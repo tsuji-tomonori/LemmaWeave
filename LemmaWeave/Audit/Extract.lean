@@ -46,6 +46,8 @@ def extract (root : Name) (limit : Nat := 100000) : CommandElabM Json := do
       boundaries := boundaries.push (Json.mkObj [("name", toJson name.toString),
         ("reason", toJson "not_in_checked_environment")])
     | some info =>
+      let prettyType ← liftTermElabM <| Lean.Meta.ppExpr info.type
+      let ranges ← Lean.findDeclarationRanges? name
       let mut refs : Array (Name × String) :=
         info.type.getUsedConstants.map fun n => (n, "type_reference")
       let mut bodyStatus := "kernel_primitive"
@@ -76,9 +78,11 @@ def extract (root : Name) (limit : Nat := 100000) : CommandElabM Json := do
           todo := todo.push target
       nodes := nodes.push (Json.mkObj [("name", toJson name.toString),
         ("kind", toJson (kindOf info)), ("type_expr", toJson (reprStr info.type)),
+        ("type_pretty", toJson prettyType.pretty),
         ("body_expr", body), ("body_status", toJson bodyStatus),
-        ("unsafe", toJson info.isUnsafe), ("source_location", Json.null),
-        ("source_location_status", toJson "not_resolved")])
+        ("unsafe", toJson info.isUnsafe),
+        ("source_location", toJson (ranges.map reprStr)),
+        ("source_location_status", toJson (if ranges.isSome then "range_only_file_unresolved" else "not_resolved"))])
   let truncated : Bool := decide (index < todo.size)
   if truncated then
     boundaries := boundaries.push (Json.mkObj [("reason", toJson "node_limit"),

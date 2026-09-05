@@ -40,7 +40,14 @@ jobs:
       - name: Run synthetic Lean fixture
         run: python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/Smoke.lean
       - name: Run dependency extraction fixtures
-        run: python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/DependencyFixtures.lean
+        run: |
+          python3 scripts/run.py --timeout 300 -- lake build LemmaWeave.Audit.Fixtures.Shared
+          python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/DependencyFixtures.lean
+          python3 scripts/run.py -- python3 scripts/check_extractor.py
+      - name: Extract all registered proof roots
+        run: |
+          python3 scripts/run.py -- python3 scripts/generate_audit.py
+          python3 scripts/run.py --timeout 600 -- lake env lean LemmaWeave/Audit/AllRoots.lean
       - name: Run Python guards
         run: python3 scripts/run.py -- python3 -m unittest discover -s tests -v
       - name: Validate ledger states
@@ -68,70 +75,3 @@ jobs:
             runs/
             work/*-graph.json
           retention-days: 14
-      - name: Package the public Lean runtime for local verification
-        if: always()
-        run: |
-          mkdir -p "$RUNNER_TEMP/lemmaweave-runtime"
-          tar -czf "$RUNNER_TEMP/lemmaweave-runtime/runtime.tar.gz" -C "$HOME/.elan/toolchains/leanprover--lean4---v4.33.1" bin lib include share
-          tar --exclude='.git' -czf "$RUNNER_TEMP/lemmaweave-runtime/packages.tar.gz" .lake/packages
-          sha256sum "$RUNNER_TEMP/lemmaweave-runtime/"*.tar.gz > "$RUNNER_TEMP/lemmaweave-runtime/SHA256SUMS"
-      - name: Split the public runtime into downloadable artifacts
-        if: always()
-        run: |
-          cd "$RUNNER_TEMP/lemmaweave-runtime"
-          tar -cf - runtime.tar.gz packages.tar.gz SHA256SUMS | split -b 400M -d - bundle.part-
-          ls -lh bundle.part-*
-      - name: Preserve runtime part 00
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: public-lean-runtime-part-00
-          path: ${{ runner.temp }}/lemmaweave-runtime/bundle.part-00
-          if-no-files-found: ignore
-          compression-level: 0
-          retention-days: 1
-      - name: Preserve runtime part 01
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: public-lean-runtime-part-01
-          path: ${{ runner.temp }}/lemmaweave-runtime/bundle.part-01
-          if-no-files-found: ignore
-          compression-level: 0
-          retention-days: 1
-      - name: Preserve runtime part 02
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: public-lean-runtime-part-02
-          path: ${{ runner.temp }}/lemmaweave-runtime/bundle.part-02
-          if-no-files-found: ignore
-          compression-level: 0
-          retention-days: 1
-      - name: Preserve runtime part 03
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: public-lean-runtime-part-03
-          path: ${{ runner.temp }}/lemmaweave-runtime/bundle.part-03
-          if-no-files-found: ignore
-          compression-level: 0
-          retention-days: 1
-      - name: Preserve runtime part 04
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: public-lean-runtime-part-04
-          path: ${{ runner.temp }}/lemmaweave-runtime/bundle.part-04
-          if-no-files-found: ignore
-          compression-level: 0
-          retention-days: 1
-      - name: Preserve runtime part 05
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: public-lean-runtime-part-05
-          path: ${{ runner.temp }}/lemmaweave-runtime/bundle.part-05
-          if-no-files-found: ignore
-          compression-level: 0
-          retention-days: 1

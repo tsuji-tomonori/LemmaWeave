@@ -36,6 +36,8 @@ GitHub Actions上で実行環境を構築できた。Lean 4.33.1と固定mathlib
 
 [検証と監査が成功したGitHub Actions実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33948148236)。検証した入力コミットは `9d427137107b16cf0f1ab016a115e5655d3344b4`。後の文書更新をこのコミットで実行済みと呼ばない。
 
+台帳・圧縮生グラフ・カードを含めてpushしたコミット `7fd73a8c30711ef70ac1332d0351eba87b13c26d` も、[再実行33949512590](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33949512590)で全ステップ成功した。5対象のビルド・監査、15件のPythonテスト、台帳検査を再確認した。ジョブログは `runs/github-run-33949512590/job.log`。この再実行は独立意味レビューではない。
+
 | 実行コマンド・対象 | 終了コード |
 |---|---:|
 | `lean --version` / `lake --version`（Actions） | 0 / 0 |
@@ -74,5 +76,7 @@ GitHub Actions上で実行環境を構築できた。Lean 4.33.1と固定mathlib
 ## 次の具体的操作
 
 `docs/RESUME.md` に記載した順で、固定版の独立レビューと、`sets_solution` の未分類2,776宣言から分類を続ける。別エージェントの起動・並行委任には現在の実行規則上、ユーザーの明示指示が必要。自己レビューを独立レビューへ読み替えない。
+
+具体的な確認対象と委任範囲は `reviews/INDEPENDENT_REVIEW_REQUEST.md` に固定した。独立レビューの許可待ちは環境構築失敗を意味しない。補題分類・抽出器の残試験も未完であり、レビューだけで全体が完了するとは扱わない。
 
 教科書全文と教材UIは作成していない。

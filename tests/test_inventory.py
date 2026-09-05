@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import inventory
@@ -90,6 +91,26 @@ class InventoryEvidence(unittest.TestCase):
 
 
 class SemanticEvidence(unittest.TestCase):
+    def test_evidence_import_rejects_paths_outside_output_roots(self):
+        from import_evidence import load_archive
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = Path(tmp) / 'evidence.zip'
+            for path in ['../escaped', '/absolute', '.private/raw/exam.pdf', 'scripts/lw.py']:
+                with zipfile.ZipFile(archive, 'w') as z:
+                    z.writestr(path, 'untrusted')
+                with self.assertRaises(ValueError):
+                    load_archive(archive)
+
+    def test_incomplete_replay_does_not_promote_or_write(self):
+        from import_evidence import import_evidence
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); archive = root / 'evidence.zip'
+            with zipfile.ZipFile(archive, 'w') as z:
+                z.writestr('reports/extractor-fixtures.json', '{"suite_status":"passed"}')
+            with self.assertRaisesRegex(ValueError, 'successful recorded command'):
+                import_evidence(root, archive, '123')
+            self.assertFalse((root / 'reports').exists())
+
     def test_location_sidecar_cannot_omit_or_substitute_a_declaration(self):
         from check_locations import check
         g = {'roots': ['T'], 'nodes': [{'name': 'T'}, {'name': 'Helper'}]}

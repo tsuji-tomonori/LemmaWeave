@@ -4,7 +4,9 @@
   "name_ja": "商型の構成・持ち上げ・帰納法",
   "statement_ja": "関係rで関連する要素を同一視する商Quot rへ、Quot.mkで要素を写す。fがrで関連する要素に同じ値を与えるならQuot.liftで商上の関数を定義できる。商の各代表で命題を示せばQuot.indで商の全要素について示せる。",
   "assumptions": [
-    "型・変数・量化と各規則の前提はactual_declaration_typesの固定版型に明記する。"
+    "α : Sort u、r : α → α → Prop。Quotの入力関係そのものに同値関係の仮定は要求しない。",
+    "Quot.liftにはf : α → βと、r a bならf a=f bという整合性が必要。",
+    "Quot.indの対象は商上の命題で、各代表についての証明が必要。"
   ],
   "kind": "foundation",
   "lean_declarations": [

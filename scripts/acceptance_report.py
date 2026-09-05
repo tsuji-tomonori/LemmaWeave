@@ -34,6 +34,7 @@ def build_report(root):
     sources = {s['source_id']: s for s in records(root, 'corpus/sources')}
     papers = {p['paper_id']: p for p in records(root, 'corpus/papers')}
     problems = records(root, 'corpus/problems')
+    cards = records(root, 'knowledge/nodes')
     inventory = inspect(root)[0]
     learning = read(root / 'knowledge/learning-graph.json')
     dag_error = None
@@ -59,6 +60,15 @@ def build_report(root):
                      all(rights.get('processing', {}).get(action) == 'allowed' for action in actions))
         semantic_ok = p['status']['semantic'] == 'independent_checked' and bool(independent)
         modeling_ok = semantic_ok and any(r.get('modeling_checks_passed') is True for r in independent)
+        learning_edges_ok = set(learning['nodes']) == {c['learning_node_id'] for c in cards}
+        for v in vs:
+            used = {n['name'] for item in v.get('audit_evidence', {}).get('graphs', {}).values()
+                    for n in read(confined(root, item['file']))['nodes']}
+            expected = {(pre, c['learning_node_id']) for c in cards
+                        if used.intersection(c['lean_declarations']) for pre in c['prerequisite_nodes']}
+            actual = {(e['from'], e['to']) for e in learning['edges']
+                      if e['kind'] == 'prerequisite' and e['proof_variant_id'] == v['proof_variant_id']}
+            learning_edges_ok = learning_edges_ok and expected == actual
         coverage_ok = bool(vs) and bool(root_types) and root_types == set(p['lean']['goal_declarations'])
         # AC12 requires a separately recorded whole-pipeline replay and current
         # proof/model/toolchain inputs; a job URL or old exit code alone is insufficient.
@@ -66,7 +76,12 @@ def build_report(root):
         for ref in p.get('reproduction_runs', []):
             try:
                 inputs = local_import_closure(root, [f for v in vs for f in v['input_files']])
-                run = verify_run(root, ref, inputs + ['lean-toolchain', 'lake-manifest.json', 'lakefile.toml', 'scripts/replay.py'],
+                pipeline = [str(f.relative_to(root)) for folder, pattern in
+                            [('scripts', '*.py'), ('knowledge/nodes', '*.json'),
+                             ('tests', '*.py'), ('tests/lean', '*.lean')]
+                            for f in sorted((root / folder).glob(pattern))]
+                run = verify_run(root, ref, inputs + pipeline + ['lean-toolchain', 'lake-manifest.json', 'lakefile.toml',
+                                 'knowledge/declaration-classifications.json', 'environment/pins.json'],
                                  ['python3', 'scripts/replay.py'])
                 original = {read(confined(root, v['build_run']))['environment'].get('github_run_id') for v in vs}
                 fresh = run['environment'].get('github_run_id')
@@ -83,7 +98,7 @@ def build_report(root):
             'AC07': gate(modeling_ok, 'Independent review must explicitly cover satisfiability, hidden assumptions and modeling sufficiency.'),
             'AC08': gate(p['status']['dependency'] == 'extracted', 'Complete extraction requires fixture validation and accounted source/body boundaries.'),
             'AC09': gate(mapped['complete'], 'Type-bound Japanese cards, prerequisites and problem backlinks are validated.', unclassified=mapped['unclassified'], mapping_errors=inventory['errors']),
-            'AC10': gate(mapped['complete'] and dag_error is None, 'Known learning prerequisites must be acyclic for each proof variant; full mapping is also required.', graph_error=dag_error),
+            'AC10': gate(mapped['complete'] and dag_error is None and learning_edges_ok, 'Prerequisite edges must exactly match cards used by each variant and be acyclic; full mapping is also required.', graph_error=dag_error, prerequisite_coverage=learning_edges_ok),
             'AC11': gate(mapped['complete'], 'All mapped cards retain Japanese claims, explanation outlines and explicitly unexpanded premises.'),
             'AC12': gate(replay_ok, 'A successful whole-pipeline replay on a different runner is bound to current inputs.', replay_errors=replay_errors),
         }

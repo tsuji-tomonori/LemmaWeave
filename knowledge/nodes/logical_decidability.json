@@ -4,7 +4,8 @@
   "name_ja": "証拠を伴う命題の決定",
   "statement_ja": "Decidable pはpの証明を含むisTrue、または¬pの証明を含むisFalseである。decideはその選択を真偽値へ写す。真偽値の外部計算だけを証明と扱わない。",
   "assumptions": [
-    "型・変数・量化と各規則の前提はactual_declaration_typesの固定版型に明記する。"
+    "p : Prop。isTrueはpの証明、isFalseは¬pの証明を持つ。",
+    "decideの使用にはDecidable pのインスタンスが必要。"
   ],
   "kind": "foundation",
   "lean_declarations": [

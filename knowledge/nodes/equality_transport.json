@@ -4,7 +4,9 @@
   "name_ja": "等号と依存する命題の置換",
   "statement_ja": "等号はa=aを導入規則に持つ。a=bなら、aに依存する型の要素をbに依存する型へ移せる。Eq.recでは型が等号の証明にも依存でき、Eq.ndrecでは対象の値に依存する。",
   "assumptions": [
-    "型・変数・量化と各規則の前提はactual_declaration_typesの固定版型に明記する。"
+    "α : Sort u、a,b : α。Eq.reflは任意のaに適用できる。",
+    "Eq.ndrecにはmotive : α → Sort v、motive aの要素、a=bの証明が必要。",
+    "Eq.recのmotiveは対象値と等号の証明に依存し、反射的な場合の要素が必要。"
   ],
   "kind": "foundation",
   "lean_declarations": [

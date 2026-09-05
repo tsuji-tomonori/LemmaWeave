@@ -4,7 +4,8 @@
   "name_ja": "同値の両方向",
   "statement_ja": "a↔bを示すにはa→bとb→aの両方を与える。同値とaからbを、同値とbからaをそれぞれ導ける。",
   "assumptions": [
-    "型・変数・量化と各規則の前提はactual_declaration_typesの固定版型に明記する。"
+    "a,b : Prop。導入にはa→bとb→aの両方が必要。",
+    "Iff.mpはa↔bとa、Iff.mprはa↔bとbを前提にする。"
   ],
   "kind": "foundation",
   "lean_declarations": [

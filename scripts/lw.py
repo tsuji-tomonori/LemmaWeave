@@ -222,6 +222,11 @@ def validate(root):
                         graph = read(graph_path)
                         if graph['roots'] != [name]:
                             raise ValueError('wrong audit root')
+                        root_node = next(n for n in graph['nodes'] if n['name'] == name)
+                        observed_type = hashlib.sha256(root_node['type_expr'].encode()).hexdigest()
+                        if (v.get('theorem_type_sha256', {}).get(name) != observed_type or
+                                p['lean']['theorem_type_hash'].get(name) != observed_type):
+                            raise ValueError('root type hash disagrees with actual Lean export')
                         result = graph_audit(graph)
                         if result['status'] != 'passed':
                             raise ValueError('axiom or body-availability audit not passed')
@@ -231,6 +236,30 @@ def validate(root):
                         fixtures = read(confined(root, audit['extractor_fixture_report']))
                         if fixtures.get('suite_status') != 'passed':
                             raise ValueError('full extractor fixture suite is incomplete')
+                        fixture_inputs = local_import_closure(root, ['tests/lean/DependencyFixtures.lean',
+                            'LemmaWeave/Audit/Fixtures/Exported.lean'])
+                        fixture_inputs += ['work/' + c['fixture'] + '-graph.json' for c in fixtures['validated_cases']]
+                        verify_run(root, audit['extractor_fixture_run'], fixture_inputs +
+                            ['scripts/check_extractor.py', 'scripts/lw.py', 'lean-toolchain', 'lake-manifest.json'],
+                            ['python3', 'scripts/check_extractor.py'])
+                        from check_locations import check as check_locations
+                        locations = v['source_mapping_evidence']
+                        location_run = verify_run(root, locations['run'],
+                            local_import_closure(root, v['input_files'] +
+                                ['work/locations.lean', 'LemmaWeave/Audit/Locations.lean']) +
+                            ['lean-toolchain', 'lake-manifest.json', 'lakefile.toml'],
+                            ['lake', 'env', 'lean', 'work/locations.lean'])
+                        for name in v['roots']:
+                            item = locations['exports'][name]
+                            path = confined(root, item['file'])
+                            if sha(path) != item['sha256']:
+                                raise ValueError('modified source-location sidecar')
+                            raw = gzip.decompress(path.read_bytes()) if path.suffix == '.gz' else path.read_bytes()
+                            raw_hash = hashlib.sha256(raw).hexdigest()
+                            if (raw_hash != item.get('raw_sha256', item['sha256']) or
+                                location_run['artifact_sha256'].get(item.get('export_file', item['file'])) != raw_hash):
+                                raise ValueError('source locations not bound to actual command output')
+                            check_locations(read(confined(root, audit['graphs'][name]['file'])), read(path))
             if p['status']['inventory'] == 'mapped':
                 from inventory import inspect
                 inventory = inspect(root)[0]

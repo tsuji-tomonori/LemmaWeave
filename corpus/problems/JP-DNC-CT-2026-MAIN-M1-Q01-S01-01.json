@@ -91,7 +91,7 @@
   },
   "status": {
     "transcription": "checked",
-    "semantic": "self_review_only",
+    "semantic": "independent_checked",
     "proof": "kernel_checked",
     "axiom_audit": "passed",
     "dependency": "extracted",
@@ -102,7 +102,8 @@
   "learning_nodes": [],
   "reviews": [
     "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-model-freeze.json",
-    "reviews/20260905-resume-source-review.json"
+    "reviews/20260905-resume-source-review.json",
+    "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-independent-20260905.json"
   ],
   "runs": [
     "runs/20260905T054432-d5587f82/run.json",
@@ -110,11 +111,6 @@
     "runs/20260905T055049-85c92f83/run.json"
   ],
   "blockers": [
-    {
-      "kind": "review_unavailable",
-      "detail": "Frozen Model/Goals are self_review_only; no independent session has checked the original pages.",
-      "next_action": "Run an explicitly authorized independent reviewer on the pinned source and frozen model."
-    },
     {
       "kind": "unclassified_dependencies",
       "detail": "See reports/acceptance.json AC09 and knowledge/educational-frontier.json.gz.",

@@ -90,7 +90,9 @@ def build_report(root):
                 replay_errors.append(str(error))
         ac = {
             'AC01': gate(rights_ok, 'Source version/position and permissions for actual processing actions; redistribution remains separate.', processing_actions=actions),
-            'AC02': gate(p['source_page_visual_review'].get('confirmed') is True, 'Original equations, figures and page positions directly checked.'),
+            'AC02': gate(p['source_page_visual_review'].get('confirmed') is True and
+                         p['status']['transcription'] == 'checked' and bool(p['mathematical_spec'].get('goals')),
+                         'Original equations and figures directly checked against a completed mathematical specification; location-only candidates do not pass.'),
             'AC03': gate(coverage_ok, 'Actual root types equal all registered frozen Goal declarations; adequacy remains subject to AC04.'),
             'AC04': gate(semantic_ok, 'Independent review must bind source, specification revision, model and root type hashes.'),
             'AC05': gate(p['status']['proof'] == 'kernel_checked', 'Successful fixed Lean commands and the complete local import closure are validated.'),

@@ -20,12 +20,13 @@ def sha(path):
 
 def snapshot(root):
     result = {}
-    for path in sorted(root.rglob('*')):
-        rel = path.relative_to(root)
-        if any(p in {'.git', '.lake', '.private', '__pycache__', 'runs', 'reports'} for p in rel.parts):
-            continue
-        if path.is_file():
-            result[str(rel)] = sha(path)
+    excluded = {'.git', '.lake', '.private', '__pycache__', 'runs', 'reports'}
+    for directory, dirs, files in os.walk(root):
+        dirs[:] = sorted(d for d in dirs if d not in excluded)
+        for name in sorted(files):
+            path = pathlib.Path(directory) / name
+            if path.is_file():
+                result[str(path.relative_to(root))] = sha(path)
     return result
 
 

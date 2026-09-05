@@ -158,12 +158,41 @@ def validate(root):
                            r['target'].get('semantic_model_hash') == p['lean']['semantic_model_hash'] and
                            r.get('source_pages_directly_checked') for r in matching):
                     raise ValueError('missing independent current-version source review')
-            if p['status']['axiom_audit'] == 'passed':
-                raise ValueError('audit promotion is disabled until Lean extractor fixture suite passes')
-            if p['status']['dependency'] == 'extracted' or p['status']['inventory'] == 'mapped':
-                raise ValueError('extraction/inventory promotion disabled pending extractor validation')
+            if p['status']['axiom_audit'] == 'passed' or p['status']['dependency'] == 'extracted':
+                for vid in p['lean']['proof_variants']:
+                    v = variant_by_id[vid]
+                    audit = v['audit_evidence']
+                    verify_run(root, audit['run'], v['input_files'] +
+                               ['LemmaWeave/Audit/Extract.lean', 'LemmaWeave/Audit/AllRoots.lean',
+                                'lean-toolchain', 'lake-manifest.json', 'lakefile.toml'],
+                               ['lake', 'env', 'lean', 'LemmaWeave/Audit/AllRoots.lean'])
+                    for name in v['roots']:
+                        item = audit['graphs'][name]
+                        graph_path = confined(root, item['file'])
+                        if sha(graph_path) != item['sha256']:
+                            raise ValueError('modified dependency graph')
+                        graph = read(graph_path)
+                        if graph['roots'] != [name]:
+                            raise ValueError('wrong audit root')
+                        result = graph_audit(graph)
+                        if result['status'] != 'passed':
+                            raise ValueError('axiom or body-availability audit not passed')
+                        if set(result['axioms']) != set(graph['lean_collected_axioms']):
+                            raise ValueError('Lean axiom collector disagrees with proof-term closure')
+                    if p['status']['dependency'] == 'extracted':
+                        fixtures = read(confined(root, audit['extractor_fixture_report']))
+                        if fixtures.get('suite_status') != 'passed':
+                            raise ValueError('full extractor fixture suite is incomplete')
+            if p['status']['inventory'] == 'mapped':
+                raise ValueError('inventory mapping requires a declaration-level coverage checker; not implemented')
         except (KeyError, ValueError, OSError) as error:
             errors.append(p['problem_id'] + ': ' + str(error))
+    expected_targets = sorted({v['module'] for v in variants})
+    target_file = root / 'LemmaWeave/AllTargets.lean'
+    if variants:
+        targets = sorted(re.findall(r'^import ([A-Za-z0-9_.]+)$', target_file.read_text(), re.M)) if target_file.exists() else []
+        if targets != expected_targets:
+            errors.append('aggregate omits or adds registered proof targets')
     expected_imports = sorted({v['module'] for v in variants if v['status'] == 'kernel_checked'})
     aggregate = root / 'LemmaWeave/AllVerified.lean'
     actual = sorted(re.findall(r'^import ([A-Za-z0-9_.]+)$', aggregate.read_text(), re.M))
@@ -186,14 +215,28 @@ def model_hash(root, files):
     return hashlib.sha256(json.dumps(values, sort_keys=True).encode()).hexdigest()
 
 
+def extraction_metrics(root):
+    files = sorted((root / 'reports/dependencies').glob('*.json'))
+    if not files:
+        return {'unclassified': None, 'reason': 'No exam proof-term extraction imported; not a measured zero.'}
+    names = set()
+    for path in files:
+        graph = read(path)
+        names.update(n['name'] for n in graph.get('nodes', [])
+                     if n.get('classification', {}).get('category', 'unclassified') == 'unclassified')
+    return {'unclassified': len(names), 'reason': 'Distinct declaration names in imported exam graphs, not source-token or import counts.'}
+
+
 def metrics(root):
     p = [p for p in records(root, 'corpus/problems') if p['origin'] == 'exam']
     sources = records(root, 'corpus/sources')
     return {
         'candidate_problems': len(p),
-        'located_sources': sum(s['source_status'] == 'located' for s in sources),
+        'located_sources': sum(s['source_status'] in {'located', 'fetched'} for s in sources),
         'fetched_papers': sum(bool(p.get('sha256')) for p in records(root, 'corpus/papers')),
         'collected_problems': sum(x['collection_status'] == 'collected' for x in p),
+        'source_visually_checked_problems': sum(x['source_page_visual_review'].get('confirmed', False) for x in p),
+        'semantic_self_review_only_problems': sum(x['status']['semantic'] == 'self_review_only' for x in p),
         'semantic_checked_problems': sum(x['status']['semantic'] == 'independent_checked' for x in p),
         'kernel_checked_problems': sum(x['status']['proof'] == 'kernel_checked' for x in p),
         'axiom_audit_passed_problems': sum(x['status']['axiom_audit'] == 'passed' for x in p),
@@ -203,8 +246,8 @@ def metrics(root):
         'phase1_complete_problems': 0,
         'phase1_complete_policy': 'disabled until AC01-AC12 evidence checker and Lean fixtures are validated',
         'learning_nodes': len(records(root, 'knowledge/nodes')),
-        'unclassified_dependencies': None,
-        'unclassified_dependencies_reason': 'No proof-term extraction executed; not a measured zero.',
+        'unclassified_dependencies': extraction_metrics(root)['unclassified'],
+        'unclassified_dependencies_reason': extraction_metrics(root)['reason'],
         'educational_frontier_status': 'not_extracted',
         'target_first_batch': 5, 'target_first_batch_complete_minimum': 1,
         'target_pilot_collected': 50, 'target_pilot_complete': 10,

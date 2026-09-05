@@ -1,5 +1,5 @@
 import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Finset.Interval
+import Mathlib.Order.Interval.Finset.Nat
 import Lean.Elab.Tactic.Omega
 
 namespace LemmaWeave.Lemmas

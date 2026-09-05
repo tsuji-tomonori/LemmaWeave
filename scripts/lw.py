@@ -116,6 +116,46 @@ def verify_run(root, run_path, required_files, expected_argv):
     return run
 
 
+def local_import_closure(root, files):
+    """Include every local Lean import; a hand-maintained file list is insufficient."""
+    pending, found = list(files), set()
+    while pending:
+        name = pending.pop()
+        if name in found:
+            continue
+        path = confined(root, name)
+        if not path.is_file():
+            raise ValueError('missing input file: ' + name)
+        found.add(name)
+        if path.suffix == '.lean':
+            imports = re.findall(r'^\s*(?:public\s+)?(?:meta\s+)?import\s+([A-Za-z0-9_.]+)',
+                                 path.read_text(), re.M)
+            for module in imports:
+                if module == 'LemmaWeave' or module.startswith('LemmaWeave.'):
+                    pending.append(module.replace('.', '/') + '.lean')
+    return sorted(found)
+
+
+def semantic_review_matches(root, problem, review):
+    """Bind independent review to source, specification, model and theorem types."""
+    target = review.get('target', {})
+    spec_hash = hashlib.sha256(json.dumps(problem['mathematical_spec'],
+                                         sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    return (review.get('independence') == 'independent' and
+            review.get('verdict') == 'passed' and
+            bool(review.get('reviewer_session_id')) and
+            review.get('reviewer_session_id') != review.get('author_session_id') and
+            bool(review.get('author_session_id')) and
+            review.get('source_pages_directly_checked') is True and
+            target.get('problem_id') == problem['problem_id'] and
+            target.get('problem_revision') == problem['revision'] and
+            target.get('source_sha256') == problem['source_locator']['document_sha256'] and
+            target.get('mathematical_spec_sha256') == spec_hash and
+            target.get('theorem_type_hash') == problem['lean']['theorem_type_hash'] and
+            target.get('semantic_model_hash') == problem['lean']['semantic_model_hash'] and
+            target.get('semantic_model_hash') == model_hash(root, problem['lean']['model_files']))
+
+
 def validate(root):
     errors = []
     problems = records(root, 'corpus/problems')
@@ -149,23 +189,23 @@ def validate(root):
                     if set(v['required_goal_ids']) != goal_ids:
                         raise ValueError('incomplete mathematical goal coverage')
                     expected_build = ['lake', 'build', v['module']] if v.get('build_mode') == 'module' else ['lake', 'build']
-                    verify_run(root, v['build_run'], v['input_files'] +
+                    inputs = local_import_closure(root, v['input_files'] + [v['module'].replace('.', '/') + '.lean'])
+                    verify_run(root, v['build_run'], inputs +
                                ['lean-toolchain', 'lake-manifest.json', 'lakefile.toml'], expected_build)
                     if p['lean']['semantic_model_hash'] != model_hash(root, p['lean']['model_files']):
                         raise ValueError('stale semantic model')
             if p['status']['semantic'] == 'independent_checked':
                 matching = [read(confined(root, f)) for f in p['reviews']]
-                if not any(r.get('independence') == 'independent' and
-                           r.get('verdict') == 'passed' and
-                           r['target'].get('semantic_model_hash') == p['lean']['semantic_model_hash'] and
-                           r.get('source_pages_directly_checked') for r in matching):
+                if not any(semantic_review_matches(root, p, r) for r in matching):
                     raise ValueError('missing independent current-version source review')
             if p['status']['axiom_audit'] == 'passed' or p['status']['dependency'] == 'extracted':
                 for vid in p['lean']['proof_variants']:
                     v = variant_by_id[vid]
                     audit = v['audit_evidence']
                     audit_file = 'work/audit_' + vid + '.lean' if audit.get('mode') == 'per_variant' else 'LemmaWeave/Audit/AllRoots.lean'
-                    observed = verify_run(root, audit['run'], v['input_files'] +
+                    inputs = local_import_closure(root, v['input_files'] +
+                                                 [v['module'].replace('.', '/') + '.lean', audit_file])
+                    observed = verify_run(root, audit['run'], inputs +
                                ['LemmaWeave/Audit/Extract.lean', audit_file,
                                 'lean-toolchain', 'lake-manifest.json', 'lakefile.toml'],
                                ['lake', 'env', 'lean', audit_file])
@@ -192,7 +232,10 @@ def validate(root):
                         if fixtures.get('suite_status') != 'passed':
                             raise ValueError('full extractor fixture suite is incomplete')
             if p['status']['inventory'] == 'mapped':
-                raise ValueError('inventory mapping requires a declaration-level coverage checker; not implemented')
+                from inventory import inspect
+                inventory = inspect(root)[0]
+                if not inventory['problems'].get(p['problem_id'], {}).get('complete'):
+                    raise ValueError('incomplete or stale declaration-to-card coverage')
         except (KeyError, ValueError, OSError) as error:
             errors.append(p['problem_id'] + ': ' + str(error))
     expected_targets = sorted({v['module'] for v in variants})
@@ -227,18 +270,17 @@ def extraction_metrics(root):
     files = sorted((root / 'reports/dependencies/raw').glob('*.json.gz'))
     if not files:
         return {'unclassified': None, 'reason': 'No exam proof-term extraction imported; not a measured zero.'}
-    mapping_path = root / 'knowledge/declaration-classifications.json'
-    classified = set(read(mapping_path).get('declarations', {})) if mapping_path.exists() else set()
-    names = set()
-    for path in files:
-        graph = read(path)
-        names.update(n['name'] for n in graph.get('nodes', []) if n['name'] not in classified)
-    return {'unclassified': len(names), 'reason': 'Distinct actual declaration names absent from the explicit classification ledger.'}
+    from inventory import inspect
+    result = inspect(root)[0]
+    return {'unclassified': result['unclassified'],
+            'reason': 'Actual declarations without valid type-bound Japanese card mappings.',
+            'mapping_errors': result['errors']}
 
 
 def metrics(root):
     p = [p for p in records(root, 'corpus/problems') if p['origin'] == 'exam']
     sources = records(root, 'corpus/sources')
+    extraction = extraction_metrics(root)
     return {
         'registered_problems': len(p),
         'candidate_problems': sum(x['collection_status'] == 'candidate' for x in p),
@@ -259,8 +301,9 @@ def metrics(root):
         'dependency_fully_validated_problems': sum(x['status']['dependency'] == 'extracted' for x in p),
         'inventory_complete_problems': sum(x['status']['inventory'] == 'mapped' for x in p),
         'learning_nodes': len(records(root, 'knowledge/nodes')),
-        'unclassified_dependencies': extraction_metrics(root)['unclassified'],
-        'unclassified_dependencies_reason': extraction_metrics(root)['reason'],
+        'unclassified_dependencies': extraction['unclassified'],
+        'unclassified_dependencies_reason': extraction['reason'],
+        'classification_errors': extraction.get('mapping_errors', []),
         'educational_frontier_status': 'partial_with_explicit_unclassified_declarations' if (root / 'knowledge/educational-frontier.json.gz').exists() else 'not_extracted',
         'target_first_batch': 5, 'target_first_batch_complete_minimum': 1,
         'target_pilot_collected': 50, 'target_pilot_complete': 10,

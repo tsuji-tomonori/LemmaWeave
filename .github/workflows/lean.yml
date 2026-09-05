@@ -51,6 +51,12 @@ jobs:
         run: python3 scripts/run.py -- python3 -m unittest discover -s tests -v
       - name: Validate ledger states
         run: python3 scripts/run.py -- python3 scripts/lw.py validate
+      - name: Validate declaration inventory and regenerate audit reports
+        run: |
+          python3 scripts/run.py -- python3 scripts/inventory.py --write
+          python3 scripts/run.py -- python3 scripts/analyze_corpus.py
+          python3 scripts/run.py -- python3 scripts/acceptance_report.py
+          python3 scripts/run.py -- python3 scripts/lw.py report
       - name: Print command output
         if: always()
         run: |
@@ -76,4 +82,10 @@ jobs:
             work/audit_*.lean
             reports/target-run-results.json
             reports/extractor-fixtures.json
+            reports/inventory.json
+            reports/declaration-index.csv
+            reports/acceptance.json
+            reports/metrics.json
+            knowledge/learning-graph.json
+            knowledge/educational-frontier.json.gz
           retention-days: 14

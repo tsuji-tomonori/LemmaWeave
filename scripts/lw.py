@@ -147,8 +147,9 @@ def validate(root):
                     goal_ids = {g['id'] for g in p['mathematical_spec']['goals']}
                     if set(v['required_goal_ids']) != goal_ids:
                         raise ValueError('incomplete mathematical goal coverage')
+                    expected_build = ['lake', 'build', v['module']] if v.get('build_mode') == 'module' else ['lake', 'build']
                     verify_run(root, v['build_run'], v['input_files'] +
-                               ['lean-toolchain', 'lake-manifest.json', 'lakefile.toml'], ['lake', 'build'])
+                               ['lean-toolchain', 'lake-manifest.json', 'lakefile.toml'], expected_build)
                     if p['lean']['semantic_model_hash'] != model_hash(root, p['lean']['model_files']):
                         raise ValueError('stale semantic model')
             if p['status']['semantic'] == 'independent_checked':
@@ -162,15 +163,18 @@ def validate(root):
                 for vid in p['lean']['proof_variants']:
                     v = variant_by_id[vid]
                     audit = v['audit_evidence']
-                    verify_run(root, audit['run'], v['input_files'] +
-                               ['LemmaWeave/Audit/Extract.lean', 'LemmaWeave/Audit/AllRoots.lean',
+                    audit_file = 'work/audit_' + vid + '.lean' if audit.get('mode') == 'per_variant' else 'LemmaWeave/Audit/AllRoots.lean'
+                    observed = verify_run(root, audit['run'], v['input_files'] +
+                               ['LemmaWeave/Audit/Extract.lean', audit_file,
                                 'lean-toolchain', 'lake-manifest.json', 'lakefile.toml'],
-                               ['lake', 'env', 'lean', 'LemmaWeave/Audit/AllRoots.lean'])
+                               ['lake', 'env', 'lean', audit_file])
                     for name in v['roots']:
                         item = audit['graphs'][name]
                         graph_path = confined(root, item['file'])
                         if sha(graph_path) != item['sha256']:
                             raise ValueError('modified dependency graph')
+                        if observed.get('artifact_sha256', {}).get(item['file']) != item['sha256']:
+                            raise ValueError('graph not linked to command output hash')
                         graph = read(graph_path)
                         if graph['roots'] != [name]:
                             raise ValueError('wrong audit root')

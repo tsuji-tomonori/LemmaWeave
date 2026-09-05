@@ -18,6 +18,9 @@ theorem sharedWrapper (n : ℕ) : n + 0 = n := LemmaWeave.Audit.Fixtures.shared_
 axiom forbiddenFixture : False
 theorem hiddenForbidden : False := forbiddenFixture
 
+-- Deliberate negative fixture for the erased/untrusted body branch, NEVER an exam proof.
+theorem explicitHole : False := by sorry
+
 #print axioms wrapper
 #print axioms hiddenForbidden
 #lw_dependencies LemmaWeave.Tests.wrapper to "work/wrapper-graph.json"
@@ -28,5 +31,10 @@ theorem hiddenForbidden : False := forbiddenFixture
 
 #lw_dependencies LemmaWeave.Tests.sharedWrapper to "work/shared-graph.json"
 #lw_dependencies LemmaWeave.Audit.Fixtures.even_two to "work/mutual-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.explicitHole to "work/hole-graph.json"
+run_cmd do
+  let graph ← LemmaWeave.Audit.extract ``LemmaWeave.Tests.wrapper 1
+  Lean.Elab.Command.liftIO <| IO.FS.writeFile "work/cutoff-graph.json" graph.compress
 
 end LemmaWeave.Tests

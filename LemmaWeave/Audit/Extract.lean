@@ -51,10 +51,10 @@ def extract (root : Name) (limit : Nat := 100000) : CommandElabM Json := do
       let mut refs : Array (Name × String) :=
         info.type.getUsedConstants.map fun n => (n, "type_reference")
       let mut bodyStatus := "kernel_primitive"
-      let mut body : Json := Json.null
+      let mut bodyHash : Json := Json.null
       if let some value := info.value? (allowOpaque := true) then
         bodyStatus := "available"
-        body := toJson (reprStr value)
+        bodyHash := toJson (toString value.hash)
         let bodyRefs := value.getUsedConstants
         if bodyRefs.contains ``sorryAx then
           bodyStatus := "erased_or_untrusted"
@@ -79,7 +79,9 @@ def extract (root : Name) (limit : Nat := 100000) : CommandElabM Json := do
       nodes := nodes.push (Json.mkObj [("name", toJson name.toString),
         ("kind", toJson (kindOf info)), ("type_expr", toJson (reprStr info.type)),
         ("type_pretty", toJson prettyType.pretty),
-        ("body_expr", body), ("body_status", toJson bodyStatus),
+        ("body_expr", Json.null), ("body_structural_hash_lean", bodyHash),
+        ("body_capture_mode", toJson "actual_references_and_noncryptographic_structural_hash"),
+        ("body_status", toJson bodyStatus),
         ("unsafe", toJson info.isUnsafe),
         ("source_location", toJson (ranges.map reprStr)),
         ("source_location_status", toJson (if ranges.isSome then "range_only_file_unresolved" else "not_resolved"))])

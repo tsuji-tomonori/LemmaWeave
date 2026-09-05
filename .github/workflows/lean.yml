@@ -47,10 +47,6 @@ jobs:
           python3 scripts/run.py --timeout 300 -- lake build LemmaWeave.Audit.Fixtures.Shared
           python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/DependencyFixtures.lean
           python3 scripts/run.py -- python3 scripts/check_extractor.py
-      - name: Extract all registered proof roots
-        run: |
-          python3 scripts/run.py -- python3 scripts/generate_audit.py
-          python3 scripts/run.py --timeout 600 -- lake env lean LemmaWeave/Audit/AllRoots.lean
       - name: Run Python guards
         run: python3 scripts/run.py -- python3 -m unittest discover -s tests -v
       - name: Validate ledger states
@@ -79,4 +75,5 @@ jobs:
             work/*-graph.json
             work/audit_*.lean
             reports/target-run-results.json
+            reports/extractor-fixtures.json
           retention-days: 14

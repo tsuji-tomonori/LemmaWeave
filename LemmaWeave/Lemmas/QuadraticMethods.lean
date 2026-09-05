@@ -44,7 +44,7 @@ theorem upper_bound_at_left_endpoint (a h k l u x : ℝ) (ha : 0 ≤ a)
   rw [vertex_difference_factor]
   apply mul_nonpos_of_nonneg_of_nonpos
   · exact mul_nonneg ha (sub_nonneg.mpr hl)
-  · exact sub_nonpos.mpr (le_trans (add_le_add_right hu l) hmid)
+  · exact sub_nonpos.mpr (le_trans (add_le_add hu (le_refl l)) hmid)
 
 /-- The symmetric endpoint rule applies when the midpoint is to the right. -/
 theorem upper_bound_at_right_endpoint (a h k l u x : ℝ) (ha : 0 ≤ a)
@@ -54,7 +54,7 @@ theorem upper_bound_at_right_endpoint (a h k l u x : ℝ) (ha : 0 ≤ a)
   rw [vertex_difference_factor]
   apply mul_nonpos_of_nonpos_of_nonneg
   · exact mul_nonpos_of_nonneg_of_nonpos ha (sub_nonpos.mpr hu)
-  · exact sub_nonneg.mpr (le_trans hmid (add_le_add_right hl u))
+  · exact sub_nonneg.mpr (le_trans hmid (add_le_add hl (le_refl u)))
 
 /-- Endpoint comparison selects the larger endpoint without testing interval points. -/
 theorem upper_bound_by_endpoints (a h k l u x : ℝ) (ha : 0 ≤ a)

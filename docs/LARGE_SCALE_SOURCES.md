@@ -2,6 +2,8 @@
 
 確認日：2026-09-05。これは掲載元の一次資料による候補調査であり、取得実績・Lean証明数ではない。機械可読の候補情報は [large-scale.json](../corpus/source_catalogs/large-scale.json)。個別の取り込み実績は、取得ファイルのハッシュと行数を持つ収集manifestで別に管理する。
 
+追記：GSM8Kの固定commit `3101c7d5072418e28b9008a6636bde82a006892c` を実取得し、[収集manifest](../corpus/imports/gsm8k.json)を保存した。実測8,792行、文字列の完全一致・NFC空白正規化の重複余剰はいずれも0、split横断重複0。数学的同値の判定、意味照合、解法抽出、Lean検証は未実施。原文・解答・MIT表示を別アーカイブに保存し、日本入試台帳とは別collectionとした。再実行は `scripts/import_gsm8k.py --help` を参照。
+
 ## 収集候補
 
 | 候補 | 公称規模と単位 | 由来・形式 | 表示ライセンスと確認点 |

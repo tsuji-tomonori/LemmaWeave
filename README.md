@@ -1,6 +1,6 @@
 # LemmaWeave（レマウィーブ）
 
-公開入試数学を原題に忠実に形式化し、Lean 4で証明を検査し、実際に使う数学的前提を記録するPhase 1プロジェクトです。パッケージ名は `lemmaweave`、名前空間は `LemmaWeave` です。
+問題を解くための公式・概念・技法をLean 4の共有補題として持ち、根拠付きの解法と相互リンクするプロジェクトです。パッケージ名は `lemmaweave`、名前空間は `LemmaWeave` です。
 
 2026-09-05時点では、大学入試センター2026年度本試験「数学Ⅰ」の5小問で、Leanビルドと公理監査が通りました。独立した意味レビューは5小問で完了しました。資料の処理条件と補題台帳の完全な分類は未完です。50小問収集・10小問完了のパイロット目標には未到達です。
 
@@ -23,6 +23,12 @@
 
 この形式化・解答は大学入試センターが作成または承認したものではありません。出典は[大学入試センターの公式掲載ページ](https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html)。原資料の再利用条件は `corpus/sources/DNC-2026-MAIN.json` と `reviews/DNC-mathematical-code-scope.md` を参照してください。
 
+## 解法中心への拡張（2026-09-05）
+
+[改訂設計](docs/METHOD_FIRST_DESIGN.md)に従い、二次関数の共有補題8本と、4つの説明ノードを組み合わせる解法例を追加しました。旧5小問のうち1問の別証明であり、問題数の増加ではありません。
+
+大規模収集の第一弾は[実測manifest](corpus/imports/gsm8k.json)のGSM8K **8,792問**（train 7,473 / test 1,319）。取得・文字列重複検査済みですが、意味レビュー・解法抽出・Lean検証は各0問です。上の日本入試5小問とは別集計です。万単位の検証と文科省全分野の網羅は未完です。[収集元候補](docs/LARGE_SCALE_SOURCES.md)も取得実績とは分けています。
+
 ## 実行
 
 通常のLinux環境で固定toolchainを用意して実行します。このチャットの作業環境ではアプリケーションパス検出に失敗したため、GitHub Actionsを標準の実行先にしています。
@@ -38,7 +44,7 @@ python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py
 
 CI成果物のZIPは `python3 scripts/import_evidence.py <artifact.zip> --run-id <GitHub実行ID>` で取り込みます。現行コード・型・実行出力のハッシュが一致しなければ取り込まず、独立意味レビューや資料の利用条件を自動承認しません。宣言の定義元モジュール・相対ソースパス・取得可能な行範囲は別の圧縮出典ファイルに保存します。
 
-`python3 -m unittest discover -s tests -v` は31テスト。`scripts/inventory.py --write` は実際の依存型と日本語カードを照合し、未分類宣言を型・利用先とともに残します。生成CSVはCI成果物に含まれます。
+`python3 -m unittest discover -s tests -v` は35テスト。`scripts/inventory.py --write` は実際の依存型と日本語カードを照合し、未分類宣言を型・利用先とともに残します。生成CSVはCI成果物に含まれます。
 
 根の型と証明項から参照を取り出し、ラッパー・暗黙参照・インスタンス・再帰の先まで追っています。証明項全文は保存せず、実参照とLeanの非暗号学的な構造ハッシュを保存します。証明ファイル、型、出力、実行入力には別途SHA256を用います。グラフはgzip圧縮JSONで、`scripts/lw.py` はそのまま読み込めます。
 

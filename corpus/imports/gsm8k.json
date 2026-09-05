@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "import_status": "succeeded",
+  "started_at": "2026-09-05T13:54:53.421756+00:00",
+  "finished_at": "2026-09-05T13:55:40.872519+00:00",
+  "upstream_repository": "https://github.com/openai/grade-school-math",
+  "upstream_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+  "license": "MIT",
+  "license_evidence": [
+    "https://huggingface.co/datasets/openai/gsm8k",
+    "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/LICENSE"
+  ],
+  "license_notice_preserved_in_archive": true,
+  "source_files": [
+    {
+      "filename": "train.jsonl",
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+      "status": "succeeded",
+      "byte_count": 4166206,
+      "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+    },
+    {
+      "filename": "test.jsonl",
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "status": "succeeded",
+      "byte_count": 749738,
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14"
+    },
+    {
+      "filename": "LICENSE",
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/LICENSE",
+      "status": "succeeded",
+      "byte_count": 1062,
+      "sha256": "86bbb73e855821d7c401912fd4bf82e34313e6e3b6fd6f909f2b6cc9e209a53b"
+    }
+  ],
+  "counts": {
+    "source_rows": 8792,
+    "split_rows": {
+      "train": 7473,
+      "test": 1319
+    },
+    "exact_question_unique": 8792,
+    "exact_question_duplicate_excess": 0,
+    "normalized_question_unique": 8792,
+    "normalized_question_duplicate_excess": 0,
+    "normalized_cross_split_overlap": 0,
+    "semantic_checked": 0,
+    "method_extracted": 0,
+    "lean_verified": 0
+  },
+  "normalization": "Unicode NFC then collapse whitespace; no semantic-equivalence claim",
+  "normalized_artifact": {
+    "filename": "normalized.jsonl",
+    "sha256": "2dfe64a7f329775d00597a80932763e098a57c3d03f7c723b6ef6bfd3edde94d",
+    "byte_count": 13845919
+  },
+  "source_answer_status": "unverified_reference",
+  "japanese_entrance_exam": false,
+  "japanese_curriculum_coverage": "not_reviewed",
+  "evaluation_note": "Preserve original test split; imported benchmark items are not unseen evaluation data.",
+  "scope_note": "Separate external collection; do not add these rows to the existing Japanese entrance-exam problem count.",
+  "attempt_note": "Only this attempt is recorded here; prior failed attempts must not be promoted to success.",
+  "archive": {
+    "filename": "lemmaweave-gsm8k-import.zip",
+    "sha256": "7df0669c1d96487caf2fb1b079f49e611f1edbc5d611cfa841db427b74fc2465",
+    "byte_count": 4462901
+  }
+}

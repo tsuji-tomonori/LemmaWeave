@@ -37,6 +37,9 @@ jobs:
         run: python3 scripts/run.py -- python3 scripts/check_pins.py
       - name: Build the project
         run: python3 scripts/run.py --timeout 600 -- lake build
+      - name: Run each registered proof and audit independently
+        if: always()
+        run: python3 scripts/run_targets.py
       - name: Run synthetic Lean fixture
         run: python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/Smoke.lean
       - name: Run dependency extraction fixtures
@@ -74,4 +77,6 @@ jobs:
           path: |
             runs/
             work/*-graph.json
+            work/audit_*.lean
+            reports/target-run-results.json
           retention-days: 14

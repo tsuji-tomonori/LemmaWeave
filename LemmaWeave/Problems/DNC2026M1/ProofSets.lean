@@ -83,7 +83,7 @@ theorem pair_condition_iff_finite (a b : ℕ) (ha : 0 < a) (hb : 0 < b) :
   · intro h
     apply lift_finite_table
     · intro k hk; exact hk.1.1
-    · intro k hk; subst k; decide
+    · intro k hk; subst k; norm_num [InUniverse]
     · intro k
       simpa only [inA_iff_finite a k ha, complement_iff_finite b k hb] using h k
 

@@ -33,24 +33,8 @@ jobs:
           python3 scripts/run.py -- lake --version
       - name: Retrieve only fixture mathlib dependencies
         run: python3 scripts/run.py --timeout 900 -- lake exe cache get Mathlib.Data.Nat.Basic Mathlib.Algebra.Group.Basic Mathlib.Data.Real.Sqrt Mathlib.Tactic
-      - name: Verify dependency revisions
-        run: python3 scripts/run.py -- python3 scripts/check_pins.py
-      - name: Build the project
-        run: python3 scripts/run.py --timeout 600 -- lake build
-      - name: Run each registered proof and audit independently
-        if: always()
-        run: python3 scripts/run_targets.py
-      - name: Run synthetic Lean fixture
-        run: python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/Smoke.lean
-      - name: Run dependency extraction fixtures
-        run: |
-          python3 scripts/run.py --timeout 300 -- lake build LemmaWeave.Audit.Fixtures.Shared
-          python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/DependencyFixtures.lean
-          python3 scripts/run.py -- python3 scripts/check_extractor.py
-      - name: Run Python guards
-        run: python3 scripts/run.py -- python3 -m unittest discover -s tests -v
-      - name: Validate ledger states
-        run: python3 scripts/run.py -- python3 scripts/lw.py validate
+      - name: Replay the complete fixed-environment pipeline
+        run: python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py
       - name: Print command output
         if: always()
         run: |
@@ -73,7 +57,16 @@ jobs:
           path: |
             runs/
             work/*-graph.json
+            work/*-locations.json
+            work/locations.lean
             work/audit_*.lean
             reports/target-run-results.json
             reports/extractor-fixtures.json
+            reports/inventory.json
+            reports/declaration-index.csv
+            reports/acceptance.json
+            reports/metrics.json
+            reports/source-mapping.json
+            knowledge/learning-graph.json
+            knowledge/educational-frontier.json.gz
           retention-days: 14

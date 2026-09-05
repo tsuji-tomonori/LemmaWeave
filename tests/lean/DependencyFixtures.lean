@@ -37,4 +37,15 @@ run_cmd do
   let graph ← LemmaWeave.Audit.extract ``LemmaWeave.Tests.wrapper 1
   Lean.Elab.Command.liftIO <| IO.FS.writeFile "work/cutoff-graph.json" graph.compress
 
+-- Import the actual exported .olean view. Unlike explicitHole, no declaration
+-- is altered or supplied with an unproved body to synthesize this boundary.
+run_cmd do
+  Lean.Elab.Command.liftIO Lean.enableInitializersExecution
+  let exported ← Lean.Elab.Command.liftIO <| Lean.importModules
+    #[{ module := `LemmaWeave.Audit.Fixtures.Exported }] {}
+    (loadExts := true) (level := .exported)
+  let graph ← Lean.withEnv exported <|
+    LemmaWeave.Audit.extract `LemmaWeave.Audit.Fixtures.exported_add_zero
+  Lean.Elab.Command.liftIO <| IO.FS.writeFile "work/exported-body-graph.json" graph.compress
+
 end LemmaWeave.Tests

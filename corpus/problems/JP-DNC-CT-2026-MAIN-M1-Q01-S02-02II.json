@@ -100,14 +100,15 @@
     "semantic": "self_review_only",
     "proof": "kernel_checked",
     "axiom_audit": "passed",
-    "dependency": "partial",
+    "dependency": "extracted",
     "inventory": "partial",
     "educational_expansion": "not_started",
     "release": "restricted"
   },
   "learning_nodes": [],
   "reviews": [
-    "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-model-freeze.json"
+    "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-model-freeze.json",
+    "reviews/20260905-resume-source-review.json"
   ],
   "runs": [
     "runs/20260905T054432-d5587f82/run.json",
@@ -121,11 +122,6 @@
       "next_action": "Run an explicitly authorized independent reviewer on the pinned source and frozen model."
     },
     {
-      "kind": "dependency_extraction_gap",
-      "detail": "All actual references traversed; naturally unavailable imported proof-body fixture and exact source file mapping are still incomplete.",
-      "next_action": "Reproduce an erased imported body under Lean 4.33.1 and verify the boundary status."
-    },
-    {
       "kind": "unclassified_dependencies",
       "detail": "See reports/acceptance.json AC09 and knowledge/educational-frontier.json.gz.",
       "next_action": "Classify declarations of sets_solution first; retain each mathematical prerequisite and Japanese statement."
@@ -135,5 +131,8 @@
       "detail": "Original PDF/prose/image reuse is not cleared. Public repository scope is independently written mathematics and metadata.",
       "next_action": "Before any original-material distribution or problem-compilation publication, obtain the applicable DNC permission."
     }
+  ],
+  "reproduction_runs": [
+    "runs/20260905T114425-ef45dcd0/run.json"
   ]
 }

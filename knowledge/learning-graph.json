@@ -8,17 +8,31 @@
     "decidable_reflection",
     "equality_symmetry",
     "equality_transitivity",
+    "equality_transport",
     "excluded_middle",
     "finite_table_lifting",
     "finset_closed_interval_membership",
     "finset_membership_insert",
     "finset_singleton_membership",
     "function_congruence",
+    "logical_conjunction",
+    "logical_decidability",
+    "logical_disjunction",
+    "logical_equivalence",
+    "logical_existence",
+    "logical_false",
+    "logical_negation",
+    "logical_true",
     "natural_add_associativity",
     "natural_add_commutativity",
+    "natural_addition",
+    "natural_construction",
     "natural_divisibility",
+    "natural_multiplication",
+    "natural_order",
     "nonnegative_product",
     "propositional_extensionality",
+    "quotient_primitives",
     "quotient_soundness",
     "real_foundation",
     "relative_complement",
@@ -26,81 +40,418 @@
   ],
   "edges": [
     {
+      "from": "equality_transport",
+      "to": "quotient_primitives",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/quotient_primitives.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
       "from": "natural_divisibility",
       "to": "bounded_divisor",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
-      "evidence": "knowledge/nodes/bounded_divisor.json"
+      "evidence": "knowledge/nodes/bounded_divisor.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_order",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/natural_order.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_negation",
+      "to": "logical_decidability",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/logical_decidability.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "bounded_divisor",
       "to": "common_divisor_finite",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
-      "evidence": "knowledge/nodes/common_divisor_finite.json"
+      "evidence": "knowledge/nodes/common_divisor_finite.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "natural_divisibility",
       "to": "common_divisor_finite",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
-      "evidence": "knowledge/nodes/common_divisor_finite.json"
+      "evidence": "knowledge/nodes/common_divisor_finite.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_addition",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/natural_addition.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_addition",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_false",
+      "to": "logical_negation",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/logical_negation.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "equality_transport",
+      "to": "quotient_primitives",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/quotient_primitives.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "natural_divisibility",
       "to": "bounded_divisor",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
-      "evidence": "knowledge/nodes/bounded_divisor.json"
+      "evidence": "knowledge/nodes/bounded_divisor.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_order",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/natural_order.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_negation",
+      "to": "logical_decidability",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/logical_decidability.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "bounded_divisor",
       "to": "common_divisor_finite",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
-      "evidence": "knowledge/nodes/common_divisor_finite.json"
+      "evidence": "knowledge/nodes/common_divisor_finite.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "natural_divisibility",
       "to": "common_divisor_finite",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
-      "evidence": "knowledge/nodes/common_divisor_finite.json"
+      "evidence": "knowledge/nodes/common_divisor_finite.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_addition",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/natural_addition.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_addition",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_false",
+      "to": "logical_negation",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/logical_negation.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "equality_transport",
+      "to": "quotient_primitives",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/quotient_primitives.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "natural_divisibility",
       "to": "bounded_divisor",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
-      "evidence": "knowledge/nodes/bounded_divisor.json"
+      "evidence": "knowledge/nodes/bounded_divisor.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_order",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/natural_order.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_negation",
+      "to": "logical_decidability",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/logical_decidability.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "bounded_divisor",
       "to": "common_divisor_finite",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
-      "evidence": "knowledge/nodes/common_divisor_finite.json"
+      "evidence": "knowledge/nodes/common_divisor_finite.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "natural_divisibility",
       "to": "common_divisor_finite",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
-      "evidence": "knowledge/nodes/common_divisor_finite.json"
+      "evidence": "knowledge/nodes/common_divisor_finite.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_addition",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/natural_addition.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_addition",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_false",
+      "to": "logical_negation",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/logical_negation.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "equality_transport",
+      "to": "quotient_primitives",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "evidence": "knowledge/nodes/quotient_primitives.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "natural_divisibility",
       "to": "bounded_divisor",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
-      "evidence": "knowledge/nodes/bounded_divisor.json"
+      "evidence": "knowledge/nodes/bounded_divisor.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_order",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "evidence": "knowledge/nodes/natural_order.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_negation",
+      "to": "logical_decidability",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "evidence": "knowledge/nodes/logical_decidability.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_addition",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "evidence": "knowledge/nodes/natural_addition.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_addition",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_false",
+      "to": "logical_negation",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "evidence": "knowledge/nodes/logical_negation.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "equality_transport",
+      "to": "quotient_primitives",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "evidence": "knowledge/nodes/quotient_primitives.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     },
     {
       "from": "natural_divisibility",
       "to": "bounded_divisor",
       "kind": "prerequisite",
       "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
-      "evidence": "knowledge/nodes/bounded_divisor.json"
+      "evidence": "knowledge/nodes/bounded_divisor.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_order",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "evidence": "knowledge/nodes/natural_order.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_negation",
+      "to": "logical_decidability",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "evidence": "knowledge/nodes/logical_decidability.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_addition",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "evidence": "knowledge/nodes/natural_addition.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_construction",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "natural_addition",
+      "to": "natural_multiplication",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "evidence": "knowledge/nodes/natural_multiplication.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
+    },
+    {
+      "from": "logical_false",
+      "to": "logical_negation",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "evidence": "knowledge/nodes/logical_negation.json",
+      "reason": "Declared prerequisite of this card, which is used by the actual proof variant.",
+      "review_status": "self_review_only"
     }
   ],
   "unexpanded_evidence": "knowledge/educational-frontier.json.gz"

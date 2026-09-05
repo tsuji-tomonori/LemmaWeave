@@ -17,14 +17,26 @@ g=graph('shared');edge(g,ns+'sharedWrapper','LemmaWeave.Audit.Fixtures.shared_ad
 g=graph('mutual');names={n['name'] for n in g['nodes']};assert 'LemmaWeave.Audit.Fixtures.evenFlag' in names;assert any('oddFlag' in n for n in names)
 g=graph('hole');assert any(n['body_status']=='erased_or_untrusted' for n in g['nodes']);assert graph_audit(g)['status']=='failed';assert 'sorryAx' in graph_audit(g)['forbidden_axioms']
 g=graph('cutoff');assert g['truncated'];assert graph_audit(g)['status']=='partial'
+g=graph('exported-body')
+exported_name='LemmaWeave.Audit.Fixtures.exported_add_zero'
+exported_node=next(n for n in g['nodes'] if n['name']==exported_name)
+assert exported_node['kind']=='axiom' and exported_node['body_status']=='axiom'
+assert graph_audit(g)['status']=='failed'
+assert exported_name in graph_audit(g)['forbidden_axioms']
 results=[]
-for name in ['wrapper','type-only','class','simp','forbidden','shared','mutual','hole','cutoff']:
+for name in ['wrapper','type-only','class','simp','forbidden','shared','mutual','hole','cutoff','exported-body']:
  g=graph(name);a=graph_audit(g)
- if name not in {'hole','cutoff'}:
+ if name not in {'hole','cutoff','exported-body'}:
   assert not a['unresolved_boundaries'],(name,a['unresolved_boundaries'])
   assert set(a['axioms'])==set(g['lean_collected_axioms']),(name,a['axioms'],g['lean_collected_axioms'])
  results.append({'fixture':name,'nodes':len(g['nodes']),'edges':len(g['edges']),'observed_audit':a['status'],'expectation_passed':True})
-report={'validated_cases':results,'suite_status':'partial','remaining_real_lean_fixtures':['naturally erased or unavailable imported proof body (explicitHole exercises same branch with a deliberate sorry, not an unavailable-import reproduction)'],'not_exam_proofs':True}
+report={'validated_cases':results,'suite_status':'passed','remaining_real_lean_fixtures':[],
+ 'imported_body_boundary':{'fixture':'exported-body','declaration':exported_name,
+  'cause':'Lean module exported .olean replaces theorem body by an axiom signature',
+  'handling':'Rejected by the unchanged axiom allowlist; never silently counted as a full proof-term closure',
+  'recovery':'Reimport full/private module data or re-elaborate pinned source before extracting the proof',
+  'source':'Lean v4.33.1 Lean/AddDecl.lean addDeclCore and Lean/Environment.lean importModules'},
+ 'not_exam_proofs':True}
 (root/'reports').mkdir(exist_ok=True)
 (root/'reports/extractor-fixtures.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))

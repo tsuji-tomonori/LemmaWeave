@@ -1,164 +1,128 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "problems": [
-    {
-      "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
-      "acceptance": {
-        "AC01": {
-          "status": "inconclusive",
-          "reason": "Metadata and PDF version pinned; original-material reuse remains conditional and code-only rights scope is self-reviewed."
-        },
-        "AC02": {
-          "status": "passed",
-          "reason": "Original pages inspected directly; document hash and locators recorded."
-        },
-        "AC03": {
-          "status": "passed",
-          "reason": "Actual theorem types are exactly the frozen Goal declarations; semantic sufficiency is separately reviewed under AC04."
-        },
-        "AC04": {
-          "status": "inconclusive",
-          "reason": "self_review_only; no independent review session exists."
-        },
-        "AC05": {
-          "status": "passed",
-          "reason": "Input and output hashes validated against recorded successful Lean commands."
-        },
-        "AC06": {
-          "status": "passed",
-          "reason": "Transitive graph axioms match Lean.collectAxioms and the three-item allowlist."
-        },
-        "AC07": {
-          "status": "inconclusive",
-          "reason": "Full-solution equivalences and attainment goals are present; absence of semantic modelling errors remains self-reviewed."
-        },
-        "AC08": {
-          "status": "partial",
-          "reason": "Actual closure traversed without truncation or unavailable bodies; naturally unavailable-import fixture and exact source file mapping remain incomplete."
-        },
-        "AC09": {
-          "status": "inconclusive",
-          "unclassified": 2776
-        },
-        "AC10": {
-          "status": "partial",
-          "reason": "Known prerequisite edges are acyclic per proof variant; graph coverage is incomplete."
-        },
-        "AC11": {
-          "status": "partial",
-          "reason": "Japanese cards and per-declaration formal statements/frontier exist; remaining Japanese mathematical explanations are not supplied."
-        },
-        "AC12": {
-          "status": "partial",
-          "reason": "Proof modules rebuilt on fresh Actions runners; complete pipeline replay evidence is being retained separately."
-        }
-      },
-      "phase1_complete": false
-    },
-    {
-      "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
-      "acceptance": {
-        "AC01": {
-          "status": "inconclusive",
-          "reason": "Metadata and PDF version pinned; original-material reuse remains conditional and code-only rights scope is self-reviewed."
-        },
-        "AC02": {
-          "status": "passed",
-          "reason": "Original pages inspected directly; document hash and locators recorded."
-        },
-        "AC03": {
-          "status": "passed",
-          "reason": "Actual theorem types are exactly the frozen Goal declarations; semantic sufficiency is separately reviewed under AC04."
-        },
-        "AC04": {
-          "status": "inconclusive",
-          "reason": "self_review_only; no independent review session exists."
-        },
-        "AC05": {
-          "status": "passed",
-          "reason": "Input and output hashes validated against recorded successful Lean commands."
-        },
-        "AC06": {
-          "status": "passed",
-          "reason": "Transitive graph axioms match Lean.collectAxioms and the three-item allowlist."
-        },
-        "AC07": {
-          "status": "inconclusive",
-          "reason": "Full-solution equivalences and attainment goals are present; absence of semantic modelling errors remains self-reviewed."
-        },
-        "AC08": {
-          "status": "partial",
-          "reason": "Actual closure traversed without truncation or unavailable bodies; naturally unavailable-import fixture and exact source file mapping remain incomplete."
-        },
-        "AC09": {
-          "status": "inconclusive",
-          "unclassified": 2971
-        },
-        "AC10": {
-          "status": "partial",
-          "reason": "Known prerequisite edges are acyclic per proof variant; graph coverage is incomplete."
-        },
-        "AC11": {
-          "status": "partial",
-          "reason": "Japanese cards and per-declaration formal statements/frontier exist; remaining Japanese mathematical explanations are not supplied."
-        },
-        "AC12": {
-          "status": "partial",
-          "reason": "Proof modules rebuilt on fresh Actions runners; complete pipeline replay evidence is being retained separately."
-        }
-      },
-      "phase1_complete": false
-    },
     {
       "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
       "acceptance": {
         "AC01": {
           "status": "inconclusive",
-          "reason": "Metadata and PDF version pinned; original-material reuse remains conditional and code-only rights scope is self-reviewed."
+          "reason": "Source version/position and permissions for actual processing actions; redistribution remains separate.",
+          "processing_actions": [
+            "local_storage",
+            "automated_analysis"
+          ]
         },
         "AC02": {
           "status": "passed",
-          "reason": "Original pages inspected directly; document hash and locators recorded."
+          "reason": "Original equations, figures and page positions directly checked."
         },
         "AC03": {
           "status": "passed",
-          "reason": "Actual theorem types are exactly the frozen Goal declarations; semantic sufficiency is separately reviewed under AC04."
+          "reason": "Actual root types equal all registered frozen Goal declarations; adequacy remains subject to AC04."
         },
         "AC04": {
           "status": "inconclusive",
-          "reason": "self_review_only; no independent review session exists."
+          "reason": "Independent review must bind source, specification revision, model and root type hashes."
         },
         "AC05": {
           "status": "passed",
-          "reason": "Input and output hashes validated against recorded successful Lean commands."
+          "reason": "Successful fixed Lean commands and the complete local import closure are validated."
         },
         "AC06": {
           "status": "passed",
-          "reason": "Transitive graph axioms match Lean.collectAxioms and the three-item allowlist."
+          "reason": "Actual transitive axioms agree with Lean and remain inside the unchanged allowlist."
         },
         "AC07": {
           "status": "inconclusive",
-          "reason": "Full-solution equivalences and attainment goals are present; absence of semantic modelling errors remains self-reviewed."
+          "reason": "Independent review must explicitly cover satisfiability, hidden assumptions and modeling sufficiency."
         },
         "AC08": {
-          "status": "partial",
-          "reason": "Actual closure traversed without truncation or unavailable bodies; naturally unavailable-import fixture and exact source file mapping remain incomplete."
+          "status": "passed",
+          "reason": "Complete extraction requires fixture validation and accounted source/body boundaries."
         },
         "AC09": {
           "status": "inconclusive",
-          "unclassified": 10798
+          "reason": "Type-bound Japanese cards, prerequisites and problem backlinks are validated.",
+          "unclassified": 10761,
+          "mapping_errors": []
         },
         "AC10": {
-          "status": "partial",
-          "reason": "Known prerequisite edges are acyclic per proof variant; graph coverage is incomplete."
+          "status": "inconclusive",
+          "reason": "Prerequisite edges must exactly match cards used by each variant and be acyclic; full mapping is also required.",
+          "graph_error": null,
+          "prerequisite_coverage": true
         },
         "AC11": {
-          "status": "partial",
-          "reason": "Japanese cards and per-declaration formal statements/frontier exist; remaining Japanese mathematical explanations are not supplied."
+          "status": "inconclusive",
+          "reason": "All mapped cards retain Japanese claims, explanation outlines and explicitly unexpanded premises."
         },
         "AC12": {
-          "status": "partial",
-          "reason": "Proof modules rebuilt on fresh Actions runners; complete pipeline replay evidence is being retained separately."
+          "status": "passed",
+          "reason": "A successful whole-pipeline replay on a different runner is bound to current inputs.",
+          "replay_errors": []
+        }
+      },
+      "phase1_complete": false
+    },
+    {
+      "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+      "acceptance": {
+        "AC01": {
+          "status": "inconclusive",
+          "reason": "Source version/position and permissions for actual processing actions; redistribution remains separate.",
+          "processing_actions": [
+            "local_storage",
+            "automated_analysis"
+          ]
+        },
+        "AC02": {
+          "status": "passed",
+          "reason": "Original equations, figures and page positions directly checked."
+        },
+        "AC03": {
+          "status": "passed",
+          "reason": "Actual root types equal all registered frozen Goal declarations; adequacy remains subject to AC04."
+        },
+        "AC04": {
+          "status": "inconclusive",
+          "reason": "Independent review must bind source, specification revision, model and root type hashes."
+        },
+        "AC05": {
+          "status": "passed",
+          "reason": "Successful fixed Lean commands and the complete local import closure are validated."
+        },
+        "AC06": {
+          "status": "passed",
+          "reason": "Actual transitive axioms agree with Lean and remain inside the unchanged allowlist."
+        },
+        "AC07": {
+          "status": "inconclusive",
+          "reason": "Independent review must explicitly cover satisfiability, hidden assumptions and modeling sufficiency."
+        },
+        "AC08": {
+          "status": "passed",
+          "reason": "Complete extraction requires fixture validation and accounted source/body boundaries."
+        },
+        "AC09": {
+          "status": "inconclusive",
+          "reason": "Type-bound Japanese cards, prerequisites and problem backlinks are validated.",
+          "unclassified": 2739,
+          "mapping_errors": []
+        },
+        "AC10": {
+          "status": "inconclusive",
+          "reason": "Prerequisite edges must exactly match cards used by each variant and be acyclic; full mapping is also required.",
+          "graph_error": null,
+          "prerequisite_coverage": true
+        },
+        "AC11": {
+          "status": "inconclusive",
+          "reason": "All mapped cards retain Japanese claims, explanation outlines and explicitly unexpanded premises."
+        },
+        "AC12": {
+          "status": "passed",
+          "reason": "A successful whole-pipeline replay on a different runner is bound to current inputs.",
+          "replay_errors": []
         }
       },
       "phase1_complete": false
@@ -168,51 +132,123 @@
       "acceptance": {
         "AC01": {
           "status": "inconclusive",
-          "reason": "Metadata and PDF version pinned; original-material reuse remains conditional and code-only rights scope is self-reviewed."
+          "reason": "Source version/position and permissions for actual processing actions; redistribution remains separate.",
+          "processing_actions": [
+            "local_storage",
+            "automated_analysis"
+          ]
         },
         "AC02": {
           "status": "passed",
-          "reason": "Original pages inspected directly; document hash and locators recorded."
+          "reason": "Original equations, figures and page positions directly checked."
         },
         "AC03": {
           "status": "passed",
-          "reason": "Actual theorem types are exactly the frozen Goal declarations; semantic sufficiency is separately reviewed under AC04."
+          "reason": "Actual root types equal all registered frozen Goal declarations; adequacy remains subject to AC04."
         },
         "AC04": {
           "status": "inconclusive",
-          "reason": "self_review_only; no independent review session exists."
+          "reason": "Independent review must bind source, specification revision, model and root type hashes."
         },
         "AC05": {
           "status": "passed",
-          "reason": "Input and output hashes validated against recorded successful Lean commands."
+          "reason": "Successful fixed Lean commands and the complete local import closure are validated."
         },
         "AC06": {
           "status": "passed",
-          "reason": "Transitive graph axioms match Lean.collectAxioms and the three-item allowlist."
+          "reason": "Actual transitive axioms agree with Lean and remain inside the unchanged allowlist."
         },
         "AC07": {
           "status": "inconclusive",
-          "reason": "Full-solution equivalences and attainment goals are present; absence of semantic modelling errors remains self-reviewed."
+          "reason": "Independent review must explicitly cover satisfiability, hidden assumptions and modeling sufficiency."
         },
         "AC08": {
-          "status": "partial",
-          "reason": "Actual closure traversed without truncation or unavailable bodies; naturally unavailable-import fixture and exact source file mapping remain incomplete."
+          "status": "passed",
+          "reason": "Complete extraction requires fixture validation and accounted source/body boundaries."
         },
         "AC09": {
           "status": "inconclusive",
-          "unclassified": 2731
+          "reason": "Type-bound Japanese cards, prerequisites and problem backlinks are validated.",
+          "unclassified": 2694,
+          "mapping_errors": []
         },
         "AC10": {
-          "status": "partial",
-          "reason": "Known prerequisite edges are acyclic per proof variant; graph coverage is incomplete."
+          "status": "inconclusive",
+          "reason": "Prerequisite edges must exactly match cards used by each variant and be acyclic; full mapping is also required.",
+          "graph_error": null,
+          "prerequisite_coverage": true
         },
         "AC11": {
-          "status": "partial",
-          "reason": "Japanese cards and per-declaration formal statements/frontier exist; remaining Japanese mathematical explanations are not supplied."
+          "status": "inconclusive",
+          "reason": "All mapped cards retain Japanese claims, explanation outlines and explicitly unexpanded premises."
         },
         "AC12": {
-          "status": "partial",
-          "reason": "Proof modules rebuilt on fresh Actions runners; complete pipeline replay evidence is being retained separately."
+          "status": "passed",
+          "reason": "A successful whole-pipeline replay on a different runner is bound to current inputs.",
+          "replay_errors": []
+        }
+      },
+      "phase1_complete": false
+    },
+    {
+      "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+      "acceptance": {
+        "AC01": {
+          "status": "inconclusive",
+          "reason": "Source version/position and permissions for actual processing actions; redistribution remains separate.",
+          "processing_actions": [
+            "local_storage",
+            "automated_analysis"
+          ]
+        },
+        "AC02": {
+          "status": "passed",
+          "reason": "Original equations, figures and page positions directly checked."
+        },
+        "AC03": {
+          "status": "passed",
+          "reason": "Actual root types equal all registered frozen Goal declarations; adequacy remains subject to AC04."
+        },
+        "AC04": {
+          "status": "inconclusive",
+          "reason": "Independent review must bind source, specification revision, model and root type hashes."
+        },
+        "AC05": {
+          "status": "passed",
+          "reason": "Successful fixed Lean commands and the complete local import closure are validated."
+        },
+        "AC06": {
+          "status": "passed",
+          "reason": "Actual transitive axioms agree with Lean and remain inside the unchanged allowlist."
+        },
+        "AC07": {
+          "status": "inconclusive",
+          "reason": "Independent review must explicitly cover satisfiability, hidden assumptions and modeling sufficiency."
+        },
+        "AC08": {
+          "status": "passed",
+          "reason": "Complete extraction requires fixture validation and accounted source/body boundaries."
+        },
+        "AC09": {
+          "status": "inconclusive",
+          "reason": "Type-bound Japanese cards, prerequisites and problem backlinks are validated.",
+          "unclassified": 2934,
+          "mapping_errors": []
+        },
+        "AC10": {
+          "status": "inconclusive",
+          "reason": "Prerequisite edges must exactly match cards used by each variant and be acyclic; full mapping is also required.",
+          "graph_error": null,
+          "prerequisite_coverage": true
+        },
+        "AC11": {
+          "status": "inconclusive",
+          "reason": "All mapped cards retain Japanese claims, explanation outlines and explicitly unexpanded premises."
+        },
+        "AC12": {
+          "status": "passed",
+          "reason": "A successful whole-pipeline replay on a different runner is bound to current inputs.",
+          "replay_errors": []
         }
       },
       "phase1_complete": false
@@ -222,55 +258,81 @@
       "acceptance": {
         "AC01": {
           "status": "inconclusive",
-          "reason": "Metadata and PDF version pinned; original-material reuse remains conditional and code-only rights scope is self-reviewed."
+          "reason": "Source version/position and permissions for actual processing actions; redistribution remains separate.",
+          "processing_actions": [
+            "local_storage",
+            "automated_analysis"
+          ]
         },
         "AC02": {
           "status": "passed",
-          "reason": "Original pages inspected directly; document hash and locators recorded."
+          "reason": "Original equations, figures and page positions directly checked."
         },
         "AC03": {
           "status": "passed",
-          "reason": "Actual theorem types are exactly the frozen Goal declarations; semantic sufficiency is separately reviewed under AC04."
+          "reason": "Actual root types equal all registered frozen Goal declarations; adequacy remains subject to AC04."
         },
         "AC04": {
           "status": "inconclusive",
-          "reason": "self_review_only; no independent review session exists."
+          "reason": "Independent review must bind source, specification revision, model and root type hashes."
         },
         "AC05": {
           "status": "passed",
-          "reason": "Input and output hashes validated against recorded successful Lean commands."
+          "reason": "Successful fixed Lean commands and the complete local import closure are validated."
         },
         "AC06": {
           "status": "passed",
-          "reason": "Transitive graph axioms match Lean.collectAxioms and the three-item allowlist."
+          "reason": "Actual transitive axioms agree with Lean and remain inside the unchanged allowlist."
         },
         "AC07": {
           "status": "inconclusive",
-          "reason": "Full-solution equivalences and attainment goals are present; absence of semantic modelling errors remains self-reviewed."
+          "reason": "Independent review must explicitly cover satisfiability, hidden assumptions and modeling sufficiency."
         },
         "AC08": {
-          "status": "partial",
-          "reason": "Actual closure traversed without truncation or unavailable bodies; naturally unavailable-import fixture and exact source file mapping remain incomplete."
+          "status": "passed",
+          "reason": "Complete extraction requires fixture validation and accounted source/body boundaries."
         },
         "AC09": {
           "status": "inconclusive",
-          "unclassified": 7011
+          "reason": "Type-bound Japanese cards, prerequisites and problem backlinks are validated.",
+          "unclassified": 6974,
+          "mapping_errors": []
         },
         "AC10": {
-          "status": "partial",
-          "reason": "Known prerequisite edges are acyclic per proof variant; graph coverage is incomplete."
+          "status": "inconclusive",
+          "reason": "Prerequisite edges must exactly match cards used by each variant and be acyclic; full mapping is also required.",
+          "graph_error": null,
+          "prerequisite_coverage": true
         },
         "AC11": {
-          "status": "partial",
-          "reason": "Japanese cards and per-declaration formal statements/frontier exist; remaining Japanese mathematical explanations are not supplied."
+          "status": "inconclusive",
+          "reason": "All mapped cards retain Japanese claims, explanation outlines and explicitly unexpanded premises."
         },
         "AC12": {
-          "status": "partial",
-          "reason": "Proof modules rebuilt on fresh Actions runners; complete pipeline replay evidence is being retained separately."
+          "status": "passed",
+          "reason": "A successful whole-pipeline replay on a different runner is bound to current inputs.",
+          "replay_errors": []
         }
       },
       "phase1_complete": false
     }
   ],
-  "phase1_complete_problems": 0
+  "phase1_complete_problems": 0,
+  "pilot": {
+    "accepted": false,
+    "checks": {
+      "collected_50": false,
+      "collection_domains_6": false,
+      "completed_10": false,
+      "proof_domains_4": false,
+      "modeling_challenge": false
+    },
+    "collected": 5,
+    "collection_domains": [
+      "expressions_functions",
+      "sets_integers"
+    ],
+    "complete": 0,
+    "proof_domains": []
+  }
 }

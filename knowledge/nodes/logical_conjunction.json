@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "logical_conjunction",
+  "name_ja": "連言の導入と除去",
+  "statement_ja": "命題aとbの両方の証明からa∧bを作れる。a∧bからaとbをそれぞれ取り出せる。",
+  "assumptions": [
+    "a,b : Prop。導入にはaとbの証明、除去にはa∧bの証明が必要。"
+  ],
+  "kind": "foundation",
+  "lean_declarations": [
+    "And",
+    "And.intro",
+    "And.left",
+    "And.right"
+  ],
+  "prerequisite_nodes": [],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "session": "fa629044271f",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "固定版の実際の型とLean 4.33.1 Init.Preludeの構成・消去規則を照合。数学的基盤として残し実装詳細にしない。",
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/Prelude.lean"
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null,
+    "note": "形式論理・依存型の基礎として保持。小中の既習認定はしていない。"
+  },
+  "explanation_outline_ja": [
+    "二つの証明を対にして連言を示す。",
+    "必要な側の証明を射影する。"
+  ],
+  "unexpanded": [
+    "自然言語の「かつ」と命題の型との翻訳の妥当性"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "actual_declaration_types": {
+    "And": "Prop → Prop → Prop",
+    "And.intro": "∀ {a b : Prop}, a → b → a ∧ b",
+    "And.left": "∀ {a b : Prop}, a ∧ b → a",
+    "And.right": "∀ {a b : Prop}, a ∧ b → b"
+  },
+  "declaration_type_sha256": {
+    "And": "b75fe885bbde4c24e5d35f95ad7dc3c70da8b0e70a24bcde54b08cb53328386e",
+    "And.intro": "d1e3e57269948c4b5351261fa65bd13fc5e07eb1ab11586d0a19db8aba7b89c5",
+    "And.left": "6aaef2e08decf1175367aab77b07ab5e9433588bf3610e68c7fdb4d29ace01f2",
+    "And.right": "f67ef103be28e00fe8d674736ba22a70b01a8e9629724fd78941f41543324204"
+  }
+}

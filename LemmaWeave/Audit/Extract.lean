@@ -96,6 +96,8 @@ def extract (root : Name) (limit : Nat := 100000) : CommandElabM Json := do
 
 elab "#lw_dependencies " name:ident " to " path:str : command => do
   let result ← extract name.getId
+  if let some parent := (System.FilePath.mk path.getString).parent then
+    liftIO <| IO.FS.createDirAll parent
   liftIO <| IO.FS.writeFile path.getString result.compress
 
 end LemmaWeave.Audit

@@ -32,7 +32,7 @@ jobs:
           python3 scripts/run.py --timeout 600 -- lean --version
           python3 scripts/run.py -- lake --version
       - name: Retrieve only fixture mathlib dependencies
-        run: python3 scripts/run.py --timeout 900 -- lake exe cache get Mathlib.Data.Nat.Basic Mathlib.Algebra.Group.Basic
+        run: python3 scripts/run.py --timeout 900 -- lake exe cache get Mathlib.Data.Nat.Basic Mathlib.Algebra.Group.Basic Mathlib.Data.Real.Sqrt Mathlib.Tactic
       - name: Verify dependency revisions
         run: python3 scripts/run.py -- python3 scripts/check_pins.py
       - name: Build the project
@@ -68,3 +68,17 @@ jobs:
             runs/
             work/*-graph.json
           retention-days: 14
+      - name: Package the public Lean runtime for local verification
+        if: always()
+        run: |
+          mkdir -p "$RUNNER_TEMP/lemmaweave-runtime"
+          tar -czf "$RUNNER_TEMP/lemmaweave-runtime/runtime.tar.gz" -C "$HOME/.elan/toolchains/leanprover--lean4---v4.33.1" bin lib include share
+          tar -czf "$RUNNER_TEMP/lemmaweave-runtime/packages.tar.gz" .lake/packages
+          sha256sum "$RUNNER_TEMP/lemmaweave-runtime/"*.tar.gz > "$RUNNER_TEMP/lemmaweave-runtime/SHA256SUMS"
+      - name: Preserve the public Lean runtime
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: public-lean-runtime
+          path: ${{ runner.temp }}/lemmaweave-runtime/
+          retention-days: 1

@@ -30,7 +30,7 @@ theorem extrema_by_methods : ExtremaGoal := by
     · exact vertex_lower_bound 2 2 (-3) x (by norm_num)
     · have bound := upper_bound_at_left_endpoint 2 2 (-3) 0 3 x
         (by norm_num) (by norm_num) hl hu
-      norm_num at bound
+      norm_num at bound ⊢
       exact bound
   · constructor
     · norm_num [InInterval]

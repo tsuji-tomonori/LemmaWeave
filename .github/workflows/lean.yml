@@ -32,7 +32,7 @@ jobs:
           python3 scripts/run.py --timeout 600 -- lean --version
           python3 scripts/run.py -- lake --version
       - name: Retrieve only fixture mathlib dependencies
-        run: python3 scripts/run.py --timeout 900 -- lake exe cache get Mathlib/Data/Nat/Basic.lean Mathlib/Algebra/Group/Basic.lean
+        run: python3 scripts/run.py --timeout 900 -- lake exe cache get Mathlib.Data.Nat.Basic Mathlib.Algebra.Group.Basic
       - name: Verify dependency revisions
         run: python3 scripts/run.py -- python3 scripts/check_pins.py
       - name: Build the project

@@ -23,6 +23,35 @@ def digest(text):
     return hashlib.sha256(text.encode()).hexdigest()
 
 
+def implementation_error(root, name, node, entry):
+    """A reviewed finite list of closed syntax values cannot hide mathematics."""
+    try:
+        path = (root / entry['rule_review_file']).resolve()
+        if not path.is_relative_to(root.resolve()) or '.private' in path.parts:
+            return 'implementation rule outside public checkout'
+        data = path.read_bytes()
+        if hashlib.sha256(data).hexdigest() != entry['rule_review_sha256']:
+            return 'stale implementation review hash'
+        rule = json.loads(data)
+        author, reviewer = rule.get('author_session_id'), rule.get('reviewer_session_id')
+        if (rule.get('review_status') != 'independently_reviewed' or not author or
+                not reviewer or author == reviewer):
+            return 'implementation rule lacks independent review'
+        if (rule.get('rule_id') != entry['evidence_rule_id'] or
+                rule.get('rule_kind') != 'closed_lean_syntax_definition'):
+            return 'unsupported implementation rule'
+        expected = {'kind': node['kind'], 'type_pretty': node['type_pretty'],
+                    'type_sha256': digest(node['type_expr'])}
+        recorded = rule['declarations'].get(name, {})
+        if {key: recorded.get(key) for key in expected} != expected:
+            return 'declaration not in reviewed exact evidence list'
+        if node['kind'] != 'definition' or node['type_pretty'] != 'Lean.Syntax':
+            return 'implementation rule cannot classify mathematical content'
+    except (KeyError, OSError, ValueError, TypeError):
+        return 'missing or invalid implementation review evidence'
+    return None
+
+
 def inspect(root):
     variants = [read(p) for p in sorted((root / 'corpus/proof_variants').glob('*.json'))]
     cards = {c['learning_node_id']: c for p in sorted((root / 'knowledge/nodes').glob('*.json'))
@@ -55,6 +84,8 @@ def inspect(root):
             reason = 'declaration absent from registered proof graphs'
         elif not node.get('type_expr') or entry.get('type_sha256') != digest(node['type_expr']):
             reason = 'stale or missing declaration type hash'
+        elif entry.get('category') == 'implementation':
+            reason = implementation_error(root, name, node, entry)
         elif entry.get('category') not in {'lemma', 'definition', 'foundation_appendix', 'baseline'}:
             reason = 'category requires an explicit supported evidence rule'
         elif card is None or name not in card.get('lean_declarations', []):
@@ -89,7 +120,8 @@ def inspect(root):
         covered = names & valid
         per_problem[pid] = {'declarations': len(names), 'mapped': len(covered),
                             'unclassified': len(names - valid),
-                            'learning_nodes': sorted({mapping[n]['learning_node_id'] for n in covered}),
+                            'learning_nodes': sorted({mapping[n]['learning_node_id'] for n in covered
+                                                      if mapping[n].get('learning_node_id')}),
                             'complete': bool(names) and names <= valid and not errors}
     return {'schema_version': '0.2', 'declarations': len(declarations),
             'mapped': len(valid), 'unclassified': len(declarations.keys() - valid),

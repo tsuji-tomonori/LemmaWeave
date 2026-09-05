@@ -74,6 +74,33 @@ class InventoryEvidence(unittest.TestCase):
         self.write('knowledge/nodes/reflexivity.json', self.card)
         self.assertTrue(inventory.inspect(self.root)[0]['errors'])
 
+    def test_reviewed_syntax_rule_cannot_cover_mathematical_theorems(self):
+        node = {'kind': 'definition', 'type_pretty': 'Lean.Syntax', 'type_expr': 'syntax-type'}
+        rule = {'rule_id': 'syntax-v1', 'rule_kind': 'closed_lean_syntax_definition',
+                'review_status': 'independently_reviewed', 'author_session_id': 'author',
+                'reviewer_session_id': 'reviewer', 'declarations': {'S': {
+                    'kind': 'definition', 'type_pretty': 'Lean.Syntax',
+                    'type_sha256': inventory.digest('syntax-type')}}}
+        self.write('reviews/rule.json', rule)
+        entry = {'rule_review_file': 'reviews/rule.json', 'evidence_rule_id': 'syntax-v1',
+                 'rule_review_sha256': inventory.digest((self.root / 'reviews/rule.json').read_text())}
+        self.assertIsNone(inventory.implementation_error(self.root, 'S', node, entry))
+        self.assertIsNotNone(inventory.implementation_error(self.root, 'unlisted', node, entry))
+        mathematical = dict(self.node)
+        rule['declarations']['S'] = {k: mathematical[k] for k in ('kind', 'type_pretty')}
+        rule['declarations']['S']['type_sha256'] = inventory.digest(mathematical['type_expr'])
+        self.write('reviews/rule.json', rule)
+        entry['rule_review_sha256'] = inventory.digest((self.root / 'reviews/rule.json').read_text())
+        self.assertIsNotNone(inventory.implementation_error(self.root, 'S', mathematical, entry))
+
+    def test_modified_or_self_reviewed_rule_is_rejected(self):
+        self.write('reviews/rule.json', {'review_status': 'independently_reviewed',
+                                      'author_session_id': 'same', 'reviewer_session_id': 'same'})
+        entry = {'rule_review_file': 'reviews/rule.json', 'rule_review_sha256': 'wrong'}
+        self.assertIsNotNone(inventory.implementation_error(self.root, 'S', self.node, entry))
+        entry['rule_review_sha256'] = inventory.digest((self.root / 'reviews/rule.json').read_text())
+        self.assertIsNotNone(inventory.implementation_error(self.root, 'S', self.node, entry))
+
     def test_unknown_prerequisite_is_rejected(self):
         self.card['prerequisite_nodes'] = ['missing']
         self.write('knowledge/nodes/reflexivity.json', self.card)

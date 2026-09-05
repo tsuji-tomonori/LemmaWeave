@@ -1,0 +1,58 @@
+{
+  "id": "quadratic_extrema",
+  "title_ja": "平方完成と端点・頂点から二次関数の極値を示す",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01",
+  "problem_ja": "f(x)=2x²−8x+5、0≤x≤3の最大値と最小値を、全域の上下界と達成に分けて示す。",
+  "root": "LemmaWeave.Tests.QuadraticMethods.extrema_by_methods",
+  "graph": "work/quadratic-methods-graph.json",
+  "semantic_review_status": "self_review_only",
+  "steps": [
+    {
+      "id": "S1",
+      "title_ja": "頂点形式へ変形",
+      "requires_steps": [],
+      "uses_nodes": [
+        "complete_square"
+      ],
+      "condition_ja": "xは実数。元の多項式と恒等的に等しい形へ変形する。",
+      "conclusion_ja": "f(x)=2(x−2)²−3。"
+    },
+    {
+      "id": "S2",
+      "title_ja": "全域で下界を示す",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "vertex_lower"
+      ],
+      "condition_ja": "二次の係数2は非負。",
+      "conclusion_ja": "すべてのxでf(x)≥−3。"
+    },
+    {
+      "id": "S3",
+      "title_ja": "区間で上界を示す",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "left_endpoint_upper"
+      ],
+      "condition_ja": "l=0,u=3,h=2なのでl+u=3≤4=2h、0≤x≤3。",
+      "conclusion_ja": "f(x)≤f(0)=5。"
+    },
+    {
+      "id": "S4",
+      "title_ja": "達成していることを確認",
+      "requires_steps": [
+        "S2",
+        "S3"
+      ],
+      "uses_nodes": [
+        "vertex_attainment"
+      ],
+      "condition_ja": "0と2はいずれも区間[0,3]に含まれる。",
+      "conclusion_ja": "x=2で−3、x=0で5。上下界と達成を合わせ、最小値−3・最大値5。"
+    }
+  ]
+}

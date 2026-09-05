@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "kind": "source_candidate_catalog",
+  "checked_on": "2026-09-05",
+  "description": "Metadata-only discovery; not a collection manifest. Actual import counts require separately hashed files and run evidence.",
+  "sum_reported_counts": false,
+  "entries": [
+    {
+      "id": "gsm8k",
+      "publisher": "OpenAI",
+      "urls": [
+        "https://huggingface.co/datasets/openai/gsm8k",
+        "https://github.com/openai/grade-school-math",
+        "https://github.com/openai/grade-school-math/blob/master/LICENSE"
+      ],
+      "reported_counts": [
+        {
+          "value": 7473,
+          "unit": "rows",
+          "split": "main/train"
+        },
+        {
+          "value": 1319,
+          "unit": "rows",
+          "split": "main/test"
+        }
+      ],
+      "license_label": "MIT",
+      "license_scope": "Official dataset card explicitly identifies dataset license; retain copyright and permission notice.",
+      "origin": "Human-written English grade-school word problems",
+      "language": [
+        "en"
+      ],
+      "formal_content": "Natural-language solutions, not Lean proofs",
+      "duplication_notes": "Socratic variant repeats the same problems; overlaps with downstream NuminaMath and OpenMathInstruct.",
+      "admission": "priority_for_separate_collection",
+      "metadata_checked_on": "2026-09-05",
+      "metadata_status": "primary_sources_reviewed",
+      "japanese_curriculum_mapping": "not_reviewed",
+      "unique_problem_count": null,
+      "import_evidence": null,
+      "import_status": "not_recorded_in_this_catalog",
+      "lean_verified_by_lemmaweave": null
+    },
+    {
+      "id": "math",
+      "publisher": "Dan Hendrycks et al.",
+      "urls": [
+        "https://arxiv.org/abs/2103.03874",
+        "https://github.com/hendrycks/math",
+        "https://github.com/hendrycks/math/blob/master/LICENSE"
+      ],
+      "reported_counts": [
+        {
+          "value": 12500,
+          "unit": "competition_problems",
+          "split": "all"
+        }
+      ],
+      "license_label": "MIT (repository)",
+      "license_scope": "Repository has loaders/evaluation code and external dataset links; scope for third-party problem text requires separate confirmation.",
+      "origin": "Competition mathematics",
+      "language": [
+        "en"
+      ],
+      "formal_content": "Step-by-step natural-language solutions, not formal proofs",
+      "duplication_notes": "MATH items also occur in NuminaMath, OpenMathInstruct and miniF2F.",
+      "admission": "upstream_data_scope_review",
+      "metadata_checked_on": "2026-09-05",
+      "metadata_status": "primary_sources_reviewed",
+      "japanese_curriculum_mapping": "not_reviewed",
+      "unique_problem_count": null,
+      "import_evidence": null,
+      "import_status": "not_recorded_in_this_catalog",
+      "lean_verified_by_lemmaweave": null
+    },
+    {
+      "id": "numinamath_cot",
+      "publisher": "AI-MO / Project Numina",
+      "urls": [
+        "https://huggingface.co/datasets/AI-MO/NuminaMath-CoT/raw/main/README.md"
+      ],
+      "reported_counts": [
+        {
+          "value": 859608,
+          "unit": "samples",
+          "split": "source_breakdown_total"
+        },
+        {
+          "value": 859494,
+          "unit": "rows",
+          "split": "train_metadata"
+        },
+        {
+          "value": 100,
+          "unit": "rows",
+          "split": "test_metadata"
+        }
+      ],
+      "count_discrepancy": "Source breakdown exceeds train+test metadata by 14; unresolved before actual import.",
+      "license_label": "Apache-2.0",
+      "license_scope": "Dataset license label; preserve per-source origin and check upstream conditions for selected subsets.",
+      "origin": "Chinese K12, olympiads, online PDFs/forums, GSM8K/MATH and synthetic subsets; OCR/English translation/CoT processing",
+      "language": [
+        "en"
+      ],
+      "formal_content": "CoT solution text, not Lean proofs",
+      "duplication_notes": "Mixed upstream datasets and synthetic derivations; unique mathematical problem count unmeasured.",
+      "admission": "subset_provenance_review",
+      "metadata_checked_on": "2026-09-05",
+      "metadata_status": "primary_sources_reviewed",
+      "japanese_curriculum_mapping": "not_reviewed",
+      "unique_problem_count": null,
+      "import_evidence": null,
+      "import_status": "not_recorded_in_this_catalog",
+      "lean_verified_by_lemmaweave": null
+    },
+    {
+      "id": "openmathinstruct_2",
+      "publisher": "NVIDIA",
+      "urls": [
+        "https://huggingface.co/datasets/nvidia/OpenMathInstruct-2/raw/main/README.md"
+      ],
+      "reported_counts": [
+        {
+          "value": 13972791,
+          "unit": "problem_solution_pairs",
+          "split": "train"
+        }
+      ],
+      "license_label": "CC-BY-4.0",
+      "license_scope": "Dataset label; retain attribution and upstream GSM8K/MATH lineage.",
+      "origin": "GSM8K/MATH training items and augmented problems; Llama 3.1 generated solutions",
+      "language": [
+        "en"
+      ],
+      "formal_content": "Generated natural-language solutions; augmented expected answers use majority vote, not proof checking",
+      "duplication_notes": "Multiple solutions per problem; train_1M/2M/5M are subsets, not additional problems. Similarity/contamination explorer is supplied upstream.",
+      "admission": "subset_provenance_review",
+      "metadata_checked_on": "2026-09-05",
+      "metadata_status": "primary_sources_reviewed",
+      "japanese_curriculum_mapping": "not_reviewed",
+      "unique_problem_count": null,
+      "import_evidence": null,
+      "import_status": "not_recorded_in_this_catalog",
+      "lean_verified_by_lemmaweave": null
+    },
+    {
+      "id": "minif2f",
+      "publisher": "OpenAI / facebookresearch; Lean 4 fork google-deepmind",
+      "urls": [
+        "https://github.com/facebookresearch/miniF2F",
+        "https://github.com/openai/miniF2F",
+        "https://github.com/google-deepmind/miniF2F",
+        "https://github.com/google-deepmind/miniF2F/blob/main/LICENSE"
+      ],
+      "reported_counts": [
+        {
+          "value": 488,
+          "unit": "formal_statements",
+          "split": "v2_total"
+        },
+        {
+          "value": 244,
+          "unit": "formal_statements",
+          "split": "v2_valid"
+        },
+        {
+          "value": 244,
+          "unit": "formal_statements",
+          "split": "v2_test"
+        }
+      ],
+      "license_label": "Apache for Lean; MIT for Metamath; system-specific licenses",
+      "license_scope": "Pin fork and commit; check the license for the relevant directory and informal component.",
+      "origin": "Competition/high-school/undergraduate exercises, including MATH/AOPS and manual annotations",
+      "language": [
+        "en",
+        "Lean"
+      ],
+      "formal_content": "Formal statements with optional proof examples; statement availability does not imply proved. Lean 4 fork exists; local toolchain compatibility untested.",
+      "duplication_notes": "Forks and formal-system translations describe the same problems; test/valid total counted once.",
+      "admission": "version_and_semantics_review",
+      "metadata_checked_on": "2026-09-05",
+      "metadata_status": "primary_sources_reviewed",
+      "japanese_curriculum_mapping": "not_reviewed",
+      "unique_problem_count": null,
+      "import_evidence": null,
+      "import_status": "not_recorded_in_this_catalog",
+      "lean_verified_by_lemmaweave": null
+    }
+  ]
+}

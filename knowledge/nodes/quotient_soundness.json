@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "quotient_soundness",
+  "name_ja": "商への写像の整合性",
+  "statement_ja": "関係rでaとbが関係するとき、商型Quot rでのaとbの像は等しい。",
+  "assumptions": [
+    "α : Sort u",
+    "r : α → α → Prop",
+    "r a b"
+  ],
+  "kind": "foundation",
+  "lean_declarations": [
+    "Quot.sound"
+  ],
+  "prerequisite_nodes": [],
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null
+  },
+  "explanation_outline_ja": [
+    "同値類による構成の基盤として記録する。",
+    "Quot.soundの形ではrの同値関係性は仮定されない。"
+  ],
+  "unexpanded": [
+    "推移的前提の個別展開",
+    "課程の項目別照合"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "declared_but_not_in_graph": [],
+  "actual_declaration_types": {
+    "Quot.sound": "∀ {α : Sort u} {r : α → α → Prop} {a b : α}, r a b → Quot.mk r a = Quot.mk r b"
+  },
+  "declaration_type_sha256": {
+    "Quot.sound": "54ef3e688b48f0f08f4a3cb121b77f99bfb7e51c29a0c22721755ca0b97d0aa2"
+  },
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "Actual exported types compared with the Japanese claim; remaining foundational prerequisites are not discarded."
+  }
+}

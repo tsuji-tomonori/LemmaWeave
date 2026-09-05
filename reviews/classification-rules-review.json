@@ -1,0 +1,799 @@
+{
+  "schema_version": "0.1",
+  "rule_id": "lean-syntax-data-v1",
+  "review_status": "independently_reviewed",
+  "author_session_id": "fa629044271f/root/classification",
+  "reviewer_session_id": "fa629044271f/root/turn2",
+  "rule_kind": "closed_lean_syntax_definition",
+  "rule_ja": "型が閉じたLean.Syntaxである定義の列挙集合のみ。これは構文木データであり命題の証明ではない。構文が指定するタクティクの健全性や背後の定理を免除せず、生グラフの全辺を保持する。",
+  "excluded_ja": [
+    "recursor・構造射影は数学的な消去規則・公理を含みうるため一括分類しない。",
+    "_proof/_simpやmathlib名前空間を理由とした分類を認めない。",
+    "型の終域だけがSyntaxの関数はこの規則の対象外。"
+  ],
+  "lean_toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "declarations": {
+    "AddGroupWithOne.intCast_negSucc._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Data/Int/Cast/Defs.lean",
+        "name": "AddGroupWithOne.intCast_negSucc._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Data.Int.Cast.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "AddGroupWithOne.intCast_ofNat._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Data/Int/Cast/Defs.lean",
+        "name": "AddGroupWithOne.intCast_ofNat._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Data.Int.Cast.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "AddMonoid.nsmul_succ._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "AddMonoid.nsmul_succ._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "AddMonoid.nsmul_zero._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "AddMonoid.nsmul_zero._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "AddMonoidWithOne.natCast_succ._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Data/Nat/Cast/Defs.lean",
+        "name": "AddMonoidWithOne.natCast_succ._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Data.Nat.Cast.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "AddMonoidWithOne.natCast_zero._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Data/Nat/Cast/Defs.lean",
+        "name": "AddMonoidWithOne.natCast_zero._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Data.Nat.Cast.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "BooleanAlgebra.himp_eq._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/BooleanAlgebra/Defs.lean",
+        "name": "BooleanAlgebra.himp_eq._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Order.BooleanAlgebra.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "BooleanAlgebra.sdiff_eq._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/BooleanAlgebra/Defs.lean",
+        "name": "BooleanAlgebra.sdiff_eq._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Order.BooleanAlgebra.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "ConditionallyCompleteLinearOrder.compare_eq_compareOfLessAndEq._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/ConditionallyCompleteLattice/Defs.lean",
+        "name": "ConditionallyCompleteLinearOrder.compare_eq_compareOfLessAndEq._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Order.ConditionallyCompleteLattice.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivInvMonoid.div_eq_mul_inv._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "DivInvMonoid.div_eq_mul_inv._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivInvMonoid.zpow_neg'._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "DivInvMonoid.zpow_neg'._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivInvMonoid.zpow_succ'._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "DivInvMonoid.zpow_succ'._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivInvMonoid.zpow_zero'._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "DivInvMonoid.zpow_zero'._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivisionRing.nnqsmul_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Field/Defs.lean",
+        "name": "DivisionRing.nnqsmul_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Field.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivisionRing.nnratCast_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Field/Defs.lean",
+        "name": "DivisionRing.nnratCast_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Field.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivisionRing.qsmul_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Field/Defs.lean",
+        "name": "DivisionRing.qsmul_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Field.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivisionRing.ratCast_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Field/Defs.lean",
+        "name": "DivisionRing.ratCast_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Field.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivisionSemiring.nnqsmul_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Field/Defs.lean",
+        "name": "DivisionSemiring.nnqsmul_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Field.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "DivisionSemiring.nnratCast_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Field/Defs.lean",
+        "name": "DivisionSemiring.nnratCast_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Field.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Equiv.left_inv._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Logic/Equiv/Defs.lean",
+        "name": "Equiv.left_inv._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Logic.Equiv.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Equiv.right_inv._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Logic/Equiv/Defs.lean",
+        "name": "Equiv.right_inv._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Logic.Equiv.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Homeomorph.continuous_invFun._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Topology/Homeomorph/Defs.lean",
+        "name": "Homeomorph.continuous_invFun._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Topology.Homeomorph.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Homeomorph.continuous_toFun._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Topology/Homeomorph/Defs.lean",
+        "name": "Homeomorph.continuous_toFun._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Topology.Homeomorph.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "LawfulGetElem.getElem!_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/GetElem.lean",
+        "name": "LawfulGetElem.getElem!_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.GetElem",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "LawfulGetElem.getElem?_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/GetElem.lean",
+        "name": "LawfulGetElem.getElem?_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.GetElem",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Lean.Grind.Ring.intCast_neg._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Grind/Ring/Basic.lean",
+        "name": "Lean.Grind.Ring.intCast_neg._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Grind.Ring.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Lean.Grind.Ring.intCast_ofNat._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Grind/Ring/Basic.lean",
+        "name": "Lean.Grind.Ring.intCast_ofNat._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Grind.Ring.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Lean.Grind.Ring.zsmul_natCast_eq_nsmul._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Grind/Ring/Basic.lean",
+        "name": "Lean.Grind.Ring.zsmul_natCast_eq_nsmul._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Grind.Ring.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Lean.Grind.Semiring.nsmul_eq_natCast_mul._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Grind/Ring/Basic.lean",
+        "name": "Lean.Grind.Semiring.nsmul_eq_natCast_mul._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Grind.Ring.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Lean.Grind.Semiring.ofNat_eq_natCast._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Grind/Ring/Basic.lean",
+        "name": "Lean.Grind.Semiring.ofNat_eq_natCast._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Grind.Ring.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Lean.Grind.Semiring.ofNat_succ._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Grind/Ring/Basic.lean",
+        "name": "Lean.Grind.Semiring.ofNat_succ._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Grind.Ring.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "LinearOrder.compare_eq_compareOfLessAndEq._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/Defs/LinearOrder.lean",
+        "name": "LinearOrder.compare_eq_compareOfLessAndEq._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Order.Defs.LinearOrder",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "LinearOrder.max_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/Defs/LinearOrder.lean",
+        "name": "LinearOrder.max_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Order.Defs.LinearOrder",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "LinearOrder.min_def._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/Defs/LinearOrder.lean",
+        "name": "LinearOrder.min_def._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Order.Defs.LinearOrder",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "List.TFAE.out._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Data/List/TFAE.lean",
+        "name": "List.TFAE.out._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Data.List.TFAE",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "List.TFAE.out._auto_3": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Data/List/TFAE.lean",
+        "name": "List.TFAE.out._auto_3",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Data.List.TFAE",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "List.nodup_range'._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/List/Nat/Range.lean",
+        "name": "List.nodup_range'._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.List.Nat.Range",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "List.pairwise_lt_range'._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/List/Nat/Range.lean",
+        "name": "List.pairwise_lt_range'._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.List.Nat.Range",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Monoid.npow_succ._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "Monoid.npow_succ._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Monoid.npow_zero._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "Monoid.npow_zero._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Preorder.lt_iff_le_not_ge._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/Defs/PartialOrder.lean",
+        "name": "Preorder.lt_iff_le_not_ge._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Order.Defs.PartialOrder",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "PseudoMetricSpace.cobounded_sets._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Topology/MetricSpace/Pseudo/Defs.lean",
+        "name": "PseudoMetricSpace.cobounded_sets._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "PseudoMetricSpace.edist_dist._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Topology/MetricSpace/Pseudo/Defs.lean",
+        "name": "PseudoMetricSpace.edist_dist._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "PseudoMetricSpace.uniformity_dist._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Topology/MetricSpace/Pseudo/Defs.lean",
+        "name": "PseudoMetricSpace.uniformity_dist._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Rat.den_nz._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Rat/Basic.lean",
+        "name": "Rat.den_nz._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Rat.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Rat.normalize._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Rat/Basic.lean",
+        "name": "Rat.normalize._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Rat.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Rat.reduced._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Rat/Basic.lean",
+        "name": "Rat.reduced._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Rat.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Std.IsLinearOrder.of_le._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Order/Factories.lean",
+        "name": "Std.IsLinearOrder.of_le._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Order.Factories",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Std.IsLinearOrder.of_le._auto_3": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Order/Factories.lean",
+        "name": "Std.IsLinearOrder.of_le._auto_3",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Order.Factories",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Std.IsLinearOrder.of_le._auto_5": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Order/Factories.lean",
+        "name": "Std.IsLinearOrder.of_le._auto_5",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Order.Factories",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Std.IsLinearPreorder.of_le._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Order/Factories.lean",
+        "name": "Std.IsLinearPreorder.of_le._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Order.Factories",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Std.IsLinearPreorder.of_le._auto_3": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Order/Factories.lean",
+        "name": "Std.IsLinearPreorder.of_le._auto_3",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Order.Factories",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Std.IsPreorder.of_le._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Order/Factories.lean",
+        "name": "Std.IsPreorder.of_le._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Order.Factories",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "Std.IsPreorder.of_le._auto_3": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Init/Data/Order/Factories.lean",
+        "name": "Std.IsPreorder.of_le._auto_3",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Init.Data.Order.Factories",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "SubNegMonoid.sub_eq_add_neg._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "SubNegMonoid.sub_eq_add_neg._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "SubNegMonoid.zsmul_neg'._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "SubNegMonoid.zsmul_neg'._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "SubNegMonoid.zsmul_succ'._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "SubNegMonoid.zsmul_succ'._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "SubNegMonoid.zsmul_zero'._autoParam": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Algebra/Group/Defs.lean",
+        "name": "SubNegMonoid.zsmul_zero'._autoParam",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Algebra.Group.Defs",
+        "status": "module_only_no_recorded_range"
+      }
+    },
+    "isGLB_csInf._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/ConditionallyCompleteLattice/Basic.lean",
+        "name": "isGLB_csInf._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": "{ range := { pos := { line := 192, column := 2 },\n             charUtf16 := 2,\n             endPos := { line := 192, column := 9 },\n             endCharUtf16 := 9 },\n  selectionRange := { pos := { line := 192, column := 2 },\n                      charUtf16 := 2,\n                      endPos := { line := 192, column := 9 },\n                      endCharUtf16 := 9 } }",
+        "source_module": "Mathlib.Order.ConditionallyCompleteLattice.Basic",
+        "status": "module_and_range"
+      }
+    },
+    "isLUB_csSup._auto_1": {
+      "type_sha256": "6ffa1eceb1eef78b984566d35c2e544b496347601221f92e8233f0236f43721e",
+      "kind": "definition",
+      "type_pretty": "Lean.Syntax",
+      "source_location": {
+        "module_relative_file": "Mathlib/Order/ConditionallyCompleteLattice/Basic.lean",
+        "name": "isLUB_csSup._auto_1",
+        "original_kind": "some (Lean.ConstantKind.defn)",
+        "range": null,
+        "source_module": "Mathlib.Order.ConditionallyCompleteLattice.Basic",
+        "status": "module_only_no_recorded_range"
+      }
+    }
+  },
+  "review_ja": "全60宣言について生グラフのkind、閉じたExpr.const Lean.Syntax []、型SHA256を照合。固定Lean 4.33.1 Init/Prelude.leanのSyntax定義（4975行以降）を直接確認した。構文木値だけを分類し、その参照先の数学的定理は生グラフと未分類台帳に残す。"
+}

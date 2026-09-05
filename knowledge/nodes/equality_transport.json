@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "equality_transport",
+  "name_ja": "等号と依存する命題の置換",
+  "statement_ja": "等号はa=aを導入規則に持つ。a=bなら、aに依存する型の要素をbに依存する型へ移せる。Eq.recでは型が等号の証明にも依存でき、Eq.ndrecでは対象の値に依存する。",
+  "assumptions": [
+    "α : Sort u、a,b : α。Eq.reflは任意のaに適用できる。",
+    "Eq.ndrecにはmotive : α → Sort v、motive aの要素、a=bの証明が必要。",
+    "Eq.recのmotiveは対象値と等号の証明に依存し、反射的な場合の要素が必要。"
+  ],
+  "kind": "foundation",
+  "lean_declarations": [
+    "Eq",
+    "Eq.refl",
+    "Eq.rec",
+    "Eq.ndrec"
+  ],
+  "prerequisite_nodes": [],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "session": "fa629044271f",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "固定版の実際の型とLean 4.33.1 Init.Preludeの構成・消去規則を照合。数学的基盤として残し実装詳細にしない。",
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/Prelude.lean"
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null,
+    "note": "形式論理・依存型の基礎として保持。小中の既習認定はしていない。"
+  },
+  "explanation_outline_ja": [
+    "反射的な場合で必要な要素を構成する。",
+    "等号の消去により等しい値へ置き換える。"
+  ],
+  "unexpanded": [
+    "依存する型への置換と通常の式の置換の対応"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "actual_declaration_types": {
+    "Eq": "{α : Sort u_1} → α → α → Prop",
+    "Eq.refl": "∀ {α : Sort u_1} (a : α), a = a",
+    "Eq.rec": "{α : Sort u_1} →\n  {a : α} → {motive : (a_1 : α) → a = a_1 → Sort u} → motive a ⋯ → {a_1 : α} → (t : a = a_1) → motive a_1 t",
+    "Eq.ndrec": "{α : Sort u2} → {a : α} → {motive : α → Sort u1} → motive a → {b : α} → a = b → motive b"
+  },
+  "declaration_type_sha256": {
+    "Eq": "02e6abbe0a64a4402c600516bbc3b3953f5d6a10270ccdf6617c32bcc698eddc",
+    "Eq.refl": "409e04d968862f232bd4838d83fbb0d185f0cf0fc7c55e93f4e70e44f56813c0",
+    "Eq.rec": "2ec238d1d111b2051459c136a4d46225f3a2a6d23040b9f6770496404721b92d",
+    "Eq.ndrec": "e7538aa0d795cc0126c5e0ba6c5d1916bedcb346ec0487d23d5c4cfc2f906a58"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": "0.1",
+  "is_template": false,
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+  "revision": 1,
+  "origin": "exam",
+  "canonical_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+  "parent_id": "DNC-CT-2026-MAIN-M1-Q1",
+  "occurrences": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-O1"
+  ],
+  "paper_id": "DNC-CT-2026-MAIN-M1",
+  "title_ja": "集合に特定の倍数を含まないパラメータの全解",
+  "domain_candidate": "sets_integers",
+  "collection_status": "collected",
+  "source_locator": {
+    "pdf_page_1_based": [
+      3,
+      4
+    ],
+    "printed_page_label": [
+      "32",
+      "33"
+    ],
+    "major_question": "1",
+    "subquestion": "[2](2)(i)",
+    "answer_slots": [
+      "ソ"
+    ],
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606"
+  },
+  "source_page_visual_review": {
+    "confirmed": true,
+    "reviewer": "/root",
+    "method": "Chrome native PDF viewer screenshots; visible equations, bars and interval endpoints inspected",
+    "pages_requested": [
+      3,
+      4
+    ],
+    "reviewed_at": "2026-09-05T05:15:05.899753+00:00",
+    "independence": "self_review_only"
+  },
+  "curriculum": {
+    "at_exam": "unverified",
+    "current_mapping": []
+  },
+  "mathematical_spec": {
+    "statement_ja": "相対補集合に2の倍数も3の倍数もないという条件について、2以上9以下の自然数パラメータを必要十分条件で特定する。",
+    "variables": [
+      {
+        "name": "a",
+        "type": "ℕ",
+        "domain": "2 ≤ a ≤ 9"
+      },
+      {
+        "name": "k",
+        "type": "ℕ",
+        "domain": "2 ≤ k ≤ 20"
+      }
+    ],
+    "assumptions": [
+      "2 ≤ a ≤ 9"
+    ],
+    "goals": [
+      {
+        "id": "all_parameters",
+        "lean_goal": "LemmaWeave.Problems.DNC2026M1.ParameterGoal"
+      }
+    ],
+    "answer_kind": "full_solution_set",
+    "answer_encoding": null,
+    "allowed_approximation": "none; Real.sqrt 6 is exact; printed decimal reference is not an equality",
+    "prerequisites_from_previous_parts": [],
+    "model_bridges_required": [
+      "unbounded common divisor to bounded divisor search",
+      "all natural numbers to the given finite universe"
+    ],
+    "drafting_note": "Models and goals were written before proof implementation. Mathematical notation independently formalized; original wording and selection tables omitted."
+  },
+  "lean": {
+    "model_files": [
+      "LemmaWeave/Problems/DNC2026M1/Model.lean",
+      "LemmaWeave/Problems/DNC2026M1/Goals.lean"
+    ],
+    "goal_declarations": [
+      "LemmaWeave.Problems.DNC2026M1.ParameterGoal"
+    ],
+    "proof_variants": [
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1"
+    ],
+    "semantic_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
+    "theorem_type_hash": {
+      "LemmaWeave.Problems.DNC2026M1.parameter_solution": "b5d77751065a8dea2b7634ab51813092be69640f37c835b2015eb8c9710f75dd"
+    }
+  },
+  "status": {
+    "transcription": "checked",
+    "semantic": "independent_checked",
+    "proof": "kernel_checked",
+    "axiom_audit": "passed",
+    "dependency": "extracted",
+    "inventory": "partial",
+    "educational_expansion": "not_started",
+    "release": "restricted"
+  },
+  "learning_nodes": [],
+  "reviews": [
+    "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-model-freeze.json",
+    "reviews/20260905-resume-source-review.json",
+    "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-independent-20260905.json"
+  ],
+  "runs": [
+    "runs/20260905T054432-d5587f82/run.json",
+    "runs/20260905T055112-d2085cfb/run.json",
+    "runs/20260905T055121-9e5e3620/run.json"
+  ],
+  "blockers": [
+    {
+      "kind": "unclassified_dependencies",
+      "detail": "See reports/acceptance.json AC09 and knowledge/educational-frontier.json.gz.",
+      "next_action": "Classify declarations of sets_solution first; retain each mathematical prerequisite and Japanese statement."
+    },
+    {
+      "kind": "rights_uncertain",
+      "detail": "Actual source storage, analysis and AI-processing conditions remain unresolved; original-material redistribution is a separate gate.",
+      "next_action": "Resolve the scope-specific questions in reviews/rights-20260905.md without treating user authorization as rightsholder permission."
+    }
+  ],
+  "reproduction_runs": [
+    "runs/20260905T114425-ef45dcd0/run.json",
+    "runs/20260905T120829-e0eb8805/run.json"
+  ]
+}

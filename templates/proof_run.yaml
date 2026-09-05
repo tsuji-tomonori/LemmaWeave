@@ -1,0 +1,35 @@
+# 実行ログの構造例。コマンドを実行した記録ではない。
+schema_version: "0.1"
+is_template: true
+run_id: "TEMPLATE-RUN"
+problem_id: null
+problem_revision: null
+proof_variant_id: null
+started_at: null
+finished_at: null
+status: not_run
+inputs:
+  git_commit: null
+  dirty_tree: null
+  semantic_model_hash: null
+  theorem_type_hash: null
+  proof_hash: null
+environment:
+  os: null
+  container_digest: null
+  lean_version: null
+  mathlib_commit: null
+  lake_manifest_sha256: null
+commands: []                   # argv, cwd, exit_code, stdout_log, stderr_log
+axiom_audit:
+  status: not_run
+  allowlist: [propext, Quot.sound, Classical.choice]
+  observed_axioms: null        # 空リストは本当に「依存なし」を測定した時のみ
+  disallowed_axioms: null
+dependency_extraction:
+  status: not_run
+  extractor_commit: null
+  raw_graph_path: null
+  unresolved_boundaries: []
+artifacts: []
+blockers: []

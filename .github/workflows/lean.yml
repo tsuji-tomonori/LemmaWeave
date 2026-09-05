@@ -45,6 +45,7 @@ jobs:
       - name: Run dependency extraction fixtures
         run: |
           python3 scripts/run.py --timeout 300 -- lake build LemmaWeave.Audit.Fixtures.Shared
+          python3 scripts/run.py --timeout 300 -- lake build LemmaWeave.Audit.Fixtures.Exported
           python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/DependencyFixtures.lean
           python3 scripts/run.py -- python3 scripts/check_extractor.py
       - name: Run Python guards

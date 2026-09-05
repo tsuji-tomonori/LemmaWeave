@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "logical_decidability",
+  "name_ja": "証拠を伴う命題の決定",
+  "statement_ja": "Decidable pはpの証明を含むisTrue、または¬pの証明を含むisFalseである。decideはその選択を真偽値へ写す。真偽値の外部計算だけを証明と扱わない。",
+  "assumptions": [
+    "型・変数・量化と各規則の前提はactual_declaration_typesの固定版型に明記する。"
+  ],
+  "kind": "foundation",
+  "lean_declarations": [
+    "Decidable",
+    "Decidable.isTrue",
+    "Decidable.isFalse",
+    "Decidable.decide"
+  ],
+  "prerequisite_nodes": [
+    "logical_negation"
+  ],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "session": "fa629044271f",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "固定版の実際の型とLean 4.33.1 Init.Preludeの構成・消去規則を照合。数学的基盤として残し実装詳細にしない。",
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/Prelude.lean"
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null,
+    "note": "形式論理・依存型の基礎として保持。小中の既習認定はしていない。"
+  },
+  "explanation_outline_ja": [
+    "肯定と否定のどちらの場合にも証明が付いていることを確認する。",
+    "decideの結果から命題へ戻すには反映の定理が必要である。"
+  ],
+  "unexpanded": [
+    "決定手続きの実装が各命題を正しく判定することの証明"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "actual_declaration_types": {
+    "Decidable": "Prop → Type",
+    "Decidable.isTrue": "{p : Prop} → p → Decidable p",
+    "Decidable.isFalse": "{p : Prop} → ¬p → Decidable p",
+    "Decidable.decide": "(p : Prop) → [h : Decidable p] → Bool"
+  },
+  "declaration_type_sha256": {
+    "Decidable": "9566fb011ff0573d6426dd602461c62ed01e1d9922d060b57a9c8ceda3d997d3",
+    "Decidable.isTrue": "fd3aa26ce6954c17badd4a74f0689ef938cd3430824079a3d7090e45d47dc697",
+    "Decidable.isFalse": "d885bc72724196792fd579bcd7b5d3db84fb46fbe51882462c57bc92d262db0a",
+    "Decidable.decide": "d78bf7775a0234eb50549026402fb29fff9c90ea928fe4cf8292ffcbcac7908b"
+  }
+}

@@ -90,6 +90,20 @@ class InventoryEvidence(unittest.TestCase):
 
 
 class SemanticEvidence(unittest.TestCase):
+    def test_pilot_requires_diversity_and_modeling_not_just_counts(self):
+        from acceptance_report import pilot_gate
+        problems = [{'problem_id': str(i), 'origin': 'exam', 'collection_status': 'collected',
+                     'domain_candidate': 'same-domain'} for i in range(50)]
+        results = [{'problem_id': str(i), 'phase1_complete': True} for i in range(10)]
+        self.assertFalse(pilot_gate(problems, results)['accepted'])
+        for i, problem in enumerate(problems):
+            problem['domain_candidate'] = 'domain-' + str(i % 6)
+        self.assertFalse(pilot_gate(problems, results)['accepted'])
+        problems[0]['modeling_challenge'] = 'geometry'
+        self.assertTrue(pilot_gate(problems, results)['accepted'])
+        results[0]['phase1_complete'] = False
+        self.assertFalse(pilot_gate(problems, results)['accepted'])
+
     def test_review_cannot_cross_source_spec_or_session(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

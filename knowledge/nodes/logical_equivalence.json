@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "logical_equivalence",
+  "name_ja": "同値の両方向",
+  "statement_ja": "a↔bを示すにはa→bとb→aの両方を与える。同値とaからbを、同値とbからaをそれぞれ導ける。",
+  "assumptions": [
+    "型・変数・量化と各規則の前提はactual_declaration_typesの固定版型に明記する。"
+  ],
+  "kind": "foundation",
+  "lean_declarations": [
+    "Iff",
+    "Iff.intro",
+    "Iff.mp",
+    "Iff.mpr"
+  ],
+  "prerequisite_nodes": [],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "session": "fa629044271f",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "固定版の実際の型とLean 4.33.1 Init.Preludeの構成・消去規則を照合。数学的基盤として残し実装詳細にしない。",
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/Prelude.lean"
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null,
+    "note": "形式論理・依存型の基礎として保持。小中の既習認定はしていない。"
+  },
+  "explanation_outline_ja": [
+    "必要条件の方向を証明する。",
+    "十分条件の方向を証明する。",
+    "全解の証明では一方向だけで終了しない。"
+  ],
+  "unexpanded": [],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "actual_declaration_types": {
+    "Iff": "Prop → Prop → Prop",
+    "Iff.intro": "∀ {a b : Prop}, (a → b) → (b → a) → (a ↔ b)",
+    "Iff.mp": "∀ {a b : Prop}, (a ↔ b) → a → b",
+    "Iff.mpr": "∀ {a b : Prop}, (a ↔ b) → b → a"
+  },
+  "declaration_type_sha256": {
+    "Iff": "b75fe885bbde4c24e5d35f95ad7dc3c70da8b0e70a24bcde54b08cb53328386e",
+    "Iff.intro": "fb844b47dfaea794ecfebbb9fa9d5ed5d3ec07dbb2a136deb82f5d513193c5f5",
+    "Iff.mp": "4051b32347be7e99450fbdf0a6b30fc70cbd4b9c2a8fe1b06cad0d6f678c55a5",
+    "Iff.mpr": "6b73eb76f6341f029b5e9a5f6254287c9ae8acea505f61291c38981df45d700f"
+  }
+}

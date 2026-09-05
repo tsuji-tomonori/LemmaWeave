@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "logical_existence",
+  "name_ja": "存在命題と証人",
+  "statement_ja": "型αの要素wと述語p wの証明を与えると、∃x:α, p xを示せる。",
+  "assumptions": [
+    "型・変数・量化と各規則の前提はactual_declaration_typesの固定版型に明記する。"
+  ],
+  "kind": "foundation",
+  "lean_declarations": [
+    "Exists",
+    "Exists.intro"
+  ],
+  "prerequisite_nodes": [],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "session": "fa629044271f",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "固定版の実際の型とLean 4.33.1 Init.Preludeの構成・消去規則を照合。数学的基盤として残し実装詳細にしない。",
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/Prelude.lean"
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null,
+    "note": "形式論理・依存型の基礎として保持。小中の既習認定はしていない。"
+  },
+  "explanation_outline_ja": [
+    "存在させる型と述語を明示する。",
+    "具体的な証人を選び、その証人に対する条件を証明する。"
+  ],
+  "unexpanded": [
+    "存在命題から証人を利用する場合の依存型と消去規則"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "actual_declaration_types": {
+    "Exists": "{α : Sort u} → (α → Prop) → Prop",
+    "Exists.intro": "∀ {α : Sort u} {p : α → Prop} (w : α), p w → Exists p"
+  },
+  "declaration_type_sha256": {
+    "Exists": "fbfeefd3988a96995e128739035b5d6960981745de38b1c721799ae24f8c86a4",
+    "Exists.intro": "61bf8e1fa0e7c3c882df17f491f774c6eb16759a5e3904fcc6e9a760ce9d1beb"
+  }
+}

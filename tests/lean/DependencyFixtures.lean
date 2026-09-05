@@ -40,6 +40,7 @@ run_cmd do
 -- Import the actual exported .olean view. Unlike explicitHole, no declaration
 -- is altered or supplied with an unproved body to synthesize this boundary.
 run_cmd do
+  Lean.Elab.Command.liftIO Lean.enableInitializersExecution
   let exported ← Lean.Elab.Command.liftIO <| Lean.importModules
     #[{ module := `LemmaWeave.Audit.Fixtures.Exported }] {}
     (loadExts := true) (level := .exported)

@@ -281,6 +281,8 @@ def metrics(root):
     p = [p for p in records(root, 'corpus/problems') if p['origin'] == 'exam']
     sources = records(root, 'corpus/sources')
     extraction = extraction_metrics(root)
+    from acceptance_report import build_report
+    acceptance = build_report(root)
     return {
         'registered_problems': len(p),
         'candidate_problems': sum(x['collection_status'] == 'candidate' for x in p),
@@ -295,8 +297,9 @@ def metrics(root):
         'audited_proofs': sum(x['status']['semantic'] == 'independent_checked' and
                              x['status']['proof'] == 'kernel_checked' and
                              x['status']['axiom_audit'] == 'passed' for x in p),
-        'phase1_complete_problems': 0,
-        'phase1_complete_policy': 'disabled until AC01-AC12 evidence checker and Lean fixtures are validated',
+        'phase1_complete_problems': acceptance['phase1_complete_problems'],
+        'phase1_complete_policy': 'All AC01-AC12 gates must pass on current evidence.',
+        'pilot': acceptance['pilot'],
         'raw_dependency_traversed_problems': sum(bool(x['lean']['proof_variants']) and x['status']['axiom_audit'] == 'passed' for x in p),
         'dependency_fully_validated_problems': sum(x['status']['dependency'] == 'extracted' for x in p),
         'inventory_complete_problems': sum(x['status']['inventory'] == 'mapped' for x in p),
@@ -307,7 +310,7 @@ def metrics(root):
         'educational_frontier_status': 'partial_with_explicit_unclassified_declarations' if (root / 'knowledge/educational-frontier.json.gz').exists() else 'not_extracted',
         'target_first_batch': 5, 'target_first_batch_complete_minimum': 1,
         'target_pilot_collected': 50, 'target_pilot_complete': 10,
-        'overall_verdict': 'INCONCLUSIVE'}
+        'overall_verdict': 'MODEL_PROVED' if acceptance['pilot']['accepted'] else 'INCONCLUSIVE'}
 
 
 def main():
@@ -359,8 +362,9 @@ def main():
         return 0
     result = metrics(root)
     if args.command == 'accept':
-        print(json.dumps({'accepted': False, 'reason': 'M0/M1 gates incomplete', 'metrics': result}, ensure_ascii=False, indent=2))
-        return 2
+        accepted = result['pilot']['accepted']
+        print(json.dumps({'accepted': accepted, 'reason': 'All pilot gates passed' if accepted else 'Pilot gates incomplete', 'metrics': result}, ensure_ascii=False, indent=2))
+        return 0 if accepted else 2
     (root / 'reports').mkdir(exist_ok=True)
     (root / 'reports/metrics.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(result, ensure_ascii=False, indent=2))

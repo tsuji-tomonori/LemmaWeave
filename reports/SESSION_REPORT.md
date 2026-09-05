@@ -1,84 +1,78 @@
-# LemmaWeave 初回セッション報告
+# LemmaWeave 実行報告 — 2026-09-05
 
-判定：**INCONCLUSIVE / M0部分完了、M1未完了**。少なくとも1小問のPhase 1完了という目標には未到達。50小問収集・10小問監査完了の目標も変更していない。
+GitHub Actions上で実行環境を構築できた。Lean 4.33.1と固定mathlibの互換性を実行で確認し、初期5小問の証明・公理監査・実依存の走査を実行した。独立レビューと補題分類が未完であり、プロジェクト全体を完了とは報告しない。
 
-## 今回作ったもの
+## 実績
 
-正本6文書を保持したローカルGitプロジェクト、版固定候補、5小問候補の機械可読台帳、コマンド実行ログ、台帳検査、Pythonグラフ検査、未コンパイルのLean依存抽出器、再開手順を作成した。旧草案の実体は今回提供されておらず、移行済み・検証済みとはしていない。教科書全文と教材UIは作成していない。
-
-既存の公開GitHubリポジトリは [tsuji-tomonori/LemmaWeave](https://github.com/tsuji-tomonori/LemmaWeave)。APIで空であることを確認した。ローカル名は `lemmaweave`、名前空間は `LemmaWeave`。リモートは変更していない。初回コードコミットは `ab7e8d8`。
-
-## 件数
-
-| 指標 | 実績 |
+| 軸 | 件数 |
 |---|---:|
-| 公式掲載元を確認 | 3 |
-| 選定した小問候補 | 5 |
-| bytesとハッシュを取得した冊子 | 0 |
-| 収集完了 | 0 |
-| 独立意味照合 | 0 |
-| Lean検証 | 0 |
-| 公理監査合格 | 0 |
-| 意味照合込みの監査済み証明 | 0 |
-| Phase 1完了・補題棚卸し完了 | 0 |
-| 実依存から登録した学習ノード | 0 |
+| 掲載元を発見 | 3（小問収集数とは別） |
+| 版を固定した原冊子 | 1 |
+| 小問の原ページ確認・数学的仕様 | 5 |
+| 意味照合（self_review_only） | 5 |
+| 独立意味レビュー | 0 |
+| Lean検証 | 5 |
+| 許容公理監査合格 | 5 |
+| 型・証明項からの生依存走査 | 5 |
+| 補題棚卸し完了 / Phase 1完全合格 | 0 / 0 |
+| 日本語カード（定義・補題・基礎付録） | 21 |
+| 実依存宣言（重複除外） | 11,131 |
+| 未分類宣言 | 11,110 |
 
-未分類依存は **未測定（null）**。未分類0という意味ではない。未展開の数学的前提も未抽出。候補には自然数・整除・集合演算・実数順序・根号・最大最小等があるが、使用された補題として確認していない。既習判定は全て未着手。
+50小問収集・6分野、10小問完了・4分野の目標は変更していない。現在は5小問、集合・整数と式・関数の2分野。次の拡大候補の位置を閲覧したことは収集済みに数えていない。
 
-レビューの独立性は `self_review_only`。原ページとの独立意味レビューは0件。
+## 実ファイル
 
-## 最初の5候補
+- `LemmaWeave/Problems/DNC2026M1/Model.lean`, `Goals.lean`：証明前に分離・固定した仕様。
+- `ProofInequalities.lean`, `ProofExtrema.lean`, `ProofSets.lean`：5小問の全目標を証明。全解は同値、極値は上下界と達成を含む。
+- `LemmaWeave/Lemmas/CommonDivisor.lean`：元の公約数モデルと有限探索の同値変換。
+- `corpus/problems/`, `corpus/proof_variants/`, `reviews/`：出典・版・途中状態・モデルハッシュ・実行参照。
+- `reports/dependencies/raw/*.json.gz`：型・証明項から抽出した生グラフ。各実行の出力SHA256と圧縮前のハッシュを照合できる。
+- `reports/dependencies/*-analysis.json.gz`：形式依存の循環成分と公理監査。学習循環とは分離。
+- `knowledge/nodes/`, `knowledge/learning-graph.json`, `knowledge/educational-frontier.json.gz`：日本語カード、既知の学習前提、未分類宣言ごとの型と利用問題。
+- `reports/acceptance.json`, `reports/command-index.json`, `reports/metrics.json`：受入不足、実行コマンドと終了コード、件数。
 
-| 小問位置 | PDFページ（1始まり） | 印刷ページ | 状態・次の操作 |
-|---|---|---|---|
-| 第1問[1](1) | 1 | 30 | 不等式の係数・根号を原画像で確認し、実数全解のModel/Goalsを作る |
-| 第1問[2](1) | 3–4 | 32–33 | 公約数条件と補集合記号・選択肢を照合する |
-| 第1問[2](2)(i) | 3–4 | 32–33 | パラメータ範囲・倍数条件を確認する |
-| 第1問[2](2)(ii) | 3–4 | 32–33 | 補集合の対象、集合の要素、(a,b)の順序を確認する |
-| 第3問[2](1) | 15 | 44 | 関数・閉区間を確認し、上下界と達成を目標に含める |
+## 実行証拠
 
-出典：[大学入試センター・令和8年度本試験の公式索引](https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html)。選定候補の分野は集合・整数と式・関数の2分野。冊子や高校数学全体の網羅率は算出していない。
+[検証と監査が成功したGitHub Actions実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33948148236)。検証した入力コミットは `9d427137107b16cf0f1ab016a115e5655d3344b4`。後の文書更新をこのコミットで実行済みと呼ばない。
 
-## 版と環境
+| 実行コマンド・対象 | 終了コード |
+|---|---:|
+| `lean --version` / `lake --version`（Actions） | 0 / 0 |
+| `lake exe cache get Mathlib.Data.Nat.Basic Mathlib.Algebra.Group.Basic Mathlib.Data.Real.Sqrt Mathlib.Tactic` | 0 |
+| `python3 scripts/check_pins.py`（9依存照合） | 0 |
+| `lake build`（登録5小問を含む） | 0 |
+| `lake build LemmaWeave.Problems.DNC2026M1.ProofInequalities` | 0 |
+| `lake build LemmaWeave.Problems.DNC2026M1.ProofSets` | 0 |
+| `lake build LemmaWeave.Problems.DNC2026M1.ProofExtrema` | 0 |
+| `lake env lean work/audit_<problem-variant>.lean`（5対象それぞれ） | 各0 |
+| `lake env lean tests/lean/DependencyFixtures.lean` | 0 |
+| `python3 scripts/check_extractor.py`（9ケースの期待結果） | 0 |
+| `python3 -m unittest discover -s tests -v`（ローカル15テスト） | 0 |
+| `python3 scripts/analyze_corpus.py` | 0 |
+| `python3 scripts/lw.py validate` | 0 |
+| `python3 scripts/acceptance_report.py`（不足を出力） | 0 |
 
-- Leanの候補固定版：`leanprover/lean4:v4.33.1`。
-- mathlib：`0df444a360eaa60ab8c11dca51a86af692955474`。
-- [同mathlibコミットの公式lean-toolchain](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/lean-toolchain)との一致を確認。実ビルドによる互換性確認は未実行。
-- 依存lock：上流mathlibのlockから9パッケージをコミット固定して構成。Lake生成・検証済みではない。
-- OS、Python、Gitコミット、入力ファイルSHA-256は各run.jsonに記録。コンテナdigestは取得できずnull。
+個々の完全なargv・入力ハッシュ・stdout/stderr・終了コードは `reports/command-index.json` と `runs/*/run.json` にある。検査コマンドが0で終了することと、標準合格が出ることは別である。
 
-## 実行コマンドと終了コード
+当初の失敗も保存した。キャッシュ引数の誤り、抽出器のToJson Prop、出力先不在、Omegaのimport、自然数の局所有限順序の依存不足、InUniverseの展開不足を修正した。数学的不可能性とは判定していない。旧出力方式の重複抽出を中断した実行はcancelledであり、そのプロセスの未取得の終了コードはnullのまま保持する。
 
-以下は `python3 scripts/run.py -- <コマンド>` で実行した実記録。
+この作業場所では同じ公開バイナリの取得・ハッシュ照合・展開はできたが、`lean --version` が `failed to locate application`、終了コード1。`LEAN_SYSROOT` 指定でも失敗した。Lean公式実装の実行ファイルパス検出に関係する制限であり、ランタイムを改造せずActionsで続行した。
 
-| コマンド | 終了コード | 証跡 |
-|---|---:|---|
-| `lake --version` | 127 | `runs/20260905T043709-6dffee78/run.json` |
-| `lean --version` | 127 | `runs/20260905T043709-e1c5ffa9/run.json` |
-| `python3 -m unittest discover -s tests -v` | 0 | `runs/20260905T043709-e7f6ce34/run.json` |
-| `python3 scripts/lw.py validate` | 0 | `runs/20260905T043733-143703e8/run.json` |
-| `sha256sum -c SHA256SUMS` | 0 | `runs/20260905T043733-dd46eccc/run.json` |
-| `python3 scripts/lw.py report` | 0 | `runs/20260905T043734-470e82e6/run.json` |
-| `lake build` | 127 | `runs/20260905T043734-89784ae5/run.json` |
-| `python3 scripts/lw.py accept` | 2 | `runs/20260905T043735-42b302b1/run.json` |
+## 監査と残る境界
 
-Pythonテスト13件は成功。隠れた公理・sorryAx・追加信頼公理、取得不能、打切り、古い入力ハッシュ、CASログの代用、学習グラフのバリアント混同などを検査した。**Lean抽出器のFixture実行や入試問題の証明ではない。**
+全5根の公理は `propext`, `Quot.sound`, `Classical.choice` のみ。禁止公理・unsafe宣言・打切り・本文取得不能は今回の実グラフでは0。元モデルから有限表への同値性もLeanで証明した。Python/CASをLean証明として数えていない。
 
-`lean --version`・`lake --version`・`lake build`の127は実行ファイル不在。Leanプロセスは開始できていない。`accept`の2は初回受入未達を表す仕様どおりの結果であり、完成した受入エンジンによる全項目判定ではない。
+各根の宣言数は、連立不等式10,813、集合2,795、パラメータ2,747、パラメータ対2,988、極値7,026。取得した実参照は完全に保存した。一方、自然に消去・取得不能となるimport本文の再現試験と、正確な宣言ソースファイル対応は残るため、依存の総合状態はpartial。
 
-## 実際の阻害要因
+未展開箇所には、実数を有理Cauchy列の同値類で構成する基盤、平方根を支える順序・完備性、有限集合を商型で表す基盤、算術自動証明の正当性が含まれる。mathlibやLean.Omegaという接頭辞だけで説明不要と扱わない。
 
-1. Lean/Lake/elanが存在しない。Lean配布物への通信試行は実行基盤が「network approval was cancelled before a decision was returned」で中止し、ダウンロードは行えなかった。その試行にはプロセス終了コードがないためnullで記録。通信制限の迂回は行っていない。
-2. 公式PDFのテキスト抽出で数値・数式記号が崩れた。原ページのスクリーンショットを要求したが、返却結果には参照のみで表示可能な画像本体がなく、目視照合できなかった。原資料のbytesも保持していないためハッシュを記録できない。
-3. [大学入試センターの利用条件](https://www.dnc.ac.jp/about_site.html)は試験問題を一般コンテンツの自由利用から除外し、二次利用の事前申請を案内している。内部保存・機械処理・派生物利用の行為別照合は未完了。適法性を勝手に確定せず、保存・転記・再公開は保留した。
-4. 意味モデル未固定、独立レビュー未実施。抽出器のソース位置取得・import済み本体の取得確認・SCC出力・実Lean負例検査も未完了。
+文部科学省の平成29年告示・小5算数（PDF241ページ、印刷235ページ）の約数・倍数を確認した。同箇所は倍数に0を含めないため、一般のNat整除を丸ごと既習扱いにしていない。
 
-## 次の開始位置
+原資料は[大学入試センター公式掲載](https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html)の2026年度数学Ⅰ、SHA256 `f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606`。原PDF・問題文・画像・選択肢表の二次利用は[同センターの条件](https://www.dnc.ac.jp/about_site.html)に従い別ゲートとする。原資料を公開リポジトリやCI成果物へ入れていない。
 
-`docs/RESUME.md` のM0から。Lean 4.33.1の実行と依存lockを検証し、Smokeと依存抽出Fixtureを実行する。その間に行為別利用条件と原ページの可視性を解決する。最初の実問題は `JP-DNC-CT-2026-MAIN-M1-Q01-S01-01`。Model/Goals作成・固定→独立意味レビュー→証明→公理監査→実依存抽出→分類の順で進める。
+## 次の具体的操作
 
-現時点で続行できる数学的証明作業は環境と原題照合で阻害されているため、50小問へ拡大して候補を積み上げることはしていない。各候補の具体的な次操作は問題別JSONにも保存した。
+`docs/RESUME.md` に記載した順で、固定版の独立レビューと、`sets_solution` の未分類2,776宣言から分類を続ける。別エージェントの起動・並行委任には現在の実行規則上、ユーザーの明示指示が必要。自己レビューを独立レビューへ読み替えない。
 
-## 公開と保存範囲
-
-ローカル実装と検査のみ。リモート作成、改名、push、PR、マージ、公開、課金、許諾申請、別の外部AIへの原資料送信は実施していない。配布するチェックポイントに原PDF・ページ画像・原文転記は含まない。
+教科書全文と教材UIは作成していない。

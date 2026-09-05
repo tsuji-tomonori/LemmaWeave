@@ -1,18 +1,45 @@
 # LemmaWeave（レマウィーブ）
 
-公開されている日本の大学入試数学を原題に忠実にLean 4で形式化・証明し、使用した定義・補題・定理と依存関係を追跡するPhase 1プロジェクトです。
+公開入試数学を原題に忠実に形式化し、Lean 4で証明を検査し、実際に使う数学的前提を記録するPhase 1プロジェクトです。パッケージ名は `lemmaweave`、名前空間は `LemmaWeave` です。
 
-現在は環境構築と監査基盤の検証中です。実問題のLean検証済み件数は0です。未実行・失敗・部分完了を成功とは扱いません。
+2026-09-05時点では、大学入試センター2026年度本試験「数学Ⅰ」の5小問で、Leanビルドと公理監査が通りました。独立した意味レビューと補題台帳の完全な分類は未完です。50小問収集・10小問完了のパイロット目標には未到達です。
 
-- [開始状態](START_HERE.md)
-- [最新の環境構築試行](reports/environment-retry.json)
-- [初回報告](reports/SESSION_REPORT.md)
-- [再開手順](docs/RESUME.md)
-- [要件](REQUIREMENTS.md)
-- [受入条件](docs/ACCEPTANCE.md)
+| 軸 | 実績 |
+|---|---:|
+| 原ページ確認・数学的仕様作成 | 5小問 |
+| 意味照合（自己レビューのみ） | 5小問 |
+| 独立意味レビュー | 0小問 |
+| Lean検証 / 許容公理監査 | 5 / 5小問 |
+| 実際の型・証明項の依存走査 | 5小問 |
+| 日本語の補題等カード | 21件 |
+| 未分類の実依存宣言（重複除外） | 11,110件 |
+| 補題棚卸し完了 / Phase 1完全合格 | 0 / 0小問 |
 
-Lean名前空間は `LemmaWeave`、ローカルプロジェクト名は `lemmaweave` です。固定版は `leanprover/lean4:v4.33.1` です。GitHub Actionsで構築を試しています。
+実行済み環境は Lean 4.33.1 / mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。固定した9依存のリビジョンをCIで照合しています。
 
-教科書全文と教材UIは今回の対象外です。原資料のPDFや画像はこのリポジトリに含みません。
+[成功した実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33948148236) · [実行報告](reports/SESSION_REPORT.md) · [次の開始位置](docs/RESUME.md) · [AC01–AC12の不足](reports/acceptance.json)
 
-受領時のREADMEとチェックサムは `docs/RECEIVED_PACKAGE_README.md` と `environment/received-package.SHA256SUMS` に保持しています。
+数学的モデル・目標は `LemmaWeave/Problems/DNC2026M1/Model.lean` と `Goals.lean` に分離し、証明前にハッシュを固定しました。証明は `Proof*.lean`、台帳は `corpus/`、圧縮した生依存グラフは `reports/dependencies/raw/`、日本語カードは `knowledge/nodes/` にあります。原PDF・問題文・図・選択肢表はこのリポジトリに含めていません。
+
+この形式化・解答は大学入試センターが作成または承認したものではありません。出典は[大学入試センターの公式掲載ページ](https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html)。原資料の再利用条件は `corpus/sources/DNC-2026-MAIN.json` と `reviews/DNC-mathematical-code-scope.md` を参照してください。
+
+## 実行
+
+通常のLinux環境で固定toolchainを用意して実行します。このチャットの作業環境ではアプリケーションパス検出に失敗したため、GitHub Actionsを標準の実行先にしています。
+
+```sh
+lake exe cache get Mathlib.Data.Nat.Basic Mathlib.Algebra.Group.Basic Mathlib.Data.Real.Sqrt Mathlib.Tactic
+python3 scripts/run.py -- lake build
+python3 scripts/run_targets.py
+python3 scripts/lw.py validate
+python3 scripts/lw.py report
+python3 scripts/acceptance_report.py
+```
+
+`run_targets.py` は全登録バリアントを個別に実行し、失敗した対象を台帳から消しません。終了コード0だけで意味レビューを合格にしません。`lw.py accept` は未完ゲートが残る間、終了コード2です。
+
+`tests/lean/DependencyFixtures.lean` の独自公理と `sorry` は拒否を検査するための負例です。入試証明のimport集合に入りません。抽出器試験9ケースの期待結果を確認していますが、自然に本文が失われたimportの再現試験は残っています。依存状態はこの制限を反映して `partial` です。
+
+根の型と証明項から参照を取り出し、ラッパー・暗黙参照・インスタンス・再帰の先まで追っています。証明項全文は保存せず、実参照とLeanの非暗号学的な構造ハッシュを保存します。証明ファイル、型、出力、実行入力には別途SHA256を用います。グラフはgzip圧縮JSONで、`scripts/lw.py` はそのまま読み込めます。
+
+教材UI・教科書全文は未着手です。最初に `AGENTS.md`、`REQUIREMENTS.md`、`docs/DATA_CONTRACT.md`、`docs/ACCEPTANCE.md`、`docs/MIGRATION.md`、`docs/ROADMAP.md` を読んでください。

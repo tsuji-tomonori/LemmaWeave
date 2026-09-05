@@ -34,10 +34,11 @@
     "same_strategy_attempts_per_problem": 4,
     "max_parallel_downloads_per_host": 1,
     "max_fetch_retries": 2,
-    "allow_remote_publication": false,
+    "allow_remote_publication": true,
     "allow_paid_services": false,
     "allow_external_ai_transfer": false,
-    "allow_dependency_upgrade": false
+    "allow_dependency_upgrade": false,
+    "remote_publication_scope": "Current user authorizes incremental pushes to existing repository; original source materials remain restricted."
   },
   "milestone_targets": {
     "first_slice": {
@@ -53,14 +54,14 @@
   },
   "results_source": "reports/metrics.json",
   "next_actions": [
-    "M0: Lean 4.33.1を実行可能にする。",
-    "M0: ロック・Smoke・抽出器の検査を実行する。",
-    "M1: 権利条件と原ページの目視照合を完了する。",
-    "M1: 最初の小問でModel/Goals作成→別レビュー→Proofの順に進む。"
+    "Complete five per-target Lean runs and raw dependency extraction",
+    "Link Japanese lemma cards to actual declarations",
+    "Resolve unclassified mathematical dependencies and extractor boundary fixtures",
+    "Independent semantic review of frozen models; keep self_review_only until then"
   ],
   "blockers": [
-    "environment_failure",
-    "transcription_uncertain",
-    "rights_uncertain"
+    "review_unavailable",
+    "rights_uncertain",
+    "dependency_extraction_gap"
   ]
 }

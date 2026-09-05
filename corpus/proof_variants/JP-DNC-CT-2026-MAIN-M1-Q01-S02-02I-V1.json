@@ -10,14 +10,67 @@
   "required_goal_ids": [
     "all_parameters"
   ],
-  "status": "not_run",
+  "status": "kernel_checked",
   "input_files": [
     "LemmaWeave/Problems/DNC2026M1/Model.lean",
     "LemmaWeave/Problems/DNC2026M1/Goals.lean",
     "LemmaWeave/Problems/DNC2026M1/ProofSets.lean",
     "LemmaWeave/Lemmas/CommonDivisor.lean"
   ],
-  "build_run": null,
+  "build_run": "runs/20260905T055112-d2085cfb/run.json",
   "method": "finite_table_with_model_equivalence",
-  "attempts": []
+  "attempts": [
+    {
+      "strategy_attempt": 1,
+      "github_run_id": 33946977449,
+      "exit_code": 1,
+      "reason": "Project aggregate failed because Mathlib.Tactic.Omega does not exist; two real proof modules did compile.",
+      "next_action": "Replace import with Lean.Elab.Tactic.Omega; rerun entire aggregate."
+    },
+    {
+      "github_run_id": 33947635318,
+      "exit_code": 1,
+      "kind": "missing_dependency_instance",
+      "detail": "LocallyFiniteOrder Nat import missing."
+    },
+    {
+      "github_run_id": 33947805864,
+      "exit_code": 1,
+      "kind": "decidability_elaboration",
+      "detail": "InUniverse 5 must be unfolded."
+    },
+    {
+      "github_run_id": 33947924903,
+      "exit_code": 0,
+      "kind": "aggregate_build",
+      "detail": "All five original mathematical goals compile."
+    }
+  ],
+  "build_mode": "module",
+  "audit_evidence": {
+    "mode": "per_variant",
+    "run": "runs/20260905T055121-9e5e3620/run.json",
+    "graphs": {
+      "LemmaWeave.Problems.DNC2026M1.parameter_solution": {
+        "file": "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+        "sha256": "5450effdb8cfbf1b39ead92381f1e31cd94c7f3907fb87ac44848f6cf75e3cd9",
+        "export_file": "work/LemmaWeave.Problems.DNC2026M1.parameter_solution-graph.json",
+        "raw_sha256": "fbe352bad20fa881b4d32ad413d8529fdb4e66cd67945a93f8fec157fba68679"
+      }
+    },
+    "extractor_fixture_report": "reports/extractor-fixtures.json"
+  },
+  "verified_git_commit": "9d427137107b16cf0f1ab016a115e5655d3344b4",
+  "proof_source_sha256": {
+    "LemmaWeave/Problems/DNC2026M1/Model.lean": "bd0d85216bb2e7533b9e224d9d0b112baba0887b613f9986c1396da4bc7c0bef",
+    "LemmaWeave/Problems/DNC2026M1/Goals.lean": "20218492c8891d632c548f2a09932493a1b9b205895e14f1027ca8b68837947b",
+    "LemmaWeave/Problems/DNC2026M1/ProofSets.lean": "7819e5a71c4d360e602d85ed2efada4a309132ad8d78dc674bbdbfa868a402d0",
+    "LemmaWeave/Lemmas/CommonDivisor.lean": "71c901a401806680ea0a457a717763b5b74ffc1416559ae18347cfa317e0258b"
+  },
+  "theorem_type_sha256": {
+    "LemmaWeave.Problems.DNC2026M1.parameter_solution": "b5d77751065a8dea2b7634ab51813092be69640f37c835b2015eb8c9710f75dd"
+  },
+  "proof_term_structural_hash_lean": {
+    "LemmaWeave.Problems.DNC2026M1.parameter_solution": "2220933881"
+  }
 }

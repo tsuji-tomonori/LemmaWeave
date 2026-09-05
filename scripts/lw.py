@@ -2,6 +2,7 @@
 """Local ledger, stale-evidence and graph checks. No automatic proof-state promotion."""
 import argparse
 import hashlib
+import gzip
 import json
 import pathlib
 import re
@@ -22,7 +23,7 @@ STATUS = {
 
 
 def read(path):
-    return json.loads(path.read_text())
+    return json.loads(gzip.decompress(path.read_bytes())) if path.suffix == ".gz" else json.loads(path.read_text())
 
 
 def sha(path):
@@ -173,7 +174,10 @@ def validate(root):
                         graph_path = confined(root, item['file'])
                         if sha(graph_path) != item['sha256']:
                             raise ValueError('modified dependency graph')
-                        if observed.get('artifact_sha256', {}).get(item['file']) != item['sha256']:
+                        raw_bytes = gzip.decompress(graph_path.read_bytes()) if graph_path.suffix == '.gz' else graph_path.read_bytes()
+                        if hashlib.sha256(raw_bytes).hexdigest() != item.get('raw_sha256', item['sha256']):
+                            raise ValueError('decoded graph hash mismatch')
+                        if observed.get('artifact_sha256', {}).get(item.get('export_file', item['file'])) != item.get('raw_sha256', item['sha256']):
                             raise ValueError('graph not linked to command output hash')
                         graph = read(graph_path)
                         if graph['roots'] != [name]:
@@ -220,22 +224,24 @@ def model_hash(root, files):
 
 
 def extraction_metrics(root):
-    files = sorted((root / 'reports/dependencies').glob('*.json'))
+    files = sorted((root / 'reports/dependencies/raw').glob('*.json.gz'))
     if not files:
         return {'unclassified': None, 'reason': 'No exam proof-term extraction imported; not a measured zero.'}
+    mapping_path = root / 'knowledge/declaration-classifications.json'
+    classified = set(read(mapping_path).get('declarations', {})) if mapping_path.exists() else set()
     names = set()
     for path in files:
         graph = read(path)
-        names.update(n['name'] for n in graph.get('nodes', [])
-                     if n.get('classification', {}).get('category', 'unclassified') == 'unclassified')
-    return {'unclassified': len(names), 'reason': 'Distinct declaration names in imported exam graphs, not source-token or import counts.'}
+        names.update(n['name'] for n in graph.get('nodes', []) if n['name'] not in classified)
+    return {'unclassified': len(names), 'reason': 'Distinct actual declaration names absent from the explicit classification ledger.'}
 
 
 def metrics(root):
     p = [p for p in records(root, 'corpus/problems') if p['origin'] == 'exam']
     sources = records(root, 'corpus/sources')
     return {
-        'candidate_problems': len(p),
+        'registered_problems': len(p),
+        'candidate_problems': sum(x['collection_status'] == 'candidate' for x in p),
         'located_sources': sum(s['source_status'] in {'located', 'fetched'} for s in sources),
         'fetched_papers': sum(bool(p.get('sha256')) for p in records(root, 'corpus/papers')),
         'collected_problems': sum(x['collection_status'] == 'collected' for x in p),
@@ -249,10 +255,13 @@ def metrics(root):
                              x['status']['axiom_audit'] == 'passed' for x in p),
         'phase1_complete_problems': 0,
         'phase1_complete_policy': 'disabled until AC01-AC12 evidence checker and Lean fixtures are validated',
+        'raw_dependency_traversed_problems': sum(bool(x['lean']['proof_variants']) and x['status']['axiom_audit'] == 'passed' for x in p),
+        'dependency_fully_validated_problems': sum(x['status']['dependency'] == 'extracted' for x in p),
+        'inventory_complete_problems': sum(x['status']['inventory'] == 'mapped' for x in p),
         'learning_nodes': len(records(root, 'knowledge/nodes')),
         'unclassified_dependencies': extraction_metrics(root)['unclassified'],
         'unclassified_dependencies_reason': extraction_metrics(root)['reason'],
-        'educational_frontier_status': 'not_extracted',
+        'educational_frontier_status': 'partial_with_explicit_unclassified_declarations' if (root / 'knowledge/educational-frontier.json.gz').exists() else 'not_extracted',
         'target_first_batch': 5, 'target_first_batch_complete_minimum': 1,
         'target_pilot_collected': 50, 'target_pilot_complete': 10,
         'overall_verdict': 'INCONCLUSIVE'}

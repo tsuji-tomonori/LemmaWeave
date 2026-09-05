@@ -1,0 +1,29 @@
+✖ [1502/1566] Running Mathlib.Tactic.Omega
+error: no such file or directory (error code: 4294967294)
+  file: /home/runner/work/LemmaWeave/LemmaWeave/.lake/packages/mathlib/Mathlib/Tactic/Omega.lean
+✖ [1503/1566] Running LemmaWeave.Lemmas.CommonDivisor
+error: LemmaWeave/Lemmas/CommonDivisor.lean: bad import 'Mathlib.Tactic.Omega'
+✖ [3009/3021] Running LemmaWeave.Problems.DNC2026M1.ProofSets
+error: LemmaWeave/Problems/DNC2026M1/ProofSets.lean: bad import 'LemmaWeave.Lemmas.CommonDivisor'
+✖ [3010/3021] Running LemmaWeave.AllTargets
+error: LemmaWeave/AllTargets.lean: bad import 'LemmaWeave.Problems.DNC2026M1.ProofSets'
+✖ [3011/3021] Running LemmaWeave
+error: LemmaWeave.lean: bad import 'LemmaWeave.AllTargets'
+✔ [3012/3021] Built LemmaWeave.AllVerified (324ms)
+✔ [3013/3021] Built LemmaWeave.Audit.Extract (1.8s)
+✔ [3014/3021] Built Mathlib.Order.Grade (1.7s)
+✔ [3015/3021] Built Mathlib.Data.Finset.Grade (1.2s)
+✔ [3016/3021] Built Mathlib.Data.Finset.Interval (1.3s)
+⚠ [3017/3021] Built LemmaWeave.Problems.DNC2026M1.Model (1.3s)
+warning: LemmaWeave/Problems/DNC2026M1/Model.lean:1:0: 'Mathlib.Data.Real.Sqrt' has been deprecated: please replace this import by
+
+import Mathlib.Analysis.Real.Sqrt
+✔ [3018/3021] Built LemmaWeave.Problems.DNC2026M1.Goals (1.2s)
+✔ [3019/3021] Built LemmaWeave.Problems.DNC2026M1.ProofInequalities (1.5s)
+✔ [3020/3021] Built LemmaWeave.Problems.DNC2026M1.ProofExtrema (1.5s)
+Some required targets logged failures:
+- Mathlib.Tactic.Omega
+- LemmaWeave.Lemmas.CommonDivisor
+- LemmaWeave.Problems.DNC2026M1.ProofSets
+- LemmaWeave.AllTargets
+- LemmaWeave

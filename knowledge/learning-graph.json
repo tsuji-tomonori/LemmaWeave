@@ -1,7 +1,107 @@
 {
-  "status": "not_started",
-  "nodes": [],
-  "edges": [],
-  "direction": "prerequisite -> dependent",
-  "note": "空グラフを学習体系完成と扱わない。"
+  "schema_version": "0.1",
+  "status": "partial_not_all_mathematical_prerequisites_mapped",
+  "nodes": [
+    "bounded_divisor",
+    "classical_choice",
+    "common_divisor_finite",
+    "decidable_reflection",
+    "equality_symmetry",
+    "equality_transitivity",
+    "excluded_middle",
+    "finite_table_lifting",
+    "finset_closed_interval_membership",
+    "finset_membership_insert",
+    "finset_singleton_membership",
+    "function_congruence",
+    "natural_add_associativity",
+    "natural_add_commutativity",
+    "natural_divisibility",
+    "nonnegative_product",
+    "propositional_extensionality",
+    "quotient_soundness",
+    "real_foundation",
+    "relative_complement",
+    "square_nonnegative"
+  ],
+  "edges": [
+    {
+      "from": "natural_divisibility",
+      "to": "bounded_divisor",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/bounded_divisor.json"
+    },
+    {
+      "from": "bounded_divisor",
+      "to": "common_divisor_finite",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/common_divisor_finite.json"
+    },
+    {
+      "from": "natural_divisibility",
+      "to": "common_divisor_finite",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "evidence": "knowledge/nodes/common_divisor_finite.json"
+    },
+    {
+      "from": "natural_divisibility",
+      "to": "bounded_divisor",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/bounded_divisor.json"
+    },
+    {
+      "from": "bounded_divisor",
+      "to": "common_divisor_finite",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/common_divisor_finite.json"
+    },
+    {
+      "from": "natural_divisibility",
+      "to": "common_divisor_finite",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "evidence": "knowledge/nodes/common_divisor_finite.json"
+    },
+    {
+      "from": "natural_divisibility",
+      "to": "bounded_divisor",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/bounded_divisor.json"
+    },
+    {
+      "from": "bounded_divisor",
+      "to": "common_divisor_finite",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/common_divisor_finite.json"
+    },
+    {
+      "from": "natural_divisibility",
+      "to": "common_divisor_finite",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "evidence": "knowledge/nodes/common_divisor_finite.json"
+    },
+    {
+      "from": "natural_divisibility",
+      "to": "bounded_divisor",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "evidence": "knowledge/nodes/bounded_divisor.json"
+    },
+    {
+      "from": "natural_divisibility",
+      "to": "bounded_divisor",
+      "kind": "prerequisite",
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "evidence": "knowledge/nodes/bounded_divisor.json"
+    }
+  ],
+  "unexpanded_evidence": "knowledge/educational-frontier.json.gz"
 }

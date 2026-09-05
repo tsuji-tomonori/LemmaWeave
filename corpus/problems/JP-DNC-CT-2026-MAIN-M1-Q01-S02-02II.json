@@ -91,15 +91,17 @@
       "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1"
     ],
     "semantic_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
-    "theorem_type_hash": null
+    "theorem_type_hash": {
+      "LemmaWeave.Problems.DNC2026M1.pair_solution": "bb313c85cd816963e832853874cdd36e4ae0445ef13c137c8f7979cab32be2ff"
+    }
   },
   "status": {
     "transcription": "checked",
     "semantic": "self_review_only",
-    "proof": "not_run",
-    "axiom_audit": "not_run",
-    "dependency": "not_run",
-    "inventory": "not_started",
+    "proof": "kernel_checked",
+    "axiom_audit": "passed",
+    "dependency": "partial",
+    "inventory": "partial",
     "educational_expansion": "not_started",
     "release": "restricted"
   },
@@ -107,17 +109,31 @@
   "reviews": [
     "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-model-freeze.json"
   ],
-  "runs": [],
+  "runs": [
+    "runs/20260905T054432-d5587f82/run.json",
+    "runs/20260905T055112-d2085cfb/run.json",
+    "runs/20260905T055128-ec0aaa38/run.json"
+  ],
   "blockers": [
     {
       "kind": "review_unavailable",
-      "detail": "Independent reviewer has not run.",
-      "next_action": "Review the frozen source position and Model/Goals in a separate authorized session."
+      "detail": "Frozen Model/Goals are self_review_only; no independent session has checked the original pages.",
+      "next_action": "Run an explicitly authorized independent reviewer on the pinned source and frozen model."
+    },
+    {
+      "kind": "dependency_extraction_gap",
+      "detail": "All actual references traversed; naturally unavailable imported proof-body fixture and exact source file mapping are still incomplete.",
+      "next_action": "Reproduce an erased imported body under Lean 4.33.1 and verify the boundary status."
+    },
+    {
+      "kind": "unclassified_dependencies",
+      "detail": "See reports/acceptance.json AC09 and knowledge/educational-frontier.json.gz.",
+      "next_action": "Classify declarations of sets_solution first; retain each mathematical prerequisite and Japanese statement."
     },
     {
       "kind": "rights_uncertain",
-      "detail": "Original exam prose, images and compilation rights remain conditional; this public record uses metadata and independently written mathematical notation only.",
-      "next_action": "Obtain DNC secondary-use permission before distributing original materials or a problem compilation."
+      "detail": "Original PDF/prose/image reuse is not cleared. Public repository scope is independently written mathematics and metadata.",
+      "next_action": "Before any original-material distribution or problem-compilation publication, obtain the applicable DNC permission."
     }
   ]
 }

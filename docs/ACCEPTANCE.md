@@ -1,6 +1,6 @@
 # 受入条件・監査テスト仕様
 
-以下は実装時に用意する判定とテストであり、本パッケージで実行済みのCIではない。
+以下は維持すべき判定基準と監査テスト仕様。実装済みの判定は `scripts/acceptance_report.py`、現在の結果は `reports/acceptance.json`、実行証拠は `reports/latest-ci-replay.json` を参照する。基準の記載だけを合格の証拠にはしない。
 
 ## 1. 小問のPhase 1完了
 

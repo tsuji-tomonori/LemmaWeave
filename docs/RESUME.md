@@ -1,16 +1,12 @@
-# 次の開始位置
+# 現在の完了状況と残る作業
 
-環境構築を最初から繰り返す必要はありません。GitHub ActionsでLean 4.33.1と固定mathlibが実行済みです。`docs/EXECUTION_ENVIRONMENT.md` と `reports/command-index.json` を参照してください。
+PR #1はマージ済み。その後の独立レビュー、候補登録、分類もmainへ順次反映した。ユーザーは別エージェントの利用・マージ・mainへのコミットとpushを明示的に許可している。承認待ちを再開条件にしない。
 
-最初の5小問は全てLean検証・公理監査が通っています。Model/Goalsのハッシュは `8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f` です。証明に合わせて書き換えないでください。
+初期5小問は独立意味レビュー・Lean検証・公理監査・実依存抽出を実施済み。Model/Goalsの合成ハッシュは `8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f`。証明に合わせて変更しない。集合問題の解答欄対応は新独立レビューに訂正済み。
 
-1. `reports/acceptance.json` のAC04を確認し、固定原ページとModel/Goalsの独立レビューを実行する。現在はすべて `self_review_only`。別エージェントの利用を明示的に許可されていない実行モードでは起動せず、自己レビューと区別する。
-2. `reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz` の2,795宣言から分類を続ける。`knowledge/declaration-classifications.json` にない宣言を、型と同版ソースに基づいて分類する。最初の対象は `Nat.le_of_dvd` の前提、`Finset.mem_Icc` の局所有限順序インスタンス、`Lean.Omega` の数学的正当性と実装用の宣言との区別。
-3. `knowledge/educational-frontier.json.gz` は未分類宣言ごとの型・利用問題を保持する。名前の接頭辞だけで数学的前提を実装詳細に除外しない。日本語カードの前提を埋め、学習グラフの既知部分を再検査する。
-4. 抽出器の10ケース目は実際のexported importで本文が失われるケースとして実装済み。`LemmaWeave/Audit/Locations.lean` が定義元・行範囲を別出力し、`scripts/check_locations.py` が生グラフ全宣言との一致を検査する。行範囲が記録されない宣言はその事実を残す。コード変更後は完全再実行と新しい証拠の取り込みが必要。
-5. 固定環境では `python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py` を実行する。成功したCI成果物を `scripts/import_evidence.py <artifact.zip> --run-id <ID>` で取り込み、`scripts/inventory.py --write`、`scripts/analyze_corpus.py`、`scripts/lw.py validate`、`scripts/acceptance_report.py`、`scripts/lw.py report` の順に再生成する。圧縮生グラフは実行出力ハッシュと連結されているので編集しない。
-6. 最初の縦通しの未完ゲートを解消してから、50小問・6分野、完了10小問・4分野への拡大を再評価する。次の公式原ページ候補は同PDFの第1問[1](2)(3)、第2問[1]、第3問[1](2)(3)。これらは位置を閲覧しただけで小問台帳に未登録であり、収集件数へ入れない。図形は実際の点・角・距離からモデル化し、無根拠な座標仮定へ置き換えない。
+1. **資料の対象行為の確認**：`reviews/rights-20260905.md` に、DNCへの確認が必要な一時保存・解析・AI処理・派生公開の範囲と公式窓口を記録した。ユーザーの承認は第三者権利者の許諾を代替しない。今回の範囲を適法と自動認定してAC01を通さない。
+2. **依存分類**：79カード、数学宣言122件と構文木定義60件を分類済み。実依存11,131件中10,949件が未分類。`reports/declaration-index.csv`（CI成果物）と圧縮frontierから型・定義元・利用先を調べる。構文規則はレビュー済みの閉じた60件だけで、数学定理・再帰規則・構造投影へ拡張しない。
+3. **収集と証明の拡大**：収集済み5小問・2分野。原ページ位置を確認した追加8候補と未取得の数学ⅠA・ⅡBC公式冊子を登録済み。利用条件を確認後、仕様を起こして独立レビューへ回す。候補やURL発見だけを50小問・6分野に数えない。図形・統計の候補はBATCH-0002/0003にある。
+4. **検証と証拠更新**：`python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py`。成功したCI成果物を `python3 scripts/import_evidence.py <artifact.zip> --run-id <ID>` で照合して取り込む。その後inventory、analyze_corpus、acceptance_report、lw reportを再生成する。コード・カード変更後の古いAC12を流用しない。
 
-ユーザーは既存リポジトリへの適宜pushを許可しています。原資料の再配布、許諾申請の送信、他者への連絡、マージはその許可から自動的に導かれません。原資料の利用条件と、独自の数学コードの公開範囲を分けてください。
-
-今回の再開変更はPR #1（`codex/resume-phase1-audit`）。mainへの直接更新は自動承認レビューで拒否されたため、レビュー可能なブランチに保存している。マージ済みとは扱わない。現在は35カード、実依存11,131宣言のうち58件を根拠付き分類、11,073件未分類。独立意味レビューは0件。
+全体の目標は50小問/6分野、完全合格10小問/4分野（図形等のモデル化を最低1件含む）のまま。独立レビューやCI成功だけで全体完了と表示しない。教材UI・教科書全文は対象外。

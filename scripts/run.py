@@ -5,6 +5,7 @@ import datetime as dt
 import hashlib
 import json
 import pathlib
+import os
 import platform
 import subprocess
 import sys
@@ -53,7 +54,7 @@ def main():
         'status': 'running', 'argv': argv, 'cwd': str(ROOT),
         'inputs': {'git_commit': commit if commit_rc == 0 else None,
                    'dirty_tree': bool(dirty), 'files': snapshot(ROOT)},
-        'environment': {'os': platform.platform(), 'python': sys.version,
+        'environment': {'os': platform.platform(), 'python': sys.version, 'github_run_id': os.getenv('GITHUB_RUN_ID'),
                         'lean_version_observed': None, 'container_digest': None},
         'exit_code': None, 'stdout_log': str((out / 'stdout.log').relative_to(ROOT)),
         'stderr_log': str((out / 'stderr.log').relative_to(ROOT)),

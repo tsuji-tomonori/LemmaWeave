@@ -79,7 +79,7 @@ def extract (root : Name) (limit : Nat := 100000) : CommandElabM Json := do
         ("body_expr", body), ("body_status", toJson bodyStatus),
         ("unsafe", toJson info.isUnsafe), ("source_location", Json.null),
         ("source_location_status", toJson "not_resolved")])
-  let truncated := index < todo.size
+  let truncated : Bool := decide (index < todo.size)
   if truncated then
     boundaries := boundaries.push (Json.mkObj [("reason", toJson "node_limit"),
       ("limit", toJson limit), ("pending", toJson (todo.size - index))])

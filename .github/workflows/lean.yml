@@ -50,9 +50,14 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          for p in sorted(Path('runs').glob('*/*.log')):
-              print(str(p))
-              print(p.read_text(errors='replace'))
+          import json, os
+          for record in sorted(Path('runs').glob('*/run.json')):
+              data = json.loads(record.read_text())
+              if data['environment'].get('github_run_id') == os.environ['GITHUB_RUN_ID']:
+                  for key in ['stdout_log', 'stderr_log']:
+                      p = Path(data[key])
+                      print(str(p))
+                      print(p.read_text(errors='replace'))
           PY
       - name: Preserve execution evidence
         if: always()

@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1",
+  "is_template": false,
+  "batch_id": "BATCH-0001",
+  "phase": "vertical_slice",
+  "scope": {
+    "exam_families": [
+      "common_test"
+    ],
+    "years": [
+      2026
+    ],
+    "institutions": [
+      "大学入試センター"
+    ],
+    "subjects": [
+      "数学Ⅰ"
+    ],
+    "sessions": [
+      "main"
+    ],
+    "problem_ids": [
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+      "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+    ],
+    "coverage_denominator": 5,
+    "denominator_meaning": "最初の選定候補5小問。冊子全小問数ではない。",
+    "stop_condition": "この5小問を処理し、少なくとも1件がAC01-AC12を満たしてから収集拡大を再評価"
+  },
+  "limits": {
+    "same_strategy_attempts_per_problem": 4,
+    "max_parallel_downloads_per_host": 1,
+    "max_fetch_retries": 2,
+    "allow_remote_publication": false,
+    "allow_paid_services": false,
+    "allow_external_ai_transfer": false,
+    "allow_dependency_upgrade": false
+  },
+  "milestone_targets": {
+    "first_slice": {
+      "real_problems": 5,
+      "phase1_complete_minimum": 1
+    },
+    "pilot": {
+      "collected_problems": 50,
+      "collected_domains_minimum": 6,
+      "phase1_complete_problems": 10,
+      "proved_domains_minimum": 4
+    }
+  },
+  "results_source": "reports/metrics.json",
+  "next_actions": [
+    "M0: Lean 4.33.1を実行可能にする。",
+    "M0: ロック・Smoke・抽出器の検査を実行する。",
+    "M1: 権利条件と原ページの目視照合を完了する。",
+    "M1: 最初の小問でModel/Goals作成→別レビュー→Proofの順に進む。"
+  ],
+  "blockers": [
+    "environment_failure",
+    "transcription_uncertain",
+    "rights_uncertain"
+  ]
+}

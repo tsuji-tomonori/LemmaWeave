@@ -1,0 +1,65 @@
+name: Lean environment and audit fixtures
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install fixed elan release
+        run: |
+          mkdir -p "$RUNNER_TEMP/lemmaweave-elan"
+          curl --fail --location --retry 2 --max-time 120 --output "$RUNNER_TEMP/lemmaweave-elan/elan.tar.gz" https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz
+          sha256sum "$RUNNER_TEMP/lemmaweave-elan/elan.tar.gz"
+          tar -xzf "$RUNNER_TEMP/lemmaweave-elan/elan.tar.gz" -C "$RUNNER_TEMP/lemmaweave-elan"
+          "$RUNNER_TEMP/lemmaweave-elan/elan-init" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Install and observe the pinned Lean toolchain
+        run: |
+          python3 scripts/run.py --timeout 600 -- lean --version
+          python3 scripts/run.py -- lake --version
+      - name: Retrieve only fixture mathlib dependencies
+        run: python3 scripts/run.py --timeout 900 -- lake exe cache get Mathlib/Data/Nat/Basic.lean Mathlib/Algebra/Group/Basic.lean
+      - name: Verify dependency revisions
+        run: python3 scripts/run.py -- python3 scripts/check_pins.py
+      - name: Build the project
+        run: python3 scripts/run.py --timeout 600 -- lake build
+      - name: Run synthetic Lean fixture
+        run: python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/Smoke.lean
+      - name: Run dependency extraction fixtures
+        run: python3 scripts/run.py --timeout 300 -- lake env lean tests/lean/DependencyFixtures.lean
+      - name: Run Python guards
+        run: python3 scripts/run.py -- python3 -m unittest discover -s tests -v
+      - name: Validate ledger states
+        run: python3 scripts/run.py -- python3 scripts/lw.py validate
+      - name: Print command output
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for p in sorted(Path('runs').glob('*/*.log')):
+              print(str(p))
+              print(p.read_text(errors='replace'))
+          PY
+      - name: Preserve execution evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lean-evidence-${{ github.sha }}
+          path: |
+            runs/
+            work/*-graph.json
+          retention-days: 14

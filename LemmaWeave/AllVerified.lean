@@ -1,0 +1,1 @@
+-- Generated from proof registry. Empty aggregate is not batch acceptance.

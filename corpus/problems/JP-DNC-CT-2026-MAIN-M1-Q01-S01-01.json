@@ -12,7 +12,7 @@
   "paper_id": "DNC-CT-2026-MAIN-M1",
   "title_ja": "連立不等式の固定パラメータの場合",
   "domain_candidate": "expressions_functions",
-  "collection_status": "candidate",
+  "collection_status": "collected",
   "source_locator": {
     "pdf_page_1_based": [
       1
@@ -27,43 +27,70 @@
       "イ",
       "ウ"
     ],
-    "document_sha256": null
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606"
   },
   "source_page_visual_review": {
-    "confirmed": false,
+    "confirmed": true,
     "reviewer": "/root",
-    "method": "web screenshot attempted; tool returned references only, no visible pixels",
+    "method": "Chrome native PDF viewer screenshots; visible equations, bars and interval endpoints inspected",
     "pages_requested": [
       1
-    ]
+    ],
+    "reviewed_at": "2026-09-05T05:15:05.899753+00:00",
+    "independence": "self_review_only"
   },
   "curriculum": {
     "at_exam": "unverified",
     "current_mapping": []
   },
   "mathematical_spec": {
-    "statement_ja": null,
-    "variables": [],
-    "assumptions": [],
-    "goals": [],
+    "statement_ja": "実数の連立不等式について、パラメータを2としたときの全実数解を同値命題で特定する。",
+    "variables": [
+      {
+        "name": "x",
+        "type": "ℝ",
+        "domain": "all real numbers"
+      },
+      {
+        "name": "a",
+        "type": "ℝ",
+        "domain": "a ≠ 1; this subquestion a = 2"
+      }
+    ],
+    "assumptions": [
+      "a = 2, hence a ≠ 1"
+    ],
+    "goals": [
+      {
+        "id": "all_real_solutions",
+        "lean_goal": "LemmaWeave.Problems.DNC2026M1.InequalitiesGoal"
+      }
+    ],
     "answer_kind": "full_solution_set",
     "answer_encoding": null,
-    "allowed_approximation": null,
+    "allowed_approximation": "none; Real.sqrt 6 is exact; printed decimal reference is not an equality",
     "prerequisites_from_previous_parts": [],
     "model_bridges_required": [],
-    "drafting_note": "数字・根号・係数をページ画像で再確認し、実数の全解を必要十分条件で定義する。"
+    "drafting_note": "Models and goals were written before proof implementation. Mathematical notation independently formalized; original wording and selection tables omitted."
   },
   "lean": {
-    "model_files": [],
-    "goal_declarations": [],
-    "proof_variants": [],
-    "semantic_model_hash": null,
+    "model_files": [
+      "LemmaWeave/Problems/DNC2026M1/Model.lean",
+      "LemmaWeave/Problems/DNC2026M1/Goals.lean"
+    ],
+    "goal_declarations": [
+      "LemmaWeave.Problems.DNC2026M1.InequalitiesGoal"
+    ],
+    "proof_variants": [
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1"
+    ],
+    "semantic_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
     "theorem_type_hash": null
   },
   "status": {
-    "transcription": "uncertain",
-    "semantic": "not_started",
-    "proof": "not_started",
+    "transcription": "checked",
+    "semantic": "self_review_only",
+    "proof": "not_run",
     "axiom_audit": "not_run",
     "dependency": "not_run",
     "inventory": "not_started",
@@ -71,23 +98,20 @@
     "release": "restricted"
   },
   "learning_nodes": [],
-  "reviews": [],
+  "reviews": [
+    "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-model-freeze.json"
+  ],
   "runs": [],
   "blockers": [
     {
-      "kind": "transcription_uncertain",
-      "detail": "抽出テキストで数字・数式記号が破損。スクリーンショットの画像本体を確認できていない。",
-      "next_action": "数字・根号・係数をページ画像で再確認し、実数の全解を必要十分条件で定義する。"
+      "kind": "review_unavailable",
+      "detail": "Independent reviewer has not run.",
+      "next_action": "Review the frozen source position and Model/Goals in a separate authorized session."
     },
     {
       "kind": "rights_uncertain",
-      "detail": "保存・自動解析・派生物の利用条件の照合未完了。",
-      "next_action": "corpus/sources/DNC-2026-MAIN.json の行為別条件を解消する。"
-    },
-    {
-      "kind": "environment_failure",
-      "detail": "Lean実行環境がない。",
-      "next_action": "docs/RESUME.md のM0ゲートから実行する。"
+      "detail": "Original exam prose, images and compilation rights remain conditional; this public record uses metadata and independently written mathematical notation only.",
+      "next_action": "Obtain DNC secondary-use permission before distributing original materials or a problem compilation."
     }
   ]
 }

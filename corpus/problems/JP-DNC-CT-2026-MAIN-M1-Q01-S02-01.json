@@ -12,7 +12,7 @@
   "paper_id": "DNC-CT-2026-MAIN-M1",
   "title_ja": "公約数で定義する集合の具体例・共通部分",
   "domain_candidate": "sets_integers",
-  "collection_status": "candidate",
+  "collection_status": "collected",
   "source_locator": {
     "pdf_page_1_based": [
       3,
@@ -30,44 +30,82 @@
       "ス",
       "セ"
     ],
-    "document_sha256": null
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606"
   },
   "source_page_visual_review": {
-    "confirmed": false,
+    "confirmed": true,
     "reviewer": "/root",
-    "method": "web screenshot attempted; tool returned references only, no visible pixels",
+    "method": "Chrome native PDF viewer screenshots; visible equations, bars and interval endpoints inspected",
     "pages_requested": [
       3,
       4
-    ]
+    ],
+    "reviewed_at": "2026-09-05T05:15:05.899753+00:00",
+    "independence": "self_review_only"
   },
   "curriculum": {
     "at_exam": "unverified",
     "current_mapping": []
   },
   "mathematical_spec": {
-    "statement_ja": null,
-    "variables": [],
-    "assumptions": [],
-    "goals": [],
+    "statement_ja": "自然数2から20の全体集合で、3または4と1より大きい公約数を持つ集合、両者の共通部分、および前者と後者の補集合の共通部分を外延的に特定する。",
+    "variables": [
+      {
+        "name": "k",
+        "type": "ℕ",
+        "domain": "2 ≤ k ≤ 20"
+      }
+    ],
+    "assumptions": [
+      "a = 3",
+      "b = 4"
+    ],
+    "goals": [
+      {
+        "id": "set_A",
+        "lean_goal": "LemmaWeave.Problems.DNC2026M1.SetsGoal"
+      },
+      {
+        "id": "set_B",
+        "lean_goal": "LemmaWeave.Problems.DNC2026M1.SetsGoal"
+      },
+      {
+        "id": "intersection",
+        "lean_goal": "LemmaWeave.Problems.DNC2026M1.SetsGoal"
+      },
+      {
+        "id": "relative_difference",
+        "lean_goal": "LemmaWeave.Problems.DNC2026M1.SetsGoal"
+      }
+    ],
     "answer_kind": "full_solution_set",
     "answer_encoding": null,
-    "allowed_approximation": null,
+    "allowed_approximation": "none; Real.sqrt 6 is exact; printed decimal reference is not an equality",
     "prerequisites_from_previous_parts": [],
-    "model_bridges_required": [],
-    "drafting_note": "全体集合、a,bの値、補集合バーの対象、全選択肢を原画像で照合する。4欄を1小問とする。"
+    "model_bridges_required": [
+      "unbounded common divisor to bounded divisor search",
+      "all natural numbers to the given finite universe"
+    ],
+    "drafting_note": "Models and goals were written before proof implementation. Mathematical notation independently formalized; original wording and selection tables omitted."
   },
   "lean": {
-    "model_files": [],
-    "goal_declarations": [],
-    "proof_variants": [],
-    "semantic_model_hash": null,
+    "model_files": [
+      "LemmaWeave/Problems/DNC2026M1/Model.lean",
+      "LemmaWeave/Problems/DNC2026M1/Goals.lean"
+    ],
+    "goal_declarations": [
+      "LemmaWeave.Problems.DNC2026M1.SetsGoal"
+    ],
+    "proof_variants": [
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1"
+    ],
+    "semantic_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
     "theorem_type_hash": null
   },
   "status": {
-    "transcription": "uncertain",
-    "semantic": "not_started",
-    "proof": "not_started",
+    "transcription": "checked",
+    "semantic": "self_review_only",
+    "proof": "not_run",
     "axiom_audit": "not_run",
     "dependency": "not_run",
     "inventory": "not_started",
@@ -75,23 +113,20 @@
     "release": "restricted"
   },
   "learning_nodes": [],
-  "reviews": [],
+  "reviews": [
+    "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-model-freeze.json"
+  ],
   "runs": [],
   "blockers": [
     {
-      "kind": "transcription_uncertain",
-      "detail": "抽出テキストで数字・数式記号が破損。スクリーンショットの画像本体を確認できていない。",
-      "next_action": "全体集合、a,bの値、補集合バーの対象、全選択肢を原画像で照合する。4欄を1小問とする。"
+      "kind": "review_unavailable",
+      "detail": "Independent reviewer has not run.",
+      "next_action": "Review the frozen source position and Model/Goals in a separate authorized session."
     },
     {
       "kind": "rights_uncertain",
-      "detail": "保存・自動解析・派生物の利用条件の照合未完了。",
-      "next_action": "corpus/sources/DNC-2026-MAIN.json の行為別条件を解消する。"
-    },
-    {
-      "kind": "environment_failure",
-      "detail": "Lean実行環境がない。",
-      "next_action": "docs/RESUME.md のM0ゲートから実行する。"
+      "detail": "Original exam prose, images and compilation rights remain conditional; this public record uses metadata and independently written mathematical notation only.",
+      "next_action": "Obtain DNC secondary-use permission before distributing original materials or a problem compilation."
     }
   ]
 }

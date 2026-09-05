@@ -12,7 +12,7 @@
   "paper_id": "DNC-CT-2026-MAIN-M1",
   "title_ja": "集合に特定の倍数を含まないパラメータの全解",
   "domain_candidate": "sets_integers",
-  "collection_status": "candidate",
+  "collection_status": "collected",
   "source_locator": {
     "pdf_page_1_based": [
       3,
@@ -27,44 +27,74 @@
     "answer_slots": [
       "ソ"
     ],
-    "document_sha256": null
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606"
   },
   "source_page_visual_review": {
-    "confirmed": false,
+    "confirmed": true,
     "reviewer": "/root",
-    "method": "web screenshot attempted; tool returned references only, no visible pixels",
+    "method": "Chrome native PDF viewer screenshots; visible equations, bars and interval endpoints inspected",
     "pages_requested": [
       3,
       4
-    ]
+    ],
+    "reviewed_at": "2026-09-05T05:15:05.899753+00:00",
+    "independence": "self_review_only"
   },
   "curriculum": {
     "at_exam": "unverified",
     "current_mapping": []
   },
   "mathematical_spec": {
-    "statement_ja": null,
-    "variables": [],
-    "assumptions": [],
-    "goals": [],
+    "statement_ja": "相対補集合に2の倍数も3の倍数もないという条件について、2以上9以下の自然数パラメータを必要十分条件で特定する。",
+    "variables": [
+      {
+        "name": "a",
+        "type": "ℕ",
+        "domain": "2 ≤ a ≤ 9"
+      },
+      {
+        "name": "k",
+        "type": "ℕ",
+        "domain": "2 ≤ k ≤ 20"
+      }
+    ],
+    "assumptions": [
+      "2 ≤ a ≤ 9"
+    ],
+    "goals": [
+      {
+        "id": "all_parameters",
+        "lean_goal": "LemmaWeave.Problems.DNC2026M1.ParameterGoal"
+      }
+    ],
     "answer_kind": "full_solution_set",
     "answer_encoding": null,
-    "allowed_approximation": null,
+    "allowed_approximation": "none; Real.sqrt 6 is exact; printed decimal reference is not an equality",
     "prerequisites_from_previous_parts": [],
-    "model_bridges_required": [],
-    "drafting_note": "自然数範囲と倍数条件を確認し、存在する全aを求める目標にする。"
+    "model_bridges_required": [
+      "unbounded common divisor to bounded divisor search",
+      "all natural numbers to the given finite universe"
+    ],
+    "drafting_note": "Models and goals were written before proof implementation. Mathematical notation independently formalized; original wording and selection tables omitted."
   },
   "lean": {
-    "model_files": [],
-    "goal_declarations": [],
-    "proof_variants": [],
-    "semantic_model_hash": null,
+    "model_files": [
+      "LemmaWeave/Problems/DNC2026M1/Model.lean",
+      "LemmaWeave/Problems/DNC2026M1/Goals.lean"
+    ],
+    "goal_declarations": [
+      "LemmaWeave.Problems.DNC2026M1.ParameterGoal"
+    ],
+    "proof_variants": [
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1"
+    ],
+    "semantic_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
     "theorem_type_hash": null
   },
   "status": {
-    "transcription": "uncertain",
-    "semantic": "not_started",
-    "proof": "not_started",
+    "transcription": "checked",
+    "semantic": "self_review_only",
+    "proof": "not_run",
     "axiom_audit": "not_run",
     "dependency": "not_run",
     "inventory": "not_started",
@@ -72,23 +102,20 @@
     "release": "restricted"
   },
   "learning_nodes": [],
-  "reviews": [],
+  "reviews": [
+    "reviews/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-model-freeze.json"
+  ],
   "runs": [],
   "blockers": [
     {
-      "kind": "transcription_uncertain",
-      "detail": "抽出テキストで数字・数式記号が破損。スクリーンショットの画像本体を確認できていない。",
-      "next_action": "自然数範囲と倍数条件を確認し、存在する全aを求める目標にする。"
+      "kind": "review_unavailable",
+      "detail": "Independent reviewer has not run.",
+      "next_action": "Review the frozen source position and Model/Goals in a separate authorized session."
     },
     {
       "kind": "rights_uncertain",
-      "detail": "保存・自動解析・派生物の利用条件の照合未完了。",
-      "next_action": "corpus/sources/DNC-2026-MAIN.json の行為別条件を解消する。"
-    },
-    {
-      "kind": "environment_failure",
-      "detail": "Lean実行環境がない。",
-      "next_action": "docs/RESUME.md のM0ゲートから実行する。"
+      "detail": "Original exam prose, images and compilation rights remain conditional; this public record uses metadata and independently written mathematical notation only.",
+      "next_action": "Obtain DNC secondary-use permission before distributing original materials or a problem compilation."
     }
   ]
 }

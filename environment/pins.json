@@ -3,8 +3,8 @@
   "lean_toolchain": "leanprover/lean4:v4.33.1",
   "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
   "selection_status": "upstream_toolchain_match_confirmed",
-  "runtime_compatibility": "not_run",
-  "lock_origin": "locally composed from pinned upstream mathlib manifest; NOT generated or validated by Lake",
+  "runtime_compatibility": "confirmed_on_github_actions",
+  "lock_origin": "composed from pinned mathlib manifest, then all 9 resolved package HEADs checked in Actions",
   "upstream_manifest_url": "https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/lake-manifest.json",
   "lake_manifest_sha256": "3c25c1e0e0d48c717a5d56c2b19772460b1b1826c7e5d319c6675161de6efa23",
   "dependency_commits": {
@@ -18,10 +18,8 @@
     "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f",
     "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
   },
-  "installation_status": "blocked",
-  "blockers": [
-    "Lean, Lake and elan are absent.",
-    "Release download command did not execute: network approval was cancelled before a decision was returned."
-  ],
-  "next_action": "Use an authorized environment with Lean 4.33.1 installed, validate the lock against Lake resolution without changing revisions, then run the recorded gates."
+  "installation_status": "remote_ready",
+  "blockers": [],
+  "next_action": "Run registered exam proofs; local runtime transfer in progress.",
+  "successful_environment_run": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33946598538"
 }

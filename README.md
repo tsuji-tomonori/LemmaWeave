@@ -10,14 +10,14 @@
 | 意味照合（自己レビューのみ） | 5小問 |
 | 独立意味レビュー | 0小問 |
 | Lean検証 / 許容公理監査 | 5 / 5小問 |
-| 実際の型・証明項の依存走査 | 5小問 |
-| 日本語の補題等カード | 21件 |
-| 未分類の実依存宣言（重複除外） | 11,110件 |
+| 実依存抽出・定義元照合 / 別環境再実行 | 5 / 5小問 |
+| 日本語の補題等カード | 35件 |
+| 未分類の実依存宣言（重複除外） | 11,073件 |
 | 補題棚卸し完了 / Phase 1完全合格 | 0 / 0小問 |
 
 実行済み環境は Lean 4.33.1 / mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。固定した9依存のリビジョンをCIで照合しています。
 
-[成功した実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33948148236) · [実行報告](reports/SESSION_REPORT.md) · [次の開始位置](docs/RESUME.md) · [AC01–AC12の不足](reports/acceptance.json)
+[成功した実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33964077764) · [実行報告](reports/SESSION_REPORT.md) · [次の開始位置](docs/RESUME.md) · [AC01–AC12の不足](reports/acceptance.json)
 
 数学的モデル・目標は `LemmaWeave/Problems/DNC2026M1/Model.lean` と `Goals.lean` に分離し、証明前にハッシュを固定しました。証明は `Proof*.lean`、台帳は `corpus/`、圧縮した生依存グラフは `reports/dependencies/raw/`、日本語カードは `knowledge/nodes/` にあります。原PDF・問題文・図・選択肢表はこのリポジトリに含めていません。
 
@@ -29,16 +29,16 @@
 
 ```sh
 lake exe cache get Mathlib.Data.Nat.Basic Mathlib.Algebra.Group.Basic Mathlib.Data.Real.Sqrt Mathlib.Tactic
-python3 scripts/run.py -- lake build
-python3 scripts/run_targets.py
-python3 scripts/lw.py validate
-python3 scripts/lw.py report
-python3 scripts/acceptance_report.py
+python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py
 ```
 
 `run_targets.py` は全登録バリアントを個別に実行し、失敗した対象を台帳から消しません。終了コード0だけで意味レビューを合格にしません。`lw.py accept` は未完ゲートが残る間、終了コード2です。
 
-`tests/lean/DependencyFixtures.lean` の独自公理と `sorry` は拒否を検査するための負例です。入試証明のimport集合に入りません。抽出器試験9ケースの期待結果を確認していますが、自然に本文が失われたimportの再現試験は残っています。依存状態はこの制限を反映して `partial` です。
+`tests/lean/DependencyFixtures.lean` の独自公理と `sorry` は拒否を検査するための負例です。入試証明のimport集合に入りません。抽出器試験は10ケースです。Leanのexported importで定理本文が自然に取得不能になるケースも再現し、未許可の公理として拒否することを確認します。
+
+CI成果物のZIPは `python3 scripts/import_evidence.py <artifact.zip> --run-id <GitHub実行ID>` で取り込みます。現行コード・型・実行出力のハッシュが一致しなければ取り込まず、独立意味レビューや資料の利用条件を自動承認しません。宣言の定義元モジュール・相対ソースパス・取得可能な行範囲は別の圧縮出典ファイルに保存します。
+
+`python3 -m unittest discover -s tests -v` は29テスト。`scripts/inventory.py --write` は実際の依存型と日本語カードを照合し、未分類宣言を型・利用先とともに残します。生成CSVはCI成果物に含まれます。
 
 根の型と証明項から参照を取り出し、ラッパー・暗黙参照・インスタンス・再帰の先まで追っています。証明項全文は保存せず、実参照とLeanの非暗号学的な構造ハッシュを保存します。証明ファイル、型、出力、実行入力には別途SHA256を用います。グラフはgzip圧縮JSONで、`scripts/lw.py` はそのまま読み込めます。
 

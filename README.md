@@ -17,7 +17,7 @@
 
 実行済み環境は Lean 4.33.1 / mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。固定した9依存のリビジョンをCIで照合しています。
 
-[成功した実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33965117317) · [実行報告](reports/SESSION_REPORT.md) · [次の開始位置](docs/RESUME.md) · [AC01–AC12の不足](reports/acceptance.json)
+[成功した実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33970704979) · [実行報告](reports/SESSION_REPORT.md) · [次の開始位置](docs/RESUME.md) · [AC01–AC12の不足](reports/acceptance.json)
 
 数学的モデル・目標は `LemmaWeave/Problems/DNC2026M1/Model.lean` と `Goals.lean` に分離し、証明前にハッシュを固定しました。証明は `Proof*.lean`、台帳は `corpus/`、圧縮した生依存グラフは `reports/dependencies/raw/`、日本語カードは `knowledge/nodes/` にあります。原PDF・問題文・図・選択肢表はこのリポジトリに含めていません。
 
@@ -25,7 +25,7 @@
 
 ## 解法中心への拡張（2026-09-05）
 
-[改訂設計](docs/METHOD_FIRST_DESIGN.md)に従い、二次関数の共有補題8本と、4つの説明ノードを組み合わせる解法例を追加しました。旧5小問のうち1問の別証明であり、問題数の増加ではありません。
+[改訂設計](docs/METHOD_FIRST_DESIGN.md)と[最新到達状況](reports/METHOD_FIRST_STATUS.md)に従い、二次関数の共有補題8本と、4つの説明ノードを組み合わせる解法例を追加しました。[リンク付きの解法例](docs/methods/quadratic_extrema.md)を生成し、Lean検証と使用補題リンクの照合が通っています。旧5小問のうち1問の別証明であり、問題数の増加ではありません。
 
 大規模収集の第一弾は[実測manifest](corpus/imports/gsm8k.json)のGSM8K **8,792問**（train 7,473 / test 1,319）。取得・文字列重複検査済みですが、意味レビュー・解法抽出・Lean検証は各0問です。上の日本入試5小問とは別集計です。万単位の検証と文科省全分野の網羅は未完です。[収集元候補](docs/LARGE_SCALE_SOURCES.md)も取得実績とは分けています。
 

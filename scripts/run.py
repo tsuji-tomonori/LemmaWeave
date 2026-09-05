@@ -80,7 +80,8 @@ def main():
     record['output_sha256'] = {name: sha(out / name) for name in ['stdout.log', 'stderr.log']}
     record['artifact_sha256'] = {
         str(path.relative_to(ROOT)): sha(path)
-        for path in sorted((ROOT / 'work').glob('*-graph.json'))
+        for path in sorted(set((ROOT / 'work').glob('*-graph.json')) |
+                           set((ROOT / 'work').glob('*-locations.json')))
     }
     (out / 'run.json').write_text(json.dumps(record, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'run': str((out / 'run.json').relative_to(ROOT)), 'exit_code': code}))

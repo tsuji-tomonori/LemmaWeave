@@ -90,6 +90,21 @@ class InventoryEvidence(unittest.TestCase):
 
 
 class SemanticEvidence(unittest.TestCase):
+    def test_location_sidecar_cannot_omit_or_substitute_a_declaration(self):
+        from check_locations import check
+        g = {'roots': ['T'], 'nodes': [{'name': 'T'}, {'name': 'Helper'}]}
+        entries = [{'name': n, 'source_module': 'Example.Proofs',
+                    'module_relative_file': 'Example/Proofs.lean', 'range': None} for n in ['T', 'Helper']]
+        sidecar = {'root': 'T', 'source_mapping': entries}
+        self.assertEqual(check(g, sidecar)['module_only_no_recorded_range'], 2)
+        sidecar['source_mapping'] = entries[:1]
+        with self.assertRaises(ValueError):
+            check(g, sidecar)
+        sidecar['source_mapping'] = entries
+        entries[1]['module_relative_file'] = 'Wrong.lean'
+        with self.assertRaises(ValueError):
+            check(g, sidecar)
+
     def test_pilot_requires_diversity_and_modeling_not_just_counts(self):
         from acceptance_report import pilot_gate
         problems = [{'problem_id': str(i), 'origin': 'exam', 'collection_status': 'collected',

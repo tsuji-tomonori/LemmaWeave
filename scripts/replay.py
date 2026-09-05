@@ -16,6 +16,8 @@ COMMANDS = [
     ['python3', 'scripts/check_pins.py'],
     ['lake', 'build'],
     ['python3', 'scripts/run_targets.py'],
+    ['python3', 'scripts/run_locations.py'],
+    ['python3', 'scripts/check_locations.py'],
     ['lake', 'build', 'LemmaWeave.Audit.Fixtures.Shared', 'LemmaWeave.Audit.Fixtures.Exported'],
     ['lake', 'env', 'lean', 'tests/lean/Smoke.lean'],
     ['lake', 'env', 'lean', 'tests/lean/DependencyFixtures.lean'],

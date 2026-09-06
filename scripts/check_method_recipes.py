@@ -18,6 +18,14 @@ def validate_recipe(recipe, nodes, graph):
     if audit['status'] != 'passed':
         raise ValueError('method proof has untrusted or unresolved dependencies')
     reachable = set(audit['reachable_declarations'])
+    individual = recipe.get('solution_format') == 'individual_lines_v1'
+    line_evidence = []
+    declarations = {}
+    graph_nodes = {n['name']: n for n in graph['nodes']}
+    if individual:
+        review = recipe.get('author_review', {})
+        if recipe.get('authorship') != 'llm_individual' or review.get('status') != 'checked' or not review.get('checks_ja'):
+            raise ValueError('individual solution needs recorded author semantic review')
     if not recipe['steps']:
         raise ValueError('recipe has no justified steps')
     completed = set()
@@ -26,7 +34,21 @@ def validate_recipe(recipe, nodes, graph):
             raise ValueError('duplicate, cyclic or future step dependency')
         if not step['condition_ja'] or not step['conclusion_ja']:
             raise ValueError('step requires explicit conditions and conclusion')
-        if not step['uses_nodes']:
+        step_reachable = reachable
+        if individual:
+            declaration = step.get('lean_declaration')
+            if declaration not in reachable or graph_nodes[declaration].get('kind') != 'theorem':
+                raise ValueError('written line has no theorem in final proof')
+            if declaration in declarations.values():
+                raise ValueError('different written lines must have distinct theorems')
+            step_reachable = set(graph_audit({**graph, 'roots': [declaration]})['reachable_declarations'])
+            if not {declarations[s] for s in step['requires_steps']} <= step_reachable:
+                raise ValueError('previous written line absent from this line proof')
+            declarations[step['id']] = declaration
+            line_evidence.append({'id': step['id'], 'lean_declaration': declaration,
+                                  'type_pretty': graph_nodes[declaration].get('type_pretty'),
+                                  'justification_links': 'verified_from_this_line'})
+        if not step['uses_nodes'] and not (individual and step.get('baseline_ja')):
             raise ValueError('step has no method justification')
         for nid in step['uses_nodes']:
             node = nodes[nid]
@@ -34,12 +56,14 @@ def validate_recipe(recipe, nodes, graph):
                 raise ValueError('missing method statement or applicability conditions')
             if not node['lean_declarations']:
                 raise ValueError('method has no Lean declaration')
-            if not set(node['lean_declarations']) <= reachable:
+            if not set(node['lean_declarations']) <= step_reachable:
                 raise ValueError('declared method absent from actual proof dependencies: ' + nid)
         completed.add(step['id'])
     return {'recipe': recipe['id'], 'root': recipe['root'], 'audit': audit['status'],
             'steps': len(completed), 'dependency_links': 'verified',
             'natural_language_step_adequacy': recipe['semantic_review_status'],
+            'individual_lines': line_evidence,
+            'solution_ready': individual,
             'limitation': 'Dependency membership does not prove the meaning of every prose step or tactic selection.'}
 
 
@@ -67,6 +91,7 @@ def proof_evidence(root, recipe, graph_bytes):
 def batch_metrics(root, recipes, results):
     by_id = {r['id']: r for r in recipes}
     verified = {r['recipe'] for r in results if r.get('proof_evidence')}
+    ready = {r['recipe'] for r in results if r.get('proof_evidence') and r.get('solution_ready')}
     output = []
     for path in sorted((root / 'corpus/method_batches').glob('*.json')):
         batch = read(path)
@@ -83,15 +108,18 @@ def batch_metrics(root, recipes, results):
                 raise ValueError('batch problem/recipe mismatch')
             if p['model_scope'] != r['model_scope'] or p['semantic_status'] != r['semantic_review_status']:
                 raise ValueError('batch semantic state differs from recipe')
+            if r.get('solution_format') == 'individual_lines_v1' and r['author_review'].get('checked_model_hash') != batch['semantic_model_hash']:
+                raise ValueError('author review is stale for batch model')
         output.append({'batch': batch['id'], 'collection_id': batch['collection_id'],
                        'selected_existing_problems': len(problems),
                        'method_extracted': len(problems),
                        'kernel_checked_models': sum(p['recipe_id'] in verified for p in problems),
+                       'individual_solutions_ready': sum(p['recipe_id'] in ready for p in problems),
                        'conditional_models': sum(p['model_scope'] == 'conditional' for p in problems),
                        # This authoring batch carries no independent-review evidence.
                        'independent_semantic_checked': 0,
                        'phase1_complete': 0,
-                       'reason_ja': '独立意味レビュー・全依存の教育分類は未完。条件付きモデルを原題の無条件な証明へ昇格しない。'})
+                       'reason_ja': '独立レビュー・全分類は後続の総合監査。自己照合した一問ごとの解答を止めない。条件付きの結論は条件を明示する。'})
     return output
 
 
@@ -138,6 +166,10 @@ def main():
             for s in r['steps']:
                 links='、'.join('['+nodes[n]['name_ja']+']('+n+'.md)' for n in s['uses_nodes'])
                 lines += ['## '+s['id']+'：'+s['title_ja'], '', '条件：'+s['condition_ja'], '', '根拠：'+links, '', '得られること：'+s['conclusion_ja'], '']
+                if s.get('baseline_ja'):
+                    lines += ['既習の根拠：'+s['baseline_ja'], '']
+                if s.get('lean_declaration'):
+                    lines += ['この行のLean定理：`'+s['lean_declaration']+'`。', '']
             lines += ['Leanの最終根：`'+r['root']+'`。各自然言語ステップのレビュー状態：'+r['semantic_review_status']+'。', '', 'このページの生成だけでは実行証拠にならない。最新のCIと `reports/method-recipes.json` を併せて確認する。']
             (dest/(r['id']+'.md')).write_text('\n'.join(lines)+'\n')
     print(json.dumps(results, ensure_ascii=False))

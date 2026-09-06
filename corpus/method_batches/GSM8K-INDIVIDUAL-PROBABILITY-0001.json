@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.1",
+  "id": "GSM8K-INDIVIDUAL-PROBABILITY-0001",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+  "source_file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+  "source_url": "https://github.com/openai/grade-school-math/blob/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+  "license_notice": "reviews/GSM8K-LICENSE.txt",
+  "model_files": [
+    "LemmaWeave/Lemmas/FiniteProbability.lean",
+    "LemmaWeave/Problems/Probability/Model.lean"
+  ],
+  "author_session_id": "lemmaweave-work-20260906-individual-probability",
+  "review_status": "self_review_only",
+  "problems": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01786",
+      "source_line_1based": 1787,
+      "source_record_sha256": "7320b1c148fa6e4a86a0c3825061add731ecf3946bba70d659b5ae0f080f40b9",
+      "raw_question_sha256": "68467aac887bb850c935667c48c9facb1c0399d0c299d004e617b9805c7491af",
+      "source_question": "4/5 of the Easter eggs are blue and 1/5 are purple. Half the purple eggs have five pieces of candy each, and 1/4 of the blue eggs do. The rest of the eggs only have one piece of candy. If Jerry opens one egg at random, what is the percentage chance he'll get 5 pieces of candy?",
+      "recipe_id": "probability_eggs",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "A=青、¬A=紫、B=飴5個。全卵からの一様選択を相対度数で表す。",
+        "原題の「青の1/4」はP(B|A)でありP(B)ではない。参考解答の independent probabilities という説明は不適切。独立性を仮定せずに30%を導く。",
+        "10個の卵からなる充足例を別に示し、仮定が矛盾していないことも確認する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02059",
+      "source_line_1based": 2060,
+      "source_record_sha256": "1b30172a48fefc0f26ccf311b5d8d35b6b5277d02e71fa01647c91561dea23c3",
+      "raw_question_sha256": "b02189779e8f5dbff277a35796875f4de858db0884e8fffbdf99cccc5917c34c",
+      "source_question": "In the jar, there are 7 blue marbles, 11 red marbles, and some yellow marbles. If the chance of randomly picking a yellow marble is 1/4, how many yellow marbles are there?",
+      "recipe_id": "probability_marbles",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "黄色の個数yは自然数。玉ごとの選ばれやすさに差がないという通常の無作為抽出の読みを採用する。",
+        "解の代入確認だけでなく、任意の自然数yについて条件とy=6が同値であることを証明する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:07274",
+      "source_line_1based": 7275,
+      "source_record_sha256": "b598e58f1ff968cfcfa51e198c53028c248e238e375c06dffcd3d5d368504bea",
+      "raw_question_sha256": "ad67577a5866c83272d8b4ba94f288881e282a2324b09792ceae960385ef2062",
+      "source_question": "20% of the job candidates at a temp agency have experience with Excel. 70% of the candidates are only willing to work day shifts. If a manager picks a candidate at random, what are the odds they know Excel and are willing to work nights?",
+      "recipe_id": "probability_candidates",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "A=Excel経験、B=夜勤可能。日勤のみを¬Bと読む。有限母集団の4区分の相対度数を有理数で表す。",
+        "参考解答は6%としているが属性の独立性は原題にない。1人を無作為抽出しても、属性間の相関が消えるわけではない。",
+        "原題への解答は一意に決まらないこと。両端の20人の例を構成し、有理数確率の可能範囲全体も証明する。追加条件付きの6%は別結論として明示する。"
+      ],
+      "blockers": []
+    }
+  ],
+  "semantic_model_hash": "1df16d0c586d3896661cff818e20dfa61d9748252d3c24fa64b82bd3d32db965"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "intersection_bound",
+  "kind": "method_or_formula",
+  "name_ja": "共通部分の確率の上界",
+  "statement_ja": "0≤P(A∩B)≤P(A)。",
+  "assumptions_ja": "各部分の重みが非負。",
+  "use_when_ja": "二つの属性の相関が不明なとき、何が必ず言えるかを調べる。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.FiniteProbability.intersection_bounds"
+  ],
+  "explanation_outline_ja": [
+    "A∩BはAの一部分。",
+    "P(A)=P(A∩B)+P(A∩¬B)、後者が非負なので上界を得る。"
+  ],
+  "unexpanded": [
+    "有理数の四則演算・一次式の変形はユーザー指定の中学既習として扱う。"
+  ],
+  "educational_baseline": "user_instruction_20260906"
+}

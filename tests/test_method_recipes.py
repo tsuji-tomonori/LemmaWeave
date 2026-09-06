@@ -43,6 +43,38 @@ class MethodRecipes(unittest.TestCase):
         self.nodes['method']['lean_declarations']=[]
         with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
 
+    def individual(self):
+        self.recipe.update(solution_format='individual_lines_v1', authorship='llm_individual',
+                           author_review={'status':'checked','checks_ja':['原題と仮定を作成者が照合']})
+        self.graph['nodes'].append({'name':'line','kind':'theorem','body_status':'available','type_pretty':'line claim'})
+        self.graph['edges']=[{'from':'solution','to':'line'},{'from':'line','to':'lemma'}]
+        self.recipe['steps'][0]['lean_declaration']='line'
+
+    def test_self_review_and_unclassified_dependencies_do_not_block_individual_solution(self):
+        self.individual()
+        result=validate_recipe(self.recipe,self.nodes,self.graph)
+        self.assertTrue(result['solution_ready'])
+        self.assertEqual(result['individual_lines'][0]['type_pretty'],'line claim')
+
+    def test_method_in_final_proof_but_not_in_written_line_is_rejected(self):
+        self.individual()
+        self.graph['edges']=[{'from':'solution','to':'line'},{'from':'solution','to':'lemma'}]
+        with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
+
+    def test_unproved_written_line_is_rejected(self):
+        self.individual()
+        self.recipe['steps'][0]['lean_declaration']='missing'
+        with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
+
+    def test_earlier_line_must_be_used_in_claimed_followup(self):
+        self.individual()
+        self.graph['nodes'].append({'name':'line2','kind':'theorem','body_status':'available'})
+        self.graph['edges'].append({'from':'solution','to':'line2'})
+        self.recipe['steps'].append({'id':'s2','lean_declaration':'line2','requires_steps':['s'],
+                                    'uses_nodes':[],'baseline_ja':'四則演算',
+                                    'condition_ja':'前の行','conclusion_ja':'次の行'})
+        with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
+
 
 class MethodProofEvidence(unittest.TestCase):
     def test_stale_input_or_modified_graph_cannot_promote_proof(self):

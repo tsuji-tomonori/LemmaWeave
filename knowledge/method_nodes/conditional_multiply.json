@@ -1,0 +1,20 @@
+{
+  "id": "conditional_multiply",
+  "kind": "method_or_formula",
+  "name_ja": "条件付き確率の定義と乗法公式",
+  "statement_ja": "P(A∩B)=P(A)P(B|A)。P(B|A)はAの中でBに属する割合。",
+  "assumptions_ja": "P(A)>0。独立性は不要。",
+  "use_when_ja": "集団の割合と、その集団内の割合が与えられたとき。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.FiniteProbability.givenA",
+    "LemmaWeave.Lemmas.FiniteProbability.multiply_given"
+  ],
+  "explanation_outline_ja": [
+    "A∩Bの確率をx、Aの確率をaと置く。",
+    "Aに条件を限った割合はx/aと定義する。a>0なので両辺にaを掛け、x=aP(B|A)を得る。"
+  ],
+  "unexpanded": [
+    "有理数の四則演算・一次式の変形はユーザー指定の中学既習として扱う。"
+  ],
+  "educational_baseline": "user_instruction_20260906"
+}

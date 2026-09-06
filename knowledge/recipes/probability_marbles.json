@@ -1,0 +1,102 @@
+{
+  "id": "probability_marbles",
+  "title_ja": "確率から黄色い玉の個数を逆算する",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02059",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "瓶に青い玉7個、赤い玉11個、黄色い玉が何個かある。等確率で1個選んだとき黄色である確率が1/4なら、黄色は何個か。",
+  "root": "LemmaWeave.Tests.ProbabilitySteps.marbles_solution",
+  "graph": "work/probability-marbles-graph.json",
+  "lean_file": "tests/lean/ProbabilitySteps.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "収集済みGSM8Kの1問をLLMが個別に解答。新規収集数・日本入試数には加えない。",
+  "model_notes_ja": [
+    "黄色の個数yは自然数。玉ごとの選ばれやすさに差がないという通常の無作為抽出の読みを採用する。",
+    "解の代入確認だけでなく、任意の自然数yについて条件とy=6が同値であることを証明する。"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_total",
+      "title_ja": "全体の個数と分母の正値を確認する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "yは黄色い玉の個数なので0以上の整数。",
+      "conclusion_ja": "全体7+11+y=18+y>0。",
+      "baseline_ja": "整数の加法と非負性。"
+    },
+    {
+      "id": "S2",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_ratio",
+      "title_ja": "原題の確率を個数比で表す",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "equal_likelihood_count"
+      ],
+      "condition_ja": "玉は等確率で選ばれる。全体18+y>0、黄色はy個。",
+      "conclusion_ja": "y/(18+y)=1/4。"
+    },
+    {
+      "id": "S3",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_balance",
+      "title_ja": "分母を掛ける",
+      "requires_steps": [
+        "S1",
+        "S2"
+      ],
+      "uses_nodes": [
+        "probability_ratio_equation"
+      ],
+      "condition_ja": "S1により18+y≠0。S2の確率の式。",
+      "conclusion_ja": "y=(1/4)(18+y)。"
+    },
+    {
+      "id": "S4",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_linear",
+      "title_ja": "一次方程式に整理する",
+      "requires_steps": [
+        "S3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "S3の両辺を4倍し、yを左へ移す。",
+      "conclusion_ja": "4y=18+y、したがって3y=18。",
+      "baseline_ja": "等式の両辺の同じ数による乗法・移項。"
+    },
+    {
+      "id": "S5",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_unique",
+      "title_ja": "個数を求める",
+      "requires_steps": [
+        "S4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "S4の3y=18。3≠0。",
+      "conclusion_ja": "y=6。自然数の個数としても6個である。",
+      "baseline_ja": "一次方程式を解く。"
+    },
+    {
+      "id": "S6",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_exists",
+      "title_ja": "得た個数が元の条件を満たす",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "黄色6個を原題へ戻す。",
+      "conclusion_ja": "全体24個、黄色6個なので6/24=1/4。従って解はちょうど6個。",
+      "baseline_ja": "個数の加法と分数の約分。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2060,
+    "checked_model_hash": "1df16d0c586d3896661cff818e20dfa61d9748252d3c24fa64b82bd3d32db965",
+    "checks_ja": [
+      "黄色の個数yは自然数。玉ごとの選ばれやすさに差がないという通常の無作為抽出の読みを採用する。",
+      "解の代入確認だけでなく、任意の自然数yについて条件とy=6が同値であることを証明する。"
+    ]
+  }
+}

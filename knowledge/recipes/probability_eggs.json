@@ -1,0 +1,117 @@
+{
+  "id": "probability_eggs",
+  "title_ja": "卵の色で場合を分け、条件付き確率を使う",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01786",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "イースターの卵の4/5は青、1/5は紫。紫の半分、青の1/4には飴が5個入り、残りは1個入り。卵を無作為に1個選ぶと、飴が5個入っている確率は何%か。",
+  "root": "LemmaWeave.Tests.ProbabilitySteps.eggs_solution",
+  "graph": "work/probability-eggs-graph.json",
+  "lean_file": "tests/lean/ProbabilitySteps.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "収集済みGSM8Kの1問をLLMが個別に解答。新規収集数・日本入試数には加えない。",
+  "model_notes_ja": [
+    "A=青、¬A=紫、B=飴5個。全卵からの一様選択を相対度数で表す。",
+    "原題の「青の1/4」はP(B|A)でありP(B)ではない。参考解答の independent probabilities という説明は不適切。独立性を仮定せずに30%を導く。",
+    "10個の卵からなる充足例を別に示し、仮定が矛盾していないことも確認する。"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_positive",
+      "title_ja": "条件付き確率の分母を確認する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "P(A)=4/5、P(¬A)=1/5。",
+      "conclusion_ja": "両方とも正なので、条件付き確率で割る分母は0ではない。",
+      "baseline_ja": "正の分数は0ではない。"
+    },
+    {
+      "id": "S2",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_blue",
+      "title_ja": "青で飴5個となる確率",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "conditional_multiply"
+      ],
+      "condition_ja": "青の割合4/5、青の中での当たり割合1/4。S1で分母を確認した。",
+      "conclusion_ja": "P(A∩B)=P(A)P(B|A)=(4/5)(1/4)。"
+    },
+    {
+      "id": "S3",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_purple",
+      "title_ja": "紫で飴5個となる確率",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "conditional_complement_multiply"
+      ],
+      "condition_ja": "紫の割合1/5、紫の中での当たり割合1/2。S1で分母を確認した。",
+      "conclusion_ja": "P(¬A∩B)=P(¬A)P(B|¬A)=(1/5)(1/2)。"
+    },
+    {
+      "id": "S4",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_sum",
+      "title_ja": "二つの排反な場合を合計する",
+      "requires_steps": [
+        "S2",
+        "S3"
+      ],
+      "uses_nodes": [
+        "disjoint_probability_split"
+      ],
+      "condition_ja": "卵は青か紫のいずれか一方。飴5個という事象の分割に重複がない。",
+      "conclusion_ja": "P(B)=P(A∩B)+P(¬A∩B)=(4/5)(1/4)+(1/5)(1/2)。"
+    },
+    {
+      "id": "S5",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_fraction",
+      "title_ja": "分数を整理する",
+      "requires_steps": [
+        "S4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "S4の等式。",
+      "conclusion_ja": "P(B)=1/5+1/10=3/10。",
+      "baseline_ja": "分数の乗法・通分・加法。"
+    },
+    {
+      "id": "S6",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_percent",
+      "title_ja": "百分率へ直す",
+      "requires_steps": [
+        "S5"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "S5で求めた確率3/10。",
+      "conclusion_ja": "100P(B)=30。答えは30%。",
+      "baseline_ja": "割合と百分率の換算。"
+    },
+    {
+      "id": "S7",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_exists",
+      "title_ja": "問題の条件を満たす卵が実在できることを確認する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "青で飴5個2個、青で飴1個6個、紫で飴5個1個、紫で飴1個1個の計10個を考える。",
+      "conclusion_ja": "青8/10=4/5、紫2/10=1/5。青の当たり2/8=1/4、紫の当たり1/2。すべての与条件を同時に満たす。",
+      "baseline_ja": "個数と割合、分数の約分。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1787,
+    "checked_model_hash": "1df16d0c586d3896661cff818e20dfa61d9748252d3c24fa64b82bd3d32db965",
+    "checks_ja": [
+      "A=青、¬A=紫、B=飴5個。全卵からの一様選択を相対度数で表す。",
+      "原題の「青の1/4」はP(B|A)でありP(B)ではない。参考解答の independent probabilities という説明は不適切。独立性を仮定せずに30%を導く。",
+      "10個の卵からなる充足例を別に示し、仮定が矛盾していないことも確認する。"
+    ]
+  }
+}

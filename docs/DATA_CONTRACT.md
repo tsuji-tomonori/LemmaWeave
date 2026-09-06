@@ -1,5 +1,7 @@
 # データ契約
 
+> 2026-09-06更新：最新ユーザー指示は `docs/INDIVIDUAL_SOLUTION_POLICY.md`。一問ずつの記述式解答と各行のLean化を先に進め、作成者の自己照合を採用する。中学既習を説明上の前提とし、独立レビュー・全分類は後続作業とする。旧Phase 1総合監査と現在の `solution_ready` は別の判定。
+
 版：0.2 / 2026-09-06。検証CLIは `scripts/lw.py`、受入判定は `scripts/acceptance_report.py` に実装済み。`templates/` は構造の具体例で、実際の問題・実行証跡ではない。
 
 ## 1. 正本とフォルダ

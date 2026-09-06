@@ -1,0 +1,19 @@
+{
+  "id": "disjoint_probability_split",
+  "kind": "method_or_formula",
+  "name_ja": "事象を重複しない二つに分ける",
+  "statement_ja": "B=(A∩B)∪(¬A∩B)なのでP(B)=P(A∩B)+P(¬A∩B)。",
+  "assumptions_ja": "Aと¬Aは全体を尽くし、共通部分が空である。",
+  "use_when_ja": "求める事象が起こる経路を場合分けして合計するとき。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.FiniteProbability.split_event"
+  ],
+  "explanation_outline_ja": [
+    "Bに属するものはAに属するか属さないかのどちらか一方。",
+    "4セルのうちBの2セルの重みを合計する。重複も数え漏れもない。"
+  ],
+  "unexpanded": [
+    "有理数の四則演算・一次式の変形はユーザー指定の中学既習として扱う。"
+  ],
+  "educational_baseline": "user_instruction_20260906"
+}

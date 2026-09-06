@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Order.Field.Rat
 import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
 
 namespace LemmaWeave.Lemmas.FiniteExpectation
 open scoped BigOperators

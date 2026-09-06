@@ -1,0 +1,75 @@
+{
+  "id": "gsm8k_daily2_commute",
+  "title_ja": "往路しか示されない通勤時間の一般形と条件付き解",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00018",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "徒歩の往路2時間、自転車の往路1時間。徒歩往復を週3回、自転車往復を週2回。週合計は？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.commute_solution",
+  "graph": "work/gsm8k-daily2-commute-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "conditional",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "原文はto workの所要時間だけを明記し、from workが同じとは明記しない。復路時間を変数にした可能範囲を先に示す。",
+    "参考解答16時間は復路も同時間という追加条件付き。"
+  ],
+  "steps": [
+    {
+      "id": "commute_formula",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.commute_formula",
+      "title_ja": "復路を変数にする",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "徒歩復路wr、自転車復路brはいずれも非負。往路は2時間と1時間。",
+      "conclusion_ja": "週合計t=3(2+wr)+2(1+br)=8+3wr+2br。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "commute_lower",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.commute_lower",
+      "title_ja": "原文だけで得られる下限",
+      "requires_steps": [
+        "commute_formula"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "復路時間wr,brは非負。",
+      "conclusion_ja": "t≥8時間。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "commute_symmetric",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.commute_symmetric",
+      "title_ja": "往復同時間という追加条件",
+      "requires_steps": [
+        "commute_formula"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "徒歩復路2時間、自転車復路1時間と追加する。",
+      "conclusion_ja": "t=3×4+2×2=16時間。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "commute_examples",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.commute_examples",
+      "title_ja": "一意でない反例",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "復路が往路と同じ場合と、徒歩3時間・自転車2時間の場合。",
+      "conclusion_ja": "前者16時間、後者21時間で、原文の往路条件にはどちらも反しない。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 19,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "原文はto workの所要時間だけを明記し、from workが同じとは明記しない。復路時間を変数にした可能範囲を先に示す。",
+      "参考解答16時間は復路も同時間という追加条件付き。"
+    ]
+  }
+}

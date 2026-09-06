@@ -2,6 +2,12 @@
 
 問題を解くための公式・概念・技法をLean 4の共有補題として持ち、根拠付きの解法と相互リンクするプロジェクトです。パッケージ名は `lemmaweave`、名前空間は `LemmaWeave` です。
 
+最新方針は [一問ずつの記述式解答とLean化](docs/INDIVIDUAL_SOLUTION_POLICY.md)。LLMが原題を個別に読み、説明行ごとに根拠・適用条件・結論とLean定理を対応させます。中学までの内容は説明上の前提とし、作成者の自己照合で進めます。独立レビューと全依存分類は後続作業です。
+
+今回の解答は、[条件付き確率と卵](docs/methods/probability_eggs.md)、[黄色い玉の個数](docs/methods/probability_marbles.md)、[独立性不足と候補者](docs/methods/probability_candidates.md)。現行入力への検証結果は [解法レポート](reports/method-recipes.json) の `individual_lines` と `proof_evidence`、解答完成件数は [バッチ集計](reports/method-batches.json) の `individual_solutions_ready` を参照します。旧 `phase1_complete` は総合監査の別軸です。
+
+以下は従来の到達状況です。
+
 最新の再開記録は [2026-09-06の進捗](reports/PROGRESS_20260906.md)。GSM8K先頭5問の解法モデルと共有補題8本を追加し、固定CIで5モデルの証明・公理監査・補題リンク照合が成功しました。2問は原文に不足する条件を明示したモデルで、独立意味レビューは未完です。
 
 2026-09-05時点では、大学入試センター2026年度本試験「数学Ⅰ」の5小問で、Leanビルドと公理監査が通りました。独立した意味レビューは5小問で完了しました。資料の処理条件と補題台帳の完全な分類は未完です。50小問収集・10小問完了のパイロット目標には未到達です。
@@ -46,7 +52,7 @@ python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py
 
 CI成果物のZIPは `python3 scripts/import_evidence.py <artifact.zip> --run-id <GitHub実行ID>` で取り込みます。現行コード・型・実行出力のハッシュが一致しなければ取り込まず、独立意味レビューや資料の利用条件を自動承認しません。宣言の定義元モジュール・相対ソースパス・取得可能な行範囲は別の圧縮出典ファイルに保存します。
 
-`python3 -m unittest discover -s tests -v` は40テスト。`scripts/inventory.py --write` は実際の依存型と日本語カードを照合し、未分類宣言を型・利用先とともに残します。生成CSVはCI成果物に含まれます。
+`python3 -m unittest discover -s tests -v` は44テスト。`scripts/inventory.py --write` は実際の依存型と日本語カードを照合し、未分類宣言を型・利用先とともに残します。生成CSVはCI成果物に含まれます。
 
 根の型と証明項から参照を取り出し、ラッパー・暗黙参照・インスタンス・再帰の先まで追っています。証明項全文は保存せず、実参照とLeanの非暗号学的な構造ハッシュを保存します。証明ファイル、型、出力、実行入力には別途SHA256を用います。グラフはgzip圧縮JSONで、`scripts/lw.py` はそのまま読み込めます。
 

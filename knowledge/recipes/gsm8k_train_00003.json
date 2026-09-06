@@ -1,40 +1,88 @@
 {
-  "id": "gsm8k_train_00003",
-  "title_ja": "半分の自己資金と倍率のある援助から不足額を求める",
-  "problem_id": "external-gsm8k-main-3101c7d50724:train:00002",
   "collection_id": "external-gsm8k-main-3101c7d50724",
-  "problem_ja": "価格100ドルに対し半額を持ち、15ドルとその2倍の援助を受けた後の不足額を求める。",
-  "root": "LemmaWeave.Tests.GSM8KMethods.wallet_by_methods",
-  "graph": "work/gsm8k-train-00003-graph.json",
-  "lean_file": "tests/lean/GSM8KMethods.lean",
-  "semantic_review_status": "self_review_only",
-  "model_scope": "self_reviewed_model",
   "counting_note_ja": "既に収集したGSM8Kの1問。入試問題数・新規収集数には加えない。",
+  "graph": "work/gsm8k-first-wallet-graph.json",
+  "id": "gsm8k_train_00003",
+  "lean_file": "tests/lean/GSM8KFirstSteps.lean",
   "model_notes_ja": [
-    "不足額を0以上とする条件もモデルに含め、50、30、5の充足例を示す。"
+    "任意の条件を満たす量から不足を導出。充足例と不足額の非負性も照合した。"
   ],
+  "model_scope": "self_reviewed_model",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00002",
+  "problem_ja": "100ドルの財布へ半額を貯金済み。両親が15ドル、祖父母がその2倍。不足は？",
+  "root": "LemmaWeave.Tests.GSM8KFirstSteps.wallet_solution",
+  "semantic_review_status": "self_review_only",
   "steps": [
     {
-      "id": "S1",
-      "title_ja": "自己資金を求める",
+      "id": "wallet_saved",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.wallet_saved",
+      "title_ja": "貯金",
       "requires_steps": [],
       "uses_nodes": [
         "fraction_balance"
       ],
-      "condition_ja": "自己資金×2=100。分母2≠0。",
-      "conclusion_ja": "自己資金=50。"
+      "condition_ja": "s×2=100、2≠0。",
+      "conclusion_ja": "s=50ドル。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
     },
     {
-      "id": "S2",
-      "title_ja": "不足額を保存式から分離する",
+      "id": "wallet_grandparents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.wallet_grandparents",
+      "title_ja": "祖父母の援助",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "両親の15ドルの2倍。",
+      "conclusion_ja": "g=30ドル。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "wallet_available",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.wallet_available",
+      "title_ja": "資金合計",
       "requires_steps": [
-        "S1"
+        "wallet_saved",
+        "wallet_grandparents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "貯金・両親・祖父母は別の資金。",
+      "conclusion_ja": "50+15+30=95ドル。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "wallet_missing",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.wallet_missing",
+      "title_ja": "不足額",
+      "requires_steps": [
+        "wallet_available"
       ],
       "uses_nodes": [
-        "missing_after_gifts"
+        "remaining_balance"
       ],
-      "condition_ja": "祖父母の援助=2×15、自己資金+15+祖父母の援助+不足額=100。",
-      "conclusion_ja": "不足額=100−50−(1+2)×15=5。"
+      "condition_ja": "95+m=100。",
+      "conclusion_ja": "m=100−95=5ドル。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "wallet_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.wallet_exists",
+      "title_ja": "非負性と充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "s=50,g=30,m=5。",
+      "conclusion_ja": "元の半額・2倍・資金保存を満たし不足額は非負。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
     }
-  ]
+  ],
+  "title_ja": "貯金と援助から不足額を求める",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3,
+    "checked_model_hash": "f309dcf47412bffc8efe969f19a1310fc34fd5a37a3229bb1042688c03d85682",
+    "checks_ja": [
+      "任意の条件を満たす量から不足を導出。充足例と不足額の非負性も照合した。"
+    ]
+  }
 }

@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_daily_cards",
+  "title_ja": "赤かつ3の倍数のカードを引く回数の期待値",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02389",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "標準52枚から絵札と8を除く。復元して36回引く。赤かつ番号が3の倍数のカードを引く期待回数は？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907.cards_solution",
+  "graph": "work/gsm8k-daily-cards-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "Marcus/Markは同じ抽出手順の人物として扱う。標準デッキはジョーカーなし、絵札JQK。",
+    "randomは残存各カードが等確率、36 timesは合計36回と読む。復元により周辺確率が一定。",
+    "有限重み付き期待値の線形性を一般に証明し、各回の周辺期待値から導出する。独立な全試行列の積標本空間の構築は形式化境界外で、原題との対応を作者が照合する。"
+  ],
+  "steps": [
+    {
+      "id": "cards_deck",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cards_deck",
+      "title_ja": "残るカードを数える",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ジョーカーなし、各スートA,2,…,10,J,Q,KからJ,Q,K,8を除く。",
+      "conclusion_ja": "各スート9枚で4×9=36枚。Aは1として扱う。",
+      "baseline_ja": "有限集合の除外と積の法則。Leanでは4スート×13ランクを実際にフィルタする。"
+    },
+    {
+      "id": "cards_favorable",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cards_favorable",
+      "title_ja": "成功カードを数える",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤は2スート。残る番号の3の倍数は3,6,9。",
+      "conclusion_ja": "成功は2×3=6枚。8除去はこの集合を減らさない。",
+      "baseline_ja": "2属性の共通部分を直接数える。赤と番号の独立性を無根拠に仮定しない。"
+    },
+    {
+      "id": "cards_probability",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cards_probability",
+      "title_ja": "1回の成功確率",
+      "requires_steps": [
+        "cards_deck",
+        "cards_favorable"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り36枚の各カードを等確率で引く。",
+      "conclusion_ja": "6/36=1/6。",
+      "baseline_ja": "有限等確率の定義：成功対象数÷全対象数。"
+    },
+    {
+      "id": "cards_indicator_mean",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cards_indicator_mean",
+      "title_ja": "指示変数の期待値",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "成功なら1、失敗なら0。各カードの重み1/36。",
+      "conclusion_ja": "E[I]=6×(1/36)×1+30×(1/36)×0=1/6。",
+      "baseline_ja": "有限期待値の定義：値×確率を全標本で加算する。Leanで残存カード集合上の和を確認。"
+    },
+    {
+      "id": "cards_expectation",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cards_expectation",
+      "title_ja": "36回の成功回数",
+      "requires_steps": [
+        "cards_probability"
+      ],
+      "uses_nodes": [
+        "finite_expected_count"
+      ],
+      "condition_ja": "各回復元するので成功確率は毎回1/6。X=I₁+…+I₃₆。",
+      "conclusion_ja": "有限和の分配法則・順序交換でE[X]=ΣE[Iᵢ]=36×(1/6)=6回。独立性はこの線形性には不要で、実際に必ず6回成功する意味ではない。",
+      "baseline_ja": "期待値の線形性は中学既習とはせず、共有補題で定義から証明する。"
+    },
+    {
+      "id": "cards_witness",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cards_witness",
+      "title_ja": "確率の正規化と仮定の充足を点検",
+      "requires_steps": [
+        "cards_expectation",
+        "cards_indicator_mean"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "重み1/36は非負で、残存36枚にわたる総和は1。",
+      "conclusion_ja": "成功指示変数の周辺平均1/6は実現可能。共有カードを使う例でも和の期待値は6で、線形性に独立性不要と確認。原題の復元抽出の独立同時分布を構築したとは主張しない。",
+      "baseline_ja": "非負性・総和1・充足例による空虚な仮定の排除。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2390,
+    "checked_model_hash": "e958c9ce30982deaaa1eb14f7c3ca5549c125b26322604f46616e26a65934542",
+    "checks_ja": [
+      "Marcus/Markは同じ抽出手順の人物として扱う。標準デッキはジョーカーなし、絵札JQK。",
+      "randomは残存各カードが等確率、36 timesは合計36回と読む。復元により周辺確率が一定。",
+      "有限重み付き期待値の線形性を一般に証明し、各回の周辺期待値から導出する。独立な全試行列の積標本空間の構築は形式化境界外で、原題との対応を作者が照合する。"
+    ]
+  }
+}

@@ -26,6 +26,7 @@ COMMANDS = [
     ['lake', 'build', 'LemmaWeave.Lemmas.ArithmeticMethods', 'LemmaWeave.Problems.GSM8K.Goals'],
     ['lake', 'build', 'LemmaWeave.Problems.Probability.Model'],
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.NextModels'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0907Models', 'LemmaWeave.Lemmas.FiniteExpectation'],
     ['python3', 'scripts/run_method_targets.py'],
     ['python3', 'scripts/check_method_recipes.py', '--render'],
     ['python3', '-m', 'unittest', 'discover', '-s', 'tests', '-v'],

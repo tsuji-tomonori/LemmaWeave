@@ -55,8 +55,12 @@ theorem partner_solution :
     (∀ p m r, PartnerShare p m r → r = 800) :=
   ⟨partner_exists, partner_part, partner_mike, partner_remaining⟩
 
-theorem hats_pink (p g t : ℕ) (x : Hats p g t) : p = 16 := by omega
-theorem hats_green (p g t : ℕ) (x : Hats p g t) : g = 3 := by omega
+theorem hats_pink (p g t : ℕ) (x : Hats p g t) : p = 16 := by
+  rcases x with ⟨hp, hg, ht⟩
+  omega
+theorem hats_green (p g t : ℕ) (x : Hats p g t) : g = 3 := by
+  rcases x with ⟨hp, hg, ht⟩
+  omega
 theorem hats_yellow : (24 : ℕ) = 24 := rfl
 theorem hats_total (p g t : ℕ) (x : Hats p g t) : t = 43 := by
   rw [x.2.2, hats_pink p g t x, hats_green p g t x]
@@ -75,7 +79,7 @@ theorem commute_lower (wr br t : ℚ) (x : Commute wr br t) : 8 ≤ t := by
 theorem commute_symmetric (t : ℚ) (x : Commute 2 1 t) : t = 16 := by
   rw [commute_formula 2 1 t x]; norm_num
 theorem commute_examples : Commute 2 1 16 ∧ Commute 3 2 21 ∧ (16 : ℚ) ≠ 21 := by
-  norm_num [Commute]
+  norm_num [LemmaWeave.Problems.GSM8K.Daily0907B.Commute]
 theorem commute_solution :
     (∀ wr br t, Commute wr br t → t = 8 + 3 * wr + 2 * br) ∧
     (∀ wr br t, Commute wr br t → 8 ≤ t) ∧
@@ -103,9 +107,12 @@ theorem cycling_solution :
     (∀ d w a h, Cycling d w a h → h = 16) ∧ (400 / 25 : ℚ) = 16 :=
   ⟨cycling_exists, cycling_daily, cycling_work, cycling_all, cycling_hours, cycling_unit_check⟩
 
-theorem stamps_truck (t r a : ℕ) (x : Stamps t r a) : t = 20 := by omega
+theorem stamps_truck (t r a : ℕ) (x : Stamps t r a) : t = 20 := by
+  rcases x with ⟨ht, hr, ha⟩
+  omega
 theorem stamps_rose (t r a : ℕ) (x : Stamps t r a) : r = 7 := by
-  have := stamps_truck t r a x; omega
+  rcases x with ⟨ht, hr, ha⟩
+  omega
 theorem stamps_total (t r a : ℕ) (x : Stamps t r a) : a = 38 := by
   rw [x.2.2, stamps_truck t r a x, stamps_rose t r a x]
 theorem stamps_exists : Stamps 20 7 38 := by norm_num [Stamps]
@@ -160,9 +167,14 @@ theorem tops_shoes (s h t e : ℚ) (x : Tops s h t e) : h = 20 := by
   norm_num at hh
   exact hh
 theorem tops_total (s h t e : ℚ) (x : Tops s h t e) : t = 20 := by
-  rw [tops_shorts s h t e x, tops_shoes s h t e x] at x; linarith [x.2.2.1]
+  have hs := tops_shorts s h t e x
+  have hh := tops_shoes s h t e x
+  have hb := x.2.2.1
+  linarith
 theorem tops_each (s h t e : ℚ) (x : Tops s h t e) : e = 5 := by
-  rw [tops_total s h t e x] at x; linarith [x.2.2.2]
+  have ht := tops_total s h t e x
+  have he := x.2.2.2
+  linarith
 theorem tops_exists : Tops 35 20 20 5 := by norm_num [Tops]
 theorem tops_solution :
     Tops 35 20 20 5 ∧ (∀ s h t e, Tops s h t e → s = 35) ∧

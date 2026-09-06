@@ -1,0 +1,40 @@
+{
+  "id": "gsm8k_train_00003",
+  "title_ja": "半分の自己資金と倍率のある援助から不足額を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00002",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "価格100ドルに対し半額を持ち、15ドルとその2倍の援助を受けた後の不足額を求める。",
+  "root": "LemmaWeave.Tests.GSM8KMethods.wallet_by_methods",
+  "graph": "work/gsm8k-train-00003-graph.json",
+  "lean_file": "tests/lean/GSM8KMethods.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "既に収集したGSM8Kの1問。入試問題数・新規収集数には加えない。",
+  "model_notes_ja": [
+    "不足額を0以上とする条件もモデルに含め、50、30、5の充足例を示す。"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "title_ja": "自己資金を求める",
+      "requires_steps": [],
+      "uses_nodes": [
+        "fraction_balance"
+      ],
+      "condition_ja": "自己資金×2=100。分母2≠0。",
+      "conclusion_ja": "自己資金=50。"
+    },
+    {
+      "id": "S2",
+      "title_ja": "不足額を保存式から分離する",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "missing_after_gifts"
+      ],
+      "condition_ja": "祖父母の援助=2×15、自己資金+15+祖父母の援助+不足額=100。",
+      "conclusion_ja": "不足額=100−50−(1+2)×15=5。"
+    }
+  ]
+}

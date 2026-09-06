@@ -1,0 +1,41 @@
+{
+  "id": "gsm8k_train_00001",
+  "title_ja": "基準量と半分の量の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00000",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "4月の48個と、その半分である5月の個数を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KMethods.clips_by_methods",
+  "graph": "work/gsm8k-train-00001-graph.json",
+  "lean_file": "tests/lean/GSM8KMethods.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "conditional",
+  "counting_note_ja": "既に収集したGSM8Kの1問。入試問題数・新規収集数には加えない。",
+  "model_notes_ja": [
+    "原文は48人への販売と記し、1人1個を明記していない。48個という参考解答の解釈を採用した条件付きモデル。原題からの無条件な結論には数えない。",
+    "個数のモデルを有理数へ埋め込み、解は非負整数24と72。すべての有理数解で結論が成立するため、整数解にも特殊化できる。"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "title_ja": "半分の量を求める",
+      "requires_steps": [],
+      "uses_nodes": [
+        "fraction_balance"
+      ],
+      "condition_ja": "5月の量×2=48。分母2≠0。",
+      "conclusion_ja": "5月の量=48÷2=24。"
+    },
+    {
+      "id": "S2",
+      "title_ja": "二つの月を合計する",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "scaled_total"
+      ],
+      "condition_ja": "5月の量=(1/2)×48、合計=48+5月の量。",
+      "conclusion_ja": "合計=(1+1/2)×48=72。"
+    }
+  ]
+}

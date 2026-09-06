@@ -25,3 +25,17 @@ class MethodRecipes(unittest.TestCase):
     def test_forbidden_axiom_is_rejected(self):
         self.graph['nodes'][1]['kind']='axiom'
         with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
+    def test_dependency_from_another_root_is_rejected(self):
+        self.graph['roots'].append('unrelated')
+        self.graph['nodes'].append({'name':'unrelated','kind':'theorem','body_status':'available'})
+        self.graph['edges']=[{'from':'unrelated','to':'lemma'}]
+        with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
+    def test_empty_steps_are_rejected(self):
+        self.recipe['steps']=[]
+        with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
+    def test_step_without_method_is_rejected(self):
+        self.recipe['steps'][0]['uses_nodes']=[]
+        with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
+    def test_method_without_declaration_is_rejected(self):
+        self.nodes['method']['lean_declarations']=[]
+        with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)

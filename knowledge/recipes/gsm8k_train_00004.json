@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_train_00004",
+  "title_ja": "読み残した量を基準に半分を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00003",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "全120ページ、昨日12ページ、今日はその2倍を読み、明日は残りの半分を読む。",
+  "root": "LemmaWeave.Tests.GSM8KMethods.reading_by_methods",
+  "graph": "work/gsm8k-train-00004-graph.json",
+  "lean_file": "tests/lean/GSM8KMethods.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "既に収集したGSM8Kの1問。入試問題数・新規収集数には加えない。",
+  "model_notes_ja": [
+    "日ごとに重複しない未読ページを順に読むモデル。今日24、残り84、明日42の非負整数の充足例を示す。",
+    "参考解答中の人名Mailaは原題Julieと一致しないため、原題の人物を優先して人名に依存しないモデルとした。"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "title_ja": "明日の量と残量の関係を整理する",
+      "requires_steps": [],
+      "uses_nodes": [
+        "fraction_balance"
+      ],
+      "condition_ja": "明日の量×2=残量。分母2≠0。",
+      "conclusion_ja": "明日の量=(1/2)×残量。"
+    },
+    {
+      "id": "S2",
+      "title_ja": "残量を基準に割合を適用する",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "fraction_remaining",
+        "remaining_nonnegative"
+      ],
+      "condition_ja": "今日の量=2×12、(12+今日の量)+残量=120。12+今日の量=36≤120。",
+      "conclusion_ja": "明日の量=(1/2)×(120−(12+24))=42。残量も0以上である。"
+    }
+  ]
+}

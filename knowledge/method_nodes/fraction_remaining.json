@@ -1,0 +1,18 @@
+{
+  "id": "fraction_remaining",
+  "kind": "method_or_formula",
+  "name_ja": "残量の一定割合を取る",
+  "statement_ja": "使用量+残量=全体、次の量=r×残量なら、次の量=r×(全体−使用量)。",
+  "assumptions_ja": "同一単位の有理数量。残りの一部なら0≤r≤1と0≤使用量≤全体を確認。",
+  "use_when_ja": "残っているページの半分など、基準量が変わる割合。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.ArithmeticMethods.fraction_of_remaining"
+  ],
+  "explanation_outline_ja": [
+    "割合の基準が元の全体でなく残量であることを確定する。",
+    "保存式を使って残量を全体−使用量へ置き換える。"
+  ],
+  "unexpanded": [
+    "残量の保存式、割合と基準量。"
+  ]
+}

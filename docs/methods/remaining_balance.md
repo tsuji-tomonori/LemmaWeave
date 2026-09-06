@@ -23,3 +23,5 @@
 
 - [予算の保存から靴代を求める](gsm8k_next_clothes.md)
 - [通常勤務と残業を分けて賃金を求める](gsm8k_next_overtime.md)
+- [貯金と援助から不足額を求める](gsm8k_train_00003.md)
+- [残りの半分を順序通り求める](gsm8k_train_00004.md)

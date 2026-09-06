@@ -1,5 +1,7 @@
 # 受入条件・監査テスト仕様
 
+> 2026-09-06更新：最新ユーザー指示は `docs/INDIVIDUAL_SOLUTION_POLICY.md`。一問ずつの記述式解答と各行のLean化を先に進め、作成者の自己照合を採用する。中学既習を説明上の前提とし、独立レビュー・全分類は後続作業とする。旧Phase 1総合監査と現在の `solution_ready` は別の判定。
+
 以下は維持すべき判定基準と監査テスト仕様。実装済みの判定は `scripts/acceptance_report.py`、現在の結果は `reports/acceptance.json`、実行証拠は `reports/latest-ci-replay.json` を参照する。基準の記載だけを合格の証拠にはしない。
 
 ## 1. 小問のPhase 1完了

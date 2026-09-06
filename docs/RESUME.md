@@ -1,3 +1,25 @@
+# 再開時の最優先：一問ずつの記述式解答
+
+最新ユーザー指示は [個別解答方針](INDIVIDUAL_SOLUTION_POLICY.md)。LLMが問題を一問ずつ読み、根拠・条件・結論を順に説明し、各行をLean化する。中学既習の詳細分類、独立レビューを待たない。以下の旧記録の停止条件よりこの指示を優先する。
+
+今回の対象はGSM8K固定版trainの1始まり1787・2060・7275行。`corpus/method_batches/GSM8K-INDIVIDUAL-PROBABILITY-0001.json`、`tests/lean/ProbabilitySteps.lean`、`knowledge/recipes/probability_*.json`を読む。条件付き確率、確率の逆算、独立性不足の反例を個別に扱った。生の結果・成功実行との結合は `reports/method-recipes.json` で確認する。
+
+次の一問の具体候補は同じ固定版train 2390行のトランプと期待回数。原題を自分で読んで解答を作る。絵札と8を除いた全36枚、赤の3・6・9の6枚、1回の該当確率1/6、36回の指示変数の和、期待値の線形性を順番にモデル化する。期待値の式を未説明で仮定しない。復元抽出により各回の周辺分布が同じことと、線形性自体には独立性が不要なことを分ける。この候補はまだ形式化・検証済み件数へ含めない。
+
+検証は既存の固定GitHub Actionsを用いる。各レシピにLeanファイルを登録し、必要な共有モジュールをreplayのbuildへ追加する。成功後にCI成果物を取り込み、`python3 scripts/check_method_recipes.py --render`。数学の個別解答をスクリプトで自動生成しない。
+
+---
+
+以下は履歴。現在の優先順位・件数は上記と最新レポートを参照する。
+
+# 最新の再開位置（2026-09-06）
+
+[進捗と残件](../reports/PROGRESS_20260906.md) と `corpus/method_batches/GSM8K-METHOD-0001.json` を読む。GSM8K先頭5問のモデル・解法を追加した。train第1問と第5問は追加解釈を明示した条件付きモデルで、全5問の独立意味レビューは未実施。次の解法抽出対象は固定train 6〜10行目。原題忠実性の判断を参考解答へ委譲しない。
+
+検証は `python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py`、成功CI取り込みは従来どおり `scripts/import_evidence.py`。取り込み後に `python3 scripts/check_method_recipes.py --render` で現在のLean入力・グラフ・成功実行を再照合し、説明ページとバッチ集計を更新する。対象を追加する際はレシピの `lean_file` を必ず登録する。
+
+以下は前回の再開記録。今回の差分・集計は上記を優先する。
+
 # 現在の完了状況と残る作業
 
 PR #1はマージ済み。その後の独立レビュー、候補登録、分類もmainへ順次反映した。ユーザーは別エージェントの利用・マージ・mainへのコミットとpushを明示的に許可している。承認待ちを再開条件にしない。

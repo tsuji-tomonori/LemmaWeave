@@ -1,0 +1,18 @@
+{
+  "id": "scaled_total",
+  "kind": "method_or_formula",
+  "name_ja": "基準量とその一定倍を合計する",
+  "statement_ja": "追加量=r×基準量、合計=基準量+追加量なら、合計=(1+r)×基準量。",
+  "assumptions_ja": "同じ単位の有理数量。個数として読むときは非負整数であることを別途確認。",
+  "use_when_ja": "前月の半分、前日の2倍などの量を合計する。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.ArithmeticMethods.scaled_total"
+  ],
+  "explanation_outline_ja": [
+    "追加量の関係を合計式へ代入する。",
+    "分配法則で基準量をくくる。"
+  ],
+  "unexpanded": [
+    "分配法則、加法、数量と単位の対応。"
+  ]
+}

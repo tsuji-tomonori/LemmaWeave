@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "id": "GSM8K-METHOD-0001",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+  "source_file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+  "source_url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+  "license_notice": "reviews/GSM8K-LICENSE.txt",
+  "source_retrieval": "git clone of pinned upstream; train.jsonl SHA256 matched original import manifest",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Model.lean",
+    "LemmaWeave/Problems/GSM8K/Goals.lean"
+  ],
+  "semantic_model_hash": "66ae985b73a1063097b5cf1cd46ff673c26890d3f404b9a0c62d22aec54e5116",
+  "author_session_id": "lemmaweave-work-20260906-d49f13b0e203",
+  "review_status": "self_review_only",
+  "problems": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00000",
+      "source_line_1based": 1,
+      "source_record_sha256": "e880dec1c0da9391ca7c7657d2d4fa5c03714e3e38815606d7b386da34565db3",
+      "raw_question_sha256": "73429d562982300e6643d83a84428a22e0656773b67dad037d2de2f8bc0b45b9",
+      "normalized_question_sha256": "73429d562982300e6643d83a84428a22e0656773b67dad037d2de2f8bc0b45b9",
+      "recipe_id": "gsm8k_train_00001",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional",
+      "modeling_notes_ja": [
+        "原文は48人への販売と記し、1人1個を明記していない。48個という参考解答の解釈を採用した条件付きモデル。原題からの無条件な結論には数えない。",
+        "個数のモデルを有理数へ埋め込み、解は非負整数24と72。すべての有理数解で結論が成立するため、整数解にも特殊化できる。"
+      ],
+      "blockers": [
+        {
+          "kind": "semantic_ambiguity",
+          "reason_ja": "48人から48個への対応には1人1個という解釈が必要。"
+        }
+      ],
+      "review_followup_ja": "独立レビューは未実施。最新ユーザー指示により解答作成を妨げない後続作業。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00001",
+      "source_line_1based": 2,
+      "source_record_sha256": "239ff1c1c5ecce781a78e3487cab5aa76a5ab80076f77e578bd2529d31c1ced1",
+      "raw_question_sha256": "3f23a7d4df7cb484dc2414bb2632f29e51a580a202d5968f1dbca00ed0f210bc",
+      "normalized_question_sha256": "3f23a7d4df7cb484dc2414bb2632f29e51a580a202d5968f1dbca00ed0f210bc",
+      "recipe_id": "gsm8k_train_00002",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "一定時給に比例するモデル。端数時間も比例配分し、中間値を丸めない。"
+      ],
+      "blockers": [],
+      "review_followup_ja": "独立レビューは未実施。最新ユーザー指示により解答作成を妨げない後続作業。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00002",
+      "source_line_1based": 3,
+      "source_record_sha256": "3c0af857cb8851bcb0f9b5e470a4707e297f140402c43f4f76be02c0bed2bcd6",
+      "raw_question_sha256": "9eea4e53dec08963ef76fdee76346277a0ae3356c2c1bb67223507ebd6340740",
+      "normalized_question_sha256": "9eea4e53dec08963ef76fdee76346277a0ae3356c2c1bb67223507ebd6340740",
+      "recipe_id": "gsm8k_train_00003",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "不足額を0以上とする条件もモデルに含め、50、30、5の充足例を示す。"
+      ],
+      "blockers": [],
+      "review_followup_ja": "独立レビューは未実施。最新ユーザー指示により解答作成を妨げない後続作業。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00003",
+      "source_line_1based": 4,
+      "source_record_sha256": "30d28df80aae1d9f46889d2c9d4a2faef05c6d4c9fe98a728c111c181a15d3ee",
+      "raw_question_sha256": "4ed90b091532ab4071ce410731d178b500525d6700568f1e94035e7694c22d23",
+      "normalized_question_sha256": "4ed90b091532ab4071ce410731d178b500525d6700568f1e94035e7694c22d23",
+      "recipe_id": "gsm8k_train_00004",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "日ごとに重複しない未読ページを順に読むモデル。今日24、残り84、明日42の非負整数の充足例を示す。",
+        "参考解答中の人名Mailaは原題Julieと一致しないため、原題の人物を優先して人名に依存しないモデルとした。"
+      ],
+      "blockers": [],
+      "review_followup_ja": "独立レビューは未実施。最新ユーザー指示により解答作成を妨げない後続作業。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00004",
+      "source_line_1based": 5,
+      "source_record_sha256": "ccb761d729f8152e880d4fda565e353672664326610f0bd0606031956c1f555e",
+      "raw_question_sha256": "d38bacc8724a241927dec39e1459b3c17295f79d244c7ec4a518303968c9dc01",
+      "normalized_question_sha256": "2e8fc28b2be60becb4712feab9ad7c96236d40cf8bebb94e5b2e6634d893450e",
+      "recipe_id": "gsm8k_train_00005",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional",
+      "modeling_notes_ja": [
+        "原文の一年には週数や端数日の処理が明記されていない。52週は参考解答の規約であり、原題からの無条件な結論と扱わない。"
+      ],
+      "blockers": [
+        {
+          "kind": "semantic_ambiguity",
+          "reason_ja": "一年の週数は原文で未指定。52週での答えは条件付き。"
+        }
+      ],
+      "review_followup_ja": "独立レビューは未実施。最新ユーザー指示により解答作成を妨げない後続作業。"
+    }
+  ],
+  "model_revision_note_ja": "初回CIで不在だったRat.Basicのimportを固定版に存在するAlgebra.Order.Field.Ratへ訂正。数量・仮定・目標は変更なし。"
+}

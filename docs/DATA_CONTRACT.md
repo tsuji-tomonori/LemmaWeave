@@ -1,6 +1,8 @@
 # データ契約
 
-版：0.1。これは実装用の仕様であり、スキーマ／検証CLIはまだ実装していない。`templates/` は構造の具体例で、実際の問題・実行証跡ではない。
+> 2026-09-06更新：最新ユーザー指示は `docs/INDIVIDUAL_SOLUTION_POLICY.md`。一問ずつの記述式解答と各行のLean化を先に進め、作成者の自己照合を採用する。中学既習を説明上の前提とし、独立レビュー・全分類は後続作業とする。旧Phase 1総合監査と現在の `solution_ready` は別の判定。
+
+版：0.2 / 2026-09-06。検証CLIは `scripts/lw.py`、受入判定は `scripts/acceptance_report.py` に実装済み。`templates/` は構造の具体例で、実際の問題・実行証跡ではない。
 
 ## 1. 正本とフォルダ
 
@@ -39,7 +41,9 @@ lemmaweave/
   work/                          # 未完成コード・探索。合格対象とは隔離
 ```
 
-このツリーは予定構成であり、今回の文書パッケージにLeanコードや実装済みCLIが存在することは意味しない。
+このツリーには当初の予定構成も含む。実際の証明バリアントは `corpus/proof_variants/`、解法のノードとレシピは `knowledge/method_nodes/` と `knowledge/recipes/` にある。
+
+外部データセットの解法バッチは `corpus/method_batches/` で入試台帳と分離する。各問題は元のcollection・split・行ID、原レコードと問題のハッシュ、固定したモデル・目標ファイルの合成ハッシュ、レシピID、自己／独立意味レビュー状態、追加条件と阻害要因を保持する。`scripts/run_method_targets.py` がレシピの全Leanファイルを実行し、`scripts/check_method_recipes.py` が実際の成功実行・現在の入力・出力グラフを照合する。モデルのLean検証数と原題の意味レビュー済み数は別集計。条件付きモデルを無条件の問題証明数へ加えない。
 
 ## 2. エンティティ
 

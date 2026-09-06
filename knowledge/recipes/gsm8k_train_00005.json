@@ -1,0 +1,28 @@
+{
+  "id": "gsm8k_train_00005",
+  "title_ja": "反復する手紙の枚数を週数の関数として示す",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00004",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1通3ページを2人に週2回書く総ページ数を、週数を明示して求める。",
+  "root": "LemmaWeave.Tests.GSM8KMethods.letters_by_methods",
+  "graph": "work/gsm8k-train-00005-graph.json",
+  "lean_file": "tests/lean/GSM8KMethods.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "conditional",
+  "counting_note_ja": "既に収集したGSM8Kの1問。入試問題数・新規収集数には加えない。",
+  "model_notes_ja": [
+    "原文の一年には週数や端数日の処理が明記されていない。52週は参考解答の規約であり、原題からの無条件な結論と扱わない。"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "title_ja": "週数を変数として反復量を合成する",
+      "requires_steps": [],
+      "uses_nodes": [
+        "repeated_groups"
+      ],
+      "condition_ja": "週当たり同じ頻度。対象期間はw週とする。",
+      "conclusion_ja": "総数=(3×2×2)×w=12w。w=52という追加規約の下では624。"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "remaining_balance",
+  "kind": "method_or_formula",
+  "name_ja": "保存式から残量を求める",
+  "statement_ja": "使用量+残量=全体 ⇔ 残量=全体−使用量。",
+  "assumptions_ja": "同じ単位の有理数。物理的な残量には0≤使用量≤全体を別途確認。",
+  "use_when_ja": "使用後の残り、読み終えていないページ数を求める。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.ArithmeticMethods.remaining_iff"
+  ],
+  "explanation_outline_ja": [
+    "両辺から使用量を引く。",
+    "逆向きは使用量を足して全体との一致を確認する。"
+  ],
+  "unexpanded": [
+    "加減の逆演算、非負数量の条件。"
+  ]
+}

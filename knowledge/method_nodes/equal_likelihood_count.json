@@ -1,0 +1,19 @@
+{
+  "id": "equal_likelihood_count",
+  "kind": "method_or_formula",
+  "name_ja": "等確率の抽出を個数の比で表す",
+  "statement_ja": "全要素を同じ確率で選ぶと、該当する要素の確率は該当数÷全体数。",
+  "assumptions_ja": "全要素を等確率で選ぶ。全体が空でない。",
+  "use_when_ja": "確率と他の色の個数から未知の個数を逆算するとき。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.FiniteProbability.yellowChance"
+  ],
+  "explanation_outline_ja": [
+    "全体n個それぞれが選ばれる確率は1/n。",
+    "該当するx個は互いに異なるので、該当確率はx/n。今回はこの相対度数モデルを原題に対応させる。"
+  ],
+  "unexpanded": [
+    "有理数の四則演算・一次式の変形はユーザー指定の中学既習として扱う。"
+  ],
+  "educational_baseline": "user_instruction_20260906"
+}

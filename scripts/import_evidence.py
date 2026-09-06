@@ -70,6 +70,10 @@ def import_evidence(root, archive, run_id):
     required += [str(p.relative_to(root)) for folder, pattern in
                  [('scripts', '*.py'), ('tests', '*.py'), ('tests/lean', '*.lean'), ('knowledge/nodes', '*.json')]
                  for p in sorted((root / folder).glob(pattern))]
+    required += [str(p.relative_to(root)) for folder in
+                 ['knowledge/method_nodes', 'knowledge/recipes', 'corpus/method_batches']
+                 for p in sorted((root / folder).glob('*.json'))]
+    required += [str(p.relative_to(root)) for p in sorted((root / 'LemmaWeave').rglob('*.lean'))]
     for name in required:
         if replay['inputs']['files'].get(name) != sha((root / name).read_bytes()):
             raise ValueError('replay is stale for current input: ' + name)

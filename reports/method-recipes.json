@@ -1,11 +1,290 @@
 [
   {
+    "recipe": "gsm8k_train_00001",
+    "root": "LemmaWeave.Tests.GSM8KMethods.clips_by_methods",
+    "audit": "passed",
+    "steps": 2,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [],
+    "solution_ready": false,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090544-e72ac4be/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "912f9bbae3e126dc620fa34dedae305231bcf0c7c310a935098eb06e7a3044dc"
+    },
+    "recipe_sha256": "90d63eaebba909cf9603baacf356f71a3ea818b86d6e7398a5013017bb3e7326",
+    "graph_archive": "reports/dependencies/methods/gsm8k_train_00001.json.gz"
+  },
+  {
+    "recipe": "gsm8k_train_00002",
+    "root": "LemmaWeave.Tests.GSM8KMethods.earnings_by_methods",
+    "audit": "passed",
+    "steps": 1,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [],
+    "solution_ready": false,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090544-e72ac4be/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "7085b9f34b0441aa9cd16d623945c48644ed8bd0d82616e2ff3e208bbf5610d1"
+    },
+    "recipe_sha256": "61228048f7e73740c01a2476121b7a5934637b17b03857c1a2b7ce7684d2b82f",
+    "graph_archive": "reports/dependencies/methods/gsm8k_train_00002.json.gz"
+  },
+  {
+    "recipe": "gsm8k_train_00003",
+    "root": "LemmaWeave.Tests.GSM8KMethods.wallet_by_methods",
+    "audit": "passed",
+    "steps": 2,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [],
+    "solution_ready": false,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090544-e72ac4be/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "bea46a9bb2b06604fad74aa08c7c30537c65c021377ecc9fb557dae01208867b"
+    },
+    "recipe_sha256": "d5952f07d7c3c64be975b5f7e2c45c42d2374ead13c8ce61e31b3fa16eef980c",
+    "graph_archive": "reports/dependencies/methods/gsm8k_train_00003.json.gz"
+  },
+  {
+    "recipe": "gsm8k_train_00004",
+    "root": "LemmaWeave.Tests.GSM8KMethods.reading_by_methods",
+    "audit": "passed",
+    "steps": 2,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [],
+    "solution_ready": false,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090544-e72ac4be/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "73e6b3fa4dd14944788109aeb0efb655572ad220d9756798f6e28056e0cc6e5a"
+    },
+    "recipe_sha256": "141ff58c186a4f2088eac06fff9d2c33ed79de79e7d51cdd88babbc59f604bca",
+    "graph_archive": "reports/dependencies/methods/gsm8k_train_00004.json.gz"
+  },
+  {
+    "recipe": "gsm8k_train_00005",
+    "root": "LemmaWeave.Tests.GSM8KMethods.letters_by_methods",
+    "audit": "passed",
+    "steps": 1,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [],
+    "solution_ready": false,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090544-e72ac4be/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "91c27f72688cdc030a54839412be4512534d1aadfc8bbd57f1643cddaafa8ab9"
+    },
+    "recipe_sha256": "77e8c35251a75701ad53f4a9fcceca59c7eaac1f71ad83d219f65beda36af3e6",
+    "graph_archive": "reports/dependencies/methods/gsm8k_train_00005.json.gz"
+  },
+  {
+    "recipe": "probability_candidates",
+    "root": "LemmaWeave.Tests.ProbabilitySteps.candidates_solution",
+    "audit": "passed",
+    "steps": 6,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "S1",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_nights",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table),\n  LemmaWeave.Problems.Probability.Candidates t → LemmaWeave.Lemmas.FiniteProbability.probB t = 3 / 10",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S2",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_bounds",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table),\n  LemmaWeave.Problems.Probability.Candidates t → 0 ≤ t.ab ∧ t.ab ≤ 1 / 5",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S3",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_attain",
+        "type_pretty": "∀ (x : ℚ), 0 ≤ x → x ≤ 1 / 5 → ∃ t, LemmaWeave.Problems.Probability.Candidates t ∧ t.ab = x",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S4",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_range",
+        "type_pretty": "∀ (x : ℚ), (∃ t, LemmaWeave.Problems.Probability.Candidates t ∧ t.ab = x) ↔ 0 ≤ x ∧ x ≤ 1 / 5",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S5",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_not_unique",
+        "type_pretty": "¬∃ p, ∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table), LemmaWeave.Problems.Probability.Candidates t → t.ab = p",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S6",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_if_independent",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table),\n  LemmaWeave.Problems.Probability.Candidates t → LemmaWeave.Lemmas.FiniteProbability.Independent t → 100 * t.ab = 6",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090606-50756ef0/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "0a4009b14f5acf5bcea99b2a96d33bd9100a1dced5318444e187afdac2db94ae"
+    },
+    "recipe_sha256": "f9b63ca2ba1a82b97d783933d57ce8e4a8c0e253b55d5ac060eda5c944373141",
+    "graph_archive": "reports/dependencies/methods/probability_candidates.json.gz"
+  },
+  {
+    "recipe": "probability_eggs",
+    "root": "LemmaWeave.Tests.ProbabilitySteps.eggs_solution",
+    "audit": "passed",
+    "steps": 7,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "S1",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_positive",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table),\n  LemmaWeave.Problems.Probability.Eggs t →\n    LemmaWeave.Lemmas.FiniteProbability.probA t ≠ 0 ∧ LemmaWeave.Lemmas.FiniteProbability.probNotA t ≠ 0",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S2",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_blue",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table), LemmaWeave.Problems.Probability.Eggs t → t.ab = 4 / 5 * (1 / 4)",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S3",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_purple",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table), LemmaWeave.Problems.Probability.Eggs t → t.nb = 1 / 5 * (1 / 2)",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S4",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_sum",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table),\n  LemmaWeave.Problems.Probability.Eggs t →\n    LemmaWeave.Lemmas.FiniteProbability.probB t = 4 / 5 * (1 / 4) + 1 / 5 * (1 / 2)",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S5",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_fraction",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table),\n  LemmaWeave.Problems.Probability.Eggs t → LemmaWeave.Lemmas.FiniteProbability.probB t = 3 / 10",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S6",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_percent",
+        "type_pretty": "∀ (t : LemmaWeave.Lemmas.FiniteProbability.Table),\n  LemmaWeave.Problems.Probability.Eggs t → 100 * LemmaWeave.Lemmas.FiniteProbability.probB t = 30",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S7",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.eggs_exists",
+        "type_pretty": "∃ t, LemmaWeave.Problems.Probability.Eggs t",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090606-50756ef0/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "12e227d6f06955ffc35a00b164530ef3a44940c257731a2697c666aa4c8bee77"
+    },
+    "recipe_sha256": "ecfa506dde2cc7f85e73dc3a390718864d309c7c224c9663617e9f75e5279319",
+    "graph_archive": "reports/dependencies/methods/probability_eggs.json.gz"
+  },
+  {
+    "recipe": "probability_marbles",
+    "root": "LemmaWeave.Tests.ProbabilitySteps.marbles_solution",
+    "audit": "passed",
+    "steps": 6,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "S1",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_total",
+        "type_pretty": "∀ (y : ℕ), 7 + 11 + ↑y = 18 + ↑y ∧ 0 < 18 + ↑y",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S2",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_ratio",
+        "type_pretty": "∀ (y : ℕ), LemmaWeave.Problems.Probability.Marbles y → ↑y / (18 + ↑y) = 1 / 4",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S3",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_balance",
+        "type_pretty": "∀ (y : ℕ), LemmaWeave.Problems.Probability.Marbles y → ↑y = 1 / 4 * (18 + ↑y)",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S4",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_linear",
+        "type_pretty": "∀ (y : ℕ), LemmaWeave.Problems.Probability.Marbles y → 3 * ↑y = 18",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S5",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_unique",
+        "type_pretty": "∀ (y : ℕ), LemmaWeave.Problems.Probability.Marbles y → y = 6",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "S6",
+        "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.marbles_exists",
+        "type_pretty": "LemmaWeave.Problems.Probability.Marbles 6",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090606-50756ef0/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "97fbc30b21443ee249424c033c3c0a9d951c485c9093ce0dd01d089c803f820a"
+    },
+    "recipe_sha256": "5b81a1076d4ccf29d885b7ae972307e30dd949dd8e0f1807234a5217f51c6c34",
+    "graph_archive": "reports/dependencies/methods/probability_marbles.json.gz"
+  },
+  {
     "recipe": "quadratic_extrema",
     "root": "LemmaWeave.Tests.QuadraticMethods.extrema_by_methods",
     "audit": "passed",
     "steps": 4,
     "dependency_links": "verified",
     "natural_language_step_adequacy": "self_review_only",
-    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection."
+    "individual_lines": [],
+    "solution_ready": false,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260906T090624-c3410707/run.json",
+      "git_commit": "90af361cb99095386c89538680bba057b89694af",
+      "github_run_id": "34023511285",
+      "raw_graph_sha256": "0e3733c2a6b148ba2b264a7205598ce50de7fbd688f131aae1e2c3334e8f6df2"
+    },
+    "recipe_sha256": "a7d4dc262d2025128d2f067fe94dd888d3bb593a43ee41dca4887fc070f41427",
+    "graph_archive": "reports/dependencies/methods/quadratic_extrema.json.gz"
   }
 ]

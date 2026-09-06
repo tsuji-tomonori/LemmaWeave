@@ -1,0 +1,103 @@
+{
+  "id": "probability_candidates",
+  "title_ja": "独立性がない問題には反例と可能範囲で答える",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:07274",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "派遣会社の候補者の20%にExcel経験があり、70%は日勤だけを希望する。無作為に1人選ぶと、Excel経験があり夜勤も可能である確率はいくらか。",
+  "root": "LemmaWeave.Tests.ProbabilitySteps.candidates_solution",
+  "graph": "work/probability-candidates-graph.json",
+  "lean_file": "tests/lean/ProbabilitySteps.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "収集済みGSM8Kの1問をLLMが個別に解答。新規収集数・日本入試数には加えない。",
+  "model_notes_ja": [
+    "A=Excel経験、B=夜勤可能。日勤のみを¬Bと読む。有限母集団の4区分の相対度数を有理数で表す。",
+    "参考解答は6%としているが属性の独立性は原題にない。1人を無作為抽出しても、属性間の相関が消えるわけではない。",
+    "原題への解答は一意に決まらないこと。両端の20人の例を構成し、有理数確率の可能範囲全体も証明する。追加条件付きの6%は別結論として明示する。"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_nights",
+      "title_ja": "夜勤可能の割合を余事象から求める",
+      "requires_steps": [],
+      "uses_nodes": [
+        "probability_complement"
+      ],
+      "condition_ja": "夜勤不可（日勤のみ）が70%。夜勤可能と不可能は排反で全体を尽くす。",
+      "conclusion_ja": "P(B)=1-7/10=3/10。"
+    },
+    {
+      "id": "S2",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_bounds",
+      "title_ja": "求める共通部分の上下界を示す",
+      "requires_steps": [],
+      "uses_nodes": [
+        "intersection_bound"
+      ],
+      "condition_ja": "Excel経験があり夜勤可能な人はExcel経験者の一部分。",
+      "conclusion_ja": "0≤P(A∩B)≤P(A)=1/5。つまり0%以上20%以下。"
+    },
+    {
+      "id": "S3",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_attain",
+      "title_ja": "範囲内の値を実際に構成する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "有理数xについて0≤x≤1/5。4区分（Excel夜勤、Excel日勤のみ、非Excel夜勤、非Excel日勤のみ）を考える。",
+      "conclusion_ja": "相対度数をx, 1/5-x, 3/10-x, 1/2+xとすれば各々非負で合計1。Excel計1/5、日勤のみ計7/10、共通部分xとなる。",
+      "baseline_ja": "分数の大小、一次式の整理。有限人数は4つの分母の共通倍数で実現できる。"
+    },
+    {
+      "id": "S4",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_range",
+      "title_ja": "必要条件と十分条件を合わせる",
+      "requires_steps": [
+        "S2",
+        "S3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "S2はすべての候補者集団で成り立ち、S3は区間内の各有理数に集団を与える。",
+      "conclusion_ja": "可能な有理数確率はちょうど0≤x≤1/5。",
+      "baseline_ja": "包含の両方向を別々に示す基本論理。"
+    },
+    {
+      "id": "S5",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_not_unique",
+      "title_ja": "二つの具体例で一意性を否定する",
+      "requires_steps": [
+        "S4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "S4のx=0とx=1/5を用いる。20人の4区分は順に(0,4,6,10)または(4,0,2,14)。",
+      "conclusion_ja": "どちらもExcel4人、日勤のみ14人だが、Excel夜勤は0人と4人。確率は0%と20%で異なるため、原題だけから単一の答えは決まらない。",
+      "baseline_ja": "具体的な反例と0≠1/5。"
+    },
+    {
+      "id": "S6",
+      "lean_declaration": "LemmaWeave.Tests.ProbabilitySteps.candidates_if_independent",
+      "title_ja": "独立性を追加したときだけ6%を導く",
+      "requires_steps": [
+        "S1"
+      ],
+      "uses_nodes": [
+        "independence_product"
+      ],
+      "condition_ja": "【追加条件】Excel経験と夜勤可能が独立である。原題にはこの条件がない。",
+      "conclusion_ja": "P(A∩B)=P(A)P(B)=(1/5)(3/10)=3/50。百分率では6%。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 7275,
+    "checked_model_hash": "1df16d0c586d3896661cff818e20dfa61d9748252d3c24fa64b82bd3d32db965",
+    "checks_ja": [
+      "A=Excel経験、B=夜勤可能。日勤のみを¬Bと読む。有限母集団の4区分の相対度数を有理数で表す。",
+      "参考解答は6%としているが属性の独立性は原題にない。1人を無作為抽出しても、属性間の相関が消えるわけではない。",
+      "原題への解答は一意に決まらないこと。両端の20人の例を構成し、有理数確率の可能範囲全体も証明する。追加条件付きの6%は別結論として明示する。"
+    ]
+  }
+}

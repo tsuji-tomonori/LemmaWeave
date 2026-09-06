@@ -1,0 +1,28 @@
+{
+  "id": "gsm8k_train_00002",
+  "title_ja": "時給と分単位の時間から報酬を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00001",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "時給12ドルで50分働いた報酬を、単位換算から求める。",
+  "root": "LemmaWeave.Tests.GSM8KMethods.earnings_by_methods",
+  "graph": "work/gsm8k-train-00002-graph.json",
+  "lean_file": "tests/lean/GSM8KMethods.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "既に収集したGSM8Kの1問。入試問題数・新規収集数には加えない。",
+  "model_notes_ja": [
+    "一定時給に比例するモデル。端数時間も比例配分し、中間値を丸めない。"
+  ],
+  "steps": [
+    {
+      "id": "S1",
+      "title_ja": "時間と単価の換算を対応させる",
+      "requires_steps": [],
+      "uses_nodes": [
+        "rate_conversion"
+      ],
+      "condition_ja": "1時間60分。一定時給、途中の通貨丸めなし。",
+      "conclusion_ja": "(12÷60)×50=12×(50÷60)=10ドル。"
+    }
+  ]
+}

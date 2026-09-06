@@ -2,6 +2,8 @@
 
 問題を解くための公式・概念・技法をLean 4の共有補題として持ち、根拠付きの解法と相互リンクするプロジェクトです。パッケージ名は `lemmaweave`、名前空間は `LemmaWeave` です。
 
+最新の再開記録は [2026-09-06の進捗](reports/PROGRESS_20260906.md)。GSM8K先頭5問の解法モデルと共有補題8本を追加し、固定CIで5モデルの証明・公理監査・補題リンク照合が成功しました。2問は原文に不足する条件を明示したモデルで、独立意味レビューは未完です。
+
 2026-09-05時点では、大学入試センター2026年度本試験「数学Ⅰ」の5小問で、Leanビルドと公理監査が通りました。独立した意味レビューは5小問で完了しました。資料の処理条件と補題台帳の完全な分類は未完です。50小問収集・10小問完了のパイロット目標には未到達です。
 
 | 軸 | 実績 |
@@ -17,7 +19,7 @@
 
 実行済み環境は Lean 4.33.1 / mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。固定した9依存のリビジョンをCIで照合しています。
 
-[成功した実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/33970704979) · [実行報告](reports/SESSION_REPORT.md) · [次の開始位置](docs/RESUME.md) · [AC01–AC12の不足](reports/acceptance.json)
+[最新の成功実行](https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34017142549) · [実行報告](reports/SESSION_REPORT.md) · [次の開始位置](docs/RESUME.md) · [AC01–AC12の不足](reports/acceptance.json)
 
 数学的モデル・目標は `LemmaWeave/Problems/DNC2026M1/Model.lean` と `Goals.lean` に分離し、証明前にハッシュを固定しました。証明は `Proof*.lean`、台帳は `corpus/`、圧縮した生依存グラフは `reports/dependencies/raw/`、日本語カードは `knowledge/nodes/` にあります。原PDF・問題文・図・選択肢表はこのリポジトリに含めていません。
 
@@ -27,7 +29,7 @@
 
 [改訂設計](docs/METHOD_FIRST_DESIGN.md)と[最新到達状況](reports/METHOD_FIRST_STATUS.md)に従い、二次関数の共有補題8本と、4つの説明ノードを組み合わせる解法例を追加しました。[リンク付きの解法例](docs/methods/quadratic_extrema.md)を生成し、Lean検証と使用補題リンクの照合が通っています。旧5小問のうち1問の別証明であり、問題数の増加ではありません。
 
-大規模収集の第一弾は[実測manifest](corpus/imports/gsm8k.json)のGSM8K **8,792問**（train 7,473 / test 1,319）。取得・文字列重複検査済みですが、意味レビュー・解法抽出・Lean検証は各0問です。上の日本入試5小問とは別集計です。万単位の検証と文科省全分野の網羅は未完です。[収集元候補](docs/LARGE_SCALE_SOURCES.md)も取得実績とは分けています。
+大規模収集の第一弾は[実測manifest](corpus/imports/gsm8k.json)のGSM8K **8,792問**（train 7,473 / test 1,319）。取得・文字列重複検査済みです。取得時点では意味レビュー・解法抽出・Lean検証は各0問でした。再開後の処理数は [解法バッチ集計](reports/method-batches.json) で別に管理します。上の日本入試5小問とは別集計です。万単位の検証と文科省全分野の網羅は未完です。[収集元候補](docs/LARGE_SCALE_SOURCES.md)も取得実績とは分けています。
 
 ## 実行
 
@@ -44,7 +46,7 @@ python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py
 
 CI成果物のZIPは `python3 scripts/import_evidence.py <artifact.zip> --run-id <GitHub実行ID>` で取り込みます。現行コード・型・実行出力のハッシュが一致しなければ取り込まず、独立意味レビューや資料の利用条件を自動承認しません。宣言の定義元モジュール・相対ソースパス・取得可能な行範囲は別の圧縮出典ファイルに保存します。
 
-`python3 -m unittest discover -s tests -v` は35テスト。`scripts/inventory.py --write` は実際の依存型と日本語カードを照合し、未分類宣言を型・利用先とともに残します。生成CSVはCI成果物に含まれます。
+`python3 -m unittest discover -s tests -v` は40テスト。`scripts/inventory.py --write` は実際の依存型と日本語カードを照合し、未分類宣言を型・利用先とともに残します。生成CSVはCI成果物に含まれます。
 
 根の型と証明項から参照を取り出し、ラッパー・暗黙参照・インスタンス・再帰の先まで追っています。証明項全文は保存せず、実参照とLeanの非暗号学的な構造ハッシュを保存します。証明ファイル、型、出力、実行入力には別途SHA256を用います。グラフはgzip圧縮JSONで、`scripts/lw.py` はそのまま読み込めます。
 

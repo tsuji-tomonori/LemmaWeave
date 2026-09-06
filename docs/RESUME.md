@@ -1,3 +1,11 @@
+# 最新の再開位置（2026-09-06）
+
+[進捗と残件](../reports/PROGRESS_20260906.md) と `corpus/method_batches/GSM8K-METHOD-0001.json` を読む。GSM8K先頭5問のモデル・解法を追加した。train第1問と第5問は追加解釈を明示した条件付きモデルで、全5問の独立意味レビューは未実施。次の解法抽出対象は固定train 6〜10行目。原題忠実性の判断を参考解答へ委譲しない。
+
+検証は `python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py`、成功CI取り込みは従来どおり `scripts/import_evidence.py`。取り込み後に `python3 scripts/check_method_recipes.py --render` で現在のLean入力・グラフ・成功実行を再照合し、説明ページとバッチ集計を更新する。対象を追加する際はレシピの `lean_file` を必ず登録する。
+
+以下は前回の再開記録。今回の差分・集計は上記を優先する。
+
 # 現在の完了状況と残る作業
 
 PR #1はマージ済み。その後の独立レビュー、候補登録、分類もmainへ順次反映した。ユーザーは別エージェントの利用・マージ・mainへのコミットとpushを明示的に許可している。承認待ちを再開条件にしない。

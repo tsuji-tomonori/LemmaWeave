@@ -75,7 +75,12 @@ theorem cards_expectation {Ω : Type*} (s : Finset Ω) (w : Ω → ℚ)
   exact he
 theorem cards_indicator_mean :
     mean deck (fun _ => (1/36 : ℚ)) (fun c => if c ∈ favorable then 1 else 0) = 1/6 := by
-  decide
+  rw [mean, ← Finset.mul_sum, Finset.sum_boole]
+  have hf : deck.filter (fun c => c ∈ favorable) = favorable := by
+    ext c
+    simp [favorable, and_assoc]
+  rw [hf, cards_favorable]
+  norm_num
 /-- 実現可能な有限確率モデル。線形性には独立性不要なので共通カードのモデルでも成立。 -/
 theorem cards_witness :
     (∀ c ∈ deck, (0 : ℚ) ≤ 1/36) ∧
@@ -83,7 +88,7 @@ theorem cards_witness :
     mean deck (fun _ => (1/36 : ℚ))
       (fun c => ∑ _i : Fin 36, if c ∈ favorable then (1 : ℚ) else 0) = 6 := by
   refine ⟨by intros; norm_num, ?_, ?_⟩
-  · simp [cards_deck]; norm_num
+  · simp [cards_deck]
   · apply cards_expectation
     intro i
     rw [cards_probability]

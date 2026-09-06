@@ -111,7 +111,8 @@ theorem stamps_truck (t r a : ℕ) (x : Stamps t r a) : t = 20 := by
   rcases x with ⟨ht, hr, ha⟩
   omega
 theorem stamps_rose (t r a : ℕ) (x : Stamps t r a) : r = 7 := by
-  rcases x with ⟨ht, hr, ha⟩
+  have ht := stamps_truck t r a x
+  have hr := x.2.1
   omega
 theorem stamps_total (t r a : ℕ) (x : Stamps t r a) : a = 38 := by
   rw [x.2.2, stamps_truck t r a x, stamps_rose t r a x]

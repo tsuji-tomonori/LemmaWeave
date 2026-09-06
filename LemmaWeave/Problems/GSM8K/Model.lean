@@ -1,4 +1,4 @@
-import Mathlib.Data.Rat.Basic
+import Mathlib.Algebra.Order.Field.Rat
 
 /-! 固定GSM8K trainの先頭5問。全量・部分量は有理数、個数は非負整数との対応を台帳に残す。
 第5問の一年の週数は原文にないため、52を無条件には固定しない。 -/

@@ -1,9 +1,12 @@
 import copy
 import sys
 import unittest
+import tempfile
+import hashlib
+import json
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from check_method_recipes import validate_recipe
+from check_method_recipes import validate_recipe, proof_evidence
 
 class MethodRecipes(unittest.TestCase):
     def setUp(self):
@@ -39,3 +42,27 @@ class MethodRecipes(unittest.TestCase):
     def test_method_without_declaration_is_rejected(self):
         self.nodes['method']['lean_declarations']=[]
         with self.assertRaises(ValueError):validate_recipe(self.recipe,self.nodes,self.graph)
+
+
+class MethodProofEvidence(unittest.TestCase):
+    def test_stale_input_or_modified_graph_cannot_promote_proof(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            (root/'runs/r1').mkdir(parents=True)
+            for name in ['proof.lean','lean-toolchain','lake-manifest.json','lakefile.toml']:
+                (root/name).write_text('fixed input')
+            for name in ['stdout.log','stderr.log']:
+                (root/'runs/r1'/name).write_text('')
+            sha=lambda data:hashlib.sha256(data).hexdigest()
+            record={'argv':['lake','env','lean','proof.lean'],'exit_code':0,'status':'succeeded',
+                    'inputs':{'git_commit':'test-commit','files':{n:sha(b'fixed input') for n in
+                              ['proof.lean','lean-toolchain','lake-manifest.json','lakefile.toml']}},
+                    'stdout_log':'runs/r1/stdout.log','stderr_log':'runs/r1/stderr.log',
+                    'output_sha256':{'stdout.log':sha(b''),'stderr.log':sha(b'')},
+                    'artifact_sha256':{'work/g-graph.json':sha(b'graph')},'environment':{'github_run_id':'1'}}
+            (root/'runs/r1/run.json').write_text(json.dumps(record))
+            recipe={'id':'recipe','lean_file':'proof.lean','graph':'work/g-graph.json'}
+            self.assertEqual(proof_evidence(root,recipe,b'graph')['github_run_id'],'1')
+            with self.assertRaises(ValueError):proof_evidence(root,recipe,b'tampered graph')
+            (root/'proof.lean').write_text('changed proof')
+            with self.assertRaises(ValueError):proof_evidence(root,recipe,b'graph')

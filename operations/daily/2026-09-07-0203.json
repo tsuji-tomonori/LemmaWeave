@@ -1,0 +1,95 @@
+{
+  "ci": [
+    {
+      "commit": "15ab63f0730aaed2d58699eabd4ea4d5b1e9a5fc",
+      "reason_ja": "有限和交換のFinset.sum_commを含むSigmaモジュールのimport不足。修正済み。",
+      "run_id": "34048020702",
+      "status": "failure"
+    },
+    {
+      "commit": "0ff9c88dd1e4fa123e688683b5e033b8a24bf7fe",
+      "reason_ja": "カード指示変数の有理数和をdecideで簡約できず、別行はsimp後の余分なnorm_num。有限和の公式で修正。",
+      "run_id": "34048330314",
+      "status": "failure"
+    },
+    {
+      "commit": "48c783c977213e2129fb38907e5fda865ef3a1c1",
+      "run_id": "34048723408",
+      "status": "success"
+    }
+  ],
+  "commit": "48c783c977213e2129fb38907e5fda865ef3a1c1",
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00000",
+    "external-gsm8k-main-3101c7d50724:train:00001",
+    "external-gsm8k-main-3101c7d50724:train:00002",
+    "external-gsm8k-main-3101c7d50724:train:00003",
+    "external-gsm8k-main-3101c7d50724:train:00004",
+    "external-gsm8k-main-3101c7d50724:train:02389",
+    "external-gsm8k-main-3101c7d50724:train:00010",
+    "external-gsm8k-main-3101c7d50724:train:00011",
+    "external-gsm8k-main-3101c7d50724:train:00012",
+    "external-gsm8k-main-3101c7d50724:train:00013"
+  ],
+  "date": "2026-09-07",
+  "deferred": [],
+  "finished_at": "2026-09-06T17:39:05Z",
+  "local_checks": {
+    "lean": "not_installed",
+    "pins": "local_mathlib_checkout_missing",
+    "python_tests_passed": 47
+  },
+  "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34036070145",
+  "previous_head": "3645f80d2864874b212547ed9e8ea061e197c17f",
+  "pull_request": 3,
+  "resume_ja": "今回の10問は入力・出力を照合した成功証拠付き。次回はブランチ最新を取得しsolve_queue.py --writeのnext_batch（train:00014以降）から進める。末尾の証拠保存コミットのCIも確認する。",
+  "scaling": {
+    "status": "measured_no_selective_reuse_yet",
+    "deadline": "2026-09-14",
+    "report": "reports/scaling/2026-09-07-0203.json",
+    "note_ja": "全件再検証を維持。選択再検証と重複排除の方式・回帰検査は次回以降に実装する。"
+  },
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00000",
+    "external-gsm8k-main-3101c7d50724:train:00001",
+    "external-gsm8k-main-3101c7d50724:train:00002",
+    "external-gsm8k-main-3101c7d50724:train:00003",
+    "external-gsm8k-main-3101c7d50724:train:00004",
+    "external-gsm8k-main-3101c7d50724:train:02389",
+    "external-gsm8k-main-3101c7d50724:train:00010",
+    "external-gsm8k-main-3101c7d50724:train:00011",
+    "external-gsm8k-main-3101c7d50724:train:00012",
+    "external-gsm8k-main-3101c7d50724:train:00013"
+  ],
+  "started_at": "2026-09-07T02:03:32+09:00",
+  "status": "completed",
+  "target": 10,
+  "transport_ja": "シェルgit pushはユーザー名認証なしで失敗。GitデータAPIで差分treeを作り全treeのSHA一致を確認して非forceで更新する。",
+  "weekly_expansion": {
+    "completed_this_run": 0,
+    "note_ja": "6分野の追加出典付き問題はこの回では未実施。カードの問題も既存固定GSM8Kであり別枠の新規出典問題に水増ししない。",
+    "target": 6
+  },
+  "github_run_id": "34048723408",
+  "proof_commit": "48c783c977213e2129fb38907e5fda865ef3a1c1",
+  "proof_evidence": {
+    "archive_sha256": "8ef5116ca50bc65c6a81b4f7af0ebee66ebb0a088d208d99c27919dbbaa2f56f",
+    "fixture_run": "runs/20260906T173202-0c4bb7f3/run.json",
+    "git_commit": "48c783c977213e2129fb38907e5fda865ef3a1c1",
+    "github_run_id": "34048723408",
+    "replay_run": "runs/20260906T173020-2e261245/run.json",
+    "semantic_or_rights_promotion": false,
+    "source_location_run": "runs/20260906T173143-220cd78e/run.json"
+  },
+  "verified_lines": 50,
+  "progress": {
+    "completed_this_run": 10,
+    "completed_today": 10,
+    "target_today": 50,
+    "solution_ready": 18,
+    "remaining": 8774,
+    "initial_target_date": "2027-03-01",
+    "measured_forecast_date": null,
+    "calibration_date": "2026-09-14"
+  }
+}

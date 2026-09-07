@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_daily2_partner",
+  "title_ja": "比2対5からMikeの残金を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00016",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "利益をMike:Johnson=2:5で分け、Johnsonが2500ドル。Mikeが200ドルのシャツを買った後の残金は？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.partner_solution",
+  "graph": "work/gsm8k-daily2-partner-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "2:5はそれぞれMikeとJohnsonの順。シャツ代以外の支出はない。"
+  ],
+  "steps": [
+    {
+      "id": "partner_part",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.partner_part",
+      "title_ja": "比の1単位",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Johnsonの5単位が2500ドル。",
+      "conclusion_ja": "1単位500ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "partner_mike",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.partner_mike",
+      "title_ja": "Mikeの取り分",
+      "requires_steps": [
+        "partner_part"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Mikeは2単位。",
+      "conclusion_ja": "2×500=1000ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "partner_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.partner_remaining",
+      "title_ja": "購入後の残金",
+      "requires_steps": [
+        "partner_mike"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1000ドルから200ドルを支出。",
+      "conclusion_ja": "800ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "partner_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.partner_exists",
+      "title_ja": "条件の充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "単位500、Mike1000、残金800。",
+      "conclusion_ja": "比と支出の関係を満たす。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 17,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "2:5はそれぞれMikeとJohnsonの順。シャツ代以外の支出はない。"
+    ]
+  }
+}

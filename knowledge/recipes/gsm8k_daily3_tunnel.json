@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily3_tunnel","title_ja":"既知の区間を総距離から引く","problem_id":"external-gsm8k-main-3101c7d50724:train:00032","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"曲がり角後の走行が5m、8m、未知、最後は即退出で、合計23m。3回目後は何mか。","root":"LemmaWeave.Tests.GSM8KDaily0907C.tunnel_solution","graph":"work/gsm8k-daily3-tunnel-graph.json","lean_file":"tests/lean/GSM8KDaily0907C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model",
+  "counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["4回目の曲がり角ではimmediately exitsなので、その後の走行距離を0mとする。"],
+  "steps":[
+    {"id":"tunnel_known","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.tunnel_known","title_ja":"既知区間の合計","requires_steps":[],"uses_nodes":[],"condition_ja":"1回目後5m、2回目後8m、4回目後0m。","conclusion_ja":"既知部分は13m。","baseline_ja":"中学校までの加法。"},
+    {"id":"tunnel_third","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.tunnel_third","title_ja":"未知区間","requires_steps":["tunnel_known"],"uses_nodes":[],"condition_ja":"合計23mから既知13mを引く。","conclusion_ja":"3回目後は10m。","baseline_ja":"中学校までの一次方程式・減法。"},
+    {"id":"tunnel_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.tunnel_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"既知13m、未知10m。","conclusion_ja":"合計23mになる。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":33,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["曲がる行為自体に距離を足さず、各曲がり角後の明示区間だけを合計した。"]}
+}

@@ -1,0 +1,12 @@
+{
+  "id":"gsm8k_daily3_tennis","title_ja":"区間別の未打球数を合計する","problem_id":"external-gsm8k-main-3101c7d50724:train:00025","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"最初の100球は2/5、次の75球は1/3を打った。全175球のうち打てなかった球数を求める。",
+  "root":"LemmaWeave.Tests.GSM8KDaily0907C.tennis_solution","graph":"work/gsm8k-daily3-tennis-graph.json","lean_file":"tests/lean/GSM8KDaily0907C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model",
+  "counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["100球と75球は重ならず合計175球。打てなかった割合は各区間で1から打った割合を引く。"],
+  "steps":[
+    {"id":"tennis_first","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.tennis_first","title_ja":"最初の区間","requires_steps":[],"uses_nodes":[],"condition_ja":"最初の100球の2/5を打った。","conclusion_ja":"未打球は(1-2/5)×100=60球。","baseline_ja":"中学校までの割合と四則演算。"},
+    {"id":"tennis_next","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.tennis_next","title_ja":"次の区間","requires_steps":[],"uses_nodes":[],"condition_ja":"次の75球の1/3を打った。","conclusion_ja":"未打球は(1-1/3)×75=50球。","baseline_ja":"中学校までの割合と四則演算。"},
+    {"id":"tennis_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.tennis_total","title_ja":"未打球を合計","requires_steps":["tennis_first","tennis_next"],"uses_nodes":[],"condition_ja":"2区間は重ならない。","conclusion_ja":"60+50=110球。","baseline_ja":"中学校までの加法。"},
+    {"id":"tennis_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.tennis_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"区間別未打球60球、50球、合計110球。","conclusion_ja":"割合と合計の条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":26,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["打った割合の補割合を各区間へ適用し、区間の重複がないことを照合した。"]}
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-07",
+  "run": "0555",
+  "github_run_id": "34061229438",
+  "job_seconds": 388,
+  "artifact": {
+    "compressed_bytes": 45615982,
+    "uncompressed_bytes": 658306482,
+    "new_method_graphs": 10,
+    "new_method_graph_raw_bytes": 135063613,
+    "new_method_graph_archives_bytes": 7811829
+  },
+  "observed_problem_ja": "全グラフを一括展開すると未圧縮658306482バイトとなり、512MiBの証拠取込保護上限を超えた。",
+  "improvement": {
+    "status": "implemented_and_ci_verified",
+    "commit": "fc8ce5de1b3f10f52877f7d7cee4cd493e712777",
+    "method_ja": "現在の入力ハッシュに一致する成功実行がないrecipeだけを選び、その依存グラフのみ成果物から展開する。ZIP全体のdigest、入力ファイルhash、実行出力hashの照合は維持する。",
+    "selected_graphs_before_import": 10,
+    "regression_test": "tests.test_inventory.SemanticEvidence.test_evidence_import_does_not_inflate_unused_large_reports",
+    "security_budget_relaxed": false
+  },
+  "remaining_work_ja": "CI側の成果物自体は全グラフを重複保存している。内容hashによるアップロード重複削減と変更対象だけの再検証は引き続き2026-09-14までの課題。"
+}

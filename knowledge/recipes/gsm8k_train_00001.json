@@ -1,41 +1,89 @@
 {
-  "id": "gsm8k_train_00001",
-  "title_ja": "基準量と半分の量の合計",
-  "problem_id": "external-gsm8k-main-3101c7d50724:train:00000",
   "collection_id": "external-gsm8k-main-3101c7d50724",
-  "problem_ja": "4月の48個と、その半分である5月の個数を合計する。",
-  "root": "LemmaWeave.Tests.GSM8KMethods.clips_by_methods",
-  "graph": "work/gsm8k-train-00001-graph.json",
-  "lean_file": "tests/lean/GSM8KMethods.lean",
-  "semantic_review_status": "self_review_only",
-  "model_scope": "conditional",
   "counting_note_ja": "既に収集したGSM8Kの1問。入試問題数・新規収集数には加えない。",
+  "graph": "work/gsm8k-first-clips-graph.json",
+  "id": "gsm8k_train_00001",
+  "lean_file": "tests/lean/GSM8KFirstSteps.lean",
   "model_notes_ja": [
-    "原文は48人への販売と記し、1人1個を明記していない。48個という参考解答の解釈を採用した条件付きモデル。原題からの無条件な結論には数えない。",
-    "個数のモデルを有理数へ埋め込み、解は非負整数24と72。すべての有理数解で結論が成立するため、整数解にも特殊化できる。"
+    "48は人数であり1人1個を無条件に仮定しない。Leanは総数a≥48で表し個別配分との対応は自己照合。",
+    "可能範囲・反例・追加条件付き72個を区別する。"
   ],
+  "model_scope": "conditional",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00000",
+  "problem_ja": "4月に48人へ販売し、5月は4月の半分。2か月のクリップ総数は？",
+  "root": "LemmaWeave.Tests.GSM8KFirstSteps.clips_solution",
+  "semantic_review_status": "self_review_only",
   "steps": [
     {
-      "id": "S1",
-      "title_ja": "半分の量を求める",
+      "id": "clips_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.clips_half",
+      "title_ja": "人数と個数を区別",
       "requires_steps": [],
-      "uses_nodes": [
-        "fraction_balance"
-      ],
-      "condition_ja": "5月の量×2=48。分母2≠0。",
-      "conclusion_ja": "5月の量=48÷2=24。"
+      "uses_nodes": [],
+      "condition_ja": "4月a個、5月m個。48人は各1個以上購入、mは整数、2m=a。",
+      "conclusion_ja": "a≥48よりm≥24、a=2m。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
     },
     {
-      "id": "S2",
-      "title_ja": "二つの月を合計する",
+      "id": "clips_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.clips_total",
+      "title_ja": "合計と下限",
       "requires_steps": [
-        "S1"
+        "clips_half"
       ],
-      "uses_nodes": [
-        "scaled_total"
+      "uses_nodes": [],
+      "condition_ja": "総数t=a+m。",
+      "conclusion_ja": "t=3m≥72。人数だけでmは決まらない。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "clips_range",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.clips_range",
+      "title_ja": "可能な合計をすべて示す",
+      "requires_steps": [
+        "clips_half",
+        "clips_total"
       ],
-      "condition_ja": "5月の量=(1/2)×48、合計=48+5月の量。",
-      "conclusion_ja": "合計=(1+1/2)×48=72。"
+      "uses_nodes": [],
+      "condition_ja": "各人の購入数に上限はない。",
+      "conclusion_ja": "可能な合計は3k（整数k≥24）、つまり72,75,78,…。逆にa=2kを48人に1個ずつ配り残りを誰かに配れば実現する。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "clips_counterexamples",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.clips_counterexamples",
+      "title_ja": "異なる答えの反例",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "48人が各1個買う場合と各2個買う場合。",
+      "conclusion_ja": "4月48・5月24なら72個、4月96・5月48なら144個。どちらも原文の人数と半分の条件に合う。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "clips_conditional",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.clips_conditional",
+      "title_ja": "追加条件付きの結論",
+      "requires_steps": [
+        "clips_half",
+        "clips_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4月は各人1個、合計48個と追加する。",
+      "conclusion_ja": "5月24個、合計72個。原文だけの一意な答えではない。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
     }
-  ]
+  ],
+  "title_ja": "48人への販売から分かる範囲と条件付きの72個",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1,
+    "checked_model_hash": "f309dcf47412bffc8efe969f19a1310fc34fd5a37a3229bb1042688c03d85682",
+    "checks_ja": [
+      "48は人数であり1人1個を無条件に仮定しない。Leanは総数a≥48で表し個別配分との対応は自己照合。",
+      "可能範囲・反例・追加条件付き72個を区別する。"
+    ]
+  }
 }

@@ -1,0 +1,75 @@
+{
+  "id": "gsm8k_next_parcel",
+  "title_ja": "重さを変化した順序で追う",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00007",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "箱に菓子を入れて総重量2ポンドにする。追加して重さを3倍にし、さらに2ポンド足し、最後に追加して重さを2倍にする。最終重量はいくらか。",
+  "root": "LemmaWeave.Tests.GSM8KNextSteps.parcel_solution",
+  "graph": "work/gsm8k-next-parcel-graph.json",
+  "lean_file": "tests/lean/GSM8KNextSteps.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "収集済みGSM8Kの1問をLLMが個別に解答。新規収集には数えない。",
+  "model_notes_ja": [
+    "原題の最初の2ポンドは秤に載せた箱を含む総重量。参考解答の「2ポンドのジェリービーンズ」という言い換えを採用しない。",
+    "各倍率はその操作直前の総重量に掛かる。途中の2ポンド加算を最後へ移さない。"
+  ],
+  "steps": [
+    {
+      "id": "parcel_tripled",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.parcel_tripled",
+      "title_ja": "最初の総重量を3倍にする",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "箱を含む総重量が2ポンド。",
+      "conclusion_ja": "追加後は3×2=6ポンド。",
+      "baseline_ja": "数量の倍。"
+    },
+    {
+      "id": "parcel_added",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.parcel_added",
+      "title_ja": "2ポンド追加する",
+      "requires_steps": [
+        "parcel_tripled"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3倍にした後の総重量6ポンドへ追加する。",
+      "conclusion_ja": "6+2=8ポンド。",
+      "baseline_ja": "同じ単位の重量の加法。"
+    },
+    {
+      "id": "parcel_doubled",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.parcel_doubled",
+      "title_ja": "その時点の総重量を2倍にする",
+      "requires_steps": [
+        "parcel_added"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2ポンド追加後の8ポンドが倍率の基準。",
+      "conclusion_ja": "2×8=16ポンド。",
+      "baseline_ja": "数量の倍、操作順序。"
+    },
+    {
+      "id": "parcel_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.parcel_exists",
+      "title_ja": "すべての操作を満たす重量を示す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "途中の総重量を6、8、16ポンドと取る。",
+      "conclusion_ja": "3倍、2ポンド追加、2倍の条件を順番どおり満たす。",
+      "baseline_ja": "四則演算、単位の一致。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 8,
+    "checked_model_hash": "c21e8f75f97f058569151f1d937c4ba3d40064ed80dda63178e3ed937fa515a2",
+    "checks_ja": [
+      "原題の最初の2ポンドは秤に載せた箱を含む総重量。参考解答の「2ポンドのジェリービーンズ」という言い換えを採用しない。",
+      "各倍率はその操作直前の総重量に掛かる。途中の2ポンド加算を最後へ移さない。"
+    ]
+  }
+}

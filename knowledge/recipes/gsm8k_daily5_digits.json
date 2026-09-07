@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily5_digits","title_ja":"倍数関係から円周率の暗記桁数を逆算する","problem_id":"external-gsm8k-main-3101c7d50724:train:00048","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"MinaはCarlosの6倍で24桁、SamはCarlosより6桁多い。Samの桁数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907E.digits_solution","graph":"work/gsm8k-daily5-digits-graph.json","lean_file":"tests/lean/GSM8KDaily0907E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["桁数を自然数とし、6×Carlos=24を解く。"],
+  "steps":[
+    {"id":"digits_carlos","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.digits_carlos","title_ja":"Carlosの桁数","requires_steps":[],"uses_nodes":[],"condition_ja":"Carlosの6倍が24桁。","conclusion_ja":"Carlosは4桁。","baseline_ja":"中学校までの一次方程式。"},
+    {"id":"digits_sam","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.digits_sam","title_ja":"Samの桁数","requires_steps":["digits_carlos"],"uses_nodes":[],"condition_ja":"SamはCarlosより6桁多い。","conclusion_ja":"4+6=10桁。","baseline_ja":"中学校までの加法。"},
+    {"id":"digits_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.digits_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"Carlosを4桁、Samを10桁と置く。","conclusion_ja":"倍数関係と差の条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":49,"checked_model_hash":"adc4c0f4dec3dbed083ddd2439540f62981d1039ced1f4d455c23cc025e0e734","checks_ja":["Minaの条件からCarlosを先に逆算し、Samとの差を適用した。"]}
+}

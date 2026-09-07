@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily6_oil","title_ja":"既知の缶を除いて残り1缶の油量を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00062","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"24缶に290Lあり、10缶が各8Lのとき、等量の残り各缶の油量を求める。","root":"LemmaWeave.Tests.GSM8KDaily0908A.oil_solution","graph":"work/gsm8k-daily6-oil-graph.json","lean_file":"tests/lean/GSM8KDaily0908A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["each of the remaining cansの問いから、残り14缶は等量を保持すると読む。"],
+  "steps":[
+    {"id":"oil_known","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.oil_known","title_ja":"既知10缶の油量","requires_steps":[],"uses_nodes":[],"condition_ja":"10缶が各8L。","conclusion_ja":"80L。","baseline_ja":"中学校までの乗法。"},
+    {"id":"oil_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.oil_remaining","title_ja":"残りの油量","requires_steps":["oil_known"],"uses_nodes":[],"condition_ja":"全290Lから80Lを引く。","conclusion_ja":"210L。","baseline_ja":"中学校までの減法。"},
+    {"id":"oil_cans","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.oil_cans","title_ja":"残り缶数","requires_steps":[],"uses_nodes":[],"condition_ja":"全24缶から10缶を引く。","conclusion_ja":"14缶。","baseline_ja":"中学校までの減法。"},
+    {"id":"oil_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.oil_each","title_ja":"残り1缶の量","requires_steps":["oil_remaining","oil_cans"],"uses_nodes":[],"condition_ja":"210Lを等量の14缶へ分ける。","conclusion_ja":"15L。","baseline_ja":"中学校までの除法。"},
+    {"id":"oil_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.oil_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"80L、210L、14缶、各15Lと置く。","conclusion_ja":"全量、缶数、等分の条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":63,"checked_model_hash":"25be0660a3ea49f64ae066a5c414124db69be9dec1af8c709e682107753e5ef2","checks_ja":["既知缶の量と残り缶数を別々に引き、等量条件で除した。"]}
+}

@@ -107,16 +107,26 @@ theorem download_solution :
     (∀ f r rt t, DownloadTime f r rt t → t = 15) :=
   ⟨download_exists, download_first, download_remaining, download_remaining_time, download_total⟩
 
-theorem digits_carlos (c s : ℕ) (x : PiDigits c s) : c = 4 := by omega
-theorem digits_sam (c s : ℕ) (x : PiDigits c s) : s = 10 := by omega
+theorem digits_carlos (c s : ℕ) (x : PiDigits c s) : c = 4 := by
+  have hc := x.1
+  omega
+theorem digits_sam (c s : ℕ) (x : PiDigits c s) : s = 10 := by
+  have hc := digits_carlos c s x
+  have hs := x.2
+  omega
 theorem digits_exists : PiDigits 4 10 := by norm_num [PiDigits]
 theorem digits_solution :
     PiDigits 4 10 ∧ (∀ c s, PiDigits c s → c = 4) ∧
     (∀ c s, PiDigits c s → s = 10) :=
   ⟨digits_exists, digits_carlos, digits_sam⟩
 
-theorem shells_ben (b a : ℕ) (x : ShellCollection b a) : b = 12 := by omega
-theorem shells_alan (b a : ℕ) (x : ShellCollection b a) : a = 48 := by omega
+theorem shells_ben (b a : ℕ) (x : ShellCollection b a) : b = 12 := by
+  have hb := x.1
+  omega
+theorem shells_alan (b a : ℕ) (x : ShellCollection b a) : a = 48 := by
+  have hb := shells_ben b a x
+  have ha := x.2
+  omega
 theorem shells_exists : ShellCollection 12 48 := by norm_num [ShellCollection]
 theorem shells_solution :
     ShellCollection 12 48 ∧ (∀ b a, ShellCollection b a → b = 12) ∧
@@ -126,11 +136,15 @@ theorem shells_solution :
 theorem saving_cost (c m i h : ℕ) (x : SupplySaving c m i h) : c = 400 := x.1
 theorem saving_months (c m i h : ℕ) (x : SupplySaving c m i h) : m = 8 := x.2.1
 theorem saving_income (c m i h : ℕ) (x : SupplySaving c m i h) : i = 50 := by
-  rw [x.2.2.1, saving_cost c m i h x, saving_months c m i h x]
-  norm_num
+  have hi := x.2.2.1
+  rw [saving_cost c m i h x, saving_months c m i h x] at hi
+  norm_num at hi ⊢
+  exact hi
 theorem saving_chores (c m i h : ℕ) (x : SupplySaving c m i h) : h = 5 := by
-  rw [x.2.2.2, saving_income c m i h x]
-  norm_num
+  have hh := x.2.2.2
+  rw [saving_income c m i h x] at hh
+  norm_num at hh ⊢
+  exact hh
 theorem saving_exists : SupplySaving 400 8 50 5 := by norm_num [SupplySaving]
 theorem saving_solution :
     SupplySaving 400 8 50 5 ∧ (∀ c m i h, SupplySaving c m i h → c = 400) ∧
@@ -157,10 +171,15 @@ theorem fabric_solution :
   ⟨fabric_exists, fabric_bolt, fabric_living, fabric_bedroom, fabric_remaining⟩
 
 theorem pencils_shared (s t e : ℕ) (x : PencilBoxes s t e) : s = 40 := x.1
-theorem pencils_total (s t e : ℕ) (x : PencilBoxes s t e) : t = 50 := by omega
+theorem pencils_total (s t e : ℕ) (x : PencilBoxes s t e) : t = 50 := by
+  have hs := pencils_shared s t e x
+  have ht := x.2.1
+  omega
 theorem pencils_each (s t e : ℕ) (x : PencilBoxes s t e) : e = 5 := by
-  rw [x.2.2, pencils_total s t e x]
-  norm_num
+  have he := x.2.2
+  rw [pencils_total s t e x] at he
+  norm_num at he ⊢
+  exact he
 theorem pencils_exists : PencilBoxes 40 50 5 := by norm_num [PencilBoxes]
 theorem pencils_solution :
     PencilBoxes 40 50 5 ∧ (∀ s t e, PencilBoxes s t e → s = 40) ∧
@@ -170,7 +189,11 @@ theorem pencils_solution :
 
 theorem dessert_ice (i y d : ℕ) (x : FrozenDesserts i y d) : i = 40 := x.1
 theorem dessert_yogurt (i y d : ℕ) (x : FrozenDesserts i y d) : y = 4 := x.2.1
-theorem dessert_difference (i y d : ℕ) (x : FrozenDesserts i y d) : d = 36 := by omega
+theorem dessert_difference (i y d : ℕ) (x : FrozenDesserts i y d) : d = 36 := by
+  have hi := dessert_ice i y d x
+  have hy := dessert_yogurt i y d x
+  have hd := x.2.2
+  omega
 theorem dessert_exists : FrozenDesserts 40 4 36 := by norm_num [FrozenDesserts]
 theorem dessert_solution :
     FrozenDesserts 40 4 36 ∧ (∀ i y d, FrozenDesserts i y d → i = 40) ∧

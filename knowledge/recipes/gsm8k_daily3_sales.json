@@ -1,0 +1,12 @@
+{
+  "id":"gsm8k_daily3_sales","title_ja":"先月売上の2倍として今月売上を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00031","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"大型8枚を各60ドル、小型4枚を各30ドルで先月販売し、今月はその2倍売った。今月売上を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907C.sales_solution","graph":"work/gsm8k-daily3-sales-graph.json","lean_file":"tests/lean/GSM8KDaily0907C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model",
+  "counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["sold twice as much this monthを売上金額が先月の2倍と読む。価格変更や費用は原文にない。"],
+  "steps":[
+    {"id":"sales_large","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.sales_large","title_ja":"大型の売上","requires_steps":[],"uses_nodes":[],"condition_ja":"大型8枚を各60ドル。","conclusion_ja":"480ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"sales_small","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.sales_small","title_ja":"小型の売上","requires_steps":[],"uses_nodes":[],"condition_ja":"小型4枚を各30ドル。","conclusion_ja":"120ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"sales_previous","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.sales_previous","title_ja":"先月売上","requires_steps":["sales_large","sales_small"],"uses_nodes":[],"condition_ja":"大型と小型を合計する。","conclusion_ja":"480+120=600ドル。","baseline_ja":"中学校までの加法。"},
+    {"id":"sales_current","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.sales_current","title_ja":"今月売上","requires_steps":["sales_previous"],"uses_nodes":[],"condition_ja":"今月は先月の2倍。","conclusion_ja":"600×2=1200ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"sales_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.sales_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"大型480、小型120、先月600、今月1200。","conclusion_ja":"販売条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":32,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["先月の2種類の売上を合算してから2倍する読みと照合した。"]}
+}

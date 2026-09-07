@@ -1,0 +1,16 @@
+{
+  "id": "gsm8k_daily3_credit", "title_ja": "返済済み額から残る信用枠を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00024", "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "100ドルの信用枠を全額使い、15ドルと23ドルを返した。次回までに残りいくら返すか。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907C.credit_solution", "graph": "work/gsm8k-daily3-credit-graph.json", "lean_file": "tests/lean/GSM8KDaily0907C.lean",
+  "semantic_review_status": "self_review_only", "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。",
+  "model_notes_ja": ["credit of $100を借入残高100ドルと読み、次回前に全額返済する条件を使う。"],
+  "steps": [
+    {"id":"credit_repaid","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.credit_repaid","title_ja":"返済済み額","requires_steps":[],"uses_nodes":[],"condition_ja":"火曜15ドルと木曜23ドルを返済した。","conclusion_ja":"返済済みは15+23=38ドル。","baseline_ja":"中学校までの四則演算。"},
+    {"id":"credit_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.credit_remaining","title_ja":"未返済額","requires_steps":["credit_repaid"],"uses_nodes":[],"condition_ja":"借入残高100ドルから返済済み38ドルを引く。","conclusion_ja":"100-38=62ドルを次回前に返す。","baseline_ja":"中学校までの四則演算。"},
+    {"id":"credit_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.credit_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"返済済み38ドル、残額62ドル。","conclusion_ja":"元の返済関係を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual",
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":25,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["100ドルを全額使用し、2回の返済以外はないという原文の条件と照合した。"]}
+}

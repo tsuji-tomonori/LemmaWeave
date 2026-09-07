@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily3_salt","title_ja":"海水中の塩をリットルからミリリットルへ換算する","problem_id":"external-gsm8k-main-3101c7d50724:train:00026","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"2Lの海水が20%の塩なら、蒸発後に得る塩は何mLか。","root":"LemmaWeave.Tests.GSM8KDaily0907C.salt_solution","graph":"work/gsm8k-daily3-salt-graph.json","lean_file":"tests/lean/GSM8KDaily0907C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model",
+  "counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["20%を体積比とする原文の単純化に従う。実際の塩は固体であり体積収縮等は扱わない。"],
+  "steps":[
+    {"id":"salt_liters","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.salt_liters","title_ja":"塩の体積割合","requires_steps":[],"uses_nodes":[],"condition_ja":"海水2Lの20%が塩。","conclusion_ja":"塩は0.4L=2/5L。","baseline_ja":"中学校までの割合。"},
+    {"id":"salt_milliliters","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.salt_milliliters","title_ja":"mLへ換算","requires_steps":["salt_liters"],"uses_nodes":[],"condition_ja":"1L=1000mL。","conclusion_ja":"2/5×1000=400mL。","baseline_ja":"中学校までの単位換算。"},
+    {"id":"salt_unit_conversion","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.salt_unit_conversion","title_ja":"換算式の確認","requires_steps":[],"uses_nodes":[],"condition_ja":"2/5Lを1000倍してmL表示する。","conclusion_ja":"400mLになる。","baseline_ja":"中学校までの分数計算。"},
+    {"id":"salt_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.salt_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"塩2/5L、400mL。","conclusion_ja":"割合と換算条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":27,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["20%を体積比とする文章題モデルとLからmLへの換算を分離した。"]}
+}

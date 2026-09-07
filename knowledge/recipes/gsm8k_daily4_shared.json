@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily4_shared","title_ja":"2人への分配額を合計する","problem_id":"external-gsm8k-main-3101c7d50724:train:00034","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Kenは1750ドル、TonyはKenの2倍を受け取った。分配総額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907D.shared_solution","graph":"work/gsm8k-daily4-shared-graph.json","lean_file":"tests/lean/GSM8KDaily0907D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["KenとTonyの2人だけへの分配で、両者の受取額を重複なく合計する。"],
+  "steps":[
+    {"id":"shared_tony","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.shared_tony","title_ja":"Tonyの受取額","requires_steps":[],"uses_nodes":[],"condition_ja":"TonyはKenの1750ドルの2倍を受け取る。","conclusion_ja":"Tonyは2×1750=3500ドル。","baseline_ja":"中学校までの倍と乗法。"},
+    {"id":"shared_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.shared_total","title_ja":"分配総額","requires_steps":["shared_tony"],"uses_nodes":[],"condition_ja":"Kenの1750ドルとTonyの3500ドルを合計する。","conclusion_ja":"分配総額は1750+3500=5250ドル。","baseline_ja":"中学校までの加法。"},
+    {"id":"shared_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.shared_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"Tonyを3500ドル、総額を5250ドルとする。","conclusion_ja":"元の倍と合計の関係を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":35,"checked_model_hash":"fc895499092d67d2da4fc95bf41b7ac10c6905853ec48ee732b806acbda2a2c5","checks_ja":["2人だけへの分配としてTonyの額と総額を原文に照合した。"]}
+}

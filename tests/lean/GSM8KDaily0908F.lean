@@ -7,11 +7,13 @@ open LemmaWeave.Problems.GSM8K.Daily0908F
 
 theorem boat_per_day (a b d p t : ℕ) (x : BoatTransport a b d p t) : p = 48 := by
   rcases x with ⟨ha, hb, hd, hp, ht⟩
-  omega
+  simp [ha, hb] at hp
+  exact hp
 theorem boat_total (a b d p t : ℕ) (x : BoatTransport a b d p t) : t = 96 := by
   have hp := boat_per_day a b d p t x
   rcases x with ⟨ha, hb, hd, hper, ht⟩
-  omega
+  simp [hd, hp] at ht
+  exact ht
 theorem boat_exists : BoatTransport 4 12 2 48 96 := by
   norm_num [BoatTransport]
 theorem boat_solution : BoatTransport 4 12 2 48 96 ∧
@@ -85,7 +87,8 @@ theorem pills_daily (n u d t : ℕ) (x : PillCost n u d t) : d = 4100 := by
   have hn := pills_other_count n u d t x
   have hu := pills_other_unit n u d t x
   have hd := x.2.2.1
-  omega
+  simp [hn, hu] at hd
+  exact hd
 theorem pills_total (n u d t : ℕ) (x : PillCost n u d t) : t = 57400 := by
   have hd := pills_daily n u d t x
   have ht := x.2.2.2

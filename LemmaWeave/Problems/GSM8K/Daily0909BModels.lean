@@ -35,9 +35,9 @@ def Seashells
   left = afterBrothers - sold
 
 def PagesRead
-    (chaptersBefore pagesPerChapter before partial laterChapters later total : ℕ) : Prop :=
+    (chaptersBefore pagesPerChapter before partialPages laterChapters later total : ℕ) : Prop :=
   chaptersBefore = 10 ∧ pagesPerChapter = 40 ∧
-  before = chaptersBefore * pagesPerChapter ∧ partial = 20 ∧
+  before = chaptersBefore * pagesPerChapter ∧ partialPages = 20 ∧
   laterChapters = 2 ∧ later = laterChapters * pagesPerChapter ∧
   total = before + partial + later
 

@@ -1,7 +1,7 @@
 {
   "date": "2026-09-08",
   "started_at": "2026-09-08T14:04:09+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-08T14:48:30+09:00",
   "target": 10,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00094",
@@ -15,9 +15,20 @@
     "external-gsm8k-main-3101c7d50724:train:00102",
     "external-gsm8k-main-3101c7d50724:train:00103"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00094",
+    "external-gsm8k-main-3101c7d50724:train:00095",
+    "external-gsm8k-main-3101c7d50724:train:00096",
+    "external-gsm8k-main-3101c7d50724:train:00097",
+    "external-gsm8k-main-3101c7d50724:train:00098",
+    "external-gsm8k-main-3101c7d50724:train:00099",
+    "external-gsm8k-main-3101c7d50724:train:00100",
+    "external-gsm8k-main-3101c7d50724:train:00101",
+    "external-gsm8k-main-3101c7d50724:train:00102",
+    "external-gsm8k-main-3101c7d50724:train:00103"
+  ],
   "deferred": [],
-  "status": "authored_awaiting_ci",
+  "status": "completed",
   "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34178753155",
   "previous_head": "6ba7ec426fef05516e328c18a394e9a05742307a",
   "pull_request": 3,
@@ -27,25 +38,34 @@
       "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34190442776",
       "conclusion": "failure",
       "reason_ja": "新モデルファイルの自然数演算インスタンスを導入する基礎importが不足。既存モデルと同じ固定mathlib importを追加して再試行。"
+    },
+    {
+      "run_id": 34190894022,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34190894022",
+      "conclusion": "success",
+      "commit": "c97423c6f46bc0b714aa090c2907641c0ae936ba",
+      "artifact_id": 10042425346,
+      "artifact_sha256": "37e60eae814b46962d8979390a36d412a17f0feeb80f986afe52a06d69931347"
     }
   ],
-  "commit": null,
+  "commit": "c97423c6f46bc0b714aa090c2907641c0ae936ba",
   "authored_lines": 42,
   "progress": {
-    "completed_this_run": 0,
-    "completed_today": 40,
+    "completed_this_run": 10,
+    "completed_today": 50,
     "target_today": 50,
-    "solution_ready": 98,
-    "remaining": 8694,
+    "solution_ready": 108,
+    "remaining": 8684,
     "initial_target_date": "2027-03-01",
     "measured_forecast_date": null,
     "calibration_date": "2026-09-14"
   },
-  "resume_ja": "CI成功後に証拠を取り込み、train:00094〜00103を完了へ昇格する。",
+  "resume_ja": "次回は reports/solve-progress.json の train:00104〜00113から再開する。",
   "scaling": {
-    "status": "pending",
+    "status": "measured",
     "deadline": "2026-09-14",
-    "note_ja": "全件再ビルドと依存グラフ重複量の測定、差分再検証方式の改善を継続する。"
+    "report": "reports/scaling/2026-09-08-1404.json",
+    "note_ja": "全件再ビルド時間と依存グラフ保存量を測定。差分再検証方式とruns重複削減は継続改善中。"
   },
   "weekly_expansion": {
     "completed_this_run": 0,

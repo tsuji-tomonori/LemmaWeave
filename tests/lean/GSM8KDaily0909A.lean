@@ -102,7 +102,8 @@ theorem juggling_solution : JugglingScenario 5 3 2 13 ∧
 
 theorem cupcakes_fourth (c p f e t : ℕ) (x : CupcakeCount c p f e t) : f = 90 := by
   rcases x with ⟨hc, hp, hf, he, ht⟩
-  omega
+  simp [hc, hp] at hf
+  exact hf
 theorem cupcakes_total (c p f e t : ℕ) (x : CupcakeCount c p f e t) : t = 140 := by
   have hf := cupcakes_fourth c p f e t x
   rcases x with ⟨hc, hp, hfourth, he, ht⟩
@@ -166,6 +167,7 @@ theorem truck_second_hours (r f m p s h t : ℕ) (x : TruckFill r f m p s h t) :
   have hm := truck_remaining r f m p s h t x
   have hs := truck_second_rate r f m p s h t x
   have hh := x.2.2.2.2.2.1
+  simp [hm, hs] at hh
   omega
 theorem truck_total_hours (r f m p s h t : ℕ) (x : TruckFill r f m p s h t) : t = 6 := by
   have hh := truck_second_hours r f m p s h t x
@@ -193,7 +195,8 @@ theorem conference_occupied (c s e o a : ℕ) (x : ConferenceAttendance c s e o 
 theorem conference_attended (c s e o a : ℕ) (x : ConferenceAttendance c s e o a) : a = 48 := by
   have ho := conference_occupied c s e o a x
   rcases x with ⟨hc, hs, he, hoccupied, ha⟩
-  omega
+  simp [ho, hs] at ha
+  exact ha
 theorem conference_exists : ConferenceAttendance 40 2 16 24 48 := by
   norm_num [ConferenceAttendance]
 theorem conference_solution : ConferenceAttendance 40 2 16 24 48 ∧

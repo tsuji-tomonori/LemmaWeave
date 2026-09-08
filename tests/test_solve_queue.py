@@ -1,4 +1,5 @@
 import datetime as dt
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -21,3 +22,14 @@ class SolveQueue(unittest.TestCase):
         logs=[{'deferred':[{'problem_id':'hard','retry_on':'2026-09-09'}]}]
         self.assertEqual(deferred_ids(logs,dt.date(2026,9,8)),{'hard'})
         self.assertEqual(deferred_ids(logs,dt.date(2026,9,9)),set())
+
+    def test_committed_ready_recipes_keep_their_run_evidence(self):
+        """A fresh checkout must not silently lose already-counted solutions."""
+        root=Path(__file__).resolve().parents[1]
+        report=json.loads((root/'reports/method-recipes.json').read_text())
+        missing=[]
+        for recipe in report:
+            evidence=recipe.get('proof_evidence')
+            if evidence and not (root/evidence['run']).is_file():
+                missing.append((recipe['recipe'],evidence['run']))
+        self.assertEqual(missing,[])

@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Order.Field.Rat
+
 namespace LemmaWeave.Problems.GSM8K.Daily0908E
 
 def BookWriting (totalPages days : ℕ) : Prop :=

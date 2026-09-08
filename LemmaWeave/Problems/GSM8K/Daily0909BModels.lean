@@ -39,7 +39,7 @@ def PagesRead
   chaptersBefore = 10 ∧ pagesPerChapter = 40 ∧
   before = chaptersBefore * pagesPerChapter ∧ partialPages = 20 ∧
   laterChapters = 2 ∧ later = laterChapters * pagesPerChapter ∧
-  total = before + partial + later
+  total = before + partialPages + later
 
 def BeefPurchase
     (packs poundsPerPack pounds centsPerPound totalCents totalDollars : ℕ) : Prop :=

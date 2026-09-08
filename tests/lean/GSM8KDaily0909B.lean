@@ -88,6 +88,7 @@ theorem hotel_solution : HotelRooms 30 2 2 1 5 6 ∧
 
 theorem ice_paid (c p f u r : ℕ) (x : IceCreamCustomers c p f u r) : p = 50 := by
   rcases x with ⟨hu, hr, hfree, hpaid, hsale⟩
+  simp [hu, hr] at hsale
   omega
 theorem ice_ten_free : IceCreamCustomers 60 50 10 2 100 := by
   norm_num [IceCreamCustomers]

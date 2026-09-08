@@ -1,7 +1,7 @@
 {
   "date": "2026-09-08",
   "started_at": "2026-09-08T09:59:33+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-08T10:57:00+09:00",
   "target": 10,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00084",
@@ -15,9 +15,20 @@
     "external-gsm8k-main-3101c7d50724:train:00092",
     "external-gsm8k-main-3101c7d50724:train:00093"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00084",
+    "external-gsm8k-main-3101c7d50724:train:00085",
+    "external-gsm8k-main-3101c7d50724:train:00086",
+    "external-gsm8k-main-3101c7d50724:train:00087",
+    "external-gsm8k-main-3101c7d50724:train:00088",
+    "external-gsm8k-main-3101c7d50724:train:00089",
+    "external-gsm8k-main-3101c7d50724:train:00090",
+    "external-gsm8k-main-3101c7d50724:train:00091",
+    "external-gsm8k-main-3101c7d50724:train:00092",
+    "external-gsm8k-main-3101c7d50724:train:00093"
+  ],
   "deferred": [],
-  "status": "authored_awaiting_ci",
+  "status": "completed",
   "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34164596881",
   "previous_head": "5170357f456151716fa434de7b7db3f67f1bbe5f",
   "pull_request": 3,
@@ -27,26 +38,34 @@
       "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34176757198",
       "conclusion": "failure",
       "reason_ja": "全モデルのビルドは成功。自然数除算を含む時給と年間貯蓄の2行だけomegaで閉じられず、既知等式を代入してnorm_numで検証する証明へ修正。"
+    },
+    {
+      "run_id": 34177460773,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34177460773",
+      "conclusion": "success",
+      "commit": "2a11e7d0801a5015e6c0e2a5cbe1adb5ce8f85a4",
+      "artifact_id": 10037951256,
+      "artifact_sha256": "d26ba5bd153b840ce7632df4e44225f6e91f45775fe764e2146c24740364114e"
     }
   ],
-  "commit": null,
+  "commit": "2a11e7d0801a5015e6c0e2a5cbe1adb5ce8f85a4",
   "authored_lines": 45,
   "progress": {
-    "completed_this_run": 0,
-    "completed_today": 30,
+    "completed_this_run": 10,
+    "completed_today": 40,
     "target_today": 50,
-    "solution_ready": 88,
-    "remaining": 8704,
+    "solution_ready": 98,
+    "remaining": 8694,
     "initial_target_date": "2027-03-01",
     "measured_forecast_date": null,
     "calibration_date": "2026-09-14"
   },
-  "resume_ja": "10問の記述式解答とLeanモデルを保存済み。CI成功証拠の取込から再開する。",
+  "resume_ja": "次回は reports/solve-progress.json の train:00094〜00103から再開する。",
   "scaling": {
-    "status": "pending",
+    "status": "measured",
     "deadline": "2026-09-14",
     "report": "reports/scaling/2026-09-08-0959.json",
-    "note_ja": "前回成功証拠をfresh cloneで復元できない退行を検出し、参照runの永続化と回帰検査を追加。"
+    "note_ja": "全件再ビルド時間と依存グラフ保存量を測定。fresh cloneで参照証拠を失わない回帰検査を追加。差分再検証方式は継続改善中。"
   },
   "weekly_expansion": {
     "completed_this_run": 0,

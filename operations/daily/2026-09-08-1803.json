@@ -1,7 +1,7 @@
 {
   "date": "2026-09-08",
   "started_at": "2026-09-08T18:03:29+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-08T18:58:19+09:00",
   "target": 10,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00104",
@@ -15,9 +15,20 @@
     "external-gsm8k-main-3101c7d50724:train:00112",
     "external-gsm8k-main-3101c7d50724:train:00113"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00104",
+    "external-gsm8k-main-3101c7d50724:train:00105",
+    "external-gsm8k-main-3101c7d50724:train:00106",
+    "external-gsm8k-main-3101c7d50724:train:00107",
+    "external-gsm8k-main-3101c7d50724:train:00108",
+    "external-gsm8k-main-3101c7d50724:train:00109",
+    "external-gsm8k-main-3101c7d50724:train:00110",
+    "external-gsm8k-main-3101c7d50724:train:00111",
+    "external-gsm8k-main-3101c7d50724:train:00112",
+    "external-gsm8k-main-3101c7d50724:train:00113"
+  ],
   "deferred": [],
-  "status": "awaiting_ci",
+  "status": "completed",
   "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34192503725",
   "previous_head": "609d68e4971281a8204af81eabca8e3b19b940f6",
   "pull_request": 3,
@@ -27,21 +38,35 @@
       "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34209559945",
       "conclusion": "failure",
       "reason_ja": "具体値へ置換する前に未知変数同士の積をomegaへ渡した3箇所が証明できなかった。既に得た等式でsimpしてから結論を返す形へ修正して再試行。"
+    },
+    {
+      "run_id": 34210882862,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34210882862",
+      "conclusion": "success",
+      "commit": "45e3dc70e66a9e5e7dbdf260d9dbacd444d8a133",
+      "artifact_id": 10050210839,
+      "artifact_sha256": "7957d3d25adf43082c3e27293011f7c600410d5644ca251c3ed6d03af6629202"
     }
   ],
-  "commit": null,
+  "commit": "45e3dc70e66a9e5e7dbdf260d9dbacd444d8a133",
   "authored_lines": 44,
   "progress": {
-    "completed_this_run": 0,
-    "completed_today": 50,
+    "completed_this_run": 10,
+    "completed_today": 60,
     "target_today": 50,
-    "solution_ready": 108,
-    "remaining": 8684,
+    "solution_ready": 118,
+    "remaining": 8674,
     "initial_target_date": "2027-03-01",
     "measured_forecast_date": null,
     "calibration_date": "2026-09-14"
   },
-  "resume_ja": "CI成功前のため完了には数えない。tests/lean/GSM8KDaily0908F.leanを固定環境で検証し、成功証拠を取り込む。",
+  "resume_ja": "次回はreports/solve-progress.jsonのnext_batch（train:00114からtrain:00123）を解く。",
+  "scaling": {
+    "status": "measured",
+    "deadline": "2026-09-14",
+    "report": "reports/scaling/2026-09-08-1803.json",
+    "note_ja": "全パイプライン時間と依存グラフ保存量を測定。入力・出力ハッシュ照合を維持した差分再検証方式は継続改善する。"
+  },
   "weekly_expansion": {
     "completed_this_run": 0,
     "target": 6,

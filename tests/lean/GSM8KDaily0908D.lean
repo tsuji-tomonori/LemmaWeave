@@ -158,7 +158,9 @@ theorem bonus_hourly (h p r : ℕ) (x : BonusHourlyPay h p r) : r = 10 := by
   have hh := bonus_hours h p r x
   have hp := bonus_total_pay h p r x
   have hr := x.2.2
-  omega
+  rw [hh, hp] at hr
+  norm_num at hr ⊢
+  exact hr
 theorem bonus_exists : BonusHourlyPay 10 100 10 := by norm_num [BonusHourlyPay]
 theorem bonus_solution : BonusHourlyPay 10 100 10 ∧
     (∀ h p r, BonusHourlyPay h p r → h = 10) ∧
@@ -173,7 +175,15 @@ theorem savings_leap : AnnualSavings 366 3 2 1830 := by norm_num [AnnualSavings]
 theorem savings_possible (d s b t : ℕ) (x : AnnualSavings d s b t) :
     t = 1825 ∨ t = 1830 := by
   rcases x with ⟨hd, hs, hb, ht⟩
-  rcases hd with hd | hd <;> omega
+  rcases hd with hd | hd
+  · left
+    rw [hd, hs, hb] at ht
+    norm_num at ht
+    exact ht
+  · right
+    rw [hd, hs, hb] at ht
+    norm_num at ht
+    exact ht
 theorem savings_ambiguity : AnnualSavings 365 3 2 1825 ∧
     AnnualSavings 366 3 2 1830 ∧ (1825 : ℕ) ≠ 1830 :=
   ⟨savings_regular, savings_leap, by omega⟩

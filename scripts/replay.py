@@ -36,6 +36,7 @@ COMMANDS = [
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0908CModels'],
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0908DModels'],
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0908EModels'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0908FModels'],
     ['python3', 'scripts/run_method_targets.py'],
     ['python3', 'scripts/check_method_recipes.py', '--render'],
     ['python3', '-m', 'unittest', 'discover', '-s', 'tests', '-v'],

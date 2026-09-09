@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily18_stickers","title_ja":"配った後のイルカシール","problem_id":"external-gsm8k-main-3101c7d50724:train:00179","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"72枚から3人へ各4枚、Mandyへその3人分より2枚多く、JustinへMandyより10枚少なく渡した後の残数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910B.stickers_solution","graph":"work/gsm8k-daily18-stickers-graph.json","lean_file":"tests/lean/GSM8KDaily0910B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["Mandyの基準は3人へ渡した合計12枚であり、1人分4枚ではない。"],
+  "steps":[
+    {"id":"stickers_friends","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.stickers_friends","title_ja":"3人に渡した合計","requires_steps":[],"uses_nodes":[],"condition_ja":"3人へ各4枚。","conclusion_ja":"12枚。","baseline_ja":"人数×1人当たり枚数。"},
+    {"id":"stickers_mandy","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.stickers_mandy","title_ja":"Mandyに渡した枚数","requires_steps":["stickers_friends"],"uses_nodes":[],"condition_ja":"3人分合計12枚より2枚多い。","conclusion_ja":"14枚。","baseline_ja":"加法。"},
+    {"id":"stickers_justin","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.stickers_justin","title_ja":"Justinに渡した枚数","requires_steps":["stickers_mandy"],"uses_nodes":[],"condition_ja":"Mandyの14枚より10枚少ない。","conclusion_ja":"4枚。","baseline_ja":"減法。"},
+    {"id":"stickers_given","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.stickers_given","title_ja":"渡した総数","requires_steps":["stickers_friends","stickers_mandy","stickers_justin"],"uses_nodes":[],"condition_ja":"12枚、14枚、4枚を渡す。","conclusion_ja":"合計30枚。","baseline_ja":"加法。"},
+    {"id":"stickers_left","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.stickers_left","title_ja":"残った枚数","requires_steps":["stickers_given"],"uses_nodes":[],"condition_ja":"最初72枚から30枚を渡す。","conclusion_ja":"42枚残る。","baseline_ja":"減法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":180,"checked_model_hash":"03e036289d514fd8619ad7bea78fd06f9a18c3822d778174ffbb4daa2b56611a","checks_ja":["3人分の合計、MandyとJustinの比較基準、初期枚数を照合した。"]}
+}

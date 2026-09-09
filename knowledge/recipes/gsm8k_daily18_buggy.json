@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily18_buggy","title_ja":"等時間で走るバギーの平均速度","problem_id":"external-gsm8k-main-3101c7d50724:train:00175","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"平地60mph、下りは12mph速く、上りは18mph遅い速度で、各地形を全時間の3分の1ずつ走るときの平均速度を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910B.buggy_solution","graph":"work/gsm8k-daily18-buggy-graph.json","lean_file":"tests/lean/GSM8KDaily0910B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各速度で走る時間が等しいため、距離でなく時間を重みとする平均速度は3速度の算術平均になる。"],
+  "steps":[
+    {"id":"buggy_downhill","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.buggy_downhill","title_ja":"下りの速度","requires_steps":[],"uses_nodes":[],"condition_ja":"平地60mphより12mph速い。","conclusion_ja":"下りは72mph。","baseline_ja":"速度差の加法。"},
+    {"id":"buggy_uphill","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.buggy_uphill","title_ja":"上りの速度","requires_steps":[],"uses_nodes":[],"condition_ja":"平地60mphより18mph遅い。","conclusion_ja":"上りは42mph。","baseline_ja":"速度差の減法。"},
+    {"id":"buggy_sum","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.buggy_sum","title_ja":"3速度の合計","requires_steps":["buggy_downhill","buggy_uphill"],"uses_nodes":[],"condition_ja":"平地60、下り72、上り42mph。","conclusion_ja":"合計は174mph。","baseline_ja":"加法。"},
+    {"id":"buggy_average","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.buggy_average","title_ja":"等時間平均","requires_steps":["buggy_sum"],"uses_nodes":[],"condition_ja":"3区間の時間が等しい。","conclusion_ja":"174÷3=58mph。","baseline_ja":"平均速度=総距離÷総時間。等時間なら速度の算術平均。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":176,"checked_model_hash":"03e036289d514fd8619ad7bea78fd06f9a18c3822d778174ffbb4daa2b56611a","checks_ja":["3地形は距離ではなく走行時間が各3分の1であることを照合した。"]}
+}

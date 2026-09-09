@@ -13,11 +13,13 @@ theorem tickets_child_cost (r d c a p q u t g h : ℕ)
     (x : FamilyTickets r d c a p q u t g h) : q = 208 := by
   have hp := tickets_child_price r d c a p q u t g h x
   rcases x with ⟨hr, hd, hc, ha, hprice, hq, hu, ht, hg, hh⟩
-  omega
+  simp [hc, hp] at hq
+  exact hq
 theorem tickets_adult_cost (r d c a p q u t g h : ℕ)
     (x : FamilyTickets r d c a p q u t g h) : u = 218 := by
   rcases x with ⟨hr, hd, hc, ha, hp, hq, hu, ht, hg, hh⟩
-  omega
+  simp [ha, hr] at hu
+  exact hu
 theorem tickets_total (r d c a p q u t g h : ℕ)
     (x : FamilyTickets r d c a p q u t g h) : t = 426 := by
   have hq := tickets_child_cost r d c a p q u t g h x
@@ -54,6 +56,7 @@ theorem house_solution : HouseArea 2350 10000 600 ∧
 
 theorem wax_small_count (s l c d u v t : ℕ) (x : WaxSculptures s l c d u v t) : c = 6 := by
   rcases x with ⟨hs, hl, hu, hused, htriple, hv, ht⟩
+  simp [hu, hs] at hused
   omega
 theorem wax_large_count (s l c d u v t : ℕ) (x : WaxSculptures s l c d u v t) : d = 2 := by
   have hc := wax_small_count s l c d u v t x
@@ -62,7 +65,8 @@ theorem wax_large_count (s l c d u v t : ℕ) (x : WaxSculptures s l c d u v t) 
 theorem wax_large_used (s l c d u v t : ℕ) (x : WaxSculptures s l c d u v t) : v = 8 := by
   have hd := wax_large_count s l c d u v t x
   rcases x with ⟨hs, hl, hu, hused, htriple, hv, ht⟩
-  omega
+  simp [hd, hl] at hv
+  exact hv
 theorem wax_total (s l c d u v t : ℕ) (x : WaxSculptures s l c d u v t) : t = 20 := by
   have hv := wax_large_used s l c d u v t x
   rcases x with ⟨hs, hl, hu, hused, htriple, hlarge, ht⟩
@@ -77,14 +81,18 @@ theorem wax_solution : WaxSculptures 2 4 6 2 12 8 20 ∧
 
 theorem towels_people (f p n d q t c l : ℕ) (x : BeachTowels f p n d q t c l) : n = 12 := by
   rcases x with ⟨hf, hp, hn, hd, hq, ht, hc, hl⟩
-  omega
+  simp [hf, hp] at hn
+  exact hn
 theorem towels_total (f p n d q t c l : ℕ) (x : BeachTowels f p n d q t c l) : t = 84 := by
   have hn := towels_people f p n d q t c l x
   rcases x with ⟨hf, hp, hpeople, hd, hq, ht, hc, hl⟩
-  omega
+  have hq12 : q = 12 := by omega
+  simp [hq12, hd] at ht
+  exact ht
 theorem towels_loads (f p n d q t c l : ℕ) (x : BeachTowels f p n d q t c l) : l = 6 := by
   have ht := towels_total f p n d q t c l x
   rcases x with ⟨hf, hp, hn, hd, hq, htotal, hc, hl⟩
+  simp [ht, hc] at hl
   omega
 theorem towels_exists : BeachTowels 3 4 12 7 12 84 14 6 := by norm_num [BeachTowels]
 theorem towels_solution : BeachTowels 3 4 12 7 12 84 14 6 ∧
@@ -101,11 +109,13 @@ theorem discounts_milk_total (r s e n m c b d t : ℕ)
     (x : ShoppingDiscounts r s e n m c b d t) : m = 3 := by
   have he := discounts_milk_each r s e n m c b d t x
   rcases x with ⟨hr, hs, hsave, hn, hm, hc, hb, hd, ht⟩
-  omega
+  simp [he, hn] at hm
+  exact hm
 theorem discounts_cereal_total (r s e n m c b d t : ℕ)
     (x : ShoppingDiscounts r s e n m c b d t) : d = 5 := by
   rcases x with ⟨hr, hs, he, hn, hm, hc, hb, hd, ht⟩
-  omega
+  simp [hc, hb] at hd
+  exact hd
 theorem discounts_total (r s e n m c b d t : ℕ)
     (x : ShoppingDiscounts r s e n m c b d t) : t = 8 := by
   have hm := discounts_milk_total r s e n m c b d t x
@@ -124,10 +134,12 @@ theorem discounts_solution : ShoppingDiscounts 3 2 1 3 3 1 5 5 8 ∧
 
 theorem stairs_up (p u d a b t : ℕ) (x : StairFlights p u d a b t) : a = 15 := by
   rcases x with ⟨hp, hu, hd, ha, hb, ht⟩
-  omega
+  simp [hp, hu] at ha
+  exact ha
 theorem stairs_down (p u d a b t : ℕ) (x : StairFlights p u d a b t) : b = 9 := by
   rcases x with ⟨hp, hu, hd, ha, hb, ht⟩
-  omega
+  simp [hp, hd] at hb
+  exact hb
 theorem stairs_total (p u d a b t : ℕ) (x : StairFlights p u d a b t) : t = 24 := by
   have ha := stairs_up p u d a b t x
   have hb := stairs_down p u d a b t x
@@ -170,7 +182,8 @@ theorem movie_solution : MovieAdmissions 120 90 50 24 63 25 260 112 148 ∧
 
 theorem dog_walk (w s a f t : ℕ) (x : DogCare w s a f t) : a = 60 := by
   rcases x with ⟨hw, hs, ha, hf, ht⟩
-  omega
+  simp [hw, hs] at ha
+  exact ha
 theorem dog_feed (w s a f t : ℕ) (x : DogCare w s a f t) : f = 12 := by
   have hf := x.2.2.2.1
   omega
@@ -206,7 +219,6 @@ theorem sanitizer_relative_left (a b o k l : ℚ)
     (x : SanitizerRelativeOverlap a b o k l) : l = 105 / 4 := by
   have ho := sanitizer_relative_overlap a b o k l x
   rcases x with ⟨ha, hb, hoverlap, hk, hl⟩
-  norm_num at ha hb
   linarith
 theorem sanitizer_relative_exists : SanitizerRelativeOverlap 50 25 (5/4) (295/4) (105/4) := by
   norm_num [SanitizerRelativeOverlap]

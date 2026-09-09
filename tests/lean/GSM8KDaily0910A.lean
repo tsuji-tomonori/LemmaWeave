@@ -44,6 +44,7 @@ theorem bus_minutes (o e r t p m h v s a : ℕ) (x : BusTour o e r t p m h v s a
 theorem bus_travel_hours (o e r t p m h v s a : ℕ) (x : BusTour o e r t p m h v s a) : v = 4 := by
   have hm := bus_minutes o e r t p m h v s a x
   rcases x with ⟨ho, he, hr, ht, hp, hminutes, hh, hv, hs, ha⟩
+  simp [hm, hh] at hv
   omega
 theorem bus_total (o e r t p m h v s a : ℕ) (x : BusTour o e r t p m h v s a) : a = 6 := by
   have hv := bus_travel_hours o e r t p m h v s a x
@@ -65,6 +66,7 @@ theorem movies_minutes (d h e m t w a : ℕ) (x : MovieMarathon d h e m t w a) :
 theorem movies_tuesday (d h e m t w a : ℕ) (x : MovieMarathon d h e m t w a) : t = 3 := by
   have hm := movies_minutes d h e m t w a x
   rcases x with ⟨hd, hh, he, hminutes, ht, hw, ha⟩
+  simp [hm, hd] at ht
   omega
 theorem movies_wednesday (d h e m t w a : ℕ) (x : MovieMarathon d h e m t w a) : w = 6 := by
   have ht := movies_tuesday d h e m t w a x
@@ -92,6 +94,7 @@ theorem film_increase (h p r i n c d t : ℕ)
     (x : FilmProduction h p r i n c d t) : i = 72 := by
   have hp := film_previous_minutes h p r i n c d t x
   rcases x with ⟨hh, hprevious, hr, hi, hn, hc, hd, ht⟩
+  simp [hp, hr] at hi
   omega
 theorem film_new_minutes (h p r i n c d t : ℕ)
     (x : FilmProduction h p r i n c d t) : n = 192 := by
@@ -146,6 +149,7 @@ theorem bakery_discount (q p c r s t b u v a h d e f : ℕ)
     (x : BakeryOrder q p c r s t b u v a h d e f) : e = 6 := by
   have ha := bakery_subtotal q p c r s t b u v a h d e f x
   rcases x with ⟨hq, hp, hc, hr, hs, ht, hb, hu, hv, hsubtotal, hh, hover, hd, he, hf⟩
+  simp [ha, hd] at he
   omega
 theorem bakery_total (q p c r s t b u v a h d e f : ℕ)
     (x : BakeryOrder q p c r s t b u v a h d e f) : f = 54 := by
@@ -172,6 +176,7 @@ theorem grapes_baseline (h p b r i t : ℕ) (x : GrapeProduction h p b r i t) : 
 theorem grapes_increase (h p b r i t : ℕ) (x : GrapeProduction h p b r i t) : i = 36 := by
   have hb := grapes_baseline h p b r i t x
   rcases x with ⟨hh, hp, hbaseline, hr, hi, ht⟩
+  simp [hb, hr] at hi
   omega
 theorem grapes_total (h p b r i t : ℕ) (x : GrapeProduction h p b r i t) : t = 216 := by
   have hb := grapes_baseline h p b r i t x
@@ -211,11 +216,12 @@ theorem seeds_total (s p t e d r n : ℕ) (h : SeedPlanting s p t e d r n) : d =
 theorem seeds_planted (s p t e d r n : ℕ) (h : SeedPlanting s p t e d r n) : n = 24 := by
   have hd := seeds_total s p t e d r n h
   rcases h with ⟨hs, hp, ht, he, hseeds, hr, hn⟩
+  simp [hd, hr] at hn
   omega
 theorem seeds_conditional_trees (s p t e d r n trees : ℕ)
     (h : AllPlantedSeedsBecomeTrees s p t e d r n trees) : trees = 24 := by
   have hn := seeds_planted s p t e d r n h.1
-  omega
+  exact h.2.trans hn
 theorem seeds_zero_possible : SeedTreeOutcome 24 0 := by norm_num [SeedTreeOutcome]
 theorem seeds_all_possible : SeedTreeOutcome 24 24 := by norm_num [SeedTreeOutcome]
 theorem seeds_not_determined : ∃ a b, SeedTreeOutcome 24 a ∧ SeedTreeOutcome 24 b ∧ a ≠ b := by
@@ -247,9 +253,11 @@ theorem bottles_solution : OrigamiBottles 2 3 5 15 75 ∧
 
 theorem race_hare_time (d h t a b s : ℕ) (x : PetRace d h t a b s) : a = 2 := by
   rcases x with ⟨hd, hh, ht, ha, hb, hs⟩
+  simp [hd, hh] at ha
   omega
 theorem race_turtle_time (d h t a b s : ℕ) (x : PetRace d h t a b s) : b = 20 := by
   rcases x with ⟨hd, hh, ht, ha, hb, hs⟩
+  simp [hd, ht] at hb
   omega
 theorem race_head_start (d h t a b s : ℕ) (x : PetRace d h t a b s) : s = 18 := by
   have ha := race_hare_time d h t a b s x

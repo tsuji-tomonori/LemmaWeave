@@ -16,6 +16,7 @@ theorem tickets_saturday (m w s t : ℕ) (h : MovieTickets m w s t) : s = 25 := 
 theorem tickets_total (m w s t : ℕ) (h : MovieTickets m w s t) : t = 35 := by
   have hw := tickets_wednesday m w s t h
   have hs := tickets_saturday m w s t h
+  rcases h with ⟨hm, hwd, hsd, ht⟩
   omega
 theorem tickets_exists : MovieTickets 5 10 25 35 := by norm_num [MovieTickets]
 theorem tickets_solution : MovieTickets 5 10 25 35 ∧

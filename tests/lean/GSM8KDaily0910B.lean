@@ -16,7 +16,7 @@ theorem tickets_saturday (m w s t : ℕ) (h : MovieTickets m w s t) : s = 25 := 
 theorem tickets_total (m w s t : ℕ) (h : MovieTickets m w s t) : t = 35 := by
   have hw := tickets_wednesday m w s t h
   have hs := tickets_saturday m w s t h
-  -- The total equation is the final model premise needed with those two values.
+  -- The model's total equation is the final premise needed with those two values.
   rcases h with ⟨hm, hwd, hsd, ht⟩
   omega
 theorem tickets_exists : MovieTickets 5 10 25 35 := by norm_num [MovieTickets]

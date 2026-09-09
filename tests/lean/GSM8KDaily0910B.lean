@@ -258,3 +258,70 @@ theorem shopping_total (a b c d e f g h i : ℕ) (x : ShoppingTotal a b c d e f 
   omega
 theorem shopping_exists : ShoppingTotal 40 20 80 140 10 60 20 90 230 := by
   norm_num [ShoppingTotal]
+theorem shopping_solution : ShoppingTotal 40 20 80 140 10 60 20 90 230 ∧
+    (∀ a b c d e f g h i, ShoppingTotal a b c d e f g h i → b = 20) ∧
+    (∀ a b c d e f g h i, ShoppingTotal a b c d e f g h i → c = 80) ∧
+    (∀ a b c d e f g h i, ShoppingTotal a b c d e f g h i → d = 140) ∧
+    (∀ a b c d e f g h i, ShoppingTotal a b c d e f g h i → e = 10) ∧
+    (∀ a b c d e f g h i, ShoppingTotal a b c d e f g h i → f = 60) ∧
+    (∀ a b c d e f g h i, ShoppingTotal a b c d e f g h i → g = 20) ∧
+    (∀ a b c d e f g h i, ShoppingTotal a b c d e f g h i → h = 90) ∧
+    (∀ a b c d e f g h i, ShoppingTotal a b c d e f g h i → i = 230) :=
+  ⟨shopping_exists, shopping_lisa_jeans, shopping_lisa_coats, shopping_lisa_total,
+    shopping_carly_shirts, shopping_carly_jeans, shopping_carly_coats,
+    shopping_carly_total, shopping_total⟩
+
+theorem poultry_chickens (a b c d e f g h i j k : ℕ)
+    (x : PoultryAfterWeek a b c d e f g h i j k) : h = 160 := by
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi, hj, hk⟩
+  simp [ha, hb, he] at hh
+  exact hh
+theorem poultry_turkeys (a b c d e f g h i j k : ℕ)
+    (x : PoultryAfterWeek a b c d e f g h i j k) : i = 144 := by
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi, hj, hk⟩
+  simp [ha, hc, hf] at hi
+  exact hi
+theorem poultry_guinea (a b c d e f g h i j k : ℕ)
+    (x : PoultryAfterWeek a b c d e f g h i j k) : j = 45 := by
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi, hj, hk⟩
+  simp [ha, hd, hg] at hj
+  exact hj
+theorem poultry_total (a b c d e f g h i j k : ℕ)
+    (x : PoultryAfterWeek a b c d e f g h i j k) : k = 349 := by
+  have hh := poultry_chickens a b c d e f g h i j k x
+  have hi := poultry_turkeys a b c d e f g h i j k x
+  have hj := poultry_guinea a b c d e f g h i j k x
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hchickens, hturkeys, hguinea, hk⟩
+  omega
+theorem poultry_exists : PoultryAfterWeek 7 300 200 80 20 8 5 160 144 45 349 := by
+  norm_num [PoultryAfterWeek]
+theorem poultry_solution : PoultryAfterWeek 7 300 200 80 20 8 5 160 144 45 349 ∧
+    (∀ a b c d e f g h i j k, PoultryAfterWeek a b c d e f g h i j k → h = 160) ∧
+    (∀ a b c d e f g h i j k, PoultryAfterWeek a b c d e f g h i j k → i = 144) ∧
+    (∀ a b c d e f g h i j k, PoultryAfterWeek a b c d e f g h i j k → j = 45) ∧
+    (∀ a b c d e f g h i j k, PoultryAfterWeek a b c d e f g h i j k → k = 349) :=
+  ⟨poultry_exists, poultry_chickens, poultry_turkeys, poultry_guinea, poultry_total⟩
+
+end LemmaWeave.Tests.GSM8KDaily0910B
+
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.tickets_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.buggy_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.sugar_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.car_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.flowers_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.stickers_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.books_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.tree_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.shopping_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910B.poultry_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.tickets_solution to "work/gsm8k-daily18-tickets-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.buggy_solution to "work/gsm8k-daily18-buggy-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.sugar_solution to "work/gsm8k-daily18-sugar-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.car_solution to "work/gsm8k-daily18-car-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.flowers_solution to "work/gsm8k-daily18-flowers-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.stickers_solution to "work/gsm8k-daily18-stickers-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.books_solution to "work/gsm8k-daily18-books-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.tree_solution to "work/gsm8k-daily18-tree-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.shopping_solution to "work/gsm8k-daily18-shopping-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910B.poultry_solution to "work/gsm8k-daily18-poultry-graph.json"

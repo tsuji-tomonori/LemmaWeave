@@ -1,7 +1,7 @@
 {
   "date": "2026-09-09",
   "started_at": "2026-09-09T17:55:39+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-09T18:54:19+09:00",
   "target_count": 10,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00154",
@@ -15,10 +15,21 @@
     "external-gsm8k-main-3101c7d50724:train:00162",
     "external-gsm8k-main-3101c7d50724:train:00163"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00154",
+    "external-gsm8k-main-3101c7d50724:train:00155",
+    "external-gsm8k-main-3101c7d50724:train:00156",
+    "external-gsm8k-main-3101c7d50724:train:00157",
+    "external-gsm8k-main-3101c7d50724:train:00158",
+    "external-gsm8k-main-3101c7d50724:train:00159",
+    "external-gsm8k-main-3101c7d50724:train:00160",
+    "external-gsm8k-main-3101c7d50724:train:00161",
+    "external-gsm8k-main-3101c7d50724:train:00162",
+    "external-gsm8k-main-3101c7d50724:train:00163"
+  ],
   "deferred": [],
   "authored_explanation_lines": 40,
-  "status": "lean_ci_pending",
+  "status": "completed",
   "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34317283432",
   "previous_head": "b683355665fdbf93eab7f00e0845362839fbf27b",
   "ci": [
@@ -28,14 +39,32 @@
       "head": "49e3a01de1b5947a91d2bc660bb936c25b45d141",
       "conclusion": "failure",
       "reason_ja": "Lean、公理監査、依存抽出は成功。凍結モデルハッシュを単純SHA256で保存しており、規定の正規化ハッシュと不一致だったため証拠集約で停止。"
+    },
+    {
+      "run_id": 34335499196,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34335499196",
+      "head": "5eeb140a9eb06107f93e85613e6d5f870f9c175f",
+      "conclusion": "success",
+      "artifact_id": 10098104675,
+      "artifact_sha256": "fb91f6871ba2cb282c3ee4978528c2110f0707a9c09116f75b891106dc627e6c"
     }
   ],
   "pr": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
-  "commit": null,
+  "commit": "5eeb140a9eb06107f93e85613e6d5f870f9c175f",
+  "progress": {
+    "completed_this_run": 10,
+    "completed_today": 50,
+    "target_today": 50,
+    "solution_ready": 168,
+    "remaining": 8624,
+    "initial_target_date": "2027-03-01",
+    "measured_forecast_date": null,
+    "calibration_date": "2026-09-14"
+  },
   "weekly_expansion": {
     "completed_this_run": 0,
     "target": 6,
     "note_ja": "高校6分野の追加出典付き問題は未実施。固定GSM8Kを高校全分野の網羅に数えない。"
   },
-  "resume_ja": "固定CIのLean証明、公理監査、行別実依存照合から再開する。"
+  "resume_ja": "次回はreports/solve-progress.jsonのnext_batch（train:00164〜00173）から再開する。"
 }

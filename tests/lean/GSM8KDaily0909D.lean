@@ -30,6 +30,7 @@ theorem beef_third_packages (w a b c t x y k r : ℕ)
     (h : GroundBeef w a b c t x y k r) : c = 8 := by
   have hr := beef_remaining_weight w a b c t x y k r h
   rcases h with ⟨hw, ha, hb, ht, hx, hy, hk, hremaining, hc⟩
+  simp [hw] at hc
   omega
 theorem beef_exists : GroundBeef 4 10 7 8 100 40 28 68 32 := by
   norm_num [GroundBeef]
@@ -149,6 +150,7 @@ theorem ages_jayden_future (y e f j k : ℕ) (h : FutureAges y e f j k) : k = 7 
   omega
 theorem ages_jayden_now (y e f j k : ℕ) (h : FutureAges y e f j k) : j = 4 := by
   have hk := ages_jayden_future y e f j k h
+  have hy := h.1
   have hj := h.2.2.2.2
   omega
 theorem ages_exists : FutureAges 3 11 14 4 7 := by norm_num [FutureAges]

@@ -144,7 +144,8 @@ theorem commute_solution : CommuteCounts 200 60 100 120 80 40 80 ∧
     commute_difference, commute_reference_answer_wrong⟩
 
 theorem cable_sections (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : c = 40 := by
-  simp [CableSections] at x
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
+  norm_num [ha, hb] at hc
   omega
 theorem cable_given (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : d = 10 := by
   have hc := cable_sections a b c d e f g h x

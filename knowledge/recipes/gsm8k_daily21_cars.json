@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily21_cars","title_ja":"3年後の玩具の車","problem_id":"external-gsm8k-main-3101c7d50724:train:00210","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"16台から毎年50%増える玩具の車が3年後に何台になるか求める。","root":"LemmaWeave.Tests.GSM8KDaily0910E.cars_solution","graph":"work/gsm8k-daily21-cars-graph.json","lean_file":"tests/lean/GSM8KDaily0910E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["毎年の50%増を前年の150%とし、各年の新しい総数へ順次適用する。"],
+  "steps":[
+    {"id":"cars_year1","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.cars_year1","title_ja":"1年後","requires_steps":[],"uses_nodes":[],"condition_ja":"初期16台を50%増、すなわち150%にする。","conclusion_ja":"1年後は16×150/100=24台。","baseline_ja":"百分率による増加。"},
+    {"id":"cars_year2","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.cars_year2","title_ja":"2年後","requires_steps":["cars_year1"],"uses_nodes":[],"condition_ja":"1年後の24台をさらに50%増にする。","conclusion_ja":"2年後は24×150/100=36台。","baseline_ja":"前年の総数を基準にする複利的増加。"},
+    {"id":"cars_year3","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.cars_year3","title_ja":"3年後","requires_steps":["cars_year2"],"uses_nodes":[],"condition_ja":"2年後の36台をさらに50%増にする。","conclusion_ja":"答えは36×150/100=54台。","baseline_ja":"前年の総数を基準にする複利的増加。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":211,"checked_model_hash":"31bcdf0c5d3a5dea5a167757075342d7c667364bb651d24831fc06828ac80874","checks_ja":["初期台数、毎年50%増、3回の逐次適用を原文と照合した。"]}
+}

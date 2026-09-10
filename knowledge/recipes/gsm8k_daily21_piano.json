@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily21_piano","title_ja":"1日当たりのピアノ練習時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00212","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"12歳から20歳になる前までに平日練習で10000時間へ達するための1日当たり時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910E.piano_solution","graph":"work/gsm8k-daily21-piano-graph.json","lean_file":"tests/lean/GSM8KDaily0910E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["8年間へ均等配分し、1年52週、毎年2週休み、残り50週の月曜から金曜を練習日とする。"],
+  "steps":[
+    {"id":"piano_years","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.piano_years","title_ja":"利用できる年数","requires_steps":[],"uses_nodes":[],"condition_ja":"12歳になった時点から20歳まで。","conclusion_ja":"利用できる期間は20−12=8年。","baseline_ja":"年齢差。"},
+    {"id":"piano_annual","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.piano_annual","title_ja":"年間の必要時間","requires_steps":["piano_years"],"uses_nodes":[],"condition_ja":"10000時間を8年間へ均等配分する。","conclusion_ja":"1年当たり1250時間。","baseline_ja":"総量の均等配分。"},
+    {"id":"piano_weeks","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.piano_weeks","title_ja":"年間の練習週","requires_steps":[],"uses_nodes":[],"condition_ja":"1年52週から休暇2週を除く。","conclusion_ja":"練習するのは年50週。","baseline_ja":"全体から休止期間を引く。"},
+    {"id":"piano_days","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.piano_days","title_ja":"年間の練習日","requires_steps":["piano_weeks"],"uses_nodes":[],"condition_ja":"50週の各週で月曜から金曜の5日練習する。","conclusion_ja":"年間練習日は50×5=250日。","baseline_ja":"週数と1週当たり日数の乗法。"},
+    {"id":"piano_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.piano_daily","title_ja":"1日当たり時間","requires_steps":["piano_annual","piano_days"],"uses_nodes":[],"condition_ja":"年間1250時間を250日に均等配分する。","conclusion_ja":"答えは1250÷250=5時間。","baseline_ja":"総時間÷日数。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":213,"checked_model_hash":"31bcdf0c5d3a5dea5a167757075342d7c667364bb651d24831fc06828ac80874","checks_ja":["年齢差、10000時間、週数、休暇、平日5日と均等配分条件を照合した。"]}
+}

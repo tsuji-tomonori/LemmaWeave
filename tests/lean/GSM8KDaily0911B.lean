@@ -72,7 +72,8 @@ theorem chairs_rest (a b c d e f g h : ℕ) (x : HallChairs a b c d e f g h) : d
   have hb := chairs_half a b c d e f g h x
   rcases x with ⟨ha, hb', hc, hd, he, hf, hg, hh⟩
   norm_num [ha, hb, hc] at hd
-  exact hd
+  clear hb' he hf hg hh
+  omega
 theorem chairs_parts (a b c d e f g h : ℕ) (x : HallChairs a b c d e f g h) :
     e = 32 ∧ f = 15 ∧ g = 44 := by
   have hb := chairs_half a b c d e f g h x
@@ -112,7 +113,8 @@ theorem lottery_remaining (a b c d e f : ℕ) (x : LotteryDebts a b c d e f) : f
   have he := lottery_paid a b c d e f x
   rcases x with ⟨ha, hb, hc, hd, he', hf⟩
   norm_num [ha, he] at hf
-  exact hf
+  clear hb hc hd he'
+  omega
 theorem lottery_exists : LotteryDebts 100 20 40 20 80 20 := by norm_num [LotteryDebts]
 theorem lottery_solution : LotteryDebts 100 20 40 20 80 20 ∧
     (∀ a b c d e f, LotteryDebts a b c d e f → c = 40) ∧
@@ -129,7 +131,8 @@ theorem commute_non_drivers (a b c d e f g : ℕ) (x : CommuteCounts a b c d e f
   have hd0 := commute_drivers a b c d e f g x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg⟩
   norm_num [ha, hd0] at he
-  exact he
+  clear hb hc hd hf hg
+  omega
 theorem commute_transit (a b c d e f g : ℕ) (x : CommuteCounts a b c d e f g) : f = 40 := by
   have he0 := commute_non_drivers a b c d e f g x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg⟩
@@ -140,7 +143,8 @@ theorem commute_difference (a b c d e f g : ℕ) (x : CommuteCounts a b c d e f 
   have hf0 := commute_transit a b c d e f g x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg⟩
   norm_num [hd0, hf0] at hg
-  exact hg
+  clear ha hb hc hd he hf
+  omega
 theorem commute_exists : CommuteCounts 200 60 100 120 80 40 80 := by norm_num [CommuteCounts]
 theorem commute_reference_answer_wrong :
     ((120 : ℕ) - 40 = 80) ∧ (120 : ℕ) - 40 ≠ 40 := by
@@ -165,13 +169,15 @@ theorem cable_given (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) 
   have hc := cable_sections a b c d e f g h x
   rcases x with ⟨ha, hb, hc', hd, he, hf, hg, hh⟩
   norm_num [hc] at hd
-  exact hd
+  clear ha hb hc' he hf hg hh
+  omega
 theorem cable_remaining (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : e = 30 := by
   have hc := cable_sections a b c d e f g h x
   have hd := cable_given a b c d e f g h x
   rcases x with ⟨ha, hb, hc', hd', he, hf, hg, hh⟩
   norm_num [hc, hd] at he
-  exact he
+  clear ha hb hc' hd' hf hg hh
+  omega
 theorem cable_on_hand (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : g = 15 := by
   have he0 := cable_remaining a b c d e f g h x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
@@ -227,7 +233,8 @@ theorem beakers_non_copper (a b c d e : ℕ) (x : BeakerTests a b c d e) : e = 7
   have hc0 := beakers_tested a b c d e x
   rcases x with ⟨ha, hb, hc, hd, he⟩
   norm_num [hc0, hd] at he
-  exact he
+  clear ha hb hc
+  omega
 theorem beakers_exists : BeakerTests 3 45 15 8 7 := by norm_num [BeakerTests]
 theorem beakers_solution : BeakerTests 3 45 15 8 7 ∧
     (∀ a b c d e, BeakerTests a b c d e → c = 15) ∧
@@ -257,7 +264,8 @@ theorem pushups_completed (a b c d e : ℕ) (x : PushupTotal a b c d e) : e = 40
   have hc0 := pushups_planned a b c d e x
   rcases x with ⟨ha, hb, hc, hd, he⟩
   norm_num [hc0, hd] at he
-  exact he
+  clear ha hb hc
+  omega
 theorem pushups_exists : PushupTotal 3 15 45 5 40 := by norm_num [PushupTotal]
 theorem pushups_solution : PushupTotal 3 15 45 5 40 ∧
     (∀ a b c d e, PushupTotal a b c d e → c = 45) ∧

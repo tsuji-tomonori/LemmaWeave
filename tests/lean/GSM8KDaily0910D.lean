@@ -299,3 +299,25 @@ theorem candy_solution : CandyBarPrice 2 4 8 28 20 5 4 ∧
   ⟨candy_exists, candy_drinks, candy_total, candy_price⟩
 
 end LemmaWeave.Tests.GSM8KDaily0910D
+
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.gifts_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.party_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.herbert_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.rolls_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.run_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.car_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.portraits_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.apples_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.piggy_solution
+#print axioms LemmaWeave.Tests.GSM8KDaily0910D.candy_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.gifts_solution to "work/gsm8k-daily20-gifts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.party_solution to "work/gsm8k-daily20-party-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.herbert_solution to "work/gsm8k-daily20-herbert-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.rolls_solution to "work/gsm8k-daily20-rolls-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.run_solution to "work/gsm8k-daily20-run-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.car_solution to "work/gsm8k-daily20-car-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.portraits_solution to "work/gsm8k-daily20-portraits-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.apples_solution to "work/gsm8k-daily20-apples-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.piggy_solution to "work/gsm8k-daily20-piggy-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0910D.candy_solution to "work/gsm8k-daily20-candy-graph.json"

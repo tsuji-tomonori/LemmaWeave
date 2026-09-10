@@ -45,6 +45,7 @@ COMMANDS = [
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0910AModels'],
     # Register every daily model explicitly so a missing build target cannot pass unnoticed.
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0910BModels'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0910CModels'],
     ['python3', 'scripts/run_method_targets.py'],
     ['python3', 'scripts/check_method_recipes.py', '--render'],
     ['python3', '-m', 'unittest', 'discover', '-s', 'tests', '-v'],

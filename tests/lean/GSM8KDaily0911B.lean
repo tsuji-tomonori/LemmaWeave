@@ -53,8 +53,9 @@ theorem wash_total (a b c d e f g h i j k l : ℕ) (x : WashWater a b c d e f g 
   have hi := wash_regular a b c d e f g h i j k l x
   have hj := wash_light a b c d e f g h i j k l x
   have hk := wash_bleach a b c d e f g h i j k l x
-  simp [WashWater] at x
-  omega
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh', hi', hj', hk', hl⟩
+  norm_num [hh, hi, hj, hk] at hl
+  exact hl
 theorem wash_exists : WashWater 20 10 2 2 3 1 2 40 30 2 4 76 := by norm_num [WashWater]
 theorem wash_solution : WashWater 20 10 2 2 3 1 2 40 30 2 4 76 ∧
     (∀ a b c d e f g h i j k l, WashWater a b c d e f g h i j k l → h = 40) ∧
@@ -69,8 +70,9 @@ theorem chairs_half (a b c d e f g h : ℕ) (x : HallChairs a b c d e f g h) : b
   omega
 theorem chairs_rest (a b c d e f g h : ℕ) (x : HallChairs a b c d e f g h) : d = 11 := by
   have hb := chairs_half a b c d e f g h x
-  simp [HallChairs] at x
-  omega
+  rcases x with ⟨ha, hb', hc, hd, he, hf, hg, hh⟩
+  norm_num [ha, hb, hc] at hd
+  exact hd
 theorem chairs_parts (a b c d e f g h : ℕ) (x : HallChairs a b c d e f g h) :
     e = 32 ∧ f = 15 ∧ g = 44 := by
   have hb := chairs_half a b c d e f g h x
@@ -80,8 +82,10 @@ theorem chairs_parts (a b c d e f g h : ℕ) (x : HallChairs a b c d e f g h) :
   exact ⟨he, hf, hg⟩
 theorem chairs_total (a b c d e f g h : ℕ) (x : HallChairs a b c d e f g h) : h = 91 := by
   have hp := chairs_parts a b c d e f g h x
-  simp [HallChairs] at x
-  omega
+  rcases hp with ⟨he, hf, hg⟩
+  rcases x with ⟨ha, hb, hc, hd, he', hf', hg', hh⟩
+  norm_num [he, hf, hg] at hh
+  exact hh
 theorem chairs_exists : HallChairs 32 16 5 11 32 15 44 91 := by norm_num [HallChairs]
 theorem chairs_solution : HallChairs 32 16 5 11 32 15 44 91 ∧
     (∀ a b c d e f g h, HallChairs a b c d e f g h → b = 16) ∧
@@ -101,12 +105,14 @@ theorem lottery_benedict (a b c d e f : ℕ) (x : LotteryDebts a b c d e f) : d 
 theorem lottery_paid (a b c d e f : ℕ) (x : LotteryDebts a b c d e f) : e = 80 := by
   have hc := lottery_helen a b c d e f x
   have hd := lottery_benedict a b c d e f x
-  simp [LotteryDebts] at x
-  omega
+  rcases x with ⟨ha, hb, hc', hd', he, hf⟩
+  norm_num [hb, hc, hd] at he
+  exact he
 theorem lottery_remaining (a b c d e f : ℕ) (x : LotteryDebts a b c d e f) : f = 20 := by
   have he := lottery_paid a b c d e f x
-  simp [LotteryDebts] at x
-  omega
+  rcases x with ⟨ha, hb, hc, hd, he', hf⟩
+  norm_num [ha, he] at hf
+  exact hf
 theorem lottery_exists : LotteryDebts 100 20 40 20 80 20 := by norm_num [LotteryDebts]
 theorem lottery_solution : LotteryDebts 100 20 40 20 80 20 ∧
     (∀ a b c d e f, LotteryDebts a b c d e f → c = 40) ∧
@@ -120,20 +126,28 @@ theorem commute_drivers (a b c d e f g : ℕ) (x : CommuteCounts a b c d e f g) 
   norm_num [ha, hb, hc] at hd
   omega
 theorem commute_non_drivers (a b c d e f g : ℕ) (x : CommuteCounts a b c d e f g) : e = 80 := by
-  have hd := commute_drivers a b c d e f g x
-  simp [CommuteCounts] at x
-  omega
+  have hd0 := commute_drivers a b c d e f g x
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg⟩
+  norm_num [ha, hd0] at he
+  exact he
 theorem commute_transit (a b c d e f g : ℕ) (x : CommuteCounts a b c d e f g) : f = 40 := by
-  have he := commute_non_drivers a b c d e f g x
-  simp [CommuteCounts] at x
+  have he0 := commute_non_drivers a b c d e f g x
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg⟩
+  clear ha hb hc hd he hg
   omega
 theorem commute_difference (a b c d e f g : ℕ) (x : CommuteCounts a b c d e f g) : g = 80 := by
-  have hd := commute_drivers a b c d e f g x
-  have hf := commute_transit a b c d e f g x
-  simp [CommuteCounts] at x
-  omega
-theorem commute_reference_answer_wrong : (120 : ℕ) - 40 ≠ 40 := by norm_num
+  have hd0 := commute_drivers a b c d e f g x
+  have hf0 := commute_transit a b c d e f g x
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg⟩
+  norm_num [hd0, hf0] at hg
+  exact hg
 theorem commute_exists : CommuteCounts 200 60 100 120 80 40 80 := by norm_num [CommuteCounts]
+theorem commute_reference_answer_wrong :
+    ((120 : ℕ) - 40 = 80) ∧ (120 : ℕ) - 40 ≠ 40 := by
+  have hg := commute_difference 200 60 100 120 80 40 80 commute_exists
+  constructor
+  · simpa using hg
+  · norm_num
 theorem commute_solution : CommuteCounts 200 60 100 120 80 40 80 ∧
     (∀ a b c d e f g, CommuteCounts a b c d e f g → d = 120) ∧
     (∀ a b c d e f g, CommuteCounts a b c d e f g → e = 80) ∧
@@ -141,7 +155,7 @@ theorem commute_solution : CommuteCounts 200 60 100 120 80 40 80 ∧
     (∀ a b c d e f g, CommuteCounts a b c d e f g → g = 80) ∧
     (120 : ℕ) - 40 ≠ 40 :=
   ⟨commute_exists, commute_drivers, commute_non_drivers, commute_transit,
-    commute_difference, commute_reference_answer_wrong⟩
+    commute_difference, commute_reference_answer_wrong.2⟩
 
 theorem cable_sections (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : c = 40 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
@@ -149,16 +163,19 @@ theorem cable_sections (a b c d e f g h : ℕ) (x : CableSections a b c d e f g 
   omega
 theorem cable_given (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : d = 10 := by
   have hc := cable_sections a b c d e f g h x
-  simp [CableSections] at x
-  omega
+  rcases x with ⟨ha, hb, hc', hd, he, hf, hg, hh⟩
+  norm_num [hc] at hd
+  exact hd
 theorem cable_remaining (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : e = 30 := by
   have hc := cable_sections a b c d e f g h x
   have hd := cable_given a b c d e f g h x
-  simp [CableSections] at x
-  omega
+  rcases x with ⟨ha, hb, hc', hd', he, hf, hg, hh⟩
+  norm_num [hc, hd] at he
+  exact he
 theorem cable_on_hand (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : g = 15 := by
-  have he := cable_remaining a b c d e f g h x
-  simp [CableSections] at x
+  have he0 := cable_remaining a b c d e f g h x
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
+  clear ha hb hc hd he hh
   omega
 theorem cable_on_hand_feet (a b c d e f g h : ℕ) (x : CableSections a b c d e f g h) : h = 375 := by
   have hg := cable_on_hand a b c d e f g h x
@@ -178,15 +195,19 @@ theorem reading_emery_serena (a b c : ℕ) (x : ReadingDaysEmery a b c) : b = 10
   simp [ReadingDaysEmery] at x
   omega
 theorem reading_emery_average (a b c : ℕ) (x : ReadingDaysEmery a b c) : c = 60 := by
-  have hb := reading_emery_serena a b c x
-  simp [ReadingDaysEmery] at x
+  have hb0 := reading_emery_serena a b c x
+  rcases x with ⟨ha, hb, hc⟩
+  clear hb
+  norm_num [ha, hb0] at hc
   omega
 theorem reading_serena_emery (a b c : ℕ) (x : ReadingDaysSerena a b c) : a = 4 := by
   simp [ReadingDaysSerena] at x
   omega
 theorem reading_serena_average (a b c : ℕ) (x : ReadingDaysSerena a b c) : c = 12 := by
-  have ha := reading_serena_emery a b c x
-  simp [ReadingDaysSerena] at x
+  have ha0 := reading_serena_emery a b c x
+  rcases x with ⟨hb, ha, hc⟩
+  clear ha
+  norm_num [hb, ha0] at hc
   omega
 theorem reading_emery_exists : ReadingDaysEmery 20 100 60 := by norm_num [ReadingDaysEmery]
 theorem reading_serena_exists : ReadingDaysSerena 4 20 12 := by norm_num [ReadingDaysSerena]
@@ -203,9 +224,10 @@ theorem beakers_tested (a b c d e : ℕ) (x : BeakerTests a b c d e) : c = 15 :=
   norm_num [ha, hb] at hc
   omega
 theorem beakers_non_copper (a b c d e : ℕ) (x : BeakerTests a b c d e) : e = 7 := by
-  have hc := beakers_tested a b c d e x
-  simp [BeakerTests] at x
-  omega
+  have hc0 := beakers_tested a b c d e x
+  rcases x with ⟨ha, hb, hc, hd, he⟩
+  norm_num [hc0, hd] at he
+  exact he
 theorem beakers_exists : BeakerTests 3 45 15 8 7 := by norm_num [BeakerTests]
 theorem beakers_solution : BeakerTests 3 45 15 8 7 ∧
     (∀ a b c d e, BeakerTests a b c d e → c = 15) ∧
@@ -217,7 +239,9 @@ theorem child_total_gap (a b c d e : ℕ) (x : FourthChildAge a b c d e) : b + c
   omega
 theorem child_fourth_age (a b c d e : ℕ) (x : FourthChildAge a b c d e) : e = 8 := by
   have hg := child_total_gap a b c d e x
-  simp [FourthChildAge] at x
+  rcases x with ⟨ha, hb, hc, hd, he⟩
+  clear hb hc hd
+  norm_num [ha] at he
   omega
 theorem child_exists : FourthChildAge 15 1 4 2 8 := by norm_num [FourthChildAge]
 theorem child_solution : FourthChildAge 15 1 4 2 8 ∧
@@ -230,9 +254,10 @@ theorem pushups_planned (a b c d e : ℕ) (x : PushupTotal a b c d e) : c = 45 :
   norm_num [ha, hb] at hc
   exact hc
 theorem pushups_completed (a b c d e : ℕ) (x : PushupTotal a b c d e) : e = 40 := by
-  have hc := pushups_planned a b c d e x
-  simp [PushupTotal] at x
-  omega
+  have hc0 := pushups_planned a b c d e x
+  rcases x with ⟨ha, hb, hc, hd, he⟩
+  norm_num [hc0, hd] at he
+  exact he
 theorem pushups_exists : PushupTotal 3 15 45 5 40 := by norm_num [PushupTotal]
 theorem pushups_solution : PushupTotal 3 15 45 5 40 ∧
     (∀ a b c d e, PushupTotal a b c d e → c = 45) ∧

@@ -99,7 +99,9 @@ theorem gym_cheap (m a b c d e f g h : ℕ) (x : GymMemberships m a b c d e f g 
   exact hd
 theorem gym_threefold_expensive (a b c d e f g h : ℕ) (x : GymMemberships 3 a b c d e f g h) : g = 480 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
-  norm_num [ha, hb] at he hf hg
+  norm_num [ha, hb] at he
+  norm_num [he] at hf
+  norm_num [ha, he, hf] at hg
   exact hg
 theorem gym_threefold_total (a b c d e f g h : ℕ) (x : GymMemberships 3 a b c d e f g h) : h = 650 := by
   have hd0 := gym_cheap 3 a b c d e f g h x
@@ -110,7 +112,10 @@ theorem gym_threefold_total (a b c d e f g h : ℕ) (x : GymMemberships 3 a b c 
 theorem gym_fourfold_total (a b c d e f g h : ℕ) (x : GymMemberships 4 a b c d e f g h) : h = 810 := by
   have hd0 := gym_cheap 4 a b c d e f g h x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
-  norm_num [ha, hb, hd0] at he hf hg hh
+  norm_num [ha, hb] at he
+  norm_num [he] at hf
+  norm_num [ha, he, hf] at hg
+  norm_num [hd0, hg] at hh
   exact hh
 theorem gym_solution : GymMemberships 3 12 10 50 170 30 120 480 650 ∧
     (∀ a b c d e f g h, GymMemberships 3 a b c d e f g h → h = 650) ∧

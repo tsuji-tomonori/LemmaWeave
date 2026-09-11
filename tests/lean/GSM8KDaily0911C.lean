@@ -205,11 +205,13 @@ theorem peanuts_solution : PeanutWeek 7 20 20 20 67 63 3 21 7 3 ∧
   ⟨peanuts_exists, peanuts_total, peanuts_spent, peanuts_pounds, peanuts_daily⟩
 
 theorem balls_red (a b c d e f : ℕ) (x : BouncyBalls a b c d e f) : d = 126 := by
-  simp [BouncyBalls] at x
-  omega
+  rcases x with ⟨ha, hb, hc, hd, he, hf⟩
+  norm_num [ha, hc] at hd
+  exact hd
 theorem balls_yellow (a b c d e f : ℕ) (x : BouncyBalls a b c d e f) : e = 108 := by
-  simp [BouncyBalls] at x
-  omega
+  rcases x with ⟨ha, hb, hc, hd, he, hf⟩
+  norm_num [hb, hc] at he
+  exact he
 theorem balls_difference (a b c d e f : ℕ) (x : BouncyBalls a b c d e f) : f = 18 := by
   have hd0 := balls_red a b c d e f x
   have he0 := balls_yellow a b c d e f x

@@ -1,0 +1,22 @@
+{
+  "id": "gsm8k_daily29_massage",
+  "title_ja": "増加率と単位換算から振動回数を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00284",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "毎秒1600回から60%速い設定を5分使うときの総振動回数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0912C.massage_solution",
+  "graph": "work/gsm8k-daily29-massage-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0912C.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["百分率は100×増加量＝60×基準量で表す。"],
+  "steps": [
+    {"id":"massage_increase","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.massage_increase","title_ja":"60%分を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"基準が毎秒1600回で増加率が60%。","conclusion_ja":"増加分は毎秒960回。","baseline_ja":"増加量＝基準量×百分率。"},
+    {"id":"massage_high","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.massage_high","title_ja":"最高設定の速さ","requires_steps":["massage_increase"],"uses_nodes":[],"condition_ja":"基準1600回へ増加分960回を加える。","conclusion_ja":"最高設定は毎秒2560回。","baseline_ja":"増加後＝基準＋増加量。"},
+    {"id":"massage_seconds","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.massage_seconds","title_ja":"分を秒へ換算","requires_steps":[],"uses_nodes":[],"condition_ja":"1分＝60秒で5分間使う。","conclusion_ja":"使用時間は300秒。","baseline_ja":"秒数＝分数×60。"},
+    {"id":"massage_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.massage_total","title_ja":"総振動回数","requires_steps":["massage_high","massage_seconds"],"uses_nodes":[],"condition_ja":"毎秒2560回が300秒続く。","conclusion_ja":"総振動回数は768000回。","baseline_ja":"総量＝単位時間当たり量×時間。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual",
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":285,"checked_model_hash":"4288a9b08dbe87ab5cb4a11cf2682900f19260501b72296b57f1ea62eec209e5","checks_ja":["1600×0.6=960、(1600+960)×(5×60)=768000を原文と照合した。"]}
+}

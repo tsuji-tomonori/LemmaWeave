@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily29_opera","title_ja":"歌唱時間に比例する練習・癇癪時間の合計","problem_id":"external-gsm8k-main-3101c7d50724:train:00293","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"本番歌唱1分ごとに練習3分、癇癪5分を費やす。本番6分のとき三活動の合計時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912C.opera_solution","graph":"work/gsm8k-daily29-opera-graph.json","lean_file":"tests/lean/GSM8KDaily0912C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["練習と癇癪を本番歌唱時間に対する比例量とし、本番時間も含めて合計する。"],
+  "steps":[
+    {"id":"opera_practice","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.opera_practice","title_ja":"練習時間を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"本番歌唱は6分で、その1分ごとに3分練習する。","conclusion_ja":"練習時間は18分である。","baseline_ja":"基準時間×比例係数を用いる。"},
+    {"id":"opera_tantrums","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.opera_tantrums","title_ja":"癇癪時間を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"本番歌唱は6分で、その1分ごとに5分癇癪を起こす。","conclusion_ja":"癇癪時間は30分である。","baseline_ja":"基準時間×比例係数を用いる。"},
+    {"id":"opera_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.opera_total","title_ja":"三活動を合計する","requires_steps":["opera_practice","opera_tantrums"],"uses_nodes":[],"condition_ja":"本番6分、練習18分、癇癪30分である。","conclusion_ja":"合計時間は54分である。","baseline_ja":"重ならない活動時間を加える。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":294,"checked_model_hash":"4288a9b08dbe87ab5cb4a11cf2682900f19260501b72296b57f1ea62eec209e5","checks_ja":["6×3＝18、6×5＝30、6＋18＋30＝54を自己照合した。"]}
+}

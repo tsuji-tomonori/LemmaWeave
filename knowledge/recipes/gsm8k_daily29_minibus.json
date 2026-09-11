@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily29_minibus","title_ja":"当初人数と参加人数の差を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00286","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"割当18人中男子8人で、当日は男女同数だったとき欠席女子数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912C.minibus_solution","graph":"work/gsm8k-daily29-minibus-graph.json","lean_file":"tests/lean/GSM8KDaily0912C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["男子は全員参加したという原文の因果関係を用いる。"],
+  "steps":[
+    {"id":"minibus_initial_girls","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.minibus_initial_girls","title_ja":"当初の女子数","requires_steps":[],"uses_nodes":[],"condition_ja":"割当18人のうち男子が8人。","conclusion_ja":"当初の女子は10人。","baseline_ja":"全体＝男子＋女子。"},
+    {"id":"minibus_attending_girls","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.minibus_attending_girls","title_ja":"参加女子数","requires_steps":[],"uses_nodes":[],"condition_ja":"当日の男女が同数で男子は8人。","conclusion_ja":"参加女子は8人。","baseline_ja":"等しい二量の置換。"},
+    {"id":"minibus_absent","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.minibus_absent","title_ja":"欠席女子数","requires_steps":["minibus_initial_girls","minibus_attending_girls"],"uses_nodes":[],"condition_ja":"当初10人のうち8人が参加。","conclusion_ja":"欠席女子は2人。","baseline_ja":"当初人数＝参加人数＋欠席人数。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":287,"checked_model_hash":"4288a9b08dbe87ab5cb4a11cf2682900f19260501b72296b57f1ea62eec209e5","checks_ja":["18−8=10、10−8=2を照合した。"]}
+}

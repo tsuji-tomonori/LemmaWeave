@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily29_gym","title_ja":"二つのジム会費と倍率表現の条件付き解答","problem_id":"external-gsm8k-main-3101c7d50724:train:00288","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"月10ドル・入会金50ドルのジムと『3 times more expensive』なジムの初年度総額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912C.gym_solution","graph":"work/gsm8k-daily29-gym-graph.json","lean_file":"tests/lean/GSM8KDaily0912C.lean","semantic_review_status":"self_review_only","model_scope":"conditional","counting_note_ja":"取得済み固定GSM8Kの1問。曖昧な倍率表現を条件付きで解答した。","model_notes_ja":["全体3倍なら650ドル、元より3倍分高い全体4倍なら810ドル。"],
+  "steps":[
+    {"id":"gym_threefold_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.gym_threefold_total","title_ja":"全体3倍と読む場合","requires_steps":[],"uses_nodes":[],"condition_ja":"高いジムの月額を10ドルの3倍30ドル、入会金をその4か月分と読む。","conclusion_ja":"安い方170ドル、高い方480ドル、合計650ドル。","baseline_ja":"初年度額＝12×月額＋入会金。"},
+    {"id":"gym_fourfold_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.gym_fourfold_total","title_ja":"3倍分高いと読む場合","requires_steps":[],"uses_nodes":[],"condition_ja":"元の価格にその3倍分を加え、全体4倍の月40ドルと読む。","conclusion_ja":"合計810ドルとなり650ドルと異なる。","baseline_ja":"増加後＝元＋3×元＝4×元。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":289,"checked_model_hash":"4288a9b08dbe87ab5cb4a11cf2682900f19260501b72296b57f1ea62eec209e5","checks_ja":["参照解の3倍解釈650ドルと、加法的解釈810ドルをそれぞれ照合した。"]}
+}

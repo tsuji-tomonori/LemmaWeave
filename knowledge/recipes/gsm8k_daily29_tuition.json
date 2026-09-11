@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily29_tuition","title_ja":"奨学金と収入を学費から差し引く","problem_id":"external-gsm8k-main-3101c7d50724:train:00287","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"90ドルの学費に30%の奨学金と月15ドルの3か月収入を充てた残額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912C.tuition_solution","graph":"work/gsm8k-daily29-tuition-graph.json","lean_file":"tests/lean/GSM8KDaily0912C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["3か月の収入を期限内に全額充当する。"],
+  "steps":[
+    {"id":"tuition_scholarship","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.tuition_scholarship","title_ja":"奨学金額","requires_steps":[],"uses_nodes":[],"condition_ja":"学費90ドルの30%。","conclusion_ja":"奨学金は27ドル。","baseline_ja":"100×部分＝百分率×全体。"},
+    {"id":"tuition_after_scholarship","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.tuition_after_scholarship","title_ja":"奨学金適用後","requires_steps":["tuition_scholarship"],"uses_nodes":[],"condition_ja":"90ドルから27ドルを差し引く。","conclusion_ja":"残り63ドル。","baseline_ja":"全体＝充当額＋残額。"},
+    {"id":"tuition_earnings","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.tuition_earnings","title_ja":"3か月の収入","requires_steps":[],"uses_nodes":[],"condition_ja":"月15ドルを3か月得る。","conclusion_ja":"収入は45ドル。","baseline_ja":"総収入＝月額×月数。"},
+    {"id":"tuition_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.tuition_remaining","title_ja":"最終残額","requires_steps":["tuition_after_scholarship","tuition_earnings"],"uses_nodes":[],"condition_ja":"63ドルへ45ドルを充当する。","conclusion_ja":"なお18ドル必要。","baseline_ja":"必要額＝残学費−収入。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":288,"checked_model_hash":"4288a9b08dbe87ab5cb4a11cf2682900f19260501b72296b57f1ea62eec209e5","checks_ja":["90×30%=27、90−27−15×3=18を照合した。"]}
+}

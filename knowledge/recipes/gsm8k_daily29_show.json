@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily29_show","title_ja":"番組の総視聴時間を日割りする","problem_id":"external-gsm8k-main-3101c7d50724:train:00285","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"30分の番組20話を5日で見るとき、1日何時間見るか求める。","root":"LemmaWeave.Tests.GSM8KDaily0912C.show_solution","graph":"work/gsm8k-daily29-show-graph.json","lean_file":"tests/lean/GSM8KDaily0912C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["全話を均等な日数で見る。"],
+  "steps":[
+    {"id":"show_minutes","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.show_minutes","title_ja":"全話の分数","requires_steps":[],"uses_nodes":[],"condition_ja":"20話が各30分。","conclusion_ja":"総視聴時間は600分。","baseline_ja":"総分数＝話数×1話の分数。"},
+    {"id":"show_hours","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.show_hours","title_ja":"時間へ換算","requires_steps":["show_minutes"],"uses_nodes":[],"condition_ja":"1時間＝60分。","conclusion_ja":"600分は10時間。","baseline_ja":"60×時間数＝分数。"},
+    {"id":"show_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.show_daily","title_ja":"1日分","requires_steps":["show_hours"],"uses_nodes":[],"condition_ja":"10時間を5日へ均等配分する。","conclusion_ja":"1日2時間。","baseline_ja":"総時間＝日数×1日当たり時間。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":286,"checked_model_hash":"4288a9b08dbe87ab5cb4a11cf2682900f19260501b72296b57f1ea62eec209e5","checks_ja":["20×30=600分＝10時間、10÷5=2時間を照合した。"]}
+}

@@ -62,6 +62,18 @@ COMMANDS = [
     ['python3', 'scripts/lw.py', 'report'],
 ]
 
+# The method-target sweep grows with the number of registered individual
+# solutions.  Keep its timeout below the outer 1800-second replay bound while
+# allowing the complete sweep to finish as the corpus grows.
+METHOD_TARGET_TIMEOUT = 1500
+DEFAULT_COMMAND_TIMEOUT = 900
+
+
+def command_timeout(argv):
+    if argv == ['python3', 'scripts/run_method_targets.py']:
+        return METHOD_TARGET_TIMEOUT
+    return DEFAULT_COMMAND_TIMEOUT
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -71,7 +83,7 @@ def main():
         print(json.dumps(COMMANDS, indent=2))
         return 0
     for argv in COMMANDS:
-        result = subprocess.run([sys.executable, 'scripts/run.py', '--timeout', '900', '--'] + argv,
+        result = subprocess.run([sys.executable, 'scripts/run.py', '--timeout', str(command_timeout(argv)), '--'] + argv,
                                 cwd=ROOT, check=False)
         if result.returncode:
             return result.returncode

@@ -1,7 +1,7 @@
 {
   "date": "2026-09-12",
   "started_at": "2026-09-12T02:04:06+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-12T03:33:26+09:00",
   "target_count": 10,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00264",
@@ -15,22 +15,42 @@
     "external-gsm8k-main-3101c7d50724:train:00272",
     "external-gsm8k-main-3101c7d50724:train:00273"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00264",
+    "external-gsm8k-main-3101c7d50724:train:00265",
+    "external-gsm8k-main-3101c7d50724:train:00266",
+    "external-gsm8k-main-3101c7d50724:train:00267",
+    "external-gsm8k-main-3101c7d50724:train:00268",
+    "external-gsm8k-main-3101c7d50724:train:00269",
+    "external-gsm8k-main-3101c7d50724:train:00270",
+    "external-gsm8k-main-3101c7d50724:train:00271",
+    "external-gsm8k-main-3101c7d50724:train:00272",
+    "external-gsm8k-main-3101c7d50724:train:00273"
+  ],
   "deferred": [],
   "authored_explanation_lines": 34,
-  "status": "awaiting_ci",
+  "status": "completed",
   "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34586152721",
   "previous_head": "01d11e1a46b3589c3cf002a5895767f1c9aced60",
-  "ci": [],
+  "ci": [
+    {
+      "github_run_id": 34630849037,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34630849037",
+      "head_sha": "daa31c4efcb8582e3d1ee85d5dbdbba815ef4487",
+      "conclusion": "success",
+      "artifact_id": 10276822002,
+      "artifact_sha256": "38609d52c663ff64e6fdaf6e328d787d703ca6fbac639b18d075b54382f1dbc7"
+    }
+  ],
   "pr": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
-  "commit": "7eacd12fb5f150acfbe2c31b0b8529c62ffbb932",
+  "commit": "daa31c4efcb8582e3d1ee85d5dbdbba815ef4487",
   "evidence_commit": null,
   "progress": {
-    "completed_this_run": 0,
-    "completed_today": 0,
+    "completed_this_run": 10,
+    "completed_today": 10,
     "target_today": 50,
-    "solution_ready": 268,
-    "remaining": 8524,
+    "solution_ready": 278,
+    "remaining": 8514,
     "initial_target_date": "2027-03-01",
     "measured_forecast_date": null,
     "calibration_date": "2026-09-14"
@@ -40,5 +60,5 @@
     "target": 6,
     "note_ja": "高校6分野の追加出典付き問題は未実施。固定GSM8Kを高校全分野の網羅に数えない。"
   },
-  "resume_ja": "10問の日本語解答・Leanモデル・行別定理を作成済み。CI実行から再開する。"
+  "resume_ja": "次回はsolve_queueのnext_batchであるtrain:00274〜00283から再開する。"
 }

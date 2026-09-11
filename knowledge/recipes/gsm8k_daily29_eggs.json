@@ -5,5 +5,5 @@
     {"id":"eggs_adults","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.eggs_adults","title_ja":"大人に配る個数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"大人3人が各3個受け取る。","conclusion_ja":"大人分は9個である。","baseline_ja":"人数×1人当たり個数を用いる。"},
     {"id":"eggs_boy_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.eggs_boy_each","title_ja":"男子1人分を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"女子1人分は1個で、男子はそれより1個多い。","conclusion_ja":"男子1人分は2個である。","baseline_ja":"比較量に差1を加える。"},
     {"id":"eggs_boys","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.eggs_boys","title_ja":"男子人数を求める","requires_steps":["eggs_total","eggs_adults","eggs_boy_each"],"uses_nodes":[],"condition_ja":"36個を大人9個、女子7個、男子1人2個にすべて配る。","conclusion_ja":"男子は10人である。","baseline_ja":"36＝9＋7＋2×男子人数という自然数方程式を解く。"}
-  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":291,"checked_model_hash":"4288a9b08dbe87ab5cb4a11cf2682900f19260501b72296b57f1ea62eec209e5","checks_ja":["9＋7＋10×2＝36を自己照合した。"]}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":291,"checked_model_hash":"588deefda61a39bf804733a78b137b1d1073ac0452e95ff3e790678b7cba0cf6","checks_ja":["9＋7＋10×2＝36を自己照合した。"]}
 }

@@ -4,5 +4,5 @@
     {"id":"fuel_reduction","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.fuel_reduction","title_ja":"減少量を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"先週は今週15ガロンより20%少ない。","conclusion_ja":"減少量は3ガロンである。","baseline_ja":"基準量×百分率＝15×20/100を用いる。"},
     {"id":"fuel_last","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.fuel_last","title_ja":"先週の使用量を求める","requires_steps":["fuel_reduction"],"uses_nodes":[],"condition_ja":"今週15ガロンから減少量3ガロンを引く。","conclusion_ja":"先週は12ガロンである。","baseline_ja":"減少後の量＝基準量－減少量。"},
     {"id":"fuel_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.fuel_total","title_ja":"2週間分を合計する","requires_steps":["fuel_last"],"uses_nodes":[],"condition_ja":"今週15ガロン、先週12ガロンである。","conclusion_ja":"合計は27ガロンである。","baseline_ja":"互いに異なる週の使用量を加える。"}
-  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":292,"checked_model_hash":"4288a9b08dbe87ab5cb4a11cf2682900f19260501b72296b57f1ea62eec209e5","checks_ja":["15×20%=3、15－3=12、15＋12=27を自己照合した。"]}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":292,"checked_model_hash":"588deefda61a39bf804733a78b137b1d1073ac0452e95ff3e790678b7cba0cf6","checks_ja":["15×20%=3、15－3=12、15＋12=27を自己照合した。"]}
 }

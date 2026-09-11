@@ -81,7 +81,7 @@ theorem pizza_minutes (a b c d e f g h i : ℕ) (x : PizzaFlour a b c d e f g h 
 theorem pizza_made (a b c d e f g h i : ℕ) (x : PizzaFlour a b c d e f g h i) : e = 42 := by
   have hd0 := pizza_minutes a b c d e f g h i x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi⟩
-  norm_num [hd0, hc] at he
+  norm_num [hd0, hd] at he
   omega
 theorem pizza_left (a b c d e f g h i : ℕ) (x : PizzaFlour a b c d e f g h i) : h = 2 := by
   have he0 := pizza_made a b c d e f g h i x

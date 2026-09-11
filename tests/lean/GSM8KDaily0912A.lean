@@ -23,9 +23,10 @@ theorem restaurant_thirty_day_total (a b c : ℕ) (x : RestaurantMonth 22 8 a b 
 theorem restaurant_solution :
     (4 * 5 = 20 ∧ 4 * 2 = 8) ∧ RestaurantMonth 20 8 600 1200 21600 ∧
     (∀ a b c, RestaurantMonth 20 8 a b c → c = 21600) ∧
-    RestaurantMonth 22 8 600 1200 22800 ∧ 21600 ≠ 22800 :=
+    RestaurantMonth 22 8 600 1200 22800 ∧
+    (∀ a b c, RestaurantMonth 22 8 a b c → c = 22800) ∧ 21600 ≠ 22800 :=
   ⟨restaurant_four_week_days, by norm_num [RestaurantMonth], restaurant_four_week_total,
-    by norm_num [RestaurantMonth], by norm_num⟩
+    by norm_num [RestaurantMonth], restaurant_thirty_day_total, by norm_num⟩
 
 theorem shoulder_percent (a b c d e f : ℕ) (x : ShoulderReach a b c d e f) : c = 80 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf⟩
@@ -157,9 +158,10 @@ theorem phone_five_week_dollars (b c d e f g h i : ℕ) (x : PhoneBill 5 b c d e
   omega
 theorem phone_solution : PhoneBill 4 60 5 300 50 15000 60000 100 600 ∧
     (∀ b c d e f g h i, PhoneBill 4 b c d e f g h i → i = 600) ∧
-    PhoneBill 5 60 5 300 50 15000 75000 100 750 ∧ 600 ≠ 750 :=
+    PhoneBill 5 60 5 300 50 15000 75000 100 750 ∧
+    (∀ b c d e f g h i, PhoneBill 5 b c d e f g h i → i = 750) ∧ 600 ≠ 750 :=
   ⟨by norm_num [PhoneBill], phone_four_week_dollars,
-    by norm_num [PhoneBill], by norm_num⟩
+    by norm_num [PhoneBill], phone_five_week_dollars, by norm_num⟩
 
 theorem flower_lilies (a b c d e f g : ℕ) (x : FlowerCost a b c d e f g) : b = 15 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg⟩

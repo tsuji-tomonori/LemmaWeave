@@ -4,5 +4,5 @@
     {"id":"typing_hour","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.typing_hour","title_ja":"1時間の語数へ換算する","requires_steps":[],"uses_nodes":[],"condition_ja":"分速50語が60分間一定である。","conclusion_ja":"1時間に3000語入力する。","baseline_ja":"速さ×時間として50×60を計算する。"},
     {"id":"typing_day","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.typing_day","title_ja":"1日の語数を求める","requires_steps":["typing_hour"],"uses_nodes":[],"condition_ja":"1時間3000語の速さで1日4時間入力する。","conclusion_ja":"1日に12000語入力する。","baseline_ja":"1時間の量×時間数を計算する。"},
     {"id":"typing_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.typing_total","title_ja":"7日間の総語数を求める","requires_steps":["typing_day"],"uses_nodes":[],"condition_ja":"1日12000語を7日間続ける。","conclusion_ja":"合計84000語入力する。","baseline_ja":"1日の量×日数を計算する。"}
-  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":310,"checked_model_hash":"64c0dfe5a75933ea9e28b540b9cc7001eced2f458f39473675ed810e1c33a6fd","checks_ja":["50×60×4×7=84000を単位ごとに原文と照合した。"]}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":310,"checked_model_hash":"fd1028e6170a8f5134aecf64d7e1cf4d126aea7a3c6ed093bd3a45c738751619","checks_ja":["50×60×4×7=84000を単位ごとに原文と照合した。"]}
 }

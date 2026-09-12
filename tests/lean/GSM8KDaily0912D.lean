@@ -189,7 +189,10 @@ theorem flour_candidate : FlourPurchase 5 0 50 50 ∧ 48 ≤ 50 := by
   norm_num [FlourPurchase]
 theorem flour_minimal (a b c d : ℕ) (x : FlourPurchase a b c d) (enough : 48 ≤ c) : 50 ≤ d := by
   rcases x with ⟨hc, hd⟩
-  omega
+  by_contra h
+  simp only [not_le] at h
+  have hb : b ≤ 3 := by omega
+  interval_cases b <;> omega
 theorem flour_solution : 12 * 4 = 48 ∧ FlourPurchase 5 0 50 50 ∧ 48 ≤ 50 ∧
     (∀ a b c d, FlourPurchase a b c d → 48 ≤ c → 50 ≤ d) :=
   ⟨flour_need, flour_candidate.1, flour_candidate.2, flour_minimal⟩

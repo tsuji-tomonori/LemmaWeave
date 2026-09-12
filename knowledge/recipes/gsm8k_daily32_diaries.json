@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily32_diaries","title_ja":"追加購入後の4分の1損失を順に計算する","problem_id":"external-gsm8k-main-3101c7d50724:train:00319","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"8冊の2倍を追加購入し、その後の総数の4分の1を失った残りを求める。","root":"LemmaWeave.Tests.GSM8KDaily0913A.diaries_solution","graph":"work/gsm8k-daily32-diaries-graph.json","lean_file":"tests/lean/GSM8KDaily0913A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["double the numberを、元の8冊とは別に16冊買ったという原文の順序で扱う。"],
+  "steps":[
+    {"id":"diaries_bought","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.diaries_bought","title_ja":"購入冊数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"持っていた8冊の2倍を買う。","conclusion_ja":"16冊を買う。","baseline_ja":"2×8を計算する。"},
+    {"id":"diaries_before","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.diaries_before","title_ja":"紛失前の総数を求める","requires_steps":["diaries_bought"],"uses_nodes":[],"condition_ja":"元の8冊に購入した16冊を加える。","conclusion_ja":"紛失前は24冊。","baseline_ja":"8+16を計算する。"},
+    {"id":"diaries_lost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.diaries_lost","title_ja":"失った冊数を求める","requires_steps":["diaries_before"],"uses_nodes":[],"condition_ja":"24冊の4分の1を失う。","conclusion_ja":"6冊を失う。","baseline_ja":"4×失った冊数=24を満たす自然数は6。"},
+    {"id":"diaries_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.diaries_remaining","title_ja":"残冊数を求める","requires_steps":["diaries_before","diaries_lost"],"uses_nodes":[],"condition_ja":"24冊から6冊を失う。","conclusion_ja":"残りは18冊。","baseline_ja":"24=6+18となる差を求める。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":320,"checked_model_hash":"4fec31cdef21e66aa97dac7c4991bc909e72e5b4b85a2a604a5de1d92c1baa4f","checks_ja":["購入が追加分であり、4分の1の基準が購入後24冊であることを原文の時系列と照合した。"]}
+}

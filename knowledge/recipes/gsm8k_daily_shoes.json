@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_daily_shoes",
+  "title_ja": "購入代金と残金から雪かき件数を逆算",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00011",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "95ドルの靴を買い15ドル残る。3か月の小遣いは月5ドル、芝刈り4件は各15ドル。雪かき各7ドルを何件したか？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907.shoes_solution",
+  "graph": "work/gsm8k-daily-shoes-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "記された3か月の収入を全額貯蓄し、それ以外の元金・収入・支出はない通常の文章題モデル。",
+    "件数を自然数で扱う。"
+  ],
+  "steps": [
+    {
+      "id": "shoes_allowance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.shoes_allowance",
+      "title_ja": "小遣い",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月5ドルを3か月全額貯める。",
+      "conclusion_ja": "a=15ドル。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "shoes_mowing",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.shoes_mowing",
+      "title_ja": "芝刈り",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4件×15ドル。",
+      "conclusion_ja": "m=60ドル。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "shoes_saved",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.shoes_saved",
+      "title_ja": "購入前の資金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "靴95ドルと残金15ドルへ分割される。",
+      "conclusion_ja": "a+m+s=95+15=110ドル。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "shoes_shoveling",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.shoes_shoveling",
+      "title_ja": "雪かき収入",
+      "requires_steps": [
+        "shoes_saved",
+        "shoes_allowance",
+        "shoes_mowing"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "資金110のうち小遣い15、芝刈り60。",
+      "conclusion_ja": "s=110−15−60=35ドル。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "shoes_drives",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.shoes_drives",
+      "title_ja": "件数",
+      "requires_steps": [
+        "shoes_shoveling"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "雪かき1件7ドル、7d=35。",
+      "conclusion_ja": "d=5件。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "shoes_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.shoes_exists",
+      "title_ja": "充足例",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "小遣い15、芝刈り60、雪かき35、5件。",
+      "conclusion_ja": "収入110=靴95+残金15で、全条件を満たす。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 12,
+    "checked_model_hash": "e958c9ce30982deaaa1eb14f7c3ca5549c125b26322604f46616e26a65934542",
+    "checks_ja": [
+      "記された3か月の収入を全額貯蓄し、それ以外の元金・収入・支出はない通常の文章題モデル。",
+      "件数を自然数で扱う。"
+    ]
+  }
+}

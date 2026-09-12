@@ -9,6 +9,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('lw', ROOT / 'scripts/lw.py')
 lw = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(lw)
+replay_spec = importlib.util.spec_from_file_location('replay', ROOT / 'scripts/replay.py')
+replay = importlib.util.module_from_spec(replay_spec)
+replay_spec.loader.exec_module(replay)
 
 
 def node(name, kind='theorem', body='available'):
@@ -21,6 +24,11 @@ def graph(nodes, pairs, roots=None):
 
 
 class GraphGuards(unittest.TestCase):
+    def test_method_target_sweep_has_growth_headroom(self):
+        self.assertEqual(replay.command_timeout(['python3', 'scripts/run_method_targets.py']), 1500)
+        self.assertEqual(replay.command_timeout(['lake', 'build']), 900)
+        self.assertLess(replay.METHOD_TARGET_TIMEOUT, 1800)
+
     def test_hidden_custom_axiom(self):
         g = graph([node('T'), node('Wrapper'), node('Bad', 'axiom', 'axiom')],
                   [('T', 'Wrapper'), ('Wrapper', 'Bad')])

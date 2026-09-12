@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_daily2_hats",
+  "title_ja": "色別に持ち出したヘルメットを引いて残数を合計する",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00017",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "桃26、緑15、黄24。Carlが桃4、Johnが桃6とその2倍の緑を持ち出す。残りは？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.hats_solution",
+  "graph": "work/gsm8k-daily2-hats-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "twice as many greenはJohnが除いた桃6個の2倍。Carlの4個を基準にしない。",
+    "黄色には持出しがなく、3色を重複なく合計する。"
+  ],
+  "steps": [
+    {
+      "id": "hats_pink",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.hats_pink",
+      "title_ja": "桃色の残数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "26個から4個と6個を持ち出す。",
+      "conclusion_ja": "26−4−6=16個。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "hats_green",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.hats_green",
+      "title_ja": "緑色の残数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Johnは桃6個の2倍、緑12個を持ち出す。",
+      "conclusion_ja": "15−12=3個。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "hats_yellow",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.hats_yellow",
+      "title_ja": "黄色は変化なし",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "黄色を持ち出した記述はない。",
+      "conclusion_ja": "24個のまま。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "hats_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.hats_total",
+      "title_ja": "残数の合計",
+      "requires_steps": [
+        "hats_pink",
+        "hats_green"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "色は排他的で、残る桃16・緑3・黄24。",
+      "conclusion_ja": "16+3+24=43個。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "hats_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.hats_exists",
+      "title_ja": "非負性と充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "桃16、緑3、合計43。",
+      "conclusion_ja": "持出数が在庫以下で、元の保存関係を満たす。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 18,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "twice as many greenはJohnが除いた桃6個の2倍。Carlの4個を基準にしない。",
+      "黄色には持出しがなく、3色を重複なく合計する。"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily33_minks","title_ja":"出生と解放後の頭数からコート数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00327","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"30匹が各6匹を産み、総数の半分を解放した後、15匹分ずつで作れるコート数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913B.minks_solution","graph":"work/gsm8k-daily33-minks-graph.json","lean_file":"tests/lean/GSM8KDaily0913B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["成獣と子を合計してから半分を解放し、残りを15匹単位で使う。"],
+  "steps":[
+    {"id":"minks_babies","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.minks_babies","title_ja":"子の数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"成獣30匹がそれぞれ6匹を産む。","conclusion_ja":"子は180匹。","baseline_ja":"同数ずつの30組として30×6を計算する。"},
+    {"id":"minks_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.minks_total","title_ja":"総数を求める","requires_steps":["minks_babies"],"uses_nodes":[],"condition_ja":"成獣30匹と子180匹を数える。","conclusion_ja":"総数は210匹。","baseline_ja":"排反な成獣と子を加える。"},
+    {"id":"minks_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.minks_remaining","title_ja":"残る数を求める","requires_steps":["minks_total"],"uses_nodes":[],"condition_ja":"210匹のちょうど半分を解放する。","conclusion_ja":"105匹が残る。","baseline_ja":"210=105+105として半分を求める。"},
+    {"id":"minks_coats","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.minks_coats","title_ja":"作れるコート数を求める","requires_steps":["minks_remaining"],"uses_nodes":[],"condition_ja":"残り105匹分を1着15匹分ずつ使う。","conclusion_ja":"7着作れる。","baseline_ja":"105=15×7を用いる。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":328,"checked_model_hash":"83680282c69fb05a6b65fef48a3956db83b4848bfee745d30d9f2d4bf1d207ac","checks_ja":["出生、合計、半減、15匹単位の順序を原文と照合した。"]}
+}

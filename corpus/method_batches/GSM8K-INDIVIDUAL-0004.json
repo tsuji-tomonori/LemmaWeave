@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.1",
+  "id": "GSM8K-INDIVIDUAL-0004",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+  "source_file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+  "source_url": "https://github.com/openai/grade-school-math/blob/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+  "license_notice": "reviews/GSM8K-LICENSE.txt",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Daily0907BModels.lean"
+  ],
+  "semantic_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+  "author_session_id": "lemmaweave-daily-20260907-0555",
+  "review_status": "self_review_only",
+  "problems": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00014",
+      "source_line_1based": 15,
+      "source_record_sha256": "ce3b57ebab8b1259878400254a3d1528fe79faba6d9629df777a63ea3bdc113c",
+      "raw_question_sha256": "9646c1dc9939f268f57613f37f2264d20720261283ad70383e5f14400edd9749",
+      "normalized_question_sha256": "9646c1dc9939f268f57613f37f2264d20720261283ad70383e5f14400edd9749",
+      "source_question": "Joy can read 8 pages of a book in 20 minutes. How many hours will it take her to read 120 pages?",
+      "recipe_id": "gsm8k_daily2_joy",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "速度が全読書中一定で、休憩時間を含めない通常の文章題モデル。",
+        "ページ数・分・時間の単位を区別し、300分から5時間へ換算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00015",
+      "source_line_1based": 16,
+      "source_record_sha256": "451c2a645e8641a6adb68fcf7ae8a30cdb6f7720cf87cfa2535820596a787796",
+      "raw_question_sha256": "9a9628f61eb62c54b986eccd2adad13cb9bc4748d23d34aae74e563ba95d8183",
+      "normalized_question_sha256": "3a7e6246f187067597dea5dc8fbbd26bcd10131425c66fb8e6ea20ceae9f033b",
+      "source_question": "James creates a media empire.  He creates a movie for $2000.  Each DVD cost $6 to make.  He sells it for 2.5 times that much.  He sells 500 movies a day for 5 days a week.  How much profit does he make in 20 weeks?",
+      "recipe_id": "gsm8k_daily2_empire",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "税・流通費・売れ残り・追加固定費は原題にないため導入しない。500 moviesはDVD販売枚数と読む。",
+        "制作費は1枚ごとではなく期間全体から一度引く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00016",
+      "source_line_1based": 17,
+      "source_record_sha256": "f2d5fc51a8af103d918e53459b50b2145db90689d0256dec9f3524764fb26202",
+      "raw_question_sha256": "20967bb841486681f21fa9e8384ce8d14e06242428d56c120977d293dfb28842",
+      "normalized_question_sha256": "20967bb841486681f21fa9e8384ce8d14e06242428d56c120977d293dfb28842",
+      "source_question": "The profit from a business transaction is shared among 2 business partners, Mike and Johnson in the ratio 2:5 respectively. If Johnson got $2500, how much will Mike have after spending some of his share on a shirt that costs $200?",
+      "recipe_id": "gsm8k_daily2_partner",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2:5はそれぞれMikeとJohnsonの順。シャツ代以外の支出はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00017",
+      "source_line_1based": 18,
+      "source_record_sha256": "4f56873ba2d3ce159dee054f5bf48ea3065128acdb56f03c0e0c5be7f10d9af2",
+      "raw_question_sha256": "3a8aedcdee8f55b3805f04fc09d8465beff04a0ecc7a94e502a5589c5b996407",
+      "normalized_question_sha256": "a159a60723217a942e9c92efff2f0dae1a4f854e21d95c0f2e5411269d521550",
+      "source_question": "In a truck, there are 26 pink hard hats, 15 green hard hats, and 24 yellow hard hats.  If Carl takes away 4 pink hard hats, and John takes away 6 pink hard hats and twice as many green hard hats as the number of pink hard hats that he removed, then calculate the total number of hard hats that remained in the truck.",
+      "recipe_id": "gsm8k_daily2_hats",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "twice as many greenはJohnが除いた桃6個の2倍。Carlの4個を基準にしない。",
+        "黄色には持出しがなく、3色を重複なく合計する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00018",
+      "source_line_1based": 19,
+      "source_record_sha256": "9b7845f3fc6cd0f85f0a9435d761d6931d75e70f07e9bbb1f19b7acf2ce0bd3c",
+      "raw_question_sha256": "bf00934879c39105ff9c6c672231e0f35cb507a7a38b0612d114ab36064a2655",
+      "normalized_question_sha256": "bf00934879c39105ff9c6c672231e0f35cb507a7a38b0612d114ab36064a2655",
+      "source_question": "It takes Roque two hours to walk to work and one hour to ride his bike to work. Roque walks to and from work three times a week and rides his bike to and from work twice a week. How many hours in total does he take to get to and from work a week with walking and biking?",
+      "recipe_id": "gsm8k_daily2_commute",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional",
+      "modeling_notes_ja": [
+        "原文はto workの所要時間だけを明記し、from workが同じとは明記しない。復路時間を変数にした可能範囲を先に示す。",
+        "参考解答16時間は復路も同時間という追加条件付き。"
+      ],
+      "blockers": [
+        {
+          "kind": "semantic_ambiguity",
+          "reason_ja": "原文はto workの所要時間だけを明記し、from workが同じとは明記しない。復路時間を変数にした可能範囲を先に示す。"
+        }
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00019",
+      "source_line_1based": 20,
+      "source_record_sha256": "6416928fd2968a0697ee2dd6635a80e10a30c736b5c3e7fc257ed72b3f483a13",
+      "raw_question_sha256": "14ea057578ce5ace80e1260f06fdb8f2e1a6d6a017ca95fcbf3907dfc24fe26f",
+      "normalized_question_sha256": "3ab5b746b4bb6fe23e49f2bf3408183b39777ee53062974f23817557d360234d",
+      "source_question": "Tim rides his bike back and forth to work for each of his 5 workdays.  His work is 20 miles away.  He also goes for a weekend bike ride of 200 miles.    If he can bike at 25 mph how much time does he spend biking a week?",
+      "recipe_id": "gsm8k_daily2_cycling",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "25mphを移動中の一定速度として扱い、休憩・信号待ちを含めない。",
+        "参考解答の文中にあるtotal 200+200の前半をworkと呼ぶ誤記は採用せず、全体400と区別する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00020",
+      "source_line_1based": 21,
+      "source_record_sha256": "b376ad238aa7ccfd4084e0a88317acadcf75f85e06334e3bc995d1af89c50ccb",
+      "raw_question_sha256": "e04a6ba1b453a05d7c06fdbe4bca8fe555b80ae46a5a1cbf2000a512cee86887",
+      "normalized_question_sha256": "e04a6ba1b453a05d7c06fdbe4bca8fe555b80ae46a5a1cbf2000a512cee86887",
+      "source_question": "Bella bought stamps at the post office. Some of the stamps had a snowflake design, some had a truck design, and some had a rose design. Bella bought 11 snowflake stamps. She bought 9 more truck stamps than snowflake stamps, and 13 fewer rose stamps than truck stamps. How many stamps did Bella buy in all?",
+      "recipe_id": "gsm8k_daily2_stamps",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "someは各デザインの存在を示すが数量は後続条件で特定される。3種類以外を購入したとは読まない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00021",
+      "source_line_1based": 22,
+      "source_record_sha256": "2c37a6f600c385a43e1d6b7fb77066f3319a4117fb46f9269d9bbff53a1d2bf4",
+      "raw_question_sha256": "9c7d7104e70d1658738b2173be75fe5ebaa86035b540c0a47667d9b3cc8d11d2",
+      "normalized_question_sha256": "9c7d7104e70d1658738b2173be75fe5ebaa86035b540c0a47667d9b3cc8d11d2",
+      "source_question": "Each bird eats 12 beetles per day, each snake eats 3 birds per day, and each jaguar eats 5 snakes per day. If there are 6 jaguars in a forest, how many beetles are eaten each day?",
+      "recipe_id": "gsm8k_daily2_food",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional",
+      "modeling_notes_ja": [
+        "1,080は各捕食段階を必要餌数として掛ける食物連鎖換算の答え。鳥が蛇に食べられながら同日に甲虫も食べたという時系列は証明しない。",
+        "実際の森で食べられる甲虫数には生存鳥数・時系列が必要。反例と追加規約付き結果を分離する。"
+      ],
+      "blockers": [
+        {
+          "kind": "semantic_ambiguity",
+          "reason_ja": "1,080は各捕食段階を必要餌数として掛ける食物連鎖換算の答え。鳥が蛇に食べられながら同日に甲虫も食べたという時系列は証明しない。"
+        }
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00022",
+      "source_line_1based": 23,
+      "source_record_sha256": "5cd0ae1475a46ff8763dc0ea99183ef8eddbcdae44db5747758a8e2282c8bfc7",
+      "raw_question_sha256": "54d62a9d0b66c95541832bd1e4ea787860e885c0af445f69a6f8cdc5cab0cf76",
+      "normalized_question_sha256": "54d62a9d0b66c95541832bd1e4ea787860e885c0af445f69a6f8cdc5cab0cf76",
+      "source_question": "Samantha’s last name has three fewer letters than Bobbie’s last name. If Bobbie took two letters off her last name, she would have a last name twice the length of Jamie’s. Jamie’s full name is Jamie Grey. How many letters are in Samantha’s last name?",
+      "recipe_id": "gsm8k_daily2_names",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "full nameの空白や名Jamieは名字の文字数に含めず、last name Greyだけを数える。",
+        "自然数の切捨て減算の誤用を避けるためBobbieの長さが2以上もモデルに含める。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00023",
+      "source_line_1based": 24,
+      "source_record_sha256": "c7221e896d421242bffe38dd74283a9452a1040f92ad6ab4912d4913535195d9",
+      "raw_question_sha256": "1e399e6f599e18023c6806a7321a4319868ee0d90cce9dc1700ebfd1c865c284",
+      "normalized_question_sha256": "1e399e6f599e18023c6806a7321a4319868ee0d90cce9dc1700ebfd1c865c284",
+      "source_question": "Ann's favorite store was having a summer clearance. For $75 she bought 5 pairs of shorts for $7 each and 2 pairs of shoes for $10 each. She also bought 4 tops, all at the same price. How much did each top cost?",
+      "recipe_id": "gsm8k_daily2_tops",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "For $75は購入総額75ドルと読む。税・割引・追加商品は原題にない。",
+        "トップス4着がすべて同価格なので合計を4等分する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

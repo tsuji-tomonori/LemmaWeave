@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily18_sugar","title_ja":"砂糖20袋のキログラム換算","problem_id":"external-gsm8k-main-3101c7d50724:train:00176","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"100グラム入りの砂糖を週20袋売るとき、週の販売量をキログラムで求める。","root":"LemmaWeave.Tests.GSM8KDaily0910B.sugar_solution","graph":"work/gsm8k-daily18-sugar-graph.json","lean_file":"tests/lean/GSM8KDaily0910B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1キログラム=1000グラムを明示して換算する。"],
+  "steps":[
+    {"id":"sugar_grams","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.sugar_grams","title_ja":"週のグラム数","requires_steps":[],"uses_nodes":[],"condition_ja":"1袋100グラムを20袋売る。","conclusion_ja":"20×100=2000グラム。","baseline_ja":"袋数×1袋当たり質量。"},
+    {"id":"sugar_kilograms","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.sugar_kilograms","title_ja":"キログラム換算","requires_steps":["sugar_grams"],"uses_nodes":[],"condition_ja":"1000グラムが1キログラム。","conclusion_ja":"2000÷1000=2キログラム。","baseline_ja":"グラムからキログラムへの単位換算。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":177,"checked_model_hash":"fd291c00084ddc96424c80629b85dc95869cd4e8b63fde580a82759c5a704e7c","checks_ja":["袋数、1袋の質量、グラムとキログラムの換算を照合した。"]}
+}

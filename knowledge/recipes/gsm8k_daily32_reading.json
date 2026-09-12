@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily32_reading","title_ja":"一週間の目標平均から最終日の読書量を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00314","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"日平均50ページを達成するため、既知の6日分から土曜日に読むページ数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913A.reading_solution","graph":"work/gsm8k-daily32-reading-graph.json","lean_file":"tests/lean/GSM8KDaily0913A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["平均×日数で一週間の目標総数を求め、水曜日の0ページも含めて既読分との差を取る。"],
+  "steps":[
+    {"id":"reading_weekly","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.reading_weekly","title_ja":"一週間の目標を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"7日間の平均を50ページにする。","conclusion_ja":"目標総数は350ページ。","baseline_ja":"平均が総数÷個数であるため、総数は50×7。"},
+    {"id":"reading_before","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.reading_before","title_ja":"土曜日までの既読量を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"日曜から金曜の読書量は43、65、28、0、70、56ページである。","conclusion_ja":"既読量は262ページ。","baseline_ja":"曜日ごとの互いに別のページ数を加える。"},
+    {"id":"reading_saturday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.reading_saturday","title_ja":"不足分を求める","requires_steps":["reading_weekly","reading_before"],"uses_nodes":[],"condition_ja":"目標350ページのうち262ページを金曜までに読んだ。","conclusion_ja":"土曜日には88ページ読む必要がある。","baseline_ja":"350=262+88となる差を求める。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":315,"checked_model_hash":"4fec31cdef21e66aa97dac7c4991bc909e72e5b4b85a2a604a5de1d92c1baa4f","checks_ja":["7日分の目標350と既知6日分262を原文から再計算し、差88を照合した。"]}
+}

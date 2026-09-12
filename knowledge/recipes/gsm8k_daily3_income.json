@@ -1,0 +1,12 @@
+{
+  "id":"gsm8k_daily3_income","title_ja":"同じ住居費の割合変化から旧月収を逆算する","problem_id":"external-gsm8k-main-3101c7d50724:train:00029","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"家賃・光熱費は旧月収の40%。昇給600ドル後は新月収の25%。旧月収を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907C.income_solution","graph":"work/gsm8k-daily3-income-graph.json","lean_file":"tests/lean/GSM8KDaily0907C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model",
+  "counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["家賃・光熱費の金額自体は昇給前後で変わらないという原文の比較を使う。"],
+  "steps":[
+    {"id":"income_cost_equation","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.income_cost_equation","title_ja":"同じ住居費を等置","requires_steps":[],"uses_nodes":[],"condition_ja":"旧月収o、新月収o+600で、同じ住居費がそれぞれ40%、25%。","conclusion_ja":"(2/5)o=(1/4)(o+600)。","baseline_ja":"中学校までの割合と一次方程式。"},
+    {"id":"income_old","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.income_old","title_ja":"旧月収を解く","requires_steps":["income_cost_equation"],"uses_nodes":[],"condition_ja":"(2/5)o=(1/4)(o+600)。","conclusion_ja":"8o=5o+3000、よってo=1000ドル。","baseline_ja":"中学校までの一次方程式。"},
+    {"id":"income_housing","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.income_housing","title_ja":"住居費を確認","requires_steps":["income_old"],"uses_nodes":[],"condition_ja":"旧月収1000ドルの40%。","conclusion_ja":"住居費は400ドル。","baseline_ja":"中学校までの割合。"},
+    {"id":"income_new","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.income_new","title_ja":"新月収を確認","requires_steps":["income_old"],"uses_nodes":[],"condition_ja":"旧月収1000ドルに600ドル加える。","conclusion_ja":"新月収1600ドル、その25%は400ドル。","baseline_ja":"中学校までの四則演算。"},
+    {"id":"income_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.income_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"旧1000、住居費400、新1600。","conclusion_ja":"40%と25%の両条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":30,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["増加したのは月収であり、家賃・光熱費の金額は同じとして割合を等置した。"]}
+}

@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily18_poultry","title_ja":"病気発生1週間後の家禽数","problem_id":"external-gsm8k-main-3101c7d50724:train:00183","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"鶏300羽、七面鳥200羽、ホロホロ鳥80羽から、毎日それぞれ20、8、5羽を失うとき、7日後の総数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910B.poultry_solution","graph":"work/gsm8k-daily18-poultry-graph.json","lean_file":"tests/lean/GSM8KDaily0910B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1週間を7日とし、各鳥種の毎日の減少が7日間続く。各初期数は7日分の減少以上。"],
+  "steps":[
+    {"id":"poultry_chickens","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.poultry_chickens","title_ja":"鶏の残数","requires_steps":[],"uses_nodes":[],"condition_ja":"300羽から毎日20羽を7日失う。","conclusion_ja":"300-20×7=160羽。","baseline_ja":"一定量の反復減少。初期数が減少総数以上。"},
+    {"id":"poultry_turkeys","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.poultry_turkeys","title_ja":"七面鳥の残数","requires_steps":[],"uses_nodes":[],"condition_ja":"200羽から毎日8羽を7日失う。","conclusion_ja":"200-8×7=144羽。","baseline_ja":"一定量の反復減少。初期数が減少総数以上。"},
+    {"id":"poultry_guinea","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.poultry_guinea","title_ja":"ホロホロ鳥の残数","requires_steps":[],"uses_nodes":[],"condition_ja":"80羽から毎日5羽を7日失う。","conclusion_ja":"80-5×7=45羽。","baseline_ja":"一定量の反復減少。初期数が減少総数以上。"},
+    {"id":"poultry_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.poultry_total","title_ja":"7日後の総数","requires_steps":["poultry_chickens","poultry_turkeys","poultry_guinea"],"uses_nodes":[],"condition_ja":"残った160、144、45羽を合計する。","conclusion_ja":"349羽。","baseline_ja":"鳥種別残数の加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":184,"checked_model_hash":"fd291c00084ddc96424c80629b85dc95869cd4e8b63fde580a82759c5a704e7c","checks_ja":["3鳥種の初期数・日次減少数・1週間7日を照合した。"]}
+}

@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily3_ingredients","title_ja":"材料の指定数値を問題の規約どおり合計する","problem_id":"external-gsm8k-main-3101c7d50724:train:00033","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"水10カップ、小麦粉16カップ、塩は小麦粉の数の半分の小さじ。問題が求める数値合計を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907C.ingredients_solution","graph":"work/gsm8k-daily3-ingredients-graph.json","lean_file":"tests/lean/GSM8KDaily0907C.lean","semantic_review_status":"self_review_only","model_scope":"conditional",
+  "counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["カップと小さじは異なる次元の単位なので34は物理量の和ではない。原文が要求する各数量の数値だけを足す追加規約付きの答え。"],
+  "steps":[
+    {"id":"ingredients_salt","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.ingredients_salt","title_ja":"塩の小さじ数","requires_steps":[],"uses_nodes":[],"condition_ja":"塩の小さじ数は小麦粉16カップという数値の1/2。","conclusion_ja":"塩は8小さじ。","baseline_ja":"中学校までの割合。"},
+    {"id":"ingredients_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.ingredients_total","title_ja":"指定された数値の合計","requires_steps":["ingredients_salt"],"uses_nodes":[],"condition_ja":"原文の規約に従い、単位換算せず10、16、8という数値を足す。","conclusion_ja":"数値合計は34。物理量として34カップとはしない。","baseline_ja":"中学校までの加法。"},
+    {"id":"ingredients_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.ingredients_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"塩8、数値合計34。","conclusion_ja":"追加規約付きモデルを満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":34,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["異なる単位の加算という原題の不備を隠さず、数値合計という条件付き解釈に限定した。"]}
+}

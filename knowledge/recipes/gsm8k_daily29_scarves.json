@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily29_scarves","title_ja":"毛糸の総数から編めるマフラー枚数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00292","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"毛糸1個でマフラー3枚を編める。赤2個、青6個、黄4個なら合計何枚か。","root":"LemmaWeave.Tests.GSM8KDaily0912C.scarves_solution","graph":"work/gsm8k-daily29-scarves-graph.json","lean_file":"tests/lean/GSM8KDaily0912C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["色ごとの毛糸数を合計し、毛糸1個当たり3枚を掛ける。"],
+  "steps":[
+    {"id":"scarves_yarns","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.scarves_yarns","title_ja":"毛糸を合計する","requires_steps":[],"uses_nodes":[],"condition_ja":"赤2個、青6個、黄4個の毛糸がある。","conclusion_ja":"毛糸は合計12個である。","baseline_ja":"互いに異なる色の個数を加える。"},
+    {"id":"scarves_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912C.scarves_total","title_ja":"編める枚数を求める","requires_steps":["scarves_yarns"],"uses_nodes":[],"condition_ja":"毛糸は12個で、1個から3枚編める。","conclusion_ja":"マフラーは36枚編める。","baseline_ja":"総資源数×単位当たり生産数を用いる。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":293,"checked_model_hash":"588deefda61a39bf804733a78b137b1d1073ac0452e95ff3e790678b7cba0cf6","checks_ja":["2＋6＋4＝12、12×3＝36を自己照合した。"]}
+}

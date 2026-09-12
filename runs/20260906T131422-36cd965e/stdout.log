@@ -1,0 +1,149 @@
+{"run": "runs/20260906T131422-109ca760/run.json", "exit_code": 0}
+{"run": "runs/20260906T131423-2ed87c46/run.json", "exit_code": 0}
+{"run": "runs/20260906T131425-d35b5949/run.json", "exit_code": 0}
+{"run": "runs/20260906T131451-986faeda/run.json", "exit_code": 0}
+{"run": "runs/20260906T131453-7d7ec5be/run.json", "exit_code": 0}
+{"run": "runs/20260906T131500-3bebf19d/run.json", "exit_code": 0}
+{"run": "runs/20260906T131507-8383614f/run.json", "exit_code": 0}
+{"run": "runs/20260906T131514-29599c34/run.json", "exit_code": 0}
+{"run": "runs/20260906T131516-d4ac81fb/run.json", "exit_code": 0}
+{
+  "schema_version": "0.1",
+  "extractor_build": {
+    "argv": [
+      "lake",
+      "build",
+      "LemmaWeave.Audit.Extract"
+    ],
+    "exit_code": 0,
+    "run": "runs/20260906T131422-109ca760/run.json"
+  },
+  "variants": [
+    {
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1",
+      "build": {
+        "argv": [
+          "lake",
+          "build",
+          "LemmaWeave.Problems.DNC2026M1.ProofInequalities"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131423-2ed87c46/run.json"
+      },
+      "audit": {
+        "argv": [
+          "lake",
+          "env",
+          "lean",
+          "work/audit_JP-DNC-CT-2026-MAIN-M1-Q01-S01-01-V1.lean"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131425-d35b5949/run.json"
+      },
+      "graphs": {
+        "LemmaWeave.Problems.DNC2026M1.inequalities_solution": "work/LemmaWeave.Problems.DNC2026M1.inequalities_solution-graph.json"
+      }
+    },
+    {
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1",
+      "build": {
+        "argv": [
+          "lake",
+          "build",
+          "LemmaWeave.Problems.DNC2026M1.ProofSets"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131451-986faeda/run.json"
+      },
+      "audit": {
+        "argv": [
+          "lake",
+          "env",
+          "lean",
+          "work/audit_JP-DNC-CT-2026-MAIN-M1-Q01-S02-01-V1.lean"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131453-7d7ec5be/run.json"
+      },
+      "graphs": {
+        "LemmaWeave.Problems.DNC2026M1.sets_solution": "work/LemmaWeave.Problems.DNC2026M1.sets_solution-graph.json"
+      }
+    },
+    {
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1",
+      "build": {
+        "argv": [
+          "lake",
+          "build",
+          "LemmaWeave.Problems.DNC2026M1.ProofSets"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131451-986faeda/run.json"
+      },
+      "audit": {
+        "argv": [
+          "lake",
+          "env",
+          "lean",
+          "work/audit_JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I-V1.lean"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131500-3bebf19d/run.json"
+      },
+      "graphs": {
+        "LemmaWeave.Problems.DNC2026M1.parameter_solution": "work/LemmaWeave.Problems.DNC2026M1.parameter_solution-graph.json"
+      }
+    },
+    {
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1",
+      "build": {
+        "argv": [
+          "lake",
+          "build",
+          "LemmaWeave.Problems.DNC2026M1.ProofSets"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131451-986faeda/run.json"
+      },
+      "audit": {
+        "argv": [
+          "lake",
+          "env",
+          "lean",
+          "work/audit_JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II-V1.lean"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131507-8383614f/run.json"
+      },
+      "graphs": {
+        "LemmaWeave.Problems.DNC2026M1.pair_solution": "work/LemmaWeave.Problems.DNC2026M1.pair_solution-graph.json"
+      }
+    },
+    {
+      "proof_variant_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1",
+      "build": {
+        "argv": [
+          "lake",
+          "build",
+          "LemmaWeave.Problems.DNC2026M1.ProofExtrema"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131514-29599c34/run.json"
+      },
+      "audit": {
+        "argv": [
+          "lake",
+          "env",
+          "lean",
+          "work/audit_JP-DNC-CT-2026-MAIN-M1-Q03-S02-01-V1.lean"
+        ],
+        "exit_code": 0,
+        "run": "runs/20260906T131516-d4ac81fb/run.json"
+      },
+      "graphs": {
+        "LemmaWeave.Problems.DNC2026M1.extrema_solution": "work/LemmaWeave.Problems.DNC2026M1.extrema_solution-graph.json"
+      }
+    }
+  ],
+  "does_not_promote_ledger": true
+}

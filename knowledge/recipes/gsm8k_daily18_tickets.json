@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily18_tickets","title_ja":"曜日別料金の映画券2枚","problem_id":"external-gsm8k-main-3101c7d50724:train:00174","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"月曜5ドルを基準に、水曜は2倍、土曜は5倍の映画券を1枚ずつ買うときの総額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910B.tickets_solution","graph":"work/gsm8k-daily18-tickets-graph.json","lean_file":"tests/lean/GSM8KDaily0910B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["曜日ごとに券1枚を買い、両日の料金を合算する。"],
+  "steps":[
+    {"id":"tickets_wednesday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.tickets_wednesday","title_ja":"水曜料金","requires_steps":[],"uses_nodes":[],"condition_ja":"水曜は月曜5ドルの2倍。","conclusion_ja":"水曜は10ドル。","baseline_ja":"倍率の乗法。"},
+    {"id":"tickets_saturday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.tickets_saturday","title_ja":"土曜料金","requires_steps":[],"uses_nodes":[],"condition_ja":"土曜は月曜5ドルの5倍。","conclusion_ja":"土曜は25ドル。","baseline_ja":"倍率の乗法。"},
+    {"id":"tickets_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.tickets_total","title_ja":"2日分の総額","requires_steps":["tickets_wednesday","tickets_saturday"],"uses_nodes":[],"condition_ja":"水曜10ドルと土曜25ドルを1枚ずつ買う。","conclusion_ja":"合計35ドル。","baseline_ja":"代金の加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":175,"checked_model_hash":"fd291c00084ddc96424c80629b85dc95869cd4e8b63fde580a82759c5a704e7c","checks_ja":["水曜・土曜の倍率はいずれも月曜料金5ドルが基準であることを照合した。"]}
+}

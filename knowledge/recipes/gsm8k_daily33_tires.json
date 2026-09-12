@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily33_tires","title_ja":"車種と予備タイヤの有無で総タイヤ数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00328","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"24台の3分の1が二輪車、残る車の4分の1が予備タイヤ付きのとき総タイヤ数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913B.tires_solution","graph":"work/gsm8k-daily33-tires-graph.json","lean_file":"tests/lean/GSM8KDaily0913B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["二輪車2本、通常車4本、予備タイヤ付き車5本として重複なく分類する。"],
+  "steps":[
+    {"id":"tires_motorcycles","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.tires_motorcycles","title_ja":"二輪車数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"24台の3分の1が二輪車。","conclusion_ja":"二輪車は8台。","baseline_ja":"24=3×8を用いる。"},
+    {"id":"tires_cars","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.tires_cars","title_ja":"車数を求める","requires_steps":["tires_motorcycles"],"uses_nodes":[],"condition_ja":"全24台から二輪車8台を除く。","conclusion_ja":"車は16台。","baseline_ja":"24=8+16となる差を求める。"},
+    {"id":"tires_spare_cars","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.tires_spare_cars","title_ja":"予備タイヤ付き車数を求める","requires_steps":["tires_cars"],"uses_nodes":[],"condition_ja":"16台の車の4分の1に予備タイヤがある。","conclusion_ja":"予備タイヤ付きは4台。","baseline_ja":"16=4×4を用いる。"},
+    {"id":"tires_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.tires_total","title_ja":"総タイヤ数を求める","requires_steps":["tires_motorcycles","tires_cars","tires_spare_cars"],"uses_nodes":[],"condition_ja":"二輪車8台、予備付き車4台、通常車12台。","conclusion_ja":"総タイヤ数は84本。","baseline_ja":"8×2+4×5+12×4を排反に加える。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":329,"checked_model_hash":"83680282c69fb05a6b65fef48a3956db83b4848bfee745d30d9f2d4bf1d207ac","checks_ja":["車両区分と各区分のタイヤ本数を原文に照らして再計算した。"]}
+}

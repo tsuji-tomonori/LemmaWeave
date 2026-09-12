@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.1",
+  "id": "GSM8K-INDIVIDUAL-0002",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+  "source_file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+  "source_url": "https://github.com/openai/grade-school-math/blob/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+  "license_notice": "reviews/GSM8K-LICENSE.txt",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/NextModels.lean"
+  ],
+  "semantic_model_hash": "c21e8f75f97f058569151f1d937c4ba3d40064ed80dda63178e3ed937fa515a2",
+  "author_session_id": "lemmaweave-daily-bootstrap-20260906",
+  "review_status": "self_review_only",
+  "problems": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00005",
+      "source_line_1based": 6,
+      "source_record_sha256": "6c7887fb1d46e6c9dfe7add61c36030403b80d6d9aa7438a9d6b4c254bf3eff7",
+      "raw_question_sha256": "16f83fb4320c9faf79cc5ef0cf235beb70b19a06e9e4dc4f03dd9d0ca78d5e75",
+      "source_question": "Mark has a garden with flowers. He planted plants of three different colors in it. Ten of them are yellow, and there are 80% more of those in purple. There are only 25% as many green flowers as there are yellow and purple flowers. How many flowers does Mark have in his garden?",
+      "recipe_id": "gsm8k_next_flowers",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "80%多いは元の180%。緑の25%の基準は黄色だけでなく黄色と紫の合計。",
+        "数量は有理数で関係を表すが、全解が紫18・緑7・合計35という非負整数になる。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00006",
+      "source_line_1based": 7,
+      "source_record_sha256": "b0c1aba7b63b19cd409d9edc8981e9c64ee4a76054af9ad3e11db4572d88f4b8",
+      "raw_question_sha256": "cf2595dad6a3ad5bbef4cb35fdf9d90cf2ea8ea8cfa675e9c0af771abd2dea12",
+      "source_question": "Albert is wondering how much pizza he can eat in one day. He buys 2 large pizzas and 2 small pizzas. A large pizza has 16 slices and a small pizza has 8 slices. If he eats it all, how many pieces does he eat that day?",
+      "recipe_id": "gsm8k_next_pizza",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "ピザの枚数と切れ数を区別する。個数を自然数で表す。食べ残しなし。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00007",
+      "source_line_1based": 8,
+      "source_record_sha256": "453de76b101b924e0276210628a5ed07e6031202d813fe4a2c57dabc39dce8dd",
+      "raw_question_sha256": "99c93669d063c21f3c4160988005ee0b93ca9cc212e4815db446c28f9bbff151",
+      "source_question": "Ken created a care package to send to his brother, who was away at boarding school.  Ken placed a box on a scale, and then he poured into the box enough jelly beans to bring the weight to 2 pounds.  Then, he added enough brownies to cause the weight to triple.  Next, he added another 2 pounds of jelly beans.  And finally, he added enough gummy worms to double the weight once again.  What was the final weight of the box of goodies, in pounds?",
+      "recipe_id": "gsm8k_next_parcel",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題の最初の2ポンドは秤に載せた箱を含む総重量。参考解答の「2ポンドのジェリービーンズ」という言い換えを採用しない。",
+        "各倍率はその操作直前の総重量に掛かる。途中の2ポンド加算を最後へ移さない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00008",
+      "source_line_1based": 9,
+      "source_record_sha256": "80a9baf444143414bbe54cb52422b4b2b8037cbb713c83f5f87253911053665f",
+      "raw_question_sha256": "a13430e732d2c1e663238de0e34daf75abd640df18ff2ab97d0d55479204c2d1",
+      "source_question": "Alexis is applying for a new job and bought a new set of business clothes to wear to the interview. She went to a department store with a budget of $200 and spent $30 on a button-up shirt, $46 on suit pants, $38 on a suit coat, $11 on socks, and $18 on a belt. She also purchased a pair of shoes, but lost the receipt for them. She has $16 left from her budget. How much did Alexis pay for the shoes?",
+      "recipe_id": "gsm8k_next_clothes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "靴代は非負。購入列挙にない税や追加費用を導入せず、原題が記す支出と残金で予算を分割する。",
+        "41ドルを代入して確かめるだけでなく、任意の靴代について原題条件と41ドルが同値であることを証明する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00009",
+      "source_line_1based": 10,
+      "source_record_sha256": "4471b683b5f2ddb70752398dcc54fc21767d9664fd0b3edbe26d82ffe19d8d61",
+      "raw_question_sha256": "699ab79580f3d4e07173fdf9ff3b39ab4d4aa99e3efdf92ea650753c03c27a4d",
+      "source_question": "Tina makes $18.00 an hour.  If she works more than 8 hours per shift, she is eligible for overtime, which is paid by your hourly wage + 1/2 your hourly wage.  If she works 10 hours every day for 5 days, how much money does she make?",
+      "recipe_id": "gsm8k_next_overtime",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題の割増規則を数学モデルにするもので、労働法・実在の賃金制度の助言ではない。",
+        "8時間を超えた部分だけが割増。毎日の勤務が同じ10時間なので日額を5倍する。全10時間に割増時給を掛けない。"
+      ],
+      "blockers": []
+    }
+  ]
+}

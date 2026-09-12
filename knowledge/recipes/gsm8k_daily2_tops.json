@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_daily2_tops",
+  "title_ja": "総額から同額のトップス1着分を逆算する",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00023",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "75ドルで短パン5組を各7ドル、靴2組を各10ドル、同額のトップス4着を購入。1着はいくらか。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.tops_solution",
+  "graph": "work/gsm8k-daily2-tops-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "For $75は購入総額75ドルと読む。税・割引・追加商品は原題にない。",
+    "トップス4着がすべて同価格なので合計を4等分する。"
+  ],
+  "steps": [
+    {
+      "id": "tops_shorts",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.tops_shorts",
+      "title_ja": "短パン代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5組×7ドル。",
+      "conclusion_ja": "35ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "tops_shoes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.tops_shoes",
+      "title_ja": "靴代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2組×10ドル。",
+      "conclusion_ja": "20ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "tops_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.tops_total",
+      "title_ja": "トップス合計",
+      "requires_steps": [
+        "tops_shorts",
+        "tops_shoes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全体75から短パン35と靴20を除く。",
+      "conclusion_ja": "20ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "tops_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.tops_each",
+      "title_ja": "1着の価格",
+      "requires_steps": [
+        "tops_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4着は同額で合計20ドル、4≠0。",
+      "conclusion_ja": "1着5ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "tops_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.tops_exists",
+      "title_ja": "条件の充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "短パン35、靴20、トップス合計20、1着5。",
+      "conclusion_ja": "4着分と全購入額75が一致する。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 24,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "For $75は購入総額75ドルと読む。税・割引・追加商品は原題にない。",
+      "トップス4着がすべて同価格なので合計を4等分する。"
+    ]
+  }
+}

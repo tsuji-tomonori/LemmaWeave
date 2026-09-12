@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily20_herbert","title_ja":"Herbertの来年の年齢","problem_id":"external-gsm8k-main-3101c7d50724:train:00196","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"24歳のKrisより10歳若いHerbertの来年の年齢を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910D.herbert_solution","graph":"work/gsm8k-daily20-herbert-graph.json","lean_file":"tests/lean/GSM8KDaily0910D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["現在の年齢を求めてから1年進める。"],
+  "steps":[
+    {"id":"herbert_now","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.herbert_now","title_ja":"現在の年齢","requires_steps":[],"uses_nodes":[],"condition_ja":"Krisの24歳から年齢差10歳を引く。","conclusion_ja":"Herbertは現在14歳。","baseline_ja":"年齢差の減法。"},
+    {"id":"herbert_next","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.herbert_next","title_ja":"来年の年齢","requires_steps":["herbert_now"],"uses_nodes":[],"condition_ja":"現在14歳から1年後。","conclusion_ja":"答えは15歳。","baseline_ja":"経過年数の加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":197,"checked_model_hash":"717063a006303129ce42e655f7323113878d12026557118736401bec27b71fe8","checks_ja":["現在と来年を区別した。"]}
+}

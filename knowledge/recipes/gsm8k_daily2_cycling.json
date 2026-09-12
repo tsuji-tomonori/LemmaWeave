@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_daily2_cycling",
+  "title_ja": "通勤と週末の走行距離から自転車時間を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00019",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "職場まで20マイルを5日往復し、週末200マイル走る。時速25マイルなら週何時間か。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.cycling_solution",
+  "graph": "work/gsm8k-daily2-cycling-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "25mphを移動中の一定速度として扱い、休憩・信号待ちを含めない。",
+    "参考解答の文中にあるtotal 200+200の前半をworkと呼ぶ誤記は採用せず、全体400と区別する。"
+  ],
+  "steps": [
+    {
+      "id": "cycling_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.cycling_daily",
+      "title_ja": "1日の通勤距離",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "片道20マイルを往復。",
+      "conclusion_ja": "40マイル/日。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "cycling_work",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.cycling_work",
+      "title_ja": "週の通勤距離",
+      "requires_steps": [
+        "cycling_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "40マイルを5日。",
+      "conclusion_ja": "200マイル/週。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "cycling_all",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.cycling_all",
+      "title_ja": "全走行距離",
+      "requires_steps": [
+        "cycling_work"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "通勤200と週末200を合計。",
+      "conclusion_ja": "400マイル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "cycling_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.cycling_hours",
+      "title_ja": "距離・速さ・時間",
+      "requires_steps": [
+        "cycling_all"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "平均走行速度を一定の25mphとし、停止時間を含めない。",
+      "conclusion_ja": "25h=400より16時間。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "cycling_unit_check",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.cycling_unit_check",
+      "title_ja": "割り算による確認",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時間=距離÷速さ、25≠0。",
+      "conclusion_ja": "400÷25=16時間。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "cycling_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.cycling_exists",
+      "title_ja": "条件の充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "日40、週通勤200、全体400、時間16。",
+      "conclusion_ja": "距離合成と速度式をすべて満たす。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 20,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "25mphを移動中の一定速度として扱い、休憩・信号待ちを含めない。",
+      "参考解答の文中にあるtotal 200+200の前半をworkと呼ぶ誤記は採用せず、全体400と区別する。"
+    ]
+  }
+}

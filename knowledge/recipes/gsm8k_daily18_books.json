@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily18_books","title_ja":"教科書と用品購入後の残金","problem_id":"external-gsm8k-main-3101c7d50724:train:00180","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"960ドルの半分を教科書に使い、その残りの4分の1を学用品に使った後の残金を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910B.books_solution","graph":"work/gsm8k-daily18-books-graph.json","lean_file":"tests/lean/GSM8KDaily0910B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["学用品の4分の1は初期960ドルでなく、教科書購入後の480ドルが基準。"],
+  "steps":[
+    {"id":"books_textbooks","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.books_textbooks","title_ja":"教科書代","requires_steps":[],"uses_nodes":[],"condition_ja":"960ドルの半分。","conclusion_ja":"480ドル。","baseline_ja":"2等分。"},
+    {"id":"books_after_textbooks","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.books_after_textbooks","title_ja":"教科書購入後","requires_steps":["books_textbooks"],"uses_nodes":[],"condition_ja":"960ドルから480ドルを使う。","conclusion_ja":"480ドル残る。","baseline_ja":"減法。"},
+    {"id":"books_supplies","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.books_supplies","title_ja":"学用品代","requires_steps":["books_after_textbooks"],"uses_nodes":[],"condition_ja":"残り480ドルの4分の1。","conclusion_ja":"120ドル。","baseline_ja":"4等分。"},
+    {"id":"books_left","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910B.books_left","title_ja":"最終残金","requires_steps":["books_after_textbooks","books_supplies"],"uses_nodes":[],"condition_ja":"480ドルから120ドルを使う。","conclusion_ja":"360ドル残る。","baseline_ja":"減法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":181,"checked_model_hash":"fd291c00084ddc96424c80629b85dc95869cd4e8b63fde580a82759c5a704e7c","checks_ja":["半分と4分の1を適用する順序と基準額を照合した。"]}
+}

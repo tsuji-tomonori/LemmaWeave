@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily20_rolls","title_ja":"夕食会に残るロールパン","problem_id":"external-gsm8k-main-3101c7d50724:train:00197","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"16人の半数ずつが1.5個と0.5個を食べるとき、40個から残る数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910D.rolls_solution","graph":"work/gsm8k-daily20-rolls-graph.json","lean_file":"tests/lean/GSM8KDaily0910D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各群の人数は8人。分数は式の両辺を2倍して整数で表す。"],
+  "steps":[
+    {"id":"rolls_half_people","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.rolls_half_people","title_ja":"各群の人数","requires_steps":[],"uses_nodes":[],"condition_ja":"16人を同数の二群に分ける。","conclusion_ja":"各群は8人。","baseline_ja":"偶数の二等分。"},
+    {"id":"rolls_first","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.rolls_first","title_ja":"第1群の消費","requires_steps":["rolls_half_people"],"uses_nodes":[],"condition_ja":"8人が1人1と1/2個ずつ食べる。分母2を払うと消費数の2倍は8×3。","conclusion_ja":"12個食べる。","baseline_ja":"分数と人数の乗法。"},
+    {"id":"rolls_second","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.rolls_second","title_ja":"第2群の消費","requires_steps":["rolls_half_people"],"uses_nodes":[],"condition_ja":"8人が1人1/2個ずつ食べる。","conclusion_ja":"4個食べる。","baseline_ja":"分数と人数の乗法。"},
+    {"id":"rolls_eaten","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.rolls_eaten","title_ja":"全消費数","requires_steps":["rolls_first","rolls_second"],"uses_nodes":[],"condition_ja":"二群の12個と4個を合算する。","conclusion_ja":"16個食べる。","baseline_ja":"加法。"},
+    {"id":"rolls_left","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.rolls_left","title_ja":"残数","requires_steps":["rolls_eaten"],"uses_nodes":[],"condition_ja":"用意した40個から16個を引く。","conclusion_ja":"答えは24個。","baseline_ja":"全体から消費分を引く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":198,"checked_model_hash":"717063a006303129ce42e655f7323113878d12026557118736401bec27b71fe8","checks_ja":["16人を8人ずつに分け、1.5個と0.5個を別々に計算した。"]}
+}

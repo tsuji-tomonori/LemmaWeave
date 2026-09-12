@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily28_puppy","title_ja":"同額の子犬2匹の単価","problem_id":"external-gsm8k-main-3101c7d50724:train:00277","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"5匹で800ドル、うち3匹が各150ドルのとき、同額の残り2匹の1匹当たり価格を求める。",
+  "root":"LemmaWeave.Tests.GSM8KDaily0912B.puppy_solution","graph":"work/gsm8k-daily28-puppy-graph.json","lean_file":"tests/lean/GSM8KDaily0912B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["残り2匹が同額という条件を積の等式にする。"],
+  "steps":[
+    {"id":"puppy_sale_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.puppy_sale_cost","title_ja":"特売3匹の代金","requires_steps":[],"uses_nodes":[],"condition_ja":"3匹が各150ドル。","conclusion_ja":"特売分は450ドル。","baseline_ja":"合計＝個数×単価。"},
+    {"id":"puppy_other_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.puppy_other_cost","title_ja":"残り2匹の合計","requires_steps":["puppy_sale_cost"],"uses_nodes":[],"condition_ja":"総額800ドルのうち450ドルが特売分。","conclusion_ja":"残り2匹は合計350ドル。","baseline_ja":"総額＝既知部分＋残額。"},
+    {"id":"puppy_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.puppy_each","title_ja":"1匹当たり価格","requires_steps":["puppy_other_cost"],"uses_nodes":[],"condition_ja":"同額の2匹が合計350ドル。","conclusion_ja":"各175ドル。","baseline_ja":"合計＝個数×同一単価。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":278,"checked_model_hash":"6b16310f0a116b0f5920805ef148e39e64b00ecbd5bcf0656596c75a079178bd","checks_ja":["3×150=450、800−450=350、350÷2=175を照合した。"]}
+}

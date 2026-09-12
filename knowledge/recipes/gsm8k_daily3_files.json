@@ -1,0 +1,13 @@
+{
+  "id":"gsm8k_daily3_files","title_ja":"2回のダウンロードから価値あるファイル数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00027","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"800件の70%と、追加400件の3/5を削除した。残る価値あるファイル数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907C.files_solution","graph":"work/gsm8k-daily3-files-graph.json","lean_file":"tests/lean/GSM8KDaily0907C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model",
+  "counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["第2回の削除後も第1回で残った240件を保持していると読む。重複ファイルは原文にない。"],
+  "steps":[
+    {"id":"files_first_irrelevant","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.files_first_irrelevant","title_ja":"第1回の削除数","requires_steps":[],"uses_nodes":[],"condition_ja":"800件の70%が不要。","conclusion_ja":"560件を削除。","baseline_ja":"中学校までの割合。"},
+    {"id":"files_first_valuable","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.files_first_valuable","title_ja":"第1回の残数","requires_steps":["files_first_irrelevant"],"uses_nodes":[],"condition_ja":"800件から不要560件を引く。","conclusion_ja":"価値ある240件が残る。","baseline_ja":"中学校までの四則演算。"},
+    {"id":"files_second_irrelevant","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.files_second_irrelevant","title_ja":"第2回の削除数","requires_steps":[],"uses_nodes":[],"condition_ja":"追加400件の3/5が不要。","conclusion_ja":"240件を削除。","baseline_ja":"中学校までの割合。"},
+    {"id":"files_second_valuable","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.files_second_valuable","title_ja":"第2回の残数","requires_steps":["files_second_irrelevant"],"uses_nodes":[],"condition_ja":"400件から不要240件を引く。","conclusion_ja":"価値ある160件が残る。","baseline_ja":"中学校までの四則演算。"},
+    {"id":"files_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.files_total","title_ja":"両回を合計","requires_steps":["files_first_valuable","files_second_valuable"],"uses_nodes":[],"condition_ja":"両回の残存ファイルを保持する。","conclusion_ja":"240+160=400件。","baseline_ja":"中学校までの加法。"},
+    {"id":"files_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.files_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"削除560・240、残存240・160、合計400。","conclusion_ja":"全条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":28,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["2回の母数と削除割合を混同せず、各回の価値ある残数を合計した。"]}
+}

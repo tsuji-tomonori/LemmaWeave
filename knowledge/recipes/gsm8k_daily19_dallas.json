@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily19_dallas","title_ja":"Dallasの現在年齢","problem_id":"external-gsm8k-main-3101c7d50724:train:00190","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"DexterとDarcyの現在年齢からDarcyとDallasの昨年年齢を経てDallasの現在年齢を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910C.dallas_solution","graph":"work/gsm8k-daily19-dallas-graph.json","lean_file":"tests/lean/GSM8KDaily0910C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["昨年の倍率には両者の昨年年齢を使う。"],
+  "steps":[
+    {"id":"dallas_darcy_now","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.dallas_darcy_now","title_ja":"Darcyの現在年齢","requires_steps":[],"uses_nodes":[],"condition_ja":"Darcyは現在8歳のDexterの2倍。","conclusion_ja":"Darcyは現在16歳。","baseline_ja":"倍率の乗法。"},
+    {"id":"dallas_darcy_last","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.dallas_darcy_last","title_ja":"Darcyの昨年年齢","requires_steps":["dallas_darcy_now"],"uses_nodes":[],"condition_ja":"現在16歳から1年戻す。","conclusion_ja":"Darcyは昨年15歳。","baseline_ja":"年齢の減法。"},
+    {"id":"dallas_last","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.dallas_last","title_ja":"Dallasの昨年年齢","requires_steps":["dallas_darcy_last"],"uses_nodes":[],"condition_ja":"昨年Dallasは昨年Darcyの3倍。","conclusion_ja":"Dallasは昨年45歳。","baseline_ja":"倍率の乗法。"},
+    {"id":"dallas_now","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.dallas_now","title_ja":"Dallasの現在年齢","requires_steps":["dallas_last"],"uses_nodes":[],"condition_ja":"昨年45歳から1年経過。","conclusion_ja":"現在46歳。","baseline_ja":"年齢の加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":191,"checked_model_hash":"9733a87ab59be1a7f4eae722999756336063da4a2b245397fedff3d3842e5241","checks_ja":["昨年と現在の基準時点を各段階で一致させた。"]}
+}

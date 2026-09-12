@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily32_gifts","title_ja":"贈った冊数と残冊数から元の冊数を戻す","problem_id":"external-gsm8k-main-3101c7d50724:train:00318","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Rebeccaへの40冊の3倍をMaraへ贈り、60冊残ったときの元の冊数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913A.gifts_solution","graph":"work/gsm8k-daily32-gifts-graph.json","lean_file":"tests/lean/GSM8KDaily0913A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["贈与後の残りと、二人へ贈った冊数を足し戻す。"],
+  "steps":[
+    {"id":"gifts_mara","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.gifts_mara","title_ja":"Maraへの冊数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"Rebeccaへの40冊の3倍をMaraへ贈る。","conclusion_ja":"Maraは120冊受け取る。","baseline_ja":"3×40を計算する。"},
+    {"id":"gifts_given","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.gifts_given","title_ja":"贈った合計を求める","requires_steps":["gifts_mara"],"uses_nodes":[],"condition_ja":"Rebeccaへ40冊、Maraへ120冊を贈る。","conclusion_ja":"贈った合計は160冊。","baseline_ja":"40+120を計算する。"},
+    {"id":"gifts_initial","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.gifts_initial","title_ja":"元の冊数を求める","requires_steps":["gifts_given"],"uses_nodes":[],"condition_ja":"160冊を贈った後に60冊残る。","conclusion_ja":"元は220冊。","baseline_ja":"贈った冊数と残った冊数を160+60と足す。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":319,"checked_model_hash":"4fec31cdef21e66aa97dac7c4991bc909e72e5b4b85a2a604a5de1d92c1baa4f","checks_ja":["贈与の倍率と、元の冊数=贈与合計+残りという保存関係を照合した。"]}
+}

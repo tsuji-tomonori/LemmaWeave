@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily33_books","title_ja":"残金から本の平均価格を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00326","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"236ドルから6冊購入後14ドル残ったときの1冊平均を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913B.books_solution","graph":"work/gsm8k-daily33-books-graph.json","lean_file":"tests/lean/GSM8KDaily0913B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["他の支出はなく、平均価格は総支出を6冊で割った値である。"],
+  "steps":[
+    {"id":"books_spent","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.books_spent","title_ja":"本への支出を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"236ドルのうち購入後に14ドル残った。","conclusion_ja":"本への支出は222ドル。","baseline_ja":"初期額=支出+残金から差を求める。"},
+    {"id":"books_average","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.books_average","title_ja":"平均価格を求める","requires_steps":["books_spent"],"uses_nodes":[],"condition_ja":"6冊の合計価格が222ドル。","conclusion_ja":"1冊平均は37ドル。","baseline_ja":"平均=合計÷個数を用い、222=6×37を確かめる。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":327,"checked_model_hash":"83680282c69fb05a6b65fef48a3956db83b4848bfee745d30d9f2d4bf1d207ac","checks_ja":["236-14=222、222÷6=37を照合した。"]}
+}

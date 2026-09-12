@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily33_tax","title_ja":"税率から手取り額を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00332","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"年収60000ドルから18%の税を支払った残額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913B.tax_solution","graph":"work/gsm8k-daily33-tax-graph.json","lean_file":"tests/lean/GSM8KDaily0913B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["控除などはなく、年収全額に18%を適用する。"],
+  "steps":[
+    {"id":"tax_amount","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.tax_amount","title_ja":"税額を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"60000ドルの18%を税として払う。","conclusion_ja":"税額は10800ドル。","baseline_ja":"100×税額=18×60000という割合の式を解く。"},
+    {"id":"tax_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.tax_remaining","title_ja":"残額を求める","requires_steps":["tax_amount"],"uses_nodes":[],"condition_ja":"60000ドルから税10800ドルを払う。","conclusion_ja":"残額は49200ドル。","baseline_ja":"60000=10800+49200となる差を求める。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":333,"checked_model_hash":"83680282c69fb05a6b65fef48a3956db83b4848bfee745d30d9f2d4bf1d207ac","checks_ja":["税額と税引後残額を原文から再計算した。"]}
+}

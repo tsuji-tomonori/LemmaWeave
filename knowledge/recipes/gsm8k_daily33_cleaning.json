@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily33_cleaning","title_ja":"部屋数と清掃時間から総報酬を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00324","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"4階各10室を1室6時間で清掃し、時給15ドルで得る総額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913B.cleaning_solution","graph":"work/gsm8k-daily33-cleaning-graph.json","lean_file":"tests/lean/GSM8KDaily0913B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["全室が同じ6時間を要し、全作業が時給対象である。"],
+  "steps":[
+    {"id":"cleaning_rooms","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.cleaning_rooms","title_ja":"部屋数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"4階の各階に10室ある。","conclusion_ja":"全部で40室ある。","baseline_ja":"階数と各階の室数を掛ける。"},
+    {"id":"cleaning_hours","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.cleaning_hours","title_ja":"清掃時間を求める","requires_steps":["cleaning_rooms"],"uses_nodes":[],"condition_ja":"40室を1室6時間で清掃する。","conclusion_ja":"全作業は240時間。","baseline_ja":"同じ所要時間の40件分として40×6を計算する。"},
+    {"id":"cleaning_pay","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.cleaning_pay","title_ja":"総報酬を求める","requires_steps":["cleaning_hours"],"uses_nodes":[],"condition_ja":"240時間すべてに時給15ドルが支払われる。","conclusion_ja":"総報酬は3600ドル。","baseline_ja":"時給×労働時間を用いる。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":325,"checked_model_hash":"83680282c69fb05a6b65fef48a3956db83b4848bfee745d30d9f2d4bf1d207ac","checks_ja":["4×10×6×15=3600を原文の単位順に照合した。"]}
+}

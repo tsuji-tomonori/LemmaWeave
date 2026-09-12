@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily31_books","title_ja":"購入総額から手持ちを引いて必要貯金額を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00305","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"1冊5ドルの本を8冊買うため、既に13ドルあるとき追加で必要な額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912E.books_solution","graph":"work/gsm8k-daily31-books-graph.json","lean_file":"tests/lean/GSM8KDaily0912E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["必要総額＝手持ち＋追加貯金額とする。"],
+  "steps":[
+    {"id":"books_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.books_cost","title_ja":"本の総額を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"同じ5ドルの本を8冊買う。","conclusion_ja":"購入総額は40ドル。","baseline_ja":"個数×単価として8×5を計算する。"},
+    {"id":"books_needed","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.books_needed","title_ja":"追加で必要な額を求める","requires_steps":["books_cost"],"uses_nodes":[],"condition_ja":"総額40ドルのうち13ドルを既に持つ。","conclusion_ja":"追加で27ドル貯める必要がある。","baseline_ja":"総額＝手持ち＋不足額の自然数方程式を解く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":306,"checked_model_hash":"64c0dfe5a75933ea9e28b540b9cc7001eced2f458f39473675ed810e1c33a6fd","checks_ja":["8×5=40、40-13=27を原文と照合した。"]}
+}

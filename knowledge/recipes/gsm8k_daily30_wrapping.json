@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily30_wrapping","title_ja":"三つの贈物に必要な包装紙面積を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00302","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"第一に2平方フィート、第二にその3/4、第三に第一と第二の合計量を使う。総面積を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.wrapping_solution","graph":"work/gsm8k-daily30-wrapping-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["三つの包装紙は重複使用せず、必要面積を加える。"],
+  "steps":[
+    {"id":"wrapping_second","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.wrapping_second","title_ja":"第二の面積","requires_steps":[],"uses_nodes":[],"condition_ja":"第一は2平方フィート、第二はその3/4。","conclusion_ja":"第二は3/2平方フィート。","baseline_ja":"基準量×割合。"},
+    {"id":"wrapping_third","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.wrapping_third","title_ja":"第三の面積","requires_steps":["wrapping_second"],"uses_nodes":[],"condition_ja":"第三は第一2と第二3/2の合計。","conclusion_ja":"第三は7/2平方フィート。","baseline_ja":"同じ単位の面積を加える。"},
+    {"id":"wrapping_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.wrapping_total","title_ja":"三つの総面積","requires_steps":["wrapping_second","wrapping_third"],"uses_nodes":[],"condition_ja":"各面積は2、3/2、7/2平方フィート。","conclusion_ja":"合計7平方フィート。","baseline_ja":"重複しない三つの使用面積を加える。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":303,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["2×3/4=3/2、2+3/2=7/2、総和7を原文と照合した。"]}
+}

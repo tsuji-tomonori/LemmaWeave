@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily30_crossword","title_ja":"二週間の総語数から一問平均を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00297","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"毎日一問のクロスワードで二週間に1050語を書く。一問当たりの平均語数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.crossword_solution","graph":"work/gsm8k-daily30-crossword-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["平均語数を各問に同じ平均値を割り当てた等式で表す。"],
+  "steps":[
+    {"id":"crossword_days","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.crossword_days","title_ja":"問題数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"一週間7日で二週間、毎日一問解く。","conclusion_ja":"問題数は14問。","baseline_ja":"2×7で日数を求める。"},
+    {"id":"crossword_average","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.crossword_average","title_ja":"一問平均","requires_steps":["crossword_days"],"uses_nodes":[],"condition_ja":"14問の合計が平均換算で1050語。","conclusion_ja":"一問平均75語。","baseline_ja":"総語数＝問題数×一問平均という自然数方程式を解く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":298,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["2×7=14、1050÷14=75を原文と照合した。"]}
+}

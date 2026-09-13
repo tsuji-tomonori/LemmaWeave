@@ -30,7 +30,7 @@ theorem grid_colored (a b c d e f g h i j k : ℕ) (x : ColoredGrid a b c d e f 
   constructor
   · norm_num [hg, hh] at hi
     exact hi
-  · norm_num [hi, hb] at hj
+  · norm_num [hg, hh, hb] at hj
     exact hj
 theorem grid_green (a b c d e f g h i j k : ℕ) (x : ColoredGrid a b c d e f g h i j k) : k = 66 := by
   have hc0 := grid_total a b c d e f g h i j k x

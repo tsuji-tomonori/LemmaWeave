@@ -1,10 +1,101 @@
 {
-  "date":"2026-09-14","started_at":"2026-09-14T05:55:16+09:00","finished_at":null,"target_count":10,
-  "selected_problem_ids":[
-    "external-gsm8k-main-3101c7d50724:train:00354","external-gsm8k-main-3101c7d50724:train:00355","external-gsm8k-main-3101c7d50724:train:00356","external-gsm8k-main-3101c7d50724:train:00357","external-gsm8k-main-3101c7d50724:train:00358","external-gsm8k-main-3101c7d50724:train:00359","external-gsm8k-main-3101c7d50724:train:00360","external-gsm8k-main-3101c7d50724:train:00361","external-gsm8k-main-3101c7d50724:train:00362","external-gsm8k-main-3101c7d50724:train:00363"
+  "date": "2026-09-14",
+  "started_at": "2026-09-14T05:55:16+09:00",
+  "finished_at": "2026-09-14T08:07:51+09:00",
+  "target_count": 10,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00354",
+    "external-gsm8k-main-3101c7d50724:train:00355",
+    "external-gsm8k-main-3101c7d50724:train:00356",
+    "external-gsm8k-main-3101c7d50724:train:00357",
+    "external-gsm8k-main-3101c7d50724:train:00358",
+    "external-gsm8k-main-3101c7d50724:train:00359",
+    "external-gsm8k-main-3101c7d50724:train:00360",
+    "external-gsm8k-main-3101c7d50724:train:00361",
+    "external-gsm8k-main-3101c7d50724:train:00362",
+    "external-gsm8k-main-3101c7d50724:train:00363"
   ],
-  "completed_problem_ids":[],"deferred":[],"authored_explanation_lines":30,"status":"in_progress",
-  "previous_ci_recovered":"https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34773199841","previous_head":"ef89a7c198d59ef9d306c7af5fa9d5d7e6309bad",
-  "ci":[],"pr":"https://github.com/tsuji-tomonori/LemmaWeave/pull/3","commit":null,"evidence_commit":null,
-  "resume_ja":"新規10問の解答・Leanモデル・行対応を作成済み。固定CI検証と証拠取り込みから再開する。"
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00354",
+    "external-gsm8k-main-3101c7d50724:train:00355",
+    "external-gsm8k-main-3101c7d50724:train:00356",
+    "external-gsm8k-main-3101c7d50724:train:00357",
+    "external-gsm8k-main-3101c7d50724:train:00358",
+    "external-gsm8k-main-3101c7d50724:train:00359",
+    "external-gsm8k-main-3101c7d50724:train:00360",
+    "external-gsm8k-main-3101c7d50724:train:00361",
+    "external-gsm8k-main-3101c7d50724:train:00362",
+    "external-gsm8k-main-3101c7d50724:train:00363"
+  ],
+  "deferred": [],
+  "authored_explanation_lines": 30,
+  "status": "completed",
+  "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34773199841",
+  "previous_head": "ef89a7c198d59ef9d306c7af5fa9d5d7e6309bad",
+  "ci": [
+    {
+      "run_id": 34782929463,
+      "commit": "7199ffc6433a67ebdf1449604365c16eeeb6c492",
+      "conclusion": "failure",
+      "artifact_id": 10326525345,
+      "artifact_sha256": "3f690310391e8fb106cd94e14995c994af3f5aa4ea822553f584fb806808e74e",
+      "reason_ja": "青色行の積を60へ置換するLean証明が不足していた。"
+    },
+    {
+      "run_id": 34784426133,
+      "commit": "f1cb896ab40020e1c760038ddf5a78a0e24c1fe2",
+      "conclusion": "failure",
+      "artifact_id": 10326616197,
+      "artifact_sha256": "6e1852d8a7bcc6ac80a5a5b65627335d232645fd1f3ef1f2ad13f7bc4d73ab3a",
+      "reason_ja": "書換え方向によりj=i×15までしか簡約されず、i=4の明示的な導出が必要だった。"
+    },
+    {
+      "run_id": 34785609514,
+      "commit": "6beab76651c71116a7d7f8dc4d9f74a00de55036",
+      "conclusion": "failure",
+      "artifact_id": 10327410520,
+      "artifact_sha256": "7b61f0302136217e805baefb6fe1a63a9e3edb27d475b590322cd66b9bd45ab7",
+      "reason_ja": "10問のLean証明と公理監査は通過したが、凍結モデルがファイルSHA形式で意味ハッシュと一致しなかった。"
+    },
+    {
+      "run_id": 34787148397,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34787148397",
+      "commit": "4635e92b6bc4685682288cebc238d4e513d5ec60",
+      "conclusion": "success",
+      "duration_seconds": 1413,
+      "artifact_id": 10326648914,
+      "artifact_sha256": "40c118124f1d06ddb818ece7f6ceb22d5940a4672084a0be24f6106f0df184ec"
+    }
+  ],
+  "pr": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
+  "commit": "4635e92b6bc4685682288cebc238d4e513d5ec60",
+  "evidence_commit": null,
+  "progress": {
+    "completed_this_run": 10,
+    "completed_today": 20,
+    "target_today": 50,
+    "solution_ready": 368,
+    "remaining": 8424,
+    "initial_target_date": "2027-03-01",
+    "measured_completed_per_day_7d": 48.57142857142857,
+    "measured_forecast_date": "2027-03-06",
+    "calibration_date": "2026-09-14"
+  },
+  "weekly_expansion": {
+    "completed_this_run": 0,
+    "target": 6,
+    "note_ja": "高校6分野の追加出典付き問題は未実施。固定GSM8Kを高校全分野の網羅に数えない。"
+  },
+  "infrastructure": {
+    "changed_proof_selection": "not_implemented",
+    "full_replay_duration_seconds": 1413,
+    "artifact_size_bytes": 320404289,
+    "new_dependency_graph_count": 10,
+    "new_dependency_graph_raw_bytes": 61610074,
+    "new_dependency_graph_archive_bytes": 3690275,
+    "previous_full_replay_duration_seconds": 1569,
+    "previous_artifact_size_bytes": 309242826,
+    "note_ja": "全件再検証は23分33秒で前回より156秒短かったが、成果物は11,161,463バイト増加した。新規10依存グラフは生61,610,074バイトからgzip 3,690,275バイトへ縮小した。変更証明と実依存だけを安全に選ぶ方式は未完了であり、成功証拠の要件は緩和しない。"
+  },
+  "resume_ja": "次回は external-gsm8k-main-3101c7d50724:train:00364 から 00373 を対象とする。"
 }

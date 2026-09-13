@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily36_fish","title_ja":"3種類の魚の総数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00357","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"金魚8匹、金魚より4匹多いエンゼルフィッシュ、その2倍のグッピーの合計を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914B.fish_solution","graph":"work/gsm8k-daily36-fish-graph.json","lean_file":"tests/lean/GSM8KDaily0914B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["『twice as many guppies as angelfish』をグッピー数=2×エンゼルフィッシュ数と読む。"],
+  "steps":[
+    {"id":"fish_angelfish","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.fish_angelfish","title_ja":"エンゼルフィッシュを求める","requires_steps":[],"uses_nodes":[],"condition_ja":"金魚8匹より4匹多い。","conclusion_ja":"エンゼルフィッシュは12匹。","baseline_ja":"8+4を計算する。"},
+    {"id":"fish_guppies","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.fish_guppies","title_ja":"グッピーを求める","requires_steps":["fish_angelfish"],"uses_nodes":[],"condition_ja":"グッピーはエンゼルフィッシュの2倍。","conclusion_ja":"グッピーは24匹。","baseline_ja":"12×2を計算する。"},
+    {"id":"fish_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.fish_total","title_ja":"全種類を合計する","requires_steps":["fish_angelfish","fish_guppies"],"uses_nodes":[],"condition_ja":"水槽の魚は記載された3種類を合計する。","conclusion_ja":"合計44匹。","baseline_ja":"8+12+24を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":358,"checked_model_hash":"97f6415d3482e92ecd59fcf1af83b1d53c334101d1b7f251d156f6967f402f9d","checks_ja":["比較の基準となる魚種と3種類の合計を原文どおりに照合した。"]}
+}

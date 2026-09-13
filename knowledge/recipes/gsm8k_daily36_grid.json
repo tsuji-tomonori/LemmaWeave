@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily36_grid","title_ja":"色分けされた格子の緑マス数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00355","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"10行15列の格子で中央24マスを赤、先頭2行と末尾2行を青にした残りの緑マスを求める。","root":"LemmaWeave.Tests.GSM8KDaily0914B.grid_solution","graph":"work/gsm8k-daily36-grid-graph.json","lean_file":"tests/lean/GSM8KDaily0914B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["中央の赤4行は先頭・末尾各2行の青領域と重ならないという原文の配置を用いる。"],
+  "steps":[
+    {"id":"grid_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.grid_total","title_ja":"格子全体を数える","requires_steps":[],"uses_nodes":[],"condition_ja":"10行あり、各行に15マスある。","conclusion_ja":"全体は150マス。","baseline_ja":"長方形配列の個数は行数×1行の個数。"},
+    {"id":"grid_colored","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.grid_colored","title_ja":"赤と青のマスを数える","requires_steps":[],"uses_nodes":[],"condition_ja":"赤は中央4行の各6マス、青は先頭2行と末尾2行の全15マスで、両領域は重ならない。","conclusion_ja":"赤24マス、青4行60マス。","baseline_ja":"互いに重ならない行ごとの積で数える。"},
+    {"id":"grid_green","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.grid_green","title_ja":"残りを緑として求める","requires_steps":["grid_total","grid_colored"],"uses_nodes":[],"condition_ja":"すべてのマスは赤・青・緑のいずれか一色。","conclusion_ja":"緑は150-24-60=66マス。","baseline_ja":"排反な部分の個数を全体から引く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":356,"checked_model_hash":"97f6415d3482e92ecd59fcf1af83b1d53c334101d1b7f251d156f6967f402f9d","checks_ja":["中央の赤領域と端の青領域が重ならない配置条件を明示して原文と照合した。"]}
+}

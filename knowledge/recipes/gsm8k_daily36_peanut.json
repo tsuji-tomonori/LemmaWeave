@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily36_peanut","title_ja":"配合比からピーナツバターの油量を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00360","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"油2オンスとピーナツ8オンスの比で作る20オンスのバッチに使う油量を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914B.peanut_solution","graph":"work/gsm8k-daily36-peanut-graph.json","lean_file":"tests/lean/GSM8KDaily0914B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["油とピーナツ以外の材料や調理損失がなく、同じ2:8の重量比を保つと解釈する。"],
+  "steps":[
+    {"id":"peanut_ratio_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.peanut_ratio_total","title_ja":"比1組の総重量を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"比1組は油2オンスとピーナツ8オンスからなる。","conclusion_ja":"比1組の完成重量は10オンス。","baseline_ja":"材料重量が加法的で損失がない条件で2+8を計算する。"},
+    {"id":"peanut_scale","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.peanut_scale","title_ja":"バッチの倍率を求める","requires_steps":["peanut_ratio_total"],"uses_nodes":[],"condition_ja":"完成バッチは20オンスで同じ配合比。","conclusion_ja":"比1組の2倍。","baseline_ja":"20÷10を計算する。"},
+    {"id":"peanut_oil","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.peanut_oil","title_ja":"油の重量を求める","requires_steps":["peanut_scale"],"uses_nodes":[],"condition_ja":"油2オンスの部分もバッチと同じ2倍にする。","conclusion_ja":"使った油は4オンス。","baseline_ja":"2×2を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":361,"checked_model_hash":"97f6415d3482e92ecd59fcf1af83b1d53c334101d1b7f251d156f6967f402f9d","checks_ja":["重量の加法性・損失なし・同じ配合比という適用条件を明記した。"]}
+}

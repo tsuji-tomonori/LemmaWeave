@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily36_jar","title_ja":"遊んだ後に瓶へ戻すビー玉を数える","problem_id":"external-gsm8k-main-3101c7d50724:train:00358","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"最初に取り出した12個の半分を失い、さらに10個を取り出し、新しい25個を受け取ったとき瓶へ戻す個数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914B.jar_solution","graph":"work/gsm8k-daily36-jar-graph.json","lean_file":"tests/lean/GSM8KDaily0914B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["瓶に元から残っていた総数ではなく、外へ出して遊んでいる元のビー玉と新しい袋のビー玉だけを数える。"],
+  "steps":[
+    {"id":"jar_recovered","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.jar_recovered","title_ja":"失わなかったビー玉を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"取り出した12個の半分6個を失い、失った分は見つからない。","conclusion_ja":"失ったのも残ったのも6個。","baseline_ja":"12を等しい二つの半分へ分ける。"},
+    {"id":"jar_original_return","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.jar_original_return","title_ja":"元の瓶から戻す分を求める","requires_steps":["jar_recovered"],"uses_nodes":[],"condition_ja":"失わなかった6個に、追加で取り出した10個を合わせる。","conclusion_ja":"元のビー玉は16個戻す。","baseline_ja":"6+10を計算する。"},
+    {"id":"jar_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.jar_total","title_ja":"新しいビー玉も合計する","requires_steps":["jar_original_return"],"uses_nodes":[],"condition_ja":"母が持ち帰った新しい袋には25個ある。","conclusion_ja":"瓶へ戻すのは合計41個。","baseline_ja":"16+25を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":359,"checked_model_hash":"97f6415d3482e92ecd59fcf1af83b1d53c334101d1b7f251d156f6967f402f9d","checks_ja":["問われた『元のものと新しいものから瓶へ戻す数』だけを対象にし、瓶内の未知の残数を混ぜていない。"]}
+}

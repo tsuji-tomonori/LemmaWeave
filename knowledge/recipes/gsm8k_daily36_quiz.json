@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily36_quiz","title_ja":"正解点と全問正解ボーナスを合計する","problem_id":"external-gsm8k-main-3101c7d50724:train:00356","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"5問ずつ5ラウンドで1問だけ誤答した生徒の、正解点と全問正解ラウンドのボーナスを求める。","root":"LemmaWeave.Tests.GSM8KDaily0914B.quiz_solution","graph":"work/gsm8k-daily36-quiz-graph.json","lean_file":"tests/lean/GSM8KDaily0914B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1問の誤答は1ラウンドだけを全問正解でなくするため、残る4ラウンドがボーナス対象。","参照解の途中計算は64点だが末尾ラベルだけ66となっており、原題から64点と再計算した。"],
+  "steps":[
+    {"id":"quiz_correct","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.quiz_correct","title_ja":"正解数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"5ラウンド×5問の全25問中、誤答は1問だけ。","conclusion_ja":"正解は24問。","baseline_ja":"全問数から誤答数を引く。"},
+    {"id":"quiz_base_and_bonus","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.quiz_base_and_bonus","title_ja":"通常点とボーナスを求める","requires_steps":["quiz_correct"],"uses_nodes":[],"condition_ja":"正解1問2点。誤答1問が属する1ラウンド以外の4ラウンドは全問正解で、各4点のボーナス。","conclusion_ja":"通常点48点、ボーナス16点。","baseline_ja":"単価×個数をそれぞれ計算する。"},
+    {"id":"quiz_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.quiz_total","title_ja":"総得点を求める","requires_steps":["quiz_base_and_bonus"],"uses_nodes":[],"condition_ja":"総得点は通常点とボーナスの和。","conclusion_ja":"Jamesは64点を得た。","baseline_ja":"48+16を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":357,"checked_model_hash":"97f6415d3482e92ecd59fcf1af83b1d53c334101d1b7f251d156f6967f402f9d","checks_ja":["原文の得点規則から64点を得ることを再計算し、参照解末尾の66は算術誤記と判定した。"]}
+}

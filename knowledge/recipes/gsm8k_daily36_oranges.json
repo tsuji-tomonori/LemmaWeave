@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily36_oranges","title_ja":"残りからオレンジ箱の購入数を逆算する","problem_id":"external-gsm8k-main-3101c7d50724:train:00354","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"母に1箱を渡し、その残りの半分を譲った後に4箱残ったとき、最初の購入箱数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914B.oranges_solution","graph":"work/gsm8k-daily36-oranges-graph.json","lean_file":"tests/lean/GSM8KDaily0914B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["『残りの半分』は母へ渡した後の箱数を基準とする。"],
+  "steps":[
+    {"id":"oranges_before_half","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.oranges_before_half","title_ja":"半分を譲る直前の箱数を戻す","requires_steps":[],"uses_nodes":[],"condition_ja":"半分を譲った後も同数の4箱が残る。","conclusion_ja":"譲る直前は8箱で、譲ったのは4箱。","baseline_ja":"全体を等しい二つの半分へ分ける。"},
+    {"id":"oranges_bought","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.oranges_bought","title_ja":"母へ渡した1箱を戻す","requires_steps":["oranges_before_half"],"uses_nodes":[],"condition_ja":"母へ1箱渡した後が8箱。","conclusion_ja":"最初に買ったのは9箱。","baseline_ja":"逆算として8+1を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":355,"checked_model_hash":"97f6415d3482e92ecd59fcf1af83b1d53c334101d1b7f251d156f6967f402f9d","checks_ja":["母への1箱を先に除き、その後の残りを半分にする順序を原文と照合した。"]}
+}

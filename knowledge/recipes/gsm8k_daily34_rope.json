@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily34_rope","title_ja":"結束損失を含むロープ本数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00340","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"6階分60フィートへ、20フィートのロープを結ぶ際の25%損失を反映して本数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913C.rope_solution","graph":"work/gsm8k-daily34-rope-graph.json","lean_file":"tests/lean/GSM8KDaily0913C.lean","semantic_review_status":"self_review_only","model_scope":"conditional","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["参照解と同じく購入する各20フィート片の25%が結束で失われ、有効長15フィートになる解釈を明示する。"],
+  "steps":[
+    {"id":"rope_required","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.rope_required","title_ja":"必要な長さを求める","requires_steps":[],"uses_nodes":[],"condition_ja":"1階10フィートを6階分下ろす。","conclusion_ja":"60フィート必要。","baseline_ja":"6×10を計算する。"},
+    {"id":"rope_loss","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.rope_loss","title_ja":"1本当たりの損失を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"20フィートの25%を結束時に失うと解釈する。","conclusion_ja":"損失は5フィート。","baseline_ja":"20÷4を計算する。"},
+    {"id":"rope_usable_piece","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.rope_usable_piece","title_ja":"1本の有効長を求める","requires_steps":["rope_loss"],"uses_nodes":[],"condition_ja":"20フィートから5フィート失う。","conclusion_ja":"1本の有効長は15フィート。","baseline_ja":"20−5を計算する。"},
+    {"id":"rope_pieces","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.rope_pieces","title_ja":"必要本数を求める","requires_steps":["rope_required","rope_usable_piece"],"uses_nodes":[],"condition_ja":"60フィートを15フィートずつの有効長で賄う。","conclusion_ja":"4本必要。","baseline_ja":"60÷15を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":341,"checked_model_hash":"4da415847e8da24aac67286049b42841d8c94276760b51d9ec40ea488088e9c4","checks_ja":["結束損失の適用単位を追加条件として明記し、参照解の4本を導いた。"]}
+}

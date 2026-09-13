@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily34_soccer","title_ja":"出場時間からサイドライン時間を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00342","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"90分の試合で20分と35分出場したときのサイドライン時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913C.soccer_solution","graph":"work/gsm8k-daily34-soccer-graph.json","lean_file":"tests/lean/GSM8KDaily0913C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["試合全体を出場時間とサイドライン時間の排反な合計として扱う。"],
+  "steps":[
+    {"id":"soccer_played","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.soccer_played","title_ja":"合計出場時間を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"20分と35分の2区間に出場した。","conclusion_ja":"出場は55分。","baseline_ja":"20+35を計算する。"},
+    {"id":"soccer_sideline","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.soccer_sideline","title_ja":"サイドライン時間を求める","requires_steps":["soccer_played"],"uses_nodes":[],"condition_ja":"90分のうち55分出場した。","conclusion_ja":"サイドラインは35分。","baseline_ja":"90−55を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":343,"checked_model_hash":"4da415847e8da24aac67286049b42841d8c94276760b51d9ec40ea488088e9c4","checks_ja":["二つの出場区間を合算し、90分との差を照合した。"]}
+}

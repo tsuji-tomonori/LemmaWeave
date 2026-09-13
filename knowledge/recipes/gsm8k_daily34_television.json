@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily34_television","title_ja":"テレビの週間電力量と料金を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00343","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"125ワットのテレビを毎日4時間使い、1kWh 14セントで週間料金を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913C.television_solution","graph":"work/gsm8k-daily34-television-graph.json","lean_file":"tests/lean/GSM8KDaily0913C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["125ワットを一定消費電力と読み、ワット時からキロワット時への1000倍の単位換算を料金式に含める。"],
+  "steps":[
+    {"id":"television_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.television_daily","title_ja":"1日の電力量を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"125ワットで4時間使う。","conclusion_ja":"1日500Wh。","baseline_ja":"電力量=電力×時間を用いる。"},
+    {"id":"television_weekly_energy","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.television_weekly_energy","title_ja":"週間電力量を求める","requires_steps":["television_daily"],"uses_nodes":[],"condition_ja":"毎日500Whを7日使う。","conclusion_ja":"週間3500Wh、すなわち3.5kWh。","baseline_ja":"500×7と1000Wh=1kWhを用いる。"},
+    {"id":"television_weekly_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.television_weekly_cost","title_ja":"週間料金を求める","requires_steps":["television_weekly_energy"],"uses_nodes":[],"condition_ja":"1kWh当たり14セントで3500Wh使う。","conclusion_ja":"週間料金は49セント。","baseline_ja":"3500×14÷1000を単位付きで計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":344,"checked_model_hash":"4da415847e8da24aac67286049b42841d8c94276760b51d9ec40ea488088e9c4","checks_ja":["Wを一定電力、Whを使用電力量として解釈し、1000Wh/kWhの換算を式に保存した。"]}
+}

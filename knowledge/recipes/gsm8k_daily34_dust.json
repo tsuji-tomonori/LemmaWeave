@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily34_dust","title_ja":"掃除後の残存割合から元の埃を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00341","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"歩行後331個のうち靴が追加した223個を除き、掃除後が元の10分の1であることから元の個数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913C.dust_solution","graph":"work/gsm8k-daily34-dust-graph.json","lean_file":"tests/lean/GSM8KDaily0913C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["9割除去後の1割と、靴が後から追加した223個を分離する。"],
+  "steps":[
+    {"id":"dust_after_sweep","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.dust_after_sweep","title_ja":"歩く前の残存数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"歩行後331個には靴が追加した223個が含まれる。","conclusion_ja":"掃除直後は108個。","baseline_ja":"331−223を計算する。"},
+    {"id":"dust_original","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.dust_original","title_ja":"掃除前の個数を求める","requires_steps":["dust_after_sweep"],"uses_nodes":[],"condition_ja":"9割除去したので108個は元の10分の1。","conclusion_ja":"掃除前は1080個。","baseline_ja":"108×10を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":342,"checked_model_hash":"4da415847e8da24aac67286049b42841d8c94276760b51d9ec40ea488088e9c4","checks_ja":["歩行による追加を先に除き、掃除後1割という時間順序を照合した。"]}
+}

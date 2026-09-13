@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily35_breath","title_ja":"3週間後の息止め時間を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00348","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"10秒から2週連続で倍にし、最終週に直前の50%増とした時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914A.breath_solution","graph":"work/gsm8k-daily35-breath-graph.json","lean_file":"tests/lean/GSM8KDaily0914A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各週の増加は直前週の値へ順次適用する。"],
+  "steps":[
+    {"id":"breath_first_week","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.breath_first_week","title_ja":"1週目の時間を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"初期10秒を倍にする。","conclusion_ja":"1週目は20秒。","baseline_ja":"10×2を計算する。"},
+    {"id":"breath_second_week","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.breath_second_week","title_ja":"2週目の時間を求める","requires_steps":["breath_first_week"],"uses_nodes":[],"condition_ja":"1週目20秒をもう一度倍にする。","conclusion_ja":"2週目は40秒。","baseline_ja":"20×2を計算する。"},
+    {"id":"breath_increase","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.breath_increase","title_ja":"最終週の増加分を求める","requires_steps":["breath_second_week"],"uses_nodes":[],"condition_ja":"直前の40秒から50%増やす。","conclusion_ja":"増加分は20秒。","baseline_ja":"40の半分を求める。"},
+    {"id":"breath_current","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.breath_current","title_ja":"現在の時間を求める","requires_steps":["breath_second_week","breath_increase"],"uses_nodes":[],"condition_ja":"40秒へ増加分20秒を足す。","conclusion_ja":"現在は60秒。","baseline_ja":"40+20を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":349,"checked_model_hash":"355a816ac7e4f5c79fe632b02995b66c3d07dd599393faa1dfce717b3ebfcbcf","checks_ja":["倍増2回と50%増を直前週へ順番に適用した。"]}
+}

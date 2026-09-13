@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Basic
+
 namespace LemmaWeave.Problems.GSM8K.Daily0913C
 
 def IceCreamCost

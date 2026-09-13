@@ -1,7 +1,7 @@
 {
   "date": "2026-09-14",
   "started_at": "2026-09-14T02:03:21+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-14T02:50:11+09:00",
   "target_count": 10,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00344",
@@ -15,22 +15,42 @@
     "external-gsm8k-main-3101c7d50724:train:00352",
     "external-gsm8k-main-3101c7d50724:train:00353"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00344",
+    "external-gsm8k-main-3101c7d50724:train:00345",
+    "external-gsm8k-main-3101c7d50724:train:00346",
+    "external-gsm8k-main-3101c7d50724:train:00347",
+    "external-gsm8k-main-3101c7d50724:train:00348",
+    "external-gsm8k-main-3101c7d50724:train:00349",
+    "external-gsm8k-main-3101c7d50724:train:00350",
+    "external-gsm8k-main-3101c7d50724:train:00351",
+    "external-gsm8k-main-3101c7d50724:train:00352",
+    "external-gsm8k-main-3101c7d50724:train:00353"
+  ],
   "deferred": [],
   "authored_explanation_lines": 28,
-  "status": "in_progress",
+  "status": "completed",
   "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34752364398",
   "previous_head": "51ca16080d153fa47430340aa7825b09e885606e",
-  "ci": [],
+  "ci": [
+    {
+      "run_id": 34771094644,
+      "commit": "2586f71d9d3a74db597284536f89540fbe265a2e",
+      "conclusion": "success",
+      "duration_seconds": 1569,
+      "artifact_id": 10322670865,
+      "artifact_sha256": "8c3182948a60c6fe8c83aec074bf3358fb9650982772dcc5fa19648f428f9d45"
+    }
+  ],
   "pr": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
-  "commit": null,
+  "commit": "2586f71d9d3a74db597284536f89540fbe265a2e",
   "evidence_commit": null,
   "progress": {
-    "completed_this_run": 0,
-    "completed_today": 0,
+    "completed_this_run": 10,
+    "completed_today": 10,
     "target_today": 50,
-    "solution_ready": 348,
-    "remaining": 8444,
+    "solution_ready": 358,
+    "remaining": 8434,
     "initial_target_date": "2027-03-01",
     "measured_completed_per_day_7d": 48.57142857142857,
     "measured_forecast_date": "2027-03-06",
@@ -43,7 +63,12 @@
   },
   "infrastructure": {
     "changed_proof_selection": "not_implemented",
-    "note_ja": "既存CIは固定環境で全件再検証する。変更証明と実依存だけを安全に選ぶ方式は未完了であり、成功証拠の要件は緩和しない。"
+    "full_replay_duration_seconds": 1569,
+    "artifact_size_bytes": 309242826,
+    "new_dependency_graph_count": 10,
+    "new_dependency_graph_raw_bytes": 60050634,
+    "new_dependency_graph_archive_bytes": 3613293,
+    "note_ja": "全件再検証は26分9秒、成果物は309,242,826バイト。新規10依存グラフは生60,050,634バイトからgzip 3,613,293バイトへ縮小した。変更証明と実依存だけを安全に選ぶ方式は未完了であり、成功証拠の要件は緩和しない。"
   },
-  "resume_ja": "Lean CIの検証結果を回収し、成功成果物から依存証拠を保存して再開する。"
+  "resume_ja": "次回は external-gsm8k-main-3101c7d50724:train:00354 から 00363 を対象とする。"
 }

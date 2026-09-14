@@ -1,0 +1,51 @@
+{
+  "id": "gsm8k_daily39_dandelions",
+  "title_ja": "タンポポの等分",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00387",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "40個から3、3、5、2個を贈り、残りを3人に等分する。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914E.dandelions_solution",
+  "graph": "work/gsm8k-daily39-dandelions-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914E.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "各贈与は別の個体。"
+  ],
+  "steps": [
+    {
+      "id": "dandelions_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.dandelions_remaining",
+      "title_ja": "残数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "40個から計13個を贈る。",
+      "conclusion_ja": "27個残る。",
+      "baseline_ja": "初期量=贈与量+残量。"
+    },
+    {
+      "id": "dandelions_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.dandelions_each",
+      "title_ja": "1人分",
+      "requires_steps": [
+        "dandelions_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "27個を3人へ等分。",
+      "conclusion_ja": "1人9個。",
+      "baseline_ja": "総量=人数×1人分。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 388,
+    "checked_model_hash": "252237ffb9ed212467eaaeb70f449451d727806edfb017fea8e489d6a220ad60",
+    "checks_ja": [
+      "原文の数量関係、単位、問いと結論を照合した。"
+    ]
+  }
+}

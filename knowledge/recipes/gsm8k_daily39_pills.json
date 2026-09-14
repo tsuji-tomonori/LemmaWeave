@@ -1,0 +1,64 @@
+{
+  "id": "gsm8k_daily39_pills",
+  "title_ja": "段階的な服薬",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00385",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "50錠から2日間は1日6錠、次の3日間は半量、最後に2錠飲んだ残数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914E.pills_solution",
+  "graph": "work/gsm8k-daily39-pills-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914E.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "半量は1日6錠を3錠へ減らす。"
+  ],
+  "steps": [
+    {
+      "id": "pills_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.pills_first",
+      "title_ja": "最初の2日",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日6錠を2日。",
+      "conclusion_ja": "12錠使用。",
+      "baseline_ja": "日量×日数。"
+    },
+    {
+      "id": "pills_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.pills_second",
+      "title_ja": "次の3日",
+      "requires_steps": [
+        "pills_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "日量を半分の3錠にして3日。",
+      "conclusion_ja": "9錠使用。",
+      "baseline_ja": "半量を求め日数を掛ける。"
+    },
+    {
+      "id": "pills_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.pills_left",
+      "title_ja": "残数",
+      "requires_steps": [
+        "pills_first",
+        "pills_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "12錠、9錠、最後2錠を使用。",
+      "conclusion_ja": "50-23=27錠。",
+      "baseline_ja": "初期量=使用量+残量。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 386,
+    "checked_model_hash": "252237ffb9ed212467eaaeb70f449451d727806edfb017fea8e489d6a220ad60",
+    "checks_ja": [
+      "原文の数量関係、単位、問いと結論を照合した。"
+    ]
+  }
+}

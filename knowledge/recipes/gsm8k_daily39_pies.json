@@ -1,0 +1,63 @@
+{
+  "id": "gsm8k_daily39_pies",
+  "title_ja": "パイの利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00389",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "12台を各3切れ、1切れ4ドルで全量販売し、1台0.5ドルの製造費を引く。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914E.pies_solution",
+  "graph": "work/gsm8k-daily39-pies-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914E.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "他の費用はなく、金額をセントで表す。"
+  ],
+  "steps": [
+    {
+      "id": "pies_pieces",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.pies_pieces",
+      "title_ja": "切れ数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12台、各3切れ。",
+      "conclusion_ja": "36切れ。",
+      "baseline_ja": "台数×切れ数。"
+    },
+    {
+      "id": "pies_revenue_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.pies_revenue_cost",
+      "title_ja": "売上と費用",
+      "requires_steps": [
+        "pies_pieces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "36切れ各400セント、12台各50セント。",
+      "conclusion_ja": "売上14400、費用600セント。",
+      "baseline_ja": "個数×単価。"
+    },
+    {
+      "id": "pies_profit",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.pies_profit",
+      "title_ja": "利益",
+      "requires_steps": [
+        "pies_revenue_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "売上14400、費用600セント。",
+      "conclusion_ja": "13800セント=138ドル。",
+      "baseline_ja": "売上=利益+費用。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 390,
+    "checked_model_hash": "252237ffb9ed212467eaaeb70f449451d727806edfb017fea8e489d6a220ad60",
+    "checks_ja": [
+      "原文の数量関係、単位、問いと結論を照合した。"
+    ]
+  }
+}

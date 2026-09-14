@@ -1,7 +1,7 @@
 {
   "date": "2026-09-15",
   "started_at": "2026-09-15T06:03:59+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-15T06:58:20+09:00",
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00404",
     "external-gsm8k-main-3101c7d50724:train:00405",
@@ -14,21 +14,39 @@
     "external-gsm8k-main-3101c7d50724:train:00412",
     "external-gsm8k-main-3101c7d50724:train:00413"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00404",
+    "external-gsm8k-main-3101c7d50724:train:00405",
+    "external-gsm8k-main-3101c7d50724:train:00406",
+    "external-gsm8k-main-3101c7d50724:train:00407",
+    "external-gsm8k-main-3101c7d50724:train:00408",
+    "external-gsm8k-main-3101c7d50724:train:00409",
+    "external-gsm8k-main-3101c7d50724:train:00410",
+    "external-gsm8k-main-3101c7d50724:train:00411",
+    "external-gsm8k-main-3101c7d50724:train:00412",
+    "external-gsm8k-main-3101c7d50724:train:00413"
+  ],
   "deferred": [],
-  "status": "authoring_complete_awaiting_ci",
+  "status": "completed_evidence_imported",
   "ci": {
     "previous_success_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34881017985",
-    "proof_run_url": null,
+    "proof_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34899984848",
     "final_run_url": null,
-    "artifact": null,
+    "artifact": {
+      "id": 10370812323,
+      "name": "lean-evidence-8cbbcacec1137dc5674abd7c9a1a6e6f7fcf3eb7",
+      "sha256": "a3e17e6ab4e6e47ab1ff039ecc3f6b8a258bf77eaff057bb24e902722b6a799b",
+      "size_bytes": 160614532,
+      "expires_at": "2026-09-28T21:50:24Z"
+    },
     "attempts": [
       "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34898087728",
-      "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34899118322"
+      "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34899118322",
+      "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34899984848"
     ]
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
-  "commit": null,
+  "commit": "8cbbcacec1137dc5674abd7c9a1a6e6f7fcf3eb7",
   "progress_before": {"completed": 408, "remaining": 8384, "today_completed": 10},
-  "note_ja": "10問・26説明行の記述式解答を作成し、固定原文・SHA-256を照合。train:00404は原文に今年の収穫月数がないため、12か月収穫の追加条件を明記した条件付き解答として保存。Lean証明・証拠生成CI待ち。"
+  "note_ja": "10問・26説明行の記述式解答を作成し、固定原文・SHA-256を照合。train:00404は原文に今年の収穫月数がないため、12か月収穫の追加条件を明記した条件付き解答として保存。固定Lean 4.33.1・許容公理監査・行別実依存照合・51件の回帰検査に成功し、成果物ZIPのSHA-256を照合して証拠を取り込んだ。"
 }

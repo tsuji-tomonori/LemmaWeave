@@ -12,6 +12,9 @@ spec.loader.exec_module(lw)
 replay_spec = importlib.util.spec_from_file_location('replay', ROOT / 'scripts/replay.py')
 replay = importlib.util.module_from_spec(replay_spec)
 replay_spec.loader.exec_module(replay)
+targets_spec = importlib.util.spec_from_file_location('run_method_targets', ROOT / 'scripts/run_method_targets.py')
+run_method_targets = importlib.util.module_from_spec(targets_spec)
+targets_spec.loader.exec_module(run_method_targets)
 
 
 def node(name, kind='theorem', body='available'):
@@ -28,6 +31,16 @@ class GraphGuards(unittest.TestCase):
         self.assertEqual(replay.command_timeout(['python3', 'scripts/run_method_targets.py']), 1500)
         self.assertEqual(replay.command_timeout(['lake', 'build']), 900)
         self.assertLess(replay.METHOD_TARGET_TIMEOUT, 1800)
+
+    def test_changed_method_selection_replays_whole_shared_target(self):
+        recipes = [
+            {'id': 'old-a', 'lean_file': 'shared.lean'},
+            {'id': 'changed-b', 'lean_file': 'shared.lean'},
+            {'id': 'current-c', 'lean_file': 'current.lean'},
+        ]
+        selected = run_method_targets.select_targets(
+            recipes, lambda recipe: recipe['id'] != 'changed-b')
+        self.assertEqual(selected, ['shared.lean'])
 
     def test_hidden_custom_axiom(self):
         g = graph([node('T'), node('Wrapper'), node('Bad', 'axiom', 'axiom')],

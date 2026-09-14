@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily40_gift","title_ja":"人数減少後の贈り物代","problem_id":"external-gsm8k-main-3101c7d50724:train:00397","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"10人から4人抜け、1人分が8ドル増えた贈り物の総額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915A.gift_solution","graph":"work/gsm8k-daily40-gift-graph.json","lean_file":"tests/lean/GSM8KDaily0915A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["贈り物の総額は人数変更前後で同じ。"],
+  "steps":[
+    {"id":"gift_original_share","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.gift_original_share","title_ja":"元の負担額","requires_steps":[],"uses_nodes":[],"condition_ja":"元の1人分をxドルとすると、10x=6(x+8)。","conclusion_ja":"x=12ドル。","baseline_ja":"同じ総額を人数×1人分で二通りに表す。"},
+    {"id":"gift_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.gift_solution","title_ja":"贈り物の総額","requires_steps":["gift_original_share"],"uses_nodes":[],"condition_ja":"元は10人が各12ドル負担する。","conclusion_ja":"贈り物は120ドル。","baseline_ja":"総額=人数×1人分。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":398,"checked_model_hash":"b1c735783c0e2fb3e158ebd21f9dd4b78fa11ad24991ed80e51465c2cc5b3451","checks_ja":["退出人数、差額、総額不変を照合した。"]}
+}

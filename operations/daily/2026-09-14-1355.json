@@ -1,7 +1,7 @@
 {
   "date": "2026-09-14",
   "started_at": "2026-09-14T13:55:17+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-14T14:46:46+09:00",
   "target_count": 10,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00374",
@@ -15,7 +15,18 @@
     "external-gsm8k-main-3101c7d50724:train:00382",
     "external-gsm8k-main-3101c7d50724:train:00383"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00374",
+    "external-gsm8k-main-3101c7d50724:train:00375",
+    "external-gsm8k-main-3101c7d50724:train:00376",
+    "external-gsm8k-main-3101c7d50724:train:00377",
+    "external-gsm8k-main-3101c7d50724:train:00378",
+    "external-gsm8k-main-3101c7d50724:train:00379",
+    "external-gsm8k-main-3101c7d50724:train:00380",
+    "external-gsm8k-main-3101c7d50724:train:00381",
+    "external-gsm8k-main-3101c7d50724:train:00382",
+    "external-gsm8k-main-3101c7d50724:train:00383"
+  ],
   "deferred": [],
   "authored_explanation_lines": 24,
   "previous_ci_recovered": {
@@ -44,12 +55,21 @@
       "artifact_id": 10333952851,
       "artifact_sha256": "c44ed48f65f7c00ea279e159cba6a465f4da156bb1fb9f4c9f8a045052b8b8d8",
       "reason_ja": "全10問のLean証明と公理監査は成功したが、意味モデルハッシュを生ファイルSHAで登録しており、所定のファイル名込みハッシュと一致しなかった。"
+    },
+    {
+      "run_id": 34809801486,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34809801486",
+      "commit": "ec6b7651af1b4c0e4dbe56e3fea7b7ccbc3c84d4",
+      "conclusion": "success",
+      "duration_seconds": 641,
+      "artifact_id": 10334403007,
+      "artifact_sha256": "c04ecf9f16a1ab037152c294d0047859ab8520b97dc0173cbefbeeb1c3152339"
     }
   ],
   "pr": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
-  "commit": null,
+  "commit": "ec6b7651af1b4c0e4dbe56e3fea7b7ccbc3c84d4",
   "evidence_commit": null,
-  "status": "proof_ci_retry",
+  "status": "completed",
   "progress": {
     "solution_ready_before": 378,
     "remaining_before": 8414,
@@ -57,15 +77,21 @@
     "target_today": 50,
     "initial_target_date": "2027-03-01",
     "measured_completed_per_day_7d": 48.57142857142857,
-    "measured_forecast_date": "2027-03-06"
+    "measured_forecast_date": "2027-03-06",
+    "solution_ready_after": 388,
+    "remaining_after": 8404,
+    "completed_today_after": 40
   },
   "infrastructure": {
-    "changed_proof_selection": "implemented_previous_run; verification_pending_for_this_batch"
+    "changed_proof_selection": "verified",
+    "registered_target_count": 42,
+    "selected_target_count": 1,
+    "skipped_current_target_count": 41
   },
   "weekly_expansion": {
     "completed_fields": 0,
     "target_fields": 6,
     "status": "not_started"
   },
-  "resume_ja": "GSM8K-INDIVIDUAL-0040をpushし、固定Leanと行別実依存のCIを実行する。"
+  "resume_ja": "次回はreports/solve-progress.jsonのnext_batchであるtrain:00384からtrain:00393を解く。"
 }

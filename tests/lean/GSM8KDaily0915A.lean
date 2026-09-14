@@ -21,15 +21,15 @@ theorem elephants_after (a b c d e f g h : Nat) (x : ElephantFlow a b c d e f g 
   norm_num [ha, hb, hc] at hd
   omega
 
-theorem elephants_entered (a b c d e f g h : Nat) (x : ElephantFlow a b c d e f g h) : f = 10500 := by
+theorem elephants_entered (a b c d e f g h : Nat) (x : ElephantFlow a b c d e f g h) : g = 10500 := by
   have hd := elephants_after a b c d e f g h x
   rcases x with ⟨ha, hb, hc, hleft, he, hf, hg, hh⟩
   clear ha hb hc hleft hg hh
   omega
 
-theorem elephants_solution : ElephantFlow 30000 4 2880 18480 28980 10500 7 1500 ∧
+theorem elephants_solution : ElephantFlow 30000 4 2880 18480 28980 7 10500 1500 ∧
     18480 = 18480 ∧ 10500 = 10500 ∧ 1500 = 1500 := by
-  have h : ElephantFlow 30000 4 2880 18480 28980 10500 7 1500 := by
+  have h : ElephantFlow 30000 4 2880 18480 28980 7 10500 1500 := by
     norm_num [ElephantFlow]
   exact ⟨h, elephants_after _ _ _ _ _ _ _ _ h,
     elephants_entered _ _ _ _ _ _ _ _ h, by norm_num⟩

@@ -175,8 +175,9 @@ theorem tubs_large_total (a b c d e : ℕ) (x : StorageTubs a b c d e) : a * c =
   rcases x with ⟨ha, hb, hc, hd, he⟩
   norm_num [ha, hc]
 theorem tubs_small_price (a b c d e : ℕ) (x : StorageTubs a b c d e) : e = 5 := by
+  have hlarge := tubs_large_total a b c d e x
   rcases x with ⟨ha, hb, hc, hd, he⟩
-  norm_num [ha, hb, hc, hd] at he
+  norm_num [hlarge, hb, hd] at he
   omega
 theorem tubs_solution : StorageTubs 3 6 6 48 5 ∧
     (∀ a b c d e, StorageTubs a b c d e → a * c = 18) ∧

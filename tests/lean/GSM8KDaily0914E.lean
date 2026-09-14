@@ -145,14 +145,14 @@ theorem ages_solution : FutureAge 12 3 15 10 25 ∧ 15=15 ∧ 25=25 := by
 #print axioms fence_solution
 #print axioms parking_solution
 #print axioms ages_solution
-#lw_dependencies ratio_solution to "work/gsm8k-daily39-ratio-graph.json"
-#lw_dependencies pills_solution to "work/gsm8k-daily39-pills-graph.json"
-#lw_dependencies magazine_solution to "work/gsm8k-daily39-magazine-graph.json"
-#lw_dependencies dandelions_solution to "work/gsm8k-daily39-dandelions-graph.json"
-#lw_dependencies weights_solution to "work/gsm8k-daily39-weights-graph.json"
-#lw_dependencies pies_solution to "work/gsm8k-daily39-pies-graph.json"
-#lw_dependencies coffee_solution to "work/gsm8k-daily39-coffee-graph.json"
-#lw_dependencies fence_solution to "work/gsm8k-daily39-fence-graph.json"
-#lw_dependencies parking_solution to "work/gsm8k-daily39-parking-graph.json"
-#lw_dependencies ages_solution to "work/gsm8k-daily39-ages-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.ratio_solution to "work/gsm8k-daily39-ratio-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.pills_solution to "work/gsm8k-daily39-pills-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.magazine_solution to "work/gsm8k-daily39-magazine-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.dandelions_solution to "work/gsm8k-daily39-dandelions-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.weights_solution to "work/gsm8k-daily39-weights-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.pies_solution to "work/gsm8k-daily39-pies-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.coffee_solution to "work/gsm8k-daily39-coffee-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.fence_solution to "work/gsm8k-daily39-fence-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.parking_solution to "work/gsm8k-daily39-parking-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KDaily0914E.ages_solution to "work/gsm8k-daily39-ages-graph.json"
 end LemmaWeave.Tests.GSM8KDaily0914E

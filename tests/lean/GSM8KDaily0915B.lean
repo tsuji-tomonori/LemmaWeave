@@ -141,6 +141,7 @@ theorem rope_rates (a b c d e f g : Nat) (h : RopeJump a b c d e f g) :
 
 theorem rope_hours (a b c d e f g : Nat) (h : RopeJump a b c d e f g) : g = 5 := by
   have hef := rope_rates a b c d e f g h
+  rcases hef with ⟨he', hf'⟩
   rcases h with ⟨ha, hb, hc, hd, he, hf, hg⟩
   omega
 
@@ -152,7 +153,11 @@ theorem rope_solution : RopeJump 54000 3 60 60 180 10800 5 ∧
 theorem grandchildren_counts (a b c d e f g h : Nat)
     (x : Grandchildren a b c d e f g h) : d = 6 ∧ f = 48 ∧ g = 10 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
-  omega
+  have hd' : d = 6 := by omega
+  have he' : e = 8 := by omega
+  norm_num [hd', he'] at hf
+  norm_num [hb, hc] at hg
+  exact ⟨hd', hf, hg⟩
 
 theorem grandchildren_total (a b c d e f g h : Nat)
     (x : Grandchildren a b c d e f g h) : h = 58 := by

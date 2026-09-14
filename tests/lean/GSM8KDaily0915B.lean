@@ -143,6 +143,7 @@ theorem rope_hours (a b c d e f g : Nat) (h : RopeJump a b c d e f g) : g = 5 :=
   have hef := rope_rates a b c d e f g h
   rcases hef with ⟨he', hf'⟩
   rcases h with ⟨ha, hb, hc, hd, he, hf, hg⟩
+  norm_num [ha, hf'] at hg
   omega
 
 theorem rope_solution : RopeJump 54000 3 60 60 180 10800 5 ∧

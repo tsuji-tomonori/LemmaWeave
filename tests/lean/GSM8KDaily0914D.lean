@@ -56,7 +56,11 @@ theorem apples_solution : AppleDifference 20 15 27 7 ∧
 
 theorem cds_parts (a b c d e : ℚ) (x : CDLengths a b c d e) : c = 3 ∧ d = 3 := by
   rcases x with ⟨ha, hb, hc, hd, he⟩
-  constructor <;> norm_num [ha, hb] at * <;> linarith
+  constructor
+  · norm_num [hb] at hc
+    exact hc
+  · norm_num [ha, hb] at hd
+    exact hd
 theorem cds_combined (a b c d e : ℚ) (x : CDLengths a b c d e) : e = 6 := by
   have hcd := cds_parts a b c d e x
   rcases x with ⟨ha, hb, hc, hd, he⟩
@@ -141,6 +145,7 @@ theorem work_solution : WorkMinutes 450 225 300 75 ∧
 
 theorem windows_groups (a b c d e : ℕ) (x : WindowWashing a b c d e) : d = 16 := by
   rcases x with ⟨ha, hb, hc, hd, he⟩
+  norm_num [ha, hc] at hd
   omega
 theorem windows_time (a b c d e : ℕ) (x : WindowWashing a b c d e) : e = 160 := by
   have hd0 := windows_groups a b c d e x

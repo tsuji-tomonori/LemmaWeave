@@ -24,6 +24,7 @@ theorem elephants_after (a b c d e f g h : Nat) (x : ElephantFlow a b c d e f g 
 theorem elephants_entered (a b c d e f g h : Nat) (x : ElephantFlow a b c d e f g h) : f = 10500 := by
   have hd := elephants_after a b c d e f g h x
   rcases x with ⟨ha, hb, hc, hleft, he, hf, hg, hh⟩
+  clear ha hb hc hleft hg hh
   omega
 
 theorem elephants_solution : ElephantFlow 30000 4 2880 18480 28980 10500 7 1500 ∧
@@ -49,6 +50,7 @@ theorem pills_solution : WeeklyPills 2 3 6 11 7 77 ∧ 6 = 6 ∧ 11 = 11 ∧ 77 
 
 theorem gift_original_share (a b c d e f : Nat) (h : TeacherGift a b c d e f) : d = 12 := by
   rcases h with ⟨ha, hb, hc, hd, he, hf⟩
+  norm_num [ha, hb, hc, hd] at he hf
   omega
 
 theorem gift_solution : TeacherGift 10 6 8 12 20 120 ∧ 12 = 12 ∧ 120 = 120 := by
@@ -107,6 +109,8 @@ theorem movie_gross (a b c d e f : Nat) (h : MovieProfit a b c d e f) : b = 420 
 theorem movie_kept (a b c d e f : Nat) (h : MovieProfit a b c d e f) : d = 252 := by
   have hb := movie_gross a b c d e f h
   rcases h with ⟨ha, hg, hc, hd, he, hf⟩
+  norm_num [hb, hc] at hd
+  clear ha hg he hf
   omega
 
 theorem movie_solution : MovieProfit 120 420 60 252 60 192 ∧ 420 = 420 ∧ 252 = 252 ∧ 192 = 192 := by

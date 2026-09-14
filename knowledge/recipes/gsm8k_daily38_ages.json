@@ -1,0 +1,21 @@
+{
+  "id": "gsm8k_daily38_ages",
+  "title_ja": "将来年齢から兄弟の現在年齢を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00380",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Robertが2年後に30歳で、Patrickの現在年齢がRobertの現在年齢の半分なら、Patrickの現在年齢を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914D.ages_solution",
+  "graph": "work/gsm8k-daily38-ages-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914D.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["半分の関係を現在年齢どうしへ適用する。"],
+  "steps": [
+    {"id": "ages_robert", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.ages_robert", "title_ja": "Robertの現在年齢を求める", "requires_steps": [], "uses_nodes": [], "condition_ja": "Robertは2年後に30歳。", "conclusion_ja": "現在は30-2=28歳。", "baseline_ja": "一定年数後の年齢から経過年数を引く。"},
+    {"id": "ages_patrick", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.ages_patrick", "title_ja": "Patrickの現在年齢を求める", "requires_steps": ["ages_robert"], "uses_nodes": [], "condition_ja": "Patrickは現在28歳のRobertの半分。", "conclusion_ja": "Patrickは28÷2=14歳。", "baseline_ja": "半分の量は元の量を2で割る。"}
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {"reviewer": "author", "status": "checked", "source_line_1based": 381, "checked_model_hash": "be779fc5f746789f967489d00a1ef7955c8a2e49527968ded24af2a29fc28c9e", "checks_ja": ["将来と現在の時点、半分を適用する時点を照合した。"]}
+}

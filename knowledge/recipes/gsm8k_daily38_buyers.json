@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_daily38_buyers",
+  "title_ja": "3日間の重複しない買い物客を数える",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00374",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "一昨日50人、昨日はその半分、今日は昨日より40人多く、3日間に重複訪問がないとき、訪問者総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914D.buyers_solution",
+  "graph": "work/gsm8k-daily38-buyers-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914D.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["重複訪問者がいないため日別人数の和が3日間の異なる訪問者数になる。"],
+  "steps": [
+    {
+      "id": "buyers_yesterday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.buyers_yesterday",
+      "title_ja": "昨日の人数を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "一昨日は50人で、昨日はその半分。",
+      "conclusion_ja": "昨日は50÷2=25人。",
+      "baseline_ja": "半分の量は2倍すると元の量になる。"
+    },
+    {
+      "id": "buyers_today",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.buyers_today",
+      "title_ja": "今日の人数を求める",
+      "requires_steps": ["buyers_yesterday"],
+      "uses_nodes": [],
+      "condition_ja": "今日は昨日の25人より40人多い。",
+      "conclusion_ja": "今日は25+40=65人。",
+      "baseline_ja": "『より40多い』は40を加える。"
+    },
+    {
+      "id": "buyers_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.buyers_total",
+      "title_ja": "重複しない3日分を合計する",
+      "requires_steps": ["buyers_yesterday", "buyers_today"],
+      "uses_nodes": [],
+      "condition_ja": "一昨日50人、昨日25人、今日65人で、同じ人は複数日に訪れていない。",
+      "conclusion_ja": "異なる訪問者の総数は50+25+65=140人。",
+      "baseline_ja": "互いに重ならない集まりの人数は加法で合計できる。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {"reviewer": "author", "status": "checked", "source_line_1based": 375, "checked_model_hash": "be779fc5f746789f967489d00a1ef7955c8a2e49527968ded24af2a29fc28c9e", "checks_ja": ["日別関係と重複なしの条件を原文に照合した。"]}
+}

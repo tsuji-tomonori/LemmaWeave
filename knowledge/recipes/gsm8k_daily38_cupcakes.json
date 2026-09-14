@@ -1,0 +1,21 @@
+{
+  "id": "gsm8k_daily38_cupcakes",
+  "title_ja": "配った後に食べたカップケーキの残数を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00383",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "60個の4/5を配り、残った1/5から3個食べた後の残数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914D.cupcakes_solution",
+  "graph": "work/gsm8k-daily38-cupcakes-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914D.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["配った後の残りは元の60個の1/5。"],
+  "steps": [
+    {"id": "cupcakes_remaining", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.cupcakes_remaining", "title_ja": "配った後の残数を求める", "requires_steps": [], "uses_nodes": [], "condition_ja": "60個の4/5を配るので1/5が残る。", "conclusion_ja": "残りは60÷5=12個。", "baseline_ja": "全体を5等分した1つ分が1/5。"},
+    {"id": "cupcakes_left", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.cupcakes_left", "title_ja": "食べた後の残数を求める", "requires_steps": ["cupcakes_remaining"], "uses_nodes": [], "condition_ja": "残った12個から3個食べる。", "conclusion_ja": "手元には12-3=9個残る。", "baseline_ja": "取り去った個数を元の残数から引く。"}
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {"reviewer": "author", "status": "checked", "source_line_1based": 384, "checked_model_hash": "be779fc5f746789f967489d00a1ef7955c8a2e49527968ded24af2a29fc28c9e", "checks_ja": ["4/5を配った後の残分と食べた順序を照合した。"]}
+}

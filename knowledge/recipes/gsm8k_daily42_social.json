@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily42_social","title_ja":"8時間勤務の投稿種別配分","problem_id":"external-gsm8k-main-3101c7d50724:train:00422","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"顧客対応4時間、その半分の広告投稿時間を8時間勤務から除いてマーケティング投稿時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915C.social_solution","graph":"work/gsm8k-daily42-social-graph.json","lean_file":"tests/lean/GSM8KDaily0915C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["3種の投稿作業が8時間勤務を重複なく分けると解釈する。"],
+  "steps":[
+    {"id":"social_advertisement","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.social_advertisement","title_ja":"広告投稿時間","requires_steps":[],"uses_nodes":[],"condition_ja":"顧客対応は4時間、広告投稿はその半分。","conclusion_ja":"広告投稿は2時間。","baseline_ja":"半分は2倍すると元の量になる関係を使う。"},
+    {"id":"social_marketing","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.social_solution","title_ja":"マーケティング投稿時間","requires_steps":["social_advertisement"],"uses_nodes":[],"condition_ja":"全8時間から顧客対応4時間と広告2時間を除く。","conclusion_ja":"マーケティング投稿は2時間。","baseline_ja":"全体=3作業時間の合計を用いる。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":423,"checked_model_hash":"8275e95a4d3b2018ba0f0d98458c9eccec8488bbf8e61192f9895a19119f3895","checks_ja":["3種の作業、顧客対応4時間、広告は半分、勤務8時間を照合した。"]}
+}

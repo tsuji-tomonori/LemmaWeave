@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily42_practice","title_ja":"運動時間からトランペット練習時間を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00419","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"バスケットボール10時間の2倍をランニング、そのさらに2倍をトランペット練習とする。","root":"LemmaWeave.Tests.GSM8KDaily0915C.practice_solution","graph":"work/gsm8k-daily42-practice-graph.json","lean_file":"tests/lean/GSM8KDaily0915C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["twice as longを各直前の活動時間の2倍と読む。"],
+  "steps":[
+    {"id":"practice_running","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.practice_running","title_ja":"ランニング時間","requires_steps":[],"uses_nodes":[],"condition_ja":"バスケットボールは10時間、ランニングはその2倍。","conclusion_ja":"ランニングは20時間。","baseline_ja":"基準時間に倍率2を掛ける。"},
+    {"id":"practice_trumpet","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.practice_solution","title_ja":"トランペット時間","requires_steps":["practice_running"],"uses_nodes":[],"condition_ja":"トランペットはランニング20時間の2倍。","conclusion_ja":"トランペット練習は40時間。","baseline_ja":"直前に求めた量へ倍率2を掛ける。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":420,"checked_model_hash":"8275e95a4d3b2018ba0f0d98458c9eccec8488bbf8e61192f9895a19119f3895","checks_ja":["2回のtwiceがそれぞれ何を基準にするかを照合した。"]}
+}

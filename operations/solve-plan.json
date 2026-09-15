@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "id": "LW-FIRST-PASS-20260906",
+  "repository": "tsuji-tomonori/LemmaWeave",
+  "working_branch": "codex/daily-solve-plan-20260906",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "scope": "pinned_collected_gsm8k_all_8792",
+  "timezone": "Asia/Tokyo",
+  "start_date": "2026-09-07",
+  "baseline_ready": 3,
+  "target_per_run": 10,
+  "runs_per_day": 5,
+  "local_hours": [
+    2,
+    6,
+    10,
+    14,
+    18
+  ],
+  "timing_mode": "flexible_schedule",
+  "target_per_day": 50,
+  "initial_remaining": 8789,
+  "initial_target_date": "2027-03-01",
+  "calibration_date": "2026-09-14",
+  "forecast_basis": "planning_target_not_measured_capacity",
+  "priority_source_lines": [
+    2390
+  ],
+  "completion_criterion": "individual_lines_v1 + author checked + current successful Lean evidence + axiom and line-dependency audit",
+  "scheduled_pass_note_ja": "全件を単に閲覧・試行した日と、全件の解答検証が完了した日を分ける。失敗・保留を完了に数えない。",
+  "scope_note_ja": "これは取得済み集合の一周計画。日本入試・高校数学全分野や将来取得する全問題の完了日とは呼ばない。",
+  "expansion_track": {
+    "first_review_date": "2026-09-14",
+    "weekly_problem_target": 6,
+    "topics": [
+      "集合・論理・整数",
+      "関数・方程式・不等式",
+      "図形・ベクトル・三角比",
+      "場合の数・確率・統計",
+      "数列",
+      "微分・積分"
+    ],
+    "note_ja": "毎週各分野の出典付き問題を最低1問選び、個別解答へ進める。新規取得・他コレクションの件数は固定8792問に混ぜない。実行余力を使う追加目標であり、未達分も日報へ残す。"
+  },
+  "automation": {
+    "status": "created",
+    "is_enabled": true,
+    "title": "LemmaWeaveの問題を解き進める",
+    "default_timezone": "Asia/Tokyo",
+    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260907T020000\nRRULE:FREQ=DAILY;BYHOUR=2,6,10,14,18;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+    "timing_mode": "flexible_schedule",
+    "registered_at": "2026-09-06T13:13:33.300624+00:00",
+    "note_ja": "登録成功を確認。各回の実行成功とは別。実際の実行結果は日次ログへ記録する。"
+  }
+}

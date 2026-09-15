@@ -15,18 +15,35 @@ from lw import local_import_closure, read, records
 from check_locations import check as check_locations
 
 ROOT = Path(__file__).resolve().parents[1]
+EVIDENCE_BUDGET = 512 * 1024 * 1024
+MAX_ARCHIVE_ENTRIES = 10_000
 
 
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def load_archive(path):
+def needed_evidence_path(name, graph_paths=None):
+    """Return whether the importer will authenticate or persist this entry."""
+    return (name.startswith('runs/') or
+            (name.startswith('work/') and
+             ((name.endswith('-graph.json') and
+               (graph_paths is None or name in graph_paths)) or
+              name.endswith('-locations.json') or
+              name == 'work/locations.lean')) or
+            name == 'reports/extractor-fixtures.json')
+
+
+def load_archive(path, graph_paths=None):
     payload = {}
     with zipfile.ZipFile(path) as archive:
-        if sum(i.file_size for i in archive.infolist()) > 512 * 1024 * 1024:
+        entries = archive.infolist()
+        if len(entries) > MAX_ARCHIVE_ENTRIES:
+            raise ValueError('artifact has too many entries')
+        if sum(i.file_size for i in entries if needed_evidence_path(i.filename, graph_paths)) > EVIDENCE_BUDGET:
             raise ValueError('artifact exceeds 512 MiB uncompressed evidence budget')
-        for info in archive.infolist():
+        names = set()
+        for info in entries:
             if info.is_dir():
                 continue
             parts = PurePosixPath(info.filename)
@@ -34,14 +51,38 @@ def load_archive(path):
                 raise ValueError('unexpected artifact path: ' + info.filename)
             if (info.external_attr >> 16) & 0o170000 == 0o120000:
                 raise ValueError('artifact symlink is not accepted')
-            if info.filename in payload:
+            if info.filename in names:
                 raise ValueError('duplicate artifact path')
+            names.add(info.filename)
+            # learning-graph/frontier and general reports are CI outputs but are
+            # neither authenticated nor persisted by this importer.  Do not
+            # inflate them merely to discard them; the recorded ZIP digest still
+            # binds the complete artifact.
+            if not needed_evidence_path(info.filename, graph_paths):
+                continue
             payload[info.filename] = archive.read(info)
     return payload
 
 
+def stale_method_graphs(root):
+    """Select only recipe graphs lacking current, successful local evidence."""
+    from check_method_recipes import proof_evidence
+    selected = set()
+    for path in sorted((root / 'knowledge/recipes').glob('*.json')):
+        recipe = read(path)
+        graph_path = recipe['graph']
+        raw_path = root / graph_path
+        archive_path = root / 'reports/dependencies/methods' / (recipe['id'] + '.json.gz')
+        try:
+            raw = raw_path.read_bytes() if raw_path.exists() else gzip.decompress(archive_path.read_bytes())
+            proof_evidence(root, recipe, raw)
+        except (OSError, KeyError, ValueError):
+            selected.add(graph_path)
+    return selected
+
+
 def import_evidence(root, archive, run_id):
-    payload = load_archive(archive)
+    payload = load_archive(archive, stale_method_graphs(root))
     candidates = {name: json.loads(data) for name, data in payload.items()
                   if name.startswith('runs/') and name.endswith('/run.json')}
     current = {name: r for name, r in candidates.items()

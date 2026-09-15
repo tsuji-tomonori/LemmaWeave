@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily20_portraits","title_ja":"肖像画の3日間売上","problem_id":"external-gsm8k-main-3101c7d50724:train:00200","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"8インチ画3枚と16インチ画5枚を毎日売るときの3日間売上を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910D.portraits_solution","graph":"work/gsm8k-daily20-portraits-graph.json","lean_file":"tests/lean/GSM8KDaily0910D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["16インチ画の価格は8インチ画の2倍。"],
+  "steps":[
+    {"id":"portraits_large_price","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.portraits_large_price","title_ja":"16インチ画の価格","requires_steps":[],"uses_nodes":[],"condition_ja":"5ドルの2倍。","conclusion_ja":"1枚10ドル。","baseline_ja":"倍率の乗法。"},
+    {"id":"portraits_small_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.portraits_small_daily","title_ja":"8インチ画の日売上","requires_steps":[],"uses_nodes":[],"condition_ja":"5ドルの絵を3枚売る。","conclusion_ja":"15ドル。","baseline_ja":"単価と枚数の乗法。"},
+    {"id":"portraits_large_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.portraits_large_daily","title_ja":"16インチ画の日売上","requires_steps":["portraits_large_price"],"uses_nodes":[],"condition_ja":"10ドルの絵を5枚売る。","conclusion_ja":"50ドル。","baseline_ja":"単価と枚数の乗法。"},
+    {"id":"portraits_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.portraits_daily","title_ja":"1日の売上","requires_steps":["portraits_small_daily","portraits_large_daily"],"uses_nodes":[],"condition_ja":"15ドルと50ドルを合算する。","conclusion_ja":"1日65ドル。","baseline_ja":"加法。"},
+    {"id":"portraits_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.portraits_total","title_ja":"3日間の売上","requires_steps":["portraits_daily"],"uses_nodes":[],"condition_ja":"毎日65ドルを3日間得る。","conclusion_ja":"答えは195ドル。","baseline_ja":"同じ日額の乗法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":201,"checked_model_hash":"717063a006303129ce42e655f7323113878d12026557118736401bec27b71fe8","checks_ja":["二つのサイズの価格・販売枚数・3日間を順に反映した。"]}
+}

@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily42_concert","title_ja":"コンサート券購入後の貯金","problem_id":"external-gsm8k-main-3101c7d50724:train:00421","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"VIP券と通常券を枚数×単価で計算し、購入費合計を500ドルから除く。","root":"LemmaWeave.Tests.GSM8KDaily0915C.concert_solution","graph":"work/gsm8k-daily42-concert-graph.json","lean_file":"tests/lean/GSM8KDaily0915C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["購入費以外の支出はなく、貯金500ドルから券代を支払う。"],
+  "steps":[
+    {"id":"concert_ticket_totals","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.concert_ticket_totals","title_ja":"券種別の代金","requires_steps":[],"uses_nodes":[],"condition_ja":"VIP券2枚は各100ドル、通常券3枚は各50ドル。","conclusion_ja":"VIP券は200ドル、通常券は150ドル。","baseline_ja":"各券種で枚数×単価を計算する。"},
+    {"id":"concert_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.concert_solution","title_ja":"購入費と残金","requires_steps":["concert_ticket_totals"],"uses_nodes":[],"condition_ja":"券代は200+150ドル、貯金は500ドル。","conclusion_ja":"購入費350ドル、残金150ドル。","baseline_ja":"券種別代金を加え、全体から差し引く。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":422,"checked_model_hash":"2f5eed7ec2376156e0083a231117cbc02d3c0be1b2c7c0253db83d5619787329","checks_ja":["貯金額、2券種の枚数と単価を照合した。"]}
+}

@@ -1,0 +1,53 @@
+{
+  "id": "gsm8k_daily40_crackers",
+  "title_ja": "クラッカーの夜数と指示語の曖昧さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00394",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "5箱のクラッカーが何晩分かを求める。『5 of these crackers』の指示対象を分けて扱う。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0915A.crackers_solution",
+  "graph": "work/gsm8k-daily40-crackers-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0915A.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["原文のthese crackersは、クラッカーサンド5個ともクラッカー5枚とも読めるため両方を形式化する。"],
+  "steps": [
+    {
+      "id": "crackers_sandwich",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0915A.crackers_sandwich",
+      "title_ja": "サンドイッチ解釈",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎晩5個のサンドイッチを食べ、1個に2枚使うと解釈する。5箱には5×4×28=560枚ある。",
+      "conclusion_ja": "毎晩10枚なので56晩分。",
+      "baseline_ja": "総数を1晩の消費枚数で割る。"
+    },
+    {
+      "id": "crackers_literal",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0915A.crackers_literal",
+      "title_ja": "クラッカー解釈",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "these crackersを文字どおり毎晩5枚と解釈する。総数は同じく560枚。",
+      "conclusion_ja": "毎晩5枚なので112晩分。",
+      "baseline_ja": "総数を1晩の消費枚数で割る。"
+    },
+    {
+      "id": "crackers_ambiguity",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0915A.crackers_solution",
+      "title_ja": "非一意性",
+      "requires_steps": ["crackers_sandwich", "crackers_literal"],
+      "uses_nodes": [],
+      "condition_ja": "二つの読みがともに数量条件と両立し、56と112は異なる。",
+      "conclusion_ja": "原文だけでは一意でない。参考解答の56はサンドイッチ5個という追加解釈の下で成立する。",
+      "baseline_ja": "異なる具体例を示して一意性を否定する。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author", "status": "checked", "source_line_1based": 395,
+    "checked_model_hash": "b1c735783c0e2fb3e158ebd21f9dd4b78fa11ad24991ed80e51465c2cc5b3451",
+    "checks_ja": ["箱・袖・枚数の単位と指示語の二解釈を原文へ再照合した。"]
+  }
+}

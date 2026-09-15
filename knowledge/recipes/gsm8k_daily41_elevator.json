@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily41_elevator","title_ja":"エレベーターに乗れる次の人の最大体重","problem_id":"external-gsm8k-main-3101c7d50724:train:00408","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"大人3人と子ども2人の合計体重を平均から求め、最大積載量との差を取る。","root":"LemmaWeave.Tests.GSM8KDaily0915B.elevator_solution","graph":"work/gsm8k-daily41-elevator-graph.json","lean_file":"tests/lean/GSM8KDaily0915B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["表示の600ポンドを超えない実数体重の上限は52ポンドであり、整数モデルでは等号で最大値を表す。"],
+  "steps":[
+    {"id":"elevator_current","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.elevator_current","title_ja":"現在の合計体重","requires_steps":[],"uses_nodes":[],"condition_ja":"大人3人の平均140ポンド、子ども2人の平均64ポンド。","conclusion_ja":"現在は3×140+2×64=548ポンド。","baseline_ja":"平均×人数で各集団の合計を求めて足す。"},
+    {"id":"elevator_next","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.elevator_solution","title_ja":"次の人の上限","requires_steps":["elevator_current"],"uses_nodes":[],"condition_ja":"最大600ポンドから現在548ポンドを引く。","conclusion_ja":"次の人の最大体重は52ポンド。","baseline_ja":"追加可能量=上限−現在量。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":409,"checked_model_hash":"e74a4210ca248991d2d8391f07fb0cc880ee33f5d619370a90295fd357ab18a3","checks_ja":["人数、平均体重、最大積載量、超過しない条件を照合した。"]}
+}

@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily31_typing","title_ja":"分速を日数まで単位変換して総語数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00309","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"分速50語で毎日4時間、7日間連続して入力する総語数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912E.typing_solution","graph":"work/gsm8k-daily31-typing-graph.json","lean_file":"tests/lean/GSM8KDaily0912E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1時間を60分とし、指定時間中は分速50語が一定と読む。"],
+  "steps":[
+    {"id":"typing_hour","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.typing_hour","title_ja":"1時間の語数へ換算する","requires_steps":[],"uses_nodes":[],"condition_ja":"分速50語が60分間一定である。","conclusion_ja":"1時間に3000語入力する。","baseline_ja":"速さ×時間として50×60を計算する。"},
+    {"id":"typing_day","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.typing_day","title_ja":"1日の語数を求める","requires_steps":["typing_hour"],"uses_nodes":[],"condition_ja":"1時間3000語の速さで1日4時間入力する。","conclusion_ja":"1日に12000語入力する。","baseline_ja":"1時間の量×時間数を計算する。"},
+    {"id":"typing_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.typing_total","title_ja":"7日間の総語数を求める","requires_steps":["typing_day"],"uses_nodes":[],"condition_ja":"1日12000語を7日間続ける。","conclusion_ja":"合計84000語入力する。","baseline_ja":"1日の量×日数を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":310,"checked_model_hash":"fd1028e6170a8f5134aecf64d7e1cf4d126aea7a3c6ed093bd3a45c738751619","checks_ja":["50×60×4×7=84000を単位ごとに原文と照合した。"]}
+}

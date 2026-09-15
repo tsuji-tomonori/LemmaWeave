@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily28_savings","title_ja":"毎月2倍の6か月貯金","problem_id":"external-gsm8k-main-3101c7d50724:train:00279","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"1月2ドル、2月4ドル、3月8ドルと毎月2倍に貯金するとき6か月の総額を求める。",
+  "root":"LemmaWeave.Tests.GSM8KDaily0912B.savings_solution","graph":"work/gsm8k-daily28-savings-graph.json","lean_file":"tests/lean/GSM8KDaily0912B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["提示された2,4,8の規則を前月の2倍と解釈する。"],
+  "steps":[
+    {"id":"savings_april","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.savings_april","title_ja":"4月の貯金","requires_steps":[],"uses_nodes":[],"condition_ja":"毎月前月の2倍で、3月は8ドル。","conclusion_ja":"4月は16ドル。","baseline_ja":"次項＝2×前項。"},
+    {"id":"savings_may","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.savings_may","title_ja":"5月の貯金","requires_steps":["savings_april"],"uses_nodes":[],"condition_ja":"4月は16ドル。","conclusion_ja":"5月は32ドル。","baseline_ja":"次項＝2×前項。"},
+    {"id":"savings_june","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.savings_june","title_ja":"6月の貯金","requires_steps":["savings_may"],"uses_nodes":[],"condition_ja":"5月は32ドル。","conclusion_ja":"6月は64ドル。","baseline_ja":"次項＝2×前項。"},
+    {"id":"savings_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.savings_total","title_ja":"6か月合計","requires_steps":["savings_april","savings_may","savings_june"],"uses_nodes":[],"condition_ja":"各月は2,4,8,16,32,64ドル。","conclusion_ja":"合計は126ドル。","baseline_ja":"期間合計＝各月の金額の和。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":280,"checked_model_hash":"6b16310f0a116b0f5920805ef148e39e64b00ecbd5bcf0656596c75a079178bd","checks_ja":["倍加規則を6月まで延長し、2+4+8+16+32+64=126を照合した。"]}
+}

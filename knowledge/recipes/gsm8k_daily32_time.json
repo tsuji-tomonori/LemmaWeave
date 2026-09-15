@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily32_time","title_ja":"一週間の総時間から活動時間を差し引く","problem_id":"external-gsm8k-main-3101c7d50724:train:00317","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"授業・宿題・睡眠・仕事の一週間分を168時間から引き、残り時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913A.time_solution","graph":"work/gsm8k-daily32-time-graph.json","lean_file":"tests/lean/GSM8KDaily0913A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各活動時間が重複しないものとして加える。参照解の「8*7-56」は等号の誤記で、8×7=56を採用する。"],
+  "steps":[
+    {"id":"time_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.time_total","title_ja":"一週間の総時間を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"一日は24時間、一週間は7日。","conclusion_ja":"総時間は168時間。","baseline_ja":"7×24を計算する。"},
+    {"id":"time_homework","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.time_homework","title_ja":"宿題時間を週換算する","requires_steps":[],"uses_nodes":[],"condition_ja":"毎日4時間を7日続ける。","conclusion_ja":"宿題は28時間。","baseline_ja":"4×7を計算する。"},
+    {"id":"time_sleep","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.time_sleep","title_ja":"睡眠時間を週換算する","requires_steps":[],"uses_nodes":[],"condition_ja":"毎日8時間眠る。","conclusion_ja":"睡眠は56時間。","baseline_ja":"8×7を計算する。"},
+    {"id":"time_busy","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.time_busy","title_ja":"予定済み時間を合計する","requires_steps":["time_homework","time_sleep"],"uses_nodes":[],"condition_ja":"宿題28、授業18、睡眠56、仕事20時間が互いに重ならない。","conclusion_ja":"予定済みは122時間。","baseline_ja":"28+18+56+20を計算する。"},
+    {"id":"time_left","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.time_left","title_ja":"残り時間を求める","requires_steps":["time_total","time_busy"],"uses_nodes":[],"condition_ja":"168時間のうち122時間を使う。","conclusion_ja":"残りは46時間。","baseline_ja":"168=122+46となる差を求める。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":318,"checked_model_hash":"4fec31cdef21e66aa97dac7c4991bc909e72e5b4b85a2a604a5de1d92c1baa4f","checks_ja":["日単位と週単位を分け、参照解の等号誤記を原題の8時間/日から再計算した。"]}
+}

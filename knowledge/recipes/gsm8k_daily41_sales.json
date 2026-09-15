@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily41_sales","title_ja":"販売割当までに必要な残り台数","problem_id":"external-gsm8k-main-3101c7d50724:train:00409","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"最初の3日と次の4日の販売台数を合計し、50台の割当との差を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915B.sales_solution","graph":"work/gsm8k-daily41-sales-graph.json","lean_file":"tests/lean/GSM8KDaily0915B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["remaining daysは残る23日間を指すが、問われるのは期間内に合計して売るべき台数であり、1日当たりではない。"],
+  "steps":[
+    {"id":"sales_week","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.sales_week","title_ja":"期間別の販売台数","requires_steps":[],"uses_nodes":[],"condition_ja":"最初の3日は1日5台、次の4日は1日3台売る。","conclusion_ja":"各期間で15台と12台を売った。","baseline_ja":"一定の日販売数に日数を掛ける。"},
+    {"id":"sales_sold","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.sales_sold","title_ja":"販売済み台数","requires_steps":["sales_week"],"uses_nodes":[],"condition_ja":"二つの期間の販売台数を足す。","conclusion_ja":"販売済みは27台。","baseline_ja":"互いに重ならない期間の数量を加える。"},
+    {"id":"sales_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.sales_solution","title_ja":"割当までの残り","requires_steps":["sales_week","sales_sold"],"uses_nodes":[],"condition_ja":"割当50台から販売済み27台を引く。30日のうち7日経過したため残日数も23日。","conclusion_ja":"残る23日間で合計23台を売る必要がある。","baseline_ja":"不足量=目標量−達成量。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":410,"checked_model_hash":"e74a4210ca248991d2d8391f07fb0cc880ee33f5d619370a90295fd357ab18a3","checks_ja":["割当、月の日数、各期間の日数と日販売数を原文と照合した。","残台数と残日数が偶然ともに23であることを区別した。"]}
+}

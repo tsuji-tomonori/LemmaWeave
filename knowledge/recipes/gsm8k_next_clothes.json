@@ -1,0 +1,77 @@
+{
+  "id": "gsm8k_next_clothes",
+  "title_ja": "予算の保存から靴代を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00008",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "予算200ドルで、シャツ30、パンツ46、上着38、靴下11、ベルト18ドルと靴を購入し、16ドル残った。靴はいくらか。",
+  "root": "LemmaWeave.Tests.GSM8KNextSteps.clothes_solution",
+  "graph": "work/gsm8k-next-clothes-graph.json",
+  "lean_file": "tests/lean/GSM8KNextSteps.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "収集済みGSM8Kの1問をLLMが個別に解答。新規収集には数えない。",
+  "model_notes_ja": [
+    "靴代は非負。購入列挙にない税や追加費用を導入せず、原題が記す支出と残金で予算を分割する。",
+    "41ドルを代入して確かめるだけでなく、任意の靴代について原題条件と41ドルが同値であることを証明する。"
+  ],
+  "steps": [
+    {
+      "id": "clothes_known",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.clothes_known",
+      "title_ja": "既知の支出を合計する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "靴以外は30、46、38、11、18ドル。残金16ドル。",
+      "conclusion_ja": "既知の支出は143ドル。143+靴代+16=200。",
+      "baseline_ja": "加法と、支出+残金=予算という保存関係。"
+    },
+    {
+      "id": "clothes_spent",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.clothes_spent",
+      "title_ja": "支出全体を求める",
+      "requires_steps": [
+        "clothes_known"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "予算から残金16ドルを除く。",
+      "conclusion_ja": "既知143ドル+靴代=200−16=184ドル。",
+      "baseline_ja": "等式の両辺から同じ数を引く。"
+    },
+    {
+      "id": "clothes_shoes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.clothes_shoes",
+      "title_ja": "支出から既知の部分を除く",
+      "requires_steps": [
+        "clothes_spent"
+      ],
+      "uses_nodes": [
+        "remaining_balance"
+      ],
+      "condition_ja": "支出184ドルは既知143ドルと靴代の和。",
+      "conclusion_ja": "靴代=184−143=41ドル。",
+      "baseline_ja": "一次方程式と残量の保存。"
+    },
+    {
+      "id": "clothes_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.clothes_exists",
+      "title_ja": "非負性と元の予算を確認する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "靴代41ドルを取る。",
+      "conclusion_ja": "41≥0、143+41+16=200。従って求める靴代はちょうど41ドル。",
+      "baseline_ja": "非負数、整数の加法。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 9,
+    "checked_model_hash": "c21e8f75f97f058569151f1d937c4ba3d40064ed80dda63178e3ed937fa515a2",
+    "checks_ja": [
+      "靴代は非負。購入列挙にない税や追加費用を導入せず、原題が記す支出と残金で予算を分割する。",
+      "41ドルを代入して確かめるだけでなく、任意の靴代について原題条件と41ドルが同値であることを証明する。"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily41_rope","title_ja":"縄跳び記録に必要な時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00410","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"毎秒3回の一定速度を1時間当たりへ換算し、54000回に必要な時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915B.rope_solution","graph":"work/gsm8k-daily41-rope-graph.json","lean_file":"tests/lean/GSM8KDaily0915B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["休憩せず毎秒3回の速度を保つとする。"],
+  "steps":[
+    {"id":"rope_rates","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.rope_rates","title_ja":"時間単位の換算","requires_steps":[],"uses_nodes":[],"condition_ja":"毎秒3回、1分60秒、1時間60分。","conclusion_ja":"毎分180回、毎時10800回。","baseline_ja":"単位時間当たりの回数を時間の倍率で換算する。"},
+    {"id":"rope_hours","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.rope_solution","title_ja":"必要時間","requires_steps":["rope_rates"],"uses_nodes":[],"condition_ja":"54000回を毎時10800回で跳ぶ。","conclusion_ja":"必要時間は5時間。","baseline_ja":"時間=総回数÷単位時間当たり回数。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":411,"checked_model_hash":"e74a4210ca248991d2d8391f07fb0cc880ee33f5d619370a90295fd357ab18a3","checks_ja":["記録回数、毎秒回数、秒・分・時の換算を照合した。"]}
+}

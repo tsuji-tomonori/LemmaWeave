@@ -1,0 +1,12 @@
+{
+  "id":"gsm8k_daily20_run","title_ja":"金曜日に走る時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00198","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"時速6マイルで週20マイルに達するため、金曜日に走る分数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910D.run_solution","graph":"work/gsm8k-daily20-run-graph.json","lean_file":"tests/lean/GSM8KDaily0910D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["時速と分は speed×minutes=miles×60 で換算する。"],
+  "steps":[
+    {"id":"run_monday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.run_monday","title_ja":"月曜日","requires_steps":[],"uses_nodes":[],"condition_ja":"時速6マイルで60分走る。","conclusion_ja":"6マイル走る。","baseline_ja":"距離=速さ×時間、1時間=60分。"},
+    {"id":"run_tuesday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.run_tuesday","title_ja":"火曜日","requires_steps":[],"uses_nodes":[],"condition_ja":"時速6マイルで30分走る。","conclusion_ja":"3マイル走る。","baseline_ja":"距離=速さ×時間、30分=1/2時間。"},
+    {"id":"run_wednesday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.run_wednesday","title_ja":"水曜日","requires_steps":[],"uses_nodes":[],"condition_ja":"時速6マイルで60分走る。","conclusion_ja":"6マイル走る。","baseline_ja":"距離=速さ×時間。"},
+    {"id":"run_thursday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.run_thursday","title_ja":"木曜日","requires_steps":[],"uses_nodes":[],"condition_ja":"時速6マイルで20分、すなわち1/3時間走る。","conclusion_ja":"2マイル走る。","baseline_ja":"距離=速さ×時間。"},
+    {"id":"run_so_far","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.run_so_far","title_ja":"木曜日まで","requires_steps":["run_monday","run_tuesday","run_wednesday","run_thursday"],"uses_nodes":[],"condition_ja":"6、3、6、2マイルを合算する。","conclusion_ja":"17マイル走った。","baseline_ja":"加法。"},
+    {"id":"run_needed","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.run_needed","title_ja":"不足距離","requires_steps":["run_so_far"],"uses_nodes":[],"condition_ja":"目標20マイルから17マイルを引く。","conclusion_ja":"あと3マイル必要。","baseline_ja":"目標と実績の差。"},
+    {"id":"run_friday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.run_friday","title_ja":"金曜日の時間","requires_steps":["run_needed"],"uses_nodes":[],"condition_ja":"時速6マイルで3マイル走る。分単位では6×分=3×60。","conclusion_ja":"答えは30分。","baseline_ja":"時間=距離÷速さと単位換算。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":199,"checked_model_hash":"717063a006303129ce42e655f7323113878d12026557118736401bec27b71fe8","checks_ja":["各曜日の距離と時・分の換算を原文どおり照合した。"]}
+}

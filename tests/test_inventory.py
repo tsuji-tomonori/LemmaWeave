@@ -118,6 +118,17 @@ class InventoryEvidence(unittest.TestCase):
 
 
 class SemanticEvidence(unittest.TestCase):
+    def test_evidence_import_does_not_inflate_unused_large_reports(self):
+        from import_evidence import load_archive
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = Path(tmp) / 'evidence.zip'
+            with zipfile.ZipFile(archive, 'w') as z:
+                z.writestr('knowledge/learning-graph.json', 'unused' * 1000)
+                z.writestr('work/unchanged-graph.json', 'unused graph' * 1000)
+                z.writestr('reports/extractor-fixtures.json', '{"suite_status":"passed"}')
+            self.assertEqual(load_archive(archive, {'work/current-graph.json'}), {
+                'reports/extractor-fixtures.json': b'{"suite_status":"passed"}'})
+
     def test_evidence_import_rejects_paths_outside_output_roots(self):
         from import_evidence import load_archive
         with tempfile.TemporaryDirectory() as tmp:

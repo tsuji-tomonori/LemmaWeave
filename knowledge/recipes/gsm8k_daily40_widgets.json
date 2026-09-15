@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily40_widgets","title_ja":"ウィジェット組立速度の解釈差","problem_id":"external-gsm8k-main-3101c7d50724:train:00399","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"Sam、Jack、Tonyの作業量からTonyの1個当たり時間を求める。they put togetherの意味を分ける。","root":"LemmaWeave.Tests.GSM8KDaily0915A.widgets_solution","graph":"work/gsm8k-daily40-widgets-graph.json","lean_file":"tests/lean/GSM8KDaily0915A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["参考解答はJack単独を15分/個と扱うが、原文のthey put togetherはSamとJackの合算速度とも読める。"],
+  "steps":[
+    {"id":"widgets_reference","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.widgets_reference","title_ja":"参考解答の帰属","requires_steps":[],"uses_nodes":[],"condition_ja":"Samを10分/個、Jackを15分/個と別々に数える。Samは36個、Jackは16個。","conclusion_ja":"Tonyは16個を480分で作り、30分/個。","baseline_ja":"各人の生産数を総数68から差し引く。"},
+    {"id":"widgets_combined","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.widgets_combined","title_ja":"合算速度の読み","requires_steps":[],"uses_nodes":[],"condition_ja":"最初の4時間はSamとJackが合わせて15分に2個、その後Samが2時間単独で作る。","conclusion_ja":"2人分は32+12=44個、Tonyは24個なので20分/個。","baseline_ja":"重複計上を避け、時間区間ごとの合算生産数を足す。"},
+    {"id":"widgets_ambiguity","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.widgets_solution","title_ja":"非一意性","requires_steps":["widgets_reference","widgets_combined"],"uses_nodes":[],"condition_ja":"二つの作業量モデルが文言の異なる読みを表し、30と20は異なる。","conclusion_ja":"参考解答は30分だが、原文だけでは20分という読みも排除できない。","baseline_ja":"異なる具体的モデルを示して追加条件の必要性を示す。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":400,"checked_model_hash":"b1c735783c0e2fb3e158ebd21f9dd4b78fa11ad24991ed80e51465c2cc5b3451","checks_ja":["各人の勤務時間、合計68個、theyの二解釈を原文へ再照合した。"]}
+}

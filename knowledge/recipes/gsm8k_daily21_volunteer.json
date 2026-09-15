@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily21_volunteer","title_ja":"年間のボランティア時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00207","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"月2回、1回3時間のボランティアを1年間続ける時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910E.volunteer_solution","graph":"work/gsm8k-daily21-volunteer-graph.json","lean_file":"tests/lean/GSM8KDaily0910E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1年を12か月として毎月同じ頻度で活動する。"],
+  "steps":[
+    {"id":"volunteer_visits","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.volunteer_visits","title_ja":"年間回数","requires_steps":[],"uses_nodes":[],"condition_ja":"月2回を12か月続ける。","conclusion_ja":"年間の活動回数は2×12=24回。","baseline_ja":"一定頻度の乗法。"},
+    {"id":"volunteer_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.volunteer_total","title_ja":"年間時間","requires_steps":["volunteer_visits"],"uses_nodes":[],"condition_ja":"24回の各回が3時間。","conclusion_ja":"答えは24×3=72時間。","baseline_ja":"総量=回数×1回量。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":208,"checked_model_hash":"31bcdf0c5d3a5dea5a167757075342d7c667364bb651d24831fc06828ac80874","checks_ja":["月当たり回数、1回の時間、年間12か月を原文と照合した。"]}
+}

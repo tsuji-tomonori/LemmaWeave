@@ -1,0 +1,12 @@
+{
+  "id":"gsm8k_daily41_hay","title_ja":"干し草の年末残量","problem_id":"external-gsm8k-main-3101c7d50724:train:00404","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"面積当たりの月産量から今年の年間収穫量を求め、9月から12月までの馬の消費量を引く。","root":"LemmaWeave.Tests.GSM8KDaily0915B.hay_solution","graph":"work/gsm8k-daily41-hay-graph.json","lean_file":"tests/lean/GSM8KDaily0915B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"conditional","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["原文だけでは今年の収穫月数が未指定である。昨年と今年で1エーカー当たり月産量が同じで、今年の12エーカーを12か月収穫する追加条件の下で解く。9月1日から12月31日までは122日。"],
+  "steps":[
+    {"id":"hay_rate","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.hay_rate","title_ja":"単位面積当たり月産量","requires_steps":[],"uses_nodes":[],"condition_ja":"5エーカーから月560俵を収穫する。","conclusion_ja":"1エーカー当たり月112俵。","baseline_ja":"単位量=全体量÷個数。"},
+    {"id":"hay_production","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.hay_monthly","title_ja":"今年の収穫量","requires_steps":["hay_rate"],"uses_nodes":[],"condition_ja":"今年は5+7=12エーカーで、1エーカー当たり月112俵を12か月収穫する。","conclusion_ja":"月1344俵、年間16128俵。","baseline_ja":"一定の単位量に面積と月数を順に掛ける。"},
+    {"id":"hay_consumed","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.hay_consumed","title_ja":"馬の消費量","requires_steps":[],"uses_nodes":[],"condition_ja":"9頭が1日3俵ずつ、122日間食べる。","conclusion_ja":"消費量は3294俵。","baseline_ja":"1日量=頭数×1頭分、総量=1日量×日数。"},
+    {"id":"hay_left","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.hay_solution","title_ja":"年末残量","requires_steps":["hay_rate","hay_production","hay_consumed"],"uses_nodes":[],"condition_ja":"年間16128俵から3294俵を消費する。","conclusion_ja":"年末に12834俵残る。","baseline_ja":"残量=収穫量−消費量。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":405,"checked_model_hash":"e74a4210ca248991d2d8391f07fb0cc880ee33f5d619370a90295fd357ab18a3","checks_ja":["面積、月産量、追加面積、頭数、1日消費量、給餌期間を原文と照合した。","今年の収穫量を12か月分とする参考解答の前提を明記した。"]}
+}

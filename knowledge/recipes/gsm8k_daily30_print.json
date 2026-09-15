@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily30_print","title_ja":"印刷代とペン代を合計して釣銭を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00300","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"25頁の作文を7部、1頁0.10ドルで印刷し、1.50ドルのペンを7本買い、40ドル払った釣銭を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.print_solution","graph":"work/gsm8k-daily30-print-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["金額をドル単位の有理数で厳密に表す。"],
+  "steps":[
+    {"id":"print_pages","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.print_pages","title_ja":"印刷頁数","requires_steps":[],"uses_nodes":[],"condition_ja":"25頁を7部印刷する。","conclusion_ja":"175頁印刷する。","baseline_ja":"頁数×部数。"},
+    {"id":"print_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.print_cost","title_ja":"印刷代","requires_steps":["print_pages"],"uses_nodes":[],"condition_ja":"175頁、1頁1/10ドル。","conclusion_ja":"印刷代は35/2ドル（17.50ドル）。","baseline_ja":"総額＝数量×単価。"},
+    {"id":"pen_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.pen_cost","title_ja":"ペン代","requires_steps":[],"uses_nodes":[],"condition_ja":"1本3/2ドルのペンを7本買う。","conclusion_ja":"ペン代は21/2ドル（10.50ドル）。","baseline_ja":"総額＝数量×単価。"},
+    {"id":"print_spent","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.print_spent","title_ja":"支払総額","requires_steps":["print_cost","pen_cost"],"uses_nodes":[],"condition_ja":"印刷代35/2ドルとペン代21/2ドル。","conclusion_ja":"支出は28ドル。","baseline_ja":"異なる購入費を加える。"},
+    {"id":"print_paid","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.print_paid","title_ja":"渡した金額","requires_steps":[],"uses_nodes":[],"condition_ja":"20ドル札を2枚渡す。","conclusion_ja":"40ドル支払う。","baseline_ja":"枚数×額面。"},
+    {"id":"print_change","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.print_change","title_ja":"釣銭","requires_steps":["print_spent","print_paid"],"uses_nodes":[],"condition_ja":"40ドルを渡し、代金は28ドル。","conclusion_ja":"釣銭は12ドル。","baseline_ja":"支払額＝代金＋釣銭。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":301,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["175×0.10=17.50、7×1.50=10.50、40-28=12を原文と照合した。"]}
+}

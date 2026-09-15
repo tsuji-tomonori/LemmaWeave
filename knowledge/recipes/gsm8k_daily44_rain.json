@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily44_rain","title_ja":"キャンプ地と自宅の降雨量差","problem_id":"external-gsm8k-main-3101c7d50724:train:00438","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"キャンプ中の3日間の降雨量3・6・5mmを合計し、自宅の週26mmとの差を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915E.rain_solution","graph":"work/gsm8k-daily44-rain-graph.json","lean_file":"tests/lean/GSM8KDaily0915E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["キャンプ地で雨が降った3日以外は0mmで、記録された3日分が週の総量を表すと読む。"],
+  "steps":[
+    {"id":"rain_camp","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.rain_camp","title_ja":"キャンプ地の総雨量","requires_steps":[],"uses_nodes":[],"condition_ja":"雨天3日の雨量が3mm、6mm、5mm。","conclusion_ja":"キャンプ地の週の雨量は3+6+5=14mm。","baseline_ja":"同じ単位の測定量を加える。"},
+    {"id":"rain_less","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.rain_less","title_ja":"自宅との差","requires_steps":["rain_camp"],"uses_nodes":[],"condition_ja":"自宅は26mm、キャンプ地は14mm。","conclusion_ja":"キャンプ地で経験した雨は26−14=12mm少ない。","baseline_ja":"二つの量の差を引き算で求める。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":439,"checked_model_hash":"25f1e737e2139d253456901513753639661f651ebe225cf88ccbdecdf78cca1f","checks_ja":["3日分をキャンプ中の週の降雨総量とする原文の前提を確認した。","両地点の量をmmで比較した。"]}
+}

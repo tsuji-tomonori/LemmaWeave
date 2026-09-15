@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_daily2_empire",
+  "title_ja": "DVDの単位利益と総販売数から純利益を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00015",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "制作費2000ドル、DVD製造費6ドル、販売価格はその2.5倍。1日500枚、週5日を20週販売した利益は？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.empire_solution",
+  "graph": "work/gsm8k-daily2-empire-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "税・流通費・売れ残り・追加固定費は原題にないため導入しない。500 moviesはDVD販売枚数と読む。",
+    "制作費は1枚ごとではなく期間全体から一度引く。"
+  ],
+  "steps": [
+    {
+      "id": "empire_sale",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.empire_sale",
+      "title_ja": "販売単価",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "販売価格は製造費6ドルの2.5倍。",
+      "conclusion_ja": "1枚15ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "empire_margin",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.empire_margin",
+      "title_ja": "1枚当たりの粗利益",
+      "requires_steps": [
+        "empire_sale"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "販売15ドルから製造費6ドルを引く。",
+      "conclusion_ja": "1枚9ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "empire_units",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.empire_units",
+      "title_ja": "総販売枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日500枚、週5日、20週。",
+      "conclusion_ja": "500×5×20=50,000枚。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "empire_gross",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.empire_gross",
+      "title_ja": "販売による粗利益",
+      "requires_steps": [
+        "empire_margin",
+        "empire_units"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1枚9ドルを50,000枚販売。",
+      "conclusion_ja": "450,000ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "empire_net",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.empire_net",
+      "title_ja": "制作費を引く",
+      "requires_steps": [
+        "empire_gross"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "固定制作費2000ドルを一度だけ引く。",
+      "conclusion_ja": "純利益448,000ドル。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "empire_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.empire_exists",
+      "title_ja": "全条件の充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "販売15、単位利益9、50,000枚、粗利益450,000、純利益448,000。",
+      "conclusion_ja": "価格・数量・固定費の全関係を満たす。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 16,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "税・流通費・売れ残り・追加固定費は原題にないため導入しない。500 moviesはDVD販売枚数と読む。",
+      "制作費は1枚ごとではなく期間全体から一度引く。"
+    ]
+  }
+}

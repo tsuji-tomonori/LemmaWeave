@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-07",
+  "run": "1002",
+  "github_run_id": "34072280025",
+  "job_seconds": 481,
+  "artifact": {
+    "compressed_bytes": 55983147,
+    "uncompressed_bytes": 811101721,
+    "new_method_graphs": 10,
+    "new_method_graph_raw_bytes": 150232887,
+    "new_method_graph_archives_bytes": 8729495
+  },
+  "observed_growth_ja": "直前測定から成果物は圧縮時10367165バイト、展開時152795239バイト増えた。今回の10グラフは生150232887バイト、正本保存用gzipは8729495バイトである。",
+  "improvement": {
+    "status": "selective_import_maintained_and_ci_verified",
+    "method_ja": "現在の入力ハッシュに一致する成功実行がないrecipeだけを選び、その依存グラフのみ成果物から展開する。ZIP全体のdigest、入力ファイルhash、実行出力hashの照合を維持する。",
+    "selected_graphs_before_import": 10,
+    "security_budget_relaxed": false
+  },
+  "remaining_work_ja": "CI成果物自体の全グラフ重複保存と全件再ビルドは増加中。内容hashによる重複削減、変更証明と推移的依存だけを正しく再検証する方式、および回帰証拠を2026-09-14までに整備する。"
+}

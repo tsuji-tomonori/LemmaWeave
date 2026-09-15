@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily31_emus","title_ja":"一羽当たりの頭と脚の合計から羽数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00312","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"エミューの頭と脚の総数60から群れの羽数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912E.emus_solution","graph":"work/gsm8k-daily31-emus-graph.json","lean_file":"tests/lean/GSM8KDaily0912E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各エミューは頭1つ、脚2本で、欠損や余分な頭・脚はないという通常の生物学的条件を用いる。"],
+  "steps":[
+    {"id":"emus_units","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.emus_units","title_ja":"一羽当たりの計数単位を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"各エミューには頭1つと脚2本がある。","conclusion_ja":"一羽は頭と脚を合わせて3単位を数える。","baseline_ja":"同じ一羽に属する頭数と脚数を加える。"},
+    {"id":"emus_count","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.emus_count","title_ja":"エミューの羽数を求める","requires_steps":["emus_units"],"uses_nodes":[],"condition_ja":"一羽3単位で、群れ全体の頭と脚は60単位である。","conclusion_ja":"群れには20羽いる。","baseline_ja":"60＝3×羽数という自然数方程式を解く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":313,"checked_model_hash":"fd1028e6170a8f5134aecf64d7e1cf4d126aea7a3c6ed093bd3a45c738751619","checks_ja":["1羽につき頭1と脚2、60÷3=20を原文と通常条件に照らして確認した。"]}
+}

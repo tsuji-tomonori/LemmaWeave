@@ -52,6 +52,7 @@ theorem rice_solution :
 
 theorem pool_paislee (a b c d e : Nat) (h : PoolTie a b c d e) : d = 375 := by
   rcases h with ⟨ha, hb, hc, hd, he⟩
+  norm_num [ha, hb, hc] at hd
   omega
 
 theorem pool_needed (a b c d e : Nat) (h : PoolTie a b c d e) : e = 125 := by
@@ -65,6 +66,7 @@ theorem pool_solution : PoolTie 500 3 4 375 125 ∧ 375 = 375 ∧ 125 = 125 := b
 
 theorem school_elementary (a b c d e : Nat) (h : SchoolStudents a b c d e) : d = 197 := by
   rcases h with ⟨ha, hb, hc, hd, he⟩
+  norm_num [ha, hb, hc] at hd
   omega
 
 theorem school_total (a b c d e : Nat) (h : SchoolStudents a b c d e) : e = 247 := by
@@ -123,11 +125,13 @@ theorem frog_solution : FrogEggs 50 100 20 120 270 540 810 ∧
 
 theorem library_english (a b c d e f g : Nat) (h : LibraryBooks a b c d e f g) : d = 1840 := by
   rcases h with ⟨ha, hb, hc, hd, he, hf, hg⟩
+  norm_num [ha, hb, hc] at hd
   omega
 
 theorem library_domestic (a b c d e f g : Nat) (h : LibraryBooks a b c d e f g) : f = 1104 := by
   have hd := library_english a b c d e f g h
   rcases h with ⟨ha, hb, hc, hx, he, hf, hg⟩
+  norm_num [hc, hd, he] at hf
   omega
 
 theorem library_outside (a b c d e f g : Nat) (h : LibraryBooks a b c d e f g) : g = 736 := by
@@ -185,11 +189,13 @@ theorem profit_per_book (a b c d e f g : Nat) (h : BookProfit a b c d e f g) : c
 theorem profit_books (a b c d e f g : Nat) (h : BookProfit a b c d e f g) : e = 8 := by
   have hc := profit_per_book a b c d e f g h
   rcases h with ⟨ha, hb, hx, hd, he, hf, hg⟩
+  norm_num [hc, hd] at he
   omega
 
 theorem profit_customers (a b c d e f g : Nat) (h : BookProfit a b c d e f g) : g = 4 := by
   have he := profit_books a b c d e f g h
   rcases h with ⟨ha, hb, hc, hd, hx, hf, hg⟩
+  norm_num [he, hf] at hg
   omega
 
 theorem profit_solution : BookProfit 20 5 15 120 8 2 4 ∧

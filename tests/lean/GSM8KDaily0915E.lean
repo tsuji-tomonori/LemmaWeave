@@ -57,33 +57,36 @@ theorem stationery_solution : StationeryLeft 60 60 7 8 6 56 42 4 18 22 ∧
   exact ⟨h, stationery_given _ _ _ _ _ _ _ _ _ _ h,
     stationery_left _ _ _ _ _ _ _ _ _ _ h, stationery_total _ _ _ _ _ _ _ _ _ _ h⟩
 
-theorem chicken_feed_cost (a b c d e f g h : Nat) (x : ChickenProfit a b c d e f g h) : e = 20 := by
-  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
+theorem chicken_feed_cost (a b c d e f g h i j : Nat) (x : ChickenProfit a b c d e f g h i j) : e = 20 := by
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi, hj⟩
   norm_num [hb, hc, hd] at he
   omega
 
-theorem chicken_unit_profit (a b c d e f g h : Nat) (x : ChickenProfit a b c d e f g h) :
+theorem chicken_unit_profit (a b c d e f g h i j : Nat) (x : ChickenProfit a b c d e f g h i j) :
     f = 130 := by
-  have he := chicken_feed_cost a b c d e f g h x
-  rcases x with ⟨ha, hb, hc, hd, hx, hf, hg, hh⟩
+  have he := chicken_feed_cost a b c d e f g h i j x
+  rcases x with ⟨ha, hb, hc, hd, hx, hf, hg, hh, hi, hj⟩
   omega
 
-theorem chicken_total_cents (a b c d e f g h : Nat) (x : ChickenProfit a b c d e f g h) :
-    g = 6500 := by
-  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
-  exact hg
+theorem chicken_total_cents (a b c d e f g h i j : Nat) (x : ChickenProfit a b c d e f g h i j) :
+    i = 6500 := by
+  rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi, hj⟩
+  norm_num [hg, hh] at hi
+  exact hi
 
-theorem chicken_count (a b c d e f g h : Nat) (x : ChickenProfit a b c d e f g h) : h = 50 := by
-  have hf := chicken_unit_profit a b c d e f g h x
-  rcases x with ⟨ha, hb, hc, hd, he, hx, hg, hh⟩
-  norm_num [hf, hg] at hh
+theorem chicken_count (a b c d e f g h i j : Nat) (x : ChickenProfit a b c d e f g h i j) : j = 50 := by
+  have hf := chicken_unit_profit a b c d e f g h i j x
+  have hi := chicken_total_cents a b c d e f g h i j x
+  rcases x with ⟨ha, hb, hc, hd, he, hx, hg, hh, hy, hj⟩
+  norm_num [hf, hi] at hj
   omega
 
-theorem chicken_solution : ChickenProfit 150 20 200 2 20 130 6500 50 ∧
+theorem chicken_solution : ChickenProfit 150 20 200 2 20 130 65 100 6500 50 ∧
     20 = 20 ∧ 130 = 130 ∧ 6500 = 6500 ∧ 50 = 50 := by
-  have h : ChickenProfit 150 20 200 2 20 130 6500 50 := by norm_num [ChickenProfit]
-  exact ⟨h, chicken_feed_cost _ _ _ _ _ _ _ _ h, chicken_unit_profit _ _ _ _ _ _ _ _ h,
-    chicken_total_cents _ _ _ _ _ _ _ _ h, chicken_count _ _ _ _ _ _ _ _ h⟩
+  have h : ChickenProfit 150 20 200 2 20 130 65 100 6500 50 := by norm_num [ChickenProfit]
+  exact ⟨h, chicken_feed_cost _ _ _ _ _ _ _ _ _ _ h,
+    chicken_unit_profit _ _ _ _ _ _ _ _ _ _ h,
+    chicken_total_cents _ _ _ _ _ _ _ _ _ _ h, chicken_count _ _ _ _ _ _ _ _ _ _ h⟩
 
 theorem rain_camp (a b c d e f : Nat) (h : CampingRain a b c d e f) : d = 14 := by
   rcases h with ⟨ha, hb, hc, hd, he, hf⟩

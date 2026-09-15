@@ -18,10 +18,11 @@ def StationeryLeft
 
 def ChickenProfit
     (saleCents bagPounds bagCostCents feedPounds feedCostCents profitCents
-      totalProfitCents chickens : Nat) : Prop :=
+      totalProfitDollars centsPerDollar totalProfitCents chickens : Nat) : Prop :=
   saleCents = 150 ∧ bagPounds = 20 ∧ bagCostCents = 200 ∧ feedPounds = 2 ∧
   bagPounds * feedCostCents = bagCostCents * feedPounds ∧
-  profitCents + feedCostCents = saleCents ∧ totalProfitCents = 6500 ∧
+  profitCents + feedCostCents = saleCents ∧ totalProfitDollars = 65 ∧
+  centsPerDollar = 100 ∧ totalProfitCents = totalProfitDollars * centsPerDollar ∧
   profitCents * chickens = totalProfitCents
 
 def CampingRain (dayOne dayTwo dayThree camp home less : Nat) : Prop :=

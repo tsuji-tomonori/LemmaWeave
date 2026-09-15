@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily44_hair","title_ja":"散髪回数の目標達成率","problem_id":"external-gsm8k-main-3101c7d50724:train:00434","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"8回散髪済みで目標まであと2回のとき、目標に対する達成率を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915E.hair_solution","graph":"work/gsm8k-daily44-hair-graph.json","lean_file":"tests/lean/GSM8KDaily0915E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["目標回数は完了8回と残り2回の合計であり、達成率は完了回数÷目標回数×100とする。"],
+  "steps":[
+    {"id":"hair_goal","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.hair_goal","title_ja":"目標回数","requires_steps":[],"uses_nodes":[],"condition_ja":"散髪済み8回、目標まで残り2回。","conclusion_ja":"目標は8+2=10回。","baseline_ja":"完了分と残り分の加法。"},
+    {"id":"hair_percent","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.hair_percent","title_ja":"達成率","requires_steps":["hair_goal"],"uses_nodes":[],"condition_ja":"10回中8回を完了している。","conclusion_ja":"8÷10×100=80%達成している。","baseline_ja":"割合は部分÷全体×100で求める。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":435,"checked_model_hash":"cbe4027d5ce5ab8b54faf2a261fca55e259c9820ff638aa26546ba2b57eccca5","checks_ja":["目標回数に既完了分と残り回数の双方を含めた。","割合の分母を目標10回として照合した。"]}
+}

@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily44_stationery","title_ja":"配った後のペンと鉛筆","problem_id":"external-gsm8k-main-3101c7d50724:train:00436","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"同数のペンと鉛筆を各60本持ち、7人へ1人当たりペン8本・鉛筆6本を配った後の合計を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915E.stationery_solution","graph":"work/gsm8k-daily44-stationery-graph.json","lean_file":"tests/lean/GSM8KDaily0915E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["ペンが60本で鉛筆も同数なので、鉛筆の初期本数も60本とする。"],
+  "steps":[
+    {"id":"stationery_given","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.stationery_given","title_ja":"配った本数","requires_steps":[],"uses_nodes":[],"condition_ja":"7人それぞれへペン8本、鉛筆6本を配る。","conclusion_ja":"配ったのはペン8×7=56本、鉛筆6×7=42本。","baseline_ja":"同数ずつ配る総数は人数×1人分。"},
+    {"id":"stationery_left","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.stationery_left","title_ja":"種類別の残り","requires_steps":["stationery_given"],"uses_nodes":[],"condition_ja":"初めに各60本あり、ペン56本と鉛筆42本を配った。","conclusion_ja":"ペンは4本、鉛筆は18本残る。","baseline_ja":"初期量から配布量を引く。"},
+    {"id":"stationery_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.stationery_total","title_ja":"残った文具の合計","requires_steps":["stationery_left"],"uses_nodes":[],"condition_ja":"ペン4本と鉛筆18本が残る。","conclusion_ja":"残りは合計4+18=22本。","baseline_ja":"異なる種類の個数を合計する。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":437,"checked_model_hash":"cbe4027d5ce5ab8b54faf2a261fca55e259c9820ff638aa26546ba2b57eccca5","checks_ja":["equal numberから鉛筆も60本と読んだ。","各友人への本数と友人数を掛けてから種類別に差し引いた。"]}
+}

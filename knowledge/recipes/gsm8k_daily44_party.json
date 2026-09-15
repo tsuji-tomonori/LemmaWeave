@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily44_party","title_ja":"所属別招待人数と追加20%","problem_id":"external-gsm8k-main-3101c7d50724:train:00441","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"故郷5人、学校はその2倍、スポーツクラブは前二者の合計、その他はこの3群合計の20%として総招待人数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915E.party_solution","graph":"work/gsm8k-daily44-party-graph.json","lean_file":"tests/lean/GSM8KDaily0915E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["remaining invitationsの20%の基準は、直前までに挙げた故郷・学校・クラブの合計30人と読む。"],
+  "steps":[
+    {"id":"party_base","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.party_base","title_ja":"主要3群の人数","requires_steps":[],"uses_nodes":[],"condition_ja":"故郷5人、学校は2倍、クラブは故郷と学校の合計。","conclusion_ja":"学校10人、クラブ15人、主要3群は計30人。","baseline_ja":"倍数と部分和を順に計算する。"},
+    {"id":"party_other","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.party_other","title_ja":"その他の招待","requires_steps":["party_base"],"uses_nodes":[],"condition_ja":"その他は主要3群30人の20%。","conclusion_ja":"その他は30×20÷100=6人。","baseline_ja":"百分率に対応する部分量を求める。"},
+    {"id":"party_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.party_total","title_ja":"総招待人数","requires_steps":["party_base","party_other"],"uses_nodes":[],"condition_ja":"主要3群30人にその他6人を加える。","conclusion_ja":"来る可能性のある人数は36人。","baseline_ja":"重複しない群の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":442,"checked_model_hash":"cbe4027d5ce5ab8b54faf2a261fca55e259c9820ff638aa26546ba2b57eccca5","checks_ja":["previously mentionedの基準を主要3群の合計とした。","その他6人を基準30人の内数でなく追加分として扱った。"]}
+}

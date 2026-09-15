@@ -118,7 +118,11 @@ theorem souvenir_keychains (a b c d e f g h i j k : Nat)
   have hg := souvenir_left a b c d e f g h i j k x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hx, hh, hi, hj, hk⟩
   norm_num [hh, hg] at hj
-  constructor <;> omega
+  have hj' : j = 7 := by omega
+  constructor
+  · exact hj'
+  · norm_num [hi, hj'] at hk
+    exact hk
 
 theorem souvenir_solution : SouvenirKeychains 50 8 2 10 2 36 14 2 3 7 21 ∧
     36 = 36 ∧ 14 = 14 ∧ (7 = 7 ∧ 21 = 21) := by
@@ -197,7 +201,8 @@ theorem crane_aggregate (a b c d e f g h i j k : ℚ)
 
 theorem crane_solution :
     CraneComparison 200 228 100 120 140 147 14 20 5 13 (25 / 2) ∧
-      (14 = 14 ∧ 20 = 20 ∧ 5 = 5) ∧ (13 : ℚ) = 13 ∧ (25 / 2 : ℚ) = 25 / 2 := by
+      ((14 : ℚ) = 14 ∧ (20 : ℚ) = 20 ∧ (5 : ℚ) = 5) ∧
+        (13 : ℚ) = 13 ∧ (25 / 2 : ℚ) = 25 / 2 := by
   have h : CraneComparison 200 228 100 120 140 147 14 20 5 13 (25 / 2) := by
     norm_num [CraneComparison]
   exact ⟨h, crane_individual _ _ _ _ _ _ _ _ _ _ _ h,

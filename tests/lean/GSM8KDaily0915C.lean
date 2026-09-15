@@ -48,7 +48,8 @@ theorem river_june (a b c d e : Nat) (h : RiverDepth a b c d e) : c = 15 := by
 theorem river_july (a b c d e : Nat) (h : RiverDepth a b c d e) : e = 45 := by
   have hc := river_june a b c d e h
   rcases h with ⟨ha, hb, hx, hd, he⟩
-  omega
+  norm_num [hc, hd] at he
+  exact he
 
 theorem river_solution : RiverDepth 5 10 15 3 45 ∧ 15 = 15 ∧ 45 = 45 := by
   have h : RiverDepth 5 10 15 3 45 := by norm_num [RiverDepth]

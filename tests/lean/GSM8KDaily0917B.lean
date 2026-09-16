@@ -26,7 +26,8 @@ theorem amoeba_counts (a b c d e f g h : Nat) (x : AmoebaGrowth a b c d e f g h)
 
 theorem amoeba_days (a b c d e f g h : Nat) (x : AmoebaGrowth a b c d e f g h) : h = 8 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
-  omega
+  norm_num [hf, hg] at hh
+  exact hh
 
 theorem amoeba_solution : AmoebaGrowth 1 2 4 8 16 2 4 8 ∧
     (2 = 2 ∧ 4 = 4 ∧ 8 = 8 ∧ 16 = 16) ∧ 8 = 8 := by
@@ -55,7 +56,8 @@ theorem questions_hourly (a b c d e f g : Nat) (x : MathQuestions a b c d e f g)
 theorem questions_total (a b c d e f g : Nat) (x : MathQuestions a b c d e f g) : g = 324 := by
   have he := (questions_hourly a b c d e f g x).2.2.2
   rcases x with ⟨ha, hb, hc, hd, hx, hf, hg⟩
-  omega
+  norm_num [he, hf] at hg
+  exact hg
 
 theorem questions_solution : MathQuestions 36 72 108 54 162 2 324 ∧
     (72 = 72 ∧ 108 = 108 ∧ 54 = 54 ∧ 162 = 162) ∧ 324 = 324 := by
@@ -139,7 +141,8 @@ theorem rope_rates (a b c d e f g : Nat) (x : RopeSkips a b c d e f g) : c = 70 
 theorem rope_total (a b c d e f g : Nat) (x : RopeSkips a b c d e f g) : g = 2250 := by
   have he := (rope_rates a b c d e f g x).2
   rcases x with ⟨ha, hb, hc, hd, hx, hf, hg⟩
-  omega
+  norm_num [he, hf] at hg
+  exact hg
 
 theorem rope_solution : RopeSkips 4200 60 70 80 150 15 2250 ∧
     (70 = 70 ∧ 150 = 150) ∧ 2250 = 2250 := by

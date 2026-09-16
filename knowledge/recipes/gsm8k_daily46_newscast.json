@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_newscast","title_ja":"ニュース番組の広告時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00454","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"30分番組の各番組部分を合計し、残りの広告時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917B.newscast_solution","graph":"work/gsm8k-daily46-newscast-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["half-hourを30分とする。"],
+  "steps":[
+    {"id":"newscast_accounted","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.newscast_accounted","title_ja":"番組部分の合計","requires_steps":[],"uses_nodes":[],"condition_ja":"国内12分、国際5分、スポーツ5分、天気2分。","conclusion_ja":"広告以外は12+5+5+2=24分。","baseline_ja":"互いに重ならない時間の加法。"},
+    {"id":"newscast_ads","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.newscast_ads","title_ja":"広告時間","requires_steps":["newscast_accounted"],"uses_nodes":[],"condition_ja":"番組全体30分のうち24分が広告以外。","conclusion_ja":"広告は30−24=6分。","baseline_ja":"全体から既知部分を引く。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":455,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["4種類の時間を原文どおり合計した。","30分との差を広告時間と確認した。"]}
+}

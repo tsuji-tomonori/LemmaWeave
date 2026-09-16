@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_votes","title_ja":"Marcyの得票数","problem_id":"external-gsm8k-main-3101c7d50724:train:00458","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"Joeyの票数を基準にBarry、Marcyの順で得票数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917B.votes_solution","graph":"work/gsm8k-daily46-votes-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["twice as many as 3 more than Joeyを2×(Joey+3)と読む。"],
+  "steps":[
+    {"id":"votes_barry","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.votes_barry","title_ja":"Barryの得票","requires_steps":[],"uses_nodes":[],"condition_ja":"Joeyは8票で、BarryはJoeyより3多い数の2倍。","conclusion_ja":"8+3=11、Barryは2×11=22票。","baseline_ja":"比較差を加えてから倍にする。"},
+    {"id":"votes_marcy","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.votes_marcy","title_ja":"Marcyの得票","requires_steps":["votes_barry"],"uses_nodes":[],"condition_ja":"MarcyはBarryの22票の3倍。","conclusion_ja":"3×22=66票。","baseline_ja":"倍数関係の乗法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":459,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["Barryの比較表現の演算順を確認した。","Marcyの3倍をBarryへ適用した。"]}
+}

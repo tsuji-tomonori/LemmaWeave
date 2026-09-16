@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_manuscripts","title_ja":"原稿10部の印刷・製本費","problem_id":"external-gsm8k-main-3101c7d50724:train:00461","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"1部の印刷費と製本費を求め、10部分を合計する。","root":"LemmaWeave.Tests.GSM8KDaily0917B.manuscripts_solution","graph":"work/gsm8k-daily46-manuscripts-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["金額をセントに統一する。"],
+  "steps":[
+    {"id":"manuscripts_unit","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.manuscripts_unit","title_ja":"1部の費用","requires_steps":[],"uses_nodes":[],"condition_ja":"400ページを1ページ5セントで印刷し、製本は500セント。","conclusion_ja":"印刷2000セント、製本込み2500セント。","baseline_ja":"単価×数量と費目の加法。"},
+    {"id":"manuscripts_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.manuscripts_total","title_ja":"10部の総費用","requires_steps":["manuscripts_unit"],"uses_nodes":[],"condition_ja":"1部2500セントを10部作る。","conclusion_ja":"25000セント、すなわち250ドル。","baseline_ja":"同じ1部費用と部数の乗法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":462,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["印刷単価0.05ドルを5セントへ換算した。","製本料も各部へ課されることを確認した。"]}
+}

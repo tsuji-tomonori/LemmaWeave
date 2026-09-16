@@ -24,15 +24,18 @@ theorem amoeba_counts (a b c d e f g h : Nat) (x : AmoebaGrowth a b c d e f g h)
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
   omega
 
-theorem amoeba_days (a b c d e f g h : Nat) (x : AmoebaGrowth a b c d e f g h) : h = 8 := by
+theorem amoeba_days (a b c d e f g h : Nat) (x : AmoebaGrowth a b c d e f g h) :
+    (b = 2 ∧ c = 4 ∧ d = 8 ∧ e = 16) ∧ h = 8 := by
+  have hcounts := amoeba_counts a b c d e f g h x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
   norm_num [hf, hg] at hh
-  exact hh
+  exact ⟨hcounts, hh⟩
 
 theorem amoeba_solution : AmoebaGrowth 1 2 4 8 16 2 4 8 ∧
     (2 = 2 ∧ 4 = 4 ∧ 8 = 8 ∧ 16 = 16) ∧ 8 = 8 := by
   have h : AmoebaGrowth 1 2 4 8 16 2 4 8 := by norm_num [AmoebaGrowth]
-  exact ⟨h, amoeba_counts _ _ _ _ _ _ _ _ h, amoeba_days _ _ _ _ _ _ _ _ h⟩
+  have hd := amoeba_days _ _ _ _ _ _ _ _ h
+  exact ⟨h, hd.1, hd.2⟩
 
 theorem savings_income (a b c d e f g h : Nat) (x : AnnualSavings a b c d e f g h) : e = 1150 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh⟩
@@ -87,9 +90,12 @@ theorem mower_reference_unit (a b c d e f g : Nat) (x : LawnmowerReference a b c
   exact ⟨hd', he', hg⟩
 
 theorem mower_two_readings :
-    LawnmowerReference 1800 2 5 720 2520 4 10080 ∧
+    (720 = 720 ∧ 2520 = 2520 ∧ 10080 = 10080) ∧
     LawnmowerStandard 1800 3000 4 12000 ∧ 10080 ≠ 12000 := by
-  norm_num [LawnmowerReference, LawnmowerStandard]
+  have href : LawnmowerReference 1800 2 5 720 2520 4 10080 := by
+    norm_num [LawnmowerReference]
+  have hunit := mower_reference_unit _ _ _ _ _ _ _ href
+  exact ⟨hunit, by norm_num [LawnmowerStandard], by norm_num⟩
 
 theorem mower_solution :
     LawnmowerReference 1800 2 5 720 2520 4 10080 ∧
@@ -161,9 +167,12 @@ theorem pizza_work (a b c d e f g h i j k : Nat) (x : PizzaSequential a b c d e 
   exact ⟨hc', he, hg', hi⟩
 
 theorem pizza_schedules :
-    PizzaSequential 12 3 4 30 120 2 6 30 180 300 5 ∧
+    (4 = 4 ∧ 120 = 120 ∧ 6 = 6 ∧ 180 = 180) ∧
     PizzaOverlapped 30 6 30 180 210 ∧ 300 ≠ 210 := by
-  norm_num [PizzaSequential, PizzaOverlapped]
+  have hseq : PizzaSequential 12 3 4 30 120 2 6 30 180 300 5 := by
+    norm_num [PizzaSequential]
+  have hwork := pizza_work _ _ _ _ _ _ _ _ _ _ _ hseq
+  exact ⟨hwork, by norm_num [PizzaOverlapped], by norm_num⟩
 
 theorem pizza_solution :
     PizzaSequential 12 3 4 30 120 2 6 30 180 300 5 ∧

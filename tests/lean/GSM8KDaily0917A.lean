@@ -143,7 +143,7 @@ theorem emily_new_total (a b c d e f g h i : Nat) (x : EmilyMarbles a b c d e f 
   omega
 
 theorem emily_left (a b c d e f g h i : Nat) (x : EmilyMarbles a b c d e f g h i) :
-    f = 9 ∧ h = 10 ∧ i = 8 := by
+    f = 9 ∧ g = 10 ∧ i = 8 := by
   have hcd := emily_new_total a b c d e f g h i x
   rcases hcd with ⟨hc', hd'⟩
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi⟩
@@ -153,9 +153,9 @@ theorem emily_left (a b c d e f g h i : Nat) (x : EmilyMarbles a b c d e f g h i
   norm_num [hd', hh] at hi
   exact ⟨hf', hh, hi⟩
 
-theorem emily_solution : EmilyMarbles 6 2 12 18 2 9 1 10 8 ∧
+theorem emily_solution : EmilyMarbles 6 2 12 18 2 9 10 1 8 ∧
     (12 = 12 ∧ 18 = 18) ∧ (9 = 9 ∧ 10 = 10 ∧ 8 = 8) := by
-  have h : EmilyMarbles 6 2 12 18 2 9 1 10 8 := by norm_num [EmilyMarbles]
+  have h : EmilyMarbles 6 2 12 18 2 9 10 1 8 := by norm_num [EmilyMarbles]
   exact ⟨h, emily_new_total _ _ _ _ _ _ _ _ _ h, emily_left _ _ _ _ _ _ _ _ _ h⟩
 
 theorem shells_total (a b c d e f : Nat) (x : SharedShells a b c d e f) : d = 54 := by

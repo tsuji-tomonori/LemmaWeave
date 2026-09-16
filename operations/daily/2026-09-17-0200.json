@@ -1,0 +1,82 @@
+{
+  "date": "2026-09-17",
+  "started_at": "2026-09-17T02:04:30+09:00",
+  "finished_at": "2026-09-17T04:08:07+09:00",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00444",
+    "external-gsm8k-main-3101c7d50724:train:00445",
+    "external-gsm8k-main-3101c7d50724:train:00446",
+    "external-gsm8k-main-3101c7d50724:train:00447",
+    "external-gsm8k-main-3101c7d50724:train:00448",
+    "external-gsm8k-main-3101c7d50724:train:00449",
+    "external-gsm8k-main-3101c7d50724:train:00450",
+    "external-gsm8k-main-3101c7d50724:train:00451",
+    "external-gsm8k-main-3101c7d50724:train:00452",
+    "external-gsm8k-main-3101c7d50724:train:00453"
+  ],
+  "completed_problem_ids": [],
+  "deferred": [],
+  "status": "verified_awaiting_evidence_import",
+  "ci": {
+    "previous_success_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34955158803",
+    "proof_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35137148486",
+    "final_run_url": null,
+    "artifact": {
+      "id": 10464103963,
+      "name": "lean-evidence-b6cb3f677a6b6c536c3a18b4ee85960597ed2fc1",
+      "sha256": "afa0776cca6d2b7e711eb7beedbfd2a3d946a9f59004b553400b5d29a9e432c1",
+      "size_in_bytes": 176470320,
+      "input_commit": "b6cb3f677a6b6c536c3a18b4ee85960597ed2fc1"
+    },
+    "attempts": [
+      {
+        "run_id": 35129416283,
+        "conclusion": "failure",
+        "reason_ja": "Emily問題の連言証明を修正"
+      },
+      {
+        "run_id": 35130663513,
+        "conclusion": "failure",
+        "reason_ja": "Emily問題の同一箇所を再修正"
+      },
+      {
+        "run_id": 35131807116,
+        "conclusion": "failure",
+        "reason_ja": "Emily補題の引数順を修正"
+      },
+      {
+        "run_id": 35133122733,
+        "conclusion": "failure",
+        "reason_ja": "Lean・公理監査成功後、モデル束ハッシュ形式差を検出"
+      },
+      {
+        "run_id": 35137148486,
+        "conclusion": "success",
+        "commit": "b6cb3f677a6b6c536c3a18b4ee85960597ed2fc1"
+      }
+    ]
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
+  "commit": "b6cb3f677a6b6c536c3a18b4ee85960597ed2fc1",
+  "progress_before": {
+    "completed": 448,
+    "remaining": 8344,
+    "today_completed": 0
+  },
+  "progress_after_verified_not_counted": {
+    "completed": 448,
+    "remaining": 8344,
+    "today_completed": 0
+  },
+  "forecast": {
+    "initial_target_date": "2027-03-01",
+    "measured_completed_per_day_7d": 38.57142857142857,
+    "measured_forecast_date": "2027-04-21"
+  },
+  "supplemental_high_school_fields": {
+    "completed": 0,
+    "target": 6,
+    "status": "unmet"
+  },
+  "note_ja": "train:00444〜00453の10問・20説明行について、日本語記述式解答、Leanモデル、レシピ、individual_lines_v1対応を作成した。固定Lean 4.33.1、許容公理監査、行別実依存照合、回帰検査をCIで通過した。成果物のGitHub側SHA-256は確認済みだが、実行環境切断により成果物をリポジトリへ回収・描画・再集計できなかったため、完了数には未算入。"
+}

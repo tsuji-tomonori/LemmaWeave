@@ -148,7 +148,9 @@ theorem emily_left (a b c d e f g h i : Nat) (x : EmilyMarbles a b c d e f g h i
   rcases hcd with ⟨hc', hd'⟩
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi⟩
   norm_num [hd', he] at hf
-  omega
+  constructor
+  · omega
+  · constructor <;> omega
 
 theorem emily_solution : EmilyMarbles 6 2 12 18 2 9 1 10 8 ∧
     (12 = 12 ∧ 18 = 18) ∧ (9 = 9 ∧ 10 = 10 ∧ 8 = 8) := by

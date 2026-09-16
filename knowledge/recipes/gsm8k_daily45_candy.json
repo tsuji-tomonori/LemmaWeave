@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily45_candy","title_ja":"75%引きの菓子2袋の代金","problem_id":"external-gsm8k-main-3101c7d50724:train:00445","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"1袋6ドルの菓子を75%引きで2袋買う代金を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917A.candy_solution","graph":"work/gsm8k-daily45-candy-graph.json","lean_file":"tests/lean/GSM8KDaily0917A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["端数を避けるため金額をセントに統一する。"],
+  "steps":[
+    {"id":"candy_unit","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.candy_unit","title_ja":"1袋の値引き後価格","requires_steps":[],"uses_nodes":[],"condition_ja":"定価600セントから75%を値引きする。","conclusion_ja":"値引額は450セント、値引き後は600−450=150セント。","baseline_ja":"割合と全体からの減法。"},
+    {"id":"candy_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.candy_total","title_ja":"2袋の代金","requires_steps":["candy_unit"],"uses_nodes":[],"condition_ja":"値引き後1袋150セントを2袋買う。","conclusion_ja":"合計は2×150=300セント、すなわち3ドル。","baseline_ja":"同額の商品2個の乗法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":446,"checked_model_hash":"96ad9d9474f46f2a0c84c60b6db63565952e98da571fe6a5e6c14b9b94ec03aa","checks_ja":["75% offを値引率として扱った。","2袋とも同じ値引き価格であることを確認した。"]}
+}

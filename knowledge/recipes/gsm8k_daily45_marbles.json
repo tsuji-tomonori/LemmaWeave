@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily45_marbles","title_ja":"3瓶のビー玉総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00448","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"A瓶28個、Aより12個多いB瓶、Bの2倍のC瓶を合計する。","root":"LemmaWeave.Tests.GSM8KDaily0917A.marbles_solution","graph":"work/gsm8k-daily45-marbles-graph.json","lean_file":"tests/lean/GSM8KDaily0917A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["Bの比較基準はA、Cの比較基準はBである。"],
+  "steps":[
+    {"id":"marbles_bc","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.marbles_bc","title_ja":"B瓶とC瓶","requires_steps":[],"uses_nodes":[],"condition_ja":"A瓶は28個、B瓶はAより12個多く、C瓶はBの2倍。","conclusion_ja":"B瓶は28+12=40個、C瓶は2×40=80個。","baseline_ja":"差による加法と倍の乗法。"},
+    {"id":"marbles_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.marbles_total","title_ja":"3瓶の合計","requires_steps":["marbles_bc"],"uses_nodes":[],"condition_ja":"A、B、Cには順に28個、40個、80個ある。","conclusion_ja":"全部で28+40+80=148個。","baseline_ja":"三つの個数の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":449,"checked_model_hash":"96ad9d9474f46f2a0c84c60b6db63565952e98da571fe6a5e6c14b9b94ec03aa","checks_ja":["12 moreの基準をA瓶とした。","twice as manyの基準をB瓶とした。"]}
+}

@@ -1,0 +1,11 @@
+{
+  "id": "gsm8k_daily50_house", "title_ja": "住宅の増築面積", "problem_id": "external-gsm8k-main-3101c7d50724:train:00494", "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "5200平方フィートと7300平方フィートの家があり、増築後の合計が16000平方フィートになるときの増築面積を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0918A.house_solution", "graph": "work/gsm8k-daily50-house-graph.json", "lean_file": "tests/lean/GSM8KDaily0918A.lean",
+  "semantic_review_status": "self_review_only", "model_scope": "self_reviewed_model", "counting_note_ja": "取得済み固定GSM8Kの1問。", "model_notes_ja": ["元の2軒の合計と新しい合計の差を取る。"],
+  "steps": [
+    {"id":"house_original_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.house_original_total","title_ja":"元の合計面積","requires_steps":[],"uses_nodes":[],"condition_ja":"2軒は5200平方フィートと7300平方フィート。","conclusion_ja":"元の合計は12500平方フィート。","baseline_ja":"加法。"},
+    {"id":"house_expansion","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.house_expansion","title_ja":"増築面積","requires_steps":["house_original_total"],"uses_nodes":[],"condition_ja":"新しい合計16000から元の合計12500を引く。","conclusion_ja":"増築面積は3500平方フィート。","baseline_ja":"差の関係。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":495,"checked_model_hash":"69d658f73115a09dc53753d617eaa49ff1bcf7dc787b529e6ccd9c37d9c7c001","checks_ja":["増築されるのは小さい家だけなので、2軒の合計増分が求める面積に一致する。"]}
+}

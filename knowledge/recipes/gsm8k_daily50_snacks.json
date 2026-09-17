@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily50_snacks","title_ja":"おやつ袋の品数","problem_id":"external-gsm8k-main-3101c7d50724:train:00495","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"64個のプレッツェル、その4倍の金魚形クラッカー、32個のキャンディーを16袋へ等分する。","root":"LemmaWeave.Tests.GSM8KDaily0918A.snacks_solution","graph":"work/gsm8k-daily50-snacks-graph.json","lean_file":"tests/lean/GSM8KDaily0918A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["3種類の合計を16人分へ等分する。"],
+  "steps":[
+    {"id":"snacks_goldfish","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.snacks_goldfish","title_ja":"金魚形クラッカーの数","requires_steps":[],"uses_nodes":[],"condition_ja":"プレッツェル64個の4倍。","conclusion_ja":"金魚形クラッカーは256個。","baseline_ja":"倍の計算。"},
+    {"id":"snacks_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.snacks_total","title_ja":"全品数","requires_steps":["snacks_goldfish"],"uses_nodes":[],"condition_ja":"64個、256個、32個を合計する。","conclusion_ja":"全体は352個。","baseline_ja":"加法。"},
+    {"id":"snacks_per_bag","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.snacks_per_bag","title_ja":"1袋の品数","requires_steps":["snacks_total"],"uses_nodes":[],"condition_ja":"352個を16袋へ等分する。","conclusion_ja":"1袋22個。","baseline_ja":"等分。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":496,"checked_model_hash":"69d658f73115a09dc53753d617eaa49ff1bcf7dc787b529e6ccd9c37d9c7c001","checks_ja":["four times as manyを64の4倍と読み、16人に同数ずつ配った。"]}
+}

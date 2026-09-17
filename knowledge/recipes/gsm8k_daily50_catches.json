@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily50_catches","title_ja":"Tammyの捕球回数","problem_id":"external-gsm8k-main-3101c7d50724:train:00500","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Joeの23回からDerekの回数を求め、その3分の1より16回多いTammyの回数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918A.catches_solution","graph":"work/gsm8k-daily50-catches-graph.json","lean_file":"tests/lean/GSM8KDaily0918A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["Derekの回数が3で割り切れることも式に含める。"],
+  "steps":[
+    {"id":"catches_derek","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.catches_derek","title_ja":"Derekの回数","requires_steps":[],"uses_nodes":[],"condition_ja":"Joeの23回の2倍より4回少ない。","conclusion_ja":"Derekは42回。","baseline_ja":"倍と減法。"},
+    {"id":"catches_third","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.catches_third","title_ja":"Derekの3分の1","requires_steps":["catches_derek"],"uses_nodes":[],"condition_ja":"42回を3等分する。","conclusion_ja":"3分の1は14回。","baseline_ja":"等分。"},
+    {"id":"catches_tammy","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.catches_tammy","title_ja":"Tammyの回数","requires_steps":["catches_third"],"uses_nodes":[],"condition_ja":"14回より16回多い。","conclusion_ja":"Tammyは30回。","baseline_ja":"加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":501,"checked_model_hash":"69d658f73115a09dc53753d617eaa49ff1bcf7dc787b529e6ccd9c37d9c7c001","checks_ja":["four less than doubleとsixteen more than a thirdを順に対応させた。"]}
+}

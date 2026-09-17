@@ -7,5 +7,5 @@
     {"id":"rain_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.rain_total","title_ja":"平日5日間の合計","requires_steps":["rain_daily_totals"],"uses_nodes":[],"condition_ja":"月曜から金曜の値を合計する。","conclusion_ja":"合計20インチ。","baseline_ja":"加法。"},
     {"id":"rain_averages","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.rain_averages","title_ja":"二つの平均","requires_steps":["rain_total"],"uses_nodes":[],"condition_ja":"列挙5日なら5で割る。暦週では土日0を追加仮定して7で割る。","conclusion_ja":"5日平均4インチ、追加条件付き7日平均20/7インチ。","baseline_ja":"算術平均。"}
   ],
-  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":487,"checked_model_hash":"e2151356e98b0c5db98d3334d6eec36f58447c47dd993a05aefe37e87f47050b","checks_ja":["Fridayの値を月曜から木曜の合計とした。","weekが5日か7日かを分離し、未指定の土日を無断で決めなかった。"]}
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":487,"checked_model_hash":"95a9c4f7f170fada4202cea4034b0759c2b801729be4ef42ded81adde11ece23","checks_ja":["Fridayの値を月曜から木曜の合計とした。","weekが5日か7日かを分離し、未指定の土日を無断で決めなかった。"]}
 }

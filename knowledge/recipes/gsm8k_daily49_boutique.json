@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily49_boutique","title_ja":"割引後の不足額","problem_id":"external-gsm8k-main-3101c7d50724:train:00488","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"500ドルより2/5多い表示価格に15%割引を適用し、不足額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917E.boutique_solution","graph":"work/gsm8k-daily49-boutique-graph.json","lean_file":"tests/lean/GSM8KDaily0917E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["two-fifths more money than she hadを500ドルの2/5増しと読む。"],
+  "steps":[
+    {"id":"boutique_sticker","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.boutique_sticker","title_ja":"表示価格","requires_steps":[],"uses_nodes":[],"condition_ja":"表示価格は手持ち500ドルよりその2/5だけ多い。","conclusion_ja":"表示価格は700ドル。","baseline_ja":"割合増加。"},
+    {"id":"boutique_payment","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.boutique_payment","title_ja":"割引額と支払額","requires_steps":["boutique_sticker"],"uses_nodes":[],"condition_ja":"700ドルから15%割り引く。","conclusion_ja":"割引105ドル、支払595ドル。","baseline_ja":"百分率と差。"},
+    {"id":"boutique_shortfall","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.boutique_shortfall","title_ja":"不足額","requires_steps":["boutique_payment"],"uses_nodes":[],"condition_ja":"支払595ドルに対して手持ちは500ドル。","conclusion_ja":"95ドル不足する。","baseline_ja":"差。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":489,"checked_model_hash":"e2151356e98b0c5db98d3334d6eec36f58447c47dd993a05aefe37e87f47050b","checks_ja":["割引率を表示価格700ドルへ適用した。"]}
+}

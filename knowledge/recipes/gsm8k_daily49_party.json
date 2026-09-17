@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily49_party","title_ja":"同窓会パーティーの費用","problem_id":"external-gsm8k-main-3101c7d50724:train:00493","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"50人が各100ドルを拠出し、費用が拠出合計より500ドル少ないときの費用を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917E.party_solution","graph":"work/gsm8k-daily49-party-graph.json","lean_file":"tests/lean/GSM8KDaily0917E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["全員が100ドルを支払った拠出総額と実費の差が500ドル。"],
+  "steps":[
+    {"id":"party_contributions","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.party_contributions","title_ja":"拠出合計","requires_steps":[],"uses_nodes":[],"condition_ja":"50人が各100ドルを支払う。","conclusion_ja":"拠出合計は5000ドル。","baseline_ja":"単価×人数。"},
+    {"id":"party_expenses","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.party_expenses","title_ja":"実際の費用","requires_steps":["party_contributions"],"uses_nodes":[],"condition_ja":"費用は拠出合計より500ドル少ない。","conclusion_ja":"費用は4500ドル。","baseline_ja":"差。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":494,"checked_model_hash":"e2151356e98b0c5db98d3334d6eec36f58447c47dd993a05aefe37e87f47050b","checks_ja":["expenses were $500 lessを拠出合計からの差として反映した。"]}
+}

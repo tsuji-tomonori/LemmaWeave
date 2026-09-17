@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily49_triangle","title_ja":"三角形の第3辺","problem_id":"external-gsm8k-main-3101c7d50724:train:00490","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"周長160cm、2辺40cmと50cmから第3辺を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917E.triangle_solution","graph":"work/gsm8k-daily49-triangle-graph.json","lean_file":"tests/lean/GSM8KDaily0917E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["第3辺70cmは既知2辺の和90cmより短く、三角形の成立条件にも整合する。"],
+  "steps":[
+    {"id":"triangle_known_sum","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.triangle_known_sum","title_ja":"既知2辺の和","requires_steps":[],"uses_nodes":[],"condition_ja":"2辺は40cmと50cm。","conclusion_ja":"和は90cm。","baseline_ja":"加法。"},
+    {"id":"triangle_third_and_valid","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.triangle_third_and_valid","title_ja":"第3辺と成立条件","requires_steps":["triangle_known_sum"],"uses_nodes":[],"condition_ja":"3辺の和が周長160cmである。","conclusion_ja":"第3辺は70cmで、70<90を満たす。","baseline_ja":"周長からの差と三角不等式の確認。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":491,"checked_model_hash":"e2151356e98b0c5db98d3334d6eec36f58447c47dd993a05aefe37e87f47050b","checks_ja":["perimeterを3辺の和として反映した。","得られた辺長が三角形と矛盾しないことを確認した。"]}
+}

@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily49_pineapple","title_ja":"パイナップルリングの利益","problem_id":"external-gsm8k-main-3101c7d50724:train:00487","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"パイナップル6個の原価とリング販売の利益を、原文どおりの読みと参考解答の追加条件に分ける。","root":"LemmaWeave.Tests.GSM8KDaily0917E.pineapple_solution","graph":"work/gsm8k-daily49-pineapple-graph.json","lean_file":"tests/lean/GSM8KDaily0917E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["4 rings for $5 eachは通常、4個を各5ドルで売った意味。参考解答は4個組を5ドルで全量販売した別条件。"],
+  "steps":[
+    {"id":"pineapple_cost_and_rings","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.pineapple_cost_and_rings","title_ja":"原価と製造数","requires_steps":[],"uses_nodes":[],"condition_ja":"6個を各3ドルで買い、各12リングに切る。","conclusion_ja":"原価18ドル、72リング。","baseline_ja":"単価×数量。"},
+    {"id":"pineapple_literal_profit","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.pineapple_literal_profit","title_ja":"原文どおりの利益","requires_steps":["pineapple_cost_and_rings"],"uses_nodes":[],"condition_ja":"4リングだけを各5ドルで売る。","conclusion_ja":"売上20ドル、利益2ドル。","baseline_ja":"売上−原価。"},
+    {"id":"pineapple_bundle_profit","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917E.pineapple_bundle_profit","title_ja":"参考解答の追加条件","requires_steps":[],"uses_nodes":[],"condition_ja":"4個組を5ドルで全72個売ると追加仮定する。","conclusion_ja":"18組、売上90ドル、利益72ドル。","baseline_ja":"等分、単価×数量、差。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":488,"checked_model_hash":"e2151356e98b0c5db98d3334d6eec36f58447c47dd993a05aefe37e87f47050b","checks_ja":["eachがringを修飾する通常読解と参考解答のbundle読解を分離した。","売れ残りには収入も追加費用もないモデルである。"]}
+}

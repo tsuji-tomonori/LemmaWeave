@@ -1,7 +1,7 @@
 {
   "date": "2026-09-18",
   "started_at": "2026-09-18T01:57:30+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-18T03:30:41+09:00",
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00494",
     "external-gsm8k-main-3101c7d50724:train:00495",
@@ -14,14 +14,32 @@
     "external-gsm8k-main-3101c7d50724:train:00502",
     "external-gsm8k-main-3101c7d50724:train:00503"
   ],
-  "completed_problem_ids": [],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00494",
+    "external-gsm8k-main-3101c7d50724:train:00495",
+    "external-gsm8k-main-3101c7d50724:train:00496",
+    "external-gsm8k-main-3101c7d50724:train:00497",
+    "external-gsm8k-main-3101c7d50724:train:00498",
+    "external-gsm8k-main-3101c7d50724:train:00499",
+    "external-gsm8k-main-3101c7d50724:train:00500",
+    "external-gsm8k-main-3101c7d50724:train:00501",
+    "external-gsm8k-main-3101c7d50724:train:00502",
+    "external-gsm8k-main-3101c7d50724:train:00503"
+  ],
   "deferred": [],
-  "status": "in_progress",
+  "status": "completed",
   "ci": {
     "previous_success_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35211555865",
-    "proof_run_url": null,
+    "proof_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35255882329",
     "final_run_url": null,
-    "artifact": null,
+    "artifact": {
+      "id": 10512707155,
+      "name": "lean-evidence-dab65cd48a6525570524e34f1383be02ee2f6946",
+      "size_in_bytes": 188855621,
+      "full_archive_sha256": "6bbbbd4f237f1d33b2d21bdb5c8d3584905a9719050329469122d368ddd15d0c",
+      "filtered_archive_sha256": "2d08e6c1b6fbfb796d01cb30fdc39a9454ee116ca2ad4b98bb05a79d407620c3",
+      "input_commit": "dab65cd48a6525570524e34f1383be02ee2f6946"
+    },
     "attempts": [
       {
         "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35252725826",
@@ -34,18 +52,24 @@
         "commit": "c517c99750fca8343eb7a0d18c15bab9d89ba2a6",
         "conclusion": "failure",
         "reason_ja": "収入問題は成功した。残る6本ではomegaへ渡す前に可変係数の積が残ったため、既知の人数・試合数・日数をnorm_numで定数へ正規化した後にomegaで商を一意にした。"
+      },
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35255882329",
+        "commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+        "conclusion": "success",
+        "reason_ja": "固定Lean 4.33.1で対象10問、許容公理監査、25説明行の実依存照合、抽出器検査、回帰検査51件がすべて成功した。成果物の完全版と必要証拠だけの縮小版をSHA-256で照合して保存した。"
       }
     ]
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
   "commit": null,
   "progress_before": {"completed": 498, "remaining": 8294, "today_completed": 0},
-  "progress_after": null,
+  "progress_after": {"completed": 508, "remaining": 8284, "today_completed": 10},
   "forecast": {
     "initial_target_date": "2027-03-01",
     "measured_completed_per_day_7d": 40.0,
     "measured_forecast_date": "2027-04-13"
   },
   "supplemental_high_school_fields": {"completed": 0, "target": 6, "status": "unmet"},
-  "note_ja": "train:00494〜00503の10問を個別に読んで解答・Leanモデル・25説明行を作成した。腕立て問題は開始回数が原文にないため、床腕立て前の3段階を各15訓練日で終える追加条件下の9週間として形式化した。固定Lean CI、許容公理監査、行別実依存照合、証拠保存は未完了のため、現時点では完了数へ算入しない。自然言語と形式モデルの対応は作成者が自己照合しており、Leanが保証するのは明示した仮定下のモデルである。高校6分野追加枠は0/6で未達。"
+  "note_ja": "train:00494〜00503の10問を個別に読んで解答・Leanモデル・25説明行を作成した。腕立て問題は開始回数が原文にないため、床腕立て前の3段階を各15訓練日で終える追加条件下の9週間として形式化した。固定Lean 4.33.1、許容公理監査、行別実依存照合、抽出器検査、回帰検査51件、成果物SHA-256照合まで成功した。自然言語と形式モデルの対応は作成者が自己照合しており、Leanが保証するのは明示した仮定下のモデルである。高校6分野追加枠は0/6で未達。"
 }

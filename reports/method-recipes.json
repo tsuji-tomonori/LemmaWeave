@@ -17132,6 +17132,356 @@
     "graph_archive": "reports/dependencies/methods/gsm8k_daily4_tickets.json.gz"
   },
   {
+    "recipe": "gsm8k_daily50_basketball",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.basketball_solution",
+    "audit": "passed",
+    "steps": 3,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "basketball_total",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.basketball_total",
+        "type_pretty": "∀ (a b c d e f g h i j k l : ℕ), BasketballPay a b c d e f g h i j k l → f = 150",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "basketball_average",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.basketball_average",
+        "type_pretty": "∀ (a b c d e f g h i j k l : ℕ), BasketballPay a b c d e f g h i j k l → h = 30",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "basketball_pay",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.basketball_pay",
+        "type_pretty": "∀ (a b c d e f g h i j k l : ℕ), BasketballPay a b c d e f g h i j k l → l = 10000",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "3a7b808e19e8627b6b8605c442dfc8eab1b48c09a8fc6ec591877ed42b48dce8"
+    },
+    "recipe_sha256": "f1896f8a924427f4f07b79f3a2bfc716438882d3a0ef614638093838305c04ce",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_basketball.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_catches",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.catches_solution",
+    "audit": "passed",
+    "steps": 3,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "catches_derek",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.catches_derek",
+        "type_pretty": "∀ (a b c d : ℕ), CatchCounts a b c d → b = 42",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "catches_third",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.catches_third",
+        "type_pretty": "∀ (a b c d : ℕ), CatchCounts a b c d → c = 14",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "catches_tammy",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.catches_tammy",
+        "type_pretty": "∀ (a b c d : ℕ), CatchCounts a b c d → d = 30",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "d8b4b5c3d5f6f88646379608e50850f93c2e3cf36c395cc958c507bade88dbbb"
+    },
+    "recipe_sha256": "422fc2bff2609a1443ff7594779020d6fd5aaf17c40f2b4e459fc899682ebc95",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_catches.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_earnings",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.earnings_solution",
+    "audit": "passed",
+    "steps": 2,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "earnings_santo",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.earnings_santo",
+        "type_pretty": "∀ (a b c : ℕ), CombinedEarnings a b c → b = 978",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "earnings_total",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.earnings_total",
+        "type_pretty": "∀ (a b c : ℕ), CombinedEarnings a b c → c = 2934",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "67f294fa6c56ab7b07cbbddbab863ca06ff3d13b9df608a4acc0d20be5432353"
+    },
+    "recipe_sha256": "92f33fb46c849102a3fb2a5ae2bbb59e2e8be9ec2151f2e8ed4be6485bcfb82d",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_earnings.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_garage",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.garage_solution",
+    "audit": "passed",
+    "steps": 2,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "garage_pair",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.garage_pair",
+        "type_pretty": "∀ (a b c d : ℕ), GarageSale a b c d → c = 12",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "garage_single",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.garage_single",
+        "type_pretty": "∀ (a b c d : ℕ), GarageSale a b c d → d = 6",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "fbe820cb0fa0a70957a7c7c6edc06a063f28a1588f22e586ec43944ed24e2f88"
+    },
+    "recipe_sha256": "1df6cc716069274d3dedc2d1d80cf1e65bbd73fe15a40080a25cedf6e0dab0b0",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_garage.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_house",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.house_solution",
+    "audit": "passed",
+    "steps": 2,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "house_original_total",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.house_original_total",
+        "type_pretty": "∀ (a b c d e : ℕ), HouseExpansion a b c d e → c = 12500",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "house_expansion",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.house_expansion",
+        "type_pretty": "∀ (a b c d e : ℕ), HouseExpansion a b c d e → e = 3500",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "d7c44c932aae0a19ae55a179b6c9b4469160999e60cc9d8f6968bd95fbbe3d50"
+    },
+    "recipe_sha256": "2bb9505e948beaf89479264a23394103c3415581ae3705b5252de1e47c98e688",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_house.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_luggage",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.luggage_solution",
+    "audit": "passed",
+    "steps": 3,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "luggage_current",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.luggage_current",
+        "type_pretty": "∀ (a b c d e f g h : ℕ), LuggageCapacity a b c d e f g h → d = 30 ∧ e = 1500",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "luggage_remaining",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.luggage_remaining",
+        "type_pretty": "∀ (a b c d e f g h : ℕ), LuggageCapacity a b c d e f g h → g = 4500",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "luggage_additional",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.luggage_additional",
+        "type_pretty": "∀ (a b c d e f g h : ℕ), LuggageCapacity a b c d e f g h → h = 90",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "81d2a3b46d9fd0ffe23361fff939ed98a9e9071b0c4b13db4ec8ba2207eef1c9"
+    },
+    "recipe_sha256": "a36612cc61293966ce853e2cc62f79f2e165247102d9b83ac752a1c4e188286e",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_luggage.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_matches",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.matches_solution",
+    "audit": "passed",
+    "steps": 2,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "matches_used",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.matches_used",
+        "type_pretty": "∀ (a b c d : ℕ), MatchstickModels a b c d → c = 300",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "matches_original",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.matches_original",
+        "type_pretty": "∀ (a b c d : ℕ), MatchstickModels a b c d → d = 600",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "b1a3f8b3c20f78ad2afb9247f8511cb7438b159279ef3869875fd8379720d89d"
+    },
+    "recipe_sha256": "0838db0418f4ed16ea3eeb13c62c849bc0e8792723c0bab3637761dac1bf7f1d",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_matches.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_pushup",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.pushup_solution",
+    "audit": "passed",
+    "steps": 2,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "pushup_training_days",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.pushup_training_days",
+        "type_pretty": "∀ (a b c d e : ℕ), PushupProgress a b c d e → c = 45",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "pushup_weeks",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.pushup_weeks",
+        "type_pretty": "∀ (a b c d e : ℕ), PushupProgress a b c d e → e = 9",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "ae6e92699944c1373632b765726b29cbe28e777d3e9da0fc46776fe42b744929"
+    },
+    "recipe_sha256": "aa9c5ff5d9f8133cb032c372f6295d887a4519db3c9af9b3522453f509573c0c",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_pushup.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_reading",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.reading_solution",
+    "audit": "passed",
+    "steps": 3,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "reading_total",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.reading_total",
+        "type_pretty": "∀ (a b c d e f : ℕ), ReadingPlan a b c d e f → c = 280",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "reading_days",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.reading_days",
+        "type_pretty": "∀ (a b c d e f : ℕ), ReadingPlan a b c d e f → e = 14",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "reading_daily",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.reading_daily",
+        "type_pretty": "∀ (a b c d e f : ℕ), ReadingPlan a b c d e f → f = 20",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "46f0b8e117ec6f1ecef5621de6bf3caf2c440952ab1ad84e9d19a7363482a99e"
+    },
+    "recipe_sha256": "0a864df5de43a705e6750b4e1dbdf3dcec4e2116388206022ca3f08279b0a4c2",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_reading.json.gz"
+  },
+  {
+    "recipe": "gsm8k_daily50_snacks",
+    "root": "LemmaWeave.Tests.GSM8KDaily0918A.snacks_solution",
+    "audit": "passed",
+    "steps": 3,
+    "dependency_links": "verified",
+    "natural_language_step_adequacy": "self_review_only",
+    "individual_lines": [
+      {
+        "id": "snacks_goldfish",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.snacks_goldfish",
+        "type_pretty": "∀ (a b c d e f g : ℕ), SnackPacks a b c d e f g → c = 256",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "snacks_total",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.snacks_total",
+        "type_pretty": "∀ (a b c d e f g : ℕ), SnackPacks a b c d e f g → e = 352",
+        "justification_links": "verified_from_this_line"
+      },
+      {
+        "id": "snacks_per_bag",
+        "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0918A.snacks_per_bag",
+        "type_pretty": "∀ (a b c d e f g : ℕ), SnackPacks a b c d e f g → g = 22",
+        "justification_links": "verified_from_this_line"
+      }
+    ],
+    "solution_ready": true,
+    "limitation": "Dependency membership does not prove the meaning of every prose step or tactic selection.",
+    "proof_evidence": {
+      "run": "runs/20260917T180456-5d2f8b4c/run.json",
+      "git_commit": "dab65cd48a6525570524e34f1383be02ee2f6946",
+      "github_run_id": "35255882329",
+      "raw_graph_sha256": "c655062964c953ace67f0093f0ce6f98236fe6ef065fc046b60036c9fb36083b"
+    },
+    "recipe_sha256": "713df352efc222f2d5e57b6c3d5a7024dcbb0e6ac982bdac520ae8133c8fa3bd",
+    "graph_archive": "reports/dependencies/methods/gsm8k_daily50_snacks.json.gz"
+  },
+  {
     "recipe": "gsm8k_daily5_course",
     "root": "LemmaWeave.Tests.GSM8KDaily0907E.course_solution",
     "audit": "passed",

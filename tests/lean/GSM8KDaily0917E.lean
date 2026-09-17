@@ -100,6 +100,7 @@ theorem pineapple_solution :
 theorem boutique_sticker (a b c d e f g h i : Nat)
     (x : BoutiqueDiscount a b c d e f g h i) : d = 700 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi, hj⟩
+  norm_num [ha, hb, hc] at hd
   omega
 
 theorem boutique_payment (a b c d e f g h i : Nat)

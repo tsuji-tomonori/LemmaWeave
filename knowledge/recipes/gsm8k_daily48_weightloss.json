@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily48_weightloss","title_ja":"毎月1/8減量の二つの解釈","problem_id":"external-gsm8k-main-3101c7d50724:train:00483","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"156ポンドから36ポンド増え、3か月間毎月体重の1/8を失ったとき年初との差を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917D.weightloss_solution","graph":"work/gsm8k-daily48-weightloss-graph.json","lean_file":"tests/lean/GSM8KDaily0917D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["『毎月体重の1/8』は基準体重を固定するか、その月の体重に掛けるかで結果が異なる。参照解答の固定量解釈では36ポンド減、通常の逐月複利的解釈では219/8=27.375ポンド減。"],
+  "steps":[
+    {"id":"weightloss_fixed_outcome","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.weightloss_fixed_outcome","title_ja":"固定量として読む場合","requires_steps":[],"uses_nodes":[],"condition_ja":"増量後192ポンドの1/8=24ポンドを毎月同じ量だけ3回失う。","conclusion_ja":"最終体重は120ポンドで、年初156ポンドより36ポンド軽い。","baseline_ja":"参照解答の追加条件付き解釈。"},
+    {"id":"weightloss_compound_outcome","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.weightloss_compound_outcome","title_ja":"各月の体重に掛ける場合","requires_steps":[],"uses_nodes":[],"condition_ja":"各月の開始時点の体重の1/8を失い、7/8を3回掛ける。","conclusion_ja":"各月後は168、147、1029/8ポンドで、年初との差は219/8=27.375ポンド。","baseline_ja":"割合を逐次適用する通常解釈。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":484,"checked_model_hash":"36659505f7e047d68fd7fe15a6930aff0d84c83830512c7638ed07d8c6a5a95d","checks_ja":["増量後の体重192ポンドを照合した。","基準固定と逐月更新の二解釈を分離し、一意に36とは断定しなかった。"]}
+}

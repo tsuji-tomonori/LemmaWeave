@@ -114,6 +114,7 @@ theorem drive_second (a b c d e f g : Nat) (h : DrivingDistance a b c d e f g) :
   have hde := drive_second_data a b c d e f g h
   rcases hde with ⟨hd', he'⟩
   rcases h with ⟨ha, hb, hc, hd, he, hf, hg⟩
+  norm_num [hd', he'] at hf
   omega
 
 theorem drive_total (a b c d e f g : Nat) (h : DrivingDistance a b c d e f g) : g = 75 := by

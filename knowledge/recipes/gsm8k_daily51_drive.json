@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily51_drive","title_ja":"2区間の走行距離","problem_id":"external-gsm8k-main-3101c7d50724:train:00508","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"時速30マイルで0.5時間走り、その2倍の時間を2倍の速度で走った総距離を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918B.drive_solution","graph":"work/gsm8k-daily51-drive-graph.json","lean_file":"tests/lean/GSM8KDaily0918B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["時間を0.5時間単位の自然数で表し、2×距離＝速度×半時間単位数とする。"],
+  "steps":[
+    {"id":"drive_first","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.drive_first","title_ja":"第1区間","requires_steps":[],"uses_nodes":[],"condition_ja":"時速30マイルで0.5時間走る。","conclusion_ja":"第1区間は15マイル。","baseline_ja":"距離＝速度×時間。"},
+    {"id":"drive_second_data","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.drive_second_data","title_ja":"第2区間の条件","requires_steps":[],"uses_nodes":[],"condition_ja":"第1区間の2倍の時間を2倍の速度で走る。","conclusion_ja":"第2区間は時速60マイルで1時間。","baseline_ja":"倍率と単位換算。"},
+    {"id":"drive_second","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.drive_second","title_ja":"第2区間","requires_steps":["drive_second_data"],"uses_nodes":[],"condition_ja":"時速60マイルで1時間走る。","conclusion_ja":"第2区間は60マイル。","baseline_ja":"距離＝速度×時間。"},
+    {"id":"drive_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.drive_total","title_ja":"総距離","requires_steps":["drive_first","drive_second"],"uses_nodes":[],"condition_ja":"2区間の15マイルと60マイルを合計する。","conclusion_ja":"総距離は75マイル。","baseline_ja":"加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":509,"checked_model_hash":"c136b76a7a2a5b6921f1c883d0839feda2d6d32eee20d698215fb577b74bfa19","checks_ja":["twice as longは0.5時間の2倍、twice the speedは30 mphの2倍と対応させた。"]}
+}

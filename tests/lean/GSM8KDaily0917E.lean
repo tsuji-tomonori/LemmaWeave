@@ -97,21 +97,21 @@ theorem pineapple_solution :
     pineapple_literal_profit _ _ _ _ _ _ _ _ _ hl⟩,
     pineapple_bundle_profit _ _ _ _ _ _ _ _ _ _ hb, by norm_num⟩
 
-theorem boutique_sticker (a b c d e f g h i j : Nat)
-    (x : BoutiqueDiscount a b c d e f g h i j) : d = 700 := by
+theorem boutique_sticker (a b c d e f g h i : Nat)
+    (x : BoutiqueDiscount a b c d e f g h i) : d = 700 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hi, hj⟩
   omega
 
-theorem boutique_payment (a b c d e f g h i j : Nat)
-    (x : BoutiqueDiscount a b c d e f g h i j) : h = 105 ∧ i = 595 := by
-  have hd := boutique_sticker a b c d e f g h i j x
+theorem boutique_payment (a b c d e f g h i : Nat)
+    (x : BoutiqueDiscount a b c d e f g h i) : g = 105 ∧ h = 595 := by
+  have hd := boutique_sticker a b c d e f g h i x
   rcases x with ⟨ha, hb, hc, hx, he, hf, hg, hh, hi, hj⟩
   norm_num [hf, hg, hd] at hh
   omega
 
-theorem boutique_shortfall (a b c d e f g h i j : Nat)
-    (x : BoutiqueDiscount a b c d e f g h i j) : j = 95 := by
-  have hi := boutique_payment a b c d e f g h i j x
+theorem boutique_shortfall (a b c d e f g h i : Nat)
+    (x : BoutiqueDiscount a b c d e f g h i) : i = 95 := by
+  have hi := boutique_payment a b c d e f g h i x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg, hh, hx, hj⟩
   omega
 

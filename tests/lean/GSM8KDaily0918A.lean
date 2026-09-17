@@ -34,8 +34,7 @@ theorem snacks_total (a b c d e f g : Nat) (h : SnackPacks a b c d e f g) : e = 
 theorem snacks_per_bag (a b c d e f g : Nat) (h : SnackPacks a b c d e f g) : g = 22 := by
   have he := snacks_total a b c d e f g h
   rcases h with ⟨ha, hb, hc, hd, hx, hf, hg⟩
-  norm_num [hf, he] at hg
-  exact hg
+  omega
 
 theorem snacks_solution : SnackPacks 64 4 256 32 352 16 22 ∧
     256 = 256 ∧ 352 = 352 ∧ 22 = 22 := by
@@ -68,8 +67,7 @@ theorem basketball_average (a b c d e f g h i j k l : Nat)
     (x : BasketballPay a b c d e f g h i j k l) : h = 30 := by
   have hf := basketball_total a b c d e f g h i j k l x
   rcases x with ⟨ha, hb, hc, hd, he, hx, hg, hh, hi, hj, hk, hl⟩
-  norm_num [hg, hf] at hh
-  exact hh
+  omega
 
 theorem basketball_pay (a b c d e f g h i j k l : Nat)
     (x : BasketballPay a b c d e f g h i j k l) : l = 10000 := by
@@ -104,8 +102,7 @@ theorem luggage_additional (a b c d e f g h : Nat) (x : LuggageCapacity a b c d 
     h = 90 := by
   have hg := luggage_remaining a b c d e f g h x
   rcases x with ⟨ha, hb, hc, hd, he, hf, hx, hh⟩
-  norm_num [hc, hg] at hh
-  exact hh
+  omega
 
 theorem luggage_solution : LuggageCapacity 6 5 50 30 1500 6000 4500 90 ∧
     (30 = 30 ∧ 1500 = 1500) ∧ 4500 = 4500 ∧ 90 = 90 := by
@@ -115,8 +112,7 @@ theorem luggage_solution : LuggageCapacity 6 5 50 30 1500 6000 4500 90 ∧
 
 theorem earnings_santo (a b c : Nat) (h : CombinedEarnings a b c) : b = 978 := by
   rcases h with ⟨ha, hb, hc⟩
-  norm_num [ha] at hb
-  exact hb
+  omega
 
 theorem earnings_total (a b c : Nat) (h : CombinedEarnings a b c) : c = 2934 := by
   have hb := earnings_santo a b c h
@@ -154,8 +150,7 @@ theorem pushup_training_days (a b c d e : Nat) (h : PushupProgress a b c d e) : 
 theorem pushup_weeks (a b c d e : Nat) (h : PushupProgress a b c d e) : e = 9 := by
   have hc := pushup_training_days a b c d e h
   rcases h with ⟨ha, hb, hx, hd, he⟩
-  norm_num [hd, hc] at he
-  exact he
+  omega
 
 theorem pushup_solution : PushupProgress 3 15 45 5 9 ∧ 45 = 45 ∧ 9 = 9 := by
   have h : PushupProgress 3 15 45 5 9 := by norm_num [PushupProgress]
@@ -169,8 +164,7 @@ theorem garage_pair (a b c d : Nat) (h : GarageSale a b c d) : c = 12 := by
 theorem garage_single (a b c d : Nat) (h : GarageSale a b c d) : d = 6 := by
   have hc := garage_pair a b c d h
   rcases h with ⟨ha, hb, hx, hd⟩
-  norm_num [hx, hc] at hd
-  exact hd
+  omega
 
 theorem garage_solution : GarageSale 3 2 12 6 ∧ 12 = 12 ∧ 6 = 6 := by
   have h : GarageSale 3 2 12 6 := by norm_num [GarageSale]
@@ -190,8 +184,7 @@ theorem reading_daily (a b c d e f : Nat) (h : ReadingPlan a b c d e f) : f = 20
   have hc := reading_total a b c d e f h
   have he := reading_days a b c d e f h
   rcases h with ⟨ha, hb, hx, hd, hy, hf⟩
-  norm_num [he, hc] at hf
-  exact hf
+  omega
 
 theorem reading_solution : ReadingPlan 180 100 280 2 14 20 ∧
     280 = 280 ∧ 14 = 14 ∧ 20 = 20 := by

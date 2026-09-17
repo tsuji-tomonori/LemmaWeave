@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily47_leave","title_ja":"残りの有給時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00466","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"病気休暇と休暇を半分ずつ使った後の時間数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917C.leave_solution","graph":"work/gsm8k-daily47-leave-graph.json","lean_file":"tests/lean/GSM8KDaily0917C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各種10日の半分を使用する。"],
+  "steps":[
+    {"id":"leave_days","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917C.leave_days","title_ja":"残りの日数","requires_steps":[],"uses_nodes":[],"condition_ja":"病気休暇10日と休暇10日をそれぞれ半分使う。","conclusion_ja":"各5日、合計10日が残る。","baseline_ja":"半分と残余の計算。"},
+    {"id":"leave_hours","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917C.leave_hours","title_ja":"時間への換算","requires_steps":["leave_days"],"uses_nodes":[],"condition_ja":"残り10日で、1日は8時間。","conclusion_ja":"残りは10×8=80時間。","baseline_ja":"日数から時間への単位換算。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":467,"checked_model_hash":"140f57836b9ac5469020908f77a917f98b11ccb436de47b0650b91e8d9549612","checks_ja":["2種類を別々に半分とした。","残り日数を8時間換算した。"]}
+}

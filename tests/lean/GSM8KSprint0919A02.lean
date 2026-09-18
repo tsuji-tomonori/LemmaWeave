@@ -9,7 +9,7 @@ theorem pass_break_even : 5000 = 200 * 25 := by norm_num
 
 theorem pass_strict_lower_bound (a b r : Nat) (h : PassRides a b r) : 26 ≤ r := by
   rcases h with ⟨ha, hb, hcheap, hminimal⟩
-  norm_num [ha, hb] at hcheap
+  rw [ha, hb, pass_break_even] at hcheap
   omega
 
 theorem pass_minimum (a b r : Nat) (h : PassRides a b r) : r = 26 := by

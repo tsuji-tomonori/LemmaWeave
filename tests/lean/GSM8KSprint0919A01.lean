@@ -121,4 +121,15 @@ theorem vehicles_solution : VehiclePurchase 3 150 450 4 300 1200 7 25 175 1825 ‚
     vehicles_registration _ _ _ _ _ _ _ _ _ _ h,
     vehicles_total _ _ _ _ _ _ _ _ _ _ h‚ü©
 
+#print axioms library_solution
+#print axioms errand_solution
+#print axioms journal_solution
+#print axioms salad_solution
+#print axioms vehicles_solution
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A01.library_solution to "work/gsm8k-sprint01-library-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A01.errand_solution to "work/gsm8k-sprint01-errand-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A01.journal_solution to "work/gsm8k-sprint01-journal-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A01.salad_solution to "work/gsm8k-sprint01-salad-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A01.vehicles_solution to "work/gsm8k-sprint01-vehicles-graph.json"
+
 end LemmaWeave.Tests.GSM8KSprint0919A01

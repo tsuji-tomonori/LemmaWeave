@@ -22,7 +22,6 @@ theorem pass_solution : PassRides 200 5000 26 ∧ 26 = 26 := by
   have h : PassRides 200 5000 26 := by
     refine ⟨rfl, rfl, by norm_num, ?_⟩
     intro n hn
-    norm_num at hn
     omega
   exact ⟨h, pass_minimum _ _ _ h⟩
 
@@ -122,5 +121,16 @@ theorem jelly_solution : JellyBeans 100 40 80 32 2 64 36 ∧
   have h : JellyBeans 100 40 80 32 2 64 36 := by norm_num [JellyBeans]
   exact ⟨h, jelly_allowed_children _ _ _ _ _ _ _ h, jelly_taken _ _ _ _ _ _ _ h,
     jelly_remaining _ _ _ _ _ _ _ h⟩
+
+#print axioms pass_solution
+#print axioms picnic_solution
+#print axioms recovery_solution
+#print axioms golf_solution
+#print axioms jelly_solution
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A02.pass_solution to "work/gsm8k-sprint02-pass-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A02.picnic_solution to "work/gsm8k-sprint02-picnic-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A02.recovery_solution to "work/gsm8k-sprint02-recovery-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A02.golf_solution to "work/gsm8k-sprint02-golf-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A02.jelly_solution to "work/gsm8k-sprint02-jelly-graph.json"
 
 end LemmaWeave.Tests.GSM8KSprint0919A02

@@ -1,7 +1,7 @@
 {
   "date": "2026-09-18",
   "started_at": "2026-09-18T09:57:51+09:00",
-  "finished_at": null,
+  "finished_at": "2026-09-18T10:30:02+09:00",
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00514",
     "external-gsm8k-main-3101c7d50724:train:00515",
@@ -16,23 +16,42 @@
   ],
   "completed_problem_ids": [],
   "deferred": [],
-  "status": "in_progress",
+  "status": "evidence_import_pending",
   "ci": {
     "previous_success_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35286431520",
-    "proof_run_url": null,
+    "proof_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35295382209",
     "final_run_url": null,
-    "artifact": null,
-    "attempts": []
+    "artifact": {
+      "id": 10527917412,
+      "name": "lean-evidence-f87ee8413b6f25cad2d46e81e90f4bf167b2fa40",
+      "size_in_bytes": 189798393,
+      "sha256": "c525ea8758ebcc6c3da5eebe25a751d8ace9a0ad669592c90c3b750c21caa80c",
+      "imported": false
+    },
+    "attempts": [
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35294212869",
+        "commit": "6aa6911a68aa8856b5692c98b652a9b1fd8c6ae3",
+        "conclusion": "failure",
+        "reason_ja": "宿題問題の二解釈比較が、その前提となる二つの合計時間定理を実依存として参照していなかった。"
+      },
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35295382209",
+        "commit": "f87ee8413b6f25cad2d46e81e90f4bf167b2fa40",
+        "conclusion": "success",
+        "reason_ja": "固定Lean、公理監査、行別実依存照合、回帰検査に成功。成果物のローカル素材化だけが実行環境の安全制約で拒否された。"
+      }
+    ]
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
-  "commit": null,
+  "commit": "f87ee8413b6f25cad2d46e81e90f4bf167b2fa40",
   "progress_before": {"completed": 518, "remaining": 8274, "today_completed": 20},
-  "progress_after": null,
+  "progress_after": {"completed": 518, "remaining": 8274, "today_completed": 20},
   "forecast": {
     "initial_target_date": "2027-03-01",
     "measured_completed_per_day_7d": 40.0,
     "measured_forecast_date": "2027-04-12"
   },
   "supplemental_high_school_fields": {"completed": 0, "target": 6, "status": "unmet"},
-  "note_ja": "train:00514〜00523の10問を原文から個別に読んで解答・Leanモデル・説明行を作成中。凍結路面問題は基礎スリップ率不足を反例付きで示し、宿題問題はtimes moreの二解釈を分離した。成功CIと証拠保存までは完了数へ算入しない。自然言語と形式モデルの対応は作成者による自己照合である。高校6分野追加枠は0/6で未達。"
+  "note_ja": "train:00514〜00523の10問を原文から個別に読み、日本語解答、Leanモデル、36説明行を作成した。凍結路面問題は基礎スリップ率不足を反例付きで示し、宿題問題はtimes moreの二解釈を分離した。修正後CIは固定Lean、公理監査、行別実依存照合、51件の回帰検査まで成功した。CI成果物のSHA-256は取得済みだが、実行環境の安全制約によりローカル素材化が拒否され、証拠をリポジトリへ取り込めなかった。このため10問は正式完了数へ算入せず、次回の証拠回収対象とする。自然言語と形式モデルの対応は作成者による自己照合である。高校6分野追加枠は0/6で未達。"
 }

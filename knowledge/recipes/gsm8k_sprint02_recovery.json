@@ -3,5 +3,5 @@
   "steps":[
     {"id":"recovery_animal_count","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.recovery_animal_count","title_ja":"回収対象数","requires_steps":[],"uses_nodes":[],"condition_ja":"ライオン3頭とサイ2頭をすべて回収する。","conclusion_ja":"合計5頭。","baseline_ja":"和の関係。"},
     {"id":"recovery_total_time","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.recovery_total_time","title_ja":"加算される回収時間","requires_steps":["recovery_animal_count"],"uses_nodes":[],"condition_ja":"各頭2時間で、各回収の時間を逐次加算する。","conclusion_ja":"追加条件の下で5×2=10時間。","baseline_ja":"1頭当たり時間×頭数。"}
-  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":532,"checked_model_hash":"08e3224466d5b21c1410b01a7f80c884f4c9df252727a2521612074f3f32ebf2","checks_ja":["動物数を漏れなく数え、並行性不足を黙って補わず、Leanモデルが加算条件付きであることを明示した。"]}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":532,"checked_model_hash":"16f6829737359fcff6f330f48e25ff19a2c114379a205620f7fd0000c7d7ae95","checks_ja":["動物数を漏れなく数え、並行性不足を黙って補わず、Leanモデルが加算条件付きであることを明示した。"]}
 }

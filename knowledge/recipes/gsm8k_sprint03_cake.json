@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint03_cake","title_ja":"ケーキ投票の総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00536","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"魔女ケーキ7票を基準に、ユニコーンとドラゴンの票を求めて合計する。","root":"LemmaWeave.Tests.GSM8KSprint0919A03.cake_solution","graph":"work/gsm8k-sprint03-cake-graph.json","lean_file":"tests/lean/GSM8KSprint0919A03.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["3倍と25票多いという別々の関係を同じ基準7票へ適用した。"],
+  "steps":[
+    {"id":"cake_unicorn","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A03.cake_unicorn","title_ja":"ユニコーン票","requires_steps":[],"uses_nodes":[],"condition_ja":"魔女7票の3倍。","conclusion_ja":"21票。","baseline_ja":"倍率の関係。"},
+    {"id":"cake_dragon","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A03.cake_dragon","title_ja":"ドラゴン票","requires_steps":[],"uses_nodes":[],"condition_ja":"魔女7票より25票多い。","conclusion_ja":"32票。","baseline_ja":"差の関係。"},
+    {"id":"cake_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A03.cake_total","title_ja":"総投票数","requires_steps":["cake_unicorn","cake_dragon"],"uses_nodes":[],"condition_ja":"魔女7、ユニコーン21、ドラゴン32を足す。","conclusion_ja":"合計60票。","baseline_ja":"和の関係。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":537,"checked_model_hash":"f17b7e1bcf601d1468679e3f5a4e23b093925978f614b88bfd31c85035bc4a4e","checks_ja":["3種の票を重複なく含めた。"]}
+}

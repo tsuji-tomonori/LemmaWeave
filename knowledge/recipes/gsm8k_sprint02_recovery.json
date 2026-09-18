@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_sprint02_recovery","title_ja":"逃げた動物の回収時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00531","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"ライオン3頭とサイ2頭を1頭2時間で回収するときの時間を求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A02.recovery_solution","graph":"work/gsm8k-sprint02-recovery-graph.json","lean_file":"tests/lean/GSM8KSprint0919A02.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["原題は回収作業を並行できるか明記していない。回収時間が頭数に比例して加算される（逐次作業または延べ作業時間）という追加条件では10時間。5頭を完全に並行回収できるなら経過時間は2時間となり、一意ではない。"],
+  "steps":[
+    {"id":"recovery_animal_count","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.recovery_animal_count","title_ja":"回収対象数","requires_steps":[],"uses_nodes":[],"condition_ja":"ライオン3頭とサイ2頭をすべて回収する。","conclusion_ja":"合計5頭。","baseline_ja":"和の関係。"},
+    {"id":"recovery_total_time","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.recovery_total_time","title_ja":"加算される回収時間","requires_steps":["recovery_animal_count"],"uses_nodes":[],"condition_ja":"各頭2時間で、各回収の時間を逐次加算する。","conclusion_ja":"追加条件の下で5×2=10時間。","baseline_ja":"1頭当たり時間×頭数。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":532,"checked_model_hash":"08e3224466d5b21c1410b01a7f80c884f4c9df252727a2521612074f3f32ebf2","checks_ja":["動物数を漏れなく数え、並行性不足を黙って補わず、Leanモデルが加算条件付きであることを明示した。"]}
+}

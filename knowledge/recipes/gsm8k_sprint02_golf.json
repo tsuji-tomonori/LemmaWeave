@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint02_golf","title_ja":"購入したゴルフボール総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00532","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"ダンとガスのダース購入分を個数へ直し、クリスの48個と合計する。","root":"LemmaWeave.Tests.GSM8KSprint0919A02.golf_solution","graph":"work/gsm8k-sprint02-golf-graph.json","lean_file":"tests/lean/GSM8KSprint0919A02.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["3ダース30ドルという価格条件もモデルへ保持したが、個数の結論には依存しない。"],
+  "steps":[
+    {"id":"golf_dan_count","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.golf_dan_count","title_ja":"ダンの個数","requires_steps":[],"uses_nodes":[],"condition_ja":"5ダース、1ダース12個。","conclusion_ja":"60個。","baseline_ja":"ダース数×12。"},
+    {"id":"golf_gus_count","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.golf_gus_count","title_ja":"ガスの個数","requires_steps":[],"uses_nodes":[],"condition_ja":"2ダース、1ダース12個。","conclusion_ja":"24個。","baseline_ja":"ダース数×12。"},
+    {"id":"golf_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.golf_total","title_ja":"3人の合計","requires_steps":["golf_dan_count","golf_gus_count"],"uses_nodes":[],"condition_ja":"60個、24個、48個を足す。","conclusion_ja":"合計132個。","baseline_ja":"和の関係。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":533,"checked_model_hash":"08e3224466d5b21c1410b01a7f80c884f4c9df252727a2521612074f3f32ebf2","checks_ja":["5ダース、2ダース、48個をすべて含め、価格情報が個数計算に不要であることを確認した。"]}
+}

@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint02_jelly","title_ja":"配布後のジェリービーンズ","problem_id":"external-gsm8k-main-3101c7d50724:train:00533","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"40人の80%が2個ずつ取った後、100個から残る個数を求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A02.jelly_solution","graph":"work/gsm8k-sprint02-jelly-graph.json","lean_file":"tests/lean/GSM8KSprint0919A02.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["80%を正確な積の等式40×80=人数×100で表し、整数除算の切捨てを避けた。"],
+  "steps":[
+    {"id":"jelly_allowed_children","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.jelly_allowed_children","title_ja":"取る子どもの人数","requires_steps":[],"uses_nodes":[],"condition_ja":"40人の80%が取る。","conclusion_ja":"32人。","baseline_ja":"全体×百分率。"},
+    {"id":"jelly_taken","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.jelly_taken","title_ja":"取られた個数","requires_steps":["jelly_allowed_children"],"uses_nodes":[],"condition_ja":"32人が2個ずつ取る。","conclusion_ja":"64個取られる。","baseline_ja":"人数×1人分。"},
+    {"id":"jelly_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.jelly_remaining","title_ja":"残数","requires_steps":["jelly_taken"],"uses_nodes":[],"condition_ja":"初めの100個から64個を除く。","conclusion_ja":"36個残る。","baseline_ja":"残数+取った数=初期数。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":534,"checked_model_hash":"08e3224466d5b21c1410b01a7f80c884f4c9df252727a2521612074f3f32ebf2","checks_ja":["初期数、参加人数、割合、1人当たり個数、残数の全条件を照合した。"]}
+}

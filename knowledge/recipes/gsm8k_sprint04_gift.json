@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_sprint04_gift","title_ja":"姉妹へ同額の贈り物","problem_id":"external-gsm8k-main-3101c7d50724:train:00541","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"妹への人形代と同額になる20ドルのレゴセット個数を求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A04.gift_solution","graph":"work/gsm8k-sprint04-gift-graph.json","lean_file":"tests/lean/GSM8KSprint0919A04.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["姉妹2人に同額を使う。"],
+  "steps":[
+    {"id":"gift_younger_spent","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A04.gift_younger_spent","title_ja":"妹への支出","requires_steps":[],"uses_nodes":[],"condition_ja":"15ドルの人形を4個。","conclusion_ja":"4×15=60ドル。","baseline_ja":"単価×個数。"},
+    {"id":"gift_lego_sets","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A04.gift_lego_sets","title_ja":"レゴの個数","requires_steps":["gift_younger_spent"],"uses_nodes":[],"condition_ja":"姉にも60ドル、1セット20ドル。","conclusion_ja":"20×3=60より3セット。","baseline_ja":"総額÷単価。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":542,"checked_model_hash":"175ee387c5a2efa32c1f53a8d9f0f04f93252d228bf289bf0676f361c7cac413","checks_ja":["同額条件を積の等式として確認した。"]}
+}

@@ -2,54 +2,88 @@
   "schema_version": "1.0",
   "id": "LW-FIRST-PASS-20260906",
   "repository": "tsuji-tomonori/LemmaWeave",
-  "working_branch": "codex/daily-solve-plan-20260906",
+  "working_branch": "codex/sprint-20260919",
+  "working_branch_policy": "use_current_open_work_pr_else_create_from_latest_main",
   "collection_id": "external-gsm8k-main-3101c7d50724",
   "scope": "pinned_collected_gsm8k_all_8792",
   "timezone": "Asia/Tokyo",
   "start_date": "2026-09-07",
   "baseline_ready": 3,
-  "target_per_run": 10,
-  "runs_per_day": 5,
-  "local_hours": [
-    2,
-    6,
-    10,
-    14,
-    18
-  ],
+  "target_per_run": 15,
+  "runs_per_day": 20,
+  "local_hours": [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+  "local_hours_role": "gsm8k_solve_only",
   "timing_mode": "flexible_schedule",
-  "target_per_day": 50,
+  "target_per_day": 300,
   "initial_remaining": 8789,
   "initial_target_date": "2027-03-01",
   "calibration_date": "2026-09-14",
   "forecast_basis": "planning_target_not_measured_capacity",
-  "priority_source_lines": [
-    2390
-  ],
+  "priority_source_lines": [2390],
   "completion_criterion": "individual_lines_v1 + author checked + current successful Lean evidence + axiom and line-dependency audit",
-  "scheduled_pass_note_ja": "全件を単に閲覧・試行した日と、全件の解答検証が完了した日を分ける。失敗・保留を完了に数えない。",
+  "scheduled_pass_note_ja": "全件を単に閲覧・試行した日と、全件の解答検証が完了した日を分ける。失敗・保留を完了に数えない。main反映数も別に集計する。",
   "scope_note_ja": "これは取得済み集合の一周計画。日本入試・高校数学全分野や将来取得する全問題の完了日とは呼ばない。",
+  "sprint": {
+    "id": "LW-SPRINT-20260919",
+    "policy_document": "docs/SPRINT_20260919.md",
+    "decision_date": "2026-09-18",
+    "start_date": "2026-09-19",
+    "target_date": "2026-10-18",
+    "calendar_days": 30,
+    "baseline_as_of": "2026-09-18",
+    "baseline_commit": "0d6ca3011970b5ceca955b168999ecd1cf401880",
+    "baseline_ready": 518,
+    "baseline_remaining": 8274,
+    "minimum_per_day": 276,
+    "production_days": 28,
+    "final_audit_days": 2,
+    "minimum_per_production_day": 296,
+    "planned_production_finish": "2026-10-16",
+    "capacity_verified": false,
+    "calibration_start": "2026-09-19",
+    "calibration_end": "2026-09-21",
+    "previous_measured_completed_per_day_7d": 40.0,
+    "continue_after_deadline_if_incomplete": true,
+    "note_ja": "9月18日は移行日。基準後の追加完了は最新証拠で再計算する。300問/日は実測能力でも完了保証でもない。目標日と実測見込みを分け、期限未達でも対象を削除しない。"
+  },
+  "support_slots": [
+    {"local_hour": 9, "role": "high_school", "target_problems": 1},
+    {"local_hour": 21, "role": "retry_oldest_and_overdue"},
+    {"local_hour": 22, "role": "evidence_import_integration_and_infrastructure"},
+    {"local_hour": 23, "role": "full_id_reconciliation_and_daily_report"}
+  ],
   "expansion_track": {
     "first_review_date": "2026-09-14",
     "weekly_problem_target": 6,
-    "topics": [
-      "集合・論理・整数",
-      "関数・方程式・不等式",
-      "図形・ベクトル・三角比",
-      "場合の数・確率・統計",
-      "数列",
-      "微分・積分"
-    ],
-    "note_ja": "毎週各分野の出典付き問題を最低1問選び、個別解答へ進める。新規取得・他コレクションの件数は固定8792問に混ぜない。実行余力を使う追加目標であり、未達分も日報へ残す。"
+    "daily_problem_target": 1,
+    "dedicated_local_hour": 9,
+    "topics": ["集合・論理・整数", "関数・方程式・不等式", "図形・ベクトル・三角比", "場合の数・確率・統計", "数列", "微分・積分"],
+    "note_ja": "高校数学・日本入試の専用枠で6分野を循環し、毎週各1問以上を目標にする。初回は既存台帳の対象IDと未処理件数・未確認範囲を確認する。固定8792問へ混ぜず、選題・解答・検証の実績と未達を分けて残す。"
   },
+  "merge_policy": {
+    "authorized_on": "2026-09-18",
+    "scope": "verified_LemmaWeave_work_changes_only",
+    "expected_head_sha_required": true,
+    "require_current_ci_success": true,
+    "bypass_protection": false,
+    "note_ja": "現HEADの差分・必須CI・未解決レビュー・競合を確認し、マージ後mainを読み戻す。証拠取込待ちは完了に数えない。"
+  },
+  "plan_history": [
+    {"effective_from": "2026-09-07", "effective_through": "2026-09-18", "target_per_run": 10, "runs_per_day": 5, "local_hours": [2, 6, 10, 14, 18], "target_per_day": 50, "initial_target_date": "2027-03-01"}
+  ],
   "automation": {
-    "status": "created",
+    "id": "6a9d66fcdaf48191ad119c25f4ee3049",
+    "status": "updated",
     "is_enabled": true,
-    "title": "LemmaWeaveの問題を解き進める",
+    "title": "LemmaWeave 30日スプリント",
     "default_timezone": "Asia/Tokyo",
-    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260907T020000\nRRULE:FREQ=DAILY;BYHOUR=2,6,10,14,18;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260919T000000\nRRULE:FREQ=HOURLY;INTERVAL=1\nEND:VEVENT",
     "timing_mode": "flexible_schedule",
+    "runs_per_day": 24,
+    "solve_runs_per_day": 20,
+    "support_runs_per_day": 4,
     "registered_at": "2026-09-06T13:13:33.300624+00:00",
-    "note_ja": "登録成功を確認。各回の実行成功とは別。実際の実行結果は日次ログへ記録する。"
+    "updated_at": "2026-09-18T02:58:42.321512+00:00",
+    "note_ja": "タスク更新成功を確認。予約は全回の実行成功・完了数を保証しない。各実行の予定枠と実時刻・実績・未実行を保存する。"
   }
 }

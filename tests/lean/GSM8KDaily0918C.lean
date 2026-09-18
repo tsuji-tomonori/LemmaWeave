@@ -108,8 +108,12 @@ theorem homework_total_literal (a b c d : Nat) (h : HomeworkLiteralMore a b c d)
   norm_num [ha, hb, hc] at hd
   exact hd
 
-theorem homework_interpretations_differ : 180 ≠ 320 := by
-  norm_num
+theorem homework_interpretations_differ (m l : Nat)
+    (hm : HomeworkMultiplicative 20 40 120 m)
+    (hl : HomeworkLiteralMore 20 60 240 l) : m ≠ l := by
+  have hm_total := homework_total_mult 20 40 120 m hm
+  have hl_total := homework_total_literal 20 60 240 l hl
+  omega
 
 theorem homework_solution : HomeworkMultiplicative 20 40 120 180 ∧
     40 = 40 ∧ 120 = 120 ∧ 180 = 180 ∧ HomeworkLiteralMore 20 60 240 320 ∧
@@ -119,7 +123,7 @@ theorem homework_solution : HomeworkMultiplicative 20 40 120 180 ∧
   exact ⟨hm, homework_history_mult _ _ _ _ hm, homework_geography_mult _ _ _ _ hm,
     homework_total_mult _ _ _ _ hm, hl, homework_history_literal _ _ _ _ hl,
     homework_geography_literal _ _ _ _ hl, homework_total_literal _ _ _ _ hl,
-    homework_interpretations_differ⟩
+    homework_interpretations_differ 180 320 hm hl⟩
 
 theorem bike_evening (a b c d : Nat) (h : BikeRide a b c d) : c = 10 := by
   rcases h with ⟨ha, hb, hc, hd⟩

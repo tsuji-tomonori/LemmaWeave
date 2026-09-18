@@ -5,15 +5,15 @@ import LemmaWeave.Audit.Extract
 namespace LemmaWeave.Tests.GSM8KSprint0919A01
 open LemmaWeave.Problems.GSM8K.Sprint0919A01
 
-theorem library_after_monday (a b c d e : Nat) (h : LibraryBooks a b c d e) : c = 212 := by
+theorem library_after_monday (a b c d e : Nat) (h : LibraryBooks a b c d e) : d = 212 := by
   rcases h with ⟨ha, hb, hc, hd, he⟩
   norm_num [ha, hb] at hc
-  omega
+  exact hc
 
 theorem library_current (a b c d e : Nat) (h : LibraryBooks a b c d e) : e = 234 := by
-  have hc := library_after_monday a b c d e h
-  rcases h with ⟨ha, hb, hx, hd, he⟩
-  norm_num [hc, hd] at he
+  have hafter := library_after_monday a b c d e h
+  rcases h with ⟨ha, hb, hx, hreturned, he⟩
+  norm_num [hafter, hreturned] at he
   exact he
 
 theorem library_solution : LibraryBooks 336 124 212 22 234 ∧ 212 = 212 ∧ 234 = 234 := by

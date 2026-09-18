@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily52_owl","title_ja":"鳴き声の回数からフクロウ数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00522","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"20回より5回少ない毎分の鳴き声を、1羽毎分5回として羽数へ換算する。","root":"LemmaWeave.Tests.GSM8KDaily0918C.owl_solution","graph":"work/gsm8k-daily52-owl-graph.json","lean_file":"tests/lean/GSM8KDaily0918C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各個体が同じ毎分5回で鳴く条件を用いる。"],
+  "steps":[
+    {"id":"owl_heard","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918C.owl_heard","title_ja":"聞こえる鳴き声","requires_steps":[],"uses_nodes":[],"condition_ja":"20回より5回少ない。","conclusion_ja":"毎分15回。","baseline_ja":"差の関係。"},
+    {"id":"owl_count","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918C.owl_count","title_ja":"羽数","requires_steps":["owl_heard"],"uses_nodes":[],"condition_ja":"1羽が毎分5回鳴く。","conclusion_ja":"3羽。","baseline_ja":"個体数＝総回数÷1個体の回数。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":523,"checked_model_hash":"0ca71faf5302828ffe412b5f11b983fdee15ede247e47c629dee1a66a907fe0e","checks_ja":["毎分という同じ時間単位で割ることを照合した。"]}
+}

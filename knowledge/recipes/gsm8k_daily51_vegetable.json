@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily51_vegetable","title_ja":"販売した野菜の質量","problem_id":"external-gsm8k-main-3101c7d50724:train:00511","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"にんじん15 kg、ズッキーニ13 kg、ブロッコリー8 kgの合計の半分を売った質量を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918B.vegetable_solution","graph":"work/gsm8k-daily51-vegetable-graph.json","lean_file":"tests/lean/GSM8KDaily0918B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["3種類の全量を合計し、その半分を販売量とする。"],
+  "steps":[
+    {"id":"vegetable_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.vegetable_total","title_ja":"野菜の総質量","requires_steps":[],"uses_nodes":[],"condition_ja":"15 kg、13 kg、8 kgを合計する。","conclusion_ja":"総質量は36 kg。","baseline_ja":"加法。"},
+    {"id":"vegetable_sold","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.vegetable_sold","title_ja":"販売量","requires_steps":["vegetable_total"],"uses_nodes":[],"condition_ja":"総質量36 kgの半分を売る。","conclusion_ja":"18 kgを売った。","baseline_ja":"2等分。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":512,"checked_model_hash":"f8eb7be4d1b942b76912236d18a8b53348adc325ae6e063d55f6a62f786e1f1a","checks_ja":["half of themを3種類を合わせた質量の半分と対応させた。"]}
+}

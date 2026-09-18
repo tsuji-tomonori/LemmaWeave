@@ -1,0 +1,51 @@
+{
+  "id": "gsm8k_daily39_ratio",
+  "title_ja": "男女比と分配",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00384",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "子ども180人の男女比5対7から男子数を求め、3900ドルを等分する。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914E.ratio_solution",
+  "graph": "work/gsm8k-daily39-ratio-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914E.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "比の12部分中5部分が男子。"
+  ],
+  "steps": [
+    {
+      "id": "ratio_boys",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.ratio_boys",
+      "title_ja": "男子数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "総数180、比5対7。",
+      "conclusion_ja": "男子75人。",
+      "baseline_ja": "全12部分のうち5部分を取る。"
+    },
+    {
+      "id": "ratio_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.ratio_each",
+      "title_ja": "1人分",
+      "requires_steps": [
+        "ratio_boys"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "75人で3900ドルを等分。",
+      "conclusion_ja": "1人52ドル。",
+      "baseline_ja": "総額=人数×1人分。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 385,
+    "checked_model_hash": "1d7e9c846015dbd622f541ddd3274ab243abb629ea52d275f4d638dff0721b06",
+    "checks_ja": [
+      "原文の数量関係、単位、問いと結論を照合した。"
+    ]
+  }
+}

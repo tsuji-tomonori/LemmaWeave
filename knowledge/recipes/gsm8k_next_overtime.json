@@ -1,0 +1,111 @@
+{
+  "id": "gsm8k_next_overtime",
+  "title_ja": "通常勤務と残業を分けて賃金を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00009",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "時給18ドル。1日の8時間を超えた分は時給にその半分を加えた額。1日10時間を5日間働くと賃金はいくらか。",
+  "root": "LemmaWeave.Tests.GSM8KNextSteps.overtime_solution",
+  "graph": "work/gsm8k-next-overtime-graph.json",
+  "lean_file": "tests/lean/GSM8KNextSteps.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "収集済みGSM8Kの1問をLLMが個別に解答。新規収集には数えない。",
+  "model_notes_ja": [
+    "原題の割増規則を数学モデルにするもので、労働法・実在の賃金制度の助言ではない。",
+    "8時間を超えた部分だけが割増。毎日の勤務が同じ10時間なので日額を5倍する。全10時間に割増時給を掛けない。"
+  ],
+  "steps": [
+    {
+      "id": "overtime_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.overtime_hours",
+      "title_ja": "割増対象の時間を分ける",
+      "requires_steps": [],
+      "uses_nodes": [
+        "remaining_balance"
+      ],
+      "condition_ja": "通常8時間と残業時間の和が1日10時間。",
+      "conclusion_ja": "残業は10−8=2時間。",
+      "baseline_ja": "全体から部分を引く保存関係。"
+    },
+    {
+      "id": "overtime_rate",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.overtime_rate",
+      "title_ja": "割増時給を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "通常時給18ドルにその半分を足す。",
+      "conclusion_ja": "割増時給=18+(1/2)×18=27ドル/時。",
+      "baseline_ja": "割合と加法。"
+    },
+    {
+      "id": "overtime_regular",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.overtime_regular",
+      "title_ja": "通常分の日額を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "通常時給18ドル、通常8時間。",
+      "conclusion_ja": "通常分=18×8=144ドル/日。",
+      "baseline_ja": "単価×数量。"
+    },
+    {
+      "id": "overtime_premium",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.overtime_premium",
+      "title_ja": "残業分の日額を求める",
+      "requires_steps": [
+        "overtime_hours",
+        "overtime_rate"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残業2時間、割増時給27ドル。",
+      "conclusion_ja": "残業分=27×2=54ドル/日。",
+      "baseline_ja": "単価×数量。"
+    },
+    {
+      "id": "overtime_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.overtime_daily",
+      "title_ja": "1日分を合計する",
+      "requires_steps": [
+        "overtime_regular",
+        "overtime_premium"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "通常分と残業分は勤務時間を重複なく分割する。",
+      "conclusion_ja": "日額=144+54=198ドル。",
+      "baseline_ja": "重複のない部分の合計。"
+    },
+    {
+      "id": "overtime_weekly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.overtime_weekly",
+      "title_ja": "5日分へ換算する",
+      "requires_steps": [
+        "overtime_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5日とも同じ条件・勤務時間。",
+      "conclusion_ja": "5日分=198×5=990ドル。",
+      "baseline_ja": "同じ日額の反復。"
+    },
+    {
+      "id": "overtime_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.overtime_exists",
+      "title_ja": "すべての数量が条件を満たすことを確認する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残業2時間、時給27、通常144、残業54、日額198、5日990。",
+      "conclusion_ja": "すべて非負で、原題の時間・単価・合計の関係を同時に満たす。",
+      "baseline_ja": "四則演算と単位の確認。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 10,
+    "checked_model_hash": "c21e8f75f97f058569151f1d937c4ba3d40064ed80dda63178e3ed937fa515a2",
+    "checks_ja": [
+      "原題の割増規則を数学モデルにするもので、労働法・実在の賃金制度の助言ではない。",
+      "8時間を超えた部分だけが割増。毎日の勤務が同じ10時間なので日額を5倍する。全10時間に割増時給を掛けない。"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_next_flowers",
+  "title_ja": "基準となる数量を区別して花の本数を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00005",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "黄色10本、紫は黄色より80%多い。緑は黄色と紫の合計の25%。全部で何本か。",
+  "root": "LemmaWeave.Tests.GSM8KNextSteps.flowers_solution",
+  "graph": "work/gsm8k-next-flowers-graph.json",
+  "lean_file": "tests/lean/GSM8KNextSteps.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "収集済みGSM8Kの1問をLLMが個別に解答。新規収集には数えない。",
+  "model_notes_ja": [
+    "80%多いは元の180%。緑の25%の基準は黄色だけでなく黄色と紫の合計。",
+    "数量は有理数で関係を表すが、全解が紫18・緑7・合計35という非負整数になる。"
+  ],
+  "steps": [
+    {
+      "id": "flowers_purple",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.flowers_purple",
+      "title_ja": "紫の本数を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "黄色10本が基準で、80%増える。",
+      "conclusion_ja": "紫=10+(80/100)×10=18本。",
+      "baseline_ja": "割合、増加分と元の数量の加法。"
+    },
+    {
+      "id": "flowers_pair",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.flowers_pair",
+      "title_ja": "緑の割合の基準量を求める",
+      "requires_steps": [
+        "flowers_purple"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "緑の割合は黄色と紫の合計に対して指定されている。",
+      "conclusion_ja": "黄色+紫=10+18=28本。",
+      "baseline_ja": "互いに異なる色の個数の加法。"
+    },
+    {
+      "id": "flowers_green",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.flowers_green",
+      "title_ja": "緑の本数を求める",
+      "requires_steps": [
+        "flowers_pair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "緑は28本の25%。",
+      "conclusion_ja": "緑=(25/100)×28=7本。",
+      "baseline_ja": "割合から部分量を求める乗法。"
+    },
+    {
+      "id": "flowers_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.flowers_total",
+      "title_ja": "全体を合計する",
+      "requires_steps": [
+        "flowers_pair",
+        "flowers_green"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3色以外はなく、色は重ならない。",
+      "conclusion_ja": "全部=28+7=35本。",
+      "baseline_ja": "場合の重複を避けた個数の加法。"
+    },
+    {
+      "id": "flowers_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.flowers_exists",
+      "title_ja": "元の条件を確かめる",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "紫18本・緑7本・全部35本を取る。",
+      "conclusion_ja": "紫は黄より8本=80%多く、緑7本は28本の25%。すべての原題条件を満たす。",
+      "baseline_ja": "整数の個数・割合の検算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 6,
+    "checked_model_hash": "c21e8f75f97f058569151f1d937c4ba3d40064ed80dda63178e3ed937fa515a2",
+    "checks_ja": [
+      "80%多いは元の180%。緑の25%の基準は黄色だけでなく黄色と紫の合計。",
+      "数量は有理数で関係を表すが、全解が紫18・緑7・合計35という非負整数になる。"
+    ]
+  }
+}

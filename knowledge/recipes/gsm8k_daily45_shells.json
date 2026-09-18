@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily45_shells","title_ja":"貝殻の均等分配","problem_id":"external-gsm8k-main-3101c7d50724:train:00453","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"3人が集めた貝殻を合わせ、到着した友人2人へ均等に分ける。","root":"LemmaWeave.Tests.GSM8KDaily0917A.shells_solution","graph":"work/gsm8k-daily45-shells-graph.json","lean_file":"tests/lean/GSM8KDaily0917A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["集めた3人ではなく、新たに到着した友人2人だけを分配先とする。"],
+  "steps":[
+    {"id":"shells_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.shells_total","title_ja":"貝殻の総数","requires_steps":[],"uses_nodes":[],"condition_ja":"Jillian、Savannah、Claytonが順に29個、17個、8個を集めた。","conclusion_ja":"合わせると29+17+8=54個。","baseline_ja":"三つの個数の加法。"},
+    {"id":"shells_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.shells_each","title_ja":"友人1人当たり","requires_steps":["shells_total"],"uses_nodes":[],"condition_ja":"54個を到着した友人2人に均等に配る。","conclusion_ja":"1人当たり54÷2=27個。","baseline_ja":"均等分配の除法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":454,"checked_model_hash":"66a0a87757473a16d430b61ee5f3fdc1565bf68aef9858072360f29af066a751","checks_ja":["3人の収集数をすべて合計した。","分配先がtwo friendsの2人であることを確認した。"]}
+}

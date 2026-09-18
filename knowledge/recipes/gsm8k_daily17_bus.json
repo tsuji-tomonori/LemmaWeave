@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily17_bus","title_ja":"往復と滞在を含むバスツアー時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00165","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"往路55マイル、復路は10マイル長く、1マイル2分で走り、目的地に2時間滞在するとき総所要時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910A.bus_solution","graph":"work/gsm8k-daily17-bus-graph.json","lean_file":"tests/lean/GSM8KDaily0910A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["走行時間と目的地での滞在時間を分けてから合算する。"],
+  "steps":[
+    {"id":"bus_return","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.bus_return","title_ja":"復路距離","requires_steps":[],"uses_nodes":[],"condition_ja":"復路は往路55マイルより10マイル長い。","conclusion_ja":"復路は65マイル。","baseline_ja":"加法。"},
+    {"id":"bus_miles","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.bus_miles","title_ja":"往復距離","requires_steps":["bus_return"],"uses_nodes":[],"condition_ja":"往路55マイルと復路65マイル。","conclusion_ja":"合計120マイル。","baseline_ja":"区間距離の加法。"},
+    {"id":"bus_minutes","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.bus_minutes","title_ja":"走行分数","requires_steps":["bus_miles"],"uses_nodes":[],"condition_ja":"120マイルを1マイル2分で走る。","conclusion_ja":"240分走る。","baseline_ja":"距離×単位距離当たり時間。"},
+    {"id":"bus_travel_hours","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.bus_travel_hours","title_ja":"走行時間","requires_steps":["bus_minutes"],"uses_nodes":[],"condition_ja":"240分を60分で1時間として換算する。","conclusion_ja":"走行は4時間。","baseline_ja":"分から時間への単位換算。"},
+    {"id":"bus_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.bus_total","title_ja":"ツアー総時間","requires_steps":["bus_travel_hours"],"uses_nodes":[],"condition_ja":"走行4時間と滞在2時間。","conclusion_ja":"合計6時間。","baseline_ja":"時間の加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":166,"checked_model_hash":"8d560b66e65f6153528fc090945267f3173ba02c8df0a2cef113393ea49676d5","checks_ja":["往復の異なる距離、速度表現、滞在2時間を照合した。"]}
+}

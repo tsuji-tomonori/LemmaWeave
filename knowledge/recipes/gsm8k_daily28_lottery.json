@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily28_lottery","title_ja":"連続価格の宝くじ賞金","problem_id":"external-gsm8k-main-3101c7d50724:train:00283","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"5枚を1ドルから1ドルずつ値上げして売り、4ドルを利益に残した後の賞金を求める。",
+  "root":"LemmaWeave.Tests.GSM8KDaily0912B.lottery_solution","graph":"work/gsm8k-daily28-lottery-graph.json","lean_file":"tests/lean/GSM8KDaily0912B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各後続価格は直前価格より1ドル高い。"],
+  "steps":[
+    {"id":"lottery_prices","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.lottery_prices","title_ja":"5枚の価格","requires_steps":[],"uses_nodes":[],"condition_ja":"最初は1ドルで、以後は直前より1ドル高い。","conclusion_ja":"価格は1,2,3,4,5ドル。","baseline_ja":"次項＝前項＋1の逐次関係。"},
+    {"id":"lottery_revenue","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.lottery_revenue","title_ja":"売上合計","requires_steps":["lottery_prices"],"uses_nodes":[],"condition_ja":"5枚の価格は1,2,3,4,5ドル。","conclusion_ja":"売上は15ドル。","baseline_ja":"総売上＝各販売価格の和。"},
+    {"id":"lottery_prize","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.lottery_prize","title_ja":"賞金","requires_steps":["lottery_revenue"],"uses_nodes":[],"condition_ja":"売上15ドルから利益4ドルを残す。","conclusion_ja":"賞金は11ドル。","baseline_ja":"売上＝利益＋賞金。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":284,"checked_model_hash":"6b16310f0a116b0f5920805ef148e39e64b00ecbd5bcf0656596c75a079178bd","checks_ja":["連続する価格の合計15ドルと利益差し引き後11ドルを照合した。"]}
+}

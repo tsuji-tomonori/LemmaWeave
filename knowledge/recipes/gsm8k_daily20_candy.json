@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily20_candy","title_ja":"キャンディーバーの単価","problem_id":"external-gsm8k-main-3101c7d50724:train:00203","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"飲料2本とキャンディーバー5本の合計28ドルから、キャンディーバー1本の値段を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910D.candy_solution","graph":"work/gsm8k-daily20-candy-graph.json","lean_file":"tests/lean/GSM8KDaily0910D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["飲料は1本4ドル、残額を5本で均等に割る。"],
+  "steps":[
+    {"id":"candy_drinks","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.candy_drinks","title_ja":"飲料代","requires_steps":[],"uses_nodes":[],"condition_ja":"1本4ドルの飲料を2本買う。","conclusion_ja":"飲料代は8ドル。","baseline_ja":"単価と個数の乗法。"},
+    {"id":"candy_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.candy_total","title_ja":"キャンディー総額","requires_steps":["candy_drinks"],"uses_nodes":[],"condition_ja":"総額28ドルから飲料代8ドルを引く。","conclusion_ja":"キャンディー5本は計20ドル。","baseline_ja":"残額の減法。"},
+    {"id":"candy_price","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.candy_price","title_ja":"1本の価格","requires_steps":["candy_total"],"uses_nodes":[],"condition_ja":"20ドルを5本で均等に分ける。","conclusion_ja":"答えは1本4ドル。","baseline_ja":"等分除。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":204,"checked_model_hash":"717063a006303129ce42e655f7323113878d12026557118736401bec27b71fe8","checks_ja":["空白の乱れを意味に含めず、2本の飲料と5本のキャンディーを原文どおり反映した。"]}
+}

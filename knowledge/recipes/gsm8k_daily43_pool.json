@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily43_pool","title_ja":"同点までに必要な追加得点","problem_id":"external-gsm8k-main-3101c7d50724:train:00425","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"500点の3/4を現在得点とし、500点に並ぶまでの追加得点を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915D.pool_solution","graph":"work/gsm8k-daily43-pool-graph.json","lean_file":"tests/lean/GSM8KDaily0915D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["required to achieveは、現在点にさらに加える必要得点と解釈する。"],
+  "steps":[
+    {"id":"pool_paislee","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.pool_paislee","title_ja":"Paisleeの現在得点","requires_steps":[],"uses_nodes":[],"condition_ja":"Calvinは500点、Paisleeはその3/4。","conclusion_ja":"Paisleeは375点。","baseline_ja":"500×3÷4の割合計算。"},
+    {"id":"pool_needed","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.pool_needed","title_ja":"同点までの不足","requires_steps":["pool_paislee"],"uses_nodes":[],"condition_ja":"Paisleeの375点に追加点を足して500点にする。","conclusion_ja":"必要な追加点は125点。","baseline_ja":"不足分=目標−現在量。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":426,"checked_model_hash":"a6933f19dea1184a4024944d3d5c0521ede1267552f17298f26c6083f9418f8e","checks_ja":["500点、3/4、同点までの追加得点という対応を原文と照合した。"]}
+}

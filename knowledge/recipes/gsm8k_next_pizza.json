@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_next_pizza",
+  "title_ja": "大きいピザと小さいピザを分けて数える",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00006",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "大きいピザ2枚は1枚16切れ、小さいピザ2枚は1枚8切れ。すべて食べると何切れか。",
+  "root": "LemmaWeave.Tests.GSM8KNextSteps.pizza_solution",
+  "graph": "work/gsm8k-next-pizza-graph.json",
+  "lean_file": "tests/lean/GSM8KNextSteps.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "収集済みGSM8Kの1問をLLMが個別に解答。新規収集には数えない。",
+  "model_notes_ja": [
+    "ピザの枚数と切れ数を区別する。個数を自然数で表す。食べ残しなし。"
+  ],
+  "steps": [
+    {
+      "id": "pizza_large",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.pizza_large",
+      "title_ja": "大きいピザの切れ数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚16切れが2枚。",
+      "conclusion_ja": "16×2=32切れ。",
+      "baseline_ja": "同じ大きさの集まりを数える乗法。"
+    },
+    {
+      "id": "pizza_small",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.pizza_small",
+      "title_ja": "小さいピザの切れ数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚8切れが2枚。",
+      "conclusion_ja": "8×2=16切れ。",
+      "baseline_ja": "同じ大きさの集まりを数える乗法。"
+    },
+    {
+      "id": "pizza_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.pizza_total",
+      "title_ja": "両方の切れ数を合わせる",
+      "requires_steps": [
+        "pizza_large",
+        "pizza_small"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "大と小を重複せずすべて食べる。",
+      "conclusion_ja": "32+16=48切れ。",
+      "baseline_ja": "異なる集まりの個数の加法。"
+    },
+    {
+      "id": "pizza_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KNextSteps.pizza_exists",
+      "title_ja": "原題条件と一致する個数を示す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "大32切れ、小16切れ、合計48切れ。",
+      "conclusion_ja": "いずれも自然数で、各枚数・切れ数・合計の関係を満たす。",
+      "baseline_ja": "自然数の乗法・加法。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 7,
+    "checked_model_hash": "c21e8f75f97f058569151f1d937c4ba3d40064ed80dda63178e3ed937fa515a2",
+    "checks_ja": [
+      "ピザの枚数と切れ数を区別する。個数を自然数で表す。食べ残しなし。"
+    ]
+  }
+}

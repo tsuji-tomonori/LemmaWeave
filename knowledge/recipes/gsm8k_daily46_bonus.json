@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_bonus","title_ja":"同率賞与を含む今年の収入","problem_id":"external-gsm8k-main-3101c7d50724:train:00460","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"昨年の給与と賞与から率を求め、今年の給与へ適用する。","root":"LemmaWeave.Tests.GSM8KDaily0917B.bonus_solution","graph":"work/gsm8k-daily46-bonus-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["賞与率は各年の基本給与に対する割合とする。"],
+  "steps":[
+    {"id":"bonus_percent","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.bonus_percent","title_ja":"賞与率","requires_steps":[],"uses_nodes":[],"condition_ja":"昨年は給与100000ドルに賞与10000ドル。","conclusion_ja":"賞与率は10000÷100000=10%。","baseline_ja":"割合は部分量÷基準量。"},
+    {"id":"bonus_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.bonus_total","title_ja":"今年の総収入","requires_steps":["bonus_percent"],"uses_nodes":[],"condition_ja":"今年の給与200000ドルにも10%の賞与率を適用する。","conclusion_ja":"賞与20000ドル、合計220000ドル。","baseline_ja":"基準量×割合を加算する。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":461,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["昨年の賞与率を正しく算出した。","今年の給与と今年の賞与だけを合計した。"]}
+}

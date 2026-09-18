@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily19_glasses","title_ja":"2人が割ったグラス総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00188","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Davidが2個、Williamがその4倍割ったときの合計。","root":"LemmaWeave.Tests.GSM8KDaily0910C.glasses_solution","graph":"work/gsm8k-daily19-glasses-graph.json","lean_file":"tests/lean/GSM8KDaily0910C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["Williamの個数を求めてDavid分と合算する。"],
+  "steps":[
+    {"id":"glasses_william","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.glasses_william","title_ja":"William分","requires_steps":[],"uses_nodes":[],"condition_ja":"Davidの2個の4倍。","conclusion_ja":"Williamは8個。","baseline_ja":"倍率の乗法。"},
+    {"id":"glasses_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.glasses_total","title_ja":"総数","requires_steps":["glasses_william"],"uses_nodes":[],"condition_ja":"David2個とWilliam8個。","conclusion_ja":"合計10個。","baseline_ja":"加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":189,"checked_model_hash":"9733a87ab59be1a7f4eae722999756336063da4a2b245397fedff3d3842e5241","checks_ja":["2人分を重複なく合算した。"]}
+}

@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily19_trout","title_ja":"父が多く釣ったマス","problem_id":"external-gsm8k-main-3101c7d50724:train:00185","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Calebが2匹、父がその3倍釣ったときの差を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910C.trout_solution","graph":"work/gsm8k-daily19-trout-graph.json","lean_file":"tests/lean/GSM8KDaily0910C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["比較対象は父の捕獲数とCalebの捕獲数。"],
+  "steps":[
+    {"id":"trout_dad","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.trout_dad","title_ja":"父の捕獲数","requires_steps":[],"uses_nodes":[],"condition_ja":"父は2匹の3倍を釣る。","conclusion_ja":"父は6匹。","baseline_ja":"倍率の乗法。"},
+    {"id":"trout_more","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.trout_more","title_ja":"差","requires_steps":["trout_dad"],"uses_nodes":[],"condition_ja":"父6匹からCaleb2匹を引く。","conclusion_ja":"父が4匹多い。","baseline_ja":"差の減法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":186,"checked_model_hash":"9733a87ab59be1a7f4eae722999756336063da4a2b245397fedff3d3842e5241","checks_ja":["3倍は父の総数であり追加分ではないことを確認した。"]}
+}

@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily32_bicycle","title_ja":"元値に百分率増加を加えて新価格を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00316","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"220ドルの自転車を15%値上げした後の価格を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913A.bicycle_solution","graph":"work/gsm8k-daily32-bicycle-graph.json","lean_file":"tests/lean/GSM8KDaily0913A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["増加率は元値を基準にする。"],
+  "steps":[
+    {"id":"bicycle_increase","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.bicycle_increase","title_ja":"増加額を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"元値220ドルの15%だけ増える。","conclusion_ja":"増加額は33ドル。","baseline_ja":"百分率の定義から100×増加額=15×220を解く。"},
+    {"id":"bicycle_new","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.bicycle_new","title_ja":"新価格を求める","requires_steps":["bicycle_increase"],"uses_nodes":[],"condition_ja":"元値220ドルへ33ドルを加える。","conclusion_ja":"新価格は253ドル。","baseline_ja":"220+33を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":317,"checked_model_hash":"4fec31cdef21e66aa97dac7c4991bc909e72e5b4b85a2a604a5de1d92c1baa4f","checks_ja":["15%の基準が昨年価格220ドルであることと増加後253ドルを照合した。"]}
+}

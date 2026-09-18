@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily32_castle","title_ja":"人日を保存して人数減少後の食料日数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00315","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"300人を90日養える食料を30日消費し、100人が去った後に残る日数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913A.castle_solution","graph":"work/gsm8k-daily32-castle-graph.json","lean_file":"tests/lean/GSM8KDaily0913A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["一人一日当たりの消費量が一定で、補給・廃棄がないとき、食料量を人日で表せる。"],
+  "steps":[
+    {"id":"castle_people","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.castle_people","title_ja":"残る人数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"300人から100人が去る。","conclusion_ja":"残るのは200人。","baseline_ja":"300=200+100となる差を求める。"},
+    {"id":"castle_food","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.castle_food","title_ja":"残る食料を人日で求める","requires_steps":[],"uses_nodes":[],"condition_ja":"当初の食料は300×90人日で、300人が30日消費した。","conclusion_ja":"残量は18000人日。","baseline_ja":"27000人日から9000人日を引く。"},
+    {"id":"castle_days","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.castle_days","title_ja":"200人で持つ日数を求める","requires_steps":["castle_people","castle_food"],"uses_nodes":[],"condition_ja":"18000人日を200人が同じ率で消費する。","conclusion_ja":"食料はさらに90日持つ。","baseline_ja":"人日=人数×日数より18000=200×90。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":316,"checked_model_hash":"4fec31cdef21e66aa97dac7c4991bc909e72e5b4b85a2a604a5de1d92c1baa4f","checks_ja":["一定消費率の条件と、残り18000人日を200人で割る計算を原文に照合した。"]}
+}

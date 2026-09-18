@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily19_covid","title_ja":"3日目後の陽性者数","problem_id":"external-gsm8k-main-3101c7d50724:train:00184","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"初日2000人から、2日目と3日目の新規陽性・回復を順に反映する。","root":"LemmaWeave.Tests.GSM8KDaily0910C.covid_solution","graph":"work/gsm8k-daily19-covid-graph.json","lean_file":"tests/lean/GSM8KDaily0910C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["新規陽性を加え、同日の回復者を引く。"],
+  "steps":[
+    {"id":"covid_after_second","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.covid_after_second","title_ja":"2日目後","requires_steps":[],"uses_nodes":[],"condition_ja":"2000人に500人を加え、50人の回復を引く。","conclusion_ja":"2日目後は2450人。","baseline_ja":"増減の加減法。"},
+    {"id":"covid_before_third_recovery","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.covid_before_third_recovery","title_ja":"3日目回復前","requires_steps":["covid_after_second"],"uses_nodes":[],"condition_ja":"2450人に新規1500人を加える。","conclusion_ja":"回復反映前は3950人。","baseline_ja":"加法。"},
+    {"id":"covid_after_third","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.covid_after_third","title_ja":"3日目後","requires_steps":["covid_before_third_recovery"],"uses_nodes":[],"condition_ja":"3950人から回復200人を引く。","conclusion_ja":"答えは3750人。","baseline_ja":"減法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":185,"checked_model_hash":"9733a87ab59be1a7f4eae722999756336063da4a2b245397fedff3d3842e5241","checks_ja":["新規陽性と回復を各日について一度ずつ反映した。"]}
+}

@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily52_marble","title_ja":"比と合計からビー玉数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00518","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Selmaより5個少ない2人の合計と、MerillがElliotの2倍という関係からMerillの個数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918C.marble_solution","graph":"work/gsm8k-daily52-marble-graph.json","lean_file":"tests/lean/GSM8KDaily0918C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["Elliotを1部分、Merillを2部分として合計3部分に分ける。"],
+  "steps":[
+    {"id":"marble_pair_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918C.marble_pair_total","title_ja":"2人の合計","requires_steps":[],"uses_nodes":[],"condition_ja":"Selmaの50個より5個少ない。","conclusion_ja":"2人の合計は45個。","baseline_ja":"差の関係。"},
+    {"id":"marble_elliot","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918C.marble_elliot","title_ja":"Elliotの個数","requires_steps":["marble_pair_total"],"uses_nodes":[],"condition_ja":"Elliotを1部分、Merillを2部分とする。","conclusion_ja":"Elliotは15個。","baseline_ja":"比の合計を3等分する。"},
+    {"id":"marble_merill","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918C.marble_merill","title_ja":"Merillの個数","requires_steps":["marble_elliot"],"uses_nodes":[],"condition_ja":"MerillはElliotの2倍。","conclusion_ja":"Merillは30個。","baseline_ja":"倍の関係。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":519,"checked_model_hash":"0ca71faf5302828ffe412b5f11b983fdee15ede247e47c629dee1a66a907fe0e","checks_ja":["誰が誰の2倍かを原文と照合した。"]}
+}

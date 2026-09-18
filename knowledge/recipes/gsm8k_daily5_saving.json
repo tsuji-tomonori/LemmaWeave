@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily5_saving","title_ja":"オフシーズンの月平均作業数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00050","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"月100ドルを4か月使う野球用品代を、残り8か月に1回10ドルの作業で貯める月平均回数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907E.saving_solution","graph":"work/gsm8k-daily5-saving-graph.json","lean_file":"tests/lean/GSM8KDaily0907E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1年を12か月とし、野球をしない8か月で必要額を均等に貯める。"],
+  "steps":[
+    {"id":"saving_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.saving_cost","title_ja":"シーズン用品代","requires_steps":[],"uses_nodes":[],"condition_ja":"月100ドルを4か月。","conclusion_ja":"400ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"saving_months","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.saving_months","title_ja":"貯金する月数","requires_steps":[],"uses_nodes":[],"condition_ja":"12か月からシーズン4か月を引く。","conclusion_ja":"8か月。","baseline_ja":"中学校までの減法。"},
+    {"id":"saving_income","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.saving_income","title_ja":"月の必要収入","requires_steps":["saving_cost","saving_months"],"uses_nodes":[],"condition_ja":"400ドルを8か月で均等に貯める。","conclusion_ja":"月50ドル。","baseline_ja":"中学校までの除法。"},
+    {"id":"saving_chores","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.saving_chores","title_ja":"月平均の作業数","requires_steps":["saving_income"],"uses_nodes":[],"condition_ja":"1作業10ドルで月50ドルを得る。","conclusion_ja":"月平均5作業。","baseline_ja":"中学校までの除法。"},
+    {"id":"saving_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.saving_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"必要額400、8か月、月50ドル、5作業と置く。","conclusion_ja":"用品代を貯める全条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":51,"checked_model_hash":"adc4c0f4dec3dbed083ddd2439540f62981d1039ced1f4d455c23cc025e0e734","checks_ja":["シーズン総額、オフシーズン月数、月収、作業数を段階的に照合した。"]}
+}

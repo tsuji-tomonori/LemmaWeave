@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily45_classroom","title_ja":"教室にある本の総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00446","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"10人が各7冊持ち、教師が8冊追加したときの総数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917A.classroom_solution","graph":"work/gsm8k-daily45-classroom-graph.json","lean_file":"tests/lean/GSM8KDaily0917A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["児童の本と教師が持参した本を同じ教室内の冊数として合計する。"],
+  "steps":[
+    {"id":"classroom_initial","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.classroom_initial","title_ja":"児童が持つ本","requires_steps":[],"uses_nodes":[],"condition_ja":"10人の児童がそれぞれ7冊持つ。","conclusion_ja":"児童の本は10×7=70冊。","baseline_ja":"同数ずつの総数を求める乗法。"},
+    {"id":"classroom_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.classroom_total","title_ja":"追加後の総数","requires_steps":["classroom_initial"],"uses_nodes":[],"condition_ja":"70冊ある教室へ教師が8冊を持参する。","conclusion_ja":"全部で70+8=78冊。","baseline_ja":"追加分の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":447,"checked_model_hash":"66a0a87757473a16d430b61ee5f3fdc1565bf68aef9858072360f29af066a751","checks_ja":["人数と1人当たり冊数を区別した。","教師の8冊を児童の70冊へ加える順序を確認した。"]}
+}

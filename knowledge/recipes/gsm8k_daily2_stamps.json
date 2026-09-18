@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_daily2_stamps",
+  "title_ja": "増減関係から3種類の切手総数を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00020",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "雪11枚、トラックは雪より9枚多く、バラはトラックより13枚少ない。合計は？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.stamps_solution",
+  "graph": "work/gsm8k-daily2-stamps-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "someは各デザインの存在を示すが数量は後続条件で特定される。3種類以外を購入したとは読まない。"
+  ],
+  "steps": [
+    {
+      "id": "stamps_truck",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.stamps_truck",
+      "title_ja": "トラック柄",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "雪11枚より9枚多い。",
+      "conclusion_ja": "20枚。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "stamps_rose",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.stamps_rose",
+      "title_ja": "バラ柄",
+      "requires_steps": [
+        "stamps_truck"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "トラック20枚より13枚少ない。",
+      "conclusion_ja": "7枚。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "stamps_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.stamps_total",
+      "title_ja": "3種類を合計",
+      "requires_steps": [
+        "stamps_truck",
+        "stamps_rose"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "雪11・トラック20・バラ7は別種類。",
+      "conclusion_ja": "38枚。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "stamps_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.stamps_exists",
+      "title_ja": "非負性と充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "トラック20、バラ7、合計38。",
+      "conclusion_ja": "増減と合計条件を満たす。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 21,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "someは各デザインの存在を示すが数量は後続条件で特定される。3種類以外を購入したとは読まない。"
+    ]
+  }
+}

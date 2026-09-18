@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily20_piggy","title_ja":"貯金の20%増加","problem_id":"external-gsm8k-main-3101c7d50724:train:00202","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"200ドルにその20%を追加した総額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910D.piggy_solution","graph":"work/gsm8k-daily20-piggy-graph.json","lean_file":"tests/lean/GSM8KDaily0910D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["20% moreを元の200ドルに対する20%増と読む。"],
+  "steps":[
+    {"id":"piggy_increase","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.piggy_increase","title_ja":"増加額","requires_steps":[],"uses_nodes":[],"condition_ja":"200ドルの20%。分母100を払うと100×増加額=20×200。","conclusion_ja":"増加額は40ドル。","baseline_ja":"百分率。"},
+    {"id":"piggy_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910D.piggy_total","title_ja":"増加後総額","requires_steps":["piggy_increase"],"uses_nodes":[],"condition_ja":"元の200ドルに40ドルを加える。","conclusion_ja":"答えは240ドル。","baseline_ja":"加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":203,"checked_model_hash":"717063a006303129ce42e655f7323113878d12026557118736401bec27b71fe8","checks_ja":["20%を追加後総額ではなく元金に対する増加率とした。"]}
+}

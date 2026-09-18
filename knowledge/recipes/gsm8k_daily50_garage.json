@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily50_garage","title_ja":"ぬいぐるみ1体の価格","problem_id":"external-gsm8k-main-3101c7d50724:train:00502","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"3ドルの磁石がぬいぐるみ2体の合計価格の4分の1であるとき、1体の価格を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918A.garage_solution","graph":"work/gsm8k-daily50-garage-graph.json","lean_file":"tests/lean/GSM8KDaily0918A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["ステッカーとの価格比は結論に不要。"],
+  "steps":[
+    {"id":"garage_pair","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.garage_pair","title_ja":"2体分の価格","requires_steps":[],"uses_nodes":[],"condition_ja":"3ドルの磁石は2体分の4分の1。","conclusion_ja":"ぬいぐるみ2体は12ドル。","baseline_ja":"4倍。"},
+    {"id":"garage_single","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.garage_single","title_ja":"1体の価格","requires_steps":["garage_pair"],"uses_nodes":[],"condition_ja":"同価格の2体で12ドル。","conclusion_ja":"1体6ドル。","baseline_ja":"等分。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":503,"checked_model_hash":"69d658f73115a09dc53753d617eaa49ff1bcf7dc787b529e6ccd9c37d9c7c001","checks_ja":["one quarter the price of the two stuffed animals combinedを4倍関係で表した。","three times more than the stickerは曖昧だが、求める値に影響しないためモデルから除外した。"]}
+}

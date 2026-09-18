@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily21_books","title_ja":"本1冊当たりの平均ページ数","problem_id":"external-gsm8k-main-3101c7d50724:train:00204","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"厚さ12インチ、1インチ当たり80ページの6冊について、1冊当たりの平均ページ数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910E.books_solution","graph":"work/gsm8k-daily21-books-graph.json","lean_file":"tests/lean/GSM8KDaily0910E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["全冊を積み重ねた厚さが12インチである。"],
+  "steps":[
+    {"id":"books_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.books_total","title_ja":"全体のページ数","requires_steps":[],"uses_nodes":[],"condition_ja":"全体は12インチで、1インチ当たり80ページ。","conclusion_ja":"全体は12×80=960ページ。","baseline_ja":"比例関係と乗法。"},
+    {"id":"books_average","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.books_average","title_ja":"1冊当たりの平均","requires_steps":["books_total"],"uses_nodes":[],"condition_ja":"960ページを6冊で平均する。","conclusion_ja":"答えは960÷6=160ページ。","baseline_ja":"算術平均。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":205,"checked_model_hash":"31bcdf0c5d3a5dea5a167757075342d7c667364bb651d24831fc06828ac80874","checks_ja":["厚さ、ページ密度、冊数、平均の対応を原文と照合した。"]}
+}

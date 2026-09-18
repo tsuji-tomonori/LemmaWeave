@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily21_plates","title_ja":"3コース料理に必要な皿","problem_id":"external-gsm8k-main-3101c7d50724:train:00205","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"30人の招待客とその半数の同伴者に3コースを新しい皿で出すときの皿数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910E.plates_solution","graph":"work/gsm8k-daily21-plates-graph.json","lean_file":"tests/lean/GSM8KDaily0910E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["全招待客が出席し、招待客の半数が各1人を同伴する。"],
+  "steps":[
+    {"id":"plates_plus_ones","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.plates_plus_ones","title_ja":"同伴者数","requires_steps":[],"uses_nodes":[],"condition_ja":"30人の半数が1人ずつ同伴する。","conclusion_ja":"同伴者は15人。","baseline_ja":"半分と整数方程式2×15=30。"},
+    {"id":"plates_attendees","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.plates_attendees","title_ja":"食事人数","requires_steps":["plates_plus_ones"],"uses_nodes":[],"condition_ja":"招待客30人に同伴者15人を加える。","conclusion_ja":"食事をする人は45人。","baseline_ja":"加法。"},
+    {"id":"plates_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.plates_total","title_ja":"必要な皿数","requires_steps":["plates_attendees"],"uses_nodes":[],"condition_ja":"45人が3コースごとに新しい皿を1枚使う。","conclusion_ja":"答えは45×3=135枚。","baseline_ja":"1人1コース当たり1枚という比例。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":206,"checked_model_hash":"31bcdf0c5d3a5dea5a167757075342d7c667364bb651d24831fc06828ac80874","checks_ja":["招待客、同伴者、コース数、皿の交換条件を原文と照合した。"]}
+}

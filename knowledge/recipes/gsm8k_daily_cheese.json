@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_daily_cheese",
+  "title_ja": "代金の半分・2倍を共通基準から求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00013",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "チェダー2ポンドの代金10ドル。クリームチーズ1ポンドの代金はその半分、コールドカット1パックはその2倍。合計代金は？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907.cheese_solution",
+  "graph": "work/gsm8k-daily-cheese-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "10ドルはチェダー2ポンドの全体価格で単価ではない。重量比を代金比へ勝手に置換しない。"
+  ],
+  "steps": [
+    {
+      "id": "cheese_cream",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cheese_cream",
+      "title_ja": "クリームチーズ代",
+      "requires_steps": [],
+      "uses_nodes": [
+        "fraction_balance"
+      ],
+      "condition_ja": "チェダー全体10ドルの半分、2c=10。",
+      "conclusion_ja": "c=5ドル。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "cheese_cold",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cheese_cold",
+      "title_ja": "コールドカット代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "チェダー全体10ドルの2倍。",
+      "conclusion_ja": "m=20ドル。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "cheese_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cheese_total",
+      "title_ja": "3品の代金を合計",
+      "requires_steps": [
+        "cheese_cream",
+        "cheese_cold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各品の代金を一度ずつ加える。",
+      "conclusion_ja": "10+5+20=35ドル。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "cheese_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.cheese_exists",
+      "title_ja": "充足例",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "c=5,m=20,t=35。",
+      "conclusion_ja": "半分・2倍・合計条件をすべて満たす。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 14,
+    "checked_model_hash": "e958c9ce30982deaaa1eb14f7c3ca5549c125b26322604f46616e26a65934542",
+    "checks_ja": [
+      "10ドルはチェダー2ポンドの全体価格で単価ではない。重量比を代金比へ勝手に置換しない。"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_daily2_food",
+  "title_ja": "食物連鎖換算1,080匹と実際の捕食数の不足条件を分ける",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00021",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "鳥1羽が甲虫12匹/日、蛇1匹が鳥3羽/日、ジャガー1頭が蛇5匹/日。ジャガー6頭なら甲虫は何匹食べられるか。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.food_solution",
+  "graph": "work/gsm8k-daily2-food-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "conditional",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "1,080は各捕食段階を必要餌数として掛ける食物連鎖換算の答え。鳥が蛇に食べられながら同日に甲虫も食べたという時系列は証明しない。",
+    "実際の森で食べられる甲虫数には生存鳥数・時系列が必要。反例と追加規約付き結果を分離する。"
+  ],
+  "steps": [
+    {
+      "id": "food_snakes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.food_snakes",
+      "title_ja": "ジャガーが食べる蛇の換算",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6頭が各5匹。",
+      "conclusion_ja": "蛇30匹。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "food_birds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.food_birds",
+      "title_ja": "蛇が食べる鳥の換算",
+      "requires_steps": [
+        "food_snakes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "蛇30匹が各3羽。",
+      "conclusion_ja": "鳥90羽。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "food_beetles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.food_beetles",
+      "title_ja": "鳥が食べる甲虫への換算",
+      "requires_steps": [
+        "food_birds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "鳥90羽が各12匹/日という食物連鎖換算規約。",
+      "conclusion_ja": "甲虫1,080匹/日。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "food_literal_examples",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.food_literal_examples",
+      "title_ja": "文字通りの実捕食数は一意でない",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "実際に甲虫を食べる生存鳥の個体数は原文にない。",
+      "conclusion_ja": "生存鳥0羽なら0匹、10羽なら120匹で、ジャガー数だけから実捕食数は定まらない。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "food_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.food_exists",
+      "title_ja": "換算モデルの充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "蛇30、鳥90、甲虫1,080。",
+      "conclusion_ja": "各段階の単位換算式を満たす。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 22,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "1,080は各捕食段階を必要餌数として掛ける食物連鎖換算の答え。鳥が蛇に食べられながら同日に甲虫も食べたという時系列は証明しない。",
+      "実際の森で食べられる甲虫数には生存鳥数・時系列が必要。反例と追加規約付き結果を分離する。"
+    ]
+  }
+}

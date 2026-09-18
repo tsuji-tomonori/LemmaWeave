@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily42_carwash","title_ja":"洗車パックの60パーセント価格","problem_id":"external-gsm8k-main-3101c7d50724:train:00417","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"通常15ドルの洗車20回分の定価を求め、支払率60%を掛ける。","root":"LemmaWeave.Tests.GSM8KDaily0915C.carwash_solution","graph":"work/gsm8k-daily42-carwash-graph.json","lean_file":"tests/lean/GSM8KDaily0915C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["only has to pay 60%を通常合計額の60%を支払う意味と読む。"],
+  "steps":[
+    {"id":"carwash_list","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.carwash_list","title_ja":"通常合計額","requires_steps":[],"uses_nodes":[],"condition_ja":"洗車は20回、通常1回15ドル。","conclusion_ja":"通常合計額は300ドル。","baseline_ja":"単価×回数で合計額を求める。"},
+    {"id":"carwash_paid","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.carwash_solution","title_ja":"パック支払額","requires_steps":["carwash_list"],"uses_nodes":[],"condition_ja":"通常合計額300ドルの60%を支払う。","conclusion_ja":"支払額は180ドル。","baseline_ja":"百分率60%を60/100として掛ける。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":418,"checked_model_hash":"2f5eed7ec2376156e0083a231117cbc02d3c0be1b2c7c0253db83d5619787329","checks_ja":["回数、通常単価、支払率60%を原文と照合した。"]}
+}

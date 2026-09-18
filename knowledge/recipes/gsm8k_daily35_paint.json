@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily35_paint","title_ja":"部屋の壁を塗る缶数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00346","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"4面の壁の面積を合計し、2平方メートル塗れる缶の必要数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914A.paint_solution","graph":"work/gsm8k-daily35-paint-graph.json","lean_file":"tests/lean/GSM8KDaily0914A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["壁面を長方形とし、幅×高さで各面積を求める。30は2で割り切れるので端数切上げは生じない。"],
+  "steps":[
+    {"id":"paint_common","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.paint_common","title_ja":"同じ2面の面積を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"幅3m、高さ2mの長方形の壁が2面ある。","conclusion_ja":"1面6m²、2面で12m²。","baseline_ja":"長方形の面積=幅×高さを用いる。"},
+    {"id":"paint_other_walls","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.paint_other_walls","title_ja":"残り2面の面積を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"幅5mと4mの壁はいずれも高さ2m。","conclusion_ja":"面積はそれぞれ10m²と8m²。","baseline_ja":"長方形の面積=幅×高さを用いる。"},
+    {"id":"paint_total_area","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.paint_total_area","title_ja":"壁面積を合計する","requires_steps":["paint_common","paint_other_walls"],"uses_nodes":[],"condition_ja":"4面の面積12、10、8m²を合計する。","conclusion_ja":"総面積は30m²。","baseline_ja":"12+10+8を計算する。"},
+    {"id":"paint_cans","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.paint_cans","title_ja":"必要な缶数を求める","requires_steps":["paint_total_area"],"uses_nodes":[],"condition_ja":"1缶で2m²を塗り、総面積30m²は2で割り切れる。","conclusion_ja":"15缶必要。","baseline_ja":"30÷2を計算し、余りがないことを確認する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":347,"checked_model_hash":"355a816ac7e4f5c79fe632b02995b66c3d07dd599393faa1dfce717b3ebfcbcf","checks_ja":["4面を重複なく数え、平方メートル単位と缶の被覆面積を照合した。"]}
+}

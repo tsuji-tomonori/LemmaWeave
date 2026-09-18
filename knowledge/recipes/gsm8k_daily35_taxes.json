@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily35_taxes","title_ja":"30日分の税引後賃金を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00345","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"日給40ドルから10%の税を引き、30日働いた税引後総額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914A.taxes_solution","graph":"work/gsm8k-daily35-taxes-graph.json","lean_file":"tests/lean/GSM8KDaily0914A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各日の税率と日数が一定であると原文どおり解釈する。"],
+  "steps":[
+    {"id":"taxes_tax","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.taxes_tax","title_ja":"1日分の税額を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"日給40ドルの10%を税として引く。","conclusion_ja":"1日分の税は4ドル。","baseline_ja":"10%は10分の1として40÷10を計算する。"},
+    {"id":"taxes_net","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.taxes_net","title_ja":"税引後日給を求める","requires_steps":["taxes_tax"],"uses_nodes":[],"condition_ja":"日給40ドルから税4ドルを引く。","conclusion_ja":"税引後日給は36ドル。","baseline_ja":"40−4を計算する。"},
+    {"id":"taxes_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.taxes_total","title_ja":"30日分を求める","requires_steps":["taxes_net"],"uses_nodes":[],"condition_ja":"税引後日給36ドルで30日働く。","conclusion_ja":"税引後総額は1,080ドル。","baseline_ja":"36×30を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":346,"checked_model_hash":"355a816ac7e4f5c79fe632b02995b66c3d07dd599393faa1dfce717b3ebfcbcf","checks_ja":["税率10%を日給へ適用し、税引後日給を30倍する順序を照合した。"]}
+}

@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_pizza","title_ja":"ピザ12枚の工程時間と並行可否","problem_id":"external-gsm8k-main-3101c7d50724:train:00463","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"必要な生地バッチ数と焼成回数を求め、工程を重ねない場合と重ねる場合を分ける。","root":"LemmaWeave.Tests.GSM8KDaily0917B.pizza_solution","graph":"work/gsm8k-daily46-pizza-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["参照解は生地作り120分と焼成180分を直列に置く。原文は工程の並行可否を明記しない。"],
+  "steps":[
+    {"id":"pizza_work","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.pizza_work","title_ja":"必要な作業量","requires_steps":[],"uses_nodes":[],"condition_ja":"生地1バッチで3枚、オーブン1回で2枚、各工程30分。","conclusion_ja":"生地は4バッチで120分、焼成は6回で180分。","baseline_ja":"必要回数=総数÷1回の処理数。"},
+    {"id":"pizza_schedules","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.pizza_schedules","title_ja":"工程条件による所要時間","requires_steps":["pizza_work"],"uses_nodes":[],"condition_ja":"工程を重ねなければ120+180分。最初の生地完成後に残りの生地作りと焼成を並行できる実行例では30+180分。","conclusion_ja":"直列なら300分=5時間、並行例なら210分であり、原文だけでは5時間に一意でない。","baseline_ja":"工程の直列和と並行スケジュールの反例を区別する。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":464,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["4バッチと6回の焼成を別々に数えた。","5時間の追加条件と210分の並行例を形式化した。"]}
+}

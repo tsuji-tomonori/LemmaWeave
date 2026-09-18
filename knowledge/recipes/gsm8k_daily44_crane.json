@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily44_crane","title_ja":"クレーンの高さ超過率と平均の定義","problem_id":"external-gsm8k-main-3101c7d50724:train:00442","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"3組の建物高とクレーン高から各超過率を求め、その単純平均を計算する。","root":"LemmaWeave.Tests.GSM8KDaily0915E.crane_solution","graph":"work/gsm8k-daily44-crane-graph.json","lean_file":"tests/lean/GSM8KDaily0915E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["原題のaverageは3件の超過率の単純平均と読むと13%。高さを合算してから求める加重された超過率は12.5%なので別定義として区別する。","参考解答は第3組でx=.5と記すが、147−140=7、7÷140=.05であり5%が正しい。"],
+  "steps":[
+    {"id":"crane_individual","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.crane_individual","title_ja":"各組の超過率","requires_steps":[],"uses_nodes":[],"condition_ja":"クレーンと建物の高さが228/200、120/100、147/140フィート。","conclusion_ja":"各超過率は(差÷建物高)×100により14%、20%、5%。","baseline_ja":"基準量に対する増加率は差÷基準量×100。"},
+    {"id":"crane_equal_average","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.crane_equal_average","title_ja":"超過率の単純平均","requires_steps":["crane_individual"],"uses_nodes":[],"condition_ja":"3件を同じ重みで平均する。","conclusion_ja":"(14+20+5)÷3=13%。","baseline_ja":"算術平均は値の合計を個数で割る。"},
+    {"id":"crane_aggregate","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.crane_aggregate","title_ja":"合算比率という別定義","requires_steps":[],"uses_nodes":[],"condition_ja":"建物高と超過高をそれぞれ合算して比率を求める別定義の場合。","conclusion_ja":"超過合計55フィート÷建物合計440フィート×100=12.5%。原題の単純平均13%とは異なる。","baseline_ja":"比率の分母を合計量とする加重平均。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":443,"checked_model_hash":"25f1e737e2139d253456901513753639661f651ebe225cf88ccbdecdf78cca1f","checks_ja":["3組すべてで建物高を割合の基準にした。","単純平均13%と合算比率12.5%を別のLean結論として照合した。","参考解答の.5という表記誤りを5%へ訂正した。"]}
+}

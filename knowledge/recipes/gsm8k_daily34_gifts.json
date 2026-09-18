@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily34_gifts","title_ja":"割引後の3人分の調理道具代を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00335","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"子ども用調理道具一式を25%引きで姪3人に買う総額を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913C.gifts_solution","graph":"work/gsm8k-daily34-gifts-graph.json","lean_file":"tests/lean/GSM8KDaily0913C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["25%引きを定価の75%として、全品を含む一式ごとに適用する。"],
+  "steps":[
+    {"id":"gifts_knife","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.gifts_knife","title_ja":"ナイフ代を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"ナイフは10ドルの器具セットの2倍。","conclusion_ja":"ナイフは20ドル。","baseline_ja":"10×2を計算する。"},
+    {"id":"gifts_kit","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.gifts_kit","title_ja":"一式の定価を求める","requires_steps":["gifts_knife"],"uses_nodes":[],"condition_ja":"ミット14ドル、エプロン16ドル、器具10ドル、ナイフ20ドルを含む。","conclusion_ja":"一式の定価は60ドル。","baseline_ja":"14+16+10+20を計算する。"},
+    {"id":"gifts_sale_price","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.gifts_sale_price","title_ja":"割引後価格を求める","requires_steps":["gifts_kit"],"uses_nodes":[],"condition_ja":"定価60ドルから25%引く。","conclusion_ja":"一式45ドル。","baseline_ja":"定価の75%を割合の式で求める。"},
+    {"id":"gifts_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913C.gifts_total","title_ja":"3人分の総額を求める","requires_steps":["gifts_sale_price"],"uses_nodes":[],"condition_ja":"同じ一式を姪3人分買う。","conclusion_ja":"総額は135ドル。","baseline_ja":"45×3を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":336,"checked_model_hash":"a1be6b279084532d7e6b41dc2d9c9a74ccb2e2e0de82a9dd69c67f4abe19254e","checks_ja":["ナイフの倍額、一式の定価、25%引き、3人分の順に原文と照合した。"]}
+}

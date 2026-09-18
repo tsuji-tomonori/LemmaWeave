@@ -1,0 +1,21 @@
+{
+  "id": "gsm8k_daily38_work",
+  "title_ja": "曜日ごとの勤務時間差を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00381",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "月曜450分、火曜は月曜の半分、水曜300分のとき、水曜が火曜より何分長いか求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914D.work_solution",
+  "graph": "work/gsm8k-daily38-work-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914D.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["すべて分単位で比較する。"],
+  "steps": [
+    {"id": "work_tuesday", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.work_tuesday", "title_ja": "火曜の勤務時間を求める", "requires_steps": [], "uses_nodes": [], "condition_ja": "火曜は月曜450分の半分。", "conclusion_ja": "火曜は450÷2=225分。", "baseline_ja": "半分は2で割る。"},
+    {"id": "work_difference", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.work_difference", "title_ja": "水曜と火曜の差を求める", "requires_steps": ["work_tuesday"], "uses_nodes": [], "condition_ja": "水曜300分と火曜225分を比べる。", "conclusion_ja": "水曜は300-225=75分長い。", "baseline_ja": "多い量から少ない量を引いて差を求める。"}
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {"reviewer": "author", "status": "checked", "source_line_1based": 382, "checked_model_hash": "bde21e632c1d91cc6aa9dce6b254a3a8f5f5ecf02910d6c56c9727929ed2fe88", "checks_ja": ["曜日と比較方向を原文に照合した。"]}
+}

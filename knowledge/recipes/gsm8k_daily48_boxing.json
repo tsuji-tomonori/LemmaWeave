@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily48_boxing","title_ja":"週間トレーニング時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00479","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"筋力トレーニングとボクシング練習の週間合計時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917D.boxing_solution","graph":"work/gsm8k-daily48-boxing-graph.json","lean_file":"tests/lean/GSM8KDaily0917D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1.5時間を3 half-hoursとして整数で表し、4回で12 half-hours=6時間とする。"],
+  "steps":[
+    {"id":"boxing_parts","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.boxing_parts","title_ja":"種目別の練習時間","requires_steps":[],"uses_nodes":[],"condition_ja":"筋力トレーニングは1時間を週3回、ボクシングは1.5時間を週4回。","conclusion_ja":"筋力は3時間、ボクシングは6時間。","baseline_ja":"回数×時間。1.5時間は3 half-hours。"},
+    {"id":"boxing_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.boxing_total","title_ja":"週間合計","requires_steps":["boxing_parts"],"uses_nodes":[],"condition_ja":"種目別の時間が3時間と6時間。","conclusion_ja":"週間合計は9時間。","baseline_ja":"時間の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":480,"checked_model_hash":"36659505f7e047d68fd7fe15a6930aff0d84c83830512c7638ed07d8c6a5a95d","checks_ja":["3 timesと4 timesを週当たり回数とした。","1.5時間の単位換算を照合した。"]}
+}

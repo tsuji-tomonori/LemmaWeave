@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_savings","title_ja":"年間受取額の40%貯蓄","problem_id":"external-gsm8k-main-3101c7d50724:train:00456","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"4種類の受取額を合計し、その40%を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917B.savings_solution","graph":"work/gsm8k-daily46-savings-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["問題文がearns/receivesとしているため贈与250ドルも基準額へ含める。"],
+  "steps":[
+    {"id":"savings_income","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.savings_income","title_ja":"年間の受取総額","requires_steps":[],"uses_nodes":[],"condition_ja":"芝刈り600、贈与250、ゲーム販売150、雑務150ドル。","conclusion_ja":"総額は600+250+150+150=1150ドル。","baseline_ja":"同一単位の金額の加法。"},
+    {"id":"savings_saved","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.savings_saved","title_ja":"貯蓄額","requires_steps":["savings_income"],"uses_nodes":[],"condition_ja":"1150ドルの40%を貯蓄する。","conclusion_ja":"1150×40÷100=460ドル。","baseline_ja":"百分率は基準額×割合÷100。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":457,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["4種類の受取額を漏れなく加えた。","40%を100分の40として適用した。"]}
+}

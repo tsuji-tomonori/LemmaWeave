@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily30_apples","title_ja":"一袋の個数と総数から袋数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00295","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Geraldの一袋40個に対しPamの一袋は三袋分。Pamの総数1200個の袋数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.apples_solution","graph":"work/gsm8k-daily30-apples-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各袋の個数は一定で、1200個を全て袋に入れている。"],
+  "steps":[
+    {"id":"apples_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.apples_each","title_ja":"Pamの一袋分","requires_steps":[],"uses_nodes":[],"condition_ja":"Geraldの一袋は40個、Pamの一袋はその三袋分。","conclusion_ja":"Pamの一袋は120個。","baseline_ja":"40×3で比例量を求める。"},
+    {"id":"apples_bags","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.apples_bags","title_ja":"袋数を求める","requires_steps":["apples_each"],"uses_nodes":[],"condition_ja":"総数1200個、各袋120個。","conclusion_ja":"袋は10袋。","baseline_ja":"総数＝袋数×一袋の個数という自然数方程式を解く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":296,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["40×3=120、1200=10×120を原文と照合した。"]}
+}

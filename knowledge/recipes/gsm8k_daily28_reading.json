@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily28_reading","title_ja":"読書後の残りページ","problem_id":"external-gsm8k-main-3101c7d50724:train:00276","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"全14冊、各200ページのシリーズを1か月目に4冊、2か月目に残りの半分読んだ後の残りページを求める。",
+  "root":"LemmaWeave.Tests.GSM8KDaily0912B.reading_solution","graph":"work/gsm8k-daily28-reading-graph.json","lean_file":"tests/lean/GSM8KDaily0912B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各冊200ページで冊数単位の半分が整数になる。"],
+  "steps":[
+    {"id":"reading_after_first","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.reading_after_first","title_ja":"1か月目後の冊数","requires_steps":[],"uses_nodes":[],"condition_ja":"14冊中4冊を読む。","conclusion_ja":"残りは10冊。","baseline_ja":"全体＝既読＋残り。"},
+    {"id":"reading_second","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.reading_second","title_ja":"2か月目の冊数","requires_steps":["reading_after_first"],"uses_nodes":[],"condition_ja":"残り10冊の半分を読む。","conclusion_ja":"2か月目は5冊読む。","baseline_ja":"2×半分＝全体。"},
+    {"id":"reading_remaining_books","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.reading_remaining_books","title_ja":"残り冊数","requires_steps":["reading_second"],"uses_nodes":[],"condition_ja":"最初の4冊と次の5冊を読んだ。","conclusion_ja":"未読は5冊。","baseline_ja":"全冊数＝既読冊数＋未読冊数。"},
+    {"id":"reading_remaining_pages","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.reading_remaining_pages","title_ja":"残りページ","requires_steps":["reading_remaining_books"],"uses_nodes":[],"condition_ja":"未読5冊、各200ページ。","conclusion_ja":"残りは1000ページ。","baseline_ja":"総ページ＝冊数×1冊のページ数。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":277,"checked_model_hash":"6b16310f0a116b0f5920805ef148e39e64b00ecbd5bcf0656596c75a079178bd","checks_ja":["2か月目の『残りの半分』を1か月目後の10冊に適用した。"]}
+}

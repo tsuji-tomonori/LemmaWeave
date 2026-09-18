@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily30_sugar","title_ja":"均等分けした一袋の半分を失った残量","problem_id":"external-gsm8k-main-3101c7d50724:train:00296","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"砂糖24kgを4袋へ等分し、一袋の半分が落ちた後の残量を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.sugar_solution","graph":"work/gsm8k-daily30-sugar-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["破れた一袋以外の砂糖は失われない。"],
+  "steps":[
+    {"id":"sugar_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.sugar_each","title_ja":"一袋の重さ","requires_steps":[],"uses_nodes":[],"condition_ja":"24kgを4袋へ等分する。","conclusion_ja":"一袋は6kg。","baseline_ja":"総量＝袋数×一袋量。"},
+    {"id":"sugar_spilled","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.sugar_spilled","title_ja":"落ちた重さ","requires_steps":["sugar_each"],"uses_nodes":[],"condition_ja":"一袋6kgの半分が落ちる。","conclusion_ja":"落ちた砂糖は3kg。","baseline_ja":"半分は2×半分＝全体で表す。"},
+    {"id":"sugar_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.sugar_remaining","title_ja":"残量を求める","requires_steps":["sugar_spilled"],"uses_nodes":[],"condition_ja":"元の24kgから3kgだけ失われた。","conclusion_ja":"21kg残る。","baseline_ja":"元の量＝損失量＋残量。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":297,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["24÷4=6、6÷2=3、24-3=21を原文と照合した。"]}
+}

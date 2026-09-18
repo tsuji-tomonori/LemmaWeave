@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily17_bottles","title_ja":"すべての瓶を満たす折り紙の星","problem_id":"external-gsm8k-main-3101c7d50724:train:00172","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"15個ずつ入る瓶を最初に2本、その後さらに同じ瓶を3本買ったとき、全部を満たす星の数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910A.bottles_solution","graph":"work/gsm8k-daily17-bottles-graph.json","lean_file":"tests/lean/GSM8KDaily0910A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["追加の3本も各15個入る同一容量。"],
+  "steps":[
+    {"id":"bottles_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.bottles_total","title_ja":"瓶の総数","requires_steps":[],"uses_nodes":[],"condition_ja":"最初の2本に3本を追加する。","conclusion_ja":"瓶は5本。","baseline_ja":"加法。"},
+    {"id":"bottles_stars","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.bottles_stars","title_ja":"必要な星の数","requires_steps":["bottles_total"],"uses_nodes":[],"condition_ja":"5本すべてに15個ずつ入れる。","conclusion_ja":"5×15=75個。","baseline_ja":"瓶数×瓶当たり容量。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":173,"checked_model_hash":"8d560b66e65f6153528fc090945267f3173ba02c8df0a2cef113393ea49676d5","checks_ja":["最初と追加の瓶数、同一容量、全瓶を満たす条件を照合した。"]}
+}

@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily5_download","title_ja":"速度が途中で変わるダウンロード時間を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00047","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"90MBのうち最初の60MBは5MB/s、残りは10MB/sで取得する総時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907E.download_solution","graph":"work/gsm8k-daily5-download-graph.json","lean_file":"tests/lean/GSM8KDaily0907E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["区間ごとに容量÷速度で時間を求め、連続する2区間の時間を加える。"],
+  "steps":[
+    {"id":"download_first","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.download_first","title_ja":"最初の区間","requires_steps":[],"uses_nodes":[],"condition_ja":"60MBを5MB/sで取得する。","conclusion_ja":"60÷5=12秒。","baseline_ja":"中学校までの速さの公式。"},
+    {"id":"download_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.download_remaining","title_ja":"残り容量","requires_steps":[],"uses_nodes":[],"condition_ja":"全90MBから60MBを引く。","conclusion_ja":"30MB。","baseline_ja":"中学校までの減法。"},
+    {"id":"download_remaining_time","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.download_remaining_time","title_ja":"残り区間","requires_steps":["download_remaining"],"uses_nodes":[],"condition_ja":"30MBを10MB/sで取得する。","conclusion_ja":"3秒。","baseline_ja":"中学校までの速さの公式。"},
+    {"id":"download_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.download_total","title_ja":"総時間","requires_steps":["download_first","download_remaining_time"],"uses_nodes":[],"condition_ja":"連続する2区間の時間を足す。","conclusion_ja":"12+3=15秒。","baseline_ja":"中学校までの加法。"},
+    {"id":"download_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.download_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"各値を12秒、30MB、3秒、15秒と置く。","conclusion_ja":"容量、速度、総時間の条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":48,"checked_model_hash":"adc4c0f4dec3dbed083ddd2439540f62981d1039ced1f4d455c23cc025e0e734","checks_ja":["速度変更点で容量を分割し、各区間の単位と時間の合計を照合した。"]}
+}

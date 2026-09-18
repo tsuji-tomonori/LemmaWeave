@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily28_stickers","title_ja":"25 times moreの条件付き解答","problem_id":"external-gsm8k-main-3101c7d50724:train:00282","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Kristoffが85枚でRikuが『25 times more』持つときの枚数を、語句の2通りの解釈で求める。",
+  "root":"LemmaWeave.Tests.GSM8KDaily0912B.stickers_solution","graph":"work/gsm8k-daily28-stickers-graph.json","lean_file":"tests/lean/GSM8KDaily0912B.lean","semantic_review_status":"self_review_only","model_scope":"conditional","counting_note_ja":"取得済み固定GSM8Kの1問。曖昧な倍率表現を反例付きで解答した。","model_notes_ja":["25倍そのものなら2125枚。元より25倍分多いという参照解の解釈なら26倍で2210枚。"],
+  "steps":[
+    {"id":"stickers_as_many","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.stickers_as_many","title_ja":"25倍と読む場合","requires_steps":[],"uses_nodes":[],"condition_ja":"『25 times more』を『25 times as many』と同じ全体25倍と読む。","conclusion_ja":"Rikuは2125枚。","baseline_ja":"全体＝倍率×基準枚数。"},
+    {"id":"stickers_more_than","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.stickers_more_than","title_ja":"25倍分多いと読む場合","requires_steps":[],"uses_nodes":[],"condition_ja":"元の85枚に、その25倍分を追加するので全体26倍と読む。","conclusion_ja":"Rikuは2210枚。2125枚と異なり、原文だけでは一意でない。","baseline_ja":"全体＝(1＋追加倍率)×基準枚数。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":283,"checked_model_hash":"6b16310f0a116b0f5920805ef148e39e64b00ecbd5bcf0656596c75a079178bd","checks_ja":["25×85=2125、26×85=2210を照合し、参照解が後者を採ることも確認した。"]}
+}

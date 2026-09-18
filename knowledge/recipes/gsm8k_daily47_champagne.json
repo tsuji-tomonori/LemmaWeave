@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily47_champagne","title_ja":"浴槽を満たすシャンパン代","problem_id":"external-gsm8k-main-3101c7d50724:train:00469","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"40ガロンを1クォート瓶で満たし20%割引後の代金を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917C.champagne_solution","graph":"work/gsm8k-daily47-champagne-graph.json","lean_file":"tests/lean/GSM8KDaily0917C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1ガロン=4クォート、1瓶=1クォートで全量を満たす。"],
+  "steps":[
+    {"id":"champagne_gross","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917C.champagne_gross","title_ja":"必要本数と定価総額","requires_steps":[],"uses_nodes":[],"condition_ja":"40ガロン、1ガロン4クォート、1瓶1クォート、1瓶50ドル。","conclusion_ja":"160本必要で、定価総額は8000ドル。","baseline_ja":"容量換算と数量×単価。"},
+    {"id":"champagne_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917C.champagne_total","title_ja":"割引後の支払額","requires_steps":["champagne_gross"],"uses_nodes":[],"condition_ja":"定価総額8000ドルから20%を割り引く。","conclusion_ja":"割引1600ドル、支払額6400ドル。","baseline_ja":"百分率と差。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":470,"checked_model_hash":"c7638dbc5d9768e007944e1ada2b2f940d2135fe03ee83db29542cd04702205d","checks_ja":["ガロンから瓶数への換算を確認した。","20%割引を総額へ適用した。"]}
+}

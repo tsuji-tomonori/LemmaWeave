@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_daily2_names",
+  "title_ja": "名字の文字数を逆算する",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00022",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Samanthaの名字はBobbieより3文字少ない。Bobbieから2文字取るとJamieの名字の2倍。Jamie GreyのときSamanthaは何文字？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.names_solution",
+  "graph": "work/gsm8k-daily2-names-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "full nameの空白や名Jamieは名字の文字数に含めず、last name Greyだけを数える。",
+    "自然数の切捨て減算の誤用を避けるためBobbieの長さが2以上もモデルに含める。"
+  ],
+  "steps": [
+    {
+      "id": "names_jamie",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.names_jamie",
+      "title_ja": "Jamieの名字",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Greyの英字を数える。",
+      "conclusion_ja": "4文字。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "names_bobbie",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.names_bobbie",
+      "title_ja": "Bobbieの元の長さ",
+      "requires_steps": [
+        "names_jamie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2文字除いた長さが2×4=8で、元の長さは2以上。",
+      "conclusion_ja": "元は10文字。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "names_removed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.names_removed",
+      "title_ja": "取り除いた後の長さ",
+      "requires_steps": [
+        "names_jamie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Bobbieは10文字。",
+      "conclusion_ja": "10−2=8文字でJamieの2倍。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "names_samantha",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.names_samantha",
+      "title_ja": "Samanthaの長さ",
+      "requires_steps": [
+        "names_bobbie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Bobbie10文字より3文字少ない。",
+      "conclusion_ja": "7文字。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "names_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.names_exists",
+      "title_ja": "条件の充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jamie4、Bobbie10、Samantha7。",
+      "conclusion_ja": "切取り・2倍・3文字差を満たす。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 23,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "full nameの空白や名Jamieは名字の文字数に含めず、last name Greyだけを数える。",
+      "自然数の切捨て減算の誤用を避けるためBobbieの長さが2以上もモデルに含める。"
+    ]
+  }
+}

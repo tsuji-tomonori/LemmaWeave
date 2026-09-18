@@ -1,0 +1,51 @@
+{
+  "id": "gsm8k_daily39_fence",
+  "title_ja": "長方形フェンス",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00391",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "長辺が短辺の3倍、周長640フィートから交換する短辺1本を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914E.fence_solution",
+  "graph": "work/gsm8k-daily39-fence-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914E.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "交換対象は短辺1本。"
+  ],
+  "steps": [
+    {
+      "id": "fence_perimeter",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.fence_perimeter",
+      "title_ja": "周長式",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "長辺3S、各辺2本。",
+      "conclusion_ja": "周長は8S。",
+      "baseline_ja": "長方形の周長は2短辺+2長辺。"
+    },
+    {
+      "id": "fence_short",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.fence_short",
+      "title_ja": "短辺",
+      "requires_steps": [
+        "fence_perimeter"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8S=640。",
+      "conclusion_ja": "S=80フィート。",
+      "baseline_ja": "周長方程式を解く。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 392,
+    "checked_model_hash": "1d7e9c846015dbd622f541ddd3274ab243abb629ea52d275f4d638dff0721b06",
+    "checks_ja": [
+      "原文の数量関係、単位、問いと結論を照合した。"
+    ]
+  }
+}

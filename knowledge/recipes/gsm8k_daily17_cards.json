@@ -1,0 +1,23 @@
+{
+  "id": "gsm8k_daily17_cards",
+  "title_ja": "曜日ごとの増減後の野球カード",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00164",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "月曜に30枚、火曜に半分を失い、水曜に12枚買い、木曜に火曜時点の3分の1を買うとき、木曜の枚数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0910A.cards_solution",
+  "graph": "work/gsm8k-daily17-cards-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0910A.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["木曜に買う量の基準は水曜ではなく火曜時点の15枚。"],
+  "steps": [
+    {"id":"cards_tuesday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.cards_tuesday","title_ja":"火曜の枚数","requires_steps":[],"uses_nodes":[],"condition_ja":"月曜30枚の半分を失う。","conclusion_ja":"火曜は15枚。","baseline_ja":"半分を失うと残りも半分。"},
+    {"id":"cards_wednesday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.cards_wednesday","title_ja":"水曜の枚数","requires_steps":["cards_tuesday"],"uses_nodes":[],"condition_ja":"火曜の15枚に12枚を買い足す。","conclusion_ja":"水曜は27枚。","baseline_ja":"加法。"},
+    {"id":"cards_purchase","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.cards_purchase","title_ja":"木曜の購入枚数","requires_steps":["cards_tuesday"],"uses_nodes":[],"condition_ja":"火曜時点15枚の3分の1を買う。","conclusion_ja":"5枚買う。","baseline_ja":"3等分。"},
+    {"id":"cards_final","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.cards_final","title_ja":"木曜の所持枚数","requires_steps":["cards_wednesday","cards_purchase"],"uses_nodes":[],"condition_ja":"水曜の27枚に木曜購入の5枚を加える。","conclusion_ja":"木曜は32枚。","baseline_ja":"加法。"}
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {"reviewer":"author","status":"checked","source_line_1based":165,"checked_model_hash":"8d560b66e65f6153528fc090945267f3173ba02c8df0a2cef113393ea49676d5","checks_ja":["各曜日の増減順と、木曜購入量の基準時点を原文と照合した。"]}
+}

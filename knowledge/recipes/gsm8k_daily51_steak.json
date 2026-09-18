@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily51_steak","title_ja":"1つ買うと1つ無料のステーキ代","problem_id":"external-gsm8k-main-3101c7d50724:train:00507","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"1ポンド15ドルのステーキ20ポンドを、1つ買うと同量が無料になる条件で買う代金を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918B.steak_solution","graph":"work/gsm8k-daily51-steak-graph.json","lean_file":"tests/lean/GSM8KDaily0918B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["販売単位の記載がないため、参考解答どおり同量のポンドが無料になる完全な組として解釈する。"],
+  "steps":[
+    {"id":"steak_paid","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.steak_paid","title_ja":"有料の重量","requires_steps":[],"uses_nodes":[],"condition_ja":"買った量と同量が無料で、20ポンドは完全な組になる。","conclusion_ja":"代金を払うのは10ポンド分。","baseline_ja":"2等分。"},
+    {"id":"steak_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.steak_cost","title_ja":"代金","requires_steps":["steak_paid"],"uses_nodes":[],"condition_ja":"10ポンド分を1ポンド15ドルで買う。","conclusion_ja":"代金は150ドル。","baseline_ja":"金額＝重量×単価。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":508,"checked_model_hash":"f8eb7be4d1b942b76912236d18a8b53348adc325ae6e063d55f6a62f786e1f1a","checks_ja":["promotionを重量単位へ適用する追加解釈を明記した。"]}
+}

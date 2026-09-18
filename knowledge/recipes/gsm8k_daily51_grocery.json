@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily51_grocery","title_ja":"食料品袋を運ぶ往復回数","problem_id":"external-gsm8k-main-3101c7d50724:train:00512","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"2人が各回3袋ずつ同時に運び、30袋を運び終える共同の回数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918B.grocery_solution","graph":"work/gsm8k-daily51-grocery-graph.json","lean_file":"tests/lean/GSM8KDaily0918B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["themの1 tripを2人が同時に車から家へ向かう1回と解釈する。"],
+  "steps":[
+    {"id":"grocery_capacity","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.grocery_capacity","title_ja":"共同1回の袋数","requires_steps":[],"uses_nodes":[],"condition_ja":"2人がそれぞれ3袋を運ぶ。","conclusion_ja":"共同1回で6袋運べる。","baseline_ja":"乗法。"},
+    {"id":"grocery_trips","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.grocery_trips","title_ja":"共同の回数","requires_steps":["grocery_capacity"],"uses_nodes":[],"condition_ja":"30袋を1回6袋ずつ運ぶ。","conclusion_ja":"5回で運び終える。","baseline_ja":"等分。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":513,"checked_model_hash":"f8eb7be4d1b942b76912236d18a8b53348adc325ae6e063d55f6a62f786e1f1a","checks_ja":["個人別の延べ10回ではなく、2人が同時に動く共同5回という参考解答の意味を明示した。"]}
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.1",
+  "id": "GSM8K-INDIVIDUAL-0003",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+  "source_file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+  "source_url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+  "license_notice": "reviews/GSM8K-LICENSE.txt",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Daily0907Models.lean"
+  ],
+  "semantic_model_hash": "e958c9ce30982deaaa1eb14f7c3ca5549c125b26322604f46616e26a65934542",
+  "author_session_id": "lemmaweave-daily-20260907-0203",
+  "review_status": "self_review_only",
+  "problems": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00010",
+      "source_line_1based": 11,
+      "source_record_sha256": "da22a7081841530a1c1d11c8947e463a47b78cd8daec0540465e19b6d85a18b2",
+      "raw_question_sha256": "09296cd5e0fc1cb5a7c241379aa53704fca1c2d3cf3e106fdf539f2f88d050c1",
+      "source_question": "A deep-sea monster rises from the waters once every hundred years to feast on a ship and sate its hunger. Over three hundred years, it has consumed 847 people. Ships have been built larger over time, so each new ship has twice as many people as the last ship. How many people were on the ship the monster ate in the first hundred years?",
+      "recipe_id": "gsm8k_daily_ships",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "300年は3回の襲撃を含む問題の区切りとして読む。期間の両端を二重に数えない。",
+        "数値だけを仮定せず、未知の最初の人数から倍増と総和の関係を導く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00011",
+      "source_line_1based": 12,
+      "source_record_sha256": "69f86ae9a75b330dbd9d7236f413a4ced01437a270abbd5618ac3b6bfb6e3747",
+      "raw_question_sha256": "3097703f5bcc130a683ad04b50f35470e76b8613faf2a78c10ce14fbf0421795",
+      "source_question": "Tobias is buying a new pair of shoes that costs $95. He has been saving up his money each month for the past three months. He gets a $5 allowance a month. He also mows lawns and shovels driveways. He charges $15 to mow a lawn and $7 to shovel. After buying the shoes, he has $15 in change. If he mows 4 lawns, how many driveways did he shovel?",
+      "recipe_id": "gsm8k_daily_shoes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "記された3か月の収入を全額貯蓄し、それ以外の元金・収入・支出はない通常の文章題モデル。",
+        "件数を自然数で扱う。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00012",
+      "source_line_1based": 13,
+      "source_record_sha256": "bedae2ef60f78904df25e3297033af5e9d73fadfb171e6aba2534988c5d90d71",
+      "raw_question_sha256": "922bb01991f9021652a70a10145417062f164211a83b40dcf1c61b6b67525daf",
+      "source_question": "Randy has 60 mango trees on his farm. He also has 5 less than half as many coconut trees as mango trees. How many trees does Randy have in all on his farm?",
+      "recipe_id": "gsm8k_daily_trees",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "(60−5)/2ではなく60/2−5。原題にない第三の樹種は合計へ加えない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00013",
+      "source_line_1based": 14,
+      "source_record_sha256": "80828a31aef9410fb5e4dcd195142289c7e681911d40957b7c664019e6f76a63",
+      "raw_question_sha256": "da32de9a8fdf17faf139ce3943810fcbe34c0a96e5790b2553a1dde0d4ede5c3",
+      "source_question": "Jasper will serve charcuterie at his dinner party. He buys 2 pounds of cheddar cheese for $10, a pound of cream cheese that cost half the price of the cheddar cheese, and a pack of cold cuts that cost twice the price of the cheddar cheese. How much does he spend on the ingredients?",
+      "recipe_id": "gsm8k_daily_cheese",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "10ドルはチェダー2ポンドの全体価格で単価ではない。重量比を代金比へ勝手に置換しない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02389",
+      "source_line_1based": 2390,
+      "source_record_sha256": "4cc3194bf796cfbe3156095e3877f59262836e50696fab5ca77e08c25037edd2",
+      "raw_question_sha256": "0e10de9274faacfbd6928648c42ac761b926aff6b9f351e595d615ddd5a8d1c7",
+      "source_question": "Marcus takes a deck of standard playing cards and takes out all the face cards and the 8's. Mark picks a card at random and then replaces it 36 times. How many times should he expect to pick a card that's both red and has a number divisible by 3?",
+      "recipe_id": "gsm8k_daily_cards",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Marcus/Markは同じ抽出手順の人物として扱う。標準デッキはジョーカーなし、絵札JQK。",
+        "randomは残存各カードが等確率、36 timesは合計36回と読む。復元により周辺確率が一定。",
+        "有限重み付き期待値の線形性を一般に証明し、各回の周辺期待値から導出する。独立な全試行列の積標本空間の構築は形式化境界外で、原題との対応を作者が照合する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

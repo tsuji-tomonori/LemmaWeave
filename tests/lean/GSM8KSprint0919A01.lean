@@ -8,7 +8,7 @@ open LemmaWeave.Problems.GSM8K.Sprint0919A01
 theorem library_after_monday (a b c d e : Nat) (h : LibraryBooks a b c d e) : d = 212 := by
   rcases h with ⟨ha, hb, hc, hd, he⟩
   norm_num [ha, hb] at hc
-  exact hc
+  omega
 
 theorem library_current (a b c d e : Nat) (h : LibraryBooks a b c d e) : e = 234 := by
   have hafter := library_after_monday a b c d e h
@@ -16,8 +16,8 @@ theorem library_current (a b c d e : Nat) (h : LibraryBooks a b c d e) : e = 234
   norm_num [hafter, hreturned] at he
   exact he
 
-theorem library_solution : LibraryBooks 336 124 212 22 234 ∧ 212 = 212 ∧ 234 = 234 := by
-  have h : LibraryBooks 336 124 212 22 234 := by norm_num [LibraryBooks]
+theorem library_solution : LibraryBooks 336 124 22 212 234 ∧ 212 = 212 ∧ 234 = 234 := by
+  have h : LibraryBooks 336 124 22 212 234 := by norm_num [LibraryBooks]
   exact ⟨h, library_after_monday _ _ _ _ _ h, library_current _ _ _ _ _ h⟩
 
 theorem errand_home_leg (a b c d e f g h i j : Nat) (x : ErrandFuel a b c d e f g h i j) : e = 24 := by

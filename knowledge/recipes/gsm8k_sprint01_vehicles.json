@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint01_vehicles","title_ja":"車両購入費と登録費","problem_id":"external-gsm8k-main-3101c7d50724:train:00528","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"2種類の車両購入費と7台すべての登録費を合計する。","root":"LemmaWeave.Tests.GSM8KSprint0919A01.vehicles_solution","graph":"work/gsm8k-sprint01-vehicles-graph.json","lean_file":"tests/lean/GSM8KSprint0919A01.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["登録費25ドルは購入した3+4台の各車両に一度ずつ掛かる。"],
+  "steps":[
+    {"id":"vehicles_dirt_cost","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.vehicles_dirt_cost","title_ja":"ダートバイク代","requires_steps":[],"uses_nodes":[],"condition_ja":"3台を1台150ドルで買う。","conclusion_ja":"450ドル。","baseline_ja":"単価×数量。"},
+    {"id":"vehicles_offroad_cost","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.vehicles_offroad_cost","title_ja":"オフロード車代","requires_steps":[],"uses_nodes":[],"condition_ja":"4台を1台300ドルで買う。","conclusion_ja":"1200ドル。","baseline_ja":"単価×数量。"},
+    {"id":"vehicles_registration","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.vehicles_registration","title_ja":"登録費","requires_steps":[],"uses_nodes":[],"condition_ja":"合計7台を1台25ドルで登録する。","conclusion_ja":"175ドル。","baseline_ja":"単価×数量。"},
+    {"id":"vehicles_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.vehicles_total","title_ja":"支払総額","requires_steps":["vehicles_dirt_cost","vehicles_offroad_cost","vehicles_registration"],"uses_nodes":[],"condition_ja":"450、1200、175ドルを合計する。","conclusion_ja":"総額1825ドル。","baseline_ja":"和の関係。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":529,"checked_model_hash":"a80aed7e770caf2fb63a998c6b642e751dc34e69ac43382f1fd4f085b5fe8cd6","checks_ja":["両車種の台数・単価と全車両への登録費を原題から照合した。"]}
+}

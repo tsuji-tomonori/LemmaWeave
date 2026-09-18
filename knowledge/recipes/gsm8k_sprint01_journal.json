@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint01_journal","title_ja":"3日間の日記ページ数","problem_id":"external-gsm8k-main-3101c7d50724:train:00526","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"月曜と火曜は時間と執筆速度からページ数を出し、水曜分と合計する。","root":"LemmaWeave.Tests.GSM8KSprint0919A01.journal_solution","graph":"work/gsm8k-sprint01-journal-graph.json","lean_file":"tests/lean/GSM8KSprint0919A01.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["各日の執筆時間は1ページ当たり時間で割り切れる。"],
+  "steps":[
+    {"id":"journal_monday_pages","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.journal_monday_pages","title_ja":"月曜分","requires_steps":[],"uses_nodes":[],"condition_ja":"60分、30分ごとに1ページ。","conclusion_ja":"2ページ。","baseline_ja":"時間=1ページ当たり時間×ページ数。"},
+    {"id":"journal_tuesday_pages","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.journal_tuesday_pages","title_ja":"火曜分","requires_steps":[],"uses_nodes":[],"condition_ja":"45分、15分ごとに1ページ。","conclusion_ja":"3ページ。","baseline_ja":"時間=1ページ当たり時間×ページ数。"},
+    {"id":"journal_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.journal_total","title_ja":"3日間の合計","requires_steps":["journal_monday_pages","journal_tuesday_pages"],"uses_nodes":[],"condition_ja":"月曜2、火曜3、水曜5ページを足す。","conclusion_ja":"合計10ページ。","baseline_ja":"和の関係。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":527,"checked_model_hash":"a80aed7e770caf2fb63a998c6b642e751dc34e69ac43382f1fd4f085b5fe8cd6","checks_ja":["曜日ごとの条件と水曜の直接指定をすべて含めた。"]}
+}

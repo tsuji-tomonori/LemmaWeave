@@ -1,3 +1,5 @@
+import Mathlib.Data.Rat.Defs
+
 namespace LemmaWeave.Problems.GSM8K.Sprint0919A29
 
 def WebsiteRevenue (monthly days daily centsPerVisit dailyCents : Nat) : Prop :=

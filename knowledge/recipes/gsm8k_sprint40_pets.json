@@ -1,0 +1,119 @@
+{
+  "id": "gsm8k_sprint40_pets",
+  "title_ja": "3人のペット数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00888",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "明記された犬猫を合計し、未記載ペットがある場合の非一意性も示す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_solution",
+  "graph": "work/gsm8k-sprint40-pets-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "参照解答54匹は、明記された動物以外を飼っていないという閉世界条件付き。"
+  ],
+  "steps": [
+    {
+      "id": "pets_teddy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_teddy",
+      "title_ja": "Teddy",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "犬7匹と猫8匹。",
+      "conclusion_ja": "15匹。",
+      "baseline_ja": "7+8=15。"
+    },
+    {
+      "id": "pets_ben_dogs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_ben_dogs",
+      "title_ja": "Benの犬",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Teddyより9匹多い。",
+      "conclusion_ja": "16匹。",
+      "baseline_ja": "7+9=16。"
+    },
+    {
+      "id": "pets_dave_cats",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_dave_cats",
+      "title_ja": "Daveの猫",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Teddyより13匹多い。",
+      "conclusion_ja": "21匹。",
+      "baseline_ja": "8+13=21。"
+    },
+    {
+      "id": "pets_dave_dogs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_dave_dogs",
+      "title_ja": "Daveの犬",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Teddyより5匹少ない。",
+      "conclusion_ja": "2匹。",
+      "baseline_ja": "2+5=7。"
+    },
+    {
+      "id": "pets_dave",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_dave",
+      "title_ja": "Daveの明記ペット",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "猫21匹と犬2匹。",
+      "conclusion_ja": "23匹。",
+      "baseline_ja": "21+2=23。"
+    },
+    {
+      "id": "pets_named",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_named",
+      "title_ja": "明記された総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Teddy15、Benの犬16、Dave23。",
+      "conclusion_ja": "54匹。",
+      "baseline_ja": "15+16+23=54。"
+    },
+    {
+      "id": "pets_closed_world",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_closed_world",
+      "title_ja": "追加なしの条件付き答え",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Benに未記載の他のペットがいない。",
+      "conclusion_ja": "54匹。",
+      "baseline_ja": "54+0=54。"
+    },
+    {
+      "id": "pets_extra_example",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_extra_example",
+      "title_ja": "反例",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Benに未記載の猫が1匹いる場合も原文の犬条件を満たす。",
+      "conclusion_ja": "55匹。",
+      "baseline_ja": "54+1=55。"
+    },
+    {
+      "id": "pets_totals_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.pets_totals_differ",
+      "title_ja": "非一意性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "54匹と55匹が両立する。",
+      "conclusion_ja": "全ペット数は追加なしの仮定なしには一意でない。",
+      "baseline_ja": "54≠55。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 889,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

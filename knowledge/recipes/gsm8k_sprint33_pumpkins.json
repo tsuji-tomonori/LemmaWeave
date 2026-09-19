@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint33_pumpkins",
+  "title_ja": "最大と最小のカボチャ差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00784",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Jessicaを27ポンド、Bettyを108ポンドと求め、差81ポンドを得る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.pumpkins_solution",
+  "graph": "work/gsm8k-sprint33-pumpkins-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pumpkins_jessica",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.pumpkins_jessica",
+      "title_ja": "Jessica",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Bradの54ポンドの半分。",
+      "conclusion_ja": "27ポンド。",
+      "baseline_ja": "27×2=54。"
+    },
+    {
+      "id": "pumpkins_betty",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.pumpkins_betty",
+      "title_ja": "Betty",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jessicaの4倍。",
+      "conclusion_ja": "108ポンド。",
+      "baseline_ja": "4×27=108。"
+    },
+    {
+      "id": "pumpkins_difference",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.pumpkins_difference",
+      "title_ja": "最大と最小の差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "108から27を引く。",
+      "conclusion_ja": "81ポンド。",
+      "baseline_ja": "81+27=108。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 785,
+    "checked_model_hash": "6989c3bd23b4f621ff1d1dbc75f571d1c653093b299f6b7c084816ff1d3dc170",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

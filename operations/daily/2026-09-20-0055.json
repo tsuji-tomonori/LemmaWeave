@@ -1,0 +1,104 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-0000-gsm8k-33",
+  "planned_slot_local_hour": 0,
+  "planned_at": "2026-09-20T00:00:00+09:00",
+  "role": "gsm8k_individual_15",
+  "base_sha": "089b4b5fdd1c7a035fd296ee7d6b4013ea59ea30",
+  "started_at": "2026-09-20T00:55:46+09:00",
+  "finished_at": "2026-09-20T01:15:00+09:00",
+  "schedule_offset_seconds": 3346,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00774",
+    "external-gsm8k-main-3101c7d50724:train:00775",
+    "external-gsm8k-main-3101c7d50724:train:00776",
+    "external-gsm8k-main-3101c7d50724:train:00777",
+    "external-gsm8k-main-3101c7d50724:train:00778",
+    "external-gsm8k-main-3101c7d50724:train:00779",
+    "external-gsm8k-main-3101c7d50724:train:00780",
+    "external-gsm8k-main-3101c7d50724:train:00781",
+    "external-gsm8k-main-3101c7d50724:train:00782",
+    "external-gsm8k-main-3101c7d50724:train:00783",
+    "external-gsm8k-main-3101c7d50724:train:00784",
+    "external-gsm8k-main-3101c7d50724:train:00785",
+    "external-gsm8k-main-3101c7d50724:train:00786",
+    "external-gsm8k-main-3101c7d50724:train:00787",
+    "external-gsm8k-main-3101c7d50724:train:00788"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00774",
+    "external-gsm8k-main-3101c7d50724:train:00775",
+    "external-gsm8k-main-3101c7d50724:train:00776",
+    "external-gsm8k-main-3101c7d50724:train:00777",
+    "external-gsm8k-main-3101c7d50724:train:00778",
+    "external-gsm8k-main-3101c7d50724:train:00779",
+    "external-gsm8k-main-3101c7d50724:train:00780",
+    "external-gsm8k-main-3101c7d50724:train:00781",
+    "external-gsm8k-main-3101c7d50724:train:00782",
+    "external-gsm8k-main-3101c7d50724:train:00783",
+    "external-gsm8k-main-3101c7d50724:train:00784",
+    "external-gsm8k-main-3101c7d50724:train:00785",
+    "external-gsm8k-main-3101c7d50724:train:00786",
+    "external-gsm8k-main-3101c7d50724:train:00787",
+    "external-gsm8k-main-3101c7d50724:train:00788"
+  ],
+  "deferred": [],
+  "verification_pending_reason_ja": "原文・質問ハッシュ、54説明行、Leanモデル、名前付き行定理、自己照合を保存した。ローカル環境にはlakeがなく、前HEADのexact-head CIも説明行依存不一致で失敗しているため、固定Lean 4.33.1の成功証拠取込前として昇格しない。",
+  "next_action_ja": "現HEADのCIでA33をビルドし、全レシピ検査のrecipe ID付き診断を取得する。成功時だけ証拠を取り込み、入力ハッシュ・公理・実依存を個別照合する。",
+  "checkpoint_commits": [
+    {"range": "train:00774..00778", "status": "planned_checkpoint"},
+    {"range": "train:00779..00783", "status": "planned_checkpoint"},
+    {"range": "train:00784..00788", "status": "planned_checkpoint"}
+  ],
+  "source_verification": {
+    "upstream_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_lines_1based": [775, 789],
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "record_hashes_checked": 15,
+    "question_hashes_checked": 15
+  },
+  "artifacts": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0087.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0920A01Models.lean",
+    "proof": "tests/lean/GSM8KSprint0920A01.lean",
+    "recipes": 15,
+    "written_lines": 54,
+    "semantic_review_status": "self_review_only",
+    "sorry_admit_custom_axiom_count": 0
+  },
+  "modeling_notes_ja": [
+    "train:00778は転売した別の自転車が最初の3000ドルに含まれるかが不明なため、持出額1420ドルと2020ドルの二解釈を保持した。",
+    "train:00786は設問の12週と参照解説の52週が矛盾する。1200ページの長編を期間内に丸ごと書く解釈と年52週へ均等配分する解釈を分け、どちらも購入単位では3連必要と証明した。"
+  ],
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 260
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 275
+  },
+  "ci": {
+    "previous_workflow_run_id": 35447386107,
+    "previous_tested_head_sha": "12bb69071b62912ba551b7821970e889a7f5bcf9",
+    "previous_status": "failure",
+    "previous_failure": "written line has no theorem in final proof",
+    "current_exact_head_status": "not_yet_observed",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": {
+    "base_sha": "089b4b5fdd1c7a035fd296ee7d6b4013ea59ea30",
+    "final_commit_sha": "recorded_by_git_history"
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00789",
+  "execution_control": {
+    "serialized": true,
+    "shared_lock_implementation": false,
+    "claim_status": "released_after_serial_write",
+    "note_ja": "同一ブランチHEADを読み直し、非force更新で3チェックポイントを保存する。"
+  }
+}

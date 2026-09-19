@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint33_quarters",
+  "title_ja": "25セント硬貨の金額差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00788",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "64枚と32枚をセント換算し、差800セント=8ドルを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.quarters_solution",
+  "graph": "work/gsm8k-sprint33-quarters-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "Leanでは金額をセント単位で保持する。"
+  ],
+  "steps": [
+    {
+      "id": "quarters_karen",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.quarters_karen",
+      "title_ja": "Karenの金額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "32枚、1枚25セント。",
+      "conclusion_ja": "800セント。",
+      "baseline_ja": "32×25=800。"
+    },
+    {
+      "id": "quarters_christopher",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.quarters_christopher",
+      "title_ja": "Christopherの金額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "64枚、1枚25セント。",
+      "conclusion_ja": "1,600セント。",
+      "baseline_ja": "64×25=1600。"
+    },
+    {
+      "id": "quarters_difference",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.quarters_difference",
+      "title_ja": "金額差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1,600セントから800セントを引く。",
+      "conclusion_ja": "800セント、すなわち8ドル。",
+      "baseline_ja": "800+800=1600。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 789,
+    "checked_model_hash": "518d7054c3f480db75ac2ab48ced7ed6ec1f932a6cdac20e25b19047237f5dba",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

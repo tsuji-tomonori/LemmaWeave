@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint39_orchard",
+  "title_ja": "果樹園の収穫質量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00873",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "りんごと桃の収穫量を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.orchard_solution",
+  "graph": "work/gsm8k-sprint39-orchard-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "すべての質量をkg単位で保持する。"
+  ],
+  "steps": [
+    {
+      "id": "orchard_apples",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.orchard_apples",
+      "title_ja": "りんごの質量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "30本が各150kg。",
+      "conclusion_ja": "4500kg。",
+      "baseline_ja": "30×150=4500。"
+    },
+    {
+      "id": "orchard_peaches",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.orchard_peaches",
+      "title_ja": "桃の質量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "45本が各65kg。",
+      "conclusion_ja": "2925kg。",
+      "baseline_ja": "45×65=2925。"
+    },
+    {
+      "id": "orchard_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.orchard_total",
+      "title_ja": "果物全体",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4500kgと2925kgを足す。",
+      "conclusion_ja": "7425kg。",
+      "baseline_ja": "4500+2925=7425。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 874,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -9,15 +9,25 @@
     "exam": "令和8年度大学入学共通テスト 本試験 数学I",
     "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
     "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
-    "pdf_page_1_based": [3, 4],
-    "printed_page_label": ["32", "33"],
+    "pdf_page_1_based": [
+      3,
+      4
+    ],
+    "printed_page_label": [
+      "32",
+      "33"
+    ],
     "subquestion": "[2](1)",
     "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
     "problem_record_sha256": "b353092efc423b7c83b214bfa6ef2a413ac14cecb0bc236c6c87b83378d529e3",
     "visual_review_status": "confirmed_2026-09-05"
   },
   "variables": [
-    {"name": "k", "type": "ℕ", "domain_ja": "2≤k≤20"}
+    {
+      "name": "k",
+      "type": "ℕ",
+      "domain_ja": "2≤k≤20"
+    }
   ],
   "assumptions_ja": [
     "全体集合は自然数2以上20以下である。",
@@ -41,7 +51,7 @@
       "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.set_a3_exact",
       "title_ja": "3と公約数をもつ集合",
       "requires_steps": [],
-      "uses_nodes": ["common_divisor_finite", "set_extensionality"],
+      "uses_nodes": [],
       "claim_ja": "3の1より大きい約数は3だけなので、条件を満たすkはU内の3の倍数である。",
       "method_ja": "公約数の定義と集合の外延性。",
       "condition_ja": "k∈U、すなわち2≤k≤20。",
@@ -54,7 +64,7 @@
       "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.set_a4_exact",
       "title_ja": "4と公約数をもつ集合",
       "requires_steps": [],
-      "uses_nodes": ["common_divisor_finite", "set_extensionality"],
+      "uses_nodes": [],
       "claim_ja": "4の1より大きい約数は2と4なので、条件を満たすkはU内の偶数である。",
       "method_ja": "公約数の定義と集合の外延性。",
       "condition_ja": "k∈U。4と4を公約数にもつ数はすでに2を公約数にもつため、偶数の列挙で尽くす。",
@@ -66,8 +76,11 @@
       "id": "intersection_exact",
       "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.intersection_exact",
       "title_ja": "共通部分",
-      "requires_steps": ["set_a3_exact", "set_a4_exact"],
-      "uses_nodes": ["set_intersection_membership"],
+      "requires_steps": [
+        "set_a3_exact",
+        "set_a4_exact"
+      ],
+      "uses_nodes": [],
       "claim_ja": "両集合に入るには3の倍数かつ偶数、すなわち6の倍数でなければならない。",
       "method_ja": "共通部分の所属条件と最小公倍数。",
       "condition_ja": "k∈U。",
@@ -79,8 +92,11 @@
       "id": "relative_difference_exact",
       "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.relative_difference_exact",
       "title_ja": "相対差",
-      "requires_steps": ["set_a3_exact", "set_a4_exact"],
-      "uses_nodes": ["relative_complement", "set_intersection_membership"],
+      "requires_steps": [
+        "set_a3_exact",
+        "set_a4_exact"
+      ],
+      "uses_nodes": [],
       "claim_ja": "InA(3)に属しInA(4)に属さない元は、U内の奇数の3の倍数である。",
       "method_ja": "相対補集合と共通部分の所属条件。",
       "condition_ja": "補集合はUに関するものであり、U外の自然数を含めない。",

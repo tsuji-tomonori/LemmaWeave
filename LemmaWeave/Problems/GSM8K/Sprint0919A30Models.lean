@@ -1,3 +1,5 @@
+import Mathlib.Data.Rat.Defs
+
 namespace LemmaWeave.Problems.GSM8K.Sprint0919A30
 
 def JogDistance

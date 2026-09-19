@@ -1,0 +1,50 @@
+{
+  "id": "gsm8k_sprint27_tadpoles",
+  "title_ja": "オタマジャクシの残数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00688",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "180匹の75%を放した後の残数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A27.tadpoles_solution",
+  "graph": "work/gsm8k-sprint27-tadpoles-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A27.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "百分率を100分率として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "tadpoles_released",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.tadpoles_released",
+      "title_ja": "放した数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "180匹の75%。",
+      "conclusion_ja": "135匹。",
+      "baseline_ja": "180×75/100=135。"
+    },
+    {
+      "id": "tadpoles_kept",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.tadpoles_kept",
+      "title_ja": "残した数",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "全180匹から135匹を引く。",
+      "conclusion_ja": "45匹。",
+      "baseline_ja": "180-135=45。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 689,
+    "checked_model_hash": "bae0c782540d1aa92fadf4c4853475678247b5247c8e57098d3a584e0c34b521",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

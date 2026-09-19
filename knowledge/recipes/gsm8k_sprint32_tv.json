@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint32_tv",
+  "title_ja": "2週間のテレビ視聴時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00770",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "週4日、1日45分の視聴を2週間続けた総時間を時間単位で求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.tv_solution",
+  "graph": "work/gsm8k-sprint32-tv-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "1週間を許可された4日だけで数え、60分=1時間で換算する。"
+  ],
+  "steps": [
+    {
+      "id": "tv_weekly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.tv_weekly",
+      "title_ja": "週あたりの分数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "45分を週4日見る。",
+      "conclusion_ja": "180分。",
+      "baseline_ja": "45×4=180。"
+    },
+    {
+      "id": "tv_two_weeks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.tv_two_weeks",
+      "title_ja": "2週間の分数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "週180分を2週間。",
+      "conclusion_ja": "360分。",
+      "baseline_ja": "180×2=360。"
+    },
+    {
+      "id": "tv_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.tv_hours",
+      "title_ja": "時間換算",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "360分を60分単位で換算する。",
+      "conclusion_ja": "6時間。",
+      "baseline_ja": "360=6×60。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 771,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

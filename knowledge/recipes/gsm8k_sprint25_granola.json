@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint25_granola",
+  "title_ja": "グラノーラ販売の純利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00659",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "20袋の原価と、通常価格15袋・値下げ価格5袋の売上から純利益を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A25.granola_solution",
+  "graph": "work/gsm8k-sprint25-granola-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A25.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "金額はすべて整数ドルで表せる。"
+  ],
+  "steps": [
+    {
+      "id": "granola_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.granola_cost",
+      "title_ja": "総原価",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1袋3ドルを20袋作る。",
+      "conclusion_ja": "原価は60ドル。",
+      "baseline_ja": "3×20=60。"
+    },
+    {
+      "id": "granola_full_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.granola_full_revenue",
+      "title_ja": "通常価格の売上",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15袋を各6ドルで売る。",
+      "conclusion_ja": "売上は90ドル。",
+      "baseline_ja": "15×6=90。"
+    },
+    {
+      "id": "granola_marked_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.granola_marked_revenue",
+      "title_ja": "値下げ分の売上",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残る5袋を各4ドルで売る。",
+      "conclusion_ja": "売上は20ドル。",
+      "baseline_ja": "5×4=20。"
+    },
+    {
+      "id": "granola_profit",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.granola_profit",
+      "title_ja": "純利益",
+      "requires_steps": [
+        "granola_cost",
+        "granola_full_revenue",
+        "granola_marked_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総売上110ドルから原価60ドルを引く。",
+      "conclusion_ja": "純利益は50ドル。",
+      "baseline_ja": "90+20-60=50。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 660,
+    "checked_model_hash": "64c4ac48fa60e182544f74477b7e92327628d8d69e04fa338bf791fdfc4b50f2",
+    "checks_ja": [
+      "20袋すべての原価と、15袋・5袋の売上を漏れなく照合した。"
+    ]
+  }
+}

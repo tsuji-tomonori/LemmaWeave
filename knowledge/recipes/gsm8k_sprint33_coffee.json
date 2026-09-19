@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint33_coffee",
+  "title_ja": "コーヒーを買わなかった客",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00785",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "25人の3/5は15人なので、残り10人と求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.coffee_solution",
+  "graph": "work/gsm8k-sprint33-coffee-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "coffee_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.coffee_count",
+      "title_ja": "購入者",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "25人の3/5。",
+      "conclusion_ja": "15人。",
+      "baseline_ja": "15×5=25×3。"
+    },
+    {
+      "id": "coffee_nonbuyers",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.coffee_nonbuyers",
+      "title_ja": "非購入者",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全25人から15人を除く。",
+      "conclusion_ja": "10人。",
+      "baseline_ja": "10+15=25。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 786,
+    "checked_model_hash": "562357e3ab2e2ef0ac7c25fe2114d11500c8868ed421d57d18bb352ff5abba5f",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

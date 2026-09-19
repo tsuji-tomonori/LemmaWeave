@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint30_boat",
+  "title_ja": "湖を渡る必要速度",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00735",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "5マイルを10分で渡るための時速を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.boat_solution",
+  "graph": "work/gsm8k-sprint30-boat-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "時間単位を60分=1時間で換算する。"
+  ],
+  "steps": [
+    {
+      "id": "boat_minutes_per_mile",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.boat_minutes_per_mile",
+      "title_ja": "1マイル当たり時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5マイルを10分。",
+      "conclusion_ja": "1マイル2分。",
+      "baseline_ja": "10÷5=2。"
+    },
+    {
+      "id": "boat_speed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.boat_speed",
+      "title_ja": "時速",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1マイル2分、1時間60分。",
+      "conclusion_ja": "時速30マイル。",
+      "baseline_ja": "60÷2=30。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 736,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

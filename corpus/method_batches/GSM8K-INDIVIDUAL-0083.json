@@ -1,0 +1,247 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0083",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00714",
+      "source_line_1based": 715,
+      "source_record_sha256": "061bc32fa5e90feef686133169afb0bce3642db6a4c564b07de3bbc9d317db50",
+      "raw_question_sha256": "bf31530c5cdd4ba5444fd7fab8f3bbdb91be7ec7f90d851318552f8efdfb5e3c",
+      "normalized_question_sha256": "74fa9cb20b04cbf1291fd1bcecdae063603ef827dc9a88a7cff8ed0a32b3041e",
+      "source_question": "John runs a website that gets 30000 visits a month, for a normal 30 day month.  He gets $.01 per visit.  How much does he make per day?",
+      "recipe_id": "gsm8k_sprint29_website",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "30日月と明記されているので日平均を30で割る。",
+        "金額はセントで整数化し、1000セント=10ドルと読む。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00715",
+      "source_line_1based": 716,
+      "source_record_sha256": "89569964573a870df9c142e3f9fb6de04d15c45a9b4f79e4b1905b448fac4160",
+      "raw_question_sha256": "ff39e8e2fccffdb9f77a46039eb96ba2dee151785b98339d447d26e806b6f340",
+      "normalized_question_sha256": "ff39e8e2fccffdb9f77a46039eb96ba2dee151785b98339d447d26e806b6f340",
+      "source_question": "You start a business selling charm bracelets. You spend $1 on the string for each bracelet and $3 on beads for each bracelet. You sell the bracelets for $6 each. If you sell 25 bracelets, how much profit will you make?",
+      "recipe_id": "gsm8k_sprint29_bracelets",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "金額はドル単位の自然数。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00716",
+      "source_line_1based": 717,
+      "source_record_sha256": "5588fabd724fb9637f81dba8901767d3a3a1fc3da987b6f9c6fe2ea428dd95a3",
+      "raw_question_sha256": "475e8ca9dafbe21592251eabf1c0565f91d0b3cf64be6e8655ce90ab82251df0",
+      "normalized_question_sha256": "475e8ca9dafbe21592251eabf1c0565f91d0b3cf64be6e8655ce90ab82251df0",
+      "source_question": "Lance has 70 cents, Margaret has three-fourths of a dollar, Guy has two quarters and a dime, and Bill has six dimes. How many cents do they have combined?",
+      "recipe_id": "gsm8k_sprint29_coins",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "3/4ドルは75セント、quarterは25セント、dimeは10セント。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00717",
+      "source_line_1based": 718,
+      "source_record_sha256": "7106e34f9cc127c8ecaadb907de9b6d1ce2dd24ae24893038400ad0a2f25a873",
+      "raw_question_sha256": "57fb9fc577138f521b10295f21033c9f2d40c8d6c9d4da96702ff94cb26d9dd8",
+      "normalized_question_sha256": "213f55368459893c61ddef6f315aee64fef828fcd707b7442531d50c18801a43",
+      "source_question": "Jake splits 8 shots of vodka with his friend.  Each shot of vodka is 1.5 ounces.  If the vodka is 50% pure alcohol, how much pure alcohol did Jake drink?",
+      "recipe_id": "gsm8k_sprint29_vodka",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "splits ... with his friend は2人で等分と解釈する。",
+        "1.5オンスと50%を有理数3/2、1/2で厳密に表す。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00718",
+      "source_line_1based": 719,
+      "source_record_sha256": "98fd73556cbe909acb2f357adf401a99a537471b467868b39d2348759cb99971",
+      "raw_question_sha256": "0741c297630616a89984eeeda1f04d1efd7dfc0239506da960c21e36fd0ab721",
+      "normalized_question_sha256": "0741c297630616a89984eeeda1f04d1efd7dfc0239506da960c21e36fd0ab721",
+      "source_question": "Jake and Penny are hunting snakes. Jake's snake is 12 inches longer than Jenny's snake. If the two snakes have a combined length of 70 inches, how long is Jake's snake?",
+      "recipe_id": "gsm8k_sprint29_snakes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文は冒頭でPenny、比較対象でJennyとし、人名が一致しない。",
+        "字義どおりならPennyとJennyの関係がなく一意に決まらない。",
+        "自然な誤記訂正としてJenny=Pennyと置く場合のみJakeは41インチ。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00719",
+      "source_line_1based": 720,
+      "source_record_sha256": "d154662f675ff3052e579f4e11ef6effa7b34e755fb4c9633582279589f72d84",
+      "raw_question_sha256": "76e849e4b4fbfa94969fbb801e198368843eee96bd0a2dc275a235476cc96716",
+      "normalized_question_sha256": "76e849e4b4fbfa94969fbb801e198368843eee96bd0a2dc275a235476cc96716",
+      "source_question": "Jenny's local library received 50 visitors on Monday. On Tuesday, the library received twice that number. On the remaining days of the week, an average of 20 visitors went to the library. What's the total number of visitors who went to the library that week?",
+      "recipe_id": "gsm8k_sprint29_library",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "1週間7日なので月曜と火曜を除く残りは5日。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00720",
+      "source_line_1based": 721,
+      "source_record_sha256": "bfb8378ed0a39829b92e3c8afd0bb95fa1aca76134a43228d2d0cb4900e94cde",
+      "raw_question_sha256": "0f05c8cc8a2d0877bf54f7d745232be7149f1f7744f87531616e947683d83290",
+      "normalized_question_sha256": "0f05c8cc8a2d0877bf54f7d745232be7149f1f7744f87531616e947683d83290",
+      "source_question": "Mr. Callen bought 10 paintings at $40 each and 8 wooden toys at $20 each from the crafts store to resell at a profit. However, when he sold the items, the selling price of a painting was 10% less and the selling price of a hat 15% less. Calculate the total loss Mr. Callen made from the sale of the items.",
+      "recipe_id": "gsm8k_sprint29_crafts",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文は購入品をwooden toysとした後、15%安い品目をhatと呼び不一致。",
+        "字義どおりでは木製玩具の売価がなく総損失は一意でない。",
+        "hatをwooden toyの誤記と補正する場合のみ総損失64ドル。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00721",
+      "source_line_1based": 722,
+      "source_record_sha256": "04ec20f1bbf2eb916fe69e47fa87bbf0e33377d4d02079dea50039a2a0b6dac8",
+      "raw_question_sha256": "382818e4660c84ce39f4db87ff4974444fddb9409a3586303eeda8b8402db90c",
+      "normalized_question_sha256": "382818e4660c84ce39f4db87ff4974444fddb9409a3586303eeda8b8402db90c",
+      "source_question": "An electronic shop offers smartphones for $300 each, personal computers for $500 more than smartphones, and advanced tablets for the sum of the prices of a smartphone and personal computer. How much do you have to pay to buy one of each of the three mentioned products?",
+      "recipe_id": "gsm8k_sprint29_electronics",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "すべてドル単位。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00722",
+      "source_line_1based": 723,
+      "source_record_sha256": "b0fc7ad7d2d1edf3e4db1ea32c709510d10e4340fc899c5b4a2232b5d1589e8f",
+      "raw_question_sha256": "426ea0d4b0366b8e7ceeb444f615412caa9887862ea6acbd2f97e8736c0e07ee",
+      "normalized_question_sha256": "0fdc2184fb98f7711ec77e0a340000bd01e2214a1fde5e3db1169e86bcabfedc",
+      "source_question": "Coral is reading a book that is 600 pages long.  She reads half of it in the first week, and 30 percent of the remaining pages the second week. How many pages must she read the third week in order to finish the book?",
+      "recipe_id": "gsm8k_sprint29_book",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "30%は最初の600ページではなく1週目後の残り300ページに適用する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00723",
+      "source_line_1based": 724,
+      "source_record_sha256": "b1cbdbc4267c96410629da241de9638213aaf88b6b2754f8f9b32cf34ca724bd",
+      "raw_question_sha256": "f9dbbde9a3e8ddd39487f204cf464f61c730102527cae08e22a158d39e4d59a1",
+      "normalized_question_sha256": "cfc5ba7ad94d218d89bd8d9f7649d4df36d58e4115e931589e84e2e2d961d639",
+      "source_question": "John eats a bag of chips for dinner and then eats twice as many after dinner.  How many bags of chips did he eat?",
+      "recipe_id": "gsm8k_sprint29_chips",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "a bag を1袋と数える。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00724",
+      "source_line_1based": 725,
+      "source_record_sha256": "bf137345df12f2aa85f0f6f63f158097dabdfd0a42ca25cc0a0fe9e6ca41d7d2",
+      "raw_question_sha256": "76285f69b76ee5e42c751691d4ba151c23f06e4b27e90b308e12ac3ec5c3d1c5",
+      "normalized_question_sha256": "76285f69b76ee5e42c751691d4ba151c23f06e4b27e90b308e12ac3ec5c3d1c5",
+      "source_question": "Jenny had $24 left after spending 3/7 of her money. How much is half of her original amount of money?",
+      "recipe_id": "gsm8k_sprint29_money",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照説明の「spent 1-3/7=4/7」は語句誤りで、正しくは残額が4/7。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00725",
+      "source_line_1based": 726,
+      "source_record_sha256": "ec68eb49db80bca2b49ba43ea8a3daea5ab4faf009def7baa254f2d4951aacf9",
+      "raw_question_sha256": "9369e85b09d8b0664b6ca440eff0e155e58673c59505d5f57f1d48f33ef17e24",
+      "normalized_question_sha256": "9369e85b09d8b0664b6ca440eff0e155e58673c59505d5f57f1d48f33ef17e24",
+      "source_question": "Tim has 30 toads. Jim has 20 more toads than Tim does. Sarah has twice as many toads as Jim does. How many toads does Sarah have?",
+      "recipe_id": "gsm8k_sprint29_toads",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "個数は自然数。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00726",
+      "source_line_1based": 727,
+      "source_record_sha256": "bf2b6697ce0f0958207f5906e1b0c05707047bf47a607332aad01289abd6c0d5",
+      "raw_question_sha256": "7d96ab3ab87acabba5370b366c518361ae60b896dffa048d000b9d200a952bbd",
+      "normalized_question_sha256": "7d96ab3ab87acabba5370b366c518361ae60b896dffa048d000b9d200a952bbd",
+      "source_question": "Jed is 10 years older than Matt. In 10 years, Jed will be 25 years old. What is the sum of their present ages?",
+      "recipe_id": "gsm8k_sprint29_ages",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "年齢は自然数年で表す。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00727",
+      "source_line_1based": 728,
+      "source_record_sha256": "54a31076b937005aa65eb844bfa146122f3397d836de98038bd28fe39cd9bda1",
+      "raw_question_sha256": "b0c088b8594f7a3b807682b28e605b7906f35ebb76af8867d0ecd3a8f7e96c54",
+      "normalized_question_sha256": "b0c088b8594f7a3b807682b28e605b7906f35ebb76af8867d0ecd3a8f7e96c54",
+      "source_question": "Shara collects shells. She had 20 shells before she went on vacation. On vacation, she found 5 shells per day for 3 days. Then he found 6 shells on the fourth day. How many shells does she have now?",
+      "recipe_id": "gsm8k_sprint29_shells",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "第4日の代名詞heはSharaを指す誤記として数量に影響しない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00728",
+      "source_line_1based": 729,
+      "source_record_sha256": "466b7a3a48d1da93b0980449a1648f94b92d31fb049bbec17a97a1dd34e52c59",
+      "raw_question_sha256": "195ee691a9fbfdd950f081f7081081831c385c0a947048b9373bcc82a09e5307",
+      "normalized_question_sha256": "195ee691a9fbfdd950f081f7081081831c385c0a947048b9373bcc82a09e5307",
+      "source_question": "Whitney’s mom gave her two $20 bills to spend at the school book fair. Whitney has decided to buy 2 posters, 3 notebooks, and 2 bookmarks. Each poster costs $5, each notebook costs $4, and each bookmark costs $2. How much money, in dollars, will Whitney have left over after the purchase?",
+      "recipe_id": "gsm8k_sprint29_fair",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照説明の最後の品目をnotebooksとする箇所はbookmarksの誤記。"
+      ],
+      "blockers": []
+    }
+  ]
+}

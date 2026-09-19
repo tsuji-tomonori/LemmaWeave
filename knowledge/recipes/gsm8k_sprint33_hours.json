@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint33_hours",
+  "title_ja": "三人の週末労働時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00776",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Amberの12時間を基準にArmandとEllaを求め、合計40時間とする。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.hours_solution",
+  "graph": "work/gsm8k-sprint33-hours-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hours_armand",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.hours_armand",
+      "title_ja": "Armandの時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Amberの3分の1。",
+      "conclusion_ja": "4時間。",
+      "baseline_ja": "4×3=12。"
+    },
+    {
+      "id": "hours_ella",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.hours_ella",
+      "title_ja": "Ellaの時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Amberの2倍。",
+      "conclusion_ja": "24時間。",
+      "baseline_ja": "2×12=24。"
+    },
+    {
+      "id": "hours_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.hours_total",
+      "title_ja": "三人の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12、4、24時間を加える。",
+      "conclusion_ja": "40時間。",
+      "baseline_ja": "12+4+24=40。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 777,
+    "checked_model_hash": "2b77b576872aaf686de50b77d0953a3009e1b1114f71c522cbc9a4f745bb7f1e",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

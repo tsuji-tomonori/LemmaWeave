@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint27_camp",
+  "title_ja": "サッカーキャンプの人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00685",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "午後のサッカー参加者750人から、午前・サッカー全体・キャンプ全体の人数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A27.camp_solution",
+  "graph": "work/gsm8k-sprint27-camp-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A27.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "午後組はサッカー組の3/4である。"
+  ],
+  "steps": [
+    {
+      "id": "camp_morning",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.camp_morning",
+      "title_ja": "午前組",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "午後750人は3等分に対応する。",
+      "conclusion_ja": "午前組は250人。",
+      "baseline_ja": "750÷3=250。"
+    },
+    {
+      "id": "camp_soccer",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.camp_soccer",
+      "title_ja": "サッカー組全体",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "午前250人はサッカー組の1/4。",
+      "conclusion_ja": "サッカー組は1000人。",
+      "baseline_ja": "250×4=1000。"
+    },
+    {
+      "id": "camp_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.camp_total",
+      "title_ja": "キャンプ全体",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "サッカー組は全体の半分。",
+      "conclusion_ja": "全体は2000人。",
+      "baseline_ja": "1000×2=2000。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 686,
+    "checked_model_hash": "bae0c782540d1aa92fadf4c4853475678247b5247c8e57098d3a584e0c34b521",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

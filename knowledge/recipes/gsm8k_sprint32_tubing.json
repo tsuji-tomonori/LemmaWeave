@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint32_tubing",
+  "title_ja": "チュービングとラフティングの両方",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00767",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "40人の4分の1がチュービングし、その半数がラフティングした人数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.tubing_solution",
+  "graph": "work/gsm8k-sprint32-tubing-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "ラフティング参加者はチュービング参加者の部分集合として原文を読む。"
+  ],
+  "steps": [
+    {
+      "id": "tubing_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.tubing_count",
+      "title_ja": "チュービング人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "40人の4分の1。",
+      "conclusion_ja": "10人。",
+      "baseline_ja": "10×4=40。"
+    },
+    {
+      "id": "rafting_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.rafting_count",
+      "title_ja": "両方の人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "チュービング10人の半分。",
+      "conclusion_ja": "5人。",
+      "baseline_ja": "5×2=10。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 768,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

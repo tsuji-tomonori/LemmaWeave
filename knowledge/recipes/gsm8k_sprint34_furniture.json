@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint34_furniture",
+  "title_ja": "部屋にある家具の脚",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00799",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "脚数別に数え、合計40本と求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.furniture_solution",
+  "graph": "work/gsm8k-sprint34-furniture-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "furniture_four_pieces",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.furniture_four_pieces",
+      "title_ja": "4本脚の家具数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "机4、ソファ1、椅子2。",
+      "conclusion_ja": "7個。",
+      "baseline_ja": "4+1+2=7。"
+    },
+    {
+      "id": "furniture_four_legs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.furniture_four_legs",
+      "title_ja": "4本脚の総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7個が各4本。",
+      "conclusion_ja": "28本。",
+      "baseline_ja": "7×4=28。"
+    },
+    {
+      "id": "furniture_three_legs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.furniture_three_legs",
+      "title_ja": "3本脚の総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "机3個が各3本。",
+      "conclusion_ja": "9本。",
+      "baseline_ja": "3×3=9。"
+    },
+    {
+      "id": "furniture_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.furniture_total",
+      "title_ja": "全脚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "28本、9本、1本、2本を合計。",
+      "conclusion_ja": "40本。",
+      "baseline_ja": "28+9+1+2=40。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 800,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

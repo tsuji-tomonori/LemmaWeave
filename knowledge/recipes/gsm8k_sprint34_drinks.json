@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint34_drinks",
+  "title_ja": "20ドル札のお釣り",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00800",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "飲み物代をセント単位で合計し、3ドルのお釣りを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.drinks_solution",
+  "graph": "work/gsm8k-sprint34-drinks-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "Leanでは金額をセント単位で表す。"
+  ],
+  "steps": [
+    {
+      "id": "drinks_cappuccino",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.drinks_cappuccino",
+      "title_ja": "カプチーノ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "200セントを3杯。",
+      "conclusion_ja": "600セント。",
+      "baseline_ja": "3×200=600。"
+    },
+    {
+      "id": "drinks_tea",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.drinks_tea",
+      "title_ja": "アイスティー",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "300セントを2杯。",
+      "conclusion_ja": "600セント。",
+      "baseline_ja": "2×300=600。"
+    },
+    {
+      "id": "drinks_latte",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.drinks_latte",
+      "title_ja": "カフェラテ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "150セントを2杯。",
+      "conclusion_ja": "300セント。",
+      "baseline_ja": "2×150=300。"
+    },
+    {
+      "id": "drinks_espresso",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.drinks_espresso",
+      "title_ja": "エスプレッソ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "100セントを2杯。",
+      "conclusion_ja": "200セント。",
+      "baseline_ja": "2×100=200。"
+    },
+    {
+      "id": "drinks_change",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.drinks_change",
+      "title_ja": "お釣り",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "合計1700セントを2000セントから払う。",
+      "conclusion_ja": "300セント=3ドル。",
+      "baseline_ja": "2000-1700=300。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 801,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

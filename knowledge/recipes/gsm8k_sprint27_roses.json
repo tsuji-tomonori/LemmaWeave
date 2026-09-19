@@ -1,0 +1,50 @@
+{
+  "id": "gsm8k_sprint27_roses",
+  "title_ja": "バラの残数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00693",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "20本から母6本、祖母9本、姉妹4本を渡した残りを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A27.roses_solution",
+  "graph": "work/gsm8k-sprint27-roses-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A27.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "渡した相手ごとの本数をすべて含める。"
+  ],
+  "steps": [
+    {
+      "id": "roses_given",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.roses_given",
+      "title_ja": "渡した総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6本・9本・4本を足す。",
+      "conclusion_ja": "19本。",
+      "baseline_ja": "6+9+4=19。"
+    },
+    {
+      "id": "roses_kept",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.roses_kept",
+      "title_ja": "残した数",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "20本から19本を引く。",
+      "conclusion_ja": "1本。",
+      "baseline_ja": "20-19=1。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 694,
+    "checked_model_hash": "bae0c782540d1aa92fadf4c4853475678247b5247c8e57098d3a584e0c34b521",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

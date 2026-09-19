@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-19",
+  "run_id": "lemmaweave-sprint-20260919-1756-ci-followup",
+  "planned_slot_local_hour": 17,
+  "planned_at": "2026-09-19T17:00:00+09:00",
+  "role": "ci_followup_only",
+  "base_sha": "f7ad59086a1d33fcd55476fbb001eed87bb1ba7a",
+  "started_at": "2026-09-19T17:56:27+09:00",
+  "finished_at": "2026-09-19T18:51:21+09:00",
+  "schedule_offset_seconds": 3387,
+  "duplicate_slot_math_skipped": true,
+  "schedule_note_ja": "17時GSM8K枠はrun_id lemmaweave-sprint-20260919-1700で既に15問を保存済みのため、同じ予定枠を二重実行せず、現HEADのCI証拠回収と失敗修復だけを実施した。",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "verification_pending": [],
+  "verification_pending_cumulative": {
+    "count": 230,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:00743",
+    "note_ja": "失敗CIの成果物は成功証拠として取り込まず、全230問を検証待ちのまま保持する。"
+  },
+  "deferred": [
+    {
+      "problem_id": "ci:lean-evidence-a28299dcdaebaae22ccf3ced954b2db179fd7a85",
+      "retry_on": "exact-head GitHub Actions completion",
+      "reason_ja": "完全replayでA23・A24・A26のテスト証明に、固定モデルの等式を十分に消去していない依存対応不良が判明した。4回の逐次失敗後、3件をまとめてモデル定義から再設計した。",
+      "next_action_ja": "a28299dcのLean CIを確認し、成功時のみ成果物を入力SHAと照合して取り込む。失敗時は同じ逐次修正を続けず、失敗問題をproblem単位で保留して21時再試行へ送る。"
+    }
+  ],
+  "ci": {
+    "failed_head_sha": "f7ad59086a1d33fcd55476fbb001eed87bb1ba7a",
+    "failed_run_id": 35431349986,
+    "failed_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35431349986",
+    "failed_job_id": 105866509357,
+    "status": "failure",
+    "first_failure": "LemmaWeave/Problems/GSM8K/Sprint0919A27Models.lean:13:61: unexpected token 'have'; expected ')'",
+    "passed_before_failure": "Sprint0919A01Models〜Sprint0919A26Models",
+    "failed_artifact": {
+      "id": 10579939594,
+      "name": "lean-evidence-f7ad59086a1d33fcd55476fbb001eed87bb1ba7a",
+      "bytes": 187778065,
+      "sha256": "dfa608dcbb4a9337839c47ffa56fe57db2916e2a4df933e3ed49a0129c887e9e",
+      "accepted_as_success_evidence": false
+    },
+    "repair_ja": "CupcakeCandlesの仮引数名haveはLean予約語なのでownedへ変更し、等式本体も同じ名前へ揃えた。命題の型・量化・意味は変更していない。",
+    "repair_commit": "853254b3f0c26dd4892a24c10fdb151f9ea707cf",
+    "second_failed_head_sha": "665f7f2bb44309800542438006aea46ddbfd59ce",
+    "second_failed_run_id": 35433589380,
+    "second_failed_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35433589380",
+    "second_failed_job_id": 105872449053,
+    "second_first_failure": "LemmaWeave/Problems/GSM8K/Sprint0919A29Models.lean:18:10: rational number instances were not imported",
+    "second_passed_before_failure": "Sprint0919A01Models〜Sprint0919A28Models",
+    "second_repair_ja": "VodkaSplitのℚモデルへMathlib.Data.Rat.Defsをimportし、数値・乗除算の型クラスを供給した。モデルの変数・仮定・結論は変更していない。",
+    "second_repair_commit": "38e35dbc55927bdfbc8c3904f4e21eb8f856c6c1",
+    "third_failed_head_sha": "8a2497b8ef1daac15635d5049b751abfe03c692f",
+    "third_failed_run_id": 35434159986,
+    "third_failed_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35434159986",
+    "third_failed_job_id": 105873974140,
+    "third_first_failure": "LemmaWeave/Problems/GSM8K/Sprint0919A30Models.lean:5:12: rational number instances were not imported",
+    "third_passed_before_failure": "Sprint0919A01Models〜Sprint0919A29Models",
+    "third_repair_ja": "JogDistanceのℚモデルへMathlib.Data.Rat.Defsをimportした。モデルの変数・仮定・結論は変更していない。",
+    "third_repair_commit": "4fd07badaffbd01b21154e5355703efe05efd469",
+    "current_status": "awaiting_exact_head_fixed_lean_and_evidence",
+    "fourth_failed_head_sha": "933c2d31b15b60c319ba84a6cde01e8793f14a20",
+    "fourth_failed_run_id": 35434666989,
+    "fourth_failed_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35434666989",
+    "fourth_failed_job_id": 105875271975,
+    "fourth_failures": [
+      "tests/lean/GSM8KSprint0919A23.lean:69: keyboard_cleaning did not eliminate the fixed sticky/already-cleaned/minutes equations",
+      "tests/lean/GSM8KSprint0919A24.lean:17: pets_total returned j = d + f + 30 instead of deriving d = 30 and f = 20",
+      "tests/lean/GSM8KSprint0919A26.lean:139: ball_extra did not rewrite dogSpeed = 5 in remaining = dogSpeed * extraSeconds"
+    ],
+    "fourth_passed_scope": "固定Lean 4.33.1環境、A01〜A22、A25、A27〜A30モデル。A23/A24/A26の後続公理表示は失敗定理由来のsorryAxを含むため不合格。",
+    "fourth_failed_artifact": {
+      "id": 10582268463,
+      "name": "lean-evidence-933c2d31b15b60c319ba84a6cde01e8793f14a20",
+      "bytes": 253875052,
+      "sha256": "db3982b63a5092d9d72e8737790ed3a8b1799d8b9573a0dd394e44582d9c5cc9",
+      "accepted_as_success_evidence": false
+    },
+    "strategy_change_ja": "4回目で逐次的な最初の失敗修正を打ち切り、A23・A24・A26を各モデル定義の等式へ戻って一括修復した。",
+    "fifth_repair_ja": "A23はcleaningMinutesへ至るsticky/alreadyCleaned/minutesEachを明示消去、A24はdog内訳を導いてからtotalをomegaで閉じ、A26はdogSpeedをremaining=dogSpeed*extraSecondsへ明示書換した。問題モデルと結論は変更していない。",
+    "fifth_repair_commit": "a28299dcdaebaae22ccf3ced954b2db179fd7a85"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "a28299dcdaebaae22ccf3ced954b2db179fd7a85",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 230
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 230
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00744",
+  "note_ja": "重複解答は作成せず、失敗ログを回収してA27の予約語衝突、A29/A30のℚ依存不足を修復した。4回目の完全replayでA23/A24/A26のテスト依存対応不良が判明したため、逐次修正を打ち切り、モデル等式に基づく3件の一括修復へ方針変更した。失敗成果物は正式証拠に流用せず、マージとsolution_ready昇格は保留した。"
+}

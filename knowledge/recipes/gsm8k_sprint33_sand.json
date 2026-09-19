@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint33_sand",
+  "title_ja": "三人が集めた砂",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00787",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "桶数を4、7、6と求め、17桶×2ポンド=34ポンドとする。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.sand_solution",
+  "graph": "work/gsm8k-sprint33-sand-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sand_mary",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.sand_mary",
+      "title_ja": "Maryの桶数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Edenより3桶多い。",
+      "conclusion_ja": "7桶。",
+      "baseline_ja": "4+3=7。"
+    },
+    {
+      "id": "sand_iris",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.sand_iris",
+      "title_ja": "Irisの桶数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Maryより1桶少ない。",
+      "conclusion_ja": "6桶。",
+      "baseline_ja": "6+1=7。"
+    },
+    {
+      "id": "sand_buckets",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.sand_buckets",
+      "title_ja": "総桶数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4、7、6桶を加える。",
+      "conclusion_ja": "17桶。",
+      "baseline_ja": "4+7+6=17。"
+    },
+    {
+      "id": "sand_pounds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.sand_pounds",
+      "title_ja": "総重量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1桶2ポンド。",
+      "conclusion_ja": "34ポンド。",
+      "baseline_ja": "17×2=34。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 788,
+    "checked_model_hash": "a7aa3989562be0d78ee51205b2baebe731a1bfb7e8bdb1be3aea2140f63709b2",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

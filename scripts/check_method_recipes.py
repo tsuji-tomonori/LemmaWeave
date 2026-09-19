@@ -43,7 +43,7 @@ def validate_recipe(recipe, nodes, graph):
                 raise ValueError('different written lines must have distinct theorems')
             step_reachable = set(graph_audit({**graph, 'roots': [declaration]})['reachable_declarations'])
             if not {declarations[s] for s in step['requires_steps']} <= step_reachable:
-                raise ValueError('previous written line absent from this line proof')
+                raise ValueError(f"previous written line absent from this line proof: recipe={recipe['id']} step={step['id']} requires={step['requires_steps']}")
             declarations[step['id']] = declaration
             line_evidence.append({'id': step['id'], 'lean_declaration': declaration,
                                   'type_pretty': graph_nodes[declaration].get('type_pretty'),
@@ -135,7 +135,10 @@ def main():
         archive_file = ROOT / 'reports/dependencies/methods' / (r['id'] + '.json.gz')
         raw = graph_file.read_bytes() if graph_file.exists() else gzip.decompress(archive_file.read_bytes())
         graph = json.loads(raw)
-        result = validate_recipe(r, nodes, graph)
+        try:
+            result = validate_recipe(r, nodes, graph)
+        except ValueError as exc:
+            raise ValueError(f"recipe {r['id']}: {exc}") from exc
         if graph['roots'] != [r['root']]:
             raise ValueError('recipe export must have exactly one root')
         if set(graph_audit(graph)['axioms']) != set(graph['lean_collected_axioms']):

@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint33_outlay",
+  "title_ja": "購入・返品・転売後の持出額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00778",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "もう一台の自転車が最初の購入に含まれるかを分け、1,420ドルと2,020ドルを示す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.outlay_solution",
+  "graph": "work/gsm8k-sprint33-outlay-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "「another bike」の購入範囲が原文だけでは一意でないため二解釈を保持する。"
+  ],
+  "steps": [
+    {
+      "id": "outlay_refunds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.outlay_refunds",
+      "title_ja": "返品額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "テレビ700ドルと自転車500ドルを返品する。",
+      "conclusion_ja": "返金1,200ドル。",
+      "baseline_ja": "700+500=1200。"
+    },
+    {
+      "id": "outlay_bike",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.outlay_bike",
+      "title_ja": "転売した自転車の原価",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "返品した自転車より20%高い。",
+      "conclusion_ja": "600ドル。",
+      "baseline_ja": "500×1.2=600。"
+    },
+    {
+      "id": "outlay_resale",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.outlay_resale",
+      "title_ja": "転売収入",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原価の80%で売る。",
+      "conclusion_ja": "480ドル。",
+      "baseline_ja": "600×0.8=480。"
+    },
+    {
+      "id": "outlay_included",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.outlay_included",
+      "title_ja": "最初の購入に含む解釈",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3,000ドルに転売車も含まれる。",
+      "conclusion_ja": "持出額1,420ドル。",
+      "baseline_ja": "3000-1200-480+100=1420。"
+    },
+    {
+      "id": "outlay_separate",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.outlay_separate",
+      "title_ja": "別購入の解釈",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "転売車は3,000ドルとは別に購入した。",
+      "conclusion_ja": "持出額2,020ドル。",
+      "baseline_ja": "1800+(600-480)+100=2020。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 779,
+    "checked_model_hash": "1d5444f21033f1ae8772ac161684562d48ac8f5038faf6d55306284423df47e1",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

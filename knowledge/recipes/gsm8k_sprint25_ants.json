@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint25_ants",
+  "title_ja": "4人が見つけたアリ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00660",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Abeの4匹を基準に、50%増・2倍・半分の各人数を求めて合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A25.ants_solution",
+  "graph": "work/gsm8k-sprint25-ants-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A25.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "50%増は元の150%、half as many は半分としてモデル化する。"
+  ],
+  "steps": [
+    {
+      "id": "ants_beth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.ants_beth",
+      "title_ja": "Bethの数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Abe4匹より50%多い。",
+      "conclusion_ja": "Bethは6匹。",
+      "baseline_ja": "4+4×50%=6。"
+    },
+    {
+      "id": "ants_cece",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.ants_cece",
+      "title_ja": "CeCeの数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Abeの2倍。",
+      "conclusion_ja": "CeCeは8匹。",
+      "baseline_ja": "2×4=8。"
+    },
+    {
+      "id": "ants_duke",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.ants_duke",
+      "title_ja": "Dukeの数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Abeの半分。",
+      "conclusion_ja": "Dukeは2匹。",
+      "baseline_ja": "4÷2=2。"
+    },
+    {
+      "id": "ants_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.ants_total",
+      "title_ja": "4人の合計",
+      "requires_steps": [
+        "ants_beth",
+        "ants_cece",
+        "ants_duke"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Abeを含む4人の数を加える。",
+      "conclusion_ja": "合計20匹。",
+      "baseline_ja": "4+6+8+2=20。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 661,
+    "checked_model_hash": "64c4ac48fa60e182544f74477b7e92327628d8d69e04fa338bf791fdfc4b50f2",
+    "checks_ja": [
+      "4人全員の数と合計を個別に確認した。"
+    ]
+  }
+}

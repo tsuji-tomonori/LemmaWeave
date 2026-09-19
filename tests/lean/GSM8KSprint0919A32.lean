@@ -62,6 +62,30 @@ theorem addresses_total : (12 : Nat) + 6 + 22 = 40 := by norm_num
 theorem addresses_solution : CommencementAddresses 12 2 6 10 22 40 := by
   norm_num [CommencementAddresses]
 
+theorem fries_total_seconds : (5 : Nat) * 60 = 300 := by norm_num
+theorem fries_remaining : (300 : Nat) = 255 + 45 := by norm_num
+theorem fries_solution : FryCooking 5 60 300 45 255 := by norm_num [FryCooking]
+
+theorem tv_weekly : (45 : Nat) * 4 = 180 := by norm_num
+theorem tv_two_weeks : (180 : Nat) * 2 = 360 := by norm_num
+theorem tv_hours : (360 : Nat) = 6 * 60 := by norm_num
+theorem tv_solution : TelevisionTime 45 4 180 2 360 60 6 := by norm_num [TelevisionTime]
+
+theorem bread_slices : (8 : Nat) * 2 = 16 := by norm_num
+theorem bread_packs : (16 : Nat) = 4 * 4 := by norm_num
+theorem bread_solution : SandwichBread 8 2 16 4 4 := by norm_num [SandwichBread]
+
+theorem apples_second : (66 : Nat) * 2 = 132 := by norm_num
+theorem apples_third : (22 : Nat) * 3 = 66 := by norm_num
+theorem apples_total : (66 : Nat) + 132 + 22 = 220 := by norm_num
+theorem apples_solution : ApplePicking 66 2 132 3 22 220 := by norm_num [ApplePicking]
+
+theorem journey_amoli : (42 : Nat) * 3 = 126 := by norm_num
+theorem journey_anayet : (61 : Nat) * 2 = 122 := by norm_num
+theorem journey_remaining : (369 : Nat) = 121 + (126 + 122) := by norm_num
+theorem journey_solution : RemainingJourney 369 42 3 126 61 2 122 248 121 := by
+  norm_num [RemainingJourney]
+
 #print axioms dough_solution
 #print axioms party_solution
 #print axioms grocery_solution
@@ -72,6 +96,11 @@ theorem addresses_solution : CommencementAddresses 12 2 6 10 22 40 := by
 #print axioms meals_solution
 #print axioms tubing_solution
 #print axioms addresses_solution
+#print axioms fries_solution
+#print axioms tv_solution
+#print axioms bread_solution
+#print axioms apples_solution
+#print axioms journey_solution
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.dough_solution to "work/gsm8k-sprint32-dough-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.party_solution to "work/gsm8k-sprint32-party-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.grocery_solution to "work/gsm8k-sprint32-grocery-graph.json"
@@ -82,5 +111,10 @@ theorem addresses_solution : CommencementAddresses 12 2 6 10 22 40 := by
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.meals_solution to "work/gsm8k-sprint32-meals-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.tubing_solution to "work/gsm8k-sprint32-tubing-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.addresses_solution to "work/gsm8k-sprint32-addresses-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.fries_solution to "work/gsm8k-sprint32-fries-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.tv_solution to "work/gsm8k-sprint32-tv-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.bread_solution to "work/gsm8k-sprint32-bread-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.apples_solution to "work/gsm8k-sprint32-apples-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.journey_solution to "work/gsm8k-sprint32-journey-graph.json"
 
 end LemmaWeave.Tests.GSM8KSprint0919A32

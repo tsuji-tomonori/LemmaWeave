@@ -72,4 +72,35 @@ def CommencementAddresses
   sloanExtra = 10 ∧ sloan = sandoval + sloanExtra ∧
   total = sandoval + hawkins + sloan
 
+def FryCooking
+    (minutes secondsPerMinute totalSeconds cookedSeconds remainingSeconds : Nat) : Prop :=
+  minutes = 5 ∧ secondsPerMinute = 60 ∧ totalSeconds = minutes * secondsPerMinute ∧
+  cookedSeconds = 45 ∧ totalSeconds = remainingSeconds + cookedSeconds
+
+def TelevisionTime
+    (minutesPerDay daysPerWeek weeklyMinutes weeks totalMinutes minutesPerHour
+      totalHours : Nat) : Prop :=
+  minutesPerDay = 45 ∧ daysPerWeek = 4 ∧ weeklyMinutes = minutesPerDay * daysPerWeek ∧
+  weeks = 2 ∧ totalMinutes = weeklyMinutes * weeks ∧ minutesPerHour = 60 ∧
+  totalMinutes = totalHours * minutesPerHour
+
+def SandwichBread
+    (sandwiches slicesPerSandwich slicesNeeded slicesPerPack packs : Nat) : Prop :=
+  sandwiches = 8 ∧ slicesPerSandwich = 2 ∧
+  slicesNeeded = sandwiches * slicesPerSandwich ∧ slicesPerPack = 4 ∧
+  slicesNeeded = packs * slicesPerPack
+
+def ApplePicking
+    (first secondMultiplier second thirdDivisor third total : Nat) : Prop :=
+  first = 66 ∧ secondMultiplier = 2 ∧ second = first * secondMultiplier ∧
+  thirdDivisor = 3 ∧ third * thirdDivisor = first ∧ total = first + second + third
+
+def RemainingJourney
+    (total amoliSpeed amoliHours amoliMiles anayetSpeed anayetHours anayetMiles
+      traveled remaining : Nat) : Prop :=
+  total = 369 ∧ amoliSpeed = 42 ∧ amoliHours = 3 ∧
+  amoliMiles = amoliSpeed * amoliHours ∧ anayetSpeed = 61 ∧ anayetHours = 2 ∧
+  anayetMiles = anayetSpeed * anayetHours ∧ traveled = amoliMiles + anayetMiles ∧
+  total = remaining + traveled
+
 end LemmaWeave.Problems.GSM8K.Sprint0919A32

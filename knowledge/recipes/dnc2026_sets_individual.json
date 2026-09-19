@@ -1,0 +1,104 @@
+{
+  "id": "dnc2026_sets_individual",
+  "title_ja": "公約数で定義された集合・共通部分・相対差",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "全体集合U={2,3,...,20}において、3または4と1より大きい公約数をもつ元の集合、両集合の共通部分、および前者と後者の補集合との共通部分を求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "pdf_page_1_based": [3, 4],
+    "printed_page_label": ["32", "33"],
+    "subquestion": "[2](1)",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "problem_record_sha256": "b353092efc423b7c83b214bfa6ef2a413ac14cecb0bc236c6c87b83378d529e3",
+    "visual_review_status": "confirmed_2026-09-05"
+  },
+  "variables": [
+    {"name": "k", "type": "ℕ", "domain_ja": "2≤k≤20"}
+  ],
+  "assumptions_ja": [
+    "全体集合は自然数2以上20以下である。",
+    "集合InA(a)は、aと1より大きい公約数をもつ全体集合の元からなる。",
+    "補集合は全体集合Uに関する相対補集合である。"
+  ],
+  "required_conclusions_ja": [
+    "InA(3)、InA(4)、両者の共通部分、InA(3)とInA(4)の補集合との共通部分を、すべて外延的に特定する。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026SetsIndividual.individual_solution",
+  "graph": "work/dnc2026-sets-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026SetsIndividual.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "existing_independently_reviewed_model_new_author_explanation",
+  "counting_note_ja": "既存台帳の1小問に個別記述解答を追加した。GSM8K 8,792問の分母にも、新規収集問題数にも加えない。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "set_a3_exact",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.set_a3_exact",
+      "title_ja": "3と公約数をもつ集合",
+      "requires_steps": [],
+      "uses_nodes": ["common_divisor_finite", "set_extensionality"],
+      "claim_ja": "3の1より大きい約数は3だけなので、条件を満たすkはU内の3の倍数である。",
+      "method_ja": "公約数の定義と集合の外延性。",
+      "condition_ja": "k∈U、すなわち2≤k≤20。",
+      "premise_ja": "3の倍数をUの端点まで列挙する。",
+      "conclusion_ja": "InA(3)={3,6,9,12,15,18}。",
+      "baseline_ja": "列挙した各元は3を公約数にもち、それ以外のUの元は3で割り切れない。"
+    },
+    {
+      "id": "set_a4_exact",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.set_a4_exact",
+      "title_ja": "4と公約数をもつ集合",
+      "requires_steps": [],
+      "uses_nodes": ["common_divisor_finite", "set_extensionality"],
+      "claim_ja": "4の1より大きい約数は2と4なので、条件を満たすkはU内の偶数である。",
+      "method_ja": "公約数の定義と集合の外延性。",
+      "condition_ja": "k∈U。4と4を公約数にもつ数はすでに2を公約数にもつため、偶数の列挙で尽くす。",
+      "premise_ja": "2から20までの偶数を列挙する。",
+      "conclusion_ja": "InA(4)={2,4,6,8,10,12,14,16,18,20}。",
+      "baseline_ja": "各偶数は2を公約数にもち、奇数は4と1より大きい公約数をもたない。"
+    },
+    {
+      "id": "intersection_exact",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.intersection_exact",
+      "title_ja": "共通部分",
+      "requires_steps": ["set_a3_exact", "set_a4_exact"],
+      "uses_nodes": ["set_intersection_membership"],
+      "claim_ja": "両集合に入るには3の倍数かつ偶数、すなわち6の倍数でなければならない。",
+      "method_ja": "共通部分の所属条件と最小公倍数。",
+      "condition_ja": "k∈U。",
+      "premise_ja": "前二行で得た集合を照合する。",
+      "conclusion_ja": "InA(3)∩InA(4)={6,12,18}。",
+      "baseline_ja": "U内の6の倍数をすべて列挙した。"
+    },
+    {
+      "id": "relative_difference_exact",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.relative_difference_exact",
+      "title_ja": "相対差",
+      "requires_steps": ["set_a3_exact", "set_a4_exact"],
+      "uses_nodes": ["relative_complement", "set_intersection_membership"],
+      "claim_ja": "InA(3)に属しInA(4)に属さない元は、U内の奇数の3の倍数である。",
+      "method_ja": "相対補集合と共通部分の所属条件。",
+      "condition_ja": "補集合はUに関するものであり、U外の自然数を含めない。",
+      "premise_ja": "InA(3)={3,6,9,12,15,18}から偶数6,12,18を除く。",
+      "conclusion_ja": "InA(3)∩(U\\InA(4))={3,9,15}。",
+      "baseline_ja": "残る3元はいずれも3を公約数にもち、4とは1より大きい公約数をもたない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-19T09:00:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "checked_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
+    "checks_ja": [
+      "原題の全体集合、二つのパラメータ3・4、四つの要求、相対補集合の基準集合を再照合した。",
+      "各説明行の結論が対応する名前付きLean定理の型と一致することを確認した。",
+      "既存の独立レビュー済みモデルを変更せず、新しい解答のレビュー状態はself_review_onlyのままとした。"
+    ]
+  }
+}

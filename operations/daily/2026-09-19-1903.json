@@ -6,7 +6,7 @@
   "role": "gsm8k_individual_15",
   "base_sha": "14b1eff28189dc05a2e070edc7de5a3a63fcef5a",
   "started_at": "2026-09-19T19:03:27+09:00",
-  "finished_at": "2026-09-19T19:58:00+09:00",
+  "finished_at": "2026-09-19T20:12:00+09:00",
   "schedule_offset_seconds": 207,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00744",
@@ -60,6 +60,12 @@
       "retry_on": "exact-head GitHub Actions completion",
       "reason_ja": "現HEADの固定Lean・公理・実依存証拠が未取得。",
       "next_action_ja": "本バッチを含む正確なHEADのCIを実行し、成功成果物だけを入力SHAと照合して取り込む。"
+    },
+    {
+      "problem_id": "ci:dnc2026-written-line-dependency",
+      "retry_on": "exact-head GitHub Actions completion",
+      "reason_ja": "HEAD a821c010 のA01〜A31固定Lean・公理監査は通過したが、入試レシピの共通部分・相対差が前2行を証明依存として申告する一方、Lean依存グラフではsets_solutionを直接参照していたためレシピ検査が失敗した。",
+      "next_action_ja": "実依存に合わせて2行のrequires_stepsを空にしたHEADでレシピ検査を再実行し、成功成果物のみを証拠として採用する。"
     }
   ],
   "self_review": {
@@ -84,11 +90,19 @@
     "local_recipe_check": "unavailable_in_partial_scratch_snapshot",
     "recipe_dependency_repair_commit": "302ba29a39c6d5f0592b2f8f68084c473b96756f",
     "current_status": "awaiting_repaired_exact_head_fixed_lean_and_evidence",
-    "current_failed_head_sha": "20bd607bd0822a0a090bd5e3bd011c787b0df6b4",
-    "current_failed_run_id": 35437497352,
-    "current_failed_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35437497352",
+    "current_failed_head_sha": "a821c010da12e4d4ad01446243da2af5b8e4a4e0",
+    "current_failed_run_id": 35438355414,
+    "current_failed_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35438355414",
     "current_failure": "previous written line absent from this line proof",
-    "current_repair_ja": "各行定理の実依存を照合し、独立な算術定理のrequires_stepsを空にした。rectangle_lengthだけはrectangle_widthを実際に使用するため依存を保持した。"
+    "current_repair_ja": "DNC2026の証明グラフを照合し、intersection_exactとrelative_difference_exactは前行定理を参照せずsets_solutionを直接使うため、2行のrequires_stepsを空にした。",
+    "previous_dependency_failed_head_sha": "20bd607bd0822a0a090bd5e3bd011c787b0df6b4",
+    "previous_dependency_failed_run_id": 35437497352,
+    "current_failed_artifact": {
+      "id": 10582614332,
+      "bytes": 256499131,
+      "sha256": "2f88725f126796a45e8b3126b26ffc4bf49b95a4b806faf2143945ea9311d7be",
+      "accepted_as_success_evidence": false
+    }
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
   "commit": "0820a92289d2bfc16fc39e13bbd878b38955015a",

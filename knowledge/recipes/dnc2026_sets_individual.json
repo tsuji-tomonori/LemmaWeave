@@ -76,10 +76,7 @@
       "id": "intersection_exact",
       "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.intersection_exact",
       "title_ja": "共通部分",
-      "requires_steps": [
-        "set_a3_exact",
-        "set_a4_exact"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "claim_ja": "両集合に入るには3の倍数かつ偶数、すなわち6の倍数でなければならない。",
       "method_ja": "共通部分の所属条件と最小公倍数。",
@@ -92,10 +89,7 @@
       "id": "relative_difference_exact",
       "lean_declaration": "LemmaWeave.Tests.DNC2026SetsIndividual.relative_difference_exact",
       "title_ja": "相対差",
-      "requires_steps": [
-        "set_a3_exact",
-        "set_a4_exact"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "claim_ja": "InA(3)に属しInA(4)に属さない元は、U内の奇数の3の倍数である。",
       "method_ja": "相対補集合と共通部分の所属条件。",
@@ -114,7 +108,8 @@
     "checks_ja": [
       "原題の全体集合、二つのパラメータ3・4、四つの要求、相対補集合の基準集合を再照合した。",
       "各説明行の結論が対応する名前付きLean定理の型と一致することを確認した。",
-      "既存の独立レビュー済みモデルを変更せず、新しい解答のレビュー状態はself_review_onlyのままとした。"
+      "既存の独立レビュー済みモデルを変更せず、新しい解答のレビュー状態はself_review_onlyのままとした。",
+      "Lean依存グラフを再照合し、共通部分・相対差の行定理は前行定理でなくsets_solutionを直接使うため、説明順序を証明依存として申告しないよう修正した。"
     ]
   }
 }

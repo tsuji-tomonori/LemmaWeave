@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint39_chocolate",
+  "title_ja": "Jennyのチョコレート",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00865",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Mikeの3倍より5個多いJennyの個数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.chocolate_solution",
+  "graph": "work/gsm8k-sprint39-chocolate-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "chocolate_thrice",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.chocolate_thrice",
+      "title_ja": "Mikeの3倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Mikeは20個で倍率は3。",
+      "conclusion_ja": "60個。",
+      "baseline_ja": "3×20=60。"
+    },
+    {
+      "id": "chocolate_jenny",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.chocolate_jenny",
+      "title_ja": "Jennyの個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "60個より5個多い。",
+      "conclusion_ja": "65個。",
+      "baseline_ja": "60+5=65。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 866,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

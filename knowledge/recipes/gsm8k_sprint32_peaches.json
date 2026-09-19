@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint32_peaches",
+  "title_ja": "選別後の桃",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00765",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "250個の60%が新鮮で、さらに15個を小さすぎるとして除いた残りを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.peaches_solution",
+  "graph": "work/gsm8k-sprint32-peaches-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "15個は新鮮な150個から除くという原文の順序を保持する。"
+  ],
+  "steps": [
+    {
+      "id": "peaches_fresh",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.peaches_fresh",
+      "title_ja": "新鮮な桃",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "250個の60%を求める。",
+      "conclusion_ja": "150個。",
+      "baseline_ja": "150×100=250×60。"
+    },
+    {
+      "id": "peaches_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.peaches_remaining",
+      "title_ja": "最終個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "新鮮な150個から15個を除く。",
+      "conclusion_ja": "135個。",
+      "baseline_ja": "150=135+15。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 766,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

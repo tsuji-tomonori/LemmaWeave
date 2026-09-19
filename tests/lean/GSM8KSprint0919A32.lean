@@ -39,15 +39,48 @@ theorem ribbon_used : (6 : Nat) * 2 = 12 := by norm_num
 theorem ribbon_remaining : (18 : Nat) = 6 + 12 := by norm_num
 theorem ribbon_solution : RibbonLeft 18 6 2 12 6 := by norm_num [RibbonLeft]
 
+theorem calories_eaten : (30 : Nat) * 4 = 40 * 3 := by norm_num
+theorem calories_extra : (30 : Nat) = 5 + 25 := by norm_num
+theorem calories_solution : LunchCalories 40 3 4 30 25 5 := by norm_num [LunchCalories]
+
+theorem peaches_fresh : (150 : Nat) * 100 = 250 * 60 := by norm_num
+theorem peaches_remaining : (150 : Nat) = 135 + 15 := by norm_num
+theorem peaches_solution : PeachSorting 250 60 150 15 135 := by norm_num [PeachSorting]
+
+theorem meals_sum : (7 : Nat) + 8 = 15 := by norm_num
+theorem meals_union : (12 : Nat) + 3 = 7 + 8 := by norm_num
+theorem meals_neither : (30 : Nat) = 18 + 12 := by norm_num
+theorem meals_solution : MealNeeds 30 7 8 3 12 18 := by norm_num [MealNeeds]
+
+theorem tubing_count : (10 : Nat) * 4 = 40 := by norm_num
+theorem rafting_count : (5 : Nat) * 2 = 10 := by norm_num
+theorem tubing_solution : TubingRafting 40 4 10 2 5 := by norm_num [TubingRafting]
+
+theorem addresses_hawkins : (12 : Nat) = 6 * 2 := by norm_num
+theorem addresses_sloan : (12 : Nat) + 10 = 22 := by norm_num
+theorem addresses_total : (12 : Nat) + 6 + 22 = 40 := by norm_num
+theorem addresses_solution : CommencementAddresses 12 2 6 10 22 40 := by
+  norm_num [CommencementAddresses]
+
 #print axioms dough_solution
 #print axioms party_solution
 #print axioms grocery_solution
 #print axioms pens_solution
 #print axioms ribbon_solution
+#print axioms calories_solution
+#print axioms peaches_solution
+#print axioms meals_solution
+#print axioms tubing_solution
+#print axioms addresses_solution
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.dough_solution to "work/gsm8k-sprint32-dough-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.party_solution to "work/gsm8k-sprint32-party-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.grocery_solution to "work/gsm8k-sprint32-grocery-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.pens_solution to "work/gsm8k-sprint32-pens-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.ribbon_solution to "work/gsm8k-sprint32-ribbon-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.calories_solution to "work/gsm8k-sprint32-calories-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.peaches_solution to "work/gsm8k-sprint32-peaches-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.meals_solution to "work/gsm8k-sprint32-meals-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.tubing_solution to "work/gsm8k-sprint32-tubing-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A32.addresses_solution to "work/gsm8k-sprint32-addresses-graph.json"
 
 end LemmaWeave.Tests.GSM8KSprint0919A32

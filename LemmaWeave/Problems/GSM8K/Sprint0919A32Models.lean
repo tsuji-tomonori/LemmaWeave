@@ -44,4 +44,32 @@ def RibbonLeft (initial gifts perGift used remaining : Nat) : Prop :=
   initial = 18 ∧ gifts = 6 ∧ perGift = 2 ∧ used = gifts * perGift ∧
   remaining + used = initial
 
+def LunchCalories
+    (total numerator denominator eaten recommended extra : Nat) : Prop :=
+  total = 40 ∧ numerator = 3 ∧ denominator = 4 ∧
+  eaten * denominator = total * numerator ∧ recommended = 25 ∧
+  eaten = extra + recommended
+
+def PeachSorting
+    (picked freshPercent fresh discarded remaining : Nat) : Prop :=
+  picked = 250 ∧ freshPercent = 60 ∧ fresh * 100 = picked * freshPercent ∧
+  discarded = 15 ∧ fresh = remaining + discarded
+
+/-- Inclusion-exclusion is modeled explicitly; vegan and kosher sets may overlap. -/
+def MealNeeds
+    (clients vegan kosher both union neither : Nat) : Prop :=
+  clients = 30 ∧ vegan = 7 ∧ kosher = 8 ∧ both = 3 ∧
+  union + both = vegan + kosher ∧ neither + union = clients
+
+def TubingRafting
+    (kids tubingDivisor tubers raftingDivisor raftingAndTubing : Nat) : Prop :=
+  kids = 40 ∧ tubingDivisor = 4 ∧ tubers * tubingDivisor = kids ∧
+  raftingDivisor = 2 ∧ raftingAndTubing * raftingDivisor = tubers
+
+def CommencementAddresses
+    (sandoval hawkinsFactor hawkins sloanExtra sloan total : Nat) : Prop :=
+  sandoval = 12 ∧ hawkinsFactor = 2 ∧ sandoval = hawkins * hawkinsFactor ∧
+  sloanExtra = 10 ∧ sloan = sandoval + sloanExtra ∧
+  total = sandoval + hawkins + sloan
+
 end LemmaWeave.Problems.GSM8K.Sprint0919A32

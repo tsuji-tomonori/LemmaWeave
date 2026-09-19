@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint34_sandwich",
+  "title_ja": "月曜と火曜朝までのサンドイッチ差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00795",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "月曜の9個と、原文で明示された火曜朝の1個を比較する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.sandwich_solution",
+  "graph": "work/gsm8k-sprint34-sandwich-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "火曜一日全体の摂取量は不明なので、明示された朝食までの比較として8個とする。"
+  ],
+  "steps": [
+    {
+      "id": "sandwich_dinner",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.sandwich_dinner",
+      "title_ja": "月曜夕食",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "昼食3個の2倍。",
+      "conclusion_ja": "6個。",
+      "baseline_ja": "2×3=6。"
+    },
+    {
+      "id": "sandwich_monday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.sandwich_monday",
+      "title_ja": "月曜合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "昼3個と夕6個。",
+      "conclusion_ja": "9個。",
+      "baseline_ja": "3+6=9。"
+    },
+    {
+      "id": "sandwich_difference",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.sandwich_difference",
+      "title_ja": "既知摂取量の差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "火曜朝は1個。",
+      "conclusion_ja": "8個多い。",
+      "baseline_ja": "9-1=8。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 796,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

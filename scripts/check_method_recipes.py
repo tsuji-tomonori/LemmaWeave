@@ -135,7 +135,10 @@ def main():
         archive_file = ROOT / 'reports/dependencies/methods' / (r['id'] + '.json.gz')
         raw = graph_file.read_bytes() if graph_file.exists() else gzip.decompress(archive_file.read_bytes())
         graph = json.loads(raw)
-        result = validate_recipe(r, nodes, graph)
+        try:
+            result = validate_recipe(r, nodes, graph)
+        except ValueError as exc:
+            raise ValueError(f"recipe {r['id']}: {exc}") from exc
         if graph['roots'] != [r['root']]:
             raise ValueError('recipe export must have exactly one root')
         if set(graph_audit(graph)['axioms']) != set(graph['lean_collected_axioms']):

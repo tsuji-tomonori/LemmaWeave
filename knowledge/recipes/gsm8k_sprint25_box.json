@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint25_box",
+  "title_ja": "箱に入る積み木",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00668",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "8×10×12インチの箱へ3×2×4インチの直方体を入れられる最大個数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A25.box_solution",
+  "graph": "work/gsm8k-sprint25-box-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A25.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "体積比だけでなく、4インチを8インチ方向、2インチを10インチ方向、3インチを12インチ方向へ向ける実配置を示す。"
+  ],
+  "steps": [
+    {
+      "id": "box_volume",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.box_volume",
+      "title_ja": "箱の体積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "箱の3辺を掛ける。",
+      "conclusion_ja": "体積は960立方インチ。",
+      "baseline_ja": "8×10×12=960。"
+    },
+    {
+      "id": "block_volume",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.block_volume",
+      "title_ja": "積み木の体積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "積み木の3辺を掛ける。",
+      "conclusion_ja": "体積は24立方インチ。",
+      "baseline_ja": "3×2×4=24。"
+    },
+    {
+      "id": "box_orientation",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.box_orientation",
+      "title_ja": "実現する向き",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4インチを8へ、2インチを10へ、3インチを12へ揃える。",
+      "conclusion_ja": "各方向に2個、5個、4個並ぶ。",
+      "baseline_ja": "8÷4=2、10÷2=5、12÷3=4。"
+    },
+    {
+      "id": "box_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.box_count",
+      "title_ja": "最大個数",
+      "requires_steps": [
+        "box_volume",
+        "block_volume",
+        "box_orientation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "実配置の個数が体積比の上限と一致する。",
+      "conclusion_ja": "40個入る。",
+      "baseline_ja": "2×5×4=40、960÷24=40。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 669,
+    "checked_model_hash": "64c4ac48fa60e182544f74477b7e92327628d8d69e04fa338bf791fdfc4b50f2",
+    "checks_ja": [
+      "体積上限40個と、2×5×4個の隙間のない配置が一致することを確認した。"
+    ]
+  }
+}

@@ -112,5 +112,6 @@ class MethodTargetRegistration(unittest.TestCase):
                              ['recipe'])
             (root / 'proof.lean').write_text(
                 'theorem solution : True := by trivial\n'
-                '#lw_dependencies Example.solution to "work/example-graph.json"\n')
+                '#lw_dependencies Example.solution to\n'
+                '  "work/example-graph.json"\n')
             self.assertEqual(missing_graph_directives(root, [recipe]), [])

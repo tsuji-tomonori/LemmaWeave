@@ -3,6 +3,7 @@
 import argparse
 import gzip
 import json
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -41,8 +42,9 @@ def missing_graph_directives(root, recipes):
         target = recipe['lean_file']
         if target not in sources:
             sources[target] = (root / target).read_text()
-        directive = f'#lw_dependencies {recipe["root"]} to "{recipe["graph"]}"'
-        if directive not in sources[target]:
+        directive = (r'#lw_dependencies\s+' + re.escape(recipe['root']) +
+                     r'\s+to\s+"' + re.escape(recipe['graph']) + r'"')
+        if not re.search(directive, sources[target], re.MULTILINE):
             missing.append({'id': recipe['id'], 'lean_file': target,
                             'root': recipe['root'], 'graph': recipe['graph']})
     return missing

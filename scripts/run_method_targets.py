@@ -33,11 +33,32 @@ def select_targets(recipes, is_current):
                   if any(not is_current(recipe) for recipe in members))
 
 
+def missing_graph_directives(root, recipes):
+    """Return recipes whose Lean source does not register the required graph."""
+    sources = {}
+    missing = []
+    for recipe in recipes:
+        target = recipe['lean_file']
+        if target not in sources:
+            sources[target] = (root / target).read_text()
+        directive = f'#lw_dependencies {recipe["root"]} to "{recipe["graph"]}"'
+        if directive not in sources[target]:
+            missing.append({'id': recipe['id'], 'lean_file': target,
+                            'root': recipe['root'], 'graph': recipe['graph']})
+    return missing
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--all', action='store_true', help='replay every registered method target')
     args = parser.parse_args()
     recipes = [read(p) for p in sorted((ROOT / 'knowledge/recipes').glob('*.json'))]
+    missing_directives = missing_graph_directives(ROOT, recipes)
+    if missing_directives:
+        print(json.dumps({'error': 'missing_graph_directives',
+                          'recipes': missing_directives}, ensure_ascii=False, indent=2),
+              file=sys.stderr)
+        return 1
     all_targets = sorted({r['lean_file'] for r in recipes})
     targets = all_targets if args.all else select_targets(recipes, lambda r: evidence_is_current(ROOT, r))
     results = []
@@ -45,8 +66,12 @@ def main():
         confined(ROOT, target)
         result = subprocess.run([sys.executable, 'scripts/run.py', '--timeout', '900', '--',
                                  'lake', 'env', 'lean', target], cwd=ROOT, check=False)
-        results.append({'target': target, 'exit_code': result.returncode,
-                        'recipes': [r['id'] for r in recipes if r['lean_file'] == target]})
+        members = [r for r in recipes if r['lean_file'] == target]
+        missing_graphs = [r['graph'] for r in members if not (ROOT / r['graph']).is_file()]
+        exit_code = result.returncode if result.returncode else int(bool(missing_graphs))
+        results.append({'target': target, 'exit_code': exit_code,
+                        'recipes': [r['id'] for r in members],
+                        'missing_graphs': missing_graphs})
     (ROOT / 'reports/method-targets.json').write_text(json.dumps(results, indent=2) + '\n')
     selection = {
         'mode': 'all' if args.all else 'stale_evidence_only',

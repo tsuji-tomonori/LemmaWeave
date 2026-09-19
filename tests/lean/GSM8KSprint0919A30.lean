@@ -87,4 +87,35 @@ theorem jet_per_mile : (20 : Nat) + 105 + 140 = 265 := by norm_num
 theorem jet_total : (265 : Nat) * 400 = 106000 := by norm_num
 theorem jet_solution : JetFuel 20 30 5 35 2 70 3 2 105 140 265 400 106000 := by norm_num [JetFuel]
 
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.age_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.apples_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.boat_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.books_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.clothing_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.crayons_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.fence_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.grass_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.jet_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.jog_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.meal_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.pretzels_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.shells_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.spider_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A30.vampire_solution
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.age_solution to "work/gsm8k-sprint30-age-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.apples_solution to "work/gsm8k-sprint30-apples-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.boat_solution to "work/gsm8k-sprint30-boat-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.books_solution to "work/gsm8k-sprint30-books-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.clothing_solution to "work/gsm8k-sprint30-clothing-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.crayons_solution to "work/gsm8k-sprint30-crayons-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.fence_solution to "work/gsm8k-sprint30-fence-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.grass_solution to "work/gsm8k-sprint30-grass-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.jet_solution to "work/gsm8k-sprint30-jet-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.jog_solution to "work/gsm8k-sprint30-jog-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.meal_solution to "work/gsm8k-sprint30-meal-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.pretzels_solution to "work/gsm8k-sprint30-pretzels-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.shells_solution to "work/gsm8k-sprint30-shells-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.spider_solution to "work/gsm8k-sprint30-spider-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A30.vampire_solution to "work/gsm8k-sprint30-vampire-graph.json"
+
 end LemmaWeave.Tests.GSM8KSprint0919A30

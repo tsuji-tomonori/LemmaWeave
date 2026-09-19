@@ -87,4 +87,35 @@ theorem usb_used : (8 : Nat) * 100 = 16 * 50 := by norm_num
 theorem usb_available : (16 : Nat) = 8 + 8 := by norm_num
 theorem usb_solution : UsbDrive 16 50 8 8 ∧ 8 = 8 ∧ 8 = 8 := by exact ⟨by norm_num [UsbDrive], rfl, rfl⟩
 
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.apples_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.camp_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.candles_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.cottage_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.engines_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.flight_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.reading_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.roses_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.salary_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.sat_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.smoothies_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.tadpoles_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.taxi_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.usb_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A27.wine_solution
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.apples_solution to "work/gsm8k-sprint27-apples-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.camp_solution to "work/gsm8k-sprint27-camp-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.candles_solution to "work/gsm8k-sprint27-candles-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.cottage_solution to "work/gsm8k-sprint27-cottage-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.engines_solution to "work/gsm8k-sprint27-engines-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.flight_solution to "work/gsm8k-sprint27-flight-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.reading_solution to "work/gsm8k-sprint27-reading-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.roses_solution to "work/gsm8k-sprint27-roses-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.salary_solution to "work/gsm8k-sprint27-salary-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.sat_solution to "work/gsm8k-sprint27-sat-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.smoothies_solution to "work/gsm8k-sprint27-smoothies-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.tadpoles_solution to "work/gsm8k-sprint27-tadpoles-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.taxi_solution to "work/gsm8k-sprint27-taxi-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.usb_solution to "work/gsm8k-sprint27-usb-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A27.wine_solution to "work/gsm8k-sprint27-wine-graph.json"
+
 end LemmaWeave.Tests.GSM8KSprint0919A27

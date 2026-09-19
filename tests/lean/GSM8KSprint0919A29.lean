@@ -83,4 +83,35 @@ theorem fair_spent : (10 : Nat) + 12 + 4 = 26 := by norm_num
 theorem fair_left : (40 : Nat) = 26 + 14 := by norm_num
 theorem fair_solution : BookFair 2 20 40 2 5 10 3 4 12 2 2 4 26 14 := by norm_num [BookFair]
 
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.ages_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.book_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.bracelet_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.chips_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.coins_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.crafts_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.electronics_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.fair_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.library_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.money_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.shells_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.snake_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.toads_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.vodka_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A29.website_solution
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.ages_solution to "work/gsm8k-sprint29-ages-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.book_solution to "work/gsm8k-sprint29-book-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.bracelet_solution to "work/gsm8k-sprint29-bracelets-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.chips_solution to "work/gsm8k-sprint29-chips-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.coins_solution to "work/gsm8k-sprint29-coins-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.crafts_solution to "work/gsm8k-sprint29-crafts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.electronics_solution to "work/gsm8k-sprint29-electronics-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.fair_solution to "work/gsm8k-sprint29-fair-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.library_solution to "work/gsm8k-sprint29-library-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.money_solution to "work/gsm8k-sprint29-money-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.shells_solution to "work/gsm8k-sprint29-shells-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.snake_solution to "work/gsm8k-sprint29-snakes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.toads_solution to "work/gsm8k-sprint29-toads-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.vodka_solution to "work/gsm8k-sprint29-vodka-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A29.website_solution to "work/gsm8k-sprint29-website-graph.json"
+
 end LemmaWeave.Tests.GSM8KSprint0919A29

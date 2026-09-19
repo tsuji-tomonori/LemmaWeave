@@ -83,4 +83,35 @@ theorem sticks_girls : (12 : Nat) * 12 = 144 := by norm_num
 theorem sticks_fewer : (150 : Nat) = 144 + 6 := by norm_num
 theorem sticks_solution : PopsicleSticks 10 15 150 12 12 144 6 := by norm_num [PopsicleSticks]
 
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.account_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.bread_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.candy_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.change_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.cookies_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.guacamole_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.lunch_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.meatballs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.oranges_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.piggy_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.pizza_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.socks_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.sticks_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.tiles_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0919A28.tub_solution
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.account_solution to "work/gsm8k-sprint28-account-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.bread_solution to "work/gsm8k-sprint28-bread-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.candy_solution to "work/gsm8k-sprint28-candy-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.change_solution to "work/gsm8k-sprint28-change-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.cookies_solution to "work/gsm8k-sprint28-cookies-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.guacamole_solution to "work/gsm8k-sprint28-guacamole-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.lunch_solution to "work/gsm8k-sprint28-lunch-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.meatballs_solution to "work/gsm8k-sprint28-meatballs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.oranges_solution to "work/gsm8k-sprint28-oranges-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.piggy_solution to "work/gsm8k-sprint28-piggy-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.pizza_solution to "work/gsm8k-sprint28-pizza-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.socks_solution to "work/gsm8k-sprint28-socks-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.sticks_solution to "work/gsm8k-sprint28-sticks-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.tiles_solution to "work/gsm8k-sprint28-tiles-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0919A28.tub_solution to "work/gsm8k-sprint28-tub-graph.json"
+
 end LemmaWeave.Tests.GSM8KSprint0919A28

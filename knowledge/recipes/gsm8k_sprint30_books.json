@@ -1,0 +1,63 @@
+{
+  "id": "gsm8k_sprint30_books",
+  "title_ja": "本の再販売損失",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00730",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "毎月の購入費と年末売却額から年間損失を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.books_solution",
+  "graph": "work/gsm8k-sprint30-books-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "金額はドル単位。"
+  ],
+  "steps": [
+    {
+      "id": "books_monthly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.books_monthly",
+      "title_ja": "月額購入費",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1冊20ドルを月3冊。",
+      "conclusion_ja": "60ドル。",
+      "baseline_ja": "3×20=60。"
+    },
+    {
+      "id": "books_yearly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.books_yearly",
+      "title_ja": "年間購入費",
+      "requires_steps": [
+        "books_monthly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "月60ドルを12か月。",
+      "conclusion_ja": "720ドル。",
+      "baseline_ja": "60×12=720。"
+    },
+    {
+      "id": "books_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.books_loss",
+      "title_ja": "損失",
+      "requires_steps": [
+        "books_yearly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "720ドルで購入し500ドルで売却。",
+      "conclusion_ja": "220ドル。",
+      "baseline_ja": "720-500=220。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 731,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "gsm8k_sprint30_spider",
+  "title_ja": "タランチュラの脚の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00732",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "5より1少ない卵嚢から生まれる幼体の脚数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.spider_solution",
+  "graph": "work/gsm8k-sprint30-spider-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "one less than 5 egg sacs は4個の卵嚢と読む。"
+  ],
+  "steps": [
+    {
+      "id": "spider_sacs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.spider_sacs",
+      "title_ja": "卵嚢数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5個より1個少ない。",
+      "conclusion_ja": "4個。",
+      "baseline_ja": "5-1=4。"
+    },
+    {
+      "id": "spider_babies",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.spider_babies",
+      "title_ja": "幼体数",
+      "requires_steps": [
+        "spider_sacs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1卵嚢1000匹を4個。",
+      "conclusion_ja": "4000匹。",
+      "baseline_ja": "4×1000=4000。"
+    },
+    {
+      "id": "spider_legs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.spider_legs",
+      "title_ja": "脚数",
+      "requires_steps": [
+        "spider_babies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1匹8本を4000匹。",
+      "conclusion_ja": "32000本。",
+      "baseline_ja": "4000×8=32000。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 733,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

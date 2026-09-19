@@ -1,0 +1,75 @@
+{
+  "id": "gsm8k_sprint30_clothing",
+  "title_ja": "衣料品の売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00731",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "シャツ20枚とジーンズ10本を全て売った売上を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.clothing_solution",
+  "graph": "work/gsm8k-sprint30-clothing-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "ジーンズ1本はシャツ1枚の2倍の価格。"
+  ],
+  "steps": [
+    {
+      "id": "clothing_shirts",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.clothing_shirts",
+      "title_ja": "シャツ売上",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10ドルを20枚。",
+      "conclusion_ja": "200ドル。",
+      "baseline_ja": "20×10=200。"
+    },
+    {
+      "id": "clothing_jean_price",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.clothing_jean_price",
+      "title_ja": "ジーンズ単価",
+      "requires_steps": [
+        "clothing_shirts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "シャツ10ドルの2倍。",
+      "conclusion_ja": "20ドル。",
+      "baseline_ja": "2×10=20。"
+    },
+    {
+      "id": "clothing_jeans",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.clothing_jeans",
+      "title_ja": "ジーンズ売上",
+      "requires_steps": [
+        "clothing_jean_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20ドルを10本。",
+      "conclusion_ja": "200ドル。",
+      "baseline_ja": "10×20=200。"
+    },
+    {
+      "id": "clothing_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.clothing_total",
+      "title_ja": "総売上",
+      "requires_steps": [
+        "clothing_jeans"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "シャツ200ドル、ジーンズ200ドル。",
+      "conclusion_ja": "400ドル。",
+      "baseline_ja": "200+200=400。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 732,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

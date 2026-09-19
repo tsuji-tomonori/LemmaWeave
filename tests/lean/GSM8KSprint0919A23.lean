@@ -66,9 +66,7 @@ theorem cakes_solution : Cheesecakes 10 15 25 7 18 ∧ 25 = 25 ∧ 18 = 18 := by
 theorem keyboard_cleaning (a b c d e f g : Nat) (x : KeyboardHomework a b c d e f g) :
     e = 42 := by
   rcases x with ⟨ha, hb, hc, hd, he, hf, hg⟩
-  norm_num [ha, hb] at hc
-  norm_num [hc, hd] at he
-  exact he
+  omega
 
 theorem keyboard_total (a b c d e f g : Nat) (x : KeyboardHomework a b c d e f g) :
     g = 52 := by

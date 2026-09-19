@@ -1,0 +1,51 @@
+{
+  "id": "gsm8k_sprint30_age",
+  "title_ja": "Justinの現在年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00741",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "5年後のAngelinaの年齢と現在の年齢差からJustinの現在年齢を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.age_solution",
+  "graph": "work/gsm8k-sprint30-age-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "年齢は自然数年。"
+  ],
+  "steps": [
+    {
+      "id": "age_angelina",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.age_angelina",
+      "title_ja": "Angelinaの現在年齢",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5年後に40歳。",
+      "conclusion_ja": "35歳。",
+      "baseline_ja": "40-5=35。"
+    },
+    {
+      "id": "age_justin",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.age_justin",
+      "title_ja": "Justinの現在年齢",
+      "requires_steps": [
+        "age_angelina"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Angelinaより4歳若い。",
+      "conclusion_ja": "31歳。",
+      "baseline_ja": "35-4=31。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 742,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

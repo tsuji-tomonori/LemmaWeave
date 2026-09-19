@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint30_fence",
+  "title_ja": "白塗りが残る柵",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00738",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "3人が順に塗った後の未塗装部分を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.fence_solution",
+  "graph": "work/gsm8k-sprint30-fence-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "各分数は直前に残っていた長さに適用する。"
+  ],
+  "steps": [
+    {
+      "id": "fence_after_ben",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.fence_after_ben",
+      "title_ja": "Benの後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "100フィートから10フィート塗る。",
+      "conclusion_ja": "90フィート残る。",
+      "baseline_ja": "100-10=90。"
+    },
+    {
+      "id": "fence_billy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.fence_billy",
+      "title_ja": "Billyが塗る量",
+      "requires_steps": [
+        "fence_after_ben"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り90フィートの1/5。",
+      "conclusion_ja": "18フィート。",
+      "baseline_ja": "90÷5=18。"
+    },
+    {
+      "id": "fence_after_billy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.fence_after_billy",
+      "title_ja": "Billyの後",
+      "requires_steps": [
+        "fence_billy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "90フィートから18フィート塗る。",
+      "conclusion_ja": "72フィート残る。",
+      "baseline_ja": "90-18=72。"
+    },
+    {
+      "id": "fence_johnny",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.fence_johnny",
+      "title_ja": "Johnnyが塗る量",
+      "requires_steps": [
+        "fence_after_billy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り72フィートの1/3。",
+      "conclusion_ja": "24フィート。",
+      "baseline_ja": "72÷3=24。"
+    },
+    {
+      "id": "fence_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.fence_remaining",
+      "title_ja": "未塗装部分",
+      "requires_steps": [
+        "fence_johnny"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "72フィートから24フィート塗る。",
+      "conclusion_ja": "48フィート。",
+      "baseline_ja": "72-24=48。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 739,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

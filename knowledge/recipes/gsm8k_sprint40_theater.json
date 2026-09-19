@@ -1,0 +1,89 @@
+{
+  "id": "gsm8k_sprint40_theater",
+  "title_ja": "劇場訪問費の下限と非一意性",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00881",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "週1回以上という条件から最小額を求め、総額が一意でないことを示す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.theater_solution",
+  "graph": "work/gsm8k-sprint40-theater-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "at least once a weekは各週1回以上であり、正確に1回とは限らない。参照解答90ドルは最小額。"
+  ],
+  "steps": [
+    {
+      "id": "theater_visit_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.theater_visit_cost",
+      "title_ja": "1公演の料金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3時間で1時間5ドル。",
+      "conclusion_ja": "15ドル。",
+      "baseline_ja": "3×5=15。"
+    },
+    {
+      "id": "theater_minimum_value",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.theater_minimum_value",
+      "title_ja": "6週間の最小額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各週ちょうど1回なら6回。",
+      "conclusion_ja": "90ドル。",
+      "baseline_ja": "6×15=90。"
+    },
+    {
+      "id": "theater_minimum",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.theater_minimum",
+      "title_ja": "下限",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6週間で少なくとも6回訪問する。",
+      "conclusion_ja": "支出は90ドル以上。",
+      "baseline_ja": "visits≥6なら15×visits≥90。"
+    },
+    {
+      "id": "theater_six_visits",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.theater_six_visits",
+      "title_ja": "成立例1",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6回訪問する。",
+      "conclusion_ja": "90ドル。",
+      "baseline_ja": "6×15=90。"
+    },
+    {
+      "id": "theater_seven_visits",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.theater_seven_visits",
+      "title_ja": "成立例2",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7回訪問しても週1回以上を満たす。",
+      "conclusion_ja": "105ドル。",
+      "baseline_ja": "7×15=105。"
+    },
+    {
+      "id": "theater_amounts_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.theater_amounts_differ",
+      "title_ja": "非一意性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "90ドルと105ドルはいずれも条件に適合する。",
+      "conclusion_ja": "原文だけでは総額は一意でない。",
+      "baseline_ja": "90≠105。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 882,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

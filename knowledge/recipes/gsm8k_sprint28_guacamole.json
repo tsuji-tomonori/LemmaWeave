@@ -1,0 +1,52 @@
+{
+  "id": "gsm8k_sprint28_guacamole",
+  "title_ja": "ワカモレの人数分",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00703",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "手持ち5個と追加4個のアボカドを1食3個で分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A28.guacamole_solution",
+  "graph": "work/gsm8k-sprint28-guacamole-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A28.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "servingごとに3個を使い切る。"
+  ],
+  "steps": [
+    {
+      "id": "guacamole_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.guacamole_total",
+      "title_ja": "アボカド総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5個と4個を足す。",
+      "conclusion_ja": "9個。",
+      "baseline_ja": "5+4=9。"
+    },
+    {
+      "id": "guacamole_servings",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.guacamole_servings",
+      "title_ja": "作れる食数",
+      "requires_steps": [
+        "guacamole_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "9個を3個ずつ。",
+      "conclusion_ja": "3食分。",
+      "baseline_ja": "9÷3=3。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 704,
+    "checked_model_hash": "1810c2eb82e2b1ef127b9a48786d662c837755e9604891a5d1862e999a8bb1ec",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

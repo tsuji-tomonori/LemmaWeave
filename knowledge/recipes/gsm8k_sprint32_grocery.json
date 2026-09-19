@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint32_grocery",
+  "title_ja": "残金で買えるりんご",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00761",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "60ドルから固定購入費を引き、2ドルのりんごを何個買えるか求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.grocery_solution",
+  "graph": "work/gsm8k-sprint32-grocery-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "すべてドル単位で、残金10ドルは2ドルで割り切れる。"
+  ],
+  "steps": [
+    {
+      "id": "grocery_hummus",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.grocery_hummus",
+      "title_ja": "フムス代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5ドルの容器を2個買う。",
+      "conclusion_ja": "10ドル。",
+      "baseline_ja": "2×5=10。"
+    },
+    {
+      "id": "grocery_fixed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.grocery_fixed",
+      "title_ja": "固定購入費",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "フムス10ドル、鶏肉20ドル、ベーコン10ドル、野菜10ドル。",
+      "conclusion_ja": "50ドル。",
+      "baseline_ja": "10+20+10+10=50。"
+    },
+    {
+      "id": "grocery_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.grocery_remaining",
+      "title_ja": "残金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "予算60ドルから固定購入費50ドルを引く。",
+      "conclusion_ja": "10ドル。",
+      "baseline_ja": "60=10+50。"
+    },
+    {
+      "id": "grocery_apples",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.grocery_apples",
+      "title_ja": "りんごの個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残金10ドルで1個2ドルのりんごを買う。",
+      "conclusion_ja": "5個。",
+      "baseline_ja": "10=5×2。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 762,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

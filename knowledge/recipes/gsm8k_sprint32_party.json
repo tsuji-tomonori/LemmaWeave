@@ -1,0 +1,89 @@
+{
+  "id": "gsm8k_sprint32_party",
+  "title_ja": "30人分の料理費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00760",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "30人分の料理に必要なじゃがいもと塩の購入費を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.party_solution",
+  "graph": "work/gsm8k-sprint32-party-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "金額はセント単位。塩は必要な15小さじを5小さじ入り容器3個で過不足なく買える。"
+  ],
+  "steps": [
+    {
+      "id": "party_batches",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.party_batches",
+      "title_ja": "必要な調理回数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1回2人分を30人へ用意する。",
+      "conclusion_ja": "15回。",
+      "baseline_ja": "30=15×2。"
+    },
+    {
+      "id": "party_potatoes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.party_potatoes",
+      "title_ja": "じゃがいもの個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1回4個を15回分用意する。",
+      "conclusion_ja": "60個。",
+      "baseline_ja": "15×4=60。"
+    },
+    {
+      "id": "party_salt_teaspoons",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.party_salt_teaspoons",
+      "title_ja": "塩の量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1回1小さじを15回分用意する。",
+      "conclusion_ja": "15小さじ。",
+      "baseline_ja": "15×1=15。"
+    },
+    {
+      "id": "party_salt_containers",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.party_salt_containers",
+      "title_ja": "塩の容器数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1容器5小さじで15小さじを用意する。",
+      "conclusion_ja": "3容器。",
+      "baseline_ja": "15=3×5。"
+    },
+    {
+      "id": "party_costs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.party_costs",
+      "title_ja": "品目別費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "じゃがいも60個を10セント、塩3容器を200セントで買う。",
+      "conclusion_ja": "各600セント。",
+      "baseline_ja": "60×10=600、3×200=600。"
+    },
+    {
+      "id": "party_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.party_total",
+      "title_ja": "総費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "600セントずつの2品目を合計する。",
+      "conclusion_ja": "1200セント、すなわち12ドル。",
+      "baseline_ja": "600+600=1200。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 761,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

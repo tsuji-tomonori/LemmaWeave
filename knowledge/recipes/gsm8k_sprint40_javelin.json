@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint40_javelin",
+  "title_ja": "やり投げの第1投",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00890",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "3投の比と合計から第1投の距離を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.javelin_solution",
+  "graph": "work/gsm8k-sprint40-javelin-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "距離はメートル単位の自然数。"
+  ],
+  "steps": [
+    {
+      "id": "javelin_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.javelin_second",
+      "title_ja": "第2投との関係",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "第1投は第2投の2倍。",
+      "conclusion_ja": "第2投150mに対し第1投300m。",
+      "baseline_ja": "300=2×150。"
+    },
+    {
+      "id": "javelin_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.javelin_third",
+      "title_ja": "第3投との関係",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "第1投は第3投の半分。",
+      "conclusion_ja": "第3投600m。",
+      "baseline_ja": "600=2×300。"
+    },
+    {
+      "id": "javelin_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.javelin_total",
+      "title_ja": "合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "300m、150m、600m。",
+      "conclusion_ja": "1050m。",
+      "baseline_ja": "300+150+600=1050。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 891,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -6,7 +6,7 @@
   "role": "ci_followup_only",
   "base_sha": "f7ad59086a1d33fcd55476fbb001eed87bb1ba7a",
   "started_at": "2026-09-19T17:56:27+09:00",
-  "finished_at": "2026-09-19T18:00:17+09:00",
+  "finished_at": "2026-09-19T18:13:00+09:00",
   "schedule_offset_seconds": 3387,
   "duplicate_slot_math_skipped": true,
   "schedule_note_ja": "17時GSM8K枠はrun_id lemmaweave-sprint-20260919-1700で既に15問を保存済みのため、同じ予定枠を二重実行せず、現HEADのCI証拠回収と失敗修復だけを実施した。",
@@ -21,7 +21,7 @@
   },
   "deferred": [
     {
-      "problem_id": "ci:lean-evidence-853254b3f0c26dd4892a24c10fdb151f9ea707cf",
+      "problem_id": "ci:lean-evidence-38e35dbc55927bdfbc8c3904f4e21eb8f856c6c1",
       "retry_on": "exact-head GitHub Actions completion",
       "reason_ja": "A27モデルの予約語修正後HEADについて固定Lean・公理・実依存証拠が未確定。",
       "next_action_ja": "現HEADのLean CIを読み、成功時のみ成果物を入力SHAと照合して取り込む。失敗時は次の最初の失敗だけを切り分ける。"
@@ -44,14 +44,22 @@
     },
     "repair_ja": "CupcakeCandlesの仮引数名haveはLean予約語なのでownedへ変更し、等式本体も同じ名前へ揃えた。命題の型・量化・意味は変更していない。",
     "repair_commit": "853254b3f0c26dd4892a24c10fdb151f9ea707cf",
+    "second_failed_head_sha": "665f7f2bb44309800542438006aea46ddbfd59ce",
+    "second_failed_run_id": 35433589380,
+    "second_failed_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35433589380",
+    "second_failed_job_id": 105872449053,
+    "second_first_failure": "LemmaWeave/Problems/GSM8K/Sprint0919A29Models.lean:18:10: rational number instances were not imported",
+    "second_passed_before_failure": "Sprint0919A01Models〜Sprint0919A28Models",
+    "second_repair_ja": "VodkaSplitのℚモデルへMathlib.Data.Rat.Defsをimportし、数値・乗除算の型クラスを供給した。モデルの変数・仮定・結論は変更していない。",
+    "second_repair_commit": "38e35dbc55927bdfbc8c3904f4e21eb8f856c6c1",
     "current_status": "awaiting_exact_head_fixed_lean_and_evidence"
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
-  "commit": "853254b3f0c26dd4892a24c10fdb151f9ea707cf",
+  "commit": "38e35dbc55927bdfbc8c3904f4e21eb8f856c6c1",
   "progress_before": {
     "solution_ready": 518,
     "remaining": 8274,
-    "verification_pending": 230
+    "verifification_pending": 230
   },
   "progress_after": {
     "solution_ready": 518,
@@ -59,5 +67,5 @@
     "verification_pending": 230
   },
   "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00744",
-  "note_ja": "重複解答は作成せず、失敗ログを回収してA27の構文障害だけを修復した。失敗成果物を正式証拠に流用せず、マージとsolution_ready昇格は保留した。"
+  "note_ja": "重複解答は作成せず、失敗ログを回収してA27の予約語衝突とA29のℚ依存不足を順に修復した。A27・A28は修復後CIで通過した。失敗成杜物を殣式証拘に流用せず、マージと�solution_ready昇格は保留した。"
 }

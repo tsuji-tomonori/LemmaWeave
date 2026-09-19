@@ -10,9 +10,9 @@ def SoccerCamp (kids soccer morning afternoon : Nat) : Prop :=
 def Cottage (hourly hours total friends each : Nat) : Prop :=
   hourly = 5 ∧ hours = 8 ∧ total = hourly * hours ∧ friends = 2 ∧ total = friends * each
 
-def CupcakeCandles (cupcakes half oneCandles twoCandles total have additional : Nat) : Prop :=
+def CupcakeCandles (cupcakes half oneCandles twoCandles total owned additional : Nat) : Prop :=
   cupcakes = 24 ∧ cupcakes = 2 * half ∧ oneCandles = half ∧ twoCandles = 2 * half ∧
-  total = oneCandles + twoCandles ∧ have = 30 ∧ total = have + additional
+  total = oneCandles + twoCandles ∧ owned = 30 ∧ total = owned + additional
 
 def Tadpoles (caught releasedPercent released kept : Nat) : Prop :=
   caught = 180 ∧ releasedPercent = 75 ∧ released * 100 = caught * releasedPercent ∧

@@ -1,0 +1,140 @@
+{
+  "date": "2026-09-19",
+  "run_id": "lemmaweave-sprint-20260919-1700",
+  "planned_slot_local_hour": 17,
+  "planned_at": "2026-09-19T17:00:00+09:00",
+  "role": "gsm8k_solve_only",
+  "base_sha": "1f38e1b8395f9682ca7fafde2c1d33474a8eea0f",
+  "started_at": "2026-09-19T17:04:59+09:00",
+  "finished_at": "2026-09-19T17:10:58+09:00",
+  "schedule_offset_seconds": 299,
+  "schedule_note_ja": "予定時刻より299秒遅く起動した。16時枠の実行記録が存在しないため未実行枠として隠さず記録し、重複のない17時GSM8K枠へ割り当てた。",
+  "unexecuted_planned_slots": [
+    {
+      "planned_local_hour": 16,
+      "status": "not_observed",
+      "note_ja": "operations/dailyに16時枠の記録がなく、今回へ15問を上乗せせず未実行として保持する。"
+    }
+  ],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00729",
+    "external-gsm8k-main-3101c7d50724:train:00730",
+    "external-gsm8k-main-3101c7d50724:train:00731",
+    "external-gsm8k-main-3101c7d50724:train:00732",
+    "external-gsm8k-main-3101c7d50724:train:00733",
+    "external-gsm8k-main-3101c7d50724:train:00734",
+    "external-gsm8k-main-3101c7d50724:train:00735",
+    "external-gsm8k-main-3101c7d50724:train:00736",
+    "external-gsm8k-main-3101c7d50724:train:00737",
+    "external-gsm8k-main-3101c7d50724:train:00738",
+    "external-gsm8k-main-3101c7d50724:train:00739",
+    "external-gsm8k-main-3101c7d50724:train:00740",
+    "external-gsm8k-main-3101c7d50724:train:00741",
+    "external-gsm8k-main-3101c7d50724:train:00742",
+    "external-gsm8k-main-3101c7d50724:train:00743"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00729",
+    "external-gsm8k-main-3101c7d50724:train:00730",
+    "external-gsm8k-main-3101c7d50724:train:00731",
+    "external-gsm8k-main-3101c7d50724:train:00732",
+    "external-gsm8k-main-3101c7d50724:train:00733",
+    "external-gsm8k-main-3101c7d50724:train:00734",
+    "external-gsm8k-main-3101c7d50724:train:00735",
+    "external-gsm8k-main-3101c7d50724:train:00736",
+    "external-gsm8k-main-3101c7d50724:train:00737",
+    "external-gsm8k-main-3101c7d50724:train:00738",
+    "external-gsm8k-main-3101c7d50724:train:00739",
+    "external-gsm8k-main-3101c7d50724:train:00740",
+    "external-gsm8k-main-3101c7d50724:train:00741",
+    "external-gsm8k-main-3101c7d50724:train:00742",
+    "external-gsm8k-main-3101c7d50724:train:00743"
+  ],
+  "verification_pending_cumulative": {
+    "count": 230,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:00743",
+    "note_ja": "既存215問と今回15問の連続範囲。固定Lean・公理・実依存証拠の現行入力照合待ちで、solution_readyには含めない。"
+  },
+  "deferred": [],
+  "claim": {
+    "problem_ids": [
+      "external-gsm8k-main-3101c7d50724:train:00729",
+      "external-gsm8k-main-3101c7d50724:train:00730",
+      "external-gsm8k-main-3101c7d50724:train:00731",
+      "external-gsm8k-main-3101c7d50724:train:00732",
+      "external-gsm8k-main-3101c7d50724:train:00733",
+      "external-gsm8k-main-3101c7d50724:train:00734",
+      "external-gsm8k-main-3101c7d50724:train:00735",
+      "external-gsm8k-main-3101c7d50724:train:00736",
+      "external-gsm8k-main-3101c7d50724:train:00737",
+      "external-gsm8k-main-3101c7d50724:train:00738",
+      "external-gsm8k-main-3101c7d50724:train:00739",
+      "external-gsm8k-main-3101c7d50724:train:00740",
+      "external-gsm8k-main-3101c7d50724:train:00741",
+      "external-gsm8k-main-3101c7d50724:train:00742",
+      "external-gsm8k-main-3101c7d50724:train:00743"
+    ],
+    "status": "checkpoint_saved",
+    "expires_at": "2026-09-19T19:00:00+09:00"
+  },
+  "ci": {
+    "prior_head_sha": "1f38e1b8395f9682ca7fafde2c1d33474a8eea0f",
+    "prior_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35428285212",
+    "prior_status": "failure",
+    "prior_failures": [
+      "tests/lean/GSM8KSprint0919A23.lean keyboard_cleaningの型不一致",
+      "Sprint0919A24Models〜Sprint0919A29Modelsの事前build登録欠落による.olean不存在"
+    ],
+    "repair_ja": "A23の証明をomegaへ修正し、replay.pyへA24〜A30モデルの明示buildを追加した。",
+    "content_head_sha": "0f562f0faaaf5a670e604d3cda01796ad8450ea3",
+    "content_status": "awaiting_exact_head_fixed_lean_and_evidence",
+    "current_status": "fixed_lean_and_evidence_import_pending"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "0f562f0faaaf5a670e604d3cda01796ad8450ea3",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 215
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 230
+  },
+  "checkpoint": {
+    "target_problems": 15,
+    "authored_problems": 15,
+    "explanation_lines": 50,
+    "unstarted_in_slot": 0,
+    "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00744",
+    "artifact_bytes": 75680,
+    "reason_ja": "原題を一問ずつ再読し、モデル・解答行・自己照合を保存した。固定Lean CIと証拠取込前なので未完扱い。"
+  },
+  "validation": {
+    "source_records_matched": 15,
+    "source_question_hashes_matched": 15,
+    "recipe_model_and_declaration_links_matched": 50,
+    "python_regression_tests_passed": 0,
+    "forbidden_proof_holes_found": 0,
+    "local_lean_available": false,
+    "replay_python_ast_valid": true,
+    "render_note_ja": "JSON・ID・宣言リンク・禁止証明穴・replay.py構文を静的検査した。固定LeanはGitHub現HEADのCI待ち。"
+  },
+  "separate_high_school_progress": {
+    "registered_ids": 13,
+    "kernel_checked": 5,
+    "candidate_unstarted": 8,
+    "weekly_fields": {
+      "集合・論理・整数": 1,
+      "関数・方程式・不等式": 0,
+      "図形・ベクトル・三角比": 0,
+      "場合の数・確率・統計": 0,
+      "数列": 0,
+      "微分・積分": 0
+    }
+  },
+  "note_ja": "train:00729〜00743を一問ずつ解いた。貝殻問題はJohn/Paulの人名不整合に対する非一意性と、誤記補正時53個を分離した。レストラン問題は税率不足を指摘し、税抜料理代と25%チップのみなら25ドル、税率10%なら27ドルとなる反例を形式化した。直前CIのA23型不一致とA24〜A29モデルbuild登録欠落も修復した。"
+}

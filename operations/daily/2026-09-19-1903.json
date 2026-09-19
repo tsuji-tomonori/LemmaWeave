@@ -6,7 +6,7 @@
   "role": "gsm8k_individual_15",
   "base_sha": "14b1eff28189dc05a2e070edc7de5a3a63fcef5a",
   "started_at": "2026-09-19T19:03:27+09:00",
-  "finished_at": "2026-09-19T19:24:31+09:00",
+  "finished_at": "2026-09-19T19:35:00+09:00",
   "schedule_offset_seconds": 207,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00744",
@@ -51,9 +51,9 @@
   "deferred": [
     {
       "problem_id": "ci:method-recipes-common-divisor-finite",
-      "retry_on": "2026-09-19T22:00:00+09:00",
-      "reason_ja": "固定Lean replayと許容公理監査はA01〜A30まで通過したが、既存レシピが参照するlearning-graphノードcommon_divisor_finiteの欠落でcheck_method_recipes.pyが失敗した。",
-      "next_action_ja": "欠落ノードの正本と依存証拠を照合し、22時の検証基盤修復枠で追加または不正参照を修正して全レシピ検査を再実行する。"
+      "retry_on": "exact-head GitHub Actions completion",
+      "reason_ja": "固定Lean replayと許容公理監査はA01〜A30まで通過したが、入試レシピが実在しないmethod node common_divisor_finite等を参照してcheck_method_recipes.pyが失敗した。実証明は有限列挙で完結し各行にbaseline_jaがあるため、実依存にないuses_nodesを除去した。",
+      "next_action_ja": "修復後HEADで全レシピ検査を再実行し、次の失敗があれば独立に記録する。"
     },
     {
       "problem_id": "external-gsm8k-main-3101c7d50724:train:00744-00758",
@@ -82,6 +82,7 @@
       "accepted_as_success_evidence": false
     },
     "local_recipe_check": "unavailable_in_partial_scratch_snapshot",
+    "recipe_dependency_repair_commit": "302ba29a39c6d5f0592b2f8f68084c473b96756f",
     "current_status": "awaiting_exact_head_fixed_lean_and_evidence"
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",

@@ -51,9 +51,9 @@
   "deferred": [
     {
       "problem_id": "external-gsm8k-main-3101c7d50724:train:00759-00773",
-      "retry_on": "repair-head GitHub Actions completion",
+      "retry_on": "2026-09-19",
       "reason_ja": "HEAD a6a5224f の固定Lean CIはA32全定理と公理監査を通過後、先行A30/A31レシピの誤った行間依存宣言で失敗した。失敗成果物は成功証拠に採用しない。",
-      "next_action_ja": "実証明に存在しないA30/A31の requires_steps を除去し、実際に rectangle_width を呼ぶ rectangle_length の依存だけを保持して再実行する。"
+      "next_action_ja": "A27〜A31の誤依存を修復したHEADを固定Lean CIで再実行し、次に検出された不一致があればrecipe/step単位で実証明へ合わせる。"
     }
   ],
   "execution_control": {

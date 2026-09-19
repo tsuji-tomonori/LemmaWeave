@@ -51,7 +51,10 @@ theorem rectangle_width (w l a : Nat) (x : RectangleLength w l a) : w = 5 := by
 theorem rectangle_length (w l a : Nat) (x : RectangleLength w l a) : l = 20 := by
   have hw := rectangle_width w l a x
   rcases x with ⟨hpos, hl, ha, harea⟩
-  omega
+  calc
+    l = 4 * w := hl
+    _ = 4 * 5 := by rw [hw]
+    _ = 20 := by norm_num
 theorem rectangle_solution : RectangleLength 5 20 100 ∧ 20 = 20 := by
   exact ⟨by norm_num [RectangleLength], rfl⟩
 

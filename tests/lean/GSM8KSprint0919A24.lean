@@ -14,7 +14,9 @@ theorem pets_cats (a b c d e f g h i j : Nat) (x : CommunityPets a b c d e f g h
   rcases x with ⟨ha,hb,hc,hd,he,hf,hx,hh,hi,hj⟩; norm_num [hg,hh] at hi; exact hi
 theorem pets_total (a b c d e f g h i j : Nat) (x : CommunityPets a b c d e f g h i j) : j = 80 := by
   have hi := pets_cats a b c d e f g h i j x
-  rcases x with ⟨ha,hb,hc,hd,he,hf,hg,hh,hx,hj⟩; norm_num [hb,hc,he,hi] at hd hf hj; exact hj
+  rcases x with ⟨ha,hb,hc,hd,he,hf,hg,hh,hx,hj⟩
+  norm_num [hb,hc,he,hi] at hd hf hj
+  omega
 theorem pets_solution :
     CommunityPets 50 15 2 30 20 20 15 2 30 80 ∧
     50 = 50 ∧ 15 = 15 ∧ 30 = 30 ∧ 80 = 80 := by

@@ -136,7 +136,10 @@ theorem ball_distance (a b c d e f g h : Nat) (x : BallCatch a b c d e f g h) : 
   rcases x with ⟨ha,hb,hc,hd,he,hf,hg,hh⟩; norm_num [ha,hb] at hc; exact hc
 theorem ball_extra (a b c d e f g h : Nat) (x : BallCatch a b c d e f g h) : g = 24 := by
   have hc := ball_distance a b c d e f g h x
-  rcases x with ⟨ha,hb,hx,hd,he,hf,hg,hh⟩; norm_num [hb,hd] at he; omega
+  rcases x with ⟨ha,hb,hx,hd,he,hf,hg,hh⟩
+  norm_num [hb,hd] at he
+  norm_num [hd] at hg
+  omega
 theorem ball_total (a b c d e f g h : Nat) (x : BallCatch a b c d e f g h) : h = 32 := by
   have hg := ball_extra a b c d e f g h x; rcases x with ⟨ha,hb,hc,hd,he,hf,hx,hh⟩; omega
 theorem ball_solution : BallCatch 20 8 160 5 40 120 24 32 ∧ 160 = 160 ∧ 24 = 24 ∧ 32 = 32 := by

@@ -29,9 +29,7 @@
       "id": "salary_daily",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.salary_daily",
       "title_ja": "日給",
-      "requires_steps": [
-        "salary_weekly"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "週144ドルを6日で割る。",
       "conclusion_ja": "日24ドル。",
@@ -41,9 +39,7 @@
       "id": "salary_hourly",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.salary_hourly",
       "title_ja": "時給",
-      "requires_steps": [
-        "salary_daily"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "日24ドルを8時間で割る。",
       "conclusion_ja": "時給3ドル。",
@@ -53,9 +49,7 @@
       "id": "salary_calendar_counterexample",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.salary_calendar_counterexample",
       "title_ja": "非一意性の反例",
-      "requires_steps": [
-        "salary_hourly"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "月26日勤務なら総労働時間は208時間。",
       "conclusion_ja": "時給36/13ドルで3ドルではない。",

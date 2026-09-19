@@ -28,9 +28,7 @@
       "id": "taxi_base",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.taxi_base",
       "title_ja": "タクシー元料金",
-      "requires_steps": [
-        "taxi_lyft"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "Lyftより4ドル安い。",
       "conclusion_ja": "15ドル。",
@@ -40,9 +38,7 @@
       "id": "taxi_tip",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.taxi_tip",
       "title_ja": "チップ",
-      "requires_steps": [
-        "taxi_base"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "元料金15ドルの20%。",
       "conclusion_ja": "3ドル。",
@@ -52,9 +48,7 @@
       "id": "taxi_total",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.taxi_total",
       "title_ja": "支払総額",
-      "requires_steps": [
-        "taxi_tip"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "元料金とチップを足す。",
       "conclusion_ja": "18ドル。",

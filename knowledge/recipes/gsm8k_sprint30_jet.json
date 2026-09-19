@@ -28,9 +28,7 @@
       "id": "jet_bags",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_bags",
       "title_ja": "荷物数",
-      "requires_steps": [
-        "jet_people"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "35人が各2個。",
       "conclusion_ja": "70個。",
@@ -40,9 +38,7 @@
       "id": "jet_people_fuel",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_people_fuel",
       "title_ja": "人による増分",
-      "requires_steps": [
-        "jet_bags"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "35人が1人3ガロン/マイル。",
       "conclusion_ja": "105ガロン/マイル。",
@@ -52,9 +48,7 @@
       "id": "jet_bags_fuel",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_bags_fuel",
       "title_ja": "荷物による増分",
-      "requires_steps": [
-        "jet_people_fuel"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "70個が1個2ガロン/マイル。",
       "conclusion_ja": "140ガロン/マイル。",
@@ -64,9 +58,7 @@
       "id": "jet_per_mile",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_per_mile",
       "title_ja": "1マイル当たり燃料",
-      "requires_steps": [
-        "jet_bags_fuel"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "空機20、人105、荷物140。",
       "conclusion_ja": "265ガロン/マイル。",
@@ -76,9 +68,7 @@
       "id": "jet_total",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_total",
       "title_ja": "全行程燃料",
-      "requires_steps": [
-        "jet_per_mile"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "265ガロン/マイルを400マイル。",
       "conclusion_ja": "106000ガロン。",

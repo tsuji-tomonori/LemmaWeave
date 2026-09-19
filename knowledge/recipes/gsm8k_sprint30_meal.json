@@ -30,9 +30,7 @@
       "id": "meal_pakoras",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_pakoras",
       "title_ja": "パコラ代",
-      "requires_steps": [
-        "meal_samosas"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "3ドルを4注文。",
       "conclusion_ja": "12ドル。",
@@ -42,9 +40,7 @@
       "id": "meal_food",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_food",
       "title_ja": "料理代",
-      "requires_steps": [
-        "meal_pakoras"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "サモサ6、パコラ12、ラッシー2ドル。",
       "conclusion_ja": "20ドル。",
@@ -54,9 +50,7 @@
       "id": "meal_tip_total",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_tip_total",
       "title_ja": "税を除く条件付き合計",
-      "requires_steps": [
-        "meal_food"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "料理代20ドルに25%のチップ。",
       "conclusion_ja": "チップ5ドル、合計25ドル。",
@@ -66,9 +60,7 @@
       "id": "meal_tax_underdetermined",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_tax_underdetermined",
       "title_ja": "税率不足の反例",
-      "requires_steps": [
-        "meal_tip_total"
-      ],
+      "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "税率が明記されていない。",
       "conclusion_ja": "税率0%なら25ドル、10%なら27ドル。",

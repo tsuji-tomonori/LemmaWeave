@@ -6,7 +6,7 @@
   "role": "gsm8k_individual_15",
   "base_sha": "288ba93d737210f6890fdb56529bac2b103b14a6",
   "started_at": "2026-09-19T20:10:09+09:00",
-  "finished_at": "2026-09-19T20:17:44+09:00",
+  "finished_at": "2026-09-19T20:48:00+09:00",
   "schedule_offset_seconds": 609,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00759",
@@ -51,9 +51,9 @@
   "deferred": [
     {
       "problem_id": "external-gsm8k-main-3101c7d50724:train:00759-00773",
-      "retry_on": "exact-head GitHub Actions completion",
-      "reason_ja": "現HEADの固定Lean・公理・実依存証拠が未取得。",
-      "next_action_ja": "本バッチを含む正確なHEADのCIを実行し、成功成果物だけを入力SHAと照合して取り込む。"
+      "retry_on": "repair-head GitHub Actions completion",
+      "reason_ja": "HEAD a6a5224f の固定Lean CIはA32全定理と公理監査を通過後、先行A30/A31レシピの誤った行間依存宣言で失敗した。失敗成果物は成功証拠に採用しない。",
+      "next_action_ja": "実証明に存在しないA30/A31の requires_steps を除去し、実際に rectangle_width を呼ぶ rectangle_length の依存だけを保持して再実行する。"
     }
   ],
   "execution_control": {
@@ -72,7 +72,17 @@
   "ci": {
     "preceding_head_sha": "288ba93d737210f6890fdb56529bac2b103b14a6",
     "preceding_status": "no_run_observed_before_A32_push",
-    "current_status": "awaiting_exact_head_fixed_lean_and_evidence"
+    "current_status": "failed_recipe_dependency_validation_repair_prepared",
+    "workflow_run_id": 35439720673,
+    "workflow_job_id": 105888331630,
+    "tested_head_sha": "a6a5224f2fc1dfffb16f04b219f641ad19383eea",
+    "lean_version": "4.33.1",
+    "a32_lean_and_axiom_audit": "passed",
+    "failure": "previous written line absent from this line proof",
+    "artifact_id": 10583891682,
+    "artifact_sha256": "dec6026ff374308778532a2fdad5fcb0f5a7ef011ce5ca7f8fa02b29b02ed36c",
+    "artifact_size_bytes": 258640422,
+    "accepted_as_success_evidence": false
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
   "checkpoint_commits": [
@@ -91,6 +101,6 @@
     "verification_pending": 260
   },
   "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00774",
-  "note_ja": "15問を原題から個別に読解し、46説明行、Leanモデル、行別定理、原文ハッシュ、自己照合を保存した。ペン問題は参照解説のHalfを原題どおりone-fourthへ訂正した。正式完了への昇格とマージは成功証拠まで保留する。",
+  "note_ja": "15問を原題から個別に読解し、46説明行、Leanモデル、行別定理、原文ハッシュ、自己照合を保存した。ペン問題は参照解説のHalfを原題どおりone-fourthへ訂正した。固定Lean 4.33.1ではA32全15問のビルドと公理監査が通過したが、全体レシピ検査で先行A30/A31の説明行依存宣言と実証明の不一致を検出したため、失敗成果物を採用せず修復した。正式完了への昇格とマージは修復HEADの成功証拠まで保留する。",
   "commit": "80232ab4302b3fbce1ad3a5f63b34fbe592966cd"
 }

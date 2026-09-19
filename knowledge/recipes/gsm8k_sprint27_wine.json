@@ -28,9 +28,7 @@
       "id": "wine_total",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.wine_total",
       "title_ja": "総本数",
-      "requires_steps": [
-        "wine_domestic"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "輸入と国産を足す。",
       "conclusion_ja": "3600本。",
@@ -40,9 +38,7 @@
       "id": "wine_consumed",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.wine_consumed",
       "title_ja": "消費本数",
-      "requires_steps": [
-        "wine_total"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "全体3600本の1/3。",
       "conclusion_ja": "1200本。",
@@ -52,9 +48,7 @@
       "id": "wine_remaining",
       "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.wine_remaining",
       "title_ja": "残本数",
-      "requires_steps": [
-        "wine_consumed"
-      ],
+      "requires_steps":[],
       "uses_nodes": [],
       "condition_ja": "総数から消費分を引く。",
       "conclusion_ja": "2400本。",

@@ -43,7 +43,7 @@ def validate_recipe(recipe, nodes, graph):
                 raise ValueError('different written lines must have distinct theorems')
             step_reachable = set(graph_audit({**graph, 'roots': [declaration]})['reachable_declarations'])
             if not {declarations[s] for s in step['requires_steps']} <= step_reachable:
-                raise ValueError('previous written line absent from this line proof')
+                raise ValueError(f"previous written line absent from this line proof: recipe={recipe['id']} step={step['id']} requires={step['requires_steps']}")
             declarations[step['id']] = declaration
             line_evidence.append({'id': step['id'], 'lean_declaration': declaration,
                                   'type_pretty': graph_nodes[declaration].get('type_pretty'),

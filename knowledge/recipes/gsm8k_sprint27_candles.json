@@ -1,0 +1,64 @@
+{
+  "id": "gsm8k_sprint27_candles",
+  "title_ja": "カップケーキのろうそく",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00687",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "24個の半分に1本、残り半分に2本ずつ立て、30本からの不足を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A27.candles_solution",
+  "graph": "work/gsm8k-sprint27-candles-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A27.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "24個を12個ずつへ分ける。"
+  ],
+  "steps": [
+    {
+      "id": "candles_halves",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.candles_halves",
+      "title_ja": "半分ごとの必要本数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12個には1本ずつ、別の12個には2本ずつ。",
+      "conclusion_ja": "12本と24本。",
+      "baseline_ja": "12×1=12、12×2=24。"
+    },
+    {
+      "id": "candles_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.candles_total",
+      "title_ja": "必要総数",
+      "requires_steps": [
+        "candles_halves"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両群を足す。",
+      "conclusion_ja": "36本。",
+      "baseline_ja": "12+24=36。"
+    },
+    {
+      "id": "candles_additional",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.candles_additional",
+      "title_ja": "不足分",
+      "requires_steps": [
+        "candles_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "所持30本を必要36本から引く。",
+      "conclusion_ja": "6本不足。",
+      "baseline_ja": "36-30=6。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 688,
+    "checked_model_hash": "bae0c782540d1aa92fadf4c4853475678247b5247c8e57098d3a584e0c34b521",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

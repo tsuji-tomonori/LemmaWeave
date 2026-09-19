@@ -1,0 +1,52 @@
+{
+  "id": "gsm8k_sprint27_smoothies",
+  "title_ja": "スムージーの杯数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00695",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "500mlのピューレと100mlのクリームを150mlずつに分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A27.smoothies_solution",
+  "graph": "work/gsm8k-sprint27-smoothies-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A27.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "混合後の体積を加法的とする。"
+  ],
+  "steps": [
+    {
+      "id": "smoothies_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.smoothies_total",
+      "title_ja": "総量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "500mlと100mlを足す。",
+      "conclusion_ja": "600ml。",
+      "baseline_ja": "500+100=600。"
+    },
+    {
+      "id": "smoothies_servings",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.smoothies_servings",
+      "title_ja": "杯数",
+      "requires_steps": [
+        "smoothies_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "600mlを150mlずつに分ける。",
+      "conclusion_ja": "4杯。",
+      "baseline_ja": "600÷150=4。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 696,
+    "checked_model_hash": "bae0c782540d1aa92fadf4c4853475678247b5247c8e57098d3a584e0c34b521",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

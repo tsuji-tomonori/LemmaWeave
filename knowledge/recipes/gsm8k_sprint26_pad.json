@@ -1,0 +1,51 @@
+{
+  "id": "gsm8k_sprint26_pad",
+  "title_ja": "ノートパッドの総ページ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00679",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "10ドルで1冊1.25ドルのノートを買い、各60ページとして総ページ数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A26.pad_solution",
+  "graph": "work/gsm8k-sprint26-pad-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A26.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "金額をセント単位で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "pad_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.pad_count",
+      "title_ja": "購入冊数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1000セントを1冊125セントで割る。",
+      "conclusion_ja": "8冊。",
+      "baseline_ja": "1000÷125=8。"
+    },
+    {
+      "id": "pad_pages",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.pad_pages",
+      "title_ja": "総ページ数",
+      "requires_steps": [
+        "pad_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8冊に各60ページ。",
+      "conclusion_ja": "480ページ。",
+      "baseline_ja": "8×60=480。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 680,
+    "checked_model_hash": "681e3255b85c58c904d89e80cbc47f307049a5b5fe3f5effd506b6faa073dc9b",
+    "checks_ja": [
+      "予算を使い切れる冊数とページ数を確認した。"
+    ]
+  }
+}

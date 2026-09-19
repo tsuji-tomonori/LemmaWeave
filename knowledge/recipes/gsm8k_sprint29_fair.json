@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint29_fair",
+  "title_ja": "ブックフェアの残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00728",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "40ドルからポスター・ノート・しおりの代金を引いた残金を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A29.fair_solution",
+  "graph": "work/gsm8k-sprint29-fair-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A29.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "参照説明の最後の品目をnotebooksとする箇所はbookmarksの誤記。"
+  ],
+  "steps": [
+    {
+      "id": "fair_available",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.fair_available",
+      "title_ja": "所持金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20ドル札2枚。",
+      "conclusion_ja": "40ドル。",
+      "baseline_ja": "2×20=40。"
+    },
+    {
+      "id": "fair_posters",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.fair_posters",
+      "title_ja": "ポスター代",
+      "requires_steps": [
+        "fair_available"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5ドルを2枚。",
+      "conclusion_ja": "10ドル。",
+      "baseline_ja": "2×5=10。"
+    },
+    {
+      "id": "fair_notebooks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.fair_notebooks",
+      "title_ja": "ノート代",
+      "requires_steps": [
+        "fair_posters"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4ドルを3冊。",
+      "conclusion_ja": "12ドル。",
+      "baseline_ja": "3×4=12。"
+    },
+    {
+      "id": "fair_bookmarks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.fair_bookmarks",
+      "title_ja": "しおり代",
+      "requires_steps": [
+        "fair_notebooks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2ドルを2枚。",
+      "conclusion_ja": "4ドル。",
+      "baseline_ja": "2×2=4。"
+    },
+    {
+      "id": "fair_spent",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.fair_spent",
+      "title_ja": "購入額",
+      "requires_steps": [
+        "fair_bookmarks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10、12、4ドルを合計。",
+      "conclusion_ja": "26ドル。",
+      "baseline_ja": "10+12+4=26。"
+    },
+    {
+      "id": "fair_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.fair_left",
+      "title_ja": "残金",
+      "requires_steps": [
+        "fair_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "40ドルから26ドルを支払う。",
+      "conclusion_ja": "14ドル。",
+      "baseline_ja": "40-26=14。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 729,
+    "checked_model_hash": "970f410138a3166065bfbe0fe681e913ec80aca7d2c0a0d8dd1e56f06eeceae5",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "gsm8k_sprint29_ages",
+  "title_ja": "現在年齢の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00726",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "10年後のJedの年齢と2人の年齢差から現在年齢の合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A29.ages_solution",
+  "graph": "work/gsm8k-sprint29-ages-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A29.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "年齢は自然数年で表す。"
+  ],
+  "steps": [
+    {
+      "id": "ages_jed_now",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.ages_jed_now",
+      "title_ja": "Jedの現在年齢",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10年後に25歳。",
+      "conclusion_ja": "15歳。",
+      "baseline_ja": "25-10=15。"
+    },
+    {
+      "id": "ages_matt_now",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.ages_matt_now",
+      "title_ja": "Mattの現在年齢",
+      "requires_steps": [
+        "ages_jed_now"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Jedより10歳若い。",
+      "conclusion_ja": "5歳。",
+      "baseline_ja": "15-10=5。"
+    },
+    {
+      "id": "ages_sum",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.ages_sum",
+      "title_ja": "現在年齢の合計",
+      "requires_steps": [
+        "ages_matt_now"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Jed 15歳、Matt 5歳。",
+      "conclusion_ja": "20歳。",
+      "baseline_ja": "15+5=20。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 727,
+    "checked_model_hash": "970f410138a3166065bfbe0fe681e913ec80aca7d2c0a0d8dd1e56f06eeceae5",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

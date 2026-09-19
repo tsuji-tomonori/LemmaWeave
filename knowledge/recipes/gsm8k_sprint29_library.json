@@ -1,0 +1,63 @@
+{
+  "id": "gsm8k_sprint29_library",
+  "title_ja": "図書館の週間来館者数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00719",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "月曜・火曜・残り5日間の来館者数を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A29.library_solution",
+  "graph": "work/gsm8k-sprint29-library-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A29.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "1週間7日なので月曜と火曜を除く残りは5日。"
+  ],
+  "steps": [
+    {
+      "id": "library_tuesday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.library_tuesday",
+      "title_ja": "火曜",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜50人の2倍。",
+      "conclusion_ja": "100人。",
+      "baseline_ja": "2×50=100。"
+    },
+    {
+      "id": "library_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.library_remaining",
+      "title_ja": "残り5日",
+      "requires_steps": [
+        "library_tuesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1日平均20人が5日。",
+      "conclusion_ja": "100人。",
+      "baseline_ja": "5×20=100。"
+    },
+    {
+      "id": "library_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.library_total",
+      "title_ja": "週間合計",
+      "requires_steps": [
+        "library_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "月曜50、火曜100、残り100人。",
+      "conclusion_ja": "250人。",
+      "baseline_ja": "50+100+100=250。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 720,
+    "checked_model_hash": "970f410138a3166065bfbe0fe681e913ec80aca7d2c0a0d8dd1e56f06eeceae5",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

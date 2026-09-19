@@ -1,0 +1,63 @@
+{
+  "id": "gsm8k_sprint29_shells",
+  "title_ja": "貝殻の現在数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00727",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "休暇前の個数と休暇中4日間の収集数を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A29.shells_solution",
+  "graph": "work/gsm8k-sprint29-shells-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A29.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "第4日の代名詞heはSharaを指す誤記として数量に影響しない。"
+  ],
+  "steps": [
+    {
+      "id": "shells_three_days",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.shells_three_days",
+      "title_ja": "最初の3日",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日5個を3日。",
+      "conclusion_ja": "15個。",
+      "baseline_ja": "5×3=15。"
+    },
+    {
+      "id": "shells_vacation",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.shells_vacation",
+      "title_ja": "休暇中",
+      "requires_steps": [
+        "shells_three_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "最初の15個と4日目6個。",
+      "conclusion_ja": "21個。",
+      "baseline_ja": "15+6=21。"
+    },
+    {
+      "id": "shells_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.shells_total",
+      "title_ja": "現在数",
+      "requires_steps": [
+        "shells_vacation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "休暇前20個と休暇中21個。",
+      "conclusion_ja": "41個。",
+      "baseline_ja": "20+21=41。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 728,
+    "checked_model_hash": "970f410138a3166065bfbe0fe681e913ec80aca7d2c0a0d8dd1e56f06eeceae5",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

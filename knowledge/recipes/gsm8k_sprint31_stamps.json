@@ -1,1 +1,59 @@
-{"id":"gsm8k_sprint31_stamps","title_ja":"切手交換後の枚数","problem_id":"external-gsm8k-main-3101c7d50724:train:00756","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"AnnaがAlisonの半数を受け取り、その後2枚と1枚を交換した最終枚数を求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A31.stamps_solution","graph":"work/gsm8k-sprint31-stamps-graph.json","lean_file":"tests/lean/GSM8KSprint0919A31.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["Jeffの初期31枚も保持する。交換ではAnnaが2枚を渡し1枚を受け取る。"],"steps":[{"id":"stamps_received","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A31.stamps_received","title_ja":"Alisonから受け取る枚数","requires_steps":[],"uses_nodes":[],"condition_ja":"Alisonの28枚の半分。","conclusion_ja":"14枚。","baseline_ja":"28=2×14。"},{"id":"stamps_before_trade","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A31.stamps_before_trade","title_ja":"交換前の枚数","requires_steps":["stamps_received"],"uses_nodes":[],"condition_ja":"元の37枚に14枚を加える。","conclusion_ja":"51枚。","baseline_ja":"37+14=51。"},{"id":"stamps_final","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A31.stamps_final","title_ja":"交換後の枚数","requires_steps":["stamps_before_trade"],"uses_nodes":[],"condition_ja":"2枚を渡し1枚を受け取る。","conclusion_ja":"50枚。","baseline_ja":"50+2=51+1。"}],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":757,"checked_model_hash":"07a67421c389491008c7f6ff76d3267cdae0342a262070c1632b379a6d57a000","checks_ja":["原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"]}}
+{
+  "id": "gsm8k_sprint31_stamps",
+  "title_ja": "切手交換後の枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00756",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "AnnaがAlisonの半数を受け取り、その後2枚と1枚を交換した最終枚数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A31.stamps_solution",
+  "graph": "work/gsm8k-sprint31-stamps-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A31.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "Jeffの初期31枚も保持する。交換ではAnnaが2枚を渡し1枚を受け取る。"
+  ],
+  "steps": [
+    {
+      "id": "stamps_received",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A31.stamps_received",
+      "title_ja": "Alisonから受け取る枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Alisonの28枚の半分。",
+      "conclusion_ja": "14枚。",
+      "baseline_ja": "28=2×14。"
+    },
+    {
+      "id": "stamps_before_trade",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A31.stamps_before_trade",
+      "title_ja": "交換前の枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "元の37枚に14枚を加える。",
+      "conclusion_ja": "51枚。",
+      "baseline_ja": "37+14=51。"
+    },
+    {
+      "id": "stamps_final",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A31.stamps_final",
+      "title_ja": "交換後の枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2枚を渡し1枚を受け取る。",
+      "conclusion_ja": "50枚。",
+      "baseline_ja": "50+2=51+1。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 757,
+    "checked_model_hash": "07a67421c389491008c7f6ff76d3267cdae0342a262070c1632b379a6d57a000",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

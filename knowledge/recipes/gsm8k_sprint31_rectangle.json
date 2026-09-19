@@ -1,1 +1,51 @@
-{"id":"gsm8k_sprint31_rectangle","title_ja":"長方形の長さ","problem_id":"external-gsm8k-main-3101c7d50724:train:00752","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"長さが幅の4倍で面積100平方メートルの長方形の長さを求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A31.rectangle_solution","graph":"work/gsm8k-sprint31-rectangle-graph.json","lean_file":"tests/lean/GSM8KSprint0919A31.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["幅を正の自然数とする。原題の面積100を採用し、参照解答冒頭の80は後続計算と矛盾する誤記として扱う。"],"steps":[{"id":"rectangle_width","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A31.rectangle_width","title_ja":"幅の決定","requires_steps":[],"uses_nodes":[],"condition_ja":"幅w>0、長さ4w、面積4w²=100。","conclusion_ja":"幅は5m。","baseline_ja":"正の自然数解としてw=5。"},{"id":"rectangle_length","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A31.rectangle_length","title_ja":"長さの決定","requires_steps":["rectangle_width"],"uses_nodes":[],"condition_ja":"長さは幅の4倍、幅5m。","conclusion_ja":"長さは20m。","baseline_ja":"4×5=20。"}],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":753,"checked_model_hash":"07a67421c389491008c7f6ff76d3267cdae0342a262070c1632b379a6d57a000","checks_ja":["原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"]}}
+{
+  "id": "gsm8k_sprint31_rectangle",
+  "title_ja": "長方形の長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00752",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "長さが幅の4倍で面積100平方メートルの長方形の長さを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A31.rectangle_solution",
+  "graph": "work/gsm8k-sprint31-rectangle-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A31.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "幅を正の自然数とする。原題の面積100を採用し、参照解答冒頭の80は後続計算と矛盾する誤記として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "rectangle_width",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A31.rectangle_width",
+      "title_ja": "幅の決定",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "幅w>0、長さ4w、面積4w²=100。",
+      "conclusion_ja": "幅は5m。",
+      "baseline_ja": "正の自然数解としてw=5。"
+    },
+    {
+      "id": "rectangle_length",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A31.rectangle_length",
+      "title_ja": "長さの決定",
+      "requires_steps": [
+        "rectangle_width"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "長さは幅の4倍、幅5m。",
+      "conclusion_ja": "長さは20m。",
+      "baseline_ja": "4×5=20。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 753,
+    "checked_model_hash": "07a67421c389491008c7f6ff76d3267cdae0342a262070c1632b379a6d57a000",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

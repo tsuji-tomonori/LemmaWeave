@@ -6,7 +6,7 @@
   "role": "gsm8k_individual_15",
   "base_sha": "14b1eff28189dc05a2e070edc7de5a3a63fcef5a",
   "started_at": "2026-09-19T19:03:27+09:00",
-  "finished_at": "2026-09-19T19:35:00+09:00",
+  "finished_at": "2026-09-19T19:58:00+09:00",
   "schedule_offset_seconds": 207,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00744",
@@ -83,12 +83,25 @@
     },
     "local_recipe_check": "unavailable_in_partial_scratch_snapshot",
     "recipe_dependency_repair_commit": "302ba29a39c6d5f0592b2f8f68084c473b96756f",
-    "current_status": "awaiting_exact_head_fixed_lean_and_evidence"
+    "current_status": "awaiting_repaired_exact_head_fixed_lean_and_evidence",
+    "current_failed_head_sha": "20bd607bd0822a0a090bd5e3bd011c787b0df6b4",
+    "current_failed_run_id": 35437497352,
+    "current_failed_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35437497352",
+    "current_failure": "previous written line absent from this line proof",
+    "current_repair_ja": "各行定理の実依存を照合し、独立な算術定理のrequires_stepsを空にした。rectangle_lengthだけはrectangle_widthを実際に使用するため依存を保持した。"
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
   "commit": "0820a92289d2bfc16fc39e13bbd878b38955015a",
-  "progress_before": {"solution_ready": 518, "remaining": 8274, "verification_pending": 230},
-  "progress_after": {"solution_ready": 518, "remaining": 8274, "verification_pending": 245},
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 230
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 245
+  },
   "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00759",
   "note_ja": "15問を原題から個別に読解し、44説明行、Leanモデル、行別定理、原文ハッシュ、自己照合を保存した。長方形問題は原題の面積100を採用し、参照解答の80表記を誤記として明示した。正式完了への昇格とマージは成功証拠まで保留する。"
 }

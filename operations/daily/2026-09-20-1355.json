@@ -6,7 +6,7 @@
   "role": "gsm8k_individual_solution",
   "base_sha": "640a1d4f2501411dcbb98f6fbfe22de68129bbc5",
   "started_at": "2026-09-20T13:55:49+09:00",
-  "finished_at": "2026-09-20T14:04:00+09:00",
+  "finished_at": "2026-09-20T14:50:00+09:00",
   "schedule_offset_seconds": -251,
   "missed_slots_detected": [
     10
@@ -63,6 +63,12 @@
       "retry_on": "2026-09-20",
       "reason_ja": "直前CIでapples_after_fallとapples_stolenが最終証明依存に現れない不整合を検出した。",
       "next_action_ja": "最終証明を両行定理へ明示的に接続済み。現HEADの依存グラフで接続を再確認する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00689-00703",
+      "retry_on": "2026-09-20",
+      "reason_ja": "exact-head完全replayでA27のcamp説明行定理が最終証明依存にないことを検出した。同じ構造の潜在不整合を一括監査した。",
+      "next_action_ja": "A27全15レシピの行定理を各最終証明へ明示的に接続済み。修復HEADの完全replayで15依存グラフを再検証する。"
     }
   ],
   "checkpoints": [
@@ -77,6 +83,10 @@
     {
       "problem_ids": "train:00964-00968",
       "commit": "6ace719cbd4d9dd5d20188e9841418ddfd118935"
+    },
+    {
+      "problem_ids": "train:00689-00703 dependency repair",
+      "commit": "23a03c5549e81d26a1b838af17d52dea8f491dfa"
     }
   ],
   "self_review": {
@@ -99,21 +109,21 @@
     "next_action_ja": "固定CIで全Lean対象と依存グラフを生成し、全レシピを照合する。"
   },
   "ci": {
-    "previous_head_sha": "640a1d4f2501411dcbb98f6fbfe22de68129bbc5",
-    "previous_run_id": 35488344702,
-    "previous_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35488344702",
+    "previous_head_sha": "0c2e6acead0201200d6220827cb96b9081ac6630",
+    "previous_run_id": 35490914686,
+    "previous_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35490914686",
     "previous_status": "failure",
-    "previous_failure": "recipe gsm8k_sprint27_apples: written line has no theorem in final proof",
-    "previous_artifact_id": 10598038556,
-    "previous_artifact_sha256": "802915f7f8a5eebd1b1900c9ca34ba6a4af606e19c280490816fdf29cdc1d50c",
+    "previous_failure": "recipe gsm8k_sprint27_camp: written line has no theorem in final proof",
+    "previous_artifact_id": 10598959508,
+    "previous_artifact_sha256": "b1f65ab40ed4599c0f3b1df1d3a8907d07faa59652e7db2d450f7bdcb690f11f",
     "accepted_as_success_evidence": false,
-    "current_head_sha": "f4455d1b80308d00993514ddf4a51db9f7c2c210",
-    "current_run_id": 35490845931,
-    "current_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35490845931",
-    "current_status": "in_progress"
+    "current_head_sha": "23a03c5549e81d26a1b838af17d52dea8f491dfa",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "trigger_pending"
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
-  "commit": "6ace719cbd4d9dd5d20188e9841418ddfd118935",
+  "commit": "23a03c5549e81d26a1b838af17d52dea8f491dfa",
   "progress_before": {
     "solution_ready": 518,
     "remaining": 8274,
@@ -125,5 +135,5 @@
     "verification_pending": 455
   },
   "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00969",
-  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・名前付き行定理・原文ハッシュ・自己照合を保存した。train:00964は速度を自然数とする適用条件を明記し、記録を破る最小増加量4本/分を全称命題で証明した。直前CIで検出されたtrain:00696の説明行定理2件を最終証明へ明示的に接続した。10時枠は未実行のまま日次欠落として保持する。"
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・名前付き行定理・原文ハッシュ・自己照合を保存した。train:00964は速度を自然数とする適用条件を明記し、記録を破る最小増加量4本/分を全称命題で証明した。新規A13のLeanビルドは成功したが、完全replayで既存A27のcamp依存不整合を検出したため成功証拠には採用していない。A27全15レシピを一括監査し、説明行定理を各最終証明へ接続した。10時枠は未実行のまま日次欠落として保持する。"
 }

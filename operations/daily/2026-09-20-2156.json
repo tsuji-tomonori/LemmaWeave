@@ -6,7 +6,7 @@
   "role": "ci_evidence_reconciliation_and_infrastructure_repair",
   "base_sha": "95a988e930297acbac7de13cfacbb3e96e690df1",
   "started_at": "2026-09-20T21:56:42+09:00",
-  "finished_at": "2026-09-20T22:06:00+09:00",
+  "finished_at": "2026-09-20T22:47:00+09:00",
   "schedule_offset_seconds": -198,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00699",
@@ -187,6 +187,18 @@
     "accepted_as_success_evidence": false,
     "failure": "check_method_recipes.py: written line has no theorem in final proof"
   },
+  "failed_repair_ci": {
+    "workflow_run_id": 35512584932,
+    "workflow_job_id": 106083040939,
+    "tested_head_sha": "816bdd3b562fe7170255c631597ad94b6cb44664",
+    "status": "failure",
+    "lean_version": "4.33.1",
+    "artifact_id": 10606710277,
+    "artifact_sha256": "a4bfab8c916b7dcc917d1a7a397e8f66d7d2c1fc3a7b13fb36ceea1d21982cc7",
+    "artifact_size_bytes": 320451107,
+    "accepted_as_success_evidence": false,
+    "failure": "simp-only repair reduced arithmetic atoms to True but did not construct the model conjunctions; fixed-environment Lean reported unsolved conjunction goals"
+  },
   "diagnostic_reconciliation": {
     "artifact_sha256_verified": true,
     "recipes_validated": 472,
@@ -203,7 +215,7 @@
     ]
   },
   "repair": {
-    "method": "最終定理を各名前付き行定理へ明示的に接続し、検査規則は緩和しない",
+    "method": "最終定理のモデル連言を明示的に構成し、各成分へ対応する名前付き行定理を直接適用する。検査規則は緩和しない",
     "condition_insufficiency_preserved": [
       "train:00718 snake literal counterexamples",
       "train:00720 crafts literal counterexamples",
@@ -211,7 +223,8 @@
       "train:00736 meal tax counterexamples"
     ],
     "local_regression": "python3 -m unittest discover -s tests: 52 passed",
-    "lean_verification": "pending exact-head fixed Lean 4.33.1 CI"
+    "static_dependency_closure": "75/75 recipes connected",
+    "lean_verification": "first direct-construction retry pending exact-head fixed Lean 4.33.1 CI"
   },
   "progress_before": {
     "solution_ready": 518,
@@ -231,6 +244,6 @@
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
   "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01059",
-  "note_ja": "完全replayの新しい実失敗を保存し、75件の証明依存を修復した。正式完了数は変更しない。",
+  "note_ja": "完全replayの二段階の実失敗を保存した。単純化による見かけ上の依存接続を廃止し、モデル連言の各成分へ行定理を直接適用する証明へ変更した。正式完了数は変更しない。",
   "commit": "687d96871c4cbf9cbb270a56bb900993a9dbb377"
 }

@@ -11,8 +11,9 @@ theorem dough_salt_cost : (10 : Nat) * 20 = 200 := by norm_num
 theorem dough_total_cost : (100000 : Nat) + 20000 + 200 = 120200 := by norm_num
 theorem dough_profit : (2000 : Nat) * 500 = 879800 + 120200 ∧ 879800 = 8798 * 100 := by norm_num
 theorem dough_solution : DoughProfit 500 50 10 2000 20000 10 20 200 100000 2000 500 1000000 120200 879800 100 8798 := by
-  simp only [DoughProfit, dough_bags, dough_flour_cost, dough_salt_cost, dough_total_cost,
-    dough_profit]
+  exact ⟨rfl, rfl, dough_bags, rfl, dough_flour_cost.symm, rfl, rfl,
+    dough_salt_cost.symm, rfl, rfl, rfl, rfl, dough_total_cost.symm,
+    dough_profit.1, rfl, dough_profit.2⟩
 
 theorem party_batches : (30 : Nat) = 15 * 2 := by norm_num
 theorem party_potatoes : (15 : Nat) * 4 = 60 := by norm_num
@@ -21,82 +22,90 @@ theorem party_salt_containers : (15 : Nat) = 3 * 5 := by norm_num
 theorem party_costs : (60 : Nat) * 10 = 600 ∧ 3 * 200 = 600 := by norm_num
 theorem party_total : (600 : Nat) + 600 = 1200 := by norm_num
 theorem party_solution : PartyFood 30 2 15 4 60 10 600 1 15 5 3 200 600 1200 := by
-  simp only [PartyFood, party_batches, party_potatoes, party_salt_teaspoons,
-    party_salt_containers, party_costs, party_total]
+  exact ⟨rfl, rfl, party_batches, rfl, party_potatoes.symm, rfl,
+    party_costs.1.symm, rfl, party_salt_teaspoons.symm, rfl,
+    party_salt_containers, rfl, party_costs.2.symm, party_total.symm⟩
 
 theorem grocery_hummus : (2 : Nat) * 5 = 10 := by norm_num
 theorem grocery_fixed : (10 : Nat) + 20 + 10 + 10 = 50 := by norm_num
 theorem grocery_remaining : (60 : Nat) = 10 + 50 := by norm_num
 theorem grocery_apples : (10 : Nat) = 5 * 2 := by norm_num
 theorem grocery_solution : GroceryApples 60 2 5 10 20 10 10 50 10 2 5 := by
-  simp only [GroceryApples, grocery_hummus, grocery_fixed, grocery_remaining, grocery_apples]
+  exact ⟨rfl, rfl, rfl, grocery_hummus.symm, rfl, rfl, rfl,
+    grocery_fixed.symm, grocery_remaining, rfl, grocery_apples⟩
 
 theorem pens_total : (20 : Nat) * 5 = 100 := by norm_num
 theorem pens_friends : (40 : Nat) * 100 = 100 * 40 ∧ 100 = 60 + 40 := by norm_num
 theorem pens_classmates : (15 : Nat) * 4 = 60 := by norm_num
 theorem pens_remaining : (60 : Nat) = 45 + 15 := by norm_num
 theorem pens_solution : PenGiving 20 5 100 40 40 60 4 15 45 := by
-  simp only [PenGiving, pens_total, pens_friends, pens_classmates, pens_remaining]
+  exact ⟨rfl, rfl, pens_total.symm, rfl, pens_friends.1, pens_friends.2.symm,
+    rfl, pens_classmates, pens_remaining.symm⟩
 
 theorem ribbon_used : (6 : Nat) * 2 = 12 := by norm_num
 theorem ribbon_remaining : (18 : Nat) = 6 + 12 := by norm_num
 theorem ribbon_solution : RibbonLeft 18 6 2 12 6 := by
-  simp only [RibbonLeft, ribbon_used, ribbon_remaining]
+  exact ⟨rfl, rfl, rfl, ribbon_used.symm, ribbon_remaining.symm⟩
 
 theorem calories_eaten : (30 : Nat) * 4 = 40 * 3 := by norm_num
 theorem calories_extra : (30 : Nat) = 5 + 25 := by norm_num
 theorem calories_solution : LunchCalories 40 3 4 30 25 5 := by
-  simp only [LunchCalories, calories_eaten, calories_extra]
+  exact ⟨rfl, rfl, rfl, calories_eaten, rfl, calories_extra⟩
 
 theorem peaches_fresh : (150 : Nat) * 100 = 250 * 60 := by norm_num
 theorem peaches_remaining : (150 : Nat) = 135 + 15 := by norm_num
 theorem peaches_solution : PeachSorting 250 60 150 15 135 := by
-  simp only [PeachSorting, peaches_fresh, peaches_remaining]
+  exact ⟨rfl, rfl, peaches_fresh, rfl, peaches_remaining.symm⟩
 
 theorem meals_sum : (7 : Nat) + 8 = 15 := by norm_num
 theorem meals_union : (12 : Nat) + 3 = 7 + 8 := by norm_num
 theorem meals_neither : (30 : Nat) = 18 + 12 := by norm_num
 theorem meals_solution : MealNeeds 30 7 8 3 12 18 := by
-  simp only [MealNeeds, meals_sum, meals_union, meals_neither]
+  exact ⟨rfl, rfl, rfl, rfl, meals_union.trans meals_sum, meals_neither.symm⟩
 
 theorem tubing_count : (10 : Nat) * 4 = 40 := by norm_num
 theorem rafting_count : (5 : Nat) * 2 = 10 := by norm_num
 theorem tubing_solution : TubingRafting 40 4 10 2 5 := by
-  simp only [TubingRafting, tubing_count, rafting_count]
+  exact ⟨rfl, rfl, tubing_count, rfl, rafting_count⟩
 
 theorem addresses_hawkins : (12 : Nat) = 6 * 2 := by norm_num
 theorem addresses_sloan : (12 : Nat) + 10 = 22 := by norm_num
 theorem addresses_total : (12 : Nat) + 6 + 22 = 40 := by norm_num
 theorem addresses_solution : CommencementAddresses 12 2 6 10 22 40 := by
-  simp only [CommencementAddresses, addresses_hawkins, addresses_sloan, addresses_total]
+  exact ⟨rfl, rfl, addresses_hawkins, rfl, addresses_sloan.symm,
+    addresses_total.symm⟩
 
 theorem fries_total_seconds : (5 : Nat) * 60 = 300 := by norm_num
 theorem fries_remaining : (300 : Nat) = 255 + 45 := by norm_num
 theorem fries_solution : FryCooking 5 60 300 45 255 := by
-  simp only [FryCooking, fries_total_seconds, fries_remaining]
+  exact ⟨rfl, rfl, fries_total_seconds.symm, rfl, fries_remaining⟩
 
 theorem tv_weekly : (45 : Nat) * 4 = 180 := by norm_num
 theorem tv_two_weeks : (180 : Nat) * 2 = 360 := by norm_num
 theorem tv_hours : (360 : Nat) = 6 * 60 := by norm_num
 theorem tv_solution : TelevisionTime 45 4 180 2 360 60 6 := by
-  simp only [TelevisionTime, tv_weekly, tv_two_weeks, tv_hours]
+  exact ⟨rfl, rfl, tv_weekly.symm, rfl, tv_two_weeks.symm, rfl, tv_hours⟩
 
 theorem bread_slices : (8 : Nat) * 2 = 16 := by norm_num
 theorem bread_packs : (16 : Nat) = 4 * 4 := by norm_num
 theorem bread_solution : SandwichBread 8 2 16 4 4 := by
-  simp only [SandwichBread, bread_slices, bread_packs]
+  exact ⟨rfl, rfl, bread_slices.symm, rfl, bread_packs⟩
 
 theorem apples_second : (66 : Nat) * 2 = 132 := by norm_num
 theorem apples_third : (22 : Nat) * 3 = 66 := by norm_num
 theorem apples_total : (66 : Nat) + 132 + 22 = 220 := by norm_num
 theorem apples_solution : ApplePicking 66 2 132 3 22 220 := by
-  simp only [ApplePicking, apples_second, apples_third, apples_total]
+  exact ⟨rfl, rfl, apples_second.symm, rfl, apples_third, apples_total.symm⟩
 
 theorem journey_amoli : (42 : Nat) * 3 = 126 := by norm_num
 theorem journey_anayet : (61 : Nat) * 2 = 122 := by norm_num
 theorem journey_remaining : (369 : Nat) = 121 + (126 + 122) := by norm_num
 theorem journey_solution : RemainingJourney 369 42 3 126 61 2 122 248 121 := by
-  simp only [RemainingJourney, journey_amoli, journey_anayet, journey_remaining]
+  exact ⟨rfl, rfl, rfl, journey_amoli.symm, rfl, rfl, journey_anayet.symm,
+    rfl, by
+      calc
+        (369 : Nat) = 121 + (126 + 122) := journey_remaining
+        _ = 121 + 248 := rfl⟩
 
 #print axioms dough_solution
 #print axioms party_solution

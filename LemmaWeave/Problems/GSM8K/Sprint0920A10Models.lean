@@ -25,4 +25,30 @@ def ShipmentFund
     (profit divisor half donation available goal surplus : Nat) : Prop :=
   half * divisor = profit ∧ available = half + donation ∧ available = goal + surplus
 
+def RemainingBirds
+    (grey whiteExtra white freedDivisor greyRemaining total : Nat) : Prop :=
+  white = grey + whiteExtra ∧ greyRemaining * freedDivisor = grey ∧
+  total = white + greyRemaining
+
+def BulbBill
+    (dailyPerBulb bulbs dailyTotal days monthlyUnits centsPerUnit billCents billDollars : Nat) : Prop :=
+  dailyTotal = bulbs * dailyPerBulb ∧ monthlyUnits = days * dailyTotal ∧
+  billCents = monthlyUnits * centsPerUnit ∧ billCents = billDollars * 100
+
+def PencilAges
+    (ageSum asafAge alexanderAge ageDifference asafPencils extra alexanderPencils total : Nat) : Prop :=
+  ageSum = asafAge + alexanderAge ∧ alexanderAge = asafAge + ageDifference ∧
+  asafPencils = 2 * ageDifference ∧ alexanderPencils = asafPencils + extra ∧
+  total = asafPencils + alexanderPencils
+
+def ClimbingDifference
+    (mattRate jasonRate minutes mattHeight jasonHeight difference : Nat) : Prop :=
+  mattHeight = mattRate * minutes ∧ jasonHeight = jasonRate * minutes ∧
+  jasonHeight = mattHeight + difference
+
+def RoofArea
+    (houseLengthTenths houseWidth houseArea porchLength porchWidthTenths porchArea total : Nat) : Prop :=
+  houseArea * 10 = houseLengthTenths * houseWidth ∧
+  porchArea * 10 = porchLength * porchWidthTenths ∧ total = houseArea + porchArea
+
 end LemmaWeave.Problems.GSM8K.Sprint0920A10

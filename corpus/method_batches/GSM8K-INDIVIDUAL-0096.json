@@ -80,6 +80,77 @@
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [],
       "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00914",
+      "source_line_1based": 915,
+      "source_record_sha256": "e748fd3a07d501d64b8cbe0c969b7fed9bd352229bd5d1d94ecffc96cdf87e7a",
+      "raw_question_sha256": "fc58304d6d197738bafcb7bf811d19dd0e1f3286cb7fa6d0b093d8180a1b8c7f",
+      "normalized_question_sha256": "fc58304d6d197738bafcb7bf811d19dd0e1f3286cb7fa6d0b093d8180a1b8c7f",
+      "source_question": "There are six more white birds next to a cage than grey birds in the cage. If the number of grey birds in the cage is 40, and after ten minutes, half of the birds in the cage are freed and fly away, calculate the total number of birds remaining.",
+      "recipe_id": "gsm8k_sprint42_birds",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "かご内にいる鳥は問題文で数が与えられた灰色鳥だけ、と読める範囲を形式化した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00915",
+      "source_line_1based": 916,
+      "source_record_sha256": "d13de24bd2fca0417c57841c0015a4f55972a8e7da2a700409c98523e6ad5333",
+      "raw_question_sha256": "b29c947736595f89a55e8e3a2d38b9dee7d93c8a70a2d8eed2d88ee0c574aadc",
+      "normalized_question_sha256": "b29c947736595f89a55e8e3a2d38b9dee7d93c8a70a2d8eed2d88ee0c574aadc",
+      "source_question": "A sixty bulb watt uses 60 watts of power each day. If Allyn has 40 such bulbs in his house and pays an electricity bill of twenty cents per power watt used, calculate Allyn's total monthly expenses on electricity in June.",
+      "recipe_id": "gsm8k_sprint42_bulbs",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文は電力Wとエネルギー料金の次元が不整合なので、物理的kWhへ補正せず、原文が定める『power watt used』を請求単位として保存した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00916",
+      "source_line_1based": 917,
+      "source_record_sha256": "aa9b3ab4e85e5a5ea9efaa880725e79fa2571709e3e755af98ff2839ae8e8684",
+      "raw_question_sha256": "2916984f3910ca3aafddaaa41614075a710979cb707ad6484caff6366deed10e",
+      "normalized_question_sha256": "2916984f3910ca3aafddaaa41614075a710979cb707ad6484caff6366deed10e",
+      "source_question": "The age difference between Asaf and Alexander's age is half the total number of pencils Asaf has. The sum of their ages is 140, and Asaf is 50 years old. If Alexander has 60 more pencils than Asaf, calculate the total number of pencils they have together.",
+      "recipe_id": "gsm8k_sprint42_pencils",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00917",
+      "source_line_1based": 918,
+      "source_record_sha256": "67637e4edcbb5ca571098d06da9d1a444096b43b81a88584d174c9487ecf0961",
+      "raw_question_sha256": "0fb4e28a7503f8b3db6f181da6b50e0a18e07e1c34c352eeb7b6e5d3c07ff06f",
+      "normalized_question_sha256": "0fb4e28a7503f8b3db6f181da6b50e0a18e07e1c34c352eeb7b6e5d3c07ff06f",
+      "source_question": "Jason is climbing a telephone pole next to a tree his friend Matt is climbing. Matt can climb 6 feet/minute and Jason can climb 12 feet per minute. After 7 minutes, how much higher will Jason be than Matt?",
+      "recipe_id": "gsm8k_sprint42_climbing",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00918",
+      "source_line_1based": 919,
+      "source_record_sha256": "079ccb8acffd9b13e81acaf42b19ed7777b0cec6b6551ffc2aded2d6cabaaf85",
+      "raw_question_sha256": "34c639512dedec2c850052499abdcbc165d064c575ccd6efdbc3cfd68ac02ab7",
+      "normalized_question_sha256": "34c639512dedec2c850052499abdcbc165d064c575ccd6efdbc3cfd68ac02ab7",
+      "source_question": "The house is 20.5 feet by 10 feet. The porch measures 6 feet by 4.5 feet. The house and the porch need shingles. How many square feet of shingles will be needed to roof the house and the porch?",
+      "recipe_id": "gsm8k_sprint42_roof",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "小数辺長は0.1フィート単位の自然数へ尺度変換した。"
+      ],
+      "blockers": []
     }
   ]
 }

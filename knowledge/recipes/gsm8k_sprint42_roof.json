@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint42_roof",
+  "title_ja": "屋根材の面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00918",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "20.5×10平方フィートの家と6×4.5平方フィートのポーチの面積を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.roof_solution",
+  "graph": "work/gsm8k-sprint42-roof-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "小数辺長は0.1フィート単位の自然数へ尺度変換した。"
+  ],
+  "steps": [
+    {
+      "id": "roof_house",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.roof_house",
+      "title_ja": "家の面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "長さ20.5フィート、幅10フィート。",
+      "conclusion_ja": "205平方フィート。",
+      "baseline_ja": "205×10=2050。"
+    },
+    {
+      "id": "roof_porch",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.roof_porch",
+      "title_ja": "ポーチの面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6フィート×4.5フィート。",
+      "conclusion_ja": "27平方フィート。",
+      "baseline_ja": "27×10=6×45。"
+    },
+    {
+      "id": "roof_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.roof_total",
+      "title_ja": "必要面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "家とポーチを合計する。",
+      "conclusion_ja": "232平方フィート。",
+      "baseline_ja": "205+27=232。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 919,
+    "checked_model_hash": "bcfb23df4034b996d532b092e397bf1305137c31d95e36693f9d3309d10ac4df",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

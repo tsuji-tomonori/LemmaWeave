@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint42_birds",
+  "title_ja": "残った鳥の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00914",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "かご内の灰色40羽の半分が飛び去り、外の白46羽と合わせる。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.birds_solution",
+  "graph": "work/gsm8k-sprint42-birds-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "かご内にいる鳥は問題文で数が与えられた灰色鳥だけ、と読める範囲を形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "birds_white",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.birds_white",
+      "title_ja": "白い鳥",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "白い鳥は灰色40羽より6羽多い。",
+      "conclusion_ja": "46羽。",
+      "baseline_ja": "40+6=46。"
+    },
+    {
+      "id": "birds_grey_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.birds_grey_remaining",
+      "title_ja": "残る灰色鳥",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "かご内40羽の半分が飛び去る。",
+      "conclusion_ja": "20羽残る。",
+      "baseline_ja": "20×2=40。"
+    },
+    {
+      "id": "birds_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.birds_total",
+      "title_ja": "残った総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "外の白46羽と残る灰色20羽を合計する。",
+      "conclusion_ja": "66羽。",
+      "baseline_ja": "46+20=66。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 915,
+    "checked_model_hash": "bcfb23df4034b996d532b092e397bf1305137c31d95e36693f9d3309d10ac4df",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

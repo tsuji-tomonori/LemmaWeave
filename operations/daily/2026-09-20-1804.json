@@ -1,0 +1,33 @@
+{
+  "date":"2026-09-20","run_id":"lemmaweave-sprint-20260920-1800-gsm8k-49",
+  "planned_slot_local_hour":18,"planned_at":"2026-09-20T18:00:00+09:00","role":"gsm8k_individual_solution",
+  "base_sha":"8e9d4633798b2f797a5536dcac60b212a77eb468","started_at":"2026-09-20T18:04:32+09:00","finished_at":"2026-09-20T18:13:55+09:00","schedule_offset_seconds":272,"missed_slots_detected":[10],
+  "selected_problem_ids":[
+    "external-gsm8k-main-3101c7d50724:train:01014","external-gsm8k-main-3101c7d50724:train:01015","external-gsm8k-main-3101c7d50724:train:01016","external-gsm8k-main-3101c7d50724:train:01017","external-gsm8k-main-3101c7d50724:train:01018",
+    "external-gsm8k-main-3101c7d50724:train:01019","external-gsm8k-main-3101c7d50724:train:01020","external-gsm8k-main-3101c7d50724:train:01021","external-gsm8k-main-3101c7d50724:train:01022","external-gsm8k-main-3101c7d50724:train:01023",
+    "external-gsm8k-main-3101c7d50724:train:01024","external-gsm8k-main-3101c7d50724:train:01025","external-gsm8k-main-3101c7d50724:train:01026","external-gsm8k-main-3101c7d50724:train:01027","external-gsm8k-main-3101c7d50724:train:01028"
+  ],
+  "completed_problem_ids":[],
+  "verification_pending":[
+    "external-gsm8k-main-3101c7d50724:train:01014","external-gsm8k-main-3101c7d50724:train:01015","external-gsm8k-main-3101c7d50724:train:01016","external-gsm8k-main-3101c7d50724:train:01017","external-gsm8k-main-3101c7d50724:train:01018",
+    "external-gsm8k-main-3101c7d50724:train:01019","external-gsm8k-main-3101c7d50724:train:01020","external-gsm8k-main-3101c7d50724:train:01021","external-gsm8k-main-3101c7d50724:train:01022","external-gsm8k-main-3101c7d50724:train:01023",
+    "external-gsm8k-main-3101c7d50724:train:01024","external-gsm8k-main-3101c7d50724:train:01025","external-gsm8k-main-3101c7d50724:train:01026","external-gsm8k-main-3101c7d50724:train:01027","external-gsm8k-main-3101c7d50724:train:01028"
+  ],
+  "verification_pending_cumulative":{"count":515,"first_problem_id":"external-gsm8k-main-3101c7d50724:train:00514","last_problem_id":"external-gsm8k-main-3101c7d50724:train:01028"},
+  "deferred":[{"problem_id":"external-gsm8k-main-3101c7d50724:train:01014-01028","retry_on":"2026-09-20","reason_ja":"固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。","next_action_ja":"現HEADの全体replayを完走し、入力SHA・許容公理・41説明行の実依存を照合して成功成果物だけを取り込む。"}],
+  "checkpoints":[
+    {"problem_ids":"train:01014-01018","commit":"0a3fa624cb4d7eafc6a1cf7efc8418cef3a2a910"},
+    {"problem_ids":"train:01019-01023","commit":"aa7b4773ce11d0f85eddf89a3aa3c822c2a6a69d"},
+    {"problem_ids":"train:01024-01028","commit":"65fe94654db9e6accc01649bccaddd6834066675"},
+    {"problem_ids":"train:01014-01028 registration","commit":"9478b3d6a3c60c2ffd70dde8040b555769d1a449"}
+  ],
+  "self_review":{"status":"self_review_only","source_records_checked":15,"source_questions_checked":15,"written_solution_lines":41,"recipe_declaration_mappings_checked":41,"sorry_admit_custom_axiom_matches":0,"python_regression_tests_passed":52,"model_sha256":"7d8de614013dd2dbe7c7436ebf511bbe2d4ea7d5ced856552e9c65dfad08a7e9"},
+  "measurements":{"elapsed_seconds":563,"artifact_bytes":45968,"selected":15,"written":15,"formal_completion_rate":0.0,"local_execution_success_rate":1.0,"ci_seconds":null},
+  "local_checks":{"ledger_validate":"passed_before_ledger_then_repeated","python_unittest":"52 passed","source_and_recipe_hash_check":"15 records and 41 declarations passed","fixed_lean":"not_available_locally","method_recipe_render":"blocked_missing_existing_artifact","method_recipe_render_missing_path":"reports/dependencies/methods/dnc2026_inequalities_individual.json.gz","next_action_ja":"固定CIで新規Lean対象と全依存グラフを生成して再照合する。"},
+  "ci":{"previous_head_sha":"8e9d4633798b2f797a5536dcac60b212a77eb468","previous_status_checks":0,"accepted_as_success_evidence":false,"current_head_sha":"9478b3d6a3c60c2ffd70dde8040b555769d1a449","current_run_id":null,"current_run_url":null,"current_status":"trigger_pending"},
+  "pull_request":"https://github.com/tsuji-tomonori/LemmaWeave/pull/5","commit":"9478b3d6a3c60c2ffd70dde8040b555769d1a449",
+  "progress_before":{"solution_ready":518,"remaining":8274,"verification_pending":500},
+  "progress_after":{"solution_ready":518,"remaining":8274,"verification_pending":515},
+  "next_problem_id":"external-gsm8k-main-3101c7d50724:train:01029",
+  "note_ja":"15問を原題から個別に読解し、記述式解答・Leanモデル・41個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01015は金額をセント単位で厳密化した。train:01023は各壁を個別に数え、原文にない角共有を仮定しなかった。train:01028は銅・鋼・錫を各20本として全重量を形式化した。10時枠は未実行のまま保持する。"
+}

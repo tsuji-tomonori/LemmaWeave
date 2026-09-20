@@ -1,0 +1,77 @@
+{
+  "id": "gsm8k_sprint44_dance",
+  "title_ja": "13回のダンスレッスン代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00946",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "10回7500セントのパックに、平均単価より3分の1高い追加3回を加えた総額を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.dance_solution",
+  "graph": "work/gsm8k-sprint44-dance-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dance_average",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.dance_average",
+      "title_ja": "パックの平均単価",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7500セントを10回で分ける。",
+      "conclusion_ja": "1回750セント。",
+      "baseline_ja": "750×10=7500。"
+    },
+    {
+      "id": "dance_extra_price",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.dance_extra_price",
+      "title_ja": "追加レッスン単価",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "平均単価より3分の1高いので4/3倍。",
+      "conclusion_ja": "1000セント。",
+      "baseline_ja": "1000×3=750×4。"
+    },
+    {
+      "id": "dance_extra_classes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.dance_extra_classes",
+      "title_ja": "追加回数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全13回からパック10回を除く。",
+      "conclusion_ja": "3回追加。",
+      "baseline_ja": "13=10+3。"
+    },
+    {
+      "id": "dance_extra_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.dance_extra_cost",
+      "title_ja": "追加分の費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "追加3回を各1000セントで受ける。",
+      "conclusion_ja": "3000セント。",
+      "baseline_ja": "3×1000=3000。"
+    },
+    {
+      "id": "dance_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.dance_total",
+      "title_ja": "総額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "パックと追加分を合計する。",
+      "conclusion_ja": "10500セント=105ドル。",
+      "baseline_ja": "7500+3000=10500。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 947,
+    "checked_model_hash": "4847bd6adf0529c3ae911606e383a2bed2570b8b697564699f9ff3ac3105e6dc",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

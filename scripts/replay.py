@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Replay the complete fixed-environment audit pipeline without promoting ledger states.
 
-Run under `python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py`
+Run under `python3 scripts/run.py --timeout 4800 -- python3 scripts/replay.py`
 on a fresh runner after installing the pinned dependencies. All subprocesses
 must succeed; incomplete Phase 1 acceptance is reported separately.
 """
@@ -141,7 +141,7 @@ COMMANDS = [
 ]
 
 # The method-target sweep grows with the number of registered individual
-# solutions.  Keep its timeout below the outer 1800-second replay bound while
+# solutions.  Keep its timeout below the outer 4800-second replay bound while
 # allowing the complete sweep to finish as the corpus grows.
 METHOD_TARGET_TIMEOUT = 1500
 DEFAULT_COMMAND_TIMEOUT = 900

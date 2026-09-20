@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_sprint46_corn","title_ja":"トウモロコシの総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00980","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"13列と16列に各4本あるトウモロコシの総数を求める。","root":"LemmaWeave.Tests.GSM8KSprint0920A14.corn_solution","graph":"work/gsm8k-sprint46-corn-graph.json","lean_file":"tests/lean/GSM8KSprint0920A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":[],
+  "steps":[
+    {"id":"corn_rows","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.corn_rows","title_ja":"総列数","requires_steps":[],"uses_nodes":[],"condition_ja":"13列と16列。","conclusion_ja":"29列。","baseline_ja":"29=13+16。"},
+    {"id":"corn_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.corn_total","title_ja":"総本数","requires_steps":[],"uses_nodes":[],"condition_ja":"29列に各4本。","conclusion_ja":"116本。","baseline_ja":"116=29×4。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":981,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["2つの畑の列数と1列当たり本数を照合した。"]}
+}

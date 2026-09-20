@@ -74,7 +74,8 @@ theorem smoothies_solution : Smoothies 500 100 600 150 4 ∧ 600 = 600 ∧ 4 = 4
 
 theorem apples_after_fall : (79 : Nat) = 26 + 53 := by norm_num
 theorem apples_stolen : (53 : Nat) = 45 + 8 := by norm_num
-theorem apples_solution : Apples 79 26 53 45 8 ∧ 53 = 53 ∧ 45 = 45 := by exact ⟨by norm_num [Apples], rfl, rfl⟩
+theorem apples_solution : Apples 79 26 53 45 8 ∧ 53 = 53 ∧ 45 = 45 := by
+  exact ⟨⟨rfl, rfl, apples_after_fall, rfl, apples_stolen⟩, rfl, rfl⟩
 
 theorem sat_weekdays : (2 : Nat) * 5 = 10 := by norm_num
 theorem sat_weekends : (3 : Nat) * 2 = 6 := by norm_num

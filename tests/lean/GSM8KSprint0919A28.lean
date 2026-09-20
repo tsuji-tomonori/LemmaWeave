@@ -71,7 +71,7 @@ theorem bread_per_slice : (2 : Nat) * 2 = 4 := by norm_num
 theorem bread_total : (2 : Nat) * 4 = 8 := by norm_num
 theorem bread_solution : BreadPieces 2 2 4 8 := by
   unfold BreadPieces
-  exact ⟨rfl, by simpa using bread_first_tear, bread_per_slice.symm, bread_total.symm⟩
+  exact ⟨rfl, bread_first_tear, bread_per_slice.symm, bread_total.symm⟩
 
 theorem tub_cycle_net : (10 : Nat) + 2 * 1 = 12 := by norm_num
 theorem tub_after_22_minutes : (11 : Nat) * 10 = 110 := by norm_num

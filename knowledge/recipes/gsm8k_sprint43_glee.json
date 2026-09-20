@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint43_glee",
+  "title_ja": "合唱部の女性部員数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00928",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "女性が男性の2倍で総数18人のとき、女性部員数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A11.glee_solution",
+  "graph": "work/gsm8k-sprint43-glee-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "glee_female",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.glee_female",
+      "title_ja": "女性部員数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "女性は男性の2倍。",
+      "conclusion_ja": "男性6人なら女性12人。",
+      "baseline_ja": "2×6=12。"
+    },
+    {
+      "id": "glee_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.glee_total",
+      "title_ja": "総数の照合",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "女性12人と男性6人を合計する。",
+      "conclusion_ja": "総数18人と一致する。",
+      "baseline_ja": "12+6=18。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 929,
+    "checked_model_hash": "e6036530ca8d1fe0903185ab18534328c4cf39260f056ee932651f5776a79a84",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

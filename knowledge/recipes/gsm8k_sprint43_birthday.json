@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint43_birthday",
+  "title_ja": "誕生日会の人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00927",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "招待した20人の半数が同伴者1人を連れ、Ashley本人を含む人数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A11.birthday_solution",
+  "graph": "work/gsm8k-sprint43-birthday-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "birthday_bringers",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.birthday_bringers",
+      "title_ja": "同伴者を連れた人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "招待客20人の半数。",
+      "conclusion_ja": "10人。",
+      "baseline_ja": "10×2=20。"
+    },
+    {
+      "id": "birthday_companions",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.birthday_companions",
+      "title_ja": "同伴者数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10人が各1人を連れる。",
+      "conclusion_ja": "同伴者は10人。",
+      "baseline_ja": "10×1=10。"
+    },
+    {
+      "id": "birthday_guests",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.birthday_guests",
+      "title_ja": "客の人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "招待客20人と同伴者10人。",
+      "conclusion_ja": "客は30人。",
+      "baseline_ja": "20+10=30。"
+    },
+    {
+      "id": "birthday_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.birthday_total",
+      "title_ja": "会場の総人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "客30人にAshley本人を加える。",
+      "conclusion_ja": "合計31人。",
+      "baseline_ja": "30+1=31。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 928,
+    "checked_model_hash": "e6036530ca8d1fe0903185ab18534328c4cf39260f056ee932651f5776a79a84",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

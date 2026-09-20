@@ -1,0 +1,114 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-1200-gsm8k-43",
+  "planned_slot_local_hour": 12,
+  "planned_at": "2026-09-20T12:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "98ace12ba2c5d583d909dcb850540f71ba82c05c",
+  "started_at": "2026-09-20T12:03:42+09:00",
+  "finished_at": "2026-09-20T12:12:46+09:00",
+  "schedule_offset_seconds": 222,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00924",
+    "external-gsm8k-main-3101c7d50724:train:00925",
+    "external-gsm8k-main-3101c7d50724:train:00926",
+    "external-gsm8k-main-3101c7d50724:train:00927",
+    "external-gsm8k-main-3101c7d50724:train:00928",
+    "external-gsm8k-main-3101c7d50724:train:00929",
+    "external-gsm8k-main-3101c7d50724:train:00930",
+    "external-gsm8k-main-3101c7d50724:train:00931",
+    "external-gsm8k-main-3101c7d50724:train:00932",
+    "external-gsm8k-main-3101c7d50724:train:00933",
+    "external-gsm8k-main-3101c7d50724:train:00934",
+    "external-gsm8k-main-3101c7d50724:train:00935",
+    "external-gsm8k-main-3101c7d50724:train:00936",
+    "external-gsm8k-main-3101c7d50724:train:00937",
+    "external-gsm8k-main-3101c7d50724:train:00938"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00924",
+    "external-gsm8k-main-3101c7d50724:train:00925",
+    "external-gsm8k-main-3101c7d50724:train:00926",
+    "external-gsm8k-main-3101c7d50724:train:00927",
+    "external-gsm8k-main-3101c7d50724:train:00928",
+    "external-gsm8k-main-3101c7d50724:train:00929",
+    "external-gsm8k-main-3101c7d50724:train:00930",
+    "external-gsm8k-main-3101c7d50724:train:00931",
+    "external-gsm8k-main-3101c7d50724:train:00932",
+    "external-gsm8k-main-3101c7d50724:train:00933",
+    "external-gsm8k-main-3101c7d50724:train:00934",
+    "external-gsm8k-main-3101c7d50724:train:00935",
+    "external-gsm8k-main-3101c7d50724:train:00936",
+    "external-gsm8k-main-3101c7d50724:train:00937",
+    "external-gsm8k-main-3101c7d50724:train:00938"
+  ],
+  "verification_pending_cumulative": {
+    "count": 425,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:00938"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00924-00938",
+      "retry_on": "2026-09-20",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のため、solution_readyへ昇格できない。",
+      "next_action_ja": "現HEADのLean CIを完走させ、入力SHA・公理・実依存・53説明行を照合し、成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:00924-00928",
+      "commit": "7b7db58b610448159f5a55ebc2dcfb7c9f784971"
+    },
+    {
+      "problem_ids": "train:00929-00933",
+      "commit": "cf8d84c038f8acb71ff7a32cda9e5439fa9657e1"
+    },
+    {
+      "problem_ids": "train:00934-00938",
+      "commit": "bd413cd05162b128ed7c274b5cf77bf6f176e1a6"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 53,
+    "recipe_declaration_mappings_checked": 53,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_sha256": "881a98f47252976fe9a699be8850a410dba97738f0a04e0f969fcced6462a82f"
+  },
+  "local_checks": {
+    "ledger_validate": "passed",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records and 53 declarations passed",
+    "method_recipe_render": "blocked_missing_existing_artifact",
+    "method_recipe_render_missing_path": "reports/dependencies/methods/dnc2026_inequalities_individual.json.gz",
+    "next_action_ja": "固定CIで既存DNC依存グラフを再生成してから全レシピをrenderし、新規15件の依存グラフも照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "98ace12ba2c5d583d909dcb850540f71ba82c05c",
+    "previous_run_id": 35483635900,
+    "previous_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35483635900",
+    "previous_status": "cancelled",
+    "accepted_as_success_evidence": false,
+    "current_status": "awaiting_exact_head_run"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "bd413cd05162b128ed7c274b5cf77bf6f176e1a6",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 410
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 425
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00939",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・名前付き行定理・原文ハッシュ・自己照合を保存した。洗濯問題は機器数と並行運転条件がないため一意でないことを示し、逐次処理なら14時間、完全並行処理なら105分という両立例を分離した。直前のexact-head CIはキャンセルのため成功証拠に採用していない。"
+}

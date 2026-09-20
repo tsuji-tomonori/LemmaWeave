@@ -43,15 +43,65 @@ theorem glee_solution : GleeClub 2 6 12 18 := by
   unfold GleeClub
   exact ⟨glee_female, glee_total⟩
 
+theorem bricks_half : (500 : Nat) * 2 = 1000 := by norm_num
+theorem bricks_discount_price : (25 : Nat) * 100 = 50 * (100 - 50) := by norm_num
+theorem bricks_discounted_cost : (12500 : Nat) = 500 * 25 := by norm_num
+theorem bricks_full_cost : (25000 : Nat) = 500 * 50 := by norm_num
+theorem bricks_total_cents : (37500 : Nat) = 12500 + 25000 := by norm_num
+theorem bricks_dollars : (37500 : Nat) = 375 * 100 := by norm_num
+theorem bricks_solution : BrickCost 1000 2 500 50 50 25 12500 25000 37500 100 375 := by
+  unfold BrickCost
+  exact ⟨bricks_half, bricks_discount_price, bricks_discounted_cost, bricks_full_cost, bricks_total_cents, bricks_dollars⟩
+
+theorem apples_men : (60 : Nat) = 2 * 30 := by norm_num
+theorem apples_woman_each : (50 : Nat) = 30 + 20 := by norm_num
+theorem apples_women : (150 : Nat) = 3 * 50 := by norm_num
+theorem apples_total : (210 : Nat) = 60 + 150 := by norm_num
+theorem apples_solution : ApplePurchase 2 30 60 20 50 3 150 210 := by
+  unfold ApplePurchase
+  exact ⟨apples_men, apples_woman_each, apples_women, apples_total⟩
+
+theorem cards_malcom : (28 : Nat) = 20 + 8 := by norm_num
+theorem cards_given : (14 : Nat) * 2 = 28 := by norm_num
+theorem cards_remaining : (28 : Nat) = 14 + 14 := by norm_num
+theorem cards_solution : BaseballCards 20 8 28 2 14 14 := by
+  unfold BaseballCards
+  exact ⟨cards_malcom, cards_given, cards_remaining⟩
+
+theorem requests_daily : (6 : Nat) = 4 + 2 := by norm_num
+theorem requests_total : (10 : Nat) = 5 * 2 := by norm_num
+theorem requests_solution : ClientRequests 6 4 2 5 10 := by
+  unfold ClientRequests
+  exact ⟨requests_daily, requests_total⟩
+
+theorem stairs_second : (40 : Nat) = 2 * 20 := by norm_num
+theorem stairs_third : (40 : Nat) = 30 + 10 := by norm_num
+theorem stairs_total_steps : (90 : Nat) = 20 + 40 + 30 := by norm_num
+theorem stairs_half_feet : (90 : Nat) = 90 * 1 := by norm_num
+theorem stairs_feet : (90 : Nat) = 45 * 2 := by norm_num
+theorem stairs_solution : StairHeight 20 2 40 10 30 90 1 90 2 45 := by
+  unfold StairHeight
+  exact ⟨stairs_second, stairs_third, stairs_total_steps, stairs_half_feet, stairs_feet⟩
+
 #print axioms laundry_solution
 #print axioms pharmacy_solution
 #print axioms towels_solution
 #print axioms birthday_solution
 #print axioms glee_solution
+#print axioms bricks_solution
+#print axioms apples_solution
+#print axioms cards_solution
+#print axioms requests_solution
+#print axioms stairs_solution
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.laundry_solution to "work/gsm8k-sprint43-laundry-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.pharmacy_solution to "work/gsm8k-sprint43-pharmacy-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.towels_solution to "work/gsm8k-sprint43-towels-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.birthday_solution to "work/gsm8k-sprint43-birthday-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.glee_solution to "work/gsm8k-sprint43-glee-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.bricks_solution to "work/gsm8k-sprint43-bricks-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.apples_solution to "work/gsm8k-sprint43-apples-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.cards_solution to "work/gsm8k-sprint43-cards-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.requests_solution to "work/gsm8k-sprint43-requests-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.stairs_solution to "work/gsm8k-sprint43-stairs-graph.json"
 
 end LemmaWeave.Tests.GSM8KSprint0920A11

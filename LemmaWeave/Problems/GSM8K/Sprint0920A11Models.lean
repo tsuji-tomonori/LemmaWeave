@@ -28,4 +28,30 @@ def GleeClub
     (femaleMultiplier male female total : Nat) : Prop :=
   female = femaleMultiplier * male ∧ total = female + male
 
+def BrickCost
+    (bricks divisor half fullPriceCents discountPercent discountedPriceCents discountedCostCents
+      fullCostCents totalCents centsPerDollar dollars : Nat) : Prop :=
+  half * divisor = bricks ∧ discountedPriceCents * 100 = fullPriceCents * (100 - discountPercent) ∧
+  discountedCostCents = half * discountedPriceCents ∧ fullCostCents = half * fullPriceCents ∧
+  totalCents = discountedCostCents + fullCostCents ∧ totalCents = dollars * centsPerDollar
+
+def ApplePurchase
+    (men maleEach maleTotal extra femaleEach women femaleTotal total : Nat) : Prop :=
+  maleTotal = men * maleEach ∧ femaleEach = maleEach + extra ∧
+  femaleTotal = women * femaleEach ∧ total = maleTotal + femaleTotal
+
+def BaseballCards
+    (brandon extra malcom divisor given remaining : Nat) : Prop :=
+  malcom = brandon + extra ∧ given * divisor = malcom ∧ malcom = given + remaining
+
+def ClientRequests
+    (dailyReceived dailyCompleted dailyBacklog days totalBacklog : Nat) : Prop :=
+  dailyReceived = dailyCompleted + dailyBacklog ∧ totalBacklog = days * dailyBacklog
+
+def StairHeight
+    (first multiplier second fewer third totalSteps halfFeetPerStep totalHalfFeet divisor totalFeet : Nat) : Prop :=
+  second = multiplier * first ∧ second = third + fewer ∧
+  totalSteps = first + second + third ∧ totalHalfFeet = totalSteps * halfFeetPerStep ∧
+  totalHalfFeet = totalFeet * divisor
+
 end LemmaWeave.Problems.GSM8K.Sprint0920A11

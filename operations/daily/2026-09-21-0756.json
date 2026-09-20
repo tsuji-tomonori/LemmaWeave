@@ -1,0 +1,133 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-0800-gsm8k-60",
+  "planned_slot_local_hour": 8,
+  "planned_at": "2026-09-21T08:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "a0c47e45bfe23e5ec7ef50b53e70debc9081197e",
+  "started_at": "2026-09-21T07:56:57+09:00",
+  "finished_at": "2026-09-21T08:06:16+09:00",
+  "schedule_offset_seconds": -183,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01179",
+    "external-gsm8k-main-3101c7d50724:train:01180",
+    "external-gsm8k-main-3101c7d50724:train:01181",
+    "external-gsm8k-main-3101c7d50724:train:01182",
+    "external-gsm8k-main-3101c7d50724:train:01183",
+    "external-gsm8k-main-3101c7d50724:train:01184",
+    "external-gsm8k-main-3101c7d50724:train:01185",
+    "external-gsm8k-main-3101c7d50724:train:01186",
+    "external-gsm8k-main-3101c7d50724:train:01187",
+    "external-gsm8k-main-3101c7d50724:train:01188",
+    "external-gsm8k-main-3101c7d50724:train:01189",
+    "external-gsm8k-main-3101c7d50724:train:01190",
+    "external-gsm8k-main-3101c7d50724:train:01191",
+    "external-gsm8k-main-3101c7d50724:train:01192",
+    "external-gsm8k-main-3101c7d50724:train:01193"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01179",
+    "external-gsm8k-main-3101c7d50724:train:01180",
+    "external-gsm8k-main-3101c7d50724:train:01181",
+    "external-gsm8k-main-3101c7d50724:train:01182",
+    "external-gsm8k-main-3101c7d50724:train:01183",
+    "external-gsm8k-main-3101c7d50724:train:01184",
+    "external-gsm8k-main-3101c7d50724:train:01185",
+    "external-gsm8k-main-3101c7d50724:train:01186",
+    "external-gsm8k-main-3101c7d50724:train:01187",
+    "external-gsm8k-main-3101c7d50724:train:01188",
+    "external-gsm8k-main-3101c7d50724:train:01189",
+    "external-gsm8k-main-3101c7d50724:train:01190",
+    "external-gsm8k-main-3101c7d50724:train:01191",
+    "external-gsm8k-main-3101c7d50724:train:01192",
+    "external-gsm8k-main-3101c7d50724:train:01193"
+  ],
+  "verification_pending_cumulative": {
+    "count": 680,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01193"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01179-01193",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを完走し、入力SHA・許容公理・57説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:01179-01183",
+      "commit": "2b63128073c7579d3564305f2454afa3712266ff"
+    },
+    {
+      "problem_ids": "train:01184-01188",
+      "commit": "b5deb9b5d10b70d540a3a46ed0eae68c00475f0d"
+    },
+    {
+      "problem_ids": "train:01189-01193 and registration",
+      "commit": "b39fe1f5171f0957c7aa4d0a07aeed986b226677"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 57,
+    "recipe_declaration_mappings_checked": 57,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_hash": "ea8997072fef377c7bed96e3dc19fe4ac9129cb9198662a0443a1558a4dc7e72",
+    "semantic_blockers": [
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01190",
+        "reason_ja": "3 times olderは3倍と、3倍分年上（4倍）の両方に読める。参照解の26歳と加法解釈の33.5歳を形式化し、非一意性を示した。"
+      }
+    ]
+  },
+  "measurements": {
+    "elapsed_seconds": 559,
+    "artifact_bytes": 54976,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0,
+    "local_execution_success_rate": 1,
+    "ci_seconds": null
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records, 15 raw questions, 15 normalized questions, and 57 declarations checked",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_until_fixed_ci_graphs",
+    "method_recipe_render_detail": "依存グラフ未生成のため既存dnc2026_inequalities_individual.json.gz読込でFileNotFoundError。検査規則は緩和していない。",
+    "solve_queue_write": "not_run_on_incomplete_local_snapshot",
+    "next_action_ja": "GitHub上の完全な現HEADを固定CIでcheckoutし、キュー再生成・新規Lean対象・全依存グラフをまとめて再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "a0c47e45bfe23e5ec7ef50b53e70debc9081197e",
+    "previous_run_id": null,
+    "previous_status": "not_triggered",
+    "accepted_as_success_evidence": false,
+    "current_head_sha": "b39fe1f5171f0957c7aa4d0a07aeed986b226677",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "trigger_pending"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "b39fe1f5171f0957c7aa4d0a07aeed986b226677",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 665
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 680
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01194",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・57個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01190は年齢倍率表現の曖昧性を保持し、26歳と33.5歳の両解釈を形式化した。"
+}

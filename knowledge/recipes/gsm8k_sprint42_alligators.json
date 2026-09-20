@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint42_alligators",
+  "title_ja": "ワニの合計歩行時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00911",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Paulの往路4時間と、7匹で歩いた復路6時間を個体時間で合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.alligators_solution",
+  "graph": "work/gsm8k-sprint42-alligators-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "combined timeは、各ワニの歩行時間を足すalligator-hoursとして形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "alligators_return",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.alligators_return",
+      "title_ja": "復路時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "復路は往路4時間より2時間長い。",
+      "conclusion_ja": "復路は6時間。",
+      "baseline_ja": "4+2=6。"
+    },
+    {
+      "id": "alligators_group",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.alligators_group",
+      "title_ja": "復路の匹数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Paulに6匹が同行する。",
+      "conclusion_ja": "復路は7匹。",
+      "baseline_ja": "6+1=7。"
+    },
+    {
+      "id": "alligators_return_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.alligators_return_hours",
+      "title_ja": "復路の個体時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7匹が各6時間歩く。",
+      "conclusion_ja": "42個体時間。",
+      "baseline_ja": "7×6=42。"
+    },
+    {
+      "id": "alligators_combined",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.alligators_combined",
+      "title_ja": "往復の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "往路のPaul4時間を加える。",
+      "conclusion_ja": "合計46個体時間。",
+      "baseline_ja": "4+42=46。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 912,
+    "checked_model_hash": "82c0154be01c8ade4f1e7151e0a619cec7e4da1dbaae5dc9e525856e96036469",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint42_animals",
+  "title_ja": "飼育区画の動物総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00909",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "カエル160匹が犬の2倍、猫が犬より20%少ないとき総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.animals_solution",
+  "graph": "work/gsm8k-sprint42-animals-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "animals_dogs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.animals_dogs",
+      "title_ja": "犬の数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "カエル160匹は犬の2倍。",
+      "conclusion_ja": "犬は80匹。",
+      "baseline_ja": "80×2=160。"
+    },
+    {
+      "id": "animals_cats",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.animals_cats",
+      "title_ja": "猫の数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "猫は犬80匹より20%少ない。",
+      "conclusion_ja": "猫は64匹。",
+      "baseline_ja": "64×100=80×80。"
+    },
+    {
+      "id": "animals_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.animals_total",
+      "title_ja": "動物の総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "猫・犬・カエルを合計する。",
+      "conclusion_ja": "総数は304匹。",
+      "baseline_ja": "64+80+160=304。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 910,
+    "checked_model_hash": "82c0154be01c8ade4f1e7151e0a619cec7e4da1dbaae5dc9e525856e96036469",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

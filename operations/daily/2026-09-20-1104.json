@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-1100-gsm8k-42",
+  "planned_slot_local_hour": 11,
+  "planned_at": "2026-09-20T11:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "0e0f529f204135a7d6fe13982c8ebe60b16d4ae7",
+  "started_at": "2026-09-20T11:04:07+09:00",
+  "finished_at": "2026-09-20T11:14:34+09:00",
+  "schedule_offset_seconds": 247,
+  "missed_slots_detected": [
+    {
+      "planned_local_hour": 10,
+      "status": "not_executed",
+      "note_ja": "直前の保存済み台帳は9時枠であり、10時枠のrun_id・選択ID・成果コミットが存在しないため未実行として保持する。"
+    }
+  ],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00909",
+    "external-gsm8k-main-3101c7d50724:train:00910",
+    "external-gsm8k-main-3101c7d50724:train:00911",
+    "external-gsm8k-main-3101c7d50724:train:00912",
+    "external-gsm8k-main-3101c7d50724:train:00913",
+    "external-gsm8k-main-3101c7d50724:train:00914",
+    "external-gsm8k-main-3101c7d50724:train:00915",
+    "external-gsm8k-main-3101c7d50724:train:00916",
+    "external-gsm8k-main-3101c7d50724:train:00917",
+    "external-gsm8k-main-3101c7d50724:train:00918",
+    "external-gsm8k-main-3101c7d50724:train:00919",
+    "external-gsm8k-main-3101c7d50724:train:00920",
+    "external-gsm8k-main-3101c7d50724:train:00921",
+    "external-gsm8k-main-3101c7d50724:train:00922",
+    "external-gsm8k-main-3101c7d50724:train:00923"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00909",
+    "external-gsm8k-main-3101c7d50724:train:00910",
+    "external-gsm8k-main-3101c7d50724:train:00911",
+    "external-gsm8k-main-3101c7d50724:train:00912",
+    "external-gsm8k-main-3101c7d50724:train:00913",
+    "external-gsm8k-main-3101c7d50724:train:00914",
+    "external-gsm8k-main-3101c7d50724:train:00915",
+    "external-gsm8k-main-3101c7d50724:train:00916",
+    "external-gsm8k-main-3101c7d50724:train:00917",
+    "external-gsm8k-main-3101c7d50724:train:00918",
+    "external-gsm8k-main-3101c7d50724:train:00919",
+    "external-gsm8k-main-3101c7d50724:train:00920",
+    "external-gsm8k-main-3101c7d50724:train:00921",
+    "external-gsm8k-main-3101c7d50724:train:00922",
+    "external-gsm8k-main-3101c7d50724:train:00923"
+  ],
+  "verification_pending_cumulative": {
+    "count": 410,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:00923"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00909-00923",
+      "retry_on": "2026-09-20",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のため、solution_readyへ昇格できない。",
+      "next_action_ja": "現HEADのLean CIを完走させ、入力SHA・公理・実依存・57説明行を照合し、成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:00909-00913",
+      "commit": "e9ff1a4aa6d962689bf1d66e2217f9be0022de9e"
+    },
+    {
+      "problem_ids": "train:00914-00918",
+      "commit": "435a97c49f92753db663e870e66c8818d046f30d"
+    },
+    {
+      "problem_ids": "train:00919-00923",
+      "commit": "bc3563a7d28e41a2d9a966f50632c59d7185d913"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 57,
+    "recipe_declaration_mappings_checked": 57,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 14,
+    "model_sha256": "99537224468d741c14fe17721e9d78f3b542f2946fd1e4df9a251fde49f95551"
+  },
+  "ci": {
+    "previous_head_sha": "0e0f529f204135a7d6fe13982c8ebe60b16d4ae7",
+    "previous_run_id": 35480456466,
+    "previous_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35480456466",
+    "previous_status": "cancelled",
+    "accepted_as_success_evidence": false,
+    "current_status": "awaiting_exact_head_run"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "bc3563a7d28e41a2d9a966f50632c59d7185d913",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 395
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 410
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00924",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・名前付き行定理・原文ハッシュ・自己照合を保存した。電球問題は原文の次元不整合を黙ってkWhへ補正せず、原文の請求単位として形式化した。ワニ問題は合計時間を個体時間と明示した。"
+}

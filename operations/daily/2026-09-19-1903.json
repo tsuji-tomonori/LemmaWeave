@@ -51,19 +51,19 @@
   "deferred": [
     {
       "problem_id": "ci:method-recipes-common-divisor-finite",
-      "retry_on": "exact-head GitHub Actions completion",
+      "retry_on": "2026-09-20",
       "reason_ja": "固定Lean replayと許容公理監査はA01〜A30まで通過したが、入試レシピが実在しないmethod node common_divisor_finite等を参照してcheck_method_recipes.pyが失敗した。実証明は有限列挙で完結し各行にbaseline_jaがあるため、実依存にないuses_nodesを除去した。",
       "next_action_ja": "修復後HEADで全レシピ検査を再実行し、次の失敗があれば独立に記録する。"
     },
     {
       "problem_id": "external-gsm8k-main-3101c7d50724:train:00744-00758",
-      "retry_on": "exact-head GitHub Actions completion",
+      "retry_on": "2026-09-20",
       "reason_ja": "現HEADの固定Lean・公理・実依存証拠が未取得。",
       "next_action_ja": "本バッチを含む正確なHEADのCIを実行し、成功成果物だけを入力SHAと照合して取り込む。"
     },
     {
       "problem_id": "ci:dnc2026-written-line-dependency",
-      "retry_on": "exact-head GitHub Actions completion",
+      "retry_on": "2026-09-20",
       "reason_ja": "HEAD a821c010 のA01〜A31固定Lean・公理監査は通過したが、入試レシピの共通部分・相対差が前2行を証明依存として申告する一方、Lean依存グラフではsets_solutionを直接参照していたためレシピ検査が失敗した。",
       "next_action_ja": "実依存に合わせて2行のrequires_stepsを空にしたHEADでレシピ検査を再実行し、成功成果物のみを証拠として採用する。"
     }

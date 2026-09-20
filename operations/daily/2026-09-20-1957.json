@@ -1,0 +1,33 @@
+{
+  "date":"2026-09-20","run_id":"lemmaweave-sprint-20260920-2000-gsm8k-51",
+  "planned_slot_local_hour":20,"planned_at":"2026-09-20T20:00:00+09:00","role":"gsm8k_individual_solution",
+  "base_sha":"07693e36c982ce6f3948ec4f24a11ae398926007","started_at":"2026-09-20T19:57:00+09:00","finished_at":"2026-09-20T20:05:26+09:00","schedule_offset_seconds":-180,"missed_slots_detected":[10],
+  "selected_problem_ids":[
+    "external-gsm8k-main-3101c7d50724:train:01044","external-gsm8k-main-3101c7d50724:train:01045","external-gsm8k-main-3101c7d50724:train:01046","external-gsm8k-main-3101c7d50724:train:01047","external-gsm8k-main-3101c7d50724:train:01048",
+    "external-gsm8k-main-3101c7d50724:train:01049","external-gsm8k-main-3101c7d50724:train:01050","external-gsm8k-main-3101c7d50724:train:01051","external-gsm8k-main-3101c7d50724:train:01052","external-gsm8k-main-3101c7d50724:train:01053",
+    "external-gsm8k-main-3101c7d50724:train:01054","external-gsm8k-main-3101c7d50724:train:01055","external-gsm8k-main-3101c7d50724:train:01056","external-gsm8k-main-3101c7d50724:train:01057","external-gsm8k-main-3101c7d50724:train:01058"
+  ],
+  "completed_problem_ids":[],
+  "verification_pending":[
+    "external-gsm8k-main-3101c7d50724:train:01044","external-gsm8k-main-3101c7d50724:train:01045","external-gsm8k-main-3101c7d50724:train:01046","external-gsm8k-main-3101c7d50724:train:01047","external-gsm8k-main-3101c7d50724:train:01048",
+    "external-gsm8k-main-3101c7d50724:train:01049","external-gsm8k-main-3101c7d50724:train:01050","external-gsm8k-main-3101c7d50724:train:01051","external-gsm8k-main-3101c7d50724:train:01052","external-gsm8k-main-3101c7d50724:train:01053",
+    "external-gsm8k-main-3101c7d50724:train:01054","external-gsm8k-main-3101c7d50724:train:01055","external-gsm8k-main-3101c7d50724:train:01056","external-gsm8k-main-3101c7d50724:train:01057","external-gsm8k-main-3101c7d50724:train:01058"
+  ],
+  "verification_pending_cumulative":{"count":545,"first_problem_id":"external-gsm8k-main-3101c7d50724:train:00514","last_problem_id":"external-gsm8k-main-3101c7d50724:train:01058"},
+  "deferred":[{"problem_id":"external-gsm8k-main-3101c7d50724:train:01044-01058","retry_on":"2026-09-20","reason_ja":"固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。","next_action_ja":"現HEADの全体replayを完走し、入力SHA・許容公理・45説明行の実依存を照合して成功成果物だけを取り込む。"}],
+  "checkpoints":[
+    {"problem_ids":"train:01044-01048","commit":"90db6d3528290b45201281d3dbdea53146e1bf1b"},
+    {"problem_ids":"train:01049-01053","commit":"8c84c5fa9a741ae680678b61478c8f9be9cab011"},
+    {"problem_ids":"train:01054-01058","commit":"f94c3cf10d6c160f5fc8b95044a269f2e88c494e"},
+    {"problem_ids":"train:01044-01058 registration","commit":"defe565bd132b14ec1868c8aa309809a29f90f3f"}
+  ],
+  "self_review":{"status":"self_review_only","source_records_checked":15,"source_questions_checked":15,"written_solution_lines":45,"recipe_declaration_mappings_checked":45,"sorry_admit_custom_axiom_matches":0,"python_regression_tests_passed":52,"model_sha256":"4a0aae08aef66067b421237e890feb727e052a2ab88603e5ea44d6a02664eece"},
+  "measurements":{"elapsed_seconds":506,"artifact_bytes":48098,"selected":15,"written":15,"formal_completion_rate":0.0,"local_execution_success_rate":1.0,"ci_seconds":null},
+  "local_checks":{"ledger_validate":"passed_before_ledger_then_repeated","python_unittest":"52 passed","source_and_recipe_hash_check":"15 records and 45 declarations passed","fixed_lean":"not_available_locally","method_recipe_render":"blocked_missing_existing_artifact","method_recipe_render_missing_path":"reports/dependencies/methods/dnc2026_inequalities_individual.json.gz","next_action_ja":"固定CIで新規Lean対象と全依存グラフを生成して再照合する。"},
+  "ci":{"previous_head_sha":"07693e36c982ce6f3948ec4f24a11ae398926007","previous_status_checks":0,"accepted_as_success_evidence":false,"current_head_sha":"defe565bd132b14ec1868c8aa309809a29f90f3f","current_run_id":null,"current_run_url":null,"current_status":"trigger_pending"},
+  "pull_request":"https://github.com/tsuji-tomonori/LemmaWeave/pull/5","commit":"defe565bd132b14ec1868c8aa309809a29f90f3f",
+  "progress_before":{"solution_ready":518,"remaining":8274,"verification_pending":530},
+  "progress_after":{"solution_ready":518,"remaining":8274,"verification_pending":545},
+  "next_problem_id":"external-gsm8k-main-3101c7d50724:train:01059",
+  "note_ja":"15問を原題から個別に読解し、記述式解答・Leanモデル・45個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01047は倍率表現の採用解釈を明示した。train:01052は参照解答の符号誤りを退け、Tim=2×John−5からJames30歳を証明した。train:01057は3.5容器を半容器7個として厳密化した。20時枠は予定より180秒早く開始したものとして記録し、10時枠は未実行のまま保持する。"
+}

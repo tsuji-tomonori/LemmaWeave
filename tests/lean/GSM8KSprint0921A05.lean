@@ -96,7 +96,9 @@ theorem kitchen_total : (254 : Nat) = 10 + 178 + 66 := by
   calc (254 : Nat) = 10 + 178 + 66 := by norm_num
        _ = (20 / 2) + 178 + 66 := by rw [kitchen_sharon_pots]; norm_num
        _ = (20 / 2) + (3 * 66 - 20) + 66 := by rw [← kitchen_sharon_plates]; norm_num
-       _ = (20 / 2) + (3 * 66 - 20) + (2 * 33) := by rw [kitchen_sharon_cutlery]
+       _ = (20 / 2) + (3 * 66 - 20) + (2 * 33) := by
+         rw [kitchen_sharon_cutlery]
+         norm_num
 theorem kitchen_solution : Kitchen 20 66 33 10 178 66 254 := by
   unfold Kitchen
   exact ⟨kitchen_angela_plates, kitchen_angela_cutlery, kitchen_sharon_pots,

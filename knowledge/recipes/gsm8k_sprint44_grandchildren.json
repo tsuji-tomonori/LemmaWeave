@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint44_grandchildren",
+  "title_ja": "孫へ贈る年間金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00941",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "孫3人へ年2枚ずつ80ドル入りのカードを贈る総額を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.grandchildren_solution",
+  "graph": "work/gsm8k-sprint44-grandchildren-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "grandchildren_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.grandchildren_each",
+      "title_ja": "孫1人分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "80ドル入りのカードを年2枚。",
+      "conclusion_ja": "160ドル。",
+      "baseline_ja": "2×80=160。"
+    },
+    {
+      "id": "grandchildren_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.grandchildren_total",
+      "title_ja": "年間総額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "孫3人に各160ドル。",
+      "conclusion_ja": "480ドル。",
+      "baseline_ja": "3×160=480。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 942,
+    "checked_model_hash": "c2e52153d8074ee96aa738d6988687ac39db9002918e0ff766de19e6f2f31573",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint44_treadmill",
+  "title_ja": "映画中に走る距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00942",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "平均1.5時間の映画2本の間、12分で1マイル走る距離を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.treadmill_solution",
+  "graph": "work/gsm8k-sprint44-treadmill-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "treadmill_movie_minutes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.treadmill_movie_minutes",
+      "title_ja": "映画1本の分数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "平均1.5時間は3半時間。",
+      "conclusion_ja": "1本90分。",
+      "baseline_ja": "90×2=3×60。"
+    },
+    {
+      "id": "treadmill_total_minutes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.treadmill_total_minutes",
+      "title_ja": "走った総時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "映画2本を各90分見る。",
+      "conclusion_ja": "180分。",
+      "baseline_ja": "2×90=180。"
+    },
+    {
+      "id": "treadmill_miles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.treadmill_miles",
+      "title_ja": "走行距離",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1マイルに12分かかる。",
+      "conclusion_ja": "15マイル。",
+      "baseline_ja": "180=15×12。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 943,
+    "checked_model_hash": "c2e52153d8074ee96aa738d6988687ac39db9002918e0ff766de19e6f2f31573",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

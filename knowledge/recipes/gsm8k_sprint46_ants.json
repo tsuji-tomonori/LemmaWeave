@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint46_ants","title_ja":"雌の働きアリ","problem_id":"external-gsm8k-main-3101c7d50724:train:00978","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"110匹の半数が働きアリで、その20%が雄のとき雌の働きアリを求める。","root":"LemmaWeave.Tests.GSM8KSprint0920A14.ants_solution","graph":"work/gsm8k-sprint46-ants-graph.json","lean_file":"tests/lean/GSM8KSprint0920A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":[],
+  "steps":[
+    {"id":"ants_workers","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.ants_workers","title_ja":"働きアリ","requires_steps":[],"uses_nodes":[],"condition_ja":"110匹の半分。","conclusion_ja":"55匹。","baseline_ja":"110=55×2。"},
+    {"id":"ants_male","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.ants_male","title_ja":"雄の働きアリ","requires_steps":[],"uses_nodes":[],"condition_ja":"55匹の20%。","conclusion_ja":"11匹。","baseline_ja":"11×100=55×20。"},
+    {"id":"ants_female","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.ants_female","title_ja":"雌の働きアリ","requires_steps":[],"uses_nodes":[],"condition_ja":"働きアリを雄と雌に分ける。","conclusion_ja":"44匹。","baseline_ja":"55=11+44。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":979,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["20%の母数が全アリでなく働きアリ55匹であることを確認した。"]}
+}

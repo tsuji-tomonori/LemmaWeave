@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_sprint46_muffins","title_ja":"マフィンの等分","problem_id":"external-gsm8k-main-3101c7d50724:train:00974","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"本人と友人4人で20個を等分する。","root":"LemmaWeave.Tests.GSM8KSprint0920A14.muffins_solution","graph":"work/gsm8k-sprint46-muffins-graph.json","lean_file":"tests/lean/GSM8KSprint0920A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":[],
+  "steps":[
+    {"id":"muffins_people","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.muffins_people","title_ja":"人数","requires_steps":[],"uses_nodes":[],"condition_ja":"友人4人に本人1人を加える。","conclusion_ja":"5人。","baseline_ja":"5=4+1。"},
+    {"id":"muffins_each","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.muffins_each","title_ja":"1人分","requires_steps":[],"uses_nodes":[],"condition_ja":"20個を5人で等分。","conclusion_ja":"1人4個。","baseline_ja":"20=5×4。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":975,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["本人を人数に含めることを再確認した。"]}
+}

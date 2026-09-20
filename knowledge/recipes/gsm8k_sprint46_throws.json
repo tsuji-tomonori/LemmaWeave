@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint46_throws","title_ja":"フリースロー成功数","problem_id":"external-gsm8k-main-3101c7d50724:train:00975","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"20試合の80%に出場し、各試合5回の反則で各2投、成功率70%の成功数を求める。","root":"LemmaWeave.Tests.GSM8KSprint0920A14.throws_solution","graph":"work/gsm8k-sprint46-throws-graph.json","lean_file":"tests/lean/GSM8KSprint0920A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["原文のgetsは試投数とも読めるが、成功率70%が与えられ参照解答も成功数112を求めるため、試投160と成功112を分離して明記した。"],
+  "steps":[
+    {"id":"throws_played","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.throws_played","title_ja":"出場試合","requires_steps":[],"uses_nodes":[],"condition_ja":"20試合の80%。","conclusion_ja":"16試合。","baseline_ja":"16×100=20×80。"},
+    {"id":"throws_fouls","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.throws_fouls","title_ja":"反則回数","requires_steps":[],"uses_nodes":[],"condition_ja":"16試合で毎試合5回。","conclusion_ja":"80回。","baseline_ja":"80=16×5。"},
+    {"id":"throws_attempts","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.throws_attempts","title_ja":"試投数","requires_steps":[],"uses_nodes":[],"condition_ja":"1反則につき2投。","conclusion_ja":"160投。","baseline_ja":"160=80×2。"},
+    {"id":"throws_made","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.throws_made","title_ja":"成功数","requires_steps":[],"uses_nodes":[],"condition_ja":"160投の70%。","conclusion_ja":"112本成功。","baseline_ja":"112×100=160×70。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":976,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["試投数と成功数を分離し、曖昧なgetsを黙って処理していない。"]}
+}

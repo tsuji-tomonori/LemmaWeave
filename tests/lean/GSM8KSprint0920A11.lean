@@ -83,6 +83,41 @@ theorem stairs_solution : StairHeight 20 2 40 10 30 90 1 90 2 45 := by
   unfold StairHeight
   exact ⟨stairs_second, stairs_third, stairs_total_steps, stairs_half_feet, stairs_feet⟩
 
+theorem turtles_marion : (60 : Nat) = 40 + 20 := by norm_num
+theorem turtles_total : (100 : Nat) = 40 + 60 := by norm_num
+theorem turtles_solution : TurtleRescue 40 20 60 100 := by
+  unfold TurtleRescue
+  exact ⟨turtles_marion, turtles_total⟩
+
+theorem bread_flour : (400 : Nat) = 200 + 100 + 100 := by norm_num
+theorem bread_loaves : (400 : Nat) = 2 * 200 := by norm_num
+theorem bread_solution : BreadLoaves 200 100 100 400 200 2 := by
+  unfold BreadLoaves
+  exact ⟨bread_flour, bread_loaves⟩
+
+theorem crayons_bobbie : (54 : Nat) = 3 * 18 := by norm_num
+theorem crayons_lizzie : (27 : Nat) * 2 = 54 := by norm_num
+theorem crayons_solution : CrayonCounts 18 3 54 2 27 := by
+  unfold CrayonCounts
+  exact ⟨crayons_bobbie, crayons_lizzie⟩
+
+theorem dress_discount : (15 : Nat) * 100 = 50 * 30 := by norm_num
+theorem dress_final : (50 : Nat) = 35 + 15 := by norm_num
+theorem dress_solution : DressDiscount 50 30 15 35 := by
+  unfold DressDiscount
+  exact ⟨dress_discount, dress_final⟩
+
+theorem soccer_joe_wins : (3 : Nat) = 1 * 3 := by norm_num
+theorem soccer_joe_draws : (3 : Nat) = 3 * 1 := by norm_num
+theorem soccer_joe_total : (6 : Nat) = 3 + 3 := by norm_num
+theorem soccer_first_wins : (6 : Nat) = 2 * 3 := by norm_num
+theorem soccer_first_draws : (2 : Nat) = 2 * 1 := by norm_num
+theorem soccer_first_total : (8 : Nat) = 6 + 2 := by norm_num
+theorem soccer_difference : (8 : Nat) = 6 + 2 := by norm_num
+theorem soccer_solution : SoccerPoints 3 1 1 3 3 3 6 2 2 6 2 8 2 := by
+  unfold SoccerPoints
+  exact ⟨soccer_joe_wins, soccer_joe_draws, soccer_joe_total, soccer_first_wins, soccer_first_draws, soccer_first_total, soccer_difference⟩
+
 #print axioms laundry_solution
 #print axioms pharmacy_solution
 #print axioms towels_solution
@@ -93,6 +128,11 @@ theorem stairs_solution : StairHeight 20 2 40 10 30 90 1 90 2 45 := by
 #print axioms cards_solution
 #print axioms requests_solution
 #print axioms stairs_solution
+#print axioms turtles_solution
+#print axioms bread_solution
+#print axioms crayons_solution
+#print axioms dress_solution
+#print axioms soccer_solution
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.laundry_solution to "work/gsm8k-sprint43-laundry-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.pharmacy_solution to "work/gsm8k-sprint43-pharmacy-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.towels_solution to "work/gsm8k-sprint43-towels-graph.json"
@@ -103,5 +143,10 @@ theorem stairs_solution : StairHeight 20 2 40 10 30 90 1 90 2 45 := by
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.cards_solution to "work/gsm8k-sprint43-cards-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.requests_solution to "work/gsm8k-sprint43-requests-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.stairs_solution to "work/gsm8k-sprint43-stairs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.turtles_solution to "work/gsm8k-sprint43-turtles-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.bread_solution to "work/gsm8k-sprint43-bread-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.crayons_solution to "work/gsm8k-sprint43-crayons-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.dress_solution to "work/gsm8k-sprint43-dress-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A11.soccer_solution to "work/gsm8k-sprint43-soccer-graph.json"
 
 end LemmaWeave.Tests.GSM8KSprint0920A11

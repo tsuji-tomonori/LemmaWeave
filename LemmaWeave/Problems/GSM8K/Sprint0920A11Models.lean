@@ -54,4 +54,28 @@ def StairHeight
   totalSteps = first + second + third ∧ totalHalfFeet = totalSteps * halfFeetPerStep ∧
   totalHalfFeet = totalFeet * divisor
 
+def TurtleRescue
+    (martha extra marion total : Nat) : Prop :=
+  marion = martha + extra ∧ total = martha + marion
+
+def BreadLoaves
+    (cupboard counter pantry totalFlour flourPerLoaf loaves : Nat) : Prop :=
+  totalFlour = cupboard + counter + pantry ∧ totalFlour = loaves * flourPerLoaf
+
+def CrayonCounts
+    (billie multiplier bobbie divisor lizzie : Nat) : Prop :=
+  bobbie = multiplier * billie ∧ lizzie * divisor = bobbie
+
+def DressDiscount
+    (price discountPercent discount final : Nat) : Prop :=
+  discount * 100 = price * discountPercent ∧ price = final + discount
+
+def SoccerPoints
+    (winPoints drawPoints joeWins joeDraws joeWinScore joeDrawScore joeTotal firstWins firstDraws
+      firstWinScore firstDrawScore firstTotal difference : Nat) : Prop :=
+  joeWinScore = joeWins * winPoints ∧ joeDrawScore = joeDraws * drawPoints ∧
+  joeTotal = joeWinScore + joeDrawScore ∧ firstWinScore = firstWins * winPoints ∧
+  firstDrawScore = firstDraws * drawPoints ∧ firstTotal = firstWinScore + firstDrawScore ∧
+  firstTotal = joeTotal + difference
+
 end LemmaWeave.Problems.GSM8K.Sprint0920A11

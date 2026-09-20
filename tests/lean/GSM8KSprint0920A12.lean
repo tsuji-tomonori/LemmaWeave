@@ -80,6 +80,47 @@ theorem library_solution : LibraryVisits 2 4 4 8 32 10 40 := by
   unfold LibraryVisits
   exact ⟨library_fourfold_week, library_fourfold_total, library_additive_week, library_additive_total, library_nonunique⟩
 
+theorem weights_wanda : (250 : Nat) = 220 + 30 := by norm_num
+theorem weights_past : (250 : Nat) = 170 + 80 := by norm_num
+theorem weights_solution : WeightHistory 220 30 250 80 170 := by
+  unfold WeightHistory
+  exact ⟨weights_wanda, weights_past⟩
+
+theorem statues_stone : (200 : Nat) = 10 * 20 := by norm_num
+theorem statues_wood : (100 : Nat) = 20 * 5 := by norm_num
+theorem statues_gross : (300 : Nat) = 200 + 100 := by norm_num
+theorem statues_tax : (30 : Nat) * 100 = 300 * 10 := by norm_num
+theorem statues_net : (300 : Nat) = 270 + 30 := by norm_num
+theorem statues_solution : StatueEarnings 10 20 200 20 5 100 300 10 30 270 := by
+  unfold StatueEarnings
+  exact ⟨statues_stone, statues_wood, statues_gross, statues_tax, statues_net⟩
+
+theorem party_invited : (18 : Nat) = 6 + 12 := by norm_num
+theorem party_companions : (36 : Nat) = 18 * 2 := by norm_num
+theorem party_guests : (54 : Nat) = 18 + 36 := by norm_num
+theorem party_including_host : (55 : Nat) = 54 + 1 := by norm_num
+theorem party_nonunique : (54 : Nat) ≠ 55 := by norm_num
+theorem party_solution : MichonneParty 6 12 18 2 36 54 1 55 := by
+  unfold MichonneParty
+  exact ⟨party_invited, party_companions, party_guests, party_including_host, party_nonunique⟩
+
+theorem fish_triple_next : (150 : Nat) = 3 * 50 := by norm_num
+theorem fish_triple_total : (200 : Nat) = 50 + 150 := by norm_num
+theorem fish_additive_next : (200 : Nat) = 50 + 3 * 50 := by norm_num
+theorem fish_additive_total : (250 : Nat) = 50 + 200 := by norm_num
+theorem fish_nonunique : (200 : Nat) ≠ 250 := by norm_num
+theorem fish_solution : FishSales 50 3 150 200 200 250 := by
+  unfold FishSales
+  exact ⟨fish_triple_next, fish_triple_total, fish_additive_next, fish_additive_total, fish_nonunique⟩
+
+theorem chickens_doubled : (8 : Nat) = 4 * 2 := by norm_num
+theorem chickens_after_dog : (8 : Nat) = 7 + 1 := by norm_num
+theorem chickens_added : (10 : Nat) = 6 + 4 := by norm_num
+theorem chickens_final : (13 : Nat) = 7 + 6 := by norm_num
+theorem chickens_solution : ChickenCount 4 2 8 1 7 10 4 6 13 := by
+  unfold ChickenCount
+  exact ⟨chickens_doubled, chickens_after_dog, chickens_added, chickens_final⟩
+
 #print axioms games_solution
 #print axioms pokemon_solution
 #print axioms grandchildren_solution
@@ -90,6 +131,11 @@ theorem library_solution : LibraryVisits 2 4 4 8 32 10 40 := by
 #print axioms dance_solution
 #print axioms practice_solution
 #print axioms library_solution
+#print axioms weights_solution
+#print axioms statues_solution
+#print axioms party_solution
+#print axioms fish_solution
+#print axioms chickens_solution
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.games_solution to "work/gsm8k-sprint44-games-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.pokemon_solution to "work/gsm8k-sprint44-pokemon-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.grandchildren_solution to "work/gsm8k-sprint44-grandchildren-graph.json"
@@ -100,5 +146,10 @@ theorem library_solution : LibraryVisits 2 4 4 8 32 10 40 := by
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.dance_solution to "work/gsm8k-sprint44-dance-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.practice_solution to "work/gsm8k-sprint44-practice-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.library_solution to "work/gsm8k-sprint44-library-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.weights_solution to "work/gsm8k-sprint44-weights-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.statues_solution to "work/gsm8k-sprint44-statues-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.party_solution to "work/gsm8k-sprint44-party-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.fish_solution to "work/gsm8k-sprint44-fish-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A12.chickens_solution to "work/gsm8k-sprint44-chickens-graph.json"
 
 end LemmaWeave.Tests.GSM8KSprint0920A12

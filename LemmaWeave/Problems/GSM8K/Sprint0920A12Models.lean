@@ -54,4 +54,29 @@ def LibraryVisits
   additivePerWeek = williamPerWeek + multiplier * williamPerWeek ∧
   additiveTotal = weeks * additivePerWeek ∧ fourfoldTotal ≠ additiveTotal
 
+def WeightHistory
+    (yolaCurrent currentDifference wanda pastDifference yolaPast : Nat) : Prop :=
+  wanda = yolaCurrent + currentDifference ∧ wanda = yolaPast + pastDifference
+
+def StatueEarnings
+    (stoneCount stonePrice stoneRevenue woodCount woodPrice woodRevenue gross taxPercent tax net : Nat) : Prop :=
+  stoneRevenue = stoneCount * stonePrice ∧ woodRevenue = woodCount * woodPrice ∧
+  gross = stoneRevenue + woodRevenue ∧ tax * 100 = gross * taxPercent ∧ gross = net + tax
+
+def MichonneParty
+    (school neighborhood invited companionsPerFriend companions guests host includingHost : Nat) : Prop :=
+  invited = school + neighborhood ∧ companions = invited * companionsPerFriend ∧
+  guests = invited + companions ∧ includingHost = guests + host ∧ guests ≠ includingHost
+
+def FishSales
+    (first multiplier tripleNext tripleTotal additiveNext additiveTotal : Nat) : Prop :=
+  tripleNext = multiplier * first ∧ tripleTotal = first + tripleNext ∧
+  additiveNext = first + multiplier * first ∧ additiveTotal = first + additiveNext ∧
+  tripleTotal ≠ additiveTotal
+
+def ChickenCount
+    (initial multiplier doubled eaten afterDog ten less added final : Nat) : Prop :=
+  doubled = initial * multiplier ∧ doubled = afterDog + eaten ∧
+  ten = added + less ∧ final = afterDog + added
+
 end LemmaWeave.Problems.GSM8K.Sprint0920A12

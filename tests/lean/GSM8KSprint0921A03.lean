@@ -95,6 +95,49 @@ theorem watermelons_weeks : (30 : Nat) = 6 * 5 := by
        _ = 6 * 5 := by rw [← watermelons_weekly]
 theorem watermelons_solution : Watermelons 30 3 2 5 6 := by unfold Watermelons; exact ⟨watermelons_weekly, watermelons_weeks⟩
 
+theorem hotdogs_hourly : (20 : Nat) = 10 * 2 := by norm_num
+theorem hotdogs_hours : (200 : Nat) = 10 * 20 := by
+  calc (200 : Nat) = 10 * (10 * 2) := by norm_num
+       _ = 10 * 20 := by rw [← hotdogs_hourly]
+theorem hotdogs_solution : HotDogs 10 2 20 200 10 := by unfold HotDogs; exact ⟨hotdogs_hourly, hotdogs_hours⟩
+
+theorem stickers_other : (42 : Nat) = 7 * 6 := by norm_num
+theorem stickers_used : (45 : Nat) = 3 + 42 := by
+  calc (45 : Nat) = 3 + 7 * 6 := by norm_num
+       _ = 3 + 42 := by rw [← stickers_other]
+theorem stickers_remaining : (89 : Nat) = 45 + 44 := by
+  calc (89 : Nat) = (3 + 42) + 44 := by norm_num
+       _ = 45 + 44 := by rw [← stickers_used]
+theorem stickers_solution : Stickers 89 3 7 6 42 45 44 := by unfold Stickers; exact ⟨stickers_other, stickers_used, stickers_remaining⟩
+
+theorem ages_olaf : (15 : Nat) = 12 + 3 := by norm_num
+theorem ages_shannen : (15 : Nat) = 13 + 2 := by
+  calc (15 : Nat) = 12 + 3 := ages_olaf
+       _ = 13 + 2 := by norm_num
+theorem ages_jack : (31 : Nat) = 2 * 13 + 5 := by
+  calc (31 : Nat) = 2 * (15 - 2) + 5 := by norm_num
+       _ = 2 * 13 + 5 := by rw [ages_shannen]; norm_num
+theorem ages_total : (71 : Nat) = 12 + 15 + 13 + 31 := by
+  calc (71 : Nat) = 12 + (12 + 3) + (15 - 2) + (2 * 13 + 5) := by norm_num
+       _ = 12 + 15 + 13 + 31 := by rw [← ages_olaf, ages_shannen, ← ages_jack]; norm_num
+theorem ages_solution : Ages 12 3 15 2 13 5 31 71 := by unfold Ages; exact ⟨ages_olaf, ages_shannen, ages_jack, ages_total⟩
+
+theorem counts_tiles : (76 : Nat) = 38 * 2 := by norm_num
+theorem counts_books : (225 : Nat) = 75 * 3 := by norm_num
+theorem counts_total : (301 : Nat) = 76 + 225 := by
+  calc (301 : Nat) = 38 * 2 + 75 * 3 := by norm_num
+       _ = 76 + 225 := by rw [← counts_tiles, ← counts_books]
+theorem counts_solution : Counting 38 2 76 75 3 225 301 := by unfold Counting; exact ⟨counts_tiles, counts_books, counts_total⟩
+
+theorem center_total_flowers : (2700 : Nat) = 180 * 15 := by norm_num
+theorem center_per : (180 : Nat) = 6 * 30 := by
+  calc (180 : Nat) = 2700 / 15 := by norm_num
+       _ = 6 * 30 := by rw [center_total_flowers]; norm_num
+theorem center_orchids : (16 : Nat) = 8 * 2 := by norm_num
+theorem center_lilies : (30 : Nat) = 8 + 16 + 6 := by
+  calc (30 : Nat) = (180 / 6) := by norm_num
+       _ = 8 + 16 + 6 := by rw [center_per, center_orchids]; norm_num
+theorem center_solution : Centerpieces 6 2700 15 180 30 8 2 16 6 := by unfold Centerpieces; exact ⟨center_total_flowers, center_per, center_orchids, center_lilies⟩
 
 #print axioms sprinkles_solution
 #print axioms students_solution
@@ -106,6 +149,11 @@ theorem watermelons_solution : Watermelons 30 3 2 5 6 := by unfold Watermelons; 
 #print axioms jelly_solution
 #print axioms cookies_solution
 #print axioms watermelons_solution
+#print axioms hotdogs_solution
+#print axioms stickers_solution
+#print axioms ages_solution
+#print axioms counts_solution
+#print axioms center_solution
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.sprinkles_solution to "work/gsm8k-sprint54-sprinkles-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.students_solution to "work/gsm8k-sprint54-students-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.water_solution to "work/gsm8k-sprint54-water-graph.json"
@@ -116,4 +164,9 @@ theorem watermelons_solution : Watermelons 30 3 2 5 6 := by unfold Watermelons; 
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.jelly_solution to "work/gsm8k-sprint54-jelly-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.cookies_solution to "work/gsm8k-sprint54-cookies-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.watermelons_solution to "work/gsm8k-sprint54-watermelons-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.hotdogs_solution to "work/gsm8k-sprint54-hotdogs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.stickers_solution to "work/gsm8k-sprint54-stickers-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.ages_solution to "work/gsm8k-sprint54-ages-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.counts_solution to "work/gsm8k-sprint54-counts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A03.center_solution to "work/gsm8k-sprint54-center-graph.json"
 end LemmaWeave.Tests.GSM8KSprint0921A03

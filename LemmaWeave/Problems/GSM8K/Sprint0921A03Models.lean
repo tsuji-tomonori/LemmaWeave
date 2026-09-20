@@ -22,5 +22,17 @@ def Cookies (total wifePercent wife afterWife daughter afterDaughter javier unea
   afterDaughter = javier * 2 ∧ afterDaughter = javier + uneaten
 def Watermelons (total eats gives weekly weeks : Nat) : Prop :=
   weekly = eats + gives ∧ total = weeks * weekly
+def HotDogs (perHour price hourlySales goal hours : Nat) : Prop :=
+  hourlySales = perHour * price ∧ goal = hours * hourlySales
+def Stickers (initial front perPage pages otherUsed totalUsed remaining : Nat) : Prop :=
+  otherUsed = perPage * pages ∧ totalUsed = front + otherUsed ∧ initial = totalUsed + remaining
+def Ages (beckett youngerOlaf olaf youngerShannen shannen jackExtra jack total : Nat) : Prop :=
+  olaf = beckett + youngerOlaf ∧ olaf = shannen + youngerShannen ∧ jack = 2 * shannen + jackExtra ∧
+  total = beckett + olaf + shannen + jack
+def Counting (tiles tileRepeats tileCounts books bookRepeats bookCounts total : Nat) : Prop :=
+  tileCounts = tiles * tileRepeats ∧ bookCounts = books * bookRepeats ∧ total = tileCounts + bookCounts
+def Centerpieces (count budget price totalFlowers perCenterpiece roses orchidMultiplier orchids lilies : Nat) : Prop :=
+  budget = totalFlowers * price ∧ totalFlowers = count * perCenterpiece ∧ orchids = roses * orchidMultiplier ∧
+  perCenterpiece = roses + orchids + lilies
 
 end LemmaWeave.Problems.GSM8K.Sprint0921A03

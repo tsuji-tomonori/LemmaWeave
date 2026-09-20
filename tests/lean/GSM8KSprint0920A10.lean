@@ -81,6 +81,47 @@ theorem roof_solution : RoofArea 205 10 205 6 45 27 232 := by
   unfold RoofArea
   exact ⟨roof_house, roof_porch, roof_total⟩
 
+theorem songs_after_two : (1000 : Nat) = 500 + 500 := by norm_num
+theorem songs_added : (2000 : Nat) = 2 * 1000 := by norm_num
+theorem songs_before_removal : (3000 : Nat) = 1000 + 2000 := by norm_num
+theorem songs_final : (3000 : Nat) = 2950 + 50 := by norm_num
+theorem songs_solution : PlayerSongs 500 500 1000 2 2000 3000 50 2950 := by
+  unfold PlayerSongs
+  exact ⟨songs_after_two, songs_added, songs_before_removal, songs_final⟩
+
+theorem party_drinks : (20 : Nat) = 2 * 10 := by norm_num
+theorem party_cakes : (50 : Nat) = 10 * 5 := by norm_num
+theorem party_ice : (500 : Nat) = 5 * 100 := by norm_num
+theorem party_total : (570 : Nat) = 20 + 50 + 500 := by norm_num
+theorem party_solution : PartyCost 2 10 20 10 5 50 5 100 500 570 := by
+  unfold PartyCost
+  exact ⟨party_drinks, party_cakes, party_ice, party_total⟩
+
+theorem recycling_soda : (45 : Nat) * 2 = 90 := by norm_num
+theorem recycling_sparkling : (30 : Nat) * 3 = 90 := by norm_num
+theorem recycling_juice : (40 : Nat) * 5 = 50 * 4 := by norm_num
+theorem recycling_total : (115 : Nat) = 45 + 30 + 40 := by norm_num
+theorem recycling_solution : RecycledContainers 90 2 45 3 30 50 4 5 40 115 := by
+  unfold RecycledContainers
+  exact ⟨recycling_soda, recycling_sparkling, recycling_juice, recycling_total⟩
+
+theorem employment_old_months : (36 : Nat) = 3 * 12 := by norm_num
+theorem employment_old_total : (180000 : Nat) = 36 * 5000 := by norm_num
+theorem employment_new_months : (41 : Nat) = 36 + 5 := by norm_num
+theorem employment_increase : (1000 : Nat) * 100 = 5000 * 20 := by norm_num
+theorem employment_new_monthly : (6000 : Nat) = 5000 + 1000 := by norm_num
+theorem employment_new_total : (246000 : Nat) = 41 * 6000 := by norm_num
+theorem employment_combined : (426000 : Nat) = 180000 + 246000 := by norm_num
+theorem employment_solution : EmploymentEarnings 3 12 36 5000 180000 5 41 20 1000 6000 246000 426000 := by
+  unfold EmploymentEarnings
+  exact ⟨employment_old_months, employment_old_total, employment_new_months, employment_increase, employment_new_monthly, employment_new_total, employment_combined⟩
+
+theorem quilt_area : (56 : Nat) = 7 * 8 := by norm_num
+theorem quilt_cost : (2240 : Nat) = 56 * 40 := by norm_num
+theorem quilt_solution : QuiltCost 7 8 56 40 2240 := by
+  unfold QuiltCost
+  exact ⟨quilt_area, quilt_cost⟩
+
 #print axioms animals_solution
 #print axioms cold_brew_solution
 #print axioms alligators_solution
@@ -91,6 +132,11 @@ theorem roof_solution : RoofArea 205 10 205 6 45 27 232 := by
 #print axioms pencils_solution
 #print axioms climbing_solution
 #print axioms roof_solution
+#print axioms songs_solution
+#print axioms party_solution
+#print axioms recycling_solution
+#print axioms employment_solution
+#print axioms quilt_solution
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.animals_solution to "work/gsm8k-sprint42-animals-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.cold_brew_solution to "work/gsm8k-sprint42-cold_brew-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.alligators_solution to "work/gsm8k-sprint42-alligators-graph.json"
@@ -101,5 +147,10 @@ theorem roof_solution : RoofArea 205 10 205 6 45 27 232 := by
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.pencils_solution to "work/gsm8k-sprint42-pencils-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.climbing_solution to "work/gsm8k-sprint42-climbing-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.roof_solution to "work/gsm8k-sprint42-roof-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.songs_solution to "work/gsm8k-sprint42-songs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.party_solution to "work/gsm8k-sprint42-party-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.recycling_solution to "work/gsm8k-sprint42-recycling-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.employment_solution to "work/gsm8k-sprint42-employment-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0920A10.quilt_solution to "work/gsm8k-sprint42-quilt-graph.json"
 
 end LemmaWeave.Tests.GSM8KSprint0920A10

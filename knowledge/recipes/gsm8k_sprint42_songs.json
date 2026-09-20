@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint42_songs",
+  "title_ja": "MP3プレーヤーの曲数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00919",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "500曲を2回入れ、已有量の2倍を追加し、50曲削除した残数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.songs_solution",
+  "graph": "work/gsm8k-sprint42-songs-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "songs_after_two",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.songs_after_two",
+      "title_ja": "最初の2回",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "500曲からさらに500曲を加える。",
+      "conclusion_ja": "1000曲。",
+      "baseline_ja": "500+500=1000。"
+    },
+    {
+      "id": "songs_added",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.songs_added",
+      "title_ja": "追加した曲",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "已有1000曲の2倍を追加する。",
+      "conclusion_ja": "2000曲を追加。",
+      "baseline_ja": "2×1000=2000。"
+    },
+    {
+      "id": "songs_before_removal",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.songs_before_removal",
+      "title_ja": "削除前",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "既存1000曲と追加2000曲。",
+      "conclusion_ja": "3000曲。",
+      "baseline_ja": "1000+2000=3000。"
+    },
+    {
+      "id": "songs_final",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.songs_final",
+      "title_ja": "削除後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "50曲を削除する。",
+      "conclusion_ja": "2950曲。",
+      "baseline_ja": "3000=2950+50。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 920,
+    "checked_model_hash": "99537224468d741c14fe17721e9d78f3b542f2946fd1e4df9a251fde49f95551",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-1400-gsm8k-45",
+  "planned_slot_local_hour": 14,
+  "planned_at": "2026-09-20T14:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "640a1d4f2501411dcbb98f6fbfe22de68129bbc5",
+  "started_at": "2026-09-20T13:55:49+09:00",
+  "finished_at": "2026-09-20T14:04:00+09:00",
+  "schedule_offset_seconds": -251,
+  "missed_slots_detected": [
+    10
+  ],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00954",
+    "external-gsm8k-main-3101c7d50724:train:00955",
+    "external-gsm8k-main-3101c7d50724:train:00956",
+    "external-gsm8k-main-3101c7d50724:train:00957",
+    "external-gsm8k-main-3101c7d50724:train:00958",
+    "external-gsm8k-main-3101c7d50724:train:00959",
+    "external-gsm8k-main-3101c7d50724:train:00960",
+    "external-gsm8k-main-3101c7d50724:train:00961",
+    "external-gsm8k-main-3101c7d50724:train:00962",
+    "external-gsm8k-main-3101c7d50724:train:00963",
+    "external-gsm8k-main-3101c7d50724:train:00964",
+    "external-gsm8k-main-3101c7d50724:train:00965",
+    "external-gsm8k-main-3101c7d50724:train:00966",
+    "external-gsm8k-main-3101c7d50724:train:00967",
+    "external-gsm8k-main-3101c7d50724:train:00968"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00954",
+    "external-gsm8k-main-3101c7d50724:train:00955",
+    "external-gsm8k-main-3101c7d50724:train:00956",
+    "external-gsm8k-main-3101c7d50724:train:00957",
+    "external-gsm8k-main-3101c7d50724:train:00958",
+    "external-gsm8k-main-3101c7d50724:train:00959",
+    "external-gsm8k-main-3101c7d50724:train:00960",
+    "external-gsm8k-main-3101c7d50724:train:00961",
+    "external-gsm8k-main-3101c7d50724:train:00962",
+    "external-gsm8k-main-3101c7d50724:train:00963",
+    "external-gsm8k-main-3101c7d50724:train:00964",
+    "external-gsm8k-main-3101c7d50724:train:00965",
+    "external-gsm8k-main-3101c7d50724:train:00966",
+    "external-gsm8k-main-3101c7d50724:train:00967",
+    "external-gsm8k-main-3101c7d50724:train:00968"
+  ],
+  "verification_pending_cumulative": {
+    "count": 455,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:00968"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00954-00968",
+      "retry_on": "2026-09-20",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のため、solution_readyへ昇格できない。",
+      "next_action_ja": "現HEADのLean CIを完走させ、入力SHA・公理・実依存・42説明行を照合し、成功成果物だけを取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00696",
+      "retry_on": "2026-09-20",
+      "reason_ja": "直前CIでapples_after_fallとapples_stolenが最終証明依存に現れない不整合を検出した。",
+      "next_action_ja": "最終証明を両行定理へ明示的に接続済み。現HEADの依存グラフで接続を再確認する。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:00954-00958",
+      "commit": "eec8e8d21090164540059e06c679101b09515bfb"
+    },
+    {
+      "problem_ids": "train:00959-00963",
+      "commit": "a071aa4782f2a9060f5a852aacff53a9d7dcb738"
+    },
+    {
+      "problem_ids": "train:00964-00968",
+      "commit": "878c00d4ecf75959a599167d10b00cfea7e93d5d"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 42,
+    "recipe_declaration_mappings_checked": 42,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_sha256": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce"
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger_then_to_repeat",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records and 42 declarations passed",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_missing_existing_artifact",
+    "method_recipe_render_missing_path": "reports/dependencies/methods/dnc2026_inequalities_individual.json.gz",
+    "next_action_ja": "固定CIで全Lean対象と依存グラフを生成し、全レシピを照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "640a1d4f2501411dcbb98f6fbfe22de68129bbc5",
+    "previous_run_id": 35488344702,
+    "previous_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35488344702",
+    "previous_status": "failure",
+    "previous_failure": "recipe gsm8k_sprint27_apples: written line has no theorem in final proof",
+    "previous_artifact_id": 10598038556,
+    "previous_artifact_sha256": "802915f7f8a5eebd1b1900c9ca34ba6a4af606e19c280490816fdf29cdc1d50c",
+    "accepted_as_success_evidence": false,
+    "current_status": "awaiting_exact_head_run"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "878c00d4ecf75959a599167d10b00cfea7e93d5d",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 440
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 455
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00969",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・名前付き行定理・原文ハッシュ・自己照合を保存した。train:00964は速度を自然数とする適用条件を明記し、記録を破る最小増加量4本/分を全称命題で証明した。直前CIで検出されたtrain:00696の説明行定理2件を最終証明へ明示的に接続した。10時枠は未実行のまま日次欠落として保持する。"
+}

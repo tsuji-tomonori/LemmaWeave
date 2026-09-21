@@ -137,6 +137,7 @@ COMMANDS = [
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A12Models'],
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A13Models'],
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A14Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A15Models'],
     ['lake', 'build', 'LemmaWeave.Problems.DNC2026M1.GeometryAreaModel'],
     ['python3', 'scripts/run_method_targets.py'],
     ['python3', 'scripts/check_method_recipes.py', '--render'],

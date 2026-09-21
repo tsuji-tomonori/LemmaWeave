@@ -1,0 +1,101 @@
+{
+  "date": "2026-09-22",
+  "run_id": "lemmaweave-sprint-20260922-0800-gsm8k-80",
+  "scheduled_slot": {
+    "role": "gsm8k_individual_solution",
+    "hour_jst": 8,
+    "planned_at": "2026-09-22T08:00:00+09:00",
+    "started_at": "2026-09-22T08:04:04+09:00",
+    "slot_shift_ja": "予定枠の4分後に起動したため8時枠として実行した。7時枠は実行済みであり二重実行していない。"
+  },
+  "base_sha": "f97b88806465eef067813f3acf1ccf4268ec8d01",
+  "started_at": "2026-09-22T08:04:04+09:00",
+  "finished_at": "2026-09-22T08:12:39+09:00",
+  "selected_problem_ids": [
+    "train:01479", "train:01480", "train:01481", "train:01482", "train:01483",
+    "train:01484", "train:01485", "train:01486", "train:01487", "train:01488",
+    "train:01489", "train:01490", "train:01491", "train:01492", "train:01493"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01479", "train:01480", "train:01481", "train:01482", "train:01483",
+    "train:01484", "train:01485", "train:01486", "train:01487", "train:01488",
+    "train:01489", "train:01490", "train:01491", "train:01492", "train:01493"
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:01479-train:01493",
+      "retry_on": "exact-head fixed Lean 4.33.1 CI success and evidence import",
+      "reason_ja": "現在HEADに固定Lean成功証拠がない。ローカル環境にもlakeがなく、直近の完全replayは既存Sprint0921A20Models.leanで失敗しているため、今回15問をsolution_readyへ昇格しない。",
+      "next_action_ja": "既存A20の非線形証明を修復後、完全replayを実行し、成功証拠を問題単位で取り込む。"
+    }
+  ],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "lines_1based": [1480, 1494],
+    "record_hash_matches": 15,
+    "question_hash_matches": 15
+  },
+  "self_review": {
+    "status": "self_review_only",
+    "problems_checked": 15,
+    "individual_solution_steps": 52,
+    "lean_declaration_matches": 52,
+    "sorry_admit_custom_axiom_count": 0,
+    "notes_ja": [
+      "各原題を再読し、数値・単位・条件・求める結論とLeanモデルを自己照合した。",
+      "train:01480のtwice moreは、twice as manyなら差4、2倍分の上乗せなら差8となるため両解を保存した。",
+      "train:01486は無料散髪を除く資格算入回数79回と、無料5回を含む全施術84回を分離した。",
+      "train:01487は産卵数が羽数と日数に比例し、追加15羽も同一率で産卵する条件を明示した。",
+      "train:01493は残り300miの速度不足を指摘し、100mi/hなら4時間、50mi/hなら7時間の適合例を形式化した。"
+    ]
+  },
+  "checkpoints": [
+    {"problem_ids": ["train:01479", "train:01480", "train:01481", "train:01482", "train:01483"], "commit": "dfdc735216730dbd5a50496c19dac3911f501769"},
+    {"problem_ids": ["train:01484", "train:01485", "train:01486", "train:01487", "train:01488"], "commit": "06899a9eaa27eac20b6131268d8a36cdb5835baa"},
+    {"problem_ids": ["train:01489", "train:01490", "train:01491", "train:01492", "train:01493"], "commit": "4789b9bfae9a3a8fb5a133c4f644a91d25c4c91e"}
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 980,
+    "pending": 7294,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 965},
+    "after": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 980},
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01494",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": ["train:01479", "train:01493"],
+    "base_sha": "f97b88806465eef067813f3acf1ccf4268ec8d01",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "not_started",
+    "local_fixed_lean_status": "unavailable_lake_not_installed",
+    "last_full_replay_run_id": 35638746183,
+    "last_full_replay_conclusion": "failure",
+    "last_failure_ja": "既存Sprint0921A20Models.leanの非線形計算連鎖。",
+    "artifact_id": 10657995173,
+    "artifact_size_bytes": 196512855
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "4789b9bfae9a3a8fb5a133c4f644a91d25c4c91e"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-0900-entrance-03",
+  "planned_slot_local_hour": 9,
+  "planned_at": "2026-09-21T09:00:00+09:00",
+  "role": "japanese_entrance_exam_high_school",
+  "base_sha": "69b5ce8972ebffb7fb0c761476246f6080422d16",
+  "started_at": "2026-09-21T09:03:07+09:00",
+  "finished_at": "2026-09-21T09:09:13+09:00",
+  "schedule_offset_seconds": 187,
+  "schedule_note_ja": "予定時刻から3分7秒後に開始した。09時専用枠として実行し、GSM8Kの解答枠へは加算していない。",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q02-S02-01"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q02-S02-01"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "JP-DNC-CT-2026-MAIN-M1-Q02-S02-01"
+  ],
+  "deferred": [],
+  "claim": {
+    "problem_ids": ["JP-DNC-CT-2026-MAIN-M1-Q02-S02-01"],
+    "claimed_at": "2026-09-21T09:03:07+09:00",
+    "expires_at": "2026-09-21T10:03:07+09:00",
+    "status": "released_after_serial_write"
+  },
+  "source": {
+    "provider": "大学入試センター",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "pdf_page_1_based": [7, 8],
+    "printed_page_label": ["36", "37"],
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q02-S02-01.json",
+    "source_review_basis": "公式掲載ページと公式PDFを2026-09-21に再取得し、保存済みの2026-09-05目視記録、出題位置、文書SHA-256を照合した。原文と図は転載せず、独自の数学的要約と形式化だけを保存した。",
+    "rights_status": "candidate_restricted_unchanged"
+  },
+  "written_solution_ja": [
+    "対角線で分けた一方の三角形の面積は、二辺とその間の角による公式からS₁=(1/2)AB·AD·sin Aである。",
+    "もう一方の三角形の面積も同様にS₂=(1/2)BC·CD·sin Cである。",
+    "凸四角形の内角和は2πであり、条件A+C=B+Dと合わせると2(A+C)=2π、したがってA+C=πである。",
+    "よってC=π-Aであり、補角の正弦公式からsin C=sin(π-A)=sin Aである。",
+    "四角形の面積はS=S₁+S₂だから、前各式を代入してS=(1/2)(AB·AD+BC·CD)sin Aとなる。"
+  ],
+  "entrance_exam_ledger_snapshot": {
+    "registered": 13,
+    "collected_kernel_checked": 5,
+    "candidate_not_started": 8,
+    "candidate_count_note_ja": "独自解答は作成したが、権利確認と正式収集状態を変更していないため候補8件の集計は維持する。",
+    "individual_solutions_authored_this_week": 3,
+    "current_week_by_six_fields": {
+      "sets_logic_integers": 1,
+      "functions_equations_inequalities": 1,
+      "geometry_vectors_trigonometry": 1,
+      "combinatorics_probability_statistics": 0,
+      "sequences": 0,
+      "calculus": 0
+    },
+    "unconfirmed_scope_ja": "旧51掲載経路・36大学と現行13 IDの完全対応、2024〜2026共通テストおよび東京・京都・名古屋大学の全小問、高校6分野の対象全集合は未列挙。"
+  },
+  "gsm8k_progress_unchanged": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 680,
+    "next_problem_id": "train:01194",
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "artifacts": {
+    "recipe": "knowledge/recipes/dnc2026_geometry_area_individual.json",
+    "model_file": "LemmaWeave/Problems/DNC2026M1/GeometryAreaModel.lean",
+    "lean_file": "tests/lean/DNC2026GeometryAreaIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "model_sha256": "b42922ff4bdd4b353201b40742a68f52d8f79baea4c2fdb08c9364165c893236",
+    "written_lines": 5,
+    "lean_line_theorems": 5,
+    "new_bytes": 10894,
+    "semantic_review_status": "self_review_only"
+  },
+  "validation": {
+    "official_source_refetched": true,
+    "registered_problem_record_matched": true,
+    "registered_id_set_count": 13,
+    "registered_id_duplicates": 0,
+    "candidate_count": 8,
+    "recipe_json_parse": "success",
+    "recipe_steps": 5,
+    "recipe_declaration_links": 5,
+    "python_unittest": "52 passed",
+    "ledger_validation": "success",
+    "forbidden_lean_tokens_found": [],
+    "local_lean_available": false,
+    "fixed_lean_status": "pending_exact_head_ci",
+    "semantic_review_status": "self_review_only",
+    "method_target_note_ja": "ローカルには固定Lean環境がなく、新規依存グラフは未生成。run_method_targetsは同一作業木に残る直前2バッチの未生成グラフを先に検出したため、exact-head CIで全件再実行する。"
+  },
+  "ci": {
+    "prior_head_sha": "69b5ce8972ebffb7fb0c761476246f6080422d16",
+    "prior_head_workflow_runs": 0,
+    "solution_commit_sha": null,
+    "current_status": "pending_commit_and_exact_head_ci",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": null,
+  "next_entrance_exam_field": "combinatorics_probability_statistics",
+  "next_entrance_exam_candidate_ja": "現行台帳の確率・統計候補から、未作成の個別記述解答を1小問選び、公式資料を目視確認する。",
+  "note_ja": "図形・ベクトル・三角比の専用枠として、公式PDFの1小問を原資料から確認した。二つの三角形の面積、四角形の内角和、補角の正弦、面積の加法性を5つの日本語説明行とLean定理へ対応させた。候補問題の権利確認、独立レビュー、固定Lean成功証拠は未完のため正式完了には数えない。"
+}

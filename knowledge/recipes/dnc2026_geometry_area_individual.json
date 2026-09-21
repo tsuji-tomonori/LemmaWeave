@@ -1,0 +1,125 @@
+{
+  "id": "dnc2026_geometry_area_individual",
+  "title_ja": "対角の和が等しい凸四角形の面積関係",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q02-S02-01",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "凸四角形を対角線で二つの三角形に分ける。向かい合う二組の角の和が等しいとき、全体の面積を四辺の長さと一つの角の正弦で表す。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "pdf_page_1_based": [7, 8],
+    "printed_page_label": ["36", "37"],
+    "subquestion": "第2問〔2〕(1)",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q02-S02-01.json",
+    "visual_review_status": "stored_visual_review_confirmed_2026-09-05_and_official_pdf_refetched_2026-09-21",
+    "rights_note_ja": "原文と図は転載せず、出題位置、独自の要約、数学的定義と証明のみを保存する。候補問題のrelease=restrictedは変更しない。"
+  },
+  "variables": [
+    {"name": "AB, AD, BC, CD", "type": "ℝ", "domain_ja": "正の辺長"},
+    {"name": "A, B, C, D", "type": "ℝ", "domain_ja": "0より大きくπより小さい内角（ラジアン）"},
+    {"name": "S₁, S₂, S", "type": "ℝ", "domain_ja": "二つの三角形と四角形の面積"}
+  ],
+  "assumptions_ja": [
+    "四角形は凸で、内角和はA+B+C+D=2πである。",
+    "向かい合う角の和が等しく、A+C=B+Dである。",
+    "対角線で分けた二つの三角形の面積は、それぞれS₁=(1/2)AB·AD·sin A、S₂=(1/2)BC·CD·sin Cである。",
+    "四角形の面積はS=S₁+S₂である。"
+  ],
+  "required_conclusions_ja": [
+    "A+C=πとsin C=sin Aを導く。",
+    "S=(1/2)(AB·AD+BC·CD)sin Aを導く。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026GeometryAreaIndividual.individual_solution",
+  "graph": "work/dnc2026-geometry-area-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026GeometryAreaIndividual.lean",
+  "model_file": "LemmaWeave/Problems/DNC2026M1/GeometryAreaModel.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "new_self_reviewed_model_derived_without_source_text_or_figure_republication",
+  "counting_note_ja": "GSM8K固定8,792問とは別集計。候補問題の収集済み件数へは昇格させず、高校数学の週次個別解答実績だけを1増やす。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "first_triangle_area",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026GeometryAreaIndividual.first_triangle_area",
+      "title_ja": "第1の三角形の面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "対角線の一方側の三角形では、二辺AB, ADとその間の角Aを使う。",
+      "method_ja": "三角形の面積公式 (1/2)ab sin θ。",
+      "condition_ja": "ABとADは正の辺長で、Aは両辺の間の内角である。",
+      "premise_ja": "原題の辺と角の配置。",
+      "conclusion_ja": "S₁=(1/2)AB·AD·sin A。",
+      "baseline_ja": "二辺とその間の角による三角形の面積公式を用いた。"
+    },
+    {
+      "id": "second_triangle_area",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026GeometryAreaIndividual.second_triangle_area",
+      "title_ja": "第2の三角形の面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "対角線のもう一方側の三角形では、二辺BC, CDとその間の角Cを使う。",
+      "method_ja": "三角形の面積公式 (1/2)ab sin θ。",
+      "condition_ja": "BCとCDは正の辺長で、Cは両辺の間の内角である。",
+      "premise_ja": "原題の辺と角の配置。",
+      "conclusion_ja": "S₂=(1/2)BC·CD·sin C。",
+      "baseline_ja": "二辺とその間の角による三角形の面積公式を用いた。"
+    },
+    {
+      "id": "supplementary_opposite_sum",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026GeometryAreaIndividual.supplementary_opposite_sum",
+      "title_ja": "対角の和はπ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "A+C=B+Dであり、四角形の内角和は2πである。",
+      "method_ja": "等しい二つの和を内角和へ代入する一次等式変形。",
+      "condition_ja": "凸四角形なので四つの内角の和が2πである。",
+      "premise_ja": "A+B+C+D=2πかつA+C=B+D。",
+      "conclusion_ja": "A+C=π。",
+      "baseline_ja": "四角形の内角和と等式の代入を用いた。"
+    },
+    {
+      "id": "supplementary_sines",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026GeometryAreaIndividual.supplementary_sines",
+      "title_ja": "補角の正弦",
+      "requires_steps": ["supplementary_opposite_sum"],
+      "uses_nodes": [],
+      "claim_ja": "A+C=πからC=π-Aである。",
+      "method_ja": "補角公式sin(π-A)=sin A。",
+      "condition_ja": "角はラジアンで表し、AとCは0より大きくπより小さい。",
+      "premise_ja": "前行のA+C=π。",
+      "conclusion_ja": "sin C=sin A。",
+      "baseline_ja": "LeanではReal.sin_pi_subを適用した。"
+    },
+    {
+      "id": "area_sum",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026GeometryAreaIndividual.area_sum",
+      "title_ja": "四角形の面積",
+      "requires_steps": ["first_triangle_area", "second_triangle_area", "supplementary_sines"],
+      "uses_nodes": [],
+      "claim_ja": "四角形の面積は二つの三角形の面積の和である。",
+      "method_ja": "S=S₁+S₂へ前各行を代入し、(1/2)sin Aをくくる。",
+      "condition_ja": "対角線による二分割は重なりがなく、全体の面積は和になる。",
+      "premise_ja": "S₁とS₂の面積公式、およびsin C=sin A。",
+      "conclusion_ja": "S=(1/2)(AB·AD+BC·CD)sin A。",
+      "baseline_ja": "面積の加法性、代入、分配法則を用いた。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-21T09:07:39+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q02-S02-01",
+    "checked_model_hash": "b42922ff4bdd4b353201b40742a68f52d8f79baea4c2fdb08c9364165c893236",
+    "checks_ja": [
+      "公式PDF7〜8ページ・冊子36〜37頁の四角形、対角線による分割、角の条件、求める面積関係を目視で再確認した。",
+      "凸性を辺長と各内角の範囲、内角和として明示し、原題の対角の和の条件を結論側へ移していない。",
+      "二つの三角形の面積、補角、正弦、面積和の各説明行を別々の名前付きLean定理へ対応させた。",
+      "最終定理が各行定理へ実際に依存する構成にし、図から読めない追加条件を黙って足していない。",
+      "原文と図は保存せず、候補問題の権利確認・独立レビュー・固定Lean実行は未完のまま明示した。"
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-1100-gsm8k-62",
+  "planned_slot_local_hour": 11,
+  "planned_at": "2026-09-21T11:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "338c91b0d4c4537fbc46bc298a2e3b46f992c135",
+  "started_at": "2026-09-21T11:03:04+09:00",
+  "finished_at": "2026-09-21T11:10:00+09:00",
+  "schedule_offset_seconds": 184,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01209",
+    "external-gsm8k-main-3101c7d50724:train:01210",
+    "external-gsm8k-main-3101c7d50724:train:01211",
+    "external-gsm8k-main-3101c7d50724:train:01212",
+    "external-gsm8k-main-3101c7d50724:train:01213",
+    "external-gsm8k-main-3101c7d50724:train:01214",
+    "external-gsm8k-main-3101c7d50724:train:01215",
+    "external-gsm8k-main-3101c7d50724:train:01216",
+    "external-gsm8k-main-3101c7d50724:train:01217",
+    "external-gsm8k-main-3101c7d50724:train:01218",
+    "external-gsm8k-main-3101c7d50724:train:01219",
+    "external-gsm8k-main-3101c7d50724:train:01220",
+    "external-gsm8k-main-3101c7d50724:train:01221",
+    "external-gsm8k-main-3101c7d50724:train:01222",
+    "external-gsm8k-main-3101c7d50724:train:01223"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01209",
+    "external-gsm8k-main-3101c7d50724:train:01210",
+    "external-gsm8k-main-3101c7d50724:train:01211",
+    "external-gsm8k-main-3101c7d50724:train:01212",
+    "external-gsm8k-main-3101c7d50724:train:01213",
+    "external-gsm8k-main-3101c7d50724:train:01214",
+    "external-gsm8k-main-3101c7d50724:train:01215",
+    "external-gsm8k-main-3101c7d50724:train:01216",
+    "external-gsm8k-main-3101c7d50724:train:01217",
+    "external-gsm8k-main-3101c7d50724:train:01218",
+    "external-gsm8k-main-3101c7d50724:train:01219",
+    "external-gsm8k-main-3101c7d50724:train:01220",
+    "external-gsm8k-main-3101c7d50724:train:01221",
+    "external-gsm8k-main-3101c7d50724:train:01222",
+    "external-gsm8k-main-3101c7d50724:train:01223"
+  ],
+  "verification_pending_cumulative": {
+    "count": 710,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01223"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01209-01223",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを完走し、入力SHA・許容公理・57説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:01209-01213",
+      "commit": "3c5b07bbab9c057ee068c7a87931b57ff726d1f5"
+    },
+    {
+      "problem_ids": "train:01214-01218",
+      "commit": "7b7c045206e52cb8f1311f81b1ca0453d81e4aa4"
+    },
+    {
+      "problem_ids": "train:01219-01223 and registration",
+      "commit": "91610c7af8e05b42e1004fc5e5e431011aa9c3c7"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 57,
+    "recipe_declaration_mappings_checked": 57,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_hash": "2153076e597ce56c134699a81576d7dbd5e1caa7969489d5599f2235322fe10a",
+    "semantic_blockers": [
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01213",
+        "reason_ja": "設問はLyssaが何問多いかを尋ねるが、Lyssaは60問、Preciousは63問正答であり、実際にはLyssaが3問少ない。参照解答の比較方向の誤りを訂正し、大小関係を形式化した。"
+      }
+    ]
+  },
+  "measurements": {
+    "elapsed_seconds": 416,
+    "artifact_bytes": 56885,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0,
+    "local_execution_success_rate": 1,
+    "ci_seconds": null
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records, 15 raw questions, 15 normalized questions, and 57 declarations checked",
+    "solve_queue_write": "passed on exact PR head checkout",
+    "queue_partition": "solution_ready 518, awaiting_verification 710, pending 7564; total 8792",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_until_fixed_ci_graphs",
+    "method_recipe_render_detail": "新規および直前の依存グラフが未生成のためdnc2026_geometry_area_individual.json.gz読込でFileNotFoundError。検査規則は緩和していない。",
+    "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "338c91b0d4c4537fbc46bc298a2e3b46f992c135",
+    "previous_run_id": null,
+    "previous_status": "not_triggered",
+    "accepted_as_success_evidence": false,
+    "solution_commit_sha": "91610c7af8e05b42e1004fc5e5e431011aa9c3c7",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "91610c7af8e05b42e1004fc5e5e431011aa9c3c7",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 695
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 710
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01224",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・57個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01213は参照解答と設問の比較方向が逆であることを検出し、Lyssa60問、Precious63問、Lyssaが3問少ないという原題からの結論を形式化した。"
+}

@@ -14,8 +14,8 @@ def WineAgeAmbiguity
   referenceTotal = franzia + carlo + referenceTwin ∧
   additiveTotal = franzia + carlo + additiveTwin ∧ referenceTotal ≠ additiveTotal
 
-def BraceletBeads (friends perBracelet needed have more : Nat) : Prop :=
-  needed = friends * perBracelet ∧ needed = have + more
+def BraceletBeads (friends perBracelet needed owned more : Nat) : Prop :=
+  needed = friends * perBracelet ∧ needed = owned + more
 
 def WalletRemainder (initial numerator denominator spent remaining : Nat) : Prop :=
   spent * denominator = initial * numerator ∧ initial = spent + remaining

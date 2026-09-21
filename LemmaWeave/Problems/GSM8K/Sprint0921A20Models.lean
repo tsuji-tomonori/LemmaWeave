@@ -3,7 +3,10 @@ import Mathlib.Tactic
 namespace LemmaWeave.Problems.GSM8K.Sprint0921A20
 
 structure AnnualRaise where
-  newWeekly oldWeekly weeklyGain annualGain : ℕ
+  newWeekly : ℕ
+  oldWeekly : ℕ
+  weeklyGain : ℕ
+  annualGain : ℕ
   hNew : newWeekly = 20 * 40
   hOld : oldWeekly = 16 * 25
   hWeekly : weeklyGain = newWeekly - oldWeekly
@@ -15,7 +18,12 @@ theorem annual_weekly_gain (m : AnnualRaise) : m.weeklyGain = 400 := by omega
 theorem annual_solution (m : AnnualRaise) : m.annualGain = 20800 := by omega
 
 structure GymSpending where
-  adidas nike skechers sneakerTotal clothes total : ℕ
+  adidas : ℕ
+  nike : ℕ
+  skechers : ℕ
+  sneakerTotal : ℕ
+  clothes : ℕ
+  total : ℕ
   hAdidas : adidas = 600
   hNike : nike = 3 * adidas
   hSkechers : skechers = 5 * adidas
@@ -29,7 +37,9 @@ theorem gym_sneakers (m : GymSpending) : m.sneakerTotal = 5400 := by omega
 theorem gym_solution (m : GymSpending) : m.clothes = 2600 := by omega
 
 structure Toads where
-  spotted brown green : ℕ
+  spotted : ℕ
+  brown : ℕ
+  green : ℕ
   hSpotted : spotted = 50
   hQuarter : brown = spotted * 4
   hRatio : brown = green * 25
@@ -38,7 +48,12 @@ theorem toads_brown (m : Toads) : m.brown = 200 := by omega
 theorem toads_solution (m : Toads) : m.green = 8 := by omega
 
 structure Cabinets where
-  current perCounter counters installed extra total : ℕ
+  current : ℕ
+  perCounter : ℕ
+  counters : ℕ
+  installed : ℕ
+  extra : ℕ
+  total : ℕ
   hCurrent : current = 3
   hPer : perCounter = 2 * current
   hCounters : counters = 3
@@ -52,7 +67,13 @@ theorem cabinets_added (m : Cabinets) : m.installed + m.extra = 23 := by omega
 theorem cabinets_solution (m : Cabinets) : m.total = 26 := by omega
 
 structure Kabob where
-  sticks cubesPerStick cubesPerSlab slabs costPerSlab totalCubes totalCost : ℕ
+  sticks : ℕ
+  cubesPerStick : ℕ
+  cubesPerSlab : ℕ
+  slabs : ℕ
+  costPerSlab : ℕ
+  totalCubes : ℕ
+  totalCost : ℕ
   hSticks : sticks = 40
   hCubesPerStick : cubesPerStick = 4
   hCubesPerSlab : cubesPerSlab = 80
@@ -67,7 +88,11 @@ theorem kabob_slabs (m : Kabob) : m.slabs = 2 := by omega
 theorem kabob_solution (m : Kabob) : m.totalCost = 50 := by omega
 
 structure Rowing where
-  first second third firstTwo total : ℕ
+  first : ℕ
+  second : ℕ
+  third : ℕ
+  firstTwo : ℕ
+  total : ℕ
   hFirst : first = 6
   hSecond : second = 15
   hThird : third = 18
@@ -78,7 +103,16 @@ theorem rowing_first_two (m : Rowing) : m.firstTwo = 21 := by omega
 theorem rowing_solution (m : Rowing) : m.total = 39 := by omega
 
 structure ButterflyAmbiguity where
-  jars perJar total failed survivors price literalButterflies literalRevenue correctedButterflies correctedRevenue : ℕ
+  jars : ℕ
+  perJar : ℕ
+  total : ℕ
+  failed : ℕ
+  survivors : ℕ
+  price : ℕ
+  literalButterflies : ℕ
+  literalRevenue : ℕ
+  correctedButterflies : ℕ
+  correctedRevenue : ℕ
   hJars : jars = 4
   hPerJar : perJar = 10
   hTotal : total = jars * perJar
@@ -98,7 +132,10 @@ theorem butterfly_corrected (m : ButterflyAmbiguity) : m.correctedRevenue = 72 :
 theorem butterfly_nonunique (m : ButterflyAmbiguity) : m.literalRevenue ≠ m.correctedRevenue := by omega
 
 structure StuffedAnimals where
-  thor jake quincy difference : ℕ
+  thor : ℕ
+  jake : ℕ
+  quincy : ℕ
+  difference : ℕ
   hQuincy : quincy = 200
   hTenfold : quincy = 10 * thor
   hJake : jake = thor + 10
@@ -109,7 +146,12 @@ theorem stuffed_jake (m : StuffedAnimals) : m.jake = 30 := by omega
 theorem stuffed_solution (m : StuffedAnimals) : m.difference = 170 := by omega
 
 structure FanAirflow where
-  litersPerSecond minutesPerDay days totalMinutes totalSeconds totalLiters : ℕ
+  litersPerSecond : ℕ
+  minutesPerDay : ℕ
+  days : ℕ
+  totalMinutes : ℕ
+  totalSeconds : ℕ
+  totalLiters : ℕ
   hRate : litersPerSecond = 10
   hMinutes : minutesPerDay = 10
   hDays : days = 7
@@ -122,7 +164,14 @@ theorem fan_seconds (m : FanAirflow) : m.totalSeconds = 4200 := by omega
 theorem fan_solution (m : FanAirflow) : m.totalLiters = 42000 := by omega
 
 structure CamelAmbiguity where
-  hareInches factor inchesPerFoot conventionalInches conventionalFeet additiveInches additiveNumerator additiveDenominator : ℕ
+  hareInches : ℕ
+  factor : ℕ
+  inchesPerFoot : ℕ
+  conventionalInches : ℕ
+  conventionalFeet : ℕ
+  additiveInches : ℕ
+  additiveNumerator : ℕ
+  additiveDenominator : ℕ
   hHare : hareInches = 14
   hFactor : factor = 24
   hFoot : inchesPerFoot = 12
@@ -140,7 +189,13 @@ theorem camel_additive_feet (m : CamelAmbiguity) : m.additiveInches * 6 = 175 * 
 theorem camel_nonunique (m : CamelAmbiguity) : m.conventionalInches ≠ m.additiveInches := by omega
 
 structure Sod where
-  length width shedLength shedWidth yard shed sod : ℕ
+  length : ℕ
+  width : ℕ
+  shedLength : ℕ
+  shedWidth : ℕ
+  yard : ℕ
+  shed : ℕ
+  sod : ℕ
   hLength : length = 20
   hWidth : width = 13
   hShedLength : shedLength = 3
@@ -154,7 +209,10 @@ theorem sod_shed (m : Sod) : m.shed = 15 := by omega
 theorem sod_solution (m : Sod) : m.sod = 245 := by omega
 
 structure Clothes where
-  pants shirtsPerPants shirts total : ℕ
+  pants : ℕ
+  shirtsPerPants : ℕ
+  shirts : ℕ
+  total : ℕ
   hPants : pants = 40
   hRatio : shirtsPerPants = 6
   hShirts : shirts = pants * shirtsPerPants
@@ -164,7 +222,11 @@ theorem clothes_shirts (m : Clothes) : m.shirts = 240 := by omega
 theorem clothes_solution (m : Clothes) : m.total = 280 := by omega
 
 structure PurpleWalls where
-  rooms greenRooms purpleRooms wallsPerRoom purpleWalls : ℕ
+  rooms : ℕ
+  greenRooms : ℕ
+  purpleRooms : ℕ
+  wallsPerRoom : ℕ
+  purpleWalls : ℕ
   hRooms : rooms = 10
   hGreenFraction : greenRooms * 5 = rooms * 3
   hPurpleRooms : purpleRooms = rooms - greenRooms
@@ -176,7 +238,11 @@ theorem purple_rooms (m : PurpleWalls) : m.purpleRooms = 4 := by omega
 theorem purple_solution (m : PurpleWalls) : m.purpleWalls = 32 := by omega
 
 structure Cents where
-  start found spent mother final : ℕ
+  start : ℕ
+  found : ℕ
+  spent : ℕ
+  mother : ℕ
+  final : ℕ
   hStart : start = 80
   hFound : found = 40
   hSpent : spent = 50
@@ -188,7 +254,12 @@ theorem cents_after_spending (m : Cents) : m.start + m.found - m.spent = 70 := b
 theorem cents_solution (m : Cents) : m.final = 140 := by omega
 
 structure Catering where
-  people chicken steak chickenCost steakCost totalCost : ℕ
+  people : ℕ
+  chicken : ℕ
+  steak : ℕ
+  chickenCost : ℕ
+  steakCost : ℕ
+  totalCost : ℕ
   hPeople : people = 80
   hSplit : people = chicken + steak
   hRatio : steak = 3 * chicken

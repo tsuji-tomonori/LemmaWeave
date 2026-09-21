@@ -81,16 +81,16 @@
     "formal_completion_rate": 0,
     "connector_static_validation_rate": 1,
     "local_execution_success_rate": null,
-    "ci_seconds": null
+    "ci_seconds": 617
   },
   "local_checks": {
-    "ledger_validate": "pending_exact_head_ci",
+    "ledger_validate": "recorded_exact_solution_head_ci_failure",
     "python_unittest": "not_run_transient_workspace_without_repository",
     "source_and_recipe_hash_check": "15 exact source records/questions, 15 current model hashes, and 62 declaration mappings checked",
     "solve_queue_write": "equivalent deterministic queue update applied through Git Data API",
     "queue_partition": "solution_ready 518, awaiting_verification 905, pending 7369; total 8792; duplicate IDs 0",
     "fixed_lean": "not_available_locally",
-    "method_recipe_render": "pending_exact_head_ci",
+    "method_recipe_render": "not_accepted_due_complete_replay_failure",
     "static_audit": "passed: 15 recipes, 62 steps, 0 missing test declarations, 0 forbidden sorry/admit/custom axiom tokens",
     "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
   },
@@ -103,9 +103,14 @@
     "previous_artifact_bytes": 196385679,
     "accepted_as_success_evidence": false,
     "solution_commit_sha": "bf189c4fa15e21d2a04bc32a084fa596c1f66091",
-    "current_run_id": 35636983870,
-    "current_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35636983870",
-    "current_status": "pending_exact_head_ci"
+    "current_run_id": 35637270550,
+    "current_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35637270550",
+    "current_job_id": 106458242444,
+    "current_status": "failure_existing_A20_nonlinear_omega_chain",
+    "current_artifact_id": 10657575807,
+    "current_artifact_bytes": 196513680,
+    "failure_location": "LemmaWeave/Problems/GSM8K/Sprint0921A20Models.lean",
+    "failure_summary_ja": "完全replayはA20の既知の非線形積・自然数減算を汎用omegaだけで解こうとする箇所で失敗した。新規A03の個別エラーは出力されていないが、完全replay未完のため成功証拠とはしない。"
   },
   "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
   "commit": "bf189c4fa15e21d2a04bc32a084fa596c1f66091",

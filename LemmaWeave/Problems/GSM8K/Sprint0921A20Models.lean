@@ -108,7 +108,7 @@ theorem stuffed_thor (m : StuffedAnimals) : m.thor = 20 := by omega
 theorem stuffed_jake (m : StuffedAnimals) : m.jake = 30 := by omega
 theorem stuffed_solution (m : StuffedAnimals) : m.difference = 170 := by omega
 
-structure FanWater where
+structure FanAirflow where
   litersPerSecond minutesPerDay days totalMinutes totalSeconds totalLiters : ℕ
   hRate : litersPerSecond = 10
   hMinutes : minutesPerDay = 10
@@ -117,18 +117,18 @@ structure FanWater where
   hSeconds : totalSeconds = totalMinutes * 60
   hLiters : totalLiters = totalSeconds * litersPerSecond
 
-theorem fan_minutes (m : FanWater) : m.totalMinutes = 70 := by omega
-theorem fan_seconds (m : FanWater) : m.totalSeconds = 4200 := by omega
-theorem fan_solution (m : FanWater) : m.totalLiters = 42000 := by omega
+theorem fan_minutes (m : FanAirflow) : m.totalMinutes = 70 := by omega
+theorem fan_seconds (m : FanAirflow) : m.totalSeconds = 4200 := by omega
+theorem fan_solution (m : FanAirflow) : m.totalLiters = 42000 := by omega
 
 structure CamelAmbiguity where
-  humanInches factor inchesPerFoot conventionalInches conventionalFeet additiveInches additiveNumerator additiveDenominator : ℕ
-  hHuman : humanInches = 14
+  hareInches factor inchesPerFoot conventionalInches conventionalFeet additiveInches additiveNumerator additiveDenominator : ℕ
+  hHare : hareInches = 14
   hFactor : factor = 24
   hFoot : inchesPerFoot = 12
-  hConventional : conventionalInches = humanInches * factor
+  hConventional : conventionalInches = hareInches * factor
   hConventionalFeet : conventionalInches = conventionalFeet * inchesPerFoot
-  hAdditive : additiveInches = humanInches + humanInches * factor
+  hAdditive : additiveInches = hareInches + hareInches * factor
   hAdditiveNumerator : additiveNumerator = 175
   hAdditiveDenominator : additiveDenominator = 6
   hAdditiveFeet : additiveInches * additiveDenominator = additiveNumerator * inchesPerFoot
@@ -140,11 +140,17 @@ theorem camel_additive_feet (m : CamelAmbiguity) : m.additiveInches * 6 = 175 * 
 theorem camel_nonunique (m : CamelAmbiguity) : m.conventionalInches ≠ m.additiveInches := by omega
 
 structure Sod where
-  yard shed sod : ℕ
-  hYard : yard = 260
-  hShed : shed = 15
+  length width shedLength shedWidth yard shed sod : ℕ
+  hLength : length = 20
+  hWidth : width = 13
+  hShedLength : shedLength = 3
+  hShedWidth : shedWidth = 5
+  hYard : yard = length * width
+  hShed : shed = shedLength * shedWidth
   hSod : sod = yard - shed
 
+theorem sod_yard (m : Sod) : m.yard = 260 := by omega
+theorem sod_shed (m : Sod) : m.shed = 15 := by omega
 theorem sod_solution (m : Sod) : m.sod = 245 := by omega
 
 structure Clothes where

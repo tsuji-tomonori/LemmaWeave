@@ -13,13 +13,13 @@ structure AnnualRaise where
   hAnnual : annualGain = weeklyGain * 52
 
 theorem annual_new_weekly (m : AnnualRaise) : m.newWeekly = 800 := by
-  cases m <;> omega
+  norm_num [m.hNew]
 theorem annual_old_weekly (m : AnnualRaise) : m.oldWeekly = 400 := by
-  cases m <;> omega
+  norm_num [m.hOld]
 theorem annual_weekly_gain (m : AnnualRaise) : m.weeklyGain = 400 := by
-  cases m <;> omega
+  norm_num [m.hWeekly, annual_new_weekly m, annual_old_weekly m]
 theorem annual_solution (m : AnnualRaise) : m.annualGain = 20800 := by
-  cases m <;> omega
+  norm_num [m.hAnnual, annual_weekly_gain m]
 
 structure GymSpending where
   adidas : ℕ
@@ -36,13 +36,15 @@ structure GymSpending where
   hSplit : total = sneakerTotal + clothes
 
 theorem gym_nike (m : GymSpending) : m.nike = 1800 := by
-  cases m <;> omega
+  norm_num [m.hNike, m.hAdidas]
 theorem gym_skechers (m : GymSpending) : m.skechers = 3000 := by
-  cases m <;> omega
+  norm_num [m.hSkechers, m.hAdidas]
 theorem gym_sneakers (m : GymSpending) : m.sneakerTotal = 5400 := by
-  cases m <;> omega
+  norm_num [m.hSneakers, m.hAdidas, gym_nike m, gym_skechers m]
 theorem gym_solution (m : GymSpending) : m.clothes = 2600 := by
-  cases m <;> omega
+  have h := m.hSplit
+  rw [m.hTotal, gym_sneakers m] at h
+  omega
 
 structure Toads where
   spotted : ℕ
@@ -53,9 +55,11 @@ structure Toads where
   hRatio : brown = green * 25
 
 theorem toads_brown (m : Toads) : m.brown = 200 := by
-  cases m <;> omega
+  norm_num [m.hQuarter, m.hSpotted]
 theorem toads_solution (m : Toads) : m.green = 8 := by
-  cases m <;> omega
+  have h := m.hRatio
+  rw [toads_brown m] at h
+  omega
 
 structure Cabinets where
   current : ℕ
@@ -72,13 +76,13 @@ structure Cabinets where
   hTotal : total = current + installed + extra
 
 theorem cabinets_per_counter (m : Cabinets) : m.perCounter = 6 := by
-  cases m <;> omega
+  norm_num [m.hPer, m.hCurrent]
 theorem cabinets_installed (m : Cabinets) : m.installed = 18 := by
-  cases m <;> omega
+  norm_num [m.hInstalled, cabinets_per_counter m, m.hCounters]
 theorem cabinets_added (m : Cabinets) : m.installed + m.extra = 23 := by
-  cases m <;> omega
+  rw [cabinets_installed m, m.hExtra]
 theorem cabinets_solution (m : Cabinets) : m.total = 26 := by
-  cases m <;> omega
+  rw [m.hTotal, m.hCurrent, cabinets_installed m, m.hExtra]
 
 structure Kabob where
   sticks : ℕ
@@ -98,11 +102,11 @@ structure Kabob where
   hCost : totalCost = slabs * costPerSlab
 
 theorem kabob_cubes (m : Kabob) : m.totalCubes = 160 := by
-  cases m <;> omega
+  norm_num [m.hCubes, m.hSticks, m.hCubesPerStick]
 theorem kabob_slabs (m : Kabob) : m.slabs = 2 := by
-  cases m <;> omega
+  exact m.hSlabs
 theorem kabob_solution (m : Kabob) : m.totalCost = 50 := by
-  cases m <;> omega
+  norm_num [m.hCost, m.hSlabs, m.hCostPerSlab]
 
 structure Rowing where
   first : ℕ
@@ -117,9 +121,9 @@ structure Rowing where
   hTotal : total = firstTwo + third
 
 theorem rowing_first_two (m : Rowing) : m.firstTwo = 21 := by
-  cases m <;> omega
+  rw [m.hFirstTwo, m.hFirst, m.hSecond]
 theorem rowing_solution (m : Rowing) : m.total = 39 := by
-  cases m <;> omega
+  rw [m.hTotal, rowing_first_two m, m.hThird]
 
 structure ButterflyAmbiguity where
   jars : ℕ
@@ -144,17 +148,19 @@ structure ButterflyAmbiguity where
   hCorrectedRevenue : correctedRevenue = correctedButterflies * price
 
 theorem butterfly_total (m : ButterflyAmbiguity) : m.total = 40 := by
-  cases m <;> omega
+  norm_num [m.hTotal, m.hJars, m.hPerJar]
 theorem butterfly_failed (m : ButterflyAmbiguity) : m.failed = 16 := by
-  cases m <;> omega
+  have h := m.hFailed
+  rw [butterfly_total m] at h
+  omega
 theorem butterfly_survivors (m : ButterflyAmbiguity) : m.survivors = 24 := by
-  cases m <;> omega
+  norm_num [m.hSurvivors, butterfly_total m, butterfly_failed m]
 theorem butterfly_literal (m : ButterflyAmbiguity) : m.literalRevenue = 0 := by
-  cases m <;> omega
+  norm_num [m.hLiteralRevenue, m.hLiteral, m.hPrice]
 theorem butterfly_corrected (m : ButterflyAmbiguity) : m.correctedRevenue = 72 := by
-  cases m <;> omega
+  norm_num [m.hCorrectedRevenue, m.hCorrected, butterfly_survivors m, m.hPrice]
 theorem butterfly_nonunique (m : ButterflyAmbiguity) : m.literalRevenue ≠ m.correctedRevenue := by
-  cases m <;> omega
+  norm_num [butterfly_literal m, butterfly_corrected m]
 
 structure StuffedAnimals where
   thor : ℕ
@@ -167,11 +173,13 @@ structure StuffedAnimals where
   hDifference : difference = quincy - jake
 
 theorem stuffed_thor (m : StuffedAnimals) : m.thor = 20 := by
-  cases m <;> omega
+  have h := m.hTenfold
+  rw [m.hQuincy] at h
+  omega
 theorem stuffed_jake (m : StuffedAnimals) : m.jake = 30 := by
-  cases m <;> omega
+  rw [m.hJake, stuffed_thor m]
 theorem stuffed_solution (m : StuffedAnimals) : m.difference = 170 := by
-  cases m <;> omega
+  rw [m.hDifference, m.hQuincy, stuffed_jake m]
 
 structure FanAirflow where
   litersPerSecond : ℕ
@@ -188,11 +196,11 @@ structure FanAirflow where
   hLiters : totalLiters = totalSeconds * litersPerSecond
 
 theorem fan_minutes (m : FanAirflow) : m.totalMinutes = 70 := by
-  cases m <;> omega
+  norm_num [m.hTotalMinutes, m.hMinutes, m.hDays]
 theorem fan_seconds (m : FanAirflow) : m.totalSeconds = 4200 := by
-  cases m <;> omega
+  norm_num [m.hSeconds, fan_minutes m]
 theorem fan_solution (m : FanAirflow) : m.totalLiters = 42000 := by
-  cases m <;> omega
+  norm_num [m.hLiters, fan_seconds m, m.hRate]
 
 structure CamelAmbiguity where
   hareInches : ℕ
@@ -214,15 +222,17 @@ structure CamelAmbiguity where
   hAdditiveFeet : additiveInches * additiveDenominator = additiveNumerator * inchesPerFoot
 
 theorem camel_conventional_inches (m : CamelAmbiguity) : m.conventionalInches = 336 := by
-  cases m <;> omega
+  norm_num [m.hConventional, m.hHare, m.hFactor]
 theorem camel_conventional_feet (m : CamelAmbiguity) : m.conventionalFeet = 28 := by
-  cases m <;> omega
+  have h := m.hConventionalFeet
+  rw [camel_conventional_inches m, m.hFoot] at h
+  omega
 theorem camel_additive_inches (m : CamelAmbiguity) : m.additiveInches = 350 := by
-  cases m <;> omega
+  norm_num [m.hAdditive, m.hHare, m.hFactor]
 theorem camel_additive_feet (m : CamelAmbiguity) : m.additiveInches * 6 = 175 * 12 := by
-  cases m <;> omega
+  norm_num [camel_additive_inches m]
 theorem camel_nonunique (m : CamelAmbiguity) : m.conventionalInches ≠ m.additiveInches := by
-  cases m <;> omega
+  norm_num [camel_conventional_inches m, camel_additive_inches m]
 
 structure Sod where
   length : ℕ
@@ -241,11 +251,11 @@ structure Sod where
   hSod : sod = yard - shed
 
 theorem sod_yard (m : Sod) : m.yard = 260 := by
-  cases m <;> omega
+  norm_num [m.hYard, m.hLength, m.hWidth]
 theorem sod_shed (m : Sod) : m.shed = 15 := by
-  cases m <;> omega
+  norm_num [m.hShed, m.hShedLength, m.hShedWidth]
 theorem sod_solution (m : Sod) : m.sod = 245 := by
-  cases m <;> omega
+  rw [m.hSod, sod_yard m, sod_shed m]
 
 structure Clothes where
   pants : ℕ
@@ -258,9 +268,9 @@ structure Clothes where
   hTotal : total = pants + shirts
 
 theorem clothes_shirts (m : Clothes) : m.shirts = 240 := by
-  cases m <;> omega
+  norm_num [m.hShirts, m.hPants, m.hRatio]
 theorem clothes_solution (m : Clothes) : m.total = 280 := by
-  cases m <;> omega
+  rw [m.hTotal, m.hPants, clothes_shirts m]
 
 structure PurpleWalls where
   rooms : ℕ
@@ -275,11 +285,13 @@ structure PurpleWalls where
   hPurpleWalls : purpleWalls = purpleRooms * wallsPerRoom
 
 theorem purple_green_rooms (m : PurpleWalls) : m.greenRooms = 6 := by
-  cases m <;> omega
+  have h := m.hGreenFraction
+  rw [m.hRooms] at h
+  omega
 theorem purple_rooms (m : PurpleWalls) : m.purpleRooms = 4 := by
-  cases m <;> omega
+  rw [m.hPurpleRooms, m.hRooms, purple_green_rooms m]
 theorem purple_solution (m : PurpleWalls) : m.purpleWalls = 32 := by
-  cases m <;> omega
+  norm_num [m.hPurpleWalls, purple_rooms m, m.hWalls]
 
 structure Cents where
   start : ℕ
@@ -294,11 +306,11 @@ structure Cents where
   hFinal : final = start + found - spent + mother
 
 theorem cents_before_spending (m : Cents) : m.start + m.found = 120 := by
-  cases m <;> omega
+  rw [m.hStart, m.hFound]
 theorem cents_after_spending (m : Cents) : m.start + m.found - m.spent = 70 := by
-  cases m <;> omega
+  rw [m.hStart, m.hFound, m.hSpent]
 theorem cents_solution (m : Cents) : m.final = 140 := by
-  cases m <;> omega
+  rw [m.hFinal, m.hStart, m.hFound, m.hSpent, m.hMother]
 
 structure Catering where
   people : ℕ
@@ -315,12 +327,19 @@ structure Catering where
   hTotal : totalCost = chickenCost + steakCost
 
 theorem catering_chicken (m : Catering) : m.chicken = 20 := by
-  cases m <;> omega
+  have hp := m.hPeople
+  have hs := m.hSplit
+  have hr := m.hRatio
+  omega
 theorem catering_steak (m : Catering) : m.steak = 60 := by
-  cases m <;> omega
+  rw [m.hRatio, catering_chicken m]
 theorem catering_costs (m : Catering) : m.chickenCost = 360 ∧ m.steakCost = 1500 := by
-  cases m <;> omega
+  constructor
+  · norm_num [m.hChickenCost, catering_chicken m]
+  · norm_num [m.hSteakCost, catering_steak m]
 theorem catering_solution (m : Catering) : m.totalCost = 1860 := by
-  cases m <;> omega
+  have hc := (catering_costs m).1
+  have hs := (catering_costs m).2
+  rw [m.hTotal, hc, hs]
 
 end LemmaWeave.Problems.GSM8K.Sprint0921A20

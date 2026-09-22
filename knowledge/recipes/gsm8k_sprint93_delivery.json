@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint93_delivery",
+  "title_ja": "無料配達までの不足額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01677",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最低18ドルで無料配達。3.20ドルのバーガー2個、1.90ドルのポテト2個、2.40ドルのシェイク2個を注文する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.delivery_solution",
+  "graph": "work/gsm8k-sprint93-delivery-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "delivery_burgers",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.delivery_burgers",
+      "title_ja": "バーガー代",
+      "claim_ja": "640セント。",
+      "method_ja": "320×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "セント単位で扱う。",
+      "conclusion_ja": "320×2=640。",
+      "baseline_ja": "320×2=640。"
+    },
+    {
+      "id": "delivery_fries",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.delivery_fries",
+      "title_ja": "ポテト代",
+      "claim_ja": "380セント。",
+      "method_ja": "190×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "セント単位で扱う。",
+      "conclusion_ja": "190×2=380。",
+      "baseline_ja": "190×2=380。"
+    },
+    {
+      "id": "delivery_shakes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.delivery_shakes",
+      "title_ja": "シェイク代",
+      "claim_ja": "480セント。",
+      "method_ja": "240×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "セント単位で扱う。",
+      "conclusion_ja": "240×2=480。",
+      "baseline_ja": "240×2=480。"
+    },
+    {
+      "id": "delivery_current",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.delivery_current",
+      "title_ja": "現在の注文額",
+      "claim_ja": "1500セント。",
+      "method_ja": "三品の代金を合計する。",
+      "requires_steps": [
+        "delivery_burgers",
+        "delivery_fries",
+        "delivery_shakes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "税などはない。",
+      "conclusion_ja": "640+380+480=1500。",
+      "baseline_ja": "640+380+480=1500。"
+    },
+    {
+      "id": "delivery_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.delivery_solution",
+      "title_ja": "不足額",
+      "claim_ja": "300セント、つまり3ドル。",
+      "method_ja": "1800から1500を引く。",
+      "requires_steps": [
+        "delivery_current"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "最低額ちょうどでも無料配達になる。",
+      "conclusion_ja": "300+1500=1800。",
+      "baseline_ja": "300+1500=1800。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1678,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

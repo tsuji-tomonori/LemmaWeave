@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint94_warehouse",
+  "title_ja": "倉庫巡回距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01694",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "600×400フィートの長方形倉庫を10周予定し、2周省略した。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.warehouse_solution",
+  "graph": "work/gsm8k-sprint94-warehouse-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "warehouse_perimeter",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.warehouse_perimeter",
+      "title_ja": "1周",
+      "claim_ja": "2000フィート。",
+      "method_ja": "2×600+2×400。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "倉庫外周を長方形とする。",
+      "conclusion_ja": "1200+800=2000。",
+      "baseline_ja": "1200+800=2000。"
+    },
+    {
+      "id": "warehouse_actual",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.warehouse_actual",
+      "title_ja": "実周回数",
+      "claim_ja": "8周。",
+      "method_ja": "10-2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "省略した2周は歩かない。",
+      "conclusion_ja": "8+2=10。",
+      "baseline_ja": "8+2=10。"
+    },
+    {
+      "id": "warehouse_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.warehouse_solution",
+      "title_ja": "歩行距離",
+      "claim_ja": "16000フィート。",
+      "method_ja": "2000×8。",
+      "requires_steps": [
+        "warehouse_perimeter",
+        "warehouse_actual"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各周で同じ外周を歩く。",
+      "conclusion_ja": "2000×8=16000。",
+      "baseline_ja": "2000×8=16000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1695,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

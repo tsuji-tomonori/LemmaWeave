@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint94_tara",
+  "title_ja": "2年目の観戦試合数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01695",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1年目は20試合の90%を観戦し、2年目は4試合少ない。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.tara_solution",
+  "graph": "work/gsm8k-sprint94-tara-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "tara_first_year",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.tara_first_year",
+      "title_ja": "1年目",
+      "claim_ja": "18試合。",
+      "method_ja": "20×90%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20試合すべてを母数にする。",
+      "conclusion_ja": "18×10=20×9。",
+      "baseline_ja": "18×10=20×9。"
+    },
+    {
+      "id": "tara_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.tara_solution",
+      "title_ja": "2年目",
+      "claim_ja": "14試合。",
+      "method_ja": "18-4。",
+      "requires_steps": [
+        "tara_first_year"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2年目は1年目より4試合少ない。",
+      "conclusion_ja": "14+4=18。",
+      "baseline_ja": "14+4=18。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1696,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

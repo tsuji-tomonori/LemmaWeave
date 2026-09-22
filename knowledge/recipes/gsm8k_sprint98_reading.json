@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint98_reading",
+  "title_ja": "夏の読書目標までの残ページ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01757",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2冊から既読ページを割合で求めて合計し、800ページから引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.reading_solution",
+  "graph": "work/gsm8k-sprint98-reading-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "reading_first_book",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.reading_first_book",
+      "title_ja": "500ページ本から400ページ読んだ。",
+      "claim_ja": "500ページ本から400ページ読んだ。",
+      "method_ja": "500の80%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "80%=80/100。",
+      "conclusion_ja": "400×100=500×80。",
+      "baseline_ja": "400×100=500×80。"
+    },
+    {
+      "id": "reading_second_book",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.reading_second_book",
+      "title_ja": "1000ページ本から200ページ読んだ。",
+      "claim_ja": "1000ページ本から200ページ読んだ。",
+      "method_ja": "1000の5分の1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5分の1。",
+      "conclusion_ja": "200×5=1000。",
+      "baseline_ja": "200×5=1000。"
+    },
+    {
+      "id": "reading_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.reading_total",
+      "title_ja": "既読は600ページ。",
+      "claim_ja": "既読は600ページ。",
+      "method_ja": "400+200。",
+      "requires_steps": [
+        "reading_first_book",
+        "reading_second_book"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二冊の既読部分を加える。",
+      "conclusion_ja": "400+200=600。",
+      "baseline_ja": "400+200=600。"
+    },
+    {
+      "id": "reading_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.reading_solution",
+      "title_ja": "あと200ページ必要。",
+      "claim_ja": "あと200ページ必要。",
+      "method_ja": "800−600。",
+      "requires_steps": [
+        "reading_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "目標から既読を引く。",
+      "conclusion_ja": "200+600=800。",
+      "baseline_ja": "200+600=800。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1758,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

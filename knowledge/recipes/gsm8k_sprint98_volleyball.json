@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint98_volleyball",
+  "title_ja": "ほかのチームメイトの得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01758",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "LizzieからNathalie、二人合計からAimee、3人合計を求め、チーム総得点から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.volleyball_solution",
+  "graph": "work/gsm8k-sprint98-volleyball-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "volleyball_nathalie",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.volleyball_nathalie",
+      "title_ja": "Nathalieは7点。",
+      "claim_ja": "Nathalieは7点。",
+      "method_ja": "4+3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Lizzieより3点多い。",
+      "conclusion_ja": "4+3=7。",
+      "baseline_ja": "4+3=7。"
+    },
+    {
+      "id": "volleyball_pair",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.volleyball_pair",
+      "title_ja": "LizzieとNathalieは11点。",
+      "claim_ja": "LizzieとNathalieは11点。",
+      "method_ja": "4+7。",
+      "requires_steps": [
+        "volleyball_nathalie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二人を各1回加える。",
+      "conclusion_ja": "4+7=11。",
+      "baseline_ja": "4+7=11。"
+    },
+    {
+      "id": "volleyball_aimee",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.volleyball_aimee",
+      "title_ja": "Aimeeは22点。",
+      "claim_ja": "Aimeeは22点。",
+      "method_ja": "11×2。",
+      "requires_steps": [
+        "volleyball_pair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二人合計の2倍。",
+      "conclusion_ja": "2×11=22。",
+      "baseline_ja": "2×11=22。"
+    },
+    {
+      "id": "volleyball_named",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.volleyball_named",
+      "title_ja": "3人は合計33点。",
+      "claim_ja": "3人は合計33点。",
+      "method_ja": "11+22。",
+      "requires_steps": [
+        "volleyball_pair",
+        "volleyball_aimee"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "LizzieとNathalieはpairに含まれるため重ねて加えない。",
+      "conclusion_ja": "11+22=33。",
+      "baseline_ja": "11+22=33。"
+    },
+    {
+      "id": "volleyball_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.volleyball_solution",
+      "title_ja": "ほかのチームメイトは17点。",
+      "claim_ja": "ほかのチームメイトは17点。",
+      "method_ja": "50−33。",
+      "requires_steps": [
+        "volleyball_named"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "チーム総得点から3人分を引く。",
+      "conclusion_ja": "17+33=50。",
+      "baseline_ja": "17+33=50。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1759,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint95_jeremy",
+  "title_ja": "バスケット用品購入後の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01715",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "50ドルからジャージ5着各2ドル、ボール18ドル、短パン8ドルを買った残金を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.jeremy_solution",
+  "graph": "work/gsm8k-sprint95-jeremy-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jeremy_jerseys",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.jeremy_jerseys",
+      "title_ja": "ジャージ代",
+      "claim_ja": "10ドル。",
+      "method_ja": "5×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各ジャージは2ドル。",
+      "conclusion_ja": "5×2=10。",
+      "baseline_ja": "5×2=10。"
+    },
+    {
+      "id": "jeremy_spent",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.jeremy_spent",
+      "title_ja": "支出合計",
+      "claim_ja": "36ドル。",
+      "method_ja": "10+18+8。",
+      "requires_steps": [
+        "jeremy_jerseys"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "三品目を各1回加える。",
+      "conclusion_ja": "10+18+8=36。",
+      "baseline_ja": "10+18+8=36。"
+    },
+    {
+      "id": "jeremy_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.jeremy_solution",
+      "title_ja": "残金",
+      "claim_ja": "14ドル。",
+      "method_ja": "50−36。",
+      "requires_steps": [
+        "jeremy_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "支出は所持金50ドル以下。",
+      "conclusion_ja": "14+36=50。",
+      "baseline_ja": "14+36=50。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1716,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

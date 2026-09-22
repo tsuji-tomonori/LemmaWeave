@@ -1,0 +1,66 @@
+{
+  "id": "gsm8k_sprint96_bugs",
+  "title_ja": "昆虫の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01729",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A03Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ゴキブリ12、サソリ3、コオロギは半数、毛虫は2倍。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.bugs_solution",
+  "graph": "work/gsm8k-sprint96-bugs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bugs_crickets",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.bugs_crickets",
+      "title_ja": "コオロギ6匹。",
+      "claim_ja": "コオロギ6匹。",
+      "method_ja": "12÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ゴキブリの半数。",
+      "conclusion_ja": "6×2=12。",
+      "baseline_ja": "6×2=12。"
+    },
+    {
+      "id": "bugs_caterpillars",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.bugs_caterpillars",
+      "title_ja": "毛虫6匹。",
+      "claim_ja": "毛虫6匹。",
+      "method_ja": "2×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "サソリの2倍。",
+      "conclusion_ja": "2×3=6。",
+      "baseline_ja": "2×3=6。"
+    },
+    {
+      "id": "bugs_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.bugs_solution",
+      "title_ja": "総数27匹。",
+      "claim_ja": "総数27匹。",
+      "method_ja": "12+3+6+6。",
+      "requires_steps": [
+        "bugs_crickets",
+        "bugs_caterpillars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "四種類を重複なく加える。",
+      "conclusion_ja": "12+3+6+6=27。",
+      "baseline_ja": "12+3+6+6=27。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1730,
+    "checked_model_hash": "c7ae9e73613030285ef5ac0f94bc1cc2c890986bccfb58f5ed826d20e789cb8c",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

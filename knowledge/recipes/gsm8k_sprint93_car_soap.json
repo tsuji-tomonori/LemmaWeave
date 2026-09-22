@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint93_car_soap",
+  "title_ja": "洗車用石けんの費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01681",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1本で4回洗車でき、1本4ドル。週1回を20週間続ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.car_soap_solution",
+  "graph": "work/gsm8k-sprint93-car-soap-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "car_soap_bottles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.car_soap_bottles",
+      "title_ja": "必要本数",
+      "claim_ja": "5本必要。",
+      "method_ja": "20回を1本4回で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各本を4回分すべて使える。",
+      "conclusion_ja": "5×4=20。",
+      "baseline_ja": "5×4=20。"
+    },
+    {
+      "id": "car_soap_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.car_soap_solution",
+      "title_ja": "費用",
+      "claim_ja": "20ドル。",
+      "method_ja": "5本×4ドル。",
+      "requires_steps": [
+        "car_soap_bottles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "価格は一定。",
+      "conclusion_ja": "5×4=20。",
+      "baseline_ja": "5×4=20。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1682,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

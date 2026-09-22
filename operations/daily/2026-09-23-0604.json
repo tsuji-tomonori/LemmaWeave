@@ -1,0 +1,180 @@
+{
+  "date": "2026-09-23",
+  "run_id": "gsm8k-20260923-0500-catchup-jst",
+  "scheduled_slot": "2026-09-23T05:00:00+09:00",
+  "actual_start_slot": "2026-09-23T06:04:54+09:00",
+  "slot_resolution": "05:00枠が未実行で、03:00補完枠と04:00枠は既に完了していたため、重複を避けて05:00枠を補完した。",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "8e8ef3f020b2b61eae3f196f60fede495175e367",
+  "started_at": "2026-09-23T06:04:54+09:00",
+  "finished_at": "2026-09-23T06:16:47+09:00",
+  "selected_problem_ids": [
+    "train:01734",
+    "train:01735",
+    "train:01736",
+    "train:01737",
+    "train:01738",
+    "train:01739",
+    "train:01740",
+    "train:01741",
+    "train:01742",
+    "train:01743",
+    "train:01744",
+    "train:01745",
+    "train:01746",
+    "train:01747",
+    "train:01748"
+  ],
+  "outputs_saved_problem_ids": [
+    "train:01734",
+    "train:01735",
+    "train:01736",
+    "train:01737",
+    "train:01738",
+    "train:01739",
+    "train:01740",
+    "train:01741",
+    "train:01742",
+    "train:01743",
+    "train:01744",
+    "train:01745",
+    "train:01746",
+    "train:01747",
+    "train:01748"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01734",
+    "train:01735",
+    "train:01736",
+    "train:01737",
+    "train:01738",
+    "train:01739",
+    "train:01740",
+    "train:01741",
+    "train:01742",
+    "train:01743",
+    "train:01744",
+    "train:01745",
+    "train:01746",
+    "train:01747",
+    "train:01748"
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:01734-train:01748",
+      "retry_on": "exact-head fixed Lean 4.33.1 success and current evidence import",
+      "reason_ja": "記述式解答・Lean形式化・自己照合は保存したが、現在HEADの固定Lean kernel成功証拠がないためsolution_readyへ昇格しない。",
+      "next_action_ja": "対象別replayでSprint0923A05Catchupを検証し、許容公理・入力SHA・依存グラフを照合して問題単位の成功証拠を取り込む。"
+    }
+  ],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "lines_1based": [
+      1735,
+      1749
+    ],
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0151.json",
+    "record_hash_method": "SHA-256 of exact UTF-8 JSONL record bytes, excluding line terminator"
+  },
+  "semantic_review": {
+    "status": "self_review_only",
+    "reviewer": "author",
+    "notes_ja": [
+      "train:01739は25人が予算内であることに加え、予算内の任意の人数が25以下である最大性も形式化した。",
+      "train:01744は参照説明の『じゃがいも20束』という誤記を採用せず、原題の250個を25個ずつ束ねた10束として売上19ドルを形式化した。",
+      "train:01745は原題だけでは1か月の週数が不足することを記録し、参照解答の追加条件『1か月=4週』の下で48時間を形式化した。"
+    ]
+  },
+  "checks": {
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "recipe_to_lean_declarations": "46/46",
+    "queue_total_and_unique_ids": "8792/8792",
+    "forbidden_tokens": 0,
+    "fixed_lean_kernel": "not_run"
+  },
+  "checkpoints": [
+    {
+      "problem_ids": [
+        "train:01734",
+        "train:01735",
+        "train:01736",
+        "train:01737",
+        "train:01738"
+      ],
+      "commit": "0f67bc4e7b9484cb7b2f83d49692371ddcd4f97f"
+    },
+    {
+      "problem_ids": [
+        "train:01739",
+        "train:01740",
+        "train:01741",
+        "train:01742",
+        "train:01743"
+      ],
+      "commit": "0310413c626a212266d0a2b78a8f12a8bfaa2688"
+    },
+    {
+      "problem_ids": [
+        "train:01744",
+        "train:01745",
+        "train:01746",
+        "train:01747",
+        "train:01748"
+      ],
+      "commit": "80224a8bf48608a87c0a857781bb322cea8a35f9"
+    }
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1235,
+    "pending": 7039,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {
+      "solution_ready": 518,
+      "remaining": 8274,
+      "awaiting_verification": 1220
+    },
+    "after": {
+      "solution_ready": 518,
+      "remaining": 8274,
+      "awaiting_verification": 1235
+    },
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01749",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": [
+      "train:01734",
+      "train:01748"
+    ],
+    "base_sha": "8e8ef3f020b2b61eae3f196f60fede495175e367",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "not_started_at_ledger_write",
+    "local_fixed_lean_status": "unavailable_lake_not_installed",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "80224a8bf48608a87c0a857781bb322cea8a35f9"
+  }
+}

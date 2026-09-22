@@ -66,12 +66,40 @@ def main():
     results = []
     for target in targets:
         confined(ROOT, target)
-        result = subprocess.run([sys.executable, 'scripts/run.py', '--timeout', '900', '--',
-                                 'lake', 'env', 'lean', target], cwd=ROOT, check=False)
+        source = (ROOT / target).read_text()
+        project_imports = sorted(set(re.findall(
+            r'^\\s*import\\s+(LemmaWeave(?:\\.[A-Za-z0-9_]+)+)\\s*
+    (ROOT / 'reports/method-targets.json').write_text(json.dumps(results, indent=2) + '\n')
+    selection = {
+        'mode': 'all' if args.all else 'stale_evidence_only',
+        'registered_target_count': len(all_targets),
+        'selected_target_count': len(targets),
+        'skipped_current_target_count': len(all_targets) - len(targets),
+        'selected_targets': targets,
+        'safety_gate': 'check_method_recipes.proof_evidence over Lean import closure and graph hash'
+    }
+    (ROOT / 'reports/method-target-selection.json').write_text(json.dumps(selection, indent=2) + '\n')
+    return int(any(r['exit_code'] for r in results))
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
+,
+            source, re.MULTILINE)))
+        build = subprocess.run(['lake', 'build', *project_imports],
+                               cwd=ROOT, check=False)
+        result = None
+        if build.returncode == 0:
+            result = subprocess.run([sys.executable, 'scripts/run.py', '--timeout', '900', '--',
+                                     'lake', 'env', 'lean', target], cwd=ROOT, check=False)
         members = [r for r in recipes if r['lean_file'] == target]
         missing_graphs = [r['graph'] for r in members if not (ROOT / r['graph']).is_file()]
-        exit_code = result.returncode if result.returncode else int(bool(missing_graphs))
+        lean_exit_code = result.returncode if result is not None else None
+        exit_code = build.returncode or lean_exit_code or int(bool(missing_graphs))
         results.append({'target': target, 'exit_code': exit_code,
+                        'dependency_build_exit_code': build.returncode,
+                        'lean_exit_code': lean_exit_code,
+                        'project_imports': project_imports,
                         'recipes': [r['id'] for r in members],
                         'missing_graphs': missing_graphs})
     (ROOT / 'reports/method-targets.json').write_text(json.dumps(results, indent=2) + '\n')

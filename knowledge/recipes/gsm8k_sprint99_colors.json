@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint99_colors",
+  "title_ja": "黄色が好きな生徒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01769",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "緑とピンクを求め、互いに排他的な好きな色の区分として30人から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.colors_solution",
+  "graph": "work/gsm8k-sprint99-colors-graph.json",
+  "model_notes_ja": [
+    "『favorite color』の緑・ピンク・黄色を互いに排他的な回答区分としてモデル化した。"
+  ],
+  "steps": [
+    {
+      "id": "colors_green",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.colors_green",
+      "title_ja": "緑は15人。",
+      "claim_ja": "緑は15人。",
+      "method_ja": "30人の半分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "half=1/2。",
+      "conclusion_ja": "15×2=30。",
+      "baseline_ja": "15×2=30。"
+    },
+    {
+      "id": "colors_pink",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.colors_pink",
+      "title_ja": "ピンクは6人。",
+      "claim_ja": "ピンクは6人。",
+      "method_ja": "女子18人の3分の1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "one-third=1/3。",
+      "conclusion_ja": "6×3=18。",
+      "baseline_ja": "6×3=18。"
+    },
+    {
+      "id": "colors_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.colors_solution",
+      "title_ja": "黄色は9人。",
+      "claim_ja": "黄色は9人。",
+      "method_ja": "30−15−6。",
+      "requires_steps": [
+        "colors_green",
+        "colors_pink"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "好きな色の3区分が互いに排他的かつ全員を尽くすという通常解釈。",
+      "conclusion_ja": "9+15+6=30。",
+      "baseline_ja": "9+15+6=30。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1770,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "gsm8k_sprint98_scores",
+  "title_ja": "3人のテスト得点合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01752",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "満点とJoseの失点からJoseを求め、2人の相対得点を復元して合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.scores_solution",
+  "graph": "work/gsm8k-sprint98-scores-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "scores_maximum",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.scores_maximum",
+      "title_ja": "満点は100点。",
+      "claim_ja": "満点は100点。",
+      "method_ja": "50問×2点。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全問が各2点。",
+      "conclusion_ja": "50×2=100。",
+      "baseline_ja": "50×2=100。"
+    },
+    {
+      "id": "scores_lost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.scores_lost",
+      "title_ja": "Joseの失点は10点。",
+      "claim_ja": "Joseの失点は10点。",
+      "method_ja": "5問×2点。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "誤答5問は各2点を得られない。",
+      "conclusion_ja": "5×2=10。",
+      "baseline_ja": "5×2=10。"
+    },
+    {
+      "id": "scores_jose",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.scores_jose",
+      "title_ja": "Joseは90点。",
+      "claim_ja": "Joseは90点。",
+      "method_ja": "100−10。",
+      "requires_steps": [
+        "scores_maximum",
+        "scores_lost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "誤答以外45問を正解したという原題の通常解釈。",
+      "conclusion_ja": "90+10=100。",
+      "baseline_ja": "90+10=100。"
+    },
+    {
+      "id": "scores_meghan",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.scores_meghan",
+      "title_ja": "Meghanは70点。",
+      "claim_ja": "Meghanは70点。",
+      "method_ja": "90−20。",
+      "requires_steps": [
+        "scores_jose"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Joseより20点少ない。",
+      "conclusion_ja": "70+20=90。",
+      "baseline_ja": "70+20=90。"
+    },
+    {
+      "id": "scores_alisson",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.scores_alisson",
+      "title_ja": "Alissonは50点。",
+      "claim_ja": "Alissonは50点。",
+      "method_ja": "90−40。",
+      "requires_steps": [
+        "scores_jose"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "JoseがAlissonより40点多い。",
+      "conclusion_ja": "50+40=90。",
+      "baseline_ja": "50+40=90。"
+    },
+    {
+      "id": "scores_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.scores_solution",
+      "title_ja": "3人の合計は210点。",
+      "claim_ja": "3人の合計は210点。",
+      "method_ja": "90+70+50。",
+      "requires_steps": [
+        "scores_jose",
+        "scores_meghan",
+        "scores_alisson"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人を各1回加える。",
+      "conclusion_ja": "90+70+50=210。",
+      "baseline_ja": "90+70+50=210。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1753,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

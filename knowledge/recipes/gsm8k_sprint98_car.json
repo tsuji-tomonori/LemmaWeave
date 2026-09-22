@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint98_car",
+  "title_ja": "自動車への支出額の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01750",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Samaraの3項目を合計し、Albertoのエンジン代から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.car_solution",
+  "graph": "work/gsm8k-sprint98-car-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "car_samara",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.car_samara",
+      "title_ja": "Samaraの支出は571ドル。",
+      "claim_ja": "Samaraの支出は571ドル。",
+      "method_ja": "25+467+79。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "オイル・タイヤ・整備を各1回加える。",
+      "conclusion_ja": "25+467+79=571。",
+      "baseline_ja": "25+467+79=571。"
+    },
+    {
+      "id": "car_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.car_solution",
+      "title_ja": "Albertoが1,886ドル多く支出した。",
+      "claim_ja": "Albertoが1,886ドル多く支出した。",
+      "method_ja": "2457−571。",
+      "requires_steps": [
+        "car_samara"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "AlbertoからSamaraを引く。",
+      "conclusion_ja": "1886+571=2457。",
+      "baseline_ja": "1886+571=2457。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1751,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint97_payroll",
+  "title_ja": "増員後の月間給与総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01746",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "増員後人数、月の勤務日数、一人当たり月給を順に求めて掛ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.payroll_solution",
+  "graph": "work/gsm8k-sprint97-payroll-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "payroll_employees",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.payroll_employees",
+      "title_ja": "増員後は700人。",
+      "claim_ja": "増員後は700人。",
+      "method_ja": "500+200。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "200人を既存500人へ追加する。",
+      "conclusion_ja": "500+200=700。",
+      "baseline_ja": "500+200=700。"
+    },
+    {
+      "id": "payroll_days",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.payroll_days",
+      "title_ja": "月20勤務日。",
+      "claim_ja": "月20勤務日。",
+      "method_ja": "5日/週×4週。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題が4週/月を明示する。",
+      "conclusion_ja": "5×4=20。",
+      "baseline_ja": "5×4=20。"
+    },
+    {
+      "id": "payroll_monthly_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.payroll_monthly_each",
+      "title_ja": "一人当たり月2400ドル。",
+      "claim_ja": "一人当たり月2400ドル。",
+      "method_ja": "12ドル/時×10時間/日×20日。",
+      "requires_steps": [
+        "payroll_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "時給・日勤務時間・月勤務日を掛ける。",
+      "conclusion_ja": "12×10×20=2400。",
+      "baseline_ja": "12×10×20=2400。"
+    },
+    {
+      "id": "payroll_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.payroll_solution",
+      "title_ja": "月間給与総額は1,680,000ドル。",
+      "claim_ja": "月間給与総額は1,680,000ドル。",
+      "method_ja": "700×2400。",
+      "requires_steps": [
+        "payroll_employees",
+        "payroll_monthly_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全700人が同じ勤務条件と時給。",
+      "conclusion_ja": "700×2400=1680000。",
+      "baseline_ja": "700×2400=1680000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1747,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

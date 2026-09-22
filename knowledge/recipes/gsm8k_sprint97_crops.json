@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint97_crops",
+  "title_ja": "収穫物の総売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01744",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "じゃがいもとにんじんの束数・売上を別々に求め、セント単位で合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.crops_solution",
+  "graph": "work/gsm8k-sprint97-crops-graph.json",
+  "model_notes_ja": [
+    "参照説明の『20 bundles of potatoes』は直前の250÷25=10および売上19ドルと矛盾する誤記である。原題から10束と計算し、参照の誤記は採用しない。"
+  ],
+  "steps": [
+    {
+      "id": "crops_potato_bundles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.crops_potato_bundles",
+      "title_ja": "じゃがいもは10束。",
+      "claim_ja": "じゃがいもは10束。",
+      "method_ja": "250÷25。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "25個ずつで余りなし。",
+      "conclusion_ja": "10×25=250。",
+      "baseline_ja": "10×25=250。"
+    },
+    {
+      "id": "crops_potato_cents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.crops_potato_cents",
+      "title_ja": "じゃがいも売上は1900セント。",
+      "claim_ja": "じゃがいも売上は1900セント。",
+      "method_ja": "10×190。",
+      "requires_steps": [
+        "crops_potato_bundles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1.90ドルを190セントとして保持する。",
+      "conclusion_ja": "10×190=1900。",
+      "baseline_ja": "10×190=1900。"
+    },
+    {
+      "id": "crops_carrot_bundles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.crops_carrot_bundles",
+      "title_ja": "にんじんは16束。",
+      "claim_ja": "にんじんは16束。",
+      "method_ja": "320÷20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20本ずつで余りなし。",
+      "conclusion_ja": "16×20=320。",
+      "baseline_ja": "16×20=320。"
+    },
+    {
+      "id": "crops_carrot_cents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.crops_carrot_cents",
+      "title_ja": "にんじん売上は3200セント。",
+      "claim_ja": "にんじん売上は3200セント。",
+      "method_ja": "16×200。",
+      "requires_steps": [
+        "crops_carrot_bundles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2ドルを200セントとして保持する。",
+      "conclusion_ja": "16×200=3200。",
+      "baseline_ja": "16×200=3200。"
+    },
+    {
+      "id": "crops_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.crops_solution",
+      "title_ja": "総売上は5100セント、すなわち51ドル。",
+      "claim_ja": "総売上は5100セント、すなわち51ドル。",
+      "method_ja": "1900+3200。",
+      "requires_steps": [
+        "crops_potato_cents",
+        "crops_carrot_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両作物を全量販売する。",
+      "conclusion_ja": "1900+3200=5100。",
+      "baseline_ja": "1900+3200=5100。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1745,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

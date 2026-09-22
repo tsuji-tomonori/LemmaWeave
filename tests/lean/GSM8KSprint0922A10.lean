@@ -56,3 +56,35 @@ theorem frames_dorothy_revenue := LemmaWeave.Problems.GSM8K.Sprint0922A10.frames
 theorem frames_solution := LemmaWeave.Problems.GSM8K.Sprint0922A10.frames_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A10
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.bones_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.books_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.brownies_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.contacts_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.cupcakes_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.dinner_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.fish_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.frames_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.games_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.insurance_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.lambs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.money_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.tacos_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.theater_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A10.tractor_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.bones_solution to "work/gsm8k-sprint81-bones-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.books_solution to "work/gsm8k-sprint81-books-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.brownies_solution to "work/gsm8k-sprint81-brownies-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.contacts_solution to "work/gsm8k-sprint81-contacts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.cupcakes_solution to "work/gsm8k-sprint81-cupcakes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.dinner_solution to "work/gsm8k-sprint81-dinner-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.fish_solution to "work/gsm8k-sprint81-fish-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.frames_solution to "work/gsm8k-sprint81-frames-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.games_solution to "work/gsm8k-sprint81-games-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.insurance_solution to "work/gsm8k-sprint81-insurance-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.lambs_solution to "work/gsm8k-sprint81-lambs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.money_solution to "work/gsm8k-sprint81-money-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.tacos_solution to "work/gsm8k-sprint81-tacos-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.theater_solution to "work/gsm8k-sprint81-theater-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A10.tractor_solution to "work/gsm8k-sprint81-tractor-graph.json"

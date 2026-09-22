@@ -147,3 +147,35 @@ theorem delivery_solution : DeliveryPay 96 3 4 72 100 9600 7200 2400 := by
   exact ⟨delivery_tona, delivery_oula_pay, delivery_tona_pay, delivery_difference⟩
 
 end LemmaWeave.Tests.GSM8KSprint0921A08
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.butterflies_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.car_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.cards_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.delivery_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.dream_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.gecko_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.jeans_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.late_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.planks_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.potatoes_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.rides_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.roofs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.tank_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.trophies_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A08.tulips_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.butterflies_solution to "work/gsm8k-sprint59-butterflies-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.car_solution to "work/gsm8k-sprint59-car-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.cards_solution to "work/gsm8k-sprint59-cards-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.delivery_solution to "work/gsm8k-sprint59-delivery-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.dream_solution to "work/gsm8k-sprint59-dream-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.gecko_solution to "work/gsm8k-sprint59-gecko-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.jeans_solution to "work/gsm8k-sprint59-jeans-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.late_solution to "work/gsm8k-sprint59-late-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.planks_solution to "work/gsm8k-sprint59-planks-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.potatoes_solution to "work/gsm8k-sprint59-potatoes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.rides_solution to "work/gsm8k-sprint59-rides-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.roofs_solution to "work/gsm8k-sprint59-roofs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.tank_solution to "work/gsm8k-sprint59-tank-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.trophies_solution to "work/gsm8k-sprint59-trophies-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A08.tulips_solution to "work/gsm8k-sprint59-tulips-graph.json"

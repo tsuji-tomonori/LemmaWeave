@@ -141,3 +141,35 @@ theorem market_solution : MarketPurchase 3 450 1350 7 50 350 3 500 1500 4 2 1800
   exact ⟨market_oranges, market_juice, market_honey, market_plants, market_total⟩
 
 end LemmaWeave.Tests.GSM8KSprint0921A09
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.ages_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.apples_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.bears_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.cards_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.ketchup_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.lettuce_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.market_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.party_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.pet_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.ramp_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.reunion_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.sandwich_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.season_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.well_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A09.zoo_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.ages_solution to "work/gsm8k-sprint60-ages-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.apples_solution to "work/gsm8k-sprint60-apples-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.bears_solution to "work/gsm8k-sprint60-bears-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.cards_solution to "work/gsm8k-sprint60-cards-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.ketchup_solution to "work/gsm8k-sprint60-ketchup-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.lettuce_solution to "work/gsm8k-sprint60-lettuce-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.market_solution to "work/gsm8k-sprint60-market-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.party_solution to "work/gsm8k-sprint60-party-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.pet_solution to "work/gsm8k-sprint60-pet-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.ramp_solution to "work/gsm8k-sprint60-ramp-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.reunion_solution to "work/gsm8k-sprint60-reunion-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.sandwich_solution to "work/gsm8k-sprint60-sandwich-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.season_solution to "work/gsm8k-sprint60-season-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.well_solution to "work/gsm8k-sprint60-well-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A09.zoo_solution to "work/gsm8k-sprint60-zoo-graph.json"

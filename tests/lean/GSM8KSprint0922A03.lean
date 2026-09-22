@@ -67,3 +67,35 @@ theorem painting_extra_liter := LemmaWeave.Problems.GSM8K.Sprint0922A03.painting
 theorem painting_nonunique := LemmaWeave.Problems.GSM8K.Sprint0922A03.painting_nonunique
 
 end LemmaWeave.Tests.GSM8KSprint0922A03
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.cheesecake_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.claws_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.snails_nonunique
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.flea_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.flowers_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.ages_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.onions_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.painting_nonunique
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.gifts_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.reading_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.running_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.shoes_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.toddlers_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.team_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A03.writing_nonunique
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.cheesecake_solution to "work/gsm8k-sprint75-cheesecake-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.claws_solution to "work/gsm8k-sprint75-claws-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.snails_nonunique to "work/gsm8k-sprint75-duck_snails-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.flea_solution to "work/gsm8k-sprint75-flea_medicine-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.flowers_solution to "work/gsm8k-sprint75-flower_sales-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.ages_solution to "work/gsm8k-sprint75-mario_age-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.onions_solution to "work/gsm8k-sprint75-onions-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.painting_nonunique to "work/gsm8k-sprint75-painting-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.gifts_solution to "work/gsm8k-sprint75-party_gifts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.reading_solution to "work/gsm8k-sprint75-reading-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.running_solution to "work/gsm8k-sprint75-running-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.shoes_solution to "work/gsm8k-sprint75-shoes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.toddlers_solution to "work/gsm8k-sprint75-toddlers-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.team_solution to "work/gsm8k-sprint75-typing_team-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A03.writing_nonunique to "work/gsm8k-sprint75-writing_names-graph.json"

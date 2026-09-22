@@ -48,3 +48,35 @@ theorem zip_fifth := LemmaWeave.Problems.GSM8K.Sprint0922A02.zip_fifth
 theorem zip_solution := LemmaWeave.Problems.GSM8K.Sprint0922A02.zip_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A02
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.birds_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.boots_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.coffee_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.dvd_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.graves_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.jam_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.milk_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.noah_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.series_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.siblings_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.soup_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.towels_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.typing_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.waves_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A02.zip_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.birds_solution to "work/gsm8k-sprint74-birds-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.boots_solution to "work/gsm8k-sprint74-boots-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.coffee_solution to "work/gsm8k-sprint74-coffee-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.dvd_solution to "work/gsm8k-sprint74-dvd-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.graves_solution to "work/gsm8k-sprint74-graves-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.jam_solution to "work/gsm8k-sprint74-jam-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.milk_solution to "work/gsm8k-sprint74-milk-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.noah_solution to "work/gsm8k-sprint74-noah-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.series_solution to "work/gsm8k-sprint74-series-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.siblings_solution to "work/gsm8k-sprint74-siblings-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.soup_solution to "work/gsm8k-sprint74-soup-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.towels_solution to "work/gsm8k-sprint74-towels-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.typing_solution to "work/gsm8k-sprint74-typing-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.waves_solution to "work/gsm8k-sprint74-waves-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A02.zip_solution to "work/gsm8k-sprint74-zip_code-graph.json"

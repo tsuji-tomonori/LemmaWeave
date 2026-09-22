@@ -52,3 +52,35 @@ theorem paintings_day5 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day5
 theorem paintings_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A12
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.balloons_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.biology_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.bucket_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.cookie_bag_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.courses_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.glasses_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.janine_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.library_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.makeup_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.movie_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.nails_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.paintings_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.reading_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.sharks_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A12.weights_pair_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.balloons_solution to "work/gsm8k-sprint83-balloons-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.biology_solution to "work/gsm8k-sprint83-biology-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.bucket_solution to "work/gsm8k-sprint83-bucket_list-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.cookie_bag_solution to "work/gsm8k-sprint83-cookie_bag-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.courses_solution to "work/gsm8k-sprint83-courses-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.glasses_solution to "work/gsm8k-sprint83-glasses-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.janine_solution to "work/gsm8k-sprint83-janine-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.library_solution to "work/gsm8k-sprint83-library-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.makeup_solution to "work/gsm8k-sprint83-makeup-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.movie_solution to "work/gsm8k-sprint83-movie-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.nails_solution to "work/gsm8k-sprint83-nails-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.paintings_solution to "work/gsm8k-sprint83-paintings-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.reading_solution to "work/gsm8k-sprint83-reading-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.sharks_solution to "work/gsm8k-sprint83-sharks-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A12.weights_pair_solution to "work/gsm8k-sprint83-weights_pair-graph.json"

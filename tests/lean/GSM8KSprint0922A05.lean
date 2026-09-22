@@ -65,3 +65,35 @@ theorem notebooks_five := LemmaWeave.Problems.GSM8K.Sprint0922A05.notebooks_five
 theorem notebooks_solution := LemmaWeave.Problems.GSM8K.Sprint0922A05.notebooks_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A05
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.cards_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.coins_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.credits_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.deck_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.instruments_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.inventory_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.jeans_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.notebooks_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.pizza_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.reading_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.sled_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.soccer_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.soup_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.spinning_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A05.tennis_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.cards_solution to "work/gsm8k-sprint77-card_tearing-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.coins_solution to "work/gsm8k-sprint77-coins-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.credits_solution to "work/gsm8k-sprint77-credits-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.deck_solution to "work/gsm8k-sprint77-deck_cost-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.instruments_solution to "work/gsm8k-sprint77-instruments-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.inventory_solution to "work/gsm8k-sprint77-inventory-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.jeans_solution to "work/gsm8k-sprint77-jeans_savings-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.notebooks_solution to "work/gsm8k-sprint77-notebooks-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.pizza_solution to "work/gsm8k-sprint77-pizza_change-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.reading_solution to "work/gsm8k-sprint77-reading_time-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.sled_solution to "work/gsm8k-sprint77-sledding-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.soccer_solution to "work/gsm8k-sprint77-soccer_points-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.soup_solution to "work/gsm8k-sprint77-soup-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.spinning_solution to "work/gsm8k-sprint77-spinning-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A05.tennis_solution to "work/gsm8k-sprint77-tennis_balls-graph.json"

@@ -61,3 +61,35 @@ theorem muffins_total := LemmaWeave.Problems.GSM8K.Sprint0922A14.muffins_total
 theorem muffins_solution := LemmaWeave.Problems.GSM8K.Sprint0922A14.muffins_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A14
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.cans_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.cows_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.frame_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.freelance_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.maddie_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.muffins_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.nails_dry_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.necklaces_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.pens_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.pizza_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.roommates_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.running_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.stamps_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.stickers_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A14.tanning_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.cans_solution to "work/gsm8k-sprint85-cans-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.cows_solution to "work/gsm8k-sprint85-cows-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.frame_solution to "work/gsm8k-sprint85-frame-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.freelance_solution to "work/gsm8k-sprint85-freelance-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.maddie_solution to "work/gsm8k-sprint85-maddie-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.muffins_solution to "work/gsm8k-sprint85-muffins-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.nails_dry_solution to "work/gsm8k-sprint85-nails_dry-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.necklaces_solution to "work/gsm8k-sprint85-necklaces-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.pens_solution to "work/gsm8k-sprint85-pens-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.pizza_solution to "work/gsm8k-sprint85-pizza-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.roommates_solution to "work/gsm8k-sprint85-roommates-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.running_solution to "work/gsm8k-sprint85-running-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.stamps_solution to "work/gsm8k-sprint85-stamps-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.stickers_solution to "work/gsm8k-sprint85-stickers-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A14.tanning_solution to "work/gsm8k-sprint85-tanning-graph.json"

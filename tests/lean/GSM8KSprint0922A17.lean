@@ -54,3 +54,35 @@ theorem knife_sales_daily := LemmaWeave.Problems.GSM8K.Sprint0922A17.knife_sales
 theorem knife_sales_solution := LemmaWeave.Problems.GSM8K.Sprint0922A17.knife_sales_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A17
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.cookies_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.country_drive_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.heights_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.hiking_water_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.jean_money_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.knife_sales_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.lifting_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.micah_water_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.minnows_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.paint_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.paul_pay_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.road_trip_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.seed_packets_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.shopping_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A17.walking_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.cookies_solution to "work/gsm8k-sprint88-cookies-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.country_drive_solution to "work/gsm8k-sprint88-country_drive-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.heights_solution to "work/gsm8k-sprint88-heights-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.hiking_water_solution to "work/gsm8k-sprint88-hiking_water-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.jean_money_solution to "work/gsm8k-sprint88-jean_money-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.knife_sales_solution to "work/gsm8k-sprint88-knife_sales-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.lifting_solution to "work/gsm8k-sprint88-lifting-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.micah_water_solution to "work/gsm8k-sprint88-micah_water-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.minnows_solution to "work/gsm8k-sprint88-minnows-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.paint_solution to "work/gsm8k-sprint88-paint-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.paul_pay_solution to "work/gsm8k-sprint88-paul_pay-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.road_trip_solution to "work/gsm8k-sprint88-road_trip-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.seed_packets_solution to "work/gsm8k-sprint88-seed_packets-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.shopping_solution to "work/gsm8k-sprint88-shopping-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A17.walking_solution to "work/gsm8k-sprint88-walking-graph.json"

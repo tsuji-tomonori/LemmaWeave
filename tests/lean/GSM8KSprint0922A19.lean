@@ -50,3 +50,35 @@ theorem bulbs_total := LemmaWeave.Problems.GSM8K.Sprint0922A19.bulbs_total
 theorem bulbs_solution := LemmaWeave.Problems.GSM8K.Sprint0922A19.bulbs_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A19
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.balloons_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.bathroom_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.bulbs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.candy_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.chocolate_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.classes_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.cobbler_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.downpayment_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.essays_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.grades_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.lemonade_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.mileage_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.rectangle_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.siblings_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A19.zoo_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.balloons_solution to "work/gsm8k-sprint90-balloons-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.bathroom_solution to "work/gsm8k-sprint90-bathroom-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.bulbs_solution to "work/gsm8k-sprint90-bulbs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.candy_solution to "work/gsm8k-sprint90-candy-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.chocolate_solution to "work/gsm8k-sprint90-chocolate-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.classes_solution to "work/gsm8k-sprint90-classes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.cobbler_solution to "work/gsm8k-sprint90-cobbler-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.downpayment_solution to "work/gsm8k-sprint90-downpayment-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.essays_solution to "work/gsm8k-sprint90-essays-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.grades_solution to "work/gsm8k-sprint90-grades-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.lemonade_solution to "work/gsm8k-sprint90-lemonade-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.mileage_solution to "work/gsm8k-sprint90-mileage-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.rectangle_solution to "work/gsm8k-sprint90-rectangle-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.siblings_solution to "work/gsm8k-sprint90-siblings-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A19.zoo_solution to "work/gsm8k-sprint90-zoo-graph.json"

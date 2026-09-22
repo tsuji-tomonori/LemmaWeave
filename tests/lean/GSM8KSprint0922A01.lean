@@ -59,3 +59,35 @@ theorem playground_biological := LemmaWeave.Problems.GSM8K.Sprint0922A01.playgro
 theorem playground_nonunique := LemmaWeave.Problems.GSM8K.Sprint0922A01.playground_nonunique
 
 end LemmaWeave.Tests.GSM8KSprint0922A01
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.bath_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.books_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.ducks_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.fence_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.followers_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.gum_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.leaves_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.pigs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.playground_nonunique
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.pots_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.rabbits_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.streaming_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.tires_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.utensils_nonunique
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A01.weight_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.bath_solution to "work/gsm8k-sprint73-bathwater-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.books_solution to "work/gsm8k-sprint73-books-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.ducks_solution to "work/gsm8k-sprint73-ducks-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.fence_solution to "work/gsm8k-sprint73-fence-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.followers_solution to "work/gsm8k-sprint73-followers-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.gum_solution to "work/gsm8k-sprint73-gum-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.leaves_solution to "work/gsm8k-sprint73-leaves-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.pigs_solution to "work/gsm8k-sprint73-pig-profit-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.playground_nonunique to "work/gsm8k-sprint73-playground-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.pots_solution to "work/gsm8k-sprint73-pots-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.rabbits_solution to "work/gsm8k-sprint73-rabbits-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.streaming_solution to "work/gsm8k-sprint73-streaming-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.tires_solution to "work/gsm8k-sprint73-tires-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.utensils_nonunique to "work/gsm8k-sprint73-utensils-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A01.weight_solution to "work/gsm8k-sprint73-weight-graph.json"

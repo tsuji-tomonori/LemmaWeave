@@ -56,3 +56,35 @@ theorem computers_used := LemmaWeave.Problems.GSM8K.Sprint0922A15.computers_used
 theorem computers_solution := LemmaWeave.Problems.GSM8K.Sprint0922A15.computers_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A15
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.bank_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.cats_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.chairs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.computers_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.flowers_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.footprints_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.milk_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.mosaic_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.paper_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.phone_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.rowing_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.tickets_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.walls_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.wool_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A15.workout_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.bank_solution to "work/gsm8k-sprint86-bank-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.cats_solution to "work/gsm8k-sprint86-cats-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.chairs_solution to "work/gsm8k-sprint86-chairs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.computers_solution to "work/gsm8k-sprint86-computers-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.flowers_solution to "work/gsm8k-sprint86-flowers-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.footprints_solution to "work/gsm8k-sprint86-footprints-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.milk_solution to "work/gsm8k-sprint86-milk-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.mosaic_solution to "work/gsm8k-sprint86-mosaic-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.paper_solution to "work/gsm8k-sprint86-paper-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.phone_solution to "work/gsm8k-sprint86-phone-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.rowing_solution to "work/gsm8k-sprint86-rowing-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.tickets_solution to "work/gsm8k-sprint86-tickets-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.walls_solution to "work/gsm8k-sprint86-walls-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.wool_solution to "work/gsm8k-sprint86-wool-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A15.workout_solution to "work/gsm8k-sprint86-workout-graph.json"

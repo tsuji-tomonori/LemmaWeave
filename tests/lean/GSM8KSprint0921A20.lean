@@ -56,3 +56,35 @@ theorem catering_costs := LemmaWeave.Problems.GSM8K.Sprint0921A20.catering_costs
 theorem catering_solution := LemmaWeave.Problems.GSM8K.Sprint0921A20.catering_solution
 
 end LemmaWeave.Tests.GSM8KSprint0921A20
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.annual_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.butterfly_nonunique
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.cabinets_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.camel_nonunique
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.catering_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.cents_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.clothes_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.fan_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.gym_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.kabob_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.purple_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.rowing_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.sod_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.stuffed_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0921A20.toads_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.annual_solution to "work/gsm8k-sprint71-annual_raise-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.butterfly_nonunique to "work/gsm8k-sprint71-butterflies-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.cabinets_solution to "work/gsm8k-sprint71-cabinets-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.camel_nonunique to "work/gsm8k-sprint71-camel-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.catering_solution to "work/gsm8k-sprint71-catering-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.cents_solution to "work/gsm8k-sprint71-cents-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.clothes_solution to "work/gsm8k-sprint71-clothes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.fan_solution to "work/gsm8k-sprint71-fan_water-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.gym_solution to "work/gsm8k-sprint71-gym-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.kabob_solution to "work/gsm8k-sprint71-kabob-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.purple_solution to "work/gsm8k-sprint71-purple_walls-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.rowing_solution to "work/gsm8k-sprint71-rowing-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.sod_solution to "work/gsm8k-sprint71-sod-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.stuffed_solution to "work/gsm8k-sprint71-stuffed_animals-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0921A20.toads_solution to "work/gsm8k-sprint71-toads-graph.json"

@@ -57,3 +57,35 @@ theorem travel_solution_slower := LemmaWeave.Problems.GSM8K.Sprint0922A08.travel
 theorem travel_solution_nonunique := LemmaWeave.Problems.GSM8K.Sprint0922A08.travel_solution_nonunique
 
 end LemmaWeave.Tests.GSM8KSprint0922A08
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.balls_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.banana_solution_both
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.earrings_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.episodes_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.gifts_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.haircuts_solution_both
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.hens_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.jerky_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.lucy_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.shoes_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.store_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.strawberries_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.travel_solution_nonunique
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.activities_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A08.loss_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.balls_solution to "work/gsm8k-sprint80-balls-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.banana_solution_both to "work/gsm8k-sprint80-banana_split-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.earrings_solution to "work/gsm8k-sprint80-earrings-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.episodes_solution to "work/gsm8k-sprint80-episodes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.gifts_solution to "work/gsm8k-sprint80-gifts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.haircuts_solution_both to "work/gsm8k-sprint80-haircuts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.hens_solution to "work/gsm8k-sprint80-hens-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.jerky_solution to "work/gsm8k-sprint80-jerky-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.lucy_solution to "work/gsm8k-sprint80-lucy_money-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.shoes_solution to "work/gsm8k-sprint80-shoes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.store_solution to "work/gsm8k-sprint80-store_marbles-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.strawberries_solution to "work/gsm8k-sprint80-strawberries-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.travel_solution_nonunique to "work/gsm8k-sprint80-travel-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.activities_solution to "work/gsm8k-sprint80-tv_games-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A08.loss_solution to "work/gsm8k-sprint80-weight_loss-graph.json"

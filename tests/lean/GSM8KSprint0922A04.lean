@@ -54,3 +54,35 @@ theorem home_runs_equation := LemmaWeave.Problems.GSM8K.Sprint0922A04.home_runs_
 theorem home_runs_solution := LemmaWeave.Problems.GSM8K.Sprint0922A04.home_runs_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A04
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.accidents_nonunique
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.arvin_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.carla_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.clerks_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.countries_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.cupcakes_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.driving_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.figurines_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.home_runs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.plates_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.parents_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.perfume_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.phones_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.dogs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A04.used_car_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.accidents_nonunique to "work/gsm8k-sprint76-accidents-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.arvin_solution to "work/gsm8k-sprint76-arvin_run-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.carla_solution to "work/gsm8k-sprint76-carla_water-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.clerks_solution to "work/gsm8k-sprint76-clerks-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.countries_solution to "work/gsm8k-sprint76-countries-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.cupcakes_solution to "work/gsm8k-sprint76-cupcakes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.driving_solution to "work/gsm8k-sprint76-driving-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.figurines_solution to "work/gsm8k-sprint76-figurines-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.home_runs_solution to "work/gsm8k-sprint76-home_runs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.plates_solution to "work/gsm8k-sprint76-paper_plates-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.parents_solution to "work/gsm8k-sprint76-parents-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.perfume_solution to "work/gsm8k-sprint76-perfume-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.phones_solution to "work/gsm8k-sprint76-phones-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.dogs_solution to "work/gsm8k-sprint76-rescue_dogs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A04.used_car_solution to "work/gsm8k-sprint76-used_car-graph.json"

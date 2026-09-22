@@ -55,3 +55,35 @@ theorem land_people := LemmaWeave.Problems.GSM8K.Sprint0922A00.land_people
 theorem land_solution := LemmaWeave.Problems.GSM8K.Sprint0922A00.land_solution
 
 end LemmaWeave.Tests.GSM8KSprint0922A00
+
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.annie_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.bowling_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.college_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.crowdfunding_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.cupcake_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.drive_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.tape_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.gumballs_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.inheritance_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.ivy_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.land_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.orchard_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.reading_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.heights_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0922A00.typing_solution
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.annie_solution to "work/gsm8k-sprint72-annie-money-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.bowling_solution to "work/gsm8k-sprint72-bowling-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.college_solution to "work/gsm8k-sprint72-college-cost-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.crowdfunding_solution to "work/gsm8k-sprint72-crowdfunding-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.cupcake_solution to "work/gsm8k-sprint72-cupcake-profit-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.drive_solution to "work/gsm8k-sprint72-drive-storage-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.tape_solution to "work/gsm8k-sprint72-duct-tape-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.gumballs_solution to "work/gsm8k-sprint72-gumballs-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.inheritance_solution to "work/gsm8k-sprint72-inheritance-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.ivy_solution to "work/gsm8k-sprint72-ivy-cupcakes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.land_solution to "work/gsm8k-sprint72-land-share-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.orchard_solution to "work/gsm8k-sprint72-orchard-pumpkins-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.reading_solution to "work/gsm8k-sprint72-reading-pages-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.heights_solution to "work/gsm8k-sprint72-tamara-height-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0922A00.typing_solution to "work/gsm8k-sprint72-typing-graph.json"

@@ -1,0 +1,101 @@
+{
+  "id": "gsm8k_sprint98_parking",
+  "title_ja": "未払い駐車台数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01762",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "有効券と恒久パスの台数を求め、両者の重なりが未指定であることを範囲と二つの実例で示す。追加条件として両区分が排他的なら30台。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.parking_disjoint_solution",
+  "graph": "work/gsm8k-sprint98-parking-graph.json",
+  "model_notes_ja": [
+    "原文は有効券所持車と恒久パス所持車が重複しないとは明記していない。重複を許すと未払いは30〜75台で一意でない。参照解答の30台は両区分が排他的という追加条件の下で成立する。"
+  ],
+  "steps": [
+    {
+      "id": "parking_tickets",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.parking_tickets",
+      "title_ja": "有効券は225台。",
+      "claim_ja": "有効券は225台。",
+      "method_ja": "300の75%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "75%=75/100。",
+      "conclusion_ja": "225×100=300×75。",
+      "baseline_ja": "225×100=300×75。"
+    },
+    {
+      "id": "parking_passes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.parking_passes",
+      "title_ja": "恒久パスは45台。",
+      "claim_ja": "恒久パスは45台。",
+      "method_ja": "225の5分の1。",
+      "requires_steps": [
+        "parking_tickets"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『1/5th that number』を有効券台数225の5分の1とする。",
+      "conclusion_ja": "45×5=225。",
+      "baseline_ja": "45×5=225。"
+    },
+    {
+      "id": "parking_range",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.parking_range",
+      "title_ja": "原文だけでは未払いは30〜75台。",
+      "claim_ja": "原文だけでは未払いは30〜75台。",
+      "method_ja": "包除原理で unpaid=300−225−45+overlap。",
+      "requires_steps": [
+        "parking_tickets",
+        "parking_passes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "券とパスの重複は0〜45台。",
+      "conclusion_ja": "30≤unpaid≤75。",
+      "baseline_ja": "30≤unpaid≤75。"
+    },
+    {
+      "id": "parking_two_possible_values",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.parking_two_possible_values",
+      "title_ja": "30台と75台の双方が原文の人数条件を満たす。",
+      "claim_ja": "30台と75台の双方が原文の人数条件を満たす。",
+      "method_ja": "重複0のモデルと重複45のモデルを構成する。",
+      "requires_steps": [
+        "parking_range"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "券とパスが排他的かどうかを原文は明示しない。",
+      "conclusion_ja": "overlap=0なら30、overlap=45なら75。",
+      "baseline_ja": "overlap=0なら30、overlap=45なら75。"
+    },
+    {
+      "id": "parking_disjoint_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.parking_disjoint_solution",
+      "title_ja": "券所持者とパス所持者が排他的なら未払いは30台。",
+      "claim_ja": "券所持者とパス所持者が排他的なら未払いは30台。",
+      "method_ja": "300−225−45。",
+      "requires_steps": [
+        "parking_tickets",
+        "parking_passes",
+        "parking_two_possible_values"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加条件 overlap=0 を明示する。",
+      "conclusion_ja": "unpaid=30。",
+      "baseline_ja": "unpaid=30。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1763,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-22",
+  "run_id": "lemmaweave-sprint-20260922-2100-retry-a20",
+  "scheduled_slot": {
+    "role": "overdue_and_failed_proof_retry",
+    "hour_jst": 21,
+    "planned_at": "2026-09-22T21:00:00+09:00",
+    "started_at": "2026-09-22T20:55:40+09:00",
+    "slot_shift_ja": "予定枠の4分20秒前に起動したため、完了済み20時枠を重複実行せず、21時の失敗証明再試行枠として直列実行した。"
+  },
+  "base_sha": "d50cb0c514fde555f87367ca58f85e251750082f",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "started_at": "2026-09-22T20:55:40+09:00",
+  "finished_at": "2026-09-22T21:05:46+09:00",
+  "selected_problem_ids": [
+    "train:01344", "train:01345", "train:01346", "train:01347", "train:01348",
+    "train:01349", "train:01350", "train:01351", "train:01352", "train:01353",
+    "train:01354", "train:01355", "train:01356", "train:01357", "train:01358"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01344", "train:01345", "train:01346", "train:01347", "train:01348",
+    "train:01349", "train:01350", "train:01351", "train:01352", "train:01353",
+    "train:01354", "train:01355", "train:01356", "train:01357", "train:01358"
+  ],
+  "deferred": [{
+    "problem_id": "train:01344-train:01358",
+    "retry_on": "exact-head fixed Lean 4.33.1 full replay success and evidence import",
+    "reason_ja": "失敗ログで確認した51定理を修復したが、ローカル実行環境にlakeがなく、修復後HEADの固定Lean CIもまだ起動していないため成功証拠を確定できない。",
+    "next_action_ja": "修復後HEADで完全replayを実行し、各定理のkernel成功・許容公理・依存を確認して証拠を取り込む。"
+  }],
+  "retry": {
+    "target_file": "LemmaWeave/Problems/GSM8K/Sprint0921A20Models.lean",
+    "previous_failure_run_id": 35670885067,
+    "previous_failure_job_id": 106566849965,
+    "previous_failure_artifact_id": 10671081248,
+    "previous_failure_artifact_size_bytes": 197153357,
+    "failed_theorems_observed": 51,
+    "root_cause_ja": "レコード全体をcasesで分解した後、変数同士の積を含む全仮定へomegaを適用していたため、非線形項を独立変数として扱い結論を導けなかった。",
+    "repair_ja": "定理文と問題モデルを変更せず、既知の数量を各フィールド仮定で先に書き換え、定数計算をnorm_numへ、定数係数の線形制約だけをomegaへ渡した。",
+    "theorem_statements_changed": 0,
+    "theorem_proofs_repaired": 51,
+    "old_semantic_model_hash": "eb4b7e737a46c4064015ddba000263dd82fca1f565a096419bac813f37941c02",
+    "new_semantic_model_hash": "db831735efef7de2e4979a919a419c3c24f793e49e507b98b07b2beadf635943",
+    "recipes_rehashed": 15,
+    "batch_rehashed": "GSM8K-INDIVIDUAL-0125"
+  },
+  "self_review": {
+    "status": "self_review_only",
+    "problem_models_rechecked": 15,
+    "theorem_declarations_rechecked": 51,
+    "sorry_admit_custom_axiom_count": 0,
+    "notes_ja": [
+      "原題・記述式解答・Lean定理文は変更していない。",
+      "条件不足を分離した蝶とラクダの両解釈定理も保持した。",
+      "各レシピのauthor_review.checked_model_hashとbatch 125のsemantic_model_hashを現在モデルへ更新した。"
+    ]
+  },
+  "checks": {
+    "fixed_file_sha256": "db831735efef7de2e4979a919a419c3c24f793e49e507b98b07b2beadf635943",
+    "theorem_count": 51,
+    "forbidden_tokens": 0,
+    "recipe_hash_matches": "15/15",
+    "batch_hash_matches": "1/1",
+    "fixed_lean_kernel": "not_run_local_lake_unavailable",
+    "exact_head_workflow_runs": 0
+  },
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1145,
+    "pending": 7129,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "solution_ready_before": 518,
+    "solution_ready_after": 518,
+    "main_reflected_solution_ready": 518,
+    "next_new_problem_id": "train:01659",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": ["train:01344", "train:01358"],
+    "base_sha": "d50cb0c514fde555f87367ca58f85e251750082f",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "not_started",
+    "local_fixed_lean_status": "unavailable_lake_not_installed",
+    "last_full_replay_run_id": 35670885067,
+    "last_full_replay_head": "bf40c0e4f97c04370bf1273f42567fe1cef66cfe",
+    "last_full_replay_conclusion": "failure"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "repair_commit": "8a4275cf4431e7230e9bacf4f61a743faef4d741",
+    "merge_status": "held_for_exact_head_ci"
+  }
+}

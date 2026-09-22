@@ -1,0 +1,106 @@
+{
+  "date": "2026-09-22",
+  "run_id": "lemmaweave-sprint-20260922-0900-entrance-04",
+  "planned_slot_local_hour": 9,
+  "planned_at": "2026-09-22T09:00:00+09:00",
+  "role": "japanese_entrance_exam_high_school",
+  "base_sha": "db3a3ca7660cda9c741fc557262e1706f4bbcff3",
+  "started_at": "2026-09-22T08:58:51+09:00",
+  "finished_at": "2026-09-22T09:07:36+09:00",
+  "schedule_offset_seconds": -69,
+  "schedule_note_ja": "予定時刻の1分9秒前に起動したが、直前の08時GSM8K枠は完了済みであり、09時専用枠として実行した。GSM8Kの解答数へは加算していない。",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i"
+  ],
+  "deferred": [],
+  "claim": {
+    "problem_ids": ["JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i"],
+    "claimed_at": "2026-09-22T08:58:51+09:00",
+    "expires_at": "2026-09-22T09:58:51+09:00",
+    "status": "released_after_serial_write"
+  },
+  "source": {
+    "provider": "大学入試センター",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "pdf_page_1_based": [19, 22],
+    "printed_page_label": ["48", "51"],
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i.json",
+    "source_review_basis": "公式掲載ページと公式PDFを2026-09-22に再取得し、外れ値境界の定義、29.315秒・29.835秒、および四分位範囲を求める要求を直接照合した。文書SHA-256は固定メタデータと一致する版を参照した。原文と図表は転載せず、独自の数学的要約と形式化だけを保存した。",
+    "rights_status": "candidate_restricted_unchanged"
+  },
+  "written_solution_ja": [
+    "下側境界をL=Q1-1.5IQR、上側境界をU=Q3+1.5IQRとする。IQR=Q3-Q1なので、U-L=(Q3-Q1)+3IQR=4IQRである。",
+    "問題で与えられた値から、U-L=29.835-29.315=0.520秒である。",
+    "したがって4IQR=0.520であり、両辺を4で割るとIQR=0.130秒、すなわち答えは0.13秒である。"
+  ],
+  "entrance_exam_ledger_snapshot": {
+    "registered": 13,
+    "collected_kernel_checked": 5,
+    "candidate_not_started": 8,
+    "candidate_count_note_ja": "独自解答は作成したが、権利確認と正式収集状態を変更していないため候補8件の集計は維持する。",
+    "individual_solutions_authored_this_week": 4,
+    "current_week_by_six_fields": {
+      "sets_logic_integers": 1,
+      "functions_equations_inequalities": 1,
+      "geometry_vectors_trigonometry": 1,
+      "combinatorics_probability_statistics": 1,
+      "sequences": 0,
+      "calculus": 0
+    },
+    "unconfirmed_scope_ja": "旧51掲載経路・36大学と現行13 IDの完全対応、2024〜2026共通テストおよび東京・京都・名古屋大学の全小問、高校6分野の対象全集合は未列挙。"
+  },
+  "gsm8k_progress_unchanged": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 980,
+    "next_problem_id": "train:01494",
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "artifacts": {
+    "recipe": "knowledge/recipes/dnc2026_iqr_boundary_individual.json",
+    "model_file": "LemmaWeave/Problems/DNC2026M1/IQRBoundaryModel.lean",
+    "lean_file": "tests/lean/DNC2026IQRBoundaryIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "model_sha256": "04e5685edd22febca04bf171502d43cbd64ea2db38e1361ef22ba1b3b7f0b4ba",
+    "written_lines": 3,
+    "lean_line_theorems": 3,
+    "new_bytes": 7832,
+    "semantic_review_status": "self_review_only"
+  },
+  "validation": {
+    "official_source_refetched": true,
+    "registered_problem_record_matched": true,
+    "registered_id_set_count": 13,
+    "registered_id_duplicates": 0,
+    "candidate_count": 8,
+    "recipe_json_parse": "success",
+    "recipe_steps": 3,
+    "recipe_declaration_links": 3,
+    "rational_arithmetic_check": "success: (29835-29315)/1000/4 = 13/100",
+    "forbidden_lean_tokens_found": [],
+    "local_lean_available": false,
+    "fixed_lean_status": "pending_exact_head_ci",
+    "semantic_review_status": "self_review_only",
+    "method_target_note_ja": "ローカルには固定Lean 4.33.1環境がなく、新規依存グラフは未生成。exact-head CIでビルド、公理、依存を再実行する。"
+  },
+  "ci": {
+    "prior_head_sha": "db3a3ca7660cda9c741fc557262e1706f4bbcff3",
+    "prior_head_workflow_runs": 0,
+    "current_status": "pending_exact_head_ci",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": null,
+  "next_entrance_exam_field": "sequences",
+  "next_entrance_exam_candidate_ja": "現行台帳には数列候補が0件なので、次の09時専用枠では公式出典から対象小問を新規登録してから解く。",
+  "note_ja": "場合の数・確率・統計の専用枠として、公式PDFの1小問を原資料から確認した。外れ値境界の定義、境界差、一次方程式を3つの日本語説明行とLean定理へ対応させた。候補問題の権利確認、独立レビュー、固定Lean成功証拠は未完のため正式完了には数えない。"
+}

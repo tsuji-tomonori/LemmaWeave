@@ -68,23 +68,7 @@ def main():
         confined(ROOT, target)
         source = (ROOT / target).read_text()
         project_imports = sorted(set(re.findall(
-            r'^\\s*import\\s+(LemmaWeave(?:\\.[A-Za-z0-9_]+)+)\\s*
-    (ROOT / 'reports/method-targets.json').write_text(json.dumps(results, indent=2) + '\n')
-    selection = {
-        'mode': 'all' if args.all else 'stale_evidence_only',
-        'registered_target_count': len(all_targets),
-        'selected_target_count': len(targets),
-        'skipped_current_target_count': len(all_targets) - len(targets),
-        'selected_targets': targets,
-        'safety_gate': 'check_method_recipes.proof_evidence over Lean import closure and graph hash'
-    }
-    (ROOT / 'reports/method-target-selection.json').write_text(json.dumps(selection, indent=2) + '\n')
-    return int(any(r['exit_code'] for r in results))
-
-
-if __name__ == '__main__':
-    raise SystemExit(main())
-,
+            r'^\s*import\s+(LemmaWeave(?:\.[A-Za-z0-9_]+)+)\s*$',
             source, re.MULTILINE)))
         build = subprocess.run(['lake', 'build', *project_imports],
                                cwd=ROOT, check=False)

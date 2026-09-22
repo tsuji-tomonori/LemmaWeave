@@ -12,7 +12,7 @@
   "repair_base_sha": "f5f9de3f6ddd674b15d7d544c0eca4900e509285",
   "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
   "started_at": "2026-09-22T21:55:46+09:00",
-  "finished_at": "2026-09-22T22:43:00+09:00",
+  "finished_at": "2026-09-22T22:55:00+09:00",
   "selected_problem_ids": [
     "train:01164",
     "train:01165",
@@ -712,8 +712,8 @@
     {
       "problem_id": "train:01164-train:01658 (affected 345 IDs only)",
       "retry_on": "exact-head fixed Lean 4.33.1 full replay success and evidence import",
-      "reason_ja": "証拠グラフ宣言欠落は解消したが、次の完全replayでA20テスト別名構文と未ビルド依存の修復を検証する必要があるため正式完了へ昇格しない。",
-      "next_action_ja": "修復後HEADの完全replayを追跡し、kernel成功・許容公理・依存グラフ・現在入力ハッシュを照合してから証拠を取り込む。"
+      "reason_ja": "51別名定理と依存ビルドは通過したが、ランナー編集時の文字列置換でPython構文が破損したため再生成した。修復後HEADの完全replay成功証拠が未確定なので正式完了へ昇格しない。",
+      "next_action_ja": "Python構文検査済みランナーのexact-head完全replayを追跡し、kernel成功・許容公理・依存グラフ・現在入力ハッシュを照合してから証拠を取り込む。"
     }
   ],
   "ci_recovery": {
@@ -733,13 +733,20 @@
     "graph_registration_artifact_sha256": "8250734c6fd2dd5f1eb0bfb831a8861280778ae54c4a5d416d4a9df1e05dde38",
     "graph_registration_artifact_size_bytes": 366305546,
     "exposed_failures": {
-      "a20_alias_declarations": 51,
-      "missing_prebuilt_project_import_targets": 20
+      "runner_python_syntax_corruption": 1
     },
     "repair_ja": [
       "A20の51別名定理へ元定理と同一の明示型を付け、定理内容と証明依存を変更しない。",
-      "run_method_targets.pyで各テスト対象のLemmaWeave importをlake buildしてからLeanを実行し、キャッシュ偶然依存を除去する。"
-    ]
+      "run_method_targets.pyで各テスト対象のLemmaWeave importをlake buildしてからLeanを実行し、キャッシュ偶然依存を除去する。",
+      "壊れたランナーを元版から再生成し、依存ビルド処理だけを再適用した。python3 -m py_compile成功後に反映した。"
+    ],
+    "alias_and_dependency_repair_commit": "c19e2454abc3b3f270ca857ed719030280ccf822",
+    "alias_and_dependency_run_id": 35735343732,
+    "alias_and_dependency_run_conclusion": "failure",
+    "alias_and_dependency_artifact_id": 10697727004,
+    "alias_and_dependency_artifact_sha256": "67154547b1c4854c315112bd345c793f6bb674c76b6416f0b3ae303387dc094f",
+    "alias_and_dependency_artifact_size_bytes": 198775616,
+    "alias_typecheck_status": "passed_in_full_replay_before_runner"
   },
   "self_review": {
     "status": "self_review_only",
@@ -780,5 +787,11 @@
     "number": 5,
     "branch": "codex/sprint-20260919-0000",
     "merge_status": "held_for_exact_head_ci"
+  },
+  "checks": {
+    "python_runner_py_compile": "passed",
+    "alias_theorems_typed": 51,
+    "forbidden_tokens_added": 0,
+    "exact_head_status": "pending_after_runner_regeneration"
   }
 }

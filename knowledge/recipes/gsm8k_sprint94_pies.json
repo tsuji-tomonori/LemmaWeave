@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint94_pies",
+  "title_ja": "作れるアップルパイ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01701",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "120ポンドの半分をソースにし、残りを1個4ポンドのパイに使う。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.pies_solution",
+  "graph": "work/gsm8k-sprint94-pies-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pies_sauce",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.pies_sauce",
+      "title_ja": "ソース用",
+      "claim_ja": "60ポンド。",
+      "method_ja": "120÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "半分を使う。",
+      "conclusion_ja": "60×2=120。",
+      "baseline_ja": "60×2=120。"
+    },
+    {
+      "id": "pies_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.pies_remaining",
+      "title_ja": "パイ用",
+      "claim_ja": "60ポンド。",
+      "method_ja": "120-60。",
+      "requires_steps": [
+        "pies_sauce"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り全部をパイに使う。",
+      "conclusion_ja": "60+60=120。",
+      "baseline_ja": "60+60=120。"
+    },
+    {
+      "id": "pies_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.pies_solution",
+      "title_ja": "パイ数",
+      "claim_ja": "15個。",
+      "method_ja": "60÷4。",
+      "requires_steps": [
+        "pies_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1個4ポンドで端数なし。",
+      "conclusion_ja": "15×4=60。",
+      "baseline_ja": "15×4=60。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1702,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

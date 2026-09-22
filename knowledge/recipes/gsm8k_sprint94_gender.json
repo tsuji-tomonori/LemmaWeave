@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint94_gender",
+  "title_ja": "女性客数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01702",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全60人のうち2/3が男性。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.gender_solution",
+  "graph": "work/gsm8k-sprint94-gender-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "gender_male",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.gender_male",
+      "title_ja": "男性客",
+      "claim_ja": "40人。",
+      "method_ja": "60×2/3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "割合の母数は全客。",
+      "conclusion_ja": "40×3=60×2。",
+      "baseline_ja": "40×3=60×2。"
+    },
+    {
+      "id": "gender_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.gender_solution",
+      "title_ja": "女性客",
+      "claim_ja": "20人。",
+      "method_ja": "60-40。",
+      "requires_steps": [
+        "gender_male"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "客を男性・女性の二群として数える。",
+      "conclusion_ja": "20+40=60。",
+      "baseline_ja": "20+40=60。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1703,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

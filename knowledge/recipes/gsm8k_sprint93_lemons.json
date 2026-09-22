@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint93_lemons",
+  "title_ja": "トラックの残り積載量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01687",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "上限900kgのトラックに、1袋8kgのレモン100袋を積む。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.lemons_solution",
+  "graph": "work/gsm8k-sprint93-lemons-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lemons_load",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.lemons_load",
+      "title_ja": "積荷",
+      "claim_ja": "800kg。",
+      "method_ja": "100×8。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各袋は8kg。",
+      "conclusion_ja": "100×8=800。",
+      "baseline_ja": "100×8=800。"
+    },
+    {
+      "id": "lemons_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.lemons_solution",
+      "title_ja": "残り積載量",
+      "claim_ja": "100kg。",
+      "method_ja": "900-800。",
+      "requires_steps": [
+        "lemons_load"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "上限ちょうどまで積載できる。",
+      "conclusion_ja": "100+800=900。",
+      "baseline_ja": "100+800=900。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1688,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

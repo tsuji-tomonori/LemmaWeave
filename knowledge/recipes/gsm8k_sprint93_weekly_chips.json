@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint93_weekly_chips",
+  "title_ja": "第3週と第4週の販売袋数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01684",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "月100袋。第1週15袋、第2週はその3倍、第3週と第4週は同数。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.weekly_chips_solution",
+  "graph": "work/gsm8k-sprint93-weekly-chips-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "weekly_chips_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.weekly_chips_second",
+      "title_ja": "第2週",
+      "claim_ja": "45袋。",
+      "method_ja": "15×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "thrice を3倍と読む。",
+      "conclusion_ja": "15×3=45。",
+      "baseline_ja": "15×3=45。"
+    },
+    {
+      "id": "weekly_chips_pair",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.weekly_chips_pair",
+      "title_ja": "後半2週合計",
+      "claim_ja": "40袋。",
+      "method_ja": "100-15-45。",
+      "requires_steps": [
+        "weekly_chips_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4週間の合計が100袋。",
+      "conclusion_ja": "40+15+45=100。",
+      "baseline_ja": "40+15+45=100。"
+    },
+    {
+      "id": "weekly_chips_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.weekly_chips_solution",
+      "title_ja": "各週",
+      "claim_ja": "第3週、第4週は各20袋。",
+      "method_ja": "40を等分する。",
+      "requires_steps": [
+        "weekly_chips_pair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両週の販売数は等しい。",
+      "conclusion_ja": "20×2=40。",
+      "baseline_ja": "20×2=40。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1685,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

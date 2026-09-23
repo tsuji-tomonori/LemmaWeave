@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T06:00+09:00-gsm8k-15-a06",
+  "scheduled_local_hour": 6,
+  "scheduled_at": "2026-09-24T06:00:00+09:00",
+  "started_at": "2026-09-24T05:56:14+09:00",
+  "finished_at": "2026-09-24T06:03:00+09:00",
+  "start_delay_seconds": -226,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "34bf3bb2842808ebfdc65657289a7bbc06a3f157",
+  "artifact_commit": "8425efc284643d8432eed9073a48e17167f145d4",
+  "selected_problem_ids": [
+    "train:02019", "train:02020", "train:02021", "train:02022", "train:02023",
+    "train:02024", "train:02025", "train:02026", "train:02027", "train:02028",
+    "train:02029", "train:02030", "train:02031", "train:02032", "train:02033"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02019", "train:02020", "train:02021", "train:02022", "train:02023",
+    "train:02024", "train:02025", "train:02026", "train:02027", "train:02028",
+    "train:02029", "train:02030", "train:02031", "train:02032", "train:02033"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02023", "commit": "481651e42967adfe806fa4dbf04cc5b15972053d"},
+    {"through": "train:02028", "commit": "766814165e592f3f89980f59bb430cf6587df311"},
+    {"through": "train:02033", "commit": "8425efc284643d8432eed9073a48e17167f145d4"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0170.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A06Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A06.lean",
+    "recipes": 15,
+    "explanation_lines": 43,
+    "named_lean_theorems": 43,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02028はtwice the number of the remaining stockの係り先が曖昧であるため、購入した200個が購入前の残正在庫の2倍という追加条件を明示し、225個残ることを形式化した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1519,
+    "pending": 6755,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02034",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持し、1時から6時までを重複なく実行した。"
+  },
+  "ci": {
+    "last_checked_head": "34bf3bb2842808ebfdc65657289a7bbc06a3f157",
+    "workflow_run_id": 35913905048,
+    "status": "failure",
+    "reason": "legacy_audit_lean_errors",
+    "accepted_as_success_evidence": false,
+    "recovery_record": "operations/ci-recovery/2026-09-24-0600.json",
+    "new_head_status": "pending_after_ledger_commit"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T06:00+09:00",
+    "scope": "train:02019-train:02033",
+    "claimed_at": "2026-09-24T05:56:14+09:00",
+    "expires_at": "2026-09-24T06:56:14+09:00",
+    "released": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint110_earnings",
+  "title_ja": "Saheedの収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01941",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Vikaとの差からKaylaの収入を求め、その4倍を取る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.earnings_solution",
+  "graph": "work/gsm8k-sprint110-earnings-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "earnings_kayla",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.earnings_kayla",
+      "title_ja": "Kaylaは54ドル。",
+      "claim_ja": "Kaylaは54ドル。",
+      "method_ja": "84−30。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "earnings_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.earnings_solution",
+      "title_ja": "Saheedは216ドル。",
+      "claim_ja": "Saheedは216ドル。",
+      "method_ja": "54×4。",
+      "requires_steps": [
+        "earnings_kayla"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1942,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

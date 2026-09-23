@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint110_jerome",
+  "title_ja": "Jeromeの残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01939",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "半分43ドルから元金を求め、MegとBiancaへの支払を引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.jerome_solution",
+  "graph": "work/gsm8k-sprint110-jerome-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jerome_initial",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.jerome_initial",
+      "title_ja": "元金は86ドル。",
+      "claim_ja": "元金は86ドル。",
+      "method_ja": "43×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "jerome_bianca",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.jerome_bianca",
+      "title_ja": "Biancaへ24ドル渡す。",
+      "claim_ja": "Biancaへ24ドル渡す。",
+      "method_ja": "8×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "jerome_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.jerome_solution",
+      "title_ja": "残金は54ドル。",
+      "claim_ja": "残金は54ドル。",
+      "method_ja": "86−8−24。",
+      "requires_steps": [
+        "jerome_initial",
+        "jerome_bianca"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1940,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint110_pets",
+  "title_ja": "ペット全体の脚の本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01940",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "動物種ごとの個体数と脚数を掛けて合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.pets_solution",
+  "graph": "work/gsm8k-sprint110-pets-graph.json",
+  "model_notes_ja": [
+    "参照説明は蛇を1匹と誤記しているが、原題の4匹を用いた。蛇の脚は0本なので最終値34は変わらない。"
+  ],
+  "steps": [
+    {
+      "id": "pets_birds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pets_birds",
+      "title_ja": "鳥3羽は6本。",
+      "claim_ja": "鳥3羽は6本。",
+      "method_ja": "3×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_dogs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pets_dogs",
+      "title_ja": "犬5匹は20本。",
+      "claim_ja": "犬5匹は20本。",
+      "method_ja": "5×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_snakes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pets_snakes",
+      "title_ja": "蛇4匹は0本。",
+      "claim_ja": "蛇4匹は0本。",
+      "method_ja": "4×0。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_spider",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pets_spider",
+      "title_ja": "蜘蛛1匹は8本。",
+      "claim_ja": "蜘蛛1匹は8本。",
+      "method_ja": "1×8。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pets_solution",
+      "title_ja": "合計34本。",
+      "claim_ja": "合計34本。",
+      "method_ja": "6+20+0+8。",
+      "requires_steps": [
+        "pets_birds",
+        "pets_dogs",
+        "pets_snakes",
+        "pets_spider"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1941,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

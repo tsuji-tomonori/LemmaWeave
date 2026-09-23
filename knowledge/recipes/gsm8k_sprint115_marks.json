@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint115_marks",
+  "title_ja": "4回の試験の得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02004",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A05.marks_solution",
+  "graph": "work/gsm8k-sprint115-marks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "marks_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A05.marks_total",
+      "title_ja": "4回の合計は300点。",
+      "claim_ja": "4回の合計は300点。",
+      "method_ja": "平均75点に4を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "4回の合計は300点。",
+      "baseline_ja": "4回の合計は300点。"
+    },
+    {
+      "id": "marks_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A05.marks_second",
+      "title_ja": "2回目は90点。",
+      "claim_ja": "2回目は90点。",
+      "method_ja": "80+10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "2回目は90点。",
+      "baseline_ja": "2回目は90点。"
+    },
+    {
+      "id": "marks_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A05.marks_remaining",
+      "title_ja": "3・4回目の合計は130点。",
+      "claim_ja": "3・4回目の合計は130点。",
+      "method_ja": "300−80−90。",
+      "requires_steps": [
+        "marks_total",
+        "marks_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "3・4回目の合計は130点。",
+      "baseline_ja": "3・4回目の合計は130点。"
+    },
+    {
+      "id": "marks_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A05.marks_solution",
+      "title_ja": "3回目は65点。",
+      "claim_ja": "3回目は65点。",
+      "method_ja": "同点なので130÷2。",
+      "requires_steps": [
+        "marks_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "3回目は65点。",
+      "baseline_ja": "3回目は65点。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2005,
+    "checked_model_hash": "af1d3cd89ac762ed5939af0e5fdfa5019b21ca0af7211d2d8c73a0db3296595c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足と参照説明の誤記を明示した。"
+    ]
+  }
+}

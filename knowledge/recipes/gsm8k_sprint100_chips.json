@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint100_chips",
+  "title_ja": "Nancyが残したチップ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01784",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "兄弟姉妹へ渡した合計を求め、22個から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.chips_solution",
+  "graph": "work/gsm8k-sprint100-chips-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "chips_given",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.chips_given",
+      "title_ja": "渡したのは12個。",
+      "claim_ja": "渡したのは12個。",
+      "method_ja": "7+5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "兄と姉へ渡した分は別。",
+      "conclusion_ja": "12。",
+      "baseline_ja": "12。"
+    },
+    {
+      "id": "chips_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.chips_solution",
+      "title_ja": "Nancyは10個残した。",
+      "claim_ja": "Nancyは10個残した。",
+      "method_ja": "22−12。",
+      "requires_steps": [
+        "chips_given"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残りをすべて自分に保つ。",
+      "conclusion_ja": "10+12=22。",
+      "baseline_ja": "10+12=22。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1785,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint100_candies",
+  "title_ja": "分けてもらった子供の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01785",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ロリポップとキャンディケーン、男子と女子を順に求めて加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.candies_solution",
+  "graph": "work/gsm8k-sprint100-candies-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "candies_lollipops",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.candies_lollipops",
+      "title_ja": "ロリポップは30個。",
+      "claim_ja": "ロリポップは30個。",
+      "method_ja": "90の3分の1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "one-third。",
+      "conclusion_ja": "30×3=90。",
+      "baseline_ja": "30×3=90。"
+    },
+    {
+      "id": "candies_canes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.candies_canes",
+      "title_ja": "キャンディケーンは60個。",
+      "claim_ja": "キャンディケーンは60個。",
+      "method_ja": "90−30。",
+      "requires_steps": [
+        "candies_lollipops"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残りはすべてキャンディケーン。",
+      "conclusion_ja": "60+30=90。",
+      "baseline_ja": "60+30=90。"
+    },
+    {
+      "id": "candies_boys",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.candies_boys",
+      "title_ja": "男子は10人。",
+      "claim_ja": "男子は10人。",
+      "method_ja": "30個÷3個/人。",
+      "requires_steps": [
+        "candies_lollipops"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全ロリポップを均等に3個ずつ。",
+      "conclusion_ja": "10×3=30。",
+      "baseline_ja": "10×3=30。"
+    },
+    {
+      "id": "candies_girls",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.candies_girls",
+      "title_ja": "女子は30人。",
+      "claim_ja": "女子は30人。",
+      "method_ja": "60個÷2個/人。",
+      "requires_steps": [
+        "candies_canes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全キャンディケーンを均等に2個ずつ。",
+      "conclusion_ja": "30×2=60。",
+      "baseline_ja": "30×2=60。"
+    },
+    {
+      "id": "candies_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.candies_solution",
+      "title_ja": "合計40人。",
+      "claim_ja": "合計40人。",
+      "method_ja": "10+30。",
+      "requires_steps": [
+        "candies_boys",
+        "candies_girls"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "男子と女子を各1回加える。",
+      "conclusion_ja": "40。",
+      "baseline_ja": "40。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1786,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

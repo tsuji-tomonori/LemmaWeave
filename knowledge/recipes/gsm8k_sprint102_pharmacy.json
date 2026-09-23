@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint102_pharmacy",
+  "title_ja": "2週間の販売カプセル数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01810",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "濃度別に週当たり販売数を売上÷単価で求め、2週間分を加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.pharmacy_solution",
+  "graph": "work/gsm8k-sprint102-pharmacy-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pharmacy_weekly_100",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.pharmacy_weekly_100",
+      "title_ja": "100mgは週16個。",
+      "claim_ja": "100mgは週16個。",
+      "method_ja": "80÷5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個5ドル、週売上80ドル。",
+      "conclusion_ja": "16。",
+      "baseline_ja": "16。"
+    },
+    {
+      "id": "pharmacy_weekly_500",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.pharmacy_weekly_500",
+      "title_ja": "500mgは週30個。",
+      "claim_ja": "500mgは週30個。",
+      "method_ja": "60÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個2ドル、週売上60ドル。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "pharmacy_two_weeks_100",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.pharmacy_two_weeks_100",
+      "title_ja": "100mgは2週間で32個。",
+      "claim_ja": "100mgは2週間で32個。",
+      "method_ja": "16×2。",
+      "requires_steps": [
+        "pharmacy_weekly_100"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各週同じ販売数。",
+      "conclusion_ja": "32。",
+      "baseline_ja": "32。"
+    },
+    {
+      "id": "pharmacy_two_weeks_500",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.pharmacy_two_weeks_500",
+      "title_ja": "500mgは2週間で60個。",
+      "claim_ja": "500mgは2週間で60個。",
+      "method_ja": "30×2。",
+      "requires_steps": [
+        "pharmacy_weekly_500"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各週同じ販売数。",
+      "conclusion_ja": "60。",
+      "baseline_ja": "60。"
+    },
+    {
+      "id": "pharmacy_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.pharmacy_solution",
+      "title_ja": "合計92個。",
+      "claim_ja": "合計92個。",
+      "method_ja": "32+60。",
+      "requires_steps": [
+        "pharmacy_two_weeks_100",
+        "pharmacy_two_weeks_500"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2濃度を各1回加える。",
+      "conclusion_ja": "92。",
+      "baseline_ja": "92。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1811,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

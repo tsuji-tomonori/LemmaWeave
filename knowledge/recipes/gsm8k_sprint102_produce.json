@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint102_produce",
+  "title_ja": "野菜の総売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01813",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "小数金額をセント単位にしてトマトとニンジンの売上を加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.produce_solution",
+  "graph": "work/gsm8k-sprint102-produce-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "produce_tomatoes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.produce_tomatoes",
+      "title_ja": "トマト売上は20,000セント。",
+      "claim_ja": "トマト売上は20,000セント。",
+      "method_ja": "200×100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個1ドル=100セント。",
+      "conclusion_ja": "20000。",
+      "baseline_ja": "20000。"
+    },
+    {
+      "id": "produce_carrots",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.produce_carrots",
+      "title_ja": "ニンジン売上は52,500セント。",
+      "claim_ja": "ニンジン売上は52,500セント。",
+      "method_ja": "350×150。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1本1.50ドル=150セント。",
+      "conclusion_ja": "52500。",
+      "baseline_ja": "52500。"
+    },
+    {
+      "id": "produce_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.produce_solution",
+      "title_ja": "総売上は72,500セント=725ドル。",
+      "claim_ja": "総売上は72,500セント=725ドル。",
+      "method_ja": "20000+52500。",
+      "requires_steps": [
+        "produce_tomatoes",
+        "produce_carrots"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全量を販売。",
+      "conclusion_ja": "72500。",
+      "baseline_ja": "72500。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1814,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

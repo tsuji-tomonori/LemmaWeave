@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint100_shells",
+  "title_ja": "4人の貝殻総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01783",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "DavidからMia、Ava、Aliceを順に復元し4人分を加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.shells_solution",
+  "graph": "work/gsm8k-sprint100-shells-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shells_mia",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.shells_mia",
+      "title_ja": "Miaは60個。",
+      "claim_ja": "Miaは60個。",
+      "method_ja": "4×15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Davidは15個、Miaは4倍。",
+      "conclusion_ja": "60。",
+      "baseline_ja": "60。"
+    },
+    {
+      "id": "shells_ava",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.shells_ava",
+      "title_ja": "Avaは80個。",
+      "claim_ja": "Avaは80個。",
+      "method_ja": "60+20。",
+      "requires_steps": [
+        "shells_mia"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Miaより20個多い。",
+      "conclusion_ja": "80。",
+      "baseline_ja": "80。"
+    },
+    {
+      "id": "shells_alice",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.shells_alice",
+      "title_ja": "Aliceは40個。",
+      "claim_ja": "Aliceは40個。",
+      "method_ja": "80の半分。",
+      "requires_steps": [
+        "shells_ava"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Avaの1/2。",
+      "conclusion_ja": "40×2=80。",
+      "baseline_ja": "40×2=80。"
+    },
+    {
+      "id": "shells_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.shells_solution",
+      "title_ja": "合計195個。",
+      "claim_ja": "合計195個。",
+      "method_ja": "15+60+80+40。",
+      "requires_steps": [
+        "shells_mia",
+        "shells_ava",
+        "shells_alice"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "David、Mia、Ava、Aliceを各1回加える。",
+      "conclusion_ja": "195。",
+      "baseline_ja": "195。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1784,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

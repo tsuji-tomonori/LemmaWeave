@@ -1,0 +1,104 @@
+{
+  "date": "2026-09-23",
+  "run_id": "gsm8k-20260923-1200-jst",
+  "scheduled_slot": "2026-09-23T12:00:00+09:00",
+  "actual_start_slot": "2026-09-23T12:04:11+09:00",
+  "slot_resolution": "11:00枠は完了済みのため、重複を避けて現在の12:00枠を実行した。10:00枠は前回台帳どおり未実行のまま保持する。",
+  "unexecuted_slots": ["2026-09-23T10:00:00+09:00"],
+  "role": "gsm8k_individual_solution",
+  "base_sha": "e59abb8a47c251cc8fb9a75c79185deecaa22918",
+  "started_at": "2026-09-23T12:04:11+09:00",
+  "finished_at": "2026-09-23T12:14:13+09:00",
+  "selected_problem_ids": [
+    "train:01809", "train:01810", "train:01811", "train:01812", "train:01813",
+    "train:01814", "train:01815", "train:01816", "train:01817", "train:01818",
+    "train:01819", "train:01820", "train:01821", "train:01822", "train:01823"
+  ],
+  "outputs_saved_problem_ids": [
+    "train:01809", "train:01810", "train:01811", "train:01812", "train:01813",
+    "train:01814", "train:01815", "train:01816", "train:01817", "train:01818",
+    "train:01819", "train:01820", "train:01821", "train:01822", "train:01823"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01809", "train:01810", "train:01811", "train:01812", "train:01813",
+    "train:01814", "train:01815", "train:01816", "train:01817", "train:01818",
+    "train:01819", "train:01820", "train:01821", "train:01822", "train:01823"
+  ],
+  "deferred": [{
+    "problem_id": "train:01809-train:01823",
+    "retry_on": "exact-head fixed Lean 4.33.1 success and current evidence import",
+    "reason_ja": "記述式解答・Lean形式化・自己照合は保存したが、現在HEADの固定Lean kernel成功証拠がないためsolution_readyへ昇格しない。",
+    "next_action_ja": "対象別replayでSprint0923A12を検証し、許容公理・入力SHA・依存グラフを照合して問題単位の成功証拠を取り込む。"
+  }],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "lines_1based": [1810, 1824],
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0156.json",
+    "record_hash_method": "SHA-256 of exact UTF-8 JSONL record bytes, excluding line terminator"
+  },
+  "semantic_review": {
+    "status": "self_review_only",
+    "reviewer": "author",
+    "notes_ja": [
+      "train:01815は15歳の誕生日の植樹と倍増の順序が不明瞭であり、参照解答の56本と、15歳にも植えてから倍にする64本を分離した。",
+      "train:01817は必要空気量1450立方インチから29回を形式化し、参照説明末尾の1550という誤記を採用しなかった。",
+      "train:01819は全金額をセント単位で保持し、40ドルを形式化した。",
+      "train:01820は全箱が15個容量という追加条件下の2箱と、箱容量が不均一なら3箱も可能な反例を分離した。"
+    ]
+  },
+  "checks": {
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "recipe_to_lean_declarations": "59/59",
+    "queue_total_and_unique_ids": "8792/8792",
+    "forbidden_tokens": 0,
+    "fixed_lean_kernel": "not_run",
+    "artifact_bytes": 78230
+  },
+  "checkpoints": [
+    {"problem_ids": ["train:01809", "train:01810", "train:01811", "train:01812", "train:01813"], "commit": "be56c3d28b3c95da8b5362eea1e8f9d303d7aaf5"},
+    {"problem_ids": ["train:01814", "train:01815", "train:01816", "train:01817", "train:01818"], "commit": "e4a9dd872561f73c85c5b5d68c0b15a21f1920ed"},
+    {"problem_ids": ["train:01819", "train:01820", "train:01821", "train:01822", "train:01823"], "commit": "39b6a3004888cdd8596a3faf85cb9c1273c33729"}
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1310,
+    "pending": 6964,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 1295},
+    "after": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 1310},
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01824",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": ["train:01809", "train:01823"],
+    "base_sha": "e59abb8a47c251cc8fb9a75c79185deecaa22918",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "zero_runs_and_zero_statuses_at_39b6a3004888cdd8596a3faf85cb9c1273c33729",
+    "local_fixed_lean_status": "unavailable_lake_not_installed",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "39b6a3004888cdd8596a3faf85cb9c1273c33729"
+  }
+}

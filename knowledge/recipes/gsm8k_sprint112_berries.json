@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint112_berries",
+  "title_ja": "Steveの最初のベリー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01969",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A02.berries_solution",
+  "graph": "work/gsm8k-sprint112-berries-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "berries_after",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A02.berries_after",
+      "title_ja": "Steveが受け取った後は25個。",
+      "claim_ja": "Steveが受け取った後は25個。",
+      "method_ja": "32−7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "Steveが受け取った後は25個。",
+      "baseline_ja": "Steveが受け取った後は25個。"
+    },
+    {
+      "id": "berries_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A02.berries_solution",
+      "title_ja": "Steveは最初21個。",
+      "claim_ja": "Steveは最初21個。",
+      "method_ja": "25−4。",
+      "requires_steps": [
+        "berries_after"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "Steveは最初21個。",
+      "baseline_ja": "Steveは最初21個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1970,
+    "checked_model_hash": "cff75c0f5c3d9bafdab526cfb829ca9517e6ed321ca1b728a453e1e263d58220",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

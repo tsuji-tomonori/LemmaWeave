@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint103_paint",
+  "title_ja": "2度塗りに必要な塗料缶",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01833",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "延べ面積を求め、1缶400平方フィートで割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.paint_solution",
+  "graph": "work/gsm8k-sprint103-paint-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "paint_area",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.paint_area",
+      "title_ja": "延べ塗装面積は1200平方フィート。",
+      "claim_ja": "延べ塗装面積は1200平方フィート。",
+      "method_ja": "2×600。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同じ壁を2度塗る。",
+      "conclusion_ja": "1200。",
+      "baseline_ja": "1200。"
+    },
+    {
+      "id": "paint_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.paint_solution",
+      "title_ja": "必要なのは3缶。",
+      "claim_ja": "必要なのは3缶。",
+      "method_ja": "1200÷400。",
+      "requires_steps": [
+        "paint_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1缶が400平方フィートを覆う。",
+      "conclusion_ja": "3。",
+      "baseline_ja": "3。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1834,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint103_wizard",
+  "title_ja": "魔法用品の合計銀貨",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01829",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "金貨建てを銀貨へ換算し、銀貨建ての薬品キットを加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.wizard_solution",
+  "graph": "work/gsm8k-sprint103-wizard-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "wizard_books",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.wizard_books",
+      "title_ja": "本は25金貨。",
+      "claim_ja": "本は25金貨。",
+      "method_ja": "5×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5冊、各5金貨。",
+      "conclusion_ja": "25。",
+      "baseline_ja": "25。"
+    },
+    {
+      "id": "wizard_gold",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.wizard_gold",
+      "title_ja": "本とフクロウは53金貨。",
+      "claim_ja": "本とフクロウは53金貨。",
+      "method_ja": "25+28。",
+      "requires_steps": [
+        "wizard_books"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "フクロウ28金貨。",
+      "conclusion_ja": "53。",
+      "baseline_ja": "53。"
+    },
+    {
+      "id": "wizard_gold_silver",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.wizard_gold_silver",
+      "title_ja": "金貨分は477銀貨。",
+      "claim_ja": "金貨分は477銀貨。",
+      "method_ja": "53×9。",
+      "requires_steps": [
+        "wizard_gold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1金貨=9銀貨。",
+      "conclusion_ja": "477。",
+      "baseline_ja": "477。"
+    },
+    {
+      "id": "wizard_kits",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.wizard_kits",
+      "title_ja": "薬品キットは60銀貨。",
+      "claim_ja": "薬品キットは60銀貨。",
+      "method_ja": "3×20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3組、各20銀貨。",
+      "conclusion_ja": "60。",
+      "baseline_ja": "60。"
+    },
+    {
+      "id": "wizard_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.wizard_solution",
+      "title_ja": "合計537銀貨。",
+      "claim_ja": "合計537銀貨。",
+      "method_ja": "477+60。",
+      "requires_steps": [
+        "wizard_gold_silver",
+        "wizard_kits"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全費用を銀貨に統一。",
+      "conclusion_ja": "537。",
+      "baseline_ja": "537。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1830,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

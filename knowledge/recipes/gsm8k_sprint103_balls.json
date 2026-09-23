@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint103_balls",
+  "title_ja": "バレーボールの個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01832",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "既知4種類を合計し、全145個から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.balls_solution",
+  "graph": "work/gsm8k-sprint103-balls-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "balls_basketball",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.balls_basketball",
+      "title_ja": "バスケットボールは25個。",
+      "claim_ja": "バスケットボールは25個。",
+      "method_ja": "20+5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "サッカーより5個多い。",
+      "conclusion_ja": "25。",
+      "baseline_ja": "25。"
+    },
+    {
+      "id": "balls_tennis",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.balls_tennis",
+      "title_ja": "テニスボールは40個。",
+      "claim_ja": "テニスボールは40個。",
+      "method_ja": "2×20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "サッカーの2倍。",
+      "conclusion_ja": "40。",
+      "baseline_ja": "40。"
+    },
+    {
+      "id": "balls_baseball",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.balls_baseball",
+      "title_ja": "野球ボールは30個。",
+      "claim_ja": "野球ボールは30個。",
+      "method_ja": "20+10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "サッカーより10個多い。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "balls_assigned",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.balls_assigned",
+      "title_ja": "既知4種類は115個。",
+      "claim_ja": "既知4種類は115個。",
+      "method_ja": "20+25+40+30。",
+      "requires_steps": [
+        "balls_basketball",
+        "balls_tennis",
+        "balls_baseball"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "種類は重複しない。",
+      "conclusion_ja": "115。",
+      "baseline_ja": "115。"
+    },
+    {
+      "id": "balls_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.balls_solution",
+      "title_ja": "バレーボールは30個。",
+      "claim_ja": "バレーボールは30個。",
+      "method_ja": "145−115。",
+      "requires_steps": [
+        "balls_assigned"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残りがすべてバレーボール。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1833,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

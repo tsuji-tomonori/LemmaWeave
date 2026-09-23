@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint103_stationery",
+  "title_ja": "文房具の総費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01831",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "箱数から鉛筆数を求め、鉛筆の2倍より300本多いペンと合わせる。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.stationery_solution",
+  "graph": "work/gsm8k-sprint103-stationery-graph.json",
+  "model_notes_ja": [
+    "参照説明中の『2700 pencils』は品目名の誤記であり、原題どおり2700 pensとして形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "stationery_pencils",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.stationery_pencils",
+      "title_ja": "鉛筆は1200本。",
+      "claim_ja": "鉛筆は1200本。",
+      "method_ja": "15×80。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15箱、各80本。",
+      "conclusion_ja": "1200。",
+      "baseline_ja": "1200。"
+    },
+    {
+      "id": "stationery_pencil_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.stationery_pencil_cost",
+      "title_ja": "鉛筆代は4800ドル。",
+      "claim_ja": "鉛筆代は4800ドル。",
+      "method_ja": "1200×4。",
+      "requires_steps": [
+        "stationery_pencils"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各4ドル。",
+      "conclusion_ja": "4800。",
+      "baseline_ja": "4800。"
+    },
+    {
+      "id": "stationery_pens",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.stationery_pens",
+      "title_ja": "ペンは2700本。",
+      "claim_ja": "ペンは2700本。",
+      "method_ja": "2×1200+300。",
+      "requires_steps": [
+        "stationery_pencils"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "鉛筆の2倍より300本多い。",
+      "conclusion_ja": "2700。",
+      "baseline_ja": "2700。"
+    },
+    {
+      "id": "stationery_pen_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.stationery_pen_cost",
+      "title_ja": "ペン代は13500ドル。",
+      "claim_ja": "ペン代は13500ドル。",
+      "method_ja": "2700×5。",
+      "requires_steps": [
+        "stationery_pens"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各5ドル。",
+      "conclusion_ja": "13500。",
+      "baseline_ja": "13500。"
+    },
+    {
+      "id": "stationery_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.stationery_solution",
+      "title_ja": "総費用は18300ドル。",
+      "claim_ja": "総費用は18300ドル。",
+      "method_ja": "4800+13500。",
+      "requires_steps": [
+        "stationery_pencil_cost",
+        "stationery_pen_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両品目を加える。",
+      "conclusion_ja": "18300。",
+      "baseline_ja": "18300。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1832,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

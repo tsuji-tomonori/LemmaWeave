@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint110_water",
+  "title_ja": "捨てた後に残る水量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01930",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "10分区間の個数ごとに流出量を求め、全量の半分を残す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.water_solution",
+  "graph": "work/gsm8k-sprint110-water-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "water_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.water_first",
+      "title_ja": "最初の30分は6カップ。",
+      "claim_ja": "最初の30分は6カップ。",
+      "method_ja": "30分は10分区間3個なので3×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "water_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.water_second",
+      "title_ja": "次の30分も6カップ。",
+      "claim_ja": "次の30分も6カップ。",
+      "method_ja": "同じ流量で3×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "water_final_hour",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.water_final_hour",
+      "title_ja": "最後の1時間は24カップ。",
+      "claim_ja": "最後の1時間は24カップ。",
+      "method_ja": "60分は10分区間6個なので6×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "water_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.water_total",
+      "title_ja": "全量は36カップ。",
+      "claim_ja": "全量は36カップ。",
+      "method_ja": "6+6+24。",
+      "requires_steps": [
+        "water_first",
+        "water_second",
+        "water_final_hour"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "water_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.water_solution",
+      "title_ja": "半分を捨てた後は18カップ。",
+      "claim_ja": "半分を捨てた後は18カップ。",
+      "method_ja": "36÷2。",
+      "requires_steps": [
+        "water_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1931,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

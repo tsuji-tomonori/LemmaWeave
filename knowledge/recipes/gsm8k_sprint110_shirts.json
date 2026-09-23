@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint110_shirts",
+  "title_ja": "Tシャツ販売の週間売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01931",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "営業時間を分に直し、男女別の販売枚数と売上を求めて7日分にする。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_solution",
+  "graph": "work/gsm8k-sprint110-shirts-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shirts_minutes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_minutes",
+      "title_ja": "1日の営業時間は720分。",
+      "claim_ja": "1日の営業時間は720分。",
+      "method_ja": "12×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shirts_women_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_women_count",
+      "title_ja": "女性用は1日24枚。",
+      "claim_ja": "女性用は1日24枚。",
+      "method_ja": "720÷30。",
+      "requires_steps": [
+        "shirts_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shirts_women_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_women_revenue",
+      "title_ja": "女性用の1日売上は432ドル。",
+      "claim_ja": "女性用の1日売上は432ドル。",
+      "method_ja": "24×18。",
+      "requires_steps": [
+        "shirts_women_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shirts_men_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_men_count",
+      "title_ja": "男性用は1日18枚。",
+      "claim_ja": "男性用は1日18枚。",
+      "method_ja": "720÷40。",
+      "requires_steps": [
+        "shirts_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shirts_men_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_men_revenue",
+      "title_ja": "男性用の1日売上は270ドル。",
+      "claim_ja": "男性用の1日売上は270ドル。",
+      "method_ja": "18×15。",
+      "requires_steps": [
+        "shirts_men_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shirts_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_daily",
+      "title_ja": "1日売上は702ドル。",
+      "claim_ja": "1日売上は702ドル。",
+      "method_ja": "432+270。",
+      "requires_steps": [
+        "shirts_women_revenue",
+        "shirts_men_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shirts_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_solution",
+      "title_ja": "1週間の売上は4914ドル。",
+      "claim_ja": "1週間の売上は4914ドル。",
+      "method_ja": "702×7。",
+      "requires_steps": [
+        "shirts_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1932,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint110_parties",
+  "title_ja": "8回のパーティーで集める総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01932",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1回分の参加費を人数分求め、8倍する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.parties_solution",
+  "graph": "work/gsm8k-sprint110-parties-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "parties_one",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.parties_one",
+      "title_ja": "1回で2400ドル集まる。",
+      "claim_ja": "1回で2400ドル集まる。",
+      "method_ja": "40×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "parties_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.parties_solution",
+      "title_ja": "8回で19200ドル集まる。",
+      "claim_ja": "8回で19200ドル集まる。",
+      "method_ja": "2400×8。",
+      "requires_steps": [
+        "parties_one"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1933,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

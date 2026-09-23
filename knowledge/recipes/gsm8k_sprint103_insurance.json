@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint103_insurance",
+  "title_ja": "保険による節約額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01825",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "24か月の保険料と20%自己負担を、無保険の手術費から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.insurance_solution",
+  "graph": "work/gsm8k-sprint103-insurance-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "insurance_premiums",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.insurance_premiums",
+      "title_ja": "保険料は480ドル。",
+      "claim_ja": "保険料は480ドル。",
+      "method_ja": "24×20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月額20ドルを24か月。",
+      "conclusion_ja": "480。",
+      "baseline_ja": "480。"
+    },
+    {
+      "id": "insurance_copay",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.insurance_copay",
+      "title_ja": "手術の自己負担は1000ドル。",
+      "claim_ja": "手術の自己負担は1000ドル。",
+      "method_ja": "5000×20%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "保険が80%を負担する。",
+      "conclusion_ja": "1000。",
+      "baseline_ja": "1000。"
+    },
+    {
+      "id": "insurance_paid",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.insurance_paid",
+      "title_ja": "保険料込みの支出は1480ドル。",
+      "claim_ja": "保険料込みの支出は1480ドル。",
+      "method_ja": "480+1000。",
+      "requires_steps": [
+        "insurance_premiums",
+        "insurance_copay"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両支出を含める。",
+      "conclusion_ja": "1480。",
+      "baseline_ja": "1480。"
+    },
+    {
+      "id": "insurance_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.insurance_solution",
+      "title_ja": "節約額は3520ドル。",
+      "claim_ja": "節約額は3520ドル。",
+      "method_ja": "5000−1480。",
+      "requires_steps": [
+        "insurance_paid"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "無保険なら5000ドル全額負担。",
+      "conclusion_ja": "3520。",
+      "baseline_ja": "3520。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1826,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint110_stock",
+  "title_ja": "自転車在庫の純増",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01937",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3日間の販売数と仕入数を合計し、仕入数から販売数を引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.stock_solution",
+  "graph": "work/gsm8k-sprint110-stock-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "stock_sold",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.stock_sold",
+      "title_ja": "販売は合計31台。",
+      "claim_ja": "販売は合計31台。",
+      "method_ja": "10+12+9。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "stock_bought",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.stock_bought",
+      "title_ja": "仕入れは合計34台。",
+      "claim_ja": "仕入れは合計34台。",
+      "method_ja": "15+8+11。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "stock_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.stock_solution",
+      "title_ja": "在庫は純増3台。",
+      "claim_ja": "在庫は純増3台。",
+      "method_ja": "34−31。",
+      "requires_steps": [
+        "stock_sold",
+        "stock_bought"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1938,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

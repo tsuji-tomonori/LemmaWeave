@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint108_pets",
+  "title_ja": "全員のペット総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01908",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初の3人、後の2人、Taylor本人を分けて合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A18.pets_solution",
+  "graph": "work/gsm8k-sprint108-pets-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pets_first_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.pets_first_each",
+      "title_ja": "最初の友人1人は8匹。",
+      "claim_ja": "最初の友人1人は8匹。",
+      "method_ja": "4×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_first_friends",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.pets_first_friends",
+      "title_ja": "最初の3人は24匹。",
+      "claim_ja": "最初の3人は24匹。",
+      "method_ja": "8×3。",
+      "requires_steps": [
+        "pets_first_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_other_friends",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.pets_other_friends",
+      "title_ja": "後の2人は4匹。",
+      "claim_ja": "後の2人は4匹。",
+      "method_ja": "2×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.pets_solution",
+      "title_ja": "合計32匹。",
+      "claim_ja": "合計32匹。",
+      "method_ja": "Taylorの4匹、24匹、4匹を足す。",
+      "requires_steps": [
+        "pets_first_friends",
+        "pets_other_friends"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1909,
+    "checked_model_hash": "8387abb9439c81fb607c222f1f1736998bf0c1f8b65dd181b6386c00663bd8bc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

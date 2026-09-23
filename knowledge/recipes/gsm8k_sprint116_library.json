@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint116_library",
+  "title_ja": "図書館の蔵書数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02032",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A06.library_solution",
+  "graph": "work/gsm8k-sprint116-library-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "library_tuesday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.library_tuesday",
+      "title_ja": "火曜後は130冊。",
+      "claim_ja": "火曜後は130冊。",
+      "method_ja": "250−120。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "火曜後は130冊。",
+      "baseline_ja": "火曜後は130冊。"
+    },
+    {
+      "id": "library_wednesday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.library_wednesday",
+      "title_ja": "水曜後は165冊。",
+      "claim_ja": "水曜後は165冊。",
+      "method_ja": "130+35。",
+      "requires_steps": [
+        "library_tuesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "水曜後は165冊。",
+      "baseline_ja": "水曜後は165冊。"
+    },
+    {
+      "id": "library_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.library_solution",
+      "title_ja": "木曜後は150冊。",
+      "claim_ja": "木曜後は150冊。",
+      "method_ja": "165−15。",
+      "requires_steps": [
+        "library_wednesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "木曜後は150冊。",
+      "baseline_ja": "木曜後は150冊。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2033,
+    "checked_model_hash": "6afaf5008eaf93c5adba4476ece9af8dac1560619045c291b7824f595ef3a6d4",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足を黙って補わず明示した。"
+    ]
+  }
+}

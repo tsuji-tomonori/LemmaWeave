@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint117_trip",
+  "title_ja": "バスは75分。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02034",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・順序を保って数量関係を式にし、全要求を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A07.trip_solution",
+  "graph": "work/gsm8k-sprint117-trip-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "trip_pretrain",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.trip_pretrain",
+      "title_ja": "列車前は120分。",
+      "claim_ja": "列車前は120分。",
+      "method_ja": "(8−6)×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "列車前は120分。",
+      "baseline_ja": "列車前は120分。"
+    },
+    {
+      "id": "trip_wait",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.trip_wait",
+      "title_ja": "待ち時間は30分。",
+      "claim_ja": "待ち時間は30分。",
+      "method_ja": "15×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "待ち時間は30分。",
+      "baseline_ja": "待ち時間は30分。"
+    },
+    {
+      "id": "trip_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.trip_solution",
+      "title_ja": "バスは75分。",
+      "claim_ja": "バスは75分。",
+      "method_ja": "120−15−30。",
+      "requires_steps": [
+        "trip_pretrain",
+        "trip_wait"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "バスは75分。",
+      "baseline_ja": "バスは75分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2035,
+    "checked_model_hash": "369701eb61882cc97fb85d1975a67fc86d2f208a3e0877119867fe1712e7ae3b",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足や曖昧さを黙って補わず明示した。"
+    ]
+  }
+}

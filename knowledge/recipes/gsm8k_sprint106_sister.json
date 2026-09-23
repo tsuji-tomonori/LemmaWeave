@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint106_sister",
+  "title_ja": "姉が56歳のときのEmma",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01878",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "現在の姉の年齢と経過年数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.sister_solution",
+  "graph": "work/gsm8k-sprint106-sister-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sister_current",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.sister_current",
+      "title_ja": "姉は現在16歳。",
+      "claim_ja": "姉は現在16歳。",
+      "method_ja": "7+9。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "sister_years",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.sister_years",
+      "title_ja": "姉が56歳になるまで40年。",
+      "claim_ja": "姉が56歳になるまで40年。",
+      "method_ja": "56−16。",
+      "requires_steps": [
+        "sister_current"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "sister_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.sister_solution",
+      "title_ja": "そのときEmmaは47歳。",
+      "claim_ja": "そのときEmmaは47歳。",
+      "method_ja": "7+40。",
+      "requires_steps": [
+        "sister_years"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1879,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

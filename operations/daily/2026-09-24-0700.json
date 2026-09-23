@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T07:00+09:00-gsm8k-15-a07",
+  "scheduled_local_hour": 7,
+  "scheduled_at": "2026-09-24T07:00:00+09:00",
+  "started_at": "2026-09-24T06:55:17+09:00",
+  "finished_at": "2026-09-24T07:20:00+09:00",
+  "start_delay_seconds": -283,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "4f960e5256929c3183e4b3078a92da9cf63c37ac",
+  "artifact_commit": "685515a0d145b0f1b914c1c9bdd21d9f9a9eda11",
+  "selected_problem_ids": [
+    "train:02034", "train:02035", "train:02036", "train:02037", "train:02038",
+    "train:02039", "train:02040", "train:02041", "train:02042", "train:02043",
+    "train:02044", "train:02045", "train:02046", "train:02047", "train:02048"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02034", "train:02035", "train:02036", "train:02037", "train:02038",
+    "train:02039", "train:02040", "train:02041", "train:02042", "train:02043",
+    "train:02044", "train:02045", "train:02046", "train:02047", "train:02048"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02038", "commit": "239a9f04e74848541ca3be685c89f51574046a15"},
+    {"through": "train:02043", "commit": "6a23e3bf417a4f8b6ea021971a91509ef395b83d"},
+    {"through": "train:02048", "commit": "685515a0d145b0f1b914c1c9bdd21d9f9a9eda11"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0171.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A07Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A07.lean",
+    "recipes": 15,
+    "explanation_lines": 56,
+    "named_lean_theorems": 56,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02044は2 times olderを『2倍の年齢』と読む44歳と、『年齢差が2倍』と読む56歳を分離し、原文だけでは一意でないことを形式化した。",
+    "train:02047はJohn/she/heの代名詞不整合を記録し、購入品・価格・クーポン額から一意な625ドルを形式化した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1534,
+    "pending": 6740,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02049",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持し、1時から7時までを重複なく実行した。"
+  },
+  "ci": {
+    "last_checked_head": "4f960e5256929c3183e4b3078a92da9cf63c37ac",
+    "workflow_run_id": 35920193610,
+    "status": "failure",
+    "reason": "timeout_and_legacy_audit_lean_errors",
+    "accepted_as_success_evidence": false,
+    "recovery_record": "operations/ci-recovery/2026-09-24-0700.json",
+    "new_head_status": "pending_after_ledger_commit"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T07:00+09:00",
+    "scope": "train:02034-train:02048",
+    "claimed_at": "2026-09-24T06:55:17+09:00",
+    "expires_at": "2026-09-24T07:55:17+09:00",
+    "released": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint108_safari",
+  "title_ja": "数えた動物の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01902",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各種類の個体数を問題文の差・半分の条件から順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A18.safari_solution",
+  "graph": "work/gsm8k-sprint108-safari-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "safari_rabbits",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.safari_rabbits",
+      "title_ja": "ウサギは114匹。",
+      "claim_ja": "ウサギは114匹。",
+      "method_ja": "80+34。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "safari_hyenas",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.safari_hyenas",
+      "title_ja": "ハイエナは152匹。",
+      "claim_ja": "ハイエナは152匹。",
+      "method_ja": "80+114−42。",
+      "requires_steps": [
+        "safari_rabbits"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "safari_wild_dogs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.safari_wild_dogs",
+      "title_ja": "野犬は202匹。",
+      "claim_ja": "野犬は202匹。",
+      "method_ja": "152+50。",
+      "requires_steps": [
+        "safari_hyenas"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "safari_leopards",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.safari_leopards",
+      "title_ja": "ヒョウは57匹。",
+      "claim_ja": "ヒョウは57匹。",
+      "method_ja": "114÷2。",
+      "requires_steps": [
+        "safari_rabbits"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "safari_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.safari_solution",
+      "title_ja": "総数は605匹。",
+      "claim_ja": "総数は605匹。",
+      "method_ja": "80+114+152+202+57。",
+      "requires_steps": [
+        "safari_rabbits",
+        "safari_hyenas",
+        "safari_wild_dogs",
+        "safari_leopards"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1903,
+    "checked_model_hash": "8387abb9439c81fb607c222f1f1736998bf0c1f8b65dd181b6386c00663bd8bc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

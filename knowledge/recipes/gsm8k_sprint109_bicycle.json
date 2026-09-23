@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint109_bicycle",
+  "title_ja": "自転車購入までに必要な追加額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01922",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "洗車と芝刈りの収入を合計し、価格との差を取る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.bicycle_solution",
+  "graph": "work/gsm8k-sprint109-bicycle-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bicycle_cars",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bicycle_cars",
+      "title_ja": "洗車収入は30ドル。",
+      "claim_ja": "洗車収入は30ドル。",
+      "method_ja": "3×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bicycle_lawns",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bicycle_lawns",
+      "title_ja": "芝刈り収入は26ドル。",
+      "claim_ja": "芝刈り収入は26ドル。",
+      "method_ja": "2×13。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bicycle_earned",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bicycle_earned",
+      "title_ja": "収入は合計56ドル。",
+      "claim_ja": "収入は合計56ドル。",
+      "method_ja": "30+26。",
+      "requires_steps": [
+        "bicycle_cars",
+        "bicycle_lawns"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bicycle_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bicycle_solution",
+      "title_ja": "さらに24ドル必要。",
+      "claim_ja": "さらに24ドル必要。",
+      "method_ja": "80−56。",
+      "requires_steps": [
+        "bicycle_earned"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1923,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

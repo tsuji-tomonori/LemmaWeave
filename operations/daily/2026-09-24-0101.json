@@ -8,7 +8,7 @@
   "role": "gsm8k_individual_solution",
   "base_sha": "879c40e26941c0add4e8cb2f88ee82bcb241adbc",
   "started_at": "2026-09-24T01:01:07+09:00",
-  "finished_at": "2026-09-24T01:24:00+09:00",
+  "finished_at": "2026-09-24T01:29:00+09:00",
   "selected_problem_ids": [
     "train:01944", "train:01945", "train:01946", "train:01947", "train:01948",
     "train:01949", "train:01950", "train:01951", "train:01952", "train:01953",
@@ -92,17 +92,26 @@
     "released": true
   },
   "ci": {
-    "exact_head_status": "pending_at_6649e80c23166d331c4f70bf4d5d64c6e4f0929e",
+    "exact_head_status": "pending_at_adb8db6d30e0f5b79d3e03d0a9cfebd0fad54c53",
     "local_fixed_lean_status": "unavailable_lake_not_installed",
     "accepted_as_success_evidence": false,
     "reviews": 0,
     "unresolved_threads": 0,
     "mergeable": true
   },
+  "ci_repair": {
+    "commit": "adb8db6d30e0f5b79d3e03d0a9cfebd0fad54c53",
+    "file": "tests/lean/GSM8KSprint0921A20.lean",
+    "changes": [
+      "51個のラッパー定理へ不足していたモデル引数mを渡した。",
+      "#lw_dependenciesを解釈するためLemmaWeave.Audit.Extractをimportした。"
+    ],
+    "scope": "旧監査ラッパーのみ。原題・モデル・結論は変更していない。"
+  },
   "pull_request": {
     "number": 5,
     "branch": "codex/sprint-20260919-0000",
     "merge_status": "held_for_exact_head_ci",
-    "commit": "6649e80c23166d331c4f70bf4d5d64c6e4f0929e"
+    "commit": "adb8db6d30e0f5b79d3e03d0a9cfebd0fad54c53"
   }
 }

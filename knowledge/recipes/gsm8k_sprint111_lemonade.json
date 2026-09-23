@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint111_lemonade",
+  "title_ja": "大型レモネードの販売数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01948",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の全数量関係を順に式へ移し、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.lemonade_solution",
+  "graph": "work/gsm8k-sprint111-lemonade-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lemonade_small_medium",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.lemonade_small_medium",
+      "title_ja": "小・中の売上は35ドル。",
+      "claim_ja": "小・中の売上は35ドル。",
+      "method_ja": "11+24。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "小・中の売上は35ドル。",
+      "baseline_ja": "小・中の売上は35ドル。"
+    },
+    {
+      "id": "lemonade_large_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.lemonade_large_revenue",
+      "title_ja": "大の売上は15ドル。",
+      "claim_ja": "大の売上は15ドル。",
+      "method_ja": "50−35。",
+      "requires_steps": [
+        "lemonade_small_medium"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "大の売上は15ドル。",
+      "baseline_ja": "大の売上は15ドル。"
+    },
+    {
+      "id": "lemonade_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.lemonade_solution",
+      "title_ja": "大は5杯売れた。",
+      "claim_ja": "大は5杯売れた。",
+      "method_ja": "15÷3。",
+      "requires_steps": [
+        "lemonade_large_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "大は5杯売れた。",
+      "baseline_ja": "大は5杯売れた。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1949,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

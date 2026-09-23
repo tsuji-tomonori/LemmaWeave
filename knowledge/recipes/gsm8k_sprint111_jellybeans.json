@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint111_jellybeans",
+  "title_ja": "2人のジェリービーンズ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01947",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の全数量関係を順に式へ移し、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.jelly_solution",
+  "graph": "work/gsm8k-sprint111-jellybeans-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jelly_caleb",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.jelly_caleb",
+      "title_ja": "Calebは36個。",
+      "claim_ja": "Calebは36個。",
+      "method_ja": "3×12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "Calebは36個。",
+      "baseline_ja": "Calebは36個。"
+    },
+    {
+      "id": "jelly_sophie",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.jelly_sophie",
+      "title_ja": "Sophieは18個。",
+      "claim_ja": "Sophieは18個。",
+      "method_ja": "36÷2。",
+      "requires_steps": [
+        "jelly_caleb"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "Sophieは18個。",
+      "baseline_ja": "Sophieは18個。"
+    },
+    {
+      "id": "jelly_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.jelly_solution",
+      "title_ja": "合計54個。",
+      "claim_ja": "合計54個。",
+      "method_ja": "36+18。",
+      "requires_steps": [
+        "jelly_sophie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "合計54個。",
+      "baseline_ja": "合計54個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1948,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

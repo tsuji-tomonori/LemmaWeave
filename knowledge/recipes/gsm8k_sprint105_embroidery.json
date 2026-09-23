@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint105_embroidery",
+  "title_ja": "刺繍に必要な時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01866",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "図柄別の縫い目を加え、毎分4針で割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.embroidery_solution",
+  "graph": "work/gsm8k-sprint105-embroidery-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "embroidery_flowers",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.embroidery_flowers",
+      "title_ja": "花は3000針。",
+      "claim_ja": "花は3000針。",
+      "method_ja": "50×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "embroidery_unicorns",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.embroidery_unicorns",
+      "title_ja": "ユニコーンは540針。",
+      "claim_ja": "ユニコーンは540針。",
+      "method_ja": "3×180。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "embroidery_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.embroidery_total",
+      "title_ja": "総数は4340針。",
+      "claim_ja": "総数は4340針。",
+      "method_ja": "800+540+3000。",
+      "requires_steps": [
+        "embroidery_flowers",
+        "embroidery_unicorns"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "embroidery_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.embroidery_solution",
+      "title_ja": "1085分必要。",
+      "claim_ja": "1085分必要。",
+      "method_ja": "4340÷4。",
+      "requires_steps": [
+        "embroidery_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1867,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

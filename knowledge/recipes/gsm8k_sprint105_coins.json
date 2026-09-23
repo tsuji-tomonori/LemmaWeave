@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint105_coins",
+  "title_ja": "Lindaの硬貨枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01865",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "硬貨種別に母から受け取った枚数を加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.coin_solution",
+  "graph": "work/gsm8k-sprint105-coins-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "coin_dimes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.coin_dimes",
+      "title_ja": "ダイムは4枚。",
+      "claim_ja": "ダイムは4枚。",
+      "method_ja": "2+2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "coin_quarters",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.coin_quarters",
+      "title_ja": "クォーターは16枚。",
+      "claim_ja": "クォーターは16枚。",
+      "method_ja": "6+10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "coin_added_nickels",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.coin_added_nickels",
+      "title_ja": "追加ニッケルは10枚。",
+      "claim_ja": "追加ニッケルは10枚。",
+      "method_ja": "5×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "coin_nickels",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.coin_nickels",
+      "title_ja": "ニッケルは15枚。",
+      "claim_ja": "ニッケルは15枚。",
+      "method_ja": "5+10。",
+      "requires_steps": [
+        "coin_added_nickels"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "coin_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.coin_solution",
+      "title_ja": "硬貨は合計35枚。",
+      "claim_ja": "硬貨は合計35枚。",
+      "method_ja": "4+16+15。",
+      "requires_steps": [
+        "coin_dimes",
+        "coin_quarters",
+        "coin_nickels"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1866,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

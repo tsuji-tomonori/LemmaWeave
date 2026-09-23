@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint101_zits",
+  "title_ja": "2クラスのにきび数の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01808",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各クラスの人数と平均から総数を求め、差を取る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A11.zits_solution",
+  "graph": "work/gsm8k-sprint101-zits-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "zits_swanson",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.zits_swanson",
+      "title_ja": "Swanson組は125個。",
+      "claim_ja": "Swanson組は125個。",
+      "method_ja": "25×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "25人、平均5個/人。",
+      "conclusion_ja": "125。",
+      "baseline_ja": "125。"
+    },
+    {
+      "id": "zits_jones",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.zits_jones",
+      "title_ja": "Jones組は192個。",
+      "claim_ja": "Jones組は192個。",
+      "method_ja": "32×6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "32人、平均6個/人。",
+      "conclusion_ja": "192。",
+      "baseline_ja": "192。"
+    },
+    {
+      "id": "zits_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.zits_solution",
+      "title_ja": "Jones組は67個多い。",
+      "claim_ja": "Jones組は67個多い。",
+      "method_ja": "192−125。",
+      "requires_steps": [
+        "zits_swanson",
+        "zits_jones"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Jones組からSwanson組を引く。",
+      "conclusion_ja": "67。",
+      "baseline_ja": "67。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1809,
+    "checked_model_hash": "62af24a6c8b2710580085f4b467479b66e4f9c46d3f8f9052f13c3bbdeea5545",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

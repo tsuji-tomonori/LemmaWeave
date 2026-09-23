@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint101_doves",
+  "title_ja": "現在のハト総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01805",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "20羽が各3個産んだ卵数、孵化した3/4、元の20羽との合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A11.doves_solution",
+  "graph": "work/gsm8k-sprint101-doves-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "doves_eggs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.doves_eggs",
+      "title_ja": "卵は60個。",
+      "claim_ja": "卵は60個。",
+      "method_ja": "20×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20羽が各3個。",
+      "conclusion_ja": "60。",
+      "baseline_ja": "60。"
+    },
+    {
+      "id": "doves_hatched",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.doves_hatched",
+      "title_ja": "孵化したのは45羽。",
+      "claim_ja": "孵化したのは45羽。",
+      "method_ja": "60×3/4。",
+      "requires_steps": [
+        "doves_eggs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "卵の4分の3が孵化。",
+      "conclusion_ja": "45。",
+      "baseline_ja": "45。"
+    },
+    {
+      "id": "doves_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.doves_solution",
+      "title_ja": "現在は65羽。",
+      "claim_ja": "現在は65羽。",
+      "method_ja": "元の20羽+45羽。",
+      "requires_steps": [
+        "doves_hatched"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "元の雌20羽も残る。",
+      "conclusion_ja": "65。",
+      "baseline_ja": "65。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1806,
+    "checked_model_hash": "62af24a6c8b2710580085f4b467479b66e4f9c46d3f8f9052f13c3bbdeea5545",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

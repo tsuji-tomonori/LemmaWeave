@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint112_commission",
+  "title_ja": "歩合収入からの貯金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01963",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A02.commission_solution",
+  "graph": "work/gsm8k-sprint112-commission-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "commission_earned",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A02.commission_earned",
+      "title_ja": "歩合収入は2880ドル。",
+      "claim_ja": "歩合収入は2880ドル。",
+      "method_ja": "24000の12%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "歩合収入は2880ドル。",
+      "baseline_ja": "歩合収入は2880ドル。"
+    },
+    {
+      "id": "commission_personal",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A02.commission_personal",
+      "title_ja": "個人用途は1728ドル。",
+      "claim_ja": "個人用途は1728ドル。",
+      "method_ja": "2880の60%。",
+      "requires_steps": [
+        "commission_earned"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "個人用途は1728ドル。",
+      "baseline_ja": "個人用途は1728ドル。"
+    },
+    {
+      "id": "commission_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A02.commission_solution",
+      "title_ja": "貯金は1152ドル。",
+      "claim_ja": "貯金は1152ドル。",
+      "method_ja": "2880−1728。",
+      "requires_steps": [
+        "commission_personal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "貯金は1152ドル。",
+      "baseline_ja": "貯金は1152ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1964,
+    "checked_model_hash": "cff75c0f5c3d9bafdab526cfb829ca9517e6ed321ca1b728a453e1e263d58220",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

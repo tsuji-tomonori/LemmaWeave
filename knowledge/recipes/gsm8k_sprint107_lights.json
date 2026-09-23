@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint107_lights",
+  "title_ja": "未使用の街灯数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01888",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "15の地点を公園と同一視する参照読解と、名称差による非一意性を分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A17.lights_unused_not_unique",
+  "graph": "work/gsm8k-sprint107-lights-graph.json",
+  "model_notes_ja": [
+    "原文は15個の square を述べた後で each park と呼ぶため、公園と広場の同一性が明示されていない。15地点を同一視すれば20本だが、同一視しなければ一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "lights_reference_used",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.lights_reference_used",
+      "title_ja": "参照読解では使用灯は180本。",
+      "claim_ja": "参照読解では使用灯は180本。",
+      "method_ja": "15×12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "lights_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.lights_reference_solution",
+      "title_ja": "参照読解の未使用灯は20本。",
+      "claim_ja": "参照読解の未使用灯は20本。",
+      "method_ja": "200−180。",
+      "requires_steps": [
+        "lights_reference_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "lights_ten_parks_countermodel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.lights_ten_parks_countermodel",
+      "title_ja": "公園が10なら未使用80本でも原文の数値条件と両立する。",
+      "claim_ja": "公園が10なら未使用80本でも原文の数値条件と両立する。",
+      "method_ja": "10×12+80=200という反例。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "lights_unused_not_unique",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.lights_unused_not_unique",
+      "title_ja": "20本と80本は異なる。",
+      "claim_ja": "20本と80本は異なる。",
+      "method_ja": "反例の結論。",
+      "requires_steps": [
+        "lights_reference_solution",
+        "lights_ten_parks_countermodel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1889,
+    "checked_model_hash": "5d08e45fe0eaf9fabcdeab34c324f312a3c8fcd3e7dbea981241a4b614ad46cc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint107_hole",
+  "title_ja": "父と同じ速度で目標の穴を掘る時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01885",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "父の穴の深さ、目標の深さを順に求め、同じ毎時4フィートで割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A17.hole_solution",
+  "graph": "work/gsm8k-sprint107-hole-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hole_father_depth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.hole_father_depth",
+      "title_ja": "父の穴は1600フィート。",
+      "claim_ja": "父の穴は1600フィート。",
+      "method_ja": "4×400。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "hole_target_depth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.hole_target_depth",
+      "title_ja": "目標の穴は2800フィート。",
+      "claim_ja": "目標の穴は2800フィート。",
+      "method_ja": "1600の2倍から400を引く。",
+      "requires_steps": [
+        "hole_father_depth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "hole_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.hole_solution",
+      "title_ja": "必要時間は700時間。",
+      "claim_ja": "必要時間は700時間。",
+      "method_ja": "2800÷4。",
+      "requires_steps": [
+        "hole_target_depth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1886,
+    "checked_model_hash": "5d08e45fe0eaf9fabcdeab34c324f312a3c8fcd3e7dbea981241a4b614ad46cc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

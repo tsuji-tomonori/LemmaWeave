@@ -101,3 +101,6 @@ end LemmaWeave.Tests.GSM8KSprint0923A12
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A12.portraits_solution to "work/gsm8k-sprint102-portraits-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A12.ship_solution to "work/gsm8k-sprint102-ship-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A12.jail_solution to "work/gsm8k-sprint102-jail-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A12.boxes_two_capacity_readings_differ to "work/gsm8k-sprint102-boxes-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A12.trees_two_birthday_readings_differ to "work/gsm8k-sprint102-trees-graph.json"

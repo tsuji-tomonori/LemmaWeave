@@ -67,3 +67,19 @@ theorem park_adults (m : P.ParkVisit) : m.adultsAttraction = 12 := P.park_adults
 theorem park_solution (m : P.ParkVisit) : m.total = 55 := P.park_solution m
 
 end LemmaWeave.Tests.GSM8KSprint0923A20
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.beanie_solution to "work/gsm8k-sprint110-beanie-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.books_solution to "work/gsm8k-sprint110-books-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.dentist_solution to "work/gsm8k-sprint110-dentist-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.earnings_solution to "work/gsm8k-sprint110-earnings-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.jerome_solution to "work/gsm8k-sprint110-jerome-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.park_solution to "work/gsm8k-sprint110-park-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.parties_solution to "work/gsm8k-sprint110-parties-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.pets_solution to "work/gsm8k-sprint110-pets-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.pot_equal_split to "work/gsm8k-sprint110-pot-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.rent_solution to "work/gsm8k-sprint110-rent-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.savings_solution to "work/gsm8k-sprint110-savings-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.shirts_solution to "work/gsm8k-sprint110-shirts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.shorts_solution to "work/gsm8k-sprint110-shorts-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.stock_solution to "work/gsm8k-sprint110-stock-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A20.water_solution to "work/gsm8k-sprint110-water-graph.json"

@@ -95,3 +95,5 @@ end LemmaWeave.Tests.GSM8KSprint0923A07
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A07.fruit_solution to "work/gsm8k-sprint98-fruit-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A07.parking_disjoint_solution to "work/gsm8k-sprint98-parking-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A07.school_time_solution to "work/gsm8k-sprint98-school-time-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A07.school_time_solution to "work/gsm8k-sprint98-school_time-graph.json"

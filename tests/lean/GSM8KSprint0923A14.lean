@@ -95,3 +95,5 @@ end LemmaWeave.Tests.GSM8KSprint0923A14
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A14.garden_solution to "work/gsm8k-sprint104-garden-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A14.kangaroo_solution to "work/gsm8k-sprint104-kangaroo-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A14.shirts_solution to "work/gsm8k-sprint104-shirts-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A14.trucks_sampling_readings_differ to "work/gsm8k-sprint104-trucks-graph.json"

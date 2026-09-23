@@ -105,3 +105,5 @@ end LemmaWeave.Tests.GSM8KSprint0923A13
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A13.candy_solution to "work/gsm8k-sprint103-candy-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A13.commute_solution to "work/gsm8k-sprint103-commute-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A13.blocks_solution to "work/gsm8k-sprint103-blocks-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A13.fund_timing_changes_answer to "work/gsm8k-sprint103-fund-graph.json"

@@ -95,3 +95,5 @@ end LemmaWeave.Tests.GSM8KSprint0923A11
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.trip_solution to "work/gsm8k-sprint101-trip-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.cards_solution to "work/gsm8k-sprint101-cards-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.zits_solution to "work/gsm8k-sprint101-zits-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.geometry_two_scoring_readings_differ to "work/gsm8k-sprint101-geometry-graph.json"

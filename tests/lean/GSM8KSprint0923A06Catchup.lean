@@ -109,3 +109,6 @@ end LemmaWeave.Tests.GSM8KSprint0923A06Catchup
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_solution to "work/gsm8k-sprint99-exam-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_organize_solution to "work/gsm8k-sprint99-donations-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.doughnuts_solution to "work/gsm8k-sprint99-doughnuts-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_two_readings_differ to "work/gsm8k-sprint99-donations-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.pie_samples_solution to "work/gsm8k-sprint99-pie_samples-graph.json"

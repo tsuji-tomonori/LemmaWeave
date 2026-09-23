@@ -113,3 +113,7 @@ end LemmaWeave.Tests.GSM8KSprint0923A08
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A08.badges_solution to "work/gsm8k-sprint100-badges-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A08.flowers_solution to "work/gsm8k-sprint100-flowers-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A08.commission_solution to "work/gsm8k-sprint100-commission-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A08.wave_two_readings_differ to "work/gsm8k-sprint100-coronavirus-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A08.dreams_two_calendar_readings_differ to "work/gsm8k-sprint100-dreams-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A08.faith_two_pay_readings_differ to "work/gsm8k-sprint100-faith-graph.json"

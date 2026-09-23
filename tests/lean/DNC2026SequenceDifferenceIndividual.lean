@@ -35,3 +35,5 @@ theorem individual_solution : FirstTermsGoal := by
     third_term_value a₁ a₂ a₃ b₁ b₂ h⟩
 
 end LemmaWeave.Tests.DNC2026SequenceDifferenceIndividual
+
+#lw_dependencies LemmaWeave.Tests.DNC2026SequenceDifferenceIndividual.individual_solution to "work/dnc2026-sequence-difference-individual-graph.json"

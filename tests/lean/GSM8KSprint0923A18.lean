@@ -100,3 +100,5 @@ end LemmaWeave.Tests.GSM8KSprint0923A18
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A18.balloons_solution to "work/gsm8k-sprint108-balloons-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A18.shipping_solution to "work/gsm8k-sprint108-shipping-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A18.land_reference_solution_days to "work/gsm8k-sprint108-land-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A18.land_time_not_unique to "work/gsm8k-sprint108-land-graph.json"

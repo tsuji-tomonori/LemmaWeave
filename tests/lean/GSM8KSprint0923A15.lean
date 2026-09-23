@@ -93,3 +93,6 @@ end LemmaWeave.Tests.GSM8KSprint0923A15
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A15.embroidery_solution to "work/gsm8k-sprint105-embroidery-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A15.playground_solution to "work/gsm8k-sprint105-playground-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A15.race_reference_solution to "work/gsm8k-sprint105-race-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A15.pets_population_not_unique to "work/gsm8k-sprint105-pets-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A15.race_remaining_not_unique to "work/gsm8k-sprint105-race-graph.json"

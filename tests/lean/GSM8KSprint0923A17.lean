@@ -90,3 +90,6 @@ end LemmaWeave.Tests.GSM8KSprint0923A17
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A17.goals_reference_total to "work/gsm8k-sprint107-goals-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A17.download_solution to "work/gsm8k-sprint107-download-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A17.hush_solution to "work/gsm8k-sprint107-hush-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A17.goals_total_not_unique to "work/gsm8k-sprint107-goals-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A17.lights_unused_not_unique to "work/gsm8k-sprint107-lights-graph.json"

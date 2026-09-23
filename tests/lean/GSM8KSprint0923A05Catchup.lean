@@ -84,3 +84,6 @@ end LemmaWeave.Tests.GSM8KSprint0923A05Catchup
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A05Catchup.payroll_solution to "work/gsm8k-sprint97-payroll-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A05Catchup.marbles_solution to "work/gsm8k-sprint97-marbles-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A05Catchup.vehicles_solution to "work/gsm8k-sprint97-vehicles-graph.json"
+
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A05Catchup.babysitter_solution to "work/gsm8k-sprint97-babysitters-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A05Catchup.basketball_solution to "work/gsm8k-sprint97-wade-graph.json"

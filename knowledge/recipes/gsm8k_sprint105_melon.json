@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint105_melon",
+  "title_ja": "スイカの切れ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01856",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "持参者別に切れ数を求めて加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.melon_solution",
+  "graph": "work/gsm8k-sprint105-melon-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "melon_danny",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.melon_danny",
+      "title_ja": "Danny分は30切れ。",
+      "claim_ja": "Danny分は30切れ。",
+      "method_ja": "3×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "melon_sister",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.melon_sister",
+      "title_ja": "姉妹分は15切れ。",
+      "claim_ja": "姉妹分は15切れ。",
+      "method_ja": "1×15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "melon_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.melon_solution",
+      "title_ja": "合計45切れ。",
+      "claim_ja": "合計45切れ。",
+      "method_ja": "30+15。",
+      "requires_steps": [
+        "melon_danny",
+        "melon_sister"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1857,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

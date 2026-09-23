@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint105_corn",
+  "title_ja": "トウモロコシの本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01854",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "重量を半ポンド単位へ換算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.corn_solution",
+  "graph": "work/gsm8k-sprint105-corn-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "corn_pounds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.corn_pounds",
+      "title_ja": "収穫重量は112ポンド。",
+      "claim_ja": "収穫重量は112ポンド。",
+      "method_ja": "2×56。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "corn_half_units",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.corn_half_units",
+      "title_ja": "半ポンド単位は224個。",
+      "claim_ja": "半ポンド単位は224個。",
+      "method_ja": "112×2。",
+      "requires_steps": [
+        "corn_pounds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "corn_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.corn_solution",
+      "title_ja": "トウモロコシは224本。",
+      "claim_ja": "トウモロコシは224本。",
+      "method_ja": "1本が半ポンドなので単位数と一致。",
+      "requires_steps": [
+        "corn_half_units"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1855,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

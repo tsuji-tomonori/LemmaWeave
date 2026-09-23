@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint101_cafeteria",
+  "title_ja": "現在食堂にいる生徒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01803",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初の内外人数を分け、外から入る10人と中から出る3人を反映する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A11.cafeteria_solution",
+  "graph": "work/gsm8k-sprint101-cafeteria-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cafeteria_inside",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.cafeteria_inside",
+      "title_ja": "最初に食堂内は60人。",
+      "claim_ja": "最初に食堂内は60人。",
+      "method_ja": "90×2/3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全90人の3分の2。",
+      "conclusion_ja": "60。",
+      "baseline_ja": "60。"
+    },
+    {
+      "id": "cafeteria_outside",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.cafeteria_outside",
+      "title_ja": "最初に屋外は30人。",
+      "claim_ja": "最初に屋外は30人。",
+      "method_ja": "90−60。",
+      "requires_steps": [
+        "cafeteria_inside"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "内外で全90人。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "cafeteria_ran_inside",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.cafeteria_ran_inside",
+      "title_ja": "屋外から10人が入る。",
+      "claim_ja": "屋外から10人が入る。",
+      "method_ja": "30の3分の1。",
+      "requires_steps": [
+        "cafeteria_outside"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "屋外の3分の1。",
+      "conclusion_ja": "10。",
+      "baseline_ja": "10。"
+    },
+    {
+      "id": "cafeteria_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.cafeteria_solution",
+      "title_ja": "現在食堂内は67人。",
+      "claim_ja": "現在食堂内は67人。",
+      "method_ja": "60+10−3。",
+      "requires_steps": [
+        "cafeteria_inside",
+        "cafeteria_ran_inside"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人は食堂から屋外へ移動。",
+      "conclusion_ja": "67。",
+      "baseline_ja": "67。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1804,
+    "checked_model_hash": "62af24a6c8b2710580085f4b467479b66e4f9c46d3f8f9052f13c3bbdeea5545",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

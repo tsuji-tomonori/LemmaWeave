@@ -1,0 +1,142 @@
+{
+  "id": "gsm8k_sprint101_fish",
+  "title_ja": "7日目の魚の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01802",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日目を6匹として日ごとの倍増と3日目・5日目の取り出し、7日目の追加を時系列で追う。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_solution",
+  "graph": "work/gsm8k-sprint101-fish-graph.json",
+  "model_notes_ja": [
+    "参照解答と同じく、最初の6匹を1日目の状態とし、3日目までに2回倍増する日数規約を明示した。"
+  ],
+  "steps": [
+    {
+      "id": "fish_day3_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_day3_before",
+      "title_ja": "3日目の取り出し前は24匹。",
+      "claim_ja": "3日目の取り出し前は24匹。",
+      "method_ja": "6×2×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日目=6匹、2日目と3日目の前に倍増。",
+      "conclusion_ja": "24。",
+      "baseline_ja": "24。"
+    },
+    {
+      "id": "fish_day3_removed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_day3_removed",
+      "title_ja": "3日目に8匹取り出す。",
+      "claim_ja": "3日目に8匹取り出す。",
+      "method_ja": "24の3分の1。",
+      "requires_steps": [
+        "fish_day3_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "one-third。",
+      "conclusion_ja": "8。",
+      "baseline_ja": "8。"
+    },
+    {
+      "id": "fish_day3_after",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_day3_after",
+      "title_ja": "3日目の後は16匹。",
+      "claim_ja": "3日目の後は16匹。",
+      "method_ja": "24−8。",
+      "requires_steps": [
+        "fish_day3_before",
+        "fish_day3_removed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "取り出した分を除く。",
+      "conclusion_ja": "16。",
+      "baseline_ja": "16。"
+    },
+    {
+      "id": "fish_day5_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_day5_before",
+      "title_ja": "5日目の取り出し前は64匹。",
+      "claim_ja": "5日目の取り出し前は64匹。",
+      "method_ja": "16×2×2。",
+      "requires_steps": [
+        "fish_day3_after"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4日目と5日目の前に倍増。",
+      "conclusion_ja": "64。",
+      "baseline_ja": "64。"
+    },
+    {
+      "id": "fish_day5_removed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_day5_removed",
+      "title_ja": "5日目に16匹取り出す。",
+      "claim_ja": "5日目に16匹取り出す。",
+      "method_ja": "64の4分の1。",
+      "requires_steps": [
+        "fish_day5_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "one-fourth。",
+      "conclusion_ja": "16。",
+      "baseline_ja": "16。"
+    },
+    {
+      "id": "fish_day5_after",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_day5_after",
+      "title_ja": "5日目の後は48匹。",
+      "claim_ja": "5日目の後は48匹。",
+      "method_ja": "64−16。",
+      "requires_steps": [
+        "fish_day5_before",
+        "fish_day5_removed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "取り出した分を除く。",
+      "conclusion_ja": "48。",
+      "baseline_ja": "48。"
+    },
+    {
+      "id": "fish_day7_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_day7_before",
+      "title_ja": "7日目の追加前は192匹。",
+      "claim_ja": "7日目の追加前は192匹。",
+      "method_ja": "48×2×2。",
+      "requires_steps": [
+        "fish_day5_after"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "6日目と7日目の前に倍増。",
+      "conclusion_ja": "192。",
+      "baseline_ja": "192。"
+    },
+    {
+      "id": "fish_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.fish_solution",
+      "title_ja": "7日目の最終数は207匹。",
+      "claim_ja": "7日目の最終数は207匹。",
+      "method_ja": "192+15。",
+      "requires_steps": [
+        "fish_day7_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加15匹。",
+      "conclusion_ja": "207。",
+      "baseline_ja": "207。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1803,
+    "checked_model_hash": "62af24a6c8b2710580085f4b467479b66e4f9c46d3f8f9052f13c3bbdeea5545",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

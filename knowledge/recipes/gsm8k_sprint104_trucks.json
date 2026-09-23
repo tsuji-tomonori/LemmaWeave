@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint104_trucks",
+  "title_ja": "白いトラックを選ぶ確率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01842",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "白いトラック数を求め、抽出母集団が全90台か乗用車40台だけかを分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_sampling_readings_differ",
+  "graph": "work/gsm8k-sprint104-trucks-graph.json",
+  "model_notes_ja": [
+    "冒頭のcarsは全車両を指す一方、内訳ではtrucksとcarsを分ける。問いのone carを全90台のvehicleと読めば17%、乗用車40台だけと厳密に読めばトラックは選べず0%なので、両読解を形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "trucks_red",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_red",
+      "title_ja": "赤いトラックは25台。",
+      "claim_ja": "赤いトラックは25台。",
+      "method_ja": "50÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "トラックの半分。",
+      "conclusion_ja": "25。",
+      "baseline_ja": "25。"
+    },
+    {
+      "id": "trucks_black",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_black",
+      "title_ja": "黒いトラックは10台。",
+      "claim_ja": "黒いトラックは10台。",
+      "method_ja": "50×20%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "トラックの20%。",
+      "conclusion_ja": "10。",
+      "baseline_ja": "10。"
+    },
+    {
+      "id": "trucks_white",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_white",
+      "title_ja": "白いトラックは15台。",
+      "claim_ja": "白いトラックは15台。",
+      "method_ja": "50−25−10。",
+      "requires_steps": [
+        "trucks_red",
+        "trucks_black"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全トラックは3色のいずれか。",
+      "conclusion_ja": "15。",
+      "baseline_ja": "15。"
+    },
+    {
+      "id": "trucks_fraction_bounds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_fraction_bounds",
+      "title_ja": "全車両抽出の割合は16.5%超17%未満。",
+      "claim_ja": "全車両抽出の割合は16.5%超17%未満。",
+      "method_ja": "15/90×100を整数不等式で挟む。",
+      "requires_steps": [
+        "trucks_white"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全90台から一様抽出。",
+      "conclusion_ja": "最寄り整数は17。",
+      "baseline_ja": "最寄り整数は17。"
+    },
+    {
+      "id": "trucks_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_reference_solution",
+      "title_ja": "全車両からなら四捨五入して17%。",
+      "claim_ja": "全車両からなら四捨五入して17%。",
+      "method_ja": "(15×100+45)÷90。",
+      "requires_steps": [
+        "trucks_white",
+        "trucks_fraction_bounds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "正の整数比を最近接整数へ丸める。",
+      "conclusion_ja": "17。",
+      "baseline_ja": "17。"
+    },
+    {
+      "id": "trucks_passenger_car_sample_probability_zero",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_passenger_car_sample_probability_zero",
+      "title_ja": "乗用車だけからなら白いトラックは抽出不能。",
+      "claim_ja": "乗用車だけからなら白いトラックは抽出不能。",
+      "method_ja": "適格な白いトラック数を0とする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "carを厳密に乗用車と読む。",
+      "conclusion_ja": "0%。",
+      "baseline_ja": "0%。"
+    },
+    {
+      "id": "trucks_sampling_readings_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_sampling_readings_differ",
+      "title_ja": "母集団の読解で17%と0%に分かれる。",
+      "claim_ja": "母集団の読解で17%と0%に分かれる。",
+      "method_ja": "17と0を比較する。",
+      "requires_steps": [
+        "trucks_reference_solution",
+        "trucks_passenger_car_sample_probability_zero"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文のcarが車両一般か乗用車か不明瞭。",
+      "conclusion_ja": "17≠0。",
+      "baseline_ja": "17≠0。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1843,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

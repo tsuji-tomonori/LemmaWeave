@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint101_marbles",
+  "title_ja": "3人の青いビー玉総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01795",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "赤の条件も捨てずに確認したうえで、Jennyの青25個からAnieとMaryの青を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A11.marbles_solution",
+  "graph": "work/gsm8k-sprint101-marbles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "marbles_mary_red",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.marbles_mary_red",
+      "title_ja": "Maryの赤は60個。",
+      "claim_ja": "Maryの赤は60個。",
+      "method_ja": "Jennyの赤30個を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Maryの赤はJennyの2倍。",
+      "conclusion_ja": "60。",
+      "baseline_ja": "60。"
+    },
+    {
+      "id": "marbles_anie_red",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.marbles_anie_red",
+      "title_ja": "Anieの赤は80個。",
+      "claim_ja": "Anieの赤は80個。",
+      "method_ja": "Maryの赤60個に20個を加える。",
+      "requires_steps": [
+        "marbles_mary_red"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "AnieはMaryより20個多い。",
+      "conclusion_ja": "80。",
+      "baseline_ja": "80。"
+    },
+    {
+      "id": "marbles_anie_blue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.marbles_anie_blue",
+      "title_ja": "Anieの青は50個。",
+      "claim_ja": "Anieの青は50個。",
+      "method_ja": "Jennyの青25個を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Anieの青はJennyの2倍。",
+      "conclusion_ja": "50。",
+      "baseline_ja": "50。"
+    },
+    {
+      "id": "marbles_mary_blue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.marbles_mary_blue",
+      "title_ja": "Maryの青は25個。",
+      "claim_ja": "Maryの青は25個。",
+      "method_ja": "Anieの青50個の半分。",
+      "requires_steps": [
+        "marbles_anie_blue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Maryの青はAnieの半分。",
+      "conclusion_ja": "25。",
+      "baseline_ja": "25。"
+    },
+    {
+      "id": "marbles_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.marbles_solution",
+      "title_ja": "青いビー玉は合計100個。",
+      "claim_ja": "青いビー玉は合計100個。",
+      "method_ja": "Jenny 25、Mary 25、Anie 50を加える。",
+      "requires_steps": [
+        "marbles_anie_blue",
+        "marbles_mary_blue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人分を各1回数える。",
+      "conclusion_ja": "100。",
+      "baseline_ja": "100。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1796,
+    "checked_model_hash": "62af24a6c8b2710580085f4b467479b66e4f9c46d3f8f9052f13c3bbdeea5545",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

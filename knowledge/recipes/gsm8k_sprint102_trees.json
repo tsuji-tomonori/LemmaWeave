@@ -1,0 +1,151 @@
+{
+  "id": "gsm8k_sprint102_trees",
+  "title_ja": "15歳時点の木の本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01815",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "誕生日10〜14歳に植える参照読解と、15歳にも植えてから倍にする読解を分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_two_birthday_readings_differ",
+  "graph": "work/gsm8k-sprint102-trees-graph.json",
+  "model_notes_ja": [
+    "参照解答は10〜14歳の5回だけ植えて56本とする。『毎年誕生日に植える』を15歳にも適用してから倍にすると64本なので、両読解を形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "trees_five_initial",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_five_initial",
+      "title_ja": "初期は8本。",
+      "claim_ja": "初期は8本。",
+      "method_ja": "2×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2列、各4本。",
+      "conclusion_ja": "8。",
+      "baseline_ja": "8。"
+    },
+    {
+      "id": "trees_five_added",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_five_added",
+      "title_ja": "参照読解の追加は20本。",
+      "claim_ja": "参照読解の追加は20本。",
+      "method_ja": "5年×4本。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10〜14歳の5回。",
+      "conclusion_ja": "20。",
+      "baseline_ja": "20。"
+    },
+    {
+      "id": "trees_five_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_five_before",
+      "title_ja": "倍増前は28本。",
+      "claim_ja": "倍増前は28本。",
+      "method_ja": "8+20。",
+      "requires_steps": [
+        "trees_five_initial",
+        "trees_five_added"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "15歳では植える前に倍増。",
+      "conclusion_ja": "28。",
+      "baseline_ja": "28。"
+    },
+    {
+      "id": "trees_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_reference_solution",
+      "title_ja": "参照読解では56本。",
+      "claim_ja": "参照読解では56本。",
+      "method_ja": "28×2。",
+      "requires_steps": [
+        "trees_five_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "15歳に倍増。",
+      "conclusion_ja": "56。",
+      "baseline_ja": "56。"
+    },
+    {
+      "id": "trees_six_initial",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_six_initial",
+      "title_ja": "代替読解の初期も8本。",
+      "claim_ja": "代替読解の初期も8本。",
+      "method_ja": "2×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同じ初期条件。",
+      "conclusion_ja": "8。",
+      "baseline_ja": "8。"
+    },
+    {
+      "id": "trees_six_added",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_six_added",
+      "title_ja": "15歳にも植えるなら追加は24本。",
+      "claim_ja": "15歳にも植えるなら追加は24本。",
+      "method_ja": "6回×4本。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10〜15歳の6回。",
+      "conclusion_ja": "24。",
+      "baseline_ja": "24。"
+    },
+    {
+      "id": "trees_six_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_six_before",
+      "title_ja": "植えた後の倍増前は32本。",
+      "claim_ja": "植えた後の倍増前は32本。",
+      "method_ja": "8+24。",
+      "requires_steps": [
+        "trees_six_initial",
+        "trees_six_added"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "15歳の新しい列を先に追加。",
+      "conclusion_ja": "32。",
+      "baseline_ja": "32。"
+    },
+    {
+      "id": "trees_inclusive_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_inclusive_solution",
+      "title_ja": "15歳にも植えてから倍にするなら64本。",
+      "claim_ja": "15歳にも植えてから倍にするなら64本。",
+      "method_ja": "32×2。",
+      "requires_steps": [
+        "trees_six_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加後に倍増。",
+      "conclusion_ja": "64。",
+      "baseline_ja": "64。"
+    },
+    {
+      "id": "trees_two_birthday_readings_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_two_birthday_readings_differ",
+      "title_ja": "誕生日の順序で答えが異なる。",
+      "claim_ja": "誕生日の順序で答えが異なる。",
+      "method_ja": "56と64を比較する。",
+      "requires_steps": [
+        "trees_reference_solution",
+        "trees_inclusive_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の15歳当日の順序が不明瞭。",
+      "conclusion_ja": "56≠64。",
+      "baseline_ja": "56≠64。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1816,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

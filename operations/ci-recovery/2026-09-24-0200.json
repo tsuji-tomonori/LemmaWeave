@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-24",
+  "checked_at": "2026-09-24T02:06:00+09:00",
+  "repository": "tsuji-tomonori/LemmaWeave",
+  "pull_request": 5,
+  "head_sha": "eee4b6ce876a5c2c7034d77dd5b7725ce5344cec",
+  "workflow_run_id": 35888063268,
+  "workflow_job_id": 107273295847,
+  "conclusion": "failure",
+  "accepted_as_success_evidence": false,
+  "failure_summary_ja": [
+    "固定Lean 4.33.1と固定mathlibの取得は成功した。",
+    "scripts/replay.pyの外側実行は約31分後にexit code 124で終了した。",
+    "再生済み範囲ではDNC2026SequenceDifferenceIndividual.leanとGSM8KSprint0921A01〜A08にLeanエラーが残り、複数の定理でsorryAx依存が報告された。",
+    "失敗成果物は現行問題の成功証拠へ流用せず、solution_readyへの昇格も行わない。"
+  ],
+  "first_observed_errors": [
+    "tests/lean/DNC2026SequenceDifferenceIndividual.lean:10:2 omega could not prove the goal",
+    "tests/lean/DNC2026SequenceDifferenceIndividual.lean:39:0 unexpected token '#'",
+    "tests/lean/GSM8KSprint0921A01.lean:93:45 No goals to be solved",
+    "tests/lean/GSM8KSprint0921A02.lean:24:29 rewrite target not found"
+  ],
+  "artifact": {
+    "id": 10765057705,
+    "name": "lean-evidence-eee4b6ce876a5c2c7034d77dd5b7725ce5344cec",
+    "size_bytes": 374844866,
+    "sha256": "711bc0d461546e41c8f43545fa877418c9fc919fcb51ed303287602cff7656dd"
+  },
+  "next_action_ja": "旧監査ファイルを小単位で修復し、全再生の時間制限も分割したうえで新しいexact-head CIを実行する。"
+}

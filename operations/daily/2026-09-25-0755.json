@@ -8,7 +8,7 @@
     "target_count": 15
   },
   "started_at": "2026-09-25T07:55:35+09:00",
-  "finished_at": "2026-09-25T08:49:00+09:00",
+  "finished_at": "2026-09-25T08:52:00+09:00",
   "schedule_variance_ja": "08時枠を07:55 JSTに開始。07時枠は完了済みのため重複させない。05時枠は未実行のまま保持。",
   "base_sha": "cd6c041892390703106f272e586bbc2dfeecdc65",
   "selected_problem_ids": [
@@ -99,7 +99,8 @@
       "knowledge/recipes/gsm8k_sprint135_restaurant_bill.json",
       "knowledge/recipes/gsm8k_sprint135_groomer.json",
       "knowledge/recipes/gsm8k_sprint135_corgi.json"
-    ]
+    ],
+    "queue": "operations/solve-queue.jsonl.gz"
   },
   "source_verification": {
     "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
@@ -135,7 +136,9 @@
     "duplicate_ids": 0,
     "state_overlap": 0,
     "remaining": 8274,
-    "next_problem_id": "external-gsm8k-main-3101c7d50724:train:02320"
+    "next_problem_id": "external-gsm8k-main-3101c7d50724:train:02320",
+    "updated_problem_ids": 15,
+    "compression": "gzip_stored_blocks"
   },
   "ci": {
     "before": {
@@ -153,7 +156,8 @@
     "merge_status": "blocked_until_exact_head_success_and_evidence_import"
   },
   "commit": {
-    "status": "to_be_filled_by_git_data_commit"
+    "artifact_commit_sha": "06f63841dccf13472d2ac4c092ccdeed25f94003",
+    "status": "saved_to_pr_5"
   },
   "claim": {
     "status": "serialized_single_writer",

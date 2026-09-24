@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint130_chickens",
+  "title_ja": "市場で売る残りの鶏",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02238",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "80羽のうち隣人に12羽、開場前の客に25羽売った。残りを求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.chickens_solution",
+  "graph": "work/gsm8k-sprint130-chickens-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "chickens_sold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.chickens_sold",
+      "title_ja": "先に37羽売った",
+      "claim_ja": "先に37羽売った",
+      "method_ja": "12羽と25羽を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "先に37羽売った",
+      "baseline_ja": "先に37羽売った"
+    },
+    {
+      "id": "chickens_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.chickens_solution",
+      "title_ja": "43羽残る",
+      "claim_ja": "43羽残る",
+      "method_ja": "80羽から37羽を引く",
+      "requires_steps": [
+        "chickens_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "43羽残る",
+      "baseline_ja": "43羽残る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2239,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

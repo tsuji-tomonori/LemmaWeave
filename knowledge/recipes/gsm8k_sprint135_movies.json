@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint135_movies",
+  "title_ja": "映画券6枚の支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02306",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ashley and her family went to the movies on Saturday. Children’s tickets cost $4.25 and adult tickets cost $3.25 more. They were given a $2 discount for buying more than 3 tickets. How much did they spend if they bought two adult tickets and four children’s tickets?",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A08.movies_solution",
+  "graph": "work/gsm8k-sprint135-movies-graph.json",
+  "model_notes_ja": [
+    "金額はセントで正確に形式化し、6枚は3枚を超えるため2ドル割引を適用する。"
+  ],
+  "steps": [
+    {
+      "id": "movies_adult_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.movies_adult_price",
+      "title_ja": "大人券は750セント",
+      "claim_ja": "大人券は750セント",
+      "method_ja": "425+325",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "子ども券より325セント高い。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "750セント",
+      "baseline_ja": "750セント"
+    },
+    {
+      "id": "movies_adults",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.movies_adults",
+      "title_ja": "大人券2枚は1500セント",
+      "claim_ja": "大人券2枚は1500セント",
+      "method_ja": "2×750",
+      "requires_steps": [
+        "movies_adult_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "大人2人。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1500セント",
+      "baseline_ja": "1500セント"
+    },
+    {
+      "id": "movies_children",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.movies_children",
+      "title_ja": "子ども券4枚は1700セント",
+      "claim_ja": "子ども券4枚は1700セント",
+      "method_ja": "4×425",
+      "requires_steps": [
+        "movies_adults"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "子ども4人。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1700セント",
+      "baseline_ja": "1700セント"
+    },
+    {
+      "id": "movies_subtotal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.movies_subtotal",
+      "title_ja": "割引前は3200セント",
+      "claim_ja": "割引前は3200セント",
+      "method_ja": "1500+1700",
+      "requires_steps": [
+        "movies_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全6枚。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "3200セント",
+      "baseline_ja": "3200セント"
+    },
+    {
+      "id": "movies_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.movies_solution",
+      "title_ja": "支払額は30ドル",
+      "claim_ja": "支払額は30ドル",
+      "method_ja": "3200-200",
+      "requires_steps": [
+        "movies_subtotal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3枚超なので200セント割引。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "30ドル",
+      "baseline_ja": "30ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2307,
+    "checked_model_hash": "15961d6fac1f9185a412fe6d82d3da2361815ed739be73de0c04d9c8d746b550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

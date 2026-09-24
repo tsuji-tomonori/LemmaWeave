@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint135_samir_age",
+  "title_ja": "5年後のSamirの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02315",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Samir just turned half the age Hania was 10 years ago. If in five years Hania will be 45 years old, what will Samir's age be five years from now?",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A08.samir_solution",
+  "graph": "work/gsm8k-sprint135-samir-age-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "samir_hania_now",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.samir_hania_now",
+      "title_ja": "Haniaは現在40歳",
+      "claim_ja": "Haniaは現在40歳",
+      "method_ja": "45-5",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5年後45歳。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "40歳",
+      "baseline_ja": "40歳"
+    },
+    {
+      "id": "samir_hania_past",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.samir_hania_past",
+      "title_ja": "10年前は30歳",
+      "claim_ja": "10年前は30歳",
+      "method_ja": "40-10",
+      "requires_steps": [
+        "samir_hania_now"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10年前。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "30歳",
+      "baseline_ja": "30歳"
+    },
+    {
+      "id": "samir_now",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.samir_now",
+      "title_ja": "Samirは現在15歳",
+      "claim_ja": "Samirは現在15歳",
+      "method_ja": "30÷2",
+      "requires_steps": [
+        "samir_hania_past"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "当時のHaniaの半分。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "15歳",
+      "baseline_ja": "15歳"
+    },
+    {
+      "id": "samir_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.samir_solution",
+      "title_ja": "5年後は20歳",
+      "claim_ja": "5年後は20歳",
+      "method_ja": "15+5",
+      "requires_steps": [
+        "samir_now"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5年経過。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "20歳",
+      "baseline_ja": "20歳"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2316,
+    "checked_model_hash": "15961d6fac1f9185a412fe6d82d3da2361815ed739be73de0c04d9c8d746b550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

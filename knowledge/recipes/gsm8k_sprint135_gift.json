@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint135_gift",
+  "title_ja": "Lisaが買いたい贈り物の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02312",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "For her gift present, Lisa has saved $1200. She asks her mother, as well as her brother, to help her raise the total amount of money she needs to buy the gift.,If her mother gave her 3/5 times of what she had saved and her brother gave her twice the amount her mother gave her, calculate the price of the gift she wanted to buy if she still had $400 less.",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A08.gift_solution",
+  "graph": "work/gsm8k-sprint135-gift-graph.json",
+  "model_notes_ja": [
+    "原文の“still had $400 less”を、集めた総額が価格より400ドル不足している条件として明示する。"
+  ],
+  "steps": [
+    {
+      "id": "gift_mother",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.gift_mother",
+      "title_ja": "母は720ドル",
+      "claim_ja": "母は720ドル",
+      "method_ja": "1200×3/5",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5で割り切れる。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "720ドル",
+      "baseline_ja": "720ドル"
+    },
+    {
+      "id": "gift_brother",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.gift_brother",
+      "title_ja": "兄は1440ドル",
+      "claim_ja": "兄は1440ドル",
+      "method_ja": "720×2",
+      "requires_steps": [
+        "gift_mother"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "母の2倍。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1440ドル",
+      "baseline_ja": "1440ドル"
+    },
+    {
+      "id": "gift_raised",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.gift_raised",
+      "title_ja": "集めた額は3360ドル",
+      "claim_ja": "集めた額は3360ドル",
+      "method_ja": "1200+720+1440",
+      "requires_steps": [
+        "gift_brother"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "本人・母・兄を合算。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "3360ドル",
+      "baseline_ja": "3360ドル"
+    },
+    {
+      "id": "gift_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.gift_solution",
+      "title_ja": "贈り物は3760ドル",
+      "claim_ja": "贈り物は3760ドル",
+      "method_ja": "3360+400",
+      "requires_steps": [
+        "gift_raised"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "400ドル不足。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "3760ドル",
+      "baseline_ja": "3760ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2313,
+    "checked_model_hash": "15961d6fac1f9185a412fe6d82d3da2361815ed739be73de0c04d9c8d746b550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

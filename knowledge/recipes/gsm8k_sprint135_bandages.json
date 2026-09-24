@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint135_bandages",
+  "title_ja": "残った包帯の枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02308",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Peggy fell off her bike and skinned her knees. She needed two bandages on her left knee and three bandages on her right knee. If the box of bandages had 8 less than two dozen bandages before Peggy skinned her knees, how many bandages were left in the box after Peggy finished putting bandages on her knees?",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A08.bandages_solution",
+  "graph": "work/gsm8k-sprint135-bandages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bandages_start",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.bandages_start",
+      "title_ja": "最初は16枚",
+      "claim_ja": "最初は16枚",
+      "method_ja": "24-8",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2ダースは24枚。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "16枚",
+      "baseline_ja": "16枚"
+    },
+    {
+      "id": "bandages_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.bandages_used",
+      "title_ja": "使用は5枚",
+      "claim_ja": "使用は5枚",
+      "method_ja": "2+3",
+      "requires_steps": [
+        "bandages_start"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "左右の膝の合計。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "5枚",
+      "baseline_ja": "5枚"
+    },
+    {
+      "id": "bandages_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.bandages_solution",
+      "title_ja": "残りは11枚",
+      "claim_ja": "残りは11枚",
+      "method_ja": "16-5",
+      "requires_steps": [
+        "bandages_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "使用枚数を引く。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "11枚",
+      "baseline_ja": "11枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2309,
+    "checked_model_hash": "15961d6fac1f9185a412fe6d82d3da2361815ed739be73de0c04d9c8d746b550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

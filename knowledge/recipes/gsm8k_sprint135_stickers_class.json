@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint135_stickers_class",
+  "title_ja": "Maryのクラス人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02316",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mary brought 50 stickers to class. She gave 4 stickers to each of her 5 friends. She gave everyone else in class two stickers each. If she has 8 stickers left over, how many students are in the class, including Mary?",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A08.stickers_class_solution",
+  "graph": "work/gsm8k-sprint135-stickers-class-graph.json",
+  "model_notes_ja": [
+    "everyone elseはMary自身と5人の友人を除く生徒と読み、最後にMaryを1人として加える。"
+  ],
+  "steps": [
+    {
+      "id": "stickers_class_given",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.stickers_class_given",
+      "title_ja": "配ったのは42枚",
+      "claim_ja": "配ったのは42枚",
+      "method_ja": "50-8",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残り8枚。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "42枚",
+      "baseline_ja": "42枚"
+    },
+    {
+      "id": "stickers_class_friends",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.stickers_class_friends",
+      "title_ja": "友人へ20枚",
+      "claim_ja": "友人へ20枚",
+      "method_ja": "4×5",
+      "requires_steps": [
+        "stickers_class_given"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "友人5人。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "20枚",
+      "baseline_ja": "20枚"
+    },
+    {
+      "id": "stickers_class_others",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.stickers_class_others",
+      "title_ja": "その他へ22枚",
+      "claim_ja": "その他へ22枚",
+      "method_ja": "42-20",
+      "requires_steps": [
+        "stickers_class_friends"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "友人分を除く。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "22枚",
+      "baseline_ja": "22枚"
+    },
+    {
+      "id": "stickers_class_other_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.stickers_class_other_students",
+      "title_ja": "その他は11人",
+      "claim_ja": "その他は11人",
+      "method_ja": "22÷2",
+      "requires_steps": [
+        "stickers_class_others"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1人2枚。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "11人",
+      "baseline_ja": "11人"
+    },
+    {
+      "id": "stickers_class_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.stickers_class_solution",
+      "title_ja": "クラスは17人",
+      "claim_ja": "クラスは17人",
+      "method_ja": "1+5+11",
+      "requires_steps": [
+        "stickers_class_other_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Mary・友人・その他。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "17人",
+      "baseline_ja": "17人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2317,
+    "checked_model_hash": "15961d6fac1f9185a412fe6d82d3da2361815ed739be73de0c04d9c8d746b550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

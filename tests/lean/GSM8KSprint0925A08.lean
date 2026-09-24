@@ -1,0 +1,18 @@
+import LemmaWeave.Problems.GSM8K.Sprint0925A08Models
+import LemmaWeave.Audit.Extract
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.rope_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.movies_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.sandbox_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.bandages_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.factory_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.book_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.dog_food_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.gift_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.christian_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.weights_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.samir_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.stickers_class_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.restaurant_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.groomer_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A08.corgi_solution

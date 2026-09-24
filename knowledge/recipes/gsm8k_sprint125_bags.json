@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint125_bags",
+  "title_ja": "バッグ1個の仕入価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02155",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "売上1000ドルと利益300ドルから総仕入額を求め、100個で割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.bags_solution",
+  "graph": "work/gsm8k-sprint125-bags-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bags_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.bags_revenue",
+      "title_ja": "売上は1000ドル。",
+      "claim_ja": "売上は1000ドル。",
+      "method_ja": "100個×10ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "売上は1000ドル。",
+      "baseline_ja": "売上は1000ドル。"
+    },
+    {
+      "id": "bags_total_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.bags_total_cost",
+      "title_ja": "総仕入額は700ドル。",
+      "claim_ja": "総仕入額は700ドル。",
+      "method_ja": "売上1000ドル−利益300ドル。",
+      "requires_steps": [
+        "bags_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "総仕入額は700ドル。",
+      "baseline_ja": "総仕入額は700ドル。"
+    },
+    {
+      "id": "bags_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.bags_solution",
+      "title_ja": "1個の仕入価格は7ドル。",
+      "claim_ja": "1個の仕入価格は7ドル。",
+      "method_ja": "700ドル÷100個。",
+      "requires_steps": [
+        "bags_total_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1個の仕入価格は7ドル。",
+      "baseline_ja": "1個の仕入価格は7ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2156,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

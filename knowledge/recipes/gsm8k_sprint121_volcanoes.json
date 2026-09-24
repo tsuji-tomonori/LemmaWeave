@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint121_volcanoes",
+  "title_ja": "さらに残り96座の50%が噴火し、年末に48座が無噴火で残る。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02109",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.volcanoes_solution",
+  "graph": "work/gsm8k-sprint121-volcanoes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "volcanoes_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.volcanoes_first",
+      "title_ja": "最初の2か月で40座が噴火し、160座が残る。",
+      "claim_ja": "最初の2か月で40座が噴火し、160座が残る。",
+      "method_ja": "200の20%を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "最初の2か月で40座が噴火し、160座が残る。",
+      "baseline_ja": "最初の2か月で40座が噴火し、160座が残る。"
+    },
+    {
+      "id": "volcanoes_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.volcanoes_second",
+      "title_ja": "残った160座の40%に当たる64座が噴火し、96座が残る。",
+      "claim_ja": "残った160座の40%に当たる64座が噴火し、96座が残る。",
+      "method_ja": "割合の基準を第1段階後の160座に置く。",
+      "requires_steps": [
+        "volcanoes_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "残った160座の40%に当たる64座が噴火し、96座が残る。",
+      "baseline_ja": "残った160座の40%に当たる64座が噴火し、96座が残る。"
+    },
+    {
+      "id": "volcanoes_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.volcanoes_solution",
+      "title_ja": "さらに残り96座の50%が噴火し、年末に48座が無噴火で残る。",
+      "claim_ja": "さらに残り96座の50%が噴火し、年末に48座が無噴火で残る。",
+      "method_ja": "96−48。",
+      "requires_steps": [
+        "volcanoes_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "さらに残り96座の50%が噴火し、年末に48座が無噴火で残る。",
+      "baseline_ja": "さらに残り96座の50%が噴火し、年末に48座が無噴火で残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2110,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

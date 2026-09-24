@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint127_commute",
+  "title_ja": "80日間の通学走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02195",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Shaneは毎日、学校へ行く際に合計10マイル運転する。80日間に家から学校へ往復して何マイルか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.commute_answer_scope",
+  "graph": "work/gsm8k-sprint127-commute-graph.json",
+  "model_notes_ja": [
+    "total of 10 milesを片道距離とみなすか一日の合計とみなすか曖昧。"
+  ],
+  "steps": [
+    {
+      "id": "commute_one_way",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.commute_one_way",
+      "title_ja": "10マイルを片道と読めば1600マイル",
+      "claim_ja": "10マイルを片道と読めば1600マイル",
+      "method_ja": "1日20マイルを80日分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "10マイルを片道と読めば1600マイル",
+      "baseline_ja": "10マイルを片道と読めば1600マイル"
+    },
+    {
+      "id": "commute_daily_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.commute_daily_total",
+      "title_ja": "10マイルを1日の合計と読めば800マイル",
+      "claim_ja": "10マイルを1日の合計と読めば800マイル",
+      "method_ja": "1日10マイルを80日分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "10マイルを1日の合計と読めば800マイル",
+      "baseline_ja": "10マイルを1日の合計と読めば800マイル"
+    },
+    {
+      "id": "commute_readings_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.commute_readings_differ",
+      "title_ja": "1600マイルと800マイルは異なる",
+      "claim_ja": "1600マイルと800マイルは異なる",
+      "method_ja": "total 10 milesの係り先で答えが変わる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "1600マイルと800マイルは異なる",
+      "baseline_ja": "1600マイルと800マイルは異なる"
+    },
+    {
+      "id": "commute_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.commute_answer_scope",
+      "title_ja": "参照解1600マイルは10マイルを片道とする場合",
+      "claim_ja": "参照解1600マイルは10マイルを片道とする場合",
+      "method_ja": "原文のtotalを往復合計と読む800マイルも保持する。",
+      "requires_steps": [
+        "commute_one_way",
+        "commute_daily_total",
+        "commute_readings_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "参照解1600マイルは10マイルを片道とする場合",
+      "baseline_ja": "参照解1600マイルは10マイルを片道とする場合"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2196,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

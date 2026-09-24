@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint134_balloons",
+  "title_ja": "Cynthiaの水風船数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02303",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Janiceは6個、Randyはその半分、CynthiaはRandyの4倍",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.balloons_solution",
+  "graph": "work/gsm8k-sprint134-balloons-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "balloons_randy",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.balloons_randy",
+      "title_ja": "Randyは3個",
+      "claim_ja": "Randyは3個",
+      "method_ja": "6個の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Randyは3個",
+      "baseline_ja": "Randyは3個"
+    },
+    {
+      "id": "balloons_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.balloons_solution",
+      "title_ja": "Cynthiaは12個",
+      "claim_ja": "Cynthiaは12個",
+      "method_ja": "3個の4倍",
+      "requires_steps": [
+        "balloons_randy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Cynthiaは12個",
+      "baseline_ja": "Cynthiaは12個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2304,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

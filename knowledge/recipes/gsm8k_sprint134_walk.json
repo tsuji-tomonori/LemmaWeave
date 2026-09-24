@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint134_walk",
+  "title_ja": "初日の10倍を初めて超える日",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02291",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "初日1マイルで毎日直前日の2倍を歩く。初日の10倍を初めて超える日を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.walk_solution",
+  "graph": "work/gsm8k-sprint134-walk-graph.json",
+  "model_notes_ja": [
+    "原題のmore thanを厳密な不等号として保持する。参照説明中のgreater than or equalは表現誤りだが、4日目8・5日目16なので答えは変わらない。"
+  ],
+  "steps": [
+    {
+      "id": "walk_day4",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.walk_day4",
+      "title_ja": "4日目は8マイル",
+      "claim_ja": "4日目は8マイル",
+      "method_ja": "1、2、4、8と倍増する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "4日目は8マイル",
+      "baseline_ja": "4日目は8マイル"
+    },
+    {
+      "id": "walk_day5",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.walk_day5",
+      "title_ja": "5日目は16マイル",
+      "claim_ja": "5日目は16マイル",
+      "method_ja": "8マイルを2倍する",
+      "requires_steps": [
+        "walk_day4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "5日目は16マイル",
+      "baseline_ja": "5日目は16マイル"
+    },
+    {
+      "id": "walk_first_over_ten",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.walk_first_over_ten",
+      "title_ja": "4日目までは10倍以下で5日目に10倍を超える",
+      "claim_ja": "4日目までは10倍以下で5日目に10倍を超える",
+      "method_ja": "8≤10かつ10<16を確認する",
+      "requires_steps": [
+        "walk_day4",
+        "walk_day5"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "4日目までは10倍以下で5日目に10倍を超える",
+      "baseline_ja": "4日目までは10倍以下で5日目に10倍を超える"
+    },
+    {
+      "id": "walk_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.walk_solution",
+      "title_ja": "答えは5日目",
+      "claim_ja": "答えは5日目",
+      "method_ja": "初めて条件を満たす日を結論する",
+      "requires_steps": [
+        "walk_first_over_ten"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "答えは5日目",
+      "baseline_ja": "答えは5日目"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2292,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

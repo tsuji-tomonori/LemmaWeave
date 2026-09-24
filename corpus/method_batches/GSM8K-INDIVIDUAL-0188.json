@@ -1,0 +1,225 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0188",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0925A07Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02290",
+      "source_line_1based": 2291,
+      "source_record_sha256": "0983071e99f11577e2cf871d331181ef400fa58459bc8ca8a5b67e1d4a3d986a",
+      "raw_question_sha256": "169e9f2654f68ea2e8888cd961bb21814c582c86c70ff073bef6e0f85a897efd",
+      "normalized_question_sha256": "169e9f2654f68ea2e8888cd961bb21814c582c86c70ff073bef6e0f85a897efd",
+      "source_question": "Victor has 8 flower stickers. He has 2 fewer animal stickers than flower stickers. How many stickers does Victor have in total?",
+      "recipe_id": "gsm8k_sprint134_stickers",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02291",
+      "source_line_1based": 2292,
+      "source_record_sha256": "574837e50b3b6c03437da12d58e6328c45979301b289787c7d62e7e30635caed",
+      "raw_question_sha256": "7cfd032d5fb6bd7fef82dffbcf42e6d23e15b5b9192d7262ffe45dc124473094",
+      "normalized_question_sha256": "80057585b60f7e4c22dbeaf43a6c511f2661450377e0b24f0f24a227f51f8be7",
+      "source_question": "Trish likes to go for walks every day.  One day, she goes on a 1-mile walk.  Every subsequent day, she doubles the distance she walked the previous day.  On what day does she walk more than 10 times further than she did on the first day?",
+      "recipe_id": "gsm8k_sprint134_walk",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題のmore thanを厳密な不等号として保持する。参照説明中のgreater than or equalは表現誤りだが、4日目8・5日目16なので答えは変わらない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02292",
+      "source_line_1based": 2293,
+      "source_record_sha256": "f9ad65ed3dd883310a06ce0d927aac905a5d6c1acd56b315aeca4b6a96c4273b",
+      "raw_question_sha256": "86476823bf015cae4decc62e100055aad692ee864da9c018c86fb88c9eea0d1c",
+      "normalized_question_sha256": "86476823bf015cae4decc62e100055aad692ee864da9c018c86fb88c9eea0d1c",
+      "source_question": "Jake is from a conservative household so during lunch at school one day, he gave one-quarter of his feeding allowance to a hungry friend. If candies cost 20 cents apiece and Jake's feeding allowance is $4, how many candies can his friend purchase with the money Jake gave to him?",
+      "recipe_id": "gsm8k_sprint134_candy",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02293",
+      "source_line_1based": 2294,
+      "source_record_sha256": "2ea20eaa96e3ace0fd8bff08984219d22398c323d72be7ffe83d62f6b1b79cc4",
+      "raw_question_sha256": "eaf207c15ee6860323996d69b29cfd5e70f6ba67abe896744732ae4037bc6c92",
+      "normalized_question_sha256": "eaf207c15ee6860323996d69b29cfd5e70f6ba67abe896744732ae4037bc6c92",
+      "source_question": "A boy runs 1.5 km in 45 minutes. What is his speed in kilometers per hour?",
+      "recipe_id": "gsm8k_sprint134_running",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "距離は0.1km単位の15として整数式45×10×速度=15×60に変換する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02294",
+      "source_line_1based": 2295,
+      "source_record_sha256": "663d841578066df580f89ea8694060b9b9660586cdda32f71131348edda69277",
+      "raw_question_sha256": "51d6778327e4cd2c376313125efc62b8d7aeaf22a49bbdfd095052a6d1133ddd",
+      "normalized_question_sha256": "51d6778327e4cd2c376313125efc62b8d7aeaf22a49bbdfd095052a6d1133ddd",
+      "source_question": "There are three buckets full of oranges. There are 22 oranges in the first bucket, 17 more oranges in the second bucket and 11 fewer oranges in the third bucket than in the second. How many oranges are there in all the buckets?",
+      "recipe_id": "gsm8k_sprint134_oranges",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02295",
+      "source_line_1based": 2296,
+      "source_record_sha256": "10cb1f9399c563d43bf5adce7e8906510094913e37f59a8fd3cee1f3bc048a94",
+      "raw_question_sha256": "b469e48a2864bcf0ea18486da247496ffa875470d63417f0862ca0052fea3034",
+      "normalized_question_sha256": "b469e48a2864bcf0ea18486da247496ffa875470d63417f0862ca0052fea3034",
+      "source_question": "Chalktown High School had their prom last weekend. There were 123 students who attended. If 3 students attended on their own, how many couples came to the prom?",
+      "recipe_id": "gsm8k_sprint134_prom",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02296",
+      "source_line_1based": 2297,
+      "source_record_sha256": "ac789159ca80c0506530cfeaac87e1eff89ae0b7ce4392c9de86dac94a3fbc62",
+      "raw_question_sha256": "d0c92c80b0a9caa897c9b408d2863d8e289d0a1320ca340185f5f143a0d7dc7a",
+      "normalized_question_sha256": "d0c92c80b0a9caa897c9b408d2863d8e289d0a1320ca340185f5f143a0d7dc7a",
+      "source_question": "Mancino is tending 3 gardens that each measure 16 feet by 5 feet. His sister, Marquita, is tilling the soil for two gardens that each measure 8 feet by 4 feet. How many square feet combined are in all their gardens?",
+      "recipe_id": "gsm8k_sprint134_gardens",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02297",
+      "source_line_1based": 2298,
+      "source_record_sha256": "136387fb70896e4db690eeb019ea006ba0a17c0c4bf5bbe15e899ed80d769fbc",
+      "raw_question_sha256": "3636d5e947d63dbe414fb093f9027b9099b906abbec8f052378dcada8bbb0fea",
+      "normalized_question_sha256": "3636d5e947d63dbe414fb093f9027b9099b906abbec8f052378dcada8bbb0fea",
+      "source_question": "Nine members of the crafts club are making 2 necklaces each. It takes 50 beads to make each necklace. How many beads will they need in all?",
+      "recipe_id": "gsm8k_sprint134_beads",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照説明のbraceletsはnecklacesの誤記として、原題どおりネックレスを扱う。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02298",
+      "source_line_1based": 2299,
+      "source_record_sha256": "fb43351bbf5644c42ca6d1711ab65b49587374d5236efbd701d5a2456ac9074c",
+      "raw_question_sha256": "2b6dde14b3f8fa416f71c2a435a3345289bec1ca6c57ff4f54c37f3e99468690",
+      "normalized_question_sha256": "2b6dde14b3f8fa416f71c2a435a3345289bec1ca6c57ff4f54c37f3e99468690",
+      "source_question": "Eunice has 10 eggplant seeds and 4 pots. How many seeds will be planted in the fourth pot if 3 seeds can be planted in 1 pot?",
+      "recipe_id": "gsm8k_sprint134_pots",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "最初の3鉢を各3個で満たしてから4つ目へ残りを植えるという順序を明示する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02299",
+      "source_line_1based": 2300,
+      "source_record_sha256": "b89dc3b2ded5ab783c72a88c3aca0b4df5d2392822eca6bfee22a7caf9272508",
+      "raw_question_sha256": "5efa9e8db41f79b37509b42a9ab93489941a3e5c969093af4637d82395800212",
+      "normalized_question_sha256": "5efa9e8db41f79b37509b42a9ab93489941a3e5c969093af4637d82395800212",
+      "source_question": "Archibald and his brother are playing tennis against each other. Archibald has won 12 games and his brother has won 18. What percentage of games has Archibald won?",
+      "recipe_id": "gsm8k_sprint134_tennis",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02300",
+      "source_line_1based": 2301,
+      "source_record_sha256": "0d20fee5ed2783aef16b05d9dec62a5b75529340d37bbe0ccf24024d496db1fc",
+      "raw_question_sha256": "a8270162f2cee48af463b13c14b65ff6c32004c247650c2b2c86c4f47ad91aa4",
+      "normalized_question_sha256": "a8270162f2cee48af463b13c14b65ff6c32004c247650c2b2c86c4f47ad91aa4",
+      "source_question": "Josh works 8 hours a day, 5 days a week, 4 weeks a month. Carl is an intern and works 2 hours less than Josh every day. Josh gets $9 an hour and Carl, half that. How much does the company pay for the 2 together in one month?",
+      "recipe_id": "gsm8k_sprint134_payroll",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "4.50ドルを正確に扱うため金額はセントで形式化し、最後にドルへ換算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02301",
+      "source_line_1based": 2302,
+      "source_record_sha256": "8bc96182c025d0b049d82bc4321a0f36802180d302c8eca5c3032e13792272fb",
+      "raw_question_sha256": "ee66a909501361083fcefd0f42f85a2b2c75ef8d7307faf0a52f6d920f7a0936",
+      "normalized_question_sha256": "ee66a909501361083fcefd0f42f85a2b2c75ef8d7307faf0a52f6d920f7a0936",
+      "source_question": "There were 10 snowflakes at first. It snowed an additional 4 snowflakes every 5 minutes. How many minutes passed before there were 58 snowflakes?",
+      "recipe_id": "gsm8k_sprint134_snow",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02302",
+      "source_line_1based": 2303,
+      "source_record_sha256": "a95692212ad89109d794b82db632dfe1cbc184b109ab60b7556a92623973c8d8",
+      "raw_question_sha256": "ca88a25f4f88b80735f292509ecf6f588ec61be44e66f8e32da1384231d11e9c",
+      "normalized_question_sha256": "ca88a25f4f88b80735f292509ecf6f588ec61be44e66f8e32da1384231d11e9c",
+      "source_question": "Each year a store decreased the price of a certain model of TV by $35. If the price in 2001 was $1950, what was the price in 2009?",
+      "recipe_id": "gsm8k_sprint134_television",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02303",
+      "source_line_1based": 2304,
+      "source_record_sha256": "ab3b8e8cf81ecdbba0d0abfc0209a22d3fd2f3fb1d6dbaf1d7103a918ab947ee",
+      "raw_question_sha256": "542494a0251c27d81b94b626579d5b659bc850af09ff32bc6734f4f01606b2d9",
+      "normalized_question_sha256": "542494a0251c27d81b94b626579d5b659bc850af09ff32bc6734f4f01606b2d9",
+      "source_question": "Cynthia has four times as many water balloons as her husband, Randy. Randy has only half as many water balloons as his daughter, Janice. If Janice throws all 6 of her water balloons at her father, how many water balloons does Cynthia have, which she could also choose to throw at Randy?",
+      "recipe_id": "gsm8k_sprint134_balloons",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02304",
+      "source_line_1based": 2305,
+      "source_record_sha256": "b4ff6dd19bb27f0140a5b70f6e460421b7c5d1125428371b8b94274578b0f491",
+      "raw_question_sha256": "6a4ca9020dfca3ce16e8885dd850dfb3c93d0f73e63798178e0010191cf82c14",
+      "normalized_question_sha256": "6a4ca9020dfca3ce16e8885dd850dfb3c93d0f73e63798178e0010191cf82c14",
+      "source_question": "Amy's grandfather gave her $100 for her birthday. Amy bought 3 dolls, each of which cost $1. How much money does Amy have left?",
+      "recipe_id": "gsm8k_sprint134_birthday",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    }
+  ]
+}

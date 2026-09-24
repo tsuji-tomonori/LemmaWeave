@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint134_television",
+  "title_ja": "2009年のテレビ価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02302",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2001年1950ドルで毎年35ドルずつ値下げ",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.television_solution",
+  "graph": "work/gsm8k-sprint134-television-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "television_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.television_years",
+      "title_ja": "経過は8年",
+      "claim_ja": "経過は8年",
+      "method_ja": "2009から2001を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "経過は8年",
+      "baseline_ja": "経過は8年"
+    },
+    {
+      "id": "television_decrease",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.television_decrease",
+      "title_ja": "値下げ合計280ドル",
+      "claim_ja": "値下げ合計280ドル",
+      "method_ja": "35ドルを8年分",
+      "requires_steps": [
+        "television_years"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "値下げ合計280ドル",
+      "baseline_ja": "値下げ合計280ドル"
+    },
+    {
+      "id": "television_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.television_solution",
+      "title_ja": "価格は1670ドル",
+      "claim_ja": "価格は1670ドル",
+      "method_ja": "1950ドルから280ドルを引く",
+      "requires_steps": [
+        "television_decrease"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "価格は1670ドル",
+      "baseline_ja": "価格は1670ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2303,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

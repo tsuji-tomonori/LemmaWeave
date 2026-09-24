@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T16:00+09:00-gsm8k-15-a16",
+  "scheduled_local_hour": 16,
+  "scheduled_at": "2026-09-24T16:00:00+09:00",
+  "started_at": "2026-09-24T16:04:07+09:00",
+  "finished_at": "2026-09-24T16:11:33+09:00",
+  "start_offset_seconds": 247,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "7c5230f4bab899440f1e64ed10cef33d1af11965",
+  "artifact_commit": "1bbf3b03e1868240d39a3059b928f9c4baf35542",
+  "selected_problem_ids": [
+    "train:02140", "train:02141", "train:02142", "train:02143", "train:02144",
+    "train:02145", "train:02146", "train:02147", "train:02148", "train:02149",
+    "train:02150", "train:02151", "train:02152", "train:02153", "train:02154"
+  ],
+  "skipped_already_solution_ready": [],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02140", "train:02141", "train:02142", "train:02143", "train:02144",
+    "train:02145", "train:02146", "train:02147", "train:02148", "train:02149",
+    "train:02150", "train:02151", "train:02152", "train:02153", "train:02154"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02144", "commit": "991c7f6c1105a52db9f557a52ef44eaa5b81b401"},
+    {"through": "train:02149", "commit": "ce04d72bd6c6e64677cb2cefa5893b98a0d46197"},
+    {"through": "train:02154", "commit": "1bbf3b03e1868240d39a3059b928f9c4baf35542"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0178.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A16Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A16.lean",
+    "recipes": 15,
+    "explanation_lines": 53,
+    "named_lean_theorems": 53,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02143は『第3競技者が第3競技者より2フィート短い』という自己参照条件のため原文通りには解がない。整数上の矛盾を形式化し、『第2競技者より短い』への訂正を明示した場合だけ24フィートを導いた。",
+    "train:02147は参照説明の主語誤記を採用せず、原題通り雌カバ25頭が各5頭産むとして総数315頭を導いた。",
+    "train:02150は2個・4個を各組全体の1日量と読むと6個残る一方、各人量と読むと週84個必要で購入48個を超える。両読解を分離し、参照答6は追加読解条件付きとした。",
+    "直前HEADのexact-head CIでは新規A14はエラー源に挙がらなかったが、DNC形式化、9月21日分の旧Leanエラー・sorryAx依存に加え、9月22日A05・A06の型注釈欠落と再生タイムアウトが再現した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "question_hash_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1639,
+    "pending": 6635,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02155",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0, 15],
+    "note_ja": "0時枠と15時枠は未実行のまま保持した。16時枠は予定時刻の247秒後に開始し、14時枠のtrain:02125〜02139とは重複していない。"
+  },
+  "ci": {
+    "last_completed_exact_head": "7c5230f4bab899440f1e64ed10cef33d1af11965",
+    "last_completed_run_id": 35962979243,
+    "last_completed_status": "failure_legacy_dnc_0921_0922_lean_axiom_and_timeout",
+    "last_completed_failure_step": "Replay the complete fixed-environment pipeline",
+    "last_completed_details_ja": "DNC形式化、GSM8KSprint0921A01〜A08の旧LeanエラーとsorryAx依存、Sprint0922A05Models・A06Modelsの型注釈欠落およびexit 124を検出した。",
+    "current_artifact_head": "1bbf3b03e1868240d39a3059b928f9c4baf35542",
+    "current_status": "not_started_before_ledger_commit",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T16:00+09:00",
+    "scope": "train:02140-train:02154",
+    "claimed_at": "2026-09-24T16:04:07+09:00",
+    "expires_at": "2026-09-24T17:04:07+09:00",
+    "released": true
+  }
+}

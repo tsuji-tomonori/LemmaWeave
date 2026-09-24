@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint123_dolphins",
+  "title_ja": "海のイルカ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02139",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "もとの65頭に、その3倍のイルカが川から加わった後の総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A14.dolphins_solution",
+  "graph": "work/gsm8k-sprint123-dolphins-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dolphins_join",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.dolphins_join",
+      "title_ja": "加わるイルカは195頭。",
+      "claim_ja": "加わるイルカは195頭。",
+      "method_ja": "65×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "加わるイルカは195頭。",
+      "baseline_ja": "加わるイルカは195頭。"
+    },
+    {
+      "id": "dolphins_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.dolphins_solution",
+      "title_ja": "合計は260頭。",
+      "claim_ja": "合計は260頭。",
+      "method_ja": "65+195。",
+      "requires_steps": [
+        "dolphins_join"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "合計は260頭。",
+      "baseline_ja": "合計は260頭。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2140,
+    "checked_model_hash": "61d9d50f01023680e1b5a790b2cbb8b5dc80e11c2c055803236bd99c6da83155",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な表現は読解条件と別読解を明示した。"
+    ]
+  }
+}

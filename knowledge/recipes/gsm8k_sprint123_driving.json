@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint123_driving",
+  "title_ja": "50時間に達する登校日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02136",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "毎日の往復運転時間と必要総分数から日数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A14.driving_solution",
+  "graph": "work/gsm8k-sprint123-driving-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "driving_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.driving_daily",
+      "title_ja": "1日40分運転する。",
+      "claim_ja": "1日40分運転する。",
+      "method_ja": "片道20分を往復する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1日40分運転する。",
+      "baseline_ja": "1日40分運転する。"
+    },
+    {
+      "id": "driving_required",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.driving_required",
+      "title_ja": "50時間は3000分。",
+      "claim_ja": "50時間は3000分。",
+      "method_ja": "50×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "50時間は3000分。",
+      "baseline_ja": "50時間は3000分。"
+    },
+    {
+      "id": "driving_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.driving_solution",
+      "title_ja": "75登校日で達する。",
+      "claim_ja": "75登校日で達する。",
+      "method_ja": "3000÷40。",
+      "requires_steps": [
+        "driving_daily",
+        "driving_required"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "75登校日で達する。",
+      "baseline_ja": "75登校日で達する。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2137,
+    "checked_model_hash": "61d9d50f01023680e1b5a790b2cbb8b5dc80e11c2c055803236bd99c6da83155",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な表現は読解条件と別読解を明示した。"
+    ]
+  }
+}

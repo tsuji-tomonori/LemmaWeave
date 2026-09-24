@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint133_farm",
+  "title_ja": "Martaが働いた時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02286",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "収入合計240ドル、時給10ドル、チップ合計50ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A06.farm_solution",
+  "graph": "work/gsm8k-sprint133-farm-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "farm_wages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.farm_wages",
+      "title_ja": "賃金部分は190ドル",
+      "claim_ja": "賃金部分は190ドル",
+      "method_ja": "240ドルからチップ50ドルを引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "賃金部分は190ドル",
+      "baseline_ja": "賃金部分は190ドル"
+    },
+    {
+      "id": "farm_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.farm_solution",
+      "title_ja": "19時間働いた",
+      "claim_ja": "19時間働いた",
+      "method_ja": "190ドルを時給10ドルで割る",
+      "requires_steps": [
+        "farm_wages"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "19時間働いた",
+      "baseline_ja": "19時間働いた"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2287,
+    "checked_model_hash": "f57c0c51ecac149c58ab9991cfaff90a4b06f84527cc15a56b74fbe4c5afc072",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

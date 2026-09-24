@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint125_campaign",
+  "title_ja": "大統領自身の選挙貯金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02168",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "総額から友人の40%を引き、その残額の30%を家族分として引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.campaign_solution",
+  "graph": "work/gsm8k-sprint125-campaign-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "campaign_friends",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.campaign_friends",
+      "title_ja": "友人は4000ドル集めた。",
+      "claim_ja": "友人は4000ドル集めた。",
+      "method_ja": "10000×40%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "友人は4000ドル集めた。",
+      "baseline_ja": "友人は4000ドル集めた。"
+    },
+    {
+      "id": "campaign_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.campaign_remaining",
+      "title_ja": "友人分を除くと6000ドル。",
+      "claim_ja": "友人分を除くと6000ドル。",
+      "method_ja": "10000−4000。",
+      "requires_steps": [
+        "campaign_friends"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "友人分を除くと6000ドル。",
+      "baseline_ja": "友人分を除くと6000ドル。"
+    },
+    {
+      "id": "campaign_family",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.campaign_family",
+      "title_ja": "家族は1800ドル集めた。",
+      "claim_ja": "家族は1800ドル集めた。",
+      "method_ja": "6000×30%。",
+      "requires_steps": [
+        "campaign_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "家族は1800ドル集めた。",
+      "baseline_ja": "家族は1800ドル集めた。"
+    },
+    {
+      "id": "campaign_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.campaign_solution",
+      "title_ja": "本人の貯金は4200ドル。",
+      "claim_ja": "本人の貯金は4200ドル。",
+      "method_ja": "6000−1800。",
+      "requires_steps": [
+        "campaign_remaining",
+        "campaign_family"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "本人の貯金は4200ドル。",
+      "baseline_ja": "本人の貯金は4200ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2169,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

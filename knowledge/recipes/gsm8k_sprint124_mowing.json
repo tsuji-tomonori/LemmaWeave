@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint124_mowing",
+  "title_ja": "週の芝刈り時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02141",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "8エーカーの4分の3を乗用機、残りを手押し機で刈る時間を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A16.mowing_solution",
+  "graph": "work/gsm8k-sprint124-mowing-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "mowing_riding_acres",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.mowing_riding_acres",
+      "title_ja": "乗用機で6エーカー刈る。",
+      "claim_ja": "乗用機で6エーカー刈る。",
+      "method_ja": "8×3/4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "乗用機で6エーカー刈る。",
+      "baseline_ja": "乗用機で6エーカー刈る。"
+    },
+    {
+      "id": "mowing_riding_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.mowing_riding_hours",
+      "title_ja": "乗用機は3時間。",
+      "claim_ja": "乗用機は3時間。",
+      "method_ja": "6÷2エーカー毎時。",
+      "requires_steps": [
+        "mowing_riding_acres"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "乗用機は3時間。",
+      "baseline_ja": "乗用機は3時間。"
+    },
+    {
+      "id": "mowing_push_acres",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.mowing_push_acres",
+      "title_ja": "手押し機で2エーカー刈る。",
+      "claim_ja": "手押し機で2エーカー刈る。",
+      "method_ja": "8−6。",
+      "requires_steps": [
+        "mowing_riding_acres"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "手押し機で2エーカー刈る。",
+      "baseline_ja": "手押し機で2エーカー刈る。"
+    },
+    {
+      "id": "mowing_push_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.mowing_push_hours",
+      "title_ja": "手押し機は2時間。",
+      "claim_ja": "手押し機は2時間。",
+      "method_ja": "2÷1エーカー毎時。",
+      "requires_steps": [
+        "mowing_push_acres"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "手押し機は2時間。",
+      "baseline_ja": "手押し機は2時間。"
+    },
+    {
+      "id": "mowing_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.mowing_solution",
+      "title_ja": "合計5時間。",
+      "claim_ja": "合計5時間。",
+      "method_ja": "3+2。",
+      "requires_steps": [
+        "mowing_riding_hours",
+        "mowing_push_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "合計5時間。",
+      "baseline_ja": "合計5時間。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2142,
+    "checked_model_hash": "1ef653f2f5493b131faeaf7e8e4695e102a0b2223657f79e1a4a788f945d875f",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、矛盾や複数読解は訂正条件・反例と分離した。"
+    ]
+  }
+}

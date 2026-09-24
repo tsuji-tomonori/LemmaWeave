@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint127_average",
+  "title_ja": "10人目を加えた平均年齢の増加",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02187",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "9人の平均年齢が8歳で、28歳の10人目を加えると平均は何歳増えるか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.average_solution",
+  "graph": "work/gsm8k-sprint127-average-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "average_first_nine",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.average_first_nine",
+      "title_ja": "最初の9人の年齢合計は72歳",
+      "claim_ja": "最初の9人の年齢合計は72歳",
+      "method_ja": "平均8歳に9人を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最初の9人の年齢合計は72歳",
+      "baseline_ja": "最初の9人の年齢合計は72歳"
+    },
+    {
+      "id": "average_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.average_total",
+      "title_ja": "10人の年齢合計は100歳",
+      "claim_ja": "10人の年齢合計は100歳",
+      "method_ja": "72歳に28歳を足す。",
+      "requires_steps": [
+        "average_first_nine"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "10人の年齢合計は100歳",
+      "baseline_ja": "10人の年齢合計は100歳"
+    },
+    {
+      "id": "average_new",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.average_new",
+      "title_ja": "新しい平均は10歳",
+      "claim_ja": "新しい平均は10歳",
+      "method_ja": "100歳を10人で割る。",
+      "requires_steps": [
+        "average_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "新しい平均は10歳",
+      "baseline_ja": "新しい平均は10歳"
+    },
+    {
+      "id": "average_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.average_solution",
+      "title_ja": "平均は2歳増える",
+      "claim_ja": "平均は2歳増える",
+      "method_ja": "10歳から元の8歳を引く。",
+      "requires_steps": [
+        "average_new"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "平均は2歳増える",
+      "baseline_ja": "平均は2歳増える"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2188,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

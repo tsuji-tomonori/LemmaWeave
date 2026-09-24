@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint132_cities",
+  "title_ja": "Sun Cityの人口",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02264",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "RosevilleはWillowdaleの3倍より500人少なく、Sun CityはRosevilleの2倍より1000人多い。Willowdaleは2000人",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A04.cities_solution",
+  "graph": "work/gsm8k-sprint132-cities-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cities_rose",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.cities_rose",
+      "title_ja": "Rosevilleは5500人",
+      "claim_ja": "Rosevilleは5500人",
+      "method_ja": "2000人の3倍から500人引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Rosevilleは5500人",
+      "baseline_ja": "Rosevilleは5500人"
+    },
+    {
+      "id": "cities_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.cities_solution",
+      "title_ja": "Sun Cityは12000人",
+      "claim_ja": "Sun Cityは12000人",
+      "method_ja": "5500人の2倍に1000人足す",
+      "requires_steps": [
+        "cities_rose"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Sun Cityは12000人",
+      "baseline_ja": "Sun Cityは12000人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2265,
+    "checked_model_hash": "1b9f70468554e9981c06f87268115033a93ac640809512751f109819832445b3",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

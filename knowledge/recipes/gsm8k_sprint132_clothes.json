@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint132_clothes",
+  "title_ja": "通りの家の軒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02267",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "子11人が各4着、大人20人が各3着を満杯の物干しに掛ける。1本2着、1軒2本",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A04.clothes_solution",
+  "graph": "work/gsm8k-sprint132-clothes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "clothes_child",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.clothes_child",
+      "title_ja": "子どもの衣類は44着",
+      "claim_ja": "子どもの衣類は44着",
+      "method_ja": "11人×4着",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "子どもの衣類は44着",
+      "baseline_ja": "子どもの衣類は44着"
+    },
+    {
+      "id": "clothes_adult",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.clothes_adult",
+      "title_ja": "大人の衣類は60着",
+      "claim_ja": "大人の衣類は60着",
+      "method_ja": "20人×3着",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "大人の衣類は60着",
+      "baseline_ja": "大人の衣類は60着"
+    },
+    {
+      "id": "clothes_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.clothes_total",
+      "title_ja": "衣類は104着",
+      "claim_ja": "衣類は104着",
+      "method_ja": "44着と60着を足す",
+      "requires_steps": [
+        "clothes_child",
+        "clothes_adult"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "衣類は104着",
+      "baseline_ja": "衣類は104着"
+    },
+    {
+      "id": "clothes_lines",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.clothes_lines",
+      "title_ja": "物干しは52本",
+      "claim_ja": "物干しは52本",
+      "method_ja": "104着を1本2着で割る",
+      "requires_steps": [
+        "clothes_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "物干しは52本",
+      "baseline_ja": "物干しは52本"
+    },
+    {
+      "id": "clothes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.clothes_solution",
+      "title_ja": "家は26軒",
+      "claim_ja": "家は26軒",
+      "method_ja": "52本を1軒2本で割る",
+      "requires_steps": [
+        "clothes_lines"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "家は26軒",
+      "baseline_ja": "家は26軒"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2268,
+    "checked_model_hash": "1b9f70468554e9981c06f87268115033a93ac640809512751f109819832445b3",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

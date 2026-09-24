@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint132_hiring",
+  "title_ja": "週平均の契約採用者数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02272",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4週目400人は3週目の2倍。2週目は3週目より150人少なく、1週目は2週目より200人多い",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A04.hiring_solution",
+  "graph": "work/gsm8k-sprint132-hiring-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hiring_week3",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.hiring_week3",
+      "title_ja": "3週目は200人",
+      "claim_ja": "3週目は200人",
+      "method_ja": "400人の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3週目は200人",
+      "baseline_ja": "3週目は200人"
+    },
+    {
+      "id": "hiring_week2",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.hiring_week2",
+      "title_ja": "2週目は50人",
+      "claim_ja": "2週目は50人",
+      "method_ja": "200人から150人引く",
+      "requires_steps": [
+        "hiring_week3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2週目は50人",
+      "baseline_ja": "2週目は50人"
+    },
+    {
+      "id": "hiring_week1",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.hiring_week1",
+      "title_ja": "1週目は250人",
+      "claim_ja": "1週目は250人",
+      "method_ja": "50人に200人足す",
+      "requires_steps": [
+        "hiring_week2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1週目は250人",
+      "baseline_ja": "1週目は250人"
+    },
+    {
+      "id": "hiring_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.hiring_total",
+      "title_ja": "4週合計900人",
+      "claim_ja": "4週合計900人",
+      "method_ja": "250、50、200、400人を足す",
+      "requires_steps": [
+        "hiring_week1",
+        "hiring_week2",
+        "hiring_week3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "4週合計900人",
+      "baseline_ja": "4週合計900人"
+    },
+    {
+      "id": "hiring_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.hiring_solution",
+      "title_ja": "週平均225人",
+      "claim_ja": "週平均225人",
+      "method_ja": "900人を4週で割る",
+      "requires_steps": [
+        "hiring_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "週平均225人",
+      "baseline_ja": "週平均225人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2273,
+    "checked_model_hash": "1b9f70468554e9981c06f87268115033a93ac640809512751f109819832445b3",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

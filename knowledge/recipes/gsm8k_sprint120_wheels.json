@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint120_wheels",
+  "title_ja": "芝刈り機4輪、三輪車3輪、一輪車1輪も加え、合計22輪。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02084",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A11.wheels_solution",
+  "graph": "work/gsm8k-sprint120-wheels-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "wheels_cars",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.wheels_cars",
+      "title_ja": "車2台には8輪ある。",
+      "claim_ja": "車2台には8輪ある。",
+      "method_ja": "4輪×2台。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "車2台には8輪ある。",
+      "baseline_ja": "車2台には8輪ある。"
+    },
+    {
+      "id": "wheels_bicycles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.wheels_bicycles",
+      "title_ja": "3人分の自転車には6輪ある。",
+      "claim_ja": "3人分の自転車には6輪ある。",
+      "method_ja": "2輪×3台。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "3人分の自転車には6輪ある。",
+      "baseline_ja": "3人分の自転車には6輪ある。"
+    },
+    {
+      "id": "wheels_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.wheels_solution",
+      "title_ja": "芝刈り機4輪、三輪車3輪、一輪車1輪も加え、合計22輪。",
+      "claim_ja": "芝刈り機4輪、三輪車3輪、一輪車1輪も加え、合計22輪。",
+      "method_ja": "8+4+6+3+1。",
+      "requires_steps": [
+        "wheels_cars",
+        "wheels_bicycles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "芝刈り機4輪、三輪車3輪、一輪車1輪も加え、合計22輪。",
+      "baseline_ja": "芝刈り機4輪、三輪車3輪、一輪車1輪も加え、合計22輪。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2085,
+    "checked_model_hash": "4fbbba05067cfd5efc01e3ad45a6bbdfe8355bb6f13cb453952d1e22052f2cc5",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、解釈条件や参照解の誤記を黙って補わず明示した。"
+    ]
+  }
+}

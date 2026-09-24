@@ -1,0 +1,103 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T17:00+09:00-gsm8k-15-a17",
+  "scheduled_local_hour": 17,
+  "scheduled_at": "2026-09-24T17:00:00+09:00",
+  "started_at": "2026-09-24T16:55:27+09:00",
+  "finished_at": "2026-09-24T17:00:44+09:00",
+  "start_offset_seconds": -273,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "89581d44800f82a1a13a65642f5a81b9cfd7fb59",
+  "artifact_commit": "315a7b2cd0d6e34380ee59d08acb9f93bf63cbe1",
+  "selected_problem_ids": [
+    "train:02155", "train:02156", "train:02157", "train:02158", "train:02159",
+    "train:02160", "train:02161", "train:02162", "train:02163", "train:02164",
+    "train:02165", "train:02166", "train:02167", "train:02168", "train:02169"
+  ],
+  "skipped_already_solution_ready": [],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02155", "train:02156", "train:02157", "train:02158", "train:02159",
+    "train:02160", "train:02161", "train:02162", "train:02163", "train:02164",
+    "train:02165", "train:02166", "train:02167", "train:02168", "train:02169"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02159", "commit": "e56c61ed9a9a120b0957e5d2f5f45ea6edeb058f"},
+    {"through": "train:02164", "commit": "447bded7c9b1d346fd7698f83b18da7445d07e29"},
+    {"through": "train:02169", "commit": "315a7b2cd0d6e34380ee59d08acb9f93bf63cbe1"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0179.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A17Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A17.lean",
+    "recipes": 15,
+    "explanation_lines": 47,
+    "named_lean_theorems": 47,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02156は20%増を36インチ、そこから50%短い距離を18インチとして、割合の基準量を各段階で固定した。",
+    "train:02161は寄付、賞金、3回のスロット損失、水とくじ券の購入、即席くじ賞金を時系列の別状態として形式化し、最終94ドルを導いた。",
+    "train:02163は指10本・手2本・頭1つという通常の人体条件を暗黙に追加せず、モデル上の明示条件として記録した。",
+    "train:02167は運賃150ドルを売上、燃料費60ドルを費用として分離し、求める金額を純収入90ドルと固定した。",
+    "直前HEADのexact-head CIではA16をエラー源として挙げず、DNC2026M2BC導関数モデルのnoncomputable不足、DNC数列、9月21日分の旧Leanエラー・sorryAx依存、再生失敗が継続した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "question_hash_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1654,
+    "pending": 6620,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02170",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0, 15],
+    "note_ja": "0時枠と15時枠は未実行のまま保持した。17時枠は予定時刻の273秒前に開始し、16時枠のtrain:02140〜02154とは重複していない。"
+  },
+  "ci": {
+    "last_completed_exact_head": "89581d44800f82a1a13a65642f5a81b9cfd7fb59",
+    "last_completed_run_id": 35968367773,
+    "last_completed_status": "failure_legacy_dnc_0921_lean_axiom_and_replay",
+    "last_completed_failure_step": "Replay the complete fixed-environment pipeline",
+    "last_completed_details_ja": "DNC2026M2BC/CubicDerivativeModel.leanのnoncomputable不足、DNC数列のomega・構文エラー、GSM8KSprint0921A01〜A08の旧LeanエラーとsorryAx依存を検出した。A16はエラー源に挙がらなかった。",
+    "current_artifact_head": "315a7b2cd0d6e34380ee59d08acb9f93bf63cbe1",
+    "current_status": "not_started_before_ledger_commit",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T17:00+09:00",
+    "scope": "train:02155-train:02169",
+    "claimed_at": "2026-09-24T16:55:27+09:00",
+    "expires_at": "2026-09-24T17:55:27+09:00",
+    "released": true
+  }
+}

@@ -5,7 +5,7 @@ namespace LemmaWeave.Problems.GSM8K.Sprint0925A08
 structure RopeCut where total parts unit shorter : ℕ
   hTotal : total = 40
   hParts : parts = 2 + 3
-  hUnit : unit * parts = total
+  hUnit : unit * 5 = total
   hShorter : shorter = 2 * unit
 theorem rope_parts (m : RopeCut) : m.parts = 5 := by cases m; omega
 theorem rope_unit (m : RopeCut) : m.unit = 8 := by cases m; omega

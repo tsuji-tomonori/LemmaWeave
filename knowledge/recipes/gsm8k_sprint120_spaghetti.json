@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint120_spaghetti",
+  "title_ja": "8等分した1食分は1ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02088",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A11.spaghetti_solution",
+  "graph": "work/gsm8k-sprint120-spaghetti-graph.json",
+  "model_notes_ja": [
+    "原文の単数表現に従い、箱1つ・瓶1つ・1ポンドを8食へ等分するモデルを明示する。"
+  ],
+  "steps": [
+    {
+      "id": "spaghetti_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.spaghetti_total",
+      "title_ja": "箱1つ、ソース1瓶、ミートボール1ポンドの合計は8ドル。",
+      "claim_ja": "箱1つ、ソース1瓶、ミートボール1ポンドの合計は8ドル。",
+      "method_ja": "1+2+5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "箱1つ、ソース1瓶、ミートボール1ポンドの合計は8ドル。",
+      "baseline_ja": "箱1つ、ソース1瓶、ミートボール1ポンドの合計は8ドル。"
+    },
+    {
+      "id": "spaghetti_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.spaghetti_solution",
+      "title_ja": "8等分した1食分は1ドル。",
+      "claim_ja": "8等分した1食分は1ドル。",
+      "method_ja": "8÷8。",
+      "requires_steps": [
+        "spaghetti_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "8等分した1食分は1ドル。",
+      "baseline_ja": "8等分した1食分は1ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2089,
+    "checked_model_hash": "4fbbba05067cfd5efc01e3ad45a6bbdfe8355bb6f13cb453952d1e22052f2cc5",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、解釈条件や参照解の誤記を黙って補わず明示した。"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint122_oranges",
+  "title_ja": "1人当たりの減少数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02119",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "傷んだオレンジを除いたとき1人分が何個減るか求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A13.oranges_solution",
+  "graph": "work/gsm8k-sprint122-oranges-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "oranges_original",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.oranges_original",
+      "title_ja": "除外前は1人9個。",
+      "claim_ja": "除外前は1人9個。",
+      "method_ja": "108÷12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "除外前は1人9個。",
+      "baseline_ja": "除外前は1人9個。"
+    },
+    {
+      "id": "oranges_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.oranges_left",
+      "title_ja": "残るオレンジは72個。",
+      "claim_ja": "残るオレンジは72個。",
+      "method_ja": "108−36。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "残るオレンジは72個。",
+      "baseline_ja": "残るオレンジは72個。"
+    },
+    {
+      "id": "oranges_now",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.oranges_now",
+      "title_ja": "除外後は1人6個。",
+      "claim_ja": "除外後は1人6個。",
+      "method_ja": "72÷12。",
+      "requires_steps": [
+        "oranges_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "除外後は1人6個。",
+      "baseline_ja": "除外後は1人6個。"
+    },
+    {
+      "id": "oranges_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.oranges_solution",
+      "title_ja": "1人当たり3個減る。",
+      "claim_ja": "1人当たり3個減る。",
+      "method_ja": "9−6。",
+      "requires_steps": [
+        "oranges_original",
+        "oranges_now"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1人当たり3個減る。",
+      "baseline_ja": "1人当たり3個減る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2120,
+    "checked_model_hash": "2d247300fd6850aeee734895d7aaaebb3883ceb284846fdab864e381503ad540",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は追加条件と反例を明示した。"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint124_theater",
+  "title_ja": "演劇をする男子",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02149",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "8人の友人の半分が女子のとき、残りの男子人数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A16.theater_solution",
+  "graph": "work/gsm8k-sprint124-theater-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "theater_girls",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.theater_girls",
+      "title_ja": "女子は4人。",
+      "claim_ja": "女子は4人。",
+      "method_ja": "8÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "女子は4人。",
+      "baseline_ja": "女子は4人。"
+    },
+    {
+      "id": "theater_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.theater_solution",
+      "title_ja": "演劇をする男子は4人。",
+      "claim_ja": "演劇をする男子は4人。",
+      "method_ja": "8−4で、男子全員が演劇をすると原題にある。",
+      "requires_steps": [
+        "theater_girls"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "演劇をする男子は4人。",
+      "baseline_ja": "演劇をする男子は4人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2150,
+    "checked_model_hash": "1ef653f2f5493b131faeaf7e8e4695e102a0b2223657f79e1a4a788f945d875f",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、矛盾や複数読解は訂正条件・反例と分離した。"
+    ]
+  }
+}

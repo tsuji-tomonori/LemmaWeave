@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint124_road",
+  "title_ja": "1マイル当たりの標識",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02145",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "走行距離と停止標識数を求め、比を計算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A16.road_solution",
+  "graph": "work/gsm8k-sprint124-road-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "road_miles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.road_miles",
+      "title_ja": "走行距離は7マイル。",
+      "claim_ja": "走行距離は7マイル。",
+      "method_ja": "5より2多い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "走行距離は7マイル。",
+      "baseline_ja": "走行距離は7マイル。"
+    },
+    {
+      "id": "road_signs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.road_signs",
+      "title_ja": "停止標識は14個。",
+      "claim_ja": "停止標識は14個。",
+      "method_ja": "17より3少ない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "停止標識は14個。",
+      "baseline_ja": "停止標識は14個。"
+    },
+    {
+      "id": "road_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.road_solution",
+      "title_ja": "1マイル当たり2個。",
+      "claim_ja": "1マイル当たり2個。",
+      "method_ja": "14÷7。",
+      "requires_steps": [
+        "road_miles",
+        "road_signs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1マイル当たり2個。",
+      "baseline_ja": "1マイル当たり2個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2146,
+    "checked_model_hash": "1ef653f2f5493b131faeaf7e8e4695e102a0b2223657f79e1a4a788f945d875f",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、矛盾や複数読解は訂正条件・反例と分離した。"
+    ]
+  }
+}

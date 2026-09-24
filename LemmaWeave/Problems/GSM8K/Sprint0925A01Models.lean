@@ -52,7 +52,7 @@ structure TailDifference where eastern western difference percent : ℕ
   hEastern : eastern = 6
   hWestern : western = 8
   hDifference : difference + eastern = western
-  hPercent : western * percent = 100 * difference
+  hPercent : 8 * percent = 100 * difference
 theorem tails_difference (m : TailDifference) : m.difference = 2 := by cases m; omega
 theorem tails_solution (m : TailDifference) : m.percent = 25 := by
   have h := tails_difference m

@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint125_instruments",
+  "title_ja": "Milesの楽器総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02163",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "通常の人の指・手・頭の数を明示し、各楽器数を求めて合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.instruments_solution",
+  "graph": "work/gsm8k-sprint125-instruments-graph.json",
+  "model_notes_ja": [
+    "指10本・手2本・頭1つという通常の人体条件を原題の暗黙の生活知識として明示した。"
+  ],
+  "steps": [
+    {
+      "id": "instruments_trumpets",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.instruments_trumpets",
+      "title_ja": "トランペットは7本。",
+      "claim_ja": "トランペットは7本。",
+      "method_ja": "指10本より3本少ない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "トランペットは7本。",
+      "baseline_ja": "トランペットは7本。"
+    },
+    {
+      "id": "instruments_guitars",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.instruments_guitars",
+      "title_ja": "ギターは4本。",
+      "claim_ja": "ギターは4本。",
+      "method_ja": "手2本より2本多い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "ギターは4本。",
+      "baseline_ja": "ギターは4本。"
+    },
+    {
+      "id": "instruments_trombones",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.instruments_trombones",
+      "title_ja": "トロンボーンは3本。",
+      "claim_ja": "トロンボーンは3本。",
+      "method_ja": "頭1つより2本多い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "トロンボーンは3本。",
+      "baseline_ja": "トロンボーンは3本。"
+    },
+    {
+      "id": "instruments_horns",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.instruments_horns",
+      "title_ja": "フレンチホルンは3本。",
+      "claim_ja": "フレンチホルンは3本。",
+      "method_ja": "ギター4本より1本少ない。",
+      "requires_steps": [
+        "instruments_guitars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "フレンチホルンは3本。",
+      "baseline_ja": "フレンチホルンは3本。"
+    },
+    {
+      "id": "instruments_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.instruments_solution",
+      "title_ja": "楽器は合計17本。",
+      "claim_ja": "楽器は合計17本。",
+      "method_ja": "7+4+3+3。",
+      "requires_steps": [
+        "instruments_trumpets",
+        "instruments_guitars",
+        "instruments_trombones",
+        "instruments_horns"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "楽器は合計17本。",
+      "baseline_ja": "楽器は合計17本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2164,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

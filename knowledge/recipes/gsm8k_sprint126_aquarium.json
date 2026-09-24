@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint126_aquarium",
+  "title_ja": "水槽の割引後の税込額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02174",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "元値120ドルの水槽を50%値引きで買い、値引き後価格の5%を税として払う。総額は何ドルか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.aquarium_solution",
+  "graph": "work/gsm8k-sprint126-aquarium-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "aquarium_reduced",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.aquarium_reduced",
+      "title_ja": "割引後は60ドル",
+      "claim_ja": "割引後は60ドル",
+      "method_ja": "元値120ドルから50%値引きする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "割引後は60ドル",
+      "baseline_ja": "割引後は60ドル"
+    },
+    {
+      "id": "aquarium_tax",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.aquarium_tax",
+      "title_ja": "売上税は3ドル",
+      "claim_ja": "売上税は3ドル",
+      "method_ja": "税率5%の基準は元値ではなく割引後60ドル。",
+      "requires_steps": [
+        "aquarium_reduced"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "売上税は3ドル",
+      "baseline_ja": "売上税は3ドル"
+    },
+    {
+      "id": "aquarium_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.aquarium_solution",
+      "title_ja": "支払総額は63ドル",
+      "claim_ja": "支払総額は63ドル",
+      "method_ja": "割引後60ドルと税3ドルを足す。",
+      "requires_steps": [
+        "aquarium_reduced",
+        "aquarium_tax"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "支払総額は63ドル",
+      "baseline_ja": "支払総額は63ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2175,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

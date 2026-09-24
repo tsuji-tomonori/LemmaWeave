@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint126_teams",
+  "title_ja": "2チームの得点差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02171",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "第1チームはBethが12点、Janが10点。第2チームはJudyが8点、Angelが11点。第1チームは何点多いか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.teams_solution",
+  "graph": "work/gsm8k-sprint126-teams-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "teams_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.teams_first",
+      "title_ja": "第1チームは22点",
+      "claim_ja": "第1チームは22点",
+      "method_ja": "Bethの12点とJanの10点を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "第1チームは22点",
+      "baseline_ja": "第1チームは22点"
+    },
+    {
+      "id": "teams_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.teams_second",
+      "title_ja": "第2チームは19点",
+      "claim_ja": "第2チームは19点",
+      "method_ja": "Judyの8点とAngelの11点を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "第2チームは19点",
+      "baseline_ja": "第2チームは19点"
+    },
+    {
+      "id": "teams_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.teams_solution",
+      "title_ja": "第1チームが3点多い",
+      "claim_ja": "第1チームが3点多い",
+      "method_ja": "22点から19点を引く。",
+      "requires_steps": [
+        "teams_first",
+        "teams_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "第1チームが3点多い",
+      "baseline_ja": "第1チームが3点多い"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2172,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

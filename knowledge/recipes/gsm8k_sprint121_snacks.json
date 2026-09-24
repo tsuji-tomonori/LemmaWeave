@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint121_snacks",
+  "title_ja": "母に返すのは22ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02100",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.snacks_solution",
+  "graph": "work/gsm8k-sprint121-snacks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "snacks_pizza",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.snacks_pizza",
+      "title_ja": "ピザ2箱は24ドル。",
+      "claim_ja": "ピザ2箱は24ドル。",
+      "method_ja": "12×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "ピザ2箱は24ドル。",
+      "baseline_ja": "ピザ2箱は24ドル。"
+    },
+    {
+      "id": "snacks_juice",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.snacks_juice",
+      "title_ja": "ジュース2パックは4ドル。",
+      "claim_ja": "ジュース2パックは4ドル。",
+      "method_ja": "2×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "ジュース2パックは4ドル。",
+      "baseline_ja": "ジュース2パックは4ドル。"
+    },
+    {
+      "id": "snacks_spent",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.snacks_spent",
+      "title_ja": "支出合計は28ドル。",
+      "claim_ja": "支出合計は28ドル。",
+      "method_ja": "24+4。",
+      "requires_steps": [
+        "snacks_pizza",
+        "snacks_juice"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "支出合計は28ドル。",
+      "baseline_ja": "支出合計は28ドル。"
+    },
+    {
+      "id": "snacks_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.snacks_solution",
+      "title_ja": "母に返すのは22ドル。",
+      "claim_ja": "母に返すのは22ドル。",
+      "method_ja": "50−28。",
+      "requires_steps": [
+        "snacks_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "母に返すのは22ドル。",
+      "baseline_ja": "母に返すのは22ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2101,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint123_ducks",
+  "title_ja": "売ったアヒルの数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02129",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "転売代金60ドルから手押し車代、家禽販売収入、アヒル販売数を逆算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A14.ducks_solution",
+  "graph": "work/gsm8k-sprint123-ducks-graph.json",
+  "model_notes_ja": [
+    "原文の『earns another $60』を転売で受け取った金額60ドルとしてモデル化し、購入額の2倍という直前条件と整合させた。"
+  ],
+  "steps": [
+    {
+      "id": "ducks_wheelbarrow",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.ducks_wheelbarrow",
+      "title_ja": "手押し車代は30ドル。",
+      "claim_ja": "手押し車代は30ドル。",
+      "method_ja": "転売代金60ドルが購入額の2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "手押し車代は30ドル。",
+      "baseline_ja": "手押し車代は30ドル。"
+    },
+    {
+      "id": "ducks_fowl_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.ducks_fowl_revenue",
+      "title_ja": "家禽販売収入は60ドル。",
+      "claim_ja": "家禽販売収入は60ドル。",
+      "method_ja": "その半分30ドルを手押し車に使った。",
+      "requires_steps": [
+        "ducks_wheelbarrow"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "家禽販売収入は60ドル。",
+      "baseline_ja": "家禽販売収入は60ドル。"
+    },
+    {
+      "id": "ducks_chicken_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.ducks_chicken_revenue",
+      "title_ja": "鶏5羽の収入は40ドル。",
+      "claim_ja": "鶏5羽の収入は40ドル。",
+      "method_ja": "5×8。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "鶏5羽の収入は40ドル。",
+      "baseline_ja": "鶏5羽の収入は40ドル。"
+    },
+    {
+      "id": "ducks_duck_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.ducks_duck_revenue",
+      "title_ja": "アヒルの収入は20ドル。",
+      "claim_ja": "アヒルの収入は20ドル。",
+      "method_ja": "60−40。",
+      "requires_steps": [
+        "ducks_fowl_revenue",
+        "ducks_chicken_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "アヒルの収入は20ドル。",
+      "baseline_ja": "アヒルの収入は20ドル。"
+    },
+    {
+      "id": "ducks_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.ducks_solution",
+      "title_ja": "売ったアヒルは2羽。",
+      "claim_ja": "売ったアヒルは2羽。",
+      "method_ja": "20÷10。",
+      "requires_steps": [
+        "ducks_duck_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "売ったアヒルは2羽。",
+      "baseline_ja": "売ったアヒルは2羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2130,
+    "checked_model_hash": "61d9d50f01023680e1b5a790b2cbb8b5dc80e11c2c055803236bd99c6da83155",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な表現は読解条件と別読解を明示した。"
+    ]
+  }
+}

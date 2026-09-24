@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint129_race",
+  "title_ja": "レース完走者",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02215",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "80人中4分の1が転倒して棄権し、残りの3分の2が脱水、その5分の1も棄権した。完走者は何人か",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.race_solution",
+  "graph": "work/gsm8k-sprint129-race-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "race_tripped",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.race_tripped",
+      "title_ja": "転倒による棄権は20人",
+      "claim_ja": "転倒による棄権は20人",
+      "method_ja": "80人の4分の1を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "転倒による棄権は20人",
+      "baseline_ja": "転倒による棄権は20人"
+    },
+    {
+      "id": "race_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.race_remaining",
+      "title_ja": "転倒後は60人",
+      "claim_ja": "転倒後は60人",
+      "method_ja": "80人から20人を引く",
+      "requires_steps": [
+        "race_tripped"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "転倒後は60人",
+      "baseline_ja": "転倒後は60人"
+    },
+    {
+      "id": "race_dehydrated",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.race_dehydrated",
+      "title_ja": "脱水したのは40人",
+      "claim_ja": "脱水したのは40人",
+      "method_ja": "残る60人の3分の2",
+      "requires_steps": [
+        "race_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "脱水したのは40人",
+      "baseline_ja": "脱水したのは40人"
+    },
+    {
+      "id": "race_dehydrated_nonfinish",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.race_dehydrated_nonfinish",
+      "title_ja": "脱水後の棄権は8人",
+      "claim_ja": "脱水後の棄権は8人",
+      "method_ja": "40人の5分の1",
+      "requires_steps": [
+        "race_dehydrated"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "脱水後の棄権は8人",
+      "baseline_ja": "脱水後の棄権は8人"
+    },
+    {
+      "id": "race_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.race_solution",
+      "title_ja": "完走者は52人",
+      "claim_ja": "完走者は52人",
+      "method_ja": "60人から8人を引く",
+      "requires_steps": [
+        "race_remaining",
+        "race_dehydrated_nonfinish"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "完走者は52人",
+      "baseline_ja": "完走者は52人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2216,
+    "checked_model_hash": "0e4dbd0892a4b7583a281baa8e229a27fa91b69da525f618ae6029f3aa92cebc",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

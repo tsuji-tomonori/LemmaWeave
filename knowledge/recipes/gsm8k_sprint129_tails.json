@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint129_tails",
+  "title_ja": "尾の節数の百分率差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02218",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "東部種6節と西部種8節の差を、西部種の節数に対する百分率で表す",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.tails_solution",
+  "graph": "work/gsm8k-sprint129-tails-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "tails_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.tails_difference",
+      "title_ja": "差は2節",
+      "claim_ja": "差は2節",
+      "method_ja": "8節から6節を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "差は2節",
+      "baseline_ja": "差は2節"
+    },
+    {
+      "id": "tails_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.tails_solution",
+      "title_ja": "西部種基準の差は25%",
+      "claim_ja": "西部種基準の差は25%",
+      "method_ja": "2を基準8で割り100倍する",
+      "requires_steps": [
+        "tails_difference"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "西部種基準の差は25%",
+      "baseline_ja": "西部種基準の差は25%"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2219,
+    "checked_model_hash": "0e4dbd0892a4b7583a281baa8e229a27fa91b69da525f618ae6029f3aa92cebc",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

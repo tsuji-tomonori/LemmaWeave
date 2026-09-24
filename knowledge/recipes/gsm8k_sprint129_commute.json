@@ -1,0 +1,113 @@
+{
+  "id": "gsm8k_sprint129_commute",
+  "title_ja": "LukeとPaulaの往復時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02220",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lukeは往路バス70分、Paulaはその3/5。Paulaは復路もバス、Lukeは復路を『5 times slower』の自転車で移動する。合計時間は",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.commute_answer_scope",
+  "graph": "work/gsm8k-sprint129-commute-graph.json",
+  "model_notes_ja": [
+    "5 times slowerは速度・時間のどちらを比較するかが原文だけでは形式的に一意でない。参照解と同じく、自転車の所要時間が同区間のバスの5倍という条件を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "commute_paula_oneway",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.commute_paula_oneway",
+      "title_ja": "Paulaの片道は42分",
+      "claim_ja": "Paulaの片道は42分",
+      "method_ja": "70分の3分の5",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "Paulaの片道は42分",
+      "baseline_ja": "Paulaの片道は42分"
+    },
+    {
+      "id": "commute_paula_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.commute_paula_total",
+      "title_ja": "Paulaの往復は84分",
+      "claim_ja": "Paulaの往復は84分",
+      "method_ja": "42分を往復分2倍する",
+      "requires_steps": [
+        "commute_paula_oneway"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "Paulaの往復は84分",
+      "baseline_ja": "Paulaの往復は84分"
+    },
+    {
+      "id": "commute_luke_bike_conditional",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.commute_luke_bike_conditional",
+      "title_ja": "復路を所要時間5倍と読むと350分",
+      "claim_ja": "復路を所要時間5倍と読むと350分",
+      "method_ja": "70分を5倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "復路を所要時間5倍と読むと350分",
+      "baseline_ja": "復路を所要時間5倍と読むと350分"
+    },
+    {
+      "id": "commute_luke_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.commute_luke_total",
+      "title_ja": "この読解でLukeは420分",
+      "claim_ja": "この読解でLukeは420分",
+      "method_ja": "往路70分と復路350分を足す",
+      "requires_steps": [
+        "commute_luke_bike_conditional"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "この読解でLukeは420分",
+      "baseline_ja": "この読解でLukeは420分"
+    },
+    {
+      "id": "commute_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.commute_solution",
+      "title_ja": "二人の合計は504分",
+      "claim_ja": "二人の合計は504分",
+      "method_ja": "420分と84分を足す",
+      "requires_steps": [
+        "commute_paula_total",
+        "commute_luke_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "二人の合計は504分",
+      "baseline_ja": "二人の合計は504分"
+    },
+    {
+      "id": "commute_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.commute_answer_scope",
+      "title_ja": "504分は『所要時間が5倍』という明示条件付き",
+      "claim_ja": "504分は『所要時間が5倍』という明示条件付き",
+      "method_ja": "曖昧な倍率表現をLeanモデルの仮定として固定する",
+      "requires_steps": [
+        "commute_luke_bike_conditional",
+        "commute_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "504分は『所要時間が5倍』という明示条件付き",
+      "baseline_ja": "504分は『所要時間が5倍』という明示条件付き"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2221,
+    "checked_model_hash": "0e4dbd0892a4b7583a281baa8e229a27fa91b69da525f618ae6029f3aa92cebc",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

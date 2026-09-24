@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint129_oats",
+  "title_ja": "馬4頭の3日分のオート麦",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02228",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "馬4頭が各4ポンドを1日2回、3日間食べる。必要量を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.oats_solution",
+  "graph": "work/gsm8k-sprint129-oats-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "oats_per_feeding",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.oats_per_feeding",
+      "title_ja": "1回の給餌は16ポンド",
+      "claim_ja": "1回の給餌は16ポンド",
+      "method_ja": "4頭に各4ポンド",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1回の給餌は16ポンド",
+      "baseline_ja": "1回の給餌は16ポンド"
+    },
+    {
+      "id": "oats_per_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.oats_per_day",
+      "title_ja": "1日は32ポンド",
+      "claim_ja": "1日は32ポンド",
+      "method_ja": "16ポンドを2回分",
+      "requires_steps": [
+        "oats_per_feeding"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1日は32ポンド",
+      "baseline_ja": "1日は32ポンド"
+    },
+    {
+      "id": "oats_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.oats_solution",
+      "title_ja": "3日分は96ポンド",
+      "claim_ja": "3日分は96ポンド",
+      "method_ja": "32ポンドを3日分",
+      "requires_steps": [
+        "oats_per_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3日分は96ポンド",
+      "baseline_ja": "3日分は96ポンド"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2229,
+    "checked_model_hash": "0e4dbd0892a4b7583a281baa8e229a27fa91b69da525f618ae6029f3aa92cebc",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

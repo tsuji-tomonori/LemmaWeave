@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint129_salary",
+  "title_ja": "Bobの現在の給与",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02225",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bobの昨年給与はMarioの今年4000ドルの3倍で、今年20%増。現在給与を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.salary_solution",
+  "graph": "work/gsm8k-sprint129-salary-graph.json",
+  "model_notes_ja": [
+    "Marioの40%増前の給与は、Bobについて与えられた関係がMarioの今年給与を参照するため結論に不要。条件を削除せず、不要であることを自己照合した。"
+  ],
+  "steps": [
+    {
+      "id": "salary_bob_last",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.salary_bob_last",
+      "title_ja": "Bobの昨年給与は12000ドル",
+      "claim_ja": "Bobの昨年給与は12000ドル",
+      "method_ja": "4000ドルを3倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "Bobの昨年給与は12000ドル",
+      "baseline_ja": "Bobの昨年給与は12000ドル"
+    },
+    {
+      "id": "salary_bob_increase",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.salary_bob_increase",
+      "title_ja": "増額は2400ドル",
+      "claim_ja": "増額は2400ドル",
+      "method_ja": "12000ドルの20%",
+      "requires_steps": [
+        "salary_bob_last"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "増額は2400ドル",
+      "baseline_ja": "増額は2400ドル"
+    },
+    {
+      "id": "salary_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.salary_solution",
+      "title_ja": "現在給与は14400ドル",
+      "claim_ja": "現在給与は14400ドル",
+      "method_ja": "12000ドルと2400ドルを足す",
+      "requires_steps": [
+        "salary_bob_last",
+        "salary_bob_increase"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "現在給与は14400ドル",
+      "baseline_ja": "現在給与は14400ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2226,
+    "checked_model_hash": "0e4dbd0892a4b7583a281baa8e229a27fa91b69da525f618ae6029f3aa92cebc",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

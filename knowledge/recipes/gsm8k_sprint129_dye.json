@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint129_dye",
+  "title_ja": "ブラウス用染料",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02216",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1着20個の点に各10mlを使う。100着を染めるには400ml瓶が何本必要か",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.dye_solution",
+  "graph": "work/gsm8k-sprint129-dye-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dye_per_blouse",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.dye_per_blouse",
+      "title_ja": "1着には200ml",
+      "claim_ja": "1着には200ml",
+      "method_ja": "20個に各10ml",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1着には200ml",
+      "baseline_ja": "1着には200ml"
+    },
+    {
+      "id": "dye_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.dye_total",
+      "title_ja": "100着には20000ml",
+      "claim_ja": "100着には20000ml",
+      "method_ja": "200mlを100着分",
+      "requires_steps": [
+        "dye_per_blouse"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "100着には20000ml",
+      "baseline_ja": "100着には20000ml"
+    },
+    {
+      "id": "dye_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.dye_solution",
+      "title_ja": "必要な瓶は50本",
+      "claim_ja": "必要な瓶は50本",
+      "method_ja": "20000mlを400mlで割る",
+      "requires_steps": [
+        "dye_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "必要な瓶は50本",
+      "baseline_ja": "必要な瓶は50本"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2217,
+    "checked_model_hash": "0e4dbd0892a4b7583a281baa8e229a27fa91b69da525f618ae6029f3aa92cebc",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

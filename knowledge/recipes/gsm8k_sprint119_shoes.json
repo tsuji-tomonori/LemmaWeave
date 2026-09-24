@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint119_shoes",
+  "title_ja": "62足は個々の靴では124個。したがって単位を足で数える答えは62足、shoeを一個ずつ数える字義どおりの答えは124個。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02069",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.shoes_solution",
+  "graph": "work/gsm8k-sprint119-shoes-graph.json",
+  "model_notes_ja": [
+    "原題は80 pairsと6 more pairsを与えながら最後にshoesを尋ねる。単位を黙って変えず、62足=124個の靴を両方記録する。"
+  ],
+  "steps": [
+    {
+      "id": "shoes_donated",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.shoes_donated",
+      "title_ja": "寄付したのは24足。",
+      "claim_ja": "寄付したのは24足。",
+      "method_ja": "80足の30%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "寄付したのは24足。",
+      "baseline_ja": "寄付したのは24足。"
+    },
+    {
+      "id": "shoes_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.shoes_remaining",
+      "title_ja": "寄付後は56足。",
+      "claim_ja": "寄付後は56足。",
+      "method_ja": "80−24。",
+      "requires_steps": [
+        "shoes_donated"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "寄付後は56足。",
+      "baseline_ja": "寄付後は56足。"
+    },
+    {
+      "id": "shoes_pairs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.shoes_pairs",
+      "title_ja": "6足買い足して62足。",
+      "claim_ja": "6足買い足して62足。",
+      "method_ja": "56+6。",
+      "requires_steps": [
+        "shoes_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "6足買い足して62足。",
+      "baseline_ja": "6足買い足して62足。"
+    },
+    {
+      "id": "shoes_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.shoes_solution",
+      "title_ja": "62足は個々の靴では124個。したがって単位を足で数える答えは62足、shoeを一個ずつ数える字義どおりの答えは124個。",
+      "claim_ja": "62足は個々の靴では124個。したがって単位を足で数える答えは62足、shoeを一個ずつ数える字義どおりの答えは124個。",
+      "method_ja": "1足=2個として単位を変換する。",
+      "requires_steps": [
+        "shoes_pairs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "62足は個々の靴では124個。したがって単位を足で数える答えは62足、shoeを一個ずつ数える字義どおりの答えは124個。",
+      "baseline_ja": "62足は個々の靴では124個。したがって単位を足で数える答えは62足、shoeを一個ずつ数える字義どおりの答えは124個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2070,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

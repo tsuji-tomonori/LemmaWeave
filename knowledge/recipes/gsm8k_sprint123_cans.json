@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint123_cans",
+  "title_ja": "追加で必要な缶",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02134",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "MarthaとDiegoの収集数を合計し、目標150缶までの不足を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A14.cans_solution",
+  "graph": "work/gsm8k-sprint123-cans-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cans_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.cans_half",
+      "title_ja": "Marthaの半分は45缶。",
+      "claim_ja": "Marthaの半分は45缶。",
+      "method_ja": "90÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Marthaの半分は45缶。",
+      "baseline_ja": "Marthaの半分は45缶。"
+    },
+    {
+      "id": "cans_diego",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.cans_diego",
+      "title_ja": "Diegoは55缶。",
+      "claim_ja": "Diegoは55缶。",
+      "method_ja": "45+10。",
+      "requires_steps": [
+        "cans_half"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Diegoは55缶。",
+      "baseline_ja": "Diegoは55缶。"
+    },
+    {
+      "id": "cans_collected",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.cans_collected",
+      "title_ja": "2人の合計は145缶。",
+      "claim_ja": "2人の合計は145缶。",
+      "method_ja": "90+55。",
+      "requires_steps": [
+        "cans_diego"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "2人の合計は145缶。",
+      "baseline_ja": "2人の合計は145缶。"
+    },
+    {
+      "id": "cans_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.cans_solution",
+      "title_ja": "あと5缶必要。",
+      "claim_ja": "あと5缶必要。",
+      "method_ja": "150−145。",
+      "requires_steps": [
+        "cans_collected"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "あと5缶必要。",
+      "baseline_ja": "あと5缶必要。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2135,
+    "checked_model_hash": "61d9d50f01023680e1b5a790b2cbb8b5dc80e11c2c055803236bd99c6da83155",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な表現は読解条件と別読解を明示した。"
+    ]
+  }
+}

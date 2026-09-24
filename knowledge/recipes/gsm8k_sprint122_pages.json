@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint122_pages",
+  "title_ja": "多い方の蔵書ページ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02114",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "MilesとDaphneのうち多い方のページ数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A13.pages_solution",
+  "graph": "work/gsm8k-sprint122-pages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pages_miles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.pages_miles",
+      "title_ja": "Milesは1200ページ。",
+      "claim_ja": "Milesは1200ページ。",
+      "method_ja": "240インチ×5ページ/インチ。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Milesは1200ページ。",
+      "baseline_ja": "Milesは1200ページ。"
+    },
+    {
+      "id": "pages_daphne",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.pages_daphne",
+      "title_ja": "Daphneは1250ページ。",
+      "claim_ja": "Daphneは1250ページ。",
+      "method_ja": "25インチ×50ページ/インチ。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Daphneは1250ページ。",
+      "baseline_ja": "Daphneは1250ページ。"
+    },
+    {
+      "id": "pages_compare",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.pages_compare",
+      "title_ja": "Daphneの方が50ページ多い。",
+      "claim_ja": "Daphneの方が50ページ多い。",
+      "method_ja": "1250−1200=50>0。",
+      "requires_steps": [
+        "pages_miles",
+        "pages_daphne"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Daphneの方が50ページ多い。",
+      "baseline_ja": "Daphneの方が50ページ多い。"
+    },
+    {
+      "id": "pages_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.pages_solution",
+      "title_ja": "多い方は1250ページ。",
+      "claim_ja": "多い方は1250ページ。",
+      "method_ja": "比較結果からDaphneのページ数を採る。",
+      "requires_steps": [
+        "pages_compare"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "多い方は1250ページ。",
+      "baseline_ja": "多い方は1250ページ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2115,
+    "checked_model_hash": "2d247300fd6850aeee734895d7aaaebb3883ceb284846fdab864e381503ad540",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は追加条件と反例を明示した。"
+    ]
+  }
+}

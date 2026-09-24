@@ -1,0 +1,130 @@
+{
+  "id": "gsm8k_sprint126_restaurant",
+  "title_ja": "16〜18時の車両数と客数の区別",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02182",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "15分当たり通常8台、ピーク12台を提供。16時から18時までの客は何人か。ただし原文は乗車人数を示さない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.restaurant_answer_scope",
+  "graph": "work/gsm8k-sprint126-restaurant-graph.json",
+  "model_notes_ja": [
+    "設問はcustomersと問うがデータはcarsの処理台数だけ。人数を車両数と同一視しない。"
+  ],
+  "steps": [
+    {
+      "id": "restaurant_offpeak",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.restaurant_offpeak",
+      "title_ja": "16〜17時は32台",
+      "claim_ja": "16〜17時は32台",
+      "method_ja": "15分区間4回×8台。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "16〜17時は32台",
+      "baseline_ja": "16〜17時は32台"
+    },
+    {
+      "id": "restaurant_peak",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.restaurant_peak",
+      "title_ja": "17〜18時は48台",
+      "claim_ja": "17〜18時は48台",
+      "method_ja": "15分区間4回×12台。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "17〜18時は48台",
+      "baseline_ja": "17〜18時は48台"
+    },
+    {
+      "id": "restaurant_cars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.restaurant_cars",
+      "title_ja": "2時間で80台を提供",
+      "claim_ja": "2時間で80台を提供",
+      "method_ja": "32台と48台を足す。",
+      "requires_steps": [
+        "restaurant_offpeak",
+        "restaurant_peak"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "2時間で80台を提供",
+      "baseline_ja": "2時間で80台を提供"
+    },
+    {
+      "id": "restaurant_one_per_car",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.restaurant_one_per_car",
+      "title_ja": "各車1人なら客は80人",
+      "claim_ja": "各車1人なら客は80人",
+      "method_ja": "80台×1人。",
+      "requires_steps": [
+        "restaurant_cars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "各車1人なら客は80人",
+      "baseline_ja": "各車1人なら客は80人"
+    },
+    {
+      "id": "restaurant_two_per_car",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.restaurant_two_per_car",
+      "title_ja": "各車2人なら客は160人",
+      "claim_ja": "各車2人なら客は160人",
+      "method_ja": "80台×2人。",
+      "requires_steps": [
+        "restaurant_cars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "各車2人なら客は160人",
+      "baseline_ja": "各車2人なら客は160人"
+    },
+    {
+      "id": "restaurant_customers_not_unique",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.restaurant_customers_not_unique",
+      "title_ja": "人数は原題から一意に決まらない",
+      "claim_ja": "人数は原題から一意に決まらない",
+      "method_ja": "80人と160人のどちらも車両数条件と両立。",
+      "requires_steps": [
+        "restaurant_one_per_car",
+        "restaurant_two_per_car"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "人数は原題から一意に決まらない",
+      "baseline_ja": "人数は原題から一意に決まらない"
+    },
+    {
+      "id": "restaurant_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.restaurant_answer_scope",
+      "title_ja": "確定するのは80台であって80人ではない",
+      "claim_ja": "確定するのは80台であって80人ではない",
+      "method_ja": "1台あたり乗車人数の追加条件が必要。",
+      "requires_steps": [
+        "restaurant_cars",
+        "restaurant_one_per_car",
+        "restaurant_two_per_car",
+        "restaurant_customers_not_unique"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "確定するのは80台であって80人ではない",
+      "baseline_ja": "確定するのは80台であって80人ではない"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2183,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

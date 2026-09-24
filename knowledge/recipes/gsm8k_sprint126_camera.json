@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint126_camera",
+  "title_ja": "4週間のカメラレンタル本人負担",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02181",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5000ドルのカメラを4週間借り、週の費用は価格の10%。友人がレンタル料の40%を負担するとJohnはいくら払うか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.camera_solution",
+  "graph": "work/gsm8k-sprint126-camera-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "camera_weekly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.camera_weekly",
+      "title_ja": "週当たり500ドル",
+      "claim_ja": "週当たり500ドル",
+      "method_ja": "価格5000ドルの10%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "週当たり500ドル",
+      "baseline_ja": "週当たり500ドル"
+    },
+    {
+      "id": "camera_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.camera_total",
+      "title_ja": "4週間で2000ドル",
+      "claim_ja": "4週間で2000ドル",
+      "method_ja": "500ドル×4。",
+      "requires_steps": [
+        "camera_weekly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "4週間で2000ドル",
+      "baseline_ja": "4週間で2000ドル"
+    },
+    {
+      "id": "camera_friend",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.camera_friend",
+      "title_ja": "友人は800ドル負担",
+      "claim_ja": "友人は800ドル負担",
+      "method_ja": "合計2000ドルの40%。",
+      "requires_steps": [
+        "camera_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "友人は800ドル負担",
+      "baseline_ja": "友人は800ドル負担"
+    },
+    {
+      "id": "camera_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.camera_solution",
+      "title_ja": "Johnは1200ドル負担",
+      "claim_ja": "Johnは1200ドル負担",
+      "method_ja": "2000−800。",
+      "requires_steps": [
+        "camera_total",
+        "camera_friend"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Johnは1200ドル負担",
+      "baseline_ja": "Johnは1200ドル負担"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2182,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

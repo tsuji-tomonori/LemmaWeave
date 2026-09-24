@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint122_allowance",
+  "title_ja": "買い物後の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02124",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4週分の小遣いからゲームと本を買った後の残金を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A13.allowance_solution",
+  "graph": "work/gsm8k-sprint122-allowance-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "allowance_saved",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.allowance_saved",
+      "title_ja": "4週間で40ドル。",
+      "claim_ja": "4週間で40ドル。",
+      "method_ja": "10×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "4週間で40ドル。",
+      "baseline_ja": "4週間で40ドル。"
+    },
+    {
+      "id": "allowance_after_game",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.allowance_after_game",
+      "title_ja": "ゲーム購入後は20ドル。",
+      "claim_ja": "ゲーム購入後は20ドル。",
+      "method_ja": "40ドルの半分を使う。",
+      "requires_steps": [
+        "allowance_saved"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "ゲーム購入後は20ドル。",
+      "baseline_ja": "ゲーム購入後は20ドル。"
+    },
+    {
+      "id": "allowance_book",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.allowance_book",
+      "title_ja": "本代は5ドル。",
+      "claim_ja": "本代は5ドル。",
+      "method_ja": "残った20ドルの4分の1。",
+      "requires_steps": [
+        "allowance_after_game"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "本代は5ドル。",
+      "baseline_ja": "本代は5ドル。"
+    },
+    {
+      "id": "allowance_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.allowance_solution",
+      "title_ja": "残金は15ドル。",
+      "claim_ja": "残金は15ドル。",
+      "method_ja": "20−5。",
+      "requires_steps": [
+        "allowance_after_game",
+        "allowance_book"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "残金は15ドル。",
+      "baseline_ja": "残金は15ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2125,
+    "checked_model_hash": "2d247300fd6850aeee734895d7aaaebb3883ceb284846fdab864e381503ad540",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は追加条件と反例を明示した。"
+    ]
+  }
+}

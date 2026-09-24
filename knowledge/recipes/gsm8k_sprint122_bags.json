@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint122_bags",
+  "title_ja": "お釣りで買える袋",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02123",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "文具購入後のお釣りで買える10ドルの袋の数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A13.bags_solution",
+  "graph": "work/gsm8k-sprint122-bags-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bags_crayons",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bags_crayons",
+      "title_ja": "クレヨン代は25ドル。",
+      "claim_ja": "クレヨン代は25ドル。",
+      "method_ja": "5×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "クレヨン代は25ドル。",
+      "baseline_ja": "クレヨン代は25ドル。"
+    },
+    {
+      "id": "bags_books",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bags_books",
+      "title_ja": "本代は50ドル。",
+      "claim_ja": "本代は50ドル。",
+      "method_ja": "10×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "本代は50ドル。",
+      "baseline_ja": "本代は50ドル。"
+    },
+    {
+      "id": "bags_calculators",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bags_calculators",
+      "title_ja": "電卓代は15ドル。",
+      "claim_ja": "電卓代は15ドル。",
+      "method_ja": "3×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "電卓代は15ドル。",
+      "baseline_ja": "電卓代は15ドル。"
+    },
+    {
+      "id": "bags_change",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bags_change",
+      "title_ja": "お釣りは110ドル。",
+      "claim_ja": "お釣りは110ドル。",
+      "method_ja": "200−25−50−15。",
+      "requires_steps": [
+        "bags_crayons",
+        "bags_books",
+        "bags_calculators"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "お釣りは110ドル。",
+      "baseline_ja": "お釣りは110ドル。"
+    },
+    {
+      "id": "bags_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bags_solution",
+      "title_ja": "袋は11個買える。",
+      "claim_ja": "袋は11個買える。",
+      "method_ja": "110÷10。",
+      "requires_steps": [
+        "bags_change"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "袋は11個買える。",
+      "baseline_ja": "袋は11個買える。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2124,
+    "checked_model_hash": "2d247300fd6850aeee734895d7aaaebb3883ceb284846fdab864e381503ad540",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は追加条件と反例を明示した。"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint119_hallway",
+  "title_ja": "父側の端から12mの地点で会う。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02075",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.hallway_solution",
+  "graph": "work/gsm8k-sprint119-hallway-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hallway_ratio",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.hallway_ratio",
+      "title_ja": "父と息子の進む距離の比は3対1。",
+      "claim_ja": "父と息子の進む距離の比は3対1。",
+      "method_ja": "同じ時間進み、速さが3対1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "父と息子の進む距離の比は3対1。",
+      "baseline_ja": "父と息子の進む距離の比は3対1。"
+    },
+    {
+      "id": "hallway_son",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.hallway_son",
+      "title_ja": "息子側の距離は4m。",
+      "claim_ja": "息子側の距離は4m。",
+      "method_ja": "16mを3+1の4部分に分ける。",
+      "requires_steps": [
+        "hallway_ratio"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "息子側の距離は4m。",
+      "baseline_ja": "息子側の距離は4m。"
+    },
+    {
+      "id": "hallway_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.hallway_solution",
+      "title_ja": "父側の端から12mの地点で会う。",
+      "claim_ja": "父側の端から12mの地点で会う。",
+      "method_ja": "父は3部分なので3×4m。",
+      "requires_steps": [
+        "hallway_son"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "父側の端から12mの地点で会う。",
+      "baseline_ja": "父側の端から12mの地点で会う。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2076,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

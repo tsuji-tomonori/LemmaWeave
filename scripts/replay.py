@@ -154,10 +154,10 @@ COMMANDS = [
     ['python3', 'scripts/lw.py', 'report'],
 ]
 
-# The method-target sweep grows with the number of registered individual
-# solutions.  Keep its timeout below the outer 4800-second replay bound while
-# allowing the complete sweep to finish as the corpus grows.
-METHOD_TARGET_TIMEOUT = 1500
+# The method-target sweep now includes over a hundred Lean files and each
+# target records its own Lean and dependency evidence.  Leave 600 seconds for
+# the remaining replay checks under the outer 4800-second bound.
+METHOD_TARGET_TIMEOUT = 4200
 DEFAULT_COMMAND_TIMEOUT = 900
 
 

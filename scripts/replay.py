@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Replay the complete fixed-environment audit pipeline without promoting ledger states.
 
-Run under `python3 scripts/run.py --timeout 4800 -- python3 scripts/replay.py`
+Run under `python3 scripts/run.py --timeout 6000 -- python3 scripts/replay.py`
 on a fresh runner after installing the pinned dependencies. All subprocesses
 must succeed; incomplete Phase 1 acceptance is reported separately.
 """
@@ -155,8 +155,8 @@ COMMANDS = [
 ]
 
 # The method-target sweep now includes over a hundred Lean files and each
-# target records its own Lean and dependency evidence.  Leave 600 seconds for
-# the remaining replay checks under the outer 4800-second bound.
+# target records its own Lean and dependency evidence.  The outer replay
+# bound leaves 1800 seconds for other checks and command startup.
 METHOD_TARGET_TIMEOUT = 4200
 DEFAULT_COMMAND_TIMEOUT = 900
 

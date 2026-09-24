@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint119_popsicles",
+  "title_ja": "最後の6本目は1本目の32倍の速さで溶ける。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02072",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.popsicles_solution",
+  "graph": "work/gsm8k-sprint119-popsicles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "popsicles_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.popsicles_second",
+      "title_ja": "2本目は1本目の2倍の速さ。",
+      "claim_ja": "2本目は1本目の2倍の速さ。",
+      "method_ja": "各段階で直前の2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "2本目は1本目の2倍の速さ。",
+      "baseline_ja": "2本目は1本目の2倍の速さ。"
+    },
+    {
+      "id": "popsicles_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.popsicles_third",
+      "title_ja": "3本目は1本目の4倍。",
+      "claim_ja": "3本目は1本目の4倍。",
+      "method_ja": "2×2。",
+      "requires_steps": [
+        "popsicles_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "3本目は1本目の4倍。",
+      "baseline_ja": "3本目は1本目の4倍。"
+    },
+    {
+      "id": "popsicles_fourth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.popsicles_fourth",
+      "title_ja": "4本目は1本目の8倍。",
+      "claim_ja": "4本目は1本目の8倍。",
+      "method_ja": "2×4。",
+      "requires_steps": [
+        "popsicles_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "4本目は1本目の8倍。",
+      "baseline_ja": "4本目は1本目の8倍。"
+    },
+    {
+      "id": "popsicles_fifth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.popsicles_fifth",
+      "title_ja": "5本目は1本目の16倍。",
+      "claim_ja": "5本目は1本目の16倍。",
+      "method_ja": "2×8。",
+      "requires_steps": [
+        "popsicles_fourth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "5本目は1本目の16倍。",
+      "baseline_ja": "5本目は1本目の16倍。"
+    },
+    {
+      "id": "popsicles_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.popsicles_solution",
+      "title_ja": "最後の6本目は1本目の32倍の速さで溶ける。",
+      "claim_ja": "最後の6本目は1本目の32倍の速さで溶ける。",
+      "method_ja": "2×16。",
+      "requires_steps": [
+        "popsicles_fifth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "最後の6本目は1本目の32倍の速さで溶ける。",
+      "baseline_ja": "最後の6本目は1本目の32倍の速さで溶ける。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2073,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

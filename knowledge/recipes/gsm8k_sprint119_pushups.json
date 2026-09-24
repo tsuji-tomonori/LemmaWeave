@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint119_pushups",
+  "title_ja": "44秒では22回できる。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02071",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.pushups_solution",
+  "graph": "work/gsm8k-sprint119-pushups-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pushups_breaks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.pushups_breaks",
+      "title_ja": "休憩時間は合計16秒。",
+      "claim_ja": "休憩時間は合計16秒。",
+      "method_ja": "8秒×2回。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "休憩時間は合計16秒。",
+      "baseline_ja": "休憩時間は合計16秒。"
+    },
+    {
+      "id": "pushups_active",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.pushups_active",
+      "title_ja": "腕立てに使える時間は44秒。",
+      "claim_ja": "腕立てに使える時間は44秒。",
+      "method_ja": "60−16。",
+      "requires_steps": [
+        "pushups_breaks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "腕立てに使える時間は44秒。",
+      "baseline_ja": "腕立てに使える時間は44秒。"
+    },
+    {
+      "id": "pushups_seconds_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.pushups_seconds_each",
+      "title_ja": "1回あたり2秒。",
+      "claim_ja": "1回あたり2秒。",
+      "method_ja": "10秒÷5回。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "1回あたり2秒。",
+      "baseline_ja": "1回あたり2秒。"
+    },
+    {
+      "id": "pushups_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.pushups_solution",
+      "title_ja": "44秒では22回できる。",
+      "claim_ja": "44秒では22回できる。",
+      "method_ja": "44÷2。",
+      "requires_steps": [
+        "pushups_active",
+        "pushups_seconds_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "44秒では22回できる。",
+      "baseline_ja": "44秒では22回できる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2072,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

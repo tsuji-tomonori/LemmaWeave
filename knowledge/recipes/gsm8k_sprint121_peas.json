@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint121_peas",
+  "title_ja": "トウモロコシは10缶。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02096",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.peas_solution",
+  "graph": "work/gsm8k-sprint121-peas-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "peas_equation",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.peas_equation",
+      "title_ja": "エンドウ豆35缶は、トウモロコシ缶数の2倍より15缶多い。",
+      "claim_ja": "エンドウ豆35缶は、トウモロコシ缶数の2倍より15缶多い。",
+      "method_ja": "原文を35=2c+15と置く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "エンドウ豆35缶は、トウモロコシ缶数の2倍より15缶多い。",
+      "baseline_ja": "エンドウ豆35缶は、トウモロコシ缶数の2倍より15缶多い。"
+    },
+    {
+      "id": "peas_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.peas_solution",
+      "title_ja": "トウモロコシは10缶。",
+      "claim_ja": "トウモロコシは10缶。",
+      "method_ja": "35−15=20を2で割る。",
+      "requires_steps": [
+        "peas_equation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "トウモロコシは10缶。",
+      "baseline_ja": "トウモロコシは10缶。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2097,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

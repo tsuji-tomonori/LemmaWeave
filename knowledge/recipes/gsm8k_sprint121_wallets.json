@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint121_wallets",
+  "title_ja": "「4 times more」をNadaより400%多い、すなわち5倍と字義どおり読むと、非負整数ドルでは条件を満たす解がない。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02097",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.wallets_literal_impossible",
+  "graph": "work/gsm8k-sprint121-wallets-graph.json",
+  "model_notes_ja": [
+    "原文の4 times moreを通常の算数問題どおり4倍と読むとJohnは48ドル。400%多い=5倍という字義的読解では整数ドル解が存在しないことも別定理で保持する。"
+  ],
+  "steps": [
+    {
+      "id": "wallets_nada",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.wallets_nada",
+      "title_ja": "JohnがNadaの4倍という通常の読みによれば、Nadaは12ドル。",
+      "claim_ja": "JohnがNadaの4倍という通常の読みによれば、Nadaは12ドル。",
+      "method_ja": "Ali=Nada−5、John=4×Nada、合計67から6N−5=67。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "JohnがNadaの4倍という通常の読みによれば、Nadaは12ドル。",
+      "baseline_ja": "JohnがNadaの4倍という通常の読みによれば、Nadaは12ドル。"
+    },
+    {
+      "id": "wallets_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.wallets_solution",
+      "title_ja": "同じ読みでJohnは48ドル。",
+      "claim_ja": "同じ読みでJohnは48ドル。",
+      "method_ja": "12×4。",
+      "requires_steps": [
+        "wallets_nada"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "同じ読みでJohnは48ドル。",
+      "baseline_ja": "同じ読みでJohnは48ドル。"
+    },
+    {
+      "id": "wallets_literal_impossible",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.wallets_literal_impossible",
+      "title_ja": "「4 times more」をNadaより400%多い、すなわち5倍と字義どおり読むと、非負整数ドルでは条件を満たす解がない。",
+      "claim_ja": "「4 times more」をNadaより400%多い、すなわち5倍と字義どおり読むと、非負整数ドルでは条件を満たす解がない。",
+      "method_ja": "Ali+5=N、John=5N、N+Ali+John=67は7N=72となり整数解を持たない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "「4 times more」をNadaより400%多い、すなわち5倍と字義どおり読むと、非負整数ドルでは条件を満たす解がない。",
+      "baseline_ja": "「4 times more」をNadaより400%多い、すなわち5倍と字義どおり読むと、非負整数ドルでは条件を満たす解がない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2098,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

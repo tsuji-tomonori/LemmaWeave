@@ -1,0 +1,100 @@
+{
+  "id": "gsm8k_sprint127_donations",
+  "title_ja": "5km走の倍増寄付",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02192",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "第1kmは10ドル、以後1kmごとに前の2倍を寄付する。5km完走時の合計はいくらか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.donations_solution",
+  "graph": "work/gsm8k-sprint127-donations-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "donations_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.donations_second",
+      "title_ja": "第2kmは20ドル",
+      "claim_ja": "第2kmは20ドル",
+      "method_ja": "10ドルを2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "第2kmは20ドル",
+      "baseline_ja": "第2kmは20ドル"
+    },
+    {
+      "id": "donations_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.donations_third",
+      "title_ja": "第3kmは40ドル",
+      "claim_ja": "第3kmは40ドル",
+      "method_ja": "20ドルを2倍する。",
+      "requires_steps": [
+        "donations_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "第3kmは40ドル",
+      "baseline_ja": "第3kmは40ドル"
+    },
+    {
+      "id": "donations_fourth",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.donations_fourth",
+      "title_ja": "第4kmは80ドル",
+      "claim_ja": "第4kmは80ドル",
+      "method_ja": "40ドルを2倍する。",
+      "requires_steps": [
+        "donations_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "第4kmは80ドル",
+      "baseline_ja": "第4kmは80ドル"
+    },
+    {
+      "id": "donations_fifth",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.donations_fifth",
+      "title_ja": "第5kmは160ドル",
+      "claim_ja": "第5kmは160ドル",
+      "method_ja": "80ドルを2倍する。",
+      "requires_steps": [
+        "donations_fourth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "第5kmは160ドル",
+      "baseline_ja": "第5kmは160ドル"
+    },
+    {
+      "id": "donations_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.donations_solution",
+      "title_ja": "寄付合計は310ドル",
+      "claim_ja": "寄付合計は310ドル",
+      "method_ja": "10、20、40、80、160ドルを足す。",
+      "requires_steps": [
+        "donations_second",
+        "donations_third",
+        "donations_fourth",
+        "donations_fifth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "寄付合計は310ドル",
+      "baseline_ja": "寄付合計は310ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2193,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

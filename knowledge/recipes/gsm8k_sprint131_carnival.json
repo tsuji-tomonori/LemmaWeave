@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint131_carnival",
+  "title_ja": "巨大滑り台に乗れる回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02256",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "滞在4時間、ジェットコースター30分を4回、回転遊具60分を1回、滑り台15分。残り時間で滑り台に何回乗れるか",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A03.carnival_solution",
+  "graph": "work/gsm8k-sprint131-carnival-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "carnival_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.carnival_total",
+      "title_ja": "滞在は240分",
+      "claim_ja": "滞在は240分",
+      "method_ja": "4時間を60分換算",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "滞在は240分",
+      "baseline_ja": "滞在は240分"
+    },
+    {
+      "id": "carnival_roller",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.carnival_roller",
+      "title_ja": "ジェットコースターは120分",
+      "claim_ja": "ジェットコースターは120分",
+      "method_ja": "30分を4回",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ジェットコースターは120分",
+      "baseline_ja": "ジェットコースターは120分"
+    },
+    {
+      "id": "carnival_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.carnival_remaining",
+      "title_ja": "残りは60分",
+      "claim_ja": "残りは60分",
+      "method_ja": "240分から120分と60分を引く",
+      "requires_steps": [
+        "carnival_total",
+        "carnival_roller"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残りは60分",
+      "baseline_ja": "残りは60分"
+    },
+    {
+      "id": "carnival_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.carnival_solution",
+      "title_ja": "滑り台は4回",
+      "claim_ja": "滑り台は4回",
+      "method_ja": "60分を1回15分で割る",
+      "requires_steps": [
+        "carnival_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "滑り台は4回",
+      "baseline_ja": "滑り台は4回"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2257,
+    "checked_model_hash": "d407bec39797f06b98831461e1a7bcc4e711e6ce05ce92e31e1c6af155b9e1e1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

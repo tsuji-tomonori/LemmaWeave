@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint131_lifespans",
+  "title_ja": "コウモリの寿命",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02246",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ハムスターはコウモリより6年短く、カエルはハムスターの4倍、合計30年。コウモリの寿命を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A03.lifespans_solution",
+  "graph": "work/gsm8k-sprint131-lifespans-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lifespans_hamster",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.lifespans_hamster",
+      "title_ja": "ハムスターは4年",
+      "claim_ja": "ハムスターは4年",
+      "method_ja": "3種の寿命の連立式を解く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ハムスターは4年",
+      "baseline_ja": "ハムスターは4年"
+    },
+    {
+      "id": "lifespans_frog",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.lifespans_frog",
+      "title_ja": "カエルは16年",
+      "claim_ja": "カエルは16年",
+      "method_ja": "ハムスター4年の4倍",
+      "requires_steps": [
+        "lifespans_hamster"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "カエルは16年",
+      "baseline_ja": "カエルは16年"
+    },
+    {
+      "id": "lifespans_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.lifespans_solution",
+      "title_ja": "コウモリは10年",
+      "claim_ja": "コウモリは10年",
+      "method_ja": "ハムスターより6年長い",
+      "requires_steps": [
+        "lifespans_hamster"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "コウモリは10年",
+      "baseline_ja": "コウモリは10年"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2247,
+    "checked_model_hash": "d407bec39797f06b98831461e1a7bcc4e711e6ce05ce92e31e1c6af155b9e1e1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

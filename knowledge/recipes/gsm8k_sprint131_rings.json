@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint131_rings",
+  "title_ja": "2本の木の年齢差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02247",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1群は太い輪2本と細い輪4本。第1の木70群、第2の木40群で、1輪が1年。年齢差を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A03.rings_solution",
+  "graph": "work/gsm8k-sprint131-rings-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rings_per_group",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.rings_per_group",
+      "title_ja": "1群は6輪",
+      "claim_ja": "1群は6輪",
+      "method_ja": "2輪と4輪を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1群は6輪",
+      "baseline_ja": "1群は6輪"
+    },
+    {
+      "id": "rings_group_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.rings_group_difference",
+      "title_ja": "群数の差は30群",
+      "claim_ja": "群数の差は30群",
+      "method_ja": "70群から40群を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "群数の差は30群",
+      "baseline_ja": "群数の差は30群"
+    },
+    {
+      "id": "rings_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.rings_solution",
+      "title_ja": "年齢差は180年",
+      "claim_ja": "年齢差は180年",
+      "method_ja": "30群に各6輪、1輪1年",
+      "requires_steps": [
+        "rings_per_group",
+        "rings_group_difference"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "年齢差は180年",
+      "baseline_ja": "年齢差は180年"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2248,
+    "checked_model_hash": "d407bec39797f06b98831461e1a7bcc4e711e6ce05ce92e31e1c6af155b9e1e1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

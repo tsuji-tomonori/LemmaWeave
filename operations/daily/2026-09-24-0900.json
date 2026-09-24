@@ -1,0 +1,84 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T09:00+09:00-entrance-exam-calculus",
+  "scheduled_local_hour": 9,
+  "scheduled_at": "2026-09-24T09:00:00+09:00",
+  "started_at": "2026-09-24T08:58:49+09:00",
+  "finished_at": "2026-09-24T09:20:00+09:00",
+  "start_offset_seconds": -71,
+  "role": "japanese_entrance_exam_individual_solution",
+  "base_sha": "5f0eca6db0150542395acef0dcd387f94a6e3a67",
+  "artifact_commit": null,
+  "selected_problem_ids": ["JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01"],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": ["JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01"],
+  "deferred": [],
+  "domain": "calculus",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学II・数学B・数学C",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "pdf_page_1_based": 13,
+    "printed_page_label": "14",
+    "subquestion": "第3問(1) 解答欄ア",
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554",
+    "normalized_question_sha256": "07ffdd03b5a2a07ca8c028090664cf5ae261f1483c238569996c84f13df810a2",
+    "official_answer_checked": true
+  },
+  "outputs": {
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01.json",
+    "recipe": "knowledge/recipes/dnc2026_cubic_derivative_individual.json",
+    "model": "LemmaWeave/Problems/DNC2026M2BC/CubicDerivativeModel.lean",
+    "lean_test": "tests/lean/DNC2026CubicDerivativeIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "explanation_lines": 4,
+    "named_lean_theorems": 4,
+    "self_review_status": "self_review_only"
+  },
+  "written_solution_ja": [
+    "べき乗則と定数倍の微分法より、(1/3)x^3の導関数は(1/3)・3x^2=x^2である。",
+    "同様に、-2x^2の導関数は-2・2x=-4xである。",
+    "3xの導関数は3であり、kはxに依存しない定数なので導関数は0である。",
+    "和・差の微分法により、f′(x)=x^2-4x+3である。"
+  ],
+  "static_checks": {
+    "json_parse": "pass",
+    "recipe_step_to_named_theorem_missing": 0,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "fixed_lean_build": "not_run",
+    "axiom_audit": "not_run",
+    "dependency_audit": "not_run"
+  },
+  "entrance_exam_ledger_after": {
+    "registered_count": 15,
+    "collected_kernel_checked_count": 5,
+    "candidate_not_started_count": 10,
+    "weekly_domain_counts": [1, 1, 1, 1, 1, 1],
+    "unconfirmed_scope_preserved": true
+  },
+  "gsm8k_counts_unchanged": {
+    "solution_ready": 518,
+    "awaiting_verification": 1549,
+    "pending": 6725,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02065"
+  },
+  "ci": {
+    "last_exact_head_sha": "5f0eca6db0150542395acef0dcd387f94a6e3a67",
+    "last_run_id": 35932358429,
+    "last_status": "failure",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T09:00+09:00",
+    "scope": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01",
+    "claimed_at": "2026-09-24T08:58:49+09:00",
+    "expires_at": "2026-09-24T10:00:00+09:00",
+    "released": true
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint143_rope",
+  "title_ja": "最後に持つロープの長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02433",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100フィートを半分、その片方を半分、さらに片方を5等分する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.rope_solution",
+  "graph": "work/gsm8k-sprint143-rope-graph.json",
+  "model_notes_ja": [
+    "参考説明のJohnは原題のJoshの誤記であり、人物名以外の数量条件は一致する。"
+  ],
+  "steps": [
+    {
+      "id": "rope_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.rope_first",
+      "title_ja": "最初の片方は50フィート",
+      "claim_ja": "最初の片方は50フィート",
+      "method_ja": "100を2等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "最初の片方は50フィート",
+      "baseline_ja": "最初の片方は50フィート"
+    },
+    {
+      "id": "rope_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.rope_second",
+      "title_ja": "次の片方は25フィート",
+      "claim_ja": "次の片方は25フィート",
+      "method_ja": "50を2等分する",
+      "requires_steps": [
+        "rope_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "次の片方は25フィート",
+      "baseline_ja": "次の片方は25フィート"
+    },
+    {
+      "id": "rope_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.rope_solution",
+      "title_ja": "最後の1本は5フィート",
+      "claim_ja": "最後の1本は5フィート",
+      "method_ja": "25を5等分する",
+      "requires_steps": [
+        "rope_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "最後の1本は5フィート",
+      "baseline_ja": "最後の1本は5フィート"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2434,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

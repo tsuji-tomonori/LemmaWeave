@@ -1,0 +1,110 @@
+{
+  "id": "gsm8k_sprint136_seeing_eye_dog",
+  "title_ja": "盲導犬の自己負担額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02327",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "未訓練犬の150ドル、週250ドルを12週間の訓練、3000ドルの認定費（保険が90%負担）について自己負担総額を求める。",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "source_line_1based": 2328,
+    "source_record_sha256": "e506683b94424c26f78f04ffc883c239a29efd53aabcd9ea45cb82e011e9ae39",
+    "raw_question_sha256": "3505b8bb0db17324030105f16c67358ae0b45ee3dc64d50014ce26f7ee45e934",
+    "normalized_question_sha256": "c5d667e5581b319120ae7c830c813712e1374c1f10d04ec630982b9a6729ae99"
+  },
+  "variables": [
+    {
+      "name": "model",
+      "type": "盲導犬の自己負担額",
+      "domain_ja": "原題の数量・単位・関係を保持する自然数モデル"
+    }
+  ],
+  "assumptions_ja": [
+    "原題に明記された数量関係をモデルの各フィールドとして保持する。"
+  ],
+  "required_conclusions_ja": [
+    "3450ドル。"
+  ],
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A10.dog_solution",
+  "lean_file": "LemmaWeave/Problems/GSM8K/Sprint0925A10Models.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "modeling_notes_ja": [
+    "原文はJohnに対し代名詞she/herを使うが、費用計算の主体には影響しない。"
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "training",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.dog_training",
+      "title_ja": "訓練費",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "週250ドルを12週間分にする。",
+      "method_ja": "単価×期間。",
+      "condition_ja": "12週間。",
+      "premise_ja": "12×250。",
+      "conclusion_ja": "3000ドル。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "insurance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.dog_insurance",
+      "title_ja": "保険負担",
+      "requires_steps": [
+        "training"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "認定費3000ドルの90%を求める。",
+      "method_ja": "割合。",
+      "condition_ja": "保険は90%。",
+      "premise_ja": "3000×9/10。",
+      "conclusion_ja": "2700ドル。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "cert",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.dog_certification",
+      "title_ja": "認定費の自己負担",
+      "requires_steps": [
+        "insurance"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "認定費から保険負担を引く。",
+      "method_ja": "差。",
+      "condition_ja": "3000ドルと2700ドル。",
+      "premise_ja": "3000-2700。",
+      "conclusion_ja": "300ドル。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.dog_solution",
+      "title_ja": "総自己負担",
+      "requires_steps": [
+        "cert"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "犬150ドル、訓練3000ドル、認定300ドルを加える。",
+      "method_ja": "加法。",
+      "condition_ja": "三費目をすべて含める。",
+      "premise_ja": "150+3000+300。",
+      "conclusion_ja": "3450ドル。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-25T10:42:00+09:00",
+    "source_problem_id": "external-gsm8k-main-3101c7d50724:train:02327",
+    "checks_ja": [
+      "固定原文を再読し、数量・単位・求める結論を照合した。",
+      "各説明行と名前付きLean定理の型を対応させた。",
+      "結論を仮定へ移さず、途中量から順に導出した。",
+      "自己照合のみであり、固定Leanの成功証拠と独立レビューは未取得である。"
+    ]
+  }
+}

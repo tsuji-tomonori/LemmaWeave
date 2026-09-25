@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint140_computers",
+  "title_ja": "月間利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02392",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "部品800ドル、売価は1.4倍、月60台、家賃5000ドルと他経費3000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.computers_solution",
+  "graph": "work/gsm8k-sprint140-computers-graph.json",
+  "model_notes_ja": [
+    "1.4倍は10分の14として正確に形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "computers_sale",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.computers_sale",
+      "title_ja": "売価1120ドル",
+      "claim_ja": "売価1120ドル",
+      "method_ja": "800の1.4倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "売価1120ドル",
+      "baseline_ja": "売価1120ドル"
+    },
+    {
+      "id": "computers_unit_profit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.computers_unit_profit",
+      "title_ja": "1台粗利320ドル",
+      "claim_ja": "1台粗利320ドル",
+      "method_ja": "1120から800を引く",
+      "requires_steps": [
+        "computers_sale"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1台粗利320ドル",
+      "baseline_ja": "1台粗利320ドル"
+    },
+    {
+      "id": "computers_gross",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.computers_gross",
+      "title_ja": "60台粗利19200ドル",
+      "claim_ja": "60台粗利19200ドル",
+      "method_ja": "320に60を掛ける",
+      "requires_steps": [
+        "computers_unit_profit"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "60台粗利19200ドル",
+      "baseline_ja": "60台粗利19200ドル"
+    },
+    {
+      "id": "computers_expenses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.computers_expenses",
+      "title_ja": "固定経費8000ドル",
+      "claim_ja": "固定経費8000ドル",
+      "method_ja": "5000と3000を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "固定経費8000ドル",
+      "baseline_ja": "固定経費8000ドル"
+    },
+    {
+      "id": "computers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.computers_solution",
+      "title_ja": "月間利益11200ドル",
+      "claim_ja": "月間利益11200ドル",
+      "method_ja": "19200から8000を引く",
+      "requires_steps": [
+        "computers_gross",
+        "computers_expenses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "月間利益11200ドル",
+      "baseline_ja": "月間利益11200ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2393,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

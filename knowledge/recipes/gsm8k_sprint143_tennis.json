@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint143_tennis",
+  "title_ja": "Brianのテニスボール数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02438",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lilyは3個、Frodoは8個多く、BrianはFrodoの2倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.tennis_solution",
+  "graph": "work/gsm8k-sprint143-tennis-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "tennis_frodo",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.tennis_frodo",
+      "title_ja": "Frodoは11個",
+      "claim_ja": "Frodoは11個",
+      "method_ja": "3に8を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Frodoは11個",
+      "baseline_ja": "Frodoは11個"
+    },
+    {
+      "id": "tennis_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.tennis_solution",
+      "title_ja": "Brianは22個",
+      "claim_ja": "Brianは22個",
+      "method_ja": "11の2倍",
+      "requires_steps": [
+        "tennis_frodo"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Brianは22個",
+      "baseline_ja": "Brianは22個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2439,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

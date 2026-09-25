@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint144_skips",
+  "title_ja": "石の総スキップ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02446",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bobは1個12回、Jimは1個15回で各10個投げる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.skips_solution",
+  "graph": "work/gsm8k-sprint144-skips-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "skips_bob",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.skips_bob",
+      "title_ja": "Bobは120回",
+      "claim_ja": "Bobは120回",
+      "method_ja": "12に10を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Bobは120回",
+      "baseline_ja": "Bobは120回"
+    },
+    {
+      "id": "skips_jim",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.skips_jim",
+      "title_ja": "Jimは150回",
+      "claim_ja": "Jimは150回",
+      "method_ja": "15に10を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Jimは150回",
+      "baseline_ja": "Jimは150回"
+    },
+    {
+      "id": "skips_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.skips_solution",
+      "title_ja": "合計270回",
+      "claim_ja": "合計270回",
+      "method_ja": "120と150を足す",
+      "requires_steps": [
+        "skips_bob",
+        "skips_jim"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計270回",
+      "baseline_ja": "合計270回"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2447,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

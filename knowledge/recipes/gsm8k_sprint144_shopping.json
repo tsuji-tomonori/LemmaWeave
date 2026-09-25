@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint144_shopping",
+  "title_ja": "買物の釣銭",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02449",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5ドルのシャツ10枚、3ドルのサンダル3足を100ドルで払う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.shopping_solution",
+  "graph": "work/gsm8k-sprint144-shopping-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shopping_shirts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.shopping_shirts",
+      "title_ja": "シャツは50ドル",
+      "claim_ja": "シャツは50ドル",
+      "method_ja": "10に5を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "シャツは50ドル",
+      "baseline_ja": "シャツは50ドル"
+    },
+    {
+      "id": "shopping_sandals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.shopping_sandals",
+      "title_ja": "サンダルは9ドル",
+      "claim_ja": "サンダルは9ドル",
+      "method_ja": "3に3を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "サンダルは9ドル",
+      "baseline_ja": "サンダルは9ドル"
+    },
+    {
+      "id": "shopping_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.shopping_spent",
+      "title_ja": "支出59ドル",
+      "claim_ja": "支出59ドル",
+      "method_ja": "50と9を足す",
+      "requires_steps": [
+        "shopping_shirts",
+        "shopping_sandals"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "支出59ドル",
+      "baseline_ja": "支出59ドル"
+    },
+    {
+      "id": "shopping_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.shopping_solution",
+      "title_ja": "釣銭41ドル",
+      "claim_ja": "釣銭41ドル",
+      "method_ja": "100から59を引く",
+      "requires_steps": [
+        "shopping_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "釣銭41ドル",
+      "baseline_ja": "釣銭41ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2450,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

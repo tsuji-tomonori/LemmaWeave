@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint144_ladder",
+  "title_ja": "必要な梯子の段数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02450",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6フィートで12段だった段密度を20フィートへ比例適用する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.ladder_solution",
+  "graph": "work/gsm8k-sprint144-ladder-graph.json",
+  "model_notes_ja": [
+    "木の高さと必要段数が同じ比例関係にあり、同じ梯子の段間隔を使うという追加条件付き。"
+  ],
+  "steps": [
+    {
+      "id": "ladder_rate",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.ladder_rate",
+      "title_ja": "1フィート当たり2段",
+      "claim_ja": "1フィート当たり2段",
+      "method_ja": "12を6で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "1フィート当たり2段",
+      "baseline_ja": "1フィート当たり2段"
+    },
+    {
+      "id": "ladder_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.ladder_solution",
+      "title_ja": "20フィートでは40段",
+      "claim_ja": "20フィートでは40段",
+      "method_ja": "20に2を掛ける",
+      "requires_steps": [
+        "ladder_rate"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "20フィートでは40段",
+      "baseline_ja": "20フィートでは40段"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2451,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

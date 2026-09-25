@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint144_blankets",
+  "title_ja": "毛布による温度上昇",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02447",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "14枚の半分を追加し、1枚につき3度温まる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.blankets_solution",
+  "graph": "work/gsm8k-sprint144-blankets-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "blankets_added",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.blankets_added",
+      "title_ja": "追加は7枚",
+      "claim_ja": "追加は7枚",
+      "method_ja": "14の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "追加は7枚",
+      "baseline_ja": "追加は7枚"
+    },
+    {
+      "id": "blankets_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.blankets_solution",
+      "title_ja": "21度温まる",
+      "claim_ja": "21度温まる",
+      "method_ja": "7に3を掛ける",
+      "requires_steps": [
+        "blankets_added"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "21度温まる",
+      "baseline_ja": "21度温まる"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2448,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

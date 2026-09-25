@@ -1,0 +1,140 @@
+{
+  "id": "dnc2026_parameter_individual",
+  "title_ja": "補集合から2と3の倍数を除くパラメータの全解",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "全体集合U={2,3,...,20}で、Aをaと1より大きい公約数をもつ元の集合とする。2≤a≤9のとき、Uに関するAの補集合が2の倍数も3の倍数も含まないためのaをすべて求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "pdf_page_1_based": [
+      3,
+      4
+    ],
+    "printed_page_label": [
+      "32",
+      "33"
+    ],
+    "subquestion": "第1問[2](2)(i) 解答欄ソ",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I.json",
+    "visual_review_status": "confirmed_2026-09-05_and_official_landing_refetched_2026-09-25",
+    "rights_note_ja": "原文画像は転載せず、出題位置、独自の要約、数学的定義と証明のみを保存する。"
+  },
+  "variables": [
+    {
+      "name": "a",
+      "type": "ℕ",
+      "domain_ja": "2≤a≤9"
+    },
+    {
+      "name": "k",
+      "type": "ℕ",
+      "domain_ja": "2≤k≤20"
+    }
+  ],
+  "assumptions_ja": [
+    "InA(a,k)は、kがUに属し、kとaが1より大きい公約数をもつことを表す。",
+    "補集合はUに関する相対補集合である。"
+  ],
+  "required_conclusions_ja": [
+    "条件を満たすこととa=6が同値であることを、すべての2≤a≤9について示す。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026ParameterIndividual.individual_solution",
+  "graph": "work/dnc2026-parameter-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026ParameterIndividual.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "existing_independently_reviewed_model_new_author_explanation",
+  "counting_note_ja": "既存台帳の1小問に個別記述解答を追加した。GSM8K固定8,792問へ加えず、固定Leanのexact-head成功証拠が得られるまで新しい個別成果は検証待ちとする。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "force_even_divisor",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ParameterIndividual.even_divisor_forced",
+      "title_ja": "2を約数にもつ必要性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "条件を満たすaは2で割り切れる。",
+      "method_ja": "k=2を補集合条件へ代入し、背理法で2∈InA(a)を示す。2とaの1より大きい公約数は2しかない。",
+      "condition_ja": "2はUに属し、2の倍数である。",
+      "premise_ja": "補集合には2の倍数が存在しない。",
+      "conclusion_ja": "2∣a。",
+      "baseline_ja": "相対補集合の定義、公約数の定義、2の約数。"
+    },
+    {
+      "id": "force_three_divisor",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ParameterIndividual.three_divisor_forced",
+      "title_ja": "3を約数にもつ必要性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "条件を満たすaは3で割り切れる。",
+      "method_ja": "k=3を補集合条件へ代入し、背理法で3∈InA(a)を示す。3とaの1より大きい公約数は3しかない。",
+      "condition_ja": "3はUに属し、3の倍数である。",
+      "premise_ja": "補集合には3の倍数が存在しない。",
+      "conclusion_ja": "3∣a。",
+      "baseline_ja": "相対補集合の定義、公約数の定義、3の約数。"
+    },
+    {
+      "id": "unique_candidate",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ParameterIndividual.only_candidate_is_six",
+      "title_ja": "候補を6に絞る",
+      "requires_steps": [
+        "force_even_divisor",
+        "force_three_divisor"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "2≤a≤9で2∣aかつ3∣aならa=6である。",
+      "method_ja": "2と3の最小公倍数6の倍数を指定範囲で調べる。",
+      "condition_ja": "aは自然数で2≤a≤9。",
+      "premise_ja": "2∣aかつ3∣a。",
+      "conclusion_ja": "a=6。",
+      "baseline_ja": "倍数と範囲の整数推論。"
+    },
+    {
+      "id": "verify_sufficiency",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ParameterIndividual.six_satisfies_condition",
+      "title_ja": "a=6の十分性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "a=6なら補集合には2の倍数も3の倍数もない。",
+      "method_ja": "2の倍数は2を、3の倍数は3を6との公約数にもつことを使う。",
+      "condition_ja": "k∈U。",
+      "premise_ja": "2∣kまたは3∣k。",
+      "conclusion_ja": "そのkはInA(6)に属するので補集合には属さない。",
+      "baseline_ja": "公約数の定義と背理法。"
+    },
+    {
+      "id": "combine_iff",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ParameterIndividual.individual_solution",
+      "title_ja": "必要十分条件を完成する",
+      "requires_steps": [
+        "unique_candidate",
+        "verify_sufficiency"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "許容されるすべてのaについて、補集合条件とa=6は同値である。",
+      "method_ja": "前向きは二つの必要性と範囲、後向きはa=6の直接確認を使う。",
+      "condition_ja": "2≤a≤9。",
+      "premise_ja": "前四行の結果。",
+      "conclusion_ja": "解はa=6のみであり、解答欄ソは6。",
+      "baseline_ja": "同値の両方向。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-25T09:16:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "checked_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
+    "checks_ja": [
+      "公式掲載ページを再取得し、既存の原資料ページ確認記録、全体集合U、aの範囲、補集合の二条件、解答欄ソを再照合した。",
+      "必要条件ではk=2とk=3を実際に用い、結論a=6を仮定へ移していない。",
+      "十分条件では2または3を具体的な公約数として構成し、相対補集合の基準をUのまま保持した。",
+      "五つの説明行を五つの名前付きLean定理へ対応させ、最終定理が前向き・後向きの双方を呼び出す構成にした。",
+      "新しい個別解答は自己照合のみであり、固定Lean実行、公理監査、依存抽出の成功証拠は未取得と表示した。"
+    ]
+  }
+}

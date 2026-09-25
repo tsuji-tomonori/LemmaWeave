@@ -91,7 +91,10 @@
     "semantic_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
     "theorem_type_hash": {
       "LemmaWeave.Problems.DNC2026M1.parameter_solution": "b5d77751065a8dea2b7634ab51813092be69640f37c835b2015eb8c9710f75dd"
-    }
+    },
+    "proof_files": [
+      "tests/lean/DNC2026ParameterIndividual.lean"
+    ]
   },
   "status": {
     "transcription": "checked",
@@ -182,5 +185,14 @@
     "runs/20260916T220020-8ad75874/run.json",
     "runs/20260917T175905-6028614e/run.json",
     "runs/20260917T223102-6eaf56aa/run.json"
-  ]
+  ],
+  "individual_solution": {
+    "recipe": "knowledge/recipes/dnc2026_parameter_individual.json",
+    "lean_file": "tests/lean/DNC2026ParameterIndividual.lean",
+    "root": "LemmaWeave.Tests.DNC2026ParameterIndividual.individual_solution",
+    "authored_at": "2026-09-25T09:16:00+09:00",
+    "review_status": "self_review_only",
+    "verification_status": "pending_exact_head_ci",
+    "note_ja": "既存のkernel_checked proof variantとは別に、記述解答の各行と名前付きLean定理を対応させた。新成果は固定Lean成功証拠をまだ持たない。"
+  }
 }

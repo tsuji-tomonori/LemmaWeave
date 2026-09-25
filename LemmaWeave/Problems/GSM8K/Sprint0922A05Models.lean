@@ -3,7 +3,9 @@ import Mathlib.Tactic
 namespace LemmaWeave.Problems.GSM8K.Sprint0922A05
 
 structure TennisBalls where
- games cans balls : ℕ
+ games : ℕ
+ cans : ℕ
+ balls : ℕ
  hGames : games = 8+4+2+1
  hCans : cans = games*5
  hBalls : balls = cans*3
@@ -12,7 +14,12 @@ theorem tennis_cans (m:TennisBalls) : m.cans=75 := by rw [m.hCans, tennis_games 
 theorem tennis_solution (m:TennisBalls) : m.balls=225 := by rw [m.hBalls, tennis_cans m]; norm_num
 
 structure Coins where
- quarters dimes nickels pennies totalCents dollars : ℕ
+ quarters : ℕ
+ dimes : ℕ
+ nickels : ℕ
+ pennies : ℕ
+ totalCents : ℕ
+ dollars : ℕ
  hQ : quarters=10*25
  hD : dimes=3*10
  hN : nickels=3*5
@@ -30,7 +37,11 @@ theorem coins_solution (m:Coins) : m.totalCents=300 ∧ m.dollars=3 := by
    have h:=m.hDollars; rw [ht] at h; omega
 
 structure Instruments where
- charlie carliFlutes carliHorns carli total : ℕ
+ charlie : ℕ
+ carliFlutes : ℕ
+ carliHorns : ℕ
+ carli : ℕ
+ total : ℕ
  hCharlie : charlie=1+2+1
  hFlutes : carliFlutes=2*1
  hHorns : 2*carliHorns=2
@@ -43,7 +54,9 @@ theorem instruments_carli (m:Instruments) : m.carli=3 := by rw [m.hCarli, instru
 theorem instruments_solution (m:Instruments) : m.total=7 := by rw [m.hTotal, instruments_charlie m, instruments_carli m]; norm_num
 
 structure DeckCost where
- area rate total : ℕ
+ area : ℕ
+ rate : ℕ
+ total : ℕ
  hArea : area=30*40
  hRate : rate=3+1
  hTotal : total=area*rate
@@ -52,7 +65,10 @@ theorem deck_rate (m:DeckCost) : m.rate=4 := by rw [m.hRate]; norm_num
 theorem deck_solution (m:DeckCost) : m.total=4800 := by rw [m.hTotal, deck_area m, deck_rate m]; norm_num
 
 structure Soup where
- d1 d2 d3 d4 : ℕ
+ d1 : ℕ
+ d2 : ℕ
+ d3 : ℕ
+ d4 : ℕ
  h1 : 2*d1=80
  h2 : 2*d2=d1
  h3 : 2*d3=d2
@@ -63,7 +79,9 @@ theorem soup_day_three (m:Soup) : m.d3=10 := by have h:=m.h3; rw [soup_day_two m
 theorem soup_solution (m:Soup) : m.d4=5 := by have h:=m.h4; rw [soup_day_three m] at h; omega
 
 structure Pizza where
- cost total change : ℕ
+ cost : ℕ
+ total : ℕ
+ change : ℕ
  hCost : cost=4*10
  hTotal : total=cost+5
  hChange : change+total=50
@@ -72,7 +90,11 @@ theorem pizza_total (m:Pizza) : m.total=45 := by rw [m.hTotal, pizza_cost m]; no
 theorem pizza_solution (m:Pizza) : m.change=5 := by have h:=m.hChange; rw [pizza_total m] at h; omega
 
 structure Soccer where
- decided draws winPoints drawPoints total : ℕ
+ decided : ℕ
+ draws : ℕ
+ winPoints : ℕ
+ drawPoints : ℕ
+ total : ℕ
  hDecided : decided=14+2
  hDraws : draws+decided=20
  hWin : winPoints=14*3
@@ -85,7 +107,9 @@ theorem soccer_draw_points (m:Soccer) : m.drawPoints=4 := by rw [m.hDraw, soccer
 theorem soccer_solution (m:Soccer) : m.total=46 := by rw [m.hTotal, soccer_win_points m, soccer_draw_points m]; norm_num
 
 structure Spinning where
- minutes classCalories weekly : ℕ
+ minutes : ℕ
+ classCalories : ℕ
+ weekly : ℕ
  hMinutes : minutes=90
  hClass : classCalories=minutes*7
  hWeekly : weekly=classCalories*3
@@ -94,7 +118,9 @@ theorem spinning_class (m:Spinning) : m.classCalories=630 := by rw [m.hClass, sp
 theorem spinning_solution (m:Spinning) : m.weekly=1890 := by rw [m.hWeekly, spinning_class m]; norm_num
 
 structure CardTearing where
- weekly cards weeks : ℕ
+ weekly : ℕ
+ cards : ℕ
+ weeks : ℕ
  hWeekly : weekly=30*3
  hCards : cards=55*18
  hWeeks : weekly*weeks=cards
@@ -103,7 +129,12 @@ theorem cards_total (m:CardTearing) : m.cards=990 := by rw [m.hCards]; norm_num
 theorem cards_solution (m:CardTearing) : m.weeks=11 := by have h:=m.hWeeks; rw [cards_weekly m, cards_total m] at h; omega
 
 structure Jeans where
- saleDiscount afterSale afterCoupon cardDiscount paid saved : ℕ
+ saleDiscount : ℕ
+ afterSale : ℕ
+ afterCoupon : ℕ
+ cardDiscount : ℕ
+ paid : ℕ
+ saved : ℕ
  hSaleDiscount : 100*saleDiscount=20*125
  hAfterSale : afterSale+saleDiscount=125
  hAfterCoupon : afterCoupon+10=afterSale
@@ -118,7 +149,10 @@ theorem jeans_paid (m:Jeans) : m.paid=81 := by have h:=m.hPaid; rw [jeans_after_
 theorem jeans_solution (m:Jeans) : m.saved=44 := by have h:=m.hSaved; rw [jeans_paid m] at h; omega
 
 structure Credits where
- aria spencer total twiceTotal : ℕ
+ aria : ℕ
+ spencer : ℕ
+ total : ℕ
+ twiceTotal : ℕ
  hAria : aria=2*20
  hSpencer : 2*spencer=20
  hTotal : total=aria+20+spencer
@@ -129,7 +163,10 @@ theorem credits_total (m:Credits) : m.total=70 := by rw [m.hTotal, credits_aria 
 theorem credits_solution (m:Credits) : m.twiceTotal=140 := by rw [m.hTwice, credits_total m]; norm_num
 
 structure ReadingTime where
- words hours minutes daily : ℕ
+ words : ℕ
+ hours : ℕ
+ minutes : ℕ
+ daily : ℕ
  hWords : words=200+400+300
  hHours : 100*hours=words
  hMinutes : minutes=hours*60
@@ -140,7 +177,11 @@ theorem reading_minutes (m:ReadingTime) : m.minutes=540 := by rw [m.hMinutes, re
 theorem reading_solution (m:ReadingTime) : m.daily=54 := by have h:=m.hDaily; rw [reading_minutes m] at h; omega
 
 structure Inventory where
- shirts jeans accessories scarves difference : ℕ
+ shirts : ℕ
+ jeans : ℕ
+ accessories : ℕ
+ scarves : ℕ
+ difference : ℕ
  hShirts : shirts=63+42
  hJeans : 3*jeans=2*shirts
  hAccessories : accessories=34+40
@@ -153,7 +194,9 @@ theorem inventory_scarves (m:Inventory) : m.scarves=37 := by have h:=m.hScarves;
 theorem inventory_solution (m:Inventory) : m.difference=33 := by have h:=m.hDifference; rw [inventory_jeans m, inventory_scarves m] at h; omega
 
 structure Sledding where
- mary ann difference : ℕ
+ mary : ℕ
+ ann : ℕ
+ difference : ℕ
  hMary : 90*mary=630
  hAnn : 40*ann=800
  hDifference : difference+mary=ann
@@ -162,7 +205,10 @@ theorem sled_ann (m:Sledding) : m.ann=20 := by omega
 theorem sled_solution (m:Sledding) : m.difference=13 := by have h:=m.hDifference; rw [sled_mary m, sled_ann m] at h; omega
 
 structure Notebooks where
- half three five total : ℕ
+ half : ℕ
+ three : ℕ
+ five : ℕ
+ total : ℕ
  hHalf : 2*half=28
  hThree : three=half*3
  hFive : five=half*5

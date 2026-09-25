@@ -3,7 +3,9 @@ import Mathlib.Tactic
 namespace LemmaWeave.Problems.GSM8K.Sprint0922A02
 
 structure Typing where
-  beforeFive afterFive difference : ℕ
+  beforeFive : ℕ
+  afterFive : ℕ
+  difference : ℕ
   hBefore : beforeFive = 5 * 10
   hAfter : afterFive = 5 * 8
   hDifference : difference = beforeFive - afterFive
@@ -15,7 +17,8 @@ theorem typing_solution (m : Typing) : m.difference = 10 := by
     _ = 10 := by norm_num
 
 structure Coffee where
-  dailyCents totalCents : ℕ
+  dailyCents : ℕ
+  totalCents : ℕ
   hDaily : dailyCents = 300 + 250
   hTotal : totalCents = 20 * dailyCents
 theorem coffee_daily (m : Coffee) : m.dailyCents = 550 := by rw [m.hDaily]; norm_num
@@ -25,7 +28,9 @@ theorem coffee_solution (m : Coffee) : m.totalCents = 11000 := by
     _ = 11000 := by norm_num
 
 structure SiblingAges where
-  arthur tom total : ℕ
+  arthur : ℕ
+  tom : ℕ
+  total : ℕ
   hArthur : arthur = 15 + 2
   hTom : tom = 11 - 3
   hTotal : total = 15 + arthur + tom + 11
@@ -37,7 +42,9 @@ theorem siblings_solution (m : SiblingAges) : m.total = 51 := by
     _ = 51 := by norm_num
 
 structure BookSeries where
-  remaining additionalWeeks totalWeeks : ℕ
+  remaining : ℕ
+  additionalWeeks : ℕ
+  totalWeeks : ℕ
   hRemaining : remaining = 54 - 6 - 3
   hAdditional : 9 * additionalWeeks = remaining
   hTotal : totalWeeks = 1 + 1 + additionalWeeks
@@ -52,7 +59,10 @@ theorem series_solution (m : BookSeries) : m.totalWeeks = 7 := by
     _ = 7 := by norm_num
 
 structure JamJars where
-  firstPacked secondPacked totalPacked left : ℕ
+  firstPacked : ℕ
+  secondPacked : ℕ
+  totalPacked : ℕ
+  left : ℕ
   hFirst : firstPacked = 12 * 10
   hSecond : secondPacked = 10 * 30
   hTotal : totalPacked = firstPacked + secondPacked
@@ -69,7 +79,9 @@ theorem jam_solution (m : JamJars) : m.left = 80 := by
     _ = 80 := by norm_num
 
 structure Birds where
-  ducks chickens totalBirds : ℕ
+  ducks : ℕ
+  chickens : ℕ
+  totalBirds : ℕ
   hDucks : ducks = 150
   hRelation : ducks = 10 + 4 * chickens
   hTotal : totalBirds = ducks + chickens
@@ -83,7 +95,9 @@ theorem birds_solution (m : Birds) : m.totalBirds = 185 := by
     _ = 185 := by norm_num
 
 structure DVD where
-  onlineCents shippingCents totalCents : ℕ
+  onlineCents : ℕ
+  shippingCents : ℕ
+  totalCents : ℕ
   hOnline : onlineCents = 2 * 500
   hShipping : 100 * shippingCents = 80 * onlineCents
   hTotal : totalCents = onlineCents + shippingCents
@@ -98,7 +112,10 @@ theorem dvd_solution (m : DVD) : m.totalCents = 1800 := by
     _ = 1800 := by norm_num
 
 structure MilkRevenue where
-  todayMorning totalMilk sold revenueCents : ℕ
+  todayMorning : ℕ
+  totalMilk : ℕ
+  sold : ℕ
+  revenueCents : ℕ
   hMorning : todayMorning = 68 - 18
   hTotal : totalMilk = 68 + 82 + todayMorning
   hSold : sold = totalMilk - 24
@@ -118,7 +135,9 @@ theorem milk_solution (m : MilkRevenue) : m.revenueCents = 61600 := by
     _ = 61600 := by norm_num
 
 structure Soup where
-  stock total bags : ℕ
+  stock : ℕ
+  total : ℕ
+  bags : ℕ
   hStock : stock = 3 * 2
   hTotal : total = 2 + stock + 1
   hBags : 3 * bags = total
@@ -133,7 +152,8 @@ theorem soup_solution (m : Soup) : m.bags = 3 := by
   omega
 
 structure Boots where
-  discountCents payCents : ℕ
+  discountCents : ℕ
+  payCents : ℕ
   hDiscount : 100 * discountCents = 20 * 9000
   hPay : payCents = 9000 - discountCents
 theorem boots_discount (m : Boots) : m.discountCents = 1800 := by
@@ -145,7 +165,9 @@ theorem boots_solution (m : Boots) : m.payCents = 7200 := by
     _ = 7200 := by norm_num
 
 structure Waves where
-  shortest austinHeight highest : ℕ
+  shortest : ℕ
+  austinHeight : ℕ
+  highest : ℕ
   hShortest : shortest = 7 + 3
   hAustin : shortest = austinHeight + 4
   hHighest : highest = 4 * austinHeight + 2
@@ -160,7 +182,8 @@ theorem waves_solution (m : Waves) : m.highest = 26 := by
     _ = 26 := by norm_num
 
 structure NoahAge where
-  now later : ℕ
+  now : ℕ
+  later : ℕ
   hNow : now = 2 * 6
   hLater : later = now + 10
 theorem noah_now (m : NoahAge) : m.now = 12 := by rw [m.hNow]; norm_num
@@ -170,7 +193,8 @@ theorem noah_solution (m : NoahAge) : m.later = 22 := by
     _ = 22 := by norm_num
 
 structure Towels where
-  total loads : ℕ
+  total : ℕ
+  loads : ℕ
   hTotal : total = 3 + 6 + 3
   hLoads : 4 * loads = total
 theorem towels_total (m : Towels) : m.total = 12 := by rw [m.hTotal]; norm_num
@@ -180,7 +204,8 @@ theorem towels_solution (m : Towels) : m.loads = 3 := by
   omega
 
 structure Graves where
-  adultHours totalHours : ℕ
+  adultHours : ℕ
+  totalHours : ℕ
   hAdult : adultHours = 3 * 5
   hTotal : totalHours = adultHours + 2
 theorem graves_adult (m : Graves) : m.adultHours = 15 := by rw [m.hAdult]; norm_num
@@ -190,7 +215,12 @@ theorem graves_solution (m : Graves) : m.totalHours = 17 := by
     _ = 17 := by norm_num
 
 structure ZipCode where
-  d1 d2 d3 d4 d5 code : ℕ
+  d1 : ℕ
+  d2 : ℕ
+  d3 : ℕ
+  d4 : ℕ
+  d5 : ℕ
+  code : ℕ
   hSum : d1 + d2 + d3 + d4 + d5 = 10
   hSame : d2 = d1
   hThird : d3 = 0

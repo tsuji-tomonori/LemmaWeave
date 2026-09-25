@@ -3,7 +3,9 @@ import Mathlib.Tactic
 namespace LemmaWeave.Problems.GSM8K.Sprint0922A01
 
 structure Books where
-  katie gary total : ℕ
+  katie : ℕ
+  gary : ℕ
+  total : ℕ
   hKatie : 2 * katie = 6
   hGary : gary = 5 * (6 + katie)
   hTotal : total = 6 + katie + gary
@@ -18,7 +20,11 @@ theorem books_solution (m : Books) : m.total = 54 := by
     _ = 54 := by norm_num
 
 structure PigProfit where
-  firstFood secondFood totalFood revenue profit : ℕ
+  firstFood : ℕ
+  secondFood : ℕ
+  totalFood : ℕ
+  revenue : ℕ
+  profit : ℕ
   hFirst : firstFood = 3 * 12 * 10
   hSecond : secondFood = 3 * 16 * 10
   hFood : totalFood = firstFood + secondFood
@@ -37,7 +43,10 @@ theorem pigs_solution (m : PigProfit) : m.profit = 960 := by
     _ = 960 := by norm_num
 
 structure Leaves where
-  total brown green yellow : ℕ
+  total : ℕ
+  brown : ℕ
+  green : ℕ
+  yellow : ℕ
   hTotal : total = 12 + 13
   hBrown : 100 * brown = 20 * total
   hGreen : 100 * green = 20 * total
@@ -53,7 +62,11 @@ theorem leaves_solution (m : Leaves) : m.yellow = 15 := by
     _ = 15 := by norm_num
 
 structure Ducks where
-  adelaide ephraim kolton total average : ℕ
+  adelaide : ℕ
+  ephraim : ℕ
+  kolton : ℕ
+  total : ℕ
+  average : ℕ
   hAdelaide : adelaide = 30
   hTwice : adelaide = 2 * ephraim
   hFewer : kolton = ephraim + 45
@@ -79,7 +92,12 @@ theorem weight_difference (m : Weight) : 3 * m.mel = 210 := by have h := m.hBren
 theorem weight_solution (m : Weight) : m.mel = 70 := by have h := m.hBrenda; omega
 
 structure Rabbits where
-  firstBorn firstAdopted firstHome secondHome offspring total : ℕ
+  firstBorn : ℕ
+  firstAdopted : ℕ
+  firstHome : ℕ
+  secondHome : ℕ
+  offspring : ℕ
+  total : ℕ
   hFirstBorn : firstBorn = 10 * 10
   hFirstAdopted : 2 * firstAdopted = firstBorn
   hFirstHome : firstHome = firstBorn - firstAdopted + 5
@@ -104,7 +122,13 @@ theorem rabbits_solution (m : Rabbits) : m.total = 121 := by
     _ = 121 := by norm_num
 
 structure Followers where
-  susy2 susy3 susyTotal sarah2 sarah3 sarahTotal maximum : ℕ
+  susy2 : ℕ
+  susy3 : ℕ
+  susyTotal : ℕ
+  sarah2 : ℕ
+  sarah3 : ℕ
+  sarahTotal : ℕ
+  maximum : ℕ
   hSusy2 : susy2 = 40 / 2
   hSusy3 : susy3 = susy2 / 2
   hSusyTotal : susyTotal = 100 + 40 + susy2 + susy3
@@ -120,7 +144,9 @@ theorem followers_solution (m : Followers) : m.maximum = 180 := by
   rw [m.hMax, followers_susy m, followers_sarah m]; norm_num
 
 structure Bathwater where
-  dailyBuckets dailyOunces weeklyOunces : ℕ
+  dailyBuckets : ℕ
+  dailyOunces : ℕ
+  weeklyOunces : ℕ
   hBuckets : dailyBuckets = 14 - 3
   hDaily : dailyOunces = dailyBuckets * 120
   hWeekly : weeklyOunces = 7 * dailyOunces
@@ -135,7 +161,8 @@ theorem bath_solution (m : Bathwater) : m.weeklyOunces = 9240 := by
     _ = 9240 := by norm_num
 
 structure Streaming where
-  monthly annual : ℕ
+  monthly : ℕ
+  annual : ℕ
   hMonthly : 2 * monthly = 14
   hAnnual : annual = 12 * monthly
 theorem streaming_monthly (m : Streaming) : m.monthly = 7 := by have h := m.hMonthly; omega
@@ -145,7 +172,10 @@ theorem streaming_solution (m : Streaming) : m.annual = 84 := by
     _ = 84 := by norm_num
 
 structure UtensilAmbiguity where
-  pensA pencilsA pensB pencilsB : ℕ
+  pensA : ℕ
+  pencilsA : ℕ
+  pensB : ℕ
+  pencilsB : ℕ
   hTotalA : pensA + pencilsA = 108
   hPencilsA : pencilsA = 5 * pensA + 12
   hTotalB : pensB + pencilsB = 108
@@ -162,7 +192,8 @@ theorem utensils_nonunique (m : UtensilAmbiguity) : m.pensA ≠ m.pensB := by
   rw [utensils_reference_pens m, utensils_reverse_pens m]; norm_num
 
 structure Pots where
-  perShelf shelves : ℕ
+  perShelf : ℕ
+  shelves : ℕ
   hPerShelf : perShelf = 5 * 3
   hShelves : shelves * perShelf = 60
 theorem pots_per_shelf (m : Pots) : m.perShelf = 15 := by rw [m.hPerShelf]; norm_num
@@ -170,7 +201,10 @@ theorem pots_solution (m : Pots) : m.shelves = 4 := by
   have h := m.hShelves; rw [pots_per_shelf m] at h; omega
 
 structure Fence where
-  rightCost leftCost backCost total : ℕ
+  rightCost : ℕ
+  leftCost : ℕ
+  backCost : ℕ
+  total : ℕ
   hRight : rightCost = 9 * 3
   hLeft : 3 * leftCost = 2 * (9 * 3)
   hBack : 2 * backCost = 18 * 3
@@ -184,7 +218,11 @@ theorem fence_solution (m : Fence) : m.total = 72 := by
     _ = 72 := by norm_num
 
 structure Tires where
-  cars bought halfLeft noneLeft noneCustomers : ℕ
+  cars : ℕ
+  bought : ℕ
+  halfLeft : ℕ
+  noneLeft : ℕ
+  noneCustomers : ℕ
   hCars : cars = 4 + 6
   hBought : bought = cars * 4
   hHalfLeft : halfLeft = 2 * 2
@@ -204,7 +242,8 @@ theorem tires_solution (m : Tires) : m.noneCustomers = 4 := by
   have h := m.hNone; rw [tires_none_left m] at h; omega
 
 structure GumShare where
-  total each : ℕ
+  total : ℕ
+  each : ℕ
   hTotal : total = 54 + 45 + 0
   hEach : 3 * each = total
 theorem gum_total (m : GumShare) : m.total = 99 := by rw [m.hTotal]; norm_num
@@ -212,7 +251,10 @@ theorem gum_solution (m : GumShare) : m.each = 33 := by
   have h := m.hEach; rw [gum_total m] at h; omega
 
 structure PlaygroundAnimals where
-  allSmallCreatures literalRemaining biologicalInsects biologicalRemaining : ℕ
+  allSmallCreatures : ℕ
+  literalRemaining : ℕ
+  biologicalInsects : ℕ
+  biologicalRemaining : ℕ
   hAll : allSmallCreatures = 3 + 12 + 8
   hLiteral : literalRemaining = allSmallCreatures - 2
   hBiological : biologicalInsects = 12 + 8

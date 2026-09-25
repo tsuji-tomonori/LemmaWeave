@@ -3,7 +3,9 @@ import Mathlib.Tactic
 namespace LemmaWeave.Problems.GSM8K.Sprint0922A00
 
 structure ReadingPages where
-  oliver lucy carter : ℕ
+  oliver : ℕ
+  lucy : ℕ
+  carter : ℕ
   hOliver : oliver = 40
   hLucy : lucy = oliver + 20
   hCarter : 2 * carter = lucy
@@ -18,7 +20,9 @@ theorem reading_solution (m : ReadingPages) : m.carter = 30 := by
   omega
 
 structure Orchard where
-  moonglow triple sunshine : ℕ
+  moonglow : ℕ
+  triple : ℕ
+  sunshine : ℕ
   hMoon : moonglow = 14
   hTriple : triple = 3 * moonglow
   hSun : sunshine = triple + 12
@@ -33,7 +37,11 @@ theorem orchard_solution (m : Orchard) : m.sunshine = 54 := by
     _ = 54 := by norm_num
 
 structure AnnieMoney where
-  burgerCost shakeCost spent left initial : ℕ
+  burgerCost : ℕ
+  shakeCost : ℕ
+  spent : ℕ
+  left : ℕ
+  initial : ℕ
   hBurger : burgerCost = 8 * 4
   hShake : shakeCost = 6 * 5
   hSpent : spent = burgerCost + shakeCost
@@ -52,7 +60,12 @@ theorem annie_solution (m : AnnieMoney) : m.initial = 132 := by
     _ = 132 := by norm_num
 
 structure Gumballs where
-  joannaBought joannaTotal jacquesBought jacquesTotal pooled each : ℕ
+  joannaBought : ℕ
+  joannaTotal : ℕ
+  jacquesBought : ℕ
+  jacquesTotal : ℕ
+  pooled : ℕ
+  each : ℕ
   hJoannaBought : joannaBought = 4 * 40
   hJoannaTotal : joannaTotal = 40 + joannaBought
   hJacquesBought : jacquesBought = 4 * 60
@@ -79,7 +92,13 @@ theorem gumballs_solution (m : Gumballs) : m.each = 250 := by
   omega
 
 structure CupcakeProfit where
-  made burnt eaten remaining revenueCents costCents profitCents : ℕ
+  made : ℕ
+  burnt : ℕ
+  eaten : ℕ
+  remaining : ℕ
+  revenueCents : ℕ
+  costCents : ℕ
+  profitCents : ℕ
   hMade : made = 6 * 12
   hBurnt : burnt = 2 * 12
   hEaten : eaten = 5 + 4
@@ -109,7 +128,10 @@ theorem cupcake_solution (m : CupcakeProfit) : m.profitCents = 2400 := by
     _ = 2400 := by norm_num
 
 structure CollegeCost where
-  tuition books facilities total : ℕ
+  tuition : ℕ
+  books : ℕ
+  facilities : ℕ
+  total : ℕ
   hTuition : tuition = 14 * 450
   hBooks : books = 5 * 120
   hFacilities : facilities = 200
@@ -123,7 +145,10 @@ theorem college_solution (m : CollegeCost) : m.total = 7100 := by
     _ = 7100 := by norm_num
 
 structure DriveStorage where
-  capacityHalfKB usedHalfKB remainingHalfKB videoCount : ℕ
+  capacityHalfKB : ℕ
+  usedHalfKB : ℕ
+  remainingHalfKB : ℕ
+  videoCount : ℕ
   hCapacity : capacityHalfKB = 2000 * 3
   hUsed : usedHalfKB = 400 * 3
   hRemaining : remainingHalfKB = capacityHalfKB - usedHalfKB
@@ -140,7 +165,8 @@ theorem drive_solution (m : DriveStorage) : m.videoCount = 12 := by
   omega
 
 structure IvyCupcakes where
-  afternoon total : ℕ
+  afternoon : ℕ
+  total : ℕ
   hAfternoon : afternoon = 20 + 15
   hTotal : total = 20 + afternoon
 
@@ -151,7 +177,9 @@ theorem ivy_solution (m : IvyCupcakes) : m.total = 55 := by
     _ = 55 := by norm_num
 
 structure Crowdfunding where
-  low second high : ℕ
+  low : ℕ
+  second : ℕ
+  high : ℕ
   hSecond : second = 10 * low
   hHigh : high = 10 * second
   hRaised : 2 * high + 3 * second + 10 * low = 12000
@@ -171,7 +199,8 @@ theorem crowdfunding_solution (m : Crowdfunding) : m.high = 5000 := by
     _ = 5000 := by norm_num
 
 structure Heights where
-  kim tamara : ℕ
+  kim : ℕ
+  tamara : ℕ
   hRelation : tamara + 4 = 3 * kim
   hSum : kim + tamara = 92
 
@@ -185,7 +214,9 @@ theorem heights_solution (m : Heights) : m.tamara = 68 := by
   omega
 
 structure Bowling where
-  first second third : ℕ
+  first : ℕ
+  second : ℕ
+  third : ℕ
   hFirst : 3 * first = second
   hSecond : second = 3 * third
   hTotal : first + second + third = 810
@@ -205,7 +236,8 @@ theorem bowling_solution (m : Bowling) : m.third = 162 := by
   omega
 
 structure DuctTape where
-  combined minutes : ℕ
+  combined : ℕ
+  minutes : ℕ
   hCombined : combined = 8 + 3
   hTime : minutes * combined = 22
 
@@ -215,7 +247,10 @@ theorem tape_solution (m : DuctTape) : m.minutes = 2 := by
   omega
 
 structure Inheritance where
-  natalie remaining rick lucy : ℕ
+  natalie : ℕ
+  remaining : ℕ
+  rick : ℕ
+  lucy : ℕ
   hNatalie : natalie = 5000
   hRemaining : remaining = 10000 - natalie
   hRick : 100 * rick = 60 * remaining
@@ -235,7 +270,9 @@ theorem inheritance_solution (m : Inheritance) : m.lucy = 2000 := by
     _ = 2000 := by norm_num
 
 structure Typing where
-  micahHour isaiahHour difference : ℕ
+  micahHour : ℕ
+  isaiahHour : ℕ
+  difference : ℕ
   hMicah : micahHour = 20 * 60
   hIsaiah : isaiahHour = 40 * 60
   hDifference : difference = isaiahHour - micahHour
@@ -248,7 +285,8 @@ theorem typing_solution (m : Typing) : m.difference = 1200 := by
     _ = 1200 := by norm_num
 
 structure LandShare where
-  people share : ℕ
+  people : ℕ
+  share : ℕ
   hPeople : people = 1 + 4
   hShare : share * 5 = 20000
 

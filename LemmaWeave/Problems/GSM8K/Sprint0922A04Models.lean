@@ -3,7 +3,11 @@ import Mathlib.Tactic
 namespace LemmaWeave.Problems.GSM8K.Sprint0922A04
 
 structure ArvinRun where
-  d1 d2 d3 d4 d5 : ℕ
+  d1 : ℕ
+  d2 : ℕ
+  d3 : ℕ
+  d4 : ℕ
+  d5 : ℕ
   h1 : d1 = 2
   h2 : d2 = d1 + 1
   h3 : d3 = d2 + 1
@@ -15,7 +19,8 @@ theorem arvin_day_four (m : ArvinRun) : m.d4 = 5 := by rw [m.h4, arvin_day_three
 theorem arvin_solution (m : ArvinRun) : m.d5 = 6 := by rw [m.h5, arvin_day_four m]; norm_num
 
 structure CarlaWater where
-  water soda : ℕ
+  water : ℕ
+  soda : ℕ
   hTotal : water + soda = 54
   hSoda : soda + 6 = 3 * water
 theorem carla_total_equation (m : CarlaWater) : m.water + m.soda = 54 := m.hTotal
@@ -26,7 +31,8 @@ theorem carla_solution (m : CarlaWater) : m.water = 15 := by
   omega
 
 structure PaperPlates where
-  owned buy : ℕ
+  owned : ℕ
+  buy : ℕ
   hOwned : owned = 21 + 28
   hBuy : buy + owned = 84
 theorem plates_owned (m : PaperPlates) : m.owned = 49 := by rw [m.hOwned]; norm_num
@@ -36,7 +42,11 @@ theorem plates_solution (m : PaperPlates) : m.buy = 35 := by
   omega
 
 structure Accidents where
-  seconds big collisions disjointTotal overlapTotal : ℕ
+  seconds : ℕ
+  big : ℕ
+  collisions : ℕ
+  disjointTotal : ℕ
+  overlapTotal : ℕ
   hSeconds : seconds = 4 * 60
   hBig : 20 * big = seconds
   hCollisions : 10 * collisions = seconds
@@ -55,7 +65,9 @@ theorem accidents_nonunique (m : Accidents) : m.disjointTotal ≠ m.overlapTotal
   rw [accidents_disjoint m, accidents_overlap m]; norm_num
 
 structure Countries where
-  joseph patrick zack : ℕ
+  joseph : ℕ
+  patrick : ℕ
+  zack : ℕ
   hJoseph : 2 * joseph = 6
   hPatrick : patrick = 3 * joseph
   hZack : zack = 2 * patrick
@@ -66,7 +78,10 @@ theorem countries_solution (m : Countries) : m.zack = 18 := by
   rw [m.hZack, countries_patrick m]; norm_num
 
 structure Perfume where
-  christianEarned sueEarned saved needed : ℕ
+  christianEarned : ℕ
+  sueEarned : ℕ
+  saved : ℕ
+  needed : ℕ
   hChristian : christianEarned = 4 * 5
   hSue : sueEarned = 6 * 2
   hSaved : saved = 5 + christianEarned + 7 + sueEarned
@@ -79,7 +94,10 @@ theorem perfume_solution (m : Perfume) : m.needed = 6 := by
   have h := m.hNeeded; rw [perfume_saved m] at h; omega
 
 structure Cupcakes where
-  dora bettyHours betty difference : ℕ
+  dora : ℕ
+  bettyHours : ℕ
+  betty : ℕ
+  difference : ℕ
   hDora : dora = 8 * 5
   hHours : bettyHours + 2 = 5
   hBetty : betty = 10 * bettyHours
@@ -94,7 +112,8 @@ theorem cupcakes_solution (m : Cupcakes) : m.difference = 10 := by
   omega
 
 structure Clerks where
-  perClerk clerks : ℕ
+  perClerk : ℕ
+  clerks : ℕ
   hCapacity : perClerk = 25 * 8
   hTotal : clerks * perClerk = 2400
 theorem clerks_capacity (m : Clerks) : m.perClerk = 200 := by rw [m.hCapacity]; norm_num
@@ -102,7 +121,9 @@ theorem clerks_solution (m : Clerks) : m.clerks = 12 := by
   have h := m.hTotal; rw [clerks_capacity m] at h; omega
 
 structure RescueDogs where
-  afterArrival afterFirst remaining : ℕ
+  afterArrival : ℕ
+  afterFirst : ℕ
+  remaining : ℕ
   hArrival : afterArrival = 200 + 100
   hFirst : afterFirst + 40 = afterArrival
   hRemaining : remaining + 60 = afterFirst
@@ -113,7 +134,11 @@ theorem dogs_solution (m : RescueDogs) : m.remaining = 200 := by
   have h := m.hRemaining; rw [dogs_after_first m] at h; omega
 
 structure Figurines where
-  basswood aspenRate aspen butternut total : ℕ
+  basswood : ℕ
+  aspenRate : ℕ
+  aspen : ℕ
+  butternut : ℕ
+  total : ℕ
   hBasswood : basswood = 15 * 3
   hAspenRate : aspenRate = 2 * 3
   hAspen : aspen = 20 * aspenRate
@@ -128,7 +153,10 @@ theorem figurines_solution (m : Figurines) : m.total = 245 := by
   rw [m.hTotal, figurines_basswood m, figurines_aspen m, figurines_butternut m]; norm_num
 
 structure Phones where
-  profit costEach profitEach price : ℕ
+  profit : ℕ
+  costEach : ℕ
+  profitEach : ℕ
+  price : ℕ
   hProfit : 3 * profit = 3000
   hCostEach : 200 * costEach = 3000
   hProfitEach : 200 * profitEach = profit
@@ -141,7 +169,9 @@ theorem phones_solution (m : Phones) : m.price = 20 := by
   rw [m.hPrice, phones_cost_each m, phones_profit_each m]; norm_num
 
 structure Parents where
-  total children parents : ℕ
+  total : ℕ
+  children : ℕ
+  parents : ℕ
   hTotal : total = 3 * 25
   hChildren : children = 14 + 11
   hParents : parents + children = total
@@ -153,7 +183,8 @@ theorem parents_solution (m : Parents) : m.parents = 50 := by
   omega
 
 structure Driving where
-  speed hours : ℕ
+  speed : ℕ
+  hours : ℕ
   hSpeed : 3 * speed = 120
   hHours : speed * hours = 200
 theorem driving_speed (m : Driving) : m.speed = 40 := by omega

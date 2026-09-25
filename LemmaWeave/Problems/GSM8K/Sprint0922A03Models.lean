@@ -3,7 +3,8 @@ import Mathlib.Tactic
 namespace LemmaWeave.Problems.GSM8K.Sprint0922A03
 
 structure Claws where
-  wombatClaws totalClaws : ℕ
+  wombatClaws : ℕ
+  totalClaws : ℕ
   hWombat : wombatClaws = 9 * 4
   hTotal : totalClaws = wombatClaws + 3
 theorem claws_wombats (m : Claws) : m.wombatClaws = 36 := by rw [m.hWombat]; norm_num
@@ -13,7 +14,11 @@ theorem claws_solution (m : Claws) : m.totalClaws = 39 := by
     _ = 39 := by norm_num
 
 structure PartyGifts where
-  boysGifts boysWithout girlsGifts girlsWithout totalWithout : ℕ
+  boysGifts : ℕ
+  boysWithout : ℕ
+  girlsGifts : ℕ
+  girlsWithout : ℕ
+  totalWithout : ℕ
   hBoysGifts : 4 * boysGifts = 3 * 16
   hBoysWithout : boysWithout = 16 - boysGifts
   hGirlsGifts : 7 * girlsGifts = 6 * 14
@@ -35,7 +40,8 @@ theorem gifts_solution (m : PartyGifts) : m.totalWithout = 6 := by
     _ = 6 := by norm_num
 
 structure Toddlers where
-  onceCounted actual : ℕ
+  onceCounted : ℕ
+  actual : ℕ
   hOnce : onceCounted = 26 - 8
   hActual : actual = onceCounted + 3
 theorem toddlers_once (m : Toddlers) : m.onceCounted = 18 := by rw [m.hOnce]; norm_num
@@ -45,7 +51,9 @@ theorem toddlers_solution (m : Toddlers) : m.actual = 21 := by
     _ = 21 := by norm_num
 
 structure Shoes where
-  increase second total : ℕ
+  increase : ℕ
+  second : ℕ
+  total : ℕ
   hIncrease : 100 * increase = 50 * 22
   hSecond : second = 22 + increase
   hTotal : total = 22 + second
@@ -60,7 +68,10 @@ theorem shoes_solution (m : Shoes) : m.total = 55 := by
     _ = 55 := by norm_num
 
 structure Running where
-  halfWeeks firstMiles secondMiles totalMiles : ℕ
+  halfWeeks : ℕ
+  firstMiles : ℕ
+  secondMiles : ℕ
+  totalMiles : ℕ
   hHalf : 2 * halfWeeks = 52
   hFirst : firstMiles = 20 * halfWeeks
   hSecond : secondMiles = 30 * halfWeeks
@@ -80,7 +91,8 @@ theorem running_solution (m : Running) : m.totalMiles = 1300 := by
     _ = 1300 := by norm_num
 
 structure ReadingCoupons where
-  books coupons : ℕ
+  books : ℕ
+  coupons : ℕ
   hBooks : books = 2 * 10
   hCoupons : 5 * coupons = books
 theorem reading_books (m : ReadingCoupons) : m.books = 20 := by rw [m.hBooks]; norm_num
@@ -90,7 +102,11 @@ theorem reading_solution (m : ReadingCoupons) : m.coupons = 4 := by
   omega
 
 structure Onions where
-  brittneyRate carlRate brittneyThirty carlThirty difference : ℕ
+  brittneyRate : ℕ
+  carlRate : ℕ
+  brittneyThirty : ℕ
+  carlThirty : ℕ
+  difference : ℕ
   hBrittneyRate : 5 * brittneyRate = 15
   hCarlRate : 5 * carlRate = 20
   hBrittneyThirty : brittneyThirty = 30 * brittneyRate
@@ -112,7 +128,11 @@ theorem onions_solution (m : Onions) : m.difference = 30 := by
     _ = 30 := by norm_num
 
 structure WritingNameAmbiguity where
-  halfPageLines lucasLines lucasWords intendedLeft literalLeft : ℕ
+  halfPageLines : ℕ
+  lucasLines : ℕ
+  lucasWords : ℕ
+  intendedLeft : ℕ
+  literalLeft : ℕ
   hHalf : halfPageLines = 20 / 2
   hLucasLines : lucasLines = 20 + halfPageLines
   hLucasWords : lucasWords = lucasLines * 10
@@ -137,7 +157,15 @@ theorem writing_nonunique (m : WritingNameAmbiguity) : m.intendedLeft ≠ m.lite
   norm_num
 
 structure DuckSnails where
-  first next groups motherThree eachThree totalThree motherTwo eachTwo totalTwo : ℕ
+  first : ℕ
+  next : ℕ
+  groups : ℕ
+  motherThree : ℕ
+  eachThree : ℕ
+  totalThree : ℕ
+  motherTwo : ℕ
+  eachTwo : ℕ
+  totalTwo : ℕ
   hFirst : first = 3 * 5
   hNext : next = 3 * 9
   hGroups : groups = first + next
@@ -182,7 +210,14 @@ theorem snails_nonunique (m : DuckSnails) : m.totalThree ≠ m.totalTwo := by
   norm_num
 
 structure FlowerSales where
-  dayTwoTulips dayTwoRoses dayThreeTulips totalTulips totalRoses tulipRevenue roseRevenue totalRevenue : ℕ
+  dayTwoTulips : ℕ
+  dayTwoRoses : ℕ
+  dayThreeTulips : ℕ
+  totalTulips : ℕ
+  totalRoses : ℕ
+  tulipRevenue : ℕ
+  roseRevenue : ℕ
+  totalRevenue : ℕ
   hDayTwoTulips : dayTwoTulips = 2 * 30
   hDayTwoRoses : dayTwoRoses = 2 * 20
   hDayThreeTulips : 100 * dayThreeTulips = 10 * dayTwoTulips
@@ -219,7 +254,9 @@ theorem flowers_solution (m : FlowerSales) : m.totalRevenue = 420 := by
     _ = 420 := by norm_num
 
 structure FleaMedicine where
-  cashback totalDiscount netCost : ℕ
+  cashback : ℕ
+  totalDiscount : ℕ
+  netCost : ℕ
   hCashback : 100 * cashback = 10 * 150
   hDiscount : totalDiscount = cashback + 25
   hNet : netCost = 150 - totalDiscount
@@ -234,7 +271,8 @@ theorem flea_solution (m : FleaMedicine) : m.netCost = 110 := by
     _ = 110 := by norm_num
 
 structure Cheesecake where
-  slices revenue : ℕ
+  slices : ℕ
+  revenue : ℕ
   hSlices : slices = 7 * 6
   hRevenue : revenue = slices * 7
 theorem cheesecake_slices (m : Cheesecake) : m.slices = 42 := by rw [m.hSlices]; norm_num
@@ -244,7 +282,8 @@ theorem cheesecake_solution (m : Cheesecake) : m.revenue = 294 := by
     _ = 294 := by norm_num
 
 structure TypingTeam where
-  total average : ℕ
+  total : ℕ
+  average : ℕ
   hTotal : total = 64 + 76 + 91 + 80 + 89
   hAverage : 5 * average = total
 theorem team_total (m : TypingTeam) : m.total = 400 := by rw [m.hTotal]; norm_num
@@ -254,7 +293,8 @@ theorem team_solution (m : TypingTeam) : m.average = 80 := by
   omega
 
 structure MarioAge where
-  maria mario : ℕ
+  maria : ℕ
+  mario : ℕ
   hOlder : mario = maria + 1
   hSum : mario + maria = 7
 theorem ages_maria (m : MarioAge) : m.maria = 3 := by
@@ -267,7 +307,13 @@ theorem ages_solution (m : MarioAge) : m.mario = 4 := by
     _ = 4 := by norm_num
 
 structure PaintingAmbiguity where
-  conventionalCanvas paintFive conventionalProfit additiveCanvas additiveProfit paintSix extraLiterProfit : ℕ
+  conventionalCanvas : ℕ
+  paintFive : ℕ
+  conventionalProfit : ℕ
+  additiveCanvas : ℕ
+  additiveProfit : ℕ
+  paintSix : ℕ
+  extraLiterProfit : ℕ
   hConventionalCanvas : conventionalCanvas = 3 * 20
   hPaintFive : paintFive = 8 * 5
   hConventionalProfit : conventionalProfit = 200 - 20 - conventionalCanvas - paintFive

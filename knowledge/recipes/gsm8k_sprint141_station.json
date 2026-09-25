@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint141_station",
+  "title_ja": "宇宙ステーションのキッチン数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02406",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "同一の3円筒に計72室あり、各円筒には寝室12、浴室7、残りがキッチン。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.station_solution",
+  "graph": "work/gsm8k-sprint141-station-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "station_per_cylinder",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.station_per_cylinder",
+      "title_ja": "各円筒は24室",
+      "claim_ja": "各円筒は24室",
+      "method_ja": "72を同一の3円筒へ等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "各円筒は24室",
+      "baseline_ja": "各円筒は24室"
+    },
+    {
+      "id": "station_kitchens_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.station_kitchens_each",
+      "title_ja": "各円筒のキッチンは5室",
+      "claim_ja": "各円筒のキッチンは5室",
+      "method_ja": "24から12と7を引く",
+      "requires_steps": [
+        "station_per_cylinder"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "各円筒のキッチンは5室",
+      "baseline_ja": "各円筒のキッチンは5室"
+    },
+    {
+      "id": "station_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.station_solution",
+      "title_ja": "全体のキッチンは15室",
+      "claim_ja": "全体のキッチンは15室",
+      "method_ja": "5に3を掛ける",
+      "requires_steps": [
+        "station_kitchens_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "全体のキッチンは15室",
+      "baseline_ja": "全体のキッチンは15室"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2407,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

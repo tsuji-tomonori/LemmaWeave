@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint137_twins",
+  "title_ja": "双子のシャツ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02339",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Hazelは6枚、Razelはその2倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.twins_solution",
+  "graph": "work/gsm8k-sprint137-twins-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "twins_razel",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.twins_razel",
+      "title_ja": "Razelは12枚",
+      "claim_ja": "Razelは12枚",
+      "method_ja": "6枚の2倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Razelは12枚",
+      "baseline_ja": "Razelは12枚"
+    },
+    {
+      "id": "twins_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.twins_solution",
+      "title_ja": "合計18枚",
+      "claim_ja": "合計18枚",
+      "method_ja": "Hazelの6枚とRazelの12枚を足す",
+      "requires_steps": [
+        "twins_razel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計18枚",
+      "baseline_ja": "合計18枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2340,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

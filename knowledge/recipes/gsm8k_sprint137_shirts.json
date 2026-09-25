@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint137_shirts",
+  "title_ja": "P.T.O.のシャツ総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02337",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各学年の人数と1枚価格から総支出を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.shirts_solution",
+  "graph": "work/gsm8k-sprint137-shirts-graph.json",
+  "model_notes_ja": [
+    "端数を正確に扱うため金額はセントで形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "shirts_kindergarten",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.shirts_kindergarten",
+      "title_ja": "幼稚園は585.80ドル",
+      "claim_ja": "幼稚園は585.80ドル",
+      "method_ja": "101枚に580セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "幼稚園は585.80ドル",
+      "baseline_ja": "幼稚園は585.80ドル"
+    },
+    {
+      "id": "shirts_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.shirts_first",
+      "title_ja": "1年生は565ドル",
+      "claim_ja": "1年生は565ドル",
+      "method_ja": "113枚に500セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1年生は565ドル",
+      "baseline_ja": "1年生は565ドル"
+    },
+    {
+      "id": "shirts_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.shirts_second",
+      "title_ja": "2年生は599.20ドル",
+      "claim_ja": "2年生は599.20ドル",
+      "method_ja": "107枚に560セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "2年生は599.20ドル",
+      "baseline_ja": "2年生は599.20ドル"
+    },
+    {
+      "id": "shirts_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.shirts_third",
+      "title_ja": "3年生は567ドル",
+      "claim_ja": "3年生は567ドル",
+      "method_ja": "108枚に525セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "3年生は567ドル",
+      "baseline_ja": "3年生は567ドル"
+    },
+    {
+      "id": "shirts_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.shirts_solution",
+      "title_ja": "合計2317ドル",
+      "claim_ja": "合計2317ドル",
+      "method_ja": "4学年の支出を足す",
+      "requires_steps": [
+        "shirts_kindergarten",
+        "shirts_first",
+        "shirts_second",
+        "shirts_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計2317ドル",
+      "baseline_ja": "合計2317ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2338,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

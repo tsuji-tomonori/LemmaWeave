@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint137_bottles",
+  "title_ja": "ボトルを満たす水量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02338",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "容量2カップのボトル10本と半量ボトル5本を満たす。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.bottles_reference_error",
+  "graph": "work/gsm8k-sprint137-bottles-graph.json",
+  "model_notes_ja": [
+    "参考解答は最終行で20を25と取り違え、25+5=30としている。原題からは25カップが正しい。"
+  ],
+  "steps": [
+    {
+      "id": "bottles_whole",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.bottles_whole",
+      "title_ja": "満量10本には20カップ",
+      "claim_ja": "満量10本には20カップ",
+      "method_ja": "10本に2カップを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "満量10本には20カップ",
+      "baseline_ja": "満量10本には20カップ"
+    },
+    {
+      "id": "bottles_half",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.bottles_half",
+      "title_ja": "半量5本には5カップ",
+      "claim_ja": "半量5本には5カップ",
+      "method_ja": "半量は1本1カップなので5本分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "半量5本には5カップ",
+      "baseline_ja": "半量5本には5カップ"
+    },
+    {
+      "id": "bottles_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.bottles_solution",
+      "title_ja": "合計25カップ",
+      "claim_ja": "合計25カップ",
+      "method_ja": "20カップと5カップを足す",
+      "requires_steps": [
+        "bottles_whole",
+        "bottles_half"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計25カップ",
+      "baseline_ja": "合計25カップ"
+    },
+    {
+      "id": "bottles_reference_error",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.bottles_reference_error",
+      "title_ja": "参考解答の30カップとは一致しない",
+      "claim_ja": "参考解答の30カップとは一致しない",
+      "method_ja": "正しい合計25と30が異なることを確認する",
+      "requires_steps": [
+        "bottles_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "参考解答の30カップとは一致しない",
+      "baseline_ja": "参考解答の30カップとは一致しない"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2339,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

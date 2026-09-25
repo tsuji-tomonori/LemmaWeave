@@ -1,0 +1,112 @@
+{
+  "id": "gsm8k_sprint140_amulets",
+  "title_ja": "護符販売の利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02387",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2日間に毎日25個、売価40ドル、原価30ドル、売上の10%を会場へ支払う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.amulets_solution",
+  "graph": "work/gsm8k-sprint140-amulets-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "amulets_sold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.amulets_sold",
+      "title_ja": "50個販売",
+      "claim_ja": "50個販売",
+      "method_ja": "2に25を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "50個販売",
+      "baseline_ja": "50個販売"
+    },
+    {
+      "id": "amulets_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.amulets_revenue",
+      "title_ja": "売上2000ドル",
+      "claim_ja": "売上2000ドル",
+      "method_ja": "50に40を掛ける",
+      "requires_steps": [
+        "amulets_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "売上2000ドル",
+      "baseline_ja": "売上2000ドル"
+    },
+    {
+      "id": "amulets_fee",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.amulets_fee",
+      "title_ja": "会場費200ドル",
+      "claim_ja": "会場費200ドル",
+      "method_ja": "売上の10%",
+      "requires_steps": [
+        "amulets_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "会場費200ドル",
+      "baseline_ja": "会場費200ドル"
+    },
+    {
+      "id": "amulets_kept",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.amulets_kept",
+      "title_ja": "会場費後1800ドル",
+      "claim_ja": "会場費後1800ドル",
+      "method_ja": "2000から200を引く",
+      "requires_steps": [
+        "amulets_fee"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "会場費後1800ドル",
+      "baseline_ja": "会場費後1800ドル"
+    },
+    {
+      "id": "amulets_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.amulets_cost",
+      "title_ja": "製造費1500ドル",
+      "claim_ja": "製造費1500ドル",
+      "method_ja": "50に30を掛ける",
+      "requires_steps": [
+        "amulets_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "製造費1500ドル",
+      "baseline_ja": "製造費1500ドル"
+    },
+    {
+      "id": "amulets_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.amulets_solution",
+      "title_ja": "利益300ドル",
+      "claim_ja": "利益300ドル",
+      "method_ja": "1800から1500を引く",
+      "requires_steps": [
+        "amulets_kept",
+        "amulets_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "利益300ドル",
+      "baseline_ja": "利益300ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2388,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

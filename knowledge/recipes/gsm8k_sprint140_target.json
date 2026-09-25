@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint140_target",
+  "title_ja": "2人の支払総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02382",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tanyaは保湿剤2個を各50ドル、ローション4個を各60ドルで買い、Christyはその2倍使う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.target_solution",
+  "graph": "work/gsm8k-sprint140-target-graph.json",
+  "model_notes_ja": [
+    "原文の “50$ for two face moisturizers each” を、参考解答と同じく1個50ドルと読む条件を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "target_moisturizers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.target_moisturizers",
+      "title_ja": "保湿剤100ドル",
+      "claim_ja": "保湿剤100ドル",
+      "method_ja": "2個に50ドル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "保湿剤100ドル",
+      "baseline_ja": "保湿剤100ドル"
+    },
+    {
+      "id": "target_lotions",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.target_lotions",
+      "title_ja": "ローション240ドル",
+      "claim_ja": "ローション240ドル",
+      "method_ja": "4個に60ドル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "ローション240ドル",
+      "baseline_ja": "ローション240ドル"
+    },
+    {
+      "id": "target_tanya",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.target_tanya",
+      "title_ja": "Tanyaは340ドル",
+      "claim_ja": "Tanyaは340ドル",
+      "method_ja": "100と240を足す",
+      "requires_steps": [
+        "target_moisturizers",
+        "target_lotions"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Tanyaは340ドル",
+      "baseline_ja": "Tanyaは340ドル"
+    },
+    {
+      "id": "target_christy",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.target_christy",
+      "title_ja": "Christyは680ドル",
+      "claim_ja": "Christyは680ドル",
+      "method_ja": "340の2倍",
+      "requires_steps": [
+        "target_tanya"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Christyは680ドル",
+      "baseline_ja": "Christyは680ドル"
+    },
+    {
+      "id": "target_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.target_solution",
+      "title_ja": "2人で1020ドル",
+      "claim_ja": "2人で1020ドル",
+      "method_ja": "340と680を足す",
+      "requires_steps": [
+        "target_tanya",
+        "target_christy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "2人で1020ドル",
+      "baseline_ja": "2人で1020ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2383,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

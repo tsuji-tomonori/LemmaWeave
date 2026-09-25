@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint145_monopoly",
+  "title_ja": "3人の勝利数合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02467",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Betsyは5勝、Helenはその2倍、Susanはその3倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.monopoly_solution",
+  "graph": "work/gsm8k-sprint145-monopoly-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "monopoly_helen",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.monopoly_helen",
+      "title_ja": "Helenは10勝",
+      "claim_ja": "Helenは10勝",
+      "method_ja": "5を2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Helenは10勝",
+      "baseline_ja": "Helenは10勝"
+    },
+    {
+      "id": "monopoly_susan",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.monopoly_susan",
+      "title_ja": "Susanは15勝",
+      "claim_ja": "Susanは15勝",
+      "method_ja": "5を3倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Susanは15勝",
+      "baseline_ja": "Susanは15勝"
+    },
+    {
+      "id": "monopoly_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.monopoly_solution",
+      "title_ja": "合計30勝",
+      "claim_ja": "合計30勝",
+      "method_ja": "5、10、15を足す",
+      "requires_steps": [
+        "monopoly_helen",
+        "monopoly_susan"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計30勝",
+      "baseline_ja": "合計30勝"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2468,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

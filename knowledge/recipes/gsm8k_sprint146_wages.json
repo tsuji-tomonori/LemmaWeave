@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint146_wages",
+  "title_ja": "第1の仕事の賃金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02477",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "週合計160ドル。第2の仕事は12時間を時給9ドルで働く。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.wages_solution",
+  "graph": "work/gsm8k-sprint146-wages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "wages_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.wages_second",
+      "title_ja": "第2の仕事は108ドル",
+      "claim_ja": "第2の仕事は108ドル",
+      "method_ja": "12に9を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "第2の仕事は108ドル",
+      "baseline_ja": "第2の仕事は108ドル"
+    },
+    {
+      "id": "wages_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.wages_solution",
+      "title_ja": "第1の仕事は52ドル",
+      "claim_ja": "第1の仕事は52ドル",
+      "method_ja": "160から108を引く",
+      "requires_steps": [
+        "wages_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "第1の仕事は52ドル",
+      "baseline_ja": "第1の仕事は52ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2478,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

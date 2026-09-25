@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint145_bees",
+  "title_ja": "蜂が4分の1になる日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02457",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "初期数を上限値80000匹と置く追加条件の下で、毎日1200匹ずつ減る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.bees_solution_conditional",
+  "graph": "work/gsm8k-sprint145-bees-graph.json",
+  "model_notes_ja": [
+    "原題の80000は収容上限であり実際の初期数を断定しない。答え50日は初期数が80000匹という追加条件付き。初期64000匹なら40日となる。"
+  ],
+  "steps": [
+    {
+      "id": "bees_target",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.bees_target",
+      "title_ja": "4分の1は20000匹",
+      "claim_ja": "4分の1は20000匹",
+      "method_ja": "80000を4等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "4分の1は20000匹",
+      "baseline_ja": "4分の1は20000匹"
+    },
+    {
+      "id": "bees_lost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.bees_lost",
+      "title_ja": "減少数は60000匹",
+      "claim_ja": "減少数は60000匹",
+      "method_ja": "80000から20000を引く",
+      "requires_steps": [
+        "bees_target"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "減少数は60000匹",
+      "baseline_ja": "減少数は60000匹"
+    },
+    {
+      "id": "bees_initial_not_fixed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.bees_initial_not_fixed",
+      "title_ja": "初期64000匹なら40日となり、上限だけでは日数は一意でない",
+      "claim_ja": "初期64000匹なら40日となり、上限だけでは日数は一意でない",
+      "method_ja": "別の許容初期値を反例にする",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "初期64000匹なら40日となり、上限だけでは日数は一意でない",
+      "baseline_ja": "初期64000匹なら40日となり、上限だけでは日数は一意でない"
+    },
+    {
+      "id": "bees_solution_conditional",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.bees_solution_conditional",
+      "title_ja": "初期80000匹なら50日",
+      "claim_ja": "初期80000匹なら50日",
+      "method_ja": "60000を1日1200匹で割る",
+      "requires_steps": [
+        "bees_lost",
+        "bees_initial_not_fixed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "初期80000匹なら50日",
+      "baseline_ja": "初期80000匹なら50日"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2458,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

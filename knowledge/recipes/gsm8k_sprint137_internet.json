@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint137_internet",
+  "title_ja": "4か月のインターネット料金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02342",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "25日より前なら5%割引だが、支払日は毎月25日。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.internet_literal_solution",
+  "graph": "work/gsm8k-sprint137-internet-graph.json",
+  "model_notes_ja": [
+    "before the 25thは25日当日を含まない。参考解答190ドルは『25日以前』という別条件の値で、原文どおりなら200ドル。"
+  ],
+  "steps": [
+    {
+      "id": "internet_not_before",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.internet_not_before",
+      "title_ja": "25日は25日より前ではない",
+      "claim_ja": "25日は25日より前ではない",
+      "method_ja": "厳密不等号25<25が偽であることを確認する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "25日は25日より前ではない",
+      "baseline_ja": "25日は25日より前ではない"
+    },
+    {
+      "id": "internet_nonstrict_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.internet_nonstrict_total",
+      "title_ja": "『25日以前』と読み替えれば190ドル",
+      "claim_ja": "『25日以前』と読み替えれば190ドル",
+      "method_ja": "月47.50ドルを4か月分にする",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "『25日以前』と読み替えれば190ドル",
+      "baseline_ja": "『25日以前』と読み替えれば190ドル"
+    },
+    {
+      "id": "internet_policy_mismatch",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.internet_policy_mismatch",
+      "title_ja": "200ドルと190ドルは異なる",
+      "claim_ja": "200ドルと190ドルは異なる",
+      "method_ja": "厳密条件と参考解答の読み替えを比較する",
+      "requires_steps": [
+        "internet_nonstrict_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "200ドルと190ドルは異なる",
+      "baseline_ja": "200ドルと190ドルは異なる"
+    },
+    {
+      "id": "internet_literal_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.internet_literal_solution",
+      "title_ja": "原文どおりなら合計200ドル",
+      "claim_ja": "原文どおりなら合計200ドル",
+      "method_ja": "割引なしの月50ドルを4か月分にする",
+      "requires_steps": [
+        "internet_not_before",
+        "internet_policy_mismatch"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "原文どおりなら合計200ドル",
+      "baseline_ja": "原文どおりなら合計200ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2343,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

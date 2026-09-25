@@ -29,7 +29,7 @@ structure ClothingIncome where
   hSkirtsTotal : skirtsTotal = 4 * 600
   hTotal : totalCents = refurbishedTotal + shirtsTotal + pantsTotal + skirtsTotal
 
-theorem clothing_refurbished_each (m : ClothingIncome) : m.refurbishedEach = 250 := by omega
+theorem clothing_refurbished_each (m : ClothingIncome) : m.refurbishedEach = 250 := by cases m <;> omega
 theorem clothing_refurbished_total (m : ClothingIncome) : m.refurbishedTotal = 1500 := by
   rw [m.hRefurbishedTotal, clothing_refurbished_each m]
 theorem clothing_regular_totals (m : ClothingIncome) :
@@ -49,7 +49,7 @@ structure ChocolateSharing where
   hEach : each * 3 = 12
   hCombined : combined = each + each
 
-theorem chocolate_each (m : ChocolateSharing) : m.each = 4 := by omega
+theorem chocolate_each (m : ChocolateSharing) : m.each = 4 := by cases m <;> omega
 theorem chocolate_solution (m : ChocolateSharing) : m.combined = 8 := by
   rw [m.hCombined, chocolate_each m]
 
@@ -94,7 +94,7 @@ structure ZooTrip where
   hAffordable : students * 10 ≤ admissionBudget
   hMaximal : ∀ n : ℕ, n * 10 ≤ admissionBudget → n ≤ students
 
-theorem zoo_admission_budget (m : ZooTrip) : m.admissionBudget = 250 := by omega
+theorem zoo_admission_budget (m : ZooTrip) : m.admissionBudget = 250 := by cases m <;> omega
 theorem zoo_affords_25 (m : ZooTrip) : 25 * 10 ≤ m.admissionBudget := by
   rw [zoo_admission_budget m]
 theorem zoo_upper_bound (m : ZooTrip) : m.students ≤ 25 := by
@@ -165,10 +165,10 @@ structure CropRevenue where
   hCarrotCents : carrotCents = carrotBundles * 200
   hTotal : totalCents = potatoCents + carrotCents
 
-theorem crops_potato_bundles (m : CropRevenue) : m.potatoBundles = 10 := by omega
+theorem crops_potato_bundles (m : CropRevenue) : m.potatoBundles = 10 := by cases m <;> omega
 theorem crops_potato_cents (m : CropRevenue) : m.potatoCents = 1900 := by
   rw [m.hPotatoCents, crops_potato_bundles m]
-theorem crops_carrot_bundles (m : CropRevenue) : m.carrotBundles = 16 := by omega
+theorem crops_carrot_bundles (m : CropRevenue) : m.carrotBundles = 16 := by cases m <;> omega
 theorem crops_carrot_cents (m : CropRevenue) : m.carrotCents = 3200 := by
   rw [m.hCarrotCents, crops_carrot_bundles m]
 theorem crops_solution (m : CropRevenue) : m.totalCents = 5100 := by

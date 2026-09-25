@@ -18,8 +18,8 @@ theorem allowance_first (m : Allowance) : m.first = 40 := by rw [m.hFirst]
 theorem allowance_second (m : Allowance) : m.second = 36 := by rw [m.hSecond]
 theorem allowance_total (m : Allowance) : m.total = 76 := by
   rw [m.hTotal, allowance_first m, allowance_second m]
-theorem allowance_after_clothes (m : Allowance) : m.afterClothes = 38 := by omega
-theorem allowance_solution (m : Allowance) : m.afterGame = 3 := by omega
+theorem allowance_after_clothes (m : Allowance) : m.afterClothes = 38 := by cases m <;> omega
+theorem allowance_solution (m : Allowance) : m.afterGame = 3 := by cases m <;> omega
 
 structure TriangleAngles where
   a : ℕ
@@ -29,9 +29,9 @@ structure TriangleAngles where
   hSum : a + b + c = 180
   hB : b = 2 * c
 
-theorem triangle_remaining (m : TriangleAngles) : m.b + m.c = 120 := by omega
-theorem triangle_c (m : TriangleAngles) : m.c = 40 := by omega
-theorem triangle_solution (m : TriangleAngles) : m.b = 80 := by omega
+theorem triangle_remaining (m : TriangleAngles) : m.b + m.c = 120 := by cases m <;> omega
+theorem triangle_c (m : TriangleAngles) : m.c = 40 := by cases m <;> omega
+theorem triangle_solution (m : TriangleAngles) : m.b = 80 := by cases m <;> omega
 
 structure LibraryItems where
   notebooks : ℕ
@@ -70,10 +70,10 @@ structure FutureAges where
   hSebastianFuture : sebastianFuture = sebastianNow + 3
   hSum : jeremyFuture + sebastianFuture + sophiaFuture = 150
 
-theorem ages_jeremy_future (m : FutureAges) : m.jeremyFuture = 43 := by omega
-theorem ages_sebastian_now (m : FutureAges) : m.sebastianNow = 44 := by omega
-theorem ages_sebastian_future (m : FutureAges) : m.sebastianFuture = 47 := by omega
-theorem ages_solution (m : FutureAges) : m.sophiaFuture = 60 := by omega
+theorem ages_jeremy_future (m : FutureAges) : m.jeremyFuture = 43 := by cases m <;> omega
+theorem ages_sebastian_now (m : FutureAges) : m.sebastianNow = 44 := by cases m <;> omega
+theorem ages_sebastian_future (m : FutureAges) : m.sebastianFuture = 47 := by cases m <;> omega
+theorem ages_solution (m : FutureAges) : m.sophiaFuture = 60 := by cases m <;> omega
 
 structure CookieBoxes where
   given : ℕ
@@ -82,7 +82,7 @@ structure CookieBoxes where
   hLeft : left + given = 45
 
 theorem cookies_given (m : CookieBoxes) : m.given = 28 := by rw [m.hGiven]
-theorem cookies_solution (m : CookieBoxes) : m.left = 17 := by omega
+theorem cookies_solution (m : CookieBoxes) : m.left = 17 := by cases m <;> omega
 
 /-- The 15-minute head start is one quarter of an hour. -/
 structure CatchUp where
@@ -93,9 +93,9 @@ structure CatchUp where
   hSpeedGap : speedGap = 25 - 20
   hCatchUp : speedGap * catchUpHours = headStartMiles
 
-theorem catchup_head_start (m : CatchUp) : m.headStartMiles = 5 := by omega
+theorem catchup_head_start (m : CatchUp) : m.headStartMiles = 5 := by cases m <;> omega
 theorem catchup_speed_gap (m : CatchUp) : m.speedGap = 5 := by rw [m.hSpeedGap]
-theorem catchup_solution (m : CatchUp) : m.catchUpHours = 1 := by omega
+theorem catchup_solution (m : CatchUp) : m.catchUpHours = 1 := by cases m <;> omega
 
 structure GiftBags where
   visitors : ℕ
@@ -107,7 +107,7 @@ structure GiftBags where
 
 theorem gifts_visitors (m : GiftBags) : m.visitors = 90 := by rw [m.hVisitors]
 theorem gifts_made (m : GiftBags) : m.made = 30 := by rw [m.hMade]
-theorem gifts_solution (m : GiftBags) : m.more = 60 := by omega
+theorem gifts_solution (m : GiftBags) : m.more = 60 := by cases m <;> omega
 
 structure WeeklyReading where
   lastWeek : ℕ
@@ -132,9 +132,9 @@ structure SisterAge where
   hYears : yearsUntil + sisterNow = 56
   hEmmaThen : emmaThen = emmaNow + yearsUntil
 
-theorem sister_current (m : SisterAge) : m.sisterNow = 16 := by omega
-theorem sister_years (m : SisterAge) : m.yearsUntil = 40 := by omega
-theorem sister_solution (m : SisterAge) : m.emmaThen = 47 := by omega
+theorem sister_current (m : SisterAge) : m.sisterNow = 16 := by cases m <;> omega
+theorem sister_years (m : SisterAge) : m.yearsUntil = 40 := by cases m <;> omega
+theorem sister_solution (m : SisterAge) : m.emmaThen = 47 := by cases m <;> omega
 
 structure BillboardAverage where
   total : ℕ
@@ -143,7 +143,7 @@ structure BillboardAverage where
   hAverage : average * 3 = total
 
 theorem billboard_total (m : BillboardAverage) : m.total = 60 := by rw [m.hTotal]
-theorem billboard_solution (m : BillboardAverage) : m.average = 20 := by omega
+theorem billboard_solution (m : BillboardAverage) : m.average = 20 := by cases m <;> omega
 
 structure RelativeSpeeds where
   cory : ℕ
@@ -155,9 +155,9 @@ structure RelativeSpeeds where
   hSkateRun : skateboard = 2 * running
   hDistance : distance = 2 * running
 
-theorem speed_skateboard (m : RelativeSpeeds) : m.skateboard = 6 := by omega
-theorem speed_running (m : RelativeSpeeds) : m.running = 3 := by omega
-theorem speed_solution (m : RelativeSpeeds) : m.distance = 6 := by omega
+theorem speed_skateboard (m : RelativeSpeeds) : m.skateboard = 6 := by cases m <;> omega
+theorem speed_running (m : RelativeSpeeds) : m.running = 3 := by cases m <;> omega
+theorem speed_solution (m : RelativeSpeeds) : m.distance = 6 := by cases m <;> omega
 
 structure BerryEating where
   oneBirdFourDays : ℕ
@@ -178,9 +178,9 @@ structure BananaTree where
   hCut : cut = eaten + basketRemaining
   hInitial : initial = 100 + cut
 
-theorem bananas_remaining (m : BananaTree) : m.basketRemaining = 140 := by omega
-theorem bananas_cut (m : BananaTree) : m.cut = 210 := by omega
-theorem bananas_solution (m : BananaTree) : m.initial = 310 := by omega
+theorem bananas_remaining (m : BananaTree) : m.basketRemaining = 140 := by cases m <;> omega
+theorem bananas_cut (m : BananaTree) : m.cut = 210 := by cases m <;> omega
+theorem bananas_solution (m : BananaTree) : m.initial = 310 := by cases m <;> omega
 
 structure TreasureGold where
   chest : ℕ
@@ -194,9 +194,9 @@ structure TreasureGold where
   hTotal : total = chest + bagTotal
   hRate : perHour * 8 = total
 
-theorem gold_bag_each (m : TreasureGold) : m.bagEach = 50 := by omega
-theorem gold_bags (m : TreasureGold) : m.bagTotal = 100 := by omega
-theorem gold_total (m : TreasureGold) : m.total = 200 := by omega
-theorem gold_solution (m : TreasureGold) : m.perHour = 25 := by omega
+theorem gold_bag_each (m : TreasureGold) : m.bagEach = 50 := by cases m <;> omega
+theorem gold_bags (m : TreasureGold) : m.bagTotal = 100 := by cases m <;> omega
+theorem gold_total (m : TreasureGold) : m.total = 200 := by cases m <;> omega
+theorem gold_solution (m : TreasureGold) : m.perHour = 25 := by cases m <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0923A16

@@ -19,7 +19,7 @@ structure FishingSeason where
 theorem fishing_first (m : FishingSeason) : m.first = 639 := by rw [m.hFirst]
 theorem fishing_first_ninety (m : FishingSeason) : m.firstNinety = 150 := by
   rw [m.hFirstNinety]
-theorem fishing_remaining_days (m : FishingSeason) : m.remainingDays = 123 := by omega
+theorem fishing_remaining_days (m : FishingSeason) : m.remainingDays = 123 := by cases m <;> omega
 theorem fishing_remainder_catch (m : FishingSeason) : m.remainderCatch = 492 := by
   rw [m.hRemainderCatch, fishing_remaining_days m]
 theorem fishing_second (m : FishingSeason) : m.second = 642 := by
@@ -44,7 +44,7 @@ structure BirdWorms where
 theorem worms_daily (m : BirdWorms) : m.daily = 18 := by rw [m.hDaily]
 theorem worms_needed (m : BirdWorms) : m.needed = 54 := by
   rw [m.hNeeded, worms_daily m]
-theorem worms_mama_net (m : BirdWorms) : m.mamaNet = 11 := by omega
+theorem worms_mama_net (m : BirdWorms) : m.mamaNet = 11 := by cases m <;> omega
 theorem worms_available (m : BirdWorms) : m.available = 20 := by
   rw [m.hAvailable, worms_mama_net m]
 theorem worms_solution (m : BirdWorms) : m.more = 34 := by
@@ -108,8 +108,8 @@ structure FavoriteColors where
   hPink : pink * 3 = 18
   hTotal : yellow + green + pink = 30
 
-theorem colors_green (m : FavoriteColors) : m.green = 15 := by omega
-theorem colors_pink (m : FavoriteColors) : m.pink = 6 := by omega
+theorem colors_green (m : FavoriteColors) : m.green = 15 := by cases m <;> omega
+theorem colors_pink (m : FavoriteColors) : m.pink = 6 := by cases m <;> omega
 theorem colors_solution (m : FavoriteColors) : m.yellow = 9 := by
   have h := m.hTotal
   rw [colors_green m, colors_pink m] at h
@@ -196,7 +196,7 @@ structure SquirrelCounts where
   hSecond : second = 12 + extra
   hTotal : total = 12 + second
 
-theorem squirrels_extra (m : SquirrelCounts) : m.extra = 4 := by omega
+theorem squirrels_extra (m : SquirrelCounts) : m.extra = 4 := by cases m <;> omega
 theorem squirrels_second (m : SquirrelCounts) : m.second = 16 := by
   rw [m.hSecond, squirrels_extra m]
 theorem squirrels_solution (m : SquirrelCounts) : m.total = 28 := by
@@ -213,7 +213,7 @@ structure ExamScore where
   hEnough : targetTotal ≤ previousSum + william
   hMinimal : ∀ s : ℕ, targetTotal ≤ previousSum + s → william ≤ s
 
-theorem exam_previous_count (m : ExamScore) : m.previousCount = 29 := by omega
+theorem exam_previous_count (m : ExamScore) : m.previousCount = 29 := by cases m <;> omega
 theorem exam_previous_sum (m : ExamScore) : m.previousSum = 2146 := by
   rw [m.hPrevious, exam_previous_count m]
 theorem exam_target_total (m : ExamScore) : m.targetTotal = 2250 := by rw [m.hTarget]
@@ -243,7 +243,7 @@ structure DonationsToOrganize where
   hIncluded : included * 2 = 60
   hTotalBalls : totalBalls = standalone + included
 
-theorem donations_organize_damaged (m : DonationsToOrganize) : m.damaged = 30 := by omega
+theorem donations_organize_damaged (m : DonationsToOrganize) : m.damaged = 30 := by cases m <;> omega
 theorem donations_organize_usable (m : DonationsToOrganize) : m.usableFloats = 90 := by
   have h := m.hUsable
   rw [donations_organize_damaged m] at h
@@ -254,7 +254,7 @@ theorem donations_organize_standalone (m : DonationsToOrganize) : m.standalone =
   have h := m.hStandalone
   rw [donations_organize_other m] at h
   omega
-theorem donations_included (m : DonationsToOrganize) : m.included = 30 := by omega
+theorem donations_included (m : DonationsToOrganize) : m.included = 30 := by cases m <;> omega
 theorem donations_organize_solution (m : DonationsToOrganize) : m.totalBalls = 90 := by
   rw [m.hTotalBalls, donations_organize_standalone m, donations_included m]
 
@@ -274,7 +274,7 @@ theorem donations_original_standalone (m : DonationsOriginallyGiven) : m.standal
   have h := m.hStandalone
   rw [donations_original_other m] at h
   omega
-theorem donations_original_included (m : DonationsOriginallyGiven) : m.included = 30 := by omega
+theorem donations_original_included (m : DonationsOriginallyGiven) : m.included = 30 := by cases m <;> omega
 theorem donations_original_solution (m : DonationsOriginallyGiven) : m.totalBalls = 60 := by
   rw [m.hTotalBalls, donations_original_standalone m, donations_original_included m]
 theorem donations_two_readings_differ : (90 : ℕ) ≠ 60 := by norm_num

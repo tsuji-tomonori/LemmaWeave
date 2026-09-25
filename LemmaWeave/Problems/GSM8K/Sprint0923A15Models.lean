@@ -25,8 +25,8 @@ structure PetTownReference where
   hPartition : dogOwners + catOwners = petOwners
   hTown : petOwners * 100 = citizens * 60
 
-theorem pets_reference_owners (m : PetTownReference) : m.petOwners = 60 := by omega
-theorem pets_reference_solution (m : PetTownReference) : m.citizens = 100 := by omega
+theorem pets_reference_owners (m : PetTownReference) : m.petOwners = 60 := by cases m <;> omega
+theorem pets_reference_solution (m : PetTownReference) : m.citizens = 100 := by cases m <;> omega
 /-- With other pet types allowed, 200 citizens, 120 pet owners, 60 dog owners and 30 cat owners satisfy the explicit rates. -/
 theorem pets_other_type_countermodel :
     (120 * 100 = 200 * 60) ∧ (60 * 2 = 120) ∧ (30 : ℕ) ≤ 120 := by norm_num
@@ -65,7 +65,7 @@ structure HousePrice where
   hSecond : second = 2 * first
   hTotal : first + second = 600000
 
-theorem house_solution (m : HousePrice) : m.first = 200000 := by omega
+theorem house_solution (m : HousePrice) : m.first = 200000 := by cases m <;> omega
 
 structure ReadingDifference where
   days : ℕ
@@ -103,8 +103,8 @@ structure DogLegs where
   hDogs : dogs + cats = 300
   hLegs : legs = dogs * 4
 
-theorem animals_cats (m : DogLegs) : m.cats = 200 := by omega
-theorem animals_dogs (m : DogLegs) : m.dogs = 100 := by omega
+theorem animals_cats (m : DogLegs) : m.cats = 200 := by cases m <;> omega
+theorem animals_dogs (m : DogLegs) : m.dogs = 100 := by cases m <;> omega
 theorem animals_solution (m : DogLegs) : m.legs = 400 := by rw [m.hLegs, animals_dogs m]
 
 structure CupcakeCousins where
@@ -114,7 +114,7 @@ structure CupcakeCousins where
   hCousins : cousins * 3 = cupcakes
 
 theorem cupcakes_total (m : CupcakeCousins) : m.cupcakes = 48 := by rw [m.hCupcakes]
-theorem cupcakes_solution (m : CupcakeCousins) : m.cousins = 16 := by omega
+theorem cupcakes_solution (m : CupcakeCousins) : m.cousins = 16 := by cases m <;> omega
 
 structure AlbertaTrip where
   distance : ℕ
@@ -123,7 +123,7 @@ structure AlbertaTrip where
   hHours : hours * 110 = distance
 
 theorem alberta_distance (m : AlbertaTrip) : m.distance = 330 := by rw [m.hDistance]
-theorem alberta_solution (m : AlbertaTrip) : m.hours = 3 := by omega
+theorem alberta_solution (m : AlbertaTrip) : m.hours = 3 := by cases m <;> omega
 
 structure FutureAge where
   phoebeFuture : ℕ
@@ -135,7 +135,7 @@ structure FutureAge where
 
 theorem age_phoebe_future (m : FutureAge) : m.phoebeFuture = 15 := by rw [m.hPhoebe]
 theorem age_raven_future (m : FutureAge) : m.ravenFuture = 60 := by rw [m.hRavenFuture, age_phoebe_future m]
-theorem age_solution (m : FutureAge) : m.ravenNow = 55 := by omega
+theorem age_solution (m : FutureAge) : m.ravenNow = 55 := by cases m <;> omega
 
 structure CoinCount where
   dimes : ℕ
@@ -170,7 +170,7 @@ theorem embroidery_flowers (m : Embroidery) : m.flowerStitches = 3000 := by rw [
 theorem embroidery_unicorns (m : Embroidery) : m.unicornStitches = 540 := by rw [m.hUnicorns]
 theorem embroidery_total (m : Embroidery) : m.totalStitches = 4340 := by
   rw [m.hTotal, embroidery_unicorns m, embroidery_flowers m]
-theorem embroidery_solution (m : Embroidery) : m.minutes = 1085 := by omega
+theorem embroidery_solution (m : Embroidery) : m.minutes = 1085 := by cases m <;> omega
 
 structure Playground where
   stayed : ℕ
@@ -182,10 +182,10 @@ structure Playground where
   hBoys : boys * 3 = playground
   hGirls : girls + boys = playground
 
-theorem playground_stayed (m : Playground) : m.stayed = 5 := by omega
-theorem playground_total (m : Playground) : m.playground = 15 := by omega
-theorem playground_boys (m : Playground) : m.boys = 5 := by omega
-theorem playground_solution (m : Playground) : m.girls = 10 := by omega
+theorem playground_stayed (m : Playground) : m.stayed = 5 := by cases m <;> omega
+theorem playground_total (m : Playground) : m.playground = 15 := by cases m <;> omega
+theorem playground_boys (m : Playground) : m.boys = 5 := by cases m <;> omega
+theorem playground_solution (m : Playground) : m.girls = 10 := by cases m <;> omega
 
 /-- Reference reading: 200, 300, 170 and 440 feet are consecutive race segments. -/
 structure RaceSegments where
@@ -195,7 +195,7 @@ structure RaceSegments where
   hRemaining : remaining + covered = 5000
 
 theorem race_covered (m : RaceSegments) : m.covered = 1110 := by rw [m.hCovered]
-theorem race_reference_solution (m : RaceSegments) : m.remaining = 3890 := by omega
+theorem race_reference_solution (m : RaceSegments) : m.remaining = 3890 := by cases m <;> omega
 /-- If the numbers are lead margins, the final 440-foot lead does not determine absolute positions. -/
 theorem race_lead_countermodels :
     ((1000 - 560 = 440) ∧ (5000 - 560 = 4440)) ∧

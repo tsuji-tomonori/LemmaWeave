@@ -16,8 +16,8 @@ structure FoodBankDonation where
 
 theorem food_water (m : FoodBankDonation) : m.water = 90 := by rw [m.hWater]
 theorem food_hormel (m : FoodBankDonation) : m.hormel = 135 := by rw [m.hHormel]
-theorem food_boudin (m : FoodBankDonation) : m.boudin = 45 := by omega
-theorem food_del_monte (m : FoodBankDonation) : m.delMonte = 60 := by omega
+theorem food_boudin (m : FoodBankDonation) : m.boudin = 45 := by cases m <;> omega
+theorem food_del_monte (m : FoodBankDonation) : m.delMonte = 60 := by cases m <;> omega
 theorem food_solution (m : FoodBankDonation) : m.total = 375 := by
   rw [m.hTotal, food_water m, food_hormel m, food_boudin m, food_del_monte m]
 
@@ -32,10 +32,10 @@ structure PetInsurance where
   hSavings : savings + paid = 5000
 
 theorem insurance_premiums (m : PetInsurance) : m.premiums = 480 := by rw [m.hPremiums]
-theorem insurance_copay (m : PetInsurance) : m.copay = 1000 := by omega
+theorem insurance_copay (m : PetInsurance) : m.copay = 1000 := by cases m <;> omega
 theorem insurance_paid (m : PetInsurance) : m.paid = 1480 := by
   rw [m.hPaid, insurance_premiums m, insurance_copay m]
-theorem insurance_solution (m : PetInsurance) : m.savings = 3520 := by omega
+theorem insurance_solution (m : PetInsurance) : m.savings = 3520 := by cases m <;> omega
 
 structure Pushups where
   wednesday : ℕ
@@ -50,7 +50,7 @@ structure Pushups where
 theorem pushups_wednesday (m : Pushups) : m.wednesday = 14 := by rw [m.hWednesday]
 theorem pushups_first_three (m : Pushups) : m.firstThree = 26 := by
   rw [m.hFirstThree, pushups_wednesday m]
-theorem pushups_thursday (m : Pushups) : m.thursday = 13 := by omega
+theorem pushups_thursday (m : Pushups) : m.thursday = 13 := by cases m <;> omega
 theorem pushups_solution (m : Pushups) : m.friday = 39 := by
   rw [m.hFriday, pushups_first_three m, pushups_thursday m]
 
@@ -90,12 +90,12 @@ structure FundReference where
   hFinal : final = year2Base + year2Interest
 
 theorem fund_ref_year1_base (m : FundReference) : m.year1Base = 2200 := by rw [m.hYear1Base]
-theorem fund_ref_year1_interest (m : FundReference) : m.year1Interest = 220 := by omega
+theorem fund_ref_year1_interest (m : FundReference) : m.year1Interest = 220 := by cases m <;> omega
 theorem fund_ref_year1_total (m : FundReference) : m.year1Total = 2420 := by
   rw [m.hYear1Total, fund_ref_year1_base m, fund_ref_year1_interest m]
 theorem fund_ref_year2_base (m : FundReference) : m.year2Base = 3620 := by
   rw [m.hYear2Base, fund_ref_year1_total m]
-theorem fund_ref_year2_interest (m : FundReference) : m.year2Interest = 362 := by omega
+theorem fund_ref_year2_interest (m : FundReference) : m.year2Interest = 362 := by cases m <;> omega
 theorem fund_reference_solution (m : FundReference) : m.final = 3982 := by
   rw [m.hFinal, fund_ref_year2_base m, fund_ref_year2_interest m]
 
@@ -110,10 +110,10 @@ structure FundEndYearDeposits where
   hInterest2 : interest2 * 10 = year1Total
   hFinal : final = year1Total + interest2 + 12 * 100
 
-theorem fund_end_interest1 (m : FundEndYearDeposits) : m.interest1 = 100 := by omega
+theorem fund_end_interest1 (m : FundEndYearDeposits) : m.interest1 = 100 := by cases m <;> omega
 theorem fund_end_year1 (m : FundEndYearDeposits) : m.year1Total = 2300 := by
   rw [m.hYear1, fund_end_interest1 m]
-theorem fund_end_interest2 (m : FundEndYearDeposits) : m.interest2 = 230 := by omega
+theorem fund_end_interest2 (m : FundEndYearDeposits) : m.interest2 = 230 := by cases m <;> omega
 theorem fund_end_year_solution (m : FundEndYearDeposits) : m.final = 3730 := by
   rw [m.hFinal, fund_end_year1 m, fund_end_interest2 m]
 theorem fund_timing_changes_answer : (3982 : ℕ) ≠ 3730 := by norm_num
@@ -151,7 +151,7 @@ structure IcePacks where
   hTotal : totalCents = packs * 300
 
 theorem ice_pounds (m : IcePacks) : m.pounds = 30 := by rw [m.hPounds]
-theorem ice_packs (m : IcePacks) : m.packs = 3 := by omega
+theorem ice_packs (m : IcePacks) : m.packs = 3 := by cases m <;> omega
 theorem ice_solution (m : IcePacks) : m.totalCents = 900 := by
   rw [m.hTotal, ice_packs m]
 
@@ -194,7 +194,7 @@ theorem balls_tennis (m : SportsBalls) : m.tennis = 40 := by rw [m.hTennis]
 theorem balls_baseball (m : SportsBalls) : m.baseball = 30 := by rw [m.hBaseball]
 theorem balls_assigned (m : SportsBalls) : m.assigned = 115 := by
   rw [m.hAssigned, balls_basketball m, balls_tennis m, balls_baseball m]
-theorem balls_solution (m : SportsBalls) : m.volleyball = 30 := by omega
+theorem balls_solution (m : SportsBalls) : m.volleyball = 30 := by cases m <;> omega
 
 structure PaintCans where
   coatedArea : ℕ
@@ -203,7 +203,7 @@ structure PaintCans where
   hCans : cans * 400 = coatedArea
 
 theorem paint_area (m : PaintCans) : m.coatedArea = 1200 := by rw [m.hArea]
-theorem paint_solution (m : PaintCans) : m.cans = 3 := by omega
+theorem paint_solution (m : PaintCans) : m.cans = 3 := by cases m <;> omega
 
 structure Lodging where
   hostel : ℕ
@@ -217,7 +217,7 @@ structure Lodging where
 
 theorem lodging_hostel (m : Lodging) : m.hostel = 45 := by rw [m.hHostel]
 theorem lodging_group (m : Lodging) : m.cabinGroup = 90 := by rw [m.hCabinGroup]
-theorem lodging_share (m : Lodging) : m.jimmyCabin = 30 := by omega
+theorem lodging_share (m : Lodging) : m.jimmyCabin = 30 := by cases m <;> omega
 theorem lodging_solution (m : Lodging) : m.total = 75 := by
   rw [m.hTotal, lodging_hostel m, lodging_share m]
 
@@ -248,11 +248,11 @@ structure CandyPicnic where
   hAndy : andy = 9 + packetRemainder
   hDifference : caleb + difference = andy
 
-theorem candy_remainder (m : CandyPicnic) : m.packetRemainder = 17 := by omega
+theorem candy_remainder (m : CandyPicnic) : m.packetRemainder = 17 := by cases m <;> omega
 theorem candy_caleb (m : CandyPicnic) : m.caleb = 22 := by rw [m.hCaleb]
 theorem candy_andy (m : CandyPicnic) : m.andy = 26 := by
   rw [m.hAndy, candy_remainder m]
-theorem candy_solution (m : CandyPicnic) : m.difference = 4 := by omega
+theorem candy_solution (m : CandyPicnic) : m.difference = 4 := by cases m <;> omega
 
 structure BusCommute where
   total : ℕ
@@ -263,7 +263,7 @@ structure BusCommute where
   hRemaining : remaining + firstLeg = total
 
 theorem commute_total (m : BusCommute) : m.total = 180 := by rw [m.hTotal]
-theorem commute_solution (m : BusCommute) : m.remaining = 140 := by omega
+theorem commute_solution (m : BusCommute) : m.remaining = 140 := by cases m <;> omega
 
 structure ToyBlocks where
   yellow : ℕ

@@ -41,8 +41,7 @@ theorem heights_short (m : Heights) : m.short = 160 := by
   have h := m.hShort
   omega
 theorem heights_extremes (m : Heights) : m.extremes = 250 := by
-  rw [m.hExtremes, heights_short m, m.hTall]
-  norm_num
+  rw [m.hExtremes, heights_short m, m.hTall] <;> norm_num
 theorem heights_solution (m : Heights) : m.average = 150 := by
   have h := m.hAverage
   rw [heights_extremes m] at h

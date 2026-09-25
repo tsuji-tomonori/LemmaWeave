@@ -13,11 +13,11 @@ structure CarOffers where
   hTires : tireCost = 3 * 80
   hSecond : secondEarn + 80 + tireCost = 5200
   hDifference : firstEarn + difference = secondEarn
-theorem car_inspection (m : CarOffers) : m.inspection = 520 := by omega
-theorem car_first_earn (m : CarOffers) : m.firstEarn = 4680 := by omega
-theorem car_tires (m : CarOffers) : m.tireCost = 240 := by omega
-theorem car_second_earn (m : CarOffers) : m.secondEarn = 4880 := by omega
-theorem car_offers_solution (m : CarOffers) : m.difference = 200 := by omega
+theorem car_inspection (m : CarOffers) : m.inspection = 520 := by cases m <;> omega
+theorem car_first_earn (m : CarOffers) : m.firstEarn = 4680 := by cases m <;> omega
+theorem car_tires (m : CarOffers) : m.tireCost = 240 := by cases m <;> omega
+theorem car_second_earn (m : CarOffers) : m.secondEarn = 4880 := by cases m <;> omega
+theorem car_offers_solution (m : CarOffers) : m.difference = 200 := by cases m <;> omega
 
 structure Compound where
   year1 : ℕ
@@ -30,7 +30,7 @@ structure Compound where
   h3 : year3 * 100 = year2 * 120
   hTripled : tripled = 3 * year3
   hFinal : final * 100 = tripled * 115
-theorem compound_year1 (m : Compound) : m.year1 = 12000 := by omega
+theorem compound_year1 (m : Compound) : m.year1 = 12000 := by cases m <;> omega
 theorem compound_year2 (m : Compound) : m.year2 = 14400 := by
   have h := m.h2; rw [compound_year1 m] at h; omega
 theorem compound_year3 (m : Compound) : m.year3 = 17280 := by
@@ -89,9 +89,9 @@ structure Bonus where
   hGifts : gifts * 8 = 1496
   hSpent : spent = kitchen + holiday + gifts
   hRemaining : remaining + spent = 1496
-theorem bonus_kitchen (m : Bonus) : m.kitchen = 68 := by omega
-theorem bonus_holiday (m : Bonus) : m.holiday = 374 := by omega
-theorem bonus_gifts (m : Bonus) : m.gifts = 187 := by omega
+theorem bonus_kitchen (m : Bonus) : m.kitchen = 68 := by cases m <;> omega
+theorem bonus_holiday (m : Bonus) : m.holiday = 374 := by cases m <;> omega
+theorem bonus_gifts (m : Bonus) : m.gifts = 187 := by cases m <;> omega
 theorem bonus_spent (m : Bonus) : m.spent = 629 := by
   rw [m.hSpent, bonus_kitchen m, bonus_holiday m, bonus_gifts m] <;> norm_num
 theorem bonus_solution (m : Bonus) : m.remaining = 867 := by
@@ -134,7 +134,7 @@ structure Popcorn where
   totalProfit : ℕ
   hUnit : unitProfit + 4 = 8
   hTotal : totalProfit = 30 * unitProfit
-theorem popcorn_unit_profit (m : Popcorn) : m.unitProfit = 4 := by omega
+theorem popcorn_unit_profit (m : Popcorn) : m.unitProfit = 4 := by cases m <;> omega
 theorem popcorn_solution (m : Popcorn) : m.totalProfit = 120 := by
   rw [m.hTotal, popcorn_unit_profit m] <;> norm_num
 
@@ -145,7 +145,7 @@ structure Bugs where
   hSprayed : sprayed * 100 = 400 * 80
   hEaten : eaten = 12 * 7
   hRemaining : remaining + eaten = sprayed
-theorem bugs_sprayed (m : Bugs) : m.sprayed = 320 := by omega
+theorem bugs_sprayed (m : Bugs) : m.sprayed = 320 := by cases m <;> omega
 theorem bugs_eaten (m : Bugs) : m.eaten = 84 := by rw [m.hEaten] <;> norm_num
 theorem bugs_solution (m : Bugs) : m.remaining = 236 := by
   have h := m.hRemaining; rw [bugs_sprayed m, bugs_eaten m] at h; omega
@@ -176,8 +176,8 @@ structure Growth where
   hSunflowers : sunflowers * 100 = 25 * 80
   hTotal : total = daisies + sunflowers
   hFlowering : flowering * 100 = total * 80
-theorem growth_daisies (m : Growth) : m.daisies = 15 := by omega
-theorem growth_sunflowers (m : Growth) : m.sunflowers = 20 := by omega
+theorem growth_daisies (m : Growth) : m.daisies = 15 := by cases m <;> omega
+theorem growth_sunflowers (m : Growth) : m.sunflowers = 20 := by cases m <;> omega
 theorem growth_total (m : Growth) : m.total = 35 := by
   rw [m.hTotal, growth_daisies m, growth_sunflowers m] <;> norm_num
 theorem growth_solution (m : Growth) : m.flowering = 28 := by
@@ -192,7 +192,7 @@ structure Timeouts where
   hSwearing : swearing * 3 = throwing
   hCount : count = 5 + throwing + swearing
   hMinutes : minutes = count * 5
-theorem timeouts_throwing (m : Timeouts) : m.throwing = 24 := by omega
+theorem timeouts_throwing (m : Timeouts) : m.throwing = 24 := by cases m <;> omega
 theorem timeouts_swearing (m : Timeouts) : m.swearing = 8 := by
   have h := m.hSwearing; rw [timeouts_throwing m] at h; omega
 theorem timeouts_count (m : Timeouts) : m.count = 37 := by
@@ -205,8 +205,8 @@ structure Employees where
   women : ℕ
   hDifference : women = men + 20
   hTotal : men + women = 180
-theorem employees_balance (m : Employees) : 2 * m.men + 20 = 180 := by omega
-theorem employees_solution (m : Employees) : m.men = 80 := by omega
+theorem employees_balance (m : Employees) : 2 * m.men + 20 = 180 := by cases m <;> omega
+theorem employees_solution (m : Employees) : m.men = 80 := by cases m <;> omega
 
 structure Soccer where
   secondEvents : ℕ

@@ -13,7 +13,7 @@ structure ArvinRun where
   h3 : d3 = d2 + 1
   h4 : d4 = d3 + 1
   h5 : d5 = d4 + 1
-theorem arvin_day_two (m : ArvinRun) : m.d2 = 3 := by omega
+theorem arvin_day_two (m : ArvinRun) : m.d2 = 3 := by cases m <;> omega
 theorem arvin_day_three (m : ArvinRun) : m.d3 = 4 := by rw [m.h3, arvin_day_two m] <;> norm_num
 theorem arvin_day_four (m : ArvinRun) : m.d4 = 5 := by rw [m.h4, arvin_day_three m] <;> norm_num
 theorem arvin_solution (m : ArvinRun) : m.d5 = 6 := by rw [m.h5, arvin_day_four m] <;> norm_num
@@ -71,7 +71,7 @@ structure Countries where
   hJoseph : 2 * joseph = 6
   hPatrick : patrick = 3 * joseph
   hZack : zack = 2 * patrick
-theorem countries_joseph (m : Countries) : m.joseph = 3 := by omega
+theorem countries_joseph (m : Countries) : m.joseph = 3 := by cases m <;> omega
 theorem countries_patrick (m : Countries) : m.patrick = 9 := by
   rw [m.hPatrick, countries_joseph m] <;> norm_num
 theorem countries_solution (m : Countries) : m.zack = 18 := by
@@ -103,7 +103,7 @@ structure Cupcakes where
   hBetty : betty = 10 * bettyHours
   hDifference : difference + betty = dora
 theorem cupcakes_dora (m : Cupcakes) : m.dora = 40 := by rw [m.hDora] <;> norm_num
-theorem cupcakes_betty_hours (m : Cupcakes) : m.bettyHours = 3 := by omega
+theorem cupcakes_betty_hours (m : Cupcakes) : m.bettyHours = 3 := by cases m <;> omega
 theorem cupcakes_betty (m : Cupcakes) : m.betty = 30 := by
   rw [m.hBetty, cupcakes_betty_hours m] <;> norm_num
 theorem cupcakes_solution (m : Cupcakes) : m.difference = 10 := by
@@ -161,8 +161,8 @@ structure Phones where
   hCostEach : 200 * costEach = 3000
   hProfitEach : 200 * profitEach = profit
   hPrice : price = costEach + profitEach
-theorem phones_profit (m : Phones) : m.profit = 1000 := by omega
-theorem phones_cost_each (m : Phones) : m.costEach = 15 := by omega
+theorem phones_profit (m : Phones) : m.profit = 1000 := by cases m <;> omega
+theorem phones_cost_each (m : Phones) : m.costEach = 15 := by cases m <;> omega
 theorem phones_profit_each (m : Phones) : m.profitEach = 5 := by
   have h := m.hProfitEach; rw [phones_profit m] at h; omega
 theorem phones_solution (m : Phones) : m.price = 20 := by
@@ -187,7 +187,7 @@ structure Driving where
   hours : ℕ
   hSpeed : 3 * speed = 120
   hHours : speed * hours = 200
-theorem driving_speed (m : Driving) : m.speed = 40 := by omega
+theorem driving_speed (m : Driving) : m.speed = 40 := by cases m <;> omega
 theorem driving_solution (m : Driving) : m.hours = 5 := by
   have h := m.hHours; rw [driving_speed m] at h; omega
 

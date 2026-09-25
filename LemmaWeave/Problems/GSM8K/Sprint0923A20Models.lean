@@ -8,8 +8,8 @@ structure BeanieBabies where
   hSydney : 15 * sydney = 300
   hTotal : total = 300 + sydney
 
-theorem beanie_sydney (m : BeanieBabies) : m.sydney = 20 := by omega
-theorem beanie_solution (m : BeanieBabies) : m.total = 320 := by omega
+theorem beanie_sydney (m : BeanieBabies) : m.sydney = 20 := by cases m <;> omega
+theorem beanie_solution (m : BeanieBabies) : m.total = 320 := by cases m <;> omega
 
 structure SinkWater where
   first : ℕ
@@ -23,11 +23,11 @@ structure SinkWater where
   hTotal : total = first + second + finalHour
   hLeft : 2 * left = total
 
-theorem water_first (m : SinkWater) : m.first = 6 := by omega
-theorem water_second (m : SinkWater) : m.second = 6 := by omega
-theorem water_final_hour (m : SinkWater) : m.finalHour = 24 := by omega
-theorem water_total (m : SinkWater) : m.total = 36 := by omega
-theorem water_solution (m : SinkWater) : m.left = 18 := by omega
+theorem water_first (m : SinkWater) : m.first = 6 := by cases m <;> omega
+theorem water_second (m : SinkWater) : m.second = 6 := by cases m <;> omega
+theorem water_final_hour (m : SinkWater) : m.finalHour = 24 := by cases m <;> omega
+theorem water_total (m : SinkWater) : m.total = 36 := by cases m <;> omega
+theorem water_solution (m : SinkWater) : m.left = 18 := by cases m <;> omega
 
 structure ShirtShop where
   minutes : ℕ
@@ -45,13 +45,13 @@ structure ShirtShop where
   hDaily : daily = womenRevenue + menRevenue
   hWeekly : weekly = daily * 7
 
-theorem shirts_minutes (m : ShirtShop) : m.minutes = 720 := by omega
-theorem shirts_women_count (m : ShirtShop) : m.womenCount = 24 := by omega
-theorem shirts_women_revenue (m : ShirtShop) : m.womenRevenue = 432 := by omega
-theorem shirts_men_count (m : ShirtShop) : m.menCount = 18 := by omega
-theorem shirts_men_revenue (m : ShirtShop) : m.menRevenue = 270 := by omega
-theorem shirts_daily (m : ShirtShop) : m.daily = 702 := by omega
-theorem shirts_solution (m : ShirtShop) : m.weekly = 4914 := by omega
+theorem shirts_minutes (m : ShirtShop) : m.minutes = 720 := by cases m <;> omega
+theorem shirts_women_count (m : ShirtShop) : m.womenCount = 24 := by cases m <;> omega
+theorem shirts_women_revenue (m : ShirtShop) : m.womenRevenue = 432 := by cases m <;> omega
+theorem shirts_men_count (m : ShirtShop) : m.menCount = 18 := by cases m <;> omega
+theorem shirts_men_revenue (m : ShirtShop) : m.menRevenue = 270 := by cases m <;> omega
+theorem shirts_daily (m : ShirtShop) : m.daily = 702 := by cases m <;> omega
+theorem shirts_solution (m : ShirtShop) : m.weekly = 4914 := by cases m <;> omega
 
 structure TeamParties where
   oneParty : ℕ
@@ -59,8 +59,8 @@ structure TeamParties where
   hOne : oneParty = 40 * 60
   hTotal : total = oneParty * 8
 
-theorem parties_one (m : TeamParties) : m.oneParty = 2400 := by omega
-theorem parties_solution (m : TeamParties) : m.total = 19200 := by omega
+theorem parties_one (m : TeamParties) : m.oneParty = 2400 := by cases m <;> omega
+theorem parties_solution (m : TeamParties) : m.total = 19200 := by cases m <;> omega
 
 structure DentistBill where
   total : ℕ
@@ -70,9 +70,9 @@ structure DentistBill where
   hFillings : fillings = 2 * 120
   hExtraction : extraction + fillings + 70 = total
 
-theorem dentist_total (m : DentistBill) : m.total = 600 := by omega
-theorem dentist_fillings (m : DentistBill) : m.fillings = 240 := by omega
-theorem dentist_solution (m : DentistBill) : m.extraction = 290 := by omega
+theorem dentist_total (m : DentistBill) : m.total = 600 := by cases m <;> omega
+theorem dentist_fillings (m : DentistBill) : m.fillings = 240 := by cases m <;> omega
+theorem dentist_solution (m : DentistBill) : m.extraction = 290 := by cases m <;> omega
 
 structure ApartmentRent where
   firstYears : ℕ
@@ -82,9 +82,9 @@ structure ApartmentRent where
   hLast : lastYears = 350 * 12 * 2
   hTotal : total = firstYears + lastYears
 
-theorem rent_first_years (m : ApartmentRent) : m.firstYears = 10800 := by omega
-theorem rent_last_years (m : ApartmentRent) : m.lastYears = 8400 := by omega
-theorem rent_solution (m : ApartmentRent) : m.total = 19200 := by omega
+theorem rent_first_years (m : ApartmentRent) : m.firstYears = 10800 := by cases m <;> omega
+theorem rent_last_years (m : ApartmentRent) : m.lastYears = 8400 := by cases m <;> omega
+theorem rent_solution (m : ApartmentRent) : m.total = 19200 := by cases m <;> omega
 
 /-- February and March are each percentages of the original savings. -/
 structure SavingsOriginalPercent where
@@ -95,9 +95,9 @@ structure SavingsOriginalPercent where
   hPool : aprilAndLeft = 1500 + 2900
   hInitial : initial * 40 = aprilAndLeft * 100
 
-theorem savings_spent_percent (m : SavingsOriginalPercent) : m.spentPercent = 60 := by omega
-theorem savings_april_and_left (m : SavingsOriginalPercent) : m.aprilAndLeft = 4400 := by omega
-theorem savings_solution (m : SavingsOriginalPercent) : m.initial = 11000 := by omega
+theorem savings_spent_percent (m : SavingsOriginalPercent) : m.spentPercent = 60 := by cases m <;> omega
+theorem savings_april_and_left (m : SavingsOriginalPercent) : m.aprilAndLeft = 4400 := by cases m <;> omega
+theorem savings_solution (m : SavingsOriginalPercent) : m.initial = 11000 := by cases m <;> omega
 
 /-- If March instead spends 40% of the post-February remainder, 48% remains before April. -/
 theorem savings_sequential_whole_dollars_impossible :
@@ -120,9 +120,9 @@ structure BicycleStock where
   hBought : bought = 15 + 8 + 11
   hIncrease : sold + increase = bought
 
-theorem stock_sold (m : BicycleStock) : m.sold = 31 := by omega
-theorem stock_bought (m : BicycleStock) : m.bought = 34 := by omega
-theorem stock_solution (m : BicycleStock) : m.increase = 3 := by omega
+theorem stock_sold (m : BicycleStock) : m.sold = 31 := by cases m <;> omega
+theorem stock_bought (m : BicycleStock) : m.bought = 34 := by cases m <;> omega
+theorem stock_solution (m : BicycleStock) : m.increase = 3 := by cases m <;> omega
 
 structure SchoolBooks where
   mathCost : ℕ
@@ -134,10 +134,10 @@ structure SchoolBooks where
   hOther : otherCost = mathCost + scienceCost
   hArt : otherCost + 3 * artEach = 30
 
-theorem books_math (m : SchoolBooks) : m.mathCost = 6 := by omega
-theorem books_science (m : SchoolBooks) : m.scienceCost = 18 := by omega
-theorem books_other (m : SchoolBooks) : m.otherCost = 24 := by omega
-theorem books_solution (m : SchoolBooks) : m.artEach = 2 := by omega
+theorem books_math (m : SchoolBooks) : m.mathCost = 6 := by cases m <;> omega
+theorem books_science (m : SchoolBooks) : m.scienceCost = 18 := by cases m <;> omega
+theorem books_other (m : SchoolBooks) : m.otherCost = 24 := by cases m <;> omega
+theorem books_solution (m : SchoolBooks) : m.artEach = 2 := by cases m <;> omega
 
 structure JeromeMoney where
   initial : ℕ
@@ -147,9 +147,9 @@ structure JeromeMoney where
   hBianca : bianca = 8 * 3
   hLeft : left + 8 + bianca = initial
 
-theorem jerome_initial (m : JeromeMoney) : m.initial = 86 := by omega
-theorem jerome_bianca (m : JeromeMoney) : m.bianca = 24 := by omega
-theorem jerome_solution (m : JeromeMoney) : m.left = 54 := by omega
+theorem jerome_initial (m : JeromeMoney) : m.initial = 86 := by cases m <;> omega
+theorem jerome_bianca (m : JeromeMoney) : m.bianca = 24 := by cases m <;> omega
+theorem jerome_solution (m : JeromeMoney) : m.left = 54 := by cases m <;> omega
 
 structure PetLegs where
   birdLegs : ℕ
@@ -163,11 +163,11 @@ structure PetLegs where
   hSpider : spiderLegs = 1 * 8
   hTotal : total = birdLegs + dogLegs + snakeLegs + spiderLegs
 
-theorem pets_birds (m : PetLegs) : m.birdLegs = 6 := by omega
-theorem pets_dogs (m : PetLegs) : m.dogLegs = 20 := by omega
-theorem pets_snakes (m : PetLegs) : m.snakeLegs = 0 := by omega
-theorem pets_spider (m : PetLegs) : m.spiderLegs = 8 := by omega
-theorem pets_solution (m : PetLegs) : m.total = 34 := by omega
+theorem pets_birds (m : PetLegs) : m.birdLegs = 6 := by cases m <;> omega
+theorem pets_dogs (m : PetLegs) : m.dogLegs = 20 := by cases m <;> omega
+theorem pets_snakes (m : PetLegs) : m.snakeLegs = 0 := by cases m <;> omega
+theorem pets_spider (m : PetLegs) : m.spiderLegs = 8 := by cases m <;> omega
+theorem pets_solution (m : PetLegs) : m.total = 34 := by cases m <;> omega
 
 structure Earnings where
   kayla : ℕ
@@ -175,8 +175,8 @@ structure Earnings where
   hKayla : kayla + 30 = 84
   hSaheed : saheed = 4 * kayla
 
-theorem earnings_kayla (m : Earnings) : m.kayla = 54 := by omega
-theorem earnings_solution (m : Earnings) : m.saheed = 216 := by omega
+theorem earnings_kayla (m : Earnings) : m.kayla = 54 := by cases m <;> omega
+theorem earnings_solution (m : Earnings) : m.saheed = 216 := by cases m <;> omega
 
 structure ShortsDiscount where
   regular : ℕ
@@ -188,10 +188,10 @@ structure ShortsDiscount where
   hSale : sale + discount = regular
   hSaving : saving = discount
 
-theorem shorts_regular (m : ShortsDiscount) : m.regular = 30 := by omega
-theorem shorts_discount (m : ShortsDiscount) : m.discount = 3 := by omega
-theorem shorts_sale (m : ShortsDiscount) : m.sale = 27 := by omega
-theorem shorts_solution (m : ShortsDiscount) : m.saving = 3 := by omega
+theorem shorts_regular (m : ShortsDiscount) : m.regular = 30 := by cases m <;> omega
+theorem shorts_discount (m : ShortsDiscount) : m.discount = 3 := by cases m <;> omega
+theorem shorts_sale (m : ShortsDiscount) : m.sale = 27 := by cases m <;> omega
+theorem shorts_solution (m : ShortsDiscount) : m.saving = 3 := by cases m <;> omega
 
 structure ParkVisit where
   people : ℕ
@@ -205,10 +205,10 @@ structure ParkVisit where
   hAdults : adultsAttraction = (2 + 1) * 4
   hTotal : total = entrance + childrenAttraction + adultsAttraction
 
-theorem park_people (m : ParkVisit) : m.people = 7 := by omega
-theorem park_entrance (m : ParkVisit) : m.entrance = 35 := by omega
-theorem park_children (m : ParkVisit) : m.childrenAttraction = 8 := by omega
-theorem park_adults (m : ParkVisit) : m.adultsAttraction = 12 := by omega
-theorem park_solution (m : ParkVisit) : m.total = 55 := by omega
+theorem park_people (m : ParkVisit) : m.people = 7 := by cases m <;> omega
+theorem park_entrance (m : ParkVisit) : m.entrance = 35 := by cases m <;> omega
+theorem park_children (m : ParkVisit) : m.childrenAttraction = 8 := by cases m <;> omega
+theorem park_adults (m : ParkVisit) : m.adultsAttraction = 12 := by cases m <;> omega
+theorem park_solution (m : ParkVisit) : m.total = 55 := by cases m <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0923A20

@@ -9,16 +9,16 @@ structure Revenue where
   hGross : gross = 47 + 31
   hProfit : totalProfit = 44
   hOverhead : totalProfit + overhead = gross
-theorem revenue_gross (m : Revenue) : m.gross = 78 := by omega
-theorem revenue_solution (m : Revenue) : m.overhead = 34 := by omega
+theorem revenue_gross (m : Revenue) : m.gross = 78 := by cases m <;> omega
+theorem revenue_solution (m : Revenue) : m.overhead = 34 := by cases m <;> omega
 
 structure Cars where
   second : ℕ
   third : ℕ
   hSecond : second = 1970 + 10
   hThird : third = second + 20
-theorem cars_second (m : Cars) : m.second = 1980 := by omega
-theorem cars_solution (m : Cars) : m.third = 2000 := by omega
+theorem cars_second (m : Cars) : m.second = 1980 := by cases m <;> omega
+theorem cars_solution (m : Cars) : m.third = 2000 := by cases m <;> omega
 
 structure SeaWorld where
   roundTrip : ℕ
@@ -31,11 +31,11 @@ structure SeaWorld where
   hGasCost : gasCost = 3 * gallons
   hTotal : total = 10 + 55 + 25 + gasCost
   hAdditional : 28 + additional = total
-theorem seaworld_roundtrip (m : SeaWorld) : m.roundTrip = 330 := by omega
-theorem seaworld_gallons (m : SeaWorld) : m.gallons = 11 := by omega
-theorem seaworld_gas_cost (m : SeaWorld) : m.gasCost = 33 := by omega
-theorem seaworld_total (m : SeaWorld) : m.total = 123 := by omega
-theorem seaworld_solution (m : SeaWorld) : m.additional = 95 := by omega
+theorem seaworld_roundtrip (m : SeaWorld) : m.roundTrip = 330 := by cases m <;> omega
+theorem seaworld_gallons (m : SeaWorld) : m.gallons = 11 := by cases m <;> omega
+theorem seaworld_gas_cost (m : SeaWorld) : m.gasCost = 33 := by cases m <;> omega
+theorem seaworld_total (m : SeaWorld) : m.total = 123 := by cases m <;> omega
+theorem seaworld_solution (m : SeaWorld) : m.additional = 95 := by cases m <;> omega
 
 structure Bubbles where
   dawn : ℕ
@@ -44,9 +44,9 @@ structure Bubbles where
   hDawn : 4 * dawn = 200000
   hBronner : bronner = 2 * dawn
   hTotal : total = dawn + bronner
-theorem bubbles_dawn (m : Bubbles) : m.dawn = 50000 := by omega
-theorem bubbles_bronner (m : Bubbles) : m.bronner = 100000 := by omega
-theorem bubbles_solution (m : Bubbles) : m.total = 150000 := by omega
+theorem bubbles_dawn (m : Bubbles) : m.dawn = 50000 := by cases m <;> omega
+theorem bubbles_bronner (m : Bubbles) : m.bronner = 100000 := by cases m <;> omega
+theorem bubbles_solution (m : Bubbles) : m.total = 150000 := by cases m <;> omega
 
 structure Coughs where
   robert : ℕ
@@ -55,9 +55,9 @@ structure Coughs where
   hRobert : robert = 2 * 5
   hCombined : combined = 5 + robert
   hTotal : total = combined * 20
-theorem coughs_robert (m : Coughs) : m.robert = 10 := by omega
-theorem coughs_combined (m : Coughs) : m.combined = 15 := by omega
-theorem coughs_solution (m : Coughs) : m.total = 300 := by omega
+theorem coughs_robert (m : Coughs) : m.robert = 10 := by cases m <;> omega
+theorem coughs_combined (m : Coughs) : m.combined = 15 := by cases m <;> omega
+theorem coughs_solution (m : Coughs) : m.total = 300 := by cases m <;> omega
 
 structure Fruit where
   orangesSold : ℕ
@@ -66,9 +66,9 @@ structure Fruit where
   hOranges : 4 * orangesSold = 40
   hApples : 2 * applesSold = 70
   hLeft : left + orangesSold + applesSold = 40 + 70
-theorem fruit_oranges_sold (m : Fruit) : m.orangesSold = 10 := by omega
-theorem fruit_apples_sold (m : Fruit) : m.applesSold = 35 := by omega
-theorem fruit_solution (m : Fruit) : m.left = 65 := by omega
+theorem fruit_oranges_sold (m : Fruit) : m.orangesSold = 10 := by cases m <;> omega
+theorem fruit_apples_sold (m : Fruit) : m.applesSold = 35 := by cases m <;> omega
+theorem fruit_solution (m : Fruit) : m.left = 65 := by cases m <;> omega
 
 structure Photos where
   fewer : ℕ
@@ -79,18 +79,18 @@ structure Photos where
   hToday : today + fewer = 100
   hSofar : sofar = 100 + today
   hNeeded : needed + sofar = 300
-theorem photos_fewer (m : Photos) : m.fewer = 20 := by omega
-theorem photos_today (m : Photos) : m.today = 80 := by omega
-theorem photos_sofar (m : Photos) : m.sofar = 180 := by omega
-theorem photos_solution (m : Photos) : m.needed = 120 := by omega
+theorem photos_fewer (m : Photos) : m.fewer = 20 := by cases m <;> omega
+theorem photos_today (m : Photos) : m.today = 80 := by cases m <;> omega
+theorem photos_sofar (m : Photos) : m.sofar = 180 := by cases m <;> omega
+theorem photos_solution (m : Photos) : m.needed = 120 := by cases m <;> omega
 
 structure Flowers where
   friday : ℕ
   total : ℕ
   hFriday : friday = 2 * 4
   hTotal : total = 4 + 8 + friday
-theorem flowers_friday (m : Flowers) : m.friday = 8 := by omega
-theorem flowers_solution (m : Flowers) : m.total = 20 := by omega
+theorem flowers_friday (m : Flowers) : m.friday = 8 := by cases m <;> omega
+theorem flowers_solution (m : Flowers) : m.total = 20 := by cases m <;> omega
 
 structure Food where
   penelope : ℚ
@@ -103,14 +103,12 @@ structure Food where
 theorem food_conventional_60 (m : Food) (h : m.penelope = 10 * m.greta) :
     m.elmer - m.penelope = 60 := by
   have hg : m.greta = 2 := by linarith [m.hPenelope, h]
-  rw [m.hElmer, m.hMilton, hg, m.hPenelope]
-  norm_num
+  rw [m.hElmer, m.hMilton, hg, m.hPenelope] <;> norm_num
 theorem food_literal_580_over_11 (m : Food)
     (h : m.penelope = m.greta + 10 * m.greta) :
     m.elmer - m.penelope = (580 : ℚ) / 11 := by
   have hg : m.greta = (20 : ℚ) / 11 := by linarith [m.hPenelope, h]
-  rw [m.hElmer, m.hMilton, hg, m.hPenelope]
-  norm_num
+  rw [m.hElmer, m.hMilton, hg, m.hPenelope] <;> norm_num
 theorem food_not_unique :
     ∃ m1 m2 : Food,
       m1.penelope = 10 * m1.greta ∧
@@ -127,16 +125,16 @@ structure Marbles where
   each : ℕ
   hShared : shared + 20 = 100
   hEach : each * 5 = shared
-theorem marbles_shared (m : Marbles) : m.shared = 80 := by omega
-theorem marbles_solution (m : Marbles) : m.each = 16 := by omega
+theorem marbles_shared (m : Marbles) : m.shared = 80 := by cases m <;> omega
+theorem marbles_solution (m : Marbles) : m.each = 16 := by cases m <;> omega
 
 structure Pools where
   sarah : ℕ
   john : ℕ
   hJohn : john = 2 * sarah + 5
   hKnown : john = 15
-theorem pools_equation (m : Pools) : 2 * m.sarah + 5 = 15 := by omega
-theorem pools_solution (m : Pools) : m.sarah = 5 := by omega
+theorem pools_equation (m : Pools) : 2 * m.sarah + 5 = 15 := by cases m <;> omega
+theorem pools_solution (m : Pools) : m.sarah = 5 := by cases m <;> omega
 
 structure Clarinet where
   half : ℕ
@@ -147,10 +145,10 @@ structure Clarinet where
   hBefore : 10 + 5 * beforeBooks = half
   hAfter : 5 * afterBooks = 90
   hTotal : totalBooks = beforeBooks + afterBooks
-theorem clarinet_half (m : Clarinet) : m.half = 45 := by omega
-theorem clarinet_before (m : Clarinet) : m.beforeBooks = 7 := by omega
-theorem clarinet_after (m : Clarinet) : m.afterBooks = 18 := by omega
-theorem clarinet_solution (m : Clarinet) : m.totalBooks = 25 := by omega
+theorem clarinet_half (m : Clarinet) : m.half = 45 := by cases m <;> omega
+theorem clarinet_before (m : Clarinet) : m.beforeBooks = 7 := by cases m <;> omega
+theorem clarinet_after (m : Clarinet) : m.afterBooks = 18 := by cases m <;> omega
+theorem clarinet_solution (m : Clarinet) : m.totalBooks = 25 := by cases m <;> omega
 
 structure RoadTrip where
   first : ℕ
@@ -163,11 +161,11 @@ structure RoadTrip where
   hTotal : total = first + second
   hGallons : gallons * 30 = total
   hCost : cost = gallons * 2
-theorem roadtrip_first (m : RoadTrip) : m.first = 120 := by omega
-theorem roadtrip_second (m : RoadTrip) : m.second = 150 := by omega
-theorem roadtrip_total (m : RoadTrip) : m.total = 270 := by omega
-theorem roadtrip_gallons (m : RoadTrip) : m.gallons = 9 := by omega
-theorem roadtrip_solution (m : RoadTrip) : m.cost = 18 := by omega
+theorem roadtrip_first (m : RoadTrip) : m.first = 120 := by cases m <;> omega
+theorem roadtrip_second (m : RoadTrip) : m.second = 150 := by cases m <;> omega
+theorem roadtrip_total (m : RoadTrip) : m.total = 270 := by cases m <;> omega
+theorem roadtrip_gallons (m : RoadTrip) : m.gallons = 9 := by cases m <;> omega
+theorem roadtrip_solution (m : RoadTrip) : m.cost = 18 := by cases m <;> omega
 
 structure Flag where
   circles : ℕ
@@ -176,16 +174,16 @@ structure Flag where
   hCircles : circles + 3 = 50 / 2
   hSquares : squares = 2 * 13 + 6
   hTotal : total = circles + squares
-theorem flag_circles (m : Flag) : m.circles = 22 := by omega
-theorem flag_squares (m : Flag) : m.squares = 32 := by omega
-theorem flag_solution (m : Flag) : m.total = 54 := by omega
+theorem flag_circles (m : Flag) : m.circles = 22 := by cases m <;> omega
+theorem flag_squares (m : Flag) : m.squares = 32 := by cases m <;> omega
+theorem flag_solution (m : Flag) : m.total = 54 := by cases m <;> omega
 
 structure Yams where
   packages : ℕ
   boxes : ℕ
   hPackages : packages * 3 = 375
   hBoxes : boxes * 25 = packages
-theorem yams_packages (m : Yams) : m.packages = 125 := by omega
-theorem yams_solution (m : Yams) : m.boxes = 5 := by omega
+theorem yams_packages (m : Yams) : m.packages = 125 := by cases m <;> omega
+theorem yams_solution (m : Yams) : m.boxes = 5 := by cases m <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0924A04

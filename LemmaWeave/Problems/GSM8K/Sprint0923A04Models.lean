@@ -53,7 +53,7 @@ structure ToyBoxes where
   hMore : anais = kamari + 30
   hTotal : kamari + anais = 160
 
-theorem toys_equation (m : ToyBoxes) : 2 * m.kamari + 30 = 160 := by omega
+theorem toys_equation (m : ToyBoxes) : 2 * m.kamari + 30 = 160 := by cases m <;> omega
 theorem toys_solution (m : ToyBoxes) : m.kamari = 65 := by
   have h := toys_equation m
   omega
@@ -145,7 +145,7 @@ structure Waterpark where
   hSoda : soda = 5
   hTotal : total = discounted + soda
 
-theorem waterpark_counts (m : Waterpark) : m.adults = 6 ∧ m.childPrice = 15 := by omega
+theorem waterpark_counts (m : Waterpark) : m.adults = 6 ∧ m.childPrice = 15 := by cases m <;> omega
 theorem waterpark_adult_cost (m : Waterpark) : m.adultCost = 180 := by
   rw [m.hAdultCost, (waterpark_counts m).1]
 theorem waterpark_child_cost (m : Waterpark) : m.childCost = 60 := by
@@ -170,9 +170,9 @@ structure ShirtSale where
   hSale : saleEach + discountEach = 50
   hTotal : total = shirts * saleEach
 
-theorem shirts_count (m : ShirtSale) : m.shirts = 6 := by omega
-theorem shirts_discount (m : ShirtSale) : m.discountEach = 10 := by omega
-theorem shirts_sale_price (m : ShirtSale) : m.saleEach = 40 := by omega
+theorem shirts_count (m : ShirtSale) : m.shirts = 6 := by cases m <;> omega
+theorem shirts_discount (m : ShirtSale) : m.discountEach = 10 := by cases m <;> omega
+theorem shirts_sale_price (m : ShirtSale) : m.saleEach = 40 := by cases m <;> omega
 theorem shirts_solution (m : ShirtSale) : m.total = 240 := by
   rw [m.hTotal, shirts_count m, shirts_sale_price m]
 
@@ -195,7 +195,7 @@ structure Warehouses where
   hSecond : 2 * second = 400
   hTotal : total = 400 + second
 
-theorem warehouses_second (m : Warehouses) : m.second = 200 := by omega
+theorem warehouses_second (m : Warehouses) : m.second = 200 := by cases m <;> omega
 theorem warehouses_solution (m : Warehouses) : m.total = 600 := by
   rw [m.hTotal, warehouses_second m]
 

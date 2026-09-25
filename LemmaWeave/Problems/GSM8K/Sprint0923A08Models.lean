@@ -167,7 +167,7 @@ structure CandySharing where
   hGirls : girls * 2 = canes
   hTotal : totalChildren = boys + girls
 
-theorem candies_lollipops (m : CandySharing) : m.lollipops = 30 := by omega
+theorem candies_lollipops (m : CandySharing) : m.lollipops = 30 := by cases m <;> omega
 theorem candies_canes (m : CandySharing) : m.canes = 60 := by
   have h := m.hCanes
   rw [candies_lollipops m] at h
@@ -234,7 +234,7 @@ structure LycheeRemainder where
   hEaten : eaten * 5 = broughtHome * 3
   hRemaining : remaining + eaten = broughtHome
 
-theorem lychees_sold (m : LycheeRemainder) : m.sold = 250 := by omega
+theorem lychees_sold (m : LycheeRemainder) : m.sold = 250 := by cases m <;> omega
 theorem lychees_brought_home (m : LycheeRemainder) : m.broughtHome = 250 := by
   have h := m.hBroughtHome
   rw [lychees_sold m] at h
@@ -300,7 +300,7 @@ structure NameBadges where
   hHandwritten : handwritten * 2 = noPreprinted
   hNoBadge : noBadge + handwritten = noPreprinted
 
-theorem badges_no_preprinted (m : NameBadges) : m.noPreprinted = 20 := by omega
+theorem badges_no_preprinted (m : NameBadges) : m.noPreprinted = 20 := by cases m <;> omega
 theorem badges_handwritten (m : NameBadges) : m.handwritten = 10 := by
   have h := m.hHandwritten
   rw [badges_no_preprinted m] at h

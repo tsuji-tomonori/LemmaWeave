@@ -13,10 +13,10 @@ structure Marks where
   hRemaining : remaining + 80 + second = total
   hEqual : third = fourth
   hPair : third + fourth = remaining
-theorem marks_total (m : Marks) : m.total = 300 := by omega
-theorem marks_second (m : Marks) : m.second = 90 := by omega
-theorem marks_remaining (m : Marks) : m.remaining = 130 := by omega
-theorem marks_solution (m : Marks) : m.third = 65 := by omega
+theorem marks_total (m : Marks) : m.total = 300 := by cases m <;> omega
+theorem marks_second (m : Marks) : m.second = 90 := by cases m <;> omega
+theorem marks_remaining (m : Marks) : m.remaining = 130 := by cases m <;> omega
+theorem marks_solution (m : Marks) : m.third = 65 := by cases m <;> omega
 
 structure Lemonade where
   friends : ℕ
@@ -27,25 +27,25 @@ structure Lemonade where
   hOther : otherHalf = 18 + friends + 1
   hHalves : crew = otherHalf
   hTotal : total = crew + otherHalf
-theorem lemonade_friends (m : Lemonade) : m.friends = 9 := by omega
-theorem lemonade_other_half (m : Lemonade) : m.otherHalf = 28 := by omega
-theorem lemonade_solution (m : Lemonade) : m.total = 56 := by omega
+theorem lemonade_friends (m : Lemonade) : m.friends = 9 := by cases m <;> omega
+theorem lemonade_other_half (m : Lemonade) : m.otherHalf = 28 := by cases m <;> omega
+theorem lemonade_solution (m : Lemonade) : m.total = 56 := by cases m <;> omega
 
 structure Membership where
   increases : ℕ
   sixth : ℕ
   hIncreases : increases = 6 - 1
   hSixth : sixth = 80 + increases * 10
-theorem membership_increases (m : Membership) : m.increases = 5 := by omega
-theorem membership_solution (m : Membership) : m.sixth = 130 := by omega
+theorem membership_increases (m : Membership) : m.increases = 5 := by cases m <;> omega
+theorem membership_solution (m : Membership) : m.sixth = 130 := by cases m <;> omega
 
 structure Lambs where
   brother : ℕ
   total : ℕ
   hBrother : brother = 10 + 3
   hTotal : total = 10 + brother
-theorem lambs_brother (m : Lambs) : m.brother = 13 := by omega
-theorem lambs_solution (m : Lambs) : m.total = 23 := by omega
+theorem lambs_brother (m : Lambs) : m.brother = 13 := by cases m <;> omega
+theorem lambs_solution (m : Lambs) : m.total = 23 := by cases m <;> omega
 
 /-- The result is conditional on every dive containing exactly four one-pearl oysters. -/
 structure Oysters where
@@ -53,8 +53,8 @@ structure Oysters where
   dives : ℕ
   hUniformQuarter : 4 * pearlsPerDive = 16
   hTarget : dives * pearlsPerDive = 56
-theorem oysters_per_dive (m : Oysters) : m.pearlsPerDive = 4 := by omega
-theorem oysters_solution (m : Oysters) : m.dives = 14 := by omega
+theorem oysters_per_dive (m : Oysters) : m.pearlsPerDive = 4 := by cases m <;> omega
+theorem oysters_solution (m : Oysters) : m.dives = 14 := by cases m <;> omega
 
 structure Band where
   brass : ℕ
@@ -64,8 +64,8 @@ structure Band where
   hPercussion : percussion = 4 * woodwind
   hTotal : brass + woodwind + percussion = 110
 theorem band_woodwind (m : Band) : m.woodwind = 2 * m.brass := m.hWoodwind
-theorem band_percussion (m : Band) : m.percussion = 8 * m.brass := by omega
-theorem band_solution (m : Band) : m.brass = 10 := by omega
+theorem band_percussion (m : Band) : m.percussion = 8 * m.brass := by cases m <;> omega
+theorem band_solution (m : Band) : m.brass = 10 := by cases m <;> omega
 
 structure Typing where
   words : ℕ
@@ -74,9 +74,9 @@ structure Typing where
   hWords : words = 5 * 400
   hMinutes : words = 50 * minutes
   hWater : 60 * waterOunces = 15 * minutes
-theorem typing_words (m : Typing) : m.words = 2000 := by omega
-theorem typing_minutes (m : Typing) : m.minutes = 40 := by omega
-theorem typing_solution (m : Typing) : m.waterOunces = 10 := by omega
+theorem typing_words (m : Typing) : m.words = 2000 := by cases m <;> omega
+theorem typing_minutes (m : Typing) : m.minutes = 40 := by cases m <;> omega
+theorem typing_solution (m : Typing) : m.waterOunces = 10 := by cases m <;> omega
 
 structure Arcade where
   games : ℕ
@@ -85,9 +85,9 @@ structure Arcade where
   hGames : games = 4 * 60
   hTokens : tokens = games * 2
   hDollars : tokens = 30 * dollars
-theorem arcade_games (m : Arcade) : m.games = 240 := by omega
-theorem arcade_tokens (m : Arcade) : m.tokens = 480 := by omega
-theorem arcade_solution (m : Arcade) : m.dollars = 16 := by omega
+theorem arcade_games (m : Arcade) : m.games = 240 := by cases m <;> omega
+theorem arcade_tokens (m : Arcade) : m.tokens = 480 := by cases m <;> omega
+theorem arcade_solution (m : Arcade) : m.dollars = 16 := by cases m <;> omega
 
 structure Stickers where
   steven : ℕ
@@ -96,9 +96,9 @@ structure Stickers where
   hSteven : steven = 3 * 30
   hTerry : terry = steven + 20
   hTotal : total = 30 + steven + terry
-theorem stickers_steven (m : Stickers) : m.steven = 90 := by omega
-theorem stickers_terry (m : Stickers) : m.terry = 110 := by omega
-theorem stickers_solution (m : Stickers) : m.total = 230 := by omega
+theorem stickers_steven (m : Stickers) : m.steven = 90 := by cases m <;> omega
+theorem stickers_terry (m : Stickers) : m.terry = 110 := by cases m <;> omega
+theorem stickers_solution (m : Stickers) : m.total = 230 := by cases m <;> omega
 
 structure Crayons where
   new : ℕ
@@ -107,9 +107,9 @@ structure Crayons where
   hNew : 3 * new = 120
   hBroken : 100 * broken = 20 * 120
   hPartition : new + broken + used = 120
-theorem crayons_new (m : Crayons) : m.new = 40 := by omega
-theorem crayons_broken (m : Crayons) : m.broken = 24 := by omega
-theorem crayons_solution (m : Crayons) : m.used = 56 := by omega
+theorem crayons_new (m : Crayons) : m.new = 40 := by cases m <;> omega
+theorem crayons_broken (m : Crayons) : m.broken = 24 := by cases m <;> omega
+theorem crayons_solution (m : Crayons) : m.used = 56 := by cases m <;> omega
 
 structure Tanks where
   existing : ℕ
@@ -118,9 +118,9 @@ structure Tanks where
   hExisting : existing = 3 * 15
   hRemaining : existing + remaining = 75
   hMore : remaining = more * 10
-theorem tanks_existing (m : Tanks) : m.existing = 45 := by omega
-theorem tanks_remaining (m : Tanks) : m.remaining = 30 := by omega
-theorem tanks_solution (m : Tanks) : m.more = 3 := by omega
+theorem tanks_existing (m : Tanks) : m.existing = 45 := by cases m <;> omega
+theorem tanks_remaining (m : Tanks) : m.remaining = 30 := by cases m <;> omega
+theorem tanks_solution (m : Tanks) : m.more = 3 := by cases m <;> omega
 
 structure Raise where
   hourly : ℕ
@@ -131,10 +131,10 @@ structure Raise where
   hWeekly : weekly = hourly * 8 * 5
   hExpenses : expenses = 600 + 100
   hLeftover : leftover + expenses = weekly
-theorem raise_hourly (m : Raise) : m.hourly = 42 := by omega
-theorem raise_weekly (m : Raise) : m.weekly = 1680 := by omega
-theorem raise_expenses (m : Raise) : m.expenses = 700 := by omega
-theorem raise_solution (m : Raise) : m.leftover = 980 := by omega
+theorem raise_hourly (m : Raise) : m.hourly = 42 := by cases m <;> omega
+theorem raise_weekly (m : Raise) : m.weekly = 1680 := by cases m <;> omega
+theorem raise_expenses (m : Raise) : m.expenses = 700 := by cases m <;> omega
+theorem raise_solution (m : Raise) : m.leftover = 980 := by cases m <;> omega
 
 structure Deductions where
   gross : ℕ
@@ -147,11 +147,11 @@ structure Deductions where
   hInsurance : 100 * insurance = 5 * gross
   hTotal : total = tax + insurance + 5
   hTakeHome : takeHome + total = gross
-theorem deductions_gross (m : Deductions) : m.gross = 420 := by omega
-theorem deductions_tax (m : Deductions) : m.tax = 84 := by omega
-theorem deductions_insurance (m : Deductions) : m.insurance = 21 := by omega
-theorem deductions_total (m : Deductions) : m.total = 110 := by omega
-theorem deductions_solution (m : Deductions) : m.takeHome = 310 := by omega
+theorem deductions_gross (m : Deductions) : m.gross = 420 := by cases m <;> omega
+theorem deductions_tax (m : Deductions) : m.tax = 84 := by cases m <;> omega
+theorem deductions_insurance (m : Deductions) : m.insurance = 21 := by cases m <;> omega
+theorem deductions_total (m : Deductions) : m.total = 110 := by cases m <;> omega
+theorem deductions_solution (m : Deductions) : m.takeHome = 310 := by cases m <;> omega
 
 structure Games where
   cost : ℕ
@@ -160,16 +160,16 @@ structure Games where
   hCost : cost = 6 * 15
   hChange : cost + change = 100
   hBills : change = bills * 5
-theorem games_cost (m : Games) : m.cost = 90 := by omega
-theorem games_change (m : Games) : m.change = 10 := by omega
-theorem games_solution (m : Games) : m.bills = 2 := by omega
+theorem games_cost (m : Games) : m.cost = 90 := by cases m <;> omega
+theorem games_change (m : Games) : m.change = 10 := by cases m <;> omega
+theorem games_solution (m : Games) : m.bills = 2 := by cases m <;> omega
 
 structure Cable where
   sports : ℕ
   total : ℕ
   hSports : sports + 3 = 12
   hTotal : total = 15 + 12 + sports
-theorem cable_sports (m : Cable) : m.sports = 9 := by omega
-theorem cable_solution (m : Cable) : m.total = 36 := by omega
+theorem cable_sports (m : Cable) : m.sports = 9 := by cases m <;> omega
+theorem cable_solution (m : Cable) : m.total = 36 := by cases m <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0924A05

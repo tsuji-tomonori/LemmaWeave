@@ -42,7 +42,7 @@ structure SewerCapacity where
   hHours : hours * 1000 = 240000
   hDays : days * 24 = hours
 
-theorem sewer_hours (m : SewerCapacity) : m.hours = 240 := by omega
+theorem sewer_hours (m : SewerCapacity) : m.hours = 240 := by cases m <;> omega
 theorem sewer_solution (m : SewerCapacity) : m.days = 10 := by
   have h := m.hDays
   rw [sewer_hours m] at h
@@ -107,7 +107,7 @@ structure EmmaMoney where
   hGiven : given * 4 = afterFurniture * 3
   hLeft : left + given = afterFurniture
 
-theorem emma_after_furniture (m : EmmaMoney) : m.afterFurniture = 1600 := by omega
+theorem emma_after_furniture (m : EmmaMoney) : m.afterFurniture = 1600 := by cases m <;> omega
 theorem emma_given (m : EmmaMoney) : m.given = 1200 := by
   have h := m.hGiven
   rw [emma_after_furniture m] at h
@@ -127,7 +127,7 @@ structure DetourTrip where
   hExtraTime : extraTime * speed = detour
   hTotalTime : totalTime = 3 + extraTime
 
-theorem detour_speed (m : DetourTrip) : m.speed = 50 := by omega
+theorem detour_speed (m : DetourTrip) : m.speed = 50 := by cases m <;> omega
 theorem detour_distance (m : DetourTrip) : m.detour = 100 := by rw [m.hDetour]
 theorem detour_extra_time (m : DetourTrip) : m.extraTime = 2 := by
   have h := m.hExtraTime
@@ -165,8 +165,8 @@ structure SummerReading where
   hTotalRead : totalRead = firstBook + secondBook
   hRemaining : remaining + totalRead = 800
 
-theorem reading_first_book (m : SummerReading) : m.firstBook = 400 := by omega
-theorem reading_second_book (m : SummerReading) : m.secondBook = 200 := by omega
+theorem reading_first_book (m : SummerReading) : m.firstBook = 400 := by cases m <;> omega
+theorem reading_second_book (m : SummerReading) : m.secondBook = 200 := by cases m <;> omega
 theorem reading_total (m : SummerReading) : m.totalRead = 600 := by
   rw [m.hTotalRead, reading_first_book m, reading_second_book m]
 theorem reading_solution (m : SummerReading) : m.remaining = 200 := by
@@ -206,7 +206,7 @@ structure CommuteDistance where
   hSecondThird : secondThird = 6 + extra
   hTotal : total = 4 + 6 + secondThird + 4
 
-theorem commute_extra (m : CommuteDistance) : m.extra = 4 := by omega
+theorem commute_extra (m : CommuteDistance) : m.extra = 4 := by cases m <;> omega
 theorem commute_second_third (m : CommuteDistance) : m.secondThird = 10 := by
   rw [m.hSecondThird, commute_extra m]
 theorem commute_solution (m : CommuteDistance) : m.total = 24 := by
@@ -256,7 +256,7 @@ structure ParkingCounts where
   hOverlapPasses : overlap ≤ passes
   hInclusionExclusion : unpaid + tickets + passes = 300 + overlap
 
-theorem parking_tickets (m : ParkingCounts) : m.tickets = 225 := by omega
+theorem parking_tickets (m : ParkingCounts) : m.tickets = 225 := by cases m <;> omega
 theorem parking_passes (m : ParkingCounts) : m.passes = 45 := by
   have h := m.hPasses
   rw [parking_tickets m] at h

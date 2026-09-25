@@ -10,9 +10,9 @@ structure HeavyFilling where
   hExtra : extraWeight * 10 = sandAtEighty * 4
   hTotal : totalWeight = sandAtEighty + extraWeight
 
-theorem filling_sand_weight (m : HeavyFilling) : m.sandAtEighty = 200 := by omega
-theorem filling_extra_weight (m : HeavyFilling) : m.extraWeight = 80 := by omega
-theorem filling_solution (m : HeavyFilling) : m.totalWeight = 280 := by omega
+theorem filling_sand_weight (m : HeavyFilling) : m.sandAtEighty = 200 := by cases m <;> omega
+theorem filling_extra_weight (m : HeavyFilling) : m.extraWeight = 80 := by cases m <;> omega
+theorem filling_solution (m : HeavyFilling) : m.totalWeight = 280 := by cases m <;> omega
 
 structure HoleDigging where
   fatherDepth : ℕ
@@ -25,7 +25,7 @@ structure HoleDigging where
 theorem hole_father_depth (m : HoleDigging) : m.fatherDepth = 1600 := by rw [m.hFather]
 theorem hole_target_depth (m : HoleDigging) : m.targetDepth = 2800 := by
   rw [m.hTarget, hole_father_depth m]
-theorem hole_solution (m : HoleDigging) : m.hours = 700 := by omega
+theorem hole_solution (m : HoleDigging) : m.hours = 700 := by cases m <;> omega
 
 structure CarSales where
   perMonth : ℕ
@@ -34,7 +34,7 @@ structure CarSales where
   hAll : months * perMonth = 500
 
 theorem cars_per_month (m : CarSales) : m.perMonth = 100 := by rw [m.hMonthly]
-theorem cars_solution (m : CarSales) : m.months = 5 := by omega
+theorem cars_solution (m : CarSales) : m.months = 5 := by cases m <;> omega
 
 structure CalculatorAnswers where
   second : ℕ
@@ -49,8 +49,8 @@ structure CalculatorAnswers where
 theorem calculator_second (m : CalculatorAnswers) : m.second = 1200 := by rw [m.hSecond]
 theorem calculator_first_two (m : CalculatorAnswers) : m.firstTwo = 1800 := by
   rw [m.hFirstTwo, calculator_second m]
-theorem calculator_third (m : CalculatorAnswers) : m.third = 1400 := by omega
-theorem calculator_solution (m : CalculatorAnswers) : m.total = 3200 := by omega
+theorem calculator_third (m : CalculatorAnswers) : m.third = 1400 := by cases m <;> omega
+theorem calculator_solution (m : CalculatorAnswers) : m.total = 3200 := by cases m <;> omega
 
 /-- Reference reading: the 15 squares are the 15 locations called parks in the next sentence. -/
 structure StreetlightsReference where
@@ -60,7 +60,7 @@ structure StreetlightsReference where
   hUnused : unused + used = 200
 
 theorem lights_reference_used (m : StreetlightsReference) : m.used = 180 := by rw [m.hUsed]
-theorem lights_reference_solution (m : StreetlightsReference) : m.unused = 20 := by omega
+theorem lights_reference_solution (m : StreetlightsReference) : m.unused = 20 := by cases m <;> omega
 /-- If the number of parks is not identified with the 15 squares, 10 parks give a different result. -/
 theorem lights_ten_parks_countermodel : 10 * 12 + 80 = 200 := by norm_num
 theorem lights_unused_not_unique : (20 : ℕ) ≠ 80 := by norm_num
@@ -75,10 +75,10 @@ structure ToySpending where
   hAnnual : annual = 80 + reed + quinn
   hFour : fourYears = 4 * annual
 
-theorem toys_reed (m : ToySpending) : m.reed = 60 := by omega
-theorem toys_quinn (m : ToySpending) : m.quinn = 30 := by omega
-theorem toys_annual (m : ToySpending) : m.annual = 170 := by omega
-theorem toys_solution (m : ToySpending) : m.fourYears = 680 := by omega
+theorem toys_reed (m : ToySpending) : m.reed = 60 := by cases m <;> omega
+theorem toys_quinn (m : ToySpending) : m.quinn = 30 := by cases m <;> omega
+theorem toys_annual (m : ToySpending) : m.annual = 170 := by cases m <;> omega
+theorem toys_solution (m : ToySpending) : m.fourYears = 680 := by cases m <;> omega
 
 structure TowelFolding where
   jane : ℕ
@@ -93,7 +93,7 @@ structure TowelFolding where
 theorem towels_jane (m : TowelFolding) : m.jane = 36 := by rw [m.hJane]
 theorem towels_kyla (m : TowelFolding) : m.kyla = 30 := by rw [m.hKyla]
 theorem towels_anthony (m : TowelFolding) : m.anthony = 21 := by rw [m.hAnthony]
-theorem towels_solution (m : TowelFolding) : m.total = 87 := by omega
+theorem towels_solution (m : TowelFolding) : m.total = 87 := by cases m <;> omega
 
 structure Stickers where
   remaining : ℕ
@@ -102,7 +102,7 @@ structure Stickers where
   hInitial : initial = 100 + remaining
 
 theorem stickers_remaining (m : Stickers) : m.remaining = 50 := by rw [m.hRemaining]
-theorem stickers_solution (m : Stickers) : m.initial = 150 := by omega
+theorem stickers_solution (m : Stickers) : m.initial = 150 := by cases m <;> omega
 
 structure DrivingDistance where
   tamika : ℕ
@@ -114,7 +114,7 @@ structure DrivingDistance where
 
 theorem driving_tamika (m : DrivingDistance) : m.tamika = 360 := by rw [m.hTamika]
 theorem driving_logan (m : DrivingDistance) : m.logan = 275 := by rw [m.hLogan]
-theorem driving_solution (m : DrivingDistance) : m.farther = 85 := by omega
+theorem driving_solution (m : DrivingDistance) : m.farther = 85 := by cases m <;> omega
 
 /-- Money amounts are represented in cents. -/
 structure TruckProfit where
@@ -128,9 +128,9 @@ structure TruckProfit where
   hProfit : profit + gasCost = payment
 
 theorem profit_payment (m : TruckProfit) : m.payment = 30000 := by rw [m.hPayment]
-theorem profit_gallons (m : TruckProfit) : m.gallons = 30 := by omega
-theorem profit_gas (m : TruckProfit) : m.gasCost = 12000 := by omega
-theorem profit_solution (m : TruckProfit) : m.profit = 18000 := by omega
+theorem profit_gallons (m : TruckProfit) : m.gallons = 30 := by cases m <;> omega
+theorem profit_gas (m : TruckProfit) : m.gasCost = 12000 := by cases m <;> omega
+theorem profit_solution (m : TruckProfit) : m.profit = 18000 := by cases m <;> omega
 
 theorem schedule_fixed_hours : 4 * 2 + 2 * 1 + 2 * 1 + 4 * 3 = 24 := by norm_num
 theorem schedule_remaining_hours : 32 - 24 = 8 := by norm_num
@@ -148,9 +148,9 @@ structure Cycling where
   hThursday : thursday = 40 + wednesday
   hTotal : total = 40 + 50 + wednesday + thursday
 
-theorem cycling_wednesday (m : Cycling) : m.wednesday = 25 := by omega
-theorem cycling_thursday (m : Cycling) : m.thursday = 65 := by omega
-theorem cycling_solution (m : Cycling) : m.total = 180 := by omega
+theorem cycling_wednesday (m : Cycling) : m.wednesday = 25 := by cases m <;> omega
+theorem cycling_thursday (m : Cycling) : m.thursday = 65 := by cases m <;> omega
+theorem cycling_solution (m : Cycling) : m.total = 180 := by cases m <;> omega
 
 /-- Reference reading: "3 times more" means three times as many. -/
 theorem goals_reference_michael : 3 * 4 = 12 := by norm_num
@@ -165,8 +165,8 @@ structure GameDownload where
   hRemaining : remaining + 310 = 880
   hMinutes : minutes * 3 = remaining
 
-theorem download_remaining (m : GameDownload) : m.remaining = 570 := by omega
-theorem download_solution (m : GameDownload) : m.minutes = 190 := by omega
+theorem download_remaining (m : GameDownload) : m.remaining = 570 := by cases m <;> omega
+theorem download_solution (m : GameDownload) : m.minutes = 190 := by cases m <;> omega
 
 structure Hushpuppies where
   total : ℕ
@@ -177,7 +177,7 @@ structure Hushpuppies where
   hMinutes : minutes = 8 * batches
 
 theorem hush_total (m : Hushpuppies) : m.total = 100 := by rw [m.hTotal]
-theorem hush_batches (m : Hushpuppies) : m.batches = 10 := by omega
-theorem hush_solution (m : Hushpuppies) : m.minutes = 80 := by omega
+theorem hush_batches (m : Hushpuppies) : m.batches = 10 := by cases m <;> omega
+theorem hush_solution (m : Hushpuppies) : m.minutes = 80 := by cases m <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0923A17

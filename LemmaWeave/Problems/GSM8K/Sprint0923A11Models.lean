@@ -52,7 +52,7 @@ structure AquariumRocks where
   hAfterEating : afterEating + eaten = 10
   hFinal : final = afterEating + 2
 
-theorem rocks_eaten (m : AquariumRocks) : m.eaten = 5 := by omega
+theorem rocks_eaten (m : AquariumRocks) : m.eaten = 5 := by cases m <;> omega
 theorem rocks_after_eating (m : AquariumRocks) : m.afterEating = 5 := by
   have h := m.hAfterEating
   rw [rocks_eaten m] at h
@@ -80,7 +80,7 @@ structure BenchPress where
   hAfter : afterInjury + loss = 500
   hFinal : final = 3 * afterInjury
 
-theorem bench_loss (m : BenchPress) : m.loss = 400 := by omega
+theorem bench_loss (m : BenchPress) : m.loss = 400 := by cases m <;> omega
 theorem bench_after_injury (m : BenchPress) : m.afterInjury = 100 := by
   have h := m.hAfter
   rw [bench_loss m] at h
@@ -100,12 +100,12 @@ structure GuitarStores where
   hSWCost : swCost + swDiscount = 1000
   hSavings : savings + swCost = gcCost
 
-theorem guitar_gc_discount (m : GuitarStores) : m.gcDiscount = 150 := by omega
+theorem guitar_gc_discount (m : GuitarStores) : m.gcDiscount = 150 := by cases m <;> omega
 theorem guitar_gc_cost (m : GuitarStores) : m.gcCost = 950 := by
   have h := m.hGCCost
   rw [guitar_gc_discount m] at h
   omega
-theorem guitar_sw_discount (m : GuitarStores) : m.swDiscount = 100 := by omega
+theorem guitar_sw_discount (m : GuitarStores) : m.swDiscount = 100 := by cases m <;> omega
 theorem guitar_sw_cost (m : GuitarStores) : m.swCost = 900 := by
   have h := m.hSWCost
   rw [guitar_sw_discount m] at h
@@ -219,7 +219,7 @@ structure CafeteriaMovement where
   hRanInside : ranInside * 3 = outside
   hFinal : final + 3 = inside + ranInside
 
-theorem cafeteria_inside (m : CafeteriaMovement) : m.inside = 60 := by omega
+theorem cafeteria_inside (m : CafeteriaMovement) : m.inside = 60 := by cases m <;> omega
 theorem cafeteria_outside (m : CafeteriaMovement) : m.outside = 30 := by
   have h := m.hOutside
   rw [cafeteria_inside m] at h
@@ -272,7 +272,7 @@ structure TradingCards where
   hAlien : alien * 3 = 48
   hMonster : monster = 2 * alien
 
-theorem cards_alien (m : TradingCards) : m.alien = 16 := by omega
+theorem cards_alien (m : TradingCards) : m.alien = 16 := by cases m <;> omega
 theorem cards_solution (m : TradingCards) : m.monster = 32 := by rw [m.hMonster, cards_alien m]
 
 structure ZitClasses where

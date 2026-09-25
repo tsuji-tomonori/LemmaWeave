@@ -153,8 +153,7 @@ theorem writing_intended (m : WritingNameAmbiguity) : m.intendedLeft = 100 := by
     _ = 100 := by norm_num
 theorem writing_literal (m : WritingNameAmbiguity) : m.literalLeft = 400 := by rw [m.hLiteral] <;> norm_num
 theorem writing_nonunique (m : WritingNameAmbiguity) : m.intendedLeft ≠ m.literalLeft := by
-  rw [writing_intended m, writing_literal m]
-  norm_num
+  rw [writing_intended m, writing_literal m] <;> norm_num
 
 structure DuckSnails where
   first : ℕ
@@ -206,8 +205,7 @@ theorem snails_two_solution (m : DuckSnails) : m.totalTwo = 210 := by
     _ = 42 + 84 + 2 * 42 := by rw [snails_groups m, hm, he]
     _ = 210 := by norm_num
 theorem snails_nonunique (m : DuckSnails) : m.totalThree ≠ m.totalTwo := by
-  rw [snails_three_solution m, snails_two_solution m]
-  norm_num
+  rw [snails_three_solution m, snails_two_solution m] <;> norm_num
 
 structure FlowerSales where
   dayTwoTulips : ℕ
@@ -324,19 +322,15 @@ structure PaintingAmbiguity where
 theorem painting_canvas_conventional (m : PaintingAmbiguity) : m.conventionalCanvas = 60 := by rw [m.hConventionalCanvas] <;> norm_num
 theorem painting_five_liters (m : PaintingAmbiguity) : m.paintFive = 40 := by rw [m.hPaintFive] <;> norm_num
 theorem painting_reference (m : PaintingAmbiguity) : m.conventionalProfit = 80 := by
-  rw [m.hConventionalProfit, painting_canvas_conventional m, painting_five_liters m]
-  norm_num
+  rw [m.hConventionalProfit, painting_canvas_conventional m, painting_five_liters m] <;> norm_num
 theorem painting_canvas_additive (m : PaintingAmbiguity) : m.additiveCanvas = 80 := by rw [m.hAdditiveCanvas] <;> norm_num
 theorem painting_additive (m : PaintingAmbiguity) : m.additiveProfit = 60 := by
-  rw [m.hAdditiveProfit, painting_canvas_additive m, painting_five_liters m]
-  norm_num
+  rw [m.hAdditiveProfit, painting_canvas_additive m, painting_five_liters m] <;> norm_num
 theorem painting_six_liters (m : PaintingAmbiguity) : m.paintSix = 48 := by rw [m.hPaintSix] <;> norm_num
 theorem painting_extra_liter (m : PaintingAmbiguity) : m.extraLiterProfit = 72 := by
-  rw [m.hExtraLiterProfit, painting_canvas_conventional m, painting_six_liters m]
-  norm_num
+  rw [m.hExtraLiterProfit, painting_canvas_conventional m, painting_six_liters m] <;> norm_num
 theorem painting_nonunique (m : PaintingAmbiguity) :
     m.conventionalProfit ≠ m.additiveProfit ∧ m.conventionalProfit ≠ m.extraLiterProfit := by
-  rw [painting_reference m, painting_additive m, painting_extra_liter m]
-  norm_num
+  rw [painting_reference m, painting_additive m, painting_extra_liter m] <;> norm_num
 
 end LemmaWeave.Problems.GSM8K.Sprint0922A03

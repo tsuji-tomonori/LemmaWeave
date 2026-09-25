@@ -11,7 +11,7 @@ structure Cans where
   hRoundtrip : roundtrip = 10 * 2
   hPerTrip : perTrip = roundtrip + 30
   hTotal : total = perTrip * trips
-theorem cans_trips (m : Cans) : m.trips = 7 := by omega
+theorem cans_trips (m : Cans) : m.trips = 7 := by cases m <;> omega
 theorem cans_roundtrip (m : Cans) : m.roundtrip = 20 := by rw [m.hRoundtrip] <;> norm_num
 theorem cans_per_trip (m : Cans) : m.perTrip = 50 := by rw [m.hPerTrip, cans_roundtrip m] <;> norm_num
 theorem cans_solution (m : Cans) : m.total = 350 := by rw [m.hTotal, cans_per_trip m, cans_trips m] <;> norm_num
@@ -26,7 +26,7 @@ structure Stickers where
   hTotal : total = 50 + silver + bronze
   hEach : each * 5 = total
 theorem stickers_silver (m : Stickers) : m.silver = 100 := by rw [m.hSilver] <;> norm_num
-theorem stickers_bronze (m : Stickers) : m.bronze = 80 := by omega
+theorem stickers_bronze (m : Stickers) : m.bronze = 80 := by cases m <;> omega
 theorem stickers_total (m : Stickers) : m.total = 230 := by rw [m.hTotal, stickers_silver m, stickers_bronze m] <;> norm_num
 theorem stickers_solution (m : Stickers) : m.each = 46 := by
   have h := m.hEach; rw [stickers_total m] at h; omega
@@ -36,7 +36,7 @@ structure Pizza where
   people : ℕ
   hEaten : eaten + 4 = 16
   hPeople : people * 2 = eaten
-theorem pizza_eaten (m : Pizza) : m.eaten = 12 := by omega
+theorem pizza_eaten (m : Pizza) : m.eaten = 12 := by cases m <;> omega
 theorem pizza_solution (m : Pizza) : m.people = 6 := by
   have hp := m.hPeople
   rw [pizza_eaten m] at hp
@@ -67,7 +67,7 @@ structure Freelance where
   hMonthly : monthlyGross = weekly * 4
   hFica : fica = 25 * 4
   hNet : net + fica + 400 = monthlyGross
-theorem freelance_hourly (m : Freelance) : m.hourly = 10 := by omega
+theorem freelance_hourly (m : Freelance) : m.hourly = 10 := by cases m <;> omega
 theorem freelance_weekly (m : Freelance) : m.weekly = 400 := by rw [m.hWeekly, freelance_hourly m] <;> norm_num
 theorem freelance_monthly_gross (m : Freelance) : m.monthlyGross = 1600 := by rw [m.hMonthly, freelance_weekly m] <;> norm_num
 theorem freelance_fica (m : Freelance) : m.fica = 100 := by rw [m.hFica] <;> norm_num
@@ -105,7 +105,7 @@ structure Frame where
   hWanted : wanted = 60 + increase
   hSmaller : smaller * 4 = wanted * 3
   hRemaining : remaining + smaller = 60
-theorem frame_increase (m : Frame) : m.increase = 12 := by omega
+theorem frame_increase (m : Frame) : m.increase = 12 := by cases m <;> omega
 theorem frame_wanted (m : Frame) : m.wanted = 72 := by rw [m.hWanted, frame_increase m] <;> norm_num
 theorem frame_smaller (m : Frame) : m.smaller = 54 := by
   have h := m.hSmaller; rw [frame_wanted m] at h; omega

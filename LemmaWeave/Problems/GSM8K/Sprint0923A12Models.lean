@@ -26,8 +26,8 @@ structure PharmacySales where
   hTwoWeeks500 : twoWeeks500 = 2 * weekly500
   hTotal : total = twoWeeks100 + twoWeeks500
 
-theorem pharmacy_weekly_100 (m : PharmacySales) : m.weekly100 = 16 := by omega
-theorem pharmacy_weekly_500 (m : PharmacySales) : m.weekly500 = 30 := by omega
+theorem pharmacy_weekly_100 (m : PharmacySales) : m.weekly100 = 16 := by cases m <;> omega
+theorem pharmacy_weekly_500 (m : PharmacySales) : m.weekly500 = 30 := by cases m <;> omega
 theorem pharmacy_two_weeks_100 (m : PharmacySales) : m.twoWeeks100 = 32 := by
   rw [m.hTwoWeeks100, pharmacy_weekly_100 m]
 theorem pharmacy_two_weeks_500 (m : PharmacySales) : m.twoWeeks500 = 60 := by
@@ -165,8 +165,8 @@ structure TirePumps where
   hPumps : pumps * 50 = totalNeed
 
 theorem tires_empty (m : TirePumps) : m.emptyNeed = 1000 := by rw [m.hEmpty]
-theorem tires_forty (m : TirePumps) : m.tire40Need = 300 := by omega
-theorem tires_seventy (m : TirePumps) : m.tire70Need = 150 := by omega
+theorem tires_forty (m : TirePumps) : m.tire40Need = 300 := by cases m <;> omega
+theorem tires_seventy (m : TirePumps) : m.tire70Need = 150 := by cases m <;> omega
 theorem tires_total (m : TirePumps) : m.totalNeed = 1450 := by
   rw [m.hTotal, tires_empty m, tires_forty m, tires_seventy m]
 theorem tires_solution (m : TirePumps) : m.pumps = 29 := by
@@ -211,8 +211,8 @@ structure DeliPurchase where
 
 theorem deli_sandwiches (m : DeliPurchase) : m.sandwiches = 1550 := by rw [m.hSandwiches]
 theorem deli_brie (m : DeliPurchase) : m.brie = 1200 := by rw [m.hBrie, m.hSalami]
-theorem deli_olives (m : DeliPurchase) : m.olives = 250 := by omega
-theorem deli_feta (m : DeliPurchase) : m.feta = 400 := by omega
+theorem deli_olives (m : DeliPurchase) : m.olives = 250 := by cases m <;> omega
+theorem deli_feta (m : DeliPurchase) : m.feta = 400 := by cases m <;> omega
 theorem deli_solution (m : DeliPurchase) : m.total = 4000 := by
   rw [m.hTotal, deli_sandwiches m, m.hSalami, deli_brie m, deli_olives m,
       deli_feta m, m.hBread]
@@ -232,7 +232,7 @@ structure UniformChocolateBoxes where
   hToBox : toBox = unboxed + newPieces
   hNeeded : boxesNeeded * capacity = toBox
 
-theorem boxes_boxed (m : UniformChocolateBoxes) : m.boxed = 45 := by omega
+theorem boxes_boxed (m : UniformChocolateBoxes) : m.boxed = 45 := by cases m <;> omega
 theorem boxes_capacity (m : UniformChocolateBoxes) : m.capacity = 15 := by
   have h := m.hCapacity
   rw [boxes_boxed m] at h
@@ -255,7 +255,7 @@ structure Portraits where
   hPhotographed : photographed = beforeLunch + 10
   hRemaining : remaining + photographed = 24
 
-theorem portraits_before (m : Portraits) : m.beforeLunch = 8 := by omega
+theorem portraits_before (m : Portraits) : m.beforeLunch = 8 := by cases m <;> omega
 theorem portraits_photographed (m : Portraits) : m.photographed = 18 := by
   rw [m.hPhotographed, portraits_before m]
 theorem portraits_solution (m : Portraits) : m.remaining = 6 := by

@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint137_peppers",
+  "title_ja": "減った唐辛子数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02345",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "従来と現在のカレー構成から購入量の差を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.peppers_solution",
+  "graph": "work/gsm8k-sprint137-peppers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "peppers_old_spicy",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.peppers_old_spicy",
+      "title_ja": "従来の辛口系は150個",
+      "claim_ja": "従来の辛口系は150個",
+      "method_ja": "激辛3×30と辛口2×30を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "従来の辛口系は150個",
+      "baseline_ja": "従来の辛口系は150個"
+    },
+    {
+      "id": "peppers_old_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.peppers_old_total",
+      "title_ja": "従来は計160個",
+      "claim_ja": "従来は計160個",
+      "method_ja": "辛口系150とマイルド10を足す",
+      "requires_steps": [
+        "peppers_old_spicy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "従来は計160個",
+      "baseline_ja": "従来は計160個"
+    },
+    {
+      "id": "peppers_new_spicy",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.peppers_new_spicy",
+      "title_ja": "現在の辛口は30個",
+      "claim_ja": "現在の辛口は30個",
+      "method_ja": "2個を15皿分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "現在の辛口は30個",
+      "baseline_ja": "現在の辛口は30個"
+    },
+    {
+      "id": "peppers_new_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.peppers_new_total",
+      "title_ja": "現在は計120個",
+      "claim_ja": "現在は計120個",
+      "method_ja": "辛口30とマイルド90を足す",
+      "requires_steps": [
+        "peppers_new_spicy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "現在は計120個",
+      "baseline_ja": "現在は計120個"
+    },
+    {
+      "id": "peppers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.peppers_solution",
+      "title_ja": "40個少ない",
+      "claim_ja": "40個少ない",
+      "method_ja": "160から120を引く",
+      "requires_steps": [
+        "peppers_old_total",
+        "peppers_new_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "40個少ない",
+      "baseline_ja": "40個少ない"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2346,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

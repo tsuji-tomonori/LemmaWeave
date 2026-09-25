@@ -1,0 +1,156 @@
+{
+  "date": "2026-09-25",
+  "run_id": "retry-20260925-2100-jst",
+  "scheduled_slot": {
+    "timezone": "Asia/Tokyo",
+    "hour": 21,
+    "role": "overdue_retry_and_proof_repair",
+    "target_count": null
+  },
+  "started_at": "2026-09-25T21:04:03+09:00",
+  "finished_at": "2026-09-25T21:16:00+09:00",
+  "schedule_variance_ja": "21時枠を21:04 JSTに開始。20時枠までの新規解答と重複せず、最古の証拠待ち10問と直近CIの検証基盤障害を再試行した。5時枠は未実行のまま保持する。",
+  "base_sha": "70cec87dc887b35a2b04038ce0de310200ac75dd",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523"
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00515",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00516",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00517",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00518",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00519",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00520",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00521",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00522",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00523",
+      "retry_on": "exact-head CI success for the graph-metadata repair, then current evidence import",
+      "reason_ja": "Sprint 136の15レシピにgraphキーがなく完全再生が証拠生成前に停止していた。キーは復旧済みだが、この台帳作成時点では新HEADの固定Lean成功証拠が未確定。",
+      "next_action_ja": "新HEADのCI成功後、artifactを入力・依存ハッシュと照合してscripts/import_evidence.pyで取り込み、当該IDを再判定する。"
+    }
+  ],
+  "known_unexecuted_slots_jst": [
+    "2026-09-25T05:00:00+09:00"
+  ],
+  "retry_result": {
+    "status": "verification_infrastructure_repaired_exact_head_pending",
+    "diagnosed_recipe_count": 2496,
+    "malformed_recipe_count": 15,
+    "malformed_recipe_prefix": "gsm8k_sprint136_",
+    "repair_commit_sha": "17e1c5acd0c239de6d1238a1d49609cfe09ef9a4",
+    "repaired_field": "graph",
+    "runner_hardening": "missing required recipe fields are now reported as structured missing_graph_directives instead of raising KeyError"
+  },
+  "ci_before_run": {
+    "head_sha": "70cec87dc887b35a2b04038ce0de310200ac75dd",
+    "workflow_run_id": 36128057284,
+    "conclusion": "failure",
+    "failure_ja": "固定Lean対象の構築後、scripts/run_method_targets.pyがSprint 136の15レシピにgraphキーがないためKeyErrorで停止。artifactは成功証拠として不採用。"
+  },
+  "ci_after_run": {
+    "head_sha": "pending_ledger_commit",
+    "workflow_run_id": null,
+    "status": "not_yet_registered",
+    "evidence_accepted": false
+  },
+  "queue_after": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1969,
+    "pending": 6305,
+    "working": 0,
+    "held": 0,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap_ids": 0,
+    "remaining": 8274,
+    "next_unwritten_problem_id": "train:02486"
+  },
+  "pull_request": {
+    "number": 5,
+    "merged": false,
+    "merge_status": "blocked_until_exact_head_success_and_evidence_import",
+    "reviews": 0,
+    "unresolved_review_threads": 0,
+    "mergeable": true
+  },
+  "commit": {
+    "graph_repair_commit_sha": "17e1c5acd0c239de6d1238a1d49609cfe09ef9a4",
+    "status": "ledger_and_runner_hardening_commit_is_this_file",
+    "branch_update_policy": "non_force_fast_forward_after_exact_parent_preflight"
+  },
+  "claim": {
+    "status": "serialized_single_writer",
+    "shared_lock_implementation": false
+  },
+  "note_ja": "最古の証拠待ち10問を再試行。証拠回収を止めていたSprint 136の15レシピのgraph欠落を全件修復し、同種欠落をKeyErrorではなく構造化診断にする検証ランナー修正を保存。新HEAD成功までは正式完了へ昇格しない。"
+}

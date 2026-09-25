@@ -36,10 +36,21 @@ def select_targets(recipes, is_current):
 
 
 def missing_graph_directives(root, recipes):
-    """Return recipes whose Lean source does not register the required graph."""
+    """Return malformed recipes and sources missing the required graph directive."""
     sources = {}
     missing = []
+    required = ('id', 'lean_file', 'root', 'graph')
     for recipe in recipes:
+        missing_fields = [field for field in required if not recipe.get(field)]
+        if missing_fields:
+            missing.append({
+                'id': recipe.get('id'),
+                'lean_file': recipe.get('lean_file'),
+                'root': recipe.get('root'),
+                'graph': recipe.get('graph'),
+                'missing_fields': missing_fields,
+            })
+            continue
         target = recipe['lean_file']
         if target not in sources:
             sources[target] = (root / target).read_text()

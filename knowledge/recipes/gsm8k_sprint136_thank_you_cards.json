@@ -1,0 +1,93 @@
+{
+  "id": "gsm8k_sprint136_thank_you_cards",
+  "title_ja": "贈り物への礼状枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02323",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "200人へ招待し、90%がRSVP、うち80%が出席し、出席者のうち10人は贈り物を持参しなかったときの礼状枚数を求める。",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "source_line_1based": 2324,
+    "source_record_sha256": "5c6ea3104d5b04de478779334ff2374d9583b807fc094a06fd9619d26bdaaaf0",
+    "raw_question_sha256": "a2333820ef9d0535d9256bd24e4e424229d155b99eafc1d43c6c6e3942c5e1af",
+    "normalized_question_sha256": "227983243eaa9ce52158c4b7d82efe650fad4bd1c03efb09296363087c3df6d3"
+  },
+  "variables": [
+    {
+      "name": "model",
+      "type": "贈り物への礼状枚数",
+      "domain_ja": "原題の数量・単位・関係を保持する自然数モデル"
+    }
+  ],
+  "assumptions_ja": [
+    "原題に明記された数量関係をモデルの各フィールドとして保持する。"
+  ],
+  "required_conclusions_ja": [
+    "礼状134枚。"
+  ],
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A10.cards_solution",
+  "lean_file": "LemmaWeave/Problems/GSM8K/Sprint0925A10Models.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "modeling_notes_ja": [],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "rsvp",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.cards_rsvp",
+      "title_ja": "RSVP人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "200人の90%を求める。",
+      "method_ja": "割合。",
+      "condition_ja": "200人、90%。",
+      "premise_ja": "200×9/10。",
+      "conclusion_ja": "180人。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "attended",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.cards_attended",
+      "title_ja": "出席人数",
+      "requires_steps": [
+        "rsvp"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "RSVP180人の80%を求める。",
+      "method_ja": "割合。",
+      "condition_ja": "180人、80%。",
+      "premise_ja": "180×8/10。",
+      "conclusion_ja": "144人。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "gifts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.cards_solution",
+      "title_ja": "贈り物をくれた人数",
+      "requires_steps": [
+        "attended"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "出席者から贈り物なし10人を除く。",
+      "method_ja": "差。",
+      "condition_ja": "144人中10人は贈り物なし。",
+      "premise_ja": "144-10。",
+      "conclusion_ja": "礼状134枚。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-25T10:42:00+09:00",
+    "source_problem_id": "external-gsm8k-main-3101c7d50724:train:02323",
+    "checks_ja": [
+      "固定原文を再読し、数量・単位・求める結論を照合した。",
+      "各説明行と名前付きLean定理の型を対応させた。",
+      "結論を仮定へ移さず、途中量から順に導出した。",
+      "自己照合のみであり、固定Leanの成功証拠と独立レビューは未取得である。"
+    ]
+  }
+}

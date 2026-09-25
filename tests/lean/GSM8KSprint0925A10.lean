@@ -1,0 +1,18 @@
+import LemmaWeave.Problems.GSM8K.Sprint0925A10Models
+import LemmaWeave.Audit.Extract
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.pizza_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.bus_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.touchdowns_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.cards_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.babysitting_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.toys_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.flowers_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.dog_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.shoes_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.antibiotics_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.mural_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.reading_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.ash_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.eggs_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A10.tanks_solution

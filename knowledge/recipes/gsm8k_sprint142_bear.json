@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint142_bear",
+  "title_ja": "1日に必要なウサギ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02419",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "母熊210ポンド、4頭の子熊は各35ポンドを週に必要とし、ウサギは1匹5ポンド。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.bear_solution",
+  "graph": "work/gsm8k-sprint142-bear-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bear_cubs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.bear_cubs",
+      "title_ja": "子熊分は140ポンド",
+      "claim_ja": "子熊分は140ポンド",
+      "method_ja": "4に35を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "子熊分は140ポンド",
+      "baseline_ja": "子熊分は140ポンド"
+    },
+    {
+      "id": "bear_weekly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.bear_weekly",
+      "title_ja": "家族で週350ポンド",
+      "claim_ja": "家族で週350ポンド",
+      "method_ja": "210と140を足す",
+      "requires_steps": [
+        "bear_cubs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "家族で週350ポンド",
+      "baseline_ja": "家族で週350ポンド"
+    },
+    {
+      "id": "bear_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.bear_daily",
+      "title_ja": "1日50ポンド",
+      "claim_ja": "1日50ポンド",
+      "method_ja": "350を7日へ等分する",
+      "requires_steps": [
+        "bear_weekly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1日50ポンド",
+      "baseline_ja": "1日50ポンド"
+    },
+    {
+      "id": "bear_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.bear_solution",
+      "title_ja": "1日10匹",
+      "claim_ja": "1日10匹",
+      "method_ja": "50を1匹5ポンドで割る",
+      "requires_steps": [
+        "bear_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1日10匹",
+      "baseline_ja": "1日10匹"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2420,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

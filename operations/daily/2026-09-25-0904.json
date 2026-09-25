@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-25",
+  "run_id": "2026-09-25T09:00+09:00-entrance-exam-sets-logic-integers",
+  "scheduled_local_hour": 9,
+  "scheduled_at": "2026-09-25T09:00:00+09:00",
+  "started_at": "2026-09-25T09:04:42+09:00",
+  "finished_at": "2026-09-25T09:20:00+09:00",
+  "start_offset_seconds": 282,
+  "schedule_note_ja": "09時専用枠へ割り当てた。08時枠は既に台帳済みで、同じ問題・共有ファイルへの同時書込みは確認されなかった。GSM8K解答枠とは分離して集計する。",
+  "role": "japanese_entrance_exam_individual_solution",
+  "domain": "sets_logic_integers",
+  "base_sha": "447700763ec4e28477c6211f102df39c0e8a8a96",
+  "artifact_commit": "08d882924600ac473eaa8e666d17998f2563ca8c",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I"
+  ],
+  "deferred": [],
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "pdf_page_1_based": [
+      3,
+      4
+    ],
+    "printed_page_label": [
+      "32",
+      "33"
+    ],
+    "subquestion": "第1問[2](2)(i) 解答欄ソ",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "source_review_basis": "公式掲載ページを2026-09-25に再取得し、2026-09-05の原ページ直接確認記録と固定文書SHA256を再照合した。原文画像は再配布しない。"
+  },
+  "outputs": {
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I.json",
+    "recipe": "knowledge/recipes/dnc2026_parameter_individual.json",
+    "lean_test": "tests/lean/DNC2026ParameterIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "explanation_lines": 5,
+    "named_lean_theorems": 5,
+    "self_review_status": "self_review_only"
+  },
+  "written_solution_ja": [
+    "補集合に2の倍数がないので、Uに属する2自身はAに入る。2とaの1より大きい公約数は2しかないから、2∣aである。",
+    "同様に、補集合に3の倍数がないので3はAに入る。3とaの1より大きい公約数は3しかないから、3∣aである。",
+    "したがってaは2と3の公倍数、すなわち6の倍数である。2≤a≤9の範囲ではa=6だけである。",
+    "逆にa=6とする。U内の2の倍数は2を、3の倍数は3を6との公約数にもつため、いずれもAに入り、補集合には残らない。",
+    "よって条件を満たすこととa=6は同値であり、解答欄ソは6である。"
+  ],
+  "static_checks": {
+    "json_parse": "pass",
+    "recipe_step_to_named_theorem_missing": 0,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "fixed_lean_build": "not_run",
+    "axiom_audit": "not_run",
+    "dependency_audit": "not_run",
+    "source_record_hash_matched": true,
+    "explanation_covers_necessary_and_sufficient_directions": true
+  },
+  "entrance_exam_ledger_after": {
+    "registered_count": 15,
+    "collected_kernel_checked_count": 5,
+    "candidate_not_started_count": 10,
+    "weekly_domain_counts": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "unconfirmed_scope_preserved": true
+  },
+  "gsm8k_counts_unchanged": {
+    "solution_ready": 518,
+    "awaiting_verification": 1804,
+    "pending": 6470,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02320",
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "ci": {
+    "prior_exact_head_sha": "447700763ec4e28477c6211f102df39c0e8a8a96",
+    "prior_exact_head_workflow_runs": 0,
+    "accepted_as_success_evidence": false,
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_at_start": true,
+    "reviews_at_start": 0,
+    "unresolved_review_threads_at_start": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-25T09:00+09:00",
+    "scope": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "claimed_at": "2026-09-25T09:04:42+09:00",
+    "expires_at": "2026-09-25T10:00:00+09:00",
+    "released": true
+  },
+  "note_ja": "集合・論理・整数の専用枠として、既存台帳の未個別化小問を原題から再読した。必要条件2本、範囲による一意性、十分性を日本語説明5行と名前付きLean定理5本へ対応させた。既存の旧proof variantがkernel_checkedでも、新しい個別成果はexact-head固定Lean成功証拠がないため正式完了へ昇格しない。"
+}

@@ -1,0 +1,108 @@
+{
+  "id": "gsm8k_sprint136_mural",
+  "title_ja": "壁画の塗装料金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02330",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "20フィート×15フィートの壁画を1平方フィート20分、時給150ドルで塗る料金を求める。",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "source_line_1based": 2331,
+    "source_record_sha256": "803f1313209c7ab472d12799656e86c0c26bcbd595f8b4a0bd771df394d0a69b",
+    "raw_question_sha256": "c364ca542aa157e552633aa2af5f93fbee2ed1df3d9c46bf3332b95380b8e2ab",
+    "normalized_question_sha256": "9c4cbabf209275ce982d40ce131cde80c1e0c43f32d0997d8ba3b370c6ca8775"
+  },
+  "variables": [
+    {
+      "name": "model",
+      "type": "壁画の塗装料金",
+      "domain_ja": "原題の数量・単位・関係を保持する自然数モデル"
+    }
+  ],
+  "assumptions_ja": [
+    "原題に明記された数量関係をモデルの各フィールドとして保持する。"
+  ],
+  "required_conclusions_ja": [
+    "15000ドル。"
+  ],
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A10.mural_solution",
+  "lean_file": "LemmaWeave/Problems/GSM8K/Sprint0925A10Models.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "modeling_notes_ja": [],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.mural_area",
+      "title_ja": "壁画面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "長方形の縦横を掛ける。",
+      "method_ja": "長方形の面積。",
+      "condition_ja": "20ft×15ft。",
+      "premise_ja": "20×15。",
+      "conclusion_ja": "300平方フィート。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.mural_minutes",
+      "title_ja": "所要分数",
+      "requires_steps": [
+        "area"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "1平方フィート20分を300平方フィート分にする。",
+      "method_ja": "単位量×面積。",
+      "condition_ja": "300平方フィート。",
+      "premise_ja": "300×20。",
+      "conclusion_ja": "6000分。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.mural_hours",
+      "title_ja": "所要時間",
+      "requires_steps": [
+        "minutes"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "6000分を60分/時で換算する。",
+      "method_ja": "単位換算。",
+      "condition_ja": "1時間=60分。",
+      "premise_ja": "6000÷60。",
+      "conclusion_ja": "100時間。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "charge",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.mural_solution",
+      "title_ja": "料金",
+      "requires_steps": [
+        "hours"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "100時間と時給150ドルを掛ける。",
+      "method_ja": "料金=時間×時給。",
+      "condition_ja": "100時間。",
+      "premise_ja": "100×150。",
+      "conclusion_ja": "15000ドル。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-25T10:42:00+09:00",
+    "source_problem_id": "external-gsm8k-main-3101c7d50724:train:02330",
+    "checks_ja": [
+      "固定原文を再読し、数量・単位・求める結論を照合した。",
+      "各説明行と名前付きLean定理の型を対応させた。",
+      "結論を仮定へ移さず、途中量から順に導出した。",
+      "自己照合のみであり、固定Leanの成功証拠と独立レビューは未取得である。"
+    ]
+  }
+}

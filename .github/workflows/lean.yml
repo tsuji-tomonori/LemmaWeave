@@ -31,8 +31,8 @@ jobs:
         run: |
           python3 scripts/run.py --timeout 600 -- lean --version
           python3 scripts/run.py -- lake --version
-      - name: Retrieve only fixture mathlib dependencies
-        run: python3 scripts/run.py --timeout 900 -- lake exe cache get Mathlib.Data.Nat.Basic Mathlib.Algebra.Group.Basic Mathlib.Data.Real.Sqrt Mathlib.Tactic
+      - name: Retrieve the pinned mathlib cache for all project imports
+        run: python3 scripts/run.py --timeout 1800 -- lake exe cache get
       - name: Replay the complete fixed-environment pipeline
         run: python3 scripts/run.py --timeout 6000 -- python3 scripts/replay.py
       - name: Print command output

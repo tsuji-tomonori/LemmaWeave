@@ -7,6 +7,7 @@ import json
 import pathlib
 import os
 import platform
+import signal
 import subprocess
 import sys
 import uuid
@@ -63,18 +64,39 @@ def main():
     (out / 'run.json').write_text(json.dumps(record, ensure_ascii=False, indent=2) + '\n')
     with (out / 'stdout.log').open('wb') as stdout, (out / 'stderr.log').open('wb') as stderr:
         try:
-            p = subprocess.run(argv, cwd=ROOT, stdout=stdout, stderr=stderr,
-                               timeout=args.timeout, check=False)
-            code = p.returncode
-            record['status'] = 'succeeded' if code == 0 else 'failed'
+            p = subprocess.Popen(
+                argv, cwd=ROOT, stdout=stdout, stderr=stderr,
+                start_new_session=(os.name == 'posix'),
+            )
+            try:
+                code = p.wait(timeout=args.timeout)
+                record['status'] = 'succeeded' if code == 0 else 'failed'
+            except subprocess.TimeoutExpired:
+                if os.name == 'posix':
+                    try:
+                        os.killpg(p.pid, signal.SIGTERM)
+                    except ProcessLookupError:
+                        pass
+                else:
+                    p.terminate()
+                try:
+                    p.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    if os.name == 'posix':
+                        try:
+                            os.killpg(p.pid, signal.SIGKILL)
+                        except ProcessLookupError:
+                            pass
+                    else:
+                        p.kill()
+                    p.wait()
+                stderr.write(b'Command exceeded recorded timeout; process group terminated; no success inferred.\n')
+                code = 124
+                record['status'] = 'timeout'
         except FileNotFoundError as error:
             stderr.write((str(error) + '\n').encode())
             code = 127
             record['status'] = 'environment_failure'
-        except subprocess.TimeoutExpired:
-            stderr.write(b'Command exceeded recorded timeout; no success inferred.\n')
-            code = 124
-            record['status'] = 'timeout'
     record['finished_at'] = dt.datetime.now(dt.timezone.utc).isoformat()
     record['exit_code'] = code
     record['output_sha256'] = {name: sha(out / name) for name in ['stdout.log', 'stderr.log']}

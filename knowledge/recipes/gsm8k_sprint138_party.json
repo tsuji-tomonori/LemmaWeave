@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint138_party",
+  "title_ja": "誕生日会の総費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02357",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "道化師4時間、半分の時間のバウンスハウス、その他1000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A12.party_solution",
+  "graph": "work/gsm8k-sprint138-party-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "party_clown",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.party_clown",
+      "title_ja": "道化師400ドル",
+      "claim_ja": "道化師400ドル",
+      "method_ja": "100ドルを4時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "道化師400ドル",
+      "baseline_ja": "道化師400ドル"
+    },
+    {
+      "id": "party_rate",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.party_rate",
+      "title_ja": "バウンスハウス時給300ドル",
+      "claim_ja": "バウンスハウス時給300ドル",
+      "method_ja": "道化師時給の3倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "バウンスハウス時給300ドル",
+      "baseline_ja": "バウンスハウス時給300ドル"
+    },
+    {
+      "id": "party_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.party_hours",
+      "title_ja": "利用2時間",
+      "claim_ja": "利用2時間",
+      "method_ja": "4時間の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "利用2時間",
+      "baseline_ja": "利用2時間"
+    },
+    {
+      "id": "party_bounce",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.party_bounce",
+      "title_ja": "バウンスハウス600ドル",
+      "claim_ja": "バウンスハウス600ドル",
+      "method_ja": "300ドルを2時間",
+      "requires_steps": [
+        "party_rate",
+        "party_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "バウンスハウス600ドル",
+      "baseline_ja": "バウンスハウス600ドル"
+    },
+    {
+      "id": "party_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.party_solution",
+      "title_ja": "総額2000ドル",
+      "claim_ja": "総額2000ドル",
+      "method_ja": "400、600、1000を足す",
+      "requires_steps": [
+        "party_clown",
+        "party_bounce"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "総額2000ドル",
+      "baseline_ja": "総額2000ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2358,
+    "checked_model_hash": "e89e0a8fed68bf87ef0de72e11cd924e42bf43e793c002049a2ea2520267d828",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

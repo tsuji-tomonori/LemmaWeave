@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint139_bus",
+  "title_ja": "バスの大人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02373",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "乗客60人の25%が子ども。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.bus_solution",
+  "graph": "work/gsm8k-sprint139-bus-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bus_children",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.bus_children",
+      "title_ja": "子ども15人",
+      "claim_ja": "子ども15人",
+      "method_ja": "60の25%",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "子ども15人",
+      "baseline_ja": "子ども15人"
+    },
+    {
+      "id": "bus_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.bus_solution",
+      "title_ja": "大人45人",
+      "claim_ja": "大人45人",
+      "method_ja": "60から15を引く",
+      "requires_steps": [
+        "bus_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "大人45人",
+      "baseline_ja": "大人45人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2374,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

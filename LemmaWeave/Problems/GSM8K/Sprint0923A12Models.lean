@@ -2,7 +2,9 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A12
 
-structure QuizAverage where total average : ℕ
+structure QuizAverage where
+  total : ℕ
+  average : ℕ
   hTotal : total = 91 + 90 + 92
   hAverage : average * 3 = total
 
@@ -12,7 +14,12 @@ theorem quiz_solution (m : QuizAverage) : m.average = 91 := by
   rw [quiz_total m] at h
   omega
 
-structure PharmacySales where weekly100 weekly500 twoWeeks100 twoWeeks500 total : ℕ
+structure PharmacySales where
+  weekly100 : ℕ
+  weekly500 : ℕ
+  twoWeeks100 : ℕ
+  twoWeeks500 : ℕ
+  total : ℕ
   hWeekly100 : weekly100 * 5 = 80
   hWeekly500 : weekly500 * 2 = 60
   hTwoWeeks100 : twoWeeks100 = 2 * weekly100
@@ -29,7 +36,13 @@ theorem pharmacy_solution (m : PharmacySales) : m.total = 92 := by
   rw [m.hTotal, pharmacy_two_weeks_100 m, pharmacy_two_weeks_500 m]
 
 /-- Supplies are counted as individual items, so paper pieces and glue bottles each count once. -/
-structure ArtSupplies where paper glue bought dropped remaining final : ℕ
+structure ArtSupplies where
+  paper : ℕ
+  glue : ℕ
+  bought : ℕ
+  dropped : ℕ
+  remaining : ℕ
+  final : ℕ
   hPaper : paper = 8 * 3
   hGlue : glue = 6
   hBought : bought = paper + glue
@@ -51,7 +64,9 @@ theorem supplies_remaining (m : ArtSupplies) : m.remaining = 15 := by
 theorem supplies_solution (m : ArtSupplies) : m.final = 20 := by
   rw [m.hFinal, supplies_remaining m]
 
-structure TrainNap where activities nap : ℕ
+structure TrainNap where
+  activities : ℕ
+  nap : ℕ
   hActivities : activities = 2 + 1 + 3
   hTrip : nap + activities = 9
 
@@ -62,7 +77,10 @@ theorem nap_solution (m : TrainNap) : m.nap = 3 := by
   omega
 
 /-- All revenue fields are in cents. -/
-structure ProduceRevenue where tomatoes carrots total : ℕ
+structure ProduceRevenue where
+  tomatoes : ℕ
+  carrots : ℕ
+  total : ℕ
   hTomatoes : tomatoes = 200 * 100
   hCarrots : carrots = 350 * 150
   hTotal : total = tomatoes + carrots
@@ -72,7 +90,9 @@ theorem produce_carrots (m : ProduceRevenue) : m.carrots = 52500 := by rw [m.hCa
 theorem produce_solution (m : ProduceRevenue) : m.total = 72500 := by
   rw [m.hTotal, produce_tomatoes m, produce_carrots m]
 
-structure CornPreference where children percent : ℕ
+structure CornPreference where
+  children : ℕ
+  percent : ℕ
   hChildren : children = 6 + 9 + 5
   hPercent : percent * children = 5 * 100
 
@@ -83,7 +103,11 @@ theorem corn_solution (m : CornPreference) : m.percent = 25 := by
   omega
 
 /-- Reference reading: rows are planted on birthdays 10 through 14, then the stock doubles at 15. -/
-structure TreesFiveRows where initial added beforeDoubling final : ℕ
+structure TreesFiveRows where
+  initial : ℕ
+  added : ℕ
+  beforeDoubling : ℕ
+  final : ℕ
   hInitial : initial = 2 * 4
   hAdded : added = (15 - 10) * 4
   hBefore : beforeDoubling = initial + added
@@ -97,7 +121,11 @@ theorem trees_reference_solution (m : TreesFiveRows) : m.final = 56 := by
   rw [m.hFinal, trees_five_before m]
 
 /-- Alternative reading: the annual row is also planted on birthday 15 before doubling. -/
-structure TreesSixRows where initial added beforeDoubling final : ℕ
+structure TreesSixRows where
+  initial : ℕ
+  added : ℕ
+  beforeDoubling : ℕ
+  final : ℕ
   hInitial : initial = 2 * 4
   hAdded : added = (15 - 10 + 1) * 4
   hBefore : beforeDoubling = initial + added
@@ -111,7 +139,10 @@ theorem trees_inclusive_solution (m : TreesSixRows) : m.final = 64 := by
   rw [m.hFinal, trees_six_before m]
 theorem trees_two_birthday_readings_differ : (56 : ℕ) ≠ 64 := by norm_num
 
-structure WalkingLegs where humanLegs dogLegs total : ℕ
+structure WalkingLegs where
+  humanLegs : ℕ
+  dogLegs : ℕ
+  total : ℕ
   hHumans : humanLegs = 2 * 2
   hDogs : dogLegs = 2 * 4
   hTotal : total = humanLegs + dogLegs
@@ -121,7 +152,12 @@ theorem legs_dogs (m : WalkingLegs) : m.dogLegs = 8 := by rw [m.hDogs]
 theorem legs_solution (m : WalkingLegs) : m.total = 12 := by
   rw [m.hTotal, legs_humans m, legs_dogs m]
 
-structure TirePumps where emptyNeed tire40Need tire70Need totalNeed pumps : ℕ
+structure TirePumps where
+  emptyNeed : ℕ
+  tire40Need : ℕ
+  tire70Need : ℕ
+  totalNeed : ℕ
+  pumps : ℕ
   hEmpty : emptyNeed = 2 * 500
   hForty : tire40Need * 100 = 500 * 60
   hSeventy : tire70Need * 100 = 500 * 30
@@ -138,7 +174,10 @@ theorem tires_solution (m : TirePumps) : m.pumps = 29 := by
   rw [tires_total m] at h
   omega
 
-structure PepperHarvest where total hot nonHot : ℕ
+structure PepperHarvest where
+  total : ℕ
+  hot : ℕ
+  nonHot : ℕ
   hTotal : total = 7 + 12 + 14 + 12 + 5 + 18 + 12
   hHot : hot * 100 = total * 20
   hPartition : nonHot + hot = total
@@ -154,7 +193,14 @@ theorem peppers_solution (m : PepperHarvest) : m.nonHot = 64 := by
   omega
 
 /-- All prices are in cents. -/
-structure DeliPurchase where sandwiches salami brie olives feta bread total : ℕ
+structure DeliPurchase where
+  sandwiches : ℕ
+  salami : ℕ
+  brie : ℕ
+  olives : ℕ
+  feta : ℕ
+  bread : ℕ
+  total : ℕ
   hSandwiches : sandwiches = 2 * 775
   hSalami : salami = 400
   hBrie : brie = 3 * salami
@@ -172,7 +218,13 @@ theorem deli_solution (m : DeliPurchase) : m.total = 4000 := by
       deli_feta m, m.hBread]
 
 /-- Reference reading: all filled and newly bought boxes have one common capacity. -/
-structure UniformChocolateBoxes where boxed capacity unboxed newPieces toBox boxesNeeded : ℕ
+structure UniformChocolateBoxes where
+  boxed : ℕ
+  capacity : ℕ
+  unboxed : ℕ
+  newPieces : ℕ
+  toBox : ℕ
+  boxesNeeded : ℕ
   hBoxed : boxed + 5 = 50
   hCapacity : boxed = 3 * capacity
   hUnboxed : unboxed = 5
@@ -195,7 +247,10 @@ theorem boxes_reference_solution (m : UniformChocolateBoxes) : m.boxesNeeded = 2
 theorem boxes_nonuniform_countermodel : (10 + 15 + 20 = 45) ∧ (3 * 10 = 30) := by norm_num
 theorem boxes_two_capacity_readings_differ : (2 : ℕ) ≠ 3 := by norm_num
 
-structure Portraits where beforeLunch photographed remaining : ℕ
+structure Portraits where
+  beforeLunch : ℕ
+  photographed : ℕ
+  remaining : ℕ
   hBefore : beforeLunch * 3 = 24
   hPhotographed : photographed = beforeLunch + 10
   hRemaining : remaining + photographed = 24
@@ -208,7 +263,10 @@ theorem portraits_solution (m : Portraits) : m.remaining = 6 := by
   rw [portraits_photographed m] at h
   omega
 
-structure ShipJourney where second third total : ℕ
+structure ShipJourney where
+  second : ℕ
+  third : ℕ
+  total : ℕ
   hSecond : second = 3 * 100
   hThird : third = second + 110
   hTotal : total = 100 + second + third
@@ -218,7 +276,10 @@ theorem ship_third (m : ShipJourney) : m.third = 410 := by rw [m.hThird, ship_se
 theorem ship_solution (m : ShipJourney) : m.total = 810 := by
   rw [m.hTotal, ship_second m, ship_third m]
 
-structure JailSentence where base extension total : ℕ
+structure JailSentence where
+  base : ℕ
+  extension : ℕ
+  total : ℕ
   hBase : base = 3 + 2 * 12
   hExtension : extension * 3 = base
   hTotal : total = base + extension

@@ -2,14 +2,21 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A20
 
-structure BeanieBabies where sydney total : ℕ
+structure BeanieBabies where
+  sydney : ℕ
+  total : ℕ
   hSydney : 15 * sydney = 300
   hTotal : total = 300 + sydney
 
 theorem beanie_sydney (m : BeanieBabies) : m.sydney = 20 := by omega
 theorem beanie_solution (m : BeanieBabies) : m.total = 320 := by omega
 
-structure SinkWater where first second finalHour total left : ℕ
+structure SinkWater where
+  first : ℕ
+  second : ℕ
+  finalHour : ℕ
+  total : ℕ
+  left : ℕ
   hFirst : first = 3 * 2
   hSecond : second = 3 * 2
   hFinalHour : finalHour = 6 * 4
@@ -22,7 +29,14 @@ theorem water_final_hour (m : SinkWater) : m.finalHour = 24 := by omega
 theorem water_total (m : SinkWater) : m.total = 36 := by omega
 theorem water_solution (m : SinkWater) : m.left = 18 := by omega
 
-structure ShirtShop where minutes womenCount womenRevenue menCount menRevenue daily weekly : ℕ
+structure ShirtShop where
+  minutes : ℕ
+  womenCount : ℕ
+  womenRevenue : ℕ
+  menCount : ℕ
+  menRevenue : ℕ
+  daily : ℕ
+  weekly : ℕ
   hMinutes : minutes = 12 * 60
   hWomenCount : 30 * womenCount = minutes
   hWomenRevenue : womenRevenue = womenCount * 18
@@ -39,14 +53,19 @@ theorem shirts_men_revenue (m : ShirtShop) : m.menRevenue = 270 := by omega
 theorem shirts_daily (m : ShirtShop) : m.daily = 702 := by omega
 theorem shirts_solution (m : ShirtShop) : m.weekly = 4914 := by omega
 
-structure TeamParties where oneParty total : ℕ
+structure TeamParties where
+  oneParty : ℕ
+  total : ℕ
   hOne : oneParty = 40 * 60
   hTotal : total = oneParty * 8
 
 theorem parties_one (m : TeamParties) : m.oneParty = 2400 := by omega
 theorem parties_solution (m : TeamParties) : m.total = 19200 := by omega
 
-structure DentistBill where total fillings extraction : ℕ
+structure DentistBill where
+  total : ℕ
+  fillings : ℕ
+  extraction : ℕ
   hTotal : total = 5 * 120
   hFillings : fillings = 2 * 120
   hExtraction : extraction + fillings + 70 = total
@@ -55,7 +74,10 @@ theorem dentist_total (m : DentistBill) : m.total = 600 := by omega
 theorem dentist_fillings (m : DentistBill) : m.fillings = 240 := by omega
 theorem dentist_solution (m : DentistBill) : m.extraction = 290 := by omega
 
-structure ApartmentRent where firstYears lastYears total : ℕ
+structure ApartmentRent where
+  firstYears : ℕ
+  lastYears : ℕ
+  total : ℕ
   hFirst : firstYears = 300 * 12 * 3
   hLast : lastYears = 350 * 12 * 2
   hTotal : total = firstYears + lastYears
@@ -65,7 +87,10 @@ theorem rent_last_years (m : ApartmentRent) : m.lastYears = 8400 := by omega
 theorem rent_solution (m : ApartmentRent) : m.total = 19200 := by omega
 
 /-- February and March are each percentages of the original savings. -/
-structure SavingsOriginalPercent where spentPercent aprilAndLeft initial : ℕ
+structure SavingsOriginalPercent where
+  spentPercent : ℕ
+  aprilAndLeft : ℕ
+  initial : ℕ
   hPercent : spentPercent = 20 + 40
   hPool : aprilAndLeft = 1500 + 2900
   hInitial : initial * 40 = aprilAndLeft * 100
@@ -87,7 +112,10 @@ theorem pot_split_example_third_eight : 0 + 8 = 8 := by norm_num
 theorem pot_equal_split (second third : ℕ) (hSplit : second + third = 8)
     (hEqual : second = third) : third = 4 := by omega
 
-structure BicycleStock where sold bought increase : ℕ
+structure BicycleStock where
+  sold : ℕ
+  bought : ℕ
+  increase : ℕ
   hSold : sold = 10 + 12 + 9
   hBought : bought = 15 + 8 + 11
   hIncrease : sold + increase = bought
@@ -96,7 +124,11 @@ theorem stock_sold (m : BicycleStock) : m.sold = 31 := by omega
 theorem stock_bought (m : BicycleStock) : m.bought = 34 := by omega
 theorem stock_solution (m : BicycleStock) : m.increase = 3 := by omega
 
-structure SchoolBooks where mathCost scienceCost otherCost artEach : ℕ
+structure SchoolBooks where
+  mathCost : ℕ
+  scienceCost : ℕ
+  otherCost : ℕ
+  artEach : ℕ
   hMath : mathCost = 2 * 3
   hScience : scienceCost = 6 * 3
   hOther : otherCost = mathCost + scienceCost
@@ -107,7 +139,10 @@ theorem books_science (m : SchoolBooks) : m.scienceCost = 18 := by omega
 theorem books_other (m : SchoolBooks) : m.otherCost = 24 := by omega
 theorem books_solution (m : SchoolBooks) : m.artEach = 2 := by omega
 
-structure JeromeMoney where initial bianca left : ℕ
+structure JeromeMoney where
+  initial : ℕ
+  bianca : ℕ
+  left : ℕ
   hInitial : initial = 43 * 2
   hBianca : bianca = 8 * 3
   hLeft : left + 8 + bianca = initial
@@ -116,7 +151,12 @@ theorem jerome_initial (m : JeromeMoney) : m.initial = 86 := by omega
 theorem jerome_bianca (m : JeromeMoney) : m.bianca = 24 := by omega
 theorem jerome_solution (m : JeromeMoney) : m.left = 54 := by omega
 
-structure PetLegs where birdLegs dogLegs snakeLegs spiderLegs total : ℕ
+structure PetLegs where
+  birdLegs : ℕ
+  dogLegs : ℕ
+  snakeLegs : ℕ
+  spiderLegs : ℕ
+  total : ℕ
   hBirds : birdLegs = 3 * 2
   hDogs : dogLegs = 5 * 4
   hSnakes : snakeLegs = 4 * 0
@@ -129,14 +169,20 @@ theorem pets_snakes (m : PetLegs) : m.snakeLegs = 0 := by omega
 theorem pets_spider (m : PetLegs) : m.spiderLegs = 8 := by omega
 theorem pets_solution (m : PetLegs) : m.total = 34 := by omega
 
-structure Earnings where kayla saheed : ℕ
+structure Earnings where
+  kayla : ℕ
+  saheed : ℕ
   hKayla : kayla + 30 = 84
   hSaheed : saheed = 4 * kayla
 
 theorem earnings_kayla (m : Earnings) : m.kayla = 54 := by omega
 theorem earnings_solution (m : Earnings) : m.saheed = 216 := by omega
 
-structure ShortsDiscount where regular discount sale saving : ℕ
+structure ShortsDiscount where
+  regular : ℕ
+  discount : ℕ
+  sale : ℕ
+  saving : ℕ
   hRegular : regular = 3 * 10
   hDiscount : discount * 100 = regular * 10
   hSale : sale + discount = regular
@@ -147,7 +193,12 @@ theorem shorts_discount (m : ShortsDiscount) : m.discount = 3 := by omega
 theorem shorts_sale (m : ShortsDiscount) : m.sale = 27 := by omega
 theorem shorts_solution (m : ShortsDiscount) : m.saving = 3 := by omega
 
-structure ParkVisit where people entrance childrenAttraction adultsAttraction total : ℕ
+structure ParkVisit where
+  people : ℕ
+  entrance : ℕ
+  childrenAttraction : ℕ
+  adultsAttraction : ℕ
+  total : ℕ
   hPeople : people = 4 + 2 + 1
   hEntrance : entrance = people * 5
   hChildren : childrenAttraction = 4 * 2

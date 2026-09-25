@@ -3,7 +3,10 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A08
 
 /-- Standard-year reading: the current one-year interval has 365 days. -/
-structure Dreams365 where thisYear lastYear total : ℕ
+structure Dreams365 where
+  thisYear : ℕ
+  lastYear : ℕ
+  total : ℕ
   hThisYear : thisYear = 4 * 365
   hLastYear : lastYear = 2 * thisYear
   hTotal : total = thisYear + lastYear
@@ -15,7 +18,10 @@ theorem dreams_365_solution (m : Dreams365) : m.total = 4380 := by
   rw [m.hTotal, dreams_365_this_year m, dreams_365_last_year m]
 
 /-- Leap-year reading: the current one-year interval has 366 days. -/
-structure Dreams366 where thisYear lastYear total : ℕ
+structure Dreams366 where
+  thisYear : ℕ
+  lastYear : ℕ
+  total : ℕ
   hThisYear : thisYear = 4 * 366
   hLastYear : lastYear = 2 * thisYear
   hTotal : total = thisYear + lastYear
@@ -28,7 +34,12 @@ theorem dreams_366_solution (m : Dreams366) : m.total = 4392 := by
 theorem dreams_two_calendar_readings_differ : (4380 : ℕ) ≠ 4392 := by norm_num
 
 /-- Pay amounts are in cents; the stated $13.50 rate is applied to all hours. -/
-structure FaithSameRate where regularHours overtimeHours regularPay overtimePay totalPay : ℕ
+structure FaithSameRate where
+  regularHours : ℕ
+  overtimeHours : ℕ
+  regularPay : ℕ
+  overtimePay : ℕ
+  totalPay : ℕ
   hRegularHours : regularHours = 8 * 5
   hOvertimeHours : overtimeHours = 2 * 5
   hRegularPay : regularPay = regularHours * 1350
@@ -45,7 +56,11 @@ theorem faith_same_rate_solution (m : FaithSameRate) : m.totalPay = 67500 := by
   rw [m.hTotal, faith_same_regular_pay m, faith_same_overtime_pay m]
 
 /-- Alternative employment-policy reading: overtime is paid at time-and-a-half. -/
-structure FaithTimeAndHalf where regularPay overtimeHours overtimePay totalPay : ℕ
+structure FaithTimeAndHalf where
+  regularPay : ℕ
+  overtimeHours : ℕ
+  overtimePay : ℕ
+  totalPay : ℕ
   hRegularPay : regularPay = 8 * 5 * 1350
   hOvertimeHours : overtimeHours = 2 * 5
   hOvertimePay : overtimePay * 2 = overtimeHours * 1350 * 3
@@ -63,7 +78,14 @@ theorem faith_time_and_half_solution (m : FaithTimeAndHalf) : m.totalPay = 74250
   rw [m.hTotal, faith_premium_regular_pay m, faith_premium_overtime_pay m]
 theorem faith_two_pay_readings_differ : (67500 : ℕ) ≠ 74250 := by norm_num
 
-structure BackpackSales where firstRevenue secondRevenue firstTwoSold remainder remainderRevenue revenue profit : ℕ
+structure BackpackSales where
+  firstRevenue : ℕ
+  secondRevenue : ℕ
+  firstTwoSold : ℕ
+  remainder : ℕ
+  remainderRevenue : ℕ
+  revenue : ℕ
+  profit : ℕ
   hFirstRevenue : firstRevenue = 17 * 18
   hSecondRevenue : secondRevenue = 10 * 25
   hFirstTwoSold : firstTwoSold = 17 + 10
@@ -89,7 +111,10 @@ theorem backpacks_solution (m : BackpackSales) : m.profit = 442 := by
   rw [backpacks_revenue m] at h
   omega
 
-structure RestaurantOrder where pizza burgers total : ℕ
+structure RestaurantOrder where
+  pizza : ℕ
+  burgers : ℕ
+  total : ℕ
   hPizza : pizza = 2 * 9
   hBurgers : burgers = 3 * 9
   hTotal : total = pizza + burgers
@@ -99,7 +124,11 @@ theorem restaurant_burgers (m : RestaurantOrder) : m.burgers = 27 := by rw [m.hB
 theorem restaurant_solution (m : RestaurantOrder) : m.total = 45 := by
   rw [m.hTotal, restaurant_pizza m, restaurant_burgers m]
 
-structure ShellCounts where mia ava alice total : ℕ
+structure ShellCounts where
+  mia : ℕ
+  ava : ℕ
+  alice : ℕ
+  total : ℕ
   hMia : mia = 4 * 15
   hAva : ava = mia + 20
   hAlice : alice * 2 = ava
@@ -114,7 +143,9 @@ theorem shells_alice (m : ShellCounts) : m.alice = 40 := by
 theorem shells_solution (m : ShellCounts) : m.total = 195 := by
   rw [m.hTotal, shells_mia m, shells_ava m, shells_alice m]
 
-structure TortillaChips where given kept : ℕ
+structure TortillaChips where
+  given : ℕ
+  kept : ℕ
   hGiven : given = 7 + 5
   hKept : kept + given = 22
 
@@ -124,7 +155,12 @@ theorem chips_solution (m : TortillaChips) : m.kept = 10 := by
   rw [chips_given m] at h
   omega
 
-structure CandySharing where lollipops canes boys girls totalChildren : ℕ
+structure CandySharing where
+  lollipops : ℕ
+  canes : ℕ
+  boys : ℕ
+  girls : ℕ
+  totalChildren : ℕ
   hLollipops : lollipops * 3 = 90
   hCanes : canes + lollipops = 90
   hBoys : boys * 3 = lollipops
@@ -148,7 +184,12 @@ theorem candies_solution (m : CandySharing) : m.totalChildren = 40 := by
   rw [m.hTotal, candies_boys m, candies_girls m]
 
 /-- All fields are percentage points. Blue and purple exhaust the egg colors. -/
-structure EasterEggChance where blue purple blueFive purpleFive favorable : ℕ
+structure EasterEggChance where
+  blue : ℕ
+  purple : ℕ
+  blueFive : ℕ
+  purpleFive : ℕ
+  favorable : ℕ
   hBlue : blue = 80
   hPurple : purple = 20
   hColors : blue + purple = 100
@@ -170,7 +211,10 @@ theorem eggs_purple_five (m : EasterEggChance) : m.purpleFive = 10 := by
 theorem eggs_solution (m : EasterEggChance) : m.favorable = 30 := by
   rw [m.hFavorable, eggs_blue_five m, eggs_purple_five m]
 
-structure BreakfastTime where sausageTime eggTime totalTime : ℕ
+structure BreakfastTime where
+  sausageTime : ℕ
+  eggTime : ℕ
+  totalTime : ℕ
   hSausages : sausageTime = 3 * 5
   hEggs : eggTime = 6 * 4
   hTotal : totalTime = sausageTime + eggTime
@@ -180,7 +224,11 @@ theorem breakfast_eggs (m : BreakfastTime) : m.eggTime = 24 := by rw [m.hEggs]
 theorem breakfast_solution (m : BreakfastTime) : m.totalTime = 39 := by
   rw [m.hTotal, breakfast_sausages m, breakfast_eggs m]
 
-structure LycheeRemainder where sold broughtHome eaten remaining : ℕ
+structure LycheeRemainder where
+  sold : ℕ
+  broughtHome : ℕ
+  eaten : ℕ
+  remaining : ℕ
   hSold : sold * 2 = 500
   hBroughtHome : broughtHome + sold = 500
   hEaten : eaten * 5 = broughtHome * 3
@@ -200,7 +248,10 @@ theorem lychees_solution (m : LycheeRemainder) : m.remaining = 100 := by
   rw [lychees_brought_home m, lychees_eaten m] at h
   omega
 
-structure CardTrades where padmaOut robertOut totalTraded : ℕ
+structure CardTrades where
+  padmaOut : ℕ
+  robertOut : ℕ
+  totalTraded : ℕ
   hPadmaOut : padmaOut = 2 + 15
   hRobertOut : robertOut = 10 + 8
   hTotal : totalTraded = padmaOut + robertOut
@@ -215,7 +266,10 @@ theorem cards_solution (m : CardTrades) : m.totalTraded = 35 := by
   rw [m.hTotal, cards_padma_out m, cards_robert_out m]
 
 /-- Additive reading of “four times more”: add four times the first-wave rate. -/
-structure WaveAdditive where extra perDay total : ℕ
+structure WaveAdditive where
+  extra : ℕ
+  perDay : ℕ
+  total : ℕ
   hExtra : extra = 4 * 300
   hPerDay : perDay = 300 + extra
   hTotal : total = 14 * perDay
@@ -227,7 +281,9 @@ theorem wave_additive_solution (m : WaveAdditive) : m.total = 21000 := by
   rw [m.hTotal, wave_additive_per_day m]
 
 /-- Multiplicative reading: the second-wave rate is four times the first-wave rate. -/
-structure WaveFourfold where perDay total : ℕ
+structure WaveFourfold where
+  perDay : ℕ
+  total : ℕ
   hPerDay : perDay = 4 * 300
   hTotal : total = 14 * perDay
 
@@ -236,7 +292,10 @@ theorem wave_fourfold_solution (m : WaveFourfold) : m.total = 16800 := by
   rw [m.hTotal, wave_fourfold_per_day m]
 theorem wave_two_readings_differ : (21000 : ℕ) ≠ 16800 := by norm_num
 
-structure NameBadges where noPreprinted handwritten noBadge : ℕ
+structure NameBadges where
+  noPreprinted : ℕ
+  handwritten : ℕ
+  noBadge : ℕ
   hNoPreprinted : noPreprinted + 16 = 36
   hHandwritten : handwritten * 2 = noPreprinted
   hNoBadge : noBadge + handwritten = noPreprinted
@@ -251,7 +310,10 @@ theorem badges_solution (m : NameBadges) : m.noBadge = 10 := by
   rw [badges_no_preprinted m, badges_handwritten m] at h
   omega
 
-structure FloralOrder where lilies perArrangement total : ℕ
+structure FloralOrder where
+  lilies : ℕ
+  perArrangement : ℕ
+  total : ℕ
   hLilies : lilies = 2 * 3
   hPerArrangement : perArrangement = 8 + 12 + 3 + lilies
   hTotal : total = perArrangement * 10
@@ -262,7 +324,9 @@ theorem flowers_per_arrangement (m : FloralOrder) : m.perArrangement = 29 := by
 theorem flowers_solution (m : FloralOrder) : m.total = 290 := by
   rw [m.hTotal, flowers_per_arrangement m]
 
-structure PaintingCommission where hours hourlyPay : ℕ
+structure PaintingCommission where
+  hours : ℕ
+  hourlyPay : ℕ
   hHours : hours = 2 * 12
   hHourlyPay : hourlyPay * hours = 3600
 

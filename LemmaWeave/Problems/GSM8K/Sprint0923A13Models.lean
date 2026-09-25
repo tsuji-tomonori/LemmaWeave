@@ -2,7 +2,12 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A13
 
-structure FoodBankDonation where water hormel boudin delMonte total : ℕ
+structure FoodBankDonation where
+  water : ℕ
+  hormel : ℕ
+  boudin : ℕ
+  delMonte : ℕ
+  total : ℕ
   hWater : water = 2 * 45
   hHormel : hormel = 3 * 45
   hBoudin : boudin * 3 = hormel
@@ -16,7 +21,11 @@ theorem food_del_monte (m : FoodBankDonation) : m.delMonte = 60 := by omega
 theorem food_solution (m : FoodBankDonation) : m.total = 375 := by
   rw [m.hTotal, food_water m, food_hormel m, food_boudin m, food_del_monte m]
 
-structure PetInsurance where premiums copay paid savings : ℕ
+structure PetInsurance where
+  premiums : ℕ
+  copay : ℕ
+  paid : ℕ
+  savings : ℕ
   hPremiums : premiums = 24 * 20
   hCopay : copay * 100 = 5000 * 20
   hPaid : paid = premiums + copay
@@ -28,7 +37,11 @@ theorem insurance_paid (m : PetInsurance) : m.paid = 1480 := by
   rw [m.hPaid, insurance_premiums m, insurance_copay m]
 theorem insurance_solution (m : PetInsurance) : m.savings = 3520 := by omega
 
-structure Pushups where wednesday firstThree thursday friday : ℕ
+structure Pushups where
+  wednesday : ℕ
+  firstThree : ℕ
+  thursday : ℕ
+  friday : ℕ
   hWednesday : wednesday = 2 * 7
   hFirstThree : firstThree = 5 + 7 + wednesday
   hThursday : thursday * 2 = firstThree
@@ -41,7 +54,12 @@ theorem pushups_thursday (m : Pushups) : m.thursday = 13 := by omega
 theorem pushups_solution (m : Pushups) : m.friday = 39 := by
   rw [m.hFriday, pushups_first_three m, pushups_thursday m]
 
-structure BreakfastEggs where children familyDaily weekdays breakfasts total : ℕ
+structure BreakfastEggs where
+  children : ℕ
+  familyDaily : ℕ
+  weekdays : ℕ
+  breakfasts : ℕ
+  total : ℕ
   hChildren : children = 4 * 2
   hDaily : familyDaily = children + 3 + 2
   hWeekdays : weekdays = 5 * 52
@@ -57,7 +75,13 @@ theorem eggs_solution (m : BreakfastEggs) : m.total = 3380 := by
   rw [m.hTotal, eggs_daily m, eggs_breakfasts m]
 
 /-- Reference convention: each year's twelve deposits are all present before that year's interest. -/
-structure FundReference where year1Base year1Interest year1Total year2Base year2Interest final : ℕ
+structure FundReference where
+  year1Base : ℕ
+  year1Interest : ℕ
+  year1Total : ℕ
+  year2Base : ℕ
+  year2Interest : ℕ
+  final : ℕ
   hYear1Base : year1Base = 1000 + 12 * 100
   hYear1Interest : year1Interest * 10 = year1Base
   hYear1Total : year1Total = year1Base + year1Interest
@@ -76,7 +100,11 @@ theorem fund_reference_solution (m : FundReference) : m.final = 3982 := by
   rw [m.hFinal, fund_ref_year2_base m, fund_ref_year2_interest m]
 
 /-- Counter-reading: each year's twelve deposits arrive after the annual interest posting. -/
-structure FundEndYearDeposits where interest1 year1Total interest2 final : ℕ
+structure FundEndYearDeposits where
+  interest1 : ℕ
+  year1Total : ℕ
+  interest2 : ℕ
+  final : ℕ
   hInterest1 : interest1 * 10 = 1000
   hYear1 : year1Total = 1000 + interest1 + 12 * 100
   hInterest2 : interest2 * 10 = year1Total
@@ -90,7 +118,13 @@ theorem fund_end_year_solution (m : FundEndYearDeposits) : m.final = 3730 := by
   rw [m.hFinal, fund_end_year1 m, fund_end_interest2 m]
 theorem fund_timing_changes_answer : (3982 : ℕ) ≠ 3730 := by norm_num
 
-structure WizardPurchase where booksGold owlGold goldTotal goldSilver kitsSilver totalSilver : ℕ
+structure WizardPurchase where
+  booksGold : ℕ
+  owlGold : ℕ
+  goldTotal : ℕ
+  goldSilver : ℕ
+  kitsSilver : ℕ
+  totalSilver : ℕ
   hBooks : booksGold = 5 * 5
   hOwl : owlGold = 28
   hGoldTotal : goldTotal = booksGold + owlGold
@@ -108,7 +142,10 @@ theorem wizard_solution (m : WizardPurchase) : m.totalSilver = 537 := by
   rw [m.hTotal, wizard_gold_silver m, wizard_kits m]
 
 /-- Each purchased pack contains ten one-pound bags and costs 300 cents. -/
-structure IcePacks where pounds packs totalCents : ℕ
+structure IcePacks where
+  pounds : ℕ
+  packs : ℕ
+  totalCents : ℕ
   hPounds : pounds = 15 * 2
   hPacks : packs * 10 = pounds
   hTotal : totalCents = packs * 300
@@ -118,7 +155,12 @@ theorem ice_packs (m : IcePacks) : m.packs = 3 := by omega
 theorem ice_solution (m : IcePacks) : m.totalCents = 900 := by
   rw [m.hTotal, ice_packs m]
 
-structure Stationery where pencils pencilCost pens penCost total : ℕ
+structure Stationery where
+  pencils : ℕ
+  pencilCost : ℕ
+  pens : ℕ
+  penCost : ℕ
+  total : ℕ
   hPencils : pencils = 15 * 80
   hPencilCost : pencilCost = pencils * 4
   hPens : pens = 2 * pencils + 300
@@ -135,7 +177,12 @@ theorem stationery_pen_cost (m : Stationery) : m.penCost = 13500 := by
 theorem stationery_solution (m : Stationery) : m.total = 18300 := by
   rw [m.hTotal, stationery_pencil_cost m, stationery_pen_cost m]
 
-structure SportsBalls where basketball tennis baseball assigned volleyball : ℕ
+structure SportsBalls where
+  basketball : ℕ
+  tennis : ℕ
+  baseball : ℕ
+  assigned : ℕ
+  volleyball : ℕ
   hBasketball : basketball = 20 + 5
   hTennis : tennis = 2 * 20
   hBaseball : baseball = 20 + 10
@@ -149,14 +196,20 @@ theorem balls_assigned (m : SportsBalls) : m.assigned = 115 := by
   rw [m.hAssigned, balls_basketball m, balls_tennis m, balls_baseball m]
 theorem balls_solution (m : SportsBalls) : m.volleyball = 30 := by omega
 
-structure PaintCans where coatedArea cans : ℕ
+structure PaintCans where
+  coatedArea : ℕ
+  cans : ℕ
   hArea : coatedArea = 2 * 600
   hCans : cans * 400 = coatedArea
 
 theorem paint_area (m : PaintCans) : m.coatedArea = 1200 := by rw [m.hArea]
 theorem paint_solution (m : PaintCans) : m.cans = 3 := by omega
 
-structure Lodging where hostel cabinGroup jimmyCabin total : ℕ
+structure Lodging where
+  hostel : ℕ
+  cabinGroup : ℕ
+  jimmyCabin : ℕ
+  total : ℕ
   hHostel : hostel = 3 * 15
   hCabinGroup : cabinGroup = 2 * 45
   hShare : jimmyCabin * 3 = cabinGroup
@@ -169,7 +222,11 @@ theorem lodging_solution (m : Lodging) : m.total = 75 := by
   rw [m.hTotal, lodging_hostel m, lodging_share m]
 
 /-- All amounts are represented in cents. -/
-structure CoinSavings where pennies nickels dimes total : ℕ
+structure CoinSavings where
+  pennies : ℕ
+  nickels : ℕ
+  dimes : ℕ
+  total : ℕ
   hPennies : pennies = 200
   hNickels : nickels = 100 * 5
   hDimes : dimes = 330 * 10
@@ -181,7 +238,11 @@ theorem coins_dimes (m : CoinSavings) : m.dimes = 3300 := by rw [m.hDimes]
 theorem coins_solution (m : CoinSavings) : m.total = 4000 := by
   rw [m.hTotal, coins_pennies m, coins_nickels m, coins_dimes m]
 
-structure CandyPicnic where packetRemainder caleb andy difference : ℕ
+structure CandyPicnic where
+  packetRemainder : ℕ
+  caleb : ℕ
+  andy : ℕ
+  difference : ℕ
   hRemainder : packetRemainder + 8 + 11 = 36
   hCaleb : caleb = 11 + 11
   hAndy : andy = 9 + packetRemainder
@@ -193,7 +254,10 @@ theorem candy_andy (m : CandyPicnic) : m.andy = 26 := by
   rw [m.hAndy, candy_remainder m]
 theorem candy_solution (m : CandyPicnic) : m.difference = 4 := by omega
 
-structure BusCommute where total firstLeg remaining : ℕ
+structure BusCommute where
+  total : ℕ
+  firstLeg : ℕ
+  remaining : ℕ
   hTotal : total = (9 - 6) * 60
   hFirst : firstLeg = 40
   hRemaining : remaining + firstLeg = total
@@ -201,7 +265,10 @@ structure BusCommute where total firstLeg remaining : ℕ
 theorem commute_total (m : BusCommute) : m.total = 180 := by rw [m.hTotal]
 theorem commute_solution (m : BusCommute) : m.remaining = 140 := by omega
 
-structure ToyBlocks where yellow blue total : ℕ
+structure ToyBlocks where
+  yellow : ℕ
+  blue : ℕ
+  total : ℕ
   hYellow : yellow = 18 + 7
   hBlue : blue = 18 + 14
   hTotal : total = 18 + yellow + blue

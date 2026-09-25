@@ -3,7 +3,11 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A18
 
 /-- Money is represented in cents. -/
-structure CandyStore where total cherry grape apple : ℕ
+structure CandyStore where
+  total : ℕ
+  cherry : ℕ
+  grape : ℕ
+  apple : ℕ
   hCost : total * 250 = 20000
   hGrape : grape = 3 * cherry
   hApple : apple = 2 * grape
@@ -15,7 +19,12 @@ theorem candy_grape (m : CandyStore) : m.grape = 24 := by omega
 theorem candy_apple (m : CandyStore) : m.apple = 48 := by omega
 theorem candy_solution (m : CandyStore) : m.grape = 24 := candy_grape m
 
-structure FootballDistance where saturdayPerThrow sundayPerThrow saturday sunday total : ℕ
+structure FootballDistance where
+  saturdayPerThrow : ℕ
+  sundayPerThrow : ℕ
+  saturday : ℕ
+  sunday : ℕ
+  total : ℕ
   hSaturdayPer : saturdayPerThrow = 20
   hSundayPer : sundayPerThrow = 2 * saturdayPerThrow
   hSaturday : saturday = 20 * saturdayPerThrow
@@ -27,7 +36,12 @@ theorem football_sunday_per_throw (m : FootballDistance) : m.sundayPerThrow = 40
 theorem football_sunday (m : FootballDistance) : m.sunday = 1200 := by omega
 theorem football_solution (m : FootballDistance) : m.total = 1600 := by omega
 
-structure TownTrip where firstDistance remainingDistance speed remainingDrive totalTime : ℕ
+structure TownTrip where
+  firstDistance : ℕ
+  remainingDistance : ℕ
+  speed : ℕ
+  remainingDrive : ℕ
+  totalTime : ℕ
   hFirst : firstDistance * 4 = 200
   hRemaining : firstDistance + remainingDistance = 200
   hSpeed : speed = firstDistance
@@ -40,7 +54,12 @@ theorem trip_speed (m : TownTrip) : m.speed = 50 := by omega
 theorem trip_remaining_drive (m : TownTrip) : m.remainingDrive = 3 := by omega
 theorem trip_solution (m : TownTrip) : m.totalTime = 5 := by omega
 
-structure SafariAnimals where rabbits hyenas wildDogs leopards total : ℕ
+structure SafariAnimals where
+  rabbits : ℕ
+  hyenas : ℕ
+  wildDogs : ℕ
+  leopards : ℕ
+  total : ℕ
   hRabbits : rabbits = 80 + 34
   hHyenas : hyenas + 42 = 80 + rabbits
   hWildDogs : wildDogs = hyenas + 50
@@ -54,7 +73,13 @@ theorem safari_leopards (m : SafariAnimals) : m.leopards = 57 := by omega
 theorem safari_solution (m : SafariAnimals) : m.total = 605 := by omega
 
 /-- Reference reading: 15 June days at 10 hours/day, then 15 days at 20 hours/day. -/
-structure JuneVideos where firstDays remainingDays firstHours dailyAfter remainingHours total : ℕ
+structure JuneVideos where
+  firstDays : ℕ
+  remainingDays : ℕ
+  firstHours : ℕ
+  dailyAfter : ℕ
+  remainingHours : ℕ
+  total : ℕ
   hDays : firstDays = 15 ∧ remainingDays = 15
   hFirst : firstHours = firstDays * 10
   hDailyAfter : dailyAfter = 2 * 10
@@ -66,14 +91,19 @@ theorem videos_daily_after (m : JuneVideos) : m.dailyAfter = 20 := by omega
 theorem videos_second_half (m : JuneVideos) : m.remainingHours = 300 := by omega
 theorem videos_solution (m : JuneVideos) : m.total = 450 := by omega
 
-structure CollectionProject where items daily : ℕ
+structure CollectionProject where
+  items : ℕ
+  daily : ℕ
   hItems : items = 30 + 20
   hDaily : daily * 10 = items
 
 theorem collection_items (m : CollectionProject) : m.items = 50 := by omega
 theorem collection_solution (m : CollectionProject) : m.daily = 5 := by omega
 
-structure PipeWashers where bolts used remaining : ℕ
+structure PipeWashers where
+  bolts : ℕ
+  used : ℕ
+  remaining : ℕ
   hBolts : bolts * 5 = 40
   hUsed : used = bolts * 2
   hRemaining : remaining + used = 20
@@ -87,14 +117,20 @@ structure WaterWeight where weight : ℕ
 
 theorem water_solution (m : WaterWeight) : m.weight = 90 := by omega
 
-structure MustangModels where mid smallest : ℕ
+structure MustangModels where
+  mid : ℕ
+  smallest : ℕ
   hMid : mid * 10 = 240
   hSmall : smallest * 2 = mid
 
 theorem mustang_mid (m : MustangModels) : m.mid = 24 := by omega
 theorem mustang_solution (m : MustangModels) : m.smallest = 12 := by omega
 
-structure PetWalk where firstFriendEach firstFriends otherFriends total : ℕ
+structure PetWalk where
+  firstFriendEach : ℕ
+  firstFriends : ℕ
+  otherFriends : ℕ
+  total : ℕ
   hFirstEach : firstFriendEach = 2 * 4
   hFirstFriends : firstFriends = 3 * firstFriendEach
   hOther : otherFriends = 2 * 2
@@ -106,7 +142,11 @@ theorem pets_other_friends (m : PetWalk) : m.otherFriends = 4 := by omega
 theorem pets_solution (m : PetWalk) : m.total = 32 := by omega
 
 /-- Reference reading: the 12 runners are an additional group finishing from 6 through 8 minutes. -/
-structure RaceReference where underSix additionalUnderEight remaining overFourteen : ℕ
+structure RaceReference where
+  underSix : ℕ
+  additionalUnderEight : ℕ
+  remaining : ℕ
+  overFourteen : ℕ
   hUnderSix : underSix * 10 = 40
   hAdditional : additionalUnderEight = 3 * underSix
   hPartition : underSix + additionalUnderEight + remaining = 40
@@ -120,7 +160,11 @@ theorem race_reference_solution (m : RaceReference) : m.overFourteen = 4 := by o
 theorem race_literal_remaining : 40 - 12 = 28 := by norm_num
 theorem race_literal_one_sixth_impossible : ¬ ∃ n : ℕ, n * 6 = 28 := by omega
 
-structure CornHarvest where neighborPerHectare neighborTwoHectares perPeriod sixMonths : ℕ
+structure CornHarvest where
+  neighborPerHectare : ℕ
+  neighborTwoHectares : ℕ
+  perPeriod : ℕ
+  sixMonths : ℕ
   hNeighborEach : neighborPerHectare = 2 * 80
   hNeighborTwo : neighborTwoHectares = 2 * neighborPerHectare
   hPerPeriod : perPeriod = 80 + neighborTwoHectares
@@ -131,7 +175,11 @@ theorem corn_neighbor_total (m : CornHarvest) : m.neighborTwoHectares = 320 := b
 theorem corn_per_period (m : CornHarvest) : m.perPeriod = 400 := by omega
 theorem corn_solution (m : CornHarvest) : m.sixMonths = 1200 := by omega
 
-structure Balloons where brooke tracyBeforePop tracyAfter total : ℕ
+structure Balloons where
+  brooke : ℕ
+  tracyBeforePop : ℕ
+  tracyAfter : ℕ
+  total : ℕ
   hBrooke : brooke = 12 + 8
   hTracyBefore : tracyBeforePop = 6 + 24
   hTracyAfter : tracyAfter * 2 = tracyBeforePop

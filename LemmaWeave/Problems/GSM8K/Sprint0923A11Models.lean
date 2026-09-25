@@ -2,7 +2,9 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A11
 
-structure SharedMoney where justin joshua : ℕ
+structure SharedMoney where
+  justin : ℕ
+  joshua : ℕ
   hTotal : justin + joshua = 40
   hTriple : joshua = 3 * justin
 
@@ -14,7 +16,13 @@ theorem money_solution (m : SharedMoney) : m.joshua = 30 := by
   rw [m.hTriple, money_justin m]
 
 structure MarbleCollection where
-    jennyRed maryRed anieRed jennyBlue maryBlue anieBlue totalBlue : ℕ
+    jennyRed : ℕ
+    maryRed : ℕ
+    anieRed : ℕ
+    jennyBlue : ℕ
+    maryBlue : ℕ
+    anieBlue : ℕ
+    totalBlue : ℕ
   hJennyRed : jennyRed = 30
   hMaryRed : maryRed = 2 * jennyRed
   hAnieRed : anieRed = maryRed + 20
@@ -36,7 +44,10 @@ theorem marbles_mary_blue (m : MarbleCollection) : m.maryBlue = 25 := by
 theorem marbles_solution (m : MarbleCollection) : m.totalBlue = 100 := by
   rw [m.hTotalBlue, m.hJennyBlue, marbles_mary_blue m, marbles_anie_blue m]
 
-structure AquariumRocks where eaten afterEating final : ℕ
+structure AquariumRocks where
+  eaten : ℕ
+  afterEating : ℕ
+  final : ℕ
   hEaten : eaten * 2 = 10
   hAfterEating : afterEating + eaten = 10
   hFinal : final = afterEating + 2
@@ -49,7 +60,10 @@ theorem rocks_after_eating (m : AquariumRocks) : m.afterEating = 5 := by
 theorem rocks_solution (m : AquariumRocks) : m.final = 7 := by
   rw [m.hFinal, rocks_after_eating m]
 
-structure ClothingPurchase where shirts pants total : ℕ
+structure ClothingPurchase where
+  shirts : ℕ
+  pants : ℕ
+  total : ℕ
   hShirts : shirts = 3 * 20
   hPants : pants = 50
   hTotal : total = shirts + pants
@@ -58,7 +72,10 @@ theorem purchase_shirts (m : ClothingPurchase) : m.shirts = 60 := by rw [m.hShir
 theorem purchase_solution (m : ClothingPurchase) : m.total = 110 := by
   rw [m.hTotal, purchase_shirts m, m.hPants]
 
-structure BenchPress where loss afterInjury final : ℕ
+structure BenchPress where
+  loss : ℕ
+  afterInjury : ℕ
+  final : ℕ
   hLoss : loss * 5 = 500 * 4
   hAfter : afterInjury + loss = 500
   hFinal : final = 3 * afterInjury
@@ -71,7 +88,12 @@ theorem bench_after_injury (m : BenchPress) : m.afterInjury = 100 := by
 theorem bench_solution (m : BenchPress) : m.final = 300 := by
   rw [m.hFinal, bench_after_injury m]
 
-structure GuitarStores where gcDiscount gcCost swDiscount swCost savings : ℕ
+structure GuitarStores where
+  gcDiscount : ℕ
+  gcCost : ℕ
+  swDiscount : ℕ
+  swCost : ℕ
+  savings : ℕ
   hGCDiscount : gcDiscount * 100 = 1000 * 15
   hGCCost : gcCost + gcDiscount = 1000 + 100
   hSWDiscount : swDiscount * 100 = 1000 * 10
@@ -96,7 +118,8 @@ theorem guitar_solution (m : GuitarStores) : m.savings = 50 := by
 /-- The prompt fixes mistake counts and Brent's score, but does not fix points lost per mistake. -/
 structure GeometryExam where
     perfect madelineMistakes leoMistakes brentMistakes brentScore
-      madelineScore pointsPerMistake : ℕ
+      madelineScore : ℕ
+      pointsPerMistake : ℕ
   hMadelineMistakes : madelineMistakes = 2
   hLeoMistakes : leoMistakes = 2 * madelineMistakes
   hBrentMistakes : brentMistakes = leoMistakes + 1
@@ -124,7 +147,11 @@ theorem geometry_two_point_solution (m : GeometryExam) (hp : m.pointsPerMistake 
   omega
 theorem geometry_two_scoring_readings_differ : (28 : ℕ) ≠ 31 := by norm_num
 
-structure EggShelf where total used afterUse final : ℕ
+structure EggShelf where
+  total : ℕ
+  used : ℕ
+  afterUse : ℕ
+  final : ℕ
   hTotal : total = 6 * 12
   hUsed : used * 2 = total
   hAfterUse : afterUse + used = total
@@ -147,7 +174,8 @@ theorem eggs_solution (m : EggShelf) : m.final = 21 := by
 /-- Day 1 is the stated initial six-fish state; doubling occurs before days 2--7 events. -/
 structure FishGrowth where
     day3Before day3Removed day3After day5Before day5Removed day5After
-      day7Before final : ℕ
+      day7Before : ℕ
+      final : ℕ
   hDay3Before : day3Before = 6 * 2 * 2
   hDay3Removed : day3Removed * 3 = day3Before
   hDay3After : day3After + day3Removed = day3Before
@@ -181,7 +209,11 @@ theorem fish_day7_before (m : FishGrowth) : m.day7Before = 192 := by
 theorem fish_solution (m : FishGrowth) : m.final = 207 := by
   rw [m.hFinal, fish_day7_before m]
 
-structure CafeteriaMovement where inside outside ranInside final : ℕ
+structure CafeteriaMovement where
+  inside : ℕ
+  outside : ℕ
+  ranInside : ℕ
+  final : ℕ
   hInside : inside * 3 = 90 * 2
   hOutside : outside + inside = 90
   hRanInside : ranInside * 3 = outside
@@ -201,14 +233,19 @@ theorem cafeteria_solution (m : CafeteriaMovement) : m.final = 67 := by
   rw [cafeteria_inside m, cafeteria_ran_inside m] at h
   omega
 
-structure DiceSides where dice sides : ℕ
+structure DiceSides where
+  dice : ℕ
+  sides : ℕ
   hDice : dice = 4 + 4
   hSides : sides = dice * 6
 
 theorem dice_count (m : DiceSides) : m.dice = 8 := by rw [m.hDice]
 theorem dice_solution (m : DiceSides) : m.sides = 48 := by rw [m.hSides, dice_count m]
 
-structure DoveCount where eggs hatched total : ℕ
+structure DoveCount where
+  eggs : ℕ
+  hatched : ℕ
+  total : ℕ
   hEggs : eggs = 20 * 3
   hHatched : hatched * 4 = eggs * 3
   hTotal : total = 20 + hatched
@@ -220,21 +257,28 @@ theorem doves_hatched (m : DoveCount) : m.hatched = 45 := by
   omega
 theorem doves_solution (m : DoveCount) : m.total = 65 := by rw [m.hTotal, doves_hatched m]
 
-structure TrafficTrip where traffic total : ℕ
+structure TrafficTrip where
+  traffic : ℕ
+  total : ℕ
   hTraffic : traffic = 2 * 5
   hTotal : total = 5 + traffic
 
 theorem trip_traffic (m : TrafficTrip) : m.traffic = 10 := by rw [m.hTraffic]
 theorem trip_solution (m : TrafficTrip) : m.total = 15 := by rw [m.hTotal, trip_traffic m]
 
-structure TradingCards where alien monster : ℕ
+structure TradingCards where
+  alien : ℕ
+  monster : ℕ
   hAlien : alien * 3 = 48
   hMonster : monster = 2 * alien
 
 theorem cards_alien (m : TradingCards) : m.alien = 16 := by omega
 theorem cards_solution (m : TradingCards) : m.monster = 32 := by rw [m.hMonster, cards_alien m]
 
-structure ZitClasses where swansonTotal jonesTotal difference : ℕ
+structure ZitClasses where
+  swansonTotal : ℕ
+  jonesTotal : ℕ
+  difference : ℕ
   hSwanson : swansonTotal = 25 * 5
   hJones : jonesTotal = 32 * 6
   hDifference : difference + swansonTotal = jonesTotal

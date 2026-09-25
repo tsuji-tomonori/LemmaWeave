@@ -2,7 +2,10 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A00
 
-structure NationalPark where extra redwoods total : ℕ
+structure NationalPark where
+  extra : ℕ
+  redwoods : ℕ
+  total : ℕ
   hExtra : extra * 100 = 600 * 20
   hRedwoods : redwoods = 600 + extra
   hTotal : total = 600 + redwoods
@@ -14,7 +17,10 @@ theorem national_redwoods (m : NationalPark) : m.redwoods = 720 := by
 theorem national_solution (m : NationalPark) : m.total = 1320 := by
   rw [m.hTotal, national_redwoods m]
 
-structure Papayas where sunday yellowed left : ℕ
+structure Papayas where
+  sunday : ℕ
+  yellowed : ℕ
+  left : ℕ
   hSunday : sunday = 2 * 2
   hYellowed : yellowed = 2 + sunday
   hLeft : left + yellowed = 14
@@ -26,7 +32,10 @@ theorem papayas_solution (m : Papayas) : m.left = 8 := by
   rw [papayas_yellowed m] at h
   omega
 
-structure Anniversary where married dating met : ℕ
+structure Anniversary where
+  married : ℕ
+  dating : ℕ
+  met : ℕ
   hMarried : married + 20 = 2025
   hDating : dating + 3 = married
   hMet : met + 2 = dating
@@ -42,7 +51,13 @@ theorem anniversary_solution (m : Anniversary) : m.met = 2000 := by
   rw [anniversary_dating m] at h
   omega
 
-structure Tomatoes where first afterFirst second afterSecond third left : ℕ
+structure Tomatoes where
+  first : ℕ
+  afterFirst : ℕ
+  second : ℕ
+  afterSecond : ℕ
+  third : ℕ
+  left : ℕ
   hFirst : first * 4 = 100
   hAfterFirst : afterFirst + first = 100
   hSecond : second = 20
@@ -67,7 +82,9 @@ theorem tomatoes_solution (m : Tomatoes) : m.left = 15 := by
   rw [tomatoes_third m, tomatoes_after_second m] at h
   omega
 
-structure Novels where alexandre difference : ℕ
+structure Novels where
+  alexandre : ℕ
+  difference : ℕ
   hAlexandre : alexandre * 10 = 120
   hDifference : difference + alexandre = 120
 theorem novels_alexandre (m : Novels) : m.alexandre = 12 := by
@@ -78,7 +95,10 @@ theorem novels_solution (m : Novels) : m.difference = 108 := by
   rw [novels_alexandre m] at h
   omega
 
-structure Kickboxing where early last total : ℕ
+structure Kickboxing where
+  early : ℕ
+  last : ℕ
+  total : ℕ
   hEarly : early = 2 * 6
   hLast : last * 2 = 4
   hTotal : total = early + last
@@ -89,7 +109,10 @@ theorem kickboxing_last (m : Kickboxing) : m.last = 2 := by
 theorem kickboxing_solution (m : Kickboxing) : m.total = 14 := by
   rw [m.hTotal, kickboxing_early m, kickboxing_last m]
 
-structure GlassBallsTwice where redLeft blue yellow : ℕ
+structure GlassBallsTwice where
+  redLeft : ℕ
+  blue : ℕ
+  yellow : ℕ
   hRedLeft : redLeft + 6 = 16
   hBlue : blue = 2 * 16
   hTotal : redLeft + blue + yellow = 74
@@ -102,7 +125,10 @@ theorem glass_twice_solution (m : GlassBallsTwice) : m.yellow = 32 := by
   rw [glass_twice_red m, glass_twice_blue m] at h
   omega
 
-structure GlassBallsTwoTimesMore where redLeft blue yellow : ℕ
+structure GlassBallsTwoTimesMore where
+  redLeft : ℕ
+  blue : ℕ
+  yellow : ℕ
   hRedLeft : redLeft + 6 = 16
   hBlue : blue = 16 + 2 * 16
   hTotal : redLeft + blue + yellow = 74
@@ -113,14 +139,19 @@ theorem glass_more_solution (m : GlassBallsTwoTimesMore) : m.yellow = 16 := by
   rw [glass_more_blue m] at ht
   omega
 
-structure Chips where weeklyCents totalCents : ℕ
+structure Chips where
+  weeklyCents : ℕ
+  totalCents : ℕ
   hWeekly : weeklyCents = 50 * 5
   hTotal : totalCents = weeklyCents * 4
 theorem chips_weekly (m : Chips) : m.weeklyCents = 250 := by rw [m.hWeekly]
 theorem chips_solution (m : Chips) : m.totalCents = 1000 := by
   rw [m.hTotal, chips_weekly m]
 
-structure Officers where aRate bRate totalRate : ℕ
+structure Officers where
+  aRate : ℕ
+  bRate : ℕ
+  totalRate : ℕ
   hA : aRate * 4 = 36
   hB : bRate * 5 = 55
   hTotal : totalRate = aRate + bRate
@@ -133,7 +164,9 @@ theorem officers_b (m : Officers) : m.bRate = 11 := by
 theorem officers_solution (m : Officers) : m.totalRate = 20 := by
   rw [m.hTotal, officers_a m, officers_b m]
 
-structure Rocks where pounds rocks : ℕ
+structure Rocks where
+  pounds : ℕ
+  rocks : ℕ
   hPounds : pounds * 4 = 60
   hWeight : rocks * 3 = pounds * 2
 theorem rocks_pounds (m : Rocks) : m.pounds = 15 := by
@@ -151,7 +184,9 @@ theorem animals_combined_range (sheep goats : ℕ) (h : sheep + goats = 56) : go
 theorem animals_combined_zero_example : 56 + 0 = 56 := by norm_num
 theorem animals_combined_fifty_six_example : 0 + 56 = 56 := by norm_num
 
-structure Basket where apples oranges : ℕ
+structure Basket where
+  apples : ℕ
+  oranges : ℕ
   hRatio : apples = 3 * oranges
   hTotal : apples + oranges = 40
 theorem basket_solution (m : Basket) : m.oranges = 10 := by
@@ -159,7 +194,11 @@ theorem basket_solution (m : Basket) : m.oranges = 10 := by
   have ht := m.hTotal
   omega
 
-structure River where widthGain segments distance seconds : ℕ
+structure River where
+  widthGain : ℕ
+  segments : ℕ
+  distance : ℕ
+  seconds : ℕ
   hWidthGain : widthGain + 50 = 80
   hSegments : segments * 2 = widthGain
   hDistance : distance = segments * 10
@@ -178,7 +217,10 @@ theorem river_solution (m : River) : m.seconds = 30 := by
   rw [river_distance m] at h
   omega
 
-structure Ophelia where lennonFuture opheliaFuture opheliaNow : ℕ
+structure Ophelia where
+  lennonFuture : ℕ
+  opheliaFuture : ℕ
+  opheliaNow : ℕ
   hLennon : lennonFuture = 8 + 2
   hFuture : opheliaFuture = 4 * lennonFuture
   hNow : opheliaNow + 2 = opheliaFuture
@@ -190,7 +232,9 @@ theorem ophelia_solution (m : Ophelia) : m.opheliaNow = 38 := by
   rw [ophelia_future m] at h
   omega
 
-structure Zachary where totalCents neededCents : ℕ
+structure Zachary where
+  totalCents : ℕ
+  neededCents : ℕ
   hTotal : totalCents = 375 + 240 + 1185
   hNeeded : neededCents + 1000 = totalCents
 theorem zachary_total (m : Zachary) : m.totalCents = 1800 := by rw [m.hTotal]

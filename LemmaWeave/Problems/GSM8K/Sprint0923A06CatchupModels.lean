@@ -2,7 +2,13 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup
 
-structure FishingSeason where first firstNinety remainingDays remainderCatch second difference : ℕ
+structure FishingSeason where
+  first : ℕ
+  firstNinety : ℕ
+  remainingDays : ℕ
+  remainderCatch : ℕ
+  second : ℕ
+  difference : ℕ
   hFirst : first = 3 * 213
   hFirstNinety : firstNinety = 1 * 30 + 2 * 60
   hRemainingDays : remainingDays + 90 = 213
@@ -23,7 +29,12 @@ theorem fishing_solution (m : FishingSeason) : m.difference = 3 := by
   rw [fishing_first m, fishing_second m] at h
   omega
 
-structure BirdWorms where daily needed mamaNet available more : ℕ
+structure BirdWorms where
+  daily : ℕ
+  needed : ℕ
+  mamaNet : ℕ
+  available : ℕ
+  more : ℕ
   hDaily : daily = 6 * 3
   hNeeded : needed = daily * 3
   hMamaNet : mamaNet + 2 = 13
@@ -41,7 +52,10 @@ theorem worms_solution (m : BirdWorms) : m.more = 34 := by
   rw [worms_available m, worms_needed m] at h
   omega
 
-structure NecklaceMachines where first second total : ℕ
+structure NecklaceMachines where
+  first : ℕ
+  second : ℕ
+  total : ℕ
   hFirst : first = 45
   hSecond : second * 10 = first * 24
   hTotal : total = first + second
@@ -54,7 +68,10 @@ theorem necklaces_second (m : NecklaceMachines) : m.second = 108 := by
 theorem necklaces_solution (m : NecklaceMachines) : m.total = 153 := by
   rw [m.hTotal, necklaces_first m, necklaces_second m]
 
-structure ChiveGarden where reservedRows chiveRows chives : ℕ
+structure ChiveGarden where
+  reservedRows : ℕ
+  chiveRows : ℕ
+  chives : ℕ
   hReserved : reservedRows = 3 + 2
   hRows : chiveRows + reservedRows = 20
   hChives : chives = chiveRows * 10
@@ -67,7 +84,10 @@ theorem chives_rows (m : ChiveGarden) : m.chiveRows = 15 := by
 theorem chives_solution (m : ChiveGarden) : m.chives = 150 := by
   rw [m.hChives, chives_rows m]
 
-structure CatShelter where beforeAdoption adopted current : ℕ
+structure CatShelter where
+  beforeAdoption : ℕ
+  adopted : ℕ
+  current : ℕ
   hBefore : beforeAdoption = 20 + 2 + 1
   hAdopted : adopted = 3 * 2
   hCurrent : current + adopted = beforeAdoption
@@ -80,7 +100,10 @@ theorem shelter_solution (m : CatShelter) : m.current = 17 := by
   omega
 
 /-- Favorite-color categories are treated as mutually exclusive and exhaustive. -/
-structure FavoriteColors where green pink yellow : ℕ
+structure FavoriteColors where
+  green : ℕ
+  pink : ℕ
+  yellow : ℕ
   hGreen : green * 2 = 30
   hPink : pink * 3 = 18
   hTotal : yellow + green + pink = 30
@@ -92,7 +115,10 @@ theorem colors_solution (m : FavoriteColors) : m.yellow = 9 := by
   rw [colors_green m, colors_pink m] at h
   omega
 
-structure EssaySections where conclusion bodyTotal eachBody : ℕ
+structure EssaySections where
+  conclusion : ℕ
+  bodyTotal : ℕ
+  eachBody : ℕ
   hConclusion : conclusion = 3 * 450
   hBodyTotal : bodyTotal + 450 + conclusion = 5000
   hEachBody : eachBody * 4 = bodyTotal
@@ -109,7 +135,12 @@ theorem essay_solution (m : EssaySections) : m.eachBody = 800 := by
   omega
 
 /-- Costs are represented in cents. -/
-structure BakeryPurchase where cupcakes doughnuts pie cookies totalCents : ℕ
+structure BakeryPurchase where
+  cupcakes : ℕ
+  doughnuts : ℕ
+  pie : ℕ
+  cookies : ℕ
+  totalCents : ℕ
   hCupcakes : cupcakes = 5 * 200
   hDoughnuts : doughnuts = 6 * 100
   hPie : pie = 4 * 200
@@ -123,7 +154,9 @@ theorem bakery_cookies (m : BakeryPurchase) : m.cookies = 900 := by rw [m.hCooki
 theorem bakery_solution (m : BakeryPurchase) : m.totalCents = 3300 := by
   rw [m.hTotal, bakery_cupcakes m, bakery_doughnuts m, bakery_pie m, bakery_cookies m]
 
-structure RoadTrip where distance hours : ℕ
+structure RoadTrip where
+  distance : ℕ
+  hours : ℕ
   hDistance : distance = 55 + 95
   hHours : hours * 25 = distance
 
@@ -133,7 +166,9 @@ theorem trip_solution (m : RoadTrip) : m.hours = 6 := by
   rw [trip_distance m] at h
   omega
 
-structure WrappingPaper where firstTwo third : ℕ
+structure WrappingPaper where
+  firstTwo : ℕ
+  third : ℕ
   hFirstTwo : firstTwo = 3 + 5
   hThird : third + firstTwo = 12
 
@@ -143,7 +178,9 @@ theorem wrapping_solution (m : WrappingPaper) : m.third = 4 := by
   rw [wrapping_first_two m] at h
   omega
 
-structure PieSamples where perPie total : ℕ
+structure PieSamples where
+  perPie : ℕ
+  total : ℕ
   hPerPie : perPie = 2 * 5
   hTotal : total = 13 * perPie
 
@@ -151,7 +188,10 @@ theorem pie_samples_per_pie (m : PieSamples) : m.perPie = 10 := by rw [m.hPerPie
 theorem pie_samples_solution (m : PieSamples) : m.total = 130 := by
   rw [m.hTotal, pie_samples_per_pie m]
 
-structure SquirrelCounts where extra second total : ℕ
+structure SquirrelCounts where
+  extra : ℕ
+  second : ℕ
+  total : ℕ
   hExtra : extra * 3 = 12
   hSecond : second = 12 + extra
   hTotal : total = 12 + second
@@ -162,7 +202,11 @@ theorem squirrels_second (m : SquirrelCounts) : m.second = 16 := by
 theorem squirrels_solution (m : SquirrelCounts) : m.total = 28 := by
   rw [m.hTotal, squirrels_second m]
 
-structure ExamScore where previousCount previousSum targetTotal william : ℕ
+structure ExamScore where
+  previousCount : ℕ
+  previousSum : ℕ
+  targetTotal : ℕ
+  william : ℕ
   hCount : previousCount + 1 = 30
   hPrevious : previousSum = previousCount * 74
   hTarget : targetTotal = 30 * 75
@@ -185,7 +229,13 @@ theorem exam_solution (m : ExamScore) : m.william = 94 := by
   · exact exam_lower_bound m
 
 /-- Reading A: 300 is the post-discard count that the class must organize. -/
-structure DonationsToOrganize where damaged usableFloats other standalone included totalBalls : ℕ
+structure DonationsToOrganize where
+  damaged : ℕ
+  usableFloats : ℕ
+  other : ℕ
+  standalone : ℕ
+  included : ℕ
+  totalBalls : ℕ
   hDamaged : damaged * 4 = 120
   hUsable : usableFloats + damaged = 120
   hOther : other = 60 + usableFloats + 50 + 40
@@ -209,7 +259,11 @@ theorem donations_organize_solution (m : DonationsToOrganize) : m.totalBalls = 9
   rw [m.hTotalBalls, donations_organize_standalone m, donations_included m]
 
 /-- Reading B: 300 is the original donation count before damaged floats are discarded. -/
-structure DonationsOriginallyGiven where other standalone included totalBalls : ℕ
+structure DonationsOriginallyGiven where
+  other : ℕ
+  standalone : ℕ
+  included : ℕ
+  totalBalls : ℕ
   hOther : other = 60 + 120 + 50 + 40
   hStandalone : standalone + other = 300
   hIncluded : included * 2 = 60
@@ -225,7 +279,9 @@ theorem donations_original_solution (m : DonationsOriginallyGiven) : m.totalBall
   rw [m.hTotalBalls, donations_original_standalone m, donations_original_included m]
 theorem donations_two_readings_differ : (90 : ℕ) ≠ 60 := by norm_num
 
-structure DoughnutProfit where revenue profit : ℕ
+structure DoughnutProfit where
+  revenue : ℕ
+  profit : ℕ
   hRevenue : revenue = 25 * 3
   hProfit : profit + 53 = revenue
 

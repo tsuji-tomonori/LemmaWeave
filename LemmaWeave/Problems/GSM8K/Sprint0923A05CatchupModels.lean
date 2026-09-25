@@ -2,7 +2,10 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A05Catchup
 
-structure BasketballPoints where wade teammates total : ℕ
+structure BasketballPoints where
+  wade : ℕ
+  teammates : ℕ
+  total : ℕ
   hWade : wade = 5 * 20
   hTeammates : teammates = 5 * 40
   hTotal : total = wade + teammates
@@ -12,7 +15,13 @@ theorem basketball_teammates (m : BasketballPoints) : m.teammates = 200 := by rw
 theorem basketball_solution (m : BasketballPoints) : m.total = 300 := by
   rw [m.hTotal, basketball_wade m, basketball_teammates m]
 
-structure ClothingIncome where refurbishedEach refurbishedTotal shirtsTotal pantsTotal skirtsTotal totalCents : ℕ
+structure ClothingIncome where
+  refurbishedEach : ℕ
+  refurbishedTotal : ℕ
+  shirtsTotal : ℕ
+  pantsTotal : ℕ
+  skirtsTotal : ℕ
+  totalCents : ℕ
   hRefurbishedEach : refurbishedEach * 2 = 500
   hRefurbishedTotal : refurbishedTotal = 6 * refurbishedEach
   hShirtsTotal : shirtsTotal = 2 * 500
@@ -34,7 +43,9 @@ theorem clothing_solution (m : ClothingIncome) : m.totalCents = 5300 := by
   obtain ⟨hs, hp, hk⟩ := clothing_regular_totals m
   rw [m.hTotal, clothing_refurbished_total m, hs, hp, hk]
 
-structure ChocolateSharing where each combined : ℕ
+structure ChocolateSharing where
+  each : ℕ
+  combined : ℕ
   hEach : each * 3 = 12
   hCombined : combined = each + each
 
@@ -42,7 +53,11 @@ theorem chocolate_each (m : ChocolateSharing) : m.each = 4 := by omega
 theorem chocolate_solution (m : ChocolateSharing) : m.combined = 8 := by
   rw [m.hCombined, chocolate_each m]
 
-structure PoolMinutes where elaine george kramer total : ℕ
+structure PoolMinutes where
+  elaine : ℕ
+  george : ℕ
+  kramer : ℕ
+  total : ℕ
   hElaine : elaine = 2 * 3
   hGeorge : george * 3 = elaine
   hKramer : kramer = 0
@@ -57,7 +72,10 @@ theorem pool_kramer (m : PoolMinutes) : m.kramer = 0 := m.hKramer
 theorem pool_solution (m : PoolMinutes) : m.total = 11 := by
   rw [m.hTotal, pool_elaine m, pool_george m, pool_kramer m]
 
-structure WeeklyPies where apple cherry difference : ℕ
+structure WeeklyPies where
+  apple : ℕ
+  cherry : ℕ
+  difference : ℕ
   hApple : apple = 3 * 12
   hCherry : cherry = 2 * 12
   hDifference : difference + cherry = apple
@@ -69,7 +87,9 @@ theorem pies_solution (m : WeeklyPies) : m.difference = 12 := by
   rw [pies_apple m, pies_cherry m] at h
   omega
 
-structure ZooTrip where admissionBudget students : ℕ
+structure ZooTrip where
+  admissionBudget : ℕ
+  students : ℕ
   hBudget : admissionBudget + 100 = 350
   hAffordable : students * 10 ≤ admissionBudget
   hMaximal : ∀ n : ℕ, n * 10 ≤ admissionBudget → n ≤ students
@@ -85,7 +105,9 @@ theorem zoo_solution (m : ZooTrip) : m.students = 25 := by
   apply Nat.le_antisymm (zoo_upper_bound m)
   exact m.hMaximal 25 (zoo_affords_25 m)
 
-structure AnnualIncome where brady combined : ℕ
+structure AnnualIncome where
+  brady : ℕ
+  combined : ℕ
   hBrady : brady = 1500 + 450
   hCombined : combined = 1500 + brady
 
@@ -93,7 +115,9 @@ theorem income_brady (m : AnnualIncome) : m.brady = 1950 := by rw [m.hBrady]
 theorem income_solution (m : AnnualIncome) : m.combined = 3450 := by
   rw [m.hCombined, income_brady m]
 
-structure WaterCapacity where perTruck total : ℕ
+structure WaterCapacity where
+  perTruck : ℕ
+  total : ℕ
   hPerTruck : perTruck = 3 * 150
   hTotal : total = 3 * perTruck
 
@@ -101,7 +125,9 @@ theorem water_per_truck (m : WaterCapacity) : m.perTruck = 450 := by rw [m.hPerT
 theorem water_solution (m : WaterCapacity) : m.total = 1350 := by
   rw [m.hTotal, water_per_truck m]
 
-structure CallAverage where total average : ℕ
+structure CallAverage where
+  total : ℕ
+  average : ℕ
   hTotal : total = 35 + 46 + 27 + 61 + 31
   hAverage : average * 5 = total
 
@@ -111,7 +137,10 @@ theorem calls_solution (m : CallAverage) : m.average = 40 := by
   rw [calls_total m] at h
   omega
 
-structure ShrimpCost where shrimp pounds cost : ℕ
+structure ShrimpCost where
+  shrimp : ℕ
+  pounds : ℕ
+  cost : ℕ
   hShrimp : shrimp = 5 * 40
   hPounds : pounds * 20 = shrimp
   hCost : cost = pounds * 17
@@ -124,7 +153,12 @@ theorem shrimp_pounds (m : ShrimpCost) : m.pounds = 10 := by
 theorem shrimp_solution (m : ShrimpCost) : m.cost = 170 := by
   rw [m.hCost, shrimp_pounds m]
 
-structure CropRevenue where potatoBundles potatoCents carrotBundles carrotCents totalCents : ℕ
+structure CropRevenue where
+  potatoBundles : ℕ
+  potatoCents : ℕ
+  carrotBundles : ℕ
+  carrotCents : ℕ
+  totalCents : ℕ
   hPotatoBundles : potatoBundles * 25 = 250
   hPotatoCents : potatoCents = potatoBundles * 190
   hCarrotBundles : carrotBundles * 20 = 320
@@ -141,7 +175,10 @@ theorem crops_solution (m : CropRevenue) : m.totalCents = 5100 := by
   rw [m.hTotal, crops_potato_cents m, crops_carrot_cents m]
 
 /-- The intended textbook reading fixes a month at four working weeks. -/
-structure BabysitterIncome where agnesWeekly agnesMonthly milaHours : ℕ
+structure BabysitterIncome where
+  agnesWeekly : ℕ
+  agnesMonthly : ℕ
+  milaHours : ℕ
   hWeekly : agnesWeekly = 15 * 8
   hMonthly : agnesMonthly = agnesWeekly * 4
   hMila : milaHours * 10 = agnesMonthly
@@ -154,7 +191,11 @@ theorem babysitter_solution (m : BabysitterIncome) : m.milaHours = 48 := by
   rw [babysitter_monthly m] at h
   omega
 
-structure CompanyPayroll where employees days monthlyEach total : ℕ
+structure CompanyPayroll where
+  employees : ℕ
+  days : ℕ
+  monthlyEach : ℕ
+  total : ℕ
   hEmployees : employees = 500 + 200
   hDays : days = 5 * 4
   hMonthlyEach : monthlyEach = 12 * 10 * days
@@ -167,7 +208,10 @@ theorem payroll_monthly_each (m : CompanyPayroll) : m.monthlyEach = 2400 := by
 theorem payroll_solution (m : CompanyPayroll) : m.total = 1680000 := by
   rw [m.hTotal, payroll_employees m, payroll_monthly_each m]
 
-structure MarbleDifference where mara markus difference : ℕ
+structure MarbleDifference where
+  mara : ℕ
+  markus : ℕ
+  difference : ℕ
   hMara : mara = 12 * 2
   hMarkus : markus = 2 * 13
   hDifference : difference + mara = markus
@@ -179,7 +223,9 @@ theorem marbles_solution (m : MarbleDifference) : m.difference = 2 := by
   rw [marbles_mara m, marbles_markus m] at h
   omega
 
-structure VehicleCount where trucks cars : ℕ
+structure VehicleCount where
+  trucks : ℕ
+  cars : ℕ
   hCars : cars = 2 * trucks
   hTotal : trucks + cars = 60
 

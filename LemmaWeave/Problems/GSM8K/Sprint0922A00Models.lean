@@ -48,8 +48,8 @@ structure AnnieMoney where
   hLeft : left = 70
   hInitial : initial = spent + left
 
-theorem annie_burgers (m : AnnieMoney) : m.burgerCost = 32 := by rw [m.hBurger]; norm_num
-theorem annie_shakes (m : AnnieMoney) : m.shakeCost = 30 := by rw [m.hShake]; norm_num
+theorem annie_burgers (m : AnnieMoney) : m.burgerCost = 32 := by rw [m.hBurger] <;> norm_num
+theorem annie_shakes (m : AnnieMoney) : m.shakeCost = 30 := by rw [m.hShake] <;> norm_num
 theorem annie_spent (m : AnnieMoney) : m.spent = 62 := by
   calc m.spent = m.burgerCost + m.shakeCost := m.hSpent
     _ = 32 + 30 := by rw [annie_burgers m, annie_shakes m]
@@ -73,12 +73,12 @@ structure Gumballs where
   hPooled : pooled = joannaTotal + jacquesTotal
   hEach : 2 * each = pooled
 
-theorem gumballs_joanna_bought (m : Gumballs) : m.joannaBought = 160 := by rw [m.hJoannaBought]; norm_num
+theorem gumballs_joanna_bought (m : Gumballs) : m.joannaBought = 160 := by rw [m.hJoannaBought] <;> norm_num
 theorem gumballs_joanna_total (m : Gumballs) : m.joannaTotal = 200 := by
   calc m.joannaTotal = 40 + m.joannaBought := m.hJoannaTotal
     _ = 40 + 160 := by rw [gumballs_joanna_bought m]
     _ = 200 := by norm_num
-theorem gumballs_jacques_bought (m : Gumballs) : m.jacquesBought = 240 := by rw [m.hJacquesBought]; norm_num
+theorem gumballs_jacques_bought (m : Gumballs) : m.jacquesBought = 240 := by rw [m.hJacquesBought] <;> norm_num
 theorem gumballs_jacques_total (m : Gumballs) : m.jacquesTotal = 300 := by
   calc m.jacquesTotal = 60 + m.jacquesBought := m.hJacquesTotal
     _ = 60 + 240 := by rw [gumballs_jacques_bought m]
@@ -107,9 +107,9 @@ structure CupcakeProfit where
   hCost : costCents = made * 75
   hProfit : profitCents = revenueCents - costCents
 
-theorem cupcake_made (m : CupcakeProfit) : m.made = 72 := by rw [m.hMade]; norm_num
-theorem cupcake_burnt (m : CupcakeProfit) : m.burnt = 24 := by rw [m.hBurnt]; norm_num
-theorem cupcake_eaten (m : CupcakeProfit) : m.eaten = 9 := by rw [m.hEaten]; norm_num
+theorem cupcake_made (m : CupcakeProfit) : m.made = 72 := by rw [m.hMade] <;> norm_num
+theorem cupcake_burnt (m : CupcakeProfit) : m.burnt = 24 := by rw [m.hBurnt] <;> norm_num
+theorem cupcake_eaten (m : CupcakeProfit) : m.eaten = 9 := by rw [m.hEaten] <;> norm_num
 theorem cupcake_remaining (m : CupcakeProfit) : m.remaining = 39 := by
   calc m.remaining = m.made - m.burnt - m.eaten := m.hRemaining
     _ = 72 - 24 - 9 := by rw [cupcake_made m, cupcake_burnt m, cupcake_eaten m]
@@ -137,8 +137,8 @@ structure CollegeCost where
   hFacilities : facilities = 200
   hTotal : total = tuition + books + facilities
 
-theorem college_tuition (m : CollegeCost) : m.tuition = 6300 := by rw [m.hTuition]; norm_num
-theorem college_books (m : CollegeCost) : m.books = 600 := by rw [m.hBooks]; norm_num
+theorem college_tuition (m : CollegeCost) : m.tuition = 6300 := by rw [m.hTuition] <;> norm_num
+theorem college_books (m : CollegeCost) : m.books = 600 := by rw [m.hBooks] <;> norm_num
 theorem college_solution (m : CollegeCost) : m.total = 7100 := by
   calc m.total = m.tuition + m.books + m.facilities := m.hTotal
     _ = 6300 + 600 + 200 := by rw [college_tuition m, college_books m, m.hFacilities]
@@ -154,8 +154,8 @@ structure DriveStorage where
   hRemaining : remainingHalfKB = capacityHalfKB - usedHalfKB
   hVideos : videoCount * 400 = remainingHalfKB
 
-theorem drive_capacity (m : DriveStorage) : m.capacityHalfKB = 6000 := by rw [m.hCapacity]; norm_num
-theorem drive_used (m : DriveStorage) : m.usedHalfKB = 1200 := by rw [m.hUsed]; norm_num
+theorem drive_capacity (m : DriveStorage) : m.capacityHalfKB = 6000 := by rw [m.hCapacity] <;> norm_num
+theorem drive_used (m : DriveStorage) : m.usedHalfKB = 1200 := by rw [m.hUsed] <;> norm_num
 theorem drive_remaining (m : DriveStorage) : m.remainingHalfKB = 4800 := by
   calc m.remainingHalfKB = m.capacityHalfKB - m.usedHalfKB := m.hRemaining
     _ = 6000 - 1200 := by rw [drive_capacity m, drive_used m]
@@ -170,7 +170,7 @@ structure IvyCupcakes where
   hAfternoon : afternoon = 20 + 15
   hTotal : total = 20 + afternoon
 
-theorem ivy_afternoon (m : IvyCupcakes) : m.afternoon = 35 := by rw [m.hAfternoon]; norm_num
+theorem ivy_afternoon (m : IvyCupcakes) : m.afternoon = 35 := by rw [m.hAfternoon] <;> norm_num
 theorem ivy_solution (m : IvyCupcakes) : m.total = 55 := by
   calc m.total = 20 + m.afternoon := m.hTotal
     _ = 20 + 35 := by rw [ivy_afternoon m]
@@ -241,7 +241,7 @@ structure DuctTape where
   hCombined : combined = 8 + 3
   hTime : minutes * combined = 22
 
-theorem tape_combined (m : DuctTape) : m.combined = 11 := by rw [m.hCombined]; norm_num
+theorem tape_combined (m : DuctTape) : m.combined = 11 := by rw [m.hCombined] <;> norm_num
 theorem tape_solution (m : DuctTape) : m.minutes = 2 := by
   have h : m.minutes * 11 = 22 := by rw [m.hTime, tape_combined m]
   omega
@@ -277,8 +277,8 @@ structure Typing where
   hIsaiah : isaiahHour = 40 * 60
   hDifference : difference = isaiahHour - micahHour
 
-theorem typing_micah (m : Typing) : m.micahHour = 1200 := by rw [m.hMicah]; norm_num
-theorem typing_isaiah (m : Typing) : m.isaiahHour = 2400 := by rw [m.hIsaiah]; norm_num
+theorem typing_micah (m : Typing) : m.micahHour = 1200 := by rw [m.hMicah] <;> norm_num
+theorem typing_isaiah (m : Typing) : m.isaiahHour = 2400 := by rw [m.hIsaiah] <;> norm_num
 theorem typing_solution (m : Typing) : m.difference = 1200 := by
   calc m.difference = m.isaiahHour - m.micahHour := m.hDifference
     _ = 2400 - 1200 := by rw [typing_isaiah m, typing_micah m]
@@ -290,7 +290,7 @@ structure LandShare where
   hPeople : people = 1 + 4
   hShare : share * 5 = 20000
 
-theorem land_people (m : LandShare) : m.people = 5 := by rw [m.hPeople]; norm_num
+theorem land_people (m : LandShare) : m.people = 5 := by rw [m.hPeople] <;> norm_num
 theorem land_solution (m : LandShare) : m.share = 4000 := by
   have h := m.hShare
   omega

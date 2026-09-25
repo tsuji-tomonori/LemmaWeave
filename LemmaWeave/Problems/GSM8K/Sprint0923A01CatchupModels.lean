@@ -3,7 +3,12 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A01Catchup
 
 structure BaylorAdditive where
-  dashboard first second pair third final : ℕ
+  dashboard : ℕ
+  first : ℕ
+  second : ℕ
+  pair : ℕ
+  third : ℕ
+  final : ℕ
   hDashboard : dashboard = 4000
   hFirst : first * 2 = dashboard
   hSecond : second * 5 = first * 7
@@ -31,7 +36,12 @@ theorem baylor_solution_additive (m : BaylorAdditive) : m.final = 18400 := by
   rw [m.hFinal, m.hDashboard, baylor_pair_additive m, baylor_third_additive m]
 
 structure BaylorMultiplicative where
-  dashboard first second pair third final : ℕ
+  dashboard : ℕ
+  first : ℕ
+  second : ℕ
+  pair : ℕ
+  third : ℕ
+  final : ℕ
   hDashboard : dashboard = 4000
   hFirst : first * 2 = dashboard
   hSecond : second * 5 = first * 2
@@ -59,7 +69,10 @@ theorem baylor_solution_multiplicative (m : BaylorMultiplicative) : m.final = 12
   rw [m.hFinal, m.hDashboard, baylor_pair_multiplicative m, baylor_third_multiplicative m]
 
 structure Rain where
-  mondayHalfCm tuesdayHalfCm differenceHalfCm differenceCm : ℕ
+  mondayHalfCm : ℕ
+  tuesdayHalfCm : ℕ
+  differenceHalfCm : ℕ
+  differenceCm : ℕ
   hMonday : mondayHalfCm = 7 * 3
   hTuesday : tuesdayHalfCm = 9 * 5
   hDifference : differenceHalfCm + mondayHalfCm = tuesdayHalfCm
@@ -76,7 +89,9 @@ theorem rain_solution (m : Rain) : m.differenceCm = 12 := by
   rw [rain_difference_half m] at h
   omega
 
-structure FruitBowl where total left : ℕ
+structure FruitBowl where
+  total : ℕ
+  left : ℕ
   hTotal : total = 3 + 6
   hLeft : left + 3 = total
 
@@ -86,7 +101,11 @@ theorem fruit_solution (m : FruitBowl) : m.left = 6 := by
   rw [fruit_total m] at h
   omega
 
-structure SueTravel where firstLeg layover secondLeg total : ℕ
+structure SueTravel where
+  firstLeg : ℕ
+  layover : ℕ
+  secondLeg : ℕ
+  total : ℕ
   hFirst : firstLeg * 4 = 3 * 24
   hLayover : layover = 16
   hSecond : secondLeg = 24
@@ -98,7 +117,12 @@ theorem sue_first_leg (m : SueTravel) : m.firstLeg = 18 := by
 theorem sue_solution (m : SueTravel) : m.total = 58 := by
   rw [m.hTotal, sue_first_leg m, m.hLayover, m.hSecond]
 
-structure AgesAverage where eden devin mother sum average : ℕ
+structure AgesAverage where
+  eden : ℕ
+  devin : ℕ
+  mother : ℕ
+  sum : ℕ
+  average : ℕ
   hDevin : devin = 12
   hEden : eden = 2 * devin
   hMother : mother = 2 * eden
@@ -114,7 +138,12 @@ theorem ages_solution (m : AgesAverage) : m.average = 28 := by
   rw [ages_sum m] at h
   omega
 
-structure WarehousePatrol where perimeter intended skipped actual distance : ℕ
+structure WarehousePatrol where
+  perimeter : ℕ
+  intended : ℕ
+  skipped : ℕ
+  actual : ℕ
+  distance : ℕ
   hPerimeter : perimeter = 2 * 600 + 2 * 400
   hActual : actual + skipped = intended
   hIntended : intended = 10
@@ -129,7 +158,9 @@ theorem warehouse_actual (m : WarehousePatrol) : m.actual = 8 := by
 theorem warehouse_solution (m : WarehousePatrol) : m.distance = 16000 := by
   rw [m.hDistance, warehouse_perimeter m, warehouse_actual m]
 
-structure TaraGames where firstYear secondYear : ℕ
+structure TaraGames where
+  firstYear : ℕ
+  secondYear : ℕ
   hFirst : firstYear * 10 = 20 * 9
   hSecond : secondYear + 4 = firstYear
 
@@ -141,7 +172,12 @@ theorem tara_solution (m : TaraGames) : m.secondYear = 14 := by
   rw [tara_first_year m] at h
   omega
 
-structure DinnerBill where silas rest tip othersTotal each : ℕ
+structure DinnerBill where
+  silas : ℕ
+  rest : ℕ
+  tip : ℕ
+  othersTotal : ℕ
+  each : ℕ
   hSilas : silas * 2 = 150
   hRest : rest = 150 - silas
   hTip : tip * 10 = 150
@@ -161,7 +197,10 @@ theorem dinner_solution (m : DinnerBill) : m.each = 18 := by
   rw [dinner_others_total m] at h
   omega
 
-structure CookieJar where martha spent left : ℕ
+structure CookieJar where
+  martha : ℕ
+  spent : ℕ
+  left : ℕ
   hMartha : martha * 2 = 6
   hSpent : spent = 6 + martha
   hLeft : left + spent = 21
@@ -175,7 +214,12 @@ theorem cookie_solution (m : CookieJar) : m.left = 12 := by
   rw [cookie_spent m] at h
   omega
 
-structure Clothes where white colored shorts pants total : ℕ
+structure Clothes where
+  white : ℕ
+  colored : ℕ
+  shorts : ℕ
+  pants : ℕ
+  total : ℕ
   hWhite : white = 10 + 6
   hColored : colored = 5 + 8
   hShorts : shorts = 7 + 10
@@ -189,7 +233,13 @@ theorem clothes_pants (m : Clothes) : m.pants = 12 := by rw [m.hPants]
 theorem clothes_solution (m : Clothes) : m.total = 58 := by
   rw [m.hTotal, clothes_white m, clothes_colored m, clothes_shorts m, clothes_pants m]
 
-structure GardenFlowers where orange red yellow known pair each : ℕ
+structure GardenFlowers where
+  orange : ℕ
+  red : ℕ
+  yellow : ℕ
+  known : ℕ
+  pair : ℕ
+  each : ℕ
   hOrange : orange = 10
   hRed : red = 2 * orange
   hYellow : yellow + 5 = red
@@ -213,7 +263,9 @@ theorem flowers_solution (m : GardenFlowers) : m.each = 30 := by
   rw [flowers_pair m] at h
   omega
 
-structure CarLoan where interest total : ℕ
+structure CarLoan where
+  interest : ℕ
+  total : ℕ
   hInterest : interest * 100 = 20000 * 15
   hTotal : total = 35000 + interest
 
@@ -222,7 +274,10 @@ theorem car_interest (m : CarLoan) : m.interest = 3000 := by
   omega
 theorem car_solution (m : CarLoan) : m.total = 38000 := by rw [m.hTotal, car_interest m]
 
-structure ApplePies where sauce remaining pies : ℕ
+structure ApplePies where
+  sauce : ℕ
+  remaining : ℕ
+  pies : ℕ
   hSauce : sauce * 2 = 120
   hRemaining : remaining + sauce = 120
   hPies : pies * 4 = remaining
@@ -239,7 +294,9 @@ theorem pies_solution (m : ApplePies) : m.pies = 15 := by
   rw [pies_remaining m] at h
   omega
 
-structure GenderParty where male female : ℕ
+structure GenderParty where
+  male : ℕ
+  female : ℕ
   hMale : male * 3 = 60 * 2
   hTotal : female + male = 60
 
@@ -251,7 +308,12 @@ theorem gender_solution (m : GenderParty) : m.female = 20 := by
   rw [gender_male m] at h
   omega
 
-structure CoachSpending where coachA baseballs coachB differenceCents differenceDollars : ℕ
+structure CoachSpending where
+  coachA : ℕ
+  baseballs : ℕ
+  coachB : ℕ
+  differenceCents : ℕ
+  differenceDollars : ℕ
   hA : coachA = 10 * 2900
   hBaseballs : baseballs = 14 * 250
   hB : coachB = baseballs + 1800

@@ -7,7 +7,7 @@ structure Claws where
   totalClaws : ℕ
   hWombat : wombatClaws = 9 * 4
   hTotal : totalClaws = wombatClaws + 3
-theorem claws_wombats (m : Claws) : m.wombatClaws = 36 := by rw [m.hWombat]; norm_num
+theorem claws_wombats (m : Claws) : m.wombatClaws = 36 := by rw [m.hWombat] <;> norm_num
 theorem claws_solution (m : Claws) : m.totalClaws = 39 := by
   calc m.totalClaws = m.wombatClaws + 3 := m.hTotal
     _ = 36 + 3 := by rw [claws_wombats m]
@@ -44,7 +44,7 @@ structure Toddlers where
   actual : ℕ
   hOnce : onceCounted = 26 - 8
   hActual : actual = onceCounted + 3
-theorem toddlers_once (m : Toddlers) : m.onceCounted = 18 := by rw [m.hOnce]; norm_num
+theorem toddlers_once (m : Toddlers) : m.onceCounted = 18 := by rw [m.hOnce] <;> norm_num
 theorem toddlers_solution (m : Toddlers) : m.actual = 21 := by
   calc m.actual = m.onceCounted + 3 := m.hActual
     _ = 18 + 3 := by rw [toddlers_once m]
@@ -95,7 +95,7 @@ structure ReadingCoupons where
   coupons : ℕ
   hBooks : books = 2 * 10
   hCoupons : 5 * coupons = books
-theorem reading_books (m : ReadingCoupons) : m.books = 20 := by rw [m.hBooks]; norm_num
+theorem reading_books (m : ReadingCoupons) : m.books = 20 := by rw [m.hBooks] <;> norm_num
 theorem reading_solution (m : ReadingCoupons) : m.coupons = 4 := by
   have h := m.hCoupons
   rw [reading_books m] at h
@@ -138,7 +138,7 @@ structure WritingNameAmbiguity where
   hLucasWords : lucasWords = lucasLines * 10
   hIntended : intendedLeft = 400 - lucasWords
   hLiteral : literalLeft = 400 - 0
-theorem writing_half_page (m : WritingNameAmbiguity) : m.halfPageLines = 10 := by rw [m.hHalf]; norm_num
+theorem writing_half_page (m : WritingNameAmbiguity) : m.halfPageLines = 10 := by rw [m.hHalf] <;> norm_num
 theorem writing_lucas_lines (m : WritingNameAmbiguity) : m.lucasLines = 30 := by
   calc m.lucasLines = 20 + m.halfPageLines := m.hLucasLines
     _ = 20 + 10 := by rw [writing_half_page m]
@@ -151,7 +151,7 @@ theorem writing_intended (m : WritingNameAmbiguity) : m.intendedLeft = 100 := by
   calc m.intendedLeft = 400 - m.lucasWords := m.hIntended
     _ = 400 - 300 := by rw [writing_lucas_words m]
     _ = 100 := by norm_num
-theorem writing_literal (m : WritingNameAmbiguity) : m.literalLeft = 400 := by rw [m.hLiteral]; norm_num
+theorem writing_literal (m : WritingNameAmbiguity) : m.literalLeft = 400 := by rw [m.hLiteral] <;> norm_num
 theorem writing_nonunique (m : WritingNameAmbiguity) : m.intendedLeft ≠ m.literalLeft := by
   rw [writing_intended m, writing_literal m]
   norm_num
@@ -175,8 +175,8 @@ structure DuckSnails where
   hMotherTwo : motherTwo = 2 * groups
   hEachTwo : 2 * eachTwo = motherTwo
   hTotalTwo : totalTwo = groups + motherTwo + 2 * eachTwo
-theorem snails_first (m : DuckSnails) : m.first = 15 := by rw [m.hFirst]; norm_num
-theorem snails_next (m : DuckSnails) : m.next = 27 := by rw [m.hNext]; norm_num
+theorem snails_first (m : DuckSnails) : m.first = 15 := by rw [m.hFirst] <;> norm_num
+theorem snails_next (m : DuckSnails) : m.next = 27 := by rw [m.hNext] <;> norm_num
 theorem snails_groups (m : DuckSnails) : m.groups = 42 := by
   calc m.groups = m.first + m.next := m.hGroups
     _ = 15 + 27 := by rw [snails_first m, snails_next m]
@@ -226,8 +226,8 @@ structure FlowerSales where
   hTulipRevenue : tulipRevenue = 2 * totalTulips
   hRoseRevenue : roseRevenue = 3 * totalRoses
   hTotalRevenue : totalRevenue = tulipRevenue + roseRevenue
-theorem flowers_day_two_tulips (m : FlowerSales) : m.dayTwoTulips = 60 := by rw [m.hDayTwoTulips]; norm_num
-theorem flowers_day_two_roses (m : FlowerSales) : m.dayTwoRoses = 40 := by rw [m.hDayTwoRoses]; norm_num
+theorem flowers_day_two_tulips (m : FlowerSales) : m.dayTwoTulips = 60 := by rw [m.hDayTwoTulips] <;> norm_num
+theorem flowers_day_two_roses (m : FlowerSales) : m.dayTwoRoses = 40 := by rw [m.hDayTwoRoses] <;> norm_num
 theorem flowers_day_three_tulips (m : FlowerSales) : m.dayThreeTulips = 6 := by
   have h := m.hDayThreeTulips
   rw [flowers_day_two_tulips m] at h
@@ -275,7 +275,7 @@ structure Cheesecake where
   revenue : ℕ
   hSlices : slices = 7 * 6
   hRevenue : revenue = slices * 7
-theorem cheesecake_slices (m : Cheesecake) : m.slices = 42 := by rw [m.hSlices]; norm_num
+theorem cheesecake_slices (m : Cheesecake) : m.slices = 42 := by rw [m.hSlices] <;> norm_num
 theorem cheesecake_solution (m : Cheesecake) : m.revenue = 294 := by
   calc m.revenue = m.slices * 7 := m.hRevenue
     _ = 42 * 7 := by rw [cheesecake_slices m]
@@ -286,7 +286,7 @@ structure TypingTeam where
   average : ℕ
   hTotal : total = 64 + 76 + 91 + 80 + 89
   hAverage : 5 * average = total
-theorem team_total (m : TypingTeam) : m.total = 400 := by rw [m.hTotal]; norm_num
+theorem team_total (m : TypingTeam) : m.total = 400 := by rw [m.hTotal] <;> norm_num
 theorem team_solution (m : TypingTeam) : m.average = 80 := by
   have h := m.hAverage
   rw [team_total m] at h
@@ -321,16 +321,16 @@ structure PaintingAmbiguity where
   hAdditiveProfit : additiveProfit = 200 - 20 - additiveCanvas - paintFive
   hPaintSix : paintSix = 8 * 6
   hExtraLiterProfit : extraLiterProfit = 200 - 20 - conventionalCanvas - paintSix
-theorem painting_canvas_conventional (m : PaintingAmbiguity) : m.conventionalCanvas = 60 := by rw [m.hConventionalCanvas]; norm_num
-theorem painting_five_liters (m : PaintingAmbiguity) : m.paintFive = 40 := by rw [m.hPaintFive]; norm_num
+theorem painting_canvas_conventional (m : PaintingAmbiguity) : m.conventionalCanvas = 60 := by rw [m.hConventionalCanvas] <;> norm_num
+theorem painting_five_liters (m : PaintingAmbiguity) : m.paintFive = 40 := by rw [m.hPaintFive] <;> norm_num
 theorem painting_reference (m : PaintingAmbiguity) : m.conventionalProfit = 80 := by
   rw [m.hConventionalProfit, painting_canvas_conventional m, painting_five_liters m]
   norm_num
-theorem painting_canvas_additive (m : PaintingAmbiguity) : m.additiveCanvas = 80 := by rw [m.hAdditiveCanvas]; norm_num
+theorem painting_canvas_additive (m : PaintingAmbiguity) : m.additiveCanvas = 80 := by rw [m.hAdditiveCanvas] <;> norm_num
 theorem painting_additive (m : PaintingAmbiguity) : m.additiveProfit = 60 := by
   rw [m.hAdditiveProfit, painting_canvas_additive m, painting_five_liters m]
   norm_num
-theorem painting_six_liters (m : PaintingAmbiguity) : m.paintSix = 48 := by rw [m.hPaintSix]; norm_num
+theorem painting_six_liters (m : PaintingAmbiguity) : m.paintSix = 48 := by rw [m.hPaintSix] <;> norm_num
 theorem painting_extra_liter (m : PaintingAmbiguity) : m.extraLiterProfit = 72 := by
   rw [m.hExtraLiterProfit, painting_canvas_conventional m, painting_six_liters m]
   norm_num

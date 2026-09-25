@@ -2,7 +2,12 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A02
 
-structure SilverGoldFiftyFold where silverCost goldHalfOunces goldPrice goldCost total : ℕ
+structure SilverGoldFiftyFold where
+  silverCost : ℕ
+  goldHalfOunces : ℕ
+  goldPrice : ℕ
+  goldCost : ℕ
+  total : ℕ
   hSilverCost : silverCost * 2 = 3 * 20
   hGoldAmount : goldHalfOunces = 2 * 3
   hGoldPrice : goldPrice = 50 * 20
@@ -20,7 +25,12 @@ theorem silver_gold_cost_fifty (m : SilverGoldFiftyFold) : m.goldCost = 3000 := 
 theorem silver_gold_solution_fifty (m : SilverGoldFiftyFold) : m.total = 3030 := by
   rw [m.hTotal, silver_gold_silver m, silver_gold_cost_fifty m]
 
-structure SilverGoldFiftyMore where silverCost goldHalfOunces goldPrice goldCost total : ℕ
+structure SilverGoldFiftyMore where
+  silverCost : ℕ
+  goldHalfOunces : ℕ
+  goldPrice : ℕ
+  goldCost : ℕ
+  total : ℕ
   hSilverCost : silverCost * 2 = 3 * 20
   hGoldAmount : goldHalfOunces = 2 * 3
   hGoldPrice : goldPrice = 20 + 50 * 20
@@ -34,13 +44,18 @@ theorem silver_gold_solution_more (m : SilverGoldFiftyMore) : m.total = 3090 := 
   rw [m.hTotal]
   omega
 
-structure Lorry where load total : ℕ
+structure Lorry where
+  load : ℕ
+  total : ℕ
   hLoad : load = 20 * 60
   hTotal : total = 500 + load
 theorem lorry_load (m : Lorry) : m.load = 1200 := by rw [m.hLoad]
 theorem lorry_solution (m : Lorry) : m.total = 1700 := by rw [m.hTotal, lorry_load m]
 
-structure Paint where perWall used left : ℕ
+structure Paint where
+  perWall : ℕ
+  used : ℕ
+  left : ℕ
   hPerWall : perWall * 4 = 16
   hUsed : used = 3 * perWall + 1
   hLeft : left + used = 16
@@ -53,7 +68,12 @@ theorem paint_solution (m : Paint) : m.left = 3 := by
   rw [paint_used m] at h
   omega
 
-structure Delivery where burgers fries shakes current needed : ℕ
+structure Delivery where
+  burgers : ℕ
+  fries : ℕ
+  shakes : ℕ
+  current : ℕ
+  needed : ℕ
   hBurgers : burgers = 2 * 320
   hFries : fries = 2 * 190
   hShakes : shakes = 2 * 240
@@ -69,7 +89,11 @@ theorem delivery_solution (m : Delivery) : m.needed = 300 := by
   rw [delivery_current m] at h
   omega
 
-structure Shipping where bottles lotion current needed : ℕ
+structure Shipping where
+  bottles : ℕ
+  lotion : ℕ
+  current : ℕ
+  needed : ℕ
   hBottles : bottles = 2 * 1000
   hLotion : lotion = 3 * 600
   hCurrent : current = bottles + lotion
@@ -83,7 +107,9 @@ theorem shipping_solution (m : Shipping) : m.needed = 1200 := by
   rw [shipping_current m] at h
   omega
 
-structure Park where area trees : ℕ
+structure Park where
+  area : ℕ
+  trees : ℕ
   hArea : area = 1000 * 2000
   hTrees : trees * 20 = area
 theorem park_area (m : Park) : m.area = 2000000 := by rw [m.hArea]
@@ -92,7 +118,9 @@ theorem park_solution (m : Park) : m.trees = 100000 := by
   rw [park_area m] at h
   omega
 
-structure Candy where afterTalitha left : ℕ
+structure Candy where
+  afterTalitha : ℕ
+  left : ℕ
   hAfterTalitha : afterTalitha + 108 = 349
   hLeft : left + 153 = afterTalitha
 theorem candy_after_talitha (m : Candy) : m.afterTalitha = 241 := by
@@ -103,7 +131,9 @@ theorem candy_solution (m : Candy) : m.left = 88 := by
   rw [candy_after_talitha m] at h
   omega
 
-structure CarSoap where bottles cost : ℕ
+structure CarSoap where
+  bottles : ℕ
+  cost : ℕ
   hBottles : bottles * 4 = 20
   hCost : cost = bottles * 4
 theorem car_soap_bottles (m : CarSoap) : m.bottles = 5 := by
@@ -111,7 +141,10 @@ theorem car_soap_bottles (m : CarSoap) : m.bottles = 5 := by
   omega
 theorem car_soap_solution (m : CarSoap) : m.cost = 20 := by rw [m.hCost, car_soap_bottles m]
 
-structure Author where yearly books earnings : ℕ
+structure Author where
+  yearly : ℕ
+  books : ℕ
+  earnings : ℕ
   hYearly : yearly * 2 = 12
   hBooks : books = yearly * 20
   hEarnings : earnings = books * 30000
@@ -121,7 +154,10 @@ theorem author_yearly (m : Author) : m.yearly = 6 := by
 theorem author_books (m : Author) : m.books = 120 := by rw [m.hBooks, author_yearly m]
 theorem author_solution (m : Author) : m.earnings = 3600000 := by rw [m.hEarnings, author_books m]
 
-structure Highlighters where pink blue total : ℕ
+structure Highlighters where
+  pink : ℕ
+  blue : ℕ
+  total : ℕ
   hPink : pink = 7 + 7
   hBlue : blue = pink + 5
   hTotal : total = 7 + pink + blue
@@ -130,7 +166,10 @@ theorem highlighters_blue (m : Highlighters) : m.blue = 19 := by rw [m.hBlue, hi
 theorem highlighters_solution (m : Highlighters) : m.total = 40 := by
   rw [m.hTotal, highlighters_pink m, highlighters_blue m]
 
-structure WeeklyChips where second laterPair eachLater : ℕ
+structure WeeklyChips where
+  second : ℕ
+  laterPair : ℕ
+  eachLater : ℕ
   hSecond : second = 3 * 15
   hLaterPair : laterPair + 15 + second = 100
   hEach : eachLater * 2 = laterPair
@@ -144,7 +183,9 @@ theorem weekly_chips_solution (m : WeeklyChips) : m.eachLater = 20 := by
   rw [weekly_chips_pair m] at h
   omega
 
-structure Clinton where dailyCents totalCents : ℕ
+structure Clinton where
+  dailyCents : ℕ
+  totalCents : ℕ
   hDaily : dailyCents = 600 + 100
   hTotal : totalCents = dailyCents * 5
 theorem clinton_daily (m : Clinton) : m.dailyCents = 700 := by rw [m.hDaily]
@@ -154,7 +195,9 @@ theorem bob_weekly_hours : (10 : ℕ) * 5 = 50 := by norm_num
 theorem bob_four_week_solution : (10 : ℕ) * 5 * 4 = 200 := by norm_num
 theorem bob_five_week_example : (10 : ℕ) * 5 * 5 = 250 := by norm_num
 
-structure Lemons where load remaining : ℕ
+structure Lemons where
+  load : ℕ
+  remaining : ℕ
   hLoad : load = 100 * 8
   hRemaining : remaining + load = 900
 theorem lemons_load (m : Lemons) : m.load = 800 := by rw [m.hLoad]
@@ -163,7 +206,10 @@ theorem lemons_solution (m : Lemons) : m.remaining = 100 := by
   rw [lemons_load m] at h
   omega
 
-structure Liquids where halfPints pints cups : ℕ
+structure Liquids where
+  halfPints : ℕ
+  pints : ℕ
+  cups : ℕ
   hHalfPints : halfPints = 17 + 19
   hPints : pints * 2 = halfPints
   hCups : cups = pints * 2

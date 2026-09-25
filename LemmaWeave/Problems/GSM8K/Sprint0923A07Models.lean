@@ -2,7 +2,11 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A07
 
-structure TreeTableProfit where planks tables revenue profit : ℕ
+structure TreeTableProfit where
+  planks : ℕ
+  tables : ℕ
+  revenue : ℕ
+  profit : ℕ
   hPlanks : planks = 30 * 25
   hTables : tables * 15 = planks
   hRevenue : revenue = tables * 300
@@ -20,7 +24,9 @@ theorem trees_solution (m : TreeTableProfit) : m.profit = 12000 := by
   rw [trees_revenue m] at h
   omega
 
-structure CarSpending where samara difference : ℕ
+structure CarSpending where
+  samara : ℕ
+  difference : ℕ
   hSamara : samara = 25 + 467 + 79
   hDifference : difference + samara = 2457
 
@@ -30,7 +36,9 @@ theorem car_solution (m : CarSpending) : m.difference = 1886 := by
   rw [car_samara m] at h
   omega
 
-structure SewerCapacity where hours days : ℕ
+structure SewerCapacity where
+  hours : ℕ
+  days : ℕ
   hHours : hours * 1000 = 240000
   hDays : days * 24 = hours
 
@@ -40,7 +48,13 @@ theorem sewer_solution (m : SewerCapacity) : m.days = 10 := by
   rw [sewer_hours m] at h
   omega
 
-structure TestScores where maximum lost jose meghan alisson total : ℕ
+structure TestScores where
+  maximum : ℕ
+  lost : ℕ
+  jose : ℕ
+  meghan : ℕ
+  alisson : ℕ
+  total : ℕ
   hMaximum : maximum = 50 * 2
   hLost : lost = 5 * 2
   hJose : jose + lost = maximum
@@ -65,7 +79,11 @@ theorem scores_alisson (m : TestScores) : m.alisson = 50 := by
 theorem scores_solution (m : TestScores) : m.total = 210 := by
   rw [m.hTotal, scores_jose m, scores_meghan m, scores_alisson m]
 
-structure SugarSubstitute where daily packets boxes cost : ℕ
+structure SugarSubstitute where
+  daily : ℕ
+  packets : ℕ
+  boxes : ℕ
+  cost : ℕ
   hDaily : daily = 1 * 2
   hPackets : packets = 90 * daily
   hBoxes : boxes * 30 = packets
@@ -81,7 +99,10 @@ theorem sugar_boxes (m : SugarSubstitute) : m.boxes = 6 := by
 theorem sugar_solution (m : SugarSubstitute) : m.cost = 24 := by
   rw [m.hCost, sugar_boxes m]
 
-structure EmmaMoney where afterFurniture given left : ℕ
+structure EmmaMoney where
+  afterFurniture : ℕ
+  given : ℕ
+  left : ℕ
   hAfterFurniture : afterFurniture + 400 = 2000
   hGiven : given * 4 = afterFurniture * 3
   hLeft : left + given = afterFurniture
@@ -96,7 +117,11 @@ theorem emma_solution (m : EmmaMoney) : m.left = 400 := by
   rw [emma_after_furniture m, emma_given m] at h
   omega
 
-structure DetourTrip where speed detour extraTime totalTime : ℕ
+structure DetourTrip where
+  speed : ℕ
+  detour : ℕ
+  extraTime : ℕ
+  totalTime : ℕ
   hSpeed : speed * 3 = 150
   hDetour : detour = 2 * 50
   hExtraTime : extraTime * speed = detour
@@ -111,7 +136,9 @@ theorem detour_extra_time (m : DetourTrip) : m.extraTime = 2 := by
 theorem detour_solution (m : DetourTrip) : m.totalTime = 5 := by
   rw [m.hTotalTime, detour_extra_time m]
 
-structure MonthlyHours where totalNeed hours : ℕ
+structure MonthlyHours where
+  totalNeed : ℕ
+  hours : ℕ
   hTotalNeed : totalNeed = 1200 + 400 + 200 + 60 + 200
   hEnough : totalNeed ≤ hours * 15
   hMinimal : ∀ n : ℕ, totalNeed ≤ n * 15 → hours ≤ n
@@ -128,7 +155,11 @@ theorem hours_solution (m : MonthlyHours) : m.hours = 138 := by
   · exact m.hMinimal 138 (hours_138_enough m)
   · exact hours_lower_bound m
 
-structure SummerReading where firstBook secondBook totalRead remaining : ℕ
+structure SummerReading where
+  firstBook : ℕ
+  secondBook : ℕ
+  totalRead : ℕ
+  remaining : ℕ
   hFirstBook : firstBook * 100 = 500 * 80
   hSecondBook : secondBook * 5 = 1000
   hTotalRead : totalRead = firstBook + secondBook
@@ -143,7 +174,12 @@ theorem reading_solution (m : SummerReading) : m.remaining = 200 := by
   rw [reading_total m] at h
   omega
 
-structure VolleyballScore where nathalie pair aimee named teammates : ℕ
+structure VolleyballScore where
+  nathalie : ℕ
+  pair : ℕ
+  aimee : ℕ
+  named : ℕ
+  teammates : ℕ
   hNathalie : nathalie = 4 + 3
   hPair : pair = 4 + nathalie
   hAimee : aimee = 2 * pair
@@ -162,7 +198,10 @@ theorem volleyball_solution (m : VolleyballScore) : m.teammates = 17 := by
   rw [volleyball_named m] at h
   omega
 
-structure CommuteDistance where extra secondThird total : ℕ
+structure CommuteDistance where
+  extra : ℕ
+  secondThird : ℕ
+  total : ℕ
   hExtra : extra * 3 = 6 * 2
   hSecondThird : secondThird = 6 + extra
   hTotal : total = 4 + 6 + secondThird + 4
@@ -174,7 +213,11 @@ theorem commute_solution (m : CommuteDistance) : m.total = 24 := by
   rw [m.hTotal, commute_second_third m]
 
 /-- All losses are measured in half-pound units until the final conversion. -/
-structure WeightLoss where aleesiaHalf alexeiHalf totalHalf totalPounds : ℕ
+structure WeightLoss where
+  aleesiaHalf : ℕ
+  alexeiHalf : ℕ
+  totalHalf : ℕ
+  totalPounds : ℕ
   hAleesia : aleesiaHalf = 3 * 10
   hAlexei : alexeiHalf = 5 * 8
   hTotalHalf : totalHalf = aleesiaHalf + alexeiHalf
@@ -189,7 +232,9 @@ theorem weight_solution (m : WeightLoss) : m.totalPounds = 35 := by
   rw [weight_total_half m] at h
   omega
 
-structure FruitCrates where known passion : ℕ
+structure FruitCrates where
+  known : ℕ
+  passion : ℕ
   hKnown : known = 13 + 20
   hPassion : passion + known = 50
 
@@ -200,7 +245,11 @@ theorem fruit_solution (m : FruitCrates) : m.passion = 17 := by
   omega
 
 /-- `overlap` counts cars that have both a valid ticket and a permanent pass. -/
-structure ParkingCounts where tickets passes overlap unpaid : ℕ
+structure ParkingCounts where
+  tickets : ℕ
+  passes : ℕ
+  overlap : ℕ
+  unpaid : ℕ
   hTickets : tickets * 100 = 300 * 75
   hPasses : passes * 5 = tickets
   hOverlapTickets : overlap ≤ tickets
@@ -238,7 +287,9 @@ theorem parking_disjoint_solution (m : ParkingCounts) (hDisjoint : m.overlap = 0
   have hu := m.hInclusionExclusion
   omega
 
-structure SchoolTime where used remaining : ℕ
+structure SchoolTime where
+  used : ℕ
+  remaining : ℕ
   hUsed : used = 15 + 6
   hRemaining : remaining + used = 30
 

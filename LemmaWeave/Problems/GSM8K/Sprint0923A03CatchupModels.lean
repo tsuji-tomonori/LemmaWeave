@@ -2,7 +2,10 @@ import Mathlib
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A03Catchup
 
-structure CreditCard where afterPayment interest final : ℕ
+structure CreditCard where
+  afterPayment : ℕ
+  interest : ℕ
+  final : ℕ
   hAfter : afterPayment + 50 = 150
   hInterest : interest * 100 = afterPayment * 20
   hFinal : final = afterPayment + interest
@@ -23,7 +26,9 @@ theorem shoes_solution (m : DiscountedShoes) : m.original = 600 := by
   have h := m.hPaid
   omega
 
-structure DogWeights where ivan total : ℕ
+structure DogWeights where
+  ivan : ℕ
+  total : ℕ
   hIvan : ivan * 7 = 63
   hTotal : total = 63 + ivan
 
@@ -31,7 +36,14 @@ theorem dogs_ivan (m : DogWeights) : m.ivan = 9 := by omega
 theorem dogs_solution (m : DogWeights) : m.total = 72 := by
   rw [m.hTotal, dogs_ivan m]
 
-structure RaceAverage where speed2 speed3 time1 time2 time3 totalTime average : ℕ
+structure RaceAverage where
+  speed2 : ℕ
+  speed3 : ℕ
+  time1 : ℕ
+  time2 : ℕ
+  time3 : ℕ
+  totalTime : ℕ
+  average : ℕ
   hSpeed2 : speed2 = 150 + 50
   hSpeed3 : speed3 = 2 * 150
   hTime1 : time1 * 150 = 3 * 3600
@@ -58,7 +70,10 @@ theorem race_solution (m : RaceAverage) : m.average = 180 := by
   rw [race_total_time m] at h
   omega
 
-structure SharedMoney where howard total each : ℕ
+structure SharedMoney where
+  howard : ℕ
+  total : ℕ
+  each : ℕ
   hHoward : howard + 30 = 150
   hTotal : total = 150 + howard
   hEach : each * 2 = total
@@ -70,14 +85,20 @@ theorem money_solution (m : SharedMoney) : m.each = 135 := by
   rw [money_total m] at h
   omega
 
-structure Scrapbook where added total : ℕ
+structure Scrapbook where
+  added : ℕ
+  total : ℕ
   hAdded : added * 4 = 72
   hTotal : total = 18 + added
 
 theorem stamps_added (m : Scrapbook) : m.added = 18 := by omega
 theorem stamps_solution (m : Scrapbook) : m.total = 36 := by rw [m.hTotal, stamps_added m]
 
-structure MedicalCosts where mri total covered paid : ℕ
+structure MedicalCosts where
+  mri : ℕ
+  total : ℕ
+  covered : ℕ
+  paid : ℕ
   hMri : mri = 3 * 250
   hTotal : total = 250 + mri
   hCovered : covered * 100 = total * 80
@@ -94,7 +115,11 @@ theorem medical_solution (m : MedicalCosts) : m.paid = 200 := by
   rw [medical_total m, medical_covered m] at h
   omega
 
-structure SchoolPopulation where female male foreignMale nonForeignMale : ℕ
+structure SchoolPopulation where
+  female : ℕ
+  male : ℕ
+  foreignMale : ℕ
+  nonForeignMale : ℕ
   hFemale : female * 3 = 300 * 2
   hMale : male + female = 300
   hForeign : foreignMale * 10 = male
@@ -114,7 +139,12 @@ theorem school_solution (m : SchoolPopulation) : m.nonForeignMale = 90 := by
   rw [school_male m, school_foreign_male m] at h
   omega
 
-structure SockProfit where firstEach firstTotal otherTotal totalCents totalDollars : ℕ
+structure SockProfit where
+  firstEach : ℕ
+  firstTotal : ℕ
+  otherTotal : ℕ
+  totalCents : ℕ
+  totalDollars : ℕ
   hFirstEach : firstEach * 100 = 200 * 25
   hFirstTotal : firstTotal = 4 * firstEach
   hOtherTotal : otherTotal = 5 * 20
@@ -132,14 +162,19 @@ theorem socks_solution (m : SockProfit) : m.totalDollars = 3 := by
   rw [socks_total_cents m] at h
   omega
 
-structure Heights where kelly jana : ℕ
+structure Heights where
+  kelly : ℕ
+  jana : ℕ
   hKelly : kelly + 3 = 72
   hJana : jana = kelly + 5
 
 theorem height_kelly (m : Heights) : m.kelly = 69 := by omega
 theorem height_solution (m : Heights) : m.jana = 74 := by rw [m.hJana, height_kelly m]
 
-structure BugCollection where crickets caterpillars total : ℕ
+structure BugCollection where
+  crickets : ℕ
+  caterpillars : ℕ
+  total : ℕ
   hCrickets : crickets * 2 = 12
   hCaterpillars : caterpillars = 2 * 3
   hTotal : total = 12 + 3 + crickets + caterpillars
@@ -149,7 +184,10 @@ theorem bugs_caterpillars (m : BugCollection) : m.caterpillars = 6 := by rw [m.h
 theorem bugs_solution (m : BugCollection) : m.total = 27 := by
   rw [m.hTotal, bugs_crickets m, bugs_caterpillars m]
 
-structure DoughnutSavings where singles doubles saving : ℕ
+structure DoughnutSavings where
+  singles : ℕ
+  doubles : ℕ
+  saving : ℕ
   hSingles : singles = 6 * 8
   hDoubles : doubles = 3 * 14
   hSaving : saving + doubles = singles
@@ -161,7 +199,10 @@ theorem doughnuts_solution (m : DoughnutSavings) : m.saving = 6 := by
   rw [doughnuts_singles m, doughnuts_doubles m] at h
   omega
 
-structure LongJump where margaritaJump margaritaTotal farther : ℕ
+structure LongJump where
+  margaritaJump : ℕ
+  margaritaTotal : ℕ
+  farther : ℕ
   hJump : margaritaJump + 1 = 2 * 4
   hTotal : margaritaTotal = 18 + margaritaJump
   hFarther : farther + 24 = margaritaTotal
@@ -173,7 +214,12 @@ theorem longjump_solution (m : LongJump) : m.farther = 1 := by
   rw [longjump_total m] at h
   omega
 
-structure IceCream where chocolateUsed vanillaUsed strawberryUsed used remaining : ℕ
+structure IceCream where
+  chocolateUsed : ℕ
+  vanillaUsed : ℕ
+  strawberryUsed : ℕ
+  used : ℕ
+  remaining : ℕ
   hChocolate : chocolateUsed = 1 + 3 * 2
   hVanilla : vanillaUsed = 1 + 1 + 2
   hStrawberry : strawberryUsed = 1 + 2
@@ -196,7 +242,12 @@ theorem icecream_solution (m : IceCream) : m.remaining = 16 := by
   omega
 
 /-- Intended reading: Adam keeps half of the 36 articles he had selected for donation. -/
-structure WardrobeDonation where pajamas adamSelected friends adamActual total : ℕ
+structure WardrobeDonation where
+  pajamas : ℕ
+  adamSelected : ℕ
+  friends : ℕ
+  adamActual : ℕ
+  total : ℕ
   hPajamas : pajamas = 4 * 2
   hAdamSelected : adamSelected = 4 + 4 + pajamas + 20
   hFriends : friends = 3 * adamSelected

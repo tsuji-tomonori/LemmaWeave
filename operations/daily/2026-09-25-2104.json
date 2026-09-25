@@ -8,7 +8,7 @@
     "target_count": null
   },
   "started_at": "2026-09-25T21:04:03+09:00",
-  "finished_at": "2026-09-25T21:16:00+09:00",
+  "finished_at": "2026-09-25T21:27:00+09:00",
   "schedule_variance_ja": "21時枠を21:04 JSTに開始。20時枠までの新規解答と重複せず、最古の証拠待ち10問と直近CIの検証基盤障害を再試行した。5時枠は未実行のまま保持する。",
   "base_sha": "70cec87dc887b35a2b04038ce0de310200ac75dd",
   "selected_problem_ids": [
@@ -108,7 +108,14 @@
     "malformed_recipe_prefix": "gsm8k_sprint136_",
     "repair_commit_sha": "17e1c5acd0c239de6d1238a1d49609cfe09ef9a4",
     "repaired_field": "graph",
-    "runner_hardening": "missing required recipe fields are now reported as structured missing_graph_directives instead of raising KeyError"
+    "runner_hardening": "missing required recipe fields are now reported as structured missing_graph_directives instead of raising KeyError",
+    "directive_repairs": {
+      "dnc_parameter": 1,
+      "sprint135": 15,
+      "sprint136": 15,
+      "sprint136_recipe_targets_moved_to_wrapper": 15,
+      "status": "saved_in_followup_commit_exact_head_pending"
+    }
   },
   "ci_before_run": {
     "head_sha": "70cec87dc887b35a2b04038ce0de310200ac75dd",
@@ -117,10 +124,12 @@
     "failure_ja": "固定Lean対象の構築後、scripts/run_method_targets.pyがSprint 136の15レシピにgraphキーがないためKeyErrorで停止。artifactは成功証拠として不採用。"
   },
   "ci_after_run": {
-    "head_sha": "pending_ledger_commit",
-    "workflow_run_id": null,
-    "status": "not_yet_registered",
-    "evidence_accepted": false
+    "head_sha": "344fde43b194dc6ffbb84f13b6deb77f6b064f89",
+    "workflow_run_id": 36133931988,
+    "status": "failure",
+    "conclusion": "failure",
+    "evidence_accepted": false,
+    "failure_ja": "graphキー欠落は解消し、構造化診断へ進行。共通テスト1件とSprint 135・136各15件のLean証拠抽出ディレクティブがgraph出力先と未対応だった。"
   },
   "queue_after": {
     "total": 8792,
@@ -152,5 +161,5 @@
     "status": "serialized_single_writer",
     "shared_lock_implementation": false
   },
-  "note_ja": "最古の証拠待ち10問を再試行。証拠回収を止めていたSprint 136の15レシピのgraph欠落を全件修復し、同種欠落をKeyErrorではなく構造化診断にする検証ランナー修正を保存。新HEAD成功までは正式完了へ昇格しない。"
+  "note_ja": "最古の証拠待ち10問を再試行。証拠回収を止めていたSprint 136の15レシピのgraph欠落を全件修復し、同種欠落をKeyErrorではなく構造化診断にする検証ランナー修正を保存。新HEAD成功までは正式完了へ昇格しない。 初回修復CIで次の31件の抽出ディレクティブ不足を特定し、wrapperとgraph出力先を一致させた。"
 }

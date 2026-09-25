@@ -1,5 +1,6 @@
 import LemmaWeave.Problems.DNC2026M1.Goals
 import Mathlib.Tactic
+import LemmaWeave.Audit.Extract
 
 namespace LemmaWeave.Tests.DNC2026ParameterIndividual
 
@@ -61,3 +62,5 @@ theorem individual_solution : ParameterGoal := by
     exact six_satisfies_condition
 
 end LemmaWeave.Tests.DNC2026ParameterIndividual
+
+#lw_dependencies LemmaWeave.Tests.DNC2026ParameterIndividual.individual_solution to "work/dnc2026-parameter-individual-graph.json"

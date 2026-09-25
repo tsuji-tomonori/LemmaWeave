@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint139_rental",
+  "title_ja": "20日間の賃料",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02369",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日50ドルまたは14日500ドルの料金で20日借りる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.rental_solution",
+  "graph": "work/gsm8k-sprint139-rental-graph.json",
+  "model_notes_ja": [
+    "14日パックを1回使い、残る6日を日額で借りる料金構成を形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "rental_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.rental_remaining",
+      "title_ja": "個別料金は残り6日",
+      "claim_ja": "個別料金は残り6日",
+      "method_ja": "20から14を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "個別料金は残り6日",
+      "baseline_ja": "個別料金は残り6日"
+    },
+    {
+      "id": "rental_individual",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.rental_individual",
+      "title_ja": "6日分は300ドル",
+      "claim_ja": "6日分は300ドル",
+      "method_ja": "50ドルを6日分",
+      "requires_steps": [
+        "rental_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "6日分は300ドル",
+      "baseline_ja": "6日分は300ドル"
+    },
+    {
+      "id": "rental_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.rental_solution",
+      "title_ja": "合計800ドル",
+      "claim_ja": "合計800ドル",
+      "method_ja": "14日パック500ドルと300ドルを足す",
+      "requires_steps": [
+        "rental_individual"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計800ドル",
+      "baseline_ja": "合計800ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2370,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

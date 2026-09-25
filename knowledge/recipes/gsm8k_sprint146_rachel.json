@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint146_rachel",
+  "title_ja": "Rachelの塗装時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02473",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mattは12時間、Pattyはその3分の1、RachelはPattyの2倍より5時間多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.rachel_solution",
+  "graph": "work/gsm8k-sprint146-rachel-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rachel_patty",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.rachel_patty",
+      "title_ja": "Pattyは4時間",
+      "claim_ja": "Pattyは4時間",
+      "method_ja": "12を3で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Pattyは4時間",
+      "baseline_ja": "Pattyは4時間"
+    },
+    {
+      "id": "rachel_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.rachel_solution",
+      "title_ja": "Rachelは13時間",
+      "claim_ja": "Rachelは13時間",
+      "method_ja": "4の2倍に5を足す",
+      "requires_steps": [
+        "rachel_patty"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Rachelは13時間",
+      "baseline_ja": "Rachelは13時間"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2474,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

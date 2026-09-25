@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint146_sentence",
+  "title_ja": "合計刑期",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02474",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "盗品5000ドルごとに1年。3回目で基礎刑の25%を加算し、抵抗でさらに2年。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.sentence_solution",
+  "graph": "work/gsm8k-sprint146-sentence-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sentence_base",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.sentence_base",
+      "title_ja": "基礎刑は8年",
+      "claim_ja": "基礎刑は8年",
+      "method_ja": "40000を5000で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "基礎刑は8年",
+      "baseline_ja": "基礎刑は8年"
+    },
+    {
+      "id": "sentence_increase",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.sentence_increase",
+      "title_ja": "25%加算は2年",
+      "claim_ja": "25%加算は2年",
+      "method_ja": "8の4分の1を求める",
+      "requires_steps": [
+        "sentence_base"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "25%加算は2年",
+      "baseline_ja": "25%加算は2年"
+    },
+    {
+      "id": "sentence_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.sentence_solution",
+      "title_ja": "合計は12年",
+      "claim_ja": "合計は12年",
+      "method_ja": "8、2、2を足す",
+      "requires_steps": [
+        "sentence_base",
+        "sentence_increase"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計は12年",
+      "baseline_ja": "合計は12年"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2475,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

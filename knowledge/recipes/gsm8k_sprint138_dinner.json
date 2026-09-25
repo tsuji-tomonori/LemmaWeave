@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint138_dinner",
+  "title_ja": "夕食注文の総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02353",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bretと同僚3人の主菜、前菜2品、20%チップ、5ドル特急料。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A12.dinner_solution",
+  "graph": "work/gsm8k-sprint138-dinner-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dinner_meals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.dinner_meals",
+      "title_ja": "主菜48ドル",
+      "claim_ja": "主菜48ドル",
+      "method_ja": "4人分を各12ドル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "主菜48ドル",
+      "baseline_ja": "主菜48ドル"
+    },
+    {
+      "id": "dinner_apps",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.dinner_apps",
+      "title_ja": "前菜12ドル",
+      "claim_ja": "前菜12ドル",
+      "method_ja": "2品を各6ドル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "前菜12ドル",
+      "baseline_ja": "前菜12ドル"
+    },
+    {
+      "id": "dinner_subtotal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.dinner_subtotal",
+      "title_ja": "小計60ドル",
+      "claim_ja": "小計60ドル",
+      "method_ja": "48と12を足す",
+      "requires_steps": [
+        "dinner_meals",
+        "dinner_apps"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "小計60ドル",
+      "baseline_ja": "小計60ドル"
+    },
+    {
+      "id": "dinner_tip",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.dinner_tip",
+      "title_ja": "チップ12ドル",
+      "claim_ja": "チップ12ドル",
+      "method_ja": "60ドルの20%",
+      "requires_steps": [
+        "dinner_subtotal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "チップ12ドル",
+      "baseline_ja": "チップ12ドル"
+    },
+    {
+      "id": "dinner_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.dinner_solution",
+      "title_ja": "総額77ドル",
+      "claim_ja": "総額77ドル",
+      "method_ja": "小計、チップ、特急料を足す",
+      "requires_steps": [
+        "dinner_subtotal",
+        "dinner_tip"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "総額77ドル",
+      "baseline_ja": "総額77ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2354,
+    "checked_model_hash": "e89e0a8fed68bf87ef0de72e11cd924e42bf43e793c002049a2ea2520267d828",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

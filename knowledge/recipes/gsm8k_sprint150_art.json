@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint150_art",
+  "title_ja": "美術品の価格増加",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02540",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4000ドルで購入した美術品が、さらに3年後に購入価格の3倍になる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A05.art_solution",
+  "graph": "work/gsm8k-sprint150-art-graph.json",
+  "model_notes_ja": [
+    "増加額は将来価格と購入価格の差として扱う。3年前という経過情報はこの差の計算には不要である。"
+  ],
+  "steps": [
+    {
+      "id": "art_future_value",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.art_future_value",
+      "title_ja": "将来価格は12000ドル",
+      "claim_ja": "将来価格は12000ドル",
+      "method_ja": "4000の3倍を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "将来価格は12000ドル",
+      "baseline_ja": "将来価格は12000ドル"
+    },
+    {
+      "id": "art_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.art_solution",
+      "title_ja": "購入価格から8000ドル増加する",
+      "claim_ja": "購入価格から8000ドル増加する",
+      "method_ja": "12000から4000を引く",
+      "requires_steps": [
+        "art_future_value"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "購入価格から8000ドル増加する",
+      "baseline_ja": "購入価格から8000ドル増加する"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2541,
+    "checked_model_hash": "74f3d14b9592612d6f581877eba370d06c55b30d905a9478b673352c3e2c6417",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

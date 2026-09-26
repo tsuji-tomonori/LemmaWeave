@@ -93,4 +93,75 @@ structure Flyers where
 theorem flyers_weekly_hours (m : Flyers) : m.hoursPerWeek = 6 := by cases m; omega
 theorem flyers_total_hours (m : Flyers) : m.hours = 36 := by cases m; omega
 theorem flyers_solution (m : Flyers) : m.earned = 360 := by cases m; omega
+structure Postcards where
+  perDay : ℕ
+  days : ℕ
+  cards : ℕ
+  dollarsPerCard : ℕ
+  earned : ℕ
+  hPerDay : perDay = 30
+  hDays : days = 6
+  hCards : cards = perDay * days
+  hDollars : dollarsPerCard = 5
+  hEarned : earned = cards * dollarsPerCard
+theorem postcards_count (m : Postcards) : m.cards = 180 := by cases m; omega
+theorem postcards_solution (m : Postcards) : m.earned = 900 := by cases m; omega
+structure HotSauce where
+  quartHalfOunces : ℕ
+  shortfallHalfOunces : ℕ
+  jarHalfOunces : ℕ
+  halfOuncesPerServing : ℕ
+  servingsPerDay : ℕ
+  dailyHalfOunces : ℕ
+  days : ℕ
+  hQuart : quartHalfOunces = 64
+  hShortfall : shortfallHalfOunces = 4
+  hJar : jarHalfOunces + shortfallHalfOunces = quartHalfOunces
+  hServing : halfOuncesPerServing = 1
+  hServings : servingsPerDay = 3
+  hDaily : dailyHalfOunces = servingsPerDay * halfOuncesPerServing
+  hDays : jarHalfOunces = dailyHalfOunces * days
+theorem sauce_jar (m : HotSauce) : m.jarHalfOunces = 60 := by cases m; omega
+theorem sauce_daily (m : HotSauce) : m.dailyHalfOunces = 3 := by cases m; omega
+theorem sauce_solution (m : HotSauce) : m.days = 20 := by cases m; omega
+structure Nickels where
+  centsPerNickel : ℕ
+  peterCents : ℕ
+  randiCents : ℕ
+  peterNickels : ℕ
+  randiNickels : ℕ
+  difference : ℕ
+  hCentsPerNickel : centsPerNickel = 5
+  hPeterCents : peterCents = 30
+  hRandiCents : randiCents = 2 * peterCents
+  hPeterNickels : peterCents = centsPerNickel * peterNickels
+  hRandiNickels : randiCents = centsPerNickel * randiNickels
+  hDifference : randiNickels = peterNickels + difference
+theorem nickels_peter (m : Nickels) : m.peterNickels = 6 := by cases m; omega
+theorem nickels_randi (m : Nickels) : m.randiNickels = 12 := by cases m; omega
+theorem nickels_solution (m : Nickels) : m.difference = 6 := by cases m; omega
+structure OrangeSavings where
+  passengers : ℕ
+  centsPerOrange : ℕ
+  savedCents : ℕ
+  plannedCents : ℕ
+  percent : ℕ
+  hPassengers : passengers = 4
+  hCentsPerOrange : centsPerOrange = 150
+  hSaved : savedCents = passengers * centsPerOrange
+  hPlanned : plannedCents = 1500
+  hPercent : savedCents * 100 = percent * plannedCents
+theorem oranges_saved (m : OrangeSavings) : m.savedCents = 600 := by cases m; omega
+theorem oranges_solution (m : OrangeSavings) : m.percent = 40 := by cases m; omega
+structure ArtValue where
+  purchasePrice : ℕ
+  futureMultiplier : ℕ
+  futureValue : ℕ
+  increase : ℕ
+  hPurchase : purchasePrice = 4000
+  hMultiplier : futureMultiplier = 3
+  hFuture : futureValue = futureMultiplier * purchasePrice
+  hIncrease : futureValue = purchasePrice + increase
+theorem art_future_value (m : ArtValue) : m.futureValue = 12000 := by cases m; omega
+theorem art_solution (m : ArtValue) : m.increase = 8000 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A05

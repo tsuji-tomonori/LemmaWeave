@@ -1,0 +1,116 @@
+{
+  "id": "gsm8k_sprint151_port",
+  "title_ja": "港にいる船の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02548",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "クルーズ船4隻、貨物船はその2倍、帆船は貨物船より6隻多く、漁船との倍率関係がある。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.port_solution",
+  "graph": "work/gsm8k-sprint151-port-graph.json",
+  "model_notes_ja": [
+    "『seven times more than fishing boats』を慣用的な『漁船の7倍』と読むと総数28隻。字義的な『漁船より7倍分多い』では帆船=8×漁船となり、帆船14隻と整合する自然数の漁船数が存在しない。"
+  ],
+  "steps": [
+    {
+      "id": "port_cargo",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.port_cargo",
+      "title_ja": "貨物船は8隻",
+      "claim_ja": "貨物船は8隻",
+      "method_ja": "4の2倍を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "貨物船は8隻",
+      "baseline_ja": "貨物船は8隻"
+    },
+    {
+      "id": "port_sailboats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.port_sailboats",
+      "title_ja": "帆船は14隻",
+      "claim_ja": "帆船は14隻",
+      "method_ja": "貨物船8に6を足す",
+      "requires_steps": [
+        "port_cargo"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "帆船は14隻",
+      "baseline_ja": "帆船は14隻"
+    },
+    {
+      "id": "port_fishing",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.port_fishing",
+      "title_ja": "慣用解釈では漁船は2隻",
+      "claim_ja": "慣用解釈では漁船は2隻",
+      "method_ja": "帆船14を7倍関係で割る",
+      "requires_steps": [
+        "port_sailboats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "慣用解釈では漁船は2隻",
+      "baseline_ja": "慣用解釈では漁船は2隻"
+    },
+    {
+      "id": "port_conventional_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.port_conventional_total",
+      "title_ja": "慣用解釈の総数は28隻",
+      "claim_ja": "慣用解釈の総数は28隻",
+      "method_ja": "4、8、14、2を足す",
+      "requires_steps": [
+        "port_cargo",
+        "port_sailboats",
+        "port_fishing"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "慣用解釈の総数は28隻",
+      "baseline_ja": "慣用解釈の総数は28隻"
+    },
+    {
+      "id": "port_literal_impossible",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.port_literal_impossible",
+      "title_ja": "字義的な8倍解釈は自然数の船数と両立しない",
+      "claim_ja": "字義的な8倍解釈は自然数の船数と両立しない",
+      "method_ja": "14が8の倍数でないことを示す",
+      "requires_steps": [
+        "port_sailboats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "字義的な8倍解釈は自然数の船数と両立しない",
+      "baseline_ja": "字義的な8倍解釈は自然数の船数と両立しない"
+    },
+    {
+      "id": "port_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.port_solution",
+      "title_ja": "慣用解釈の答え28と字義的解釈の不整合を分離する",
+      "claim_ja": "慣用解釈の答え28と字義的解釈の不整合を分離する",
+      "method_ja": "二つの解釈を明示して比較する",
+      "requires_steps": [
+        "port_conventional_total",
+        "port_literal_impossible"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "慣用解釈の答え28と字義的解釈の不整合を分離する",
+      "baseline_ja": "慣用解釈の答え28と字義的解釈の不整合を分離する"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2549,
+    "checked_model_hash": "384e45e9725069db6bfe4c0bd74de4beb8486b01fb92a55ab7a85ecc00b7944d",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

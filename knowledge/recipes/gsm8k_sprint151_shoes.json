@@ -1,0 +1,111 @@
+{
+  "id": "gsm8k_sprint151_shoes",
+  "title_ja": "乗馬学校へ回せる蹄鉄",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02549",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "400kgの鉄から1個2kgで蹄鉄を作り、近隣の農場と厩舎の注文後の残りを乗馬学校へ渡す。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.shoes_solution",
+  "graph": "work/gsm8k-sprint151-shoes-graph.json",
+  "model_notes_ja": [
+    "馬1頭には4個の蹄鉄が必要という生物学的・日常的前提を明示する。参考解答の『5厩舎×各2頭』は原文の『2厩舎×各5頭』の転記誤りだが積は同じ10頭である。"
+  ],
+  "steps": [
+    {
+      "id": "shoes_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.shoes_total",
+      "title_ja": "全部で200個の蹄鉄を作れる",
+      "claim_ja": "全部で200個の蹄鉄を作れる",
+      "method_ja": "400kgを1個2kgで割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "全部で200個の蹄鉄を作れる",
+      "baseline_ja": "全部で200個の蹄鉄を作れる"
+    },
+    {
+      "id": "shoes_farm_horses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.shoes_farm_horses",
+      "title_ja": "農場には4頭いる",
+      "claim_ja": "農場には4頭いる",
+      "method_ja": "2農場に各2頭を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "農場には4頭いる",
+      "baseline_ja": "農場には4頭いる"
+    },
+    {
+      "id": "shoes_stable_horses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.shoes_stable_horses",
+      "title_ja": "厩舎には10頭いる",
+      "claim_ja": "厩舎には10頭いる",
+      "method_ja": "2厩舎に各5頭を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "厩舎には10頭いる",
+      "baseline_ja": "厩舎には10頭いる"
+    },
+    {
+      "id": "shoes_ordered",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.shoes_ordered",
+      "title_ja": "既存注文には56個必要",
+      "claim_ja": "既存注文には56個必要",
+      "method_ja": "14頭に各4個を掛ける",
+      "requires_steps": [
+        "shoes_farm_horses",
+        "shoes_stable_horses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "既存注文には56個必要",
+      "baseline_ja": "既存注文には56個必要"
+    },
+    {
+      "id": "shoes_leftover",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.shoes_leftover",
+      "title_ja": "144個残る",
+      "claim_ja": "144個残る",
+      "method_ja": "200から56を引く",
+      "requires_steps": [
+        "shoes_total",
+        "shoes_ordered"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "144個残る",
+      "baseline_ja": "144個残る"
+    },
+    {
+      "id": "shoes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.shoes_solution",
+      "title_ja": "乗馬学校の36頭に配れる",
+      "claim_ja": "乗馬学校の36頭に配れる",
+      "method_ja": "144を1頭4個で割る",
+      "requires_steps": [
+        "shoes_leftover"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "乗馬学校の36頭に配れる",
+      "baseline_ja": "乗馬学校の36頭に配れる"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2550,
+    "checked_model_hash": "384e45e9725069db6bfe4c0bd74de4beb8486b01fb92a55ab7a85ecc00b7944d",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

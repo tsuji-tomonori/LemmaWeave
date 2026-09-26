@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint151_brew",
+  "title_ja": "24日間のコールドブリュー抽出時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02546",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1.5ガロンずつ作り、2日ごとに96オンス飲み、1回の抽出に20時間かかる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.brew_solution",
+  "graph": "work/gsm8k-sprint151-brew-graph.json",
+  "model_notes_ja": [
+    "米国液量1ガロン=128液量オンスを用いる。抽出時間は各バッチに20時間ずつ費やすものとして合計し、並行抽出は想定しない。"
+  ],
+  "steps": [
+    {
+      "id": "brew_batch_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.brew_batch_ounces",
+      "title_ja": "1バッチは192オンス",
+      "claim_ja": "1バッチは192オンス",
+      "method_ja": "1.5ガロンを半ガロン3単位として64オンスを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "1バッチは192オンス",
+      "baseline_ja": "1バッチは192オンス"
+    },
+    {
+      "id": "brew_daily_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.brew_daily_ounces",
+      "title_ja": "1日48オンス飲む",
+      "claim_ja": "1日48オンス飲む",
+      "method_ja": "96オンスを2日で等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "1日48オンス飲む",
+      "baseline_ja": "1日48オンス飲む"
+    },
+    {
+      "id": "brew_days_per_batch",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.brew_days_per_batch",
+      "title_ja": "1バッチは4日分",
+      "claim_ja": "1バッチは4日分",
+      "method_ja": "192を1日48オンスで割る",
+      "requires_steps": [
+        "brew_batch_ounces",
+        "brew_daily_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "1バッチは4日分",
+      "baseline_ja": "1バッチは4日分"
+    },
+    {
+      "id": "brew_batches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.brew_batches",
+      "title_ja": "24日で6バッチ必要",
+      "claim_ja": "24日で6バッチ必要",
+      "method_ja": "24日を4日分ずつに分ける",
+      "requires_steps": [
+        "brew_days_per_batch"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "24日で6バッチ必要",
+      "baseline_ja": "24日で6バッチ必要"
+    },
+    {
+      "id": "brew_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.brew_solution",
+      "title_ja": "抽出時間の合計は120時間",
+      "claim_ja": "抽出時間の合計は120時間",
+      "method_ja": "6バッチに各20時間を掛ける",
+      "requires_steps": [
+        "brew_batches"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "抽出時間の合計は120時間",
+      "baseline_ja": "抽出時間の合計は120時間"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2547,
+    "checked_model_hash": "384e45e9725069db6bfe4c0bd74de4beb8486b01fb92a55ab7a85ecc00b7944d",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

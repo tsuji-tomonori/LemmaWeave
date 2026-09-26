@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint152_questions",
+  "title_ja": "Frankが各種類作る問題数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02573",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Billは20問、Ryanはその2倍、FrankはRyanの3倍を作り、4種類を同数ずつ作る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A07.questions_solution",
+  "graph": "work/gsm8k-sprint152-questions-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "questions_ryan",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.questions_ryan",
+      "title_ja": "Ryanは40問",
+      "claim_ja": "Ryanは40問",
+      "method_ja": "Billの20問を2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Ryanは40問",
+      "baseline_ja": "Ryanは40問"
+    },
+    {
+      "id": "questions_frank",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.questions_frank",
+      "title_ja": "Frankは120問",
+      "claim_ja": "Frankは120問",
+      "method_ja": "Ryanの40問を3倍する",
+      "requires_steps": [
+        "questions_ryan"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Frankは120問",
+      "baseline_ja": "Frankは120問"
+    },
+    {
+      "id": "questions_per_type",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.questions_per_type",
+      "title_ja": "1種類30問",
+      "claim_ja": "1種類30問",
+      "method_ja": "120を4種類で等分する",
+      "requires_steps": [
+        "questions_frank"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1種類30問",
+      "baseline_ja": "1種類30問"
+    },
+    {
+      "id": "questions_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.questions_solution",
+      "title_ja": "答えは各30問",
+      "claim_ja": "答えは各30問",
+      "method_ja": "種類ごとの結論を確定する",
+      "requires_steps": [
+        "questions_per_type"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "答えは各30問",
+      "baseline_ja": "答えは各30問"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2574,
+    "checked_model_hash": "1fa8fbd959b8482d726c56c73f7beccc873a392c43051f8ee7a764303b6498b0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

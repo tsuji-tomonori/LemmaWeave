@@ -147,4 +147,74 @@ structure Earnings where
   hAmount : leftPercent * earnings = 100 * leftDollars
 theorem earnings_left_percent (m : Earnings) : m.leftPercent = 90 := by cases m; omega
 theorem earnings_solution (m : Earnings) : m.earnings = 450 := by cases m; omega
+structure ChickenEggs where
+  chickens : ℕ
+  eggsPerChickenPerDay : ℕ
+  dailyEggs : ℕ
+  days : ℕ
+  totalEggs : ℕ
+  hChickens : chickens = 4
+  hRate : eggsPerChickenPerDay = 3
+  hDaily : dailyEggs = chickens * eggsPerChickenPerDay
+  hDays : days = 3
+  hTotal : totalEggs = dailyEggs * days
+theorem chickens_daily (m : ChickenEggs) : m.dailyEggs = 12 := by cases m; omega
+theorem chickens_solution (m : ChickenEggs) : m.totalEggs = 36 := by cases m; omega
+structure YardLengths where
+  derrick : ℕ
+  alex : ℕ
+  brianne : ℕ
+  hBrianne : brianne = 30
+  hBrianneRatio : brianne = 6 * alex
+  hDerrickRatio : derrick = 2 * alex
+theorem yards_alex (m : YardLengths) : m.alex = 5 := by cases m; omega
+theorem yards_brianne_check (m : YardLengths) : m.brianne = 30 := by cases m; omega
+theorem yards_solution (m : YardLengths) : m.derrick = 10 := by cases m; omega
+structure MathQuestions where
+  bill : ℕ
+  ryan : ℕ
+  frank : ℕ
+  types : ℕ
+  perType : ℕ
+  hBill : bill = 20
+  hRyan : ryan = 2 * bill
+  hFrank : frank = 3 * ryan
+  hTypes : types = 4
+  hEqual : frank = types * perType
+theorem questions_ryan (m : MathQuestions) : m.ryan = 40 := by cases m; omega
+theorem questions_frank (m : MathQuestions) : m.frank = 120 := by cases m; omega
+theorem questions_per_type (m : MathQuestions) : m.perType = 30 := by cases m; omega
+theorem questions_solution (m : MathQuestions) : m.perType = 30 := questions_per_type m
+structure SwimLaps where
+  yvonne : ℕ
+  sister : ℕ
+  joel : ℕ
+  minutes : ℕ
+  hYvonne : yvonne = 10
+  hMinutes : minutes = 5
+  hHalf : yvonne = 2 * sister
+  hJoel : joel = 3 * sister
+theorem laps_sister (m : SwimLaps) : m.sister = 5 := by cases m; omega
+theorem laps_joel (m : SwimLaps) : m.joel = 15 := by cases m; omega
+theorem laps_solution (m : SwimLaps) : m.joel = 15 := laps_joel m
+structure JourneyPortions where
+  journeyMiles : ℕ
+  totalPortions : ℕ
+  milesPerPortion : ℕ
+  speedMph : ℕ
+  timeTenthsHour : ℕ
+  tenthsPerHour : ℕ
+  distanceMiles : ℕ
+  portionsCovered : ℕ
+  hJourney : journeyMiles = 35
+  hTotalPortions : totalPortions = 5
+  hPortion : journeyMiles = totalPortions * milesPerPortion
+  hSpeed : speedMph = 40
+  hTime : timeTenthsHour = 7
+  hTenthsPerHour : tenthsPerHour = 10
+  hDistance : tenthsPerHour * distanceMiles = speedMph * timeTenthsHour
+  hCovered : distanceMiles = portionsCovered * milesPerPortion
+theorem journey_portion_miles (m : JourneyPortions) : m.milesPerPortion = 7 := by cases m; omega
+theorem journey_distance (m : JourneyPortions) : m.distanceMiles = 28 := by cases m; omega
+theorem journey_solution (m : JourneyPortions) : m.portionsCovered = 4 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A07

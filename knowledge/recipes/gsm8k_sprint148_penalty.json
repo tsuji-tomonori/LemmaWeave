@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint148_penalty",
+  "title_ja": "退室になる投擲回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02515",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "割込み2回と侮辱4回の50点から、投擲1回25点で100点境界を調べる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.penalty_solution",
+  "graph": "work/gsm8k-sprint148-penalty-graph.json",
+  "model_notes_ja": [
+    "100点で退室するため、退室せずに投げられるのは1回までで、2回目の投擲が退室を発生させる。参考解答2回は発生させる投擲を含む回数である。"
+  ],
+  "steps": [
+    {
+      "id": "penalty_current",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.penalty_current",
+      "title_ja": "現在は50点",
+      "claim_ja": "現在は50点",
+      "method_ja": "割込み10点と侮辱40点を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "現在は50点",
+      "baseline_ja": "現在は50点"
+    },
+    {
+      "id": "penalty_safe_throws",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.penalty_safe_throws",
+      "title_ja": "退室前に安全なのは高々1回",
+      "claim_ja": "退室前に安全なのは高々1回",
+      "method_ja": "50+25n<100をn≤1へ同値変形する",
+      "requires_steps": [
+        "penalty_current"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "退室前に安全なのは高々1回",
+      "baseline_ja": "退室前に安全なのは高々1回"
+    },
+    {
+      "id": "penalty_trigger_throws",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.penalty_trigger_throws",
+      "title_ja": "退室基準に達するのは2回以上",
+      "claim_ja": "退室基準に達するのは2回以上",
+      "method_ja": "100≤50+25nを2≤nへ同値変形する",
+      "requires_steps": [
+        "penalty_current"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "退室基準に達するのは2回以上",
+      "baseline_ja": "退室基準に達するのは2回以上"
+    },
+    {
+      "id": "penalty_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.penalty_solution",
+      "title_ja": "1回後は75点で残り、2回目で100点に達する",
+      "claim_ja": "1回後は75点で残り、2回目で100点に達する",
+      "method_ja": "境界の両側を具体的に確認する",
+      "requires_steps": [
+        "penalty_safe_throws",
+        "penalty_trigger_throws"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "1回後は75点で残り、2回目で100点に達する",
+      "baseline_ja": "1回後は75点で残り、2回目で100点に達する"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2516,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

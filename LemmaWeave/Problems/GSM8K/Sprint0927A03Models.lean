@@ -144,4 +144,75 @@ theorem savings_saved (m : Savings) : m.saved = 98 := by cases m; omega
 theorem savings_qualifies (m : Savings) : 75 < m.saved := m.hQualifies
 theorem savings_before_purchase (m : Savings) : m.beforePurchase = 123 := by cases m; omega
 theorem savings_solution (m : Savings) : m.remaining = 36 := by cases m; omega
+structure Sentences where
+  arson : ℕ
+  explosives : ℕ
+  terrorism : ℕ
+  total : ℕ
+  hArson : arson = 2 * 6
+  hExplosives : explosives = 2 * arson
+  hTerrorism : terrorism = 20
+  hTotal : total = arson + explosives + terrorism
+theorem sentences_arson (m : Sentences) : m.arson = 12 := by cases m; omega
+theorem sentences_explosives (m : Sentences) : m.explosives = 24 := by cases m; omega
+theorem sentences_terrorism (m : Sentences) : m.terrorism = 20 := by cases m; omega
+theorem sentences_solution (m : Sentences) : m.total = 56 := by cases m; omega
+structure Ratatouille where
+  eggplantZucchiniCents : ℕ
+  tomatoCents : ℕ
+  onionCents : ℕ
+  basilCents : ℕ
+  totalCents : ℕ
+  perQuartCents : ℕ
+  perQuartDollars : ℕ
+  hProduce : eggplantZucchiniCents = (5 + 4) * 200
+  hTomato : tomatoCents = 4 * 350
+  hOnion : onionCents = 3 * 100
+  hBasil : basilCents = 2 * 250
+  hTotal : totalCents = eggplantZucchiniCents + tomatoCents + onionCents + basilCents
+  hQuarts : totalCents = 4 * perQuartCents
+  hDollars : perQuartCents = 100 * perQuartDollars
+theorem ratatouille_produce (m : Ratatouille) : m.eggplantZucchiniCents = 1800 := by cases m; omega
+theorem ratatouille_tomatoes (m : Ratatouille) : m.tomatoCents = 1400 := by cases m; omega
+theorem ratatouille_onions (m : Ratatouille) : m.onionCents = 300 := by cases m; omega
+theorem ratatouille_basil (m : Ratatouille) : m.basilCents = 500 := by cases m; omega
+theorem ratatouille_total (m : Ratatouille) : m.totalCents = 4000 := by cases m; omega
+theorem ratatouille_solution (m : Ratatouille) : m.perQuartDollars = 10 := by cases m; omega
+structure Cafe where
+  chefs : ℕ
+  waiters : ℕ
+  total : ℕ
+  hChefs : chefs + 6 = 16
+  hWaiters : waiters + 3 = 16
+  hTotal : total = chefs + waiters
+theorem cafe_chefs (m : Cafe) : m.chefs = 10 := by cases m; omega
+theorem cafe_waiters (m : Cafe) : m.waiters = 13 := by cases m; omega
+theorem cafe_solution (m : Cafe) : m.total = 23 := by cases m; omega
+structure Mountains where
+  borisElevation : ℕ
+  hugoTotal : ℕ
+  borisTotal : ℕ
+  borisClimbs : ℕ
+  hBoris : borisElevation + 2500 = 10000
+  hHugoTotal : hugoTotal = 3 * 10000
+  hBorisTotal : borisTotal = 7500 * borisClimbs
+  hEqual : borisTotal = hugoTotal
+theorem mountains_boris (m : Mountains) : m.borisElevation = 7500 := by cases m; omega
+theorem mountains_hugo_total (m : Mountains) : m.hugoTotal = 30000 := by cases m; omega
+theorem mountains_boris_total (m : Mountains) : m.borisTotal = 30000 := by cases m; omega
+theorem mountains_solution (m : Mountains) : m.borisClimbs = 4 := by cases m; omega
+structure Penalty where
+  interruptPoints : ℕ
+  insultPoints : ℕ
+  currentPoints : ℕ
+  hInterrupt : interruptPoints = 5 * 2
+  hInsult : insultPoints = 10 * 4
+  hCurrent : currentPoints = interruptPoints + insultPoints
+theorem penalty_current (m : Penalty) : m.currentPoints = 50 := by cases m; omega
+theorem penalty_safe_throws (n : ℕ) : 50 + 25 * n < 100 ↔ n ≤ 1 := by omega
+theorem penalty_trigger_throws (n : ℕ) : 100 ≤ 50 + 25 * n ↔ 2 ≤ n := by omega
+theorem penalty_solution (m : Penalty) :
+    m.currentPoints + 25 * 1 < 100 ∧ 100 ≤ m.currentPoints + 25 * 2 := by
+  cases m
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A03

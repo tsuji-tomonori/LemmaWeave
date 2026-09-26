@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint148_sentences",
+  "title_ja": "刑期の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02511",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "放火2件各6年、爆発物は放火合計の2倍、テロ罪20年を合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.sentences_solution",
+  "graph": "work/gsm8k-sprint148-sentences-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sentences_arson",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.sentences_arson",
+      "title_ja": "放火刑は12年",
+      "claim_ja": "放火刑は12年",
+      "method_ja": "6年を2件分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "放火刑は12年",
+      "baseline_ja": "放火刑は12年"
+    },
+    {
+      "id": "sentences_explosives",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.sentences_explosives",
+      "title_ja": "爆発物刑は24年",
+      "claim_ja": "爆発物刑は24年",
+      "method_ja": "放火合計12年の2倍",
+      "requires_steps": [
+        "sentences_arson"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "爆発物刑は24年",
+      "baseline_ja": "爆発物刑は24年"
+    },
+    {
+      "id": "sentences_terrorism",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.sentences_terrorism",
+      "title_ja": "テロ罪は20年",
+      "claim_ja": "テロ罪は20年",
+      "method_ja": "原題の年数を保持する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "テロ罪は20年",
+      "baseline_ja": "テロ罪は20年"
+    },
+    {
+      "id": "sentences_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.sentences_solution",
+      "title_ja": "合計は56年",
+      "claim_ja": "合計は56年",
+      "method_ja": "12、24、20を足す",
+      "requires_steps": [
+        "sentences_arson",
+        "sentences_explosives",
+        "sentences_terrorism"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計は56年",
+      "baseline_ja": "合計は56年"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2512,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

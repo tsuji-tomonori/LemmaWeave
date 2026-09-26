@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint149_hotdogs",
+  "title_ja": "第3競技者が食べるホットドッグ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02529",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "第1は毎分10本。第2の『3 times more』を二通りに解釈し、第3は第2の2倍を5分続ける。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A04.hotdogs_solution",
+  "graph": "work/gsm8k-sprint149-hotdogs-graph.json",
+  "model_notes_ja": [
+    "『3 times more than』は、慣用的な3倍なら第2は毎分30本で答え300本、字義的な『元より3倍分多い』なら毎分40本で答え400本。追加解釈なしには一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "hotdogs_conventional_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.hotdogs_conventional_second",
+      "title_ja": "慣用解釈で第2は毎分30本",
+      "claim_ja": "慣用解釈で第2は毎分30本",
+      "method_ja": "10の3倍と解釈する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "慣用解釈で第2は毎分30本",
+      "baseline_ja": "慣用解釈で第2は毎分30本"
+    },
+    {
+      "id": "hotdogs_conventional_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.hotdogs_conventional_solution",
+      "title_ja": "慣用解釈で第3は5分で300本",
+      "claim_ja": "慣用解釈で第3は5分で300本",
+      "method_ja": "毎分60本を5分続ける",
+      "requires_steps": [
+        "hotdogs_conventional_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "慣用解釈で第3は5分で300本",
+      "baseline_ja": "慣用解釈で第3は5分で300本"
+    },
+    {
+      "id": "hotdogs_literal_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.hotdogs_literal_second",
+      "title_ja": "字義的解釈で第2は毎分40本",
+      "claim_ja": "字義的解釈で第2は毎分40本",
+      "method_ja": "10にその3倍の30を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "字義的解釈で第2は毎分40本",
+      "baseline_ja": "字義的解釈で第2は毎分40本"
+    },
+    {
+      "id": "hotdogs_literal_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.hotdogs_literal_solution",
+      "title_ja": "字義的解釈で第3は5分で400本",
+      "claim_ja": "字義的解釈で第3は5分で400本",
+      "method_ja": "毎分80本を5分続ける",
+      "requires_steps": [
+        "hotdogs_literal_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "字義的解釈で第3は5分で400本",
+      "baseline_ja": "字義的解釈で第3は5分で400本"
+    },
+    {
+      "id": "hotdogs_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.hotdogs_solution",
+      "title_ja": "300本と400本が異なり原文だけでは一意でない",
+      "claim_ja": "300本と400本が異なり原文だけでは一意でない",
+      "method_ja": "二つの明示解釈を反例として比較する",
+      "requires_steps": [
+        "hotdogs_conventional_solution",
+        "hotdogs_literal_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "300本と400本が異なり原文だけでは一意でない",
+      "baseline_ja": "300本と400本が異なり原文だけでは一意でない"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2530,
+    "checked_model_hash": "bf48471e5f50a20e1256bd8203ba528b20e3455a0bb5dad6c2632708aa2a99f1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

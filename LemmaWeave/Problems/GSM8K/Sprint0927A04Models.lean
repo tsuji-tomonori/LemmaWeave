@@ -148,4 +148,94 @@ structure Crayons where
   hYellow : yellow + 6 = 2 * blue
 theorem crayons_blue (m : Crayons) : m.blue = 19 := by cases m; omega
 theorem crayons_solution (m : Crayons) : m.yellow = 32 := by cases m; omega
+structure Running where
+  fieldLength : ℕ
+  fields : ℕ
+  firstLeg : ℕ
+  secondLeg : ℕ
+  total : ℕ
+  hField : fieldLength = 168
+  hFields : fields = 4
+  hFirst : firstLeg = fields * fieldLength
+  hSecond : secondLeg = 500
+  hTotal : total = firstLeg + secondLeg
+theorem running_first (m : Running) : m.firstLeg = 672 := by cases m; omega
+theorem running_solution (m : Running) : m.total = 1172 := by cases m; omega
+structure Chairs where
+  indoorTables : ℕ
+  outdoorTables : ℕ
+  indoorChairs : ℕ
+  outdoorChairs : ℕ
+  total : ℕ
+  hIndoorTables : indoorTables = 9
+  hOutdoorTables : outdoorTables = 11
+  hIndoor : indoorChairs = indoorTables * 10
+  hOutdoor : outdoorChairs = outdoorTables * 3
+  hTotal : total = indoorChairs + outdoorChairs
+theorem chairs_indoor (m : Chairs) : m.indoorChairs = 90 := by cases m; omega
+theorem chairs_outdoor (m : Chairs) : m.outdoorChairs = 33 := by cases m; omega
+theorem chairs_solution (m : Chairs) : m.total = 123 := by cases m; omega
+structure Areas where
+  rectangle : ℕ
+  square : ℕ
+  difference : ℕ
+  hRectangle : rectangle = 3 * 6
+  hSquare : square = 5 * 5
+  hDifference : square = rectangle + difference
+theorem areas_rectangle (m : Areas) : m.rectangle = 18 := by cases m; omega
+theorem areas_square (m : Areas) : m.square = 25 := by cases m; omega
+theorem areas_solution (m : Areas) : m.difference = 7 := by cases m; omega
+structure HotdogsConventional where
+  firstRate : ℕ
+  secondRate : ℕ
+  thirdRate : ℕ
+  minutes : ℕ
+  total : ℕ
+  hFirst : firstRate = 10
+  hSecond : secondRate = 3 * firstRate
+  hThird : thirdRate = 2 * secondRate
+  hMinutes : minutes = 5
+  hTotal : total = thirdRate * minutes
+theorem hotdogs_conventional_second (m : HotdogsConventional) : m.secondRate = 30 := by cases m; omega
+theorem hotdogs_conventional_solution (m : HotdogsConventional) : m.total = 300 := by cases m; omega
+
+structure HotdogsLiteral where
+  firstRate : ℕ
+  secondRate : ℕ
+  thirdRate : ℕ
+  minutes : ℕ
+  total : ℕ
+  hFirst : firstRate = 10
+  hSecond : secondRate = firstRate + 3 * firstRate
+  hThird : thirdRate = 2 * secondRate
+  hMinutes : minutes = 5
+  hTotal : total = thirdRate * minutes
+theorem hotdogs_literal_second (m : HotdogsLiteral) : m.secondRate = 40 := by cases m; omega
+theorem hotdogs_literal_solution (m : HotdogsLiteral) : m.total = 400 := by cases m; omega
+theorem hotdogs_solution (c : HotdogsConventional) (l : HotdogsLiteral) :
+    c.total = 300 ∧ l.total = 400 ∧ c.total ≠ l.total := by
+  cases c
+  cases l
+  omega
+structure Coffee where
+  dozens : ℕ
+  donuts : ℕ
+  ouncesPerDonut : ℕ
+  ounces : ℕ
+  ouncesPerPot : ℕ
+  pots : ℕ
+  costPerPot : ℕ
+  cost : ℕ
+  hDozens : dozens = 3
+  hDonuts : donuts = dozens * 12
+  hPerDonut : ouncesPerDonut = 2
+  hOunces : ounces = donuts * ouncesPerDonut
+  hPerPot : ouncesPerPot = 12
+  hPots : ounces = pots * ouncesPerPot
+  hCostPerPot : costPerPot = 3
+  hCost : cost = pots * costPerPot
+theorem coffee_donuts (m : Coffee) : m.donuts = 36 := by cases m; omega
+theorem coffee_ounces (m : Coffee) : m.ounces = 72 := by cases m; omega
+theorem coffee_pots (m : Coffee) : m.pots = 6 := by cases m; omega
+theorem coffee_solution (m : Coffee) : m.cost = 18 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A04

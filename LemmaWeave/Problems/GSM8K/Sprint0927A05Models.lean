@@ -164,4 +164,71 @@ structure ArtValue where
   hIncrease : futureValue = purchasePrice + increase
 theorem art_future_value (m : ArtValue) : m.futureValue = 12000 := by cases m; omega
 theorem art_solution (m : ArtValue) : m.increase = 8000 := by cases m; omega
+structure BirdDive where
+  eagleSpeed : ℕ
+  falconSpeed : ℕ
+  eagleSeconds : ℕ
+  falconSeconds : ℕ
+  hEagleSpeed : eagleSpeed = 100
+  hFalconSpeed : falconSpeed = 2 * eagleSpeed
+  hEagleSeconds : eagleSeconds = 30
+  hSameDistance : falconSpeed * falconSeconds = eagleSpeed * eagleSeconds
+theorem dive_falcon_speed (m : BirdDive) : m.falconSpeed = 200 := by cases m; omega
+theorem dive_solution (m : BirdDive) : m.falconSeconds = 15 := by cases m; omega
+structure FlowerPots where
+  minutesPerHour : ℕ
+  coldMinutesPerPot : ℕ
+  warmMinutesPerPot : ℕ
+  firstHourPots : ℕ
+  lastHourPots : ℕ
+  additional : ℕ
+  hHour : minutesPerHour = 60
+  hCold : coldMinutesPerPot = 6
+  hWarm : warmMinutesPerPot = 5
+  hFirst : minutesPerHour = coldMinutesPerPot * firstHourPots
+  hLast : minutesPerHour = warmMinutesPerPot * lastHourPots
+  hAdditional : lastHourPots = firstHourPots + additional
+theorem pots_first_hour (m : FlowerPots) : m.firstHourPots = 10 := by cases m; omega
+theorem pots_last_hour (m : FlowerPots) : m.lastHourPots = 12 := by cases m; omega
+theorem pots_solution (m : FlowerPots) : m.additional = 2 := by cases m; omega
+structure WaterBottle where
+  glassesPerDay : ℕ
+  ouncesPerGlass : ℕ
+  dailyOunces : ℕ
+  daysPerWeek : ℕ
+  weeklyOunces : ℕ
+  bottleOunces : ℕ
+  fills : ℕ
+  hGlasses : glassesPerDay = 4
+  hPerGlass : ouncesPerGlass = 5
+  hDaily : dailyOunces = glassesPerDay * ouncesPerGlass
+  hDays : daysPerWeek = 7
+  hWeekly : weeklyOunces = daysPerWeek * dailyOunces
+  hBottle : bottleOunces = 35
+  hFills : weeklyOunces = bottleOunces * fills
+theorem water_daily (m : WaterBottle) : m.dailyOunces = 20 := by cases m; omega
+theorem water_weekly (m : WaterBottle) : m.weeklyOunces = 140 := by cases m; omega
+theorem water_solution (m : WaterBottle) : m.fills = 4 := by cases m; omega
+structure Watermelons where
+  michael : ℕ
+  clay : ℕ
+  john : ℕ
+  hMichael : michael = 8
+  hClay : clay = 3 * michael
+  hJohn : 2 * john = clay
+theorem watermelon_clay (m : Watermelons) : m.clay = 24 := by cases m; omega
+theorem watermelon_solution (m : Watermelons) : m.john = 12 := by cases m; omega
+structure Eggs where
+  breakfast : ℕ
+  lunch : ℕ
+  dinner : ℕ
+  breakfastLunch : ℕ
+  total : ℕ
+  hBreakfast : breakfast = 2
+  hLunch : lunch = 3
+  hDinner : dinner = 1
+  hBreakfastLunch : breakfastLunch = breakfast + lunch
+  hTotal : total = breakfastLunch + dinner
+theorem eggs_breakfast_lunch (m : Eggs) : m.breakfastLunch = 5 := by cases m; omega
+theorem eggs_solution (m : Eggs) : m.total = 6 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A05

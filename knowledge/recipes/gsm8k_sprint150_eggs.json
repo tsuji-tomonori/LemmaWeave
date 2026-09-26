@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint150_eggs",
+  "title_ja": "1日に食べた卵の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02545",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "朝食2個、昼食3個、夕食1個の卵を食べる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A05.eggs_solution",
+  "graph": "work/gsm8k-sprint150-eggs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "eggs_breakfast_lunch",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.eggs_breakfast_lunch",
+      "title_ja": "朝食と昼食で5個",
+      "claim_ja": "朝食と昼食で5個",
+      "method_ja": "2と3を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "朝食と昼食で5個",
+      "baseline_ja": "朝食と昼食で5個"
+    },
+    {
+      "id": "eggs_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.eggs_solution",
+      "title_ja": "全部で6個",
+      "claim_ja": "全部で6個",
+      "method_ja": "5に夕食の1を足す",
+      "requires_steps": [
+        "eggs_breakfast_lunch"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "全部で6個",
+      "baseline_ja": "全部で6個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2546,
+    "checked_model_hash": "74f3d14b9592612d6f581877eba370d06c55b30d905a9478b673352c3e2c6417",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

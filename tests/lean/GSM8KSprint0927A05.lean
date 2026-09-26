@@ -11,3 +11,8 @@ import LemmaWeave.Audit.Extract
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A05.nickels_solution to "work/gsm8k-sprint150-nickels-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A05.oranges_solution to "work/gsm8k-sprint150-oranges-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A05.art_solution to "work/gsm8k-sprint150-art-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A05.dive_solution to "work/gsm8k-sprint150-dive-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A05.pots_solution to "work/gsm8k-sprint150-pots-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A05.water_solution to "work/gsm8k-sprint150-water-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A05.watermelon_solution to "work/gsm8k-sprint150-watermelon-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A05.eggs_solution to "work/gsm8k-sprint150-eggs-graph.json"

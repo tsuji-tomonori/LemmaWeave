@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint151_dolls",
+  "title_ja": "Dinaの人形数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02552",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ivyの人形の2/3が限定版で20体、DinaはIvyの2倍持つ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.dolls_solution",
+  "graph": "work/gsm8k-sprint151-dolls-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dolls_ivy",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.dolls_ivy",
+      "title_ja": "Ivyは30体持つ",
+      "claim_ja": "Ivyは30体持つ",
+      "method_ja": "全体の2/3が20なので20×3÷2を計算する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Ivyは30体持つ",
+      "baseline_ja": "Ivyは30体持つ"
+    },
+    {
+      "id": "dolls_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.dolls_solution",
+      "title_ja": "Dinaは60体持つ",
+      "claim_ja": "Dinaは60体持つ",
+      "method_ja": "Ivyの30体を2倍する",
+      "requires_steps": [
+        "dolls_ivy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Dinaは60体持つ",
+      "baseline_ja": "Dinaは60体持つ"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2553,
+    "checked_model_hash": "384e45e9725069db6bfe4c0bd74de4beb8486b01fb92a55ab7a85ecc00b7944d",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

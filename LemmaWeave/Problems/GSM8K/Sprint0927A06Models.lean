@@ -108,4 +108,85 @@ structure NancyWork where
   hTargetRate : targetPay = targetHours * hourlyPay
 theorem nancy_hourly (m : NancyWork) : m.hourlyPay = 7 := by cases m; omega
 theorem nancy_solution (m : NancyWork) : m.targetHours = 10 := by cases m; omega
+structure DukeGame where
+  neededToTie : ℕ
+  pointsPastRecord : ℕ
+  gamePoints : ℕ
+  freeThrowPoints : ℕ
+  regularBasketPoints : ℕ
+  threePointPoints : ℕ
+  threePointers : ℕ
+  normalThreePointers : ℕ
+  additional : ℕ
+  hNeeded : neededToTie = 17
+  hPast : pointsPastRecord = 5
+  hGamePoints : gamePoints = neededToTie + pointsPastRecord
+  hFreeThrows : freeThrowPoints = 5
+  hRegular : regularBasketPoints = 4 * 2
+  hPointSplit : gamePoints = freeThrowPoints + regularBasketPoints + threePointPoints
+  hThreePoints : threePointPoints = 3 * threePointers
+  hNormal : normalThreePointers = 2
+  hAdditional : threePointers = normalThreePointers + additional
+theorem duke_game_points (m : DukeGame) : m.gamePoints = 22 := by cases m; omega
+theorem duke_three_point_points (m : DukeGame) : m.threePointPoints = 9 := by cases m; omega
+theorem duke_three_pointers (m : DukeGame) : m.threePointers = 3 := by cases m; omega
+theorem duke_solution (m : DukeGame) : m.additional = 1 := by cases m; omega
+structure Dolls where
+  ivy : ℕ
+  collectors : ℕ
+  dina : ℕ
+  hCollectors : collectors = 20
+  hFraction : 3 * collectors = 2 * ivy
+  hDina : dina = 2 * ivy
+theorem dolls_ivy (m : Dolls) : m.ivy = 30 := by cases m; omega
+theorem dolls_solution (m : Dolls) : m.dina = 60 := by cases m; omega
+structure SleepHours where
+  connor : ℕ
+  luke : ℕ
+  puppy : ℕ
+  hConnor : connor = 6
+  hLuke : luke = connor + 2
+  hPuppy : puppy = 2 * luke
+theorem sleep_luke (m : SleepHours) : m.luke = 8 := by cases m; omega
+theorem sleep_solution (m : SleepHours) : m.puppy = 16 := by cases m; omega
+structure ApplesIntended where
+  smallCount : ℕ
+  mediumCount : ℕ
+  bigCount : ℕ
+  smallCents : ℕ
+  mediumCents : ℕ
+  bigCents : ℕ
+  totalCents : ℕ
+  hSmallCount : smallCount = 6
+  hMediumCount : mediumCount = 6
+  hBigCount : bigCount = 8
+  hSmallCents : smallCents = 150
+  hMediumCents : mediumCents = 200
+  hBigCents : bigCents = 300
+  hTotal : totalCents = smallCount * smallCents + mediumCount * mediumCents + bigCount * bigCents
+theorem apples_intended_solution (m : ApplesIntended) : m.totalCents = 4500 := by cases m; omega
+
+theorem apples_combined_all_small : 6 * 150 + 0 * 200 + 8 * 300 = 3300 := by norm_num
+theorem apples_combined_all_medium : 0 * 150 + 6 * 200 + 8 * 300 = 3600 := by norm_num
+theorem apples_solution (m : ApplesIntended) :
+    m.totalCents = 4500 ∧ 3300 ≠ 3600 := by
+  constructor
+  · exact apples_intended_solution m
+  · norm_num
+structure PlanetComposition where
+  ironPercent : ℕ
+  carbonPercent : ℕ
+  otherPercent : ℕ
+  marsOtherTons : ℕ
+  marsTons : ℕ
+  moonTons : ℕ
+  hIron : ironPercent = 50
+  hCarbon : carbonPercent = 20
+  hComposition : ironPercent + carbonPercent + otherPercent = 100
+  hMarsOther : marsOtherTons = 150
+  hMarsFraction : otherPercent * marsTons = 100 * marsOtherTons
+  hMassRatio : marsTons = 2 * moonTons
+theorem planet_other_percent (m : PlanetComposition) : m.otherPercent = 30 := by cases m; omega
+theorem planet_mars_mass (m : PlanetComposition) : m.marsTons = 500 := by cases m; omega
+theorem planet_solution (m : PlanetComposition) : m.moonTons = 250 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A06

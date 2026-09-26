@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint151_duke",
+  "title_ja": "通常より多く決めた3点シュート",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02551",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "記録まで17点、最終的に5点更新し、フリースロー5本と2点シュート4本を決めた。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.duke_solution",
+  "graph": "work/gsm8k-sprint151-duke-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "duke_game_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.duke_game_points",
+      "title_ja": "最終戦で22点取った",
+      "claim_ja": "最終戦で22点取った",
+      "method_ja": "同点まで17点と更新分5点を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最終戦で22点取った",
+      "baseline_ja": "最終戦で22点取った"
+    },
+    {
+      "id": "duke_three_point_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.duke_three_point_points",
+      "title_ja": "3点シュートによる得点は9点",
+      "claim_ja": "3点シュートによる得点は9点",
+      "method_ja": "22からフリースロー5点と2点シュート8点を引く",
+      "requires_steps": [
+        "duke_game_points"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3点シュートによる得点は9点",
+      "baseline_ja": "3点シュートによる得点は9点"
+    },
+    {
+      "id": "duke_three_pointers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.duke_three_pointers",
+      "title_ja": "3点シュートは3本",
+      "claim_ja": "3点シュートは3本",
+      "method_ja": "9点を1本3点で割る",
+      "requires_steps": [
+        "duke_three_point_points"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3点シュートは3本",
+      "baseline_ja": "3点シュートは3本"
+    },
+    {
+      "id": "duke_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.duke_solution",
+      "title_ja": "通常より1本多い",
+      "claim_ja": "通常より1本多い",
+      "method_ja": "3本から通常2本を引く",
+      "requires_steps": [
+        "duke_three_pointers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "通常より1本多い",
+      "baseline_ja": "通常より1本多い"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2552,
+    "checked_model_hash": "384e45e9725069db6bfe4c0bd74de4beb8486b01fb92a55ab7a85ecc00b7944d",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

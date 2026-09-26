@@ -85,4 +85,66 @@ theorem stairs_feet (m : StairClimb) : m.totalFeet = 90 := by cases m; omega
 theorem stairs_inches (m : StairClimb) : m.totalInches = 1080 := by cases m; omega
 theorem stairs_steps (m : StairClimb) : m.steps = 60 := by cases m; omega
 theorem stairs_solution (m : StairClimb) : m.steps = 60 := stairs_steps m
+structure SiblingMoney where
+  madeline : ℕ
+  brother : ℕ
+  total : ℕ
+  hMadeline : madeline = 48
+  hHalf : madeline = 2 * brother
+  hTotal : total = madeline + brother
+theorem money_brother (m : SiblingMoney) : m.brother = 24 := by cases m; omega
+theorem money_solution (m : SiblingMoney) : m.total = 72 := by cases m; omega
+structure Donations where
+  carwash : ℕ
+  carwashDonation : ℕ
+  bakeSale : ℕ
+  bakeDonation : ℕ
+  mowing : ℕ
+  mowingDonation : ℕ
+  total : ℕ
+  hCarwash : carwash = 100
+  hCarwashDonation : 100 * carwashDonation = 90 * carwash
+  hBakeSale : bakeSale = 80
+  hBakeDonation : 100 * bakeDonation = 75 * bakeSale
+  hMowing : mowing = 50
+  hMowingDonation : mowingDonation = mowing
+  hTotal : total = carwashDonation + bakeDonation + mowingDonation
+theorem donations_carwash (m : Donations) : m.carwashDonation = 90 := by cases m; omega
+theorem donations_bake (m : Donations) : m.bakeDonation = 60 := by cases m; omega
+theorem donations_mowing (m : Donations) : m.mowingDonation = 50 := by cases m; omega
+theorem donations_solution (m : Donations) : m.total = 200 := by cases m; omega
+structure EggYolks where
+  eggs : ℕ
+  doubleYolkEggs : ℕ
+  singleYolkEggs : ℕ
+  yolks : ℕ
+  hEggs : eggs = 12
+  hDouble : doubleYolkEggs = 5
+  hPartition : eggs = singleYolkEggs + doubleYolkEggs
+  hYolks : yolks = singleYolkEggs + 2 * doubleYolkEggs
+theorem eggs_single (m : EggYolks) : m.singleYolkEggs = 7 := by cases m; omega
+theorem eggs_double_yolks (m : EggYolks) : 2 * m.doubleYolkEggs = 10 := by cases m; omega
+theorem eggs_solution (m : EggYolks) : m.yolks = 17 := by cases m; omega
+structure KartWins where
+  chloeRatio : ℕ
+  maxRatio : ℕ
+  chloeWins : ℕ
+  maxWins : ℕ
+  hChloeRatio : chloeRatio = 8
+  hMaxRatio : maxRatio = 3
+  hChloeWins : chloeWins = 24
+  hRatio : maxRatio * chloeWins = chloeRatio * maxWins
+theorem kart_ratio_products (m : KartWins) : 3 * m.chloeWins = 72 := by cases m; omega
+theorem kart_solution (m : KartWins) : m.maxWins = 9 := by cases m; omega
+structure Earnings where
+  spentPercent : ℕ
+  leftPercent : ℕ
+  leftDollars : ℕ
+  earnings : ℕ
+  hSpent : spentPercent = 10
+  hPercent : spentPercent + leftPercent = 100
+  hLeft : leftDollars = 405
+  hAmount : leftPercent * earnings = 100 * leftDollars
+theorem earnings_left_percent (m : Earnings) : m.leftPercent = 90 := by cases m; omega
+theorem earnings_solution (m : Earnings) : m.earnings = 450 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A07

@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint152_donations",
+  "title_ja": "ホームレス支援施設への寄付総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02567",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "洗車100ドルの90%、ベークセール80ドルの75%、芝刈り50ドルの100%を寄付する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A07.donations_solution",
+  "graph": "work/gsm8k-sprint152-donations-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "donations_carwash",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.donations_carwash",
+      "title_ja": "洗車から90ドル寄付",
+      "claim_ja": "洗車から90ドル寄付",
+      "method_ja": "100ドルの90%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "洗車から90ドル寄付",
+      "baseline_ja": "洗車から90ドル寄付"
+    },
+    {
+      "id": "donations_bake",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.donations_bake",
+      "title_ja": "ベークセールから60ドル寄付",
+      "claim_ja": "ベークセールから60ドル寄付",
+      "method_ja": "80ドルの75%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ベークセールから60ドル寄付",
+      "baseline_ja": "ベークセールから60ドル寄付"
+    },
+    {
+      "id": "donations_mowing",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.donations_mowing",
+      "title_ja": "芝刈りから50ドル寄付",
+      "claim_ja": "芝刈りから50ドル寄付",
+      "method_ja": "50ドルの100%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "芝刈りから50ドル寄付",
+      "baseline_ja": "芝刈りから50ドル寄付"
+    },
+    {
+      "id": "donations_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.donations_solution",
+      "title_ja": "寄付総額は200ドル",
+      "claim_ja": "寄付総額は200ドル",
+      "method_ja": "90、60、50を足す",
+      "requires_steps": [
+        "donations_carwash",
+        "donations_bake",
+        "donations_mowing"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "寄付総額は200ドル",
+      "baseline_ja": "寄付総額は200ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2568,
+    "checked_model_hash": "1fa8fbd959b8482d726c56c73f7beccc873a392c43051f8ee7a764303b6498b0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

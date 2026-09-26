@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint152_eggs",
+  "title_ja": "12個の卵に含まれる黄身の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02568",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "12個中5個が二黄卵である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A07.eggs_solution",
+  "graph": "work/gsm8k-sprint152-eggs-graph.json",
+  "model_notes_ja": [
+    "二黄卵は黄身2個、残りの卵は黄身1個ずつとする。"
+  ],
+  "steps": [
+    {
+      "id": "eggs_single",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.eggs_single",
+      "title_ja": "一黄卵は7個",
+      "claim_ja": "一黄卵は7個",
+      "method_ja": "12から二黄卵5個を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "一黄卵は7個",
+      "baseline_ja": "一黄卵は7個"
+    },
+    {
+      "id": "eggs_double_yolks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.eggs_double_yolks",
+      "title_ja": "二黄卵の黄身は10個",
+      "claim_ja": "二黄卵の黄身は10個",
+      "method_ja": "5個に黄身2個を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "二黄卵の黄身は10個",
+      "baseline_ja": "二黄卵の黄身は10個"
+    },
+    {
+      "id": "eggs_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.eggs_solution",
+      "title_ja": "黄身は合計17個",
+      "claim_ja": "黄身は合計17個",
+      "method_ja": "一黄卵7個と二黄卵の黄身10個を足す",
+      "requires_steps": [
+        "eggs_single",
+        "eggs_double_yolks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "黄身は合計17個",
+      "baseline_ja": "黄身は合計17個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2569,
+    "checked_model_hash": "1fa8fbd959b8482d726c56c73f7beccc873a392c43051f8ee7a764303b6498b0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

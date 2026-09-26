@@ -87,4 +87,65 @@ theorem supplies_guns (m : Supplies) : m.guns = 7000 := by cases m; omega
 theorem supplies_tractors (m : Supplies) : m.tractors = 5600 := by cases m; omega
 theorem supplies_uniforms (m : Supplies) : m.uniforms = 60000 := by cases m; omega
 theorem supplies_solution (m : Supplies) : m.total = 72600 := by cases m; omega
+structure Cards where
+  mara : ℕ
+  janet : ℕ
+  brenda : ℕ
+  total : ℕ
+  hMara : mara + 40 = 150
+  hTwice : mara = 2 * janet
+  hMore : janet = brenda + 9
+  hTotal : total = mara + janet + brenda
+theorem cards_mara (m : Cards) : m.mara = 110 := by cases m; omega
+theorem cards_janet (m : Cards) : m.janet = 55 := by cases m; omega
+theorem cards_brenda (m : Cards) : m.brenda = 46 := by cases m; omega
+theorem cards_solution (m : Cards) : m.total = 211 := by cases m; omega
+structure Puzzles where
+  large : ℕ
+  small : ℕ
+  bundle : ℕ
+  total : ℕ
+  hLarge : large = 15
+  hBundle : bundle = 23
+  hTogether : small + large = bundle
+  hTotal : total = large + 3 * small
+theorem puzzles_small (m : Puzzles) : m.small = 8 := by cases m; omega
+theorem puzzles_solution (m : Puzzles) : m.total = 39 := by cases m; omega
+structure Rings where
+  firstCost : ℕ
+  secondCost : ℕ
+  resale : ℕ
+  outOfPocket : ℕ
+  hFirst : firstCost = 10000
+  hSecond : secondCost = 2 * firstCost
+  hResale : 2 * resale = firstCost
+  hOut : outOfPocket + resale = firstCost + secondCost
+theorem rings_second (m : Rings) : m.secondCost = 20000 := by cases m; omega
+theorem rings_resale (m : Rings) : m.resale = 5000 := by cases m; omega
+theorem rings_solution (m : Rings) : m.outOfPocket = 25000 := by cases m; omega
+structure Helium where
+  balloons : ℕ
+  helium : ℕ
+  perBalloon : ℕ
+  floating : ℕ
+  air : ℕ
+  difference : ℕ
+  hBalloons : balloons = 50
+  hHelium : helium = 1800
+  hPer : perBalloon = 50
+  hFloating : helium = perBalloon * floating
+  hAir : balloons = floating + air
+  hDifference : floating = air + difference
+theorem helium_floating (m : Helium) : m.floating = 36 := by cases m; omega
+theorem helium_air (m : Helium) : m.air = 14 := by cases m; omega
+theorem helium_solution (m : Helium) : m.difference = 22 := by cases m; omega
+structure Crayons where
+  red : ℕ
+  blue : ℕ
+  yellow : ℕ
+  hRed : red = 14
+  hBlue : blue = red + 5
+  hYellow : yellow + 6 = 2 * blue
+theorem crayons_blue (m : Crayons) : m.blue = 19 := by cases m; omega
+theorem crayons_solution (m : Crayons) : m.yellow = 32 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A04

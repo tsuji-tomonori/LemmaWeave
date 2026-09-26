@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint147_reading",
+  "title_ja": "読書の残り時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02486",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全248頁を毎時16頁で読み、月曜3時間・火曜6.5時間読んだ後の残り時間を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.reading_solution",
+  "graph": "work/gsm8k-sprint147-reading-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "reading_monday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.reading_monday",
+      "title_ja": "月曜は48頁読む",
+      "claim_ja": "月曜は48頁読む",
+      "method_ja": "3時間に毎時16頁を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "月曜は48頁読む",
+      "baseline_ja": "月曜は48頁読む"
+    },
+    {
+      "id": "reading_tuesday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.reading_tuesday",
+      "title_ja": "火曜は104頁読む",
+      "claim_ja": "火曜は104頁読む",
+      "method_ja": "6.5時間を13/2時間として整数関係で計算する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "火曜は104頁読む",
+      "baseline_ja": "火曜は104頁読む"
+    },
+    {
+      "id": "reading_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.reading_remaining",
+      "title_ja": "残りは96頁",
+      "claim_ja": "残りは96頁",
+      "method_ja": "248頁から既読152頁を引く",
+      "requires_steps": [
+        "reading_monday",
+        "reading_tuesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "残りは96頁",
+      "baseline_ja": "残りは96頁"
+    },
+    {
+      "id": "reading_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.reading_solution",
+      "title_ja": "残りの読書時間は6時間",
+      "claim_ja": "残りの読書時間は6時間",
+      "method_ja": "残り96頁を毎時16頁で割る",
+      "requires_steps": [
+        "reading_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "残りの読書時間は6時間",
+      "baseline_ja": "残りの読書時間は6時間"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2487,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

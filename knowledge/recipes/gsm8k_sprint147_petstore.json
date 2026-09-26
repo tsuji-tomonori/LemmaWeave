@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint147_petstore",
+  "title_ja": "ペット店の動物数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02490",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "犬6匹を基準に、猫は半分、鳥は2倍、魚は3倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.petstore_solution",
+  "graph": "work/gsm8k-sprint147-petstore-graph.json",
+  "model_notes_ja": [
+    "参照説明の3倍の項目を birds とする記述は fish の誤記であり、原題どおり魚18匹として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "petstore_cats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.petstore_cats",
+      "title_ja": "猫は3匹",
+      "claim_ja": "猫は3匹",
+      "method_ja": "犬6匹の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "猫は3匹",
+      "baseline_ja": "猫は3匹"
+    },
+    {
+      "id": "petstore_birds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.petstore_birds",
+      "title_ja": "鳥は12羽",
+      "claim_ja": "鳥は12羽",
+      "method_ja": "犬6匹の2倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "鳥は12羽",
+      "baseline_ja": "鳥は12羽"
+    },
+    {
+      "id": "petstore_fish",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.petstore_fish",
+      "title_ja": "魚は18匹",
+      "claim_ja": "魚は18匹",
+      "method_ja": "犬6匹の3倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "魚は18匹",
+      "baseline_ja": "魚は18匹"
+    },
+    {
+      "id": "petstore_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.petstore_solution",
+      "title_ja": "動物は合計39匹",
+      "claim_ja": "動物は合計39匹",
+      "method_ja": "犬・猫・鳥・魚を足す",
+      "requires_steps": [
+        "petstore_cats",
+        "petstore_birds",
+        "petstore_fish"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "動物は合計39匹",
+      "baseline_ja": "動物は合計39匹"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2491,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

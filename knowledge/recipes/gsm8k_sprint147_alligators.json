@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint147_alligators",
+  "title_ja": "ワニの目撃数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02489",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Samaraは20匹、3人の友人は平均10匹ずつ目撃した。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.alligators_solution",
+  "graph": "work/gsm8k-sprint147-alligators-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "alligators_friends",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.alligators_friends",
+      "title_ja": "友人3人の合計は30匹",
+      "claim_ja": "友人3人の合計は30匹",
+      "method_ja": "平均10匹に3人を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "友人3人の合計は30匹",
+      "baseline_ja": "友人3人の合計は30匹"
+    },
+    {
+      "id": "alligators_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.alligators_solution",
+      "title_ja": "全員の合計は50匹",
+      "claim_ja": "全員の合計は50匹",
+      "method_ja": "Samaraの20匹と友人の30匹を足す",
+      "requires_steps": [
+        "alligators_friends"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "全員の合計は50匹",
+      "baseline_ja": "全員の合計は50匹"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2490,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

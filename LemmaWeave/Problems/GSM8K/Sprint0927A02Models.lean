@@ -133,4 +133,42 @@ structure Oasis where
 theorem oasis_camel (m : Oasis) : m.camelOunces = 224 := by cases m; omega
 theorem oasis_total (m : Oasis) : m.totalOunces = 256 := by cases m; omega
 theorem oasis_solution (m : Oasis) : m.gallons = 2 := by cases m; omega
+structure SwagBag where
+  earringsCost : ℕ
+  scarvesCost : ℕ
+  scarves : ℕ
+  he : earringsCost = 2 * 6000
+  hr : scarvesCost + earringsCost + 2000 = 20000
+  hs : scarvesCost = 1500 * scarves
+theorem swag_earrings (m : SwagBag) : m.earringsCost = 12000 := by cases m; omega
+theorem swag_scarves_cost (m : SwagBag) : m.scarvesCost = 6000 := by cases m; omega
+theorem swag_solution (m : SwagBag) : m.scarves = 4 := by cases m; omega
+structure Raffle where
+  given : ℕ
+  kept : ℕ
+  hg : 5 * given = 100
+  hk : kept + given = 100
+theorem raffle_given (m : Raffle) : m.given = 20 := by cases m; omega
+theorem raffle_solution (m : Raffle) : m.kept = 80 := by cases m; omega
+structure Nuggets where
+  boxes : ℕ
+  paid : ℕ
+  hb : 20 * boxes = 100
+  hp : paid = 4 * boxes
+theorem nuggets_boxes (m : Nuggets) : m.boxes = 5 := by cases m; omega
+theorem nuggets_solution (m : Nuggets) : m.paid = 20 := by cases m; omega
+structure Bread where
+  afternoon : ℕ
+  evening : ℕ
+  ha : afternoon + 629 = 2355
+  he : evening = afternoon + 489
+theorem bread_afternoon (m : Bread) : m.afternoon = 1726 := by cases m; omega
+theorem bread_solution (m : Bread) : m.evening = 2215 := by cases m; omega
+structure Flour where
+  packages : ℕ
+  cost : ℕ
+  hp : packages = 2 * 2
+  hc : cost = packages * 3
+theorem flour_packages (m : Flour) : m.packages = 4 := by cases m; omega
+theorem flour_solution (m : Flour) : m.cost = 12 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A02

@@ -11,3 +11,8 @@ import LemmaWeave.Audit.Extract
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.cake_solution to "work/gsm8k-sprint147-cake_eggs-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.rocks_solution to "work/gsm8k-sprint147-rocks-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.oasis_solution to "work/gsm8k-sprint147-oasis-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.swag_solution to "work/gsm8k-sprint147-swag-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.raffle_solution to "work/gsm8k-sprint147-raffle-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.nuggets_solution to "work/gsm8k-sprint147-nuggets-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.bread_solution to "work/gsm8k-sprint147-bread-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.flour_solution to "work/gsm8k-sprint147-flour-graph.json"

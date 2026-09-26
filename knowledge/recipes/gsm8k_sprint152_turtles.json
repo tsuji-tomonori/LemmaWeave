@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint152_turtles",
+  "title_ja": "Lonely Islandのカメの数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02561",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Happy Islandの60匹は、Lonely Islandの2倍より10匹多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A07.turtles_solution",
+  "graph": "work/gsm8k-sprint152-turtles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "turtles_twice_lonely",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.turtles_twice_lonely",
+      "title_ja": "Lonely Islandの2倍は50匹",
+      "claim_ja": "Lonely Islandの2倍は50匹",
+      "method_ja": "60から余分な10を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Lonely Islandの2倍は50匹",
+      "baseline_ja": "Lonely Islandの2倍は50匹"
+    },
+    {
+      "id": "turtles_lonely",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.turtles_lonely",
+      "title_ja": "Lonely Islandは25匹",
+      "claim_ja": "Lonely Islandは25匹",
+      "method_ja": "50を2で割る",
+      "requires_steps": [
+        "turtles_twice_lonely"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Lonely Islandは25匹",
+      "baseline_ja": "Lonely Islandは25匹"
+    },
+    {
+      "id": "turtles_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A07.turtles_solution",
+      "title_ja": "答えは25匹",
+      "claim_ja": "答えは25匹",
+      "method_ja": "直前の結論を求める量として確定する",
+      "requires_steps": [
+        "turtles_lonely"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "答えは25匹",
+      "baseline_ja": "答えは25匹"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2562,
+    "checked_model_hash": "1fa8fbd959b8482d726c56c73f7beccc873a392c43051f8ee7a764303b6498b0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

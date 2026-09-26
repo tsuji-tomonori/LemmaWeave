@@ -74,7 +74,15 @@ def deferred_ids(logs, today):
     deferred = set()
     for log in logs:
         for item in log.get('deferred', []):
-            if dt.date.fromisoformat(item['retry_on']) > today:
+            retry_on = item.get('retry_on')
+            try:
+                retry_date = dt.date.fromisoformat(retry_on)
+            except (TypeError, ValueError):
+                # Historical ledgers also use an exact-head CI condition here.
+                # Such a condition has not expired merely because it is not a date.
+                deferred.add(item['problem_id'])
+                continue
+            if retry_date > today:
                 deferred.add(item['problem_id'])
     return deferred
 

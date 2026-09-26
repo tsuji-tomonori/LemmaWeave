@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint150_hvac",
+  "title_ja": "空調設備の通風口1個当たり費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02531",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "20,000ドルの空調設備には2区域があり、各区域に5個の通風口がある。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A05.hvac_solution",
+  "graph": "work/gsm8k-sprint150-hvac-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hvac_vents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.hvac_vents",
+      "title_ja": "通風口は全部で10個",
+      "claim_ja": "通風口は全部で10個",
+      "method_ja": "2区域に各5個なので2×5を計算する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "通風口は全部で10個",
+      "baseline_ja": "通風口は全部で10個"
+    },
+    {
+      "id": "hvac_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.hvac_solution",
+      "title_ja": "通風口1個当たり2000ドル",
+      "claim_ja": "通風口1個当たり2000ドル",
+      "method_ja": "20,000ドルを10個で等分する",
+      "requires_steps": [
+        "hvac_vents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "通風口1個当たり2000ドル",
+      "baseline_ja": "通風口1個当たり2000ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2532,
+    "checked_model_hash": "74f3d14b9592612d6f581877eba370d06c55b30d905a9478b673352c3e2c6417",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

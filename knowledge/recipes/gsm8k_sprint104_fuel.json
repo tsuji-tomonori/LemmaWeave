@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint104_fuel",
+  "title_ja": "300マイルに必要な燃料",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01843",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Marthaの燃費を半分として、距離を燃費で割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.fuel_solution",
+  "graph": "work/gsm8k-sprint104-fuel-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fuel_mpg",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.fuel_mpg",
+      "title_ja": "燃費は10マイル/ガロン。",
+      "claim_ja": "燃費は10マイル/ガロン。",
+      "method_ja": "20÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Darleneの半分。",
+      "conclusion_ja": "10。",
+      "baseline_ja": "10。"
+    },
+    {
+      "id": "fuel_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.fuel_solution",
+      "title_ja": "必要燃料は30ガロン。",
+      "claim_ja": "必要燃料は30ガロン。",
+      "method_ja": "300÷10。",
+      "requires_steps": [
+        "fuel_mpg"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "一定燃費。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1844,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

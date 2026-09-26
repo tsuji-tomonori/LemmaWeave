@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint107_driving",
+  "title_ja": "TamikaがLoganより多く運転した距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01892",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各人の距離を求めて差を取る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A17.driving_solution",
+  "graph": "work/gsm8k-sprint107-driving-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "driving_tamika",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.driving_tamika",
+      "title_ja": "Tamikaは360マイル。",
+      "claim_ja": "Tamikaは360マイル。",
+      "method_ja": "8×45。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "driving_logan",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.driving_logan",
+      "title_ja": "Loganは275マイル。",
+      "claim_ja": "Loganは275マイル。",
+      "method_ja": "5×55。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "driving_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.driving_solution",
+      "title_ja": "Tamikaが85マイル多い。",
+      "claim_ja": "Tamikaが85マイル多い。",
+      "method_ja": "360−275。",
+      "requires_steps": [
+        "driving_tamika",
+        "driving_logan"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1893,
+    "checked_model_hash": "5d08e45fe0eaf9fabcdeab34c324f312a3c8fcd3e7dbea981241a4b614ad46cc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "gsm8k_sprint44_games",
+  "title_ja": "どちらの球技もしない生徒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00939",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "20人のうちバスケットボール10人、バレーボール8人、両方2人から、どちらもしない人数を包除原理で求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.games_solution",
+  "graph": "work/gsm8k-sprint44-games-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "games_basketball",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.games_basketball",
+      "title_ja": "バスケットボール",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20人の半分。",
+      "conclusion_ja": "10人。",
+      "baseline_ja": "10×2=20。"
+    },
+    {
+      "id": "games_volleyball",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.games_volleyball",
+      "title_ja": "バレーボール",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20人の5分の2。",
+      "conclusion_ja": "8人。",
+      "baseline_ja": "8×5=20×2。"
+    },
+    {
+      "id": "games_both",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.games_both",
+      "title_ja": "両方する生徒",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20人の10分の1。",
+      "conclusion_ja": "2人。",
+      "baseline_ja": "2×10=20。"
+    },
+    {
+      "id": "games_union",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.games_union",
+      "title_ja": "少なくとも一方",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "包除原理で重複2人を1回だけ数える。",
+      "conclusion_ja": "16人。",
+      "baseline_ja": "16+2=10+8。"
+    },
+    {
+      "id": "games_neither",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.games_neither",
+      "title_ja": "どちらもしない生徒",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全20人から和集合16人を除く。",
+      "conclusion_ja": "4人。",
+      "baseline_ja": "20=16+4。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 940,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

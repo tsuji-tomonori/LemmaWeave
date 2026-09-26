@@ -1,0 +1,50 @@
+{
+  "id": "gsm8k_sprint25_jackson",
+  "title_ja": "times more と所持金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00666",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "2人の合計150ドルについて、5 times more の倍率解釈と字義的追加量解釈を分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A25.jackson_solution",
+  "graph": "work/gsm8k-sprint25-jackson-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A25.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "参照解答は5倍としてJackson=125ドル。",
+    "字義的に元より5倍分多いならJacksonはWilliamsの6倍で900/7ドルとなり、整数ドルにはならない。"
+  ],
+  "steps": [
+    {
+      "id": "jackson_reference",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.jackson_reference",
+      "title_ja": "参照解答の倍率解釈",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "JacksonをWilliamsの5倍と読む。",
+      "conclusion_ja": "Williams25ドル、Jackson125ドル。",
+      "baseline_ja": "150÷(1+5)=25、5×25=125。"
+    },
+    {
+      "id": "jackson_literal",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.jackson_literal",
+      "title_ja": "字義的な追加量解釈",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "JacksonはWilliamsよりWilliamsの5倍分多い、すなわち6倍と読む。",
+      "conclusion_ja": "Williamsは150/7ドル、Jacksonは900/7ドル。",
+      "baseline_ja": "150÷(1+6)=150/7、6×150/7=900/7。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 667,
+    "checked_model_hash": "581c7484f9bea721da385e231f57c0a17afd20596d25584599b46b8c242b9903",
+    "checks_ja": [
+      "曖昧な表現を黙って固定せず、両解釈で合計150ドルとなることを確認した。"
+    ]
+  }
+}

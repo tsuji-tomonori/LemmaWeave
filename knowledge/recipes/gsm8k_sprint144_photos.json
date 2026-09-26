@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint144_photos",
+  "title_ja": "写真撮影で撮った枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02453",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "63枚から7枚削除、猫を15枚撮影、友人撮影後に3枚削除して84枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.photos_solution",
+  "graph": "work/gsm8k-sprint144-photos-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "photos_after_delete",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.photos_after_delete",
+      "title_ja": "削除後56枚",
+      "claim_ja": "削除後56枚",
+      "method_ja": "63から7を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "削除後56枚",
+      "baseline_ja": "削除後56枚"
+    },
+    {
+      "id": "photos_after_cat",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.photos_after_cat",
+      "title_ja": "猫撮影後71枚",
+      "claim_ja": "猫撮影後71枚",
+      "method_ja": "56に15を足す",
+      "requires_steps": [
+        "photos_after_delete"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "猫撮影後71枚",
+      "baseline_ja": "猫撮影後71枚"
+    },
+    {
+      "id": "photos_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.photos_solution",
+      "title_ja": "友人撮影は16枚",
+      "claim_ja": "友人撮影は16枚",
+      "method_ja": "71+x-3=84を解く",
+      "requires_steps": [
+        "photos_after_cat"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "友人撮影は16枚",
+      "baseline_ja": "友人撮影は16枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2454,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

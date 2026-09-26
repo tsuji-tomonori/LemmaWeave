@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint44_library",
+  "title_ja": "Jasonの図書館訪問回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00948",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Williamが週2回のとき、four times more oftenを4倍または5倍と読む場合の4週間の回数を分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.library_solution",
+  "graph": "work/gsm8k-sprint44-library-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "four times more oftenは、4倍と読む用法と、基準に4倍分を加えた5倍と読む用法があり、原文だけでは一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "library_fourfold_week",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.library_fourfold_week",
+      "title_ja": "4倍解釈の週回数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "four timesを4倍と読む。",
+      "conclusion_ja": "週8回。",
+      "baseline_ja": "4×2=8。"
+    },
+    {
+      "id": "library_fourfold_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.library_fourfold_total",
+      "title_ja": "4倍解釈の4週間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "週8回を4週間。",
+      "conclusion_ja": "32回。",
+      "baseline_ja": "4×8=32。"
+    },
+    {
+      "id": "library_additive_week",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.library_additive_week",
+      "title_ja": "加算解釈の週回数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "four times moreを基準2回に4倍分を加えると読む。",
+      "conclusion_ja": "週10回。",
+      "baseline_ja": "2+4×2=10。"
+    },
+    {
+      "id": "library_additive_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.library_additive_total",
+      "title_ja": "加算解釈の4週間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "週10回を4週間。",
+      "conclusion_ja": "40回。",
+      "baseline_ja": "4×10=40。"
+    },
+    {
+      "id": "library_nonunique",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.library_nonunique",
+      "title_ja": "非一意性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2つの通常解釈が異なる結果を与える。",
+      "conclusion_ja": "原文だけでは32回か40回か一意でない。",
+      "baseline_ja": "32≠40。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 949,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

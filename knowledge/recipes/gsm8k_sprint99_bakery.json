@@ -1,0 +1,93 @@
+{
+  "id": "gsm8k_sprint99_bakery",
+  "title_ja": "菓子の購入総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01771",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "小数ドルを避けて全額をセント単位で計算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.bakery_solution",
+  "graph": "work/gsm8k-sprint99-bakery-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bakery_cupcakes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.bakery_cupcakes",
+      "title_ja": "カップケーキは1,000セント。",
+      "claim_ja": "カップケーキは1,000セント。",
+      "method_ja": "5個×200セント。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個2ドル=200セント。",
+      "conclusion_ja": "5×200=1000。",
+      "baseline_ja": "5×200=1000。"
+    },
+    {
+      "id": "bakery_doughnuts",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.bakery_doughnuts",
+      "title_ja": "ドーナツは600セント。",
+      "claim_ja": "ドーナツは600セント。",
+      "method_ja": "6個×100セント。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個1ドル=100セント。",
+      "conclusion_ja": "6×100=600。",
+      "baseline_ja": "6×100=600。"
+    },
+    {
+      "id": "bakery_pie",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.bakery_pie",
+      "title_ja": "アップルパイは800セント。",
+      "claim_ja": "アップルパイは800セント。",
+      "method_ja": "4切れ×200セント。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1切れ2ドル=200セント。",
+      "conclusion_ja": "4×200=800。",
+      "baseline_ja": "4×200=800。"
+    },
+    {
+      "id": "bakery_cookies",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.bakery_cookies",
+      "title_ja": "クッキーは900セント。",
+      "claim_ja": "クッキーは900セント。",
+      "method_ja": "15枚×60セント。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚0.60ドル=60セント。",
+      "conclusion_ja": "15×60=900。",
+      "baseline_ja": "15×60=900。"
+    },
+    {
+      "id": "bakery_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.bakery_solution",
+      "title_ja": "総額は3,300セント、すなわち33ドル。",
+      "claim_ja": "総額は3,300セント、すなわち33ドル。",
+      "method_ja": "1000+600+800+900。",
+      "requires_steps": [
+        "bakery_cupcakes",
+        "bakery_doughnuts",
+        "bakery_pie",
+        "bakery_cookies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全品目を各1回加える。",
+      "conclusion_ja": "合計3300セント。",
+      "baseline_ja": "合計3300セント。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1772,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

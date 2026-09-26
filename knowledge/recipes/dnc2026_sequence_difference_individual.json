@@ -1,0 +1,100 @@
+{
+  "id": "dnc2026_sequence_difference_individual",
+  "title_ja": "階差数列の最初の二つの差から第3項までを求める",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "a1=1、bn=a(n+1)-an、bn=4n-1のとき、b1、a2、b2、a3を順に求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学II・数学B・数学C",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017550.pdf&n=2026_ol_18_sugaku2BC.pdf",
+    "pdf_page_1_based": [19],
+    "printed_page_label": ["22"],
+    "subquestion": "第4問(1)(i)",
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i.json",
+    "visual_review_status": "official_pdf_refetched_and_page_visually_checked_2026-09-23"
+  },
+  "variables": [
+    {"name": "a1,a2,a3", "type": "ℤ", "domain_ja": "数列{an}の第1項から第3項"},
+    {"name": "b1,b2", "type": "ℤ", "domain_ja": "階差数列{bn}の第1項と第2項"}
+  ],
+  "assumptions_ja": ["a1=1である。", "bn=a(n+1)-anである。", "bn=4n-1である。"],
+  "required_conclusions_ja": ["b1=3、a2=4、b2=7、a3=11をすべて示す。"],
+  "root": "LemmaWeave.Tests.DNC2026SequenceDifferenceIndividual.individual_solution",
+  "graph": "work/dnc2026-sequence-difference-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026SequenceDifferenceIndividual.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "new_source_backed_model_author_review_only",
+  "counting_note_ja": "日本入試専用台帳へ新規登録した1小問であり、GSM8K固定8,792問へ加えない。固定Lean未実行のため正式完了にも数えない。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "first_difference",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026SequenceDifferenceIndividual.first_difference_value",
+      "title_ja": "第1階差を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "b1=4*1-1を計算する。",
+      "method_ja": "階差の一般項へn=1を代入する。",
+      "condition_ja": "一般項bn=4n-1がn=1で成り立つ。",
+      "premise_ja": "bn=4n-1。",
+      "conclusion_ja": "b1=3。",
+      "baseline_ja": "整数の代入と四則計算。"
+    },
+    {
+      "id": "second_term",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026SequenceDifferenceIndividual.second_term_value",
+      "title_ja": "第2項を求める",
+      "requires_steps": ["first_difference"],
+      "uses_nodes": [],
+      "claim_ja": "b1=a2-a1へa1=1とb1=3を代入する。",
+      "method_ja": "階差の定義をa2について解く。",
+      "condition_ja": "b1は前進差a2-a1である。",
+      "premise_ja": "a1=1、b1=3、b1=a2-a1。",
+      "conclusion_ja": "a2=4。",
+      "baseline_ja": "整数の一次方程式。"
+    },
+    {
+      "id": "second_difference",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026SequenceDifferenceIndividual.second_difference_value",
+      "title_ja": "第2階差を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "b2=4*2-1を計算する。",
+      "method_ja": "階差の一般項へn=2を代入する。",
+      "condition_ja": "一般項bn=4n-1がn=2で成り立つ。",
+      "premise_ja": "bn=4n-1。",
+      "conclusion_ja": "b2=7。",
+      "baseline_ja": "整数の代入と四則計算。"
+    },
+    {
+      "id": "third_term",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026SequenceDifferenceIndividual.third_term_value",
+      "title_ja": "第3項を求める",
+      "requires_steps": ["second_term", "second_difference"],
+      "uses_nodes": [],
+      "claim_ja": "b2=a3-a2へa2=4とb2=7を代入する。",
+      "method_ja": "階差の定義をa3について解く。",
+      "condition_ja": "b2は前進差a3-a2である。",
+      "premise_ja": "a2=4、b2=7、b2=a3-a2。",
+      "conclusion_ja": "a3=11。",
+      "baseline_ja": "整数の一次方程式。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-23T10:04:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i",
+    "checks_ja": [
+      "公式PDF第19ページ（冊子22頁）の階差定義、初項、一般項、四つの解答欄を画像で再読した。",
+      "階差を整数上の減算として保持し、結論を仮定へ移していない。",
+      "四つの説明行を四つの名前付きLean定理へ一対一で対応させた。",
+      "最終定理が四つの行定理を実際に呼び出す構成を確認した。",
+      "新規モデルと解答はいずれもself_review_onlyであり、独立レビュー済みとは扱わない。"
+    ]
+  }
+}

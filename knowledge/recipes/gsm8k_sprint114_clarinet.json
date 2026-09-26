@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint114_clarinet",
+  "title_ja": "売った本の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02000",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A04.clarinet_solution",
+  "graph": "work/gsm8k-sprint114-clarinet-graph.json",
+  "model_notes_ja": [
+    "参照説明の35/7=5は式の誤記。1冊5ドルなので35/5=7冊とし、最終25冊は原題から導く。"
+  ],
+  "steps": [
+    {
+      "id": "clarinet_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.clarinet_half",
+      "title_ja": "半分の目標は45ドル。",
+      "claim_ja": "半分の目標は45ドル。",
+      "method_ja": "90÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "半分の目標は45ドル。",
+      "baseline_ja": "半分の目標は45ドル。"
+    },
+    {
+      "id": "clarinet_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.clarinet_before",
+      "title_ja": "最初に売った本は7冊。",
+      "claim_ja": "最初に売った本は7冊。",
+      "method_ja": "10+5×7=45。",
+      "requires_steps": [
+        "clarinet_half"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "最初に売った本は7冊。",
+      "baseline_ja": "最初に売った本は7冊。"
+    },
+    {
+      "id": "clarinet_after",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.clarinet_after",
+      "title_ja": "失った後に18冊売る。",
+      "claim_ja": "失った後に18冊売る。",
+      "method_ja": "5×18=90。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "失った後に18冊売る。",
+      "baseline_ja": "失った後に18冊売る。"
+    },
+    {
+      "id": "clarinet_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.clarinet_solution",
+      "title_ja": "合計25冊。",
+      "claim_ja": "合計25冊。",
+      "method_ja": "7+18。",
+      "requires_steps": [
+        "clarinet_before",
+        "clarinet_after"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "合計25冊。",
+      "baseline_ja": "合計25冊。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2001,
+    "checked_model_hash": "1a0cc19b2490c11d76cac5ef60cb8fab9b5c9dae974c31340285155356e4fa59",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な倍率表現と参照説明の誤記を分離した。"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint100_cards",
+  "title_ja": "交換されたカード総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01789",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "二回の交換でPadma側とRobert側から動いたカードをそれぞれ集計し、実際に所有数内であることも確認する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.cards_solution",
+  "graph": "work/gsm8k-sprint100-cards-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cards_padma_out",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.cards_padma_out",
+      "title_ja": "Padmaから渡ったのは17枚。",
+      "claim_ja": "Padmaから渡ったのは17枚。",
+      "method_ja": "2+15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二回の交換でPadmaが渡した枚数。",
+      "conclusion_ja": "17。",
+      "baseline_ja": "17。"
+    },
+    {
+      "id": "cards_robert_out",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.cards_robert_out",
+      "title_ja": "Robertから渡ったのは18枚。",
+      "claim_ja": "Robertから渡ったのは18枚。",
+      "method_ja": "10+8。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二回の交換でRobertが渡した枚数。",
+      "conclusion_ja": "18。",
+      "baseline_ja": "18。"
+    },
+    {
+      "id": "cards_feasible",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.cards_feasible",
+      "title_ja": "両者の提供枚数は初期所持数以内。",
+      "claim_ja": "両者の提供枚数は初期所持数以内。",
+      "method_ja": "17≤75かつ18≤88を確認。",
+      "requires_steps": [
+        "cards_padma_out",
+        "cards_robert_out"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "交換時系列の詳細によらず初期枚数で足りる。",
+      "conclusion_ja": "feasible。",
+      "baseline_ja": "feasible。"
+    },
+    {
+      "id": "cards_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.cards_solution",
+      "title_ja": "交換で動いたカードは合計35枚。",
+      "claim_ja": "交換で動いたカードは合計35枚。",
+      "method_ja": "17+18。",
+      "requires_steps": [
+        "cards_padma_out",
+        "cards_robert_out"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両方向に渡った実カードを数える。",
+      "conclusion_ja": "35。",
+      "baseline_ja": "35。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1790,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

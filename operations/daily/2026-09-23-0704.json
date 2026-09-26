@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-23",
+  "run_id": "gsm8k-20260923-0700-jst",
+  "scheduled_slot": "2026-09-23T07:00:00+09:00",
+  "actual_start_slot": "2026-09-23T07:04:03+09:00",
+  "slot_resolution": "07:00枠を07:04に開始した。直前の05:00補完枠は完了済みで、06:00枠は実行記録がないため未実行のまま隠さず残した。",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "e65785cef0c70f11bc8b08853504204a10c99152",
+  "started_at": "2026-09-23T07:04:03+09:00",
+  "finished_at": "2026-09-23T07:16:49+09:00",
+  "selected_problem_ids": [
+    "train:01749", "train:01750", "train:01751", "train:01752", "train:01753",
+    "train:01754", "train:01755", "train:01756", "train:01757", "train:01758",
+    "train:01759", "train:01760", "train:01761", "train:01762", "train:01763"
+  ],
+  "outputs_saved_problem_ids": [
+    "train:01749", "train:01750", "train:01751", "train:01752", "train:01753",
+    "train:01754", "train:01755", "train:01756", "train:01757", "train:01758",
+    "train:01759", "train:01760", "train:01761", "train:01762", "train:01763"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01749", "train:01750", "train:01751", "train:01752", "train:01753",
+    "train:01754", "train:01755", "train:01756", "train:01757", "train:01758",
+    "train:01759", "train:01760", "train:01761", "train:01762", "train:01763"
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:01749-train:01763",
+      "retry_on": "exact-head fixed Lean 4.33.1 success and current evidence import",
+      "reason_ja": "記述式解答・Lean形式化・自己照合は保存したが、現在HEADの固定Lean kernel成功証拠がないためsolution_readyへ昇格しない。",
+      "next_action_ja": "対象別replayでSprint0923A07を検証し、許容公理・入力SHA・依存グラフを照合して問題単位の成功証拠を取り込む。"
+    }
+  ],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "lines_1based": [1750, 1764],
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0152.json",
+    "record_hash_method": "SHA-256 of exact UTF-8 JSONL record bytes, excluding line terminator"
+  },
+  "semantic_review": {
+    "status": "self_review_only",
+    "reviewer": "author",
+    "notes_ja": [
+      "train:01755は50マイル外れた後に50マイル戻る参照解釈を明示し、追加100マイル・合計5時間を形式化した。",
+      "train:01756は138時間で必要額に到達することと137時間以下では不足する下界を合わせ、最小整数時間を形式化した。",
+      "train:01762は券とパスの重複が未指定であるため未払い30〜75台を示し、30台と75台の両モデルを構成した。排他的という追加条件下の30台を別定理にした。"
+    ]
+  },
+  "checks": {
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "recipe_to_lean_declarations": "54/54",
+    "queue_total_and_unique_ids": "8792/8792",
+    "forbidden_tokens": 0,
+    "fixed_lean_kernel": "not_run"
+  },
+  "checkpoints": [
+    {
+      "problem_ids": ["train:01749", "train:01750", "train:01751", "train:01752", "train:01753"],
+      "commit": "6e5884820ca01d1d068dde2cfa9bc5dcddfa4cb4"
+    },
+    {
+      "problem_ids": ["train:01754", "train:01755", "train:01756", "train:01757", "train:01758"],
+      "commit": "268d9ae2b33606eadee7ebeba8b407af8a2c9b06"
+    },
+    {
+      "problem_ids": ["train:01759", "train:01760", "train:01761", "train:01762", "train:01763"],
+      "commit": "0cad89911534ec2b305b33c934a76d69f2195a67"
+    }
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1250,
+    "pending": 7024,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 1235},
+    "after": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 1250},
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01764",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": ["train:01749", "train:01763"],
+    "base_sha": "e65785cef0c70f11bc8b08853504204a10c99152",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "not_started_at_ledger_write",
+    "local_fixed_lean_status": "unavailable_lake_not_installed",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "0cad89911534ec2b305b33c934a76d69f2195a67"
+  }
+}

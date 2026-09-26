@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-1300-gsm8k-44",
+  "planned_slot_local_hour": 13,
+  "planned_at": "2026-09-20T13:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "4915761e993e7b8e42265533feefa3d790668617",
+  "started_at": "2026-09-20T12:59:59+09:00",
+  "finished_at": "2026-09-20T13:06:01+09:00",
+  "schedule_offset_seconds": -1,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00939",
+    "external-gsm8k-main-3101c7d50724:train:00940",
+    "external-gsm8k-main-3101c7d50724:train:00941",
+    "external-gsm8k-main-3101c7d50724:train:00942",
+    "external-gsm8k-main-3101c7d50724:train:00943",
+    "external-gsm8k-main-3101c7d50724:train:00944",
+    "external-gsm8k-main-3101c7d50724:train:00945",
+    "external-gsm8k-main-3101c7d50724:train:00946",
+    "external-gsm8k-main-3101c7d50724:train:00947",
+    "external-gsm8k-main-3101c7d50724:train:00948",
+    "external-gsm8k-main-3101c7d50724:train:00949",
+    "external-gsm8k-main-3101c7d50724:train:00950",
+    "external-gsm8k-main-3101c7d50724:train:00951",
+    "external-gsm8k-main-3101c7d50724:train:00952",
+    "external-gsm8k-main-3101c7d50724:train:00953"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00939",
+    "external-gsm8k-main-3101c7d50724:train:00940",
+    "external-gsm8k-main-3101c7d50724:train:00941",
+    "external-gsm8k-main-3101c7d50724:train:00942",
+    "external-gsm8k-main-3101c7d50724:train:00943",
+    "external-gsm8k-main-3101c7d50724:train:00944",
+    "external-gsm8k-main-3101c7d50724:train:00945",
+    "external-gsm8k-main-3101c7d50724:train:00946",
+    "external-gsm8k-main-3101c7d50724:train:00947",
+    "external-gsm8k-main-3101c7d50724:train:00948",
+    "external-gsm8k-main-3101c7d50724:train:00949",
+    "external-gsm8k-main-3101c7d50724:train:00950",
+    "external-gsm8k-main-3101c7d50724:train:00951",
+    "external-gsm8k-main-3101c7d50724:train:00952",
+    "external-gsm8k-main-3101c7d50724:train:00953"
+  ],
+  "verification_pending_cumulative": {
+    "count": 440,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:00953"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00939-00953",
+      "retry_on": "2026-09-20",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のため、solution_readyへ昇格できない。",
+      "next_action_ja": "90分へ延長した現HEADのLean CIを完走させ、入力SHA・公理・実依存・56説明行を照合し、成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:00939-00943",
+      "commit": "5bca440e93b25b4535fa0af0319e853ae884e515"
+    },
+    {
+      "problem_ids": "train:00944-00948",
+      "commit": "e0bba0ff3c3eaac6eeacc7b337cd02a5da77b4ea"
+    },
+    {
+      "problem_ids": "train:00949-00953",
+      "commit": "ac3daf593c596f1a0913b9af9af265a1c24f3485"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 56,
+    "recipe_declaration_mappings_checked": 56,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_sha256": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff"
+  },
+  "local_checks": {
+    "ledger_validate": "passed",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records and 56 declarations passed",
+    "method_recipe_render": "blocked_missing_existing_artifact",
+    "method_recipe_render_missing_path": "reports/dependencies/methods/dnc2026_inequalities_individual.json.gz",
+    "next_action_ja": "固定CIで既存DNC依存グラフを再生成してから全レシピをrenderし、新規15件の依存グラフも照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "4915761e993e7b8e42265533feefa3d790668617",
+    "previous_run_id": 35486047114,
+    "previous_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35486047114",
+    "previous_status": "cancelled_at_30_minute_timeout",
+    "accepted_as_success_evidence": false,
+    "workflow_timeout_before_minutes": 30,
+    "workflow_timeout_after_minutes": 90,
+    "current_status": "awaiting_exact_head_run"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "ac3daf593c596f1a0913b9af9af265a1c24f3485",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 425
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 440
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00954",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・名前付き行定理・原文ハッシュ・自己照合を保存した。球技問題は包除原理で和集合16人・どちらもしない4人を証明した。four times more、three times more、誕生日会で主催者を含むかという条件不足は複数解釈を分離した。直前CIが30分上限で再現性高くキャンセルされていたため、完全replayを省略せず完走させる目的で上限を90分へ修正した。"
+}

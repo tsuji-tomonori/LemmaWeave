@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint120_haircut",
+  "title_ja": "7日間の1週間では413ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02080",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A11.haircut_solution",
+  "graph": "work/gsm8k-sprint120-haircut-graph.json",
+  "model_notes_ja": [
+    "原題はper weekを尋ねる。参照説明末尾のper monthは7倍計算と矛盾する誤記なので、7日間の週413ドルを形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "haircut_normal",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.haircut_normal",
+      "title_ja": "通常カット5件の売上は25ドル。",
+      "claim_ja": "通常カット5件の売上は25ドル。",
+      "method_ja": "5ドル×5件。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "通常カット5件の売上は25ドル。",
+      "baseline_ja": "通常カット5件の売上は25ドル。"
+    },
+    {
+      "id": "haircut_special",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.haircut_special",
+      "title_ja": "特別カット3件の売上は18ドル。",
+      "claim_ja": "特別カット3件の売上は18ドル。",
+      "method_ja": "6ドル×3件。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "特別カット3件の売上は18ドル。",
+      "baseline_ja": "特別カット3件の売上は18ドル。"
+    },
+    {
+      "id": "haircut_trendy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.haircut_trendy",
+      "title_ja": "流行カット2件の売上は16ドル。",
+      "claim_ja": "流行カット2件の売上は16ドル。",
+      "method_ja": "8ドル×2件。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "流行カット2件の売上は16ドル。",
+      "baseline_ja": "流行カット2件の売上は16ドル。"
+    },
+    {
+      "id": "haircut_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.haircut_daily",
+      "title_ja": "1日の売上は59ドル。",
+      "claim_ja": "1日の売上は59ドル。",
+      "method_ja": "25+18+16。",
+      "requires_steps": [
+        "haircut_normal",
+        "haircut_special",
+        "haircut_trendy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "1日の売上は59ドル。",
+      "baseline_ja": "1日の売上は59ドル。"
+    },
+    {
+      "id": "haircut_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.haircut_solution",
+      "title_ja": "7日間の1週間では413ドル。",
+      "claim_ja": "7日間の1週間では413ドル。",
+      "method_ja": "59×7。問題は週を尋ねるため、参照説明末尾のmonthは誤記として採用しない。",
+      "requires_steps": [
+        "haircut_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "7日間の1週間では413ドル。",
+      "baseline_ja": "7日間の1週間では413ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2081,
+    "checked_model_hash": "4fbbba05067cfd5efc01e3ad45a6bbdfe8355bb6f13cb453952d1e22052f2cc5",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、解釈条件や参照解の誤記を黙って補わず明示した。"
+    ]
+  }
+}

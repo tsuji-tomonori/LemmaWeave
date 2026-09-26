@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint124_jump",
+  "title_ja": "走幅跳び第4競技者",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02143",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原文の自己参照条件を検査し、訂正を仮定した場合だけ第4競技者の距離を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A16.jump_literal_impossible",
+  "graph": "work/gsm8k-sprint124-jump-graph.json",
+  "model_notes_ja": [
+    "原文は第3競技者を第3競技者自身と比較しており矛盾する。参照解は比較対象を第2競技者へ黙って変更しているため、原文の解なしと訂正条件付き24フィートを分離した。"
+  ],
+  "steps": [
+    {
+      "id": "jump_literal_impossible",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.jump_literal_impossible",
+      "title_ja": "原文通りでは第3競技者が自分自身より2フィート短いことになり、解は存在しない。",
+      "claim_ja": "原文通りでは第3競技者が自分自身より2フィート短いことになり、解は存在しない。",
+      "method_ja": "third+2=thirdは整数上で矛盾する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の自己参照を保持する。24フィートを述べる行では比較対象を第2競技者へ訂正する追加条件を明示する。",
+      "conclusion_ja": "原文通りでは第3競技者が自分自身より2フィート短いことになり、解は存在しない。",
+      "baseline_ja": "原文通りでは第3競技者が自分自身より2フィート短いことになり、解は存在しない。"
+    },
+    {
+      "id": "jump_corrected_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.jump_corrected_second",
+      "title_ja": "第2競技者は23フィート。",
+      "claim_ja": "第2競技者は23フィート。",
+      "method_ja": "22+1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の自己参照を保持する。24フィートを述べる行では比較対象を第2競技者へ訂正する追加条件を明示する。",
+      "conclusion_ja": "第2競技者は23フィート。",
+      "baseline_ja": "第2競技者は23フィート。"
+    },
+    {
+      "id": "jump_corrected_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.jump_corrected_third",
+      "title_ja": "『第2競技者より2フィート短い』と訂正すれば第3競技者は21フィート。",
+      "claim_ja": "『第2競技者より2フィート短い』と訂正すれば第3競技者は21フィート。",
+      "method_ja": "23−2。",
+      "requires_steps": [
+        "jump_corrected_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の自己参照を保持する。24フィートを述べる行では比較対象を第2競技者へ訂正する追加条件を明示する。",
+      "conclusion_ja": "『第2競技者より2フィート短い』と訂正すれば第3競技者は21フィート。",
+      "baseline_ja": "『第2競技者より2フィート短い』と訂正すれば第3競技者は21フィート。"
+    },
+    {
+      "id": "jump_corrected_fourth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.jump_corrected_fourth",
+      "title_ja": "同じ訂正条件の下で第4競技者は24フィート。",
+      "claim_ja": "同じ訂正条件の下で第4競技者は24フィート。",
+      "method_ja": "21+3。",
+      "requires_steps": [
+        "jump_corrected_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の自己参照を保持する。24フィートを述べる行では比較対象を第2競技者へ訂正する追加条件を明示する。",
+      "conclusion_ja": "同じ訂正条件の下で第4競技者は24フィート。",
+      "baseline_ja": "同じ訂正条件の下で第4競技者は24フィート。"
+    },
+    {
+      "id": "jump_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.jump_reference_solution",
+      "title_ja": "参照答24フィートは明示した訂正条件付き。",
+      "claim_ja": "参照答24フィートは明示した訂正条件付き。",
+      "method_ja": "訂正モデルの第4競技者の値を採る。",
+      "requires_steps": [
+        "jump_corrected_fourth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の自己参照を保持する。24フィートを述べる行では比較対象を第2競技者へ訂正する追加条件を明示する。",
+      "conclusion_ja": "参照答24フィートは明示した訂正条件付き。",
+      "baseline_ja": "参照答24フィートは明示した訂正条件付き。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2144,
+    "checked_model_hash": "1ef653f2f5493b131faeaf7e8e4695e102a0b2223657f79e1a4a788f945d875f",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、矛盾や複数読解は訂正条件・反例と分離した。"
+    ]
+  }
+}

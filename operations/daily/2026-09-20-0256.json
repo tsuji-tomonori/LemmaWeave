@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-0200-gsm8k-35",
+  "planned_slot_local_hour": 2,
+  "planned_at": "2026-09-20T02:00:00+09:00",
+  "role": "gsm8k_individual_15",
+  "base_sha": "e5d2b576771025ff6332df6a19e4d57672a19816",
+  "started_at": "2026-09-20T02:56:57+09:00",
+  "finished_at": "2026-09-20T03:10:04+09:00",
+  "schedule_offset_seconds": 3417,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00804",
+    "external-gsm8k-main-3101c7d50724:train:00805",
+    "external-gsm8k-main-3101c7d50724:train:00806",
+    "external-gsm8k-main-3101c7d50724:train:00807",
+    "external-gsm8k-main-3101c7d50724:train:00808",
+    "external-gsm8k-main-3101c7d50724:train:00809",
+    "external-gsm8k-main-3101c7d50724:train:00810",
+    "external-gsm8k-main-3101c7d50724:train:00811",
+    "external-gsm8k-main-3101c7d50724:train:00812",
+    "external-gsm8k-main-3101c7d50724:train:00813",
+    "external-gsm8k-main-3101c7d50724:train:00814",
+    "external-gsm8k-main-3101c7d50724:train:00815",
+    "external-gsm8k-main-3101c7d50724:train:00816",
+    "external-gsm8k-main-3101c7d50724:train:00817",
+    "external-gsm8k-main-3101c7d50724:train:00818"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00804",
+    "external-gsm8k-main-3101c7d50724:train:00805",
+    "external-gsm8k-main-3101c7d50724:train:00806",
+    "external-gsm8k-main-3101c7d50724:train:00807",
+    "external-gsm8k-main-3101c7d50724:train:00808",
+    "external-gsm8k-main-3101c7d50724:train:00809",
+    "external-gsm8k-main-3101c7d50724:train:00810",
+    "external-gsm8k-main-3101c7d50724:train:00811",
+    "external-gsm8k-main-3101c7d50724:train:00812",
+    "external-gsm8k-main-3101c7d50724:train:00813",
+    "external-gsm8k-main-3101c7d50724:train:00814",
+    "external-gsm8k-main-3101c7d50724:train:00815",
+    "external-gsm8k-main-3101c7d50724:train:00816",
+    "external-gsm8k-main-3101c7d50724:train:00817",
+    "external-gsm8k-main-3101c7d50724:train:00818"
+  ],
+  "deferred": [],
+  "verification_pending_reason_ja": "原文・質問ハッシュ、49説明行、Leanモデル、名前付き行定理、自己照合を保存した。固定Lean 4.33.1の全体ビルド、新規証明、公理・実依存監査はローカルで成功したが、exact-head CIの成功証拠を未取込のため昇格しない。",
+  "next_action_ja": "現HEADのCIでA35を含む全体ビルド、公理監査、説明行と実依存の照合を実行する。成功時だけ証拠を取り込み、15問を個別にsolution_readyへ昇格する。",
+  "checkpoint_commits": [
+    {"range": "train:00804..00808", "status": "saved", "commit_sha": "511099a3192c1ddb444315bceabc85d1790b7b3f"},
+    {"range": "train:00809..00813", "status": "saved", "commit_sha": "3c3063c0d2ef9a4a7bf254e2fdc5d4a868ff0508"},
+    {"range": "train:00814..00818", "status": "saved", "commit_sha": "696b527b8486c1106ac08f1f05a2c7e1bd632f71"}
+  ],
+  "source_verification": {
+    "upstream_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_lines_1based": [805, 819],
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "record_hashes_checked": 15,
+    "question_hashes_checked": 15
+  },
+  "artifacts": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0089.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0920A03Models.lean",
+    "proof": "tests/lean/GSM8KSprint0920A03.lean",
+    "recipes": 15,
+    "written_lines": 49,
+    "semantic_review_status": "self_review_only",
+    "sorry_admit_custom_axiom_count": 0
+  },
+  "modeling_notes_ja": [
+    "train:00807は7歳という解の実現だけでなく、二つの年齢条件からDavidが7歳に一意に定まることを証明した。",
+    "train:00808は教室内16人、トイレ2人、欠席5人を異なる区分として合計し、23人とした。",
+    "train:00809は半マイル単位、train:00814はセント単位、train:00817は半オンス単位で整数化し、丸めを避けた。",
+    "train:00813は通常診療1回200ドルと割引診療2回120ドルを比較し、節約額80ドルを形式化した。",
+    "依存監査でtrain:00809の2説明行が最終根から消える問題を検出し、最終定理へ明示接続して再検証した。"
+  ],
+  "local_validation": {
+    "full_lake_build": "success_3020_jobs",
+    "model_build": "success",
+    "proof_replay": "success",
+    "axiom_audit": "success_allowed_only_propext_classical_choice_quot_sound",
+    "new_recipe_dependency_validation": "15_recipes_49_lines_success",
+    "python_regression_tests": 52,
+    "python_regression_status": "success",
+    "syntax_check": "success",
+    "source_hash_check": "15_records_15_questions_success",
+    "diff_check": "success",
+    "global_recipe_render": "blocked_by_preexisting_missing_reports/dependencies/methods/dnc2026_sets_individual.json.gz"
+  },
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 290
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 305
+  },
+  "ci": {
+    "current_exact_head_status": "no_run_or_status_observed_before_ledger_push",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": {
+    "base_sha": "e5d2b576771025ff6332df6a19e4d57672a19816",
+    "solution_commit_sha": "696b527b8486c1106ac08f1f05a2c7e1bd632f71"
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00819",
+  "execution_control": {
+    "serialized": true,
+    "shared_lock_implementation": false,
+    "claim_status": "released_after_serial_write",
+    "note_ja": "同一ブランチHEADを読み直し、非force更新で5問以内のチェックポイントを保存した。"
+  }
+}

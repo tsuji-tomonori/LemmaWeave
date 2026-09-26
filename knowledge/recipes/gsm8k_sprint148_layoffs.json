@@ -1,0 +1,113 @@
+{
+  "id": "gsm8k_sprint148_layoffs",
+  "title_ja": "3回の解雇人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02508",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "残っている従業員の10%を3回続けて解雇する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.layoffs_solution",
+  "graph": "work/gsm8k-sprint148-layoffs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "layoffs_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.layoffs_first",
+      "title_ja": "1回目は100人",
+      "claim_ja": "1回目は100人",
+      "method_ja": "1000の10%",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1回目は100人",
+      "baseline_ja": "1回目は100人"
+    },
+    {
+      "id": "layoffs_remaining_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.layoffs_remaining_first",
+      "title_ja": "1回目後は900人",
+      "claim_ja": "1回目後は900人",
+      "method_ja": "1000から100を引く",
+      "requires_steps": [
+        "layoffs_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1回目後は900人",
+      "baseline_ja": "1回目後は900人"
+    },
+    {
+      "id": "layoffs_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.layoffs_second",
+      "title_ja": "2回目は90人",
+      "claim_ja": "2回目は90人",
+      "method_ja": "残り900の10%",
+      "requires_steps": [
+        "layoffs_remaining_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2回目は90人",
+      "baseline_ja": "2回目は90人"
+    },
+    {
+      "id": "layoffs_remaining_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.layoffs_remaining_second",
+      "title_ja": "2回目後は810人",
+      "claim_ja": "2回目後は810人",
+      "method_ja": "900から90を引く",
+      "requires_steps": [
+        "layoffs_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2回目後は810人",
+      "baseline_ja": "2回目後は810人"
+    },
+    {
+      "id": "layoffs_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.layoffs_third",
+      "title_ja": "3回目は81人",
+      "claim_ja": "3回目は81人",
+      "method_ja": "残り810の10%",
+      "requires_steps": [
+        "layoffs_remaining_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3回目は81人",
+      "baseline_ja": "3回目は81人"
+    },
+    {
+      "id": "layoffs_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.layoffs_solution",
+      "title_ja": "解雇は合計271人",
+      "claim_ja": "解雇は合計271人",
+      "method_ja": "100、90、81を足す",
+      "requires_steps": [
+        "layoffs_first",
+        "layoffs_second",
+        "layoffs_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "解雇は合計271人",
+      "baseline_ja": "解雇は合計271人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2509,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

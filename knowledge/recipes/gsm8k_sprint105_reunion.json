@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint105_reunion",
+  "title_ja": "同窓会の参加人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01857",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "男女の成人、子供、全体を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.reunion_solution",
+  "graph": "work/gsm8k-sprint105-reunion-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "reunion_women",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.reunion_women",
+      "title_ja": "女性成人は150人。",
+      "claim_ja": "女性成人は150人。",
+      "method_ja": "100+50。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "reunion_adults",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.reunion_adults",
+      "title_ja": "成人は250人。",
+      "claim_ja": "成人は250人。",
+      "method_ja": "100+150。",
+      "requires_steps": [
+        "reunion_women"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "reunion_children",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.reunion_children",
+      "title_ja": "子供は500人。",
+      "claim_ja": "子供は500人。",
+      "method_ja": "250×2。",
+      "requires_steps": [
+        "reunion_adults"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "reunion_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.reunion_solution",
+      "title_ja": "参加者は750人。",
+      "claim_ja": "参加者は750人。",
+      "method_ja": "250+500。",
+      "requires_steps": [
+        "reunion_adults",
+        "reunion_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1858,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

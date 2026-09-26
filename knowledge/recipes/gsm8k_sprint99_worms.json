@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint99_worms",
+  "title_ja": "3日分の不足する餌",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01765",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日の必要数、3日分、両親が現在持つ数、不足数を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_solution",
+  "graph": "work/gsm8k-sprint99-worms-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "worms_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_daily",
+      "title_ja": "1日に18匹のミミズが必要。",
+      "claim_ja": "1日に18匹のミミズが必要。",
+      "method_ja": "雛6羽×各3匹。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各雛が毎日3匹食べる。",
+      "conclusion_ja": "6×3=18。",
+      "baseline_ja": "6×3=18。"
+    },
+    {
+      "id": "worms_needed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_needed",
+      "title_ja": "3日で54匹必要。",
+      "claim_ja": "3日で54匹必要。",
+      "method_ja": "1日18匹×3日。",
+      "requires_steps": [
+        "worms_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3日とも必要数は同じ。",
+      "conclusion_ja": "18×3=54。",
+      "baseline_ja": "18×3=54。"
+    },
+    {
+      "id": "worms_mama_net",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_mama_net",
+      "title_ja": "母鳥の手元には11匹。",
+      "claim_ja": "母鳥の手元には11匹。",
+      "method_ja": "捕まえた13匹から盗まれた2匹を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "盗まれた2匹は利用できない。",
+      "conclusion_ja": "11+2=13。",
+      "baseline_ja": "11+2=13。"
+    },
+    {
+      "id": "worms_available",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_available",
+      "title_ja": "父鳥分と合わせて20匹ある。",
+      "claim_ja": "父鳥分と合わせて20匹ある。",
+      "method_ja": "母鳥の11匹に父鳥の9匹を加える。",
+      "requires_steps": [
+        "worms_mama_net"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両方を餌に使える。",
+      "conclusion_ja": "11+9=20。",
+      "baseline_ja": "11+9=20。"
+    },
+    {
+      "id": "worms_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_solution",
+      "title_ja": "さらに34匹捕まえる必要がある。",
+      "claim_ja": "さらに34匹捕まえる必要がある。",
+      "method_ja": "必要54匹から手元20匹を引く。",
+      "requires_steps": [
+        "worms_needed",
+        "worms_available"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "不足分だけを新たに捕る。",
+      "conclusion_ja": "34+20=54。",
+      "baseline_ja": "34+20=54。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1766,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

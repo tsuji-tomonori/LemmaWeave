@@ -1,0 +1,126 @@
+{
+  "id": "gsm8k_sprint110_pot",
+  "title_ja": "賞金の3位配分",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01936",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "参加者数・賞金総額・1位後の残額を求め、2位と3位が等分する追加条件の有無を分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_equal_split",
+  "graph": "work/gsm8k-sprint110-pot-graph.json",
+  "model_notes_ja": [
+    "原文のsplitだけでは等分が明示されないため3位の取り分は一意でない。等分という追加条件下の意図解4ドルと、0ドル・8ドルの反例を分離した。"
+  ],
+  "steps": [
+    {
+      "id": "pot_people",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_people",
+      "title_ja": "参加者は8人。",
+      "claim_ja": "参加者は8人。",
+      "method_ja": "Joshを含めて7+1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pot_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_total",
+      "title_ja": "賞金総額は40ドル。",
+      "claim_ja": "賞金総額は40ドル。",
+      "method_ja": "8×5。",
+      "requires_steps": [
+        "pot_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pot_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_first",
+      "title_ja": "1位は32ドル。",
+      "claim_ja": "1位は32ドル。",
+      "method_ja": "40の80%。",
+      "requires_steps": [
+        "pot_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pot_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_remaining",
+      "title_ja": "2位と3位に残るのは8ドル。",
+      "claim_ja": "2位と3位に残るのは8ドル。",
+      "method_ja": "40−32。",
+      "requires_steps": [
+        "pot_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pot_split_example_third_zero",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_split_example_third_zero",
+      "title_ja": "等分条件がなければ3位0ドル・2位8ドルも条件を満たす。",
+      "claim_ja": "等分条件がなければ3位0ドル・2位8ドルも条件を満たす。",
+      "method_ja": "8+0=8。",
+      "requires_steps": [
+        "pot_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pot_split_example_third_eight",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_split_example_third_eight",
+      "title_ja": "等分条件がなければ3位8ドル・2位0ドルも条件を満たす。",
+      "claim_ja": "等分条件がなければ3位8ドル・2位0ドルも条件を満たす。",
+      "method_ja": "0+8=8。",
+      "requires_steps": [
+        "pot_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pot_equal_split",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_equal_split",
+      "title_ja": "等分する追加条件下では3位は4ドル。",
+      "claim_ja": "等分する追加条件下では3位は4ドル。",
+      "method_ja": "8を2等分。",
+      "requires_steps": [
+        "pot_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2位と3位が残額を等しく分ける。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1937,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

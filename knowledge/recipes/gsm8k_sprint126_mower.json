@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint126_mower",
+  "title_ja": "芝刈機の概算価値",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02178",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "芝刈機100ドルの価値が半年後に約25%、次の1年でさらに20%下がった。最終価値はいくらか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.mower_answer_scope",
+  "graph": "work/gsm8k-sprint126-mower-graph.json",
+  "model_notes_ja": [
+    "about 25%は近似。60ドルを無条件の厳密値にしない。24%減なら60.80ドル。"
+  ],
+  "steps": [
+    {
+      "id": "mower_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.mower_first",
+      "title_ja": "初回が正確に25%減なら7500セント",
+      "claim_ja": "初回が正確に25%減なら7500セント",
+      "method_ja": "10000セントの75%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "初回が正確に25%減なら7500セント",
+      "baseline_ja": "初回が正確に25%減なら7500セント"
+    },
+    {
+      "id": "mower_exact_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.mower_exact_solution",
+      "title_ja": "次の20%減後は6000セント、60ドル",
+      "claim_ja": "次の20%減後は6000セント、60ドル",
+      "method_ja": "7500セントの80%。",
+      "requires_steps": [
+        "mower_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "次の20%減後は6000セント、60ドル",
+      "baseline_ja": "次の20%減後は6000セント、60ドル"
+    },
+    {
+      "id": "mower_alternative",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.mower_alternative",
+      "title_ja": "初回24%減なら6080セント",
+      "claim_ja": "初回24%減なら6080セント",
+      "method_ja": "約25%を24%と読むと7600セントの80%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "初回24%減なら6080セント",
+      "baseline_ja": "初回24%減なら6080セント"
+    },
+    {
+      "id": "mower_not_unique",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.mower_not_unique",
+      "title_ja": "6000と6080セントは異なる",
+      "claim_ja": "6000と6080セントは異なる",
+      "method_ja": "about 25%だけでは誤差幅が指定されない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "6000と6080セントは異なる",
+      "baseline_ja": "6000と6080セントは異なる"
+    },
+    {
+      "id": "mower_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.mower_answer_scope",
+      "title_ja": "60ドルは初回が正確に25%のときに限る",
+      "claim_ja": "60ドルは初回が正確に25%のときに限る",
+      "method_ja": "概算の幅がない原文に対し別の結果も示す。",
+      "requires_steps": [
+        "mower_exact_solution",
+        "mower_alternative",
+        "mower_not_unique"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "60ドルは初回が正確に25%のときに限る",
+      "baseline_ja": "60ドルは初回が正確に25%のときに限る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2179,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

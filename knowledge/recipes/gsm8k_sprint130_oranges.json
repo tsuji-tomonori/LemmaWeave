@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint130_oranges",
+  "title_ja": "成長した木から採るオレンジ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02239",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bettyの15個とBillの12個の合計の3倍をFrankが採り、各果実から種2個を植える。各木に果実5個なると総数はいくつか",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.oranges_solution",
+  "graph": "work/gsm8k-sprint130-oranges-graph.json",
+  "model_notes_ja": [
+    "植えた全種が20年後に各1本の実のなる木へ育つという原題の明示条件を使用する。"
+  ],
+  "steps": [
+    {
+      "id": "oranges_friends",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.oranges_friends",
+      "title_ja": "BettyとBillの合計は27個",
+      "claim_ja": "BettyとBillの合計は27個",
+      "method_ja": "15個と12個を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "BettyとBillの合計は27個",
+      "baseline_ja": "BettyとBillの合計は27個"
+    },
+    {
+      "id": "oranges_frank",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.oranges_frank",
+      "title_ja": "Frankは81個採る",
+      "claim_ja": "Frankは81個採る",
+      "method_ja": "27個の3倍",
+      "requires_steps": [
+        "oranges_friends"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "Frankは81個採る",
+      "baseline_ja": "Frankは81個採る"
+    },
+    {
+      "id": "oranges_seeds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.oranges_seeds",
+      "title_ja": "種すなわち木は162本",
+      "claim_ja": "種すなわち木は162本",
+      "method_ja": "81個から各2個の種",
+      "requires_steps": [
+        "oranges_frank"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "種すなわち木は162本",
+      "baseline_ja": "種すなわち木は162本"
+    },
+    {
+      "id": "oranges_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.oranges_solution",
+      "title_ja": "採れる果実は810個",
+      "claim_ja": "採れる果実は810個",
+      "method_ja": "162本に各5個",
+      "requires_steps": [
+        "oranges_seeds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "採れる果実は810個",
+      "baseline_ja": "採れる果実は810個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2240,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

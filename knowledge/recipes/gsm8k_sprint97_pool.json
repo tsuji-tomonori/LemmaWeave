@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint97_pool",
+  "title_ja": "冷水にいた合計時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01737",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jerryの3分からElaineとGeorgeを順に求め、入水しなかったKramerを0分として加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pool_solution",
+  "graph": "work/gsm8k-sprint97-pool-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pool_elaine",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pool_elaine",
+      "title_ja": "Elaineは6分。",
+      "claim_ja": "Elaineは6分。",
+      "method_ja": "Jerryの2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jerryは3分。",
+      "conclusion_ja": "2×3=6。",
+      "baseline_ja": "2×3=6。"
+    },
+    {
+      "id": "pool_george",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pool_george",
+      "title_ja": "Georgeは2分。",
+      "claim_ja": "Georgeは2分。",
+      "method_ja": "Elaineの3分の1。",
+      "requires_steps": [
+        "pool_elaine"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "6分を3等分する。",
+      "conclusion_ja": "2×3=6。",
+      "baseline_ja": "2×3=6。"
+    },
+    {
+      "id": "pool_kramer",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pool_kramer",
+      "title_ja": "Kramerは0分。",
+      "claim_ja": "Kramerは0分。",
+      "method_ja": "プールへ到達しなかった事実を数量化する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題どおり入水なし。",
+      "conclusion_ja": "0分。",
+      "baseline_ja": "0分。"
+    },
+    {
+      "id": "pool_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pool_solution",
+      "title_ja": "合計11分。",
+      "claim_ja": "合計11分。",
+      "method_ja": "3+6+2+0。",
+      "requires_steps": [
+        "pool_elaine",
+        "pool_george",
+        "pool_kramer"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4人の実際の入水時間を加える。",
+      "conclusion_ja": "3+6+2+0=11。",
+      "baseline_ja": "3+6+2+0=11。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1738,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

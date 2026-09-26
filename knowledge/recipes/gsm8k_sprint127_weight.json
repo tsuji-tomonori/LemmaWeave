@@ -1,0 +1,126 @@
+{
+  "id": "gsm8k_sprint127_weight",
+  "title_ja": "Tomが動かす重量の範囲",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02189",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "体重150kgのTomが各手に体重の1.5倍を持ち、体重の半分のベストを着る。動かす総重量は何kgか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.weight_answer_scope",
+  "graph": "work/gsm8k-sprint127-weight-graph.json",
+  "model_notes_ja": [
+    "moving withが本人の体重を含むか曖昧。525kgは持ち物とベストだけ、675kgは本人を含む。"
+  ],
+  "steps": [
+    {
+      "id": "weight_each_hand",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.weight_each_hand",
+      "title_ja": "各手の重量は225kg",
+      "claim_ja": "各手の重量は225kg",
+      "method_ja": "150kgの1.5倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "各手の重量は225kg",
+      "baseline_ja": "各手の重量は225kg"
+    },
+    {
+      "id": "weight_hands",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.weight_hands",
+      "title_ja": "両手では450kg",
+      "claim_ja": "両手では450kg",
+      "method_ja": "225kgを2倍する。",
+      "requires_steps": [
+        "weight_each_hand"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "両手では450kg",
+      "baseline_ja": "両手では450kg"
+    },
+    {
+      "id": "weight_vest",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.weight_vest",
+      "title_ja": "ベストは75kg",
+      "claim_ja": "ベストは75kg",
+      "method_ja": "150kgの半分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "ベストは75kg",
+      "baseline_ja": "ベストは75kg"
+    },
+    {
+      "id": "weight_external_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.weight_external_solution",
+      "title_ja": "外部負荷だけなら525kg",
+      "claim_ja": "外部負荷だけなら525kg",
+      "method_ja": "両手450kgとベスト75kgを足す。",
+      "requires_steps": [
+        "weight_hands",
+        "weight_vest"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "外部負荷だけなら525kg",
+      "baseline_ja": "外部負荷だけなら525kg"
+    },
+    {
+      "id": "weight_including_body",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.weight_including_body",
+      "title_ja": "本人も含めるなら675kg",
+      "claim_ja": "本人も含めるなら675kg",
+      "method_ja": "外部負荷525kgに体重150kgを足す。",
+      "requires_steps": [
+        "weight_external_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "本人も含めるなら675kg",
+      "baseline_ja": "本人も含めるなら675kg"
+    },
+    {
+      "id": "weight_readings_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.weight_readings_differ",
+      "title_ja": "525kgと675kgは異なる",
+      "claim_ja": "525kgと675kgは異なる",
+      "method_ja": "総重量に本人を含むかで結果が変わる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "525kgと675kgは異なる",
+      "baseline_ja": "525kgと675kgは異なる"
+    },
+    {
+      "id": "weight_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.weight_answer_scope",
+      "title_ja": "参照解525kgは外部負荷のみの読解",
+      "claim_ja": "参照解525kgは外部負荷のみの読解",
+      "method_ja": "両読解を分離して追加条件を明示する。",
+      "requires_steps": [
+        "weight_external_solution",
+        "weight_including_body",
+        "weight_readings_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "参照解525kgは外部負荷のみの読解",
+      "baseline_ja": "参照解525kgは外部負荷のみの読解"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2190,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

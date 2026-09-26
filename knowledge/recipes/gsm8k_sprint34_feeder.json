@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint34_feeder",
+  "title_ja": "鳥の餌箱が養う鳥",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00802",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "リスに半カップ盗まれた後の1.5カップで21羽を養う。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.feeder_solution",
+  "graph": "work/gsm8k-sprint34-feeder-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "Leanでは半カップを1単位として表す。"
+  ],
+  "steps": [
+    {
+      "id": "feeder_available",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.feeder_available",
+      "title_ja": "鳥が食べる餌",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2カップから半カップを引く。",
+      "conclusion_ja": "1.5カップ（3半カップ）。",
+      "baseline_ja": "3+1=4半カップ。"
+    },
+    {
+      "id": "feeder_rate",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.feeder_rate",
+      "title_ja": "鳥の数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1カップ14羽、1.5カップ。",
+      "conclusion_ja": "21羽。",
+      "baseline_ja": "21×2=3×14。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 803,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint106_triangle",
+  "title_ja": "三角形の角B",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01870",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "内角和とB=2Cを連立する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.triangle_solution",
+  "graph": "work/gsm8k-sprint106-triangle-graph.json",
+  "model_notes_ja": [
+    "参照説明にはAを40度とする誤記があるが採用せず、原題のA=60度を用いた。"
+  ],
+  "steps": [
+    {
+      "id": "triangle_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.triangle_remaining",
+      "title_ja": "BとCの和は120度。",
+      "claim_ja": "BとCの和は120度。",
+      "method_ja": "180−60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "triangle_c",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.triangle_c",
+      "title_ja": "Cは40度。",
+      "claim_ja": "Cは40度。",
+      "method_ja": "B=2Cより3C=120。",
+      "requires_steps": [
+        "triangle_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "triangle_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.triangle_solution",
+      "title_ja": "Bは80度。",
+      "claim_ja": "Bは80度。",
+      "method_ja": "2×40。",
+      "requires_steps": [
+        "triangle_c"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1871,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

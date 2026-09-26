@@ -1,0 +1,43 @@
+{
+  "date":"2026-09-20",
+  "run_id":"lemmaweave-sprint-20260920-1600-gsm8k-47",
+  "planned_slot_local_hour":16,
+  "planned_at":"2026-09-20T16:00:00+09:00",
+  "role":"gsm8k_individual_solution",
+  "base_sha":"6926f08a51393e61abd607392fbd096c56b2a108",
+  "started_at":"2026-09-20T16:03:28+09:00",
+  "finished_at":"2026-09-20T16:14:12+09:00",
+  "schedule_offset_seconds":208,
+  "missed_slots_detected":[10],
+  "selected_problem_ids":[
+    "external-gsm8k-main-3101c7d50724:train:00984","external-gsm8k-main-3101c7d50724:train:00985","external-gsm8k-main-3101c7d50724:train:00986","external-gsm8k-main-3101c7d50724:train:00987","external-gsm8k-main-3101c7d50724:train:00988",
+    "external-gsm8k-main-3101c7d50724:train:00989","external-gsm8k-main-3101c7d50724:train:00990","external-gsm8k-main-3101c7d50724:train:00991","external-gsm8k-main-3101c7d50724:train:00992","external-gsm8k-main-3101c7d50724:train:00993",
+    "external-gsm8k-main-3101c7d50724:train:00994","external-gsm8k-main-3101c7d50724:train:00995","external-gsm8k-main-3101c7d50724:train:00996","external-gsm8k-main-3101c7d50724:train:00997","external-gsm8k-main-3101c7d50724:train:00998"
+  ],
+  "completed_problem_ids":[],
+  "verification_pending":[
+    "external-gsm8k-main-3101c7d50724:train:00984","external-gsm8k-main-3101c7d50724:train:00985","external-gsm8k-main-3101c7d50724:train:00986","external-gsm8k-main-3101c7d50724:train:00987","external-gsm8k-main-3101c7d50724:train:00988",
+    "external-gsm8k-main-3101c7d50724:train:00989","external-gsm8k-main-3101c7d50724:train:00990","external-gsm8k-main-3101c7d50724:train:00991","external-gsm8k-main-3101c7d50724:train:00992","external-gsm8k-main-3101c7d50724:train:00993",
+    "external-gsm8k-main-3101c7d50724:train:00994","external-gsm8k-main-3101c7d50724:train:00995","external-gsm8k-main-3101c7d50724:train:00996","external-gsm8k-main-3101c7d50724:train:00997","external-gsm8k-main-3101c7d50724:train:00998"
+  ],
+  "verification_pending_cumulative":{"count":485,"first_problem_id":"external-gsm8k-main-3101c7d50724:train:00514","last_problem_id":"external-gsm8k-main-3101c7d50724:train:00998"},
+  "deferred":[
+    {"problem_id":"external-gsm8k-main-3101c7d50724:train:00984-00998","retry_on":"2026-09-20","reason_ja":"固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。","next_action_ja":"現HEADの全体replayを完走し、入力SHA・許容公理・51説明行の実依存を照合して成功成果物だけを取り込む。"}
+  ],
+  "checkpoints":[
+    {"problem_ids":"train:00984-00988","commit":"d09fedd9d0f730c7e4389d1a5fee97e94b5fde51"},
+    {"problem_ids":"train:00989-00993","commit":"51117ea8d6ecadf521237ba970b7cbacae0875b5"},
+    {"problem_ids":"train:00994-00998","commit":"8412643b7f298565d2965eb50f92ffb15ff18232"},
+    {"problem_ids":"train:00984-00998 registration","commit":"9ceb683e80cf2b138bfc26dadc0687bd51b6fe24"}
+  ],
+  "self_review":{"status":"self_review_only","source_records_checked":15,"source_questions_checked":15,"written_solution_lines":51,"recipe_declaration_mappings_checked":51,"sorry_admit_custom_axiom_matches":0,"python_regression_tests_passed":52,"model_sha256":"8c8348891e5b7a5ee8f4d673d66ee699be487e84af82f6ad5080c3de3b8a81c0"},
+  "measurements":{"elapsed_seconds":644,"artifact_bytes":52076,"selected":15,"written":15,"formal_completion_rate":0.0,"local_execution_success_rate":1.0,"ci_seconds":null},
+  "local_checks":{"ledger_validate":"passed_before_ledger_then_repeated","python_unittest":"52 passed","source_and_recipe_hash_check":"15 records and 51 declarations passed","fixed_lean":"not_available_locally","method_recipe_render":"blocked_missing_existing_artifact","method_recipe_render_missing_path":"reports/dependencies/methods/dnc2026_inequalities_individual.json.gz","next_action_ja":"固定CIで新規Lean対象と全依存グラフを生成して再照合する。"},
+  "ci":{"previous_run_id":35490914686,"previous_run_url":"https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35490914686","previous_status":"failure","previous_failure":"既存A27の説明行依存検査","accepted_as_success_evidence":false,"current_head_sha":"9ceb683e80cf2b138bfc26dadc0687bd51b6fe24","current_run_id":null,"current_run_url":null,"current_status":"trigger_pending"},
+  "pull_request":"https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit":"9ceb683e80cf2b138bfc26dadc0687bd51b6fe24",
+  "progress_before":{"solution_ready":518,"remaining":8274,"verification_pending":470},
+  "progress_after":{"solution_ready":518,"remaining":8274,"verification_pending":485},
+  "next_problem_id":"external-gsm8k-main-3101c7d50724:train:00999",
+  "note_ja":"15問を原題から個別に読解し、記述式解答・Leanモデル・51個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:00994は参照説明の誤記を原題と切り分け、食べた4切れとして残り11切れを形式化した。train:00998は0.1ガロン単位へ整数化し、流入・漏水・正味流量を厳密に保存した。10時枠は未実行のまま保持する。"
+}

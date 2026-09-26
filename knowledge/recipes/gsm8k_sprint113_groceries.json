@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint113_groceries",
+  "title_ja": "食費に占める肉の割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01983",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A03.grocery_solution",
+  "graph": "work/gsm8k-sprint113-groceries-graph.json",
+  "model_notes_ja": [
+    "金額はセントで整数化し、100/3%が33%へ四捨五入される条件を余りと半単位の比較で表す。"
+  ],
+  "steps": [
+    {
+      "id": "grocery_vegetables",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A03.grocery_vegetables",
+      "title_ja": "野菜類は1800セント。",
+      "claim_ja": "野菜類は1800セント。",
+      "method_ja": "1200+225+375。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "野菜類は1800セント。",
+      "baseline_ja": "野菜類は1800セント。"
+    },
+    {
+      "id": "grocery_meat",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A03.grocery_meat",
+      "title_ja": "肉類は900セント。",
+      "claim_ja": "肉類は900セント。",
+      "method_ja": "300+600。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "肉類は900セント。",
+      "baseline_ja": "肉類は900セント。"
+    },
+    {
+      "id": "grocery_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A03.grocery_total",
+      "title_ja": "食費全体は2700セント。",
+      "claim_ja": "食費全体は2700セント。",
+      "method_ja": "1800+900。",
+      "requires_steps": [
+        "grocery_vegetables",
+        "grocery_meat"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "食費全体は2700セント。",
+      "baseline_ja": "食費全体は2700セント。"
+    },
+    {
+      "id": "grocery_fraction",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A03.grocery_fraction",
+      "title_ja": "肉の正確な割合は100/3%。",
+      "claim_ja": "肉の正確な割合は100/3%。",
+      "method_ja": "900/2700=1/3。",
+      "requires_steps": [
+        "grocery_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "肉の正確な割合は100/3%。",
+      "baseline_ja": "肉の正確な割合は100/3%。"
+    },
+    {
+      "id": "grocery_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A03.grocery_solution",
+      "title_ja": "最寄りの整数百分率は33%。",
+      "claim_ja": "最寄りの整数百分率は33%。",
+      "method_ja": "33%との差は1/3ポイントで1/2未満。",
+      "requires_steps": [
+        "grocery_fraction"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "正確な割合100/3%と整数33%との差が0.5ポイント未満。",
+      "conclusion_ja": "最寄りの整数百分率は33%。",
+      "baseline_ja": "最寄りの整数百分率は33%。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1984,
+    "checked_model_hash": "8c1f18cb7a0d8ac443f78b40ca2b8d16bc527730adadb6a34590de86eedca8a8",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は反例と追加条件を分離した。"
+    ]
+  }
+}

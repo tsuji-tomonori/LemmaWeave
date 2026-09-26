@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint140_guests",
+  "title_ja": "招待客の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02395",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "大人58人、子どもは大人より35人少なく、高齢者は子どもの2倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.guests_solution",
+  "graph": "work/gsm8k-sprint140-guests-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "guests_children",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.guests_children",
+      "title_ja": "子ども23人",
+      "claim_ja": "子ども23人",
+      "method_ja": "58から35を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "子ども23人",
+      "baseline_ja": "子ども23人"
+    },
+    {
+      "id": "guests_seniors",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.guests_seniors",
+      "title_ja": "高齢者46人",
+      "claim_ja": "高齢者46人",
+      "method_ja": "23の2倍",
+      "requires_steps": [
+        "guests_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "高齢者46人",
+      "baseline_ja": "高齢者46人"
+    },
+    {
+      "id": "guests_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.guests_solution",
+      "title_ja": "合計127人",
+      "claim_ja": "合計127人",
+      "method_ja": "58、23、46を足す",
+      "requires_steps": [
+        "guests_children",
+        "guests_seniors"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計127人",
+      "baseline_ja": "合計127人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2396,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

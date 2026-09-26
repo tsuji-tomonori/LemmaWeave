@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint108_trip",
+  "title_ja": "2町間の移動に要した総時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01901",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初の4分の1から速度を求め、残りの運転時間と昼食時間を足す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A18.trip_solution",
+  "graph": "work/gsm8k-sprint108-trip-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "trip_first_distance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.trip_first_distance",
+      "title_ja": "最初に50マイル進んだ。",
+      "claim_ja": "最初に50マイル進んだ。",
+      "method_ja": "200の4分の1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "trip_remaining_distance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.trip_remaining_distance",
+      "title_ja": "残りは150マイル。",
+      "claim_ja": "残りは150マイル。",
+      "method_ja": "200−50。",
+      "requires_steps": [
+        "trip_first_distance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "trip_speed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.trip_speed",
+      "title_ja": "速度は時速50マイル。",
+      "claim_ja": "速度は時速50マイル。",
+      "method_ja": "50マイルを1時間。",
+      "requires_steps": [
+        "trip_first_distance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "trip_remaining_drive",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.trip_remaining_drive",
+      "title_ja": "残りの運転は3時間。",
+      "claim_ja": "残りの運転は3時間。",
+      "method_ja": "150÷50。",
+      "requires_steps": [
+        "trip_remaining_distance",
+        "trip_speed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "trip_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.trip_solution",
+      "title_ja": "総時間は5時間。",
+      "claim_ja": "総時間は5時間。",
+      "method_ja": "最初の運転1時間、昼食1時間、残り3時間。",
+      "requires_steps": [
+        "trip_remaining_drive"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1902,
+    "checked_model_hash": "8387abb9439c81fb607c222f1f1736998bf0c1f8b65dd181b6386c00663bd8bc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

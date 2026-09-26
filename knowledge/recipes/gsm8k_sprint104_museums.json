@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint104_museums",
+  "title_ja": "2日間の博物館往復距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01849",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各日について自宅からの距離を往復分2倍し、加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.museums_solution",
+  "graph": "work/gsm8k-sprint104-museums-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "museums_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.museums_first",
+      "title_ja": "1日目は10マイル。",
+      "claim_ja": "1日目は10マイル。",
+      "method_ja": "2×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5マイル先を往復。",
+      "conclusion_ja": "10。",
+      "baseline_ja": "10。"
+    },
+    {
+      "id": "museums_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.museums_second",
+      "title_ja": "2日目は30マイル。",
+      "claim_ja": "2日目は30マイル。",
+      "method_ja": "2×15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15マイル先を往復。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "museums_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.museums_solution",
+      "title_ja": "合計40マイル。",
+      "claim_ja": "合計40マイル。",
+      "method_ja": "10+30。",
+      "requires_steps": [
+        "museums_first",
+        "museums_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "別日の2往復を加える。",
+      "conclusion_ja": "40。",
+      "baseline_ja": "40。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1850,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint98_fruit",
+  "title_ja": "パッションフルーツの木箱数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01761",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "既知のぶどうとマンゴーを合計し、週合計50から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.fruit_solution",
+  "graph": "work/gsm8k-sprint98-fruit-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fruit_known",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.fruit_known",
+      "title_ja": "ぶどうとマンゴーは33箱。",
+      "claim_ja": "ぶどうとマンゴーは33箱。",
+      "method_ja": "13+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二種類を各1回加える。",
+      "conclusion_ja": "13+20=33。",
+      "baseline_ja": "13+20=33。"
+    },
+    {
+      "id": "fruit_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.fruit_solution",
+      "title_ja": "パッションフルーツは17箱。",
+      "claim_ja": "パッションフルーツは17箱。",
+      "method_ja": "50−33。",
+      "requires_steps": [
+        "fruit_known"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "三種類で合計50箱。",
+      "conclusion_ja": "17+33=50。",
+      "baseline_ja": "17+33=50。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1762,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint125_book",
+  "title_ja": "読書後の残りページ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02165",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "既読149ページに1週間分を加え、全381ページから引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.book_solution",
+  "graph": "work/gsm8k-sprint125-book-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "book_week",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.book_week",
+      "title_ja": "1週間で140ページ読む。",
+      "claim_ja": "1週間で140ページ読む。",
+      "method_ja": "20×7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1週間で140ページ読む。",
+      "baseline_ja": "1週間で140ページ読む。"
+    },
+    {
+      "id": "book_read",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.book_read",
+      "title_ja": "既読は合計289ページ。",
+      "claim_ja": "既読は合計289ページ。",
+      "method_ja": "149+140。",
+      "requires_steps": [
+        "book_week"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "既読は合計289ページ。",
+      "baseline_ja": "既読は合計289ページ。"
+    },
+    {
+      "id": "book_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.book_solution",
+      "title_ja": "残りは92ページ。",
+      "claim_ja": "残りは92ページ。",
+      "method_ja": "381−289。",
+      "requires_steps": [
+        "book_read"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "残りは92ページ。",
+      "baseline_ja": "残りは92ページ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2166,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

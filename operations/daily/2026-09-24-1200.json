@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T12:00+09:00-gsm8k-15-a12",
+  "scheduled_local_hour": 12,
+  "scheduled_at": "2026-09-24T12:00:00+09:00",
+  "started_at": "2026-09-24T11:56:03+09:00",
+  "finished_at": "2026-09-24T12:00:10+09:00",
+  "start_offset_seconds": -237,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "3478d55dbe2da196f08ace92b8c7a94df6513123",
+  "artifact_commit": "3e42c27b08f4a64b4b45ca2b0220a6c959474b9a",
+  "selected_problem_ids": [
+    "train:02095", "train:02096", "train:02097", "train:02098", "train:02099",
+    "train:02100", "train:02101", "train:02102", "train:02103", "train:02104",
+    "train:02105", "train:02106", "train:02107", "train:02108", "train:02109"
+  ],
+  "skipped_already_solution_ready": [],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02095", "train:02096", "train:02097", "train:02098", "train:02099",
+    "train:02100", "train:02101", "train:02102", "train:02103", "train:02104",
+    "train:02105", "train:02106", "train:02107", "train:02108", "train:02109"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02099", "commit": "b956b7cb015c24bc06d0940b32eb9a5177b28d05"},
+    {"through": "train:02104", "commit": "a0e784f51d8be69cfd5d8868c128b0f5e3f85677"},
+    {"through": "train:02109", "commit": "3e42c27b08f4a64b4b45ca2b0220a6c959474b9a"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0175.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A12Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A12.lean",
+    "recipes": 15,
+    "explanation_lines": 48,
+    "named_lean_theorems": 48,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02097は4 times moreを通常の4倍と読む解48ドルに加え、400%多い=5倍という字義的読解では非負整数ドル解が存在しないことを別定理で保持した。",
+    "train:02098は雄鶏3羽と収集・箱詰め時間が、雌鶏270羽の7日分の卵を6個箱に詰める箱数へ影響しないことをモデル上で分離した。",
+    "train:02102は税20%と保険5%を元の月給2000ドルへ適用し、その後の1500ドルにだけ公共料金1/4を適用した。",
+    "直前のexact-head CIは固定Lean環境と依存取得を通過したが、9月21日分の旧監査ファイル群でNo goals to be solved、rewrite失敗、sorryAx依存を検出して失敗した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1594,
+    "pending": 6680,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02110",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持した。12時枠は予定時刻の237秒前に開始し、既実行枠と重複していない。"
+  },
+  "ci": {
+    "last_completed_exact_head": "3478d55dbe2da196f08ace92b8c7a94df6513123",
+    "last_completed_run_id": 35945594289,
+    "last_completed_status": "failure_legacy_lean_and_axiom_audit",
+    "last_completed_failure_step": "Replay the complete fixed-environment pipeline",
+    "current_artifact_head": "3e42c27b08f4a64b4b45ca2b0220a6c959474b9a",
+    "current_status": "not_started_before_ledger_commit",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T12:00+09:00",
+    "scope": "train:02095-train:02109",
+    "claimed_at": "2026-09-24T11:56:03+09:00",
+    "expires_at": "2026-09-24T12:56:03+09:00",
+    "released": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint130_yogurt",
+  "title_ja": "フローズンヨーグルト1パイントの価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02240",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ヨーグルト5パイント、ガム2パック、5ドルのエビ5皿が合計55ドル。ガムはヨーグルトの半額。ヨーグルトの価格を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.yogurt_solution",
+  "graph": "work/gsm8k-sprint130-yogurt-graph.json",
+  "model_notes_ja": [
+    "ガム価格が2.50ドルとなるため全価格をセント単位の自然数で形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "yogurt_shrimp",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.yogurt_shrimp",
+      "title_ja": "エビ代は25ドル",
+      "claim_ja": "エビ代は25ドル",
+      "method_ja": "5ドルを5皿分、セント単位で計算する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "エビ代は25ドル",
+      "baseline_ja": "エビ代は25ドル"
+    },
+    {
+      "id": "yogurt_gum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.yogurt_gum",
+      "title_ja": "ガムは1パック2.50ドル",
+      "claim_ja": "ガムは1パック2.50ドル",
+      "method_ja": "ヨーグルトの半額という連立条件",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "ガムは1パック2.50ドル",
+      "baseline_ja": "ガムは1パック2.50ドル"
+    },
+    {
+      "id": "yogurt_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.yogurt_solution",
+      "title_ja": "ヨーグルトは1パイント5ドル",
+      "claim_ja": "ヨーグルトは1パイント5ドル",
+      "method_ja": "5パイントと半額2パックを残る30ドルに等置する",
+      "requires_steps": [
+        "yogurt_shrimp",
+        "yogurt_gum"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "ヨーグルトは1パイント5ドル",
+      "baseline_ja": "ヨーグルトは1パイント5ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2241,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

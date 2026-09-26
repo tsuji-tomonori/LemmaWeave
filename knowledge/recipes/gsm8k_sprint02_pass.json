@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint02_pass","title_ja":"30日券が厳密に安くなる最小乗車回数","problem_id":"external-gsm8k-main-3101c7d50724:train:00529","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"片道2ドルと30日券50ドルを比べ、1回当たり費用が厳密に安くなる最小乗車回数を求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A02.pass_solution","graph":"work/gsm8k-sprint02-pass-graph.json","lean_file":"tests/lean/GSM8KSprint0919A02.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["金額はセントで統一し、厳密不等号と最小性を全称量化で表した。"],
+  "steps":[
+    {"id":"pass_break_even","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.pass_break_even","title_ja":"同額になる回数","requires_steps":[],"uses_nodes":[],"condition_ja":"片道200セントを25回払う。","conclusion_ja":"合計5000セントで30日券と同額。","baseline_ja":"単価×回数。"},
+    {"id":"pass_strict_lower_bound","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.pass_strict_lower_bound","title_ja":"厳密に安い条件","requires_steps":["pass_break_even"],"uses_nodes":[],"condition_ja":"30日券5000セントが片道券合計より厳密に小さい。","conclusion_ja":"乗車回数は26回以上。","baseline_ja":"自然数上の厳密不等式。"},
+    {"id":"pass_minimum","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A02.pass_minimum","title_ja":"最小回数","requires_steps":["pass_strict_lower_bound"],"uses_nodes":[],"condition_ja":"26回なら5200セントで条件を満たし、条件を満たすすべての回数は26以上。","conclusion_ja":"最小は26回。","baseline_ja":"下界の達成。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":530,"checked_model_hash":"16f6829737359fcff6f330f48e25ff19a2c114379a205620f7fd0000c7d7ae95","checks_ja":["平均単価の比較を総費用の厳密不等式へ同値変形し、25回の同額を答えに含めないことを確認した。"]}
+}

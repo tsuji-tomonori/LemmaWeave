@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-23",
+  "run_id": "ci-recovery-20260923-2200-jst",
+  "scheduled_slot": "2026-09-23T22:00:00+09:00",
+  "actual_start_slot": "2026-09-23T21:56:55+09:00",
+  "slot_resolution": "21:00再試行枠まで完了済みのため、予定より3分05秒早く起動した今回を22:00 CI証拠回収枠として直列実行した。10:00枠は未実行のまま保持する。",
+  "unexecuted_slots": [
+    "2026-09-23T10:00:00+09:00"
+  ],
+  "role": "ci_evidence_recovery_and_verification_infrastructure_repair",
+  "base_sha": "45182c6679e705864450962f97c4b869fe0987d0",
+  "started_at": "2026-09-23T21:56:55+09:00",
+  "finished_at": "2026-09-23T22:12:00+09:00",
+  "selected_problem_ids": [
+    "train:00514",
+    "train:00515",
+    "train:00516",
+    "train:00517",
+    "train:00518",
+    "train:00519",
+    "train:00520",
+    "train:00521",
+    "train:00522",
+    "train:00523"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:00514",
+    "train:00515",
+    "train:00516",
+    "train:00517",
+    "train:00518",
+    "train:00519",
+    "train:00520",
+    "train:00521",
+    "train:00522",
+    "train:00523"
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:00514-train:00523",
+      "retry_on": "修正HEADのpush workflow完了後",
+      "reason_ja": "旧exact-headでは固定Lean全体ビルドは成功したが、34レシピの依存グラフ指示不足で証拠再生が停止した。",
+      "next_action_ja": "追加した#lw_dependenciesを含むexact-head runを成功させ、成果物を取り込む。"
+    }
+  ],
+  "checks": {
+    "discovered_exact_head_push_run": 35858426592,
+    "previous_false_zero_run_cause": "workflowはpush/workflow_dispatch起動だが、従来の取得ラッパーはpull_requestイベントだけを検索していた。",
+    "fixed_lean_build": "success_3020_jobs",
+    "replay": "failed_missing_graph_directives",
+    "missing_graph_directives": 34,
+    "affected_lean_files": 13,
+    "repair_report": "operations/ci-recovery/2026-09-23-2200.json",
+    "accepted_as_solution_success_evidence": false
+  },
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1430,
+    "pending": 6844,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "awaiting_verification": 1430,
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01944",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": [
+      "train:00514",
+      "train:00523"
+    ],
+    "base_sha": "45182c6679e705864450962f97c4b869fe0987d0",
+    "released": true
+  },
+  "ci": {
+    "run_id": 35858426592,
+    "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35858426592",
+    "head_sha": "45182c6679e705864450962f97c4b869fe0987d0",
+    "conclusion": "failure",
+    "exact_head_push_run_discovered": true,
+    "local_fixed_lean_status": "not_used",
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "mergeable": true
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_repaired_exact_head_ci",
+    "commit": "45182c6679e705864450962f97c4b869fe0987d0"
+  }
+}

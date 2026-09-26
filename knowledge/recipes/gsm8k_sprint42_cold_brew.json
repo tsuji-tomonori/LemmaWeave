@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint42_cold_brew",
+  "title_ja": "コールドブリューの日量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00910",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "4日ごとに1/2ガロンを飲むとき、1日当たりのカップ数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.cold_brew_solution",
+  "graph": "work/gsm8k-sprint42-cold_brew-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "米液量1ガロン=128液量オンス、1カップ=8液量オンスを単位換算条件として明示した。"
+  ],
+  "steps": [
+    {
+      "id": "cold_brew_jug",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.cold_brew_jug",
+      "title_ja": "半ガロンの量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ガロン128液量オンス。",
+      "conclusion_ja": "半ガロンは64液量オンス。",
+      "baseline_ja": "64×2=128。"
+    },
+    {
+      "id": "cold_brew_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.cold_brew_daily",
+      "title_ja": "1日当たりの液量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "64液量オンスを4日で飲む。",
+      "conclusion_ja": "1日16液量オンス。",
+      "baseline_ja": "64=4×16。"
+    },
+    {
+      "id": "cold_brew_cups",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.cold_brew_cups",
+      "title_ja": "カップ数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1カップは8液量オンス。",
+      "conclusion_ja": "1日2カップ。",
+      "baseline_ja": "16=8×2。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 911,
+    "checked_model_hash": "99537224468d741c14fe17721e9d78f3b542f2946fd1e4df9a251fde49f95551",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint107_stickers",
+  "title_ja": "最初のステッカー数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01891",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "残った封筒の枚数を求め、分けた100枚を戻す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A17.stickers_solution",
+  "graph": "work/gsm8k-sprint107-stickers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "stickers_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.stickers_remaining",
+      "title_ja": "残りは50枚。",
+      "claim_ja": "残りは50枚。",
+      "method_ja": "5封筒×10枚。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "stickers_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.stickers_solution",
+      "title_ja": "最初は150枚。",
+      "claim_ja": "最初は150枚。",
+      "method_ja": "100+50。",
+      "requires_steps": [
+        "stickers_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1892,
+    "checked_model_hash": "5d08e45fe0eaf9fabcdeab34c324f312a3c8fcd3e7dbea981241a4b614ad46cc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

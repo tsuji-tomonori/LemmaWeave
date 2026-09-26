@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_sprint03_bag","title_ja":"15%利益を得る販売価格","problem_id":"external-gsm8k-main-3101c7d50724:train:00538","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"3000ドルの仕入額に対する15%の利益を加えた販売価格を求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A03.bag_solution","graph":"work/gsm8k-sprint03-bag-graph.json","lean_file":"tests/lean/GSM8KSprint0919A03.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["15%は仕入額3000ドルを基準とする。"],
+  "steps":[
+    {"id":"bag_profit","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A03.bag_profit","title_ja":"利益額","requires_steps":[],"uses_nodes":[],"condition_ja":"3000ドルの15%。","conclusion_ja":"450ドル。","baseline_ja":"元の量×百分率。"},
+    {"id":"bag_selling_price","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A03.bag_selling_price","title_ja":"販売価格","requires_steps":["bag_profit"],"uses_nodes":[],"condition_ja":"原価3000ドルへ利益450ドルを加える。","conclusion_ja":"3450ドル。","baseline_ja":"販売価格=原価+利益。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":539,"checked_model_hash":"f17b7e1bcf601d1468679e3f5a4e23b093925978f614b88bfd31c85035bc4a4e","checks_ja":["利益率の基準を原価とし、利益額と販売価格を区別した。"]}
+}

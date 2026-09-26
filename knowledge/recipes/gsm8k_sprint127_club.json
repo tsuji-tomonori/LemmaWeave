@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint127_club",
+  "title_ja": "読書会の年間徴収額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02193",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6人が軽食150ドルに加え、30ドルのハードカバー6冊と12ドルのペーパーバック6冊の費用を各自払う。合計はいくらか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.club_solution",
+  "graph": "work/gsm8k-sprint127-club-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "club_hardcover",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.club_hardcover",
+      "title_ja": "1人のハードカバー代は180ドル",
+      "claim_ja": "1人のハードカバー代は180ドル",
+      "method_ja": "30ドルを6冊分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1人のハードカバー代は180ドル",
+      "baseline_ja": "1人のハードカバー代は180ドル"
+    },
+    {
+      "id": "club_paperback",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.club_paperback",
+      "title_ja": "1人のペーパーバック代は72ドル",
+      "claim_ja": "1人のペーパーバック代は72ドル",
+      "method_ja": "12ドルを6冊分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1人のペーパーバック代は72ドル",
+      "baseline_ja": "1人のペーパーバック代は72ドル"
+    },
+    {
+      "id": "club_member",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.club_member",
+      "title_ja": "1人当たり402ドル",
+      "claim_ja": "1人当たり402ドル",
+      "method_ja": "150、180、72ドルを足す。",
+      "requires_steps": [
+        "club_hardcover",
+        "club_paperback"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1人当たり402ドル",
+      "baseline_ja": "1人当たり402ドル"
+    },
+    {
+      "id": "club_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.club_solution",
+      "title_ja": "6人から2412ドル集める",
+      "claim_ja": "6人から2412ドル集める",
+      "method_ja": "402ドルを6人分。",
+      "requires_steps": [
+        "club_member"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "6人から2412ドル集める",
+      "baseline_ja": "6人から2412ドル集める"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2194,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

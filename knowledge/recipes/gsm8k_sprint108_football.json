@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint108_football",
+  "title_ja": "2日間に投げた延べ距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01900",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各日の1投距離と投球数を掛け、両日を足す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A18.football_solution",
+  "graph": "work/gsm8k-sprint108-football-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "football_saturday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.football_saturday",
+      "title_ja": "土曜は400ヤード。",
+      "claim_ja": "土曜は400ヤード。",
+      "method_ja": "20投×20ヤード。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "football_sunday_per_throw",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.football_sunday_per_throw",
+      "title_ja": "日曜は1投40ヤード。",
+      "claim_ja": "日曜は1投40ヤード。",
+      "method_ja": "20ヤードの2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "football_sunday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.football_sunday",
+      "title_ja": "日曜は1200ヤード。",
+      "claim_ja": "日曜は1200ヤード。",
+      "method_ja": "30投×40ヤード。",
+      "requires_steps": [
+        "football_sunday_per_throw"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "football_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.football_solution",
+      "title_ja": "合計1600ヤード。",
+      "claim_ja": "合計1600ヤード。",
+      "method_ja": "400+1200。",
+      "requires_steps": [
+        "football_saturday",
+        "football_sunday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1901,
+    "checked_model_hash": "8387abb9439c81fb607c222f1f1736998bf0c1f8b65dd181b6386c00663bd8bc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

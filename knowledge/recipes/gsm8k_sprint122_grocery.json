@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint122_grocery",
+  "title_ja": "買い物のお釣り",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02110",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Juliaのお釣りを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A13.grocery_solution",
+  "graph": "work/gsm8k-sprint122-grocery-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "grocery_snickers",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.grocery_snickers",
+      "title_ja": "Snickers 2個は300セント。",
+      "claim_ja": "Snickers 2個は300セント。",
+      "method_ja": "150×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Snickers 2個は300セント。",
+      "baseline_ja": "Snickers 2個は300セント。"
+    },
+    {
+      "id": "grocery_mms",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.grocery_mms",
+      "title_ja": "M&M's 3袋は900セント。",
+      "claim_ja": "M&M's 3袋は900セント。",
+      "method_ja": "1袋はSnickers 2個分なので300セント、これを3倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "M&M's 3袋は900セント。",
+      "baseline_ja": "M&M's 3袋は900セント。"
+    },
+    {
+      "id": "grocery_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.grocery_total",
+      "title_ja": "代金は1200セント。",
+      "claim_ja": "代金は1200セント。",
+      "method_ja": "300+900。",
+      "requires_steps": [
+        "grocery_snickers",
+        "grocery_mms"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "代金は1200セント。",
+      "baseline_ja": "代金は1200セント。"
+    },
+    {
+      "id": "grocery_cash",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.grocery_cash",
+      "title_ja": "支払額は2000セント。",
+      "claim_ja": "支払額は2000セント。",
+      "method_ja": "10ドル札2枚をセントに直す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "支払額は2000セント。",
+      "baseline_ja": "支払額は2000セント。"
+    },
+    {
+      "id": "grocery_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.grocery_solution",
+      "title_ja": "お釣りは800セント、すなわち8ドル。",
+      "claim_ja": "お釣りは800セント、すなわち8ドル。",
+      "method_ja": "2000−1200。",
+      "requires_steps": [
+        "grocery_total",
+        "grocery_cash"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "お釣りは800セント、すなわち8ドル。",
+      "baseline_ja": "お釣りは800セント、すなわち8ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2111,
+    "checked_model_hash": "2d247300fd6850aeee734895d7aaaebb3883ceb284846fdab864e381503ad540",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は追加条件と反例を明示した。"
+    ]
+  }
+}

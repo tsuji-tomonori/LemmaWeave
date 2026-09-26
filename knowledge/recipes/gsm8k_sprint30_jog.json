@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint30_jog",
+  "title_ja": "犬とのランニング距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00729",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "犬と30分、その後1人で30分走った総距離を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.jog_solution",
+  "graph": "work/gsm8k-sprint30-jog-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "30分を1/2時間として有理数で厳密に表す。",
+    "犬の100ポンドという体重は距離計算に不要。"
+  ],
+  "steps": [
+    {
+      "id": "jog_with_dog",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jog_with_dog",
+      "title_ja": "犬と走る距離",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時速6マイルで30分。",
+      "conclusion_ja": "3マイル。",
+      "baseline_ja": "6×30/60=3。"
+    },
+    {
+      "id": "jog_solo",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jog_solo",
+      "title_ja": "1人で走る距離",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時速4マイルで30分。",
+      "conclusion_ja": "2マイル。",
+      "baseline_ja": "4×30/60=2。"
+    },
+    {
+      "id": "jog_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jog_total",
+      "title_ja": "総距離",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3マイルと2マイル。",
+      "conclusion_ja": "5マイル。",
+      "baseline_ja": "3+2=5。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 730,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

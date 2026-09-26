@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint142_barrettes",
+  "title_ja": "ボビーピンの割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02416",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "バレッタ6個、シュシュは2倍、ボビーピンは3個少ない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barrettes_solution",
+  "graph": "work/gsm8k-sprint142-barrettes-graph.json",
+  "model_notes_ja": [
+    "最近接整数への四捨五入を、13.5% ≤ 3/21×100 < 14.5% の両側不等式で厳密に確認する。"
+  ],
+  "steps": [
+    {
+      "id": "barrettes_scrunchies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barrettes_scrunchies",
+      "title_ja": "シュシュは12個",
+      "claim_ja": "シュシュは12個",
+      "method_ja": "6の2倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "シュシュは12個",
+      "baseline_ja": "シュシュは12個"
+    },
+    {
+      "id": "barrettes_bobby",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barrettes_bobby",
+      "title_ja": "ボビーピンは3個",
+      "claim_ja": "ボビーピンは3個",
+      "method_ja": "6から3を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "ボビーピンは3個",
+      "baseline_ja": "ボビーピンは3個"
+    },
+    {
+      "id": "barrettes_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barrettes_total",
+      "title_ja": "飾りは計21個",
+      "claim_ja": "飾りは計21個",
+      "method_ja": "6、12、3を足す",
+      "requires_steps": [
+        "barrettes_scrunchies",
+        "barrettes_bobby"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "飾りは計21個",
+      "baseline_ja": "飾りは計21個"
+    },
+    {
+      "id": "barrettes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barrettes_solution",
+      "title_ja": "ボビーピンは四捨五入して14%",
+      "claim_ja": "ボビーピンは四捨五入して14%",
+      "method_ja": "3/21×100が13.5%以上14.5%未満であることを整数不等式で示す",
+      "requires_steps": [
+        "barrettes_bobby",
+        "barrettes_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "ボビーピンは四捨五入して14%",
+      "baseline_ja": "ボビーピンは四捨五入して14%"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2417,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

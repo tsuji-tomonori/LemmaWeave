@@ -1,0 +1,112 @@
+{
+  "id": "gsm8k_sprint122_bowling",
+  "title_ja": "Richardの合計超過ピン数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02120",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2ラウンド合計でRichardがPatrickより何本多いか求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A13.bowling_solution",
+  "graph": "work/gsm8k-sprint122-bowling-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bowling_richard_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bowling_richard_first",
+      "title_ja": "第1ラウンドのRichardは85本。",
+      "claim_ja": "第1ラウンドのRichardは85本。",
+      "method_ja": "70+15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "第1ラウンドのRichardは85本。",
+      "baseline_ja": "第1ラウンドのRichardは85本。"
+    },
+    {
+      "id": "bowling_patrick_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bowling_patrick_second",
+      "title_ja": "第2ラウンドのPatrickは170本。",
+      "claim_ja": "第2ラウンドのPatrickは170本。",
+      "method_ja": "Richardの第1ラウンド85本の2倍。",
+      "requires_steps": [
+        "bowling_richard_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "第2ラウンドのPatrickは170本。",
+      "baseline_ja": "第2ラウンドのPatrickは170本。"
+    },
+    {
+      "id": "bowling_richard_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bowling_richard_second",
+      "title_ja": "第2ラウンドのRichardは167本。",
+      "claim_ja": "第2ラウンドのRichardは167本。",
+      "method_ja": "170−3。",
+      "requires_steps": [
+        "bowling_patrick_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "第2ラウンドのRichardは167本。",
+      "baseline_ja": "第2ラウンドのRichardは167本。"
+    },
+    {
+      "id": "bowling_patrick_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bowling_patrick_total",
+      "title_ja": "Patrickの合計は240本。",
+      "claim_ja": "Patrickの合計は240本。",
+      "method_ja": "70+170。",
+      "requires_steps": [
+        "bowling_patrick_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Patrickの合計は240本。",
+      "baseline_ja": "Patrickの合計は240本。"
+    },
+    {
+      "id": "bowling_richard_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bowling_richard_total",
+      "title_ja": "Richardの合計は252本。",
+      "claim_ja": "Richardの合計は252本。",
+      "method_ja": "85+167。",
+      "requires_steps": [
+        "bowling_richard_first",
+        "bowling_richard_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Richardの合計は252本。",
+      "baseline_ja": "Richardの合計は252本。"
+    },
+    {
+      "id": "bowling_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.bowling_solution",
+      "title_ja": "Richardが12本多い。",
+      "claim_ja": "Richardが12本多い。",
+      "method_ja": "252−240。",
+      "requires_steps": [
+        "bowling_patrick_total",
+        "bowling_richard_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Richardが12本多い。",
+      "baseline_ja": "Richardが12本多い。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2121,
+    "checked_model_hash": "2d247300fd6850aeee734895d7aaaebb3883ceb284846fdab864e381503ad540",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は追加条件と反例を明示した。"
+    ]
+  }
+}

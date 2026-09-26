@@ -1,0 +1,61 @@
+{
+  "id": "gsm8k_sprint29_snakes",
+  "title_ja": "蛇の長さと人名不整合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00718",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Jakeの蛇と相手の蛇の長さからJakeの蛇の長さを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A29.snake_solution",
+  "graph": "work/gsm8k-sprint29-snakes-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A29.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "原文は冒頭でPenny、比較対象でJennyとし、人名が一致しない。",
+    "字義どおりならPennyとJennyの関係がなく一意に決まらない。",
+    "自然な誤記訂正としてJenny=Pennyと置く場合のみJakeは41インチ。"
+  ],
+  "steps": [
+    {
+      "id": "snake_partner",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.snake_partner",
+      "title_ja": "条件付きの相手の長さ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jenny=Pennyと補正し、Jakeが12インチ長く合計70インチ。",
+      "conclusion_ja": "相手29インチ、Jake41インチ。",
+      "baseline_ja": "2p+12=70よりp=29、j=41。"
+    },
+    {
+      "id": "snake_combined",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.snake_combined",
+      "title_ja": "合計の確認",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "条件付き解の41インチと29インチ。",
+      "conclusion_ja": "合計70インチ。",
+      "baseline_ja": "41+29=70。"
+    },
+    {
+      "id": "snake_literal_underdetermined",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.snake_literal_underdetermined",
+      "title_ja": "字義的な非一意性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jake+Penny=70かつJake=Jenny+12だけを課す。",
+      "conclusion_ja": "(Jake,Penny,Jenny)=(41,29,29)と(42,28,30)の2解がある。",
+      "baseline_ja": "両組が条件を満たすので追加同一視なしでは一意でない。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 719,
+    "checked_model_hash": "970f410138a3166065bfbe0fe681e913ec80aca7d2c0a0d8dd1e56f06eeceae5",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

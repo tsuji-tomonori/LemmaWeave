@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint45_biscuits",
+  "title_ja": "正方形ビスケット数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00962",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "12インチ四方の生地から3インチ四方のビスケットを切り出す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.biscuits_solution",
+  "graph": "work/gsm8k-sprint45-biscuits-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "biscuits_per_side",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.biscuits_per_side",
+      "title_ja": "一辺の個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12インチを3インチずつ等分する。",
+      "conclusion_ja": "4個。",
+      "baseline_ja": "12=4×3。"
+    },
+    {
+      "id": "biscuits_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.biscuits_total",
+      "title_ja": "全個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "縦4個、横4個の格子。",
+      "conclusion_ja": "16個。",
+      "baseline_ja": "4×4=16。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 963,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

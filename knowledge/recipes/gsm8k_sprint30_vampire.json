@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint30_vampire",
+  "title_ja": "吸血対象の1日人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00739",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "週間必要量と1人当たり採血量から1日当たり人数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.vampire_solution",
+  "graph": "work/gsm8k-sprint30-vampire-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "1ガロン=8パイントを用いる。",
+    "毎日均等に必要量を得るモデル。"
+  ],
+  "steps": [
+    {
+      "id": "vampire_daily_gallons",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.vampire_daily_gallons",
+      "title_ja": "1日の必要ガロン",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "週7ガロンを7日で均等化。",
+      "conclusion_ja": "1ガロン。",
+      "baseline_ja": "7÷7=1。"
+    },
+    {
+      "id": "vampire_daily_pints",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.vampire_daily_pints",
+      "title_ja": "1日の必要パイント",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ガロンは8パイント。",
+      "conclusion_ja": "8パイント。",
+      "baseline_ja": "1×8=8。"
+    },
+    {
+      "id": "vampire_people",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.vampire_people",
+      "title_ja": "1日の人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1人2パイントで8パイント必要。",
+      "conclusion_ja": "4人。",
+      "baseline_ja": "8÷2=4。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 740,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "gsm8k_sprint25_battery",
+  "title_ja": "充電後の予算残額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00655",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1回3.5ドルの充電を4回行い、20ドルの予算から残る金額を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A25.battery_solution",
+  "graph": "work/gsm8k-sprint25-battery-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A25.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "端数を避けるため金額をセント単位で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "battery_spent",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.battery_spent",
+      "title_ja": "充電費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1回350セントを4回支払う。",
+      "conclusion_ja": "支出は1400セント。",
+      "baseline_ja": "350×4=1400。"
+    },
+    {
+      "id": "battery_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.battery_left",
+      "title_ja": "予算残額",
+      "requires_steps": [
+        "battery_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2000セントから1400セントを引く。",
+      "conclusion_ja": "残額は600セント、すなわち6ドル。",
+      "baseline_ja": "2000-1400=600。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 656,
+    "checked_model_hash": "581c7484f9bea721da385e231f57c0a17afd20596d25584599b46b8c242b9903",
+    "checks_ja": [
+      "3.5ドル=350セントと20ドル=2000セントの換算を確認した。"
+    ]
+  }
+}

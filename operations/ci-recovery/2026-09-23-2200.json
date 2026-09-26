@@ -1,0 +1,297 @@
+{
+  "schema_version": "ci_recovery_v1",
+  "date": "2026-09-23",
+  "run_id": "ci-recovery-20260923-2200-jst",
+  "source_head_sha": "45182c6679e705864450962f97c4b869fe0987d0",
+  "failed_workflow_run": {
+    "id": 35858426592,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35858426592",
+    "event": "push",
+    "head_sha": "45182c6679e705864450962f97c4b869fe0987d0",
+    "conclusion": "failure",
+    "started_at": "2026-09-23T21:06:21+09:00",
+    "finished_at": "2026-09-23T21:13:53+09:00",
+    "job_id": 107172421153,
+    "lean_version": "4.33.1",
+    "lake_build_jobs": 3020,
+    "lake_build_status": "success",
+    "replay_failure_run": "runs/20260923T121328-8ef0c533/run.json",
+    "artifact": {
+      "id": 10748134375,
+      "name": "lean-evidence-45182c6679e705864450962f97c4b869fe0987d0",
+      "size_bytes": 201131271,
+      "zip_sha256": "541c74a0b23e11442c6c0b398c6423e460de5ca2bcdb6ad5db49f8fc0cc64053"
+    }
+  },
+  "root_cause": {
+    "code": "missing_graph_directives",
+    "recipe_count": 34,
+    "lean_file_count": 13,
+    "explanation_ja": "workflowはpull_requestではなくpushで起動していた。PRイベント専用の取得では0件と誤認した。固定Lean全体ビルドは成功し、その後のレシピ監査が34レシピの#lw_dependencies不足を検出して停止した。"
+  },
+  "repair": {
+    "action": "各レシピの既存rootと既存graphを変更せず、対応するLeanテストへ完全一致の#lw_dependencies指示を追加する。",
+    "recipes": [
+      {
+        "id": "dnc2026_sequence_difference_individual",
+        "lean_file": "tests/lean/DNC2026SequenceDifferenceIndividual.lean",
+        "root": "LemmaWeave.Tests.DNC2026SequenceDifferenceIndividual.individual_solution",
+        "graph": "work/dnc2026-sequence-difference-individual-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint100_coronavirus",
+        "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A08.wave_two_readings_differ",
+        "graph": "work/gsm8k-sprint100-coronavirus-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint100_dreams",
+        "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_two_calendar_readings_differ",
+        "graph": "work/gsm8k-sprint100-dreams-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint100_faith",
+        "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_two_pay_readings_differ",
+        "graph": "work/gsm8k-sprint100-faith-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint101_geometry",
+        "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A11.geometry_two_scoring_readings_differ",
+        "graph": "work/gsm8k-sprint101-geometry-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint102_boxes",
+        "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A12.boxes_two_capacity_readings_differ",
+        "graph": "work/gsm8k-sprint102-boxes-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint102_trees",
+        "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A12.trees_two_birthday_readings_differ",
+        "graph": "work/gsm8k-sprint102-trees-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint103_fund",
+        "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_timing_changes_answer",
+        "graph": "work/gsm8k-sprint103-fund-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint104_trucks",
+        "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A14.trucks_sampling_readings_differ",
+        "graph": "work/gsm8k-sprint104-trucks-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint105_pets",
+        "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A15.pets_population_not_unique",
+        "graph": "work/gsm8k-sprint105-pets-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint105_race",
+        "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A15.race_remaining_not_unique",
+        "graph": "work/gsm8k-sprint105-race-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint107_goals",
+        "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A17.goals_total_not_unique",
+        "graph": "work/gsm8k-sprint107-goals-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint107_lights",
+        "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A17.lights_unused_not_unique",
+        "graph": "work/gsm8k-sprint107-lights-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint108_land",
+        "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A18.land_time_not_unique",
+        "graph": "work/gsm8k-sprint108-land-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_beanie",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.beanie_solution",
+        "graph": "work/gsm8k-sprint110-beanie-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_books",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.books_solution",
+        "graph": "work/gsm8k-sprint110-books-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_dentist",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.dentist_solution",
+        "graph": "work/gsm8k-sprint110-dentist-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_earnings",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.earnings_solution",
+        "graph": "work/gsm8k-sprint110-earnings-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_jerome",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.jerome_solution",
+        "graph": "work/gsm8k-sprint110-jerome-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_park",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.park_solution",
+        "graph": "work/gsm8k-sprint110-park-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_parties",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.parties_solution",
+        "graph": "work/gsm8k-sprint110-parties-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_pets",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.pets_solution",
+        "graph": "work/gsm8k-sprint110-pets-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_pot",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.pot_equal_split",
+        "graph": "work/gsm8k-sprint110-pot-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_rent",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.rent_solution",
+        "graph": "work/gsm8k-sprint110-rent-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_savings",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.savings_solution",
+        "graph": "work/gsm8k-sprint110-savings-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_shirts",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.shirts_solution",
+        "graph": "work/gsm8k-sprint110-shirts-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_shorts",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.shorts_solution",
+        "graph": "work/gsm8k-sprint110-shorts-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_stock",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.stock_solution",
+        "graph": "work/gsm8k-sprint110-stock-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint110_water",
+        "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A20.water_solution",
+        "graph": "work/gsm8k-sprint110-water-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint97_babysitters",
+        "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.babysitter_solution",
+        "graph": "work/gsm8k-sprint97-babysitters-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint97_wade",
+        "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.basketball_solution",
+        "graph": "work/gsm8k-sprint97-wade-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint98_school_time",
+        "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A07.school_time_solution",
+        "graph": "work/gsm8k-sprint98-school_time-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint99_donations",
+        "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_two_readings_differ",
+        "graph": "work/gsm8k-sprint99-donations-graph.json"
+      },
+      {
+        "id": "gsm8k_sprint99_pie_samples",
+        "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+        "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.pie_samples_solution",
+        "graph": "work/gsm8k-sprint99-pie_samples-graph.json"
+      }
+    ],
+    "files": [
+      {
+        "path": "tests/lean/DNC2026SequenceDifferenceIndividual.lean",
+        "directives_added": 1
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A08.lean",
+        "directives_added": 3
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A11.lean",
+        "directives_added": 1
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A12.lean",
+        "directives_added": 2
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A13.lean",
+        "directives_added": 1
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A14.lean",
+        "directives_added": 1
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A15.lean",
+        "directives_added": 2
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A17.lean",
+        "directives_added": 2
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A18.lean",
+        "directives_added": 1
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A20.lean",
+        "directives_added": 15
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+        "directives_added": 2
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A07.lean",
+        "directives_added": 1
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+        "directives_added": 2
+      }
+    ],
+    "semantic_or_proof_changes": 0,
+    "next_action_ja": "修正HEADのpush workflowを監視し、固定Lean・レシピ再生・検査・単体テストのexact-head結果と成果物を回収する。"
+  }
+}

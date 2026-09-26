@@ -1,0 +1,113 @@
+{
+  "id": "gsm8k_sprint109_game",
+  "title_ja": "Vladの得点と原題の整合性",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01924",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "参照の代数計算を示した後、5点刻みの得点条件との矛盾を検証する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.game_reference_scores_invalid",
+  "graph": "work/gsm8k-sprint109-game-graph.json",
+  "model_notes_ja": [
+    "各勝利が5点なら個人得点は5の倍数だが、参照値86点と64点はいずれも5の倍数でない。したがって参照の代数値64は原題の得点規則を満たす実際の競技結果ではない。"
+  ],
+  "steps": [
+    {
+      "id": "game_reference_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.game_reference_total",
+      "title_ja": "全30ラウンドに各1勝者がいる追加条件なら総得点150。",
+      "claim_ja": "全30ラウンドに各1勝者がいる追加条件なら総得点150。",
+      "method_ja": "5×30。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "game_reference_taro_relation",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.game_reference_taro_relation",
+      "title_ja": "参照計算のTaroは86点。",
+      "claim_ja": "参照計算のTaroは86点。",
+      "method_ja": "5×(86+4)=3×150。",
+      "requires_steps": [
+        "game_reference_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "game_reference_vlad",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.game_reference_vlad",
+      "title_ja": "参照計算のVladは64点。",
+      "claim_ja": "参照計算のVladは64点。",
+      "method_ja": "150−86。",
+      "requires_steps": [
+        "game_reference_taro_relation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "game_taro_not_multiple_of_five",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.game_taro_not_multiple_of_five",
+      "title_ja": "86点は5点刻みで作れない。",
+      "claim_ja": "86点は5点刻みで作れない。",
+      "method_ja": "5w=86を満たす自然数wがない。",
+      "requires_steps": [
+        "game_reference_taro_relation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "game_vlad_not_multiple_of_five",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.game_vlad_not_multiple_of_five",
+      "title_ja": "64点も5点刻みで作れない。",
+      "claim_ja": "64点も5点刻みで作れない。",
+      "method_ja": "5w=64を満たす自然数wがない。",
+      "requires_steps": [
+        "game_reference_vlad"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "game_reference_scores_invalid",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.game_reference_scores_invalid",
+      "title_ja": "参照の両得点を勝利数から同時に実現できない。",
+      "claim_ja": "参照の両得点を勝利数から同時に実現できない。",
+      "method_ja": "双方の5の倍数条件に反する。",
+      "requires_steps": [
+        "game_taro_not_multiple_of_five",
+        "game_vlad_not_multiple_of_five"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1925,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "gsm8k_sprint30_jet",
+  "title_ja": "ジェット機の必要燃料",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00743",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "空機・人・荷物ごとの1マイル当たり燃料を合計し400マイル分を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_solution",
+  "graph": "work/gsm8k-sprint30-jet-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "乗客30人と乗務員5人の全員が2個ずつ荷物を持つ。"
+  ],
+  "steps": [
+    {
+      "id": "jet_people",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_people",
+      "title_ja": "総人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "乗客30人と乗務員5人。",
+      "conclusion_ja": "35人。",
+      "baseline_ja": "30+5=35。"
+    },
+    {
+      "id": "jet_bags",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_bags",
+      "title_ja": "荷物数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "35人が各2個。",
+      "conclusion_ja": "70個。",
+      "baseline_ja": "35×2=70。"
+    },
+    {
+      "id": "jet_people_fuel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_people_fuel",
+      "title_ja": "人による増分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "35人が1人3ガロン/マイル。",
+      "conclusion_ja": "105ガロン/マイル。",
+      "baseline_ja": "35×3=105。"
+    },
+    {
+      "id": "jet_bags_fuel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_bags_fuel",
+      "title_ja": "荷物による増分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "70個が1個2ガロン/マイル。",
+      "conclusion_ja": "140ガロン/マイル。",
+      "baseline_ja": "70×2=140。"
+    },
+    {
+      "id": "jet_per_mile",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_per_mile",
+      "title_ja": "1マイル当たり燃料",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "空機20、人105、荷物140。",
+      "conclusion_ja": "265ガロン/マイル。",
+      "baseline_ja": "20+105+140=265。"
+    },
+    {
+      "id": "jet_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.jet_total",
+      "title_ja": "全行程燃料",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "265ガロン/マイルを400マイル。",
+      "conclusion_ja": "106000ガロン。",
+      "baseline_ja": "265×400=106000。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 744,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

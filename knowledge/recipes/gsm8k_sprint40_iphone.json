@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint40_iphone",
+  "title_ja": "iPhone購入までの週数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00889",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "下取り後の必要額と週収から最小週数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.iphone_solution",
+  "graph": "work/gsm8k-sprint40-iphone-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "週数は自然数とし、6週不足と7週達成の両方を確認する。"
+  ],
+  "steps": [
+    {
+      "id": "iphone_net",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.iphone_net",
+      "title_ja": "必要な現金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "800ドルから下取り240ドルを充てる。",
+      "conclusion_ja": "560ドル。",
+      "baseline_ja": "800=240+560。"
+    },
+    {
+      "id": "iphone_seven_weeks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.iphone_seven_weeks",
+      "title_ja": "7週間の収入",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "週80ドルを7週。",
+      "conclusion_ja": "560ドル。",
+      "baseline_ja": "80×7=560。"
+    },
+    {
+      "id": "iphone_six_insufficient",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.iphone_six_insufficient",
+      "title_ja": "6週では不足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6週の収入480ドルは560ドル未満。",
+      "conclusion_ja": "6週では買えない。",
+      "baseline_ja": "6×80<560。"
+    },
+    {
+      "id": "iphone_consecutive",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.iphone_consecutive",
+      "title_ja": "最小性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6週の次が7週。",
+      "conclusion_ja": "最小7週間。",
+      "baseline_ja": "6+1=7。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 890,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

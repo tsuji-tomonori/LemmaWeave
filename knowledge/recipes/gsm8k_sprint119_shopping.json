@@ -1,0 +1,80 @@
+{
+  "id": "gsm8k_sprint119_shopping",
+  "title_ja": "合計40ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02077",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.shopping_solution",
+  "graph": "work/gsm8k-sprint119-shopping-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shopping_dish",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.shopping_dish",
+      "title_ja": "焼き皿は12ドル。",
+      "claim_ja": "焼き皿は12ドル。",
+      "method_ja": "レシピ本6ドルの2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "焼き皿は12ドル。",
+      "baseline_ja": "焼き皿は12ドル。"
+    },
+    {
+      "id": "shopping_ingredients",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.shopping_ingredients",
+      "title_ja": "材料5点は15ドル。",
+      "claim_ja": "材料5点は15ドル。",
+      "method_ja": "5×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "材料5点は15ドル。",
+      "baseline_ja": "材料5点は15ドル。"
+    },
+    {
+      "id": "shopping_apron",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.shopping_apron",
+      "title_ja": "エプロンは7ドル。",
+      "claim_ja": "エプロンは7ドル。",
+      "method_ja": "本より1ドル高いので6+1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "エプロンは7ドル。",
+      "baseline_ja": "エプロンは7ドル。"
+    },
+    {
+      "id": "shopping_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.shopping_solution",
+      "title_ja": "合計40ドル。",
+      "claim_ja": "合計40ドル。",
+      "method_ja": "6+12+15+7。",
+      "requires_steps": [
+        "shopping_dish",
+        "shopping_ingredients",
+        "shopping_apron"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "合計40ドル。",
+      "baseline_ja": "合計40ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2078,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

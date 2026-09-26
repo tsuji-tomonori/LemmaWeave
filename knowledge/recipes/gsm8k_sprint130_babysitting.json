@@ -1,0 +1,114 @@
+{
+  "id": "gsm8k_sprint130_babysitting",
+  "title_ja": "ベビーシッター収入の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02234",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "毎日3時間、時給10ドルで7日働き、3/10を化粧品に使い、その後2/5をスキンケアに使う。残金を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.babysitting_sequential_alternative",
+  "graph": "work/gsm8k-sprint130-babysitting-graph.json",
+  "model_notes_ja": [
+    "then spent 2/5 of her moneyは、元の週収を基準にするか、化粧品購入後の残高を基準にするか一意でない。参照解の63ドルと、逐次読解の88.20ドルを分けて形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "babysitting_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.babysitting_daily",
+      "title_ja": "1日30ドル稼ぐ",
+      "claim_ja": "1日30ドル稼ぐ",
+      "method_ja": "3時間×時給10ドル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "1日30ドル稼ぐ",
+      "baseline_ja": "1日30ドル稼ぐ"
+    },
+    {
+      "id": "babysitting_weekly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.babysitting_weekly",
+      "title_ja": "週収は210ドル",
+      "claim_ja": "週収は210ドル",
+      "method_ja": "30ドルを7日分",
+      "requires_steps": [
+        "babysitting_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "週収は210ドル",
+      "baseline_ja": "週収は210ドル"
+    },
+    {
+      "id": "babysitting_makeup",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.babysitting_makeup",
+      "title_ja": "化粧品代は63ドル",
+      "claim_ja": "化粧品代は63ドル",
+      "method_ja": "週収210ドルの3/10",
+      "requires_steps": [
+        "babysitting_weekly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "化粧品代は63ドル",
+      "baseline_ja": "化粧品代は63ドル"
+    },
+    {
+      "id": "babysitting_skincare_original",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.babysitting_skincare_original",
+      "title_ja": "元の週収を基準にするとスキンケア代は84ドル",
+      "claim_ja": "元の週収を基準にするとスキンケア代は84ドル",
+      "method_ja": "210ドルの2/5",
+      "requires_steps": [
+        "babysitting_weekly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "元の週収を基準にするとスキンケア代は84ドル",
+      "baseline_ja": "元の週収を基準にするとスキンケア代は84ドル"
+    },
+    {
+      "id": "babysitting_solution_original",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.babysitting_solution_original",
+      "title_ja": "参照解の読解では残金63ドル",
+      "claim_ja": "参照解の読解では残金63ドル",
+      "method_ja": "210ドルから63ドルと84ドルを引く",
+      "requires_steps": [
+        "babysitting_makeup",
+        "babysitting_skincare_original"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "参照解の読解では残金63ドル",
+      "baseline_ja": "参照解の読解では残金63ドル"
+    },
+    {
+      "id": "babysitting_sequential_alternative",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.babysitting_sequential_alternative",
+      "title_ja": "直前残高を基準にすると残金は88.20ドル",
+      "claim_ja": "直前残高を基準にすると残金は88.20ドル",
+      "method_ja": "147ドルの3/5をセント単位で計算する",
+      "requires_steps": [
+        "babysitting_makeup"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "直前残高を基準にすると残金は88.20ドル",
+      "baseline_ja": "直前残高を基準にすると残金は88.20ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2235,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

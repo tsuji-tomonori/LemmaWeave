@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint139_envelopes",
+  "title_ja": "封筒の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02375",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "青10枚、黄は青より4枚少ない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.envelopes_solution",
+  "graph": "work/gsm8k-sprint139-envelopes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "envelopes_yellow",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.envelopes_yellow",
+      "title_ja": "黄色は6枚",
+      "claim_ja": "黄色は6枚",
+      "method_ja": "10から4を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "黄色は6枚",
+      "baseline_ja": "黄色は6枚"
+    },
+    {
+      "id": "envelopes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.envelopes_solution",
+      "title_ja": "合計16枚",
+      "claim_ja": "合計16枚",
+      "method_ja": "青10と黄6を足す",
+      "requires_steps": [
+        "envelopes_yellow"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計16枚",
+      "baseline_ja": "合計16枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2376,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

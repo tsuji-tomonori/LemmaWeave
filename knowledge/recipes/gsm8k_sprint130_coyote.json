@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint130_coyote",
+  "title_ja": "コヨーテへの追いつき",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02241",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "コヨーテは1時間前に時速15マイルで東へ進み、Darrelは時速30マイルで追う。追いつくまでの時間を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.coyote_solution",
+  "graph": "work/gsm8k-sprint130-coyote-graph.json",
+  "model_notes_ja": [
+    "参照説明中のDarrelの20mphおよび2*xは原題の30mphに反する誤記。Leanモデルは原題どおり30mphを用い、結論1時間を導いた。"
+  ],
+  "steps": [
+    {
+      "id": "coyote_lead",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.coyote_lead",
+      "title_ja": "先行距離は15マイル",
+      "claim_ja": "先行距離は15マイル",
+      "method_ja": "時速15マイルで1時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "先行距離は15マイル",
+      "baseline_ja": "先行距離は15マイル"
+    },
+    {
+      "id": "coyote_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.coyote_solution",
+      "title_ja": "追いつくのは1時間後",
+      "claim_ja": "追いつくのは1時間後",
+      "method_ja": "相対速度15mphで15マイル差を詰める",
+      "requires_steps": [
+        "coyote_lead"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "追いつくのは1時間後",
+      "baseline_ja": "追いつくのは1時間後"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2242,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

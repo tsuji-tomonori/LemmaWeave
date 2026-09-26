@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint103_lodging",
+  "title_ja": "宿泊費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01834",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ホステル3泊と、3人で均等負担するキャビン2泊を加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.lodging_solution",
+  "graph": "work/gsm8k-sprint103-lodging-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lodging_hostel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.lodging_hostel",
+      "title_ja": "ホステル代は45ドル。",
+      "claim_ja": "ホステル代は45ドル。",
+      "method_ja": "3×15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3泊、各15ドル。",
+      "conclusion_ja": "45。",
+      "baseline_ja": "45。"
+    },
+    {
+      "id": "lodging_group",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.lodging_group",
+      "title_ja": "キャビンの全体費用は90ドル。",
+      "claim_ja": "キャビンの全体費用は90ドル。",
+      "method_ja": "2×45。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2泊、全員で各泊45ドル。",
+      "conclusion_ja": "90。",
+      "baseline_ja": "90。"
+    },
+    {
+      "id": "lodging_share",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.lodging_share",
+      "title_ja": "Jimmyのキャビン負担は30ドル。",
+      "claim_ja": "Jimmyのキャビン負担は30ドル。",
+      "method_ja": "90÷3。",
+      "requires_steps": [
+        "lodging_group"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Jimmyと友人2人の3人で均等負担。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "lodging_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.lodging_solution",
+      "title_ja": "合計75ドル。",
+      "claim_ja": "合計75ドル。",
+      "method_ja": "45+30。",
+      "requires_steps": [
+        "lodging_hostel",
+        "lodging_share"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両宿泊先を加える。",
+      "conclusion_ja": "75。",
+      "baseline_ja": "75。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1835,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

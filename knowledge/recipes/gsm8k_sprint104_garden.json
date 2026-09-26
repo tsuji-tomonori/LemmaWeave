@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint104_garden",
+  "title_ja": "収穫するトマト数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01851",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "トマト1行対キュウリ2行の比で15行を分け、株数と収量を掛ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.garden_solution",
+  "graph": "work/gsm8k-sprint104-garden-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "garden_tomato_rows",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.garden_tomato_rows",
+      "title_ja": "トマトは5行。",
+      "claim_ja": "トマトは5行。",
+      "method_ja": "15÷(1+2)。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "行数比1:2。",
+      "conclusion_ja": "5。",
+      "baseline_ja": "5。"
+    },
+    {
+      "id": "garden_cucumber_rows",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.garden_cucumber_rows",
+      "title_ja": "キュウリは10行。",
+      "claim_ja": "キュウリは10行。",
+      "method_ja": "2×5。",
+      "requires_steps": [
+        "garden_tomato_rows"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "トマト行の2倍。",
+      "conclusion_ja": "10。",
+      "baseline_ja": "10。"
+    },
+    {
+      "id": "garden_plants",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.garden_plants",
+      "title_ja": "トマトは40株。",
+      "claim_ja": "トマトは40株。",
+      "method_ja": "5×8。",
+      "requires_steps": [
+        "garden_tomato_rows"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1行8株。",
+      "conclusion_ja": "40。",
+      "baseline_ja": "40。"
+    },
+    {
+      "id": "garden_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.garden_solution",
+      "title_ja": "トマトは120個。",
+      "claim_ja": "トマトは120個。",
+      "method_ja": "40×3。",
+      "requires_steps": [
+        "garden_plants"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1株3個。",
+      "conclusion_ja": "120。",
+      "baseline_ja": "120。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1852,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

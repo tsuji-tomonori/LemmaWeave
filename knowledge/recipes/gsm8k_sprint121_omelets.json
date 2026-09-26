@@ -1,0 +1,93 @@
+{
+  "id": "gsm8k_sprint121_omelets",
+  "title_ja": "準備と調理の合計は50分。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02104",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.omelets_solution",
+  "graph": "work/gsm8k-sprint121-omelets-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "omelets_peppers",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.omelets_peppers",
+      "title_ja": "ピーマン4個を刻むのに12分。",
+      "claim_ja": "ピーマン4個を刻むのに12分。",
+      "method_ja": "4×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "ピーマン4個を刻むのに12分。",
+      "baseline_ja": "ピーマン4個を刻むのに12分。"
+    },
+    {
+      "id": "omelets_onions",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.omelets_onions",
+      "title_ja": "玉ねぎ2個を刻むのに8分。",
+      "claim_ja": "玉ねぎ2個を刻むのに8分。",
+      "method_ja": "2×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "玉ねぎ2個を刻むのに8分。",
+      "baseline_ja": "玉ねぎ2個を刻むのに8分。"
+    },
+    {
+      "id": "omelets_cheese",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.omelets_cheese",
+      "title_ja": "5個分のチーズをおろすのに5分。",
+      "claim_ja": "5個分のチーズをおろすのに5分。",
+      "method_ja": "5×1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "5個分のチーズをおろすのに5分。",
+      "baseline_ja": "5個分のチーズをおろすのに5分。"
+    },
+    {
+      "id": "omelets_cook",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.omelets_cook",
+      "title_ja": "5個の組立てと調理に25分。",
+      "claim_ja": "5個の組立てと調理に25分。",
+      "method_ja": "5×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "5個の組立てと調理に25分。",
+      "baseline_ja": "5個の組立てと調理に25分。"
+    },
+    {
+      "id": "omelets_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.omelets_solution",
+      "title_ja": "準備と調理の合計は50分。",
+      "claim_ja": "準備と調理の合計は50分。",
+      "method_ja": "12+8+5+25。",
+      "requires_steps": [
+        "omelets_peppers",
+        "omelets_onions",
+        "omelets_cheese",
+        "omelets_cook"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "準備と調理の合計は50分。",
+      "baseline_ja": "準備と調理の合計は50分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2105,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

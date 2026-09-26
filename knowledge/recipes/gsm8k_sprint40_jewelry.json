@@ -1,0 +1,77 @@
+{
+  "id": "gsm8k_sprint40_jewelry",
+  "title_ja": "アクセサリーに使ったビーズ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00893",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "種類別の制作数と1個当たりビーズ数から総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.jewelry_solution",
+  "graph": "work/gsm8k-sprint40-jewelry-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jewelry_necklaces",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.jewelry_necklaces",
+      "title_ja": "ネックレス数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜10個と火曜2個。",
+      "conclusion_ja": "12個。",
+      "baseline_ja": "10+2=12。"
+    },
+    {
+      "id": "jewelry_necklace_beads",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.jewelry_necklace_beads",
+      "title_ja": "ネックレス用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個20粒を12個。",
+      "conclusion_ja": "240粒。",
+      "baseline_ja": "12×20=240。"
+    },
+    {
+      "id": "jewelry_bracelet_beads",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.jewelry_bracelet_beads",
+      "title_ja": "ブレスレット用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個10粒を5個。",
+      "conclusion_ja": "50粒。",
+      "baseline_ja": "5×10=50。"
+    },
+    {
+      "id": "jewelry_earring_beads",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.jewelry_earring_beads",
+      "title_ja": "イヤリング用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個5粒を7個。",
+      "conclusion_ja": "35粒。",
+      "baseline_ja": "7×5=35。"
+    },
+    {
+      "id": "jewelry_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.jewelry_total",
+      "title_ja": "総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "240粒、50粒、35粒を足す。",
+      "conclusion_ja": "325粒。",
+      "baseline_ja": "240+50+35=325。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 894,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

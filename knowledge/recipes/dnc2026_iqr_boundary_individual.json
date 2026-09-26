@@ -1,0 +1,97 @@
+{
+  "id": "dnc2026_iqr_boundary_individual",
+  "title_ja": "外れ値境界から四分位範囲を求める",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "四分位範囲をIQR、第1・第3四分位数をQ1, Q3とする。外れ値境界Q1-1.5IQRとQ3+1.5IQRがそれぞれ29.315秒、29.835秒であるとき、IQRを求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "pdf_page_1_based": [19, 22],
+    "printed_page_label": ["48", "51"],
+    "subquestion": "第4問〔1〕(3)(i)",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i.json",
+    "official_pdf_reviewed_at": "2026-09-22T09:00:00+09:00",
+    "visual_review_status": "stored_location_review_confirmed_2026-09-05_and_official_pdf_text_refetched_2026-09-22",
+    "rights_note_ja": "原文や図表は転載せず、出題位置、独自の要約、問題に明記された境界値と数学的証明のみを保存する。候補問題のrelease=restrictedは変更しない。"
+  },
+  "variables": [
+    {"name": "Q1, Q3", "type": "ℝ", "domain_ja": "第1・第3四分位数（秒）"},
+    {"name": "IQR", "type": "ℝ", "domain_ja": "四分位範囲Q3-Q1（秒）"},
+    {"name": "L, U", "type": "ℝ", "domain_ja": "下側・上側の外れ値境界（秒）"}
+  ],
+  "assumptions_ja": [
+    "IQR=Q3-Q1である。",
+    "L=Q1-1.5IQR、U=Q3+1.5IQRである。",
+    "L=29.315秒、U=29.835秒である。"
+  ],
+  "required_conclusions_ja": [
+    "IQR=0.13秒を導く。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026IQRBoundaryIndividual.individual_solution",
+  "graph": "work/dnc2026-iqr-boundary-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026IQRBoundaryIndividual.lean",
+  "model_file": "LemmaWeave/Problems/DNC2026M1/IQRBoundaryModel.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "new_self_reviewed_model_derived_without_source_text_or_figure_republication",
+  "counting_note_ja": "GSM8K固定8,792問とは別集計。候補問題の収集済み件数へは昇格させず、高校数学の週次個別解答実績だけを1増やす。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "boundary_gap_four_iqr",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026IQRBoundaryIndividual.boundary_gap_four_iqr",
+      "title_ja": "境界差をIQRで表す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "上側境界から下側境界を引く。",
+      "method_ja": "外れ値境界の定義とIQR=Q3-Q1を代入して整理する。",
+      "condition_ja": "二つの境界が同じデータのQ1, Q3, IQRから定義されている。",
+      "premise_ja": "U=Q3+1.5IQR、L=Q1-1.5IQR、IQR=Q3-Q1。",
+      "conclusion_ja": "U-L=4IQR。",
+      "baseline_ja": "等式への代入と分配法則を用いた。"
+    },
+    {
+      "id": "boundary_gap_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026IQRBoundaryIndividual.boundary_gap_value",
+      "title_ja": "数値としての境界差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "問題で与えられた上側境界と下側境界の差を計算する。",
+      "method_ja": "29.835-29.315を正確な有理数として引く。",
+      "condition_ja": "両値の単位がともに秒である。",
+      "premise_ja": "U=29.835、L=29.315。",
+      "conclusion_ja": "U-L=0.520=13/25秒。",
+      "baseline_ja": "小数の減法を分数へ直して計算した。"
+    },
+    {
+      "id": "iqr_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026IQRBoundaryIndividual.iqr_value",
+      "title_ja": "四分位範囲",
+      "requires_steps": ["boundary_gap_four_iqr", "boundary_gap_value"],
+      "uses_nodes": [],
+      "claim_ja": "同じ境界差について二つの表現を等置する。",
+      "method_ja": "4IQR=0.520を4で割る一次方程式。",
+      "condition_ja": "4は0でない。",
+      "premise_ja": "U-L=4IQRかつU-L=0.520。",
+      "conclusion_ja": "IQR=0.130=13/100秒。",
+      "baseline_ja": "一次方程式の両辺を4で割った。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-22T09:05:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i",
+    "checks_ja": [
+      "公式PDF19頁で外れ値境界の定義、22頁で29.315秒と29.835秒および四分位範囲を求める設問を再確認した。",
+      "選手順位や外れ値の個数はIQRの算出に不要なので仮定へ入れず、問題が与えた二境界と定義だけをモデル化した。",
+      "小数は29315/1000、29835/1000として正確に形式化し、近似等式に置き換えていない。",
+      "境界差の式、数値差、一次方程式の各説明行を別の名前付きLean定理へ対応させた。",
+      "原文と図表は保存せず、候補問題の権利確認、独立レビュー、固定Lean実行は未完のまま明示した。"
+    ]
+  }
+}

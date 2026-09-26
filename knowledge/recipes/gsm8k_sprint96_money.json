@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint96_money",
+  "title_ja": "二人で等分する金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01723",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A03Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Emani150ドルはHowardより30ドル多い。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.money_solution",
+  "graph": "work/gsm8k-sprint96-money-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "money_howard",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.money_howard",
+      "title_ja": "Howardは120ドル。",
+      "claim_ja": "Howardは120ドル。",
+      "method_ja": "150−30。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Emaniが30ドル多い。",
+      "conclusion_ja": "120+30=150。",
+      "baseline_ja": "120+30=150。"
+    },
+    {
+      "id": "money_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.money_total",
+      "title_ja": "合計270ドル。",
+      "claim_ja": "合計270ドル。",
+      "method_ja": "150+120。",
+      "requires_steps": [
+        "money_howard"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二人の所持金を加える。",
+      "conclusion_ja": "150+120=270。",
+      "baseline_ja": "150+120=270。"
+    },
+    {
+      "id": "money_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.money_solution",
+      "title_ja": "一人135ドル。",
+      "claim_ja": "一人135ドル。",
+      "method_ja": "270÷2。",
+      "requires_steps": [
+        "money_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二人で等分する。",
+      "conclusion_ja": "135×2=270。",
+      "baseline_ja": "135×2=270。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1724,
+    "checked_model_hash": "c7ae9e73613030285ef5ac0f94bc1cc2c890986bccfb58f5ed826d20e789cb8c",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

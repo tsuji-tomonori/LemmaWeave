@@ -1,0 +1,138 @@
+{
+  "id": "gsm8k_sprint111_candy_bars",
+  "title_ja": "キャンディーバーの週間売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01952",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の全数量関係を順に式へ移し、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_solution",
+  "graph": "work/gsm8k-sprint111-candy-bars-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "candy_day2",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_day2",
+      "title_ja": "2日目は14本。",
+      "claim_ja": "2日目は14本。",
+      "method_ja": "10+4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "2日目は14本。",
+      "baseline_ja": "2日目は14本。"
+    },
+    {
+      "id": "candy_day3",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_day3",
+      "title_ja": "3日目は18本。",
+      "claim_ja": "3日目は18本。",
+      "method_ja": "14+4。",
+      "requires_steps": [
+        "candy_day2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "3日目は18本。",
+      "baseline_ja": "3日目は18本。"
+    },
+    {
+      "id": "candy_day4",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_day4",
+      "title_ja": "4日目は22本。",
+      "claim_ja": "4日目は22本。",
+      "method_ja": "18+4。",
+      "requires_steps": [
+        "candy_day3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "4日目は22本。",
+      "baseline_ja": "4日目は22本。"
+    },
+    {
+      "id": "candy_day5",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_day5",
+      "title_ja": "5日目は26本。",
+      "claim_ja": "5日目は26本。",
+      "method_ja": "22+4。",
+      "requires_steps": [
+        "candy_day4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "5日目は26本。",
+      "baseline_ja": "5日目は26本。"
+    },
+    {
+      "id": "candy_day6",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_day6",
+      "title_ja": "6日目は30本。",
+      "claim_ja": "6日目は30本。",
+      "method_ja": "26+4。",
+      "requires_steps": [
+        "candy_day5"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "6日目は30本。",
+      "baseline_ja": "6日目は30本。"
+    },
+    {
+      "id": "candy_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_total",
+      "title_ja": "週間合計は120本。",
+      "claim_ja": "週間合計は120本。",
+      "method_ja": "6日分を加える。",
+      "requires_steps": [
+        "candy_day6"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "週間合計は120本。",
+      "baseline_ja": "週間合計は120本。"
+    },
+    {
+      "id": "candy_cents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_cents",
+      "title_ja": "売上は1200セント。",
+      "claim_ja": "売上は1200セント。",
+      "method_ja": "120×10。",
+      "requires_steps": [
+        "candy_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "売上は1200セント。",
+      "baseline_ja": "売上は1200セント。"
+    },
+    {
+      "id": "candy_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.candy_solution",
+      "title_ja": "売上は12ドル。",
+      "claim_ja": "売上は12ドル。",
+      "method_ja": "1200÷100。",
+      "requires_steps": [
+        "candy_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "売上は12ドル。",
+      "baseline_ja": "売上は12ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1953,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "gsm8k_sprint34_injury",
+  "title_ja": "負傷後に重い物を持てる最短日",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00789",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "「少なくとも」を保ち、重い物を持てるのは最短でも39日後と示す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.injury_solution",
+  "graph": "work/gsm8k-sprint34-injury-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "治癒期間は15日ちょうどではなく15日以上である。"
+  ],
+  "steps": [
+    {
+      "id": "injury_min_heal",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.injury_min_heal",
+      "title_ja": "治癒期間の下限",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "痛みが3日で引き、治癒はその少なくとも5倍。",
+      "conclusion_ja": "治癒は15日以上。",
+      "baseline_ja": "3×5=15を下限とする。"
+    },
+    {
+      "id": "injury_heavy_wait",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.injury_heavy_wait",
+      "title_ja": "3週間の日数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1週間を7日とする。",
+      "conclusion_ja": "3週間は21日。",
+      "baseline_ja": "3×7=21。"
+    },
+    {
+      "id": "injury_lower_bound",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.injury_lower_bound",
+      "title_ja": "合計の下限",
+      "requires_steps": [
+        "injury_min_heal",
+        "injury_heavy_wait"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "治癒後3日、さらに21日待つ。",
+      "conclusion_ja": "重い物を持てるのは39日後以降。",
+      "baseline_ja": "15+3+21=39なので最短39日。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 790,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

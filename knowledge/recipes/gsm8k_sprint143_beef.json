@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint143_beef",
+  "title_ja": "3日間の牛肉販売量の平均",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02427",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "木曜210ポンド、金曜はその2倍、土曜150ポンド。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.beef_solution",
+  "graph": "work/gsm8k-sprint143-beef-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "beef_friday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.beef_friday",
+      "title_ja": "金曜は420ポンド",
+      "claim_ja": "金曜は420ポンド",
+      "method_ja": "210の2倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "金曜は420ポンド",
+      "baseline_ja": "金曜は420ポンド"
+    },
+    {
+      "id": "beef_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.beef_total",
+      "title_ja": "3日合計は780ポンド",
+      "claim_ja": "3日合計は780ポンド",
+      "method_ja": "210、420、150を足す",
+      "requires_steps": [
+        "beef_friday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3日合計は780ポンド",
+      "baseline_ja": "3日合計は780ポンド"
+    },
+    {
+      "id": "beef_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.beef_solution",
+      "title_ja": "1日平均は260ポンド",
+      "claim_ja": "1日平均は260ポンド",
+      "method_ja": "780を3日へ等分する",
+      "requires_steps": [
+        "beef_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1日平均は260ポンド",
+      "baseline_ja": "1日平均は260ポンド"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2428,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

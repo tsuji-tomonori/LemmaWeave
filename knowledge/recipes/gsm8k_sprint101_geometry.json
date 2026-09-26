@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint101_geometry",
+  "title_ja": "Madelineの得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01800",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "誤答数は確定するが1問当たりの減点が未指定なので、参照解答の1点減点と2点減点の反例を分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A11.geometry_two_scoring_readings_differ",
+  "graph": "work/gsm8k-sprint101-geometry-graph.json",
+  "model_notes_ja": [
+    "参照解答は1誤答につき1点減点を暗黙に置く。原文だけでは配点が未指定なので、追加条件下の28点と、2点減点なら31点となる反例を形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "geometry_leo_mistakes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.geometry_leo_mistakes",
+      "title_ja": "Leoの誤答は4問。",
+      "claim_ja": "Leoの誤答は4問。",
+      "method_ja": "Madelineの2問を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Madelineの誤答はLeoの半分。",
+      "conclusion_ja": "4。",
+      "baseline_ja": "4。"
+    },
+    {
+      "id": "geometry_brent_mistakes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.geometry_brent_mistakes",
+      "title_ja": "Brentの誤答は5問。",
+      "claim_ja": "Brentの誤答は5問。",
+      "method_ja": "Leoの4問に1問を加える。",
+      "requires_steps": [
+        "geometry_leo_mistakes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "BrentはLeoより1問多い。",
+      "conclusion_ja": "5。",
+      "baseline_ja": "5。"
+    },
+    {
+      "id": "geometry_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.geometry_reference_solution",
+      "title_ja": "1問1点減点ならMadelineは28点。",
+      "claim_ja": "1問1点減点ならMadelineは28点。",
+      "method_ja": "Brentの25点と5点減点から満点30、そこから2点引く。",
+      "requires_steps": [
+        "geometry_brent_mistakes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加条件として全問が1点減点。",
+      "conclusion_ja": "28。",
+      "baseline_ja": "28。"
+    },
+    {
+      "id": "geometry_two_point_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.geometry_two_point_solution",
+      "title_ja": "1問2点減点ならMadelineは31点。",
+      "claim_ja": "1問2点減点ならMadelineは31点。",
+      "method_ja": "Brentの25点と10点減点から満点35、そこから4点引く。",
+      "requires_steps": [
+        "geometry_brent_mistakes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "反例条件として全問が2点減点。",
+      "conclusion_ja": "31。",
+      "baseline_ja": "31。"
+    },
+    {
+      "id": "geometry_two_scoring_readings_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.geometry_two_scoring_readings_differ",
+      "title_ja": "原文だけでは得点が一意でない。",
+      "claim_ja": "原文だけでは得点が一意でない。",
+      "method_ja": "28と31を比較する。",
+      "requires_steps": [
+        "geometry_reference_solution",
+        "geometry_two_point_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1問当たり減点が原文にない。",
+      "conclusion_ja": "28≠31。",
+      "baseline_ja": "28≠31。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1801,
+    "checked_model_hash": "62af24a6c8b2710580085f4b467479b66e4f9c46d3f8f9052f13c3bbdeea5545",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

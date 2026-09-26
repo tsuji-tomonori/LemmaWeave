@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Replay the complete fixed-environment audit pipeline without promoting ledger states.
 
-Run under `python3 scripts/run.py --timeout 1800 -- python3 scripts/replay.py`
+Run under `python3 scripts/run.py --timeout 6000 -- python3 scripts/replay.py`
 on a fresh runner after installing the pinned dependencies. All subprocesses
 must succeed; incomplete Phase 1 acceptance is reported separately.
 """
@@ -79,6 +79,71 @@ COMMANDS = [
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0918AModels'],
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0918BModels'],
     ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Daily0918CModels'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A01Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A02Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A03Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A04Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A05Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A06Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A07Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A08Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A09Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A10Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A11Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A12Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A13Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A14Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A15Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A16Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A17Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A18Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A19Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A20Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A21Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A22Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A23Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A24Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A25Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A26Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A27Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A28Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A29Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A30Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A31Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0919A32Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A01Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A02Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A03Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A04Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A05Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A06Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A07Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A08Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A09Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A10Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A11Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A12Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A13Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A14Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A15Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A16Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A17Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A18Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0920A19Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A08Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A09Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A10Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A11Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A12Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A13Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A14Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A15Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A16Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A17Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A18Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A19Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.GSM8K.Sprint0921A20Models'],
+    ['lake', 'build', 'LemmaWeave.Problems.DNC2026M1.GeometryAreaModel'],
     ['python3', 'scripts/run_method_targets.py'],
     ['python3', 'scripts/check_method_recipes.py', '--render'],
     ['python3', '-m', 'unittest', 'discover', '-s', 'tests', '-v'],
@@ -89,10 +154,10 @@ COMMANDS = [
     ['python3', 'scripts/lw.py', 'report'],
 ]
 
-# The method-target sweep grows with the number of registered individual
-# solutions.  Keep its timeout below the outer 1800-second replay bound while
-# allowing the complete sweep to finish as the corpus grows.
-METHOD_TARGET_TIMEOUT = 1500
+# The method-target sweep now includes over a hundred Lean files and each
+# target records its own Lean and dependency evidence.  The outer replay
+# bound leaves 1800 seconds for other checks and command startup.
+METHOD_TARGET_TIMEOUT = 4200
 DEFAULT_COMMAND_TIMEOUT = 900
 
 

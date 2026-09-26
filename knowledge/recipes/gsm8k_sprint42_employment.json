@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint42_employment",
+  "title_ja": "新旧会社の総収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00922",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "旧会社36か月と、それより5か月長い新会社での20%増賃金を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.employment_solution",
+  "graph": "work/gsm8k-sprint42-employment-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "employment_old_months",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.employment_old_months",
+      "title_ja": "旧会社の月数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3年を月へ換算する。",
+      "conclusion_ja": "36か月。",
+      "baseline_ja": "3×12=36。"
+    },
+    {
+      "id": "employment_old_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.employment_old_total",
+      "title_ja": "旧会社の収入",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月5000ドルを36か月。",
+      "conclusion_ja": "180000ドル。",
+      "baseline_ja": "36×5000=180000。"
+    },
+    {
+      "id": "employment_new_months",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.employment_new_months",
+      "title_ja": "新会社の月数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "旧会社より5か月長い。",
+      "conclusion_ja": "41か月。",
+      "baseline_ja": "36+5=41。"
+    },
+    {
+      "id": "employment_increase",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.employment_increase",
+      "title_ja": "月給の増分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5000ドルの20%。",
+      "conclusion_ja": "1000ドル。",
+      "baseline_ja": "1000×100=5000×20。"
+    },
+    {
+      "id": "employment_new_monthly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.employment_new_monthly",
+      "title_ja": "新会社の月給",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "旧月給に20%増分を加える。",
+      "conclusion_ja": "6000ドル。",
+      "baseline_ja": "5000+1000=6000。"
+    },
+    {
+      "id": "employment_new_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.employment_new_total",
+      "title_ja": "新会社の収入",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月6000ドルを41か月。",
+      "conclusion_ja": "246000ドル。",
+      "baseline_ja": "41×6000=246000。"
+    },
+    {
+      "id": "employment_combined",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.employment_combined",
+      "title_ja": "総収入",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "新旧会社の収入を合計する。",
+      "conclusion_ja": "426000ドル。",
+      "baseline_ja": "180000+246000=426000。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 923,
+    "checked_model_hash": "99537224468d741c14fe17721e9d78f3b542f2946fd1e4df9a251fde49f95551",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

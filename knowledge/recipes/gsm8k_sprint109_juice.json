@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint109_juice",
+  "title_ja": "1パウチ当たりの価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01926",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "パウチ総数と総額のセント表示を求めて割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.juice_solution",
+  "graph": "work/gsm8k-sprint109-juice-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "juice_pouches",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.juice_pouches",
+      "title_ja": "パウチは60個。",
+      "claim_ja": "パウチは60個。",
+      "method_ja": "10×6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "juice_total_cents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.juice_total_cents",
+      "title_ja": "総額は1200セント。",
+      "claim_ja": "総額は1200セント。",
+      "method_ja": "12×100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "juice_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.juice_solution",
+      "title_ja": "1個20セント。",
+      "claim_ja": "1個20セント。",
+      "method_ja": "1200÷60。",
+      "requires_steps": [
+        "juice_pouches",
+        "juice_total_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1927,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

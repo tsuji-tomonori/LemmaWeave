@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint146_beach",
+  "title_ja": "浜辺で休んでいる人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02484",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1列目24人から3人、2列目20人から5人が水へ行き、3列目18人は残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.beach_solution",
+  "graph": "work/gsm8k-sprint146-beach-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "beach_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.beach_first",
+      "title_ja": "1列目は21人",
+      "claim_ja": "1列目は21人",
+      "method_ja": "24から3を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "1列目は21人",
+      "baseline_ja": "1列目は21人"
+    },
+    {
+      "id": "beach_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.beach_second",
+      "title_ja": "2列目は15人",
+      "claim_ja": "2列目は15人",
+      "method_ja": "20から5を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "2列目は15人",
+      "baseline_ja": "2列目は15人"
+    },
+    {
+      "id": "beach_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.beach_solution",
+      "title_ja": "合計54人",
+      "claim_ja": "合計54人",
+      "method_ja": "21、15、18を足す",
+      "requires_steps": [
+        "beach_first",
+        "beach_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計54人",
+      "baseline_ja": "合計54人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2485,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

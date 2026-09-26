@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint142_barbara",
+  "title_ja": "将来のBarbaraの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02412",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mikeは16歳、Barbaraは半分の8歳。Mikeが24歳になる8年後を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barbara_solution",
+  "graph": "work/gsm8k-sprint142-barbara-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "barbara_current",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barbara_current",
+      "title_ja": "Barbaraは現在8歳",
+      "claim_ja": "Barbaraは現在8歳",
+      "method_ja": "16を2等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Barbaraは現在8歳",
+      "baseline_ja": "Barbaraは現在8歳"
+    },
+    {
+      "id": "barbara_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barbara_years",
+      "title_ja": "8年後",
+      "claim_ja": "8年後",
+      "method_ja": "24から16を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "8年後",
+      "baseline_ja": "8年後"
+    },
+    {
+      "id": "barbara_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.barbara_solution",
+      "title_ja": "Barbaraは16歳",
+      "claim_ja": "Barbaraは16歳",
+      "method_ja": "現在8歳に8年を足す",
+      "requires_steps": [
+        "barbara_current",
+        "barbara_years"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Barbaraは16歳",
+      "baseline_ja": "Barbaraは16歳"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2413,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

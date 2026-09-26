@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint96_wardrobe",
+  "title_ja": "衣類寄付の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01733",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A03Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Adamが選んだ衣類と友人3人の同数寄付から、Adamが選択分の半分を戻した後の総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.wardrobe_solution",
+  "graph": "work/gsm8k-sprint96-wardrobe-graph.json",
+  "model_notes_ja": [
+    "『half of his clothes』をワードローブ全体と読むと全衣類数がなく一意に決まらない。参照解答の意図どおり、直前に選んだ36点の半分を保持する追加条件を明示した。"
+  ],
+  "steps": [
+    {
+      "id": "wardrobe_pajamas",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.wardrobe_pajamas",
+      "title_ja": "パジャマは8着分。",
+      "claim_ja": "パジャマは8着分。",
+      "method_ja": "4組×上下2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "組を衣類点数へ換算。",
+      "conclusion_ja": "4×2=8。",
+      "baseline_ja": "4×2=8。"
+    },
+    {
+      "id": "wardrobe_adam_selected",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.wardrobe_adam_selected",
+      "title_ja": "Adamの選択分36点。",
+      "claim_ja": "Adamの選択分36点。",
+      "method_ja": "4+4+8+20。",
+      "requires_steps": [
+        "wardrobe_pajamas"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "pantsのpairは1着として数える参照解釈。",
+      "conclusion_ja": "4+4+8+20=36。",
+      "baseline_ja": "4+4+8+20=36。"
+    },
+    {
+      "id": "wardrobe_friends",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.wardrobe_friends",
+      "title_ja": "友人分108点。",
+      "claim_ja": "友人分108点。",
+      "method_ja": "3×36。",
+      "requires_steps": [
+        "wardrobe_adam_selected"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人がAdamの当初選択分と同数。",
+      "conclusion_ja": "3×36=108。",
+      "baseline_ja": "3×36=108。"
+    },
+    {
+      "id": "wardrobe_adam_actual",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.wardrobe_adam_actual",
+      "title_ja": "Adamの実寄付18点。",
+      "claim_ja": "Adamの実寄付18点。",
+      "method_ja": "36÷2。",
+      "requires_steps": [
+        "wardrobe_adam_selected"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『半分を残す』対象を選択済み36点とする。",
+      "conclusion_ja": "18×2=36。",
+      "baseline_ja": "18×2=36。"
+    },
+    {
+      "id": "wardrobe_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.wardrobe_solution",
+      "title_ja": "総寄付126点。",
+      "claim_ja": "総寄付126点。",
+      "method_ja": "108+18。",
+      "requires_steps": [
+        "wardrobe_friends",
+        "wardrobe_adam_actual"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "友人分とAdam実寄付を加える。",
+      "conclusion_ja": "108+18=126。",
+      "baseline_ja": "108+18=126。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1734,
+    "checked_model_hash": "c7ae9e73613030285ef5ac0f94bc1cc2c890986bccfb58f5ed826d20e789cb8c",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

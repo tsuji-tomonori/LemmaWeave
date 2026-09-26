@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint146_sandwich_cake",
+  "title_ja": "ハムサンドとケーキが同じ日の確率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02472",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5日中ハムの日は3日、ケーキの日は独立に一様な1日とする。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.sandwich_cake_solution",
+  "graph": "work/gsm8k-sprint146-sandwich_cake-graph.json",
+  "model_notes_ja": [
+    "ケーキ曜日の選択がサンドイッチ曜日の選択から独立かつ一様という条件を明示する。問は週のどこかで一致する確率なので3/5=60%。参考解答3/25=12%は、特定の1日が両方になる確率と取り違えている。"
+  ],
+  "steps": [
+    {
+      "id": "sandwich_cake_favorable",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.sandwich_cake_favorable",
+      "title_ja": "5通りのケーキ曜日のうち有利なのはハム曜日3通り",
+      "claim_ja": "5通りのケーキ曜日のうち有利なのはハム曜日3通り",
+      "method_ja": "等確率な曜日を数える",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "5通りのケーキ曜日のうち有利なのはハム曜日3通り",
+      "baseline_ja": "5通りのケーキ曜日のうち有利なのはハム曜日3通り"
+    },
+    {
+      "id": "sandwich_cake_reference_is_wrong",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.sandwich_cake_reference_is_wrong",
+      "title_ja": "参考解答12%は求める週内一致確率60%と異なる",
+      "claim_ja": "参考解答12%は求める週内一致確率60%と異なる",
+      "method_ja": "1日を先に選ぶ事象との混同を数値で示す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "参考解答12%は求める週内一致確率60%と異なる",
+      "baseline_ja": "参考解答12%は求める週内一致確率60%と異なる"
+    },
+    {
+      "id": "sandwich_cake_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.sandwich_cake_solution",
+      "title_ja": "同じ日になる確率は60%",
+      "claim_ja": "同じ日になる確率は60%",
+      "method_ja": "3/5を百分率にする",
+      "requires_steps": [
+        "sandwich_cake_favorable",
+        "sandwich_cake_reference_is_wrong"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "同じ日になる確率は60%",
+      "baseline_ja": "同じ日になる確率は60%"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2473,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

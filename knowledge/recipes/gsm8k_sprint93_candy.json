@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint93_candy",
+  "title_ja": "残ったキャンディー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01680",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "349個からTalithaが108個、Solomonが153個取る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.candy_solution",
+  "graph": "work/gsm8k-sprint93-candy-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "candy_after_talitha",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.candy_after_talitha",
+      "title_ja": "最初の後",
+      "claim_ja": "241個残る。",
+      "method_ja": "349-108。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "取った個数は重複しない。",
+      "conclusion_ja": "241+108=349。",
+      "baseline_ja": "241+108=349。"
+    },
+    {
+      "id": "candy_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.candy_solution",
+      "title_ja": "最終残数",
+      "claim_ja": "88個残る。",
+      "method_ja": "241-153。",
+      "requires_steps": [
+        "candy_after_talitha"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Solomonは残りから取る。",
+      "conclusion_ja": "88+153=241。",
+      "baseline_ja": "88+153=241。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1681,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

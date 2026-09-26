@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-0900-entrance-02",
+  "planned_slot_local_hour": 9,
+  "planned_at": "2026-09-20T09:00:00+09:00",
+  "role": "japanese_entrance_exam_high_school",
+  "base_sha": "40a3bce45eac46ff09bccaac19bc81af807029ed",
+  "started_at": "2026-09-20T09:56:51+09:00",
+  "finished_at": "2026-09-20T10:03:51+09:00",
+  "schedule_offset_seconds": 3411,
+  "schedule_note_ja": "予定時刻から56分51秒遅れて起動した。09時専用枠は当日未実行だったため重複せず割り当てた。10時のGSM8K枠は本実行では消化していない。",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01"
+  ],
+  "deferred": [],
+  "claim": {
+    "problem_ids": [
+      "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01"
+    ],
+    "claimed_at": "2026-09-20T09:56:51+09:00",
+    "expires_at": "2026-09-20T10:56:51+09:00",
+    "status": "released_after_serial_write"
+  },
+  "source": {
+    "provider": "大学入試センター",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "pdf_page_1_based": [1],
+    "printed_page_label": ["30"],
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q01-S01-01.json",
+    "source_review_basis": "公式掲載ページと公式PDFを2026-09-20に再取得し、保存済みの2026-09-05原ページ目視記録、出題位置、文書SHA-256、独立照合済みモデルを再照合した。原資料そのものは再配布しない。"
+  },
+  "written_solution_ja": [
+    "a=2を第1不等式へ代入するとx-2√6+1≥0である。両辺を同値変形してx≥2√6-1を得る。",
+    "a=2を第2不等式へ代入すると(2-1)x-2·2²-2+3≤0、すなわちx-7≤0だからx≤7である。",
+    "二つを同時に満たす必要十分条件は2√6-1≤x≤7である。各変形は同値なので、この区間の全実数が元の連立不等式を満たし、これ以外の解はない。"
+  ],
+  "entrance_exam_ledger_snapshot": {
+    "registered": 13,
+    "collected_kernel_checked": 5,
+    "candidate_not_started": 8,
+    "individual_solutions_authored_this_week": 2,
+    "current_week_by_six_fields": {
+      "sets_logic_integers": 1,
+      "functions_equations_inequalities": 1,
+      "geometry_vectors_trigonometry": 0,
+      "combinatorics_probability_statistics": 0,
+      "sequences": 0,
+      "calculus": 0
+    },
+    "unconfirmed_scope_ja": "旧51掲載経路・36大学と現行13 IDの完全対応、2024〜2026共通テストおよび東京・京都・名古屋大学の全小問、高校6分野の対象全集合は未列挙。"
+  },
+  "gsm8k_progress_unchanged": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 395,
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "artifacts": {
+    "recipe": "knowledge/recipes/dnc2026_inequalities_individual.json",
+    "lean_file": "tests/lean/DNC2026InequalitiesIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "written_lines": 3,
+    "lean_line_theorems": 3,
+    "semantic_review_status": "self_review_only"
+  },
+  "validation": {
+    "official_source_refetched": true,
+    "registered_problem_record_matched": true,
+    "registered_id_set_count": 13,
+    "registered_id_duplicates": 0,
+    "candidate_count": 8,
+    "recipe_json_parse": "success",
+    "recipe_steps": 3,
+    "recipe_declaration_links": 3,
+    "forbidden_lean_tokens_found": [],
+    "local_lean_available": false,
+    "fixed_lean_status": "pending_exact_head_ci",
+    "semantic_review_status": "self_review_only_for_new_individual_solution",
+    "render_note_ja": "新規依存グラフと固定Lean成功実行がまだないため、check_method_recipes.py --renderの成功証拠は未取得。"
+  },
+  "ci": {
+    "prior_head_sha": "40a3bce45eac46ff09bccaac19bc81af807029ed",
+    "prior_head_workflow_runs": 0,
+    "solution_commit_sha": "f3df7873fd86d482806aec03240fcf9cfd7a5cfd",
+    "current_status": "pending_exact_head_ci",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "f3df7873fd86d482806aec03240fcf9cfd7a5cfd",
+  "next_entrance_exam_field": "geometry_vectors_trigonometry",
+  "next_entrance_exam_candidate_ja": "現行台帳の図形問題から、未作成の個別記述解答を1小問選び、公式図を原資料で確認する。",
+  "note_ja": "関数・方程式・不等式の専用枠として既存の共通テスト1小問を原題から再読し、全解の必要十分条件を3つの日本語説明行とLean定理へ対応させた。既存の独立レビュー済みモデルは変更せず、新しい解答はself_review_only。固定Lean成功証拠と依存グラフ取込前なので正式完了には数えない。"
+}

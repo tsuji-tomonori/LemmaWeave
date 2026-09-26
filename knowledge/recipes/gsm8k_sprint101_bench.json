@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint101_bench",
+  "title_ja": "訓練後のベンチプレス重量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01798",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "500ポンドの80%低下分、負傷後重量、その3倍を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A11.bench_solution",
+  "graph": "work/gsm8k-sprint101-bench-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bench_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.bench_loss",
+      "title_ja": "低下量は400ポンド。",
+      "claim_ja": "低下量は400ポンド。",
+      "method_ja": "500の80%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "80%=4/5。",
+      "conclusion_ja": "400。",
+      "baseline_ja": "400。"
+    },
+    {
+      "id": "bench_after_injury",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.bench_after_injury",
+      "title_ja": "負傷直後は100ポンド。",
+      "claim_ja": "負傷直後は100ポンド。",
+      "method_ja": "500−400。",
+      "requires_steps": [
+        "bench_loss"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "元の重量から低下量を引く。",
+      "conclusion_ja": "100。",
+      "baseline_ja": "100。"
+    },
+    {
+      "id": "bench_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.bench_solution",
+      "title_ja": "訓練後は300ポンド。",
+      "claim_ja": "訓練後は300ポンド。",
+      "method_ja": "100×3。",
+      "requires_steps": [
+        "bench_after_injury"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "負傷後重量を3倍した。",
+      "conclusion_ja": "300。",
+      "baseline_ja": "300。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1799,
+    "checked_model_hash": "62af24a6c8b2710580085f4b467479b66e4f9c46d3f8f9052f13c3bbdeea5545",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

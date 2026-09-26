@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint45_garden",
+  "title_ja": "イチゴ区画の面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00956",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "64平方フィートの庭の半分を果物にし、その4分の1をイチゴにする。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.garden_solution",
+  "graph": "work/gsm8k-sprint45-garden-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "garden_fruit",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.garden_fruit",
+      "title_ja": "果物区画",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "庭64平方フィートの半分。",
+      "conclusion_ja": "32平方フィート。",
+      "baseline_ja": "64=32×2。"
+    },
+    {
+      "id": "garden_strawberries",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.garden_strawberries",
+      "title_ja": "イチゴ区画",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "果物区画32平方フィートの4分の1。",
+      "conclusion_ja": "8平方フィート。",
+      "baseline_ja": "32=8×4。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 957,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

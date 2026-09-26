@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint44_coffee",
+  "title_ja": "4月のコーヒー代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00945",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1日2杯を各2ドルで、30日間買う費用を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.coffee_solution",
+  "graph": "work/gsm8k-sprint44-coffee-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "coffee_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.coffee_daily",
+      "title_ja": "1日の費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日2杯を各2ドルで買う。",
+      "conclusion_ja": "4ドル。",
+      "baseline_ja": "2×2=4。"
+    },
+    {
+      "id": "coffee_month",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.coffee_month",
+      "title_ja": "4月の費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4月は30日。",
+      "conclusion_ja": "120ドル。",
+      "baseline_ja": "30×4=120。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 946,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

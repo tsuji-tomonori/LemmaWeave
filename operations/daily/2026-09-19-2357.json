@@ -1,0 +1,194 @@
+{
+  "date": "2026-09-19",
+  "run_id": "lemmaweave-sprint-20260919-2300-daily-audit",
+  "planned_slot_local_hour": 23,
+  "planned_at": "2026-09-19T23:00:00+09:00",
+  "role": "full_id_reconciliation_and_daily_report",
+  "base_sha": "12bb69071b62912ba551b7821970e889a7f5bcf9",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "started_at": "2026-09-19T23:57:02+09:00",
+  "finished_at": "2026-09-19T23:59:30+09:00",
+  "schedule_offset_seconds": 3422,
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "verification_pending": [],
+  "daily_gsm8k": {
+    "target_authored": 300,
+    "solve_slots_planned": 20,
+    "solve_slots_executed": 18,
+    "solve_slot_execution_rate": 0.9,
+    "unexecuted_local_hours": [
+      16,
+      18
+    ],
+    "partial_slots": [
+      {
+        "local_hour": 0,
+        "target": 15,
+        "authored": 5
+      },
+      {
+        "local_hour": 1,
+        "target": 15,
+        "authored": 5
+      }
+    ],
+    "authored_unique": 250,
+    "authored_first_problem_id": "external-gsm8k-main-3101c7d50724:train:00524",
+    "authored_last_problem_id": "external-gsm8k-main-3101c7d50724:train:00773",
+    "authoring_target_attainment": 0.8333333333,
+    "formally_completed": 0,
+    "formal_completion_rate": 0,
+    "authoring_elapsed_seconds_sum": 19795,
+    "authoring_elapsed_seconds_per_problem": 79.18,
+    "note_ja": "記述式解答・Leanモデル・行別定理・原文ハッシュ・自己照合を保存した件数と、成功証拠まで照合した正式完了件数を分離する。"
+  },
+  "cumulative_gsm8k": {
+    "fixed_universe": 8792,
+    "split_counts": {
+      "train": 7473,
+      "test": 1319
+    },
+    "solution_ready": 518,
+    "main_reflected_solution_ready": 518,
+    "verification_pending": 260,
+    "pending_first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "pending_last_problem_id": "external-gsm8k-main-3101c7d50724:train:00773",
+    "in_progress": 0,
+    "held": 0,
+    "unstarted": 8014,
+    "remaining": 8274
+  },
+  "id_reconciliation": {
+    "universe_definition": "external-gsm8k-main-3101c7d50724:{train:00000..07472,test:00000..01318}",
+    "universe_count": 8792,
+    "universe_unique_count": 8792,
+    "source_duplicate_excess": 0,
+    "source_cross_split_overlap": 0,
+    "state_sets": {
+      "solution_ready": {
+        "count": 518,
+        "source": "current successful evidence in reports/method-recipes.json"
+      },
+      "verification_pending": {
+        "count": 260,
+        "definition": "daily-ledger unique IDs train:00514..00773; no current successful evidence"
+      },
+      "in_progress": {
+        "count": 0
+      },
+      "held": {
+        "count": 0
+      },
+      "unstarted": {
+        "count": 8014,
+        "definition": "fixed universe minus the four preceding disjoint state sets"
+      }
+    },
+    "state_union_count": 8792,
+    "pairwise_state_overlap_count": 0,
+    "missing_state_assignment_count": 0,
+    "selected_occurrences_today": 290,
+    "selected_unique_gsm8k_ids_today": 260,
+    "duplicate_selection_excess_today": 30,
+    "duplicate_selection_reason": "train:00514..00523 were deliberately retried in the 21/22-hour evidence slots; this does not duplicate state membership.",
+    "status": "passed"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "retry_on": "2026-09-20",
+      "reason_ja": "最古の検証待ち。exact-head CIは固定LeanビルドとA24〜A32監査後、レシピ説明行の名前付き定理が最終証明依存に現れない不整合を検出して失敗した。成功証拠へ採用できない。",
+      "next_action_ja": "失敗メッセージへrecipe IDを付けて全不一致を列挙し、A27〜A30の60レシピを実依存グラフへ合わせて修復後、exact-head CIと証拠取込を再実行する。"
+    }
+  ],
+  "oldest_overdue": {
+    "problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "originally_planned_date": "2026-09-18",
+    "state": "verification_pending",
+    "retry_on": "2026-09-20"
+  },
+  "high_school_track": {
+    "denominator_separate_from_gsm8k": true,
+    "ledger_total": 13,
+    "previously_verified": 5,
+    "candidate_unstarted": 8,
+    "today_authored_self_review_only": 1,
+    "today_formally_completed": 0,
+    "topic_week_counts": {
+      "集合・論理・整数": 1,
+      "関数・方程式・不等式": 0,
+      "図形・ベクトル・三角比": 0,
+      "場合の数・確率・統計": 0,
+      "数列": 0,
+      "微分・積分": 0
+    }
+  },
+  "calibration": {
+    "period": "2026-09-19..2026-09-21",
+    "day_number": 1,
+    "new_configuration_three_day_average": null,
+    "new_configuration_day1_authored_per_day": 250,
+    "new_configuration_day1_formally_completed_per_day": 0,
+    "previous_measured_completed_per_day_7d": 40,
+    "comparison_note_ja": "旧7暦日平均40問/日と、新構成初日の作成250問/日・正式完了0問/日を混同しない。3日平均は9月21日終了後に算出する。",
+    "latest_exact_head_ci_elapsed_seconds": 1402,
+    "latest_failed_artifact_size_bytes": 269106341
+  },
+  "forecast": {
+    "target_date": "2026-10-18",
+    "remaining_calendar_days_after_today": 29,
+    "required_formal_completions_per_day": 286,
+    "authored_rate_if_day1_repeats": 250,
+    "authoring_only_forecast_date": "2026-10-23",
+    "formal_measured_forecast_date": null,
+    "status": "target_at_risk_no_formal_throughput",
+    "note_ja": "初日の作成速度250問/日は必要286問/日を下回る。正式完了は0問のため有限の実測完了日を提示できず、検証基盤を直さない限り10月18日目標は未達見込み。"
+  },
+  "ci": {
+    "workflow_run_id": 35447386107,
+    "workflow_job_id": 105908668338,
+    "tested_head_sha": "12bb69071b62912ba551b7821970e889a7f5bcf9",
+    "status": "failure",
+    "started_at": "2026-09-19T22:59:57+09:00",
+    "finished_at": "2026-09-19T23:23:19+09:00",
+    "lean_version": "4.33.1",
+    "complete_build": "passed",
+    "a24_to_a32_lean_and_axiom_audit": "passed",
+    "failure": "scripts/check_method_recipes.py: ValueError: written line has no theorem in final proof",
+    "failure_scope_note_ja": "検査は最初の不一致で停止しrecipe IDを出力しないため、影響件数は未確定。失敗を1件だけと仮定しない。",
+    "failed_artifact_id": 10586406404,
+    "failed_artifact_sha256": "715d02d01f6dc965e1da95ef32487268f4f8c2dd3ae4268cd9adf8de45c7e655",
+    "failed_artifact_size_bytes": 269106341,
+    "accepted_as_success_evidence": false,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35447386107"
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "head_sha": "12bb69071b62912ba551b7821970e889a7f5bcf9",
+    "mergeable": true,
+    "unresolved_review_threads": 0,
+    "reviews": 0,
+    "merged": false,
+    "merge_blocker": "exact-head required CI failed"
+  },
+  "commit": {
+    "audited_head_sha": "12bb69071b62912ba551b7821970e889a7f5bcf9",
+    "ledger_commit_sha": "self",
+    "note_ja": "このフィールドのselfは本ファイルを含むGitコミットを指す。"
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00774",
+  "next_actions": [
+    "レシピ検査の例外へrecipe IDを付与して全不一致を列挙する",
+    "A27〜A30の説明行定理と最終証明の実依存を一括修復する",
+    "exact-head固定Lean CI成功後のみ証拠を取込み、solution_readyを再計算する",
+    "未実行だった16時・18時の30問と、0時・1時の不足20問を翌日配分へ明示する"
+  ],
+  "execution_control": {
+    "serialized": true,
+    "shared_lock_implementation": false,
+    "claim_status": "released_after_serial_write",
+    "note_ja": "既存HEADを読み直して非forceの単一ファイル作成を行う。"
+  }
+}

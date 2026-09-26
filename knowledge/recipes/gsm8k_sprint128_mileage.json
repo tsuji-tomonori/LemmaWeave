@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint128_mileage",
+  "title_ja": "一週間の走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02211",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "学校まで2.5マイルを1日2往復・週4日、市場まで2マイルを週末1往復する。合計は",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A20.mileage_solution",
+  "graph": "work/gsm8k-sprint128-mileage-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "mileage_school_round",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.mileage_school_round",
+      "title_ja": "学校1往復は5マイル",
+      "claim_ja": "学校1往復は5マイル",
+      "method_ja": "2.5マイルを往復する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "学校1往復は5マイル",
+      "baseline_ja": "学校1往復は5マイル"
+    },
+    {
+      "id": "mileage_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.mileage_daily",
+      "title_ja": "学校は1日10マイル",
+      "claim_ja": "学校は1日10マイル",
+      "method_ja": "5マイルを2往復",
+      "requires_steps": [
+        "mileage_school_round"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "学校は1日10マイル",
+      "baseline_ja": "学校は1日10マイル"
+    },
+    {
+      "id": "mileage_school_week",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.mileage_school_week",
+      "title_ja": "学校分は週40マイル",
+      "claim_ja": "学校分は週40マイル",
+      "method_ja": "10マイルを4日",
+      "requires_steps": [
+        "mileage_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "学校分は週40マイル",
+      "baseline_ja": "学校分は週40マイル"
+    },
+    {
+      "id": "mileage_market",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.mileage_market",
+      "title_ja": "市場1往復は4マイル",
+      "claim_ja": "市場1往復は4マイル",
+      "method_ja": "2マイルを往復する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "市場1往復は4マイル",
+      "baseline_ja": "市場1往復は4マイル"
+    },
+    {
+      "id": "mileage_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.mileage_solution",
+      "title_ja": "週44マイル",
+      "claim_ja": "週44マイル",
+      "method_ja": "40マイルと4マイルを足す",
+      "requires_steps": [
+        "mileage_school_week",
+        "mileage_market"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "週44マイル",
+      "baseline_ja": "週44マイル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2212,
+    "checked_model_hash": "be9ab873a50df496e12f7ec640da6afee66c564105c78477bc6213cb94a7cbe0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint114_cars",
+  "title_ja": "3台目の製造年",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01990",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A04.cars_solution",
+  "graph": "work/gsm8k-sprint114-cars-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cars_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.cars_second",
+      "title_ja": "2台目は1980年製。",
+      "claim_ja": "2台目は1980年製。",
+      "method_ja": "1970+10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "2台目は1980年製。",
+      "baseline_ja": "2台目は1980年製。"
+    },
+    {
+      "id": "cars_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.cars_solution",
+      "title_ja": "3台目は2000年製。",
+      "claim_ja": "3台目は2000年製。",
+      "method_ja": "1980+20。",
+      "requires_steps": [
+        "cars_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "3台目は2000年製。",
+      "baseline_ja": "3台目は2000年製。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1991,
+    "checked_model_hash": "1a0cc19b2490c11d76cac5ef60cb8fab9b5c9dae974c31340285155356e4fa59",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な倍率表現と参照説明の誤記を分離した。"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint103_pushups",
+  "title_ja": "金曜日の腕立て伏せ回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01826",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "曜日ごとの指示を時系列に適用する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.pushups_solution",
+  "graph": "work/gsm8k-sprint103-pushups-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pushups_wednesday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.pushups_wednesday",
+      "title_ja": "水曜日は14回。",
+      "claim_ja": "水曜日は14回。",
+      "method_ja": "7×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "火曜日7回の2倍。",
+      "conclusion_ja": "14。",
+      "baseline_ja": "14。"
+    },
+    {
+      "id": "pushups_first_three",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.pushups_first_three",
+      "title_ja": "月〜水の合計は26回。",
+      "claim_ja": "月〜水の合計は26回。",
+      "method_ja": "5+7+14。",
+      "requires_steps": [
+        "pushups_wednesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3日を各1回加える。",
+      "conclusion_ja": "26。",
+      "baseline_ja": "26。"
+    },
+    {
+      "id": "pushups_thursday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.pushups_thursday",
+      "title_ja": "木曜日は13回。",
+      "claim_ja": "木曜日は13回。",
+      "method_ja": "26÷2。",
+      "requires_steps": [
+        "pushups_first_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "それまでの合計の半分。",
+      "conclusion_ja": "13。",
+      "baseline_ja": "13。"
+    },
+    {
+      "id": "pushups_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.pushups_solution",
+      "title_ja": "金曜日は39回。",
+      "claim_ja": "金曜日は39回。",
+      "method_ja": "26+13。",
+      "requires_steps": [
+        "pushups_first_three",
+        "pushups_thursday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "前4日間の総数と同数。",
+      "conclusion_ja": "39。",
+      "baseline_ja": "39。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1827,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

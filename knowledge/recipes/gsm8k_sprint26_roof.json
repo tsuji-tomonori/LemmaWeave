@@ -1,0 +1,51 @@
+{
+  "id": "gsm8k_sprint26_roof",
+  "title_ja": "残りの屋根材費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00677",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "必要300フィートのうち250フィートが無料で、残りを1フィート8ドルで買う費用を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A26.roof_solution",
+  "graph": "work/gsm8k-sprint26-roof-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A26.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "長さと単価の単位を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "roof_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.roof_remaining",
+      "title_ja": "購入する長さ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "必要300から無料250を引く。",
+      "conclusion_ja": "50フィート。",
+      "baseline_ja": "300-250=50。"
+    },
+    {
+      "id": "roof_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.roof_cost",
+      "title_ja": "購入費用",
+      "requires_steps": [
+        "roof_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "50フィートを1フィート8ドルで買う。",
+      "conclusion_ja": "400ドル。",
+      "baseline_ja": "50×8=400。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 678,
+    "checked_model_hash": "916d85cf91b2b878437a08560919c67499293ac4d5422b70e189384b4426aceb",
+    "checks_ja": [
+      "無料分を引いた長さだけに単価を掛けた。"
+    ]
+  }
+}

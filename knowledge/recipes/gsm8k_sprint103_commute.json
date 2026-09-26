@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint103_commute",
+  "title_ja": "最初の駅から職場までの時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01837",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6時から9時までの全180分から最初の区間40分を引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.commute_solution",
+  "graph": "work/gsm8k-sprint103-commute-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "commute_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.commute_total",
+      "title_ja": "全通勤時間は180分。",
+      "claim_ja": "全通勤時間は180分。",
+      "method_ja": "(9−6)×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同日の6時から9時。",
+      "conclusion_ja": "180。",
+      "baseline_ja": "180。"
+    },
+    {
+      "id": "commute_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.commute_solution",
+      "title_ja": "最初の駅から職場までは140分。",
+      "claim_ja": "最初の駅から職場までは140分。",
+      "method_ja": "180−40。",
+      "requires_steps": [
+        "commute_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "最初の駅到着まで40分。",
+      "conclusion_ja": "140。",
+      "baseline_ja": "140。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1838,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

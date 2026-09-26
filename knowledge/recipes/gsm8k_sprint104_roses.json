@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint104_roses",
+  "title_ja": "3日間の花束販売数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01848",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "月曜を基準に火曜を3倍、水曜を火曜の3分の1として加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.roses_solution",
+  "graph": "work/gsm8k-sprint104-roses-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "roses_tuesday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.roses_tuesday",
+      "title_ja": "火曜日は36束。",
+      "claim_ja": "火曜日は36束。",
+      "method_ja": "12×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜日の3倍。",
+      "conclusion_ja": "36。",
+      "baseline_ja": "36。"
+    },
+    {
+      "id": "roses_wednesday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.roses_wednesday",
+      "title_ja": "水曜日は12束。",
+      "claim_ja": "水曜日は12束。",
+      "method_ja": "36÷3。",
+      "requires_steps": [
+        "roses_tuesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "火曜日の3分の1。",
+      "conclusion_ja": "12。",
+      "baseline_ja": "12。"
+    },
+    {
+      "id": "roses_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.roses_solution",
+      "title_ja": "合計60束。",
+      "claim_ja": "合計60束。",
+      "method_ja": "12+36+12。",
+      "requires_steps": [
+        "roses_tuesday",
+        "roses_wednesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3日分を加える。",
+      "conclusion_ja": "60。",
+      "baseline_ja": "60。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1849,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

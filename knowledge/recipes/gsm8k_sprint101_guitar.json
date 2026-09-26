@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint101_guitar",
+  "title_ja": "安い店で節約できる金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01799",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各店の割引と送料込み価格を求め、その差を取る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A11.guitar_solution",
+  "graph": "work/gsm8k-sprint101-guitar-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "guitar_gc_discount",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.guitar_gc_discount",
+      "title_ja": "Guitar Centerの割引は150ドル。",
+      "claim_ja": "Guitar Centerの割引は150ドル。",
+      "method_ja": "1000×15%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15%=15/100。",
+      "conclusion_ja": "150。",
+      "baseline_ja": "150。"
+    },
+    {
+      "id": "guitar_gc_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.guitar_gc_cost",
+      "title_ja": "Guitar Centerの支払額は950ドル。",
+      "claim_ja": "Guitar Centerの支払額は950ドル。",
+      "method_ja": "1000−150+送料100。",
+      "requires_steps": [
+        "guitar_gc_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "割引後に送料を加える。",
+      "conclusion_ja": "950。",
+      "baseline_ja": "950。"
+    },
+    {
+      "id": "guitar_sw_discount",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.guitar_sw_discount",
+      "title_ja": "Sweetwaterの割引は100ドル。",
+      "claim_ja": "Sweetwaterの割引は100ドル。",
+      "method_ja": "1000×10%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10%=10/100。",
+      "conclusion_ja": "100。",
+      "baseline_ja": "100。"
+    },
+    {
+      "id": "guitar_sw_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.guitar_sw_cost",
+      "title_ja": "Sweetwaterの支払額は900ドル。",
+      "claim_ja": "Sweetwaterの支払額は900ドル。",
+      "method_ja": "1000−100、送料無料。",
+      "requires_steps": [
+        "guitar_sw_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "送料0ドル。",
+      "conclusion_ja": "900。",
+      "baseline_ja": "900。"
+    },
+    {
+      "id": "guitar_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A11.guitar_solution",
+      "title_ja": "Sweetwaterなら50ドル節約できる。",
+      "claim_ja": "Sweetwaterなら50ドル節約できる。",
+      "method_ja": "950−900。",
+      "requires_steps": [
+        "guitar_gc_cost",
+        "guitar_sw_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "900<950。",
+      "conclusion_ja": "50。",
+      "baseline_ja": "50。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1800,
+    "checked_model_hash": "62af24a6c8b2710580085f4b467479b66e4f9c46d3f8f9052f13c3bbdeea5545",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

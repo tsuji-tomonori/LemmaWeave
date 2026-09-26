@@ -1,0 +1,36 @@
+{
+  "date":"2026-09-20","run_id":"lemmaweave-sprint-20260920-1900-gsm8k-50",
+  "planned_slot_local_hour":19,"planned_at":"2026-09-20T19:00:00+09:00","role":"gsm8k_individual_solution",
+  "base_sha":"6520f81c73168d492b83a6552b9e78133a2d5f3a","started_at":"2026-09-20T19:04:06+09:00","finished_at":"2026-09-20T19:15:19+09:00","schedule_offset_seconds":246,"missed_slots_detected":[10],
+  "selected_problem_ids":[
+    "external-gsm8k-main-3101c7d50724:train:01029","external-gsm8k-main-3101c7d50724:train:01030","external-gsm8k-main-3101c7d50724:train:01031","external-gsm8k-main-3101c7d50724:train:01032","external-gsm8k-main-3101c7d50724:train:01033",
+    "external-gsm8k-main-3101c7d50724:train:01034","external-gsm8k-main-3101c7d50724:train:01035","external-gsm8k-main-3101c7d50724:train:01036","external-gsm8k-main-3101c7d50724:train:01037","external-gsm8k-main-3101c7d50724:train:01038",
+    "external-gsm8k-main-3101c7d50724:train:01039","external-gsm8k-main-3101c7d50724:train:01040","external-gsm8k-main-3101c7d50724:train:01041","external-gsm8k-main-3101c7d50724:train:01042","external-gsm8k-main-3101c7d50724:train:01043"
+  ],
+  "completed_problem_ids":[],
+  "verification_pending":[
+    "external-gsm8k-main-3101c7d50724:train:01029","external-gsm8k-main-3101c7d50724:train:01030","external-gsm8k-main-3101c7d50724:train:01031","external-gsm8k-main-3101c7d50724:train:01032","external-gsm8k-main-3101c7d50724:train:01033",
+    "external-gsm8k-main-3101c7d50724:train:01034","external-gsm8k-main-3101c7d50724:train:01035","external-gsm8k-main-3101c7d50724:train:01036","external-gsm8k-main-3101c7d50724:train:01037","external-gsm8k-main-3101c7d50724:train:01038",
+    "external-gsm8k-main-3101c7d50724:train:01039","external-gsm8k-main-3101c7d50724:train:01040","external-gsm8k-main-3101c7d50724:train:01041","external-gsm8k-main-3101c7d50724:train:01042","external-gsm8k-main-3101c7d50724:train:01043"
+  ],
+  "verification_pending_cumulative":{"count":530,"first_problem_id":"external-gsm8k-main-3101c7d50724:train:00514","last_problem_id":"external-gsm8k-main-3101c7d50724:train:01043"},
+  "deferred":[
+    {"problem_id":"external-gsm8k-main-3101c7d50724:train:01029-01043","retry_on":"2026-09-20","reason_ja":"固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。","next_action_ja":"現HEADの全体replayを完走し、入力SHA・許容公理・54説明行の実依存を照合して成功成果物だけを取り込む。"},
+    {"problem_id":"external-gsm8k-main-3101c7d50724:train:01038","retry_on":"2026-09-20","reason_ja":"原文の『A third of the remaining seeds grew, but the plants were eaten』は3分の1だけが育ち食べられたとも、参照解答のように育った18本の3分の1が食べられたとも読める。","next_action_ja":"独立レビューで原文解釈を確認する。現成果では参照解答の解釈を明示した追加条件として9本を形式化し、曖昧性を保持する。"}
+  ],
+  "checkpoints":[
+    {"problem_ids":"train:01029-01033","commit":"6a58982a8cb3b8f6779a8daa1cbcde29a1b55bfd"},
+    {"problem_ids":"train:01034-01038","commit":"93a36bb96875cb2f53c7ebdb9e6c38f3b952cad1"},
+    {"problem_ids":"train:01039-01043","commit":"df2f3f9245f4909ab7e4d52bc411a32ba4a4b3d5"},
+    {"problem_ids":"train:01029-01043 registration","commit":"a26fbc6ec5f157f218837baea0ca6a660d4e422a"}
+  ],
+  "self_review":{"status":"self_review_only","source_records_checked":15,"source_questions_checked":15,"written_solution_lines":54,"recipe_declaration_mappings_checked":54,"sorry_admit_custom_axiom_matches":0,"python_regression_tests_passed":52,"model_sha256":"7b29133179613f873ebcb1ca6f7d04b98440d2827b8f5062b3210ba82adacf75"},
+  "measurements":{"elapsed_seconds":673,"artifact_bytes":51294,"selected":15,"written":15,"formal_completion_rate":0.0,"local_execution_success_rate":1.0,"ci_seconds":null},
+  "local_checks":{"ledger_validate":"passed_before_ledger_then_repeated","python_unittest":"52 passed","source_and_recipe_hash_check":"15 records and 54 declarations passed","fixed_lean":"not_available_locally","method_recipe_render":"blocked_missing_existing_artifact","method_recipe_render_missing_path":"reports/dependencies/methods/dnc2026_inequalities_individual.json.gz","next_action_ja":"固定CIで新規Lean対象と全依存グラフを生成して再照合する。"},
+  "ci":{"previous_head_sha":"6520f81c73168d492b83a6552b9e78133a2d5f3a","previous_status_checks":0,"accepted_as_success_evidence":false,"current_head_sha":"a26fbc6ec5f157f218837baea0ca6a660d4e422a","current_run_id":null,"current_run_url":null,"current_status":"trigger_pending"},
+  "pull_request":"https://github.com/tsuji-tomonori/LemmaWeave/pull/5","commit":"a26fbc6ec5f157f218837baea0ca6a660d4e422a",
+  "progress_before":{"solution_ready":518,"remaining":8274,"verification_pending":515},
+  "progress_after":{"solution_ready":518,"remaining":8274,"verification_pending":530},
+  "next_problem_id":"external-gsm8k-main-3101c7d50724:train:01044",
+  "note_ja":"15問を原題から個別に読解し、記述式解答・Leanモデル・54個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01038は曖昧な英文を黙って補完せず、参照解答の解釈を明示した条件付き成果として保持した。train:01041は接種者を大人と子どもの二分として表現し、train:01043はcoachを品名に依存しない価格計算として形式化した。10時枠は未実行のまま保持する。"
+}

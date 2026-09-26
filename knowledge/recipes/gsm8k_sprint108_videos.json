@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint108_videos",
+  "title_ja": "6月末までの動画時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01903",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6月を15日ずつに分け、前半と倍増後の後半を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A18.videos_solution",
+  "graph": "work/gsm8k-sprint108-videos-graph.json",
+  "model_notes_ja": [
+    "参照解答どおり、6月前半15日を1日10時間、残り15日を1日20時間と読む。"
+  ],
+  "steps": [
+    {
+      "id": "videos_first_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.videos_first_half",
+      "title_ja": "前半15日で150時間。",
+      "claim_ja": "前半15日で150時間。",
+      "method_ja": "15×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "videos_daily_after",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.videos_daily_after",
+      "title_ja": "後半は1日20時間。",
+      "claim_ja": "後半は1日20時間。",
+      "method_ja": "10×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "videos_second_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.videos_second_half",
+      "title_ja": "後半15日で300時間。",
+      "claim_ja": "後半15日で300時間。",
+      "method_ja": "15×20。",
+      "requires_steps": [
+        "videos_daily_after"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "videos_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.videos_solution",
+      "title_ja": "合計450時間。",
+      "claim_ja": "合計450時間。",
+      "method_ja": "150+300。",
+      "requires_steps": [
+        "videos_first_half",
+        "videos_second_half"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1904,
+    "checked_model_hash": "8387abb9439c81fb607c222f1f1736998bf0c1f8b65dd181b6386c00663bd8bc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

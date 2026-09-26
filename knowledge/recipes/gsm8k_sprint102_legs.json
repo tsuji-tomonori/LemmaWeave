@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint102_legs",
+  "title_ja": "一緒に歩く生物の脚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01816",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "人間2人と犬2匹を種別に数えて加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.legs_solution",
+  "graph": "work/gsm8k-sprint102-legs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "legs_humans",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.legs_humans",
+      "title_ja": "人間の脚は4本。",
+      "claim_ja": "人間の脚は4本。",
+      "method_ja": "2人×2本。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Johnnyと息子。",
+      "conclusion_ja": "4。",
+      "baseline_ja": "4。"
+    },
+    {
+      "id": "legs_dogs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.legs_dogs",
+      "title_ja": "犬の脚は8本。",
+      "claim_ja": "犬の脚は8本。",
+      "method_ja": "2匹×4本。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "犬は各4本。",
+      "conclusion_ja": "8。",
+      "baseline_ja": "8。"
+    },
+    {
+      "id": "legs_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.legs_solution",
+      "title_ja": "合計12本。",
+      "claim_ja": "合計12本。",
+      "method_ja": "4+8。",
+      "requires_steps": [
+        "legs_humans",
+        "legs_dogs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全4個体を各1回数える。",
+      "conclusion_ja": "12。",
+      "baseline_ja": "12。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1817,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

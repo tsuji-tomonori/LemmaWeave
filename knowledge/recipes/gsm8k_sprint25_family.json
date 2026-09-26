@@ -1,0 +1,62 @@
+{
+  "id": "gsm8k_sprint25_family",
+  "title_ja": "3人が所有する本",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00662",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Harryの50冊を基準に、Floraの2倍とGaryの半分を求め、3人の合計を出す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A25.family_solution",
+  "graph": "work/gsm8k-sprint25-family-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A25.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "冊数は自然数で、半分条件は2×Gary=Harryと表す。"
+  ],
+  "steps": [
+    {
+      "id": "family_flora",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.family_flora",
+      "title_ja": "Floraの冊数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Harry50冊の2倍。",
+      "conclusion_ja": "Floraは100冊。",
+      "baseline_ja": "2×50=100。"
+    },
+    {
+      "id": "family_gary",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.family_gary",
+      "title_ja": "Garyの冊数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Harry50冊の半分。",
+      "conclusion_ja": "Garyは25冊。",
+      "baseline_ja": "50÷2=25。"
+    },
+    {
+      "id": "family_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.family_total",
+      "title_ja": "3人の合計",
+      "requires_steps": [
+        "family_flora",
+        "family_gary"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "50冊、100冊、25冊を加える。",
+      "conclusion_ja": "合計175冊。",
+      "baseline_ja": "50+100+25=175。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 663,
+    "checked_model_hash": "581c7484f9bea721da385e231f57c0a17afd20596d25584599b46b8c242b9903",
+    "checks_ja": [
+      "3人すべてを合計に含めた。"
+    ]
+  }
+}

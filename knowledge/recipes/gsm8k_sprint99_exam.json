@@ -1,0 +1,111 @@
+{
+  "id": "gsm8k_sprint99_exam",
+  "title_ja": "ピザ会に必要なWilliamの最小得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01776",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "29人の得点合計と30人で平均75に必要な合計を求め、達成可能性と最小性の両方を示す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_solution",
+  "graph": "work/gsm8k-sprint99-exam-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "exam_previous_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_previous_count",
+      "title_ja": "William以外は29人。",
+      "claim_ja": "William以外は29人。",
+      "method_ja": "30−1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全30人のうちWilliamだけ未受験。",
+      "conclusion_ja": "29+1=30。",
+      "baseline_ja": "29+1=30。"
+    },
+    {
+      "id": "exam_previous_sum",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_previous_sum",
+      "title_ja": "29人の得点合計は2,146点。",
+      "claim_ja": "29人の得点合計は2,146点。",
+      "method_ja": "平均74×29人。",
+      "requires_steps": [
+        "exam_previous_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "平均74は29人の正確な算術平均。",
+      "conclusion_ja": "29×74=2146。",
+      "baseline_ja": "29×74=2146。"
+    },
+    {
+      "id": "exam_target_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_target_total",
+      "title_ja": "平均75に必要な合計は2,250点。",
+      "claim_ja": "平均75に必要な合計は2,250点。",
+      "method_ja": "30人×75点。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "少なくとも平均75を要求する。",
+      "conclusion_ja": "30×75=2250。",
+      "baseline_ja": "30×75=2250。"
+    },
+    {
+      "id": "exam_94_enough",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_94_enough",
+      "title_ja": "94点なら平均75に到達する。",
+      "claim_ja": "94点なら平均75に到達する。",
+      "method_ja": "2146+94と2250を比較する。",
+      "requires_steps": [
+        "exam_previous_sum",
+        "exam_target_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "得点は自然数。",
+      "conclusion_ja": "2146+94=2250。",
+      "baseline_ja": "2146+94=2250。"
+    },
+    {
+      "id": "exam_lower_bound",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_lower_bound",
+      "title_ja": "必要得点は94点以上。",
+      "claim_ja": "必要得点は94点以上。",
+      "method_ja": "2146+score≥2250を解く。",
+      "requires_steps": [
+        "exam_previous_sum",
+        "exam_target_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "平均が少なくとも75。",
+      "conclusion_ja": "94≤score。",
+      "baseline_ja": "94≤score。"
+    },
+    {
+      "id": "exam_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_solution",
+      "title_ja": "最小得点は94点。",
+      "claim_ja": "最小得点は94点。",
+      "method_ja": "94点の達成可能性と、全達成得点に対する94点の下界を合わせる。",
+      "requires_steps": [
+        "exam_94_enough",
+        "exam_lower_bound"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "最小性を量化して確認する。",
+      "conclusion_ja": "score=94。",
+      "baseline_ja": "score=94。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1777,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

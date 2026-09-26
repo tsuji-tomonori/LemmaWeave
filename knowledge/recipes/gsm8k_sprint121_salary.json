@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint121_salary",
+  "title_ja": "控除と公共料金支払い後は1125ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02102",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.salary_solution",
+  "graph": "work/gsm8k-sprint121-salary-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "salary_tax",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.salary_tax",
+      "title_ja": "税金は400ドル。",
+      "claim_ja": "税金は400ドル。",
+      "method_ja": "月給2000ドルの20%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "税金は400ドル。",
+      "baseline_ja": "税金は400ドル。"
+    },
+    {
+      "id": "salary_insurance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.salary_insurance",
+      "title_ja": "保険は100ドル。",
+      "claim_ja": "保険は100ドル。",
+      "method_ja": "月給2000ドルの5%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "保険は100ドル。",
+      "baseline_ja": "保険は100ドル。"
+    },
+    {
+      "id": "salary_after_deductions",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.salary_after_deductions",
+      "title_ja": "控除後は1500ドル。",
+      "claim_ja": "控除後は1500ドル。",
+      "method_ja": "2000−400−100。",
+      "requires_steps": [
+        "salary_tax",
+        "salary_insurance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "控除後は1500ドル。",
+      "baseline_ja": "控除後は1500ドル。"
+    },
+    {
+      "id": "salary_utilities",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.salary_utilities",
+      "title_ja": "公共料金は375ドル。",
+      "claim_ja": "公共料金は375ドル。",
+      "method_ja": "控除後1500ドルの1/4。",
+      "requires_steps": [
+        "salary_after_deductions"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "公共料金は375ドル。",
+      "baseline_ja": "公共料金は375ドル。"
+    },
+    {
+      "id": "salary_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.salary_solution",
+      "title_ja": "控除と公共料金支払い後は1125ドル。",
+      "claim_ja": "控除と公共料金支払い後は1125ドル。",
+      "method_ja": "1500−375。",
+      "requires_steps": [
+        "salary_utilities"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "控除と公共料金支払い後は1125ドル。",
+      "baseline_ja": "控除と公共料金支払い後は1125ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2103,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

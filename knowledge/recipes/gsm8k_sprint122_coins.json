@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint122_coins",
+  "title_ja": "瓶に残る硬貨",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02113",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5時間目の後に瓶に残る硬貨を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A13.coins_solution",
+  "graph": "work/gsm8k-sprint122-coins-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "coins_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.coins_before",
+      "title_ja": "4時間目までに120枚。",
+      "claim_ja": "4時間目までに120枚。",
+      "method_ja": "20+30+30+40。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "4時間目までに120枚。",
+      "baseline_ja": "4時間目までに120枚。"
+    },
+    {
+      "id": "coins_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.coins_solution",
+      "title_ja": "5時間目の後は100枚。",
+      "claim_ja": "5時間目の後は100枚。",
+      "method_ja": "母に20枚貸すので120−20。",
+      "requires_steps": [
+        "coins_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "5時間目の後は100枚。",
+      "baseline_ja": "5時間目の後は100枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2114,
+    "checked_model_hash": "2d247300fd6850aeee734895d7aaaebb3883ceb284846fdab864e381503ad540",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は追加条件と反例を明示した。"
+    ]
+  }
+}

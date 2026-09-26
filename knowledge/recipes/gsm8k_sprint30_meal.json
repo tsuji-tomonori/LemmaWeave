@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint30_meal",
+  "title_ja": "食事代と税率不足",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00736",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "料理代と25%チップから支払額を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_solution",
+  "graph": "work/gsm8k-sprint30-meal-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "設問はwith taxと書くが税率を与えていない。",
+    "参照解答は税を無視し、料理代とチップのみで25ドルとしている。",
+    "税率0%なら25ドル、料理代への税率10%なら27ドルで、字義どおりは一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "meal_samosas",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_samosas",
+      "title_ja": "サモサ代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2ドルを3個。",
+      "conclusion_ja": "6ドル。",
+      "baseline_ja": "3×2=6。"
+    },
+    {
+      "id": "meal_pakoras",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_pakoras",
+      "title_ja": "パコラ代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3ドルを4注文。",
+      "conclusion_ja": "12ドル。",
+      "baseline_ja": "4×3=12。"
+    },
+    {
+      "id": "meal_food",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_food",
+      "title_ja": "料理代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "サモサ6、パコラ12、ラッシー2ドル。",
+      "conclusion_ja": "20ドル。",
+      "baseline_ja": "6+12+2=20。"
+    },
+    {
+      "id": "meal_tip_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_tip_total",
+      "title_ja": "税を除く条件付き合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "料理代20ドルに25%のチップ。",
+      "conclusion_ja": "チップ5ドル、合計25ドル。",
+      "baseline_ja": "20×25%=5、20+5=25。"
+    },
+    {
+      "id": "meal_tax_underdetermined",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.meal_tax_underdetermined",
+      "title_ja": "税率不足の反例",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "税率が明記されていない。",
+      "conclusion_ja": "税率0%なら25ドル、10%なら27ドル。",
+      "baseline_ja": "異なる合計が明示条件と両立する。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 737,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

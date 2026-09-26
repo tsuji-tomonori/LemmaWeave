@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint42_recycling",
+  "title_ja": "回収した容器数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00921",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "参加者90人の飲料選択とジュース50本の4/5から、消費された容器数を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.recycling_solution",
+  "graph": "work/gsm8k-sprint42-recycling-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "recycling_soda",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.recycling_soda",
+      "title_ja": "ソーダ缶",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参加者90人の半分。",
+      "conclusion_ja": "45缶。",
+      "baseline_ja": "45×2=90。"
+    },
+    {
+      "id": "recycling_sparkling",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.recycling_sparkling",
+      "title_ja": "炭酸水ボトル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参加者90人の3分の1。",
+      "conclusion_ja": "30本。",
+      "baseline_ja": "30×3=90。"
+    },
+    {
+      "id": "recycling_juice",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.recycling_juice",
+      "title_ja": "ジュース瓶",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "50本の4/5。",
+      "conclusion_ja": "40本。",
+      "baseline_ja": "40×5=50×4。"
+    },
+    {
+      "id": "recycling_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.recycling_total",
+      "title_ja": "回収容器総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "消費された3種の容器を加える。",
+      "conclusion_ja": "115個。",
+      "baseline_ja": "45+30+40=115。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 922,
+    "checked_model_hash": "99537224468d741c14fe17721e9d78f3b542f2946fd1e4df9a251fde49f95551",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

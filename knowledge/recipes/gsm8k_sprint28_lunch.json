@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint28_lunch",
+  "title_ja": "全校ランチ費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00699",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "3学年の児童数と1食分の品目価格から全員分の費用を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A28.lunch_solution",
+  "graph": "work/gsm8k-sprint28-lunch-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A28.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "金額はセントで整数化する。"
+  ],
+  "steps": [
+    {
+      "id": "lunch_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.lunch_third",
+      "title_ja": "3年生",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5クラス各30人。",
+      "conclusion_ja": "150人。",
+      "baseline_ja": "5×30=150。"
+    },
+    {
+      "id": "lunch_fourth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.lunch_fourth",
+      "title_ja": "4年生",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4クラス各28人。",
+      "conclusion_ja": "112人。",
+      "baseline_ja": "4×28=112。"
+    },
+    {
+      "id": "lunch_fifth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.lunch_fifth",
+      "title_ja": "5年生",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4クラス各27人。",
+      "conclusion_ja": "108人。",
+      "baseline_ja": "4×27=108。"
+    },
+    {
+      "id": "lunch_students",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.lunch_students",
+      "title_ja": "児童総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3学年を合計する。",
+      "conclusion_ja": "370人。",
+      "baseline_ja": "150+112+108=370。"
+    },
+    {
+      "id": "lunch_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.lunch_each",
+      "title_ja": "1食の価格",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "210・50・20セントを合計する。",
+      "conclusion_ja": "280セント。",
+      "baseline_ja": "210+50+20=280。"
+    },
+    {
+      "id": "lunch_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.lunch_total",
+      "title_ja": "全員分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "370食に280セントを掛ける。",
+      "conclusion_ja": "103600セント、すなわち1036ドル。",
+      "baseline_ja": "370×280=103600。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 700,
+    "checked_model_hash": "1810c2eb82e2b1ef127b9a48786d662c837755e9604891a5d1862e999a8bb1ec",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

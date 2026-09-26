@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint134_beads",
+  "title_ja": "必要なビーズ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02297",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "9人が各2本のネックレスを作り、1本50個使う",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.beads_solution",
+  "graph": "work/gsm8k-sprint134-beads-graph.json",
+  "model_notes_ja": [
+    "参照説明のbraceletsはnecklacesの誤記として、原題どおりネックレスを扱う。"
+  ],
+  "steps": [
+    {
+      "id": "beads_per_member",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.beads_per_member",
+      "title_ja": "1人分は100個",
+      "claim_ja": "1人分は100個",
+      "method_ja": "2本に各50個",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1人分は100個",
+      "baseline_ja": "1人分は100個"
+    },
+    {
+      "id": "beads_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.beads_solution",
+      "title_ja": "合計900個",
+      "claim_ja": "合計900個",
+      "method_ja": "1人100個を9人分",
+      "requires_steps": [
+        "beads_per_member"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計900個",
+      "baseline_ja": "合計900個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2298,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

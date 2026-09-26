@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint144_clothes",
+  "title_ja": "縞シャツと短パンの人数差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02454",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "81人の3分の2が縞、残りがチェック。短パンはチェックより19人多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.clothes_solution",
+  "graph": "work/gsm8k-sprint144-clothes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "clothes_striped",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.clothes_striped",
+      "title_ja": "縞は54人",
+      "claim_ja": "縞は54人",
+      "method_ja": "81の3分の2",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "縞は54人",
+      "baseline_ja": "縞は54人"
+    },
+    {
+      "id": "clothes_checkered",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.clothes_checkered",
+      "title_ja": "チェックは27人",
+      "claim_ja": "チェックは27人",
+      "method_ja": "81から54を引く",
+      "requires_steps": [
+        "clothes_striped"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "チェックは27人",
+      "baseline_ja": "チェックは27人"
+    },
+    {
+      "id": "clothes_shorts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.clothes_shorts",
+      "title_ja": "短パンは46人",
+      "claim_ja": "短パンは46人",
+      "method_ja": "27に19を足す",
+      "requires_steps": [
+        "clothes_checkered"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "短パンは46人",
+      "baseline_ja": "短パンは46人"
+    },
+    {
+      "id": "clothes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.clothes_solution",
+      "title_ja": "縞が8人多い",
+      "claim_ja": "縞が8人多い",
+      "method_ja": "54から46を引く",
+      "requires_steps": [
+        "clothes_striped",
+        "clothes_shorts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "縞が8人多い",
+      "baseline_ja": "縞が8人多い"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2455,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

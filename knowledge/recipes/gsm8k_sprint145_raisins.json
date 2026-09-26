@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint145_raisins",
+  "title_ja": "残り3箱のレーズン数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02456",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "合計437個。既知の2箱は72個と74個で、残り3箱は同数。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.raisins_solution",
+  "graph": "work/gsm8k-sprint145-raisins-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "raisins_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.raisins_remaining",
+      "title_ja": "残り3箱の合計は291個",
+      "claim_ja": "残り3箱の合計は291個",
+      "method_ja": "437から72と74を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "残り3箱の合計は291個",
+      "baseline_ja": "残り3箱の合計は291個"
+    },
+    {
+      "id": "raisins_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.raisins_solution",
+      "title_ja": "各箱は97個",
+      "claim_ja": "各箱は97個",
+      "method_ja": "291を3等分する",
+      "requires_steps": [
+        "raisins_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "各箱は97個",
+      "baseline_ja": "各箱は97個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2457,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

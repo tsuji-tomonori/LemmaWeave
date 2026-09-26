@@ -1,0 +1,139 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-1400-gsm8k-45",
+  "planned_slot_local_hour": 14,
+  "planned_at": "2026-09-20T14:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "640a1d4f2501411dcbb98f6fbfe22de68129bbc5",
+  "started_at": "2026-09-20T13:55:49+09:00",
+  "finished_at": "2026-09-20T14:50:00+09:00",
+  "schedule_offset_seconds": -251,
+  "missed_slots_detected": [
+    10
+  ],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00954",
+    "external-gsm8k-main-3101c7d50724:train:00955",
+    "external-gsm8k-main-3101c7d50724:train:00956",
+    "external-gsm8k-main-3101c7d50724:train:00957",
+    "external-gsm8k-main-3101c7d50724:train:00958",
+    "external-gsm8k-main-3101c7d50724:train:00959",
+    "external-gsm8k-main-3101c7d50724:train:00960",
+    "external-gsm8k-main-3101c7d50724:train:00961",
+    "external-gsm8k-main-3101c7d50724:train:00962",
+    "external-gsm8k-main-3101c7d50724:train:00963",
+    "external-gsm8k-main-3101c7d50724:train:00964",
+    "external-gsm8k-main-3101c7d50724:train:00965",
+    "external-gsm8k-main-3101c7d50724:train:00966",
+    "external-gsm8k-main-3101c7d50724:train:00967",
+    "external-gsm8k-main-3101c7d50724:train:00968"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00954",
+    "external-gsm8k-main-3101c7d50724:train:00955",
+    "external-gsm8k-main-3101c7d50724:train:00956",
+    "external-gsm8k-main-3101c7d50724:train:00957",
+    "external-gsm8k-main-3101c7d50724:train:00958",
+    "external-gsm8k-main-3101c7d50724:train:00959",
+    "external-gsm8k-main-3101c7d50724:train:00960",
+    "external-gsm8k-main-3101c7d50724:train:00961",
+    "external-gsm8k-main-3101c7d50724:train:00962",
+    "external-gsm8k-main-3101c7d50724:train:00963",
+    "external-gsm8k-main-3101c7d50724:train:00964",
+    "external-gsm8k-main-3101c7d50724:train:00965",
+    "external-gsm8k-main-3101c7d50724:train:00966",
+    "external-gsm8k-main-3101c7d50724:train:00967",
+    "external-gsm8k-main-3101c7d50724:train:00968"
+  ],
+  "verification_pending_cumulative": {
+    "count": 455,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:00968"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00954-00968",
+      "retry_on": "2026-09-20",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のため、solution_readyへ昇格できない。",
+      "next_action_ja": "現HEADのLean CIを完走させ、入力SHA・公理・実依存・42説明行を照合し、成功成果物だけを取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00696",
+      "retry_on": "2026-09-20",
+      "reason_ja": "直前CIでapples_after_fallとapples_stolenが最終証明依存に現れない不整合を検出した。",
+      "next_action_ja": "最終証明を両行定理へ明示的に接続済み。現HEADの依存グラフで接続を再確認する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00689-00703",
+      "retry_on": "2026-09-20",
+      "reason_ja": "exact-head完全replayでA27のcamp説明行定理が最終証明依存にないことを検出した。同じ構造の潜在不整合を一括監査した。",
+      "next_action_ja": "A27全15レシピの行定理を各最終証明へ明示的に接続済み。修復HEADの完全replayで15依存グラフを再検証する。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:00954-00958",
+      "commit": "d88406ae1dfcc96b690129831bb5da4f671cd9c2"
+    },
+    {
+      "problem_ids": "train:00959-00963",
+      "commit": "4212124b5f530dfb071ad4aab2383877dcabe6f4"
+    },
+    {
+      "problem_ids": "train:00964-00968",
+      "commit": "6ace719cbd4d9dd5d20188e9841418ddfd118935"
+    },
+    {
+      "problem_ids": "train:00689-00703 dependency repair",
+      "commit": "23a03c5549e81d26a1b838af17d52dea8f491dfa"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 42,
+    "recipe_declaration_mappings_checked": 42,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_sha256": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce"
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger_then_to_repeat",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records and 42 declarations passed",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_missing_existing_artifact",
+    "method_recipe_render_missing_path": "reports/dependencies/methods/dnc2026_inequalities_individual.json.gz",
+    "next_action_ja": "固定CIで全Lean対象と依存グラフを生成し、全レシピを照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "0c2e6acead0201200d6220827cb96b9081ac6630",
+    "previous_run_id": 35490914686,
+    "previous_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35490914686",
+    "previous_status": "failure",
+    "previous_failure": "recipe gsm8k_sprint27_camp: written line has no theorem in final proof",
+    "previous_artifact_id": 10598959508,
+    "previous_artifact_sha256": "b1f65ab40ed4599c0f3b1df1d3a8907d07faa59652e7db2d450f7bdcb690f11f",
+    "accepted_as_success_evidence": false,
+    "current_head_sha": "23a03c5549e81d26a1b838af17d52dea8f491dfa",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "trigger_pending"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "23a03c5549e81d26a1b838af17d52dea8f491dfa",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 440
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 455
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00969",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・名前付き行定理・原文ハッシュ・自己照合を保存した。train:00964は速度を自然数とする適用条件を明記し、記録を破る最小増加量4本/分を全称命題で証明した。新規A13のLeanビルドは成功したが、完全replayで既存A27のcamp依存不整合を検出したため成功証拠には採用していない。A27全15レシピを一括監査し、説明行定理を各最終証明へ接続した。10時枠は未実行のまま日次欠落として保持する。"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint33_carnival",
+  "title_ja": "遊園地の乗車料金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00777",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "二人分の観覧車料金を含め、合計50ドルを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.carnival_solution",
+  "graph": "work/gsm8k-sprint33-carnival-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "carnival_bumper",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.carnival_bumper",
+      "title_ja": "バンパーカー",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2ドルを2回。",
+      "conclusion_ja": "4ドル。",
+      "baseline_ja": "2×2=4。"
+    },
+    {
+      "id": "carnival_shuttle",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.carnival_shuttle",
+      "title_ja": "スペースシャトル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4ドルを4回。",
+      "conclusion_ja": "16ドル。",
+      "baseline_ja": "4×4=16。"
+    },
+    {
+      "id": "carnival_ferris",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.carnival_ferris",
+      "title_ja": "観覧車",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二人が各3回、1回5ドル。",
+      "conclusion_ja": "30ドル。",
+      "baseline_ja": "2×3×5=30。"
+    },
+    {
+      "id": "carnival_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.carnival_total",
+      "title_ja": "総額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "三種類の料金を加える。",
+      "conclusion_ja": "50ドル。",
+      "baseline_ja": "4+16+30=50。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 778,
+    "checked_model_hash": "f92955fa08a026655dc6e62f05770cdc6885021e9fc38cc9d8259214b11e7fcd",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

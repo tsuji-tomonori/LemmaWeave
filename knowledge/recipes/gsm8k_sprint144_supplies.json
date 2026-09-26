@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint144_supplies",
+  "title_ja": "理科用品の総費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02455",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "生徒1人につき5ドル、2ドル、1ドルの用品を23人分買う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.supplies_solution",
+  "graph": "work/gsm8k-sprint144-supplies-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "supplies_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.supplies_each",
+      "title_ja": "1人分8ドル",
+      "claim_ja": "1人分8ドル",
+      "method_ja": "5、2、1を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "1人分8ドル",
+      "baseline_ja": "1人分8ドル"
+    },
+    {
+      "id": "supplies_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.supplies_solution",
+      "title_ja": "総額184ドル",
+      "claim_ja": "総額184ドル",
+      "method_ja": "8に23を掛ける",
+      "requires_steps": [
+        "supplies_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "総額184ドル",
+      "baseline_ja": "総額184ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2456,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

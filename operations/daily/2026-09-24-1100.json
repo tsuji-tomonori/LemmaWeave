@@ -1,0 +1,101 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T11:00+09:00-gsm8k-15-a11",
+  "scheduled_local_hour": 11,
+  "scheduled_at": "2026-09-24T11:00:00+09:00",
+  "started_at": "2026-09-24T10:56:38+09:00",
+  "finished_at": "2026-09-24T11:02:22+09:00",
+  "start_offset_seconds": -202,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "ce8cc4f79c7bdb8e2bf5c7ebc723a449c2232c69",
+  "artifact_commit": "f673942656aa21c63044764df835b36e45860d47",
+  "selected_problem_ids": [
+    "train:02080", "train:02081", "train:02082", "train:02083", "train:02084",
+    "train:02085", "train:02086", "train:02087", "train:02088", "train:02089",
+    "train:02090", "train:02091", "train:02092", "train:02093", "train:02094"
+  ],
+  "skipped_already_solution_ready": [],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02080", "train:02081", "train:02082", "train:02083", "train:02084",
+    "train:02085", "train:02086", "train:02087", "train:02088", "train:02089",
+    "train:02090", "train:02091", "train:02092", "train:02093", "train:02094"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02084", "commit": "da2461a0e0a6329e3de9b0eaec6688d75e84d155"},
+    {"through": "train:02089", "commit": "4c2ceb527e2736c51edf680637497997b1815f4e"},
+    {"through": "train:02094", "commit": "f673942656aa21c63044764df835b36e45860d47"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0174.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A11Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A11.lean",
+    "recipes": 15,
+    "explanation_lines": 43,
+    "named_lean_theorems": 43,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02080は問題が週を尋ねるため、7日分413ドルを採用し、参照説明末尾のmonthを計算内容と矛盾する誤記として記録した。",
+    "train:02083は5日で30オンスという平均消費率とオンス単価が1週間も一定である条件を明示し、84ドルを導いた。整数缶の購入時点・在庫問題とは区別した。",
+    "train:02088は箱1つ・ソース1瓶・ミートボール1ポンドを8食へ等分するという原文の単数表現をモデル条件として明示した。",
+    "直前のexact-head CIは固定Lean 4.33.1と依存取得を通過したが、全件再生が内部上限でexit 124となった。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1579,
+    "pending": 6695,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02095",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持した。11時枠は予定時刻の202秒前に開始し、0〜10時の各枠と重複していない。"
+  },
+  "ci": {
+    "last_completed_exact_head": "ce8cc4f79c7bdb8e2bf5c7ebc723a449c2232c69",
+    "last_completed_run_id": 35941339665,
+    "last_completed_status": "failure_timeout_exit_124",
+    "last_completed_failure_step": "Replay the complete fixed-environment pipeline",
+    "last_completed_timeout_seconds": 1876,
+    "current_artifact_head": "f673942656aa21c63044764df835b36e45860d47",
+    "current_status": "not_started_before_ledger_commit",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T11:00+09:00",
+    "scope": "train:02080-train:02094",
+    "claimed_at": "2026-09-24T10:56:38+09:00",
+    "expires_at": "2026-09-24T11:56:38+09:00",
+    "released": true
+  }
+}

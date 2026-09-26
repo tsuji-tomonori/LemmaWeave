@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint45_juice",
+  "title_ja": "飲まれたジュース",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00955",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "10ガロン、1ガロン10カップから、残り5カップを除いて飲まれた量を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.juice_solution",
+  "graph": "work/gsm8k-sprint45-juice-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "juice_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.juice_total",
+      "title_ja": "購入量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10ガロンに各10カップ。",
+      "conclusion_ja": "100カップ。",
+      "baseline_ja": "10×10=100。"
+    },
+    {
+      "id": "juice_drunk",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.juice_drunk",
+      "title_ja": "飲まれた量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全100カップのうち5カップ残った。",
+      "conclusion_ja": "95カップ。",
+      "baseline_ja": "100=95+5。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 956,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

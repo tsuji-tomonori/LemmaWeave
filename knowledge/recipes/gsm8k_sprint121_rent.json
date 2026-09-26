@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint121_rent",
+  "title_ja": "1か月の家賃は1350ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02107",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.rent_solution",
+  "graph": "work/gsm8k-sprint121-rent-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rent_tax",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.rent_tax",
+      "title_ja": "税金は500ドル。",
+      "claim_ja": "税金は500ドル。",
+      "method_ja": "5000ドルの10%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "税金は500ドル。",
+      "baseline_ja": "税金は500ドル。"
+    },
+    {
+      "id": "rent_after_tax",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.rent_after_tax",
+      "title_ja": "税引後給与は4500ドル。",
+      "claim_ja": "税引後給与は4500ドル。",
+      "method_ja": "5000−500。",
+      "requires_steps": [
+        "rent_tax"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "税引後給与は4500ドル。",
+      "baseline_ja": "税引後給与は4500ドル。"
+    },
+    {
+      "id": "rent_two_months",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.rent_two_months",
+      "title_ja": "滞納2か月分は2700ドル。",
+      "claim_ja": "滞納2か月分は2700ドル。",
+      "method_ja": "税引後4500ドルの3/5。",
+      "requires_steps": [
+        "rent_after_tax"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "滞納2か月分は2700ドル。",
+      "baseline_ja": "滞納2か月分は2700ドル。"
+    },
+    {
+      "id": "rent_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.rent_solution",
+      "title_ja": "1か月の家賃は1350ドル。",
+      "claim_ja": "1か月の家賃は1350ドル。",
+      "method_ja": "2700÷2。",
+      "requires_steps": [
+        "rent_two_months"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "1か月の家賃は1350ドル。",
+      "baseline_ja": "1か月の家賃は1350ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2108,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

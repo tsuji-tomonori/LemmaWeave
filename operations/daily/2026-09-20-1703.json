@@ -1,0 +1,33 @@
+{
+  "date":"2026-09-20","run_id":"lemmaweave-sprint-20260920-1700-gsm8k-48",
+  "planned_slot_local_hour":17,"planned_at":"2026-09-20T17:00:00+09:00","role":"gsm8k_individual_solution",
+  "base_sha":"ff11a86a0fdd419b99368cfccc693f1530ea21b4","started_at":"2026-09-20T17:02:55+09:00","finished_at":"2026-09-20T17:10:52+09:00","schedule_offset_seconds":175,"missed_slots_detected":[10],
+  "selected_problem_ids":[
+    "external-gsm8k-main-3101c7d50724:train:00999","external-gsm8k-main-3101c7d50724:train:01000","external-gsm8k-main-3101c7d50724:train:01001","external-gsm8k-main-3101c7d50724:train:01002","external-gsm8k-main-3101c7d50724:train:01003",
+    "external-gsm8k-main-3101c7d50724:train:01004","external-gsm8k-main-3101c7d50724:train:01005","external-gsm8k-main-3101c7d50724:train:01006","external-gsm8k-main-3101c7d50724:train:01007","external-gsm8k-main-3101c7d50724:train:01008",
+    "external-gsm8k-main-3101c7d50724:train:01009","external-gsm8k-main-3101c7d50724:train:01010","external-gsm8k-main-3101c7d50724:train:01011","external-gsm8k-main-3101c7d50724:train:01012","external-gsm8k-main-3101c7d50724:train:01013"
+  ],
+  "completed_problem_ids":[],
+  "verification_pending":[
+    "external-gsm8k-main-3101c7d50724:train:00999","external-gsm8k-main-3101c7d50724:train:01000","external-gsm8k-main-3101c7d50724:train:01001","external-gsm8k-main-3101c7d50724:train:01002","external-gsm8k-main-3101c7d50724:train:01003",
+    "external-gsm8k-main-3101c7d50724:train:01004","external-gsm8k-main-3101c7d50724:train:01005","external-gsm8k-main-3101c7d50724:train:01006","external-gsm8k-main-3101c7d50724:train:01007","external-gsm8k-main-3101c7d50724:train:01008",
+    "external-gsm8k-main-3101c7d50724:train:01009","external-gsm8k-main-3101c7d50724:train:01010","external-gsm8k-main-3101c7d50724:train:01011","external-gsm8k-main-3101c7d50724:train:01012","external-gsm8k-main-3101c7d50724:train:01013"
+  ],
+  "verification_pending_cumulative":{"count":500,"first_problem_id":"external-gsm8k-main-3101c7d50724:train:00514","last_problem_id":"external-gsm8k-main-3101c7d50724:train:01013"},
+  "deferred":[{"problem_id":"external-gsm8k-main-3101c7d50724:train:00999-01013","retry_on":"2026-09-20","reason_ja":"固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。","next_action_ja":"現HEADの全体replayを完走し、入力SHA・許容公理・46説明行の実依存を照合して成功成果物だけを取り込む。"}],
+  "checkpoints":[
+    {"problem_ids":"train:00999-01003","commit":"2ac1dfe8a89c669312ce514584a3843daf1ce5ea"},
+    {"problem_ids":"train:01004-01008","commit":"cb3b98864d4aa9e9c0a8544dff7b7b6ee779063e"},
+    {"problem_ids":"train:01009-01013","commit":"b0ec946a35c5dda04e58f7323675b4f400ad8301"},
+    {"problem_ids":"train:00999-01013 registration","commit":"8c93f3e4d84873d9c0abda50d0f574c471bf0b9b"}
+  ],
+  "self_review":{"status":"self_review_only","source_records_checked":15,"source_questions_checked":15,"written_solution_lines":46,"recipe_declaration_mappings_checked":46,"sorry_admit_custom_axiom_matches":0,"python_regression_tests_passed":52,"model_sha256":"840d06a567f31ebf81564a89f447409ca98f51135478c434144a3b3d0a87917f"},
+  "measurements":{"elapsed_seconds":477,"artifact_bytes":49866,"selected":15,"written":15,"formal_completion_rate":0.0,"local_execution_success_rate":1.0,"ci_seconds":null},
+  "local_checks":{"ledger_validate":"passed_before_ledger_then_repeated","python_unittest":"52 passed","source_and_recipe_hash_check":"15 records and 46 declarations passed","fixed_lean":"not_available_locally","method_recipe_render":"blocked_missing_existing_artifact","method_recipe_render_missing_path":"reports/dependencies/methods/dnc2026_inequalities_individual.json.gz","next_action_ja":"固定CIで新規Lean対象と全依存グラフを生成して再照合する。"},
+  "ci":{"previous_head_sha":"ff11a86a0fdd419b99368cfccc693f1530ea21b4","previous_status_checks":0,"accepted_as_success_evidence":false,"current_head_sha":"8c93f3e4d84873d9c0abda50d0f574c471bf0b9b","current_run_id":null,"current_run_url":null,"current_status":"trigger_pending"},
+  "pull_request":"https://github.com/tsuji-tomonori/LemmaWeave/pull/5","commit":"8c93f3e4d84873d9c0abda50d0f574c471bf0b9b",
+  "progress_before":{"solution_ready":518,"remaining":8274,"verification_pending":485},
+  "progress_after":{"solution_ready":518,"remaining":8274,"verification_pending":500},
+  "next_problem_id":"external-gsm8k-main-3101c7d50724:train:01014",
+  "note_ja":"15問を原題から個別に読解し、記述式解答・Leanモデル・46個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01004は第2職人の賃率不足を示し、1260ドルと1470ドルの両立例で非一意性を形式化した。train:01007は自然数解の一意性まで証明し、train:01010は最近接分への丸めを整数差で証明した。10時枠は未実行のまま保持する。"
+}

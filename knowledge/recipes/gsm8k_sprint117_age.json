@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint117_age",
+  "title_ja": "原文だけでは44歳と56歳の両読解があり一意でない。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02044",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・順序を保って数量関係を式にし、全要求を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A07.age_solution",
+  "graph": "work/gsm8k-sprint117-age-graph.json",
+  "model_notes_ja": [
+    "“2 times older”は「2倍の年齢」(44歳)と「年齢差が2倍」(56歳)の両読解があり、原文だけでは一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "age_conventional",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.age_conventional",
+      "title_ja": "「2倍の年齢」なら現在44歳。",
+      "claim_ja": "「2倍の年齢」なら現在44歳。",
+      "method_ja": "12×2+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二つの自然な語義を明示して比較する。",
+      "conclusion_ja": "「2倍の年齢」なら現在44歳。",
+      "baseline_ja": "「2倍の年齢」なら現在44歳。"
+    },
+    {
+      "id": "age_literal",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.age_literal",
+      "title_ja": "「2倍年上」を差が2倍と読むなら現在56歳。",
+      "claim_ja": "「2倍年上」を差が2倍と読むなら現在56歳。",
+      "method_ja": "12+2×12+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二つの自然な語義を明示して比較する。",
+      "conclusion_ja": "「2倍年上」を差が2倍と読むなら現在56歳。",
+      "baseline_ja": "「2倍年上」を差が2倍と読むなら現在56歳。"
+    },
+    {
+      "id": "age_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.age_solution",
+      "title_ja": "原文だけでは44歳と56歳の両読解があり一意でない。",
+      "claim_ja": "原文だけでは44歳と56歳の両読解があり一意でない。",
+      "method_ja": "二つの語義を反例として分離する。",
+      "requires_steps": [
+        "age_conventional",
+        "age_literal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二つの自然な語義を明示して比較する。",
+      "conclusion_ja": "原文だけでは44歳と56歳の両読解があり一意でない。",
+      "baseline_ja": "原文だけでは44歳と56歳の両読解があり一意でない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2045,
+    "checked_model_hash": "369701eb61882cc97fb85d1975a67fc86d2f208a3e0877119867fe1712e7ae3b",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足や曖昧さを黙って補わず明示した。"
+    ]
+  }
+}

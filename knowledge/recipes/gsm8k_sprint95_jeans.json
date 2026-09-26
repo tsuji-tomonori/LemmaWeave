@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint95_jeans",
+  "title_ja": "ジーンズ3本の代金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01717",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1本40ドル、同時購入2本ごとにその2本を10%引きとして3本の代金を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.jeans_solution",
+  "graph": "work/gsm8k-sprint95-jeans-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jeans_pair_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.jeans_pair_cost",
+      "title_ja": "2本の通常価格",
+      "claim_ja": "80ドル。",
+      "method_ja": "2×40。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "割引単位は2本。",
+      "conclusion_ja": "2×40=80。",
+      "baseline_ja": "2×40=80。"
+    },
+    {
+      "id": "jeans_discount",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.jeans_discount",
+      "title_ja": "2本の値引額",
+      "claim_ja": "8ドル。",
+      "method_ja": "80の10%。",
+      "requires_steps": [
+        "jeans_pair_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10%=10/100。",
+      "conclusion_ja": "8×100=80×10。",
+      "baseline_ja": "8×100=80×10。"
+    },
+    {
+      "id": "jeans_discounted_pair",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.jeans_discounted_pair",
+      "title_ja": "割引後2本価格",
+      "claim_ja": "72ドル。",
+      "method_ja": "80−8。",
+      "requires_steps": [
+        "jeans_pair_cost",
+        "jeans_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "割引は2本の組に適用。",
+      "conclusion_ja": "72+8=80。",
+      "baseline_ja": "72+8=80。"
+    },
+    {
+      "id": "jeans_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.jeans_solution",
+      "title_ja": "3本の代金",
+      "claim_ja": "112ドル。",
+      "method_ja": "割引後2本72ドルと残り1本40ドルを加える。",
+      "requires_steps": [
+        "jeans_discounted_pair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3本中割引組は1組だけ。",
+      "conclusion_ja": "72+40=112。",
+      "baseline_ja": "72+40=112。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1718,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

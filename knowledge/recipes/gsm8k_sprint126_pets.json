@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint126_pets",
+  "title_ja": "Frankieの飼う動物の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02184",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Frankieは猫より蛇が6匹多く、オウムは猫より1羽少ない。四足のペットは6匹で犬が2匹いる。総数は何匹か。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.pets_solution",
+  "graph": "work/gsm8k-sprint126-pets-graph.json",
+  "model_notes_ja": [
+    "通常の生物分類として四足は猫と犬、蛇0足、オウム2足を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "pets_cats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.pets_cats",
+      "title_ja": "猫は4匹",
+      "claim_ja": "猫は4匹",
+      "method_ja": "四足動物6匹から犬2匹を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "猫は4匹",
+      "baseline_ja": "猫は4匹"
+    },
+    {
+      "id": "pets_parrots",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.pets_parrots",
+      "title_ja": "オウムは3羽",
+      "claim_ja": "オウムは3羽",
+      "method_ja": "猫より1羽少ない。",
+      "requires_steps": [
+        "pets_cats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "オウムは3羽",
+      "baseline_ja": "オウムは3羽"
+    },
+    {
+      "id": "pets_snakes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.pets_snakes",
+      "title_ja": "蛇は10匹",
+      "claim_ja": "蛇は10匹",
+      "method_ja": "猫より6匹多い。",
+      "requires_steps": [
+        "pets_cats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "蛇は10匹",
+      "baseline_ja": "蛇は10匹"
+    },
+    {
+      "id": "pets_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.pets_solution",
+      "title_ja": "ペットは19匹",
+      "claim_ja": "ペットは19匹",
+      "method_ja": "猫4、オウム3、蛇10、犬2を足す。",
+      "requires_steps": [
+        "pets_cats",
+        "pets_parrots",
+        "pets_snakes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "ペットは19匹",
+      "baseline_ja": "ペットは19匹"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2185,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

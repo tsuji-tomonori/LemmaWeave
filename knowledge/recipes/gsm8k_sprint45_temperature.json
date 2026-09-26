@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint45_temperature",
+  "title_ja": "気温の低下量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00967",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "現在84度が1時間後に4分の3になるときの低下量を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.temperature_solution",
+  "graph": "work/gsm8k-sprint45-temperature-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "temperature_after",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.temperature_after",
+      "title_ja": "1時間後の気温",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "84度の4分の3。",
+      "conclusion_ja": "63度。",
+      "baseline_ja": "84×3=63×4。"
+    },
+    {
+      "id": "temperature_decrease",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.temperature_decrease",
+      "title_ja": "低下量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "84度から63度への差。",
+      "conclusion_ja": "21度。",
+      "baseline_ja": "84=63+21。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 968,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

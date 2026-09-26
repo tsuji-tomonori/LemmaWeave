@@ -1,0 +1,53 @@
+{
+  "id": "gsm8k_sprint95_warehouses",
+  "title_ja": "二つの倉庫の箱",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01714",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "第1倉庫400箱が第2倉庫の2倍のとき、両倉庫の合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.warehouses_solution",
+  "graph": "work/gsm8k-sprint95-warehouses-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "warehouses_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.warehouses_second",
+      "title_ja": "第2倉庫",
+      "claim_ja": "200箱。",
+      "method_ja": "400÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "第1=2×第2。",
+      "conclusion_ja": "2×200=400。",
+      "baseline_ja": "2×200=400。"
+    },
+    {
+      "id": "warehouses_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.warehouses_solution",
+      "title_ja": "両倉庫合計",
+      "claim_ja": "600箱。",
+      "method_ja": "400+200。",
+      "requires_steps": [
+        "warehouses_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二倉庫以外は含めない。",
+      "conclusion_ja": "400+200=600。",
+      "baseline_ja": "400+200=600。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1715,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

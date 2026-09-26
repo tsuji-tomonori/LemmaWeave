@@ -1,0 +1,66 @@
+{
+  "id": "gsm8k_sprint95_flower",
+  "title_ja": "花の購入と無料分",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01705",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3ダース購入し、1ダースごとに2本無料となるときの総本数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.flower_solution",
+  "graph": "work/gsm8k-sprint95-flower-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "flower_bought",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.flower_bought",
+      "title_ja": "購入分",
+      "claim_ja": "36本。",
+      "method_ja": "3ダースを1ダース12本で換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ダース=12本。",
+      "conclusion_ja": "3×12=36。",
+      "baseline_ja": "3×12=36。"
+    },
+    {
+      "id": "flower_free",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.flower_free",
+      "title_ja": "無料分",
+      "claim_ja": "6本。",
+      "method_ja": "3ダースそれぞれに2本を付ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "無料分はダース数ごとに付与される。",
+      "conclusion_ja": "3×2=6。",
+      "baseline_ja": "3×2=6。"
+    },
+    {
+      "id": "flower_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.flower_solution",
+      "title_ja": "総本数",
+      "claim_ja": "42本。",
+      "method_ja": "購入分と無料分を加える。",
+      "requires_steps": [
+        "flower_bought",
+        "flower_free"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "無料分も最終保有数に含む。",
+      "conclusion_ja": "36+6=42。",
+      "baseline_ja": "36+6=42。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1706,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

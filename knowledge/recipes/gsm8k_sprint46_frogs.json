@@ -1,0 +1,12 @@
+{
+  "id": "gsm8k_sprint46_frogs", "title_ja": "2つの湖のカエル", "problem_id": "external-gsm8k-main-3101c7d50724:train:00969",
+  "collection_id": "external-gsm8k-main-3101c7d50724", "problem_ja": "45匹より20%少ない湖と元の湖の合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A14.frogs_solution", "graph": "work/gsm8k-sprint46-frogs-graph.json", "lean_file": "tests/lean/GSM8KSprint0920A14.lean",
+  "semantic_review_status": "self_review_only", "model_scope": "self_reviewed_model", "counting_note_ja": "固定GSM8Kの1問。", "model_notes_ja": [],
+  "steps": [
+    {"id":"frogs_reduction","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.frogs_reduction","title_ja":"20%分","requires_steps":[],"uses_nodes":[],"condition_ja":"45匹の20%。","conclusion_ja":"9匹。","baseline_ja":"9×100=45×20。"},
+    {"id":"frogs_crystal","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.frogs_crystal","title_ja":"Crystal湖","requires_steps":[],"uses_nodes":[],"condition_ja":"45匹から9匹減らす。","conclusion_ja":"36匹。","baseline_ja":"45=36+9。"},
+    {"id":"frogs_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.frogs_total","title_ja":"2湖の合計","requires_steps":[],"uses_nodes":[],"condition_ja":"45匹と36匹を足す。","conclusion_ja":"81匹。","baseline_ja":"81=45+36。"}
+  ], "solution_format":"individual_lines_v1", "authorship":"llm_individual",
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":970,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["原題・割合・全要求を再読し、各行とLean定理を照合した。"]}
+}

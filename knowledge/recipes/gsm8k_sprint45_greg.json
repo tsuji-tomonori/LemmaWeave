@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint45_greg",
+  "title_ja": "Gregの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00960",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Cindy5歳、Janは2歳上、MarciaはJanの2倍、GregはMarciaより2歳上。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.greg_solution",
+  "graph": "work/gsm8k-sprint45-greg-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "greg_jan",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.greg_jan",
+      "title_ja": "Janの年齢",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Cindy5歳より2歳上。",
+      "conclusion_ja": "7歳。",
+      "baseline_ja": "5+2=7。"
+    },
+    {
+      "id": "greg_marcia",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.greg_marcia",
+      "title_ja": "Marciaの年齢",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jan7歳の2倍。",
+      "conclusion_ja": "14歳。",
+      "baseline_ja": "2×7=14。"
+    },
+    {
+      "id": "greg_age",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.greg_age",
+      "title_ja": "Gregの年齢",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Marcia14歳より2歳上。",
+      "conclusion_ja": "16歳。",
+      "baseline_ja": "14+2=16。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 961,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint32_addresses",
+  "title_ja": "3知事の卒業式演説",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00768",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Sandovalの12回を基準にHawkinsとSloanの回数を求め、合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.addresses_solution",
+  "graph": "work/gsm8k-sprint32-addresses-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "twice as manyはSandovalがHawkinsの2倍という原文どおりに読む。"
+  ],
+  "steps": [
+    {
+      "id": "addresses_hawkins",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.addresses_hawkins",
+      "title_ja": "Hawkinsの回数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Sandovalの12回はHawkinsの2倍。",
+      "conclusion_ja": "6回。",
+      "baseline_ja": "12=6×2。"
+    },
+    {
+      "id": "addresses_sloan",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.addresses_sloan",
+      "title_ja": "Sloanの回数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Sandovalより10回多い。",
+      "conclusion_ja": "22回。",
+      "baseline_ja": "12+10=22。"
+    },
+    {
+      "id": "addresses_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.addresses_total",
+      "title_ja": "3人の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12回、6回、22回を合計する。",
+      "conclusion_ja": "40回。",
+      "baseline_ja": "12+6+22=40。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 769,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

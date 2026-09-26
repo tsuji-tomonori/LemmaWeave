@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint99_pie_samples",
+  "title_ja": "一口試食できる人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01774",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1個のパイを2半分、各半分を5試食に分け、13個分へ拡張する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.pie_samples_solution",
+  "graph": "work/gsm8k-sprint99-pie_samples-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pie_samples_per_pie",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.pie_samples_per_pie",
+      "title_ja": "1個のパイから10試食。",
+      "claim_ja": "1個のパイから10試食。",
+      "method_ja": "2半分×各5試食。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各試食を1人が食べる。",
+      "conclusion_ja": "2×5=10。",
+      "baseline_ja": "2×5=10。"
+    },
+    {
+      "id": "pie_samples_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.pie_samples_solution",
+      "title_ja": "130人が試食できる。",
+      "claim_ja": "130人が試食できる。",
+      "method_ja": "13個×10試食。",
+      "requires_steps": [
+        "pie_samples_per_pie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "13個すべてを同じ方法で分ける。",
+      "conclusion_ja": "13×10=130。",
+      "baseline_ja": "13×10=130。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1775,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

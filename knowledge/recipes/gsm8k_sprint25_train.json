@@ -1,0 +1,63 @@
+{
+  "id": "gsm8k_sprint25_train",
+  "title_ja": "列車に間に合う出発時刻",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00657",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "徒歩10分と列車1時間20分を経て9時までに到着するための出発時刻を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A25.train_solution",
+  "graph": "work/gsm8k-sprint25-train-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A25.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "24時間制の時刻を午前0時からの分へ換算する。"
+  ],
+  "steps": [
+    {
+      "id": "train_minutes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.train_minutes",
+      "title_ja": "列車時間の換算",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1時間20分を分に直す。",
+      "conclusion_ja": "列車は80分。",
+      "baseline_ja": "60+20=80。"
+    },
+    {
+      "id": "train_travel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.train_travel",
+      "title_ja": "総所要時間",
+      "requires_steps": [
+        "train_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "徒歩10分と列車80分を加える。",
+      "conclusion_ja": "総所要時間は90分。",
+      "baseline_ja": "10+80=90。"
+    },
+    {
+      "id": "train_departure",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.train_departure",
+      "title_ja": "出発時刻",
+      "requires_steps": [
+        "train_travel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "9時00分を540分として90分戻る。",
+      "conclusion_ja": "450分、すなわち07時30分に出る。",
+      "baseline_ja": "540-90=450。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 658,
+    "checked_model_hash": "581c7484f9bea721da385e231f57c0a17afd20596d25584599b46b8c242b9903",
+    "checks_ja": [
+      "乗換待ち時間は原題にないため加えず、徒歩と列車の所要時間だけを用いた。"
+    ]
+  }
+}

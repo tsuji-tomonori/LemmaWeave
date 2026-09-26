@@ -1,0 +1,130 @@
+{
+  "date": "2026-09-22",
+  "run_id": "lemmaweave-sprint-20260922-0100-gsm8k-73",
+  "planned_slot_local_hour": 1,
+  "planned_at": "2026-09-22T01:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "a520e1fea765963a66c5aebe86922d813b33de84",
+  "started_at": "2026-09-22T00:55:26+09:00",
+  "finished_at": "2026-09-22T01:01:15+09:00",
+  "schedule_offset_seconds": -274,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01374",
+    "external-gsm8k-main-3101c7d50724:train:01375",
+    "external-gsm8k-main-3101c7d50724:train:01376",
+    "external-gsm8k-main-3101c7d50724:train:01377",
+    "external-gsm8k-main-3101c7d50724:train:01378",
+    "external-gsm8k-main-3101c7d50724:train:01379",
+    "external-gsm8k-main-3101c7d50724:train:01380",
+    "external-gsm8k-main-3101c7d50724:train:01381",
+    "external-gsm8k-main-3101c7d50724:train:01382",
+    "external-gsm8k-main-3101c7d50724:train:01383",
+    "external-gsm8k-main-3101c7d50724:train:01384",
+    "external-gsm8k-main-3101c7d50724:train:01385",
+    "external-gsm8k-main-3101c7d50724:train:01386",
+    "external-gsm8k-main-3101c7d50724:train:01387",
+    "external-gsm8k-main-3101c7d50724:train:01388"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01374",
+    "external-gsm8k-main-3101c7d50724:train:01375",
+    "external-gsm8k-main-3101c7d50724:train:01376",
+    "external-gsm8k-main-3101c7d50724:train:01377",
+    "external-gsm8k-main-3101c7d50724:train:01378",
+    "external-gsm8k-main-3101c7d50724:train:01379",
+    "external-gsm8k-main-3101c7d50724:train:01380",
+    "external-gsm8k-main-3101c7d50724:train:01381",
+    "external-gsm8k-main-3101c7d50724:train:01382",
+    "external-gsm8k-main-3101c7d50724:train:01383",
+    "external-gsm8k-main-3101c7d50724:train:01384",
+    "external-gsm8k-main-3101c7d50724:train:01385",
+    "external-gsm8k-main-3101c7d50724:train:01386",
+    "external-gsm8k-main-3101c7d50724:train:01387",
+    "external-gsm8k-main-3101c7d50724:train:01388"
+  ],
+  "verification_pending_cumulative": {
+    "count": 875,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01388"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01374-01388",
+      "retry_on": "2026-09-22",
+      "reason_ja": "現HEADの固定Lean 4.33.1 exact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを実行し、入力SHA・許容公理・54説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:01374-01378",
+      "commit": "b843e6175f32e69cfc85b07ccd8a5061f473218f"
+    },
+    {
+      "problem_ids": "train:01379-01383",
+      "commit": "880a6e7e99548e463d1d28f6c4333fddf8fa39d3"
+    },
+    {
+      "problem_ids": "train:01384-01388 and registration",
+      "commit": "8896d5551ac5496114ac7f36eb47e4884379267b"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 54,
+    "recipe_declaration_mappings_checked": 54,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": null,
+    "model_hash": "04af4fb38a327e00f82366ee93caedde15f8e242fce538b2a86bd947032605ed",
+    "semantic_blockers": []
+  },
+  "measurements": {
+    "elapsed_seconds": 349,
+    "artifact_bytes": null,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0,
+    "connector_static_validation_rate": 1,
+    "local_execution_success_rate": null,
+    "ci_seconds": null
+  },
+  "local_checks": {
+    "ledger_validate": "pending_exact_head_ci",
+    "python_unittest": "not_run_transient_workspace_without_repository",
+    "source_and_recipe_hash_check": "15 exact source records/questions, 15 current model hashes, and 54 declaration mappings checked",
+    "solve_queue_write": "equivalent deterministic queue update applied through Git Data API",
+    "queue_partition": "solution_ready 518, awaiting_verification 875, pending 7399; total 8792; duplicate IDs 0",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "pending_exact_head_ci",
+    "static_audit": "passed: 15 recipes, 54 steps, 0 missing test declarations, 0 forbidden sorry/admit/custom axiom tokens",
+    "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "a520e1fea765963a66c5aebe86922d813b33de84",
+    "previous_run_id": null,
+    "previous_status": "not_triggered",
+    "accepted_as_success_evidence": false,
+    "solution_commit_sha": "8896d5551ac5496114ac7f36eb47e4884379267b",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "8896d5551ac5496114ac7f36eb47e4884379267b",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 860
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 875
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01389",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・54個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01383は比較方向の曖昧性をペン16本と92本の両解釈で保持し、train:01388は参照意図21匹と生物分類上の昆虫18匹を分離した。"
+}

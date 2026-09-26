@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint133_syrup",
+  "title_ja": "シロップの最終体積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02276",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6クォートを元の1/12まで煮詰め、砂糖1カップを加える。1クォート4カップとして最終体積を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A06.syrup_solution",
+  "graph": "work/gsm8k-sprint133-syrup-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "syrup_juice_cups",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.syrup_juice_cups",
+      "title_ja": "果汁は24カップ",
+      "claim_ja": "果汁は24カップ",
+      "method_ja": "6クォートに4カップを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "果汁は24カップ",
+      "baseline_ja": "果汁は24カップ"
+    },
+    {
+      "id": "syrup_reduced",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.syrup_reduced",
+      "title_ja": "煮詰めた果汁は2カップ",
+      "claim_ja": "煮詰めた果汁は2カップ",
+      "method_ja": "24カップの1/12",
+      "requires_steps": [
+        "syrup_juice_cups"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "煮詰めた果汁は2カップ",
+      "baseline_ja": "煮詰めた果汁は2カップ"
+    },
+    {
+      "id": "syrup_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.syrup_solution",
+      "title_ja": "最終体積は3カップ",
+      "claim_ja": "最終体積は3カップ",
+      "method_ja": "2カップに砂糖1カップを足す",
+      "requires_steps": [
+        "syrup_reduced"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最終体積は3カップ",
+      "baseline_ja": "最終体積は3カップ"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2277,
+    "checked_model_hash": "f57c0c51ecac149c58ab9991cfaff90a4b06f84527cc15a56b74fbe4c5afc072",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

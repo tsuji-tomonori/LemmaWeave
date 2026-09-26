@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint28_sticks",
+  "title_ja": "棒の本数差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00713",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "男子10人各15本と女子12人各12本の差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A28.sticks_solution",
+  "graph": "work/gsm8k-sprint28-sticks-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A28.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "fewerは女子合計が男子合計より少ない本数。"
+  ],
+  "steps": [
+    {
+      "id": "sticks_boys",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.sticks_boys",
+      "title_ja": "男子合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10人が各15本。",
+      "conclusion_ja": "150本。",
+      "baseline_ja": "10×15=150。"
+    },
+    {
+      "id": "sticks_girls",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.sticks_girls",
+      "title_ja": "女子合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12人が各12本。",
+      "conclusion_ja": "144本。",
+      "baseline_ja": "12×12=144。"
+    },
+    {
+      "id": "sticks_fewer",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.sticks_fewer",
+      "title_ja": "差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "男子150本から女子144本を引く。",
+      "conclusion_ja": "6本少ない。",
+      "baseline_ja": "150-144=6。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 714,
+    "checked_model_hash": "1810c2eb82e2b1ef127b9a48786d662c837755e9604891a5d1862e999a8bb1ec",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

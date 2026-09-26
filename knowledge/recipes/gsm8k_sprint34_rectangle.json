@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint34_rectangle",
+  "title_ja": "長方形の面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00793",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "幅4インチ、周30インチから高さ11インチと面積44平方インチを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.rectangle_solution",
+  "graph": "work/gsm8k-sprint34-rectangle-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rectangle_height",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.rectangle_height",
+      "title_ja": "高さ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2×(幅+高さ)=30、幅4。",
+      "conclusion_ja": "11インチ。",
+      "baseline_ja": "2×(4+h)=30からh=11。"
+    },
+    {
+      "id": "rectangle_multiply",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.rectangle_multiply",
+      "title_ja": "面積の積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "面積は幅×高さ。",
+      "conclusion_ja": "4×11。",
+      "baseline_ja": "4×11=44。"
+    },
+    {
+      "id": "rectangle_area",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.rectangle_area",
+      "title_ja": "面積",
+      "requires_steps": [
+        "rectangle_height",
+        "rectangle_multiply"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "幅4、高さ11。",
+      "conclusion_ja": "44平方インチ。",
+      "baseline_ja": "前二行から44。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 794,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

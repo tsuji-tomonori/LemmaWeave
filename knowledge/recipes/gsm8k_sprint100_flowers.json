@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint100_flowers",
+  "title_ja": "10卓分の花の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01792",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "キンギョソウ3本の2倍としてユリを求め、1卓分と10卓分を計算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.flowers_solution",
+  "graph": "work/gsm8k-sprint100-flowers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "flowers_lilies",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.flowers_lilies",
+      "title_ja": "ユリは1卓6本。",
+      "claim_ja": "ユリは1卓6本。",
+      "method_ja": "2×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "直前のキンギョソウ3本の2倍と読む。",
+      "conclusion_ja": "6。",
+      "baseline_ja": "6。"
+    },
+    {
+      "id": "flowers_per_arrangement",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.flowers_per_arrangement",
+      "title_ja": "1卓は29本。",
+      "claim_ja": "1卓は29本。",
+      "method_ja": "8+12+3+6。",
+      "requires_steps": [
+        "flowers_lilies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4種類を各1回加える。",
+      "conclusion_ja": "29。",
+      "baseline_ja": "29。"
+    },
+    {
+      "id": "flowers_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.flowers_solution",
+      "title_ja": "10卓で290本。",
+      "claim_ja": "10卓で290本。",
+      "method_ja": "29×10。",
+      "requires_steps": [
+        "flowers_per_arrangement"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全卓が同じ構成。",
+      "conclusion_ja": "290。",
+      "baseline_ja": "290。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1793,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

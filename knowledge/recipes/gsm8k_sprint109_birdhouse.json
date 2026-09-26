@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint109_birdhouse",
+  "title_ja": "鳥小屋4個の材料費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01915",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "金額をセント単位に統一し、板材と釘の費用を合計して4倍する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.birdhouse_solution",
+  "graph": "work/gsm8k-sprint109-birdhouse-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "birdhouse_planks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.birdhouse_planks",
+      "title_ja": "1個分の板材は2100セント。",
+      "claim_ja": "1個分の板材は2100セント。",
+      "method_ja": "7×300。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "birdhouse_nails",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.birdhouse_nails",
+      "title_ja": "1個分の釘は100セント。",
+      "claim_ja": "1個分の釘は100セント。",
+      "method_ja": "20×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "birdhouse_one",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.birdhouse_one",
+      "title_ja": "1個分は2200セント。",
+      "claim_ja": "1個分は2200セント。",
+      "method_ja": "2100+100。",
+      "requires_steps": [
+        "birdhouse_planks",
+        "birdhouse_nails"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "birdhouse_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.birdhouse_solution",
+      "title_ja": "4個分は8800セント、すなわち88ドル。",
+      "claim_ja": "4個分は8800セント、すなわち88ドル。",
+      "method_ja": "2200×4。",
+      "requires_steps": [
+        "birdhouse_one"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1916,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

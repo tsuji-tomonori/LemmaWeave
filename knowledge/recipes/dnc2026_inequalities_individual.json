@@ -1,0 +1,101 @@
+{
+  "id": "dnc2026_inequalities_individual",
+  "title_ja": "固定パラメータを代入した連立不等式の全実数解",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "実数xについて、a=2とした連立不等式 x-√6a+1≥0、(a-1)x-2a²-a+3≤0 の全解を求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "pdf_page_1_based": [1],
+    "printed_page_label": ["30"],
+    "subquestion": "[1](1)",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q01-S01-01.json",
+    "visual_review_status": "stored_review_confirmed_2026-09-05_and_official_pdf_refetched_2026-09-20"
+  },
+  "variables": [
+    {
+      "name": "x",
+      "type": "ℝ",
+      "domain_ja": "すべての実数"
+    },
+    {
+      "name": "a",
+      "type": "ℝ",
+      "domain_ja": "この小問ではa=2"
+    }
+  ],
+  "assumptions_ja": [
+    "a=2であり、原題のa≠1を満たす。",
+    "√6は近似値で置き換えず、実数上の非負平方根として扱う。"
+  ],
+  "required_conclusions_ja": [
+    "二つの不等式を同時に満たす実数xの全体を必要十分条件で特定する。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026InequalitiesIndividual.individual_solution",
+  "graph": "work/dnc2026-inequalities-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026InequalitiesIndividual.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "existing_independently_reviewed_model_new_author_explanation",
+  "counting_note_ja": "既存台帳の1小問に個別記述解答を追加した。GSM8K 8,792問の分母にも、新規収集問題数にも加えない。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "lower_bound",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026InequalitiesIndividual.lower_bound_from_first",
+      "title_ja": "第1不等式から下限を得る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "a=2を第1不等式へ代入すると、x-2√6+1≥0となる。",
+      "method_ja": "一次不等式の両辺へ同じ実数を加える同値変形。",
+      "condition_ja": "xは実数で、√6は実数上の定数である。",
+      "premise_ja": "原題の第1不等式とa=2。",
+      "conclusion_ja": "x≥2√6-1。",
+      "baseline_ja": "加法による一次不等式の同値変形を用いた。"
+    },
+    {
+      "id": "upper_bound",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026InequalitiesIndividual.upper_bound_from_second",
+      "title_ja": "第2不等式から上限を得る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "a=2を第2不等式へ代入すると、x-8-2+3≤0、すなわちx-7≤0となる。",
+      "method_ja": "数値計算と一次不等式の同値変形。",
+      "condition_ja": "a-1=1>0なので、xの係数で割っても不等号の向きは変わらない。",
+      "premise_ja": "原題の第2不等式、a=2、2²=4。",
+      "conclusion_ja": "x≤7。",
+      "baseline_ja": "整数の四則計算と正数による除法を用いた。"
+    },
+    {
+      "id": "combine_bounds",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026InequalitiesIndividual.interval_from_both",
+      "title_ja": "二つの条件を同時に満たす全解",
+      "requires_steps": ["lower_bound", "upper_bound"],
+      "uses_nodes": [],
+      "claim_ja": "連立不等式の解は、前二行の下限と上限を同時に満たす実数である。",
+      "method_ja": "連立条件を論理積として結合する。",
+      "condition_ja": "原題は二つの不等式の双方を要求する。近似値√6=2.449…は端点の大小確認には不要である。",
+      "premise_ja": "x≥2√6-1かつx≤7。",
+      "conclusion_ja": "全実数解は2√6-1≤x≤7であり、その区間の各実数は逆に元の二不等式を満たす。",
+      "baseline_ja": "必要条件と十分条件の両向きを、前二行の同値変形から得た。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-20T10:04:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "checked_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
+    "checks_ja": [
+      "公式PDF1ページ目・冊子30頁のa=2、二つの不等式、全解要求を再読した。",
+      "a≠1の原条件はa=2により満たされ、結論や定義域を仮定へ移していない。",
+      "下限・上限・両者の結合の各説明行が、別々の名前付きLean定理の型と一致することを確認した。",
+      "最終定理が前二行の定理へ実際に依存するよう構成し、必要条件と十分条件の両方を保持した。",
+      "既存の独立レビュー済みモデルを変更せず、新しい記述解答の状態はself_review_onlyとした。"
+    ]
+  }
+}

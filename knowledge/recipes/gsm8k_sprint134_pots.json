@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint134_pots",
+  "title_ja": "4つ目の鉢に植える種の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02298",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "種10個、鉢4つ、1鉢に3個ずつ順に植える",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.pots_solution",
+  "graph": "work/gsm8k-sprint134-pots-graph.json",
+  "model_notes_ja": [
+    "最初の3鉢を各3個で満たしてから4つ目へ残りを植えるという順序を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "pots_first_three",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.pots_first_three",
+      "title_ja": "最初の3鉢に9個植える",
+      "claim_ja": "最初の3鉢に9個植える",
+      "method_ja": "3鉢に各3個",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "最初の3鉢に9個植える",
+      "baseline_ja": "最初の3鉢に9個植える"
+    },
+    {
+      "id": "pots_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.pots_solution",
+      "title_ja": "4つ目には1個植える",
+      "claim_ja": "4つ目には1個植える",
+      "method_ja": "10個から9個引く",
+      "requires_steps": [
+        "pots_first_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "4つ目には1個植える",
+      "baseline_ja": "4つ目には1個植える"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2299,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

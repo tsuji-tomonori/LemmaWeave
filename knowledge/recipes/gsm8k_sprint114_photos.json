@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint114_photos",
+  "title_ja": "目標までの写真",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01995",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A04.photos_solution",
+  "graph": "work/gsm8k-sprint114-photos-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "photos_fewer",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.photos_fewer",
+      "title_ja": "今日は20枚少ない。",
+      "claim_ja": "今日は20枚少ない。",
+      "method_ja": "100の20%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "今日は20枚少ない。",
+      "baseline_ja": "今日は20枚少ない。"
+    },
+    {
+      "id": "photos_today",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.photos_today",
+      "title_ja": "今日は80枚撮る。",
+      "claim_ja": "今日は80枚撮る。",
+      "method_ja": "100−20。",
+      "requires_steps": [
+        "photos_fewer"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "今日は80枚撮る。",
+      "baseline_ja": "今日は80枚撮る。"
+    },
+    {
+      "id": "photos_sofar",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.photos_sofar",
+      "title_ja": "2日分は180枚。",
+      "claim_ja": "2日分は180枚。",
+      "method_ja": "100+80。",
+      "requires_steps": [
+        "photos_today"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "2日分は180枚。",
+      "baseline_ja": "2日分は180枚。"
+    },
+    {
+      "id": "photos_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A04.photos_solution",
+      "title_ja": "目標まであと120枚。",
+      "claim_ja": "目標まであと120枚。",
+      "method_ja": "300−180。",
+      "requires_steps": [
+        "photos_sofar"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数または有理数の量を用いる。",
+      "conclusion_ja": "目標まであと120枚。",
+      "baseline_ja": "目標まであと120枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1996,
+    "checked_model_hash": "1a0cc19b2490c11d76cac5ef60cb8fab9b5c9dae974c31340285155356e4fa59",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な倍率表現と参照説明の誤記を分離した。"
+    ]
+  }
+}

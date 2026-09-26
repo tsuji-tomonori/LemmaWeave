@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint39_runners",
+  "title_ja": "追走で追いつく時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00867",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "BobとJimの20分間の距離を同じ単位で比較する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.runners_solution",
+  "graph": "work/gsm8k-sprint39-runners-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "距離をマイル、時間を分で保持し、60分=1時間で換算する。"
+  ],
+  "steps": [
+    {
+      "id": "runners_bob",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.runners_bob",
+      "title_ja": "Bobの距離",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時速6マイルで20分、1時間は60分。",
+      "conclusion_ja": "2マイル。",
+      "baseline_ja": "2×60=6×20。"
+    },
+    {
+      "id": "runners_jim",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.runners_jim",
+      "title_ja": "Jimの距離",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時速9マイルで20分、1時間は60分。",
+      "conclusion_ja": "3マイル。",
+      "baseline_ja": "3×60=9×20。"
+    },
+    {
+      "id": "runners_catch",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.runners_catch",
+      "title_ja": "追いつく条件",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jimの3マイルは、先行1マイルとBobの2マイルの和。",
+      "conclusion_ja": "20分で追いつく。",
+      "baseline_ja": "3=1+2。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 868,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

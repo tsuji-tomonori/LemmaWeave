@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint98_commute",
+  "title_ja": "通勤距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01759",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "店間6マイルの3分の2を増分として第2–第3区間を求め、両端区間と合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.commute_solution",
+  "graph": "work/gsm8k-sprint98-commute-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "commute_extra",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.commute_extra",
+      "title_ja": "第2–第3区間の増分は4マイル。",
+      "claim_ja": "第2–第3区間の増分は4マイル。",
+      "method_ja": "6×2/3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『2/3 longer than』を元の6に対する増分と読む。",
+      "conclusion_ja": "4×3=6×2。",
+      "baseline_ja": "4×3=6×2。"
+    },
+    {
+      "id": "commute_second_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.commute_second_third",
+      "title_ja": "第2–第3店間は10マイル。",
+      "claim_ja": "第2–第3店間は10マイル。",
+      "method_ja": "6+4。",
+      "requires_steps": [
+        "commute_extra"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "元の距離へ増分を加える。",
+      "conclusion_ja": "6+4=10。",
+      "baseline_ja": "6+4=10。"
+    },
+    {
+      "id": "commute_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.commute_solution",
+      "title_ja": "通勤距離は24マイル。",
+      "claim_ja": "通勤距離は24マイル。",
+      "method_ja": "4+6+10+4。",
+      "requires_steps": [
+        "commute_second_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "家から第1店、第1–第2、第2–第3、第3店から職場の連続4区間。",
+      "conclusion_ja": "4+6+10+4=24。",
+      "baseline_ja": "4+6+10+4=24。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1760,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

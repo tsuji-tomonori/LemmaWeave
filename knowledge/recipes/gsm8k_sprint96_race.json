@@ -1,0 +1,109 @@
+{
+  "id": "gsm8k_sprint96_race",
+  "title_ja": "レースの平均速度",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01722",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A03Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "距離ごとの速度から所要時間を求め、全距離÷全時間で平均速度を出す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.race_solution",
+  "graph": "work/gsm8k-sprint96-race-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "race_speeds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.race_speeds",
+      "title_ja": "第2区間200km/h、第3区間300km/h。",
+      "claim_ja": "第2区間200km/h、第3区間300km/h。",
+      "method_ja": "150+50と2×150。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "倍率・加算は原題の各区間速度に適用。",
+      "conclusion_ja": "200,300。",
+      "baseline_ja": "200,300。"
+    },
+    {
+      "id": "race_time1",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.race_time1",
+      "title_ja": "第1区間72秒。",
+      "claim_ja": "第1区間72秒。",
+      "method_ja": "3/150時間を秒換算。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "速度一定、1時間=3600秒。",
+      "conclusion_ja": "72×150=3×3600。",
+      "baseline_ja": "72×150=3×3600。"
+    },
+    {
+      "id": "race_time2",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.race_time2",
+      "title_ja": "第2区間36秒。",
+      "claim_ja": "第2区間36秒。",
+      "method_ja": "2/200時間を秒換算。",
+      "requires_steps": [
+        "race_speeds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "速度一定。",
+      "conclusion_ja": "36×200=2×3600。",
+      "baseline_ja": "36×200=2×3600。"
+    },
+    {
+      "id": "race_time3",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.race_time3",
+      "title_ja": "第3区間12秒。",
+      "claim_ja": "第3区間12秒。",
+      "method_ja": "1/300時間を秒換算。",
+      "requires_steps": [
+        "race_speeds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "速度一定。",
+      "conclusion_ja": "12×300=3600。",
+      "baseline_ja": "12×300=3600。"
+    },
+    {
+      "id": "race_total_time",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.race_total_time",
+      "title_ja": "総時間120秒。",
+      "claim_ja": "総時間120秒。",
+      "method_ja": "72+36+12。",
+      "requires_steps": [
+        "race_time1",
+        "race_time2",
+        "race_time3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "三区間を連続走行する。",
+      "conclusion_ja": "72+36+12=120。",
+      "baseline_ja": "72+36+12=120。"
+    },
+    {
+      "id": "race_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.race_solution",
+      "title_ja": "平均速度180km/h。",
+      "claim_ja": "平均速度180km/h。",
+      "method_ja": "6kmを120秒で割る。",
+      "requires_steps": [
+        "race_total_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "単純な速度平均でなく距離÷総時間。",
+      "conclusion_ja": "180×120=6×3600。",
+      "baseline_ja": "180×120=6×3600。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1723,
+    "checked_model_hash": "c7ae9e73613030285ef5ac0f94bc1cc2c890986bccfb58f5ed826d20e789cb8c",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

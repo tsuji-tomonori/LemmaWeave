@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint129_diana",
+  "title_ja": "3か月の収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02221",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "7月150ドル、8月はその3倍、9月は8月の2倍。3か月合計を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.diana_solution",
+  "graph": "work/gsm8k-sprint129-diana-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "diana_august",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.diana_august",
+      "title_ja": "8月は450ドル",
+      "claim_ja": "8月は450ドル",
+      "method_ja": "150ドルを3倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "8月は450ドル",
+      "baseline_ja": "8月は450ドル"
+    },
+    {
+      "id": "diana_september",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.diana_september",
+      "title_ja": "9月は900ドル",
+      "claim_ja": "9月は900ドル",
+      "method_ja": "450ドルを2倍する",
+      "requires_steps": [
+        "diana_august"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "9月は900ドル",
+      "baseline_ja": "9月は900ドル"
+    },
+    {
+      "id": "diana_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.diana_solution",
+      "title_ja": "合計1500ドル",
+      "claim_ja": "合計1500ドル",
+      "method_ja": "150、450、900ドルを足す",
+      "requires_steps": [
+        "diana_august",
+        "diana_september"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計1500ドル",
+      "baseline_ja": "合計1500ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2222,
+    "checked_model_hash": "13f3fd6d8fb4e423b9fcfe6fe744d66bdf53e12e65ec6e255bd35e6de12aeb35",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

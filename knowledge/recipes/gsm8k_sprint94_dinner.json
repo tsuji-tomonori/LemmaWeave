@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint94_dinner",
+  "title_ja": "残る友人一人当たりの支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01696",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6人の150ドルの会計でSilasが半額、残る5人が残額と全体の10%のチップを等分する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.dinner_solution",
+  "graph": "work/gsm8k-sprint94-dinner-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dinner_silas",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.dinner_silas",
+      "title_ja": "Silas負担",
+      "claim_ja": "75ドル。",
+      "method_ja": "150÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "半額を支払う。",
+      "conclusion_ja": "75×2=150。",
+      "baseline_ja": "75×2=150。"
+    },
+    {
+      "id": "dinner_tip",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.dinner_tip",
+      "title_ja": "チップ",
+      "claim_ja": "15ドル。",
+      "method_ja": "150×10%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "チップは会計全体の10%。",
+      "conclusion_ja": "15×10=150。",
+      "baseline_ja": "15×10=150。"
+    },
+    {
+      "id": "dinner_others_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.dinner_others_total",
+      "title_ja": "残る5人の総負担",
+      "claim_ja": "90ドル。",
+      "method_ja": "残額75+チップ15。",
+      "requires_steps": [
+        "dinner_silas",
+        "dinner_tip"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Silas以外は5人。",
+      "conclusion_ja": "75+15=90。",
+      "baseline_ja": "75+15=90。"
+    },
+    {
+      "id": "dinner_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.dinner_solution",
+      "title_ja": "一人当たり",
+      "claim_ja": "18ドル。",
+      "method_ja": "90÷5。",
+      "requires_steps": [
+        "dinner_others_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5人が均等に分担する。",
+      "conclusion_ja": "18×5=90。",
+      "baseline_ja": "18×5=90。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1697,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

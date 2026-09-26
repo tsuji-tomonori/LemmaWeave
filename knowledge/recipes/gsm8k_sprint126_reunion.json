@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint126_reunion",
+  "title_ja": "食卓ごとの人数の条件確認",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02173",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "子ども45人と大人123人が14卓で食事をした。各卓に何人が座ったか。等人数とは明記されていない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.reunion_answer_scope",
+  "graph": "work/gsm8k-sprint126-reunion-graph.json",
+  "model_notes_ja": [
+    "原題は14卓で食べたとだけ述べ、等人数を指定しない。12人は均等着席という追加条件付き。"
+  ],
+  "steps": [
+    {
+      "id": "reunion_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.reunion_people",
+      "title_ja": "出席者は168人",
+      "claim_ja": "出席者は168人",
+      "method_ja": "子45人と大人123人を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "出席者は168人",
+      "baseline_ja": "出席者は168人"
+    },
+    {
+      "id": "reunion_equal_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.reunion_equal_solution",
+      "title_ja": "均等なら1卓12人",
+      "claim_ja": "均等なら1卓12人",
+      "method_ja": "14卓に等人数を配置する追加条件のもと168÷14。",
+      "requires_steps": [
+        "reunion_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "均等なら1卓12人",
+      "baseline_ja": "均等なら1卓12人"
+    },
+    {
+      "id": "reunion_unequal_possible",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.reunion_unequal_possible",
+      "title_ja": "不均等な着席も可能",
+      "claim_ja": "不均等な着席も可能",
+      "method_ja": "13卓に11人、最後の卓に25人でも合計168人。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "不均等な着席も可能",
+      "baseline_ja": "不均等な着席も可能"
+    },
+    {
+      "id": "reunion_not_determined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.reunion_not_determined",
+      "title_ja": "原題では卓ごとの人数は一意でない",
+      "claim_ja": "原題では卓ごとの人数は一意でない",
+      "method_ja": "卓に11人がいる配置と全卓12人の配置が異なる。",
+      "requires_steps": [
+        "reunion_equal_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "原題では卓ごとの人数は一意でない",
+      "baseline_ja": "原題では卓ごとの人数は一意でない"
+    },
+    {
+      "id": "reunion_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.reunion_answer_scope",
+      "title_ja": "12人は均等着席を追加した場合の答え",
+      "claim_ja": "12人は均等着席を追加した場合の答え",
+      "method_ja": "2つの配置を並べ、原題には均等条件がないと明示する。",
+      "requires_steps": [
+        "reunion_equal_solution",
+        "reunion_unequal_possible",
+        "reunion_not_determined"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "12人は均等着席を追加した場合の答え",
+      "baseline_ja": "12人は均等着席を追加した場合の答え"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2174,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

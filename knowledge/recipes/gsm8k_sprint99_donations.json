@@ -1,0 +1,179 @@
+{
+  "id": "gsm8k_sprint99_donations",
+  "title_ja": "寄付されたバスケットボール数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01777",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "300件が廃棄後の整理対象数か、廃棄前の原寄付数かで分け、両方を形式化する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_two_readings_differ",
+  "graph": "work/gsm8k-sprint99-donations-graph.json",
+  "model_notes_ja": [
+    "原文の『300 donations to organize』と『120 pool floats were donated, but ... discarded before the sports class arrived』は、300が廃棄後の整理対象か廃棄前の原寄付かで整合する答えが90個と60個に分かれる。参照解答の90個は前者を追加条件として採る。"
+  ],
+  "steps": [
+    {
+      "id": "donations_organize_damaged",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_organize_damaged",
+      "title_ja": "破損フロートは30個。",
+      "claim_ja": "破損フロートは30個。",
+      "method_ja": "120の4分の1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "quarter=1/4。",
+      "conclusion_ja": "30×4=120。",
+      "baseline_ja": "30×4=120。"
+    },
+    {
+      "id": "donations_organize_usable",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_organize_usable",
+      "title_ja": "整理対象のフロートは90個。",
+      "claim_ja": "整理対象のフロートは90個。",
+      "method_ja": "120−30。",
+      "requires_steps": [
+        "donations_organize_damaged"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "読解Aでは破損分を300件の整理対象から除く。",
+      "conclusion_ja": "90+30=120。",
+      "baseline_ja": "90+30=120。"
+    },
+    {
+      "id": "donations_organize_other",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_organize_other",
+      "title_ja": "読解Aで単体バスケットボール以外は240件。",
+      "claim_ja": "読解Aで単体バスケットボール以外は240件。",
+      "method_ja": "フープ60+使用可能フロート90+フットボール50+テニスボール40。",
+      "requires_steps": [
+        "donations_organize_usable"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "フープ同梱ボールは寄付件数を増やさない。",
+      "conclusion_ja": "60+90+50+40=240。",
+      "baseline_ja": "60+90+50+40=240。"
+    },
+    {
+      "id": "donations_organize_standalone",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_organize_standalone",
+      "title_ja": "読解Aの単体バスケットボール寄付は60件。",
+      "claim_ja": "読解Aの単体バスケットボール寄付は60件。",
+      "method_ja": "整理対象300−その他240。",
+      "requires_steps": [
+        "donations_organize_other"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加条件として300は廃棄後の整理対象件数。",
+      "conclusion_ja": "60+240=300。",
+      "baseline_ja": "60+240=300。"
+    },
+    {
+      "id": "donations_included",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_included",
+      "title_ja": "フープに同梱されたボールは30個。",
+      "claim_ja": "フープに同梱されたボールは30個。",
+      "method_ja": "60フープの半分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同梱率は1/2。",
+      "conclusion_ja": "30×2=60。",
+      "baseline_ja": "30×2=60。"
+    },
+    {
+      "id": "donations_organize_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_organize_solution",
+      "title_ja": "読解Aではボールは合計90個。",
+      "claim_ja": "読解Aではボールは合計90個。",
+      "method_ja": "単体60+同梱30。",
+      "requires_steps": [
+        "donations_organize_standalone",
+        "donations_included"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参照解答が採る『300=廃棄後に整理する寄付』という追加条件。",
+      "conclusion_ja": "60+30=90。",
+      "baseline_ja": "60+30=90。"
+    },
+    {
+      "id": "donations_original_other",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_original_other",
+      "title_ja": "読解Bで単体バスケットボール以外の原寄付は270件。",
+      "claim_ja": "読解Bで単体バスケットボール以外の原寄付は270件。",
+      "method_ja": "フープ60+原フロート120+フットボール50+テニスボール40。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "300を廃棄前の全寄付数と読む。",
+      "conclusion_ja": "60+120+50+40=270。",
+      "baseline_ja": "60+120+50+40=270。"
+    },
+    {
+      "id": "donations_original_standalone",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_original_standalone",
+      "title_ja": "読解Bの単体バスケットボール寄付は30件。",
+      "claim_ja": "読解Bの単体バスケットボール寄付は30件。",
+      "method_ja": "原寄付300−その他270。",
+      "requires_steps": [
+        "donations_original_other"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "破損フロートも『寄付された』件数には含む。",
+      "conclusion_ja": "30+270=300。",
+      "baseline_ja": "30+270=300。"
+    },
+    {
+      "id": "donations_original_included",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_original_included",
+      "title_ja": "読解Bでも同梱ボールは30個。",
+      "claim_ja": "読解Bでも同梱ボールは30個。",
+      "method_ja": "60フープの半分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同梱率は1/2。",
+      "conclusion_ja": "30×2=60。",
+      "baseline_ja": "30×2=60。"
+    },
+    {
+      "id": "donations_original_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_original_solution",
+      "title_ja": "読解Bではボールは合計60個。",
+      "claim_ja": "読解Bではボールは合計60個。",
+      "method_ja": "単体30+同梱30。",
+      "requires_steps": [
+        "donations_original_standalone",
+        "donations_original_included"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "300を廃棄前の原寄付数と読む。",
+      "conclusion_ja": "30+30=60。",
+      "baseline_ja": "30+30=60。"
+    },
+    {
+      "id": "donations_two_readings_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_two_readings_differ",
+      "title_ja": "二つの読解は90個と60個で異なる。",
+      "claim_ja": "二つの読解は90個と60個で異なる。",
+      "method_ja": "数値の不等式を確認する。",
+      "requires_steps": [
+        "donations_organize_solution",
+        "donations_original_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文だけでは300の時点が曖昧。",
+      "conclusion_ja": "90≠60。",
+      "baseline_ja": "90≠60。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1778,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

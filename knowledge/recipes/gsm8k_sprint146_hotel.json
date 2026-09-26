@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint146_hotel",
+  "title_ja": "ホテル代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02471",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1泊250ドルで3泊し、合計から100ドルを割り引く。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.hotel_solution",
+  "graph": "work/gsm8k-sprint146-hotel-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hotel_gross",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.hotel_gross",
+      "title_ja": "割引前は750ドル",
+      "claim_ja": "割引前は750ドル",
+      "method_ja": "250に3を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "割引前は750ドル",
+      "baseline_ja": "割引前は750ドル"
+    },
+    {
+      "id": "hotel_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.hotel_discount",
+      "title_ja": "支払額に100ドルを戻すと750ドル",
+      "claim_ja": "支払額に100ドルを戻すと750ドル",
+      "method_ja": "割引の関係を式にする",
+      "requires_steps": [
+        "hotel_gross"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "支払額に100ドルを戻すと750ドル",
+      "baseline_ja": "支払額に100ドルを戻すと750ドル"
+    },
+    {
+      "id": "hotel_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.hotel_solution",
+      "title_ja": "支払額は650ドル",
+      "claim_ja": "支払額は650ドル",
+      "method_ja": "750から100を引く",
+      "requires_steps": [
+        "hotel_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "支払額は650ドル",
+      "baseline_ja": "支払額は650ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2472,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

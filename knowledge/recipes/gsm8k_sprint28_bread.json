@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint28_bread",
+  "title_ja": "パン片の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00707",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "2枚のパンを各2回半分に裂いた総片数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A28.bread_solution",
+  "graph": "work/gsm8k-sprint28-bread-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A28.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "各段階で全ての片を半分にする。"
+  ],
+  "steps": [
+    {
+      "id": "bread_first_tear",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.bread_first_tear",
+      "title_ja": "1回目",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚を半分にする。",
+      "conclusion_ja": "1枚当たり2片。",
+      "baseline_ja": "1×2=2。"
+    },
+    {
+      "id": "bread_per_slice",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.bread_per_slice",
+      "title_ja": "2回目",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2片をそれぞれ半分にする。",
+      "conclusion_ja": "1枚当たり4片。",
+      "baseline_ja": "2×2=4。"
+    },
+    {
+      "id": "bread_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.bread_total",
+      "title_ja": "2枚分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚4片を2枚。",
+      "conclusion_ja": "8片。",
+      "baseline_ja": "2×4=8。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 708,
+    "checked_model_hash": "1810c2eb82e2b1ef127b9a48786d662c837755e9604891a5d1862e999a8bb1ec",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

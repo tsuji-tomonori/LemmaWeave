@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint34_bus",
+  "title_ja": "窓側に座ったオランダ系アメリカ人",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00791",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "90人から3/5、1/2、1/3を順に適用する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.bus_solution",
+  "graph": "work/gsm8k-sprint34-bus-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bus_dutch",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.bus_dutch",
+      "title_ja": "オランダ人",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "90人の3/5。",
+      "conclusion_ja": "54人。",
+      "baseline_ja": "54×5=90×3。"
+    },
+    {
+      "id": "bus_american",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.bus_american",
+      "title_ja": "オランダ系アメリカ人",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "54人の1/2。",
+      "conclusion_ja": "27人。",
+      "baseline_ja": "27×2=54。"
+    },
+    {
+      "id": "bus_windows",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.bus_windows",
+      "title_ja": "窓側",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "27人の1/3。",
+      "conclusion_ja": "9人。",
+      "baseline_ja": "9×3=27。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 792,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "gsm8k_sprint148_ratatouille",
+  "title_ja": "ラタトゥイユ1クォートの原価",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02512",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各野菜を正確なセント単位で合計し、4クォートで割る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ratatouille_solution",
+  "graph": "work/gsm8k-sprint148-ratatouille-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ratatouille_produce",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ratatouille_produce",
+      "title_ja": "ナスとズッキーニは1800セント",
+      "claim_ja": "ナスとズッキーニは1800セント",
+      "method_ja": "合計9ポンドに200セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ナスとズッキーニは1800セント",
+      "baseline_ja": "ナスとズッキーニは1800セント"
+    },
+    {
+      "id": "ratatouille_tomatoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ratatouille_tomatoes",
+      "title_ja": "トマトは1400セント",
+      "claim_ja": "トマトは1400セント",
+      "method_ja": "4ポンドに350セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "トマトは1400セント",
+      "baseline_ja": "トマトは1400セント"
+    },
+    {
+      "id": "ratatouille_onions",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ratatouille_onions",
+      "title_ja": "玉ねぎは300セント",
+      "claim_ja": "玉ねぎは300セント",
+      "method_ja": "3ポンドに100セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "玉ねぎは300セント",
+      "baseline_ja": "玉ねぎは300セント"
+    },
+    {
+      "id": "ratatouille_basil",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ratatouille_basil",
+      "title_ja": "バジルは500セント",
+      "claim_ja": "バジルは500セント",
+      "method_ja": "半ポンド250セントを2単位分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "バジルは500セント",
+      "baseline_ja": "バジルは500セント"
+    },
+    {
+      "id": "ratatouille_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ratatouille_total",
+      "title_ja": "総額は4000セント",
+      "claim_ja": "総額は4000セント",
+      "method_ja": "四つの小計を足す",
+      "requires_steps": [
+        "ratatouille_produce",
+        "ratatouille_tomatoes",
+        "ratatouille_onions",
+        "ratatouille_basil"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "総額は4000セント",
+      "baseline_ja": "総額は4000セント"
+    },
+    {
+      "id": "ratatouille_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ratatouille_solution",
+      "title_ja": "1クォートは10ドル",
+      "claim_ja": "1クォートは10ドル",
+      "method_ja": "4000セントを4等分しドルへ戻す",
+      "requires_steps": [
+        "ratatouille_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1クォートは10ドル",
+      "baseline_ja": "1クォートは10ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2513,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

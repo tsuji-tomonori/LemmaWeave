@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint136_toy_sale",
+  "title_ja": "レゴセットの販売価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02325",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "小型車3台を各5ドルで売り、レゴセットと合わせて45ドル得たとき、レゴセットの価格を求める。",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "source_line_1based": 2326,
+    "source_record_sha256": "8b7d15a172c93ee7da75100797f8b37aff1954ff8bb2e71d880f45780760dc10",
+    "raw_question_sha256": "a648260d80f8bd3245e09ca583d5ca1108fe5cc9127af1f6caa86d8b3ca35dc8",
+    "normalized_question_sha256": "a648260d80f8bd3245e09ca583d5ca1108fe5cc9127af1f6caa86d8b3ca35dc8"
+  },
+  "variables": [
+    {
+      "name": "model",
+      "type": "レゴセットの販売価格",
+      "domain_ja": "原題の数量・単位・関係を保持する自然数モデル"
+    }
+  ],
+  "assumptions_ja": [
+    "原題に明記された数量関係をモデルの各フィールドとして保持する。"
+  ],
+  "required_conclusions_ja": [
+    "30ドル。"
+  ],
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A10.toys_solution",
+  "graph": "work/gsm8k-sprint136-toy-sale-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0925A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "modeling_notes_ja": [],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "cars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.toys_cars",
+      "title_ja": "小型車の売上",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "3台と単価5ドルを掛ける。",
+      "method_ja": "個数×単価。",
+      "condition_ja": "3台、各5ドル。",
+      "premise_ja": "3×5。",
+      "conclusion_ja": "15ドル。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "lego",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.toys_solution",
+      "title_ja": "レゴの価格",
+      "requires_steps": [
+        "cars"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "総売上45ドルから車の15ドルを引く。",
+      "method_ja": "差。",
+      "condition_ja": "総額45ドル。",
+      "premise_ja": "45-15。",
+      "conclusion_ja": "30ドル。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-25T10:42:00+09:00",
+    "source_problem_id": "external-gsm8k-main-3101c7d50724:train:02325",
+    "checks_ja": [
+      "固定原文を再読し、数量・単位・求める結論を照合した。",
+      "各説明行と名前付きLean定理の型を対応させた。",
+      "結論を仮定へ移さず、途中量から順に導出した。",
+      "自己照合のみであり、固定Leanの成功証拠と独立レビューは未取得である。"
+    ]
+  }
+}

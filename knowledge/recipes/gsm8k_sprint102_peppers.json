@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint102_peppers",
+  "title_ja": "辛くない唐辛子の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01818",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "7日分を加え、20%を辛い分として除く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.peppers_solution",
+  "graph": "work/gsm8k-sprint102-peppers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "peppers_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.peppers_total",
+      "title_ja": "収穫は80個。",
+      "claim_ja": "収穫は80個。",
+      "method_ja": "7+12+14+12+5+18+12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "日曜から土曜まで各1回。",
+      "conclusion_ja": "80。",
+      "baseline_ja": "80。"
+    },
+    {
+      "id": "peppers_hot",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.peppers_hot",
+      "title_ja": "辛いのは16個。",
+      "claim_ja": "辛いのは16個。",
+      "method_ja": "80×20%。",
+      "requires_steps": [
+        "peppers_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20%=1/5。",
+      "conclusion_ja": "16。",
+      "baseline_ja": "16。"
+    },
+    {
+      "id": "peppers_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.peppers_solution",
+      "title_ja": "辛くないのは64個。",
+      "claim_ja": "辛くないのは64個。",
+      "method_ja": "80−16。",
+      "requires_steps": [
+        "peppers_total",
+        "peppers_hot"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "辛い・辛くないで全体を分割。",
+      "conclusion_ja": "64。",
+      "baseline_ja": "64。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1819,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

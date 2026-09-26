@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint94_fruit",
+  "title_ja": "果物鉢の残数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01691",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "オレンジ3個とレモン6個から3個食べる。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.fruit_solution",
+  "graph": "work/gsm8k-sprint94-fruit-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fruit_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.fruit_total",
+      "title_ja": "初期総数",
+      "claim_ja": "9個。",
+      "method_ja": "3+6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二種類以外はない。",
+      "conclusion_ja": "3+6=9。",
+      "baseline_ja": "3+6=9。"
+    },
+    {
+      "id": "fruit_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.fruit_solution",
+      "title_ja": "残数",
+      "claim_ja": "6個。",
+      "method_ja": "9-3。",
+      "requires_steps": [
+        "fruit_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "食べた3個は鉢からなくなる。",
+      "conclusion_ja": "6+3=9。",
+      "baseline_ja": "6+3=9。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1692,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

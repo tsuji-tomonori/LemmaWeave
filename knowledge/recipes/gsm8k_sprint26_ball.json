@@ -1,0 +1,63 @@
+{
+  "id": "gsm8k_sprint26_ball",
+  "title_ja": "犬がボールへ追いつく時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00678",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "ボールが20ft/sで8秒飛んで160ft地点へ落ち、犬が投球時から5ft/sで走るときの追いつく時刻を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A26.ball_solution",
+  "graph": "work/gsm8k-sprint26-ball-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A26.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "犬は投球時から走り、ボールは8秒後に160フィート地点で静止するとモデル化する。"
+  ],
+  "steps": [
+    {
+      "id": "ball_distance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.ball_distance",
+      "title_ja": "ボールの到達距離",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20ft/sで8秒飛ぶ。",
+      "conclusion_ja": "160フィート。",
+      "baseline_ja": "20×8=160。"
+    },
+    {
+      "id": "ball_extra",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.ball_extra",
+      "title_ja": "着地後の追加時間",
+      "requires_steps": [
+        "ball_distance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "犬は最初の8秒で40フィート進み、残る120フィートを5ft/sで走る。",
+      "conclusion_ja": "追加24秒。",
+      "baseline_ja": "(160-5×8)÷5=24。"
+    },
+    {
+      "id": "ball_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.ball_total",
+      "title_ja": "投球から追いつくまで",
+      "requires_steps": [
+        "ball_extra"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "飛行8秒と追加24秒を足す。",
+      "conclusion_ja": "32秒。",
+      "baseline_ja": "8+24=32。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 679,
+    "checked_model_hash": "916d85cf91b2b878437a08560919c67499293ac4d5422b70e189384b4426aceb",
+    "checks_ja": [
+      "最初の8秒に犬が進む40フィートを二重に足さず、追加24秒と合計32秒を照合した。"
+    ]
+  }
+}

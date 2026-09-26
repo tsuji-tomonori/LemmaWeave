@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint126_sled",
+  "title_ja": "そりの4区間所要時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02177",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "そりを満載時速10マイルで180、空荷時速20マイルで120、満載で80、空荷で140マイル引く。合計何時間か。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.sled_solution",
+  "graph": "work/gsm8k-sprint126-sled-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sled_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.sled_first",
+      "title_ja": "満載180マイルは18時間",
+      "claim_ja": "満載180マイルは18時間",
+      "method_ja": "時速10マイルで180÷10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "満載180マイルは18時間",
+      "baseline_ja": "満載180マイルは18時間"
+    },
+    {
+      "id": "sled_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.sled_second",
+      "title_ja": "空荷120マイルは6時間",
+      "claim_ja": "空荷120マイルは6時間",
+      "method_ja": "時速20マイルで120÷20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "空荷120マイルは6時間",
+      "baseline_ja": "空荷120マイルは6時間"
+    },
+    {
+      "id": "sled_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.sled_third",
+      "title_ja": "満載80マイルは8時間",
+      "claim_ja": "満載80マイルは8時間",
+      "method_ja": "時速10マイルで80÷10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "満載80マイルは8時間",
+      "baseline_ja": "満載80マイルは8時間"
+    },
+    {
+      "id": "sled_fourth",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.sled_fourth",
+      "title_ja": "空荷140マイルは7時間",
+      "claim_ja": "空荷140マイルは7時間",
+      "method_ja": "時速20マイルで140÷20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "空荷140マイルは7時間",
+      "baseline_ja": "空荷140マイルは7時間"
+    },
+    {
+      "id": "sled_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.sled_solution",
+      "title_ja": "合計39時間",
+      "claim_ja": "合計39時間",
+      "method_ja": "4区間の18+6+8+7。",
+      "requires_steps": [
+        "sled_first",
+        "sled_second",
+        "sled_third",
+        "sled_fourth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計39時間",
+      "baseline_ja": "合計39時間"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2178,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

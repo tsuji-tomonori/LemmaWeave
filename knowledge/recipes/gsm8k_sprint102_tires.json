@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint102_tires",
+  "title_ja": "タイヤを満たすポンプ回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01817",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各タイヤの不足空気量を求め、合計を1回50立方インチで割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.tires_solution",
+  "graph": "work/gsm8k-sprint102-tires-graph.json",
+  "model_notes_ja": [
+    "参照説明末尾の『1550/50=29』は左辺の誤記である。直前までの正しい不足量1450を用いると1450/50=29となる。"
+  ],
+  "steps": [
+    {
+      "id": "tires_empty",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.tires_empty",
+      "title_ja": "空の2本には1,000立方インチ必要。",
+      "claim_ja": "空の2本には1,000立方インチ必要。",
+      "method_ja": "2×500。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各500。",
+      "conclusion_ja": "1000。",
+      "baseline_ja": "1000。"
+    },
+    {
+      "id": "tires_forty",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.tires_forty",
+      "title_ja": "40%入りのタイヤには300必要。",
+      "claim_ja": "40%入りのタイヤには300必要。",
+      "method_ja": "500×60%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "不足率は60%。",
+      "conclusion_ja": "300。",
+      "baseline_ja": "300。"
+    },
+    {
+      "id": "tires_seventy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.tires_seventy",
+      "title_ja": "70%入りのタイヤには150必要。",
+      "claim_ja": "70%入りのタイヤには150必要。",
+      "method_ja": "500×30%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "不足率は30%。",
+      "conclusion_ja": "150。",
+      "baseline_ja": "150。"
+    },
+    {
+      "id": "tires_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.tires_total",
+      "title_ja": "不足量は合計1,450立方インチ。",
+      "claim_ja": "不足量は合計1,450立方インチ。",
+      "method_ja": "1000+300+150。",
+      "requires_steps": [
+        "tires_empty",
+        "tires_forty",
+        "tires_seventy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4本分を加える。",
+      "conclusion_ja": "1450。",
+      "baseline_ja": "1450。"
+    },
+    {
+      "id": "tires_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.tires_solution",
+      "title_ja": "必要なポンプは29回。",
+      "claim_ja": "必要なポンプは29回。",
+      "method_ja": "1450÷50。",
+      "requires_steps": [
+        "tires_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各ポンプ50立方インチ。",
+      "conclusion_ja": "29。",
+      "baseline_ja": "29。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1818,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint93_liquids",
+  "title_ja": "飲んだ液体のカップ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01688",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "8.5パイントのコーヒーと9.5パイントの水を飲み、1パイント=2カップで換算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.liquids_solution",
+  "graph": "work/gsm8k-sprint93-liquids-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "liquids_half_pints",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.liquids_half_pints",
+      "title_ja": "半パイント合計",
+      "claim_ja": "半パイント36個。",
+      "method_ja": "8.5と9.5を半パイント17個と19個に直す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "両量を同じ単位にそろえる。",
+      "conclusion_ja": "17+19=36。",
+      "baseline_ja": "17+19=36。"
+    },
+    {
+      "id": "liquids_pints",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.liquids_pints",
+      "title_ja": "パイント合計",
+      "claim_ja": "18パイント。",
+      "method_ja": "半パイント36個を2で割る。",
+      "requires_steps": [
+        "liquids_half_pints"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2半パイント=1パイント。",
+      "conclusion_ja": "18×2=36。",
+      "baseline_ja": "18×2=36。"
+    },
+    {
+      "id": "liquids_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.liquids_solution",
+      "title_ja": "カップ合計",
+      "claim_ja": "36カップ。",
+      "method_ja": "18×2。",
+      "requires_steps": [
+        "liquids_pints"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1パイント=2カップ。",
+      "conclusion_ja": "18×2=36。",
+      "baseline_ja": "18×2=36。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1689,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

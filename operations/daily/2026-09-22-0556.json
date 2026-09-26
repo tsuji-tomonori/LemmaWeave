@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-22",
+  "run_id": "lemmaweave-sprint-20260922-0600-gsm8k-78",
+  "scheduled_slot": {
+    "role": "gsm8k_individual_solution",
+    "hour_jst": 6,
+    "planned_at": "2026-09-22T06:00:00+09:00",
+    "started_at": "2026-09-22T05:56:12+09:00",
+    "slot_shift_ja": "予定枠の4分前に起動したため、当日未実行の6時枠へ割り当てた。5時枠は実行済みであり二重実行していない。"
+  },
+  "base_sha": "f1a54245fae3b7642017676a1661eeee7a7b292b",
+  "started_at": "2026-09-22T05:56:12+09:00",
+  "finished_at": "2026-09-22T06:06:10+09:00",
+  "selected_problem_ids": [
+    "train:01449", "train:01450", "train:01451", "train:01452", "train:01453",
+    "train:01454", "train:01455", "train:01456", "train:01457", "train:01458",
+    "train:01459", "train:01460", "train:01461", "train:01462", "train:01463"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01449", "train:01450", "train:01451", "train:01452", "train:01453",
+    "train:01454", "train:01455", "train:01456", "train:01457", "train:01458",
+    "train:01459", "train:01460", "train:01461", "train:01462", "train:01463"
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:01449-train:01463",
+      "retry_on": "exact-head fixed Lean 4.33.1 CI success and evidence import",
+      "reason_ja": "現在HEADに固定Lean成功証拠がない。直近の完全replayは既存Sprint0921A20Models.leanで失敗しており、今回15問もsolution_readyへ昇格しない。",
+      "next_action_ja": "既存A20の非線形証明を修復後、完全replayを実行し、成功証拠を問題単位で取り込む。"
+    }
+  ],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "lines_1based": [1450, 1464],
+    "record_hash_matches": 15,
+    "question_hash_matches": 15
+  },
+  "self_review": {
+    "status": "self_review_only",
+    "problems_checked": 15,
+    "individual_solution_steps": 54,
+    "lean_declaration_matches": 54,
+    "sorry_admit_custom_axiom_count": 0,
+    "notes_ja": [
+      "各原題を再読し、数値・単位・条件・求める結論とLeanモデルを自己照合した。",
+      "train:01452はAbel出発時を時刻0とし、Aliceの1時間遅い出発を含めて到着差360分を形式化した。",
+      "train:01454は列挙された月・水・金・日を50mileの日、残る3日を100mileの日として明示した。",
+      "train:01463の72秒は165秒走った現在時点の残り時間としてモデル化した。"
+    ]
+  },
+  "checkpoints": [
+    {"problem_ids": ["train:01449", "train:01450", "train:01451", "train:01452", "train:01453"], "commit": "b94f3eb32c1f627bfd864919102b607bc2148fbe"},
+    {"problem_ids": ["train:01454", "train:01455", "train:01456", "train:01457", "train:01458"], "commit": "756261d16ec994c23ca2a7267b1e593833cbfce1"},
+    {"problem_ids": ["train:01459", "train:01460", "train:01461", "train:01462", "train:01463"], "commit": "3da299f023d2f7061af24c6457fe0896bd39ba17"}
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 950,
+    "pending": 7324,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 935},
+    "after": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 950},
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01464",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": ["train:01449", "train:01463"],
+    "base_sha": "f1a54245fae3b7642017676a1661eeee7a7b292b",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "not_started",
+    "last_full_replay_run_id": 35638746183,
+    "last_full_replay_conclusion": "failure",
+    "last_failure_ja": "既存Sprint0921A20Models.leanの非線形計算連鎖。",
+    "artifact_id": 10657995173,
+    "artifact_size_bytes": 196512855
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "3da299f023d2f7061af24c6457fe0896bd39ba17"
+  }
+}

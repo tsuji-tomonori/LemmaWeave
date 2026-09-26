@@ -1,0 +1,112 @@
+{
+  "id": "gsm8k_sprint119_trip",
+  "title_ja": "各人がさらに必要な額は475ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02067",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.trip_solution",
+  "graph": "work/gsm8k-sprint119-trip-graph.json",
+  "model_notes_ja": [
+    "『次の4日間で、最初の3日間に集めた額の半分』を次の4日間全体の合計と読む。日ごとの額とは読まない。"
+  ],
+  "steps": [
+    {
+      "id": "trip_goal",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.trip_goal",
+      "title_ja": "必要総額は5700ドル。",
+      "claim_ja": "必要総額は5700ドル。",
+      "method_ja": "6人×450ドルに共通経費3000ドルを加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "必要総額は5700ドル。",
+      "baseline_ja": "必要総額は5700ドル。"
+    },
+    {
+      "id": "trip_first_three",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.trip_first_three",
+      "title_ja": "最初の3日で1900ドル。",
+      "claim_ja": "最初の3日で1900ドル。",
+      "method_ja": "600+900+400。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "最初の3日で1900ドル。",
+      "baseline_ja": "最初の3日で1900ドル。"
+    },
+    {
+      "id": "trip_next_four",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.trip_next_four",
+      "title_ja": "次の4日間の合計は950ドル。",
+      "claim_ja": "次の4日間の合計は950ドル。",
+      "method_ja": "原文どおり、最初の3日間の合計1900ドルの半分。",
+      "requires_steps": [
+        "trip_first_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "次の4日間の合計は950ドル。",
+      "baseline_ja": "次の4日間の合計は950ドル。"
+    },
+    {
+      "id": "trip_week",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.trip_week",
+      "title_ja": "7日間の合計は2850ドル。",
+      "claim_ja": "7日間の合計は2850ドル。",
+      "method_ja": "1900+950。",
+      "requires_steps": [
+        "trip_first_three",
+        "trip_next_four"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "7日間の合計は2850ドル。",
+      "baseline_ja": "7日間の合計は2850ドル。"
+    },
+    {
+      "id": "trip_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.trip_remaining",
+      "title_ja": "不足額は2850ドル。",
+      "claim_ja": "不足額は2850ドル。",
+      "method_ja": "5700−2850。",
+      "requires_steps": [
+        "trip_goal",
+        "trip_week"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "不足額は2850ドル。",
+      "baseline_ja": "不足額は2850ドル。"
+    },
+    {
+      "id": "trip_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.trip_solution",
+      "title_ja": "各人がさらに必要な額は475ドル。",
+      "claim_ja": "各人がさらに必要な額は475ドル。",
+      "method_ja": "不足額2850ドルを6人で等分する。",
+      "requires_steps": [
+        "trip_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "各人がさらに必要な額は475ドル。",
+      "baseline_ja": "各人がさらに必要な額は475ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2068,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint139_toys",
+  "title_ja": "玩具購入の総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02378",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "レゴ3組各250ドル、剣7本各120ドル、粘土10個各35ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.toys_solution",
+  "graph": "work/gsm8k-sprint139-toys-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "toys_lego",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.toys_lego",
+      "title_ja": "レゴ750ドル",
+      "claim_ja": "レゴ750ドル",
+      "method_ja": "3に250を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "レゴ750ドル",
+      "baseline_ja": "レゴ750ドル"
+    },
+    {
+      "id": "toys_swords",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.toys_swords",
+      "title_ja": "剣840ドル",
+      "claim_ja": "剣840ドル",
+      "method_ja": "7に120を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "剣840ドル",
+      "baseline_ja": "剣840ドル"
+    },
+    {
+      "id": "toys_dough",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.toys_dough",
+      "title_ja": "粘土350ドル",
+      "claim_ja": "粘土350ドル",
+      "method_ja": "10に35を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "粘土350ドル",
+      "baseline_ja": "粘土350ドル"
+    },
+    {
+      "id": "toys_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.toys_solution",
+      "title_ja": "合計1940ドル",
+      "claim_ja": "合計1940ドル",
+      "method_ja": "750、840、350を足す",
+      "requires_steps": [
+        "toys_lego",
+        "toys_swords",
+        "toys_dough"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計1940ドル",
+      "baseline_ja": "合計1940ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2379,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

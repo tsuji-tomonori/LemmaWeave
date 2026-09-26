@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint40_vampires",
+  "title_ja": "2夜後の吸血鬼数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00884",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "各夜の開始時点の吸血鬼が5人ずつ増やすとして反復する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.vampires_solution",
+  "graph": "work/gsm8k-sprint40-vampires-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "2夜で転化する70人は村人口300人を超えない。"
+  ],
+  "steps": [
+    {
+      "id": "vampires_new_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.vampires_new_first",
+      "title_ja": "1夜目の新規",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2人が各5人を吸血鬼にする。",
+      "conclusion_ja": "10人。",
+      "baseline_ja": "5×2=10。"
+    },
+    {
+      "id": "vampires_after_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.vampires_after_first",
+      "title_ja": "1夜目後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "元の2人と新規10人。",
+      "conclusion_ja": "12人。",
+      "baseline_ja": "2+10=12。"
+    },
+    {
+      "id": "vampires_new_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.vampires_new_second",
+      "title_ja": "2夜目の新規",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12人が各5人を吸血鬼にする。",
+      "conclusion_ja": "60人。",
+      "baseline_ja": "5×12=60。"
+    },
+    {
+      "id": "vampires_after_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.vampires_after_second",
+      "title_ja": "2夜目後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "既存12人と新規60人。",
+      "conclusion_ja": "72人。",
+      "baseline_ja": "12+60=72。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 885,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

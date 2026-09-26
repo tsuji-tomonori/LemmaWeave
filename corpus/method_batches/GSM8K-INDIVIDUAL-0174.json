@@ -1,0 +1,221 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0174",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "4fbbba05067cfd5efc01e3ad45a6bbdfe8355bb6f13cb453952d1e22052f2cc5",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0924A11Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02080",
+      "source_line_1based": 2081,
+      "source_record_sha256": "ba3d3198974b0c40b9fce7872313eaee6145cbcfca7d19f0b0562f06a8cf5514",
+      "raw_question_sha256": "39ac6de0ab8c338315b45148f7bbb14d3cb7b7e2fbf3f341229602fd0cbeabfb",
+      "normalized_question_sha256": "39ac6de0ab8c338315b45148f7bbb14d3cb7b7e2fbf3f341229602fd0cbeabfb",
+      "source_question": "A hairstylist charges $5 for a normal haircut, $6 for a special haircut, and $8 for a trendy haircut. If he cuts 5 normal haircuts, 3 special haircuts, and 2 trendy haircuts per day, how much money does he earn per week?",
+      "recipe_id": "gsm8k_sprint120_haircut",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題はper weekを尋ねる。参照説明末尾のper monthは7倍計算と矛盾する誤記なので、7日間の週413ドルを形式化する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02081",
+      "source_line_1based": 2082,
+      "source_record_sha256": "fa240db6e50d4e27228c7f40a28b5a66567e093c0e95865a05b80d9ad5310918",
+      "raw_question_sha256": "d22f2e9440048ecd5b7648f089bf0570414a9059e72b1179d7b9fdb729ec641c",
+      "normalized_question_sha256": "d22f2e9440048ecd5b7648f089bf0570414a9059e72b1179d7b9fdb729ec641c",
+      "source_question": "Cassidy is grounded for 14 days for lying about her report card, plus 3 extra days for each grade below a B. If Cassidy got four grades below a B, how long is she grounded for?",
+      "recipe_id": "gsm8k_sprint120_grounded",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02082",
+      "source_line_1based": 2083,
+      "source_record_sha256": "2ae1b970d584d70f29fbbd67903e96fba3ec490c52114b41dc52692ad9253452",
+      "raw_question_sha256": "7878562cfb10688860c1dc4c781daa0e835cb5d7ac91a854f982a2aaa4c70374",
+      "normalized_question_sha256": "7878562cfb10688860c1dc4c781daa0e835cb5d7ac91a854f982a2aaa4c70374",
+      "source_question": "Mildred and Candice went to the market. Mildred spent $25 while Candice spent $35. If their mom gave them $100 to spend, how much will be left with them after spending?",
+      "recipe_id": "gsm8k_sprint120_market",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02083",
+      "source_line_1based": 2084,
+      "source_record_sha256": "d8266b13a72a121370ebaa4265a53a5bfc8f3d10a2f9972bd4107984da49318d",
+      "raw_question_sha256": "d17d1a39450695c32dd7f0ec6ecacc4bc0166bca4772f95cf579dccbe271c981",
+      "normalized_question_sha256": "94b95f96ee94d9e4c4f0087522f4dbf23837ebf7abe059380a4cb9c2bc542083",
+      "source_question": "James buys pistachios for $10 per can.  Each can is 5 ounces.  He eats 30 ounces of pistachios every 5 days.  How much does he spend on pistachios per week?",
+      "recipe_id": "gsm8k_sprint120_pistachios",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "5日間30オンスという平均消費率が1週間も一定で、オンス単価が比例するとして84ドルを導く。缶を整数個だけ購入する時点の在庫問題とは区別する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02084",
+      "source_line_1based": 2085,
+      "source_record_sha256": "078b524c60b866c6dfb2da4df6f2113ca9b3a65cb44565f8e4972ca9a62c41a7",
+      "raw_question_sha256": "c3b7d14a555f44c565c48ffb72bddddfda1747edffbb158287907f8c89f2447f",
+      "normalized_question_sha256": "6314a807fffd8e28c0ea0ae12a0f02bf712449fa188e4b1c22589b73b83daba2",
+      "source_question": "Timmy's parents have a 2 car garage, which has both cars inside it.  Also inside is a riding lawnmower, a bicycle for Timmy as well as each of his parents, a tricycle for Timmy's little brother Joey, and a unicycle that Timmy's dad practices riding on.  How many wheels in total are in this garage?",
+      "recipe_id": "gsm8k_sprint120_wheels",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02085",
+      "source_line_1based": 2086,
+      "source_record_sha256": "c38579cbfc88d49b31bce4b1be069a288c66421614beeafabff9a7a92cd33c58",
+      "raw_question_sha256": "20a07927657421948af882b6e81824d59cde7982c2bb132b2f45637adc67df1b",
+      "normalized_question_sha256": "f2a9cacb2a9d3cdae875ebc959a6f88da806637aa38d36817e45d00edf3883ce",
+      "source_question": "Tom needs to buy a new gaming system.  He trades in his super Nintendo for an original NES.  The SNES is worth $150 and the store gives him 80% of that value.  He gives $80 and gets back $10 change and a game worth $30.  How much was the NES on sale for?",
+      "recipe_id": "gsm8k_sprint120_nes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02086",
+      "source_line_1based": 2087,
+      "source_record_sha256": "a98ba1336e940f311e19616c909176dadd3bc7455d9d1efc8f0d1710e94e73bc",
+      "raw_question_sha256": "c4ead1fb01ca1961d19b3a235c10e40ebe19b1b0e243f9b9011548136aa59c8b",
+      "normalized_question_sha256": "c4ead1fb01ca1961d19b3a235c10e40ebe19b1b0e243f9b9011548136aa59c8b",
+      "source_question": "A jewelry store is restocking its shelves. The necklace stand, which can hold 12 necklaces, currently holds 5 necklaces. The ring display, which can hold 30 rings, currently holds 18 rings. The bracelet display, which can hold 15 bracelets, currently holds 8 bracelets. The store’s supplier charges $4 per necklace, $10 per ring, and $5 per bracelet. How much, in dollars, will the store need to pay to fill the displays?",
+      "recipe_id": "gsm8k_sprint120_jewelry",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02087",
+      "source_line_1based": 2088,
+      "source_record_sha256": "c20bef59abac9667a4f3731615a7ec53d3b1bd19d0f732bfbed8131e8cd086da",
+      "raw_question_sha256": "e6d7e05064939cccb4d05031ed4a39f777900caffa84df0936fcff39d9a990f2",
+      "normalized_question_sha256": "16162183952bba72d6d85a648177cfd65340121982a6cf746d0d00249e2c3f6e",
+      "source_question": "A private company raised $2500 to be used for charity. They donated  80% to a public foundation with 8 organizations. How much money will each organization receive?",
+      "recipe_id": "gsm8k_sprint120_charity",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02088",
+      "source_line_1based": 2089,
+      "source_record_sha256": "85919de95711ec4be52b7ceea816f45e9ef42bd3f57b20ef8d4c91b5d9c18af5",
+      "raw_question_sha256": "cd2560e0279a9ae026b2b87706761e9a238e0d6f8db7e3232dd03339059b1e97",
+      "normalized_question_sha256": "a386d077b11aee790c57dced77622e2fffd021436f4040a0c49196f5e909653c",
+      "source_question": "Sam is serving spaghetti and meatballs for dinner.  The pasta costs $1.00 per box, a jar of sauce is $2.00 and 1 pound of meatballs is $5.00.  He wants to stretch this meal into 8 servings.  How much does each serving cost?",
+      "recipe_id": "gsm8k_sprint120_spaghetti",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文の単数表現に従い、箱1つ・瓶1つ・1ポンドを8食へ等分するモデルを明示する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02089",
+      "source_line_1based": 2090,
+      "source_record_sha256": "097599cef86d8919ffbea2200fb3db6275947ede9c687a9e116caa421eebce64",
+      "raw_question_sha256": "000f9683cfbdf42c2143e446cf104eb585ceea7b2df51d8f8f4bbb5433711ea5",
+      "normalized_question_sha256": "000f9683cfbdf42c2143e446cf104eb585ceea7b2df51d8f8f4bbb5433711ea5",
+      "source_question": "Sophia ate 1/6 of her pie and she put the rest on the fridge. If the pie left in the fridge weighs 1200 grams, how many grams did Sophia eat?",
+      "recipe_id": "gsm8k_sprint120_pie",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02090",
+      "source_line_1based": 2091,
+      "source_record_sha256": "5d04a955dea6ecbe00cfafce0709b80e3267d769afdbcbc642549644c07a6617",
+      "raw_question_sha256": "15cc2e29639c01b069680bb317be5abf355e750744ded0fe32b202e98ac3a47d",
+      "normalized_question_sha256": "15cc2e29639c01b069680bb317be5abf355e750744ded0fe32b202e98ac3a47d",
+      "source_question": "A bag full of sugar weighs 16 kg. A bag full of salt weighs 30 kg. If you remove 4 kg from the combined weight of these two bags, how much do the bags now weigh?",
+      "recipe_id": "gsm8k_sprint120_bags",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02091",
+      "source_line_1based": 2092,
+      "source_record_sha256": "0d1a545509cceae718daf4cd6d8f2a8c42931dac6877afad1b110755c8392ac6",
+      "raw_question_sha256": "ebe5a29b817bf756c7ed367684adee9df842c2190736d3bd4bdc1850a38b2dc4",
+      "normalized_question_sha256": "ebe5a29b817bf756c7ed367684adee9df842c2190736d3bd4bdc1850a38b2dc4",
+      "source_question": "A store has an 8% discount on all items. If Shara paid $184 for a pair of shoes, how much did Shara save?",
+      "recipe_id": "gsm8k_sprint120_discount",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02092",
+      "source_line_1based": 2093,
+      "source_record_sha256": "3cd8c5e4737fe4241535bed49ab44e0b3bfcba4c03468fbe174490fd88fb045c",
+      "raw_question_sha256": "0348df7a7a96f84092cbdacec253346974507837f999035b8e221ff034f931cb",
+      "normalized_question_sha256": "0348df7a7a96f84092cbdacec253346974507837f999035b8e221ff034f931cb",
+      "source_question": "Eduardo is a teacher. He taught 3 classes last week while his colleague Frankie taught double what Eduardo teaches. How many classes did Eduardo and Frankie teach in total?",
+      "recipe_id": "gsm8k_sprint120_classes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02093",
+      "source_line_1based": 2094,
+      "source_record_sha256": "26ad8727ca05733283dc8e19064efc2579eb027630f60d2de79a4663b08c22b5",
+      "raw_question_sha256": "73cfe9287b511fa4fb868fc35c282ccde512c4fd556f532c01f6617b4423cdcb",
+      "normalized_question_sha256": "73cfe9287b511fa4fb868fc35c282ccde512c4fd556f532c01f6617b4423cdcb",
+      "source_question": "Cary is 72 inches tall. Her younger brother Bill is half her height, and her younger sister Jan is 6 inches taller than Bill. How tall is Jan?",
+      "recipe_id": "gsm8k_sprint120_height",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02094",
+      "source_line_1based": 2095,
+      "source_record_sha256": "1aba4ef708e5832fa1b561dce76f7cd83b6d6606bd78edff348c33fc98616340",
+      "raw_question_sha256": "ebfa8ddef2a195927ed8956ea1eeddce75d5921ed2b53901478aa1ce7c7231d7",
+      "normalized_question_sha256": "ebfa8ddef2a195927ed8956ea1eeddce75d5921ed2b53901478aa1ce7c7231d7",
+      "source_question": "A family is going to the amusement park. The adult tickets cost $22 for admission, and the tickets for children cost $7. The family consists of 2 adults and 2 children. What is the total price the family will pay for admission?",
+      "recipe_id": "gsm8k_sprint120_admission",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    }
+  ]
+}

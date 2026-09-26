@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint34_triangle",
+  "title_ja": "三つの三角形の面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00790",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "底辺40cm、高さ20cmの同形三角形3個の合計面積を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.triangle_solution",
+  "graph": "work/gsm8k-sprint34-triangle-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "triangle_one",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.triangle_one",
+      "title_ja": "1個の面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "三角形の面積は底辺×高さ÷2。",
+      "conclusion_ja": "400平方cm。",
+      "baseline_ja": "40×20÷2=400。"
+    },
+    {
+      "id": "triangle_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.triangle_total",
+      "title_ja": "3個の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Zionと友人2人で同形の家が3個。",
+      "conclusion_ja": "1200平方cm。",
+      "baseline_ja": "3×400=1200。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 791,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

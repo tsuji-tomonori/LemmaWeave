@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint107_hush",
+  "title_ja": "100個のハッシュパピーを作る時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01898",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1バッチ10個からバッチ数を求め、1バッチ8分を掛ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A17.hush_solution",
+  "graph": "work/gsm8k-sprint107-hush-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hush_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.hush_total",
+      "title_ja": "必要数は100個。",
+      "claim_ja": "必要数は100個。",
+      "method_ja": "40+60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "hush_batches",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.hush_batches",
+      "title_ja": "必要なのは10バッチ。",
+      "claim_ja": "必要なのは10バッチ。",
+      "method_ja": "100÷10。",
+      "requires_steps": [
+        "hush_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "hush_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.hush_solution",
+      "title_ja": "所要時間は80分。",
+      "claim_ja": "所要時間は80分。",
+      "method_ja": "10×8。",
+      "requires_steps": [
+        "hush_batches"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1899,
+    "checked_model_hash": "5d08e45fe0eaf9fabcdeab34c324f312a3c8fcd3e7dbea981241a4b614ad46cc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

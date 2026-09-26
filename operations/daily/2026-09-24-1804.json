@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T18:00+09:00-gsm8k-15-a18",
+  "scheduled_local_hour": 18,
+  "scheduled_at": "2026-09-24T18:00:00+09:00",
+  "started_at": "2026-09-24T18:04:48+09:00",
+  "finished_at": "2026-09-24T18:15:00+09:00",
+  "start_offset_seconds": 288,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "7d1e88dd5b76718a252d32b22a3b80a59e9fd0da",
+  "artifact_commit": "4e639c3b40e85b6e5af012ac4e4e65eab46b7d65",
+  "selected_problem_ids": ["train:02170", "train:02171", "train:02172", "train:02173", "train:02174", "train:02175", "train:02176", "train:02177", "train:02178", "train:02179", "train:02180", "train:02181", "train:02182", "train:02183", "train:02184"],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": ["train:02170", "train:02171", "train:02172", "train:02173", "train:02174", "train:02175", "train:02176", "train:02177", "train:02178", "train:02179", "train:02180", "train:02181", "train:02182", "train:02183", "train:02184"],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02174", "commit": "38caf311f1704cb07f3cbfb7e5de87d09ecbcb88"},
+    {"through": "train:02179", "commit": "5c5b625ddf92ca1aef0a97d7327f039afb5545c6"},
+    {"through": "train:02184", "commit": "4e639c3b40e85b6e5af012ac4e4e65eab46b7d65"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0180.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A18Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A18.lean",
+    "recipes": 15,
+    "explanation_lines": 62,
+    "named_lean_theorems": 62,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02173は14卓に均等配置する条件がないため、1卓12人は条件付き。13卓に11人と残り25人も合計168人になる。",
+    "train:02175は『1/5 times more』の解釈を分け、3人合計140冊と90冊を区別した。",
+    "train:02176は同じ第1姉妹が2倍の年齢かつ1歳若い原文の矛盾を証明した。4歳は第2姉妹が若いと訂正した場合だけ。",
+    "train:02178の初回の値下がりは『about 25%』なので、正確に25%なら60ドル、24%なら60.80ドルとなる。",
+    "train:02182は車80台まで確定するが、客80人は各車1人という追加条件が必要で、各車2人なら160人。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "question_hash_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0,
+    "pinned_lean_build": "pending_ci",
+    "axiom_dependency_audit": "pending_ci"
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1669,
+    "pending": 6605,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02185",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {"unexecuted_slots_today": [0, 15], "note_ja": "0時枠と15時枠は未実行。18時枠は予定より288秒遅れて開始し、17時枠のtrain:02155〜02169と重複しない。"},
+  "ci": {
+    "prior_change_head": "7d1e88dd5b76718a252d32b22a3b80a59e9fd0da",
+    "prior_run_id": 35976043614,
+    "prior_status_at_start": "in_progress",
+    "latest_checkpoint_run_id": 35979923922,
+    "latest_checkpoint_status": "pending",
+    "current_artifact_head": "4e639c3b40e85b6e5af012ac4e4e65eab46b7d65",
+    "current_run_id": 35980069052,
+    "current_status": "pending_before_ledger_commit",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {"number": 5, "branch": "codex/sprint-20260919-0000", "mergeable_before_write": true, "merge_status": "held_for_current_ci_and_evidence"},
+  "claim": {"owner": "scheduled-run-2026-09-24T18:00+09:00", "scope": "train:02170-train:02184", "claimed_at": "2026-09-24T18:04:48+09:00", "expires_at": "2026-09-24T19:04:48+09:00", "released": true}
+}

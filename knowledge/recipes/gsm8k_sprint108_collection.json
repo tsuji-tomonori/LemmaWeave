@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint108_collection",
+  "title_ja": "1日当たり集める品数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01904",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "葉と虫を合計し、10日で等分する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A18.collection_solution",
+  "graph": "work/gsm8k-sprint108-collection-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "collection_items",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.collection_items",
+      "title_ja": "必要品は50点。",
+      "claim_ja": "必要品は50点。",
+      "method_ja": "30+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "collection_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.collection_solution",
+      "title_ja": "1日5点。",
+      "claim_ja": "1日5点。",
+      "method_ja": "50÷10。",
+      "requires_steps": [
+        "collection_items"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1905,
+    "checked_model_hash": "8387abb9439c81fb607c222f1f1736998bf0c1f8b65dd181b6386c00663bd8bc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

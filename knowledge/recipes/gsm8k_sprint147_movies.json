@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint147_movies",
+  "title_ja": "映画へ行った回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02488",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Timothyの2009年24回を基準に、両者の2009年・2010年の回数を合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.movies_solution",
+  "graph": "work/gsm8k-sprint147-movies-graph.json",
+  "model_notes_ja": [
+    "原文の that は than、go on は go to の誤記と読めるが、数量関係は一意である。"
+  ],
+  "steps": [
+    {
+      "id": "movies_timothy2010",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.movies_timothy2010",
+      "title_ja": "Timothyの2010年は31回",
+      "claim_ja": "Timothyの2010年は31回",
+      "method_ja": "24回に7回を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "Timothyの2010年は31回",
+      "baseline_ja": "Timothyの2010年は31回"
+    },
+    {
+      "id": "movies_theresa2009",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.movies_theresa2009",
+      "title_ja": "Theresaの2009年は12回",
+      "claim_ja": "Theresaの2009年は12回",
+      "method_ja": "Timothyの半分を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "Theresaの2009年は12回",
+      "baseline_ja": "Theresaの2009年は12回"
+    },
+    {
+      "id": "movies_theresa2010",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.movies_theresa2010",
+      "title_ja": "Theresaの2010年は62回",
+      "claim_ja": "Theresaの2010年は62回",
+      "method_ja": "Timothyの2010年の2倍を求める",
+      "requires_steps": [
+        "movies_timothy2010"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "Theresaの2010年は62回",
+      "baseline_ja": "Theresaの2010年は62回"
+    },
+    {
+      "id": "movies_components",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.movies_components",
+      "title_ja": "Timothyは2009年24回・2010年31回",
+      "claim_ja": "Timothyは2009年24回・2010年31回",
+      "method_ja": "原題の基準値と増加分を照合する",
+      "requires_steps": [
+        "movies_timothy2010"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "Timothyは2009年24回・2010年31回",
+      "baseline_ja": "Timothyは2009年24回・2010年31回"
+    },
+    {
+      "id": "movies_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.movies_solution",
+      "title_ja": "4区分の合計は129回",
+      "claim_ja": "4区分の合計は129回",
+      "method_ja": "24、31、12、62を足す",
+      "requires_steps": [
+        "movies_theresa2009",
+        "movies_theresa2010",
+        "movies_components"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "4区分の合計は129回",
+      "baseline_ja": "4区分の合計は129回"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2489,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

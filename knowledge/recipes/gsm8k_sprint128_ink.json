@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint128_ink",
+  "title_ja": "白板用インクの一日費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02202",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5教室に各2枚の白板があり、1枚につき約20ml使う。1ml50セントなら費用はいくらか",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A20.ink_answer_scope",
+  "graph": "work/gsm8k-sprint128-ink-graph.json",
+  "model_notes_ja": [
+    "about 20mlは近似。100ドルは追加条件付き。"
+  ],
+  "steps": [
+    {
+      "id": "ink_boards",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.ink_boards",
+      "title_ja": "白板は10枚",
+      "claim_ja": "白板は10枚",
+      "method_ja": "5教室に各2枚",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "白板は10枚",
+      "baseline_ja": "白板は10枚"
+    },
+    {
+      "id": "ink_ml_exact",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.ink_ml_exact",
+      "title_ja": "正確に20mlなら合計200ml",
+      "claim_ja": "正確に20mlなら合計200ml",
+      "method_ja": "10枚に20mlを掛ける",
+      "requires_steps": [
+        "ink_boards"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "正確に20mlなら合計200ml",
+      "baseline_ja": "正確に20mlなら合計200ml"
+    },
+    {
+      "id": "ink_cents_exact",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.ink_cents_exact",
+      "title_ja": "正確に20mlなら10000セント",
+      "claim_ja": "正確に20mlなら10000セント",
+      "method_ja": "200mlに50セントを掛ける",
+      "requires_steps": [
+        "ink_ml_exact"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "正確に20mlなら10000セント",
+      "baseline_ja": "正確に20mlなら10000セント"
+    },
+    {
+      "id": "ink_exact_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.ink_exact_solution",
+      "title_ja": "正確に20mlなら100ドル",
+      "claim_ja": "正確に20mlなら100ドル",
+      "method_ja": "10000セントを100で割る",
+      "requires_steps": [
+        "ink_cents_exact"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "正確に20mlなら100ドル",
+      "baseline_ja": "正確に20mlなら100ドル"
+    },
+    {
+      "id": "ink_about_alternative",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.ink_about_alternative",
+      "title_ja": "1枚19mlなら9500セント",
+      "claim_ja": "1枚19mlなら9500セント",
+      "method_ja": "10枚×19ml×50セント",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "1枚19mlなら9500セント",
+      "baseline_ja": "1枚19mlなら9500セント"
+    },
+    {
+      "id": "ink_not_unique",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.ink_not_unique",
+      "title_ja": "10000と9500セントは異なる",
+      "claim_ja": "10000と9500セントは異なる",
+      "method_ja": "約20mlの誤差幅がない",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "10000と9500セントは異なる",
+      "baseline_ja": "10000と9500セントは異なる"
+    },
+    {
+      "id": "ink_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.ink_answer_scope",
+      "title_ja": "100ドルは正確に20mlと置く場合",
+      "claim_ja": "100ドルは正確に20mlと置く場合",
+      "method_ja": "条件付き解と反例を併記する",
+      "requires_steps": [
+        "ink_exact_solution",
+        "ink_about_alternative",
+        "ink_not_unique"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "100ドルは正確に20mlと置く場合",
+      "baseline_ja": "100ドルは正確に20mlと置く場合"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2203,
+    "checked_model_hash": "be9ab873a50df496e12f7ec640da6afee66c564105c78477bc6213cb94a7cbe0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

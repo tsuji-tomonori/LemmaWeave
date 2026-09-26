@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint106_ages",
+  "title_ja": "Sophiaの3年後の年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01873",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "JeremyとSebastianの3年後を求め、合計150から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.ages_solution",
+  "graph": "work/gsm8k-sprint106-ages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ages_jeremy_future",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.ages_jeremy_future",
+      "title_ja": "Jeremyは3年後43歳。",
+      "claim_ja": "Jeremyは3年後43歳。",
+      "method_ja": "40+3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "ages_sebastian_now",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.ages_sebastian_now",
+      "title_ja": "Sebastianは現在44歳。",
+      "claim_ja": "Sebastianは現在44歳。",
+      "method_ja": "40+4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "ages_sebastian_future",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.ages_sebastian_future",
+      "title_ja": "Sebastianは3年後47歳。",
+      "claim_ja": "Sebastianは3年後47歳。",
+      "method_ja": "44+3。",
+      "requires_steps": [
+        "ages_sebastian_now"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "ages_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.ages_solution",
+      "title_ja": "Sophiaは3年後60歳。",
+      "claim_ja": "Sophiaは3年後60歳。",
+      "method_ja": "150−43−47。",
+      "requires_steps": [
+        "ages_jeremy_future",
+        "ages_sebastian_future"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1874,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

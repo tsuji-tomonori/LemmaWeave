@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint44_daisies",
+  "title_ja": "Kylieに残るヒナギク",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00944",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "5本に9本を加え、その半分を母へ渡した残数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.daisies_solution",
+  "graph": "work/gsm8k-sprint44-daisies-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "daisies_after_gift",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.daisies_after_gift",
+      "title_ja": "受け取った後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5本に9本を加える。",
+      "conclusion_ja": "14本。",
+      "baseline_ja": "5+9=14。"
+    },
+    {
+      "id": "daisies_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.daisies_remaining",
+      "title_ja": "残数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "14本の半分を母へ渡す。",
+      "conclusion_ja": "7本残る。",
+      "baseline_ja": "7×2=14。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 945,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "gsm8k_sprint26_mango",
+  "title_ja": "残った熟したマンゴー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00671",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "400個の3/5が熟し、その60%を食べた後の熟した実を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A26.mango_solution",
+  "graph": "work/gsm8k-sprint26-mango-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A26.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "全体に対する熟した割合と、熟した集合に対する食べた割合を分ける。"
+  ],
+  "steps": [
+    {
+      "id": "mango_ripe",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.mango_ripe",
+      "title_ja": "熟した個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "400個の3/5。",
+      "conclusion_ja": "240個が熟している。",
+      "baseline_ja": "400×3/5=240。"
+    },
+    {
+      "id": "mango_eaten",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.mango_eaten",
+      "title_ja": "食べた熟果",
+      "requires_steps": [
+        "mango_ripe"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "熟した240個の60%。",
+      "conclusion_ja": "144個を食べた。",
+      "baseline_ja": "240×60/100=144。"
+    },
+    {
+      "id": "mango_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.mango_remaining",
+      "title_ja": "残る熟果",
+      "requires_steps": [
+        "mango_ripe",
+        "mango_eaten"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "熟果240個から144個を引く。",
+      "conclusion_ja": "96個残る。",
+      "baseline_ja": "240-144=96。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 672,
+    "checked_model_hash": "916d85cf91b2b878437a08560919c67499293ac4d5422b70e189384b4426aceb",
+    "checks_ja": [
+      "60%を全400個ではなく熟した240個へ適用した。"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T03:00+09:00-gsm8k-15-a03",
+  "scheduled_local_hour": 3,
+  "scheduled_at": "2026-09-24T03:00:00+09:00",
+  "started_at": "2026-09-24T02:56:13+09:00",
+  "finished_at": "2026-09-24T03:10:00+09:00",
+  "start_offset_seconds": -227,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "e104a26d5e984fe1f0fbdf9fc567d02e3222720c",
+  "artifact_commit": "6d015ce74722e27e5702542190da11fadc467d5f",
+  "selected_problem_ids": [
+    "train:01974", "train:01975", "train:01976", "train:01977", "train:01978",
+    "train:01979", "train:01980", "train:01981", "train:01982", "train:01983",
+    "train:01984", "train:01985", "train:01986", "train:01987", "train:01988"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01974", "train:01975", "train:01976", "train:01977", "train:01978",
+    "train:01979", "train:01980", "train:01981", "train:01982", "train:01983",
+    "train:01984", "train:01985", "train:01986", "train:01987", "train:01988"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:01978", "commit": "2abb50f66dbcc06fdfb8ea28e7379130d6ad9b14"},
+    {"through": "train:01983", "commit": "50dcee80bf9ea355be2574784be27039031504ba"},
+    {"through": "train:01988", "commit": "6d015ce74722e27e5702542190da11fadc467d5f"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0167.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A03Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A03.lean",
+    "recipes": 15,
+    "explanation_lines": 48,
+    "named_lean_theorems": 48,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:01977は犬の散歩時間が原文にないため、追加条件付き216ドルと反例282ドルを分離し、答えが一意でないことを形式化した。",
+    "train:01983は金額をセントで整数化し、100/3パーセントを33パーセントへ四捨五入する条件を形式化した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1474,
+    "pending": 6800,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:01989",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持し、1時・2時・3時枠を重複なく実行した。3時枠は予定より227秒早く開始した。"
+  },
+  "ci": {
+    "last_checked_head": "e104a26d5e984fe1f0fbdf9fc567d02e3222720c",
+    "workflow_run_id": 35895123925,
+    "status": "failure",
+    "reason": "complete_replay_timeout_exit_124",
+    "accepted_as_success_evidence": false,
+    "recovery_record": "operations/ci-recovery/2026-09-24-0300.json",
+    "new_head_status": "pending_after_ledger_commit"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T03:00+09:00",
+    "scope": "train:01974-train:01988",
+    "claimed_at": "2026-09-24T02:56:13+09:00",
+    "expires_at": "2026-09-24T03:56:13+09:00",
+    "released": true
+  }
+}

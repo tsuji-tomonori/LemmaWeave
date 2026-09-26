@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint143_scholarship",
+  "title_ja": "3人の奨学金合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02426",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Wendyは20000ドル、Kellyはその2倍、NinaはKellyより8000ドル少ない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.scholarship_solution",
+  "graph": "work/gsm8k-sprint143-scholarship-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "scholarship_kelly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.scholarship_kelly",
+      "title_ja": "Kellyは40000ドル",
+      "claim_ja": "Kellyは40000ドル",
+      "method_ja": "20000の2倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Kellyは40000ドル",
+      "baseline_ja": "Kellyは40000ドル"
+    },
+    {
+      "id": "scholarship_nina",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.scholarship_nina",
+      "title_ja": "Ninaは32000ドル",
+      "claim_ja": "Ninaは32000ドル",
+      "method_ja": "40000から8000を引く",
+      "requires_steps": [
+        "scholarship_kelly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Ninaは32000ドル",
+      "baseline_ja": "Ninaは32000ドル"
+    },
+    {
+      "id": "scholarship_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.scholarship_solution",
+      "title_ja": "3人の合計は92000ドル",
+      "claim_ja": "3人の合計は92000ドル",
+      "method_ja": "20000、40000、32000を足す",
+      "requires_steps": [
+        "scholarship_kelly",
+        "scholarship_nina"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3人の合計は92000ドル",
+      "baseline_ja": "3人の合計は92000ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2427,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

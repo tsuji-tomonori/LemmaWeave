@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint147_bread",
+  "title_ja": "閉店時のパン",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02499",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "開始2355個から629個売れ、489個納品される。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.bread_solution",
+  "graph": "work/gsm8k-sprint147-bread-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bread_afternoon",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.bread_afternoon",
+      "title_ja": "午後の残数は1726個",
+      "claim_ja": "午後の残数は1726個",
+      "method_ja": "2355から629を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "午後の残数は1726個",
+      "baseline_ja": "午後の残数は1726個"
+    },
+    {
+      "id": "bread_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.bread_solution",
+      "title_ja": "閉店時は2215個",
+      "claim_ja": "閉店時は2215個",
+      "method_ja": "1726に489を足す",
+      "requires_steps": [
+        "bread_afternoon"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "閉店時は2215個",
+      "baseline_ja": "閉店時は2215個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2500,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

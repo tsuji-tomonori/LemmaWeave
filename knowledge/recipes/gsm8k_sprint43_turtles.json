@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint43_turtles",
+  "title_ja": "2人が受け取ったカメの総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00934",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Marthaが40匹、Marionが20匹多く受け取ったときの合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A11.turtles_solution",
+  "graph": "work/gsm8k-sprint43-turtles-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "turtles_marion",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.turtles_marion",
+      "title_ja": "Marionのカメ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Martha40匹より20匹多い。",
+      "conclusion_ja": "60匹。",
+      "baseline_ja": "40+20=60。"
+    },
+    {
+      "id": "turtles_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.turtles_total",
+      "title_ja": "合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "MarthaとMarionの分を加える。",
+      "conclusion_ja": "100匹。",
+      "baseline_ja": "40+60=100。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 935,
+    "checked_model_hash": "881a98f47252976fe9a699be8850a410dba97738f0a04e0f969fcced6462a82f",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint147_oasis",
+  "title_ja": "飲んだ水のガロン数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02495",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "旅行者32オンス、ラクダはその7倍を飲み、128オンスを1ガロンとして換算する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.oasis_solution",
+  "graph": "work/gsm8k-sprint147-oasis-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "oasis_camel",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.oasis_camel",
+      "title_ja": "ラクダは224オンス飲む",
+      "claim_ja": "ラクダは224オンス飲む",
+      "method_ja": "32オンスの7倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "ラクダは224オンス飲む",
+      "baseline_ja": "ラクダは224オンス飲む"
+    },
+    {
+      "id": "oasis_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.oasis_total",
+      "title_ja": "合計は256オンス",
+      "claim_ja": "合計は256オンス",
+      "method_ja": "32と224を足す",
+      "requires_steps": [
+        "oasis_camel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計は256オンス",
+      "baseline_ja": "合計は256オンス"
+    },
+    {
+      "id": "oasis_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.oasis_solution",
+      "title_ja": "合計は2ガロン",
+      "claim_ja": "合計は2ガロン",
+      "method_ja": "256オンスを128で割る",
+      "requires_steps": [
+        "oasis_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計は2ガロン",
+      "baseline_ja": "合計は2ガロン"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2496,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

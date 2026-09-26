@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint137_library",
+  "title_ja": "最初のカートの本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02340",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3区画で本を棚に戻し、誤配置4冊をカートへ加えた後16冊残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.library_solution",
+  "graph": "work/gsm8k-sprint137-library-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "library_shelved",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.library_shelved",
+      "title_ja": "棚に置いた冊数の延べ合計は39冊",
+      "claim_ja": "棚に置いた冊数の延べ合計は39冊",
+      "method_ja": "12、19、8を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "棚に置いた冊数の延べ合計は39冊",
+      "baseline_ja": "棚に置いた冊数の延べ合計は39冊"
+    },
+    {
+      "id": "library_net",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.library_net",
+      "title_ja": "カートから正味35冊減った",
+      "claim_ja": "カートから正味35冊減った",
+      "method_ja": "39冊置いて4冊を戻す",
+      "requires_steps": [
+        "library_shelved"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "カートから正味35冊減った",
+      "baseline_ja": "カートから正味35冊減った"
+    },
+    {
+      "id": "library_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.library_remaining",
+      "title_ja": "最後に16冊残る",
+      "claim_ja": "最後に16冊残る",
+      "method_ja": "原題の残数を保持する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最後に16冊残る",
+      "baseline_ja": "最後に16冊残る"
+    },
+    {
+      "id": "library_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.library_solution",
+      "title_ja": "最初は51冊",
+      "claim_ja": "最初は51冊",
+      "method_ja": "正味減少35冊と残り16冊を足す",
+      "requires_steps": [
+        "library_net",
+        "library_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最初は51冊",
+      "baseline_ja": "最初は51冊"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2341,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

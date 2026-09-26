@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint122_sales",
+  "title_ja": "第2通りの販売数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02116",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Rodneyが第2通りで売った台数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A13.sales_solution",
+  "graph": "work/gsm8k-sprint122-sales-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sales_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.sales_total",
+      "title_ja": "全販売数は7台。",
+      "claim_ja": "全販売数は7台。",
+      "method_ja": "175ドル÷25ドル/台。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "全販売数は7台。",
+      "baseline_ja": "全販売数は7台。"
+    },
+    {
+      "id": "sales_relation",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.sales_relation",
+      "title_ja": "第2通りは第1通りの2倍。",
+      "claim_ja": "第2通りは第1通りの2倍。",
+      "method_ja": "「第1通りは第2通りの半分」を式にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "第2通りは第1通りの2倍。",
+      "baseline_ja": "第2通りは第1通りの2倍。"
+    },
+    {
+      "id": "sales_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.sales_first",
+      "title_ja": "第1通りは2台。",
+      "claim_ja": "第1通りは2台。",
+      "method_ja": "第3通り0台、第4通り1台なので3s+1=7。",
+      "requires_steps": [
+        "sales_total",
+        "sales_relation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "第1通りは2台。",
+      "baseline_ja": "第1通りは2台。"
+    },
+    {
+      "id": "sales_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A13.sales_solution",
+      "title_ja": "第2通りは4台。",
+      "claim_ja": "第2通りは4台。",
+      "method_ja": "2×2。",
+      "requires_steps": [
+        "sales_first",
+        "sales_relation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "第2通りは4台。",
+      "baseline_ja": "第2通りは4台。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2117,
+    "checked_model_hash": "2d247300fd6850aeee734895d7aaaebb3883ceb284846fdab864e381503ad540",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は追加条件と反例を明示した。"
+    ]
+  }
+}

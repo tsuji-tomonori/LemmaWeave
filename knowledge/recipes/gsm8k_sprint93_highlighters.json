@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint93_highlighters",
+  "title_ja": "蛍光ペンの総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01683",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "黄色7本。ピンクは黄色より7本多く、青はピンクより5本多い。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.highlighters_solution",
+  "graph": "work/gsm8k-sprint93-highlighters-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "highlighters_pink",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.highlighters_pink",
+      "title_ja": "ピンク",
+      "claim_ja": "14本。",
+      "method_ja": "7+7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "「7本多い」は加算。",
+      "conclusion_ja": "7+7=14。",
+      "baseline_ja": "7+7=14。"
+    },
+    {
+      "id": "highlighters_blue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.highlighters_blue",
+      "title_ja": "青",
+      "claim_ja": "19本。",
+      "method_ja": "14+5。",
+      "requires_steps": [
+        "highlighters_pink"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ピンク本数を基準にする。",
+      "conclusion_ja": "14+5=19。",
+      "baseline_ja": "14+5=19。"
+    },
+    {
+      "id": "highlighters_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.highlighters_solution",
+      "title_ja": "総数",
+      "claim_ja": "40本。",
+      "method_ja": "7+14+19。",
+      "requires_steps": [
+        "highlighters_pink",
+        "highlighters_blue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "三色以外はない。",
+      "conclusion_ja": "7+14+19=40。",
+      "baseline_ja": "7+14+19=40。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1684,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

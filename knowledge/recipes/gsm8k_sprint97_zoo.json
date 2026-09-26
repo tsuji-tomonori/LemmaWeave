@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint97_zoo",
+  "title_ja": "動物園へ行ける生徒の最大人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01739",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "バス代を予算から引き、入場料を払える人数の上限と達成を証明する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.zoo_solution",
+  "graph": "work/gsm8k-sprint97-zoo-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "zoo_admission_budget",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.zoo_admission_budget",
+      "title_ja": "入場料に使える予算は250ドル。",
+      "claim_ja": "入場料に使える予算は250ドル。",
+      "method_ja": "350−100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "教師は無料で、固定費はバス100ドルだけ。",
+      "conclusion_ja": "250+100=350。",
+      "baseline_ja": "250+100=350。"
+    },
+    {
+      "id": "zoo_affords_25",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.zoo_affords_25",
+      "title_ja": "25人の入場料250ドルは予算内。",
+      "claim_ja": "25人の入場料250ドルは予算内。",
+      "method_ja": "25×10を計算する。",
+      "requires_steps": [
+        "zoo_admission_budget"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各生徒10ドル。",
+      "conclusion_ja": "25×10≤250。",
+      "baseline_ja": "25×10≤250。"
+    },
+    {
+      "id": "zoo_upper_bound",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.zoo_upper_bound",
+      "title_ja": "予算内の人数は25人以下。",
+      "claim_ja": "予算内の人数は25人以下。",
+      "method_ja": "10×人数≤250から上界を得る。",
+      "requires_steps": [
+        "zoo_admission_budget"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "人数は自然数、入場料は一人10ドル。",
+      "conclusion_ja": "students≤25。",
+      "baseline_ja": "students≤25。"
+    },
+    {
+      "id": "zoo_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.zoo_solution",
+      "title_ja": "最大25人。",
+      "claim_ja": "最大25人。",
+      "method_ja": "25人の達成可能性と全候補の上界を合わせる。",
+      "requires_steps": [
+        "zoo_affords_25",
+        "zoo_upper_bound"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "単なる割算値でなく最大性を確認する。",
+      "conclusion_ja": "students=25。",
+      "baseline_ja": "students=25。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1740,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

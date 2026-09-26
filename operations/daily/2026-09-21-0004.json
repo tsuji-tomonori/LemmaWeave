@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-0000-gsm8k-52",
+  "planned_slot_local_hour": 0,
+  "planned_at": "2026-09-21T00:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "c68512625ef13657c0f20f173774a6bc15fb00a4",
+  "started_at": "2026-09-21T00:04:23+09:00",
+  "finished_at": "2026-09-21T02:17:33+09:00",
+  "schedule_offset_seconds": 263,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01059",
+    "external-gsm8k-main-3101c7d50724:train:01060",
+    "external-gsm8k-main-3101c7d50724:train:01061",
+    "external-gsm8k-main-3101c7d50724:train:01062",
+    "external-gsm8k-main-3101c7d50724:train:01063",
+    "external-gsm8k-main-3101c7d50724:train:01064",
+    "external-gsm8k-main-3101c7d50724:train:01065",
+    "external-gsm8k-main-3101c7d50724:train:01066",
+    "external-gsm8k-main-3101c7d50724:train:01067",
+    "external-gsm8k-main-3101c7d50724:train:01068",
+    "external-gsm8k-main-3101c7d50724:train:01069",
+    "external-gsm8k-main-3101c7d50724:train:01070",
+    "external-gsm8k-main-3101c7d50724:train:01071",
+    "external-gsm8k-main-3101c7d50724:train:01072",
+    "external-gsm8k-main-3101c7d50724:train:01073"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01059",
+    "external-gsm8k-main-3101c7d50724:train:01060",
+    "external-gsm8k-main-3101c7d50724:train:01061",
+    "external-gsm8k-main-3101c7d50724:train:01062",
+    "external-gsm8k-main-3101c7d50724:train:01063",
+    "external-gsm8k-main-3101c7d50724:train:01064",
+    "external-gsm8k-main-3101c7d50724:train:01065",
+    "external-gsm8k-main-3101c7d50724:train:01066",
+    "external-gsm8k-main-3101c7d50724:train:01067",
+    "external-gsm8k-main-3101c7d50724:train:01068",
+    "external-gsm8k-main-3101c7d50724:train:01069",
+    "external-gsm8k-main-3101c7d50724:train:01070",
+    "external-gsm8k-main-3101c7d50724:train:01071",
+    "external-gsm8k-main-3101c7d50724:train:01072",
+    "external-gsm8k-main-3101c7d50724:train:01073"
+  ],
+  "verification_pending_cumulative": {
+    "count": 560,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01073"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01059-01073",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを完走し、入力SHA・許容公理・46説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {"problem_ids":"train:01059-01063","commit":"a028ff2966989fda8d479ae2f7240d10994ec7c2"},
+    {"problem_ids":"train:01064-01068","commit":"175503ac096c953486a3203b23b6a9a91941c3ef"},
+    {"problem_ids":"train:01069-01073 and registration","commit":"cc356b8378a22d75a420a0d023d519ea17e770cc"}
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 46,
+    "recipe_declaration_mappings_checked": 46,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_hash": "ffe918da0aa62458275d6d8dbf8854640ce4eea7cbb927886d1fa86112b62bbb"
+  },
+  "verification_infrastructure_repair": {
+    "stale_batches": ["GSM8K-INDIVIDUAL-0078","GSM8K-INDIVIDUAL-0079","GSM8K-INDIVIDUAL-0080"],
+    "recipes_refrozen": 45,
+    "reason_ja": "各バッチに生ファイルSHA-256が保存され、現行model_hashのファイル名付き凍結値と不一致だったため、モデル本文を変えず現行方式で再凍結した。",
+    "validator_relaxed": false
+  },
+  "measurements": {
+    "elapsed_seconds": 7990,
+    "artifact_bytes": 49333,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0.0,
+    "local_execution_success_rate": 1.0,
+    "ci_seconds": null
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 source records, 15 questions, 46 declarations, and 15 model bindings checked",
+    "frozen_model_hash_check": "all legacy model batches current after repairing 0078-0080",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_missing_existing_artifact",
+    "method_recipe_render_missing_path": "reports/dependencies/methods/dnc2026_inequalities_individual.json.gz",
+    "next_action_ja": "固定CIで新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "c68512625ef13657c0f20f173774a6bc15fb00a4",
+    "previous_run_id": 35516693460,
+    "previous_status": "failure",
+    "previous_failure_ja": "GSM8K-INDIVIDUAL-0078の古い凍結モデルハッシュ。",
+    "accepted_as_success_evidence": false,
+    "current_head_sha": "cc356b8378a22d75a420a0d023d519ea17e770cc",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "trigger_pending"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "cc356b8378a22d75a420a0d023d519ea17e770cc",
+  "progress_before": {"solution_ready":518,"remaining":8274,"verification_pending":545},
+  "progress_after": {"solution_ready":518,"remaining":8274,"verification_pending":560},
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01074",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・46個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01060は組と個を分離した。train:01069はセント単位で小数を避けた。train:01073は参照説明内の東西の誤記を退け、原題どおりの捕獲割合を形式化した。"
+}

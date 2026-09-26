@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint142_exam",
+  "title_ja": "Sammyの誤答数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02424",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bryan20点、Jenは10点多く、SammyはJenより2点少ない。満点35点。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.exam_solution",
+  "graph": "work/gsm8k-sprint142-exam-graph.json",
+  "model_notes_ja": [
+    "1問1点で、失点数が誤答数に一致するという原題の意図を保持する。"
+  ],
+  "steps": [
+    {
+      "id": "exam_jen",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.exam_jen",
+      "title_ja": "Jenは30点",
+      "claim_ja": "Jenは30点",
+      "method_ja": "20に10を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Jenは30点",
+      "baseline_ja": "Jenは30点"
+    },
+    {
+      "id": "exam_sammy",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.exam_sammy",
+      "title_ja": "Sammyは28点",
+      "claim_ja": "Sammyは28点",
+      "method_ja": "30から2を引く",
+      "requires_steps": [
+        "exam_jen"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Sammyは28点",
+      "baseline_ja": "Sammyは28点"
+    },
+    {
+      "id": "exam_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.exam_solution",
+      "title_ja": "誤答は7問",
+      "claim_ja": "誤答は7問",
+      "method_ja": "35から28を引く",
+      "requires_steps": [
+        "exam_sammy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "誤答は7問",
+      "baseline_ja": "誤答は7問"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2425,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

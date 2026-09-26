@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint149_mobile",
+  "title_ja": "残る携帯データ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02518",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "500MBのうち300MBを動画に使い、残りの2/5をFacebookに使った後の残量を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A04.mobile_solution",
+  "graph": "work/gsm8k-sprint149-mobile-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "mobile_after_video",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.mobile_after_video",
+      "title_ja": "動画視聴後は200MB",
+      "claim_ja": "動画視聴後は200MB",
+      "method_ja": "500から300を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "動画視聴後は200MB",
+      "baseline_ja": "動画視聴後は200MB"
+    },
+    {
+      "id": "mobile_facebook",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.mobile_facebook",
+      "title_ja": "Facebookには80MBを使う",
+      "claim_ja": "Facebookには80MBを使う",
+      "method_ja": "200の2/5を求める",
+      "requires_steps": [
+        "mobile_after_video"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Facebookには80MBを使う",
+      "baseline_ja": "Facebookには80MBを使う"
+    },
+    {
+      "id": "mobile_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.mobile_solution",
+      "title_ja": "残量は120MB",
+      "claim_ja": "残量は120MB",
+      "method_ja": "200から80を引く",
+      "requires_steps": [
+        "mobile_after_video",
+        "mobile_facebook"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残量は120MB",
+      "baseline_ja": "残量は120MB"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2519,
+    "checked_model_hash": "bf48471e5f50a20e1256bd8203ba528b20e3455a0bb5dad6c2632708aa2a99f1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

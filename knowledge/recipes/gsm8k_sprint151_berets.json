@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint151_berets",
+  "title_ja": "作れるベレー帽の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02558",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "赤12巻、黒15巻、青6巻を合計し、1個につき3巻使う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.berets_solution",
+  "graph": "work/gsm8k-sprint151-berets-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "berets_spools",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.berets_spools",
+      "title_ja": "糸は合計33巻",
+      "claim_ja": "糸は合計33巻",
+      "method_ja": "12、15、6を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "糸は合計33巻",
+      "baseline_ja": "糸は合計33巻"
+    },
+    {
+      "id": "berets_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.berets_solution",
+      "title_ja": "ベレー帽は11個作れる",
+      "claim_ja": "ベレー帽は11個作れる",
+      "method_ja": "33巻を1個3巻で割る",
+      "requires_steps": [
+        "berets_spools"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ベレー帽は11個作れる",
+      "baseline_ja": "ベレー帽は11個作れる"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2559,
+    "checked_model_hash": "384e45e9725069db6bfe4c0bd74de4beb8486b01fb92a55ab7a85ecc00b7944d",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

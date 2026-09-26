@@ -11,3 +11,8 @@ import LemmaWeave.Audit.Extract
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A06.sleep_solution to "work/gsm8k-sprint151-sleep-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A06.apples_solution to "work/gsm8k-sprint151-apples-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A06.planet_solution to "work/gsm8k-sprint151-planet-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A06.rhinos_solution to "work/gsm8k-sprint151-rhinos-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A06.stones_solution to "work/gsm8k-sprint151-stones-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A06.berets_solution to "work/gsm8k-sprint151-berets-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A06.car_solution to "work/gsm8k-sprint151-car-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A06.finance_solution to "work/gsm8k-sprint151-finance-graph.json"

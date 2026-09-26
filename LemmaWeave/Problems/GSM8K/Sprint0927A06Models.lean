@@ -189,4 +189,71 @@ structure PlanetComposition where
 theorem planet_other_percent (m : PlanetComposition) : m.otherPercent = 30 := by cases m; omega
 theorem planet_mars_mass (m : PlanetComposition) : m.marsTons = 500 := by cases m; omega
 theorem planet_solution (m : PlanetComposition) : m.moonTons = 250 := by cases m; omega
+structure Rhinos where
+  whiteCount : ℕ
+  poundsPerWhite : ℕ
+  whitePounds : ℕ
+  blackCount : ℕ
+  poundsPerTon : ℕ
+  blackPounds : ℕ
+  totalPounds : ℕ
+  hWhiteCount : whiteCount = 7
+  hWhiteWeight : poundsPerWhite = 5100
+  hWhiteTotal : whitePounds = whiteCount * poundsPerWhite
+  hBlackCount : blackCount = 8
+  hShortTon : poundsPerTon = 2000
+  hBlackTotal : blackPounds = blackCount * poundsPerTon
+  hTotal : totalPounds = whitePounds + blackPounds
+theorem rhinos_white (m : Rhinos) : m.whitePounds = 35700 := by cases m; omega
+theorem rhinos_black (m : Rhinos) : m.blackPounds = 16000 := by cases m; omega
+theorem rhinos_solution (m : Rhinos) : m.totalPounds = 51700 := by cases m; omega
+structure PreciousStones where
+  agate : ℕ
+  olivine : ℕ
+  diamond : ℕ
+  total : ℕ
+  hAgate : agate = 30
+  hOlivine : olivine = agate + 5
+  hDiamond : diamond = olivine + 11
+  hTotal : total = agate + olivine + diamond
+theorem stones_olivine (m : PreciousStones) : m.olivine = 35 := by cases m; omega
+theorem stones_diamond (m : PreciousStones) : m.diamond = 46 := by cases m; omega
+theorem stones_solution (m : PreciousStones) : m.total = 111 := by cases m; omega
+structure Berets where
+  redSpools : ℕ
+  blackSpools : ℕ
+  blueSpools : ℕ
+  totalSpools : ℕ
+  spoolsPerBeret : ℕ
+  berets : ℕ
+  hRed : redSpools = 12
+  hBlack : blackSpools = 15
+  hBlue : blueSpools = 6
+  hTotal : totalSpools = redSpools + blackSpools + blueSpools
+  hPerBeret : spoolsPerBeret = 3
+  hBerets : totalSpools = berets * spoolsPerBeret
+theorem berets_spools (m : Berets) : m.totalSpools = 33 := by cases m; omega
+theorem berets_solution (m : Berets) : m.berets = 11 := by cases m; omega
+structure CarCosts where
+  oldSalePrice : ℕ
+  remainingDebt : ℕ
+  newCost : ℕ
+  oldCost : ℕ
+  hSale : oldSalePrice = 1800
+  hDebt : remainingDebt = 2000
+  hNewCost : newCost = oldSalePrice + remainingDebt
+  hDouble : newCost = 2 * oldCost
+theorem car_new_cost (m : CarCosts) : m.newCost = 3800 := by cases m; omega
+theorem car_solution (m : CarCosts) : m.oldCost = 1900 := by cases m; omega
+structure FinanceCharge where
+  balanceCents : ℕ
+  percent : ℕ
+  chargeCents : ℕ
+  totalCents : ℕ
+  hBalance : balanceCents = 15000
+  hPercent : percent = 2
+  hCharge : 100 * chargeCents = percent * balanceCents
+  hTotal : totalCents = balanceCents + chargeCents
+theorem finance_charge (m : FinanceCharge) : m.chargeCents = 300 := by cases m; omega
+theorem finance_solution (m : FinanceCharge) : m.totalCents = 15300 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A06

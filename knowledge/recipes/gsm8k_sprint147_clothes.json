@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint147_clothes",
+  "title_ja": "ドレス1着の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02492",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "総額69ドルからシャツ4枚各5ドルを引き、ドレス7着で割る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.clothes_solution",
+  "graph": "work/gsm8k-sprint147-clothes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "clothes_shirts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.clothes_shirts",
+      "title_ja": "シャツ売上は20ドル",
+      "claim_ja": "シャツ売上は20ドル",
+      "method_ja": "4枚に5ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "シャツ売上は20ドル",
+      "baseline_ja": "シャツ売上は20ドル"
+    },
+    {
+      "id": "clothes_dresses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.clothes_dresses",
+      "title_ja": "ドレス売上は49ドル",
+      "claim_ja": "ドレス売上は49ドル",
+      "method_ja": "69ドルから20ドルを引く",
+      "requires_steps": [
+        "clothes_shirts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "ドレス売上は49ドル",
+      "baseline_ja": "ドレス売上は49ドル"
+    },
+    {
+      "id": "clothes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.clothes_solution",
+      "title_ja": "ドレス1着は7ドル",
+      "claim_ja": "ドレス1着は7ドル",
+      "method_ja": "49ドルを7着で割る",
+      "requires_steps": [
+        "clothes_dresses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "ドレス1着は7ドル",
+      "baseline_ja": "ドレス1着は7ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2493,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

@@ -69,4 +69,68 @@ theorem petstore_cats (m : PetStore) : m.cats = 3 := by cases m; omega
 theorem petstore_birds (m : PetStore) : m.birds = 12 := by cases m; omega
 theorem petstore_fish (m : PetStore) : m.fish = 18 := by cases m; omega
 theorem petstore_solution (m : PetStore) : m.total = 39 := by cases m; omega
+structure CandyStore where
+  fudgeCents : ℕ
+  truffleCents : ℕ
+  pretzelCents : ℕ
+  totalCents : ℕ
+  totalDollars : ℕ
+  hf : fudgeCents = 20 * 250
+  ht : truffleCents = 5 * 12 * 150
+  hp : pretzelCents = 3 * 12 * 200
+  htotal : totalCents = fudgeCents + truffleCents + pretzelCents
+  hd : totalCents = 100 * totalDollars
+theorem candy_fudge (m : CandyStore) : m.fudgeCents = 5000 := by cases m; omega
+theorem candy_truffles (m : CandyStore) : m.truffleCents = 9000 := by cases m; omega
+theorem candy_pretzels (m : CandyStore) : m.pretzelCents = 7200 := by cases m; omega
+theorem candy_solution (m : CandyStore) : m.totalDollars = 212 := by cases m; omega
+structure Clothes where
+  shirtsRevenue : ℕ
+  dressesRevenue : ℕ
+  dressPrice : ℕ
+  hs : shirtsRevenue = 4 * 5
+  ht : dressesRevenue + shirtsRevenue = 69
+  hd : dressesRevenue = 7 * dressPrice
+theorem clothes_shirts (m : Clothes) : m.shirtsRevenue = 20 := by cases m; omega
+theorem clothes_dresses (m : Clothes) : m.dressesRevenue = 49 := by cases m; omega
+theorem clothes_solution (m : Clothes) : m.dressPrice = 7 := by cases m; omega
+structure CakeEggs where
+  scale : ℕ
+  eggsNeeded : ℕ
+  milkNeeded : ℕ
+  eggsHave : ℕ
+  eggsToBuy : ℕ
+  hs : 4 * scale = 8
+  he : eggsNeeded = 2 * scale
+  hm : milkNeeded = 4 * scale
+  hh : eggsHave = 3
+  hb : eggsToBuy + eggsHave = eggsNeeded
+theorem cake_scale (m : CakeEggs) : m.scale = 2 := by cases m; omega
+theorem cake_eggs (m : CakeEggs) : m.eggsNeeded = 4 := by cases m; omega
+theorem cake_milk (m : CakeEggs) : m.milkNeeded = 8 := by cases m; omega
+theorem cake_solution (m : CakeEggs) : m.eggsToBuy = 1 := by cases m; omega
+structure Rocks where
+  connerDay1 : ℕ
+  sydneyDay3 : ℕ
+  sydneyFinal : ℕ
+  connerBeforeDay3 : ℕ
+  hcd1 : connerDay1 = 8 * 4
+  hsd3 : sydneyDay3 = 2 * connerDay1
+  hsf : sydneyFinal = 837 + 4 + sydneyDay3
+  hcb : connerBeforeDay3 = 723 + connerDay1 + 123
+theorem rocks_conner_day1 (m : Rocks) : m.connerDay1 = 32 := by cases m; omega
+theorem rocks_sydney_day3 (m : Rocks) : m.sydneyDay3 = 64 := by cases m; omega
+theorem rocks_sydney_final (m : Rocks) : m.sydneyFinal = 905 := by cases m; omega
+theorem rocks_conner_before (m : Rocks) : m.connerBeforeDay3 = 878 := by cases m; omega
+theorem rocks_solution (n : ℕ) : 905 ≤ 878 + n ↔ 27 ≤ n := by omega
+structure Oasis where
+  camelOunces : ℕ
+  totalOunces : ℕ
+  gallons : ℕ
+  hc : camelOunces = 7 * 32
+  ht : totalOunces = 32 + camelOunces
+  hg : totalOunces = 128 * gallons
+theorem oasis_camel (m : Oasis) : m.camelOunces = 224 := by cases m; omega
+theorem oasis_total (m : Oasis) : m.totalOunces = 256 := by cases m; omega
+theorem oasis_solution (m : Oasis) : m.gallons = 2 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A02

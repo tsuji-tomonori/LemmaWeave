@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint148_study",
+  "title_ja": "勉強時間の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02509",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Science 60分、Math 80分、Literature 40分を時間へ換算する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.study_solution",
+  "graph": "work/gsm8k-sprint148-study-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "study_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.study_minutes",
+      "title_ja": "合計は180分",
+      "claim_ja": "合計は180分",
+      "method_ja": "60、80、40を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計は180分",
+      "baseline_ja": "合計は180分"
+    },
+    {
+      "id": "study_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.study_solution",
+      "title_ja": "合計は3時間",
+      "claim_ja": "合計は3時間",
+      "method_ja": "180分を60分毎時で割る",
+      "requires_steps": [
+        "study_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計は3時間",
+      "baseline_ja": "合計は3時間"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2510,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

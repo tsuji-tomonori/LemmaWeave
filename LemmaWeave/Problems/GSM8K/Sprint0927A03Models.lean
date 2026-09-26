@@ -81,4 +81,67 @@ structure Shopping where
 theorem shopping_book (m : Shopping) : m.book = 39 := by cases m; omega
 theorem shopping_total (m : Shopping) : m.total = 73 := by cases m; omega
 theorem shopping_solution (m : Shopping) : m.over = 3 := by cases m; omega
+structure Sleep where
+  increase : ℕ
+  newHours : ℕ
+  hIncrease : 3 * increase = 6
+  hNew : newHours = 6 + increase
+theorem sleep_increase (m : Sleep) : m.increase = 2 := by cases m; omega
+theorem sleep_solution (m : Sleep) : m.newHours = 8 := by cases m; omega
+structure Relay where
+  sadieMiles : ℕ
+  arianaMiles : ℕ
+  sarahHalfHours : ℕ
+  sarahMiles : ℕ
+  totalMiles : ℕ
+  hSadie : sadieMiles = 3 * 2
+  hAriana : 2 * arianaMiles = 6
+  hTime : 4 + 1 + sarahHalfHours = 9
+  hSarah : 2 * sarahMiles = 4 * sarahHalfHours
+  hTotal : totalMiles = sadieMiles + arianaMiles + sarahMiles
+theorem relay_sadie (m : Relay) : m.sadieMiles = 6 := by cases m; omega
+theorem relay_ariana (m : Relay) : m.arianaMiles = 3 := by cases m; omega
+theorem relay_sarah_time (m : Relay) : m.sarahHalfHours = 4 := by cases m; omega
+theorem relay_sarah_distance (m : Relay) : m.sarahMiles = 8 := by cases m; omega
+theorem relay_solution (m : Relay) : m.totalMiles = 17 := by cases m; omega
+structure Layoffs where
+  first : ℕ
+  remainingFirst : ℕ
+  second : ℕ
+  remainingSecond : ℕ
+  third : ℕ
+  total : ℕ
+  hFirst : 10 * first = 1000
+  hRemainFirst : remainingFirst + first = 1000
+  hSecond : 10 * second = remainingFirst
+  hRemainSecond : remainingSecond + second = remainingFirst
+  hThird : 10 * third = remainingSecond
+  hTotal : total = first + second + third
+theorem layoffs_first (m : Layoffs) : m.first = 100 := by cases m; omega
+theorem layoffs_remaining_first (m : Layoffs) : m.remainingFirst = 900 := by cases m; omega
+theorem layoffs_second (m : Layoffs) : m.second = 90 := by cases m; omega
+theorem layoffs_remaining_second (m : Layoffs) : m.remainingSecond = 810 := by cases m; omega
+theorem layoffs_third (m : Layoffs) : m.third = 81 := by cases m; omega
+theorem layoffs_solution (m : Layoffs) : m.total = 271 := by cases m; omega
+structure StudyTime where
+  totalMinutes : ℕ
+  hours : ℕ
+  hTotal : totalMinutes = 60 + 80 + 40
+  hHours : totalMinutes = 60 * hours
+theorem study_minutes (m : StudyTime) : m.totalMinutes = 180 := by cases m; omega
+theorem study_solution (m : StudyTime) : m.hours = 3 := by cases m; omega
+structure Savings where
+  saved : ℕ
+  bonus : ℕ
+  beforePurchase : ℕ
+  remaining : ℕ
+  hSaved : saved = 50 + 37 + 11
+  hQualifies : 75 < saved
+  hBonus : bonus = 25
+  hBefore : beforePurchase = saved + bonus
+  hRemaining : remaining + 87 = beforePurchase
+theorem savings_saved (m : Savings) : m.saved = 98 := by cases m; omega
+theorem savings_qualifies (m : Savings) : 75 < m.saved := m.hQualifies
+theorem savings_before_purchase (m : Savings) : m.beforePurchase = 123 := by cases m; omega
+theorem savings_solution (m : Savings) : m.remaining = 36 := by cases m; omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A03

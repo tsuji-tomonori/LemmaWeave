@@ -62,4 +62,68 @@ structure OrangePieces where
 theorem oranges_pieces (m : OrangePieces) : m.totalPieces = 800 := by cases m; omega
 theorem oranges_solution (m : OrangePieces) : m.friends = 200 := by cases m; omega
 
+structure StorePurchase where
+  starting baguettes baguettePrice baguetteCost waters waterPrice waterCost spent left : ℕ
+  hStarting : starting = 50
+  hBaguettes : baguettes = 2
+  hBaguettePrice : baguettePrice = 2
+  hBaguetteCost : baguetteCost = baguettes * baguettePrice
+  hWaters : waters = 2
+  hWaterPrice : waterPrice = 1
+  hWaterCost : waterCost = waters * waterPrice
+  hSpent : spent = baguetteCost + waterCost
+  hLeft : starting = spent + left
+theorem store_baguettes (m : StorePurchase) : m.baguetteCost = 4 := by cases m; omega
+theorem store_water (m : StorePurchase) : m.waterCost = 2 := by cases m; omega
+theorem store_solution (m : StorePurchase) : m.left = 44 := by cases m; omega
+
+structure ThreeGenerations where
+  markus son grandson total : ℕ
+  hMarkus : markus = 2 * son
+  hSon : son = 2 * grandson
+  hTotal : total = 140
+  hSum : total = markus + son + grandson
+theorem ages_ratio_sum (m : ThreeGenerations) : 7 * m.grandson = 140 := by cases m; omega
+theorem ages_solution (m : ThreeGenerations) : m.grandson = 20 := by cases m; omega
+
+structure CourseEarnings where
+  courses weeklyHours weeklyPerCourse weeks monthlyHours hourlyRate earnings : ℕ
+  hCourses : courses = 4
+  hWeeklyHours : weeklyHours = 48
+  hWeeklyShare : weeklyHours = courses * weeklyPerCourse
+  hWeeks : weeks = 4
+  hMonthly : monthlyHours = weeklyPerCourse * weeks
+  hRate : hourlyRate = 25
+  hEarnings : earnings = monthlyHours * hourlyRate
+theorem course_weekly (m : CourseEarnings) : m.weeklyPerCourse = 12 := by cases m; omega
+theorem course_monthly (m : CourseEarnings) : m.monthlyHours = 48 := by cases m; omega
+theorem course_solution (m : CourseEarnings) : m.earnings = 1200 := by cases m; omega
+
+structure FlyerShare where
+  total ryan alyssa scott friends belinda percent : ℕ
+  hTotal : total = 200
+  hRyan : ryan = 42
+  hAlyssa : alyssa = 67
+  hScott : scott = 51
+  hFriends : friends = ryan + alyssa + scott
+  hPartition : total = friends + belinda
+  hPercent : percent * total = 100 * belinda
+theorem flyers_friends (m : FlyerShare) : m.friends = 160 := by cases m; omega
+theorem flyers_belinda (m : FlyerShare) : m.belinda = 40 := by cases m; omega
+theorem flyers_solution (m : FlyerShare) : m.percent = 20 := by cases m; omega
+
+structure DutyShoes where
+  fullPrice firstPercent firstDiscount firstPrice secondPercent secondDiscount finalPrice : ℕ
+  hFull : fullPrice = 85
+  hFirstPercent : firstPercent = 20
+  hFirstDiscount : 100 * firstDiscount = firstPercent * fullPrice
+  hFirstPrice : fullPrice = firstDiscount + firstPrice
+  hSecondPercent : secondPercent = 25
+  hSecondDiscount : 100 * secondDiscount = secondPercent * firstPrice
+  hFinal : firstPrice = secondDiscount + finalPrice
+theorem shoes_first_discount (m : DutyShoes) : m.firstDiscount = 17 := by cases m; omega
+theorem shoes_first_price (m : DutyShoes) : m.firstPrice = 68 := by cases m; omega
+theorem shoes_second_discount (m : DutyShoes) : m.secondDiscount = 17 := by cases m; omega
+theorem shoes_solution (m : DutyShoes) : m.finalPrice = 51 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A10

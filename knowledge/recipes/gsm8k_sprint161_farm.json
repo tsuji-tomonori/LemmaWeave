@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint161_farm",
+  "title_ja": "追加後の農場の動物数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02710",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "現在は牛2、豚3、山羊6。牛3、豚5、山羊2を追加する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A20.farm_solution",
+  "graph": "work/gsm8k-sprint161-farm-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "farm_current",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.farm_current",
+      "title_ja": "現在は11頭",
+      "claim_ja": "現在は11頭",
+      "method_ja": "2・3・6を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "現在は11頭",
+      "baseline_ja": "現在は11頭"
+    },
+    {
+      "id": "farm_added",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.farm_added",
+      "title_ja": "10頭追加する",
+      "claim_ja": "10頭追加する",
+      "method_ja": "3・5・2を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "10頭追加する",
+      "baseline_ja": "10頭追加する"
+    },
+    {
+      "id": "farm_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.farm_solution",
+      "title_ja": "追加後は21頭",
+      "claim_ja": "追加後は21頭",
+      "method_ja": "11頭と10頭を足す",
+      "requires_steps": [
+        "farm_current",
+        "farm_added"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "追加後は21頭",
+      "baseline_ja": "追加後は21頭"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2711,
+    "checked_model_hash": "8d7fbfbc766babcae24a7e271d229ec0afc640cd67c6b41e767e4de45bba9094",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

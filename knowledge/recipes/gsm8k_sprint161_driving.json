@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint161_driving",
+  "title_ja": "2人の走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02707",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Renaldoは15 km、Ernestoはその3分の1より7 km多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A20.driving_solution",
+  "graph": "work/gsm8k-sprint161-driving-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "driving_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.driving_third",
+      "title_ja": "15 kmの3分の1は5 km",
+      "claim_ja": "15 kmの3分の1は5 km",
+      "method_ja": "15を3等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "15 kmの3分の1は5 km",
+      "baseline_ja": "15 kmの3分の1は5 km"
+    },
+    {
+      "id": "driving_ernesto",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.driving_ernesto",
+      "title_ja": "Ernestoは12 km",
+      "claim_ja": "Ernestoは12 km",
+      "method_ja": "5 kmに7 kmを足す",
+      "requires_steps": [
+        "driving_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Ernestoは12 km",
+      "baseline_ja": "Ernestoは12 km"
+    },
+    {
+      "id": "driving_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.driving_solution",
+      "title_ja": "2人合計27 km",
+      "claim_ja": "2人合計27 km",
+      "method_ja": "15 kmと12 kmを足す",
+      "requires_steps": [
+        "driving_ernesto"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2人合計27 km",
+      "baseline_ja": "2人合計27 km"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2708,
+    "checked_model_hash": "8d7fbfbc766babcae24a7e271d229ec0afc640cd67c6b41e767e4de45bba9094",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -53,4 +53,71 @@ structure RectangleLine where
 theorem rectangle_length (m : RectangleLine) : m.length = 39 := by cases m; omega
 theorem rectangle_solution (m : RectangleLine) : m.totalLength = 390 := by cases m; omega
 
+structure CamperWeeks where
+  threeWeeks twoWeeksAgo difference lastWeek total : ℕ
+  hThreeWeeks : threeWeeks = 30
+  hTwoWeeks : twoWeeksAgo = 40
+  hDifference : difference = 10
+  hRelation : twoWeeksAgo = threeWeeks + difference
+  hTotal : total = 150
+  hSum : total = threeWeeks + twoWeeksAgo + lastWeek
+theorem campers_three_weeks (m : CamperWeeks) : m.threeWeeks = 30 := by cases m; omega
+theorem campers_solution (m : CamperWeeks) : m.lastWeek = 80 := by cases m; omega
+
+structure SockPrice where
+  start shirt afterShirt final socks : ℕ
+  hStart : start = 100
+  hShirt : shirt = 24
+  hAfter : start = shirt + afterShirt
+  hFinal : final = 65
+  hSocks : afterShirt = socks + final
+theorem socks_after_shirt (m : SockPrice) : m.afterShirt = 76 := by cases m; omega
+theorem socks_solution (m : SockPrice) : m.socks = 11 := by cases m; omega
+
+structure AnimalVideos where
+  cats dogs firstTwo gorillas total : ℕ
+  hCats : cats = 4
+  hDogs : dogs = 2 * cats
+  hFirst : firstTwo = cats + dogs
+  hGorillas : gorillas = 2 * firstTwo
+  hTotal : total = firstTwo + gorillas
+theorem videos_dogs (m : AnimalVideos) : m.dogs = 8 := by cases m; omega
+theorem videos_first_two (m : AnimalVideos) : m.firstTwo = 12 := by cases m; omega
+theorem videos_gorillas (m : AnimalVideos) : m.gorillas = 24 := by cases m; omega
+theorem videos_solution (m : AnimalVideos) : m.total = 36 := by cases m; omega
+
+/-- soldPerDay answers the literal sales-rate question; producedPerDay also includes the storefront payment. -/
+structure CupcakeGoal where
+  soldGoal payment days totalProduced soldPerDay producedPerDay : ℕ
+  hSoldGoal : soldGoal = 96
+  hPayment : payment = 24
+  hDays : days = 2
+  hTotalProduced : totalProduced = soldGoal + payment
+  hSoldRate : soldGoal = days * soldPerDay
+  hProducedRate : totalProduced = days * producedPerDay
+theorem cupcakes_sold_solution (m : CupcakeGoal) : m.soldPerDay = 48 := by cases m; omega
+theorem cupcakes_total_produced (m : CupcakeGoal) : m.totalProduced = 120 := by cases m; omega
+theorem cupcakes_produced_solution (m : CupcakeGoal) : m.producedPerDay = 60 := by cases m; omega
+theorem cupcakes_distinction (m : CupcakeGoal) : m.soldPerDay ≠ m.producedPerDay := by cases m; omega
+
+/-- Money is represented in dollars; only the stated dye-supply costs are deducted. -/
+structure SalonDay where
+  haircuts haircutEach haircutRevenue permRevenue dyeJobs dyeEach dyeRevenue
+    dyeCostEach dyeCost tips net : ℕ
+  hHaircuts : haircuts = 4
+  hHaircutEach : haircutEach = 30
+  hHaircutRevenue : haircutRevenue = haircuts * haircutEach
+  hPerm : permRevenue = 40
+  hDyeJobs : dyeJobs = 2
+  hDyeEach : dyeEach = 60
+  hDyeRevenue : dyeRevenue = dyeJobs * dyeEach
+  hDyeCostEach : dyeCostEach = 10
+  hDyeCost : dyeCost = dyeJobs * dyeCostEach
+  hTips : tips = 50
+  hNet : haircutRevenue + permRevenue + dyeRevenue + tips = dyeCost + net
+theorem salon_haircuts (m : SalonDay) : m.haircutRevenue = 120 := by cases m; omega
+theorem salon_dye_revenue (m : SalonDay) : m.dyeRevenue = 120 := by cases m; omega
+theorem salon_dye_cost (m : SalonDay) : m.dyeCost = 20 := by cases m; omega
+theorem salon_solution (m : SalonDay) : m.net = 310 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A15

@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint157_socks",
+  "title_ja": "靴下の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02642",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100ドルから24ドルのシャツを買い、靴下購入後65ドル残った。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A15.socks_solution",
+  "graph": "work/gsm8k-sprint157-socks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "socks_after_shirt",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.socks_after_shirt",
+      "title_ja": "シャツ購入後は76ドル",
+      "claim_ja": "シャツ購入後は76ドル",
+      "method_ja": "100ドルから24ドルを引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "シャツ購入後は76ドル",
+      "baseline_ja": "シャツ購入後は76ドル"
+    },
+    {
+      "id": "socks_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.socks_solution",
+      "title_ja": "靴下は11ドル",
+      "claim_ja": "靴下は11ドル",
+      "method_ja": "76ドルから残金65ドルを引く",
+      "requires_steps": [
+        "socks_after_shirt"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "靴下は11ドル",
+      "baseline_ja": "靴下は11ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2643,
+    "checked_model_hash": "74e2b2054ec9dff08465187b409d986eb9f38b6f4eb9c321866f80c4b84ae986",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint157_cupcakes",
+  "title_ja": "カップケーキの販売数と製造数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02644",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2日で96個を販売目標とし、店舗使用料として24個をBonnieへ渡す。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A15.cupcakes_distinction",
+  "graph": "work/gsm8k-sprint157-cupcakes-graph.json",
+  "model_notes_ja": [
+    "原題のasks how many cupcakes she needs to sell each dayを文字どおり読むと48個。参考解答60個は店舗使用料分を含む製造数であり、両者を分離する。"
+  ],
+  "steps": [
+    {
+      "id": "cupcakes_sold_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.cupcakes_sold_solution",
+      "title_ja": "文字どおりの販売数は1日48個",
+      "claim_ja": "文字どおりの販売数は1日48個",
+      "method_ja": "販売目標96個を2日で等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題のasks how many cupcakes she needs to sell each dayを文字どおり読むと48個。参考解答60個は店舗使用料分を含む製造数であり、両者を分離する。",
+      "conclusion_ja": "文字どおりの販売数は1日48個",
+      "baseline_ja": "文字どおりの販売数は1日48個"
+    },
+    {
+      "id": "cupcakes_total_produced",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.cupcakes_total_produced",
+      "title_ja": "使用料分を含む製造総数は120個",
+      "claim_ja": "使用料分を含む製造総数は120個",
+      "method_ja": "販売96個と支払24個を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題のasks how many cupcakes she needs to sell each dayを文字どおり読むと48個。参考解答60個は店舗使用料分を含む製造数であり、両者を分離する。",
+      "conclusion_ja": "使用料分を含む製造総数は120個",
+      "baseline_ja": "使用料分を含む製造総数は120個"
+    },
+    {
+      "id": "cupcakes_produced_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.cupcakes_produced_solution",
+      "title_ja": "製造数は1日60個",
+      "claim_ja": "製造数は1日60個",
+      "method_ja": "120個を2日で等分する",
+      "requires_steps": [
+        "cupcakes_total_produced"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題のasks how many cupcakes she needs to sell each dayを文字どおり読むと48個。参考解答60個は店舗使用料分を含む製造数であり、両者を分離する。",
+      "conclusion_ja": "製造数は1日60個",
+      "baseline_ja": "製造数は1日60個"
+    },
+    {
+      "id": "cupcakes_distinction",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.cupcakes_distinction",
+      "title_ja": "販売48個/日と製造60個/日は異なる",
+      "claim_ja": "販売48個/日と製造60個/日は異なる",
+      "method_ja": "2つの結論を比較する",
+      "requires_steps": [
+        "cupcakes_sold_solution",
+        "cupcakes_produced_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題のasks how many cupcakes she needs to sell each dayを文字どおり読むと48個。参考解答60個は店舗使用料分を含む製造数であり、両者を分離する。",
+      "conclusion_ja": "販売48個/日と製造60個/日は異なる",
+      "baseline_ja": "販売48個/日と製造60個/日は異なる"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2645,
+    "checked_model_hash": "74e2b2054ec9dff08465187b409d986eb9f38b6f4eb9c321866f80c4b84ae986",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

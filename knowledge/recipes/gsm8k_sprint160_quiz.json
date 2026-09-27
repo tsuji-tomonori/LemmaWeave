@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint160_quiz",
+  "title_ja": "第5回クイズ得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02692",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初の4回は90・98・92・94点、5回平均94点を目指す。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.quiz_solution",
+  "graph": "work/gsm8k-sprint160-quiz-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "quiz_first_four",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.quiz_first_four",
+      "title_ja": "最初の4回合計は374点",
+      "claim_ja": "最初の4回合計は374点",
+      "method_ja": "4得点を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最初の4回合計は374点",
+      "baseline_ja": "最初の4回合計は374点"
+    },
+    {
+      "id": "quiz_target",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.quiz_target",
+      "title_ja": "必要な5回合計は470点",
+      "claim_ja": "必要な5回合計は470点",
+      "method_ja": "平均94点を5回分掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "必要な5回合計は470点",
+      "baseline_ja": "必要な5回合計は470点"
+    },
+    {
+      "id": "quiz_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.quiz_solution",
+      "title_ja": "第5回は96点必要",
+      "claim_ja": "第5回は96点必要",
+      "method_ja": "470から374を引く",
+      "requires_steps": [
+        "quiz_first_four",
+        "quiz_target"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "第5回は96点必要",
+      "baseline_ja": "第5回は96点必要"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2693,
+    "checked_model_hash": "d8f2a4dd865ac6226ce7dcfa6aed8d2ddf7210255ed4ef06302795eae9ddfd4a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

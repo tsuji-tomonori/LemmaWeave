@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint160_dog_time",
+  "title_ja": "犬と過ごす合計時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02695",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "入浴20分、乾燥はその半分、3マイルを時速6マイルで散歩。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.dog_solution",
+  "graph": "work/gsm8k-sprint160-dog_time-graph.json",
+  "model_notes_ja": [
+    "距離3マイル・時速6マイルを、6×散歩分=3×60という単位換算済み比例式で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "dog_dry",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.dog_dry",
+      "title_ja": "乾燥は10分",
+      "claim_ja": "乾燥は10分",
+      "method_ja": "20分の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "距離3マイル・時速6マイルを、6×散歩分=3×60という単位換算済み比例式で形式化する。",
+      "conclusion_ja": "乾燥は10分",
+      "baseline_ja": "乾燥は10分"
+    },
+    {
+      "id": "dog_walk",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.dog_walk",
+      "title_ja": "散歩は30分",
+      "claim_ja": "散歩は30分",
+      "method_ja": "3/6時間を60分へ換算する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "距離3マイル・時速6マイルを、6×散歩分=3×60という単位換算済み比例式で形式化する。",
+      "conclusion_ja": "散歩は30分",
+      "baseline_ja": "散歩は30分"
+    },
+    {
+      "id": "dog_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.dog_solution",
+      "title_ja": "合計60分",
+      "claim_ja": "合計60分",
+      "method_ja": "20・10・30を足す",
+      "requires_steps": [
+        "dog_dry",
+        "dog_walk"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "距離3マイル・時速6マイルを、6×散歩分=3×60という単位換算済み比例式で形式化する。",
+      "conclusion_ja": "合計60分",
+      "baseline_ja": "合計60分"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2696,
+    "checked_model_hash": "d8f2a4dd865ac6226ce7dcfa6aed8d2ddf7210255ed4ef06302795eae9ddfd4a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

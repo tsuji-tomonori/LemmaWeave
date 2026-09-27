@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint160_cookies",
+  "title_ja": "Frankのクッキー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02694",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Millie4個、Mikeはその3倍、FrankはMikeの半分より3個少ない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.cookies_solution",
+  "graph": "work/gsm8k-sprint160-cookies-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cookies_mike",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.cookies_mike",
+      "title_ja": "Mikeは12個",
+      "claim_ja": "Mikeは12個",
+      "method_ja": "4個を3倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Mikeは12個",
+      "baseline_ja": "Mikeは12個"
+    },
+    {
+      "id": "cookies_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.cookies_solution",
+      "title_ja": "Frankは3個",
+      "claim_ja": "Frankは3個",
+      "method_ja": "12個の半分6個から3個引く",
+      "requires_steps": [
+        "cookies_mike"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Frankは3個",
+      "baseline_ja": "Frankは3個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2695,
+    "checked_model_hash": "d8f2a4dd865ac6226ce7dcfa6aed8d2ddf7210255ed4ef06302795eae9ddfd4a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

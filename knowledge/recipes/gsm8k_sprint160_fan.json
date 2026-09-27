@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint160_fan",
+  "title_ja": "扇風機の月間電力量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02682",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "75 Wの扇風機を1日8時間、30日使用する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fan_solution",
+  "graph": "work/gsm8k-sprint160-fan-graph.json",
+  "model_notes_ja": [
+    "電力Wと電力量Whを区別し、月間値をWhからkWhへ換算する。"
+  ],
+  "steps": [
+    {
+      "id": "fan_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fan_daily",
+      "title_ja": "1日の電力量は600 Wh",
+      "claim_ja": "1日の電力量は600 Wh",
+      "method_ja": "75 Wに8時間を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "電力Wと電力量Whを区別し、月間値をWhからkWhへ換算する。",
+      "conclusion_ja": "1日の電力量は600 Wh",
+      "baseline_ja": "1日の電力量は600 Wh"
+    },
+    {
+      "id": "fan_monthly_wh",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fan_monthly_wh",
+      "title_ja": "30日で18000 Wh",
+      "claim_ja": "30日で18000 Wh",
+      "method_ja": "600 Whを30日分掛ける",
+      "requires_steps": [
+        "fan_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "電力Wと電力量Whを区別し、月間値をWhからkWhへ換算する。",
+      "conclusion_ja": "30日で18000 Wh",
+      "baseline_ja": "30日で18000 Wh"
+    },
+    {
+      "id": "fan_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fan_solution",
+      "title_ja": "月間電力量は18 kWh",
+      "claim_ja": "月間電力量は18 kWh",
+      "method_ja": "18000 Whを1000で換算する",
+      "requires_steps": [
+        "fan_monthly_wh"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "電力Wと電力量Whを区別し、月間値をWhからkWhへ換算する。",
+      "conclusion_ja": "月間電力量は18 kWh",
+      "baseline_ja": "月間電力量は18 kWh"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2683,
+    "checked_model_hash": "d8f2a4dd865ac6226ce7dcfa6aed8d2ddf7210255ed4ef06302795eae9ddfd4a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

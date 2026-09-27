@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint160_magazines",
+  "title_ja": "残った雑誌",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02683",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "金曜8冊、土曜12冊、日曜は金曜の4倍購入し、4冊を犬が噛んだ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.magazines_solution",
+  "graph": "work/gsm8k-sprint160-magazines-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "magazines_sunday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.magazines_sunday",
+      "title_ja": "日曜は32冊購入",
+      "claim_ja": "日曜は32冊購入",
+      "method_ja": "8冊を4倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "日曜は32冊購入",
+      "baseline_ja": "日曜は32冊購入"
+    },
+    {
+      "id": "magazines_before",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.magazines_before",
+      "title_ja": "犬が噛む前は52冊",
+      "claim_ja": "犬が噛む前は52冊",
+      "method_ja": "3日分を足す",
+      "requires_steps": [
+        "magazines_sunday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "犬が噛む前は52冊",
+      "baseline_ja": "犬が噛む前は52冊"
+    },
+    {
+      "id": "magazines_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.magazines_solution",
+      "title_ja": "現在は48冊",
+      "claim_ja": "現在は48冊",
+      "method_ja": "52冊から4冊を引く",
+      "requires_steps": [
+        "magazines_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "現在は48冊",
+      "baseline_ja": "現在は48冊"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2684,
+    "checked_model_hash": "d8f2a4dd865ac6226ce7dcfa6aed8d2ddf7210255ed4ef06302795eae9ddfd4a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

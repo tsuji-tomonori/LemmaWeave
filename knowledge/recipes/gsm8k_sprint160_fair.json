@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint160_fair",
+  "title_ja": "州祭の総収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02684",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "入場5ドル、食事8ドルを3分の2、乗り物4ドルを4分の1、土産15ドルを8分の1が購入。入場収入2520ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fair_solution",
+  "graph": "work/gsm8k-sprint160-fair-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fair_attendees",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fair_attendees",
+      "title_ja": "入場者は504人",
+      "claim_ja": "入場者は504人",
+      "method_ja": "2520ドルを5ドル券で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "入場者は504人",
+      "baseline_ja": "入場者は504人"
+    },
+    {
+      "id": "fair_food",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fair_food",
+      "title_ja": "食事収入は2688ドル",
+      "claim_ja": "食事収入は2688ドル",
+      "method_ja": "504人の3分の2に8ドルを掛ける",
+      "requires_steps": [
+        "fair_attendees"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "食事収入は2688ドル",
+      "baseline_ja": "食事収入は2688ドル"
+    },
+    {
+      "id": "fair_rides",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fair_rides",
+      "title_ja": "乗り物収入は504ドル",
+      "claim_ja": "乗り物収入は504ドル",
+      "method_ja": "504人の4分の1に4ドルを掛ける",
+      "requires_steps": [
+        "fair_attendees"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "乗り物収入は504ドル",
+      "baseline_ja": "乗り物収入は504ドル"
+    },
+    {
+      "id": "fair_souvenirs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fair_souvenirs",
+      "title_ja": "土産収入は945ドル",
+      "claim_ja": "土産収入は945ドル",
+      "method_ja": "504人の8分の1に15ドルを掛ける",
+      "requires_steps": [
+        "fair_attendees"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "土産収入は945ドル",
+      "baseline_ja": "土産収入は945ドル"
+    },
+    {
+      "id": "fair_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.fair_solution",
+      "title_ja": "総収入は6657ドル",
+      "claim_ja": "総収入は6657ドル",
+      "method_ja": "4種類の収入を足す",
+      "requires_steps": [
+        "fair_food",
+        "fair_rides",
+        "fair_souvenirs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "総収入は6657ドル",
+      "baseline_ja": "総収入は6657ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2685,
+    "checked_model_hash": "d8f2a4dd865ac6226ce7dcfa6aed8d2ddf7210255ed4ef06302795eae9ddfd4a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

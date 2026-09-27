@@ -6,3 +6,8 @@ import LemmaWeave.Audit.Extract
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A17.grocery_solution to "work/gsm8k-sprint158-grocery-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A17.apples_solution to "work/gsm8k-sprint158-apples-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A17.decorations_solution to "work/gsm8k-sprint158-decorations-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A17.tags_solution to "work/gsm8k-sprint158-tags-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A17.doughnuts_solution to "work/gsm8k-sprint158-doughnuts-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A17.stickers_intended_solution to "work/gsm8k-sprint158-stickers-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A17.triangle_solution to "work/gsm8k-sprint158-triangle-graph.json"
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A17.oranges_solution to "work/gsm8k-sprint158-oranges-graph.json"

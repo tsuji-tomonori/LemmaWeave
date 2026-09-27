@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint158_doughnuts",
+  "title_ja": "残ったドーナツ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02657",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2ダースから8個食べた。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A17.doughnuts_solution",
+  "graph": "work/gsm8k-sprint158-doughnuts-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "doughnuts_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A17.doughnuts_total",
+      "title_ja": "全部で24個",
+      "claim_ja": "全部で24個",
+      "method_ja": "1ダース12個を2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "全部で24個",
+      "baseline_ja": "全部で24個"
+    },
+    {
+      "id": "doughnuts_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A17.doughnuts_solution",
+      "title_ja": "16個残る",
+      "claim_ja": "16個残る",
+      "method_ja": "24個から8個を引く",
+      "requires_steps": [
+        "doughnuts_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "16個残る",
+      "baseline_ja": "16個残る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2658,
+    "checked_model_hash": "4e1d8b75293cde42aeff44dc951555871fae6cc788dcb7b707acd6eb140140a8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -60,4 +60,68 @@ theorem decorations_after_nails (m : WallDecorations) : m.afterNails = 25 := by 
 theorem decorations_total (m : WallDecorations) : m.total = 75 := by cases m; omega
 theorem decorations_solution (m : WallDecorations) : m.nails = 50 := by cases m; omega
 
+structure CardTags where
+  w : ℕ
+  x : ℕ
+  y : ℕ
+  z : ℕ
+  total : ℕ
+  hW : w = 200
+  hHalf : 2 * x = w
+  hY : y = w + x
+  hZ : z = 400
+  hTotal : total = w + x + y + z
+theorem tags_x (m : CardTags) : m.x = 100 := by cases m; omega
+theorem tags_y (m : CardTags) : m.y = 300 := by cases m; omega
+theorem tags_solution (m : CardTags) : m.total = 1000 := by cases m; omega
+
+structure Doughnuts where
+  total : ℕ
+  left : ℕ
+  hTotal : total = 2 * 12
+  hLeft : left + 8 = total
+theorem doughnuts_total (m : Doughnuts) : m.total = 24 := by cases m; omega
+theorem doughnuts_solution (m : Doughnuts) : m.left = 16 := by cases m; omega
+
+/-- The original final sentence says Andrew gave stickers; the modeled quantity is the intended total Zander gave to Andrew and Bill. -/
+structure StickerTransfers where
+  andrewReceived : ℕ
+  remaining : ℕ
+  billReceived : ℕ
+  intendedGivenAway : ℕ
+  hAndrew : 5 * andrewReceived = 100
+  hRemaining : remaining + andrewReceived = 100
+  hBill : 10 * billReceived = 3 * remaining
+  hGiven : intendedGivenAway = andrewReceived + billReceived
+theorem stickers_andrew (m : StickerTransfers) : m.andrewReceived = 20 := by cases m; omega
+theorem stickers_remaining (m : StickerTransfers) : m.remaining = 80 := by cases m; omega
+theorem stickers_bill (m : StickerTransfers) : m.billReceived = 24 := by cases m; omega
+theorem stickers_intended_solution (m : StickerTransfers) : m.intendedGivenAway = 44 := by cases m; omega
+
+/-- With height 8, the triangle formula specializes to area = 4 * base. -/
+structure TriangleBase where
+  area : ℕ
+  base : ℕ
+  hArea : area = 24
+  hSpecializedFormula : area = 4 * base
+theorem triangle_solution (m : TriangleBase) : m.base = 6 := by cases m; omega
+
+structure OrangeSales where
+  total : ℕ
+  reserved : ℕ
+  afterReserve : ℕ
+  sold : ℕ
+  leftBeforeRot : ℕ
+  sellable : ℕ
+  hTotal : total = 7 * 12
+  hReserved : 4 * reserved = total
+  hAfterReserve : afterReserve + reserved = total
+  hSold : 7 * sold = 3 * afterReserve
+  hLeft : leftBeforeRot + sold = afterReserve
+  hSellable : sellable + 4 = leftBeforeRot
+theorem oranges_total (m : OrangeSales) : m.total = 84 := by cases m; omega
+theorem oranges_reserved (m : OrangeSales) : m.reserved = 21 := by cases m; omega
+theorem oranges_sold (m : OrangeSales) : m.sold = 27 := by cases m; omega
+theorem oranges_solution (m : OrangeSales) : m.sellable = 32 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A17

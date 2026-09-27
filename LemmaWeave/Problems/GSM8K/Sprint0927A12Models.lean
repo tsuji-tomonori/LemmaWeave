@@ -139,4 +139,67 @@ structure WaterPrice where
 theorem water_liters (m : WaterPrice) : m.totalLiters = 12 := by cases m; omega
 theorem water_solution (m : WaterPrice) : m.pricePerLiter = 1 := by cases m; omega
 
+structure BottleShops where
+  capacity shopA shopB shopC : ℕ
+  hCapacity : capacity = 550
+  hA : shopA = 150
+  hB : shopB = 180
+  hAll : capacity = shopA + shopB + shopC
+theorem shops_first_two (m : BottleShops) : m.shopA + m.shopB = 330 := by cases m; omega
+theorem shops_solution (m : BottleShops) : m.shopC = 220 := by cases m; omega
+
+structure ApartmentRooms where
+  length width totalArea normalRooms livingMultiplier normalArea livingArea : ℕ
+  hLength : length = 16
+  hWidth : width = 10
+  hArea : totalArea = length * width
+  hNormalRooms : normalRooms = 5
+  hMultiplier : livingMultiplier = 3
+  hLiving : livingArea = livingMultiplier * normalArea
+  hPartition : totalArea = normalRooms * normalArea + livingArea
+theorem apartment_area (m : ApartmentRooms) : m.totalArea = 160 := by cases m; omega
+theorem apartment_normal (m : ApartmentRooms) : m.normalArea = 20 := by cases m; omega
+theorem apartment_solution (m : ApartmentRooms) : m.livingArea = 60 := by cases m; omega
+
+structure Sandwiches where
+  initial firstCoworker selfMultiplier selfKept others : ℕ
+  hInitial : initial = 20
+  hFirst : firstCoworker = 4
+  hMultiplier : selfMultiplier = 2
+  hSelf : selfKept = selfMultiplier * firstCoworker
+  hOthers : initial = firstCoworker + selfKept + others
+theorem sandwiches_self (m : Sandwiches) : m.selfKept = 8 := by cases m; omega
+theorem sandwiches_solution (m : Sandwiches) : m.others = 8 := by cases m; omega
+
+structure AttendanceAverage where
+  monday tuesday wed thu fri total days average : ℕ
+  hMonday : monday = 10
+  hTuesday : tuesday = 15
+  hWed : wed = 10
+  hThu : thu = 10
+  hFri : fri = 10
+  hTotal : total = monday + tuesday + wed + thu + fri
+  hDays : days = 5
+  hAverage : total = days * average
+theorem attendance_total (m : AttendanceAverage) : m.total = 55 := by cases m; omega
+theorem attendance_solution (m : AttendanceAverage) : m.average = 11 := by cases m; omega
+
+structure ArcadeTokens where
+  initial pacman candy ski spent left parentMultiplier bought final : ℕ
+  hInitial : initial = 36
+  hPacman : initial = 3 * pacman
+  hCandy : initial = 4 * candy
+  hSki : ski = 7
+  hSpent : spent = pacman + candy + ski
+  hLeft : initial = spent + left
+  hMultiplier : parentMultiplier = 7
+  hBought : bought = parentMultiplier * ski
+  hFinal : final = left + bought
+theorem arcade_pacman (m : ArcadeTokens) : m.pacman = 12 := by cases m; omega
+theorem arcade_candy (m : ArcadeTokens) : m.candy = 9 := by cases m; omega
+theorem arcade_spent (m : ArcadeTokens) : m.spent = 28 := by cases m; omega
+theorem arcade_bought (m : ArcadeTokens) : m.bought = 49 := by cases m; omega
+theorem arcade_solution (m : ArcadeTokens) : m.final = 57 := by cases m; omega
+theorem arcade_reference_22_false (m : ArcadeTokens) : m.final ≠ 22 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A12

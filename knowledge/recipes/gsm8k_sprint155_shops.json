@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint155_shops",
+  "title_ja": "Shop Cから買う瓶数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02616",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "購入上限550本からShop Aの150本とShop Bの180本を除く。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A12.shops_solution",
+  "graph": "work/gsm8k-sprint155-shops-graph.json",
+  "model_notes_ja": [
+    "capable of buying only 550 bottles を合計550本を買う条件として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "shops_first_two",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.shops_first_two",
+      "title_ja": "AとBは330本",
+      "claim_ja": "AとBは330本",
+      "method_ja": "150本と180本を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "capable of buying only 550 bottles を合計550本を買う条件として扱う。",
+      "conclusion_ja": "AとBは330本",
+      "baseline_ja": "AとBは330本"
+    },
+    {
+      "id": "shops_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.shops_solution",
+      "title_ja": "Shop Cは220本",
+      "claim_ja": "Shop Cは220本",
+      "method_ja": "550本から330本を引く",
+      "requires_steps": [
+        "shops_first_two"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "capable of buying only 550 bottles を合計550本を買う条件として扱う。",
+      "conclusion_ja": "Shop Cは220本",
+      "baseline_ja": "Shop Cは220本"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2617,
+    "checked_model_hash": "3e4b93f5a4108cc1a846e5cd16a8de7dc3e582b6180b1e81a6346cde530ddf48",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

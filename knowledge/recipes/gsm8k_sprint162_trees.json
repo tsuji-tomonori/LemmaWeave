@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint162_trees",
+  "title_ja": "4本の果樹が使う長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02713",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A00.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "幅10フィートのリンゴ2本と間隔12フィート、幅12フィートの桃2本と間隔15フィートの合計を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A00.trees_solution",
+  "graph": "work/gsm8k-sprint162-trees-graph.json",
+  "model_notes_ja": [
+    "各樹種2本の間には間隔が1つだけあるものとして線上の必要長を数える。"
+  ],
+  "steps": [
+    {
+      "id": "trees_apple",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.trees_apple",
+      "title_ja": "リンゴ部分は32フィート",
+      "claim_ja": "木の幅20フィートに間隔12フィートを足して32フィート",
+      "method_ja": "2本の幅と1区間の間隔を加える",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各樹種2本の間には間隔が1つだけあるものとして線上の必要長を数える。",
+      "conclusion_ja": "木の幅20フィートに間隔12フィートを足して32フィート",
+      "baseline_ja": "木の幅20フィートに間隔12フィートを足して32フィート"
+    },
+    {
+      "id": "trees_peach",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.trees_peach",
+      "title_ja": "桃部分は39フィート",
+      "claim_ja": "木の幅24フィートに間隔15フィートを足して39フィート",
+      "method_ja": "2本の幅と1区間の間隔を加える",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各樹種2本の間には間隔が1つだけあるものとして線上の必要長を数える。",
+      "conclusion_ja": "木の幅24フィートに間隔15フィートを足して39フィート",
+      "baseline_ja": "木の幅24フィートに間隔15フィートを足して39フィート"
+    },
+    {
+      "id": "trees_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.trees_solution",
+      "title_ja": "合計71フィート",
+      "claim_ja": "32フィートと39フィートを足して71フィート",
+      "method_ja": "二つの樹種の必要長を加える",
+      "requires_steps": [
+        "trees_apple",
+        "trees_peach"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各樹種2本の間には間隔が1つだけあるものとして線上の必要長を数える。",
+      "conclusion_ja": "32フィートと39フィートを足して71フィート",
+      "baseline_ja": "32フィートと39フィートを足して71フィート"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2714,
+    "checked_model_hash": "84ca62dc880edecc1a8f910bc5662f6e230d249210f7be5d32f59637b8b74853",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

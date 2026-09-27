@@ -11,8 +11,20 @@ structure HVAC where
   hVentsPerZone : ventsPerZone = 5
   hVents : vents = zones * ventsPerZone
   hUnitCost : cost = vents * costPerVent
-theorem hvac_vents (m : HVAC) : m.vents = 10 := by cases m; omega
-theorem hvac_solution (m : HVAC) : m.costPerVent = 2000 := by cases m; omega
+theorem hvac_vents (m : HVAC) : m.vents = 10 := by
+  have hCost := m.hCost
+  have hZones := m.hZones
+  have hVentsPerZone := m.hVentsPerZone
+  have hVents := m.hVents
+  have hUnitCost := m.hUnitCost
+  simp_all <;> omega
+theorem hvac_solution (m : HVAC) : m.costPerVent = 2000 := by
+  have hCost := m.hCost
+  have hZones := m.hZones
+  have hVentsPerZone := m.hVentsPerZone
+  have hVents := m.hVents
+  have hUnitCost := m.hUnitCost
+  simp_all <;> omega
 structure SoupCans where
   firstWeek : ℕ
   secondWeek : ℕ
@@ -24,8 +36,20 @@ structure SoupCans where
   hCollected : collected = firstWeek + secondWeek
   hGoal : goal = 500
   hNeeded : collected + needed = goal
-theorem soup_collected (m : SoupCans) : m.collected = 417 := by cases m; omega
-theorem soup_solution (m : SoupCans) : m.needed = 83 := by cases m; omega
+theorem soup_collected (m : SoupCans) : m.collected = 417 := by
+  have hFirst := m.hFirst
+  have hSecond := m.hSecond
+  have hCollected := m.hCollected
+  have hGoal := m.hGoal
+  have hNeeded := m.hNeeded
+  simp_all <;> omega
+theorem soup_solution (m : SoupCans) : m.needed = 83 := by
+  have hFirst := m.hFirst
+  have hSecond := m.hSecond
+  have hCollected := m.hCollected
+  have hGoal := m.hGoal
+  have hNeeded := m.hNeeded
+  simp_all <;> omega
 structure LakeTents where
   matt : ℕ
   parents : ℕ
@@ -49,9 +73,48 @@ structure LakeTents where
   hOutside : outside + houseCapacity = people
   hPerTent : perTent = 2
   hTents : outside = perTent * tents
-theorem tents_people (m : LakeTents) : m.people = 14 := by cases m; omega
-theorem tents_outside (m : LakeTents) : m.outside = 10 := by cases m; omega
-theorem tents_solution (m : LakeTents) : m.tents = 5 := by cases m; omega
+theorem tents_people (m : LakeTents) : m.people = 14 := by
+  have houseCapacity := m.houseCapacity
+  have hMatt := m.hMatt
+  have hParents := m.hParents
+  have hBrotherCouple := m.hBrotherCouple
+  have hBrotherKids := m.hBrotherKids
+  have hUncleCouple := m.hUncleCouple
+  have hUncleKids := m.hUncleKids
+  have hPeople := m.hPeople
+  have hHouse := m.hHouse
+  have hOutside := m.hOutside
+  have hPerTent := m.hPerTent
+  have hTents := m.hTents
+  simp_all <;> omega
+theorem tents_outside (m : LakeTents) : m.outside = 10 := by
+  have houseCapacity := m.houseCapacity
+  have hMatt := m.hMatt
+  have hParents := m.hParents
+  have hBrotherCouple := m.hBrotherCouple
+  have hBrotherKids := m.hBrotherKids
+  have hUncleCouple := m.hUncleCouple
+  have hUncleKids := m.hUncleKids
+  have hPeople := m.hPeople
+  have hHouse := m.hHouse
+  have hOutside := m.hOutside
+  have hPerTent := m.hPerTent
+  have hTents := m.hTents
+  simp_all <;> omega
+theorem tents_solution (m : LakeTents) : m.tents = 5 := by
+  have houseCapacity := m.houseCapacity
+  have hMatt := m.hMatt
+  have hParents := m.hParents
+  have hBrotherCouple := m.hBrotherCouple
+  have hBrotherKids := m.hBrotherKids
+  have hUncleCouple := m.hUncleCouple
+  have hUncleKids := m.hUncleKids
+  have hPeople := m.hPeople
+  have hHouse := m.hHouse
+  have hOutside := m.hOutside
+  have hPerTent := m.hPerTent
+  have hTents := m.hTents
+  simp_all <;> omega
 structure PieSlices where
   pies : ℕ
   slicesPerPie : ℕ
@@ -71,10 +134,50 @@ structure PieSlices where
   hAfterFamily : afterFamily + familyEaten = afterRebecca
   hSunday : sundayEaten = 2
   hRemaining : remaining + sundayEaten = afterFamily
-theorem pies_initial (m : PieSlices) : m.initial = 16 := by cases m; omega
-theorem pies_after_rebecca (m : PieSlices) : m.afterRebecca = 14 := by cases m; omega
-theorem pies_after_family (m : PieSlices) : m.afterFamily = 7 := by cases m; omega
-theorem pies_solution (m : PieSlices) : m.remaining = 5 := by cases m; omega
+theorem pies_initial (m : PieSlices) : m.initial = 16 := by
+  have hPies := m.hPies
+  have hSlices := m.hSlices
+  have hInitial := m.hInitial
+  have hFirst := m.hFirst
+  have hAfterRebecca := m.hAfterRebecca
+  have hHalf := m.hHalf
+  have hAfterFamily := m.hAfterFamily
+  have hSunday := m.hSunday
+  have hRemaining := m.hRemaining
+  simp_all <;> omega
+theorem pies_after_rebecca (m : PieSlices) : m.afterRebecca = 14 := by
+  have hPies := m.hPies
+  have hSlices := m.hSlices
+  have hInitial := m.hInitial
+  have hFirst := m.hFirst
+  have hAfterRebecca := m.hAfterRebecca
+  have hHalf := m.hHalf
+  have hAfterFamily := m.hAfterFamily
+  have hSunday := m.hSunday
+  have hRemaining := m.hRemaining
+  simp_all <;> omega
+theorem pies_after_family (m : PieSlices) : m.afterFamily = 7 := by
+  have hPies := m.hPies
+  have hSlices := m.hSlices
+  have hInitial := m.hInitial
+  have hFirst := m.hFirst
+  have hAfterRebecca := m.hAfterRebecca
+  have hHalf := m.hHalf
+  have hAfterFamily := m.hAfterFamily
+  have hSunday := m.hSunday
+  have hRemaining := m.hRemaining
+  simp_all <;> omega
+theorem pies_solution (m : PieSlices) : m.remaining = 5 := by
+  have hPies := m.hPies
+  have hSlices := m.hSlices
+  have hInitial := m.hInitial
+  have hFirst := m.hFirst
+  have hAfterRebecca := m.hAfterRebecca
+  have hHalf := m.hHalf
+  have hAfterFamily := m.hAfterFamily
+  have hSunday := m.hSunday
+  have hRemaining := m.hRemaining
+  simp_all <;> omega
 structure Flyers where
   hourlyPay : ℕ
   daysPerWeek : ℕ
@@ -90,9 +193,45 @@ structure Flyers where
   hWeeks : weeks = 6
   hHours : hours = hoursPerWeek * weeks
   hEarned : earned = hours * hourlyPay
-theorem flyers_weekly_hours (m : Flyers) : m.hoursPerWeek = 6 := by cases m; omega
-theorem flyers_total_hours (m : Flyers) : m.hours = 36 := by cases m; omega
-theorem flyers_solution (m : Flyers) : m.earned = 360 := by cases m; omega
+theorem flyers_weekly_hours (m : Flyers) : m.hoursPerWeek = 6 := by
+  have hourlyPay := m.hourlyPay
+  have hoursPerDay := m.hoursPerDay
+  have hoursPerWeek := m.hoursPerWeek
+  have hours := m.hours
+  have hPay := m.hPay
+  have hDays := m.hDays
+  have hHoursPerDay := m.hHoursPerDay
+  have hWeekly := m.hWeekly
+  have hWeeks := m.hWeeks
+  have hHours := m.hHours
+  have hEarned := m.hEarned
+  simp_all <;> omega
+theorem flyers_total_hours (m : Flyers) : m.hours = 36 := by
+  have hourlyPay := m.hourlyPay
+  have hoursPerDay := m.hoursPerDay
+  have hoursPerWeek := m.hoursPerWeek
+  have hours := m.hours
+  have hPay := m.hPay
+  have hDays := m.hDays
+  have hHoursPerDay := m.hHoursPerDay
+  have hWeekly := m.hWeekly
+  have hWeeks := m.hWeeks
+  have hHours := m.hHours
+  have hEarned := m.hEarned
+  simp_all <;> omega
+theorem flyers_solution (m : Flyers) : m.earned = 360 := by
+  have hourlyPay := m.hourlyPay
+  have hoursPerDay := m.hoursPerDay
+  have hoursPerWeek := m.hoursPerWeek
+  have hours := m.hours
+  have hPay := m.hPay
+  have hDays := m.hDays
+  have hHoursPerDay := m.hHoursPerDay
+  have hWeekly := m.hWeekly
+  have hWeeks := m.hWeeks
+  have hHours := m.hHours
+  have hEarned := m.hEarned
+  simp_all <;> omega
 structure Postcards where
   perDay : ℕ
   days : ℕ
@@ -104,8 +243,20 @@ structure Postcards where
   hCards : cards = perDay * days
   hDollars : dollarsPerCard = 5
   hEarned : earned = cards * dollarsPerCard
-theorem postcards_count (m : Postcards) : m.cards = 180 := by cases m; omega
-theorem postcards_solution (m : Postcards) : m.earned = 900 := by cases m; omega
+theorem postcards_count (m : Postcards) : m.cards = 180 := by
+  have hPerDay := m.hPerDay
+  have hDays := m.hDays
+  have hCards := m.hCards
+  have hDollars := m.hDollars
+  have hEarned := m.hEarned
+  simp_all <;> omega
+theorem postcards_solution (m : Postcards) : m.earned = 900 := by
+  have hPerDay := m.hPerDay
+  have hDays := m.hDays
+  have hCards := m.hCards
+  have hDollars := m.hDollars
+  have hEarned := m.hEarned
+  simp_all <;> omega
 structure HotSauce where
   quartHalfOunces : ℕ
   shortfallHalfOunces : ℕ
@@ -121,9 +272,36 @@ structure HotSauce where
   hServings : servingsPerDay = 3
   hDaily : dailyHalfOunces = servingsPerDay * halfOuncesPerServing
   hDays : jarHalfOunces = dailyHalfOunces * days
-theorem sauce_jar (m : HotSauce) : m.jarHalfOunces = 60 := by cases m; omega
-theorem sauce_daily (m : HotSauce) : m.dailyHalfOunces = 3 := by cases m; omega
-theorem sauce_solution (m : HotSauce) : m.days = 20 := by cases m; omega
+theorem sauce_jar (m : HotSauce) : m.jarHalfOunces = 60 := by
+  have halfOuncesPerServing := m.halfOuncesPerServing
+  have hQuart := m.hQuart
+  have hShortfall := m.hShortfall
+  have hJar := m.hJar
+  have hServing := m.hServing
+  have hServings := m.hServings
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  simp_all <;> omega
+theorem sauce_daily (m : HotSauce) : m.dailyHalfOunces = 3 := by
+  have halfOuncesPerServing := m.halfOuncesPerServing
+  have hQuart := m.hQuart
+  have hShortfall := m.hShortfall
+  have hJar := m.hJar
+  have hServing := m.hServing
+  have hServings := m.hServings
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  simp_all <;> omega
+theorem sauce_solution (m : HotSauce) : m.days = 20 := by
+  have halfOuncesPerServing := m.halfOuncesPerServing
+  have hQuart := m.hQuart
+  have hShortfall := m.hShortfall
+  have hJar := m.hJar
+  have hServing := m.hServing
+  have hServings := m.hServings
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  simp_all <;> omega
 structure Nickels where
   centsPerNickel : ℕ
   peterCents : ℕ
@@ -137,9 +315,30 @@ structure Nickels where
   hPeterNickels : peterCents = centsPerNickel * peterNickels
   hRandiNickels : randiCents = centsPerNickel * randiNickels
   hDifference : randiNickels = peterNickels + difference
-theorem nickels_peter (m : Nickels) : m.peterNickels = 6 := by cases m; omega
-theorem nickels_randi (m : Nickels) : m.randiNickels = 12 := by cases m; omega
-theorem nickels_solution (m : Nickels) : m.difference = 6 := by cases m; omega
+theorem nickels_peter (m : Nickels) : m.peterNickels = 6 := by
+  have hCentsPerNickel := m.hCentsPerNickel
+  have hPeterCents := m.hPeterCents
+  have hRandiCents := m.hRandiCents
+  have hPeterNickels := m.hPeterNickels
+  have hRandiNickels := m.hRandiNickels
+  have hDifference := m.hDifference
+  simp_all <;> omega
+theorem nickels_randi (m : Nickels) : m.randiNickels = 12 := by
+  have hCentsPerNickel := m.hCentsPerNickel
+  have hPeterCents := m.hPeterCents
+  have hRandiCents := m.hRandiCents
+  have hPeterNickels := m.hPeterNickels
+  have hRandiNickels := m.hRandiNickels
+  have hDifference := m.hDifference
+  simp_all <;> omega
+theorem nickels_solution (m : Nickels) : m.difference = 6 := by
+  have hCentsPerNickel := m.hCentsPerNickel
+  have hPeterCents := m.hPeterCents
+  have hRandiCents := m.hRandiCents
+  have hPeterNickels := m.hPeterNickels
+  have hRandiNickels := m.hRandiNickels
+  have hDifference := m.hDifference
+  simp_all <;> omega
 structure OrangeSavings where
   passengers : ℕ
   centsPerOrange : ℕ
@@ -151,8 +350,20 @@ structure OrangeSavings where
   hSaved : savedCents = passengers * centsPerOrange
   hPlanned : plannedCents = 1500
   hPercent : savedCents * 100 = percent * plannedCents
-theorem oranges_saved (m : OrangeSavings) : m.savedCents = 600 := by cases m; omega
-theorem oranges_solution (m : OrangeSavings) : m.percent = 40 := by cases m; omega
+theorem oranges_saved (m : OrangeSavings) : m.savedCents = 600 := by
+  have hPassengers := m.hPassengers
+  have hCentsPerOrange := m.hCentsPerOrange
+  have hSaved := m.hSaved
+  have hPlanned := m.hPlanned
+  have hPercent := m.hPercent
+  simp_all <;> omega
+theorem oranges_solution (m : OrangeSavings) : m.percent = 40 := by
+  have hPassengers := m.hPassengers
+  have hCentsPerOrange := m.hCentsPerOrange
+  have hSaved := m.hSaved
+  have hPlanned := m.hPlanned
+  have hPercent := m.hPercent
+  simp_all <;> omega
 structure ArtValue where
   purchasePrice : ℕ
   futureMultiplier : ℕ
@@ -162,8 +373,18 @@ structure ArtValue where
   hMultiplier : futureMultiplier = 3
   hFuture : futureValue = futureMultiplier * purchasePrice
   hIncrease : futureValue = purchasePrice + increase
-theorem art_future_value (m : ArtValue) : m.futureValue = 12000 := by cases m; omega
-theorem art_solution (m : ArtValue) : m.increase = 8000 := by cases m; omega
+theorem art_future_value (m : ArtValue) : m.futureValue = 12000 := by
+  have hPurchase := m.hPurchase
+  have hMultiplier := m.hMultiplier
+  have hFuture := m.hFuture
+  have hIncrease := m.hIncrease
+  simp_all <;> omega
+theorem art_solution (m : ArtValue) : m.increase = 8000 := by
+  have hPurchase := m.hPurchase
+  have hMultiplier := m.hMultiplier
+  have hFuture := m.hFuture
+  have hIncrease := m.hIncrease
+  simp_all <;> omega
 structure BirdDive where
   eagleSpeed : ℕ
   falconSpeed : ℕ
@@ -173,8 +394,18 @@ structure BirdDive where
   hFalconSpeed : falconSpeed = 2 * eagleSpeed
   hEagleSeconds : eagleSeconds = 30
   hSameDistance : falconSpeed * falconSeconds = eagleSpeed * eagleSeconds
-theorem dive_falcon_speed (m : BirdDive) : m.falconSpeed = 200 := by cases m; omega
-theorem dive_solution (m : BirdDive) : m.falconSeconds = 15 := by cases m; omega
+theorem dive_falcon_speed (m : BirdDive) : m.falconSpeed = 200 := by
+  have hEagleSpeed := m.hEagleSpeed
+  have hFalconSpeed := m.hFalconSpeed
+  have hEagleSeconds := m.hEagleSeconds
+  have hSameDistance := m.hSameDistance
+  simp_all <;> omega
+theorem dive_solution (m : BirdDive) : m.falconSeconds = 15 := by
+  have hEagleSpeed := m.hEagleSpeed
+  have hFalconSpeed := m.hFalconSpeed
+  have hEagleSeconds := m.hEagleSeconds
+  have hSameDistance := m.hSameDistance
+  simp_all <;> omega
 structure FlowerPots where
   minutesPerHour : ℕ
   coldMinutesPerPot : ℕ
@@ -188,9 +419,30 @@ structure FlowerPots where
   hFirst : minutesPerHour = coldMinutesPerPot * firstHourPots
   hLast : minutesPerHour = warmMinutesPerPot * lastHourPots
   hAdditional : lastHourPots = firstHourPots + additional
-theorem pots_first_hour (m : FlowerPots) : m.firstHourPots = 10 := by cases m; omega
-theorem pots_last_hour (m : FlowerPots) : m.lastHourPots = 12 := by cases m; omega
-theorem pots_solution (m : FlowerPots) : m.additional = 2 := by cases m; omega
+theorem pots_first_hour (m : FlowerPots) : m.firstHourPots = 10 := by
+  have hHour := m.hHour
+  have hCold := m.hCold
+  have hWarm := m.hWarm
+  have hFirst := m.hFirst
+  have hLast := m.hLast
+  have hAdditional := m.hAdditional
+  simp_all <;> omega
+theorem pots_last_hour (m : FlowerPots) : m.lastHourPots = 12 := by
+  have hHour := m.hHour
+  have hCold := m.hCold
+  have hWarm := m.hWarm
+  have hFirst := m.hFirst
+  have hLast := m.hLast
+  have hAdditional := m.hAdditional
+  simp_all <;> omega
+theorem pots_solution (m : FlowerPots) : m.additional = 2 := by
+  have hHour := m.hHour
+  have hCold := m.hCold
+  have hWarm := m.hWarm
+  have hFirst := m.hFirst
+  have hLast := m.hLast
+  have hAdditional := m.hAdditional
+  simp_all <;> omega
 structure WaterBottle where
   glassesPerDay : ℕ
   ouncesPerGlass : ℕ
@@ -206,9 +458,33 @@ structure WaterBottle where
   hWeekly : weeklyOunces = daysPerWeek * dailyOunces
   hBottle : bottleOunces = 35
   hFills : weeklyOunces = bottleOunces * fills
-theorem water_daily (m : WaterBottle) : m.dailyOunces = 20 := by cases m; omega
-theorem water_weekly (m : WaterBottle) : m.weeklyOunces = 140 := by cases m; omega
-theorem water_solution (m : WaterBottle) : m.fills = 4 := by cases m; omega
+theorem water_daily (m : WaterBottle) : m.dailyOunces = 20 := by
+  have hGlasses := m.hGlasses
+  have hPerGlass := m.hPerGlass
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  have hWeekly := m.hWeekly
+  have hBottle := m.hBottle
+  have hFills := m.hFills
+  simp_all <;> omega
+theorem water_weekly (m : WaterBottle) : m.weeklyOunces = 140 := by
+  have hGlasses := m.hGlasses
+  have hPerGlass := m.hPerGlass
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  have hWeekly := m.hWeekly
+  have hBottle := m.hBottle
+  have hFills := m.hFills
+  simp_all <;> omega
+theorem water_solution (m : WaterBottle) : m.fills = 4 := by
+  have hGlasses := m.hGlasses
+  have hPerGlass := m.hPerGlass
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  have hWeekly := m.hWeekly
+  have hBottle := m.hBottle
+  have hFills := m.hFills
+  simp_all <;> omega
 structure Watermelons where
   michael : ℕ
   clay : ℕ
@@ -216,8 +492,16 @@ structure Watermelons where
   hMichael : michael = 8
   hClay : clay = 3 * michael
   hJohn : 2 * john = clay
-theorem watermelon_clay (m : Watermelons) : m.clay = 24 := by cases m; omega
-theorem watermelon_solution (m : Watermelons) : m.john = 12 := by cases m; omega
+theorem watermelon_clay (m : Watermelons) : m.clay = 24 := by
+  have hMichael := m.hMichael
+  have hClay := m.hClay
+  have hJohn := m.hJohn
+  simp_all <;> omega
+theorem watermelon_solution (m : Watermelons) : m.john = 12 := by
+  have hMichael := m.hMichael
+  have hClay := m.hClay
+  have hJohn := m.hJohn
+  simp_all <;> omega
 structure Eggs where
   breakfast : ℕ
   lunch : ℕ
@@ -229,6 +513,18 @@ structure Eggs where
   hDinner : dinner = 1
   hBreakfastLunch : breakfastLunch = breakfast + lunch
   hTotal : total = breakfastLunch + dinner
-theorem eggs_breakfast_lunch (m : Eggs) : m.breakfastLunch = 5 := by cases m; omega
-theorem eggs_solution (m : Eggs) : m.total = 6 := by cases m; omega
+theorem eggs_breakfast_lunch (m : Eggs) : m.breakfastLunch = 5 := by
+  have hBreakfast := m.hBreakfast
+  have hLunch := m.hLunch
+  have hDinner := m.hDinner
+  have hBreakfastLunch := m.hBreakfastLunch
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem eggs_solution (m : Eggs) : m.total = 6 := by
+  have hBreakfast := m.hBreakfast
+  have hLunch := m.hLunch
+  have hDinner := m.hDinner
+  have hBreakfastLunch := m.hBreakfastLunch
+  have hTotal := m.hTotal
+  simp_all <;> omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A05

@@ -337,11 +337,9 @@ theorem earnings_left_percent (m : Earnings) : m.leftPercent = 90 := by
   have hAmount := m.hAmount
   simp_all <;> omega
 theorem earnings_solution (m : Earnings) : m.earnings = 450 := by
-  have hSpent := m.hSpent
-  have hPercent := m.hPercent
-  have hLeft := m.hLeft
-  have hAmount := m.hAmount
-  simp_all <;> omega
+  have h := m.hAmount
+  rw [earnings_left_percent m, m.hLeft] at h
+  omega
 structure ChickenEggs where
   chickens : ℕ
   eggsPerChickenPerDay : ℕ
@@ -482,13 +480,7 @@ theorem journey_distance (m : JourneyPortions) : m.distanceMiles = 28 := by
   have hCovered := m.hCovered
   simp_all <;> omega
 theorem journey_solution (m : JourneyPortions) : m.portionsCovered = 4 := by
-  have hJourney := m.hJourney
-  have hTotalPortions := m.hTotalPortions
-  have hPortion := m.hPortion
-  have hSpeed := m.hSpeed
-  have hTime := m.hTime
-  have hTenthsPerHour := m.hTenthsPerHour
-  have hDistance := m.hDistance
-  have hCovered := m.hCovered
-  simp_all <;> omega
+  have h := m.hCovered
+  rw [journey_distance m, journey_portion_miles m] at h
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A07

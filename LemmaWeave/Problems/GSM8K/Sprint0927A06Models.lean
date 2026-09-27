@@ -50,47 +50,15 @@ theorem brew_daily_ounces (m : ColdBrew) : m.dailyOunces = 48 := by
   have hTotalHours := m.hTotalHours
   simp_all <;> omega
 theorem brew_days_per_batch (m : ColdBrew) : m.daysPerBatch = 4 := by
-  have halfGallonsPerBatch := m.halfGallonsPerBatch
-  have hoursPerBatch := m.hoursPerBatch
-  have hHalfGallons := m.hHalfGallons
-  have hOuncesPerHalfGallon := m.hOuncesPerHalfGallon
-  have hBatch := m.hBatch
-  have hTwoDay := m.hTwoDay
-  have hDaily := m.hDaily
-  have hDaysPerBatch := m.hDaysPerBatch
-  have hPeriod := m.hPeriod
-  have hBatches := m.hBatches
-  have hHoursPerBatch := m.hHoursPerBatch
-  have hTotalHours := m.hTotalHours
-  simp_all <;> omega
+  have h := m.hDaysPerBatch
+  rw [brew_batch_ounces m, brew_daily_ounces m] at h
+  omega
 theorem brew_batches (m : ColdBrew) : m.batches = 6 := by
-  have halfGallonsPerBatch := m.halfGallonsPerBatch
-  have hoursPerBatch := m.hoursPerBatch
-  have hHalfGallons := m.hHalfGallons
-  have hOuncesPerHalfGallon := m.hOuncesPerHalfGallon
-  have hBatch := m.hBatch
-  have hTwoDay := m.hTwoDay
-  have hDaily := m.hDaily
-  have hDaysPerBatch := m.hDaysPerBatch
-  have hPeriod := m.hPeriod
-  have hBatches := m.hBatches
-  have hHoursPerBatch := m.hHoursPerBatch
-  have hTotalHours := m.hTotalHours
-  simp_all <;> omega
+  have h := m.hBatches
+  rw [m.hPeriod, brew_days_per_batch m] at h
+  omega
 theorem brew_solution (m : ColdBrew) : m.totalHours = 120 := by
-  have halfGallonsPerBatch := m.halfGallonsPerBatch
-  have hoursPerBatch := m.hoursPerBatch
-  have hHalfGallons := m.hHalfGallons
-  have hOuncesPerHalfGallon := m.hOuncesPerHalfGallon
-  have hBatch := m.hBatch
-  have hTwoDay := m.hTwoDay
-  have hDaily := m.hDaily
-  have hDaysPerBatch := m.hDaysPerBatch
-  have hPeriod := m.hPeriod
-  have hBatches := m.hBatches
-  have hHoursPerBatch := m.hHoursPerBatch
-  have hTotalHours := m.hTotalHours
-  simp_all <;> omega
+  rw [m.hTotalHours, brew_batches m, m.hHoursPerBatch]
 structure FishingLine where
   reels : ℕ
   metersPerReel : ℕ
@@ -318,13 +286,9 @@ theorem nancy_hourly (m : NancyWork) : m.hourlyPay = 7 := by
   have hTargetRate := m.hTargetRate
   simp_all <;> omega
 theorem nancy_solution (m : NancyWork) : m.targetHours = 10 := by
-  have hourlyPay := m.hourlyPay
-  have hFirstPay := m.hFirstPay
-  have hFirstHours := m.hFirstHours
-  have hFirstRate := m.hFirstRate
-  have hTargetPay := m.hTargetPay
-  have hTargetRate := m.hTargetRate
-  simp_all <;> omega
+  have h := m.hTargetRate
+  rw [m.hTargetPay, nancy_hourly m] at h
+  omega
 structure DukeGame where
   neededToTie : ℕ
   pointsPastRecord : ℕ
@@ -476,21 +440,13 @@ theorem planet_other_percent (m : PlanetComposition) : m.otherPercent = 30 := by
   have hMassRatio := m.hMassRatio
   simp_all <;> omega
 theorem planet_mars_mass (m : PlanetComposition) : m.marsTons = 500 := by
-  have hIron := m.hIron
-  have hCarbon := m.hCarbon
-  have hComposition := m.hComposition
-  have hMarsOther := m.hMarsOther
-  have hMarsFraction := m.hMarsFraction
-  have hMassRatio := m.hMassRatio
-  simp_all <;> omega
+  have h := m.hMarsFraction
+  rw [planet_other_percent m, m.hMarsOther] at h
+  omega
 theorem planet_solution (m : PlanetComposition) : m.moonTons = 250 := by
-  have hIron := m.hIron
-  have hCarbon := m.hCarbon
-  have hComposition := m.hComposition
-  have hMarsOther := m.hMarsOther
-  have hMarsFraction := m.hMarsFraction
-  have hMassRatio := m.hMassRatio
-  simp_all <;> omega
+  have h := m.hMassRatio
+  rw [planet_mars_mass m] at h
+  omega
 structure Rhinos where
   whiteCount : ℕ
   poundsPerWhite : ℕ

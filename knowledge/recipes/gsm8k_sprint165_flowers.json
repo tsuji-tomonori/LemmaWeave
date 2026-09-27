@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint165_flowers",
+  "title_ja": "花瓶に入れた花",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02766",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "52本から母へ15本、祖母へ母より6本多く渡した残りを求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A03.flowers_solution",
+  "graph": "work/gsm8k-sprint165-flowers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "flowers_grandma",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.flowers_grandma",
+      "title_ja": "祖母へ21本",
+      "claim_ja": "15+6=21",
+      "method_ja": "15+6=21",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "15+6=21",
+      "baseline_ja": "15+6=21"
+    },
+    {
+      "id": "flowers_given",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.flowers_given",
+      "title_ja": "合計36本渡した",
+      "claim_ja": "15+21=36",
+      "method_ja": "15+21=36",
+      "requires_steps": [
+        "flowers_grandma"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "15+21=36",
+      "baseline_ja": "15+21=36"
+    },
+    {
+      "id": "flowers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.flowers_solution",
+      "title_ja": "花瓶は16本",
+      "claim_ja": "52-36=16",
+      "method_ja": "52-36=16",
+      "requires_steps": [
+        "flowers_given"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "52-36=16",
+      "baseline_ja": "52-36=16"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2767,
+    "checked_model_hash": "7c0798e652fe575277ce62a4cd367a46b44fbf59cf2652cfec02eb90be46a808",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -253,4 +253,118 @@ theorem icecream_chocolate (m : IceCreamModel) : m.chocolate = 22 := by
 theorem icecream_solution (m : IceCreamModel) : m.chocolate = 22 := by
   exact icecream_chocolate m
 
+structure FlowersModel where
+  grandma : Nat
+  givenAway : Nat
+  vase : Nat
+  hGrandma : grandma = 15 + 6
+  hGivenAway : givenAway = 15 + grandma
+  hVase : vase + givenAway = 52
+
+theorem flowers_grandma (m : FlowersModel) : m.grandma = 21 := by
+  have h := m.hGrandma
+  omega
+
+theorem flowers_given (m : FlowersModel) : m.givenAway = 36 := by
+  have hg := flowers_grandma m
+  have h := m.hGivenAway
+  omega
+
+theorem flowers_vase (m : FlowersModel) : m.vase = 16 := by
+  have hg := flowers_given m
+  have h := m.hVase
+  omega
+
+theorem flowers_solution (m : FlowersModel) : m.vase = 16 := by
+  exact flowers_vase m
+
+structure CookingModel where
+  breakfast : Nat
+  lunch : Nat
+  dinner : Nat
+  total : Nat
+  hBreakfast : breakfast = 20 * 7
+  hLunch : lunch = 5 * 7
+  hDinner : dinner = 10 * 4 + 30 * 3
+  hTotal : total = breakfast + lunch + dinner
+
+theorem cooking_meals (m : CookingModel) :
+    m.breakfast = 140 ∧ m.lunch = 35 ∧ m.dinner = 130 := by
+  constructor
+  · have h := m.hBreakfast
+    omega
+  · constructor
+    · have h := m.hLunch
+      omega
+    · have h := m.hDinner
+      omega
+
+theorem cooking_total (m : CookingModel) : m.total = 305 := by
+  rcases cooking_meals m with ⟨hb, hl, hd⟩
+  have h := m.hTotal
+  omega
+
+theorem cooking_solution (m : CookingModel) : m.total = 305 := by
+  exact cooking_total m
+
+structure BallsModel where
+  received : Nat
+  total : Nat
+  hReceived : 2 * received = 40
+  hTotal : total = 25 + received
+
+theorem balls_received (m : BallsModel) : m.received = 20 := by
+  have h := m.hReceived
+  omega
+
+theorem balls_total (m : BallsModel) : m.total = 45 := by
+  have hr := balls_received m
+  have h := m.hTotal
+  omega
+
+theorem balls_solution (m : BallsModel) : m.total = 45 := by
+  exact balls_total m
+
+structure JewelryModel where
+  ringPrice : Nat
+  hRevenue : 4 * 12 + 8 * ringPrice = 80
+
+theorem jewelry_ring_price (m : JewelryModel) : m.ringPrice = 4 := by
+  have h := m.hRevenue
+  omega
+
+theorem jewelry_solution (m : JewelryModel) : m.ringPrice = 4 := by
+  exact jewelry_ring_price m
+
+structure SnacksModel where
+  robert : Nat
+  teddy : Nat
+  total : Nat
+  hRobert : robert = 5 * 10 + 10 * 2
+  hTeddy : teddy = 6 * 3 + 10 * 2
+  hTotal : total = robert + teddy
+
+theorem snacks_robert (m : SnacksModel) : m.robert = 70 := by
+  have h := m.hRobert
+  omega
+
+theorem snacks_teddy (m : SnacksModel) : m.teddy = 38 := by
+  have h := m.hTeddy
+  omega
+
+theorem snacks_total (m : SnacksModel) : m.total = 108 := by
+  have hr := snacks_robert m
+  have ht := snacks_teddy m
+  have h := m.hTotal
+  omega
+
+theorem snacks_reference_conflict : (108 : Nat) ≠ 106 := by
+  norm_num
+
+theorem snacks_solution (m : SnacksModel) :
+    m.total = 108 ∧ (108 : Nat) ≠ 106 := by
+  constructor
+  · exact snacks_total m
+  · exact snacks_reference_conflict
+
 end LemmaWeave.Problems.GSM8K.Sprint0928A03

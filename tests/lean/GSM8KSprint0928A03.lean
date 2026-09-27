@@ -21,3 +21,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A03.barn_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A03.icecream_solution to "work/gsm8k-sprint165-icecream-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A03.icecream_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A03.flowers_solution to "work/gsm8k-sprint165-flowers-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A03.flowers_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A03.cooking_solution to "work/gsm8k-sprint165-cooking-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A03.cooking_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A03.balls_solution to "work/gsm8k-sprint165-balls-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A03.balls_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A03.jewelry_solution to "work/gsm8k-sprint165-jewelry-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A03.jewelry_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A03.snacks_solution to "work/gsm8k-sprint165-snacks-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A03.snacks_solution

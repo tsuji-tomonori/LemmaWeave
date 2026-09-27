@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint165_cooking",
+  "title_ja": "1週間の調理時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02767",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "朝食・昼食を7日分、夕食を4日と残り3日に分けて週間調理時間を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A03.cooking_solution",
+  "graph": "work/gsm8k-sprint165-cooking-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cooking_meals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.cooking_meals",
+      "title_ja": "朝140、昼35、夜130分",
+      "claim_ja": "20×7、5×7、10×4+30×3",
+      "method_ja": "20×7、5×7、10×4+30×3",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "20×7、5×7、10×4+30×3",
+      "baseline_ja": "20×7、5×7、10×4+30×3"
+    },
+    {
+      "id": "cooking_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.cooking_solution",
+      "title_ja": "合計305分",
+      "claim_ja": "140+35+130=305",
+      "method_ja": "140+35+130=305",
+      "requires_steps": [
+        "cooking_meals"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "140+35+130=305",
+      "baseline_ja": "140+35+130=305"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2768,
+    "checked_model_hash": "7c0798e652fe575277ce62a4cd367a46b44fbf59cf2652cfec02eb90be46a808",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

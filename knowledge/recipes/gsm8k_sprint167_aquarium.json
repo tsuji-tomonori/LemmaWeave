@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint167_aquarium",
+  "title_ja": "水族館の個別券代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02791",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "大人1人と子供6人の個別券を合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A05.aquarium_solution",
+  "graph": "work/gsm8k-sprint167-aquarium-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "aquarium_children",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.aquarium_children",
+      "title_ja": "子供券120ドル",
+      "claim_ja": "6×20=120ドル。",
+      "method_ja": "人数×単価",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "6×20=120ドル。",
+      "baseline_ja": "6×20=120ドル。"
+    },
+    {
+      "id": "aquarium_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.aquarium_total",
+      "title_ja": "個別券合計155ドル",
+      "claim_ja": "120+35=155ドル。",
+      "method_ja": "加法",
+      "requires_steps": [
+        "aquarium_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "120+35=155ドル。",
+      "baseline_ja": "120+35=155ドル。"
+    },
+    {
+      "id": "aquarium_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.aquarium_solution",
+      "title_ja": "答えは155ドル",
+      "claim_ja": "個別券なら155ドル払う。",
+      "method_ja": "直前の結論",
+      "requires_steps": [
+        "aquarium_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "個別券なら155ドル払う。",
+      "baseline_ja": "個別券なら155ドル払う。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2792,
+    "checked_model_hash": "f7a1e420295684b1a3ce1819164c097e1162dae701762324c7c1a8f14a0c27d6",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

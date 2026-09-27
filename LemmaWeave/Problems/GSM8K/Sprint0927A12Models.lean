@@ -70,4 +70,73 @@ theorem eggs_weekly (m : EggSales) : m.weeklyEggs = 276 := by cases m; omega
 theorem eggs_dozens (m : EggSales) : m.weeklyDozens = 23 := by cases m; omega
 theorem eggs_solution (m : EggSales) : m.total = 552 := by cases m; omega
 
+structure BrotherAge where
+  trevorNow brotherNow ageGap targetBrother trevorThen : ℕ
+  hTrevor : trevorNow = 11
+  hBrother : brotherNow = 20
+  hGap : brotherNow = trevorNow + ageGap
+  hTarget : targetBrother = 3 * trevorNow
+  hThen : targetBrother = trevorThen + ageGap
+theorem age_target_brother (m : BrotherAge) : m.targetBrother = 33 := by cases m; omega
+theorem age_solution (m : BrotherAge) : m.trevorThen = 24 := by cases m; omega
+
+structure CatLitter where
+  days daysPerWeek changes poundsPerChange poundsNeeded poundsPerContainer containers
+    dollarsPerContainer totalCost : ℕ
+  hDays : days = 210
+  hWeek : daysPerWeek = 7
+  hChanges : days = changes * daysPerWeek
+  hPoundsChange : poundsPerChange = 15
+  hPoundsNeeded : poundsNeeded = changes * poundsPerChange
+  hContainer : poundsPerContainer = 45
+  hContainers : poundsNeeded = containers * poundsPerContainer
+  hPrice : dollarsPerContainer = 21
+  hCost : totalCost = containers * dollarsPerContainer
+theorem litter_changes (m : CatLitter) : m.changes = 30 := by cases m; omega
+theorem litter_pounds (m : CatLitter) : m.poundsNeeded = 450 := by cases m; omega
+theorem litter_containers (m : CatLitter) : m.containers = 10 := by cases m; omega
+theorem litter_solution (m : CatLitter) : m.totalCost = 210 := by cases m; omega
+
+structure CheesePurchase where
+  initial remaining spent beefPounds beefPrice beefCost cheesePrice cheeseCost cheesePounds : ℕ
+  hInitial : initial = 87
+  hRemaining : remaining = 61
+  hSpent : initial = remaining + spent
+  hBeefPounds : beefPounds = 1
+  hBeefPrice : beefPrice = 5
+  hBeefCost : beefCost = beefPounds * beefPrice
+  hCheesePrice : cheesePrice = 7
+  hCheeseCost : spent = beefCost + cheeseCost
+  hCheesePounds : cheeseCost = cheesePounds * cheesePrice
+theorem cheese_spent (m : CheesePurchase) : m.spent = 26 := by cases m; omega
+theorem cheese_cost (m : CheesePurchase) : m.cheeseCost = 21 := by cases m; omega
+theorem cheese_solution (m : CheesePurchase) : m.cheesePounds = 3 := by cases m; omega
+
+structure EggMeals where
+  dozens eggsPerDozen initial omelet cake afterCooking given remaining meals perMeal : ℕ
+  hDozens : dozens = 2
+  hPerDozen : eggsPerDozen = 12
+  hInitial : initial = dozens * eggsPerDozen
+  hOmelet : omelet = 2
+  hCake : cake = 4
+  hAfter : initial = omelet + cake + afterCooking
+  hHalf : afterCooking = 2 * given
+  hRemaining : remaining + given = afterCooking
+  hMeals : meals = 3
+  hPerMeal : remaining = meals * perMeal
+theorem meals_initial (m : EggMeals) : m.initial = 24 := by cases m; omega
+theorem meals_after_cooking (m : EggMeals) : m.afterCooking = 18 := by cases m; omega
+theorem meals_remaining (m : EggMeals) : m.remaining = 9 := by cases m; omega
+theorem meals_solution (m : EggMeals) : m.perMeal = 3 := by cases m; omega
+
+structure WaterPrice where
+  bottles litersPerBottle totalLiters totalCost pricePerLiter : ℕ
+  hBottles : bottles = 6
+  hLitersEach : litersPerBottle = 2
+  hLiters : totalLiters = bottles * litersPerBottle
+  hCost : totalCost = 12
+  hUnitPrice : totalCost = totalLiters * pricePerLiter
+theorem water_liters (m : WaterPrice) : m.totalLiters = 12 := by cases m; omega
+theorem water_solution (m : WaterPrice) : m.pricePerLiter = 1 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A12

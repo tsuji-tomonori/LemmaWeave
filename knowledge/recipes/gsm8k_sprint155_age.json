@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint155_age",
+  "title_ja": "兄が目標年齢のときのTrevor",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02611",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "現在Trevor11歳、兄20歳。兄が現在のTrevorの3倍である33歳になる時を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A12.age_solution",
+  "graph": "work/gsm8k-sprint155-age-graph.json",
+  "model_notes_ja": [
+    "three times as old as Trevor is now を、兄の年齢が現在のTrevor11歳の3倍になる時と読む。"
+  ],
+  "steps": [
+    {
+      "id": "age_target_brother",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.age_target_brother",
+      "title_ja": "兄の目標年齢は33歳",
+      "claim_ja": "兄の目標年齢は33歳",
+      "method_ja": "現在のTrevor11歳を3倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "three times as old as Trevor is now を、兄の年齢が現在のTrevor11歳の3倍になる時と読む。",
+      "conclusion_ja": "兄の目標年齢は33歳",
+      "baseline_ja": "兄の目標年齢は33歳"
+    },
+    {
+      "id": "age_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.age_solution",
+      "title_ja": "その時Trevorは24歳",
+      "claim_ja": "その時Trevorは24歳",
+      "method_ja": "年齢差9歳を33歳から引く",
+      "requires_steps": [
+        "age_target_brother"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "three times as old as Trevor is now を、兄の年齢が現在のTrevor11歳の3倍になる時と読む。",
+      "conclusion_ja": "その時Trevorは24歳",
+      "baseline_ja": "その時Trevorは24歳"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2612,
+    "checked_model_hash": "3e4b93f5a4108cc1a846e5cd16a8de7dc3e582b6180b1e81a6346cde530ddf48",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

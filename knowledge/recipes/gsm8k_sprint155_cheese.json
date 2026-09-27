@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint155_cheese",
+  "title_ja": "購入したチーズの重量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02613",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "87ドルから、1ポンド5ドルの牛肉と1ポンド7ドルのチーズを買い、61ドル残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A12.cheese_solution",
+  "graph": "work/gsm8k-sprint155-cheese-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cheese_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.cheese_spent",
+      "title_ja": "支出は26ドル",
+      "claim_ja": "支出は26ドル",
+      "method_ja": "87ドルから61ドルを引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "支出は26ドル",
+      "baseline_ja": "支出は26ドル"
+    },
+    {
+      "id": "cheese_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.cheese_cost",
+      "title_ja": "チーズ代は21ドル",
+      "claim_ja": "チーズ代は21ドル",
+      "method_ja": "26ドルから牛肉代5ドルを引く",
+      "requires_steps": [
+        "cheese_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "チーズ代は21ドル",
+      "baseline_ja": "チーズ代は21ドル"
+    },
+    {
+      "id": "cheese_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.cheese_solution",
+      "title_ja": "チーズは3ポンド",
+      "claim_ja": "チーズは3ポンド",
+      "method_ja": "21ドルを1ポンド7ドルで分ける",
+      "requires_steps": [
+        "cheese_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "チーズは3ポンド",
+      "baseline_ja": "チーズは3ポンド"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2614,
+    "checked_model_hash": "3e4b93f5a4108cc1a846e5cd16a8de7dc3e582b6180b1e81a6346cde530ddf48",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

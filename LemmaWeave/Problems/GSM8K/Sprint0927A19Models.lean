@@ -2,7 +2,10 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0927A19
 
 structure WeeklyCalories where
-  saturday weeklyConsumed weeklyBurned deficit : ℕ
+  saturday : ℕ
+  weeklyConsumed : ℕ
+  weeklyBurned : ℕ
+  deficit : ℕ
   hSaturday : saturday = 2500 + 1000
   hConsumed : weeklyConsumed = 6 * 2500 + saturday
   hBurned : weeklyBurned = 7 * 3000
@@ -13,7 +16,9 @@ theorem calories_burned (m : WeeklyCalories) : m.weeklyBurned = 21000 := by case
 theorem calories_solution (m : WeeklyCalories) : m.deficit = 2500 := by cases m <;> omega
 
 structure FanEnergy where
-  dailyWh monthlyWh monthlyKWh : ℕ
+  dailyWh : ℕ
+  monthlyWh : ℕ
+  monthlyKWh : ℕ
   hDaily : dailyWh = 75 * 8
   hMonthly : monthlyWh = 30 * dailyWh
   hKWh : monthlyWh = 1000 * monthlyKWh
@@ -22,7 +27,9 @@ theorem fan_monthly_wh (m : FanEnergy) : m.monthlyWh = 18000 := by cases m <;> o
 theorem fan_solution (m : FanEnergy) : m.monthlyKWh = 18 := by cases m <;> omega
 
 structure Magazines where
-  sunday beforeDog now : ℕ
+  sunday : ℕ
+  beforeDog : ℕ
+  now : ℕ
   hSunday : sunday = 4 * 8
   hBefore : beforeDog = 8 + 12 + sunday
   hNow : now + 4 = beforeDog
@@ -31,7 +38,14 @@ theorem magazines_before (m : Magazines) : m.beforeDog = 52 := by cases m <;> om
 theorem magazines_solution (m : Magazines) : m.now = 48 := by cases m <;> omega
 
 structure StateFair where
-  attendees foodBuyers foodRevenue rideBuyers rideRevenue souvenirBuyers souvenirRevenue total : ℕ
+  attendees : ℕ
+  foodBuyers : ℕ
+  foodRevenue : ℕ
+  rideBuyers : ℕ
+  rideRevenue : ℕ
+  souvenirBuyers : ℕ
+  souvenirRevenue : ℕ
+  total : ℕ
   hTickets : 5 * attendees = 2520
   hFoodBuyers : 3 * foodBuyers = 2 * attendees
   hFoodRevenue : foodRevenue = 8 * foodBuyers
@@ -47,7 +61,12 @@ theorem fair_souvenirs (m : StateFair) : m.souvenirRevenue = 945 := by cases m <
 theorem fair_solution (m : StateFair) : m.total = 6657 := by cases m <;> omega
 
 structure CabinDeposit where
-  days rent subtotal service total deposit : ℕ
+  days : ℕ
+  rent : ℕ
+  subtotal : ℕ
+  service : ℕ
+  total : ℕ
+  deposit : ℕ
   hDays : days = 2 * 7
   hRent : rent = 125 * days
   hSubtotal : subtotal = rent + 100
@@ -61,7 +80,10 @@ theorem cabin_total (m : CabinDeposit) : m.total = 2220 := by cases m <;> omega
 theorem cabin_solution (m : CabinDeposit) : m.deposit = 1110 := by cases m <;> omega
 
 structure FishingWeights where
-  peter ali joey total : ℕ
+  peter : ℕ
+  ali : ℕ
+  joey : ℕ
+  total : ℕ
   hAli : ali = 2 * peter
   hJoey : joey = peter + 1
   hTotal : total = peter + ali + joey
@@ -71,7 +93,9 @@ theorem weights_joey (m : FishingWeights) : m.joey = 7 := by cases m <;> omega
 theorem weights_solution (m : FishingWeights) : m.ali = 12 := by cases m <;> omega
 
 structure TreePlanting where
-  monday tuesday total : ℕ
+  monday : ℕ
+  tuesday : ℕ
+  total : ℕ
   hMonday : 30 + monday = 3 * 30
   hTuesday : 3 * tuesday = monday
   hTotal : total = monday + tuesday
@@ -80,7 +104,10 @@ theorem trees_tuesday (m : TreePlanting) : m.tuesday = 20 := by cases m <;> omeg
 theorem trees_solution (m : TreePlanting) : m.total = 80 := by cases m <;> omega
 
 structure Pens where
-  blue black red total : ℕ
+  blue : ℕ
+  black : ℕ
+  red : ℕ
+  total : ℕ
   hBlue : blue = 2
   hBlack : black = 2 * blue
   hRed : red + 2 = 2 * black
@@ -90,7 +117,10 @@ theorem pens_red (m : Pens) : m.red = 6 := by cases m <;> omega
 theorem pens_solution (m : Pens) : m.total = 12 := by cases m <;> omega
 
 structure TeachingYears where
-  calculus algebra statistics total : ℕ
+  calculus : ℕ
+  algebra : ℕ
+  statistics : ℕ
+  total : ℕ
   hCalculus : calculus = 4
   hAlgebra : algebra = 2 * calculus
   hStatistics : statistics = 5 * algebra
@@ -100,7 +130,10 @@ theorem years_statistics (m : TeachingYears) : m.statistics = 40 := by cases m <
 theorem years_solution (m : TeachingYears) : m.total = 52 := by cases m <;> omega
 
 structure SamuelApples where
-  bought eaten pie left : ℕ
+  bought : ℕ
+  eaten : ℕ
+  pie : ℕ
+  left : ℕ
   hBought : bought = 8 + 20
   hEaten : 2 * eaten = bought
   hPie : 7 * pie = bought
@@ -111,7 +144,10 @@ theorem samuel_pie (m : SamuelApples) : m.pie = 4 := by cases m <;> omega
 theorem samuel_solution (m : SamuelApples) : m.left = 10 := by cases m <;> omega
 
 structure SharedFish where
-  carla kyle tasha total : ℕ
+  carla : ℕ
+  kyle : ℕ
+  tasha : ℕ
+  total : ℕ
   hCarla : carla = 8
   hEqual : kyle = tasha
   hTotal : total = carla + kyle + tasha
@@ -120,7 +156,9 @@ theorem shared_pair (m : SharedFish) : m.kyle + m.tasha = 28 := by cases m <;> o
 theorem shared_solution (m : SharedFish) : m.kyle = 14 := by cases m <;> omega
 
 structure QuizAverage where
-  firstFour targetTotal fifth : ℕ
+  firstFour : ℕ
+  targetTotal : ℕ
+  fifth : ℕ
   hFirst : firstFour = 90 + 98 + 92 + 94
   hTarget : targetTotal = 94 * 5
   hFifth : firstFour + fifth = targetTotal
@@ -129,7 +167,12 @@ theorem quiz_target (m : QuizAverage) : m.targetTotal = 470 := by cases m <;> om
 theorem quiz_solution (m : QuizAverage) : m.fifth = 96 := by cases m <;> omega
 
 structure TaxBill where
-  taxable lowerBand higherBand lowerTax higherTax totalTax : ℕ
+  taxable : ℕ
+  lowerBand : ℕ
+  higherBand : ℕ
+  lowerTax : ℕ
+  higherTax : ℕ
+  totalTax : ℕ
   hTaxable : taxable + 30000 = 100000
   hLowerBand : lowerBand = 20000
   hHigherBand : lowerBand + higherBand = taxable
@@ -142,7 +185,9 @@ theorem tax_higher (m : TaxBill) : m.higherTax = 10000 := by cases m <;> omega
 theorem tax_solution (m : TaxBill) : m.totalTax = 12000 := by cases m <;> omega
 
 structure Cookies where
-  millie mike frank : ℕ
+  millie : ℕ
+  mike : ℕ
+  frank : ℕ
   hMillie : millie = 4
   hMike : mike = 3 * millie
   hFrank : 2 * (frank + 3) = mike
@@ -150,7 +195,9 @@ theorem cookies_mike (m : Cookies) : m.mike = 12 := by cases m <;> omega
 theorem cookies_solution (m : Cookies) : m.frank = 3 := by cases m <;> omega
 
 structure DogTime where
-  dryMinutes walkMinutes totalMinutes : ℕ
+  dryMinutes : ℕ
+  walkMinutes : ℕ
+  totalMinutes : ℕ
   hDry : 2 * dryMinutes = 20
   hWalk : 6 * walkMinutes = 3 * 60
   hTotal : totalMinutes = 20 + dryMinutes + walkMinutes

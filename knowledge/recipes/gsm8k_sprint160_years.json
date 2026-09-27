@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint160_years",
+  "title_ja": "教えた年数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02689",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Calculus4年、Algebraは2倍、StatisticsはAlgebraの5倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.years_solution",
+  "graph": "work/gsm8k-sprint160-years-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "years_algebra",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.years_algebra",
+      "title_ja": "Algebraは8年",
+      "claim_ja": "Algebraは8年",
+      "method_ja": "4年を2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Algebraは8年",
+      "baseline_ja": "Algebraは8年"
+    },
+    {
+      "id": "years_statistics",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.years_statistics",
+      "title_ja": "Statisticsは40年",
+      "claim_ja": "Statisticsは40年",
+      "method_ja": "8年を5倍する",
+      "requires_steps": [
+        "years_algebra"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Statisticsは40年",
+      "baseline_ja": "Statisticsは40年"
+    },
+    {
+      "id": "years_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.years_solution",
+      "title_ja": "合計52年",
+      "claim_ja": "合計52年",
+      "method_ja": "4・8・40を足す",
+      "requires_steps": [
+        "years_algebra",
+        "years_statistics"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計52年",
+      "baseline_ja": "合計52年"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2690,
+    "checked_model_hash": "d8f2a4dd865ac6226ce7dcfa6aed8d2ddf7210255ed4ef06302795eae9ddfd4a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

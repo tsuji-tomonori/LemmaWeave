@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint160_trees",
+  "title_ja": "植えた木の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02687",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "元の30本が月曜に合計3倍となるまで植え、火曜は月曜の3分の1を植える。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.trees_solution",
+  "graph": "work/gsm8k-sprint160-trees-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "trees_monday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.trees_monday",
+      "title_ja": "月曜に60本植えた",
+      "claim_ja": "月曜に60本植えた",
+      "method_ja": "30+月曜分=90を解く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "月曜に60本植えた",
+      "baseline_ja": "月曜に60本植えた"
+    },
+    {
+      "id": "trees_tuesday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.trees_tuesday",
+      "title_ja": "火曜に20本植えた",
+      "claim_ja": "火曜に20本植えた",
+      "method_ja": "月曜60本の3分の1",
+      "requires_steps": [
+        "trees_monday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "火曜に20本植えた",
+      "baseline_ja": "火曜に20本植えた"
+    },
+    {
+      "id": "trees_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.trees_solution",
+      "title_ja": "合計80本植えた",
+      "claim_ja": "合計80本植えた",
+      "method_ja": "60本と20本を足す",
+      "requires_steps": [
+        "trees_monday",
+        "trees_tuesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計80本植えた",
+      "baseline_ja": "合計80本植えた"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2688,
+    "checked_model_hash": "d8f2a4dd865ac6226ce7dcfa6aed8d2ddf7210255ed4ef06302795eae9ddfd4a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

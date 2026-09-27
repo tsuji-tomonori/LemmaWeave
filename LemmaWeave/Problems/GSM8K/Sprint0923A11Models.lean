@@ -16,13 +16,13 @@ theorem money_solution (m : SharedMoney) : m.joshua = 30 := by
   rw [m.hTriple, money_justin m]
 
 structure MarbleCollection where
-    jennyRed : ℕ
-    maryRed : ℕ
-    anieRed : ℕ
-    jennyBlue : ℕ
-    maryBlue : ℕ
-    anieBlue : ℕ
-    totalBlue : ℕ
+  jennyRed : ℕ
+  maryRed : ℕ
+  anieRed : ℕ
+  jennyBlue : ℕ
+  maryBlue : ℕ
+  anieBlue : ℕ
+  totalBlue : ℕ
   hJennyRed : jennyRed = 30
   hMaryRed : maryRed = 2 * jennyRed
   hAnieRed : anieRed = maryRed + 20
@@ -52,7 +52,9 @@ structure AquariumRocks where
   hAfterEating : afterEating + eaten = 10
   hFinal : final = afterEating + 2
 
-theorem rocks_eaten (m : AquariumRocks) : m.eaten = 5 := by cases m <;> omega
+theorem rocks_eaten (m : AquariumRocks) : m.eaten = 5 := by
+  have h := m.hEaten
+  omega
 theorem rocks_after_eating (m : AquariumRocks) : m.afterEating = 5 := by
   have h := m.hAfterEating
   rw [rocks_eaten m] at h
@@ -80,7 +82,9 @@ structure BenchPress where
   hAfter : afterInjury + loss = 500
   hFinal : final = 3 * afterInjury
 
-theorem bench_loss (m : BenchPress) : m.loss = 400 := by cases m <;> omega
+theorem bench_loss (m : BenchPress) : m.loss = 400 := by
+  have h := m.hLoss
+  omega
 theorem bench_after_injury (m : BenchPress) : m.afterInjury = 100 := by
   have h := m.hAfter
   rw [bench_loss m] at h
@@ -100,12 +104,16 @@ structure GuitarStores where
   hSWCost : swCost + swDiscount = 1000
   hSavings : savings + swCost = gcCost
 
-theorem guitar_gc_discount (m : GuitarStores) : m.gcDiscount = 150 := by cases m <;> omega
+theorem guitar_gc_discount (m : GuitarStores) : m.gcDiscount = 150 := by
+  have h := m.hGCDiscount
+  omega
 theorem guitar_gc_cost (m : GuitarStores) : m.gcCost = 950 := by
   have h := m.hGCCost
   rw [guitar_gc_discount m] at h
   omega
-theorem guitar_sw_discount (m : GuitarStores) : m.swDiscount = 100 := by cases m <;> omega
+theorem guitar_sw_discount (m : GuitarStores) : m.swDiscount = 100 := by
+  have h := m.hSWDiscount
+  omega
 theorem guitar_sw_cost (m : GuitarStores) : m.swCost = 900 := by
   have h := m.hSWCost
   rw [guitar_sw_discount m] at h
@@ -117,9 +125,13 @@ theorem guitar_solution (m : GuitarStores) : m.savings = 50 := by
 
 /-- The prompt fixes mistake counts and Brent's score, but does not fix points lost per mistake. -/
 structure GeometryExam where
-    perfect madelineMistakes leoMistakes brentMistakes brentScore
-      madelineScore : ℕ
-      pointsPerMistake : ℕ
+  perfect : ℕ
+  madelineMistakes : ℕ
+  leoMistakes : ℕ
+  brentMistakes : ℕ
+  brentScore : ℕ
+  madelineScore : ℕ
+  pointsPerMistake : ℕ
   hMadelineMistakes : madelineMistakes = 2
   hLeoMistakes : leoMistakes = 2 * madelineMistakes
   hBrentMistakes : brentMistakes = leoMistakes + 1
@@ -173,9 +185,14 @@ theorem eggs_solution (m : EggShelf) : m.final = 21 := by
 
 /-- Day 1 is the stated initial six-fish state; doubling occurs before days 2--7 events. -/
 structure FishGrowth where
-    day3Before day3Removed day3After day5Before day5Removed day5After
-      day7Before : ℕ
-      final : ℕ
+  day3Before : ℕ
+  day3Removed : ℕ
+  day3After : ℕ
+  day5Before : ℕ
+  day5Removed : ℕ
+  day5After : ℕ
+  day7Before : ℕ
+  final : ℕ
   hDay3Before : day3Before = 6 * 2 * 2
   hDay3Removed : day3Removed * 3 = day3Before
   hDay3After : day3After + day3Removed = day3Before
@@ -219,7 +236,9 @@ structure CafeteriaMovement where
   hRanInside : ranInside * 3 = outside
   hFinal : final + 3 = inside + ranInside
 
-theorem cafeteria_inside (m : CafeteriaMovement) : m.inside = 60 := by cases m <;> omega
+theorem cafeteria_inside (m : CafeteriaMovement) : m.inside = 60 := by
+  have h := m.hInside
+  omega
 theorem cafeteria_outside (m : CafeteriaMovement) : m.outside = 30 := by
   have h := m.hOutside
   rw [cafeteria_inside m] at h
@@ -272,7 +291,9 @@ structure TradingCards where
   hAlien : alien * 3 = 48
   hMonster : monster = 2 * alien
 
-theorem cards_alien (m : TradingCards) : m.alien = 16 := by cases m <;> omega
+theorem cards_alien (m : TradingCards) : m.alien = 16 := by
+  have h := m.hAlien
+  omega
 theorem cards_solution (m : TradingCards) : m.monster = 32 := by rw [m.hMonster, cards_alien m]
 
 structure ZitClasses where

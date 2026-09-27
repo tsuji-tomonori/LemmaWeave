@@ -12,9 +12,27 @@ structure ColoredHangers where
   hBlue : blue + 1 = green
   hYellow : yellow + 1 = blue
   hTotal : total = pink + green + blue + yellow
-theorem hangers_blue (m : ColoredHangers) : m.blue = 3 := by cases m; omega
-theorem hangers_yellow (m : ColoredHangers) : m.yellow = 2 := by cases m; omega
-theorem hangers_solution (m : ColoredHangers) : m.total = 16 := by cases m; omega
+theorem hangers_blue (m : ColoredHangers) : m.blue = 3 := by
+  have hPink := m.hPink
+  have hGreen := m.hGreen
+  have hBlue := m.hBlue
+  have hYellow := m.hYellow
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem hangers_yellow (m : ColoredHangers) : m.yellow = 2 := by
+  have hPink := m.hPink
+  have hGreen := m.hGreen
+  have hBlue := m.hBlue
+  have hYellow := m.hYellow
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem hangers_solution (m : ColoredHangers) : m.total = 16 := by
+  have hPink := m.hPink
+  have hGreen := m.hGreen
+  have hBlue := m.hBlue
+  have hYellow := m.hYellow
+  have hTotal := m.hTotal
+  simp_all <;> omega
 
 structure JellyBeans where
   napoleon : ℕ
@@ -27,9 +45,27 @@ structure JellyBeans where
   hPair : pairSum = napoleon + sedrich
   hTwice : twiceSum = 2 * pairSum
   hMikey : twiceSum = 4 * mikey
-theorem jelly_sedrich (m : JellyBeans) : m.sedrich = 21 := by cases m; omega
-theorem jelly_pair (m : JellyBeans) : m.pairSum = 38 := by cases m; omega
-theorem jelly_solution (m : JellyBeans) : m.mikey = 19 := by cases m; omega
+theorem jelly_sedrich (m : JellyBeans) : m.sedrich = 21 := by
+  have hNapoleon := m.hNapoleon
+  have hSedrich := m.hSedrich
+  have hPair := m.hPair
+  have hTwice := m.hTwice
+  have hMikey := m.hMikey
+  simp_all <;> omega
+theorem jelly_pair (m : JellyBeans) : m.pairSum = 38 := by
+  have hNapoleon := m.hNapoleon
+  have hSedrich := m.hSedrich
+  have hPair := m.hPair
+  have hTwice := m.hTwice
+  have hMikey := m.hMikey
+  simp_all <;> omega
+theorem jelly_solution (m : JellyBeans) : m.mikey = 19 := by
+  have hNapoleon := m.hNapoleon
+  have hSedrich := m.hSedrich
+  have hPair := m.hPair
+  have hTwice := m.hTwice
+  have hMikey := m.hMikey
+  simp_all <;> omega
 
 structure TicketTrades where
   bluePerRed : ℕ
@@ -54,10 +90,58 @@ structure TicketTrades where
   hOwnedValue : ownedValue = ownedYellow * bluePerYellow + ownedRed * bluePerRed + ownedBlue
   hNeeded : targetBlue = ownedValue + neededBlue
   hVerses : versesPerBlue = 2
-theorem tickets_blue_per_yellow (m : TicketTrades) : m.bluePerYellow = 100 := by cases m; omega
-theorem tickets_target (m : TicketTrades) : m.targetBlue = 1000 := by cases m; omega
-theorem tickets_owned (m : TicketTrades) : m.ownedValue = 837 := by cases m; omega
-theorem tickets_solution (m : TicketTrades) : m.neededBlue = 163 := by cases m; omega
+theorem tickets_blue_per_yellow (m : TicketTrades) : m.bluePerYellow = 100 := by
+  have hBluePerRed := m.hBluePerRed
+  have hRedPerYellow := m.hRedPerYellow
+  have hYellowNeeded := m.hYellowNeeded
+  have hOwnedYellow := m.hOwnedYellow
+  have hOwnedRed := m.hOwnedRed
+  have hOwnedBlue := m.hOwnedBlue
+  have hBluePerYellow := m.hBluePerYellow
+  have hTarget := m.hTarget
+  have hOwnedValue := m.hOwnedValue
+  have hNeeded := m.hNeeded
+  have hVerses := m.hVerses
+  simp_all <;> omega
+theorem tickets_target (m : TicketTrades) : m.targetBlue = 1000 := by
+  have hBluePerRed := m.hBluePerRed
+  have hRedPerYellow := m.hRedPerYellow
+  have hYellowNeeded := m.hYellowNeeded
+  have hOwnedYellow := m.hOwnedYellow
+  have hOwnedRed := m.hOwnedRed
+  have hOwnedBlue := m.hOwnedBlue
+  have hBluePerYellow := m.hBluePerYellow
+  have hTarget := m.hTarget
+  have hOwnedValue := m.hOwnedValue
+  have hNeeded := m.hNeeded
+  have hVerses := m.hVerses
+  simp_all <;> omega
+theorem tickets_owned (m : TicketTrades) : m.ownedValue = 837 := by
+  have hBluePerRed := m.hBluePerRed
+  have hRedPerYellow := m.hRedPerYellow
+  have hYellowNeeded := m.hYellowNeeded
+  have hOwnedYellow := m.hOwnedYellow
+  have hOwnedRed := m.hOwnedRed
+  have hOwnedBlue := m.hOwnedBlue
+  have hBluePerYellow := m.hBluePerYellow
+  have hTarget := m.hTarget
+  have hOwnedValue := m.hOwnedValue
+  have hNeeded := m.hNeeded
+  have hVerses := m.hVerses
+  simp_all <;> omega
+theorem tickets_solution (m : TicketTrades) : m.neededBlue = 163 := by
+  have hBluePerRed := m.hBluePerRed
+  have hRedPerYellow := m.hRedPerYellow
+  have hYellowNeeded := m.hYellowNeeded
+  have hOwnedYellow := m.hOwnedYellow
+  have hOwnedRed := m.hOwnedRed
+  have hOwnedBlue := m.hOwnedBlue
+  have hBluePerYellow := m.hBluePerYellow
+  have hTarget := m.hTarget
+  have hOwnedValue := m.hOwnedValue
+  have hNeeded := m.hNeeded
+  have hVerses := m.hVerses
+  simp_all <;> omega
 
 structure DVDDiscount where
   percent : ℕ
@@ -68,8 +152,18 @@ structure DVDDiscount where
   hDiscount : discount = 40
   hRate : 100 * discount = percent * original
   hPaid : original = discount + paid
-theorem dvd_original (m : DVDDiscount) : m.original = 160 := by cases m; omega
-theorem dvd_solution (m : DVDDiscount) : m.paid = 120 := by cases m; omega
+theorem dvd_original (m : DVDDiscount) : m.original = 160 := by
+  have hPercent := m.hPercent
+  have hDiscount := m.hDiscount
+  have hRate := m.hRate
+  have hPaid := m.hPaid
+  simp_all <;> omega
+theorem dvd_solution (m : DVDDiscount) : m.paid = 120 := by
+  have hPercent := m.hPercent
+  have hDiscount := m.hDiscount
+  have hRate := m.hRate
+  have hPaid := m.hPaid
+  simp_all <;> omega
 
 structure FriendsByGender where
   boyPercent : ℕ
@@ -82,8 +176,20 @@ structure FriendsByGender where
   hBoys : boys = 33
   hRate : 100 * boys = boyPercent * total
   hSplit : total = boys + girls
-theorem friends_total (m : FriendsByGender) : m.total = 60 := by cases m; omega
-theorem friends_solution (m : FriendsByGender) : m.girls = 27 := by cases m; omega
+theorem friends_total (m : FriendsByGender) : m.total = 60 := by
+  have hBoyPercent := m.hBoyPercent
+  have hGirlPercent := m.hGirlPercent
+  have hBoys := m.hBoys
+  have hRate := m.hRate
+  have hSplit := m.hSplit
+  simp_all <;> omega
+theorem friends_solution (m : FriendsByGender) : m.girls = 27 := by
+  have hBoyPercent := m.hBoyPercent
+  have hGirlPercent := m.hGirlPercent
+  have hBoys := m.hBoys
+  have hRate := m.hRate
+  have hSplit := m.hSplit
+  simp_all <;> omega
 
 /-- All money values are cents. -/
 structure SlipperOrder where
@@ -105,10 +211,50 @@ structure SlipperOrder where
   hEmbroidery : embroidery = shoes * embroideryEach
   hShipping : shipping = 1000
   hTotal : total = salePrice + embroidery + shipping
-theorem slippers_discount (m : SlipperOrder) : m.discount = 500 := by cases m; omega
-theorem slippers_sale (m : SlipperOrder) : m.salePrice = 4500 := by cases m; omega
-theorem slippers_embroidery (m : SlipperOrder) : m.embroidery = 1100 := by cases m; omega
-theorem slippers_solution (m : SlipperOrder) : m.total = 6600 := by cases m; omega
+theorem slippers_discount (m : SlipperOrder) : m.discount = 500 := by
+  have hList := m.hList
+  have hPercent := m.hPercent
+  have hDiscount := m.hDiscount
+  have hSale := m.hSale
+  have hShoes := m.hShoes
+  have hEmbroideryEach := m.hEmbroideryEach
+  have hEmbroidery := m.hEmbroidery
+  have hShipping := m.hShipping
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem slippers_sale (m : SlipperOrder) : m.salePrice = 4500 := by
+  have hList := m.hList
+  have hPercent := m.hPercent
+  have hDiscount := m.hDiscount
+  have hSale := m.hSale
+  have hShoes := m.hShoes
+  have hEmbroideryEach := m.hEmbroideryEach
+  have hEmbroidery := m.hEmbroidery
+  have hShipping := m.hShipping
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem slippers_embroidery (m : SlipperOrder) : m.embroidery = 1100 := by
+  have hList := m.hList
+  have hPercent := m.hPercent
+  have hDiscount := m.hDiscount
+  have hSale := m.hSale
+  have hShoes := m.hShoes
+  have hEmbroideryEach := m.hEmbroideryEach
+  have hEmbroidery := m.hEmbroidery
+  have hShipping := m.hShipping
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem slippers_solution (m : SlipperOrder) : m.total = 6600 := by
+  have hList := m.hList
+  have hPercent := m.hPercent
+  have hDiscount := m.hDiscount
+  have hSale := m.hSale
+  have hShoes := m.hShoes
+  have hEmbroideryEach := m.hEmbroideryEach
+  have hEmbroidery := m.hEmbroidery
+  have hShipping := m.hShipping
+  have hTotal := m.hTotal
+  simp_all <;> omega
 
 structure BlockPyramid where
   row1 : ℕ
@@ -123,11 +269,46 @@ structure BlockPyramid where
   hRow4 : row4 + 2 = row3
   hRow5 : row5 + 2 = row4
   hTotal : total = row1 + row2 + row3 + row4 + row5
-theorem pyramid_row2 (m : BlockPyramid) : m.row2 = 7 := by cases m; omega
-theorem pyramid_row3 (m : BlockPyramid) : m.row3 = 5 := by cases m; omega
-theorem pyramid_row4 (m : BlockPyramid) : m.row4 = 3 := by cases m; omega
-theorem pyramid_row5 (m : BlockPyramid) : m.row5 = 1 := by cases m; omega
-theorem pyramid_solution (m : BlockPyramid) : m.total = 25 := by cases m; omega
+theorem pyramid_row2 (m : BlockPyramid) : m.row2 = 7 := by
+  have hRow1 := m.hRow1
+  have hRow2 := m.hRow2
+  have hRow3 := m.hRow3
+  have hRow4 := m.hRow4
+  have hRow5 := m.hRow5
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem pyramid_row3 (m : BlockPyramid) : m.row3 = 5 := by
+  have hRow1 := m.hRow1
+  have hRow2 := m.hRow2
+  have hRow3 := m.hRow3
+  have hRow4 := m.hRow4
+  have hRow5 := m.hRow5
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem pyramid_row4 (m : BlockPyramid) : m.row4 = 3 := by
+  have hRow1 := m.hRow1
+  have hRow2 := m.hRow2
+  have hRow3 := m.hRow3
+  have hRow4 := m.hRow4
+  have hRow5 := m.hRow5
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem pyramid_row5 (m : BlockPyramid) : m.row5 = 1 := by
+  have hRow1 := m.hRow1
+  have hRow2 := m.hRow2
+  have hRow3 := m.hRow3
+  have hRow4 := m.hRow4
+  have hRow5 := m.hRow5
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem pyramid_solution (m : BlockPyramid) : m.total = 25 := by
+  have hRow1 := m.hRow1
+  have hRow2 := m.hRow2
+  have hRow3 := m.hRow3
+  have hRow4 := m.hRow4
+  have hRow5 := m.hRow5
+  have hTotal := m.hTotal
+  simp_all <;> omega
 
 structure BirdPurchase where
   grandparents : ℕ
@@ -144,9 +325,33 @@ structure BirdPurchase where
   hBirds : totalMoney = birds * birdPrice
   hWingsEach : wingsEach = 2
   hWings : totalWings = birds * wingsEach
-theorem birds_money (m : BirdPurchase) : m.totalMoney = 200 := by cases m; omega
-theorem birds_count (m : BirdPurchase) : m.birds = 10 := by cases m; omega
-theorem birds_solution (m : BirdPurchase) : m.totalWings = 20 := by cases m; omega
+theorem birds_money (m : BirdPurchase) : m.totalMoney = 200 := by
+  have hGrandparents := m.hGrandparents
+  have hDollarsEach := m.hDollarsEach
+  have hMoney := m.hMoney
+  have hBirdPrice := m.hBirdPrice
+  have hBirds := m.hBirds
+  have hWingsEach := m.hWingsEach
+  have hWings := m.hWings
+  simp_all <;> omega
+theorem birds_count (m : BirdPurchase) : m.birds = 10 := by
+  have hGrandparents := m.hGrandparents
+  have hDollarsEach := m.hDollarsEach
+  have hMoney := m.hMoney
+  have hBirdPrice := m.hBirdPrice
+  have hBirds := m.hBirds
+  have hWingsEach := m.hWingsEach
+  have hWings := m.hWings
+  simp_all <;> omega
+theorem birds_solution (m : BirdPurchase) : m.totalWings = 20 := by
+  have hGrandparents := m.hGrandparents
+  have hDollarsEach := m.hDollarsEach
+  have hMoney := m.hMoney
+  have hBirdPrice := m.hBirdPrice
+  have hBirds := m.hBirds
+  have hWingsEach := m.hWingsEach
+  have hWings := m.hWings
+  simp_all <;> omega
 
 structure GuessingScores where
   hajar : ℕ
@@ -157,8 +362,20 @@ structure GuessingScores where
   hDifference : difference = 21
   hFarahHigher : farah = hajar + difference
   hTotal : total = hajar + farah
-theorem scores_farah (m : GuessingScores) : m.farah = 45 := by cases m; omega
-theorem scores_solution (m : GuessingScores) : m.total = 69 := by cases m; omega
+theorem scores_farah (m : GuessingScores) : m.farah = 45 := by
+  have hajar := m.hajar
+  have hHajar := m.hHajar
+  have hDifference := m.hDifference
+  have hFarahHigher := m.hFarahHigher
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem scores_solution (m : GuessingScores) : m.total = 69 := by
+  have hajar := m.hajar
+  have hHajar := m.hHajar
+  have hDifference := m.hDifference
+  have hFarahHigher := m.hFarahHigher
+  have hTotal := m.hTotal
+  simp_all <;> omega
 
 /-- Times are minutes. The two stretch-stop counts expose the endpoint ambiguity. -/
 structure RoadTripStops where
@@ -182,10 +399,54 @@ structure RoadTripStops where
   hExcludedStops : excludedStops = excludedStretch + food + gas
   hIncludedTotal : includedTotal = drivingMinutes + includedStops * stopMinutes
   hExcludedTotal : excludedTotal = drivingMinutes + excludedStops * stopMinutes
-theorem road_included_stops (m : RoadTripStops) : m.includedStops = 12 := by cases m; omega
-theorem road_included_solution (m : RoadTripStops) : m.includedTotal = 1080 := by cases m; omega
-theorem road_excluded_solution (m : RoadTripStops) : m.excludedTotal = 1060 := by cases m; omega
-theorem road_nonunique (m : RoadTripStops) : m.includedTotal ≠ m.excludedTotal := by cases m; omega
+theorem road_included_stops (m : RoadTripStops) : m.includedStops = 12 := by
+  have hDriving := m.hDriving
+  have hIncludedStretch := m.hIncludedStretch
+  have hExcludedStretch := m.hExcludedStretch
+  have hFood := m.hFood
+  have hGas := m.hGas
+  have hStopMinutes := m.hStopMinutes
+  have hIncludedStops := m.hIncludedStops
+  have hExcludedStops := m.hExcludedStops
+  have hIncludedTotal := m.hIncludedTotal
+  have hExcludedTotal := m.hExcludedTotal
+  simp_all <;> omega
+theorem road_included_solution (m : RoadTripStops) : m.includedTotal = 1080 := by
+  have hDriving := m.hDriving
+  have hIncludedStretch := m.hIncludedStretch
+  have hExcludedStretch := m.hExcludedStretch
+  have hFood := m.hFood
+  have hGas := m.hGas
+  have hStopMinutes := m.hStopMinutes
+  have hIncludedStops := m.hIncludedStops
+  have hExcludedStops := m.hExcludedStops
+  have hIncludedTotal := m.hIncludedTotal
+  have hExcludedTotal := m.hExcludedTotal
+  simp_all <;> omega
+theorem road_excluded_solution (m : RoadTripStops) : m.excludedTotal = 1060 := by
+  have hDriving := m.hDriving
+  have hIncludedStretch := m.hIncludedStretch
+  have hExcludedStretch := m.hExcludedStretch
+  have hFood := m.hFood
+  have hGas := m.hGas
+  have hStopMinutes := m.hStopMinutes
+  have hIncludedStops := m.hIncludedStops
+  have hExcludedStops := m.hExcludedStops
+  have hIncludedTotal := m.hIncludedTotal
+  have hExcludedTotal := m.hExcludedTotal
+  simp_all <;> omega
+theorem road_nonunique (m : RoadTripStops) : m.includedTotal ≠ m.excludedTotal := by
+  have hDriving := m.hDriving
+  have hIncludedStretch := m.hIncludedStretch
+  have hExcludedStretch := m.hExcludedStretch
+  have hFood := m.hFood
+  have hGas := m.hGas
+  have hStopMinutes := m.hStopMinutes
+  have hIncludedStops := m.hIncludedStops
+  have hExcludedStops := m.hExcludedStops
+  have hIncludedTotal := m.hIncludedTotal
+  have hExcludedTotal := m.hExcludedTotal
+  simp_all <;> omega
 
 structure TailoringFabric where
   shirts : ℕ
@@ -206,9 +467,39 @@ structure TailoringFabric where
   hDaily : daily = shirtDaily + pantDaily
   hDays : days = 3
   hTotal : total = daily * days
-theorem fabric_shirts (m : TailoringFabric) : m.shirtDaily = 6 := by cases m; omega
-theorem fabric_pants (m : TailoringFabric) : m.pantDaily = 25 := by cases m; omega
-theorem fabric_solution (m : TailoringFabric) : m.total = 93 := by cases m; omega
+theorem fabric_shirts (m : TailoringFabric) : m.shirtDaily = 6 := by
+  have hShirts := m.hShirts
+  have hShirtYards := m.hShirtYards
+  have hShirtDaily := m.hShirtDaily
+  have hPants := m.hPants
+  have hPantYards := m.hPantYards
+  have hPantDaily := m.hPantDaily
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem fabric_pants (m : TailoringFabric) : m.pantDaily = 25 := by
+  have hShirts := m.hShirts
+  have hShirtYards := m.hShirtYards
+  have hShirtDaily := m.hShirtDaily
+  have hPants := m.hPants
+  have hPantYards := m.hPantYards
+  have hPantDaily := m.hPantDaily
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem fabric_solution (m : TailoringFabric) : m.total = 93 := by
+  have hShirts := m.hShirts
+  have hShirtYards := m.hShirtYards
+  have hShirtDaily := m.hShirtDaily
+  have hPants := m.hPants
+  have hPantYards := m.hPantYards
+  have hPantDaily := m.hPantDaily
+  have hDaily := m.hDaily
+  have hDays := m.hDays
+  have hTotal := m.hTotal
+  simp_all <;> omega
 
 structure SwimTransport where
   cars : ℕ
@@ -229,9 +520,39 @@ structure SwimTransport where
   hCurrent : current = cars * carRiders + vans * vanRiders
   hCapacity : capacity = cars * carCapacity + vans * vanCapacity
   hAdditional : capacity = current + additional
-theorem swim_current (m : SwimTransport) : m.current = 19 := by cases m; omega
-theorem swim_capacity (m : SwimTransport) : m.capacity = 36 := by cases m; omega
-theorem swim_solution (m : SwimTransport) : m.additional = 17 := by cases m; omega
+theorem swim_current (m : SwimTransport) : m.current = 19 := by
+  have hCars := m.hCars
+  have hVans := m.hVans
+  have hCarRiders := m.hCarRiders
+  have hVanRiders := m.hVanRiders
+  have hCarCapacity := m.hCarCapacity
+  have hVanCapacity := m.hVanCapacity
+  have hCurrent := m.hCurrent
+  have hCapacity := m.hCapacity
+  have hAdditional := m.hAdditional
+  simp_all <;> omega
+theorem swim_capacity (m : SwimTransport) : m.capacity = 36 := by
+  have hCars := m.hCars
+  have hVans := m.hVans
+  have hCarRiders := m.hCarRiders
+  have hVanRiders := m.hVanRiders
+  have hCarCapacity := m.hCarCapacity
+  have hVanCapacity := m.hVanCapacity
+  have hCurrent := m.hCurrent
+  have hCapacity := m.hCapacity
+  have hAdditional := m.hAdditional
+  simp_all <;> omega
+theorem swim_solution (m : SwimTransport) : m.additional = 17 := by
+  have hCars := m.hCars
+  have hVans := m.hVans
+  have hCarRiders := m.hCarRiders
+  have hVanRiders := m.hVanRiders
+  have hCarCapacity := m.hCarCapacity
+  have hVanCapacity := m.hVanCapacity
+  have hCurrent := m.hCurrent
+  have hCapacity := m.hCapacity
+  have hAdditional := m.hAdditional
+  simp_all <;> omega
 
 structure BirdWatching where
   monday : ℕ
@@ -242,9 +563,24 @@ structure BirdWatching where
   hTuesday : monday = 2 * tuesday
   hWednesday : wednesday = tuesday + 8
   hTotal : total = monday + tuesday + wednesday
-theorem watching_tuesday (m : BirdWatching) : m.tuesday = 35 := by cases m; omega
-theorem watching_wednesday (m : BirdWatching) : m.wednesday = 43 := by cases m; omega
-theorem watching_solution (m : BirdWatching) : m.total = 148 := by cases m; omega
+theorem watching_tuesday (m : BirdWatching) : m.tuesday = 35 := by
+  have hMonday := m.hMonday
+  have hTuesday := m.hTuesday
+  have hWednesday := m.hWednesday
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem watching_wednesday (m : BirdWatching) : m.wednesday = 43 := by
+  have hMonday := m.hMonday
+  have hTuesday := m.hTuesday
+  have hWednesday := m.hWednesday
+  have hTotal := m.hTotal
+  simp_all <;> omega
+theorem watching_solution (m : BirdWatching) : m.total = 148 := by
+  have hMonday := m.hMonday
+  have hTuesday := m.hTuesday
+  have hWednesday := m.hWednesday
+  have hTotal := m.hTotal
+  simp_all <;> omega
 
 structure TextbookSavings where
   schoolPrice : ℕ
@@ -263,9 +599,36 @@ structure TextbookSavings where
   hSchoolTotal : schoolTotal = books * schoolPrice
   hOutsideTotal : outsideTotal = books * outsidePrice
   hSaving : schoolTotal = outsideTotal + totalSaving
-theorem textbook_each_saving (m : TextbookSavings) : m.savingEach = 9 := by cases m; omega
-theorem textbook_outside_price (m : TextbookSavings) : m.outsidePrice = 36 := by cases m; omega
-theorem textbook_solution (m : TextbookSavings) : m.totalSaving = 27 := by cases m; omega
+theorem textbook_each_saving (m : TextbookSavings) : m.savingEach = 9 := by
+  have hSchoolPrice := m.hSchoolPrice
+  have hPercent := m.hPercent
+  have hSavingEach := m.hSavingEach
+  have hOutside := m.hOutside
+  have hBooks := m.hBooks
+  have hSchoolTotal := m.hSchoolTotal
+  have hOutsideTotal := m.hOutsideTotal
+  have hSaving := m.hSaving
+  simp_all <;> omega
+theorem textbook_outside_price (m : TextbookSavings) : m.outsidePrice = 36 := by
+  have hSchoolPrice := m.hSchoolPrice
+  have hPercent := m.hPercent
+  have hSavingEach := m.hSavingEach
+  have hOutside := m.hOutside
+  have hBooks := m.hBooks
+  have hSchoolTotal := m.hSchoolTotal
+  have hOutsideTotal := m.hOutsideTotal
+  have hSaving := m.hSaving
+  simp_all <;> omega
+theorem textbook_solution (m : TextbookSavings) : m.totalSaving = 27 := by
+  have hSchoolPrice := m.hSchoolPrice
+  have hPercent := m.hPercent
+  have hSavingEach := m.hSavingEach
+  have hOutside := m.hOutside
+  have hBooks := m.hBooks
+  have hSchoolTotal := m.hSchoolTotal
+  have hOutsideTotal := m.hOutsideTotal
+  have hSaving := m.hSaving
+  simp_all <;> omega
 
 structure ApartmentSplit where
   oldMonthly : ℕ
@@ -286,9 +649,49 @@ structure ApartmentSplit where
   hOldAnnual : oldAnnual = oldMonthly * months
   hShareAnnual : shareAnnual = shareMonthly * months
   hSaving : oldAnnual = shareAnnual + annualSaving
-theorem apartment_new_monthly (m : ApartmentSplit) : m.newMonthly = 1680 := by cases m; omega
-theorem apartment_share_monthly (m : ApartmentSplit) : m.shareMonthly = 560 := by cases m; omega
-theorem apartment_share_annual (m : ApartmentSplit) : m.shareAnnual = 6720 := by cases m; omega
-theorem apartment_solution (m : ApartmentSplit) : m.annualSaving = 7680 := by cases m; omega
+theorem apartment_new_monthly (m : ApartmentSplit) : m.newMonthly = 1680 := by
+  have hOld := m.hOld
+  have hIncrease := m.hIncrease
+  have hNew := m.hNew
+  have hPeople := m.hPeople
+  have hShare := m.hShare
+  have hMonths := m.hMonths
+  have hOldAnnual := m.hOldAnnual
+  have hShareAnnual := m.hShareAnnual
+  have hSaving := m.hSaving
+  simp_all <;> omega
+theorem apartment_share_monthly (m : ApartmentSplit) : m.shareMonthly = 560 := by
+  have hOld := m.hOld
+  have hIncrease := m.hIncrease
+  have hNew := m.hNew
+  have hPeople := m.hPeople
+  have hShare := m.hShare
+  have hMonths := m.hMonths
+  have hOldAnnual := m.hOldAnnual
+  have hShareAnnual := m.hShareAnnual
+  have hSaving := m.hSaving
+  simp_all <;> omega
+theorem apartment_share_annual (m : ApartmentSplit) : m.shareAnnual = 6720 := by
+  have hOld := m.hOld
+  have hIncrease := m.hIncrease
+  have hNew := m.hNew
+  have hPeople := m.hPeople
+  have hShare := m.hShare
+  have hMonths := m.hMonths
+  have hOldAnnual := m.hOldAnnual
+  have hShareAnnual := m.hShareAnnual
+  have hSaving := m.hSaving
+  simp_all <;> omega
+theorem apartment_solution (m : ApartmentSplit) : m.annualSaving = 7680 := by
+  have hOld := m.hOld
+  have hIncrease := m.hIncrease
+  have hNew := m.hNew
+  have hPeople := m.hPeople
+  have hShare := m.hShare
+  have hMonths := m.hMonths
+  have hOldAnnual := m.hOldAnnual
+  have hShareAnnual := m.hShareAnnual
+  have hSaving := m.hSaving
+  simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0927A13

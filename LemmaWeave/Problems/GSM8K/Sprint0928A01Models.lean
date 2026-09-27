@@ -148,8 +148,8 @@ theorem flowers_per_day (m : FlowersModel) : m.perPersonPerDay = 20 := by
   have ht := m.hTotal
   have he := m.hEqualWork
   rw [hp, hd, ht] at he
-  norm_num at he ⊢
-  exact he
+  norm_num at he
+  omega
 
 theorem flowers_solution (m : FlowersModel) : m.perPersonPerDay = 20 := by
   exact flowers_per_day m

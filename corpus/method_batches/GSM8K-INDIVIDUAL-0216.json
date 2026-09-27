@@ -11,7 +11,7 @@
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "semantic_review_status": "self_review_only",
-  "semantic_model_hash": "1de50b621f353dc1803082d0847cb1590f7baa39d9a70b3d2b57b6e6ea2e1982",
+  "semantic_model_hash": "23893a4f431136c313e893a3841a1baf9e6be6bce5cc503d790a82f655706262",
   "model_files": [
     "LemmaWeave/Problems/GSM8K/Sprint0928A00Models.lean"
   ],
@@ -150,6 +150,82 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02721",
+      "source_line_1based": 2722,
+      "source_record_sha256": "8f3f5241f754159e526b2bf05b35fb3f02629f0e73f69d2d1ba19a83f8a0adfc",
+      "raw_question_sha256": "9671b3451dabd0d45e1274b6913274687454bb72c306169a054e99c1c1126a20",
+      "normalized_question_sha256": "9671b3451dabd0d45e1274b6913274687454bb72c306169a054e99c1c1126a20",
+      "source_question": "Every time she goes to the store, Felicity gets a lollipop. After she finishes them, she uses the sticks to build a fort. The fort needs 400 sticks to finish it. Her family goes to the store three times a week and she always goes. If the fort is 60% complete, how many weeks has Felicity been collecting lollipops for?",
+      "recipe_id": "gsm8k_sprint162_fort",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "60%を3/5として、棒の本数が整数になる等式で表す。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02722",
+      "source_line_1based": 2723,
+      "source_record_sha256": "13143b248ac258eae1d83a470d771eb66ea74549d7224a55ef2226b8da20a2c8",
+      "raw_question_sha256": "3774d88c470c1eda53306b252c8d58d61ea2e786233bddae3d927715587fde99",
+      "normalized_question_sha256": "3774d88c470c1eda53306b252c8d58d61ea2e786233bddae3d927715587fde99",
+      "source_question": "Jim is wondering how many miles each gallon of gas gets him. His gas tank is 12 gallons. He has 2/3 of a tank left after he drives to and from work, which is 10 miles away from his house. How many miles per gallon does he get?",
+      "recipe_id": "gsm8k_sprint162_gas",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "消費量は満タンの1/3、走行距離は往復20マイル。燃費は距離÷消費ガロンで定義する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02723",
+      "source_line_1based": 2724,
+      "source_record_sha256": "fcc034de3810a24152f2aa61410b3a92d1734011c4cd722ff5526957808bab88",
+      "raw_question_sha256": "3423253d16422d75437c59bcfca40e535723b0ff8cf9e1f5e2decd2b3d29b7f6",
+      "normalized_question_sha256": "3423253d16422d75437c59bcfca40e535723b0ff8cf9e1f5e2decd2b3d29b7f6",
+      "source_question": "The length of the straight part of a river is three times shorter than the crooked part. If the river is 80 miles long, how long is the straight part of the river?",
+      "recipe_id": "gsm8k_sprint162_river",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_model",
+      "modeling_notes_ja": [
+        "“three times shorter”は曖昧で一意な数学関係を定めない。ここではデータセット参考解答の追加条件「曲線部=直線部の3倍」の下で20マイルを示す。",
+        "別解釈「直線部は曲線部より1/3短い」なら直線部=(2/3)曲線部となり、直線部32マイル・曲線部48マイルである。"
+      ],
+      "blockers": [
+        "semantic_ambiguity"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02724",
+      "source_line_1based": 2725,
+      "source_record_sha256": "6663b0b259bf86eed712ff026dbeb26279f9a476501d3326a0390a0d81f5ff57",
+      "raw_question_sha256": "5133220dc5ee81f0f83e78ead0839a38ce72b3d62d10debc9d68f592c0a12ed0",
+      "normalized_question_sha256": "5133220dc5ee81f0f83e78ead0839a38ce72b3d62d10debc9d68f592c0a12ed0",
+      "source_question": "Jimmy is setting up a garden. He has three plots: one plot for green beans, one plot for carrots, and one plot for corn. Each corn plant produces 5 times as many servings of veggies as each carrot, and each green bean plant produces half as many servings as each corn plant. If each carrot produces 4 servings of vegetables, and each plot has 9 plants, how many servings of vegetables is Jimmy growing?",
+      "recipe_id": "gsm8k_sprint162_garden",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02725",
+      "source_line_1based": 2726,
+      "source_record_sha256": "c52d16aaecfa302745fefb2a340614051f31f249146cf88098f61d705598aa88",
+      "raw_question_sha256": "f4ee91919520e546e5450da3032a747409ecc1757dac458d51bb8e84a9970539",
+      "normalized_question_sha256": "f4ee91919520e546e5450da3032a747409ecc1757dac458d51bb8e84a9970539",
+      "source_question": "Tenisha had 40 dogs that she kept at home as pets. If 60% of them are female, and 3/4 of the female gives birth to 10 puppies each, calculate the total number of puppies that Tenisha remains with after donating 130 puppies to the church.",
+      "recipe_id": "gsm8k_sprint162_puppies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "割合60%=3/5、3/4を整数方程式で表し、出生数と寄付後残数を区別する。"
+      ],
       "blockers": []
     }
   ]

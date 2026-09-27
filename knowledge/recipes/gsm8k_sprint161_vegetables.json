@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint161_vegetables",
+  "title_ja": "週あたりの平均野菜回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02700",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "200点必要で1回2点、25人、2週間で達成する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A20.vegetables_solution",
+  "graph": "work/gsm8k-sprint161-vegetables-graph.json",
+  "model_notes_ja": [
+    "野菜の個数ではなく、昼食で野菜を食べて2点を得る回数を数える。"
+  ],
+  "steps": [
+    {
+      "id": "vegetables_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.vegetables_total",
+      "title_ja": "クラス全体で100回必要",
+      "claim_ja": "クラス全体で100回必要",
+      "method_ja": "200点を1回2点で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "野菜の個数ではなく、昼食で野菜を食べて2点を得る回数を数える。",
+      "conclusion_ja": "クラス全体で100回必要",
+      "baseline_ja": "クラス全体で100回必要"
+    },
+    {
+      "id": "vegetables_per_student",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.vegetables_per_student",
+      "title_ja": "1人あたり2週間で4回",
+      "claim_ja": "1人あたり2週間で4回",
+      "method_ja": "100回を25人で等分する",
+      "requires_steps": [
+        "vegetables_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "野菜の個数ではなく、昼食で野菜を食べて2点を得る回数を数える。",
+      "conclusion_ja": "1人あたり2週間で4回",
+      "baseline_ja": "1人あたり2週間で4回"
+    },
+    {
+      "id": "vegetables_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.vegetables_solution",
+      "title_ja": "1人あたり週2回",
+      "claim_ja": "1人あたり週2回",
+      "method_ja": "4回を2週間で等分する",
+      "requires_steps": [
+        "vegetables_per_student"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "野菜の個数ではなく、昼食で野菜を食べて2点を得る回数を数える。",
+      "conclusion_ja": "1人あたり週2回",
+      "baseline_ja": "1人あたり週2回"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2701,
+    "checked_model_hash": "8d7fbfbc766babcae24a7e271d229ec0afc640cd67c6b41e767e4de45bba9094",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

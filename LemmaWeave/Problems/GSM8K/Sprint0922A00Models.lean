@@ -243,7 +243,8 @@ structure DuctTape where
 
 theorem tape_combined (m : DuctTape) : m.combined = 11 := by rw [m.hCombined] <;> norm_num
 theorem tape_solution (m : DuctTape) : m.minutes = 2 := by
-  have h : m.minutes * 11 = 22 := by rw [m.hTime, tape_combined m]
+  have h := m.hTime
+  rw [tape_combined m] at h
   omega
 
 structure Inheritance where

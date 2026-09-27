@@ -22,7 +22,6 @@ theorem car_first_earn (m : CarOffers) : m.firstEarn = 4680 := by
   omega
 theorem car_tires (m : CarOffers) : m.tireCost = 240 := by
   rw [m.hTires]
-  norm_num
 theorem car_second_earn (m : CarOffers) : m.secondEarn = 4880 := by
   have h := m.hSecond
   rw [car_tires m] at h
@@ -279,4 +278,3 @@ theorem soccer_solution (m : Soccer) (hAllNew : m.secondNew = m.secondEvents) : 
   omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0922A13
-

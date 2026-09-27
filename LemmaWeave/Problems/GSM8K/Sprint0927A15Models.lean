@@ -120,4 +120,58 @@ theorem salon_dye_revenue (m : SalonDay) : m.dyeRevenue = 120 := by cases m; ome
 theorem salon_dye_cost (m : SalonDay) : m.dyeCost = 20 := by cases m; omega
 theorem salon_solution (m : SalonDay) : m.net = 310 := by cases m; omega
 
+structure PrepSchool where
+  semester semesters annual years total : ℕ
+  hSemester : semester = 20000
+  hSemesters : semesters = 2
+  hAnnual : annual = semester * semesters
+  hYears : years = 13
+  hTotal : total = annual * years
+theorem school_annual (m : PrepSchool) : m.annual = 40000 := by cases m; omega
+theorem school_solution (m : PrepSchool) : m.total = 520000 := by cases m; omega
+
+structure ParkSnakes where
+  boas pythons total rattlesnakes : ℕ
+  hBoas : boas = 40
+  hPythons : pythons = 3 * boas
+  hTotal : total = 200
+  hSum : total = boas + pythons + rattlesnakes
+theorem snakes_pythons (m : ParkSnakes) : m.pythons = 120 := by cases m; omega
+theorem snakes_solution (m : ParkSnakes) : m.rattlesnakes = 40 := by cases m; omega
+
+structure SiblingAges where
+  halimaRatio beckhamRatio gurmeetRatio scale total halima beckham difference : ℕ
+  hHalimaRatio : halimaRatio = 4
+  hBeckhamRatio : beckhamRatio = 3
+  hGurmeetRatio : gurmeetRatio = 7
+  hTotal : total = 126
+  hRatioTotal : total = (halimaRatio + beckhamRatio + gurmeetRatio) * scale
+  hHalima : halima = halimaRatio * scale
+  hBeckham : beckham = beckhamRatio * scale
+  hDifference : halima = beckham + difference
+theorem ages_scale (m : SiblingAges) : m.scale = 9 := by cases m; omega
+theorem ages_halima (m : SiblingAges) : m.halima = 36 := by cases m; omega
+theorem ages_beckham (m : SiblingAges) : m.beckham = 27 := by cases m; omega
+theorem ages_solution (m : SiblingAges) : m.difference = 9 := by cases m; omega
+
+structure CardDiscount where
+  price discount each cards total : ℕ
+  hPrice : price = 12
+  hDiscount : discount = 2
+  hEach : price = discount + each
+  hCards : cards = 10
+  hTotal : total = cards * each
+theorem cards_each (m : CardDiscount) : m.each = 10 := by cases m; omega
+theorem cards_solution (m : CardDiscount) : m.total = 100 := by cases m; omega
+
+structure CurrencyTotal where
+  dollars euros dollarsPerEuro converted total : ℕ
+  hDollars : dollars = 45
+  hEuros : euros = 36
+  hRate : dollarsPerEuro = 2
+  hConverted : converted = euros * dollarsPerEuro
+  hTotal : total = dollars + converted
+theorem currency_converted (m : CurrencyTotal) : m.converted = 72 := by cases m; omega
+theorem currency_solution (m : CurrencyTotal) : m.total = 117 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A15

@@ -130,4 +130,134 @@ theorem doughnuts_left (m : DoughnutsModel) : m.left = 12 := by
 theorem doughnuts_solution (m : DoughnutsModel) : m.left = 12 := by
   exact doughnuts_left m
 
+structure WeightsModel where
+  al : Nat
+  ben : Nat
+  carl : Nat
+  hEdToAl : 146 + 38 = al
+  hBenToAl : ben + 25 = al
+  hBenToCarl : ben + 16 = carl
+
+theorem weights_al (m : WeightsModel) : m.al = 184 := by
+  have h := m.hEdToAl
+  omega
+
+theorem weights_ben (m : WeightsModel) : m.ben = 159 := by
+  have ha := weights_al m
+  have h := m.hBenToAl
+  omega
+
+theorem weights_carl (m : WeightsModel) : m.carl = 175 := by
+  have hb := weights_ben m
+  have h := m.hBenToCarl
+  omega
+
+theorem weights_solution (m : WeightsModel) : m.carl = 175 := by
+  exact weights_carl m
+
+structure StampsModel where
+  nelly : Nat
+  total : Nat
+  hNelly : nelly = 34 + 44
+  hTotal : total = 34 + nelly
+
+theorem stamps_nelly (m : StampsModel) : m.nelly = 78 := by
+  have h := m.hNelly
+  omega
+
+theorem stamps_total (m : StampsModel) : m.total = 112 := by
+  have hn := stamps_nelly m
+  have h := m.hTotal
+  omega
+
+theorem stamps_solution (m : StampsModel) : m.total = 112 := by
+  exact stamps_total m
+
+structure BookModel where
+  decrease : Nat
+  reduced : Nat
+  increase : Nat
+  finalPrice : Nat
+  hDecrease : 100 * decrease = 15 * 400
+  hReduced : reduced + decrease = 400
+  hIncrease : 100 * increase = 40 * reduced
+  hFinal : finalPrice = reduced + increase
+
+theorem book_reduced (m : BookModel) : m.reduced = 340 := by
+  have hd := m.hDecrease
+  have hr := m.hReduced
+  omega
+
+theorem book_increase (m : BookModel) : m.increase = 136 := by
+  have hr := book_reduced m
+  have h := m.hIncrease
+  omega
+
+theorem book_final (m : BookModel) : m.finalPrice = 476 := by
+  have hr := book_reduced m
+  have hi := book_increase m
+  have h := m.hFinal
+  omega
+
+theorem book_solution (m : BookModel) : m.finalPrice = 476 := by
+  exact book_final m
+
+structure BasketsModel where
+  sandra : Nat
+  hector : Nat
+  total : Nat
+  hSandra : sandra = 3 * 8
+  hHector : hector = 2 * sandra
+  hTotal : total = 8 + sandra + hector
+
+theorem baskets_sandra (m : BasketsModel) : m.sandra = 24 := by
+  have h := m.hSandra
+  omega
+
+theorem baskets_hector (m : BasketsModel) : m.hector = 48 := by
+  have hs := baskets_sandra m
+  have h := m.hHector
+  omega
+
+theorem baskets_total (m : BasketsModel) : m.total = 80 := by
+  have hs := baskets_sandra m
+  have hh := baskets_hector m
+  have h := m.hTotal
+  omega
+
+theorem baskets_solution (m : BasketsModel) : m.total = 80 := by
+  exact baskets_total m
+
+structure ZoeEarningsModel where
+  julieEarnings : Nat
+  chloeEarnings : Nat
+  babysittingTotal : Nat
+  poolCleaning : Nat
+  hJulieEqualRate : julieEarnings = 3 * 600
+  hChloeEqualRate : chloeEarnings = 5 * 600
+  hBabysitting : babysittingTotal = 600 + julieEarnings + chloeEarnings
+  hTotal : poolCleaning + babysittingTotal = 8000
+
+theorem zoe_equal_rate_babysitting (m : ZoeEarningsModel) :
+    m.babysittingTotal = 5400 := by
+  have hj := m.hJulieEqualRate
+  have hc := m.hChloeEqualRate
+  have h := m.hBabysitting
+  omega
+
+theorem zoe_equal_rate_pool (m : ZoeEarningsModel) : m.poolCleaning = 2600 := by
+  have hb := zoe_equal_rate_babysitting m
+  have h := m.hTotal
+  omega
+
+theorem zoe_unequal_rate_counterexample :
+    (600 : Nat) + 600 + 500 + 6300 = 8000 := by
+  norm_num
+
+theorem zoe_solution (m : ZoeEarningsModel) :
+    m.poolCleaning = 2600 ∧ (600 : Nat) + 600 + 500 + 6300 = 8000 := by
+  constructor
+  · exact zoe_equal_rate_pool m
+  · exact zoe_unequal_rate_counterexample
+
 end LemmaWeave.Problems.GSM8K.Sprint0928A02

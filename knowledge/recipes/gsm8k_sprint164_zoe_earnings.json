@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint164_zoe_earnings",
+  "title_ja": "プール清掃収入と報酬条件",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02750",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "conditional_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "総収入8000ドルからベビーシッター収入を引く。ただし回数比から収入比を得るには同一単価条件が必要。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A02.zoe_earnings_solution",
+  "graph": "work/gsm8k-sprint164-zoe_earnings-graph.json",
+  "model_notes_ja": [
+    "訪問回数の比から収入の比を導くには、相手ごとの1回当たり報酬が等しいという追加条件が必要。",
+    "同一単価なら2600ドル。相手ごとの単価が異なる反例として清掃収入6300ドルも総額8000ドルと両立する。"
+  ],
+  "steps": [
+    {
+      "id": "zoe_equal_rate_babysitting",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.zoe_equal_rate_babysitting",
+      "title_ja": "同一単価ならベビーシッター収入は5400ドル",
+      "claim_ja": "600+3×600+5×600=5400",
+      "method_ja": "600+3×600+5×600=5400",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "収入比を回数比と同じにする箇所では、1回当たり報酬が相手によらず等しいという追加条件を明示する。",
+      "conclusion_ja": "600+3×600+5×600=5400",
+      "baseline_ja": "600+3×600+5×600=5400"
+    },
+    {
+      "id": "zoe_equal_rate_pool",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.zoe_equal_rate_pool",
+      "title_ja": "同一単価なら清掃収入は2600ドル",
+      "claim_ja": "8000-5400=2600",
+      "method_ja": "8000-5400=2600",
+      "requires_steps": [
+        "zoe_equal_rate_babysitting"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "収入比を回数比と同じにする箇所では、1回当たり報酬が相手によらず等しいという追加条件を明示する。",
+      "conclusion_ja": "8000-5400=2600",
+      "baseline_ja": "8000-5400=2600"
+    },
+    {
+      "id": "zoe_unequal_rate_counterexample",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.zoe_unequal_rate_counterexample",
+      "title_ja": "単価が違えば清掃収入6300ドルも可能",
+      "claim_ja": "600+600+500+6300=8000",
+      "method_ja": "600+600+500+6300=8000",
+      "requires_steps": [
+        "zoe_equal_rate_pool"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "収入比を回数比と同じにする箇所では、1回当たり報酬が相手によらず等しいという追加条件を明示する。",
+      "conclusion_ja": "600+600+500+6300=8000",
+      "baseline_ja": "600+600+500+6300=8000"
+    },
+    {
+      "id": "zoe_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.zoe_solution",
+      "title_ja": "条件不足と条件付き解を併記",
+      "claim_ja": "同一単価を追加した答え2600と反例6300を分離する",
+      "method_ja": "同一単価を追加した答え2600と反例6300を分離する",
+      "requires_steps": [
+        "zoe_unequal_rate_counterexample"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "収入比を回数比と同じにする箇所では、1回当たり報酬が相手によらず等しいという追加条件を明示する。",
+      "conclusion_ja": "同一単価を追加した答え2600と反例6300を分離する",
+      "baseline_ja": "同一単価を追加した答え2600と反例6300を分離する"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2751,
+    "checked_model_hash": "f32b73b732f7b98644e11bb0aa6f12c4d921d8e6a4e614c3cb8b770ccedb4f48",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

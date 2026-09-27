@@ -11,3 +11,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A02.fetch_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A02.doughnuts_solution to "work/gsm8k-sprint164-doughnuts-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A02.doughnuts_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A02.weights_solution to "work/gsm8k-sprint164-weights-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A02.weights_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A02.stamps_solution to "work/gsm8k-sprint164-stamps-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A02.stamps_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A02.book_solution to "work/gsm8k-sprint164-book-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A02.book_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A02.baskets_solution to "work/gsm8k-sprint164-baskets-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A02.baskets_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A02.zoe_earnings_solution to "work/gsm8k-sprint164-zoe_earnings-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A02.zoe_earnings_solution

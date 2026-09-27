@@ -80,6 +80,77 @@
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [],
       "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02746",
+      "source_line_1based": 2747,
+      "source_record_sha256": "61e7dec23527c1c6ddbb903a0ad48eecce35782a050d9166ce2efdcc36170b6e",
+      "raw_question_sha256": "e5be27e9e1c10fa8062e790db7142336f5f453dd96c9276eeb71cf2022da874b",
+      "normalized_question_sha256": "e5be27e9e1c10fa8062e790db7142336f5f453dd96c9276eeb71cf2022da874b",
+      "source_question": "Al is 25 pounds heavier than Ben. Ben is 16 pounds lighter than Carl. If Ed weighs 146 pounds and is 38 pounds lighter than Al, find the weight of Carl.",
+      "recipe_id": "gsm8k_sprint164_weights",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02747",
+      "source_line_1based": 2748,
+      "source_record_sha256": "ec5481951e0fac26507182efe5d6b80e3339e6adff96f46e4e14011b5028368e",
+      "raw_question_sha256": "b7f5fab7f48761e1350634d78d2eeeb11e193c586824c6a3523a33a3932c734a",
+      "normalized_question_sha256": "b7f5fab7f48761e1350634d78d2eeeb11e193c586824c6a3523a33a3932c734a",
+      "source_question": "Kylie has 34 stamps in her collection. Her friend, Nelly, has 44 more stamps than Kylie. How many stamps do Kylie and Nelly have together?",
+      "recipe_id": "gsm8k_sprint164_stamps",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02748",
+      "source_line_1based": 2749,
+      "source_record_sha256": "15b9961614cae93c6d2a3896884cc09533f6637e484fa95f92145c643ebf569c",
+      "raw_question_sha256": "b665d7f51235e8a61a2eea11e0c9628dfe537f64d932463392f1614d3fc6acd3",
+      "normalized_question_sha256": "b665d7f51235e8a61a2eea11e0c9628dfe537f64d932463392f1614d3fc6acd3",
+      "source_question": "The price of a book was $400. If the book's price is decreased by 15% and then increased by 40%, what is the final price of the book?",
+      "recipe_id": "gsm8k_sprint164_book",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02749",
+      "source_line_1based": 2750,
+      "source_record_sha256": "529af000e915009e9d9df9762e65bc6d284cc1e376a096b3621ff624a23ed1a0",
+      "raw_question_sha256": "e4f4a24649b49ed96390089caf2a9334d4f3430f3b9872344ad914c2dfe56fdd",
+      "normalized_question_sha256": "e4f4a24649b49ed96390089caf2a9334d4f3430f3b9872344ad914c2dfe56fdd",
+      "source_question": "Alex and his friend had a free throw contest. Alex made 8 baskets. Sandra made three times as many baskets as Alex and Hector made two times the number of baskets that Sandra made. How many baskets did they make in total?",
+      "recipe_id": "gsm8k_sprint164_baskets",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02750",
+      "source_line_1based": 2751,
+      "source_record_sha256": "4349dd29ceecdc203caca2cbe529bfe17404d1398ff2cee4adf00c1b5b308252",
+      "raw_question_sha256": "05b59b0f808ef9593586b73ec4ee12aa627bb865a88dab23910ce61a95fbfbc8",
+      "normalized_question_sha256": "05b59b0f808ef9593586b73ec4ee12aa627bb865a88dab23910ce61a95fbfbc8",
+      "source_question": "Zoe made a total of $8,000 cleaning pools and babysitting. She babysat Julie three times as often as she babysat Zachary. The number of times she babysat Zachary was 1/5 the number of times she babysat Chloe. If Zoe made $600 babysitting Zachary, how much did she earn from pool cleaning?",
+      "recipe_id": "gsm8k_sprint164_zoe_earnings",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_model",
+      "modeling_notes_ja": [
+        "訪問回数の比から収入の比を導くには、相手ごとの1回当たり報酬が等しいという追加条件が必要。",
+        "同一単価なら2600ドル。相手ごとの単価が異なる反例として清掃収入6300ドルも総額8000ドルと両立する。"
+      ],
+      "blockers": [
+        "missing_equal_rate_assumption",
+        "semantic_ambiguity"
+      ]
     }
   ]
 }

@@ -192,4 +192,91 @@ theorem coins_solution (m : CoinPayments) : m.total = 660 := by
   have h2 := m.hTotal
   omega
 
+structure SweetShares where
+  total : ℕ
+  each : ℕ
+  hTotal : total = 212 + 310 + 502
+  hSplit : total = 4 * each
+theorem sweets_total (m : SweetShares) : m.total = 1024 := by
+  have h := m.hTotal
+  omega
+theorem sweets_solution (m : SweetShares) : m.each = 256 := by
+  have h1 := m.hTotal
+  have h2 := m.hSplit
+  omega
+
+structure TicketPrice where
+  adultTotal : ℕ
+  childTotal : ℕ
+  childPrice : ℕ
+  hAdults : adultTotal = 10 * 8
+  hBill : adultTotal + childTotal = 124
+  hChildren : childTotal = 11 * childPrice
+theorem tickets_adults (m : TicketPrice) : m.adultTotal = 80 := by
+  have h := m.hAdults
+  omega
+theorem tickets_children (m : TicketPrice) : m.childTotal = 44 := by
+  have h1 := m.hAdults
+  have h2 := m.hBill
+  omega
+theorem tickets_solution (m : TicketPrice) : m.childPrice = 4 := by
+  have h1 := m.hAdults
+  have h2 := m.hBill
+  have h3 := m.hChildren
+  omega
+
+structure PizzaConsumption where
+  pieces : ℕ
+  pizzas : ℕ
+  hPieces : pieces = 72 * 3
+  hPizzas : pieces = 8 * pizzas
+theorem consumption_pieces (m : PizzaConsumption) : m.pieces = 216 := by
+  have h := m.hPieces
+  omega
+theorem consumption_solution (m : PizzaConsumption) : m.pizzas = 27 := by
+  have h1 := m.hPieces
+  have h2 := m.hPizzas
+  omega
+
+structure BowlingAverage where
+  sum : ℕ
+  average : ℕ
+  hSum : sum = 120 + 113 + 85
+  hAverage : sum = 3 * average
+theorem bowling_sum (m : BowlingAverage) : m.sum = 318 := by
+  have h := m.hSum
+  omega
+theorem bowling_solution (m : BowlingAverage) : m.average = 106 := by
+  have h1 := m.hSum
+  have h2 := m.hAverage
+  omega
+
+structure ArtifactSearch where
+  firstMonths : ℕ
+  secondMonths : ℕ
+  totalMonths : ℕ
+  years : ℕ
+  hFirst : firstMonths = 6 + 24
+  hSecond : secondMonths = 3 * firstMonths
+  hTotal : totalMonths = firstMonths + secondMonths
+  hYears : totalMonths = 12 * years
+theorem artifacts_first (m : ArtifactSearch) : m.firstMonths = 30 := by
+  have h := m.hFirst
+  omega
+theorem artifacts_second (m : ArtifactSearch) : m.secondMonths = 90 := by
+  have h1 := m.hFirst
+  have h2 := m.hSecond
+  omega
+theorem artifacts_months (m : ArtifactSearch) : m.totalMonths = 120 := by
+  have h1 := m.hFirst
+  have h2 := m.hSecond
+  have h3 := m.hTotal
+  omega
+theorem artifacts_solution (m : ArtifactSearch) : m.years = 10 := by
+  have h1 := m.hFirst
+  have h2 := m.hSecond
+  have h3 := m.hTotal
+  have h4 := m.hYears
+  omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A18

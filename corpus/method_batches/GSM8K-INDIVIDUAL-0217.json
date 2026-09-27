@@ -151,6 +151,83 @@
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [],
       "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02736",
+      "source_line_1based": 2737,
+      "source_record_sha256": "a4338967a9d51fc49e04c0abcc772c9a239531611d0be673c709b3c747d3d394",
+      "raw_question_sha256": "9fafdce145125f3861decaa366b08b99c036859b2be710cbadf52ebd8861c8ba",
+      "normalized_question_sha256": "4c64cf9a6dd1bb19b345e7683f97aaac1120f3774f9235d2c13e95f7b2700192",
+      "source_question": "Paul lives in a 5th story apartment.  He makes 3 trips out from and back to his apartment throughout the day each day of a week.  How many feet does he travel vertically in total over the week if each story is 10 feet tall?",
+      "recipe_id": "gsm8k_sprint163_apartment",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_model",
+      "modeling_notes_ja": [
+        "参考解答の5区間なら2100フィート、1階を地上階とする4区間なら1680フィート。"
+      ],
+      "blockers": [
+        "semantic_ambiguity"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02737",
+      "source_line_1based": 2738,
+      "source_record_sha256": "8d91987774bbf3d008270bf4cae02cdba77dc1c01e977bc188e1a5b61da41058",
+      "raw_question_sha256": "7f26d8a87819c4c29a5ac460f2cfd2a1d505eafab7a408727b188251b35998dd",
+      "normalized_question_sha256": "7f26d8a87819c4c29a5ac460f2cfd2a1d505eafab7a408727b188251b35998dd",
+      "source_question": "On Monday a group of 7 children and 5 adults went to the zoo. On Tuesday a group of 4 children and 2 adults went as well. Child tickets cost $3, and adult tickets cost $4. How much money did the zoo make in total for both days?",
+      "recipe_id": "gsm8k_sprint163_zoo",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02738",
+      "source_line_1based": 2739,
+      "source_record_sha256": "ae6f3027387ed4a762751249633ee91d98db8054ba1737716a849f3556653616",
+      "raw_question_sha256": "3e7d2395fa2addd69875c591382499fa001cf1094d19b0d1a7c93946235a3d7e",
+      "normalized_question_sha256": "3e7d2395fa2addd69875c591382499fa001cf1094d19b0d1a7c93946235a3d7e",
+      "source_question": "Marj has two $20 bills, three $5 bills, and $4.50 in loose coins in her wallet. If she buys a cake that costs $17.50, how much money will be left in her wallet?",
+      "recipe_id": "gsm8k_sprint163_wallet",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "金額はセント単位の自然数で表す。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02739",
+      "source_line_1based": 2740,
+      "source_record_sha256": "3af033209e0e862b730e6c68ab6befc8b046b7595e986390cdf8a6626bb00250",
+      "raw_question_sha256": "43e8699342380d2520e4a3a0438a31e8264b5c9442608d6241dd1cb2c2bdef84",
+      "normalized_question_sha256": "43e8699342380d2520e4a3a0438a31e8264b5c9442608d6241dd1cb2c2bdef84",
+      "source_question": "Legacy has 5 bars of gold she received from her father. Her friend Aleena has 2 bars fewer than she has. If a bar of gold is worth $2200, calculate the total value of gold the three have together.",
+      "recipe_id": "gsm8k_sprint163_gold",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_model",
+      "modeling_notes_ja": [
+        "第三者の保有本数が未指定。0本なら17600ドル、1本なら19800ドルで一意に決まらない。"
+      ],
+      "blockers": [
+        "semantic_ambiguity"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02740",
+      "source_line_1based": 2741,
+      "source_record_sha256": "bc63d60269f90501b1af872d640c0fee53e4e6b59a2d0b2210281f8b5275a0bf",
+      "raw_question_sha256": "de2922b839c15244b1594342429542836ff9de9dc782886f922dad58e31e8ec1",
+      "normalized_question_sha256": "56799245de8ce8080fb4c421c7ee4bc943367287e203725dfe6f878911a93604",
+      "source_question": "Without factoring in the cost of depreciation for his car John made $30,000 doing Uber.  When he finally traded in the car he bought for $18,000 he got $6000 back.  What was his profit from driving Uber?",
+      "recipe_id": "gsm8k_sprint163_uber",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文で与えられた費用は車の減価償却のみ。"
+      ],
+      "blockers": []
     }
   ]
 }

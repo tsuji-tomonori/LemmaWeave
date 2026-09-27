@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint163_uber",
+  "title_ja": "Uber運転の減価償却後利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02740",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Uber収入30000ドル。18000ドルで買った車を6000ドルで下取りしたときの利益を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.uber_solution",
+  "graph": "work/gsm8k-sprint163-uber-graph.json",
+  "model_notes_ja": [
+    "燃料・保険等は原文で与えられず、車の減価償却だけを収入から引く。"
+  ],
+  "steps": [
+    {
+      "id": "uber_depreciation",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.uber_depreciation",
+      "title_ja": "減価償却は12000ドル",
+      "claim_ja": "車の価値減少12000ドル",
+      "method_ja": "18000-6000",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "燃料・保険等は原文で与えられず、車の減価償却だけを収入から引く。",
+      "conclusion_ja": "車の価値減少12000ドル",
+      "baseline_ja": "車の価値減少12000ドル"
+    },
+    {
+      "id": "uber_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.uber_solution",
+      "title_ja": "利益は18000ドル",
+      "claim_ja": "利益18000ドル",
+      "method_ja": "30000-12000",
+      "requires_steps": [
+        "uber_depreciation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "燃料・保険等は原文で与えられず、車の減価償却だけを収入から引く。",
+      "conclusion_ja": "利益18000ドル",
+      "baseline_ja": "利益18000ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2741,
+    "checked_model_hash": "ee3d72b1cd40386e72b9fe569d315b48bcca70ec75c6d4a32aa237512d5c2e95",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

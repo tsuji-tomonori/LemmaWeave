@@ -21,3 +21,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A01.leaves_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A01.wages_solution to "work/gsm8k-sprint163-wages-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A01.wages_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A01.apartment_solution to "work/gsm8k-sprint163-apartment-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A01.apartment_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A01.zoo_solution to "work/gsm8k-sprint163-zoo-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A01.zoo_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A01.wallet_solution to "work/gsm8k-sprint163-wallet-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A01.wallet_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A01.gold_solution to "work/gsm8k-sprint163-gold-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A01.gold_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A01.uber_solution to "work/gsm8k-sprint163-uber-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A01.uber_solution

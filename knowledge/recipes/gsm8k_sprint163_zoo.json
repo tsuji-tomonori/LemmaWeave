@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint163_zoo",
+  "title_ja": "2日間の動物園入場料",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02737",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "月曜は子7人・大人5人、火曜は子4人・大人2人。子3ドル・大人4ドルの総額を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.zoo_solution",
+  "graph": "work/gsm8k-sprint163-zoo-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "zoo_children",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.zoo_children_revenue",
+      "title_ja": "子ども分33ドル",
+      "claim_ja": "子ども11人で33ドル",
+      "method_ja": "(7+4)×3",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "子ども11人で33ドル",
+      "baseline_ja": "子ども11人で33ドル"
+    },
+    {
+      "id": "zoo_adults",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.zoo_adult_revenue",
+      "title_ja": "大人分28ドル",
+      "claim_ja": "大人7人で28ドル",
+      "method_ja": "(5+2)×4",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "大人7人で28ドル",
+      "baseline_ja": "大人7人で28ドル"
+    },
+    {
+      "id": "zoo_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.zoo_solution",
+      "title_ja": "合計61ドル",
+      "claim_ja": "総額61ドル",
+      "method_ja": "33+28",
+      "requires_steps": [
+        "zoo_children",
+        "zoo_adults"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "総額61ドル",
+      "baseline_ja": "総額61ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2738,
+    "checked_model_hash": "ee3d72b1cd40386e72b9fe569d315b48bcca70ec75c6d4a32aa237512d5c2e95",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

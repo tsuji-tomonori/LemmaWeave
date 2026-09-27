@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint154_scores",
+  "title_ja": "4科目の総得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02596",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "地理50、数学70、英語66。歴史はこの3科目の平均。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A11.scores_solution",
+  "graph": "work/gsm8k-sprint154-scores-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "scores_first_three",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.scores_first_three",
+      "title_ja": "最初の3科目は186点",
+      "claim_ja": "最初の3科目は186点",
+      "method_ja": "50・70・66を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最初の3科目は186点",
+      "baseline_ja": "最初の3科目は186点"
+    },
+    {
+      "id": "scores_history",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.scores_history",
+      "title_ja": "歴史は62点",
+      "claim_ja": "歴史は62点",
+      "method_ja": "186点を3科目で割る",
+      "requires_steps": [
+        "scores_first_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "歴史は62点",
+      "baseline_ja": "歴史は62点"
+    },
+    {
+      "id": "scores_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.scores_solution",
+      "title_ja": "4科目合計は248点",
+      "claim_ja": "4科目合計は248点",
+      "method_ja": "186点へ62点を足す",
+      "requires_steps": [
+        "scores_history"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "4科目合計は248点",
+      "baseline_ja": "4科目合計は248点"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2597,
+    "checked_model_hash": "7603f810b51d39a7655bac595d8a7c44f1e78e39713596c6cb2769150d8204c8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

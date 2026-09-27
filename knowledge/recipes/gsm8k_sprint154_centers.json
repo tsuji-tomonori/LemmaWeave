@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint154_centers",
+  "title_ja": "4人の訪問施設総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02597",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lisa6、JudeはLisaの半分、HanはJudeの2倍より2少なく、JaneはHanの2倍より6多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A11.centers_solution",
+  "graph": "work/gsm8k-sprint154-centers-graph.json",
+  "model_notes_ja": [
+    "half fewer はLisaの数の半分、すなわち6から50%減の3と解釈する。"
+  ],
+  "steps": [
+    {
+      "id": "centers_jude",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.centers_jude",
+      "title_ja": "Judeは3施設",
+      "claim_ja": "Judeは3施設",
+      "method_ja": "Lisa6施設の半分を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "half fewer はLisaの数の半分、すなわち6から50%減の3と解釈する。",
+      "conclusion_ja": "Judeは3施設",
+      "baseline_ja": "Judeは3施設"
+    },
+    {
+      "id": "centers_han",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.centers_han",
+      "title_ja": "Hanは4施設",
+      "claim_ja": "Hanは4施設",
+      "method_ja": "Jude3の2倍から2を引く",
+      "requires_steps": [
+        "centers_jude"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "half fewer はLisaの数の半分、すなわち6から50%減の3と解釈する。",
+      "conclusion_ja": "Hanは4施設",
+      "baseline_ja": "Hanは4施設"
+    },
+    {
+      "id": "centers_jane",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.centers_jane",
+      "title_ja": "Janeは14施設",
+      "claim_ja": "Janeは14施設",
+      "method_ja": "Han4の2倍へ6を足す",
+      "requires_steps": [
+        "centers_han"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "half fewer はLisaの数の半分、すなわち6から50%減の3と解釈する。",
+      "conclusion_ja": "Janeは14施設",
+      "baseline_ja": "Janeは14施設"
+    },
+    {
+      "id": "centers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.centers_solution",
+      "title_ja": "4人で27施設",
+      "claim_ja": "4人で27施設",
+      "method_ja": "6・3・4・14を足し、各人数が異なることも条件と照合する",
+      "requires_steps": [
+        "centers_jude",
+        "centers_han",
+        "centers_jane"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "half fewer はLisaの数の半分、すなわち6から50%減の3と解釈する。",
+      "conclusion_ja": "4人で27施設",
+      "baseline_ja": "4人で27施設"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2598,
+    "checked_model_hash": "7603f810b51d39a7655bac595d8a7c44f1e78e39713596c6cb2769150d8204c8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

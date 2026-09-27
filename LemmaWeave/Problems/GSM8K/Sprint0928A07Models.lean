@@ -172,9 +172,10 @@ theorem taco_counts (m : TacoModel) :
 
 theorem taco_total_cents (m : TacoModel) : m.totalProfitCents = 20000 := by
   rcases taco_counts m with ⟨ht, hp⟩
-  rw [ht, hp] at m.hTotalProfit
-  norm_num at m.hTotalProfit ⊢
-  exact m.hTotalProfit
+  have h := m.hTotalProfit
+  rw [ht, hp] at h
+  norm_num at h ⊢
+  exact h
 
 theorem taco_profit_dollars (m : TacoModel) : m.totalProfitCents = 100 * 200 := by
   have h := taco_total_cents m

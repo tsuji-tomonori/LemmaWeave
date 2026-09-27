@@ -11,3 +11,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A00.pets_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A00.birds_solution to "work/gsm8k-sprint162-birds-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A00.birds_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A00.ages_solution to "work/gsm8k-sprint162-ages-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A00.ages_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A00.districts_solution to "work/gsm8k-sprint162-districts-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A00.districts_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A00.band_solution to "work/gsm8k-sprint162-band-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A00.band_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A00.bread_solution to "work/gsm8k-sprint162-bread-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A00.bread_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A00.biscuits_solution to "work/gsm8k-sprint162-biscuits-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0928A00.biscuits_solution

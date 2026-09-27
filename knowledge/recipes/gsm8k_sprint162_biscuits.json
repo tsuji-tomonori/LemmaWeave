@@ -1,7 +1,7 @@
 {
-  "id": "gsm8k_sprint162_piano",
-  "title_ja": "5週間のピアノ講師収入",
-  "problem_id": "external-gsm8k-main-3101c7d50724:train:02712",
+  "id": "gsm8k_sprint162_biscuits",
+  "title_ja": "残りのビスケット箱数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02720",
   "collection_id": "external-gsm8k-main-3101c7d50724",
   "lean_file": "tests/lean/GSM8KSprint0928A00.lean",
   "semantic_review_status": "self_review_only",
@@ -9,42 +9,42 @@
   "counting_note_ja": "固定GSM8Kの1問。",
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
-  "problem_ja": "30分10ドル、週1回1時間のレッスンを5週間行う。",
-  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A00.piano_solution",
-  "graph": "work/gsm8k-sprint162-piano-graph.json",
+  "problem_ja": "目標33箱。すでにレモン12、チョコ5、オートミール4箱を販売。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A00.biscuits_solution",
+  "graph": "work/gsm8k-sprint162-biscuits-graph.json",
   "model_notes_ja": [],
   "steps": [
     {
-      "id": "piano_lesson",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.piano_lesson",
-      "title_ja": "1回は20ドル",
-      "claim_ja": "1時間は30分の2区間なので20ドル",
-      "method_ja": "30分10ドルを2倍する",
+      "id": "biscuits_sold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.biscuits_sold",
+      "title_ja": "販売済み21箱",
+      "claim_ja": "12+5+4=21箱",
+      "method_ja": "三種類の販売数を加える",
       "requires_steps": [],
       "uses_nodes": [],
       "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
-      "conclusion_ja": "1時間は30分の2区間なので20ドル",
-      "baseline_ja": "1時間は30分の2区間なので20ドル"
+      "conclusion_ja": "12+5+4=21箱",
+      "baseline_ja": "12+5+4=21箱"
     },
     {
-      "id": "piano_solution",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.piano_solution",
-      "title_ja": "5週間で100ドル",
-      "claim_ja": "週20ドルを5週間で100ドル",
-      "method_ja": "1回分を5倍する",
+      "id": "biscuits_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.biscuits_solution",
+      "title_ja": "残り12箱",
+      "claim_ja": "33箱から21箱を引く",
+      "method_ja": "目標から販売済みを引く",
       "requires_steps": [
-        "piano_lesson"
+        "biscuits_sold"
       ],
       "uses_nodes": [],
       "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
-      "conclusion_ja": "週20ドルを5週間で100ドル",
-      "baseline_ja": "週20ドルを5週間で100ドル"
+      "conclusion_ja": "33箱から21箱を引く",
+      "baseline_ja": "33箱から21箱を引く"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
-    "source_line_1based": 2713,
+    "source_line_1based": 2721,
     "checked_model_hash": "1de50b621f353dc1803082d0847cb1590f7baa39d9a70b3d2b57b6e6ea2e1982",
     "checks_ja": [
       "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",

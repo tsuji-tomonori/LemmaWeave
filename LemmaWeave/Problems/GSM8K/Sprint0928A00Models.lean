@@ -138,4 +138,146 @@ theorem birds_solution (m : BirdAverage) : m.average = 9 := by
   have hd1 := birds_total m
   omega
 
+structure FutureAges where
+  drewFuture : ℕ
+  samFuture : ℕ
+  samCurrent : ℕ
+  hDrew : drewFuture = 12 + 5
+  hSamFuture : samFuture = 3 * drewFuture
+  hCurrent : samCurrent + 5 = samFuture
+
+theorem ages_drew_future (m : FutureAges) : m.drewFuture = 17 := by
+  have h1 := m.hDrew
+  have h2 := m.hSamFuture
+  have h3 := m.hCurrent
+  omega
+
+theorem ages_sam_future (m : FutureAges) : m.samFuture = 51 := by
+  have h1 := m.hDrew
+  have h2 := m.hSamFuture
+  have h3 := m.hCurrent
+  have hd1 := ages_drew_future m
+  omega
+
+theorem ages_solution (m : FutureAges) : m.samCurrent = 46 := by
+  have h1 := m.hDrew
+  have h2 := m.hSamFuture
+  have h3 := m.hCurrent
+  have hd1 := ages_sam_future m
+  omega
+
+structure DistrictVoters where
+  district2 : ℕ
+  district3 : ℕ
+  total : ℕ
+  hDistrict3 : district3 = 2 * 322
+  hDistrict2 : district2 + 19 = district3
+  hTotal : total = 322 + district2 + district3
+
+theorem districts_three (m : DistrictVoters) : m.district3 = 644 := by
+  have h1 := m.hDistrict3
+  have h2 := m.hDistrict2
+  have h3 := m.hTotal
+  omega
+
+theorem districts_two (m : DistrictVoters) : m.district2 = 625 := by
+  have h1 := m.hDistrict3
+  have h2 := m.hDistrict2
+  have h3 := m.hTotal
+  have hd1 := districts_three m
+  omega
+
+theorem districts_solution (m : DistrictVoters) : m.total = 1591 := by
+  have h1 := m.hDistrict3
+  have h2 := m.hDistrict2
+  have h3 := m.hTotal
+  have hd1 := districts_two m
+  omega
+
+structure MarchingBandWeight where
+  lightWeight : ℕ
+  tromboneWeight : ℕ
+  tubaWeight : ℕ
+  drumWeight : ℕ
+  total : ℕ
+  hLight : lightWeight = (6 + 9) * 5
+  hTrombone : tromboneWeight = 8 * 10
+  hTuba : tubaWeight = 3 * 20
+  hDrum : drumWeight = 2 * 15
+  hTotal : total = lightWeight + tromboneWeight + tubaWeight + drumWeight
+
+theorem band_light (m : MarchingBandWeight) : m.lightWeight = 75 := by
+  have h1 := m.hLight
+  have h2 := m.hTrombone
+  have h3 := m.hTuba
+  have h4 := m.hDrum
+  have h5 := m.hTotal
+  omega
+
+theorem band_other (m : MarchingBandWeight) : m.tromboneWeight = 80 ∧ m.tubaWeight = 60 ∧ m.drumWeight = 30 := by
+  have h1 := m.hLight
+  have h2 := m.hTrombone
+  have h3 := m.hTuba
+  have h4 := m.hDrum
+  have h5 := m.hTotal
+  constructor
+  · omega
+  constructor <;> omega
+
+theorem band_solution (m : MarchingBandWeight) : m.total = 245 := by
+  have h1 := m.hLight
+  have h2 := m.hTrombone
+  have h3 := m.hTuba
+  have h4 := m.hDrum
+  have h5 := m.hTotal
+  have hd1 := band_light m
+  have hd2 := band_other m
+  rcases hd2 with ⟨ht, htu, hd⟩
+  omega
+
+structure BreadSchedule where
+  riseHours : ℕ
+  bakeHours : ℕ
+  total : ℕ
+  hRise : riseHours = 4 * 3
+  hBake : bakeHours = 4 * 2
+  hTotal : total = riseHours + bakeHours
+
+theorem bread_rise (m : BreadSchedule) : m.riseHours = 12 := by
+  have h1 := m.hRise
+  have h2 := m.hBake
+  have h3 := m.hTotal
+  omega
+
+theorem bread_bake (m : BreadSchedule) : m.bakeHours = 8 := by
+  have h1 := m.hRise
+  have h2 := m.hBake
+  have h3 := m.hTotal
+  omega
+
+theorem bread_solution (m : BreadSchedule) : m.total = 20 := by
+  have h1 := m.hRise
+  have h2 := m.hBake
+  have h3 := m.hTotal
+  have hd1 := bread_rise m
+  have hd2 := bread_bake m
+  omega
+
+structure BiscuitSales where
+  sold : ℕ
+  remaining : ℕ
+  hSold : sold = 12 + 5 + 4
+  hRemaining : remaining + sold = 33
+
+theorem biscuits_sold (m : BiscuitSales) : m.sold = 21 := by
+  have h1 := m.hSold
+  have h2 := m.hRemaining
+  omega
+
+theorem biscuits_solution (m : BiscuitSales) : m.remaining = 12 := by
+  have h1 := m.hSold
+  have h2 := m.hRemaining
+  have hd1 := biscuits_sold m
+  omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0928A00

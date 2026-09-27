@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint154_vet",
+  "title_ja": "保険加入後を含む診療費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02605",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "400ドルの診療3回。初回後に100ドルの保険へ入り、後続診療の80%を補償。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A11.vet_solution",
+  "graph": "work/gsm8k-sprint154-vet-graph.json",
+  "model_notes_ja": [
+    "保険は初回後に加入し、2回目と3回目だけ80%補償する。"
+  ],
+  "steps": [
+    {
+      "id": "vet_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.vet_discount",
+      "title_ja": "後続1回の補償額は320ドル",
+      "claim_ja": "後続1回の補償額は320ドル",
+      "method_ja": "400ドルの80%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "保険は初回後に加入し、2回目と3回目だけ80%補償する。",
+      "conclusion_ja": "後続1回の補償額は320ドル",
+      "baseline_ja": "後続1回の補償額は320ドル"
+    },
+    {
+      "id": "vet_subsequent_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.vet_subsequent_cost",
+      "title_ja": "後続1回の自己負担は80ドル",
+      "claim_ja": "後続1回の自己負担は80ドル",
+      "method_ja": "400ドルから320ドルを引く",
+      "requires_steps": [
+        "vet_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "保険は初回後に加入し、2回目と3回目だけ80%補償する。",
+      "conclusion_ja": "後続1回の自己負担は80ドル",
+      "baseline_ja": "後続1回の自己負担は80ドル"
+    },
+    {
+      "id": "vet_subsequent_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.vet_subsequent_total",
+      "title_ja": "後続2回の自己負担は160ドル",
+      "claim_ja": "後続2回の自己負担は160ドル",
+      "method_ja": "80ドルに2回を掛ける",
+      "requires_steps": [
+        "vet_subsequent_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "保険は初回後に加入し、2回目と3回目だけ80%補償する。",
+      "conclusion_ja": "後続2回の自己負担は160ドル",
+      "baseline_ja": "後続2回の自己負担は160ドル"
+    },
+    {
+      "id": "vet_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.vet_solution",
+      "title_ja": "合計支払額は660ドル",
+      "claim_ja": "合計支払額は660ドル",
+      "method_ja": "初回400、保険100、後続160を足す",
+      "requires_steps": [
+        "vet_subsequent_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "保険は初回後に加入し、2回目と3回目だけ80%補償する。",
+      "conclusion_ja": "合計支払額は660ドル",
+      "baseline_ja": "合計支払額は660ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2606,
+    "checked_model_hash": "7603f810b51d39a7655bac595d8a7c44f1e78e39713596c6cb2769150d8204c8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

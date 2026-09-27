@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint154_toys",
+  "title_ja": "Mandyのおもちゃ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02603",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "AnnaはMandyの3倍でAmandaより2個少なく、3人で142個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A11.toys_solution",
+  "graph": "work/gsm8k-sprint154-toys-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "toys_equation",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.toys_equation",
+      "title_ja": "Mandyの7倍に2を足すと142",
+      "claim_ja": "Mandyの7倍に2を足すと142",
+      "method_ja": "MandyをxとしAnna=3x、Amanda=3x+2を合計する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Mandyの7倍に2を足すと142",
+      "baseline_ja": "Mandyの7倍に2を足すと142"
+    },
+    {
+      "id": "toys_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.toys_solution",
+      "title_ja": "Mandyは20個",
+      "claim_ja": "Mandyは20個",
+      "method_ja": "7x+2=142を解く",
+      "requires_steps": [
+        "toys_equation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Mandyは20個",
+      "baseline_ja": "Mandyは20個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2604,
+    "checked_model_hash": "7603f810b51d39a7655bac595d8a7c44f1e78e39713596c6cb2769150d8204c8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

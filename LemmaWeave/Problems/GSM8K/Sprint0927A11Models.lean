@@ -116,4 +116,67 @@ structure BookMoney where
 theorem books_total (m : BookMoney) : m.totalCost = 21 := by cases m; omega
 theorem books_solution (m : BookMoney) : m.needed = 2 := by cases m; omega
 
+structure YearEarnings where
+  january february march total : ℕ
+  hJanuary : january = 4000
+  hFebruary : february = 2 * january
+  hMarch : february = march + 2000
+  hTotal : total = january + february + march
+theorem earnings_february (m : YearEarnings) : m.february = 8000 := by cases m; omega
+theorem earnings_march (m : YearEarnings) : m.march = 6000 := by cases m; omega
+theorem earnings_solution (m : YearEarnings) : m.total = 18000 := by cases m; omega
+
+structure LunchCookies where
+  burger carrots caloriesPerCarrot carrotCalories target remaining caloriesPerCookie cookies : ℕ
+  hBurger : burger = 400
+  hCarrots : carrots = 5
+  hPerCarrot : caloriesPerCarrot = 20
+  hCarrotCalories : carrotCalories = carrots * caloriesPerCarrot
+  hTarget : target = 750
+  hRemaining : target = burger + carrotCalories + remaining
+  hPerCookie : caloriesPerCookie = 50
+  hCookies : remaining = cookies * caloriesPerCookie
+theorem lunch_carrots (m : LunchCookies) : m.carrotCalories = 100 := by cases m; omega
+theorem lunch_remaining (m : LunchCookies) : m.remaining = 250 := by cases m; omega
+theorem lunch_solution (m : LunchCookies) : m.cookies = 5 := by cases m; omega
+
+structure ToyCounts where
+  mandy anna amanda total : ℕ
+  hAnna : anna = 3 * mandy
+  hAmanda : amanda = anna + 2
+  hTotal : total = 142
+  hSum : total = mandy + anna + amanda
+theorem toys_equation (m : ToyCounts) : 7 * m.mandy + 2 = 142 := by cases m; omega
+theorem toys_solution (m : ToyCounts) : m.mandy = 20 := by cases m; omega
+
+structure StickerSharing where
+  initial daniel extra fred shared kept : ℕ
+  hInitial : initial = 750
+  hDaniel : daniel = 250
+  hExtra : extra = 120
+  hFred : fred = daniel + extra
+  hShared : shared = daniel + fred
+  hKept : initial = shared + kept
+theorem stickers_fred (m : StickerSharing) : m.fred = 370 := by cases m; omega
+theorem stickers_shared (m : StickerSharing) : m.shared = 620 := by cases m; omega
+theorem stickers_solution (m : StickerSharing) : m.kept = 130 := by cases m; omega
+
+structure VetInsurance where
+  visits costPerVisit firstVisit insurance coveragePercent coveredDiscount subsequentCost
+    subsequentVisits subsequentTotal totalPaid : ℕ
+  hVisits : visits = 3
+  hCost : costPerVisit = 400
+  hFirst : firstVisit = costPerVisit
+  hInsurance : insurance = 100
+  hCoverage : coveragePercent = 80
+  hDiscount : 100 * coveredDiscount = coveragePercent * costPerVisit
+  hSubsequentCost : costPerVisit = coveredDiscount + subsequentCost
+  hSubsequentVisits : visits = subsequentVisits + 1
+  hSubsequentTotal : subsequentTotal = subsequentVisits * subsequentCost
+  hTotal : totalPaid = firstVisit + insurance + subsequentTotal
+theorem vet_discount (m : VetInsurance) : m.coveredDiscount = 320 := by cases m; omega
+theorem vet_subsequent_cost (m : VetInsurance) : m.subsequentCost = 80 := by cases m; omega
+theorem vet_subsequent_total (m : VetInsurance) : m.subsequentTotal = 160 := by cases m; omega
+theorem vet_solution (m : VetInsurance) : m.totalPaid = 660 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A11

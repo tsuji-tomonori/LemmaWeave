@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint157_lateness",
+  "title_ja": "生徒の遅刻時間合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02636",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Charlizeは20分遅刻し、4人の同級生はそれぞれCharlizeより10分多く遅刻した。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A15.lateness_solution",
+  "graph": "work/gsm8k-sprint157-lateness-graph.json",
+  "model_notes_ja": [
+    "参考解答の説明にはthree friendsとあるが、原題のfour classmatesと数式4×30を採用する。"
+  ],
+  "steps": [
+    {
+      "id": "lateness_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.lateness_each",
+      "title_ja": "同級生1人は30分遅刻",
+      "claim_ja": "同級生1人は30分遅刻",
+      "method_ja": "20分に10分を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参考解答の説明にはthree friendsとあるが、原題のfour classmatesと数式4×30を採用する。",
+      "conclusion_ja": "同級生1人は30分遅刻",
+      "baseline_ja": "同級生1人は30分遅刻"
+    },
+    {
+      "id": "lateness_classmates",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.lateness_classmates",
+      "title_ja": "同級生4人の合計は120分",
+      "claim_ja": "同級生4人の合計は120分",
+      "method_ja": "30分を4人分掛ける",
+      "requires_steps": [
+        "lateness_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参考解答の説明にはthree friendsとあるが、原題のfour classmatesと数式4×30を採用する。",
+      "conclusion_ja": "同級生4人の合計は120分",
+      "baseline_ja": "同級生4人の合計は120分"
+    },
+    {
+      "id": "lateness_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.lateness_solution",
+      "title_ja": "5人の遅刻合計は140分",
+      "claim_ja": "5人の遅刻合計は140分",
+      "method_ja": "Charlizeの20分と同級生の120分を足す",
+      "requires_steps": [
+        "lateness_classmates"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参考解答の説明にはthree friendsとあるが、原題のfour classmatesと数式4×30を採用する。",
+      "conclusion_ja": "5人の遅刻合計は140分",
+      "baseline_ja": "5人の遅刻合計は140分"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2637,
+    "checked_model_hash": "74e2b2054ec9dff08465187b409d986eb9f38b6f4eb9c321866f80c4b84ae986",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

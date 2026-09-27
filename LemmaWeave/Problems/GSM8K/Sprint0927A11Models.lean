@@ -2,7 +2,12 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0927A11
 
 structure PapayaFourWeeks where
-  jake brother father weekly weeks total : ℕ
+  jake : ℕ
+  brother : ℕ
+  father : ℕ
+  weekly : ℕ
+  weeks : ℕ
+  total : ℕ
   hJake : jake = 3
   hBrother : brother = 5
   hFather : father = 4
@@ -14,7 +19,12 @@ theorem papaya_solution (m : PapayaFourWeeks) : m.total = 48 := by cases m; omeg
 
 /-- Volumes are measured in half-liters, except `totalLiters`. -/
 structure FruitPunch where
-  orange cherry apple difference totalHalfLiters totalLiters : ℕ
+  orange : ℕ
+  cherry : ℕ
+  apple : ℕ
+  difference : ℕ
+  totalHalfLiters : ℕ
+  totalLiters : ℕ
   hOrange : orange = 9
   hCherry : cherry = 2 * orange
   hDifference : difference = 3
@@ -27,7 +37,10 @@ theorem punch_half_liters (m : FruitPunch) : m.totalHalfLiters = 42 := by cases 
 theorem punch_solution (m : FruitPunch) : m.totalLiters = 21 := by cases m; omega
 
 structure FarmAnimals where
-  cows sheep pigs total : ℕ
+  cows : ℕ
+  sheep : ℕ
+  pigs : ℕ
+  total : ℕ
   hCows : cows = 12
   hSheep : sheep = 2 * cows
   hPigs : pigs = 3 * sheep
@@ -37,7 +50,11 @@ theorem farm_pigs (m : FarmAnimals) : m.pigs = 72 := by cases m; omega
 theorem farm_solution (m : FarmAnimals) : m.total = 108 := by cases m; omega
 
 structure PaintballMonthly where
-  plays boxesPerPlay pricePerBox costPerPlay monthlyCost : ℕ
+  plays : ℕ
+  boxesPerPlay : ℕ
+  pricePerBox : ℕ
+  costPerPlay : ℕ
+  monthlyCost : ℕ
   hPlays : plays = 3
   hBoxes : boxesPerPlay = 3
   hPrice : pricePerBox = 25
@@ -47,7 +64,12 @@ theorem paintball_each (m : PaintballMonthly) : m.costPerPlay = 75 := by cases m
 theorem paintball_solution (m : PaintballMonthly) : m.monthlyCost = 225 := by cases m; omega
 
 structure FootballAverage where
-  intervalMinutes goalsPerInterval matchHours matchMinutes intervals averageGoals : ℕ
+  intervalMinutes : ℕ
+  goalsPerInterval : ℕ
+  matchHours : ℕ
+  matchMinutes : ℕ
+  intervals : ℕ
+  averageGoals : ℕ
   hInterval : intervalMinutes = 15
   hGoals : goalsPerInterval = 2
   hHours : matchHours = 2
@@ -59,7 +81,12 @@ theorem football_intervals (m : FootballAverage) : m.intervals = 8 := by cases m
 theorem football_solution (m : FootballAverage) : m.averageGoals = 16 := by cases m; omega
 
 structure TestScores where
-  geography math english firstThree history total : ℕ
+  geography : ℕ
+  math : ℕ
+  english : ℕ
+  firstThree : ℕ
+  history : ℕ
+  total : ℕ
   hGeography : geography = 50
   hMath : math = 70
   hEnglish : english = 66
@@ -71,7 +98,11 @@ theorem scores_history (m : TestScores) : m.history = 62 := by cases m; omega
 theorem scores_solution (m : TestScores) : m.total = 248 := by cases m; omega
 
 structure CenterVisits where
-  lisa jude han jane total : ℕ
+  lisa : ℕ
+  jude : ℕ
+  han : ℕ
+  jane : ℕ
+  total : ℕ
   hLisa : lisa = 6
   hJudeHalf : 2 * jude = lisa
   hHan : han + 2 = 2 * jude
@@ -84,7 +115,9 @@ theorem centers_jane (m : CenterVisits) : m.jane = 14 := by cases m; omega
 theorem centers_solution (m : CenterVisits) : m.total = 27 := by cases m; omega
 
 structure CollectorDolls where
-  dina ivy collectors : ℕ
+  dina : ℕ
+  ivy : ℕ
+  collectors : ℕ
   hDina : dina = 60
   hTwice : dina = 2 * ivy
   hCollectors : 3 * collectors = 2 * ivy
@@ -92,7 +125,14 @@ theorem dolls_ivy (m : CollectorDolls) : m.ivy = 30 := by cases m; omega
 theorem dolls_solution (m : CollectorDolls) : m.collectors = 20 := by cases m; omega
 
 structure CandleWicks where
-  feet inchesPerFoot totalInches shortLength longLength pairLength pairs totalWicks : ℕ
+  feet : ℕ
+  inchesPerFoot : ℕ
+  totalInches : ℕ
+  shortLength : ℕ
+  longLength : ℕ
+  pairLength : ℕ
+  pairs : ℕ
+  totalWicks : ℕ
   hFeet : feet = 15
   hInchesPerFoot : inchesPerFoot = 12
   hTotalInches : totalInches = feet * inchesPerFoot
@@ -106,7 +146,12 @@ theorem wicks_pairs (m : CandleWicks) : m.pairs = 10 := by cases m; omega
 theorem wicks_solution (m : CandleWicks) : m.totalWicks = 20 := by cases m; omega
 
 structure BookMoney where
-  dictionary dinosaur cookbook totalCost saved needed : ℕ
+  dictionary : ℕ
+  dinosaur : ℕ
+  cookbook : ℕ
+  totalCost : ℕ
+  saved : ℕ
+  needed : ℕ
   hDictionary : dictionary = 5
   hDinosaur : dinosaur = 11
   hCookbook : cookbook = 5
@@ -117,7 +162,10 @@ theorem books_total (m : BookMoney) : m.totalCost = 21 := by cases m; omega
 theorem books_solution (m : BookMoney) : m.needed = 2 := by cases m; omega
 
 structure YearEarnings where
-  january february march total : ℕ
+  january : ℕ
+  february : ℕ
+  march : ℕ
+  total : ℕ
   hJanuary : january = 4000
   hFebruary : february = 2 * january
   hMarch : february = march + 2000
@@ -127,7 +175,14 @@ theorem earnings_march (m : YearEarnings) : m.march = 6000 := by cases m; omega
 theorem earnings_solution (m : YearEarnings) : m.total = 18000 := by cases m; omega
 
 structure LunchCookies where
-  burger carrots caloriesPerCarrot carrotCalories target remaining caloriesPerCookie cookies : ℕ
+  burger : ℕ
+  carrots : ℕ
+  caloriesPerCarrot : ℕ
+  carrotCalories : ℕ
+  target : ℕ
+  remaining : ℕ
+  caloriesPerCookie : ℕ
+  cookies : ℕ
   hBurger : burger = 400
   hCarrots : carrots = 5
   hPerCarrot : caloriesPerCarrot = 20
@@ -141,7 +196,10 @@ theorem lunch_remaining (m : LunchCookies) : m.remaining = 250 := by cases m; om
 theorem lunch_solution (m : LunchCookies) : m.cookies = 5 := by cases m; omega
 
 structure ToyCounts where
-  mandy anna amanda total : ℕ
+  mandy : ℕ
+  anna : ℕ
+  amanda : ℕ
+  total : ℕ
   hAnna : anna = 3 * mandy
   hAmanda : amanda = anna + 2
   hTotal : total = 142
@@ -150,7 +208,12 @@ theorem toys_equation (m : ToyCounts) : 7 * m.mandy + 2 = 142 := by cases m; ome
 theorem toys_solution (m : ToyCounts) : m.mandy = 20 := by cases m; omega
 
 structure StickerSharing where
-  initial daniel extra fred shared kept : ℕ
+  initial : ℕ
+  daniel : ℕ
+  extra : ℕ
+  fred : ℕ
+  shared : ℕ
+  kept : ℕ
   hInitial : initial = 750
   hDaniel : daniel = 250
   hExtra : extra = 120
@@ -162,8 +225,16 @@ theorem stickers_shared (m : StickerSharing) : m.shared = 620 := by cases m; ome
 theorem stickers_solution (m : StickerSharing) : m.kept = 130 := by cases m; omega
 
 structure VetInsurance where
-  visits costPerVisit firstVisit insurance coveragePercent coveredDiscount subsequentCost
-    subsequentVisits subsequentTotal totalPaid : ℕ
+  visits : ℕ
+  costPerVisit : ℕ
+  firstVisit : ℕ
+  insurance : ℕ
+  coveragePercent : ℕ
+  coveredDiscount : ℕ
+  subsequentCost : ℕ
+  subsequentVisits : ℕ
+  subsequentTotal : ℕ
+  totalPaid : ℕ
   hVisits : visits = 3
   hCost : costPerVisit = 400
   hFirst : firstVisit = costPerVisit

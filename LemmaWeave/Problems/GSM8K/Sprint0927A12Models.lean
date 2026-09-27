@@ -2,7 +2,13 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0927A12
 
 structure FarmEntrance where
-  students adults studentPrice adultPrice studentCost adultCost total : ℕ
+  students : ℕ
+  adults : ℕ
+  studentPrice : ℕ
+  adultPrice : ℕ
+  studentCost : ℕ
+  adultCost : ℕ
+  total : ℕ
   hStudents : students = 35
   hAdults : adults = 4
   hStudentPrice : studentPrice = 5
@@ -15,7 +21,15 @@ theorem entrance_adults (m : FarmEntrance) : m.adultCost = 24 := by cases m; ome
 theorem entrance_solution (m : FarmEntrance) : m.total = 199 := by cases m; omega
 
 structure PuppyProfit where
-  litter given remaining kept sold price revenue studFee profit : ℕ
+  litter : ℕ
+  given : ℕ
+  remaining : ℕ
+  kept : ℕ
+  sold : ℕ
+  price : ℕ
+  revenue : ℕ
+  studFee : ℕ
+  profit : ℕ
   hLitter : litter = 8
   hGivenHalf : litter = 2 * given
   hRemaining : remaining + given = litter
@@ -31,7 +45,11 @@ theorem puppies_revenue (m : PuppyProfit) : m.revenue = 1800 := by cases m; omeg
 theorem puppies_solution (m : PuppyProfit) : m.profit = 1500 := by cases m; omega
 
 structure HamSlices where
-  perSandwich sandwiches required onHand needed : ℕ
+  perSandwich : ℕ
+  sandwiches : ℕ
+  required : ℕ
+  onHand : ℕ
+  needed : ℕ
   hPer : perSandwich = 3
   hSandwiches : sandwiches = 50
   hRequired : required = perSandwich * sandwiches
@@ -41,7 +59,15 @@ theorem ham_required (m : HamSlices) : m.required = 150 := by cases m; omega
 theorem ham_solution (m : HamSlices) : m.needed = 119 := by cases m; omega
 
 structure Bracelets where
-  nancyMetal nancyPearl nancyTotal roseCrystal roseStone roseTotal total beadsPer bracelets : ℕ
+  nancyMetal : ℕ
+  nancyPearl : ℕ
+  nancyTotal : ℕ
+  roseCrystal : ℕ
+  roseStone : ℕ
+  roseTotal : ℕ
+  total : ℕ
+  beadsPer : ℕ
+  bracelets : ℕ
   hNancyMetal : nancyMetal = 40
   hNancyPearl : nancyPearl = nancyMetal + 20
   hNancyTotal : nancyTotal = nancyMetal + nancyPearl
@@ -57,7 +83,14 @@ theorem bracelets_total (m : Bracelets) : m.total = 160 := by cases m; omega
 theorem bracelets_solution (m : Bracelets) : m.bracelets = 20 := by cases m; omega
 
 structure EggSales where
-  chickens eggsEach weeklyEggs eggsPerDozen weeklyDozens dollarsPerDozen weeks total : ℕ
+  chickens : ℕ
+  eggsEach : ℕ
+  weeklyEggs : ℕ
+  eggsPerDozen : ℕ
+  weeklyDozens : ℕ
+  dollarsPerDozen : ℕ
+  weeks : ℕ
+  total : ℕ
   hChickens : chickens = 46
   hEach : eggsEach = 6
   hWeekly : weeklyEggs = chickens * eggsEach
@@ -71,7 +104,11 @@ theorem eggs_dozens (m : EggSales) : m.weeklyDozens = 23 := by cases m; omega
 theorem eggs_solution (m : EggSales) : m.total = 552 := by cases m; omega
 
 structure BrotherAge where
-  trevorNow brotherNow ageGap targetBrother trevorThen : ℕ
+  trevorNow : ℕ
+  brotherNow : ℕ
+  ageGap : ℕ
+  targetBrother : ℕ
+  trevorThen : ℕ
   hTrevor : trevorNow = 11
   hBrother : brotherNow = 20
   hGap : brotherNow = trevorNow + ageGap
@@ -81,8 +118,15 @@ theorem age_target_brother (m : BrotherAge) : m.targetBrother = 33 := by cases m
 theorem age_solution (m : BrotherAge) : m.trevorThen = 24 := by cases m; omega
 
 structure CatLitter where
-  days daysPerWeek changes poundsPerChange poundsNeeded poundsPerContainer containers
-    dollarsPerContainer totalCost : ℕ
+  days : ℕ
+  daysPerWeek : ℕ
+  changes : ℕ
+  poundsPerChange : ℕ
+  poundsNeeded : ℕ
+  poundsPerContainer : ℕ
+  containers : ℕ
+  dollarsPerContainer : ℕ
+  totalCost : ℕ
   hDays : days = 210
   hWeek : daysPerWeek = 7
   hChanges : days = changes * daysPerWeek
@@ -98,7 +142,15 @@ theorem litter_containers (m : CatLitter) : m.containers = 10 := by cases m; ome
 theorem litter_solution (m : CatLitter) : m.totalCost = 210 := by cases m; omega
 
 structure CheesePurchase where
-  initial remaining spent beefPounds beefPrice beefCost cheesePrice cheeseCost cheesePounds : ℕ
+  initial : ℕ
+  remaining : ℕ
+  spent : ℕ
+  beefPounds : ℕ
+  beefPrice : ℕ
+  beefCost : ℕ
+  cheesePrice : ℕ
+  cheeseCost : ℕ
+  cheesePounds : ℕ
   hInitial : initial = 87
   hRemaining : remaining = 61
   hSpent : initial = remaining + spent
@@ -113,7 +165,16 @@ theorem cheese_cost (m : CheesePurchase) : m.cheeseCost = 21 := by cases m; omeg
 theorem cheese_solution (m : CheesePurchase) : m.cheesePounds = 3 := by cases m; omega
 
 structure EggMeals where
-  dozens eggsPerDozen initial omelet cake afterCooking given remaining meals perMeal : ℕ
+  dozens : ℕ
+  eggsPerDozen : ℕ
+  initial : ℕ
+  omelet : ℕ
+  cake : ℕ
+  afterCooking : ℕ
+  given : ℕ
+  remaining : ℕ
+  meals : ℕ
+  perMeal : ℕ
   hDozens : dozens = 2
   hPerDozen : eggsPerDozen = 12
   hInitial : initial = dozens * eggsPerDozen
@@ -130,7 +191,11 @@ theorem meals_remaining (m : EggMeals) : m.remaining = 9 := by cases m; omega
 theorem meals_solution (m : EggMeals) : m.perMeal = 3 := by cases m; omega
 
 structure WaterPrice where
-  bottles litersPerBottle totalLiters totalCost pricePerLiter : ℕ
+  bottles : ℕ
+  litersPerBottle : ℕ
+  totalLiters : ℕ
+  totalCost : ℕ
+  pricePerLiter : ℕ
   hBottles : bottles = 6
   hLitersEach : litersPerBottle = 2
   hLiters : totalLiters = bottles * litersPerBottle
@@ -140,7 +205,10 @@ theorem water_liters (m : WaterPrice) : m.totalLiters = 12 := by cases m; omega
 theorem water_solution (m : WaterPrice) : m.pricePerLiter = 1 := by cases m; omega
 
 structure BottleShops where
-  capacity shopA shopB shopC : ℕ
+  capacity : ℕ
+  shopA : ℕ
+  shopB : ℕ
+  shopC : ℕ
   hCapacity : capacity = 550
   hA : shopA = 150
   hB : shopB = 180
@@ -149,7 +217,13 @@ theorem shops_first_two (m : BottleShops) : m.shopA + m.shopB = 330 := by cases 
 theorem shops_solution (m : BottleShops) : m.shopC = 220 := by cases m; omega
 
 structure ApartmentRooms where
-  length width totalArea normalRooms livingMultiplier normalArea livingArea : ℕ
+  length : ℕ
+  width : ℕ
+  totalArea : ℕ
+  normalRooms : ℕ
+  livingMultiplier : ℕ
+  normalArea : ℕ
+  livingArea : ℕ
   hLength : length = 16
   hWidth : width = 10
   hArea : totalArea = length * width
@@ -162,7 +236,11 @@ theorem apartment_normal (m : ApartmentRooms) : m.normalArea = 20 := by cases m;
 theorem apartment_solution (m : ApartmentRooms) : m.livingArea = 60 := by cases m; omega
 
 structure Sandwiches where
-  initial firstCoworker selfMultiplier selfKept others : ℕ
+  initial : ℕ
+  firstCoworker : ℕ
+  selfMultiplier : ℕ
+  selfKept : ℕ
+  others : ℕ
   hInitial : initial = 20
   hFirst : firstCoworker = 4
   hMultiplier : selfMultiplier = 2
@@ -172,7 +250,14 @@ theorem sandwiches_self (m : Sandwiches) : m.selfKept = 8 := by cases m; omega
 theorem sandwiches_solution (m : Sandwiches) : m.others = 8 := by cases m; omega
 
 structure AttendanceAverage where
-  monday tuesday wed thu fri total days average : ℕ
+  monday : ℕ
+  tuesday : ℕ
+  wed : ℕ
+  thu : ℕ
+  fri : ℕ
+  total : ℕ
+  days : ℕ
+  average : ℕ
   hMonday : monday = 10
   hTuesday : tuesday = 15
   hWed : wed = 10
@@ -185,7 +270,15 @@ theorem attendance_total (m : AttendanceAverage) : m.total = 55 := by cases m; o
 theorem attendance_solution (m : AttendanceAverage) : m.average = 11 := by cases m; omega
 
 structure ArcadeTokens where
-  initial pacman candy ski spent left parentMultiplier bought final : ℕ
+  initial : ℕ
+  pacman : ℕ
+  candy : ℕ
+  ski : ℕ
+  spent : ℕ
+  left : ℕ
+  parentMultiplier : ℕ
+  bought : ℕ
+  final : ℕ
   hInitial : initial = 36
   hPacman : initial = 3 * pacman
   hCandy : initial = 4 * candy

@@ -2,7 +2,11 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0927A13
 
 structure ColoredHangers where
-  pink green blue yellow total : ℕ
+  pink : ℕ
+  green : ℕ
+  blue : ℕ
+  yellow : ℕ
+  total : ℕ
   hPink : pink = 7
   hGreen : green = 4
   hBlue : blue + 1 = green
@@ -13,7 +17,11 @@ theorem hangers_yellow (m : ColoredHangers) : m.yellow = 2 := by cases m; omega
 theorem hangers_solution (m : ColoredHangers) : m.total = 16 := by cases m; omega
 
 structure JellyBeans where
-  napoleon sedrich pairSum twiceSum mikey : ℕ
+  napoleon : ℕ
+  sedrich : ℕ
+  pairSum : ℕ
+  twiceSum : ℕ
+  mikey : ℕ
   hNapoleon : napoleon = 17
   hSedrich : sedrich = napoleon + 4
   hPair : pairSum = napoleon + sedrich
@@ -24,8 +32,17 @@ theorem jelly_pair (m : JellyBeans) : m.pairSum = 38 := by cases m; omega
 theorem jelly_solution (m : JellyBeans) : m.mikey = 19 := by cases m; omega
 
 structure TicketTrades where
-  bluePerRed redPerYellow yellowNeeded ownedYellow ownedRed ownedBlue
-    bluePerYellow targetBlue ownedValue neededBlue versesPerBlue : ℕ
+  bluePerRed : ℕ
+  redPerYellow : ℕ
+  yellowNeeded : ℕ
+  ownedYellow : ℕ
+  ownedRed : ℕ
+  ownedBlue : ℕ
+  bluePerYellow : ℕ
+  targetBlue : ℕ
+  ownedValue : ℕ
+  neededBlue : ℕ
+  versesPerBlue : ℕ
   hBluePerRed : bluePerRed = 10
   hRedPerYellow : redPerYellow = 10
   hYellowNeeded : yellowNeeded = 10
@@ -43,7 +60,10 @@ theorem tickets_owned (m : TicketTrades) : m.ownedValue = 837 := by cases m; ome
 theorem tickets_solution (m : TicketTrades) : m.neededBlue = 163 := by cases m; omega
 
 structure DVDDiscount where
-  percent discount original paid : ℕ
+  percent : ℕ
+  discount : ℕ
+  original : ℕ
+  paid : ℕ
   hPercent : percent = 25
   hDiscount : discount = 40
   hRate : 100 * discount = percent * original
@@ -52,7 +72,11 @@ theorem dvd_original (m : DVDDiscount) : m.original = 160 := by cases m; omega
 theorem dvd_solution (m : DVDDiscount) : m.paid = 120 := by cases m; omega
 
 structure FriendsByGender where
-  boyPercent girlPercent boys total girls : ℕ
+  boyPercent : ℕ
+  girlPercent : ℕ
+  boys : ℕ
+  total : ℕ
+  girls : ℕ
   hBoyPercent : boyPercent = 55
   hGirlPercent : girlPercent + boyPercent = 100
   hBoys : boys = 33
@@ -63,7 +87,15 @@ theorem friends_solution (m : FriendsByGender) : m.girls = 27 := by cases m; ome
 
 /-- All money values are cents. -/
 structure SlipperOrder where
-  listPrice discountPercent discount salePrice shoes embroideryEach embroidery shipping total : ℕ
+  listPrice : ℕ
+  discountPercent : ℕ
+  discount : ℕ
+  salePrice : ℕ
+  shoes : ℕ
+  embroideryEach : ℕ
+  embroidery : ℕ
+  shipping : ℕ
+  total : ℕ
   hList : listPrice = 5000
   hPercent : discountPercent = 10
   hDiscount : 100 * discount = discountPercent * listPrice
@@ -79,7 +111,12 @@ theorem slippers_embroidery (m : SlipperOrder) : m.embroidery = 1100 := by cases
 theorem slippers_solution (m : SlipperOrder) : m.total = 6600 := by cases m; omega
 
 structure BlockPyramid where
-  row1 row2 row3 row4 row5 total : ℕ
+  row1 : ℕ
+  row2 : ℕ
+  row3 : ℕ
+  row4 : ℕ
+  row5 : ℕ
+  total : ℕ
   hRow1 : row1 = 9
   hRow2 : row2 + 2 = row1
   hRow3 : row3 + 2 = row2
@@ -93,7 +130,13 @@ theorem pyramid_row5 (m : BlockPyramid) : m.row5 = 1 := by cases m; omega
 theorem pyramid_solution (m : BlockPyramid) : m.total = 25 := by cases m; omega
 
 structure BirdPurchase where
-  grandparents dollarsEach totalMoney birdPrice birds wingsEach totalWings : ℕ
+  grandparents : ℕ
+  dollarsEach : ℕ
+  totalMoney : ℕ
+  birdPrice : ℕ
+  birds : ℕ
+  wingsEach : ℕ
+  totalWings : ℕ
   hGrandparents : grandparents = 4
   hDollarsEach : dollarsEach = 50
   hMoney : totalMoney = grandparents * dollarsEach
@@ -106,7 +149,10 @@ theorem birds_count (m : BirdPurchase) : m.birds = 10 := by cases m; omega
 theorem birds_solution (m : BirdPurchase) : m.totalWings = 20 := by cases m; omega
 
 structure GuessingScores where
-  hajar difference farah total : ℕ
+  hajar : ℕ
+  difference : ℕ
+  farah : ℕ
+  total : ℕ
   hHajar : hajar = 24
   hDifference : difference = 21
   hFarahHigher : farah = hajar + difference
@@ -116,8 +162,16 @@ theorem scores_solution (m : GuessingScores) : m.total = 69 := by cases m; omega
 
 /-- Times are minutes. The two stretch-stop counts expose the endpoint ambiguity. -/
 structure RoadTripStops where
-  drivingMinutes includedStretch excludedStretch food gas stopMinutes
-    includedStops excludedStops includedTotal excludedTotal : ℕ
+  drivingMinutes : ℕ
+  includedStretch : ℕ
+  excludedStretch : ℕ
+  food : ℕ
+  gas : ℕ
+  stopMinutes : ℕ
+  includedStops : ℕ
+  excludedStops : ℕ
+  includedTotal : ℕ
+  excludedTotal : ℕ
   hDriving : drivingMinutes = 14 * 60
   hIncludedStretch : includedStretch = 7
   hExcludedStretch : excludedStretch = 6
@@ -134,7 +188,15 @@ theorem road_excluded_solution (m : RoadTripStops) : m.excludedTotal = 1060 := b
 theorem road_nonunique (m : RoadTripStops) : m.includedTotal ≠ m.excludedTotal := by cases m; omega
 
 structure TailoringFabric where
-  shirts shirtYards shirtDaily pants pantYards pantDaily daily days total : ℕ
+  shirts : ℕ
+  shirtYards : ℕ
+  shirtDaily : ℕ
+  pants : ℕ
+  pantYards : ℕ
+  pantDaily : ℕ
+  daily : ℕ
+  days : ℕ
+  total : ℕ
   hShirts : shirts = 3
   hShirtYards : shirtYards = 2
   hShirtDaily : shirtDaily = shirts * shirtYards
@@ -149,7 +211,15 @@ theorem fabric_pants (m : TailoringFabric) : m.pantDaily = 25 := by cases m; ome
 theorem fabric_solution (m : TailoringFabric) : m.total = 93 := by cases m; omega
 
 structure SwimTransport where
-  cars vans carRiders vanRiders carCapacity vanCapacity current capacity additional : ℕ
+  cars : ℕ
+  vans : ℕ
+  carRiders : ℕ
+  vanRiders : ℕ
+  carCapacity : ℕ
+  vanCapacity : ℕ
+  current : ℕ
+  capacity : ℕ
+  additional : ℕ
   hCars : cars = 2
   hVans : vans = 3
   hCarRiders : carRiders = 5
@@ -164,7 +234,10 @@ theorem swim_capacity (m : SwimTransport) : m.capacity = 36 := by cases m; omega
 theorem swim_solution (m : SwimTransport) : m.additional = 17 := by cases m; omega
 
 structure BirdWatching where
-  monday tuesday wednesday total : ℕ
+  monday : ℕ
+  tuesday : ℕ
+  wednesday : ℕ
+  total : ℕ
   hMonday : monday = 70
   hTuesday : monday = 2 * tuesday
   hWednesday : wednesday = tuesday + 8
@@ -174,7 +247,14 @@ theorem watching_wednesday (m : BirdWatching) : m.wednesday = 43 := by cases m; 
 theorem watching_solution (m : BirdWatching) : m.total = 148 := by cases m; omega
 
 structure TextbookSavings where
-  schoolPrice discountPercent savingEach outsidePrice books schoolTotal outsideTotal totalSaving : ℕ
+  schoolPrice : ℕ
+  discountPercent : ℕ
+  savingEach : ℕ
+  outsidePrice : ℕ
+  books : ℕ
+  schoolTotal : ℕ
+  outsideTotal : ℕ
+  totalSaving : ℕ
   hSchoolPrice : schoolPrice = 45
   hPercent : discountPercent = 20
   hSavingEach : 100 * savingEach = discountPercent * schoolPrice
@@ -188,7 +268,15 @@ theorem textbook_outside_price (m : TextbookSavings) : m.outsidePrice = 36 := by
 theorem textbook_solution (m : TextbookSavings) : m.totalSaving = 27 := by cases m; omega
 
 structure ApartmentSplit where
-  oldMonthly increasePercent newMonthly people shareMonthly months oldAnnual shareAnnual annualSaving : ℕ
+  oldMonthly : ℕ
+  increasePercent : ℕ
+  newMonthly : ℕ
+  people : ℕ
+  shareMonthly : ℕ
+  months : ℕ
+  oldAnnual : ℕ
+  shareAnnual : ℕ
+  annualSaving : ℕ
   hOld : oldMonthly = 1200
   hIncrease : increasePercent = 40
   hNew : 100 * newMonthly = (100 + increasePercent) * oldMonthly

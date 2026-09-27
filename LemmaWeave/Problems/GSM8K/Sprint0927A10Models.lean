@@ -2,8 +2,17 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0927A10
 
 structure LemonadeProfit where
-  gallons glassesPerGallon produced drank unsold sold : ℕ
-  costPerGallonCents totalCostCents pricePerGlassCents revenueCents profitCents : ℕ
+  gallons : ℕ
+  glassesPerGallon : ℕ
+  produced : ℕ
+  drank : ℕ
+  unsold : ℕ
+  sold : ℕ
+  costPerGallonCents : ℕ
+  totalCostCents : ℕ
+  pricePerGlassCents : ℕ
+  revenueCents : ℕ
+  profitCents : ℕ
   hGallons : gallons = 2
   hYield : glassesPerGallon = 16
   hProduced : produced = gallons * glassesPerGallon
@@ -21,7 +30,11 @@ theorem lemonade_revenue (m : LemonadeProfit) : m.revenueCents = 2100 := by case
 theorem lemonade_solution (m : LemonadeProfit) : m.profitCents = 1400 := by cases m; omega
 
 structure UmbrellaCost where
-  house car total priceEach totalCost : ℕ
+  house : ℕ
+  car : ℕ
+  total : ℕ
+  priceEach : ℕ
+  totalCost : ℕ
   hHouse : house = 2
   hCar : car = 1
   hTotal : total = house + car
@@ -31,7 +44,10 @@ theorem umbrellas_total (m : UmbrellaCost) : m.total = 3 := by cases m; omega
 theorem umbrellas_solution (m : UmbrellaCost) : m.totalCost = 24 := by cases m; omega
 
 structure RubberBands where
-  harper fewer brother total : ℕ
+  harper : ℕ
+  fewer : ℕ
+  brother : ℕ
+  total : ℕ
   hHarper : harper = 15
   hFewer : fewer = 6
   hBrother : harper = brother + fewer
@@ -40,7 +56,13 @@ theorem bands_brother (m : RubberBands) : m.brother = 9 := by cases m; omega
 theorem bands_solution (m : RubberBands) : m.total = 24 := by cases m; omega
 
 structure CrayonGifts where
-  boxes perBox initial mae lea remaining moreForLea : ℕ
+  boxes : ℕ
+  perBox : ℕ
+  initial : ℕ
+  mae : ℕ
+  lea : ℕ
+  remaining : ℕ
+  moreForLea : ℕ
   hBoxes : boxes = 4
   hPerBox : perBox = 8
   hInitial : initial = boxes * perBox
@@ -53,7 +75,11 @@ theorem crayons_lea (m : CrayonGifts) : m.lea = 12 := by cases m; omega
 theorem crayons_solution (m : CrayonGifts) : m.moreForLea = 7 := by cases m; omega
 
 structure OrangePieces where
-  oranges piecesPerOrange totalPieces piecesPerFriend friends : ℕ
+  oranges : ℕ
+  piecesPerOrange : ℕ
+  totalPieces : ℕ
+  piecesPerFriend : ℕ
+  friends : ℕ
   hOranges : oranges = 80
   hPiecesPerOrange : piecesPerOrange = 10
   hTotal : totalPieces = oranges * piecesPerOrange
@@ -63,7 +89,15 @@ theorem oranges_pieces (m : OrangePieces) : m.totalPieces = 800 := by cases m; o
 theorem oranges_solution (m : OrangePieces) : m.friends = 200 := by cases m; omega
 
 structure StorePurchase where
-  starting baguettes baguettePrice baguetteCost waters waterPrice waterCost spent left : ℕ
+  starting : ℕ
+  baguettes : ℕ
+  baguettePrice : ℕ
+  baguetteCost : ℕ
+  waters : ℕ
+  waterPrice : ℕ
+  waterCost : ℕ
+  spent : ℕ
+  left : ℕ
   hStarting : starting = 50
   hBaguettes : baguettes = 2
   hBaguettePrice : baguettePrice = 2
@@ -78,7 +112,10 @@ theorem store_water (m : StorePurchase) : m.waterCost = 2 := by cases m; omega
 theorem store_solution (m : StorePurchase) : m.left = 44 := by cases m; omega
 
 structure ThreeGenerations where
-  markus son grandson total : ℕ
+  markus : ℕ
+  son : ℕ
+  grandson : ℕ
+  total : ℕ
   hMarkus : markus = 2 * son
   hSon : son = 2 * grandson
   hTotal : total = 140
@@ -87,7 +124,13 @@ theorem ages_ratio_sum (m : ThreeGenerations) : 7 * m.grandson = 140 := by cases
 theorem ages_solution (m : ThreeGenerations) : m.grandson = 20 := by cases m; omega
 
 structure CourseEarnings where
-  courses weeklyHours weeklyPerCourse weeks monthlyHours hourlyRate earnings : ℕ
+  courses : ℕ
+  weeklyHours : ℕ
+  weeklyPerCourse : ℕ
+  weeks : ℕ
+  monthlyHours : ℕ
+  hourlyRate : ℕ
+  earnings : ℕ
   hCourses : courses = 4
   hWeeklyHours : weeklyHours = 48
   hWeeklyShare : weeklyHours = courses * weeklyPerCourse
@@ -100,7 +143,13 @@ theorem course_monthly (m : CourseEarnings) : m.monthlyHours = 48 := by cases m;
 theorem course_solution (m : CourseEarnings) : m.earnings = 1200 := by cases m; omega
 
 structure FlyerShare where
-  total ryan alyssa scott friends belinda percent : ℕ
+  total : ℕ
+  ryan : ℕ
+  alyssa : ℕ
+  scott : ℕ
+  friends : ℕ
+  belinda : ℕ
+  percent : ℕ
   hTotal : total = 200
   hRyan : ryan = 42
   hAlyssa : alyssa = 67
@@ -113,7 +162,13 @@ theorem flyers_belinda (m : FlyerShare) : m.belinda = 40 := by cases m; omega
 theorem flyers_solution (m : FlyerShare) : m.percent = 20 := by cases m; omega
 
 structure DutyShoes where
-  fullPrice firstPercent firstDiscount firstPrice secondPercent secondDiscount finalPrice : ℕ
+  fullPrice : ℕ
+  firstPercent : ℕ
+  firstDiscount : ℕ
+  firstPrice : ℕ
+  secondPercent : ℕ
+  secondDiscount : ℕ
+  finalPrice : ℕ
   hFull : fullPrice = 85
   hFirstPercent : firstPercent = 20
   hFirstDiscount : 100 * firstDiscount = firstPercent * fullPrice
@@ -127,7 +182,11 @@ theorem shoes_second_discount (m : DutyShoes) : m.secondDiscount = 17 := by case
 theorem shoes_solution (m : DutyShoes) : m.finalPrice = 51 := by cases m; omega
 
 structure PilotFishSpeed where
-  initial sharkSpeed sharkIncrease fishIncrease fishSpeed : ℕ
+  initial : ℕ
+  sharkSpeed : ℕ
+  sharkIncrease : ℕ
+  fishIncrease : ℕ
+  fishSpeed : ℕ
   hInitial : initial = 20
   hSharkSpeed : sharkSpeed = 2 * initial
   hSharkIncrease : sharkSpeed = initial + sharkIncrease
@@ -138,7 +197,10 @@ theorem speed_fish_increase (m : PilotFishSpeed) : m.fishIncrease = 10 := by cas
 theorem speed_solution (m : PilotFishSpeed) : m.fishSpeed = 30 := by cases m; omega
 
 structure RockyMiles where
-  day1 day2 day3 total : ℕ
+  day1 : ℕ
+  day2 : ℕ
+  day3 : ℕ
+  total : ℕ
   hDay1 : day1 = 4
   hDay2 : day2 = 2 * day1
   hDay3 : day3 = 3 * day2
@@ -148,7 +210,13 @@ theorem rocky_day3 (m : RockyMiles) : m.day3 = 24 := by cases m; omega
 theorem rocky_solution (m : RockyMiles) : m.total = 36 := by cases m; omega
 
 structure DoorReplacement where
-  bedroomDoors outsideDoors outsideEach outsideCost bedroomEach bedroomCost total : ℕ
+  bedroomDoors : ℕ
+  outsideDoors : ℕ
+  outsideEach : ℕ
+  outsideCost : ℕ
+  bedroomEach : ℕ
+  bedroomCost : ℕ
+  total : ℕ
   hBedroomDoors : bedroomDoors = 3
   hOutsideDoors : outsideDoors = 2
   hOutsideEach : outsideEach = 20
@@ -162,7 +230,13 @@ theorem doors_bedroom_cost (m : DoorReplacement) : m.bedroomCost = 30 := by case
 theorem doors_solution (m : DoorReplacement) : m.total = 70 := by cases m; omega
 
 structure AppleFamily where
-  apples children applesPerChild childrenApples adultApples applesPerAdult adults : ℕ
+  apples : ℕ
+  children : ℕ
+  applesPerChild : ℕ
+  childrenApples : ℕ
+  adultApples : ℕ
+  applesPerAdult : ℕ
+  adults : ℕ
   hApples : apples = 450
   hChildren : children = 33
   hPerChild : applesPerChild = 10
@@ -175,7 +249,14 @@ theorem apples_adults_share (m : AppleFamily) : m.adultApples = 120 := by cases 
 theorem apples_solution (m : AppleFamily) : m.adults = 40 := by cases m; omega
 
 structure DisplayCupboards where
-  tall wide narrowCapacity shelves perShelf remainingShelves narrowDisplayed total : ℕ
+  tall : ℕ
+  wide : ℕ
+  narrowCapacity : ℕ
+  shelves : ℕ
+  perShelf : ℕ
+  remainingShelves : ℕ
+  narrowDisplayed : ℕ
+  total : ℕ
   hTall : tall = 20
   hWide : wide = 2 * tall
   hNarrowCapacity : narrowCapacity = 15

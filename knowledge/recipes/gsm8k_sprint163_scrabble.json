@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint163_scrabble",
+  "title_ja": "スクラブルの中央文字の点数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02726",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3文字語を3倍して30点。両端が各1点のとき中央文字の点数を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.scrabble_solution",
+  "graph": "work/gsm8k-sprint163-scrabble-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "scrabble_pre_score",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.scrabble_pre_score",
+      "title_ja": "3倍前は10点",
+      "claim_ja": "3×3倍前=30から3倍前は10点",
+      "method_ja": "30点を3倍前へ戻す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "3×3倍前=30から3倍前は10点",
+      "baseline_ja": "3×3倍前=30から3倍前は10点"
+    },
+    {
+      "id": "scrabble_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.scrabble_solution",
+      "title_ja": "中央文字は8点",
+      "claim_ja": "10-1-1=8点",
+      "method_ja": "語の合計から両端各1点を引く",
+      "requires_steps": [
+        "scrabble_pre_score"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "10-1-1=8点",
+      "baseline_ja": "10-1-1=8点"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2727,
+    "checked_model_hash": "ee3d72b1cd40386e72b9fe569d315b48bcca70ec75c6d4a32aa237512d5c2e95",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

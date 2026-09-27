@@ -1,0 +1,131 @@
+{
+  "id": "gsm8k_sprint163_rancher",
+  "title_ja": "牛の値下げ損失と総収入減",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02728",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "conditional_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "340頭を204000ドルで売る予定だったが172頭が死亡し、残る牛を1頭150ドル値下げする。損失の比較基準を分けて求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.rancher_solution",
+  "graph": "work/gsm8k-sprint163-rancher-graph.json",
+  "model_notes_ja": [
+    "参考解答は生存168頭について値下げ前後を比べ、値下げ分25200ドルを答える。",
+    "元の全340頭の契約額204000ドルと実収入75600ドルを比べるなら総収入減は128400ドルである。原文だけでは損失に死亡分を含めるか曖昧。"
+  ],
+  "steps": [
+    {
+      "id": "rancher_survivors",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.rancher_survivors",
+      "title_ja": "生存は168頭",
+      "claim_ja": "残る牛は168頭",
+      "method_ja": "340-172",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参考解答は生存168頭について値下げ前後を比べ、値下げ分25200ドルを答える。",
+      "conclusion_ja": "残る牛は168頭",
+      "baseline_ja": "残る牛は168頭"
+    },
+    {
+      "id": "rancher_original_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.rancher_original_price",
+      "title_ja": "元値は1頭600ドル",
+      "claim_ja": "1頭600ドル",
+      "method_ja": "204000÷340",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参考解答は生存168頭について値下げ前後を比べ、値下げ分25200ドルを答える。",
+      "conclusion_ja": "1頭600ドル",
+      "baseline_ja": "1頭600ドル"
+    },
+    {
+      "id": "rancher_lowered_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.rancher_lowered_price",
+      "title_ja": "値下げ後は450ドル",
+      "claim_ja": "1頭450ドル",
+      "method_ja": "600-150",
+      "requires_steps": [
+        "rancher_original_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参考解答は生存168頭について値下げ前後を比べ、値下げ分25200ドルを答える。",
+      "conclusion_ja": "1頭450ドル",
+      "baseline_ja": "1頭450ドル"
+    },
+    {
+      "id": "rancher_lowered_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.rancher_lowered_revenue",
+      "title_ja": "実収入は75600ドル",
+      "claim_ja": "値下げ後収入は75600ドル",
+      "method_ja": "450×168",
+      "requires_steps": [
+        "rancher_survivors",
+        "rancher_lowered_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参考解答は生存168頭について値下げ前後を比べ、値下げ分25200ドルを答える。",
+      "conclusion_ja": "値下げ後収入は75600ドル",
+      "baseline_ja": "値下げ後収入は75600ドル"
+    },
+    {
+      "id": "rancher_price_cut_loss",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.rancher_price_cut_loss",
+      "title_ja": "生存頭数一定の値下げ損は25200ドル",
+      "claim_ja": "参考解答の比較では25200ドル",
+      "method_ja": "(600-450)×168",
+      "requires_steps": [
+        "rancher_survivors",
+        "rancher_original_price",
+        "rancher_lowered_price",
+        "rancher_lowered_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参考解答は生存168頭について値下げ前後を比べ、値下げ分25200ドルを答える。",
+      "conclusion_ja": "参考解答の比較では25200ドル",
+      "baseline_ja": "参考解答の比較では25200ドル"
+    },
+    {
+      "id": "rancher_all_deal_shortfall",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.rancher_all_deal_shortfall",
+      "title_ja": "元の全頭契約からの減少は128400ドル",
+      "claim_ja": "死亡分も含む総収入減は128400ドル",
+      "method_ja": "204000-75600",
+      "requires_steps": [
+        "rancher_lowered_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参考解答は生存168頭について値下げ前後を比べ、値下げ分25200ドルを答える。",
+      "conclusion_ja": "死亡分も含む総収入減は128400ドル",
+      "baseline_ja": "死亡分も含む総収入減は128400ドル"
+    },
+    {
+      "id": "rancher_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.rancher_solution",
+      "title_ja": "二つの比較基準を併記する",
+      "claim_ja": "値下げのみ25200ドル、全契約比128400ドル",
+      "method_ja": "曖昧な比較対象を分離する",
+      "requires_steps": [
+        "rancher_price_cut_loss",
+        "rancher_all_deal_shortfall"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参考解答は生存168頭について値下げ前後を比べ、値下げ分25200ドルを答える。",
+      "conclusion_ja": "値下げのみ25200ドル、全契約比128400ドル",
+      "baseline_ja": "値下げのみ25200ドル、全契約比128400ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2729,
+    "checked_model_hash": "ee3d72b1cd40386e72b9fe569d315b48bcca70ec75c6d4a32aa237512d5c2e95",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

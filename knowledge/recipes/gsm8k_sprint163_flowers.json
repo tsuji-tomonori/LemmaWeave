@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint163_flowers",
+  "title_ja": "Jamesの1日当たり植花数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02730",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jamesと友人4人が2日で計200本を等分して植える。Jamesの1日分を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.flowers_solution",
+  "graph": "work/gsm8k-sprint163-flowers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "flowers_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.flowers_people",
+      "title_ja": "作業者は5人",
+      "claim_ja": "計5人",
+      "method_ja": "James1人と友人4人を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "計5人",
+      "baseline_ja": "計5人"
+    },
+    {
+      "id": "flowers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.flowers_solution",
+      "title_ja": "Jamesは1日20本",
+      "claim_ja": "各人各日は20本",
+      "method_ja": "200÷2÷5",
+      "requires_steps": [
+        "flowers_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "各人各日は20本",
+      "baseline_ja": "各人各日は20本"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2731,
+    "checked_model_hash": "ee3d72b1cd40386e72b9fe569d315b48bcca70ec75c6d4a32aa237512d5c2e95",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

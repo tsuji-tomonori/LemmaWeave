@@ -126,4 +126,67 @@ theorem shoes_first_price (m : DutyShoes) : m.firstPrice = 68 := by cases m; ome
 theorem shoes_second_discount (m : DutyShoes) : m.secondDiscount = 17 := by cases m; omega
 theorem shoes_solution (m : DutyShoes) : m.finalPrice = 51 := by cases m; omega
 
+structure PilotFishSpeed where
+  initial sharkSpeed sharkIncrease fishIncrease fishSpeed : ℕ
+  hInitial : initial = 20
+  hSharkSpeed : sharkSpeed = 2 * initial
+  hSharkIncrease : sharkSpeed = initial + sharkIncrease
+  hHalfIncrease : sharkIncrease = 2 * fishIncrease
+  hFishSpeed : fishSpeed = initial + fishIncrease
+theorem speed_shark (m : PilotFishSpeed) : m.sharkSpeed = 40 := by cases m; omega
+theorem speed_fish_increase (m : PilotFishSpeed) : m.fishIncrease = 10 := by cases m; omega
+theorem speed_solution (m : PilotFishSpeed) : m.fishSpeed = 30 := by cases m; omega
+
+structure RockyMiles where
+  day1 day2 day3 total : ℕ
+  hDay1 : day1 = 4
+  hDay2 : day2 = 2 * day1
+  hDay3 : day3 = 3 * day2
+  hTotal : total = day1 + day2 + day3
+theorem rocky_day2 (m : RockyMiles) : m.day2 = 8 := by cases m; omega
+theorem rocky_day3 (m : RockyMiles) : m.day3 = 24 := by cases m; omega
+theorem rocky_solution (m : RockyMiles) : m.total = 36 := by cases m; omega
+
+structure DoorReplacement where
+  bedroomDoors outsideDoors outsideEach outsideCost bedroomEach bedroomCost total : ℕ
+  hBedroomDoors : bedroomDoors = 3
+  hOutsideDoors : outsideDoors = 2
+  hOutsideEach : outsideEach = 20
+  hOutsideCost : outsideCost = outsideDoors * outsideEach
+  hHalf : outsideEach = 2 * bedroomEach
+  hBedroomCost : bedroomCost = bedroomDoors * bedroomEach
+  hTotal : total = outsideCost + bedroomCost
+theorem doors_outside (m : DoorReplacement) : m.outsideCost = 40 := by cases m; omega
+theorem doors_bedroom_each (m : DoorReplacement) : m.bedroomEach = 10 := by cases m; omega
+theorem doors_bedroom_cost (m : DoorReplacement) : m.bedroomCost = 30 := by cases m; omega
+theorem doors_solution (m : DoorReplacement) : m.total = 70 := by cases m; omega
+
+structure AppleFamily where
+  apples children applesPerChild childrenApples adultApples applesPerAdult adults : ℕ
+  hApples : apples = 450
+  hChildren : children = 33
+  hPerChild : applesPerChild = 10
+  hChildrenApples : childrenApples = children * applesPerChild
+  hPartition : apples = childrenApples + adultApples
+  hPerAdult : applesPerAdult = 3
+  hAdults : adultApples = adults * applesPerAdult
+theorem apples_children (m : AppleFamily) : m.childrenApples = 330 := by cases m; omega
+theorem apples_adults_share (m : AppleFamily) : m.adultApples = 120 := by cases m; omega
+theorem apples_solution (m : AppleFamily) : m.adults = 40 := by cases m; omega
+
+structure DisplayCupboards where
+  tall wide narrowCapacity shelves perShelf remainingShelves narrowDisplayed total : ℕ
+  hTall : tall = 20
+  hWide : wide = 2 * tall
+  hNarrowCapacity : narrowCapacity = 15
+  hShelves : shelves = 3
+  hPerShelf : narrowCapacity = shelves * perShelf
+  hRemaining : shelves = remainingShelves + 1
+  hNarrowDisplayed : narrowDisplayed = remainingShelves * perShelf
+  hTotal : total = tall + wide + narrowDisplayed
+theorem cupboards_wide (m : DisplayCupboards) : m.wide = 40 := by cases m; omega
+theorem cupboards_per_shelf (m : DisplayCupboards) : m.perShelf = 5 := by cases m; omega
+theorem cupboards_narrow (m : DisplayCupboards) : m.narrowDisplayed = 10 := by cases m; omega
+theorem cupboards_solution (m : DisplayCupboards) : m.total = 70 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A10

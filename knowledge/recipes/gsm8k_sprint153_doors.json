@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint153_doors",
+  "title_ja": "ドア交換費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02588",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "寝室3枚、外扉2枚。外扉は各20ドル、寝室扉はその半額。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A10.doors_solution",
+  "graph": "work/gsm8k-sprint153-doors-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "doors_outside",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.doors_outside",
+      "title_ja": "外扉代は40ドル",
+      "claim_ja": "外扉代は40ドル",
+      "method_ja": "2枚に20ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "外扉代は40ドル",
+      "baseline_ja": "外扉代は40ドル"
+    },
+    {
+      "id": "doors_bedroom_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.doors_bedroom_each",
+      "title_ja": "寝室扉は1枚10ドル",
+      "claim_ja": "寝室扉は1枚10ドル",
+      "method_ja": "20ドルの半額を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "寝室扉は1枚10ドル",
+      "baseline_ja": "寝室扉は1枚10ドル"
+    },
+    {
+      "id": "doors_bedroom_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.doors_bedroom_cost",
+      "title_ja": "寝室扉代は30ドル",
+      "claim_ja": "寝室扉代は30ドル",
+      "method_ja": "3枚に10ドルを掛ける",
+      "requires_steps": [
+        "doors_bedroom_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "寝室扉代は30ドル",
+      "baseline_ja": "寝室扉代は30ドル"
+    },
+    {
+      "id": "doors_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.doors_solution",
+      "title_ja": "合計は70ドル",
+      "claim_ja": "合計は70ドル",
+      "method_ja": "40ドルと30ドルを足す",
+      "requires_steps": [
+        "doors_outside",
+        "doors_bedroom_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計は70ドル",
+      "baseline_ja": "合計は70ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2589,
+    "checked_model_hash": "7618bd45dd30da04bf979ceea74e3d62b59e8bace446403a94acee461f56111a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

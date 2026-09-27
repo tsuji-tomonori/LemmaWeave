@@ -103,4 +103,93 @@ theorem people_solution (m : PeopleCount) : m.total = 1500 := by
   have h2 := m.hTotal
   omega
 
+structure StormRain where
+  secondDay : ℕ
+  thirdDay : ℕ
+  hSecond : secondDay = 5 * 4
+  hThird : thirdDay + 6 = 4 + secondDay
+theorem rain_second (m : StormRain) : m.secondDay = 20 := by
+  have h := m.hSecond
+  omega
+theorem rain_solution (m : StormRain) : m.thirdDay = 18 := by
+  have h1 := m.hSecond
+  have h2 := m.hThird
+  omega
+
+structure HousePizza where
+  eaters : ℕ
+  eaten : ℕ
+  remaining : ℕ
+  hEaters : 5 * eaters = 3 * 15
+  hEaten : eaten = 4 * eaters
+  hRemaining : eaten + remaining = 50
+theorem house_eaters (m : HousePizza) : m.eaters = 9 := by
+  have h := m.hEaters
+  omega
+theorem house_eaten (m : HousePizza) : m.eaten = 36 := by
+  have h1 := m.hEaters
+  have h2 := m.hEaten
+  omega
+theorem house_solution (m : HousePizza) : m.remaining = 14 := by
+  have h1 := m.hEaters
+  have h2 := m.hEaten
+  have h3 := m.hRemaining
+  omega
+
+/-- The wording supports both a running-balance reading and increasing monthly deposits. -/
+structure SavingsReadings where
+  firstMonth : ℕ
+  secondMonth : ℕ
+  thirdMonth : ℕ
+  balanceReading : ℕ
+  depositTotal : ℕ
+  hFirst : firstMonth = 10
+  hSecond : secondMonth = firstMonth + 30
+  hThird : thirdMonth = secondMonth + 30
+  hBalance : balanceReading = firstMonth + 30 + 30
+  hDeposits : depositTotal = firstMonth + secondMonth + thirdMonth
+theorem savings_second (m : SavingsReadings) : m.secondMonth = 40 := by
+  have h1 := m.hFirst
+  have h2 := m.hSecond
+  omega
+theorem savings_third (m : SavingsReadings) : m.thirdMonth = 70 := by
+  have h1 := m.hFirst
+  have h2 := m.hSecond
+  have h3 := m.hThird
+  omega
+theorem savings_balance_solution (m : SavingsReadings) : m.balanceReading = 70 := by
+  have h1 := m.hFirst
+  have h2 := m.hBalance
+  omega
+theorem savings_deposit_solution (m : SavingsReadings) : m.depositTotal = 120 := by
+  have h1 := m.hFirst
+  have h2 := m.hSecond
+  have h3 := m.hThird
+  have h4 := m.hDeposits
+  omega
+theorem savings_ambiguous (m : SavingsReadings) : m.balanceReading ≠ m.depositTotal := by
+  have h1 := savings_balance_solution m
+  have h2 := savings_deposit_solution m
+  omega
+
+structure DogToys where
+  total : ℕ
+  hTotal : total = 5 + 3 + 5
+theorem toys_solution (m : DogToys) : m.total = 13 := by
+  have h := m.hTotal
+  omega
+
+structure CoinPayments where
+  jason : ℕ
+  total : ℕ
+  hJason : jason = 300 + 60
+  hTotal : total = 300 + jason
+theorem coins_jason (m : CoinPayments) : m.jason = 360 := by
+  have h := m.hJason
+  omega
+theorem coins_solution (m : CoinPayments) : m.total = 660 := by
+  have h1 := m.hJason
+  have h2 := m.hTotal
+  omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A18

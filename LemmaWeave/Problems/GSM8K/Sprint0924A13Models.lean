@@ -13,11 +13,18 @@ structure Grocery where
   hTotal : total = snickers + mms
   hCash : cash = 2 * 1000
   hChange : change + total = cash
-theorem grocery_snickers (m : Grocery) : m.snickers = 300 := by cases m <;> omega
-theorem grocery_mms (m : Grocery) : m.mms = 900 := by cases m <;> omega
-theorem grocery_total (m : Grocery) : m.total = 1200 := by cases m <;> omega
-theorem grocery_cash (m : Grocery) : m.cash = 2000 := by cases m <;> omega
-theorem grocery_solution (m : Grocery) : m.change = 800 := by cases m <;> omega
+theorem grocery_snickers (m : Grocery) : m.snickers = 300 := by
+  rw [m.hSnickers]
+theorem grocery_mms (m : Grocery) : m.mms = 900 := by
+  rw [m.hMms]
+theorem grocery_total (m : Grocery) : m.total = 1200 := by
+  rw [m.hTotal, grocery_snickers m, grocery_mms m]
+theorem grocery_cash (m : Grocery) : m.cash = 2000 := by
+  rw [m.hCash]
+theorem grocery_solution (m : Grocery) : m.change = 800 := by
+  have h := m.hChange
+  rw [grocery_total m, grocery_cash m] at h
+  omega
 
 structure Download where
   install : ℕ
@@ -28,10 +35,15 @@ structure Download where
   hCombined : combined = 10 + install
   hTutorial : tutorial = 3 * combined
   hTotal : total = combined + tutorial
-theorem download_install (m : Download) : m.install = 5 := by cases m <;> omega
-theorem download_combined (m : Download) : m.combined = 15 := by cases m <;> omega
-theorem download_tutorial (m : Download) : m.tutorial = 45 := by cases m <;> omega
-theorem download_solution (m : Download) : m.total = 60 := by cases m <;> omega
+theorem download_install (m : Download) : m.install = 5 := by
+  have h := m.hInstall
+  omega
+theorem download_combined (m : Download) : m.combined = 15 := by
+  rw [m.hCombined, download_install m]
+theorem download_tutorial (m : Download) : m.tutorial = 45 := by
+  rw [m.hTutorial, download_combined m]
+theorem download_solution (m : Download) : m.total = 60 := by
+  rw [m.hTotal, download_combined m, download_tutorial m]
 
 structure Kona where
   withStop : ℕ

@@ -10,10 +10,30 @@ structure WeeklyCalories where
   hConsumed : weeklyConsumed = 6 * 2500 + saturday
   hBurned : weeklyBurned = 7 * 3000
   hDeficit : weeklyConsumed + deficit = weeklyBurned
-theorem calories_saturday (m : WeeklyCalories) : m.saturday = 3500 := by cases m <;> omega
-theorem calories_consumed (m : WeeklyCalories) : m.weeklyConsumed = 18500 := by cases m <;> omega
-theorem calories_burned (m : WeeklyCalories) : m.weeklyBurned = 21000 := by cases m <;> omega
-theorem calories_solution (m : WeeklyCalories) : m.deficit = 2500 := by cases m <;> omega
+theorem calories_saturday (m : WeeklyCalories) : m.saturday = 3500 := by
+  have h1 := m.hSaturday
+  have h2 := m.hConsumed
+  have h3 := m.hBurned
+  have h4 := m.hDeficit
+  omega
+theorem calories_consumed (m : WeeklyCalories) : m.weeklyConsumed = 18500 := by
+  have h1 := m.hSaturday
+  have h2 := m.hConsumed
+  have h3 := m.hBurned
+  have h4 := m.hDeficit
+  omega
+theorem calories_burned (m : WeeklyCalories) : m.weeklyBurned = 21000 := by
+  have h1 := m.hSaturday
+  have h2 := m.hConsumed
+  have h3 := m.hBurned
+  have h4 := m.hDeficit
+  omega
+theorem calories_solution (m : WeeklyCalories) : m.deficit = 2500 := by
+  have h1 := m.hSaturday
+  have h2 := m.hConsumed
+  have h3 := m.hBurned
+  have h4 := m.hDeficit
+  omega
 
 structure FanEnergy where
   dailyWh : ℕ
@@ -22,9 +42,21 @@ structure FanEnergy where
   hDaily : dailyWh = 75 * 8
   hMonthly : monthlyWh = 30 * dailyWh
   hKWh : monthlyWh = 1000 * monthlyKWh
-theorem fan_daily (m : FanEnergy) : m.dailyWh = 600 := by cases m <;> omega
-theorem fan_monthly_wh (m : FanEnergy) : m.monthlyWh = 18000 := by cases m <;> omega
-theorem fan_solution (m : FanEnergy) : m.monthlyKWh = 18 := by cases m <;> omega
+theorem fan_daily (m : FanEnergy) : m.dailyWh = 600 := by
+  have h1 := m.hDaily
+  have h2 := m.hMonthly
+  have h3 := m.hKWh
+  omega
+theorem fan_monthly_wh (m : FanEnergy) : m.monthlyWh = 18000 := by
+  have h1 := m.hDaily
+  have h2 := m.hMonthly
+  have h3 := m.hKWh
+  omega
+theorem fan_solution (m : FanEnergy) : m.monthlyKWh = 18 := by
+  have h1 := m.hDaily
+  have h2 := m.hMonthly
+  have h3 := m.hKWh
+  omega
 
 structure Magazines where
   sunday : ℕ
@@ -33,9 +65,21 @@ structure Magazines where
   hSunday : sunday = 4 * 8
   hBefore : beforeDog = 8 + 12 + sunday
   hNow : now + 4 = beforeDog
-theorem magazines_sunday (m : Magazines) : m.sunday = 32 := by cases m <;> omega
-theorem magazines_before (m : Magazines) : m.beforeDog = 52 := by cases m <;> omega
-theorem magazines_solution (m : Magazines) : m.now = 48 := by cases m <;> omega
+theorem magazines_sunday (m : Magazines) : m.sunday = 32 := by
+  have h1 := m.hSunday
+  have h2 := m.hBefore
+  have h3 := m.hNow
+  omega
+theorem magazines_before (m : Magazines) : m.beforeDog = 52 := by
+  have h1 := m.hSunday
+  have h2 := m.hBefore
+  have h3 := m.hNow
+  omega
+theorem magazines_solution (m : Magazines) : m.now = 48 := by
+  have h1 := m.hSunday
+  have h2 := m.hBefore
+  have h3 := m.hNow
+  omega
 
 structure StateFair where
   attendees : ℕ
@@ -54,11 +98,56 @@ structure StateFair where
   hSouvenirBuyers : 8 * souvenirBuyers = attendees
   hSouvenirRevenue : souvenirRevenue = 15 * souvenirBuyers
   hTotal : total = 2520 + foodRevenue + rideRevenue + souvenirRevenue
-theorem fair_attendees (m : StateFair) : m.attendees = 504 := by cases m <;> omega
-theorem fair_food (m : StateFair) : m.foodRevenue = 2688 := by cases m <;> omega
-theorem fair_rides (m : StateFair) : m.rideRevenue = 504 := by cases m <;> omega
-theorem fair_souvenirs (m : StateFair) : m.souvenirRevenue = 945 := by cases m <;> omega
-theorem fair_solution (m : StateFair) : m.total = 6657 := by cases m <;> omega
+theorem fair_attendees (m : StateFair) : m.attendees = 504 := by
+  have h1 := m.hTickets
+  have h2 := m.hFoodBuyers
+  have h3 := m.hFoodRevenue
+  have h4 := m.hRideBuyers
+  have h5 := m.hRideRevenue
+  have h6 := m.hSouvenirBuyers
+  have h7 := m.hSouvenirRevenue
+  have h8 := m.hTotal
+  omega
+theorem fair_food (m : StateFair) : m.foodRevenue = 2688 := by
+  have h1 := m.hTickets
+  have h2 := m.hFoodBuyers
+  have h3 := m.hFoodRevenue
+  have h4 := m.hRideBuyers
+  have h5 := m.hRideRevenue
+  have h6 := m.hSouvenirBuyers
+  have h7 := m.hSouvenirRevenue
+  have h8 := m.hTotal
+  omega
+theorem fair_rides (m : StateFair) : m.rideRevenue = 504 := by
+  have h1 := m.hTickets
+  have h2 := m.hFoodBuyers
+  have h3 := m.hFoodRevenue
+  have h4 := m.hRideBuyers
+  have h5 := m.hRideRevenue
+  have h6 := m.hSouvenirBuyers
+  have h7 := m.hSouvenirRevenue
+  have h8 := m.hTotal
+  omega
+theorem fair_souvenirs (m : StateFair) : m.souvenirRevenue = 945 := by
+  have h1 := m.hTickets
+  have h2 := m.hFoodBuyers
+  have h3 := m.hFoodRevenue
+  have h4 := m.hRideBuyers
+  have h5 := m.hRideRevenue
+  have h6 := m.hSouvenirBuyers
+  have h7 := m.hSouvenirRevenue
+  have h8 := m.hTotal
+  omega
+theorem fair_solution (m : StateFair) : m.total = 6657 := by
+  have h1 := m.hTickets
+  have h2 := m.hFoodBuyers
+  have h3 := m.hFoodRevenue
+  have h4 := m.hRideBuyers
+  have h5 := m.hRideRevenue
+  have h6 := m.hSouvenirBuyers
+  have h7 := m.hSouvenirRevenue
+  have h8 := m.hTotal
+  omega
 
 structure CabinDeposit where
   days : ℕ
@@ -73,11 +162,46 @@ structure CabinDeposit where
   hService : 5 * service = subtotal
   hTotal : total = subtotal + service
   hDeposit : 2 * deposit = total
-theorem cabin_days (m : CabinDeposit) : m.days = 14 := by cases m <;> omega
-theorem cabin_rent (m : CabinDeposit) : m.rent = 1750 := by cases m <;> omega
-theorem cabin_service (m : CabinDeposit) : m.service = 370 := by cases m <;> omega
-theorem cabin_total (m : CabinDeposit) : m.total = 2220 := by cases m <;> omega
-theorem cabin_solution (m : CabinDeposit) : m.deposit = 1110 := by cases m <;> omega
+theorem cabin_days (m : CabinDeposit) : m.days = 14 := by
+  have h1 := m.hDays
+  have h2 := m.hRent
+  have h3 := m.hSubtotal
+  have h4 := m.hService
+  have h5 := m.hTotal
+  have h6 := m.hDeposit
+  omega
+theorem cabin_rent (m : CabinDeposit) : m.rent = 1750 := by
+  have h1 := m.hDays
+  have h2 := m.hRent
+  have h3 := m.hSubtotal
+  have h4 := m.hService
+  have h5 := m.hTotal
+  have h6 := m.hDeposit
+  omega
+theorem cabin_service (m : CabinDeposit) : m.service = 370 := by
+  have h1 := m.hDays
+  have h2 := m.hRent
+  have h3 := m.hSubtotal
+  have h4 := m.hService
+  have h5 := m.hTotal
+  have h6 := m.hDeposit
+  omega
+theorem cabin_total (m : CabinDeposit) : m.total = 2220 := by
+  have h1 := m.hDays
+  have h2 := m.hRent
+  have h3 := m.hSubtotal
+  have h4 := m.hService
+  have h5 := m.hTotal
+  have h6 := m.hDeposit
+  omega
+theorem cabin_solution (m : CabinDeposit) : m.deposit = 1110 := by
+  have h1 := m.hDays
+  have h2 := m.hRent
+  have h3 := m.hSubtotal
+  have h4 := m.hService
+  have h5 := m.hTotal
+  have h6 := m.hDeposit
+  omega
 
 structure FishingWeights where
   peter : ℕ
@@ -88,9 +212,24 @@ structure FishingWeights where
   hJoey : joey = peter + 1
   hTotal : total = peter + ali + joey
   hTwentyFive : total = 25
-theorem weights_peter (m : FishingWeights) : m.peter = 6 := by cases m <;> omega
-theorem weights_joey (m : FishingWeights) : m.joey = 7 := by cases m <;> omega
-theorem weights_solution (m : FishingWeights) : m.ali = 12 := by cases m <;> omega
+theorem weights_peter (m : FishingWeights) : m.peter = 6 := by
+  have h1 := m.hAli
+  have h2 := m.hJoey
+  have h3 := m.hTotal
+  have h4 := m.hTwentyFive
+  omega
+theorem weights_joey (m : FishingWeights) : m.joey = 7 := by
+  have h1 := m.hAli
+  have h2 := m.hJoey
+  have h3 := m.hTotal
+  have h4 := m.hTwentyFive
+  omega
+theorem weights_solution (m : FishingWeights) : m.ali = 12 := by
+  have h1 := m.hAli
+  have h2 := m.hJoey
+  have h3 := m.hTotal
+  have h4 := m.hTwentyFive
+  omega
 
 structure TreePlanting where
   monday : ℕ
@@ -99,9 +238,21 @@ structure TreePlanting where
   hMonday : 30 + monday = 3 * 30
   hTuesday : 3 * tuesday = monday
   hTotal : total = monday + tuesday
-theorem trees_monday (m : TreePlanting) : m.monday = 60 := by cases m <;> omega
-theorem trees_tuesday (m : TreePlanting) : m.tuesday = 20 := by cases m <;> omega
-theorem trees_solution (m : TreePlanting) : m.total = 80 := by cases m <;> omega
+theorem trees_monday (m : TreePlanting) : m.monday = 60 := by
+  have h1 := m.hMonday
+  have h2 := m.hTuesday
+  have h3 := m.hTotal
+  omega
+theorem trees_tuesday (m : TreePlanting) : m.tuesday = 20 := by
+  have h1 := m.hMonday
+  have h2 := m.hTuesday
+  have h3 := m.hTotal
+  omega
+theorem trees_solution (m : TreePlanting) : m.total = 80 := by
+  have h1 := m.hMonday
+  have h2 := m.hTuesday
+  have h3 := m.hTotal
+  omega
 
 structure Pens where
   blue : ℕ
@@ -112,9 +263,24 @@ structure Pens where
   hBlack : black = 2 * blue
   hRed : red + 2 = 2 * black
   hTotal : total = blue + black + red
-theorem pens_black (m : Pens) : m.black = 4 := by cases m <;> omega
-theorem pens_red (m : Pens) : m.red = 6 := by cases m <;> omega
-theorem pens_solution (m : Pens) : m.total = 12 := by cases m <;> omega
+theorem pens_black (m : Pens) : m.black = 4 := by
+  have h1 := m.hBlue
+  have h2 := m.hBlack
+  have h3 := m.hRed
+  have h4 := m.hTotal
+  omega
+theorem pens_red (m : Pens) : m.red = 6 := by
+  have h1 := m.hBlue
+  have h2 := m.hBlack
+  have h3 := m.hRed
+  have h4 := m.hTotal
+  omega
+theorem pens_solution (m : Pens) : m.total = 12 := by
+  have h1 := m.hBlue
+  have h2 := m.hBlack
+  have h3 := m.hRed
+  have h4 := m.hTotal
+  omega
 
 structure TeachingYears where
   calculus : ℕ
@@ -125,9 +291,24 @@ structure TeachingYears where
   hAlgebra : algebra = 2 * calculus
   hStatistics : statistics = 5 * algebra
   hTotal : total = calculus + algebra + statistics
-theorem years_algebra (m : TeachingYears) : m.algebra = 8 := by cases m <;> omega
-theorem years_statistics (m : TeachingYears) : m.statistics = 40 := by cases m <;> omega
-theorem years_solution (m : TeachingYears) : m.total = 52 := by cases m <;> omega
+theorem years_algebra (m : TeachingYears) : m.algebra = 8 := by
+  have h1 := m.hCalculus
+  have h2 := m.hAlgebra
+  have h3 := m.hStatistics
+  have h4 := m.hTotal
+  omega
+theorem years_statistics (m : TeachingYears) : m.statistics = 40 := by
+  have h1 := m.hCalculus
+  have h2 := m.hAlgebra
+  have h3 := m.hStatistics
+  have h4 := m.hTotal
+  omega
+theorem years_solution (m : TeachingYears) : m.total = 52 := by
+  have h1 := m.hCalculus
+  have h2 := m.hAlgebra
+  have h3 := m.hStatistics
+  have h4 := m.hTotal
+  omega
 
 structure SamuelApples where
   bought : ℕ
@@ -138,10 +319,30 @@ structure SamuelApples where
   hEaten : 2 * eaten = bought
   hPie : 7 * pie = bought
   hLeft : left + eaten + pie = bought
-theorem samuel_bought (m : SamuelApples) : m.bought = 28 := by cases m <;> omega
-theorem samuel_eaten (m : SamuelApples) : m.eaten = 14 := by cases m <;> omega
-theorem samuel_pie (m : SamuelApples) : m.pie = 4 := by cases m <;> omega
-theorem samuel_solution (m : SamuelApples) : m.left = 10 := by cases m <;> omega
+theorem samuel_bought (m : SamuelApples) : m.bought = 28 := by
+  have h1 := m.hBought
+  have h2 := m.hEaten
+  have h3 := m.hPie
+  have h4 := m.hLeft
+  omega
+theorem samuel_eaten (m : SamuelApples) : m.eaten = 14 := by
+  have h1 := m.hBought
+  have h2 := m.hEaten
+  have h3 := m.hPie
+  have h4 := m.hLeft
+  omega
+theorem samuel_pie (m : SamuelApples) : m.pie = 4 := by
+  have h1 := m.hBought
+  have h2 := m.hEaten
+  have h3 := m.hPie
+  have h4 := m.hLeft
+  omega
+theorem samuel_solution (m : SamuelApples) : m.left = 10 := by
+  have h1 := m.hBought
+  have h2 := m.hEaten
+  have h3 := m.hPie
+  have h4 := m.hLeft
+  omega
 
 structure SharedFish where
   carla : ℕ
@@ -152,8 +353,18 @@ structure SharedFish where
   hEqual : kyle = tasha
   hTotal : total = carla + kyle + tasha
   hThirtySix : total = 36
-theorem shared_pair (m : SharedFish) : m.kyle + m.tasha = 28 := by cases m <;> omega
-theorem shared_solution (m : SharedFish) : m.kyle = 14 := by cases m <;> omega
+theorem shared_pair (m : SharedFish) : m.kyle + m.tasha = 28 := by
+  have h1 := m.hCarla
+  have h2 := m.hEqual
+  have h3 := m.hTotal
+  have h4 := m.hThirtySix
+  omega
+theorem shared_solution (m : SharedFish) : m.kyle = 14 := by
+  have h1 := m.hCarla
+  have h2 := m.hEqual
+  have h3 := m.hTotal
+  have h4 := m.hThirtySix
+  omega
 
 structure QuizAverage where
   firstFour : ℕ
@@ -162,9 +373,21 @@ structure QuizAverage where
   hFirst : firstFour = 90 + 98 + 92 + 94
   hTarget : targetTotal = 94 * 5
   hFifth : firstFour + fifth = targetTotal
-theorem quiz_first_four (m : QuizAverage) : m.firstFour = 374 := by cases m <;> omega
-theorem quiz_target (m : QuizAverage) : m.targetTotal = 470 := by cases m <;> omega
-theorem quiz_solution (m : QuizAverage) : m.fifth = 96 := by cases m <;> omega
+theorem quiz_first_four (m : QuizAverage) : m.firstFour = 374 := by
+  have h1 := m.hFirst
+  have h2 := m.hTarget
+  have h3 := m.hFifth
+  omega
+theorem quiz_target (m : QuizAverage) : m.targetTotal = 470 := by
+  have h1 := m.hFirst
+  have h2 := m.hTarget
+  have h3 := m.hFifth
+  omega
+theorem quiz_solution (m : QuizAverage) : m.fifth = 96 := by
+  have h1 := m.hFirst
+  have h2 := m.hTarget
+  have h3 := m.hFifth
+  omega
 
 structure TaxBill where
   taxable : ℕ
@@ -179,10 +402,46 @@ structure TaxBill where
   hLowerTax : 10 * lowerTax = lowerBand
   hHigherTax : 5 * higherTax = higherBand
   hTotalTax : totalTax = lowerTax + higherTax
-theorem tax_taxable (m : TaxBill) : m.taxable = 70000 := by cases m <;> omega
-theorem tax_lower (m : TaxBill) : m.lowerTax = 2000 := by cases m <;> omega
-theorem tax_higher (m : TaxBill) : m.higherTax = 10000 := by cases m <;> omega
-theorem tax_solution (m : TaxBill) : m.totalTax = 12000 := by cases m <;> omega
+theorem tax_taxable (m : TaxBill) : m.taxable = 70000 := by
+  have h1 := m.higherBand
+  have h2 := m.higherTax
+  have h3 := m.hTaxable
+  have h4 := m.hLowerBand
+  have h5 := m.hHigherBand
+  have h6 := m.hLowerTax
+  have h7 := m.hHigherTax
+  have h8 := m.hTotalTax
+  omega
+theorem tax_lower (m : TaxBill) : m.lowerTax = 2000 := by
+  have h1 := m.higherBand
+  have h2 := m.higherTax
+  have h3 := m.hTaxable
+  have h4 := m.hLowerBand
+  have h5 := m.hHigherBand
+  have h6 := m.hLowerTax
+  have h7 := m.hHigherTax
+  have h8 := m.hTotalTax
+  omega
+theorem tax_higher (m : TaxBill) : m.higherTax = 10000 := by
+  have h1 := m.higherBand
+  have h2 := m.higherTax
+  have h3 := m.hTaxable
+  have h4 := m.hLowerBand
+  have h5 := m.hHigherBand
+  have h6 := m.hLowerTax
+  have h7 := m.hHigherTax
+  have h8 := m.hTotalTax
+  omega
+theorem tax_solution (m : TaxBill) : m.totalTax = 12000 := by
+  have h1 := m.higherBand
+  have h2 := m.higherTax
+  have h3 := m.hTaxable
+  have h4 := m.hLowerBand
+  have h5 := m.hHigherBand
+  have h6 := m.hLowerTax
+  have h7 := m.hHigherTax
+  have h8 := m.hTotalTax
+  omega
 
 structure Cookies where
   millie : ℕ
@@ -191,8 +450,16 @@ structure Cookies where
   hMillie : millie = 4
   hMike : mike = 3 * millie
   hFrank : 2 * (frank + 3) = mike
-theorem cookies_mike (m : Cookies) : m.mike = 12 := by cases m <;> omega
-theorem cookies_solution (m : Cookies) : m.frank = 3 := by cases m <;> omega
+theorem cookies_mike (m : Cookies) : m.mike = 12 := by
+  have h1 := m.hMillie
+  have h2 := m.hMike
+  have h3 := m.hFrank
+  omega
+theorem cookies_solution (m : Cookies) : m.frank = 3 := by
+  have h1 := m.hMillie
+  have h2 := m.hMike
+  have h3 := m.hFrank
+  omega
 
 structure DogTime where
   dryMinutes : ℕ
@@ -201,8 +468,20 @@ structure DogTime where
   hDry : 2 * dryMinutes = 20
   hWalk : 6 * walkMinutes = 3 * 60
   hTotal : totalMinutes = 20 + dryMinutes + walkMinutes
-theorem dog_dry (m : DogTime) : m.dryMinutes = 10 := by cases m <;> omega
-theorem dog_walk (m : DogTime) : m.walkMinutes = 30 := by cases m <;> omega
-theorem dog_solution (m : DogTime) : m.totalMinutes = 60 := by cases m <;> omega
+theorem dog_dry (m : DogTime) : m.dryMinutes = 10 := by
+  have h1 := m.hDry
+  have h2 := m.hWalk
+  have h3 := m.hTotal
+  omega
+theorem dog_walk (m : DogTime) : m.walkMinutes = 30 := by
+  have h1 := m.hDry
+  have h2 := m.hWalk
+  have h3 := m.hTotal
+  omega
+theorem dog_solution (m : DogTime) : m.totalMinutes = 60 := by
+  have h1 := m.hDry
+  have h2 := m.hWalk
+  have h3 := m.hTotal
+  omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0927A19

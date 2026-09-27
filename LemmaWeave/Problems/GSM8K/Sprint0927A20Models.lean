@@ -10,9 +10,21 @@ structure BookTournament where
   hKara : 2 * kara = amanda
   hPatricia : patricia = 7 * kara
 
-theorem books_amanda (m : BookTournament) : m.amanda = 6 := by cases m <;> omega
-theorem books_kara (m : BookTournament) : m.kara = 3 := by cases m <;> omega
-theorem books_solution (m : BookTournament) : m.patricia = 21 := by cases m <;> omega
+theorem books_amanda (m : BookTournament) : m.amanda = 6 := by
+  have h1 := m.hAmanda
+  have h2 := m.hKara
+  have h3 := m.hPatricia
+  omega
+theorem books_kara (m : BookTournament) : m.kara = 3 := by
+  have h1 := m.hAmanda
+  have h2 := m.hKara
+  have h3 := m.hPatricia
+  omega
+theorem books_solution (m : BookTournament) : m.patricia = 21 := by
+  have h1 := m.hAmanda
+  have h2 := m.hKara
+  have h3 := m.hPatricia
+  omega
 
 structure KeychainThread where
   clubFriends : ℕ
@@ -22,9 +34,21 @@ structure KeychainThread where
   hTotal : totalFriends = 6 + clubFriends
   hThread : threadInches = 12 * totalFriends
 
-theorem keychains_club (m : KeychainThread) : m.clubFriends = 3 := by cases m <;> omega
-theorem keychains_total (m : KeychainThread) : m.totalFriends = 9 := by cases m <;> omega
-theorem keychains_solution (m : KeychainThread) : m.threadInches = 108 := by cases m <;> omega
+theorem keychains_club (m : KeychainThread) : m.clubFriends = 3 := by
+  have h1 := m.hClub
+  have h2 := m.hTotal
+  have h3 := m.hThread
+  omega
+theorem keychains_total (m : KeychainThread) : m.totalFriends = 9 := by
+  have h1 := m.hClub
+  have h2 := m.hTotal
+  have h3 := m.hThread
+  omega
+theorem keychains_solution (m : KeychainThread) : m.threadInches = 108 := by
+  have h1 := m.hClub
+  have h2 := m.hTotal
+  have h3 := m.hThread
+  omega
 
 structure WallDivision where
   fourWallRooms : ℕ
@@ -36,9 +60,24 @@ structure WallDivision where
   hTotal : totalWalls = fourWallRooms + fiveWallRooms
   hEach : 5 * wallsEach = totalWalls
 
-theorem walls_four (m : WallDivision) : m.fourWallRooms = 20 := by cases m <;> omega
-theorem walls_total (m : WallDivision) : m.totalWalls = 40 := by cases m <;> omega
-theorem walls_solution (m : WallDivision) : m.wallsEach = 8 := by cases m <;> omega
+theorem walls_four (m : WallDivision) : m.fourWallRooms = 20 := by
+  have h1 := m.hFour
+  have h2 := m.hFive
+  have h3 := m.hTotal
+  have h4 := m.hEach
+  omega
+theorem walls_total (m : WallDivision) : m.totalWalls = 40 := by
+  have h1 := m.hFour
+  have h2 := m.hFive
+  have h3 := m.hTotal
+  have h4 := m.hEach
+  omega
+theorem walls_solution (m : WallDivision) : m.wallsEach = 8 := by
+  have h1 := m.hFour
+  have h2 := m.hFive
+  have h3 := m.hTotal
+  have h4 := m.hEach
+  omega
 
 structure Kickball where
   thursday : ℕ
@@ -46,8 +85,14 @@ structure Kickball where
   hThursday : thursday + 9 = 37
   hTotal : total = 37 + thursday
 
-theorem kickball_thursday (m : Kickball) : m.thursday = 28 := by cases m <;> omega
-theorem kickball_solution (m : Kickball) : m.total = 65 := by cases m <;> omega
+theorem kickball_thursday (m : Kickball) : m.thursday = 28 := by
+  have h1 := m.hThursday
+  have h2 := m.hTotal
+  omega
+theorem kickball_solution (m : Kickball) : m.total = 65 := by
+  have h1 := m.hThursday
+  have h2 := m.hTotal
+  omega
 
 structure VegetablePoints where
   totalVegetables : ℕ
@@ -57,9 +102,21 @@ structure VegetablePoints where
   hStudents : 25 * perStudentTwoWeeks = totalVegetables
   hWeeks : 2 * perStudentWeek = perStudentTwoWeeks
 
-theorem vegetables_total (m : VegetablePoints) : m.totalVegetables = 100 := by cases m <;> omega
-theorem vegetables_per_student (m : VegetablePoints) : m.perStudentTwoWeeks = 4 := by cases m <;> omega
-theorem vegetables_solution (m : VegetablePoints) : m.perStudentWeek = 2 := by cases m <;> omega
+theorem vegetables_total (m : VegetablePoints) : m.totalVegetables = 100 := by
+  have h1 := m.hPoints
+  have h2 := m.hStudents
+  have h3 := m.hWeeks
+  omega
+theorem vegetables_per_student (m : VegetablePoints) : m.perStudentTwoWeeks = 4 := by
+  have h1 := m.hPoints
+  have h2 := m.hStudents
+  have h3 := m.hWeeks
+  omega
+theorem vegetables_solution (m : VegetablePoints) : m.perStudentWeek = 2 := by
+  have h1 := m.hPoints
+  have h2 := m.hStudents
+  have h3 := m.hWeeks
+  omega
 
 structure TomatoProfit where
   totalKg : ℕ
@@ -71,10 +128,30 @@ structure TomatoProfit where
   hRevenue : revenue = 6 * sellableKg
   hProfit : profit + 330 = revenue
 
-theorem tomatoes_total (m : TomatoProfit) : m.totalKg = 60 := by cases m <;> omega
-theorem tomatoes_sellable (m : TomatoProfit) : m.sellableKg = 57 := by cases m <;> omega
-theorem tomatoes_revenue (m : TomatoProfit) : m.revenue = 342 := by cases m <;> omega
-theorem tomatoes_solution (m : TomatoProfit) : m.profit = 12 := by cases m <;> omega
+theorem tomatoes_total (m : TomatoProfit) : m.totalKg = 60 := by
+  have h1 := m.hTotal
+  have h2 := m.hSellable
+  have h3 := m.hRevenue
+  have h4 := m.hProfit
+  omega
+theorem tomatoes_sellable (m : TomatoProfit) : m.sellableKg = 57 := by
+  have h1 := m.hTotal
+  have h2 := m.hSellable
+  have h3 := m.hRevenue
+  have h4 := m.hProfit
+  omega
+theorem tomatoes_revenue (m : TomatoProfit) : m.revenue = 342 := by
+  have h1 := m.hTotal
+  have h2 := m.hSellable
+  have h3 := m.hRevenue
+  have h4 := m.hProfit
+  omega
+theorem tomatoes_solution (m : TomatoProfit) : m.profit = 12 := by
+  have h1 := m.hTotal
+  have h2 := m.hSellable
+  have h3 := m.hRevenue
+  have h4 := m.hProfit
+  omega
 
 structure PizzaSlices where
   total : ℕ
@@ -88,10 +165,34 @@ structure PizzaSlices where
   hPete : 2 * peteAte = remaining
   hLeft : left + peteAte = remaining
 
-theorem pizza_total (m : PizzaSlices) : m.total = 24 := by cases m <;> omega
-theorem pizza_after_stephen (m : PizzaSlices) : m.remaining = 18 := by cases m <;> omega
-theorem pizza_pete (m : PizzaSlices) : m.peteAte = 9 := by cases m <;> omega
-theorem pizza_solution (m : PizzaSlices) : m.left = 9 := by cases m <;> omega
+theorem pizza_total (m : PizzaSlices) : m.total = 24 := by
+  have h1 := m.hTotal
+  have h2 := m.hStephen
+  have h3 := m.hRemaining
+  have h4 := m.hPete
+  have h5 := m.hLeft
+  omega
+theorem pizza_after_stephen (m : PizzaSlices) : m.remaining = 18 := by
+  have h1 := m.hTotal
+  have h2 := m.hStephen
+  have h3 := m.hRemaining
+  have h4 := m.hPete
+  have h5 := m.hLeft
+  omega
+theorem pizza_pete (m : PizzaSlices) : m.peteAte = 9 := by
+  have h1 := m.hTotal
+  have h2 := m.hStephen
+  have h3 := m.hRemaining
+  have h4 := m.hPete
+  have h5 := m.hLeft
+  omega
+theorem pizza_solution (m : PizzaSlices) : m.left = 9 := by
+  have h1 := m.hTotal
+  have h2 := m.hStephen
+  have h3 := m.hRemaining
+  have h4 := m.hPete
+  have h5 := m.hLeft
+  omega
 
 structure Crayons where
   orange : ℕ
@@ -103,9 +204,24 @@ structure Crayons where
   hRed : red = 11
   hTotal : total = orange + blue + red
 
-theorem crayons_orange (m : Crayons) : m.orange = 48 := by cases m <;> omega
-theorem crayons_blue (m : Crayons) : m.blue = 35 := by cases m <;> omega
-theorem crayons_solution (m : Crayons) : m.total = 94 := by cases m <;> omega
+theorem crayons_orange (m : Crayons) : m.orange = 48 := by
+  have h1 := m.hOrange
+  have h2 := m.hBlue
+  have h3 := m.hRed
+  have h4 := m.hTotal
+  omega
+theorem crayons_blue (m : Crayons) : m.blue = 35 := by
+  have h1 := m.hOrange
+  have h2 := m.hBlue
+  have h3 := m.hRed
+  have h4 := m.hTotal
+  omega
+theorem crayons_solution (m : Crayons) : m.total = 94 := by
+  have h1 := m.hOrange
+  have h2 := m.hBlue
+  have h3 := m.hRed
+  have h4 := m.hTotal
+  omega
 
 structure CarValue where
   reduction : ℕ
@@ -113,8 +229,14 @@ structure CarValue where
   hReduction : 10 * reduction = 3 * 4000
   hCurrent : current + reduction = 4000
 
-theorem car_reduction (m : CarValue) : m.reduction = 1200 := by cases m <;> omega
-theorem car_solution (m : CarValue) : m.current = 2800 := by cases m <;> omega
+theorem car_reduction (m : CarValue) : m.reduction = 1200 := by
+  have h1 := m.hReduction
+  have h2 := m.hCurrent
+  omega
+theorem car_solution (m : CarValue) : m.current = 2800 := by
+  have h1 := m.hReduction
+  have h2 := m.hCurrent
+  omega
 
 structure MonthlyBill where
   increase : ℕ
@@ -122,8 +244,14 @@ structure MonthlyBill where
   hIncrease : 10 * increase = 3 * 60
   hTotal : total = 60 + increase
 
-theorem bill_increase (m : MonthlyBill) : m.increase = 18 := by cases m <;> omega
-theorem bill_solution (m : MonthlyBill) : m.total = 78 := by cases m <;> omega
+theorem bill_increase (m : MonthlyBill) : m.increase = 18 := by
+  have h1 := m.hIncrease
+  have h2 := m.hTotal
+  omega
+theorem bill_solution (m : MonthlyBill) : m.total = 78 := by
+  have h1 := m.hIncrease
+  have h2 := m.hTotal
+  omega
 
 structure LeafProgress where
   forward : ℕ
@@ -133,9 +261,21 @@ structure LeafProgress where
   hBackward : backward = 11 * 2
   hNet : net + backward = forward
 
-theorem leaf_forward (m : LeafProgress) : m.forward = 55 := by cases m <;> omega
-theorem leaf_backward (m : LeafProgress) : m.backward = 22 := by cases m <;> omega
-theorem leaf_solution (m : LeafProgress) : m.net = 33 := by cases m <;> omega
+theorem leaf_forward (m : LeafProgress) : m.forward = 55 := by
+  have h1 := m.hForward
+  have h2 := m.hBackward
+  have h3 := m.hNet
+  omega
+theorem leaf_backward (m : LeafProgress) : m.backward = 22 := by
+  have h1 := m.hForward
+  have h2 := m.hBackward
+  have h3 := m.hNet
+  omega
+theorem leaf_solution (m : LeafProgress) : m.net = 33 := by
+  have h1 := m.hForward
+  have h2 := m.hBackward
+  have h3 := m.hNet
+  omega
 
 structure DrivingDistance where
   oneThird : ℕ
@@ -145,9 +285,21 @@ structure DrivingDistance where
   hErnesto : ernesto = oneThird + 7
   hTotal : total = 15 + ernesto
 
-theorem driving_third (m : DrivingDistance) : m.oneThird = 5 := by cases m <;> omega
-theorem driving_ernesto (m : DrivingDistance) : m.ernesto = 12 := by cases m <;> omega
-theorem driving_solution (m : DrivingDistance) : m.total = 27 := by cases m <;> omega
+theorem driving_third (m : DrivingDistance) : m.oneThird = 5 := by
+  have h1 := m.hThird
+  have h2 := m.hErnesto
+  have h3 := m.hTotal
+  omega
+theorem driving_ernesto (m : DrivingDistance) : m.ernesto = 12 := by
+  have h1 := m.hThird
+  have h2 := m.hErnesto
+  have h3 := m.hTotal
+  omega
+theorem driving_solution (m : DrivingDistance) : m.total = 27 := by
+  have h1 := m.hThird
+  have h2 := m.hErnesto
+  have h3 := m.hTotal
+  omega
 
 structure SavingsDoubling where
   february : ℕ
@@ -159,10 +311,30 @@ structure SavingsDoubling where
   hApril : april = 2 * march
   hMay : may = 2 * april
 
-theorem savings_february (m : SavingsDoubling) : m.february = 20 := by cases m <;> omega
-theorem savings_march (m : SavingsDoubling) : m.march = 40 := by cases m <;> omega
-theorem savings_april (m : SavingsDoubling) : m.april = 80 := by cases m <;> omega
-theorem savings_solution (m : SavingsDoubling) : m.may = 160 := by cases m <;> omega
+theorem savings_february (m : SavingsDoubling) : m.february = 20 := by
+  have h1 := m.hFebruary
+  have h2 := m.hMarch
+  have h3 := m.hApril
+  have h4 := m.hMay
+  omega
+theorem savings_march (m : SavingsDoubling) : m.march = 40 := by
+  have h1 := m.hFebruary
+  have h2 := m.hMarch
+  have h3 := m.hApril
+  have h4 := m.hMay
+  omega
+theorem savings_april (m : SavingsDoubling) : m.april = 80 := by
+  have h1 := m.hFebruary
+  have h2 := m.hMarch
+  have h3 := m.hApril
+  have h4 := m.hMay
+  omega
+theorem savings_solution (m : SavingsDoubling) : m.may = 160 := by
+  have h1 := m.hFebruary
+  have h2 := m.hMarch
+  have h3 := m.hApril
+  have h4 := m.hMay
+  omega
 
 structure ClassSizes where
   classA : ℕ
@@ -172,8 +344,16 @@ structure ClassSizes where
   hA : classA = 2 * classB
   hC : classC = 3 * classA
 
-theorem classes_a (m : ClassSizes) : m.classA = 40 := by cases m <;> omega
-theorem classes_solution (m : ClassSizes) : m.classC = 120 := by cases m <;> omega
+theorem classes_a (m : ClassSizes) : m.classA = 40 := by
+  have h1 := m.hB
+  have h2 := m.hA
+  have h3 := m.hC
+  omega
+theorem classes_solution (m : ClassSizes) : m.classC = 120 := by
+  have h1 := m.hB
+  have h2 := m.hA
+  have h3 := m.hC
+  omega
 
 structure FarmAnimals where
   current : ℕ
@@ -183,8 +363,20 @@ structure FarmAnimals where
   hAdded : added = 3 + 5 + 2
   hTotal : total = current + added
 
-theorem farm_current (m : FarmAnimals) : m.current = 11 := by cases m <;> omega
-theorem farm_added (m : FarmAnimals) : m.added = 10 := by cases m <;> omega
-theorem farm_solution (m : FarmAnimals) : m.total = 21 := by cases m <;> omega
+theorem farm_current (m : FarmAnimals) : m.current = 11 := by
+  have h1 := m.hCurrent
+  have h2 := m.hAdded
+  have h3 := m.hTotal
+  omega
+theorem farm_added (m : FarmAnimals) : m.added = 10 := by
+  have h1 := m.hCurrent
+  have h2 := m.hAdded
+  have h3 := m.hTotal
+  omega
+theorem farm_solution (m : FarmAnimals) : m.total = 21 := by
+  have h1 := m.hCurrent
+  have h2 := m.hAdded
+  have h3 := m.hTotal
+  omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0927A20

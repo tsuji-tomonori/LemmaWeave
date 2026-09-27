@@ -22,6 +22,7 @@ theorem apple_solution (m : AppleAverage) : m.fits = 2 := by
   have h2 := m.hTotal
   have h3 := m.hAverage
   have h4 := m.hFits
+  rw [h1] at h4
   omega
 
 structure GameSales where

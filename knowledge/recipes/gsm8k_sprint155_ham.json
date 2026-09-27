@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint155_ham",
+  "title_ja": "不足するハムの枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02608",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1個3枚のサンドイッチを50個作り、手元に31枚ある。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A12.ham_solution",
+  "graph": "work/gsm8k-sprint155-ham-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ham_required",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.ham_required",
+      "title_ja": "必要総数は150枚",
+      "claim_ja": "必要総数は150枚",
+      "method_ja": "3枚に50個を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "必要総数は150枚",
+      "baseline_ja": "必要総数は150枚"
+    },
+    {
+      "id": "ham_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.ham_solution",
+      "title_ja": "あと119枚必要",
+      "claim_ja": "あと119枚必要",
+      "method_ja": "150枚から31枚を引く",
+      "requires_steps": [
+        "ham_required"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "あと119枚必要",
+      "baseline_ja": "あと119枚必要"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2609,
+    "checked_model_hash": "3e4b93f5a4108cc1a846e5cd16a8de7dc3e582b6180b1e81a6346cde530ddf48",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

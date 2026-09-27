@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint155_bracelets",
+  "title_ja": "作れるブレスレット数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02609",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "NancyとRoseの全ビーズを、1個8粒のブレスレットに余りなく使う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A12.bracelets_solution",
+  "graph": "work/gsm8k-sprint155-bracelets-graph.json",
+  "model_notes_ja": [
+    "全ビーズを混ぜて使用でき、8粒単位で余りなく作る。"
+  ],
+  "steps": [
+    {
+      "id": "bracelets_nancy",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.bracelets_nancy",
+      "title_ja": "Nancyは100粒",
+      "claim_ja": "Nancyは100粒",
+      "method_ja": "金属40粒と、それより20粒多い真珠60粒を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全ビーズを混ぜて使用でき、8粒単位で余りなく作る。",
+      "conclusion_ja": "Nancyは100粒",
+      "baseline_ja": "Nancyは100粒"
+    },
+    {
+      "id": "bracelets_rose",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.bracelets_rose",
+      "title_ja": "Roseは60粒",
+      "claim_ja": "Roseは60粒",
+      "method_ja": "水晶20粒と、その2倍の石40粒を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全ビーズを混ぜて使用でき、8粒単位で余りなく作る。",
+      "conclusion_ja": "Roseは60粒",
+      "baseline_ja": "Roseは60粒"
+    },
+    {
+      "id": "bracelets_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.bracelets_total",
+      "title_ja": "合計は160粒",
+      "claim_ja": "合計は160粒",
+      "method_ja": "100粒と60粒を足す",
+      "requires_steps": [
+        "bracelets_nancy",
+        "bracelets_rose"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全ビーズを混ぜて使用でき、8粒単位で余りなく作る。",
+      "conclusion_ja": "合計は160粒",
+      "baseline_ja": "合計は160粒"
+    },
+    {
+      "id": "bracelets_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.bracelets_solution",
+      "title_ja": "20個作れる",
+      "claim_ja": "20個作れる",
+      "method_ja": "160粒を1個8粒に分ける",
+      "requires_steps": [
+        "bracelets_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全ビーズを混ぜて使用でき、8粒単位で余りなく作る。",
+      "conclusion_ja": "20個作れる",
+      "baseline_ja": "20個作れる"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2610,
+    "checked_model_hash": "3e4b93f5a4108cc1a846e5cd16a8de7dc3e582b6180b1e81a6346cde530ddf48",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

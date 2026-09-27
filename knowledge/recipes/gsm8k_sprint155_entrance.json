@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint155_entrance",
+  "title_ja": "農場入場料の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02606",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "生徒35人は1人5ドル、大人4人は1人6ドルで入場する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A12.entrance_solution",
+  "graph": "work/gsm8k-sprint155-entrance-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "entrance_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.entrance_students",
+      "title_ja": "生徒分は175ドル",
+      "claim_ja": "生徒分は175ドル",
+      "method_ja": "35人に5ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "生徒分は175ドル",
+      "baseline_ja": "生徒分は175ドル"
+    },
+    {
+      "id": "entrance_adults",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.entrance_adults",
+      "title_ja": "大人分は24ドル",
+      "claim_ja": "大人分は24ドル",
+      "method_ja": "4人に6ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "大人分は24ドル",
+      "baseline_ja": "大人分は24ドル"
+    },
+    {
+      "id": "entrance_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.entrance_solution",
+      "title_ja": "合計は199ドル",
+      "claim_ja": "合計は199ドル",
+      "method_ja": "175ドルと24ドルを足す",
+      "requires_steps": [
+        "entrance_students",
+        "entrance_adults"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計は199ドル",
+      "baseline_ja": "合計は199ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2607,
+    "checked_model_hash": "3e4b93f5a4108cc1a846e5cd16a8de7dc3e582b6180b1e81a6346cde530ddf48",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

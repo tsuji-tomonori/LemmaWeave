@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint165_icecream",
+  "title_ja": "チョコレート注文者数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02765",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "220人の20%がバニラで、バニラがチョコの2倍であるときのチョコ注文者数を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A03.icecream_solution",
+  "graph": "work/gsm8k-sprint165-icecream-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "icecream_vanilla",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.icecream_vanilla",
+      "title_ja": "バニラ44人",
+      "claim_ja": "220の20%=44",
+      "method_ja": "220の20%=44",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "220の20%=44",
+      "baseline_ja": "220の20%=44"
+    },
+    {
+      "id": "icecream_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.icecream_solution",
+      "title_ja": "チョコ22人",
+      "claim_ja": "44÷2=22",
+      "method_ja": "44÷2=22",
+      "requires_steps": [
+        "icecream_vanilla"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "44÷2=22",
+      "baseline_ja": "44÷2=22"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2766,
+    "checked_model_hash": "7c0798e652fe575277ce62a4cd367a46b44fbf59cf2652cfec02eb90be46a808",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

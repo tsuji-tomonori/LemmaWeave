@@ -121,4 +121,136 @@ theorem ages_joel (m : AgesModel) : m.joelAge = 27 := by
 theorem ages_solution (m : AgesModel) : m.joelAge = 27 := by
   exact ages_joel m
 
+structure FishingModel where
+  willFish : Nat
+  henryCaught : Nat
+  returned : Nat
+  henryKept : Nat
+  total : Nat
+  hWill : willFish = 16 + 10
+  hHenry : henryCaught = 3 * 16
+  hReturned : 2 * returned = henryCaught
+  hKept : henryKept + returned = henryCaught
+  hTotal : total = willFish + henryKept
+
+theorem fishing_will_henry (m : FishingModel) :
+    m.willFish = 26 ∧ m.henryCaught = 48 := by
+  constructor
+  · have h := m.hWill
+    omega
+  · have h := m.hHenry
+    omega
+
+theorem fishing_kept (m : FishingModel) : m.henryKept = 24 := by
+  rcases fishing_will_henry m with ⟨hw, hh⟩
+  have hr := m.hReturned
+  have hk := m.hKept
+  omega
+
+theorem fishing_total (m : FishingModel) : m.total = 50 := by
+  rcases fishing_will_henry m with ⟨hw, hh⟩
+  have hk := fishing_kept m
+  have h := m.hTotal
+  omega
+
+theorem fishing_solution (m : FishingModel) : m.total = 50 := by
+  exact fishing_total m
+
+structure KombuchaModel where
+  bottles : Nat
+  refundCents : Nat
+  purchasable : Nat
+  hBottles : bottles = 15 * 12
+  hRefund : refundCents = bottles * 10
+  hPurchase : purchasable * 300 = refundCents
+
+theorem kombucha_bottles (m : KombuchaModel) : m.bottles = 180 := by
+  have h := m.hBottles
+  omega
+
+theorem kombucha_refund (m : KombuchaModel) : m.refundCents = 1800 := by
+  have hb := kombucha_bottles m
+  have h := m.hRefund
+  omega
+
+theorem kombucha_purchasable (m : KombuchaModel) : m.purchasable = 6 := by
+  have hr := kombucha_refund m
+  have h := m.hPurchase
+  omega
+
+theorem kombucha_solution (m : KombuchaModel) : m.purchasable = 6 := by
+  exact kombucha_purchasable m
+
+structure CrackersModel where
+  saturday : Nat
+  sunday : Nat
+  total : Nat
+  hSaturday : saturday = 2 * 30
+  hSunday : sunday + 15 = saturday
+  hTotal : total = 30 + saturday + sunday
+
+theorem crackers_saturday (m : CrackersModel) : m.saturday = 60 := by
+  have h := m.hSaturday
+  omega
+
+theorem crackers_sunday (m : CrackersModel) : m.sunday = 45 := by
+  have hs := crackers_saturday m
+  have h := m.hSunday
+  omega
+
+theorem crackers_total (m : CrackersModel) : m.total = 135 := by
+  have hsat := crackers_saturday m
+  have hsun := crackers_sunday m
+  have h := m.hTotal
+  omega
+
+theorem crackers_solution (m : CrackersModel) : m.total = 135 := by
+  exact crackers_total m
+
+structure BarnModel where
+  initial : Nat
+  remaining : Nat
+  afterGoats : Nat
+  male : Nat
+  hInitial : initial = 100 + 29 + 9
+  hRemaining : 2 * remaining = initial
+  hAfterGoats : afterGoats = remaining + 37
+  hMale : 2 * male = afterGoats
+
+theorem barn_initial (m : BarnModel) : m.initial = 138 := by
+  have h := m.hInitial
+  omega
+
+theorem barn_after_goats (m : BarnModel) : m.afterGoats = 106 := by
+  have hi := barn_initial m
+  have hr := m.hRemaining
+  have hg := m.hAfterGoats
+  omega
+
+theorem barn_male (m : BarnModel) : m.male = 53 := by
+  have ha := barn_after_goats m
+  have h := m.hMale
+  omega
+
+theorem barn_solution (m : BarnModel) : m.male = 53 := by
+  exact barn_male m
+
+structure IceCreamModel where
+  vanilla : Nat
+  chocolate : Nat
+  hVanilla : 100 * vanilla = 20 * 220
+  hTwice : vanilla = 2 * chocolate
+
+theorem icecream_vanilla (m : IceCreamModel) : m.vanilla = 44 := by
+  have h := m.hVanilla
+  omega
+
+theorem icecream_chocolate (m : IceCreamModel) : m.chocolate = 22 := by
+  have hv := icecream_vanilla m
+  have h := m.hTwice
+  omega
+
+theorem icecream_solution (m : IceCreamModel) : m.chocolate = 22 := by
+  exact icecream_chocolate m
+
 end LemmaWeave.Problems.GSM8K.Sprint0928A03

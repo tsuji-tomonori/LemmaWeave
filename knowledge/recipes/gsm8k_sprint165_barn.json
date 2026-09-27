@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint165_barn",
+  "title_ja": "納屋の雄の動物数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02764",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "馬・羊・鶏の半数が売られた後に37頭の山羊が増え、その半数である雄の数を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A03.barn_solution",
+  "graph": "work/gsm8k-sprint165-barn-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "barn_initial",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.barn_initial",
+      "title_ja": "当初138頭",
+      "claim_ja": "100+29+9=138",
+      "method_ja": "100+29+9=138",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "100+29+9=138",
+      "baseline_ja": "100+29+9=138"
+    },
+    {
+      "id": "barn_after_goats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.barn_after_goats",
+      "title_ja": "山羊追加後106頭",
+      "claim_ja": "138÷2+37=106",
+      "method_ja": "138÷2+37=106",
+      "requires_steps": [
+        "barn_initial"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "138÷2+37=106",
+      "baseline_ja": "138÷2+37=106"
+    },
+    {
+      "id": "barn_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.barn_solution",
+      "title_ja": "雄は53頭",
+      "claim_ja": "106÷2=53",
+      "method_ja": "106÷2=53",
+      "requires_steps": [
+        "barn_after_goats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "106÷2=53",
+      "baseline_ja": "106÷2=53"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2765,
+    "checked_model_hash": "7c0798e652fe575277ce62a4cd367a46b44fbf59cf2652cfec02eb90be46a808",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint156_swim",
+  "title_ja": "車両の追加乗車可能人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02632",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "車2台は各5人・定員6人、バン3台は各3人・定員8人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A13.swim_solution",
+  "graph": "work/gsm8k-sprint156-swim-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "swim_current",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.swim_current",
+      "title_ja": "現在19人",
+      "claim_ja": "現在19人",
+      "method_ja": "車10人とバン9人を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "現在19人",
+      "baseline_ja": "現在19人"
+    },
+    {
+      "id": "swim_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.swim_capacity",
+      "title_ja": "総定員36人",
+      "claim_ja": "総定員36人",
+      "method_ja": "車12人とバン24人を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "総定員36人",
+      "baseline_ja": "総定員36人"
+    },
+    {
+      "id": "swim_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.swim_solution",
+      "title_ja": "あと17人乗れる",
+      "claim_ja": "あと17人乗れる",
+      "method_ja": "36人から19人を引く",
+      "requires_steps": [
+        "swim_current",
+        "swim_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "あと17人乗れる",
+      "baseline_ja": "あと17人乗れる"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2633,
+    "checked_model_hash": "211975b071a45586a25b68ef45f1b1d45760a88db783870a6cf949ee2ee7b047",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

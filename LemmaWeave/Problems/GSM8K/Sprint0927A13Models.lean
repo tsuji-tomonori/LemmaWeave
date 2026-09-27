@@ -133,4 +133,74 @@ theorem road_included_solution (m : RoadTripStops) : m.includedTotal = 1080 := b
 theorem road_excluded_solution (m : RoadTripStops) : m.excludedTotal = 1060 := by cases m; omega
 theorem road_nonunique (m : RoadTripStops) : m.includedTotal ≠ m.excludedTotal := by cases m; omega
 
+structure TailoringFabric where
+  shirts shirtYards shirtDaily pants pantYards pantDaily daily days total : ℕ
+  hShirts : shirts = 3
+  hShirtYards : shirtYards = 2
+  hShirtDaily : shirtDaily = shirts * shirtYards
+  hPants : pants = 5
+  hPantYards : pantYards = 5
+  hPantDaily : pantDaily = pants * pantYards
+  hDaily : daily = shirtDaily + pantDaily
+  hDays : days = 3
+  hTotal : total = daily * days
+theorem fabric_shirts (m : TailoringFabric) : m.shirtDaily = 6 := by cases m; omega
+theorem fabric_pants (m : TailoringFabric) : m.pantDaily = 25 := by cases m; omega
+theorem fabric_solution (m : TailoringFabric) : m.total = 93 := by cases m; omega
+
+structure SwimTransport where
+  cars vans carRiders vanRiders carCapacity vanCapacity current capacity additional : ℕ
+  hCars : cars = 2
+  hVans : vans = 3
+  hCarRiders : carRiders = 5
+  hVanRiders : vanRiders = 3
+  hCarCapacity : carCapacity = 6
+  hVanCapacity : vanCapacity = 8
+  hCurrent : current = cars * carRiders + vans * vanRiders
+  hCapacity : capacity = cars * carCapacity + vans * vanCapacity
+  hAdditional : capacity = current + additional
+theorem swim_current (m : SwimTransport) : m.current = 19 := by cases m; omega
+theorem swim_capacity (m : SwimTransport) : m.capacity = 36 := by cases m; omega
+theorem swim_solution (m : SwimTransport) : m.additional = 17 := by cases m; omega
+
+structure BirdWatching where
+  monday tuesday wednesday total : ℕ
+  hMonday : monday = 70
+  hTuesday : monday = 2 * tuesday
+  hWednesday : wednesday = tuesday + 8
+  hTotal : total = monday + tuesday + wednesday
+theorem watching_tuesday (m : BirdWatching) : m.tuesday = 35 := by cases m; omega
+theorem watching_wednesday (m : BirdWatching) : m.wednesday = 43 := by cases m; omega
+theorem watching_solution (m : BirdWatching) : m.total = 148 := by cases m; omega
+
+structure TextbookSavings where
+  schoolPrice discountPercent savingEach outsidePrice books schoolTotal outsideTotal totalSaving : ℕ
+  hSchoolPrice : schoolPrice = 45
+  hPercent : discountPercent = 20
+  hSavingEach : 100 * savingEach = discountPercent * schoolPrice
+  hOutside : schoolPrice = savingEach + outsidePrice
+  hBooks : books = 3
+  hSchoolTotal : schoolTotal = books * schoolPrice
+  hOutsideTotal : outsideTotal = books * outsidePrice
+  hSaving : schoolTotal = outsideTotal + totalSaving
+theorem textbook_each_saving (m : TextbookSavings) : m.savingEach = 9 := by cases m; omega
+theorem textbook_outside_price (m : TextbookSavings) : m.outsidePrice = 36 := by cases m; omega
+theorem textbook_solution (m : TextbookSavings) : m.totalSaving = 27 := by cases m; omega
+
+structure ApartmentSplit where
+  oldMonthly increasePercent newMonthly people shareMonthly months oldAnnual shareAnnual annualSaving : ℕ
+  hOld : oldMonthly = 1200
+  hIncrease : increasePercent = 40
+  hNew : 100 * newMonthly = (100 + increasePercent) * oldMonthly
+  hPeople : people = 3
+  hShare : newMonthly = people * shareMonthly
+  hMonths : months = 12
+  hOldAnnual : oldAnnual = oldMonthly * months
+  hShareAnnual : shareAnnual = shareMonthly * months
+  hSaving : oldAnnual = shareAnnual + annualSaving
+theorem apartment_new_monthly (m : ApartmentSplit) : m.newMonthly = 1680 := by cases m; omega
+theorem apartment_share_monthly (m : ApartmentSplit) : m.shareMonthly = 560 := by cases m; omega
+theorem apartment_share_annual (m : ApartmentSplit) : m.shareAnnual = 6720 := by cases m; omega
+theorem apartment_solution (m : ApartmentSplit) : m.annualSaving = 7680 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A13

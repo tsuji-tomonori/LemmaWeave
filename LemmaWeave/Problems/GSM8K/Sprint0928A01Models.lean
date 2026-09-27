@@ -3,7 +3,8 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A01
 
 structure ScrabbleModel where
-  preScore middle : Nat
+  preScore : Nat
+  middle : Nat
   hTriple : 3 * preScore = 30
   hLetters : preScore = 1 + middle + 1
 
@@ -20,7 +21,9 @@ theorem scrabble_solution (m : ScrabbleModel) : m.middle = 8 := by
   exact scrabble_middle m
 
 structure PlantersModel where
-  largeCapacity remaining smallPlanters : Nat
+  largeCapacity : Nat
+  remaining : Nat
+  smallPlanters : Nat
   hLarge : largeCapacity = 4 * 20
   hRemaining : largeCapacity + remaining = 200
   hSmall : 4 * smallPlanters = remaining
@@ -43,8 +46,13 @@ theorem planters_solution (m : PlantersModel) : m.smallPlanters = 30 := by
   exact planters_small m
 
 structure RancherModel where
-  survivors originalPrice loweredPrice loweredRevenue sameHerdOriginalRevenue : Nat
-  priceCutLoss allDealShortfall : Nat
+  survivors : Nat
+  originalPrice : Nat
+  loweredPrice : Nat
+  loweredRevenue : Nat
+  sameHerdOriginalRevenue : Nat
+  priceCutLoss : Nat
+  allDealShortfall : Nat
   hSurvivors : survivors + 172 = 340
   hOriginalPrice : originalPrice * 340 = 204000
   hLoweredPrice : loweredPrice + 150 = originalPrice
@@ -96,7 +104,11 @@ theorem rancher_solution (m : RancherModel) :
   · exact rancher_all_deal_shortfall m
 
 structure JobsModel where
-  workers jobs hoursPerJob payPerWorker totalPay : Nat
+  workers : Nat
+  jobs : Nat
+  hoursPerJob : Nat
+  payPerWorker : Nat
+  totalPay : Nat
   hWorkers : workers = 3
   hJobs : jobs = 5
   hHours : hoursPerJob = 1
@@ -117,7 +129,10 @@ theorem jobs_solution (m : JobsModel) : m.totalPay = 150 := by
   exact jobs_total m
 
 structure FlowersModel where
-  people days perPersonPerDay total : Nat
+  people : Nat
+  days : Nat
+  perPersonPerDay : Nat
+  total : Nat
   hPeople : people = 1 + 4
   hDays : days = 2
   hTotal : total = 200
@@ -140,7 +155,8 @@ theorem flowers_solution (m : FlowersModel) : m.perPersonPerDay = 20 := by
   exact flowers_per_day m
 
 structure LapsModel where
-  afterSaturday remainingAtBreak : Nat
+  afterSaturday : Nat
+  remainingAtBreak : Nat
   hSaturday : 27 + afterSaturday = 98
   hMorning : 15 + remainingAtBreak = afterSaturday
 
@@ -157,7 +173,13 @@ theorem laps_solution (m : LapsModel) : m.remainingAtBreak = 56 := by
   exact laps_remaining m
 
 structure BakerModel where
-  hourly weekdayDaily weekdayTotal weekendDaily weekendTotal weekly total : Nat
+  hourly : Nat
+  weekdayDaily : Nat
+  weekdayTotal : Nat
+  weekendDaily : Nat
+  weekendTotal : Nat
+  weekly : Nat
+  total : Nat
   hHourly : hourly = 5 * 4
   hWeekdayDaily : weekdayDaily = hourly * 5
   hWeekdayTotal : weekdayTotal = weekdayDaily * 5
@@ -201,7 +223,10 @@ theorem baker_solution (m : BakerModel) : m.total = 1740 := by
   exact baker_total m
 
 structure DucksModel where
-  annualNet fiveYearGain originalAfter combined : Nat
+  annualNet : Nat
+  fiveYearGain : Nat
+  originalAfter : Nat
+  combined : Nat
   hAnnual : annualNet + 20 = 30
   hFive : fiveYearGain = annualNet * 5
   hOriginal : originalAfter = 100 + fiveYearGain
@@ -226,7 +251,10 @@ theorem ducks_solution (m : DucksModel) : m.combined = 300 := by
   exact ducks_combined m
 
 structure LeavesModel where
-  basil rosemary thyme total : Nat
+  basil : Nat
+  rosemary : Nat
+  thyme : Nat
+  total : Nat
   hBasil : basil = 3 * 4
   hRosemary : rosemary = 9 * 18
   hThyme : thyme = 6 * 30
@@ -249,7 +277,13 @@ theorem leaves_solution (m : LeavesModel) : m.total = 354 := by
   exact leaves_total m
 
 structure WagesModel where
-  regularHours overtimeFirst overtimeSecond overtimeTotal regularPay overtimePay totalPay : Nat
+  regularHours : Nat
+  overtimeFirst : Nat
+  overtimeSecond : Nat
+  overtimeTotal : Nat
+  regularPay : Nat
+  overtimePay : Nat
+  totalPay : Nat
   hRegularHours : regularHours = 40 * 2
   hFirst : 40 + overtimeFirst = 44
   hSecond : 40 + overtimeSecond = 48
@@ -280,7 +314,12 @@ theorem wages_solution (m : WagesModel) : m.totalPay = 472 := by
   exact wages_total m
 
 structure ApartmentModel where
-  traversalsPerDay weeklyTraversals referenceHeight referenceTotal alternativeHeight alternativeTotal : Nat
+  traversalsPerDay : Nat
+  weeklyTraversals : Nat
+  referenceHeight : Nat
+  referenceTotal : Nat
+  alternativeHeight : Nat
+  alternativeTotal : Nat
   hPerDay : traversalsPerDay = 3 * 2
   hWeekly : weeklyTraversals = traversalsPerDay * 7
   hReferenceHeight : referenceHeight = 5 * 10
@@ -316,7 +355,11 @@ theorem apartment_solution (m : ApartmentModel) :
   · exact apartment_alternative_total m
 
 structure ZooModel where
-  children adults childRevenue adultRevenue totalRevenue : Nat
+  children : Nat
+  adults : Nat
+  childRevenue : Nat
+  adultRevenue : Nat
+  totalRevenue : Nat
   hChildren : children = 7 + 4
   hAdults : adults = 5 + 2
   hChildRevenue : childRevenue = children * 3
@@ -343,7 +386,12 @@ theorem zoo_solution (m : ZooModel) : m.totalRevenue = 61 := by
   exact zoo_total m
 
 structure WalletModel where
-  twenties fives loose initial cake remaining : Nat
+  twenties : Nat
+  fives : Nat
+  loose : Nat
+  initial : Nat
+  cake : Nat
+  remaining : Nat
   hTwenties : twenties = 2 * 2000
   hFives : fives = 3 * 500
   hLoose : loose = 450
@@ -368,7 +416,11 @@ theorem wallet_solution (m : WalletModel) : m.remaining = 4200 := by
   exact wallet_remaining m
 
 structure GoldModel where
-  legacy aleena namedBars thirdBars totalValue : Nat
+  legacy : Nat
+  aleena : Nat
+  namedBars : Nat
+  thirdBars : Nat
+  totalValue : Nat
   hLegacy : legacy = 5
   hAleena : aleena + 2 = legacy
   hNamed : namedBars = legacy + aleena
@@ -404,7 +456,8 @@ theorem gold_solution (m : GoldModel) :
   · exact gold_alternative_if_one_third_bar m
 
 structure UberModel where
-  depreciation profit : Nat
+  depreciation : Nat
+  profit : Nat
   hDepreciation : depreciation + 6000 = 18000
   hProfit : profit + depreciation = 30000
 

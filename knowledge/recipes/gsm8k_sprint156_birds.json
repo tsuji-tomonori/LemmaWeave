@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint156_birds",
+  "title_ja": "購入した鳥の翼総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02628",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "祖父母4人から各50ドル受け取り、1羽20ドルの鳥を全額で買う。各鳥2翼。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A13.birds_solution",
+  "graph": "work/gsm8k-sprint156-birds-graph.json",
+  "model_notes_ja": [
+    "受け取った200ドルを余りなく鳥の購入に使う。"
+  ],
+  "steps": [
+    {
+      "id": "birds_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.birds_money",
+      "title_ja": "合計200ドル",
+      "claim_ja": "合計200ドル",
+      "method_ja": "4人に50ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "受け取った200ドルを余りなく鳥の購入に使う。",
+      "conclusion_ja": "合計200ドル",
+      "baseline_ja": "合計200ドル"
+    },
+    {
+      "id": "birds_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.birds_count",
+      "title_ja": "鳥は10羽",
+      "claim_ja": "鳥は10羽",
+      "method_ja": "200ドルを1羽20ドルで分ける",
+      "requires_steps": [
+        "birds_money"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "受け取った200ドルを余りなく鳥の購入に使う。",
+      "conclusion_ja": "鳥は10羽",
+      "baseline_ja": "鳥は10羽"
+    },
+    {
+      "id": "birds_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.birds_solution",
+      "title_ja": "翼は20枚",
+      "claim_ja": "翼は20枚",
+      "method_ja": "10羽に2翼を掛ける",
+      "requires_steps": [
+        "birds_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "受け取った200ドルを余りなく鳥の購入に使う。",
+      "conclusion_ja": "翼は20枚",
+      "baseline_ja": "翼は20枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2629,
+    "checked_model_hash": "211975b071a45586a25b68ef45f1b1d45760a88db783870a6cf949ee2ee7b047",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

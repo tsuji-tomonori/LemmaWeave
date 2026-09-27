@@ -61,4 +61,76 @@ structure FriendsByGender where
 theorem friends_total (m : FriendsByGender) : m.total = 60 := by cases m; omega
 theorem friends_solution (m : FriendsByGender) : m.girls = 27 := by cases m; omega
 
+/-- All money values are cents. -/
+structure SlipperOrder where
+  listPrice discountPercent discount salePrice shoes embroideryEach embroidery shipping total : ℕ
+  hList : listPrice = 5000
+  hPercent : discountPercent = 10
+  hDiscount : 100 * discount = discountPercent * listPrice
+  hSale : listPrice = discount + salePrice
+  hShoes : shoes = 2
+  hEmbroideryEach : embroideryEach = 550
+  hEmbroidery : embroidery = shoes * embroideryEach
+  hShipping : shipping = 1000
+  hTotal : total = salePrice + embroidery + shipping
+theorem slippers_discount (m : SlipperOrder) : m.discount = 500 := by cases m; omega
+theorem slippers_sale (m : SlipperOrder) : m.salePrice = 4500 := by cases m; omega
+theorem slippers_embroidery (m : SlipperOrder) : m.embroidery = 1100 := by cases m; omega
+theorem slippers_solution (m : SlipperOrder) : m.total = 6600 := by cases m; omega
+
+structure BlockPyramid where
+  row1 row2 row3 row4 row5 total : ℕ
+  hRow1 : row1 = 9
+  hRow2 : row2 + 2 = row1
+  hRow3 : row3 + 2 = row2
+  hRow4 : row4 + 2 = row3
+  hRow5 : row5 + 2 = row4
+  hTotal : total = row1 + row2 + row3 + row4 + row5
+theorem pyramid_row2 (m : BlockPyramid) : m.row2 = 7 := by cases m; omega
+theorem pyramid_row3 (m : BlockPyramid) : m.row3 = 5 := by cases m; omega
+theorem pyramid_row4 (m : BlockPyramid) : m.row4 = 3 := by cases m; omega
+theorem pyramid_row5 (m : BlockPyramid) : m.row5 = 1 := by cases m; omega
+theorem pyramid_solution (m : BlockPyramid) : m.total = 25 := by cases m; omega
+
+structure BirdPurchase where
+  grandparents dollarsEach totalMoney birdPrice birds wingsEach totalWings : ℕ
+  hGrandparents : grandparents = 4
+  hDollarsEach : dollarsEach = 50
+  hMoney : totalMoney = grandparents * dollarsEach
+  hBirdPrice : birdPrice = 20
+  hBirds : totalMoney = birds * birdPrice
+  hWingsEach : wingsEach = 2
+  hWings : totalWings = birds * wingsEach
+theorem birds_money (m : BirdPurchase) : m.totalMoney = 200 := by cases m; omega
+theorem birds_count (m : BirdPurchase) : m.birds = 10 := by cases m; omega
+theorem birds_solution (m : BirdPurchase) : m.totalWings = 20 := by cases m; omega
+
+structure GuessingScores where
+  hajar difference farah total : ℕ
+  hHajar : hajar = 24
+  hDifference : difference = 21
+  hFarahHigher : farah = hajar + difference
+  hTotal : total = hajar + farah
+theorem scores_farah (m : GuessingScores) : m.farah = 45 := by cases m; omega
+theorem scores_solution (m : GuessingScores) : m.total = 69 := by cases m; omega
+
+/-- Times are minutes. The two stretch-stop counts expose the endpoint ambiguity. -/
+structure RoadTripStops where
+  drivingMinutes includedStretch excludedStretch food gas stopMinutes
+    includedStops excludedStops includedTotal excludedTotal : ℕ
+  hDriving : drivingMinutes = 14 * 60
+  hIncludedStretch : includedStretch = 7
+  hExcludedStretch : excludedStretch = 6
+  hFood : food = 2
+  hGas : gas = 3
+  hStopMinutes : stopMinutes = 20
+  hIncludedStops : includedStops = includedStretch + food + gas
+  hExcludedStops : excludedStops = excludedStretch + food + gas
+  hIncludedTotal : includedTotal = drivingMinutes + includedStops * stopMinutes
+  hExcludedTotal : excludedTotal = drivingMinutes + excludedStops * stopMinutes
+theorem road_included_stops (m : RoadTripStops) : m.includedStops = 12 := by cases m; omega
+theorem road_included_solution (m : RoadTripStops) : m.includedTotal = 1080 := by cases m; omega
+theorem road_excluded_solution (m : RoadTripStops) : m.excludedTotal = 1060 := by cases m; omega
+theorem road_nonunique (m : RoadTripStops) : m.includedTotal ≠ m.excludedTotal := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A13

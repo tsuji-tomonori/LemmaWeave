@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint156_slippers",
+  "title_ja": "刺繍入りスリッパの総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02626",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "50ドルを10%引き、片足5.50ドルの刺繍を2足分、送料10ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A13.slippers_solution",
+  "graph": "work/gsm8k-sprint156-slippers-graph.json",
+  "model_notes_ja": [
+    "金額はすべてセント単位で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "slippers_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.slippers_discount",
+      "title_ja": "値引きは5ドル",
+      "claim_ja": "値引きは5ドル",
+      "method_ja": "5000セントの10%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "金額はすべてセント単位で形式化する。",
+      "conclusion_ja": "値引きは5ドル",
+      "baseline_ja": "値引きは5ドル"
+    },
+    {
+      "id": "slippers_sale",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.slippers_sale",
+      "title_ja": "本体は45ドル",
+      "claim_ja": "本体は45ドル",
+      "method_ja": "50ドルから5ドルを引く",
+      "requires_steps": [
+        "slippers_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "金額はすべてセント単位で形式化する。",
+      "conclusion_ja": "本体は45ドル",
+      "baseline_ja": "本体は45ドル"
+    },
+    {
+      "id": "slippers_embroidery",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.slippers_embroidery",
+      "title_ja": "刺繍は11ドル",
+      "claim_ja": "刺繍は11ドル",
+      "method_ja": "550セントを2足分掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "金額はすべてセント単位で形式化する。",
+      "conclusion_ja": "刺繍は11ドル",
+      "baseline_ja": "刺繍は11ドル"
+    },
+    {
+      "id": "slippers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.slippers_solution",
+      "title_ja": "総額は66ドル",
+      "claim_ja": "総額は66ドル",
+      "method_ja": "45ドル・11ドル・10ドルを足す",
+      "requires_steps": [
+        "slippers_sale",
+        "slippers_embroidery"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "金額はすべてセント単位で形式化する。",
+      "conclusion_ja": "総額は66ドル",
+      "baseline_ja": "総額は66ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2627,
+    "checked_model_hash": "211975b071a45586a25b68ef45f1b1d45760a88db783870a6cf949ee2ee7b047",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -124,4 +124,48 @@ theorem oranges_reserved (m : OrangeSales) : m.reserved = 21 := by cases m; omeg
 theorem oranges_sold (m : OrangeSales) : m.sold = 27 := by cases m; omega
 theorem oranges_solution (m : OrangeSales) : m.sellable = 32 := by cases m; omega
 
+structure CerealPurchase where
+  unitPrice : ℕ
+  totalPrice : ℕ
+  hUnit : unitPrice + 24 = 104
+  hTotal : totalPrice = 20 * unitPrice
+theorem cereal_unit (m : CerealPurchase) : m.unitPrice = 80 := by cases m; omega
+theorem cereal_solution (m : CerealPurchase) : m.totalPrice = 1600 := by cases m; omega
+
+structure JournalPages where
+  weeklyPages : ℕ
+  totalPages : ℕ
+  hWeekly : weeklyPages = 3 * 4
+  hTotal : totalPages = 6 * weeklyPages
+theorem journal_weekly (m : JournalPages) : m.weeklyPages = 12 := by cases m; omega
+theorem journal_solution (m : JournalPages) : m.totalPages = 72 := by cases m; omega
+
+structure CardTrade where
+  givenValue : ℕ
+  receivedValue : ℕ
+  profit : ℕ
+  hGiven : givenValue = 2 * 8
+  hReceived : receivedValue = 21
+  hProfit : givenValue + profit = receivedValue
+theorem trade_given (m : CardTrade) : m.givenValue = 16 := by cases m; omega
+theorem trade_solution (m : CardTrade) : m.profit = 5 := by cases m; omega
+
+structure PizzaSlices where
+  total : ℕ
+  left : ℕ
+  hTotal : total = 4 * 12
+  hLeft : left + 39 = total
+theorem pizza_total (m : PizzaSlices) : m.total = 48 := by cases m; omega
+theorem pizza_solution (m : PizzaSlices) : m.left = 9 := by cases m; omega
+
+structure FishingRate where
+  hours : ℕ
+  twoHourPeriods : ℕ
+  fish : ℕ
+  hHours : hours = 12
+  hPeriods : 2 * twoHourPeriods = hours
+  hFish : fish = 5 * twoHourPeriods
+theorem fishing_periods (m : FishingRate) : m.twoHourPeriods = 6 := by cases m; omega
+theorem fishing_solution (m : FishingRate) : m.fish = 30 := by cases m; omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0927A17

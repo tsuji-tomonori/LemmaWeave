@@ -8,7 +8,7 @@
   "base_sha": "5eda0fb7570d232d84ab4d54cbbe06c2c96a605e",
   "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
   "started_at": "2026-09-28T08:20:44+09:00",
-  "finished_at": "2026-09-28T08:28:28+09:00",
+  "finished_at": "2026-09-28T08:33:30+09:00",
   "schedule_offset_seconds": 1244,
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:02816",
@@ -82,7 +82,7 @@
   },
   "authored_artifacts": {
     "model_path": "LemmaWeave/Problems/GSM8K/Sprint0928A07Models.lean",
-    "model_sha256": "6dede342f9d76cdbf45f69e44a250294bbf100a1ae4babd79fbbb29277875f9c",
+    "model_sha256": "a06b6d773c4754973ac5f71f8216bcb35998fa933999e5b42a4696644de7415f",
     "test_path": "tests/lean/GSM8KSprint0928A07.lean",
     "recipe_prefix": "knowledge/recipes/gsm8k_sprint169_",
     "recipe_count": 15,
@@ -124,6 +124,11 @@
       "commit": "d9a5f6f37c70daf0743f57b90d20d73c06449a84"
     }
   ],
+  "post_checkpoint_correction": {
+    "commit": "864c27b0af854d74b54da4e22c41e3a5538d747f",
+    "reason_ja": "taco_total_centsで構造体射影を直接rw対象にせず、局所仮説へ束縛してから書換える形へ修正した。全レシピとバッチのモデルハッシュも現行入力へ更新した。",
+    "force_update": false
+  },
   "self_review": {
     "status": "self_review_only",
     "all_selected_re_read_against_source": true,
@@ -173,10 +178,10 @@
   },
   "validation": {
     "fixed_lean_version": "4.33.1",
-    "validated_code_head_sha": "d9a5f6f37c70daf0743f57b90d20d73c06449a84",
-    "workflow_run_id": 36358777217,
-    "workflow_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36358777217",
-    "status": "in_progress",
+    "validated_code_head_sha": "864c27b0af854d74b54da4e22c41e3a5538d747f",
+    "workflow_run_id": 36359023143,
+    "workflow_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36359023143",
+    "status": "pending",
     "conclusion": null,
     "current_model_build": {"target": "LemmaWeave.Problems.GSM8K.Sprint0928A07Models", "built": false, "error_count": null},
     "current_axiom_and_dependency_audit": "not_reached",
@@ -190,7 +195,7 @@
     "number": 5,
     "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
     "branch": "codex/sprint-20260919-0000",
-    "source_head_sha": "d9a5f6f37c70daf0743f57b90d20d73c06449a84",
+    "source_head_sha": "864c27b0af854d74b54da4e22c41e3a5538d747f",
     "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
     "state": "open",
     "merged": false,
@@ -201,7 +206,7 @@
   },
   "commit": {
     "branch": "codex/sprint-20260919-0000",
-    "source_head_sha": "d9a5f6f37c70daf0743f57b90d20d73c06449a84",
+    "source_head_sha": "864c27b0af854d74b54da4e22c41e3a5538d747f",
     "report_commit_sha": "self_not_embedded",
     "force_update": false
   },

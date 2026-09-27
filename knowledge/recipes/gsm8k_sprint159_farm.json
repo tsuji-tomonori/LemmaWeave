@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint159_farm",
+  "title_ja": "農場の動物総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02668",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "豚10頭、牛は豚の2倍より3頭少なく、山羊は牛より6頭多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A18.farm_solution",
+  "graph": "work/gsm8k-sprint159-farm-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "farm_cows",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.farm_cows",
+      "title_ja": "牛は17頭",
+      "claim_ja": "牛は17頭",
+      "method_ja": "10頭の2倍から3頭引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "牛は17頭",
+      "baseline_ja": "牛は17頭"
+    },
+    {
+      "id": "farm_goats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.farm_goats",
+      "title_ja": "山羊は23頭",
+      "claim_ja": "山羊は23頭",
+      "method_ja": "牛17頭に6頭足す",
+      "requires_steps": [
+        "farm_cows"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "山羊は23頭",
+      "baseline_ja": "山羊は23頭"
+    },
+    {
+      "id": "farm_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.farm_solution",
+      "title_ja": "合計50頭",
+      "claim_ja": "合計50頭",
+      "method_ja": "豚・牛・山羊を足す",
+      "requires_steps": [
+        "farm_cows",
+        "farm_goats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計50頭",
+      "baseline_ja": "合計50頭"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2669,
+    "checked_model_hash": "243b8cda487e688ce121d2ea277f6782a1ae703fa53603772248f5c2516db99d",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

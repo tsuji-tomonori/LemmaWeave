@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint161_tomatoes",
+  "title_ja": "トマト販売の利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02701",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "20 kg入り3箱を330ドルで買い、3 kg腐り、残りを1 kgあたり6ドルで売る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A20.tomatoes_solution",
+  "graph": "work/gsm8k-sprint161-tomatoes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "tomatoes_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.tomatoes_total",
+      "title_ja": "仕入れは60 kg",
+      "claim_ja": "仕入れは60 kg",
+      "method_ja": "20 kgを3箱分掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "仕入れは60 kg",
+      "baseline_ja": "仕入れは60 kg"
+    },
+    {
+      "id": "tomatoes_sellable",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.tomatoes_sellable",
+      "title_ja": "販売可能量は57 kg",
+      "claim_ja": "販売可能量は57 kg",
+      "method_ja": "60 kgから腐った3 kgを引く",
+      "requires_steps": [
+        "tomatoes_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "販売可能量は57 kg",
+      "baseline_ja": "販売可能量は57 kg"
+    },
+    {
+      "id": "tomatoes_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.tomatoes_revenue",
+      "title_ja": "売上は342ドル",
+      "claim_ja": "売上は342ドル",
+      "method_ja": "57 kgに6ドルを掛ける",
+      "requires_steps": [
+        "tomatoes_sellable"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "売上は342ドル",
+      "baseline_ja": "売上は342ドル"
+    },
+    {
+      "id": "tomatoes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.tomatoes_solution",
+      "title_ja": "利益は12ドル",
+      "claim_ja": "利益は12ドル",
+      "method_ja": "売上342ドルから原価330ドルを引く",
+      "requires_steps": [
+        "tomatoes_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "利益は12ドル",
+      "baseline_ja": "利益は12ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2702,
+    "checked_model_hash": "8d7fbfbc766babcae24a7e271d229ec0afc640cd67c6b41e767e4de45bba9094",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

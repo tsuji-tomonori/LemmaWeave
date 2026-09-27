@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint161_pizza",
+  "title_ja": "残ったピザの枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02702",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "12切れのピザ2枚。Stephenが全体の25%、Peteが残りの50%を食べる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A20.pizza_solution",
+  "graph": "work/gsm8k-sprint161-pizza-graph.json",
+  "model_notes_ja": [
+    "25%と50%の基準が異なり、Peteの50%はStephen後の18切れへ適用する。"
+  ],
+  "steps": [
+    {
+      "id": "pizza_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.pizza_total",
+      "title_ja": "全部で24切れ",
+      "claim_ja": "全部で24切れ",
+      "method_ja": "12切れを2枚分掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "25%と50%の基準が異なり、Peteの50%はStephen後の18切れへ適用する。",
+      "conclusion_ja": "全部で24切れ",
+      "baseline_ja": "全部で24切れ"
+    },
+    {
+      "id": "pizza_after_stephen",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.pizza_after_stephen",
+      "title_ja": "Stephen後は18切れ",
+      "claim_ja": "Stephen後は18切れ",
+      "method_ja": "24切れの25%である6切れを除く",
+      "requires_steps": [
+        "pizza_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "25%と50%の基準が異なり、Peteの50%はStephen後の18切れへ適用する。",
+      "conclusion_ja": "Stephen後は18切れ",
+      "baseline_ja": "Stephen後は18切れ"
+    },
+    {
+      "id": "pizza_pete",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.pizza_pete",
+      "title_ja": "Peteは9切れ食べる",
+      "claim_ja": "Peteは9切れ食べる",
+      "method_ja": "残り18切れの50%",
+      "requires_steps": [
+        "pizza_after_stephen"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "25%と50%の基準が異なり、Peteの50%はStephen後の18切れへ適用する。",
+      "conclusion_ja": "Peteは9切れ食べる",
+      "baseline_ja": "Peteは9切れ食べる"
+    },
+    {
+      "id": "pizza_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.pizza_solution",
+      "title_ja": "9切れ残る",
+      "claim_ja": "9切れ残る",
+      "method_ja": "18切れから9切れを引く",
+      "requires_steps": [
+        "pizza_pete"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "25%と50%の基準が異なり、Peteの50%はStephen後の18切れへ適用する。",
+      "conclusion_ja": "9切れ残る",
+      "baseline_ja": "9切れ残る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2703,
+    "checked_model_hash": "8d7fbfbc766babcae24a7e271d229ec0afc640cd67c6b41e767e4de45bba9094",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

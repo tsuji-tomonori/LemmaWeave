@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint153_oranges",
+  "title_ja": "オレンジ片を受け取る友人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02580",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "80個を各10片に切り、各友人へ4片ずつ配る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A10.oranges_solution",
+  "graph": "work/gsm8k-sprint153-oranges-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "oranges_pieces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.oranges_pieces",
+      "title_ja": "全部で800片",
+      "claim_ja": "全部で800片",
+      "method_ja": "80個に10片を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "全部で800片",
+      "baseline_ja": "全部で800片"
+    },
+    {
+      "id": "oranges_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.oranges_solution",
+      "title_ja": "友人は200人",
+      "claim_ja": "友人は200人",
+      "method_ja": "800片を1人4片で等分する",
+      "requires_steps": [
+        "oranges_pieces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "友人は200人",
+      "baseline_ja": "友人は200人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2581,
+    "checked_model_hash": "7618bd45dd30da04bf979ceea74e3d62b59e8bace446403a94acee461f56111a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

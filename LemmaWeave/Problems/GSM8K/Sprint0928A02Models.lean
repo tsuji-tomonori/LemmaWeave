@@ -260,4 +260,129 @@ theorem zoe_solution (m : ZoeEarningsModel) :
   · exact zoe_equal_rate_pool m
   · exact zoe_unequal_rate_counterexample
 
+structure CardsModel where
+  matias : Nat
+  jorge : Nat
+  total : Nat
+  hMatias : matias + 6 = 20
+  hJorge : jorge = matias
+  hTotal : total = 20 + matias + jorge
+
+theorem cards_matias (m : CardsModel) : m.matias = 14 := by
+  have h := m.hMatias
+  omega
+
+theorem cards_total (m : CardsModel) : m.total = 48 := by
+  have hm := cards_matias m
+  have hj := m.hJorge
+  have h := m.hTotal
+  omega
+
+theorem cards_solution (m : CardsModel) : m.total = 48 := by
+  exact cards_total m
+
+structure BudgetModel where
+  annual : Nat
+  parks : Nat
+  left : Nat
+  hAnnual : 15 * annual = 100 * 3000
+  hParks : 100 * parks = 24 * annual
+  hLeft : left + 3000 + parks = annual
+
+theorem budget_annual (m : BudgetModel) : m.annual = 20000 := by
+  have h := m.hAnnual
+  omega
+
+theorem budget_parks (m : BudgetModel) : m.parks = 4800 := by
+  have ha := budget_annual m
+  have h := m.hParks
+  omega
+
+theorem budget_left (m : BudgetModel) : m.left = 12200 := by
+  have ha := budget_annual m
+  have hp := budget_parks m
+  have h := m.hLeft
+  omega
+
+theorem budget_solution (m : BudgetModel) : m.left = 12200 := by
+  exact budget_left m
+
+structure EyesModel where
+  spiderEyes : Nat
+  antEyes : Nat
+  total : Nat
+  hSpider : spiderEyes = 3 * 8
+  hAnt : antEyes = 50 * 2
+  hTotal : total = spiderEyes + antEyes
+
+theorem eyes_by_kind (m : EyesModel) :
+    m.spiderEyes = 24 ∧ m.antEyes = 100 := by
+  constructor
+  · have h := m.hSpider
+    omega
+  · have h := m.hAnt
+    omega
+
+theorem eyes_total (m : EyesModel) : m.total = 124 := by
+  rcases eyes_by_kind m with ⟨hs, ha⟩
+  have h := m.hTotal
+  omega
+
+theorem eyes_solution (m : EyesModel) : m.total = 124 := by
+  exact eyes_total m
+
+structure OrangesModel where
+  sandra : Nat
+  emily : Nat
+  hSandra : sandra = 3 * 12
+  hEmily : emily = 7 * sandra
+
+theorem oranges_sandra (m : OrangesModel) : m.sandra = 36 := by
+  have h := m.hSandra
+  omega
+
+theorem oranges_emily (m : OrangesModel) : m.emily = 252 := by
+  have hs := oranges_sandra m
+  have h := m.hEmily
+  omega
+
+theorem oranges_solution (m : OrangesModel) : m.emily = 252 := by
+  exact oranges_emily m
+
+structure PensModel where
+  extraPencils : Nat
+  pencils : Nat
+  pencilCostCents : Nat
+  penCostCents : Nat
+  totalCents : Nat
+  hExtra : 5 * extraPencils = 2 * 40
+  hPencils : pencils = 40 + extraPencils
+  hPencilCost : pencilCostCents = pencils * 25
+  hPenCost : penCostCents = 40 * 15
+  hTotal : totalCents = pencilCostCents + penCostCents
+
+theorem pens_pencil_count (m : PensModel) : m.pencils = 56 := by
+  have he := m.hExtra
+  have hp := m.hPencils
+  omega
+
+theorem pens_total_more_interpretation (m : PensModel) : m.totalCents = 2000 := by
+  have hp := pens_pencil_count m
+  have hc := m.hPencilCost
+  have hpen := m.hPenCost
+  have ht := m.hTotal
+  rw [hp] at hc
+  norm_num at hc hpen
+  omega
+
+theorem pens_as_many_interpretation :
+    (16 : Nat) * 25 + 40 * 15 = 1000 := by
+  norm_num
+
+theorem pens_solution (m : PensModel) :
+    m.totalCents = 2000 ∧ (16 : Nat) * 25 + 40 * 15 = 1000 := by
+  constructor
+  · exact pens_total_more_interpretation m
+  · exact pens_as_many_interpretation
+
 end LemmaWeave.Problems.GSM8K.Sprint0928A02

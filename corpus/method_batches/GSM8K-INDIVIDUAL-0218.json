@@ -151,6 +151,76 @@
         "missing_equal_rate_assumption",
         "semantic_ambiguity"
       ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02751",
+      "source_line_1based": 2752,
+      "source_record_sha256": "0a886b8a1c898395d8905970d8173331b935a8e3f67c3ffeb93cc1c38dfbfd74",
+      "raw_question_sha256": "cbed0242ef2a5dcdf5b2fda3043fa6a61a87ad4f9c2d0b1e308b92cd8d6ae330",
+      "normalized_question_sha256": "cbed0242ef2a5dcdf5b2fda3043fa6a61a87ad4f9c2d0b1e308b92cd8d6ae330",
+      "source_question": "Jorge has an equal number of baseball cards as Matias, who has 6 fewer cards than Carlos. If Carlos has 20 baseball cards, what is the total number of baseball cards the three have?",
+      "recipe_id": "gsm8k_sprint164_cards",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02752",
+      "source_line_1based": 2753,
+      "source_record_sha256": "36f571cb20d45840538ef2d002d4d82c6a8008c53c9948a99f58924c31f35ba5",
+      "raw_question_sha256": "6dbd52a5ae3b014fd133555fe2fe4cf34b196efe1e4192b59e909b197749ebf4",
+      "normalized_question_sha256": "6dbd52a5ae3b014fd133555fe2fe4cf34b196efe1e4192b59e909b197749ebf4",
+      "source_question": "The town of Centerville spends 15% of its annual budget on its public library. Centerville spent $3,000 on its public library and 24% on the public parks. How much is left of the annual budget?",
+      "recipe_id": "gsm8k_sprint164_budget",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02753",
+      "source_line_1based": 2754,
+      "source_record_sha256": "46818820ca9273673ee55f072a8ce65203b860076c6ec1975615b5246a522fdd",
+      "raw_question_sha256": "f07ad30a661648d7d2f64a5764531cc893e02221070a9dbdfc12f9b2dacc2fe8",
+      "normalized_question_sha256": "f07ad30a661648d7d2f64a5764531cc893e02221070a9dbdfc12f9b2dacc2fe8",
+      "source_question": "Nina enjoys keeping insects as pets. She has 3 spiders and 50 ants. Each spider has 8 eyes. Each ant has 2 eyes. How many eyes are there in total among Nina’s pet insects?",
+      "recipe_id": "gsm8k_sprint164_eyes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02754",
+      "source_line_1based": 2755,
+      "source_record_sha256": "592c32e5d1ed2c14570ca57686badde56b791fa7e6d85fe2b998509a91c51b0d",
+      "raw_question_sha256": "c738664197886f2320081cbfc655749b908481d094e634a58a5240ad0af6d003",
+      "normalized_question_sha256": "c738664197886f2320081cbfc655749b908481d094e634a58a5240ad0af6d003",
+      "source_question": "Emily has 7 times as many oranges as Sandra. Sandra has 3 times as many oranges as Betty. If Betty has 12 oranges, how many oranges does Emily have?",
+      "recipe_id": "gsm8k_sprint164_oranges",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02755",
+      "source_line_1based": 2756,
+      "source_record_sha256": "fa9bb5b30442f7de9c1ebd3dcf77e08a52fdbf6314faaae514e367b1f261e106",
+      "raw_question_sha256": "0819248d9d755a633ec52955a56564e155379f1b009a7b4e081119c5e632db4d",
+      "normalized_question_sha256": "0819248d9d755a633ec52955a56564e155379f1b009a7b4e081119c5e632db4d",
+      "source_question": "At A.T. Cross Luxury Pens, a pencil sells at twenty-five cents while a pen sells at fifteen cents. Bowen buys 40 pens and 2/5 times more pencils than pens from A.T. Cross Luxury Pens. Calculate the total amount of money Bowen spends.",
+      "recipe_id": "gsm8k_sprint164_pens",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_model",
+      "modeling_notes_ja": [
+        "“2/5 times more”を40%多いと読むと鉛筆56本・合計20ドル。",
+        "“2/5 times as many”相当と読むと鉛筆16本・合計10ドル。原文のmoreを尊重した前者を標準解釈とする。"
+      ],
+      "blockers": [
+        "semantic_ambiguity"
+      ]
     }
   ]
 }

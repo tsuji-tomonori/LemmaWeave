@@ -2,7 +2,11 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0927A15
 
 structure StudentLateness where
-  charlize classmates classmateEach classmatesTotal total : ℕ
+  charlize : ℕ
+  classmates : ℕ
+  classmateEach : ℕ
+  classmatesTotal : ℕ
+  total : ℕ
   hCharlize : charlize = 20
   hClassmates : classmates = 4
   hEach : classmateEach = charlize + 10
@@ -13,7 +17,11 @@ theorem lateness_classmates (m : StudentLateness) : m.classmatesTotal = 120 := b
 theorem lateness_solution (m : StudentLateness) : m.total = 140 := by cases m; omega
 
 structure BridesmaidDresses where
-  dresses hoursEach totalHours hoursPerWeek weeks : ℕ
+  dresses : ℕ
+  hoursEach : ℕ
+  totalHours : ℕ
+  hoursPerWeek : ℕ
+  weeks : ℕ
   hDresses : dresses = 5
   hHoursEach : hoursEach = 12
   hTotal : totalHours = dresses * hoursEach
@@ -24,7 +32,10 @@ theorem dresses_solution (m : BridesmaidDresses) : m.weeks = 15 := by cases m; o
 
 /-- Money is represented in cents. Bridge and Bridget name the same child. -/
 structure SharedMoney where
-  total bridgetExtra sarah bridget : ℕ
+  total : ℕ
+  bridgetExtra : ℕ
+  sarah : ℕ
+  bridget : ℕ
   hTotal : total = 300
   hExtra : bridgetExtra = 50
   hBridget : bridget = sarah + bridgetExtra
@@ -33,7 +44,12 @@ theorem shared_bridget (m : SharedMoney) : m.bridget = 175 := by cases m; omega
 theorem shared_solution (m : SharedMoney) : m.sarah = 125 := by cases m; omega
 
 structure AmusementMoney where
-  start food rides games spent remaining : ℕ
+  start : ℕ
+  food : ℕ
+  rides : ℕ
+  games : ℕ
+  spent : ℕ
+  remaining : ℕ
   hStart : start = 75
   hFood : food = 30
   hRides : rides = 13
@@ -44,7 +60,11 @@ theorem amusement_spent (m : AmusementMoney) : m.spent = 66 := by cases m; omega
 theorem amusement_solution (m : AmusementMoney) : m.remaining = 9 := by cases m; omega
 
 structure RectangleLine where
-  width area length rectangles totalLength : ℕ
+  width : ℕ
+  area : ℕ
+  length : ℕ
+  rectangles : ℕ
+  totalLength : ℕ
   hWidth : width = 42
   hArea : area = 1638
   hRectangle : area = width * length
@@ -54,7 +74,11 @@ theorem rectangle_length (m : RectangleLine) : m.length = 39 := by cases m; omeg
 theorem rectangle_solution (m : RectangleLine) : m.totalLength = 390 := by cases m; omega
 
 structure CamperWeeks where
-  threeWeeks twoWeeksAgo difference lastWeek total : ℕ
+  threeWeeks : ℕ
+  twoWeeksAgo : ℕ
+  difference : ℕ
+  lastWeek : ℕ
+  total : ℕ
   hThreeWeeks : threeWeeks = 30
   hTwoWeeks : twoWeeksAgo = 40
   hDifference : difference = 10
@@ -65,7 +89,11 @@ theorem campers_three_weeks (m : CamperWeeks) : m.threeWeeks = 30 := by cases m;
 theorem campers_solution (m : CamperWeeks) : m.lastWeek = 80 := by cases m; omega
 
 structure SockPrice where
-  start shirt afterShirt final socks : ℕ
+  start : ℕ
+  shirt : ℕ
+  afterShirt : ℕ
+  final : ℕ
+  socks : ℕ
   hStart : start = 100
   hShirt : shirt = 24
   hAfter : start = shirt + afterShirt
@@ -75,7 +103,11 @@ theorem socks_after_shirt (m : SockPrice) : m.afterShirt = 76 := by cases m; ome
 theorem socks_solution (m : SockPrice) : m.socks = 11 := by cases m; omega
 
 structure AnimalVideos where
-  cats dogs firstTwo gorillas total : ℕ
+  cats : ℕ
+  dogs : ℕ
+  firstTwo : ℕ
+  gorillas : ℕ
+  total : ℕ
   hCats : cats = 4
   hDogs : dogs = 2 * cats
   hFirst : firstTwo = cats + dogs
@@ -88,7 +120,12 @@ theorem videos_solution (m : AnimalVideos) : m.total = 36 := by cases m; omega
 
 /-- soldPerDay answers the literal sales-rate question; producedPerDay also includes the storefront payment. -/
 structure CupcakeGoal where
-  soldGoal payment days totalProduced soldPerDay producedPerDay : ℕ
+  soldGoal : ℕ
+  payment : ℕ
+  days : ℕ
+  totalProduced : ℕ
+  soldPerDay : ℕ
+  producedPerDay : ℕ
   hSoldGoal : soldGoal = 96
   hPayment : payment = 24
   hDays : days = 2
@@ -102,8 +139,17 @@ theorem cupcakes_distinction (m : CupcakeGoal) : m.soldPerDay ≠ m.producedPerD
 
 /-- Money is represented in dollars; only the stated dye-supply costs are deducted. -/
 structure SalonDay where
-  haircuts haircutEach haircutRevenue permRevenue dyeJobs dyeEach dyeRevenue
-    dyeCostEach dyeCost tips net : ℕ
+  haircuts : ℕ
+  haircutEach : ℕ
+  haircutRevenue : ℕ
+  permRevenue : ℕ
+  dyeJobs : ℕ
+  dyeEach : ℕ
+  dyeRevenue : ℕ
+  dyeCostEach : ℕ
+  dyeCost : ℕ
+  tips : ℕ
+  net : ℕ
   hHaircuts : haircuts = 4
   hHaircutEach : haircutEach = 30
   hHaircutRevenue : haircutRevenue = haircuts * haircutEach
@@ -121,7 +167,11 @@ theorem salon_dye_cost (m : SalonDay) : m.dyeCost = 20 := by cases m; omega
 theorem salon_solution (m : SalonDay) : m.net = 310 := by cases m; omega
 
 structure PrepSchool where
-  semester semesters annual years total : ℕ
+  semester : ℕ
+  semesters : ℕ
+  annual : ℕ
+  years : ℕ
+  total : ℕ
   hSemester : semester = 20000
   hSemesters : semesters = 2
   hAnnual : annual = semester * semesters
@@ -131,7 +181,10 @@ theorem school_annual (m : PrepSchool) : m.annual = 40000 := by cases m; omega
 theorem school_solution (m : PrepSchool) : m.total = 520000 := by cases m; omega
 
 structure ParkSnakes where
-  boas pythons total rattlesnakes : ℕ
+  boas : ℕ
+  pythons : ℕ
+  total : ℕ
+  rattlesnakes : ℕ
   hBoas : boas = 40
   hPythons : pythons = 3 * boas
   hTotal : total = 200
@@ -140,7 +193,14 @@ theorem snakes_pythons (m : ParkSnakes) : m.pythons = 120 := by cases m; omega
 theorem snakes_solution (m : ParkSnakes) : m.rattlesnakes = 40 := by cases m; omega
 
 structure SiblingAges where
-  halimaRatio beckhamRatio gurmeetRatio scale total halima beckham difference : ℕ
+  halimaRatio : ℕ
+  beckhamRatio : ℕ
+  gurmeetRatio : ℕ
+  scale : ℕ
+  total : ℕ
+  halima : ℕ
+  beckham : ℕ
+  difference : ℕ
   hHalimaRatio : halimaRatio = 4
   hBeckhamRatio : beckhamRatio = 3
   hGurmeetRatio : gurmeetRatio = 7
@@ -155,7 +215,11 @@ theorem ages_beckham (m : SiblingAges) : m.beckham = 27 := by cases m; omega
 theorem ages_solution (m : SiblingAges) : m.difference = 9 := by cases m; omega
 
 structure CardDiscount where
-  price discount each cards total : ℕ
+  price : ℕ
+  discount : ℕ
+  each : ℕ
+  cards : ℕ
+  total : ℕ
   hPrice : price = 12
   hDiscount : discount = 2
   hEach : price = discount + each
@@ -165,7 +229,11 @@ theorem cards_each (m : CardDiscount) : m.each = 10 := by cases m; omega
 theorem cards_solution (m : CardDiscount) : m.total = 100 := by cases m; omega
 
 structure CurrencyTotal where
-  dollars euros dollarsPerEuro converted total : ℕ
+  dollars : ℕ
+  euros : ℕ
+  dollarsPerEuro : ℕ
+  converted : ℕ
+  total : ℕ
   hDollars : dollars = 45
   hEuros : euros = 36
   hRate : dollarsPerEuro = 2

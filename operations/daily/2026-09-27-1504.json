@@ -129,7 +129,7 @@
     "sorry_admit_custom_axiom_static_count": 0,
     "model_assurance_level": "MODEL_FORMALIZED",
     "local_build_status": "not_available_before_fixed_toolchain_CI",
-    "exact_head_status": "pending_after_commit",
+    "exact_head_status": "failed_then_model_field_typing_repaired_pending_new_exact_head",
     "evidence_accepted": false
   },
   "self_review": {
@@ -193,7 +193,7 @@
     "mergeable": true
   },
   "commit": {
-    "status": "checkpoint_and_queue_outputs_pending_commit",
+    "status": "field_typing_repair_pending_commit",
     "checkpoint_head_sha": "34b0e4a59fd1d229798e5eafea6f8805ed05be16",
     "branch_update_policy": "non_force_fast_forward_after_exact_parent_preflight"
   },
@@ -201,6 +201,17 @@
     "status": "serialized_single_writer",
     "shared_lock_implementation": false
   },
-  "note_ja": "15問を原題から個別に解答・Lean化し、5問単位で保存する。前HEADのCI失敗および現行成功証拠なしのため全件を検証待ちとし、正式完了へ昇格しない。"
+  "note_ja": "15問を原題から個別に解答・Lean化し、5問単位で保存する。前HEADのCI失敗および現行成功証拠なしのため全件を検証待ちとし、正式完了へ昇格しない。 初回exact-headログでA15の構造体フィールド型宣言不備を確認し、数学モデルを変えず個別型指定へ修復した。",
+  "ci_after_initial_commit": {
+    "head_sha": "8a87bb724f182bd7176f4a2a03cc3ae063b591bb",
+    "workflow_run_id": 36299518635,
+    "job_id": 108564462766,
+    "conclusion": "failure",
+    "failed_step": "Replay the complete fixed-environment pipeline",
+    "artifact_id": 10924149434,
+    "artifact_size_bytes": 207059791,
+    "artifact_sha256": "7c8af6ce43316dd2a9976fb821ff744a8f6f658e2914948478a3275b1318251f",
+    "reason_ja": "A15を含む複数のモデルで、複数フィールドの一括宣言がLean 4.33.1に依存フィールドとして解釈され型推論が失敗した。A15は各フィールドへ型を個別指定して修復したが、過去モデルの失敗は別途継続する。",
+    "evidence_accepted": false
+  }
 }
-

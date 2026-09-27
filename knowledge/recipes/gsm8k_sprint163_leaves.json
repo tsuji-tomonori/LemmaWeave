@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint163_leaves",
+  "title_ja": "3種類の葉の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02734",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "バジル3鉢各4枚、ローズマリー9鉢各18枚、タイム6鉢各30枚の葉を合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.leaves_solution",
+  "graph": "work/gsm8k-sprint163-leaves-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "leaves_by_type",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.leaves_by_type",
+      "title_ja": "種類別は12枚・162枚・180枚",
+      "claim_ja": "各種類の葉数を得る",
+      "method_ja": "鉢数×1鉢の葉数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "各種類の葉数を得る",
+      "baseline_ja": "各種類の葉数を得る"
+    },
+    {
+      "id": "leaves_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.leaves_solution",
+      "title_ja": "合計354枚",
+      "claim_ja": "総数354枚",
+      "method_ja": "12+162+180",
+      "requires_steps": [
+        "leaves_by_type"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "総数354枚",
+      "baseline_ja": "総数354枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2735,
+    "checked_model_hash": "ee3d72b1cd40386e72b9fe569d315b48bcca70ec75c6d4a32aa237512d5c2e95",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

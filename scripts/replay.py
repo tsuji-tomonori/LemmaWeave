@@ -21,6 +21,7 @@ COMMANDS = [
     ['lake', 'build', 'LemmaWeave.Audit.Fixtures.Shared', 'LemmaWeave.Audit.Fixtures.Exported'],
     ['lake', 'env', 'lean', 'tests/lean/Smoke.lean'],
     ['lake', 'env', 'lean', 'tests/lean/DependencyFixtures.lean'],
+    ['lake', 'env', 'lean', 'tests/lean/DNC2026ExtremaIndividual.lean'],
     ['python3', 'scripts/check_extractor.py'],
     ['lake', 'build', 'LemmaWeave.Lemmas.QuadraticMethods'],
     ['lake', 'build', 'LemmaWeave.Lemmas.ArithmeticMethods', 'LemmaWeave.Problems.GSM8K.Goals'],

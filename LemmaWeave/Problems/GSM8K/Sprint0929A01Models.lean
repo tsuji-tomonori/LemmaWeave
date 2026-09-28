@@ -3,7 +3,11 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A01
 
 structure LemonadeModel where
-  glasses priceCents plainCents strawberryCents differenceCents : ℕ
+  glasses : ℕ
+  priceCents : ℕ
+  plainCents : ℕ
+  strawberryCents : ℕ
+  differenceCents : ℕ
   hglasses : glasses = 36
   hprice : priceCents = 75
   hplain : plainCents = 36 * 75
@@ -22,7 +26,10 @@ theorem lemonade_difference (m : LemonadeModel) : m.differenceCents = 1100 := by
 theorem lemonade_solution (m : LemonadeModel) : m.differenceCents = 1100 := lemonade_difference m
 
 structure LollipopsModel where
-  first later totalPeople lollipops : ℕ
+  first : ℕ
+  later : ℕ
+  totalPeople : ℕ
+  lollipops : ℕ
   hfirst : first = 45
   hlater : later = 15
   htotal : totalPeople = first + later
@@ -37,7 +44,10 @@ theorem lollipops_groups (m : LollipopsModel) : m.lollipops = 12 := by
 theorem lollipops_solution (m : LollipopsModel) : m.lollipops = 12 := lollipops_groups m
 
 structure PiesModel where
-  adam bill sierra total : ℕ
+  adam : ℕ
+  bill : ℕ
+  sierra : ℕ
+  total : ℕ
   hsierra : sierra = 12
   htwice : sierra = 2 * bill
   hadam : adam = bill + 3
@@ -55,7 +65,10 @@ theorem pies_total (m : PiesModel) : m.total = 27 := by
 theorem pies_solution (m : PiesModel) : m.total = 27 := pies_total m
 
 structure ParkingSectionsModel where
-  total first second third : ℕ
+  total : ℕ
+  first : ℕ
+  second : ℕ
+  third : ℕ
   htotal : total = 1000
   hfirst : first = 320
   hsecond : second = third + 200
@@ -73,7 +86,12 @@ theorem parking_second (m : ParkingSectionsModel) : m.second = 440 := by
 theorem parking_sections_solution (m : ParkingSectionsModel) : m.second = 440 := parking_second m
 
 structure ValentinesModel where
-  students recipients price spent budget percent : ℕ
+  students : ℕ
+  recipients : ℕ
+  price : ℕ
+  spent : ℕ
+  budget : ℕ
+  percent : ℕ
   hstudents : students = 30
   hrecipients : 5 * recipients = 3 * students
   hprice : price = 2
@@ -93,7 +111,9 @@ theorem valentines_percent (m : ValentinesModel) : m.percent = 90 := by
 theorem valentines_solution (m : ValentinesModel) : m.percent = 90 := valentines_percent m
 
 structure BasketballModel where
-  attempted made missed : ℕ
+  attempted : ℕ
+  made : ℕ
+  missed : ℕ
   hattempted : attempted = 20
   hmade : 5 * made = 4 * attempted
   hpartition : attempted = made + missed
@@ -107,7 +127,13 @@ theorem basketball_missed (m : BasketballModel) : m.missed = 4 := by
 theorem basketball_solution (m : BasketballModel) : m.missed = 4 := basketball_missed m
 
 structure SleepModel where
-  weekdayHours weekdayDays otherHours otherDays weekdayTotal otherTotal total : ℕ
+  weekdayHours : ℕ
+  weekdayDays : ℕ
+  otherHours : ℕ
+  otherDays : ℕ
+  weekdayTotal : ℕ
+  otherTotal : ℕ
+  total : ℕ
   hweekdayHours : weekdayHours = 6
   hweekdayDays : weekdayDays = 5
   hotherHours : otherHours = 10
@@ -128,7 +154,11 @@ theorem sleep_total (m : SleepModel) : m.total = 50 := by
 theorem sleep_solution (m : SleepModel) : m.total = 50 := sleep_total m
 
 structure HomesModel where
-  total white nonwhite fireplace noFireplace : ℕ
+  total : ℕ
+  white : ℕ
+  nonwhite : ℕ
+  fireplace : ℕ
+  noFireplace : ℕ
   htotal : total = 400
   hwhite : 4 * white = total
   hnonwhite : total = white + nonwhite
@@ -150,7 +180,10 @@ theorem homes_no_fireplace (m : HomesModel) : m.noFireplace = 240 := by
 theorem homes_solution (m : HomesModel) : m.noFireplace = 240 := homes_no_fireplace m
 
 structure PebbleFriendsModel where
-  dozens pebbles perFriend friends : ℕ
+  dozens : ℕ
+  pebbles : ℕ
+  perFriend : ℕ
+  friends : ℕ
   hdozens : dozens = 3
   hpebbles : pebbles = 3 * 12
   hperFriend : perFriend = 4
@@ -165,7 +198,11 @@ theorem pebble_friends_count (m : PebbleFriendsModel) : m.friends = 9 := by
 theorem pebble_friends_solution (m : PebbleFriendsModel) : m.friends = 9 := pebble_friends_count m
 
 structure TypingModel where
-  wordsPerMinute minutesPerHour totalWords wordsPerHour hours : ℕ
+  wordsPerMinute : ℕ
+  minutesPerHour : ℕ
+  totalWords : ℕ
+  wordsPerHour : ℕ
+  hours : ℕ
   hrate : wordsPerMinute = 60
   hminutes : minutesPerHour = 60
   hhourly : wordsPerHour = 60 * 60
@@ -181,7 +218,9 @@ theorem typing_hours (m : TypingModel) : m.hours = 3 := by
 theorem typing_solution (m : TypingModel) : m.hours = 3 := typing_hours m
 
 structure BooksModel where
-  longest shortest middle : ℕ
+  longest : ℕ
+  shortest : ℕ
+  middle : ℕ
   hlongest : longest = 396
   hshortest : 4 * shortest = longest
   hmiddle : middle = 3 * shortest
@@ -195,7 +234,16 @@ theorem books_middle (m : BooksModel) : m.middle = 297 := by
 theorem books_solution (m : BooksModel) : m.middle = 297 := books_middle m
 
 structure LimoModel where
-  rides ridePay hours hourlyPay gallons pricePerGallon gasPay reviews reviewPay total : ℕ
+  rides : ℕ
+  ridePay : ℕ
+  hours : ℕ
+  hourlyPay : ℕ
+  gallons : ℕ
+  pricePerGallon : ℕ
+  gasPay : ℕ
+  reviews : ℕ
+  reviewPay : ℕ
+  total : ℕ
   hrides : rides = 3
   hridePay : ridePay = 5 * rides
   hhours : hours = 8
@@ -225,7 +273,11 @@ theorem limo_total (m : LimoModel) : m.total = 226 := by
 theorem limo_solution (m : LimoModel) : m.total = 226 := limo_total m
 
 structure TullyModel where
-  kateNow kateFuture tullyFuture tullyNow tullyLastYear : ℕ
+  kateNow : ℕ
+  kateFuture : ℕ
+  tullyFuture : ℕ
+  tullyNow : ℕ
+  tullyLastYear : ℕ
   hkate : kateNow = 29
   hkateFuture : kateFuture = kateNow + 3
   htullyFuture : tullyFuture = 2 * kateFuture
@@ -247,7 +299,9 @@ theorem tully_last_year (m : TullyModel) : m.tullyLastYear = 60 := by
 theorem tully_solution (m : TullyModel) : m.tullyLastYear = 60 := tully_last_year m
 
 structure DarcieModel where
-  darcie mother father : ℕ
+  darcie : ℕ
+  mother : ℕ
+  father : ℕ
   hdarcie : darcie = 4
   hmother : mother = 6 * darcie
   hfatherRatio : 5 * mother = 4 * father
@@ -261,7 +315,14 @@ theorem darcie_father (m : DarcieModel) : m.father = 30 := by
 theorem darcie_solution (m : DarcieModel) : m.father = 30 := darcie_father m
 
 structure TennisBallsModel where
-  games worn lost canisters bought started given remaining : ℕ
+  games : ℕ
+  worn : ℕ
+  lost : ℕ
+  canisters : ℕ
+  bought : ℕ
+  started : ℕ
+  given : ℕ
+  remaining : ℕ
   hgames : games = 20
   hworn : games = 10 * worn
   hlost : games = 5 * lost

@@ -1,1 +1,247 @@
-aW1wb3J0IE1hdGhsaWIKCm5hbWVzcGFjZSBMZW1tYVdlYXZlLlByb2JsZW1zLkdTTThLLlNwcmludDA5MjhBMTAKCnN0cnVjdHVyZSBNZWRTY2hvb2xNb2RlbCB3aGVyZQogIHJlc2VhcmNoZWQgYXBwbGllZCBhY2NlcHRlZCA6IOKElQogIGhSZXNlYXJjaGVkIDogcmVzZWFyY2hlZCA9IDQyCiAgaEFwcGxpZWQgOiAzICogYXBwbGllZCA9IHJlc2VhcmNoZWQKICBoQWNjZXB0ZWQgOiAyICogYWNjZXB0ZWQgPSBhcHBsaWVkCgp0aGVvcmVtIG1lZF9zY2hvb2xfYXBwbGllZCAobSA6IE1lZFNjaG9vbE1vZGVsKSA6IG0uYXBwbGllZCA9IDE0IDo9IGJ5IG9tZWdhCnRoZW9yZW0gbWVkX3NjaG9vbF9hY2NlcHRlZCAobSA6IE1lZFNjaG9vbE1vZGVsKSA6IG0uYWNjZXB0ZWQgPSA3IDo9IGJ5CiAgaGF2ZSA6PSBtZWRfc2Nob29sX2FwcGxpZWQgbQogIG9tZWdhCnRoZW9yZW0gbWVkX3NjaG9vbF9zb2x1dGlvbiAobSA6IE1lZFNjaG9vbE1vZGVsKSA6IG0uYWNjZXB0ZWQgPSA3IDo9IG1lZF9zY2hvb2xfYWNjZXB0ZWQgbQoKc3RydWN0dXJlIEJha2VyTW9kZWwgd2hlcmUKICBjYWtlQ291bnQgY2FrZVByaWNlIGNha2VSZXZlbnVlIHBpZUNvdW50IHBpZVByaWNlIHBpZVJldmVudWUgdG90YWxSZXZlbnVlIDog4oSVCiAgaENha2VDb3VudCA6IGNha2VDb3VudCA9IDQ1MwogIGhDYWtlUHJpY2UgOiBjYWtlUHJpY2UgPSAxMgogIGhDYWtlUmV2ZW51ZSA6IGNha2VSZXZlbnVlID0gY2FrZUNvdW50ICogY2FrZVByaWNlCiAgaFBpZUNvdW50IDogcGllQ291bnQgPSAxMjYKICBoUGllUHJpY2UgOiBwaWVQcmljZSA9IDcKICBoUGllUmV2ZW51ZSA6IHBpZVJldmVudWUgPSBwaWVDb3VudCAqIHBpZVByaWNlCiAgaFRvdGFsIDogdG90YWxSZXZlbnVlID0gY2FrZVJldmVudWUgKyBwaWVSZXZlbnVlCgp0aGVvcmVtIGJha2VyX2Nha2VfcmV2ZW51ZSAobSA6IEJha2VyTW9kZWwpIDogbS5jYWtlUmV2ZW51ZSA9IDU0MzYgOj0gYnkgb21lZ2EKdGhlb3JlbSBiYWtlcl9waWVfcmV2ZW51ZSAobSA6IEJha2VyTW9kZWwpIDogbS5waWVSZXZlbnVlID0gODgyIDo9IGJ5IG9tZWdhCnRoZW9yZW0gYmFrZXJfdG90YWwgKG0gOiBCYWtlck1vZGVsKSA6IG0udG90YWxSZXZlbnVlID0gNjMxOCA6PSBieQogIGhhdmUgaOKCgSA6PSBiYWtlcl9jYWtlX3JldmVudWUgbQogIGhhdmUgaOKCgiA6PSBiYWtlcl9waWVfcmV2ZW51ZSBtCiAgb21lZ2EKdGhlb3JlbSBiYWtlcl9zb2x1dGlvbiAobSA6IEJha2VyTW9kZWwpIDogbS50b3RhbFJldmVudWUgPSA2MzE4IDo9IGJha2VyX3RvdGFsIG0KCnN0cnVjdHVyZSBTdXJ2ZXlNb2RlbCB3aGVyZQogIGNsYXNzU2l6ZSBqb2huc29uIGZlbGRzdGVpbiBoZW5kZXJzb24gdG90YWwgOiDihJUKICBoQ2xhc3NTaXplIDogY2xhc3NTaXplID0gMzAKICBoSm9obnNvbiA6IDYgKiBqb2huc29uID0gY2xhc3NTaXplCiAgaEZlbGRzdGVpbiA6IDMgKiBmZWxkc3RlaW4gPSAyICogY2xhc3NTaXplCiAgaEhlbmRlcnNvbiA6IDUgKiBoZW5kZXJzb24gPSBjbGFzc1NpemUKICBoVG90YWwgOiB0b3RhbCA9IGpvaG5zb24gKyBmZWxkc3RlaW4gKyBoZW5kZXJzb24KCnRoZW9yZW0gc3VydmV5X2NsYXNzX2NvdW50cyAobSA6IFN1cnZleU1vZGVsKSA6CiAgICBtLmpvaG5zb24gPSA1IOKIpyBtLmZlbGRzdGVpbiA9IDIwIOKIpyBtLmhlbmRlcnNvbiA9IDYgOj0gYnkgb21lZ2EKdGhlb3JlbSBzdXJ2ZXlfdG90YWwgKG0gOiBTdXJ2ZXlNb2RlbCkgOiBtLnRvdGFsID0gMzEgOj0gYnkKICBoYXZlIGggOj0gc3VydmV5X2NsYXNzX2NvdW50cyBtCiAgb21lZ2EKdGhlb3JlbSBzdXJ2ZXlfc29sdXRpb24gKG0gOiBTdXJ2ZXlNb2RlbCkgOiBtLnRvdGFsID0gMzEgOj0gc3VydmV5X3RvdGFsIG0KCnN0cnVjdHVyZSBQcmFjdGljZU1vZGVsIHdoZXJlCiAgbWFydmluWWVzdGVyZGF5IG1hcnZpblRvZGF5IG1hcnZpblRvdGFsIGFydmluWWVzdGVyZGF5IGFydmluVG9kYXkgYXJ2aW5Ub3RhbCBjb21iaW5lZCA6IOKElQogIGhNYXJ2aW5ZZXN0ZXJkYXkgOiBtYXJ2aW5ZZXN0ZXJkYXkgPSA0MAogIGhNYXJ2aW5Ub2RheSA6IG1hcnZpblRvZGF5ID0gMyAqIG1hcnZpblllc3RlcmRheQogIGhNYXJ2aW5Ub3RhbCA6IG1hcnZpblRvdGFsID0gbWFydmluWWVzdGVyZGF5ICsgbWFydmluVG9kYXkKICBoQXJ2aW5ZZXN0ZXJkYXkgOiBhcnZpblllc3RlcmRheSA9IDIgKiBtYXJ2aW5ZZXN0ZXJkYXkKICBoQXJ2aW5Ub2RheSA6IGFydmluVG9kYXkgPSAyICogbWFydmluVG9kYXkKICBoQXJ2aW5Ub3RhbCA6IGFydmluVG90YWwgPSBhcnZpblllc3RlcmRheSArIGFydmluVG9kYXkKICBoQ29tYmluZWQgOiBjb21iaW5lZCA9IG1hcnZpblRvdGFsICsgYXJ2aW5Ub3RhbAoKdGhlb3JlbSBwcmFjdGljZV9kYWlseSAobSA6IFByYWN0aWNlTW9kZWwpIDoKICAgIG0ubWFydmluVG9kYXkgPSAxMjAg4oinIG0uYXJ2aW5ZZXN0ZXJkYXkgPSA4MCDiiKcgbS5hcnZpblRvZGF5ID0gMjQwIDo9IGJ5IG9tZWdhCnRoZW9yZW0gcHJhY3RpY2VfdG90YWxzIChtIDogUHJhY3RpY2VNb2RlbCkgOiBtLm1hcnZpblRvdGFsID0gMTYwIOKIpyBtLmFydmluVG90YWwgPSAzMjAgOj0gYnkKICBoYXZlIGggOj0gcHJhY3RpY2VfZGFpbHkgbQogIG9tZWdhCnRoZW9yZW0gcHJhY3RpY2VfY29tYmluZWQgKG0gOiBQcmFjdGljZU1vZGVsKSA6IG0uY29tYmluZWQgPSA0ODAgOj0gYnkKICBoYXZlIGggOj0gcHJhY3RpY2VfdG90YWxzIG0KICBvbWVnYQp0aGVvcmVtIHByYWN0aWNlX3NvbHV0aW9uIChtIDogUHJhY3RpY2VNb2RlbCkgOiBtLmNvbWJpbmVkID0gNDgwIDo9IHByYWN0aWNlX2NvbWJpbmVkIG0KCnN0cnVjdHVyZSBTdXJmZXJNb2RlbCB3aGVyZQogIGZpcnN0IHNlY29uZCB0aGlyZCB0b3RhbCBhdmVyYWdlIDog4oSVCiAgaEZpcnN0IDogZmlyc3QgPSAxNTAwCiAgaFNlY29uZCA6IHNlY29uZCA9IGZpcnN0ICsgNjAwCiAgaFRoaXJkIDogNSAqIHRoaXJkID0gMiAqIGZpcnN0CiAgaFRvdGFsIDogdG90YWwgPSBmaXJzdCArIHNlY29uZCArIHRoaXJkCiAgaEF2ZXJhZ2UgOiAzICogYXZlcmFnZSA9IHRvdGFsCgp0aGVvcmVtIHN1cmZlcl9kYXlzIChtIDogU3VyZmVyTW9kZWwpIDogbS5zZWNvbmQgPSAyMTAwIOKIpyBtLnRoaXJkID0gNjAwIDo9IGJ5IG9tZWdhCnRoZW9yZW0gc3VyZmVyX3RvdGFsIChtIDogU3VyZmVyTW9kZWwpIDogbS50b3RhbCA9IDQyMDAgOj0gYnkKICBoYXZlIGggOj0gc3VyZmVyX2RheXMgbQogIG9tZWdhCnRoZW9yZW0gc3VyZmVyX2F2ZXJhZ2UgKG0gOiBTdXJmZXJNb2RlbCkgOiBtLmF2ZXJhZ2UgPSAxNDAwIDo9IGJ5CiAgaGF2ZSBoIDo9IHN1cmZlcl90b3RhbCBtCiAgb21lZ2EKdGhlb3JlbSBzdXJmZXJzX3NvbHV0aW9uIChtIDogU3VyZmVyTW9kZWwpIDogbS5hdmVyYWdlID0gMTQwMCA6PSBzdXJmZXJfYXZlcmFnZSBtCgpzdHJ1Y3R1cmUgRmlsbGV0TW9kZWwgd2hlcmUKICBkYXlzIGZpc2hQZXJEYXkgdG90YWxGaXNoIGZpbGxldHNQZXJGaXNoIHRvdGFsRmlsbGV0cyA6IOKElQogIGhEYXlzIDogZGF5cyA9IDMwCiAgaEZpc2hQZXJEYXkgOiBmaXNoUGVyRGF5ID0gMgogIGhUb3RhbEZpc2ggOiB0b3RhbEZpc2ggPSBmaXNoUGVyRGF5ICogZGF5cwogIGhGaWxsZXRzUGVyRmlzaCA6IGZpbGxldHNQZXJGaXNoID0gMgogIGhUb3RhbEZpbGxldHMgOiB0b3RhbEZpbGxldHMgPSBmaWxsZXRzUGVyRmlzaCAqIHRvdGFsRmlzaAoKdGhlb3JlbSBmaWxsZXRfZmlzaCAobSA6IEZpbGxldE1vZGVsKSA6IG0udG90YWxGaXNoID0gNjAgOj0gYnkgb21lZ2EKdGhlb3JlbSBmaWxsZXRfdG90YWwgKG0gOiBGaWxsZXRNb2RlbCkgOiBtLnRvdGFsRmlsbGV0cyA9IDEyMCA6PSBieQogIGhhdmUgaCA6PSBmaWxsZXRfZmlzaCBtCiAgb21lZ2EKdGhlb3JlbSBmaWxsZXRzX3NvbHV0aW9uIChtIDogRmlsbGV0TW9kZWwpIDogbS50b3RhbEZpbGxldHMgPSAxMjAgOj0gZmlsbGV0X3RvdGFsIG0KCnN0cnVjdHVyZSBDYWtlT3JkZXJNb2RlbCB3aGVyZQogIGNob2NvbGF0ZUNvdW50IGNob2NvbGF0ZVByaWNlIGNob2NvbGF0ZUNvc3Qgc3RyYXdiZXJyeUNvdW50IHN0cmF3YmVycnlQcmljZSBzdHJhd2JlcnJ5Q29zdCB0b3RhbCA6IOKElQogIGhDaG9jb2xhdGVDb3VudCA6IGNob2NvbGF0ZUNvdW50ID0gMwogIGhDaG9jb2xhdGVQcmljZSA6IGNob2NvbGF0ZVByaWNlID0gMTIKICBoQ2hvY29sYXRlQ29zdCA6IGNob2NvbGF0ZUNvc3QgPSBjaG9jb2xhdGVDb3VudCAqIGNob2NvbGF0ZVByaWNlCiAgaFN0cmF3YmVycnlDb3VudCA6IHN0cmF3YmVycnlDb3VudCA9IDYKICBoU3RyYXdiZXJyeVByaWNlIDogc3RyYXdiZXJyeVByaWNlID0gMjIKICBoU3RyYXdiZXJyeUNvc3QgOiBzdHJhd2JlcnJ5Q29zdCA9IHN0cmF3YmVycnlDb3VudCAqIHN0cmF3YmVycnlQcmljZQogIGhUb3RhbCA6IHRvdGFsID0gY2hvY29sYXRlQ29zdCArIHN0cmF3YmVycnlDb3N0Cgp0aGVvcmVtIGNha2Vfb3JkZXJfY29zdHMgKG0gOiBDYWtlT3JkZXJNb2RlbCkgOgogICAgbS5jaG9jb2xhdGVDb3N0ID0gMzYg4oinIG0uc3RyYXdiZXJyeUNvc3QgPSAxMzIgOj0gYnkgb21lZ2EKdGhlb3JlbSBjYWtlX29yZGVyX3RvdGFsIChtIDogQ2FrZU9yZGVyTW9kZWwpIDogbS50b3RhbCA9IDE2OCA6PSBieQogIGhhdmUgaCA6PSBjYWtlX29yZGVyX2Nvc3RzIG0KICBvbWVnYQp0aGVvcmVtIGNha2Vfb3JkZXJfc29sdXRpb24gKG0gOiBDYWtlT3JkZXJNb2RlbCkgOiBtLnRvdGFsID0gMTY4IDo9IGNha2Vfb3JkZXJfdG90YWwgbQoKc3RydWN0dXJlIERpc3RhbmNlTW9kZWwgd2hlcmUKICBtaWxlcyB5YXJkcyBuaWtsYXVzRmVldCBsaW9uZWxGZWV0IGVzdGhlckZlZXQgdG90YWxGZWV0IDog4oSVCiAgaE1pbGVzIDogbWlsZXMgPSA0CiAgaFlhcmRzIDogeWFyZHMgPSA5NzUKICBoTmlrbGF1c0ZlZXQgOiBuaWtsYXVzRmVldCA9IDEyODcKICBoTGlvbmVsRmVldCA6IGxpb25lbEZlZXQgPSA1MjgwICogbWlsZXMKICBoRXN0aGVyRmVldCA6IGVzdGhlckZlZXQgPSAzICogeWFyZHMKICBoVG90YWwgOiB0b3RhbEZlZXQgPSBsaW9uZWxGZWV0ICsgZXN0aGVyRmVldCArIG5pa2xhdXNGZWV0Cgp0aGVvcmVtIGRpc3RhbmNlX2NvbnZlcnNpb25zIChtIDogRGlzdGFuY2VNb2RlbCkgOgogICAgbS5saW9uZWxGZWV0ID0gMjExMjAg4oinIG0uZXN0aGVyRmVldCA9IDI5MjUgOj0gYnkgb21lZ2EKdGhlb3JlbSBkaXN0YW5jZV90b3RhbCAobSA6IERpc3RhbmNlTW9kZWwpIDogbS50b3RhbEZlZXQgPSAyNTMzMiA6PSBieQogIGhhdmUgaCA6PSBkaXN0YW5jZV9jb252ZXJzaW9ucyBtCiAgb21lZ2EKdGhlb3JlbSBkaXN0YW5jZV9zb2x1dGlvbiAobSA6IERpc3RhbmNlTW9kZWwpIDogbS50b3RhbEZlZXQgPSAyNTMzMiA6PSBkaXN0YW5jZV90b3RhbCBtCgpzdHJ1Y3R1cmUgU21vcmVNb2RlbCB3aGVyZQogIGNyYWNrZXJzIGNyYWNrZXJzUGVyU21vcmUgc21vcmVzIG1hcnNobWFsbG93c0hhdmUgbWFyc2htYWxsb3dzTmVlZGVkIHRvQnV5IDog4oSVCiAgaENyYWNrZXJzIDogY3JhY2tlcnMgPSA0OAogIGhDcmFja2Vyc1BlclNtb3JlIDogY3JhY2tlcnNQZXJTbW9yZSA9IDIKICBoU21vcmVzIDogY3JhY2tlcnNQZXJTbW9yZSAqIHNtb3JlcyA9IGNyYWNrZXJzCiAgaE1hcnNobWFsbG93c0hhdmUgOiBtYXJzaG1hbGxvd3NIYXZlID0gNgogIGhOZWVkZWQgOiBtYXJzaG1hbGxvd3NOZWVkZWQgPSBzbW9yZXMKICBoQnV5IDogbWFyc2htYWxsb3dzSGF2ZSArIHRvQnV5ID0gbWFyc2htYWxsb3dzTmVlZGVkCgp0aGVvcmVtIHNtb3JlX2NvdW50IChtIDogU21vcmVNb2RlbCkgOiBtLnNtb3JlcyA9IDI0IDo9IGJ5IG9tZWdhCnRoZW9yZW0gc21vcmVfYnV5IChtIDogU21vcmVNb2RlbCkgOiBtLnRvQnV5ID0gMTggOj0gYnkKICBoYXZlIGggOj0gc21vcmVfY291bnQgbQogIG9tZWdhCnRoZW9yZW0gc21vcmVzX3NvbHV0aW9uIChtIDogU21vcmVNb2RlbCkgOiBtLnRvQnV5ID0gMTggOj0gc21vcmVfYnV5IG0KCnN0cnVjdHVyZSBQYXJraW5nTW9kZWwgd2hlcmUKICBjYXJzIHdoZWVsc1BlckNhciBjYXJXaGVlbHMgYWxsV2hlZWxzIG1vdG9yY3ljbGVXaGVlbHMgd2hlZWxzUGVyTW90b3JjeWNsZSBtb3RvcmN5Y2xlcyA6IOKElQogIGhDYXJzIDogY2FycyA9IDE5CiAgaFdoZWVsc1BlckNhciA6IHdoZWVsc1BlckNhciA9IDUKICBoQ2FyV2hlZWxzIDogY2FyV2hlZWxzID0gY2FycyAqIHdoZWVsc1BlckNhcgogIGhBbGxXaGVlbHMgOiBhbGxXaGVlbHMgPSAxMTcKICBoTW90b3JjeWNsZVdoZWVscyA6IGNhcldoZWVscyArIG1vdG9yY3ljbGVXaGVlbHMgPSBhbGxXaGVlbHMKICBoV2hlZWxzUGVyTW90b3JjeWNsZSA6IHdoZWVsc1Blck1vdG9yY3ljbGUgPSAyCiAgaE1vdG9yY3ljbGVzIDogd2hlZWxzUGVyTW90b3JjeWNsZSAqIG1vdG9yY3ljbGVzID0gbW90b3JjeWNsZVdoZWVscwoKdGhlb3JlbSBwYXJraW5nX2Nhcl93aGVlbHMgKG0gOiBQYXJraW5nTW9kZWwpIDogbS5jYXJXaGVlbHMgPSA5NSA6PSBieSBvbWVnYQp0aGVvcmVtIHBhcmtpbmdfbW90b3JjeWNsZV93aGVlbHMgKG0gOiBQYXJraW5nTW9kZWwpIDogbS5tb3RvcmN5Y2xlV2hlZWxzID0gMjIgOj0gYnkKICBoYXZlIGggOj0gcGFya2luZ19jYXJfd2hlZWxzIG0KICBvbWVnYQp0aGVvcmVtIHBhcmtpbmdfY291bnQgKG0gOiBQYXJraW5nTW9kZWwpIDogbS5tb3RvcmN5Y2xlcyA9IDExIDo9IGJ5CiAgaGF2ZSBoIDo9IHBhcmtpbmdfbW90b3JjeWNsZV93aGVlbHMgbQogIG9tZWdhCnRoZW9yZW0gcGFya2luZ19zb2x1dGlvbiAobSA6IFBhcmtpbmdNb2RlbCkgOiBtLm1vdG9yY3ljbGVzID0gMTEgOj0gcGFya2luZ19jb3VudCBtCgpzdHJ1Y3R1cmUgUmlkZU1vZGVsIHdoZXJlCiAgZmVycmlzUmlkZXMgZmVycmlzUGVyIGZlcnJpc1RpY2tldHMgY29hc3RlclJpZGVzIGNvYXN0ZXJQZXIgY29hc3RlclRpY2tldHMgbG9nUmlkZXMgbG9nUGVyIGxvZ1RpY2tldHMgdG90YWwgaGF2ZSB0b0J1eSA6IOKElQogIGhGZXJyaXNSaWRlcyA6IGZlcnJpc1JpZGVzID0gMgogIGhGZXJyaXNQZXIgOiBmZXJyaXNQZXIgPSAyCiAgaEZlcnJpc1RpY2tldHMgOiBmZXJyaXNUaWNrZXRzID0gZmVycmlzUmlkZXMgKiBmZXJyaXNQZXIKICBoQ29hc3RlclJpZGVzIDogY29hc3RlclJpZGVzID0gMwogIGhDb2FzdGVyUGVyIDogY29hc3RlclBlciA9IDUKICBoQ29hc3RlclRpY2tldHMgOiBjb2FzdGVyVGlja2V0cyA9IGNvYXN0ZXJSaWRlcyAqIGNvYXN0ZXJQZXIKICBoTG9nUmlkZXMgOiBsb2dSaWRlcyA9IDcKICBoTG9nUGVyIDogbG9nUGVyID0gMQogIGhMb2dUaWNrZXRzIDogbG9nVGlja2V0cyA9IGxvZ1JpZGVzICogbG9nUGVyCiAgaFRvdGFsIDogdG90YWwgPSBmZXJyaXNUaWNrZXRzICsgY29hc3RlclRpY2tldHMgKyBsb2dUaWNrZXRzCiAgaEhhdmUgOiBoYXZlID0gMjAKICBoQnV5IDogaGF2ZSArIHRvQnV5ID0gdG90YWwKCnRoZW9yZW0gcmlkZV9jb3N0cyAobSA6IFJpZGVNb2RlbCkgOgogICAgbS5mZXJyaXNUaWNrZXRzID0gNCDiiKcgbS5jb2FzdGVyVGlja2V0cyA9IDE1IOKIpyBtLmxvZ1RpY2tldHMgPSA3IDo9IGJ5IG9tZWdhCnRoZW9yZW0gcmlkZV90b3RhbCAobSA6IFJpZGVNb2RlbCkgOiBtLnRvdGFsID0gMjYgOj0gYnkKICBoYXZlIGggOj0gcmlkZV9jb3N0cyBtCiAgb21lZ2EKdGhlb3JlbSByaWRlX2J1eSAobSA6IFJpZGVNb2RlbCkgOiBtLnRvQnV5ID0gNiA6PSBieQogIGhhdmUgaCA6PSByaWRlX3RvdGFsIG0KICBvbWVnYQp0aGVvcmVtIHJpZGVzX3NvbHV0aW9uIChtIDogUmlkZU1vZGVsKSA6IG0udG9CdXkgPSA2IDo9IHJpZGVfYnV5IG0KCnN0cnVjdHVyZSBSYWNoZWxNb2RlbCB3aGVyZQogIHJhdGUgbWludXRlcyBiZWR0aW1lIG5leHREYXkgdG90YWwgOiDihJUKICBoUmF0ZSA6IHJhdGUgPSA1CiAgaE1pbnV0ZXMgOiBtaW51dGVzID0gMTIKICBoQmVkdGltZSA6IGJlZHRpbWUgPSByYXRlICogbWludXRlcwogIGhOZXh0RGF5IDogbmV4dERheSA9IDE2CiAgaFRvdGFsIDogdG90YWwgPSBiZWR0aW1lICsgbmV4dERheQoKdGhlb3JlbSByYWNoZWxfYmVkdGltZSAobSA6IFJhY2hlbE1vZGVsKSA6IG0uYmVkdGltZSA9IDYwIDo9IGJ5IG9tZWdhCnRoZW9yZW0gcmFjaGVsX3RvdGFsIChtIDogUmFjaGVsTW9kZWwpIDogbS50b3RhbCA9IDc2IDo9IGJ5CiAgaGF2ZSBoIDo9IHJhY2hlbF9iZWR0aW1lIG0KICBvbWVnYQp0aGVvcmVtIHJhY2hlbF9zb2x1dGlvbiAobSA6IFJhY2hlbE1vZGVsKSA6IG0udG90YWwgPSA3NiA6PSByYWNoZWxfdG90YWwgbQoKc3RydWN0dXJlIEJpa2VNb2RlbCB3aGVyZQogIHJvdGF0aW9uc1BlckJsb2NrIHRhcmdldEJsb2NrcyB0YXJnZXRSb3RhdGlvbnMgYWxyZWFkeSBhZGRpdGlvbmFsIDog4oSVCiAgaFJvdGF0aW9uc1BlckJsb2NrIDogcm90YXRpb25zUGVyQmxvY2sgPSAyMDAKICBoVGFyZ2V0QmxvY2tzIDogdGFyZ2V0QmxvY2tzID0gOAogIGhUYXJnZXQgOiB0YXJnZXRSb3RhdGlvbnMgPSByb3RhdGlvbnNQZXJCbG9jayAqIHRhcmdldEJsb2NrcwogIGhBbHJlYWR5IDogYWxyZWFkeSA9IDYwMAogIGhBZGRpdGlvbmFsIDogYWxyZWFkeSArIGFkZGl0aW9uYWwgPSB0YXJnZXRSb3RhdGlvbnMKCnRoZW9yZW0gYmlrZV90YXJnZXQgKG0gOiBCaWtlTW9kZWwpIDogbS50YXJnZXRSb3RhdGlvbnMgPSAxNjAwIDo9IGJ5IG9tZWdhCnRoZW9yZW0gYmlrZV9hZGRpdGlvbmFsIChtIDogQmlrZU1vZGVsKSA6IG0uYWRkaXRpb25hbCA9IDEwMDAgOj0gYnkKICBoYXZlIGggOj0gYmlrZV90YXJnZXQgbQogIG9tZWdhCnRoZW9yZW0gYmlrZV9zb2x1dGlvbiAobSA6IEJpa2VNb2RlbCkgOiBtLmFkZGl0aW9uYWwgPSAxMDAwIDo9IGJpa2VfYWRkaXRpb25hbCBtCgpzdHJ1Y3R1cmUgRG9sbE1vZGVsIHdoZXJlCiAgYWRkZWQgb3JpZ2luYWwgdG90YWwgOiDihJUKICBoQWRkZWQgOiBhZGRlZCA9IDIKICBoSW5jcmVhc2UgOiA0ICogYWRkZWQgPSBvcmlnaW5hbAogIGhUb3RhbCA6IHRvdGFsID0gb3JpZ2luYWwgKyBhZGRlZAoKdGhlb3JlbSBkb2xsX29yaWdpbmFsIChtIDogRG9sbE1vZGVsKSA6IG0ub3JpZ2luYWwgPSA4IDo9IGJ5IG9tZWdhCnRoZW9yZW0gZG9sbF90b3RhbCAobSA6IERvbGxNb2RlbCkgOiBtLnRvdGFsID0gMTAgOj0gYnkKICBoYXZlIGggOj0gZG9sbF9vcmlnaW5hbCBtCiAgb21lZ2EKdGhlb3JlbSBkb2xsc19zb2x1dGlvbiAobSA6IERvbGxNb2RlbCkgOiBtLnRvdGFsID0gMTAgOj0gZG9sbF90b3RhbCBtCgpzdHJ1Y3R1cmUgTW9zcXVpdG9Nb2RlbCB3aGVyZQogIGRyb3BzUGVyRmVlZCBkcm9wc1BlckxpdGVyIGxldGhhbExpdGVycyBsZXRoYWxEcm9wcyBtb3NxdWl0b2VzIDog4oSVCiAgaERyb3BzUGVyRmVlZCA6IGRyb3BzUGVyRmVlZCA9IDIwCiAgaERyb3BzUGVyTGl0ZXIgOiBkcm9wc1BlckxpdGVyID0gNTAwMAogIGhMZXRoYWxMaXRlcnMgOiBsZXRoYWxMaXRlcnMgPSAzCiAgaExldGhhbERyb3BzIDogbGV0aGFsRHJvcHMgPSBkcm9wc1BlckxpdGVyICogbGV0aGFsTGl0ZXJzCiAgaE1vc3F1aXRvZXMgOiBkcm9wc1BlckZlZWQgKiBtb3NxdWl0b2VzID0gbGV0aGFsRHJvcHMKCnRoZW9yZW0gbW9zcXVpdG9fbGV0aGFsX2Ryb3BzIChtIDogTW9zcXVpdG9Nb2RlbCkgOiBtLmxldGhhbERyb3BzID0gMTUwMDAgOj0gYnkgb21lZ2EKdGhlb3JlbSBtb3NxdWl0b19jb3VudCAobSA6IE1vc3F1aXRvTW9kZWwpIDogbS5tb3NxdWl0b2VzID0gNzUwIDo9IGJ5CiAgaGF2ZSBoIDo9IG1vc3F1aXRvX2xldGhhbF9kcm9wcyBtCiAgb21lZ2EKdGhlb3JlbSBtb3NxdWl0b19zb2x1dGlvbiAobSA6IE1vc3F1aXRvTW9kZWwpIDogbS5tb3NxdWl0b2VzID0gNzUwIDo9IG1vc3F1aXRvX2NvdW50IG0KCmVuZCBMZW1tYVdlYXZlLlByb2JsZW1zLkdTTThLLlNwcmludDA5MjhBMTAK
+import Mathlib
+
+namespace LemmaWeave.Problems.GSM8K.Sprint0928A10
+
+structure MedSchoolModel where
+  researched applied accepted : ℕ
+  hResearched : researched = 42
+  hApplied : 3 * applied = researched
+  hAccepted : 2 * accepted = applied
+
+theorem med_school_applied (m : MedSchoolModel) : m.applied = 14 := by omega
+theorem med_school_accepted (m : MedSchoolModel) : m.accepted = 7 := by
+  have := med_school_applied m
+  omega
+theorem med_school_solution (m : MedSchoolModel) : m.accepted = 7 := med_school_accepted m
+
+structure BakerModel where
+  cakeCount cakePrice cakeRevenue pieCount piePrice pieRevenue totalRevenue : ℕ
+  hCakeCount : cakeCount = 453
+  hCakePrice : cakePrice = 12
+  hCakeRevenue : cakeRevenue = cakeCount * cakePrice
+  hPieCount : pieCount = 126
+  hPiePrice : piePrice = 7
+  hPieRevenue : pieRevenue = pieCount * piePrice
+  hTotal : totalRevenue = cakeRevenue + pieRevenue
+
+theorem baker_cake_revenue (m : BakerModel) : m.cakeRevenue = 5436 := by omega
+theorem baker_pie_revenue (m : BakerModel) : m.pieRevenue = 882 := by omega
+theorem baker_total (m : BakerModel) : m.totalRevenue = 6318 := by
+  have h₁ := baker_cake_revenue m
+  have h₂ := baker_pie_revenue m
+  omega
+theorem baker_solution (m : BakerModel) : m.totalRevenue = 6318 := baker_total m
+
+structure SurveyModel where
+  classSize johnson feldstein henderson total : ℕ
+  hClassSize : classSize = 30
+  hJohnson : 6 * johnson = classSize
+  hFeldstein : 3 * feldstein = 2 * classSize
+  hHenderson : 5 * henderson = classSize
+  hTotal : total = johnson + feldstein + henderson
+
+theorem survey_class_counts (m : SurveyModel) :
+    m.johnson = 5 ∧ m.feldstein = 20 ∧ m.henderson = 6 := by omega
+theorem survey_total (m : SurveyModel) : m.total = 31 := by
+  have h := survey_class_counts m
+  omega
+theorem survey_solution (m : SurveyModel) : m.total = 31 := survey_total m
+
+structure PracticeModel where
+  marvinYesterday marvinToday marvinTotal arvinYesterday arvinToday arvinTotal combined : ℕ
+  hMarvinYesterday : marvinYesterday = 40
+  hMarvinToday : marvinToday = 3 * marvinYesterday
+  hMarvinTotal : marvinTotal = marvinYesterday + marvinToday
+  hArvinYesterday : arvinYesterday = 2 * marvinYesterday
+  hArvinToday : arvinToday = 2 * marvinToday
+  hArvinTotal : arvinTotal = arvinYesterday + arvinToday
+  hCombined : combined = marvinTotal + arvinTotal
+
+theorem practice_daily (m : PracticeModel) :
+    m.marvinToday = 120 ∧ m.arvinYesterday = 80 ∧ m.arvinToday = 240 := by omega
+theorem practice_totals (m : PracticeModel) : m.marvinTotal = 160 ∧ m.arvinTotal = 320 := by
+  have h := practice_daily m
+  omega
+theorem practice_combined (m : PracticeModel) : m.combined = 480 := by
+  have h := practice_totals m
+  omega
+theorem practice_solution (m : PracticeModel) : m.combined = 480 := practice_combined m
+
+structure SurferModel where
+  first second third total average : ℕ
+  hFirst : first = 1500
+  hSecond : second = first + 600
+  hThird : 5 * third = 2 * first
+  hTotal : total = first + second + third
+  hAverage : 3 * average = total
+
+theorem surfer_days (m : SurferModel) : m.second = 2100 ∧ m.third = 600 := by omega
+theorem surfer_total (m : SurferModel) : m.total = 4200 := by
+  have h := surfer_days m
+  omega
+theorem surfer_average (m : SurferModel) : m.average = 1400 := by
+  have h := surfer_total m
+  omega
+theorem surfers_solution (m : SurferModel) : m.average = 1400 := surfer_average m
+
+structure FilletModel where
+  days fishPerDay totalFish filletsPerFish totalFillets : ℕ
+  hDays : days = 30
+  hFishPerDay : fishPerDay = 2
+  hTotalFish : totalFish = fishPerDay * days
+  hFilletsPerFish : filletsPerFish = 2
+  hTotalFillets : totalFillets = filletsPerFish * totalFish
+
+theorem fillet_fish (m : FilletModel) : m.totalFish = 60 := by omega
+theorem fillet_total (m : FilletModel) : m.totalFillets = 120 := by
+  have h := fillet_fish m
+  omega
+theorem fillets_solution (m : FilletModel) : m.totalFillets = 120 := fillet_total m
+
+structure CakeOrderModel where
+  chocolateCount chocolatePrice chocolateCost strawberryCount strawberryPrice strawberryCost total : ℕ
+  hChocolateCount : chocolateCount = 3
+  hChocolatePrice : chocolatePrice = 12
+  hChocolateCost : chocolateCost = chocolateCount * chocolatePrice
+  hStrawberryCount : strawberryCount = 6
+  hStrawberryPrice : strawberryPrice = 22
+  hStrawberryCost : strawberryCost = strawberryCount * strawberryPrice
+  hTotal : total = chocolateCost + strawberryCost
+
+theorem cake_order_costs (m : CakeOrderModel) :
+    m.chocolateCost = 36 ∧ m.strawberryCost = 132 := by omega
+theorem cake_order_total (m : CakeOrderModel) : m.total = 168 := by
+  have h := cake_order_costs m
+  omega
+theorem cake_order_solution (m : CakeOrderModel) : m.total = 168 := cake_order_total m
+
+structure DistanceModel where
+  miles yards niklausFeet lionelFeet estherFeet totalFeet : ℕ
+  hMiles : miles = 4
+  hYards : yards = 975
+  hNiklausFeet : niklausFeet = 1287
+  hLionelFeet : lionelFeet = 5280 * miles
+  hEstherFeet : estherFeet = 3 * yards
+  hTotal : totalFeet = lionelFeet + estherFeet + niklausFeet
+
+theorem distance_conversions (m : DistanceModel) :
+    m.lionelFeet = 21120 ∧ m.estherFeet = 2925 := by omega
+theorem distance_total (m : DistanceModel) : m.totalFeet = 25332 := by
+  have h := distance_conversions m
+  omega
+theorem distance_solution (m : DistanceModel) : m.totalFeet = 25332 := distance_total m
+
+structure SmoreModel where
+  crackers crackersPerSmore smores marshmallowsHave marshmallowsNeeded toBuy : ℕ
+  hCrackers : crackers = 48
+  hCrackersPerSmore : crackersPerSmore = 2
+  hSmores : crackersPerSmore * smores = crackers
+  hMarshmallowsHave : marshmallowsHave = 6
+  hNeeded : marshmallowsNeeded = smores
+  hBuy : marshmallowsHave + toBuy = marshmallowsNeeded
+
+theorem smore_count (m : SmoreModel) : m.smores = 24 := by omega
+theorem smore_buy (m : SmoreModel) : m.toBuy = 18 := by
+  have h := smore_count m
+  omega
+theorem smores_solution (m : SmoreModel) : m.toBuy = 18 := smore_buy m
+
+structure ParkingModel where
+  cars wheelsPerCar carWheels allWheels motorcycleWheels wheelsPerMotorcycle motorcycles : ℕ
+  hCars : cars = 19
+  hWheelsPerCar : wheelsPerCar = 5
+  hCarWheels : carWheels = cars * wheelsPerCar
+  hAllWheels : allWheels = 117
+  hMotorcycleWheels : carWheels + motorcycleWheels = allWheels
+  hWheelsPerMotorcycle : wheelsPerMotorcycle = 2
+  hMotorcycles : wheelsPerMotorcycle * motorcycles = motorcycleWheels
+
+theorem parking_car_wheels (m : ParkingModel) : m.carWheels = 95 := by omega
+theorem parking_motorcycle_wheels (m : ParkingModel) : m.motorcycleWheels = 22 := by
+  have h := parking_car_wheels m
+  omega
+theorem parking_count (m : ParkingModel) : m.motorcycles = 11 := by
+  have h := parking_motorcycle_wheels m
+  omega
+theorem parking_solution (m : ParkingModel) : m.motorcycles = 11 := parking_count m
+
+structure RideModel where
+  ferrisRides ferrisPer ferrisTickets coasterRides coasterPer coasterTickets logRides logPer logTickets total have toBuy : ℕ
+  hFerrisRides : ferrisRides = 2
+  hFerrisPer : ferrisPer = 2
+  hFerrisTickets : ferrisTickets = ferrisRides * ferrisPer
+  hCoasterRides : coasterRides = 3
+  hCoasterPer : coasterPer = 5
+  hCoasterTickets : coasterTickets = coasterRides * coasterPer
+  hLogRides : logRides = 7
+  hLogPer : logPer = 1
+  hLogTickets : logTickets = logRides * logPer
+  hTotal : total = ferrisTickets + coasterTickets + logTickets
+  hHave : have = 20
+  hBuy : have + toBuy = total
+
+theorem ride_costs (m : RideModel) :
+    m.ferrisTickets = 4 ∧ m.coasterTickets = 15 ∧ m.logTickets = 7 := by omega
+theorem ride_total (m : RideModel) : m.total = 26 := by
+  have h := ride_costs m
+  omega
+theorem ride_buy (m : RideModel) : m.toBuy = 6 := by
+  have h := ride_total m
+  omega
+theorem rides_solution (m : RideModel) : m.toBuy = 6 := ride_buy m
+
+structure RachelModel where
+  rate minutes bedtime nextDay total : ℕ
+  hRate : rate = 5
+  hMinutes : minutes = 12
+  hBedtime : bedtime = rate * minutes
+  hNextDay : nextDay = 16
+  hTotal : total = bedtime + nextDay
+
+theorem rachel_bedtime (m : RachelModel) : m.bedtime = 60 := by omega
+theorem rachel_total (m : RachelModel) : m.total = 76 := by
+  have h := rachel_bedtime m
+  omega
+theorem rachel_solution (m : RachelModel) : m.total = 76 := rachel_total m
+
+structure BikeModel where
+  rotationsPerBlock targetBlocks targetRotations already additional : ℕ
+  hRotationsPerBlock : rotationsPerBlock = 200
+  hTargetBlocks : targetBlocks = 8
+  hTarget : targetRotations = rotationsPerBlock * targetBlocks
+  hAlready : already = 600
+  hAdditional : already + additional = targetRotations
+
+theorem bike_target (m : BikeModel) : m.targetRotations = 1600 := by omega
+theorem bike_additional (m : BikeModel) : m.additional = 1000 := by
+  have h := bike_target m
+  omega
+theorem bike_solution (m : BikeModel) : m.additional = 1000 := bike_additional m
+
+structure DollModel where
+  added original total : ℕ
+  hAdded : added = 2
+  hIncrease : 4 * added = original
+  hTotal : total = original + added
+
+theorem doll_original (m : DollModel) : m.original = 8 := by omega
+theorem doll_total (m : DollModel) : m.total = 10 := by
+  have h := doll_original m
+  omega
+theorem dolls_solution (m : DollModel) : m.total = 10 := doll_total m
+
+structure MosquitoModel where
+  dropsPerFeed dropsPerLiter lethalLiters lethalDrops mosquitoes : ℕ
+  hDropsPerFeed : dropsPerFeed = 20
+  hDropsPerLiter : dropsPerLiter = 5000
+  hLethalLiters : lethalLiters = 3
+  hLethalDrops : lethalDrops = dropsPerLiter * lethalLiters
+  hMosquitoes : dropsPerFeed * mosquitoes = lethalDrops
+
+theorem mosquito_lethal_drops (m : MosquitoModel) : m.lethalDrops = 15000 := by omega
+theorem mosquito_count (m : MosquitoModel) : m.mosquitoes = 750 := by
+  have h := mosquito_lethal_drops m
+  omega
+theorem mosquito_solution (m : MosquitoModel) : m.mosquitoes = 750 := mosquito_count m
+
+end LemmaWeave.Problems.GSM8K.Sprint0928A10

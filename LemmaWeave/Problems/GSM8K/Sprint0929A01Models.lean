@@ -33,4 +33,35 @@ structure PiesModel where
   hadam : adam = bill + 3
   htotal : total = adam + bill + sierra
 
+theorem pies_bill (m : PiesModel) : m.bill = 6 := by omega
+theorem pies_adam (m : PiesModel) : m.adam = 9 := by omega
+theorem pies_total (m : PiesModel) : m.total = 27 := by omega
+theorem pies_solution (m : PiesModel) : m.total = 27 := pies_total m
+
+structure ParkingSectionsModel where
+  total first second third : ℕ
+  htotal : total = 1000
+  hfirst : first = 320
+  hsecond : second = third + 200
+  hpartition : total = first + second + third
+
+theorem parking_remaining (m : ParkingSectionsModel) : m.second + m.third = 680 := by omega
+theorem parking_third (m : ParkingSectionsModel) : m.third = 240 := by omega
+theorem parking_second (m : ParkingSectionsModel) : m.second = 440 := by omega
+theorem parking_sections_solution (m : ParkingSectionsModel) : m.second = 440 := parking_second m
+
+structure ValentinesModel where
+  students recipients price spent budget percent : ℕ
+  hstudents : students = 30
+  hrecipients : 5 * recipients = 3 * students
+  hprice : price = 2
+  hspent : spent = 2 * recipients
+  hbudget : budget = 40
+  hpercent : 40 * percent = 100 * spent
+
+theorem valentines_recipients (m : ValentinesModel) : m.recipients = 18 := by omega
+theorem valentines_spent (m : ValentinesModel) : m.spent = 36 := by omega
+theorem valentines_percent (m : ValentinesModel) : m.percent = 90 := by omega
+theorem valentines_solution (m : ValentinesModel) : m.percent = 90 := valentines_percent m
+
 end LemmaWeave.Problems.GSM8K.Sprint0929A01

@@ -21,3 +21,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A05.fruit_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A05.market_ambiguity to "work/gsm8k-sprint181-market-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A05.market_ambiguity
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A05.flavors_ambiguity to "work/gsm8k-sprint181-flavors-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A05.flavors_ambiguity
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A05.skirts_solution to "work/gsm8k-sprint181-skirts-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A05.skirts_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A05.snake_ambiguity to "work/gsm8k-sprint181-snake-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A05.snake_ambiguity
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A05.bridges_solution to "work/gsm8k-sprint181-bridges-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A05.bridges_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A05.laundry_solution to "work/gsm8k-sprint181-laundry-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A05.laundry_solution

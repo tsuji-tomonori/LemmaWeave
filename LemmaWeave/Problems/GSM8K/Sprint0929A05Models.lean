@@ -243,4 +243,140 @@ theorem market_ambiguity (m : MarketModel) :
   have hMultiplier := market_multiplier_solution m
   omega
 
+structure FlavorsModel where
+  firstYear : ℕ
+  lastYear : ℕ
+  disjointTried : ℕ
+  disjointRemaining : ℕ
+  overlapTried : ℕ
+  overlapRemaining : ℕ
+  hFirst : 4 * firstYear = 100
+  hLast : lastYear = 2 * firstYear
+  hDisjoint : disjointTried = firstYear + lastYear
+  hDisjointRemaining : disjointTried + disjointRemaining = 100
+  hOverlap : overlapTried = lastYear
+  hOverlapRemaining : overlapTried + overlapRemaining = 100
+
+theorem flavors_first (m : FlavorsModel) : m.firstYear = 25 := by
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+theorem flavors_last (m : FlavorsModel) : m.lastYear = 50 := by
+  have hPrev := flavors_first m
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+theorem flavors_disjoint_solution (m : FlavorsModel) : m.disjointRemaining = 25 := by
+  have hPrev := flavors_last m
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+theorem flavors_overlap_solution (m : FlavorsModel) : m.overlapRemaining = 50 := by
+  have hPrev := flavors_disjoint_solution m
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+theorem flavors_ambiguity (m : FlavorsModel) :
+    m.disjointRemaining = 25 ∧ m.overlapRemaining = 50 ∧
+      m.disjointRemaining ≠ m.overlapRemaining := by
+  have hDisjoint := flavors_disjoint_solution m
+  have hOverlap := flavors_overlap_solution m
+  omega
+
+structure SkirtsModel where
+  skirtsTotal : ℕ
+  eachSkirt : ℕ
+  hTotal : skirtsTotal + 20 = 50
+  hEach : skirtsTotal = 2 * eachSkirt
+
+theorem skirts_total (m : SkirtsModel) : m.skirtsTotal = 30 := by
+  rcases m with ⟨a,b,h1,h2⟩
+  omega
+theorem skirts_solution (m : SkirtsModel) : m.eachSkirt = 15 := by
+  have hPrev := skirts_total m
+  rcases m with ⟨a,b,h1,h2⟩
+  omega
+
+structure SnakeModel where
+  head : ℕ
+  excludingHead : ℕ
+  literalSubtractAgain : ℕ
+  hHead : 10 * head = 10
+  hExcluding : excludingHead + head = 10
+  hLiteral : literalSubtractAgain + head = excludingHead
+
+theorem snake_head (m : SnakeModel) : m.head = 1 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem snake_excluding_solution (m : SnakeModel) : m.excludingHead = 9 := by
+  have hPrev := snake_head m
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem snake_literal_solution (m : SnakeModel) : m.literalSubtractAgain = 8 := by
+  have hPrev := snake_excluding_solution m
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem snake_ambiguity (m : SnakeModel) :
+    m.excludingHead = 9 ∧ m.literalSubtractAgain = 8 ∧
+      m.excludingHead ≠ m.literalSubtractAgain := by
+  have hExclude := snake_excluding_solution m
+  have hLiteral := snake_literal_solution m
+  omega
+
+structure BridgesModel where
+  oldAnnual : ℕ
+  newCapacityMonthly : ℕ
+  increaseMonthly : ℕ
+  newMonthly : ℕ
+  newAnnual : ℕ
+  combinedAnnual : ℕ
+  hOldAnnual : oldAnnual = 12 * 2000
+  hCapacity : newCapacityMonthly = 2 * 2000
+  hIncrease : 100 * increaseMonthly = 60 * 2000
+  hNewMonthly : newMonthly = 2000 + increaseMonthly
+  hNewAnnual : newAnnual = 12 * newMonthly
+  hCombined : combinedAnnual = oldAnnual + newAnnual
+
+theorem bridges_old_annual (m : BridgesModel) : m.oldAnnual = 24000 := by
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+theorem bridges_new_monthly (m : BridgesModel) : m.newMonthly = 3200 := by
+  have hPrev := bridges_old_annual m
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+theorem bridges_capacity_sufficient (m : BridgesModel) : m.newMonthly ≤ m.newCapacityMonthly := by
+  have hPrev := bridges_new_monthly m
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+theorem bridges_new_annual (m : BridgesModel) : m.newAnnual = 38400 := by
+  have hPrev := bridges_capacity_sufficient m
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+theorem bridges_solution (m : BridgesModel) : m.combinedAnnual = 62400 := by
+  have hPrev := bridges_new_annual m
+  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  omega
+
+structure LaundryModel where
+  shirtPounds : ℕ
+  pantsPounds : ℕ
+  totalPounds : ℕ
+  loads : ℕ
+  hShirts : 4 * shirtPounds = 20
+  hPants : 2 * pantsPounds = 20
+  hTotal : totalPounds = shirtPounds + pantsPounds
+  hLoads : totalPounds = 5 * loads
+
+theorem laundry_shirts (m : LaundryModel) : m.shirtPounds = 5 := by
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem laundry_pants (m : LaundryModel) : m.pantsPounds = 10 := by
+  have hPrev := laundry_shirts m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem laundry_total (m : LaundryModel) : m.totalPounds = 15 := by
+  have hPrev := laundry_pants m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem laundry_solution (m : LaundryModel) : m.loads = 3 := by
+  have hPrev := laundry_total m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0929A05

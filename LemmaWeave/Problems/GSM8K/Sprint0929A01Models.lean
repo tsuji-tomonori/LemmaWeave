@@ -64,4 +64,37 @@ theorem valentines_spent (m : ValentinesModel) : m.spent = 36 := by omega
 theorem valentines_percent (m : ValentinesModel) : m.percent = 90 := by omega
 theorem valentines_solution (m : ValentinesModel) : m.percent = 90 := valentines_percent m
 
+structure BasketballModel where
+  attempted made missed : ℕ
+  hattempted : attempted = 20
+  hmade : 5 * made = 4 * attempted
+  hpartition : attempted = made + missed
+
+theorem basketball_made (m : BasketballModel) : m.made = 16 := by omega
+theorem basketball_missed (m : BasketballModel) : m.missed = 4 := by omega
+theorem basketball_solution (m : BasketballModel) : m.missed = 4 := basketball_missed m
+
+structure SleepModel where
+  weekdayHours weekdayDays otherHours otherDays weekdayTotal otherTotal total : ℕ
+  hweekdayHours : weekdayHours = 6
+  hweekdayDays : weekdayDays = 5
+  hotherHours : otherHours = 10
+  hotherDays : otherDays = 2
+  hweekdayTotal : weekdayTotal = 6 * 5
+  hotherTotal : otherTotal = 10 * 2
+  htotal : total = weekdayTotal + otherTotal
+
+theorem sleep_weekday (m : SleepModel) : m.weekdayTotal = 30 := by omega
+theorem sleep_other (m : SleepModel) : m.otherTotal = 20 := by omega
+theorem sleep_total (m : SleepModel) : m.total = 50 := by omega
+theorem sleep_solution (m : SleepModel) : m.total = 50 := sleep_total m
+
+structure HomesModel where
+  total white nonwhite fireplace noFireplace : ℕ
+  htotal : total = 400
+  hwhite : 4 * white = total
+  hnonwhite : total = white + nonwhite
+  hfireplace : 5 * fireplace = nonwhite
+  hpartition : nonwhite = fireplace + noFireplace
+
 end LemmaWeave.Problems.GSM8K.Sprint0929A01

@@ -21,3 +21,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A01.pebble_friends_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A01.typing_solution to "work/gsm8k-sprint178-typing-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A01.typing_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A01.books_solution to "work/gsm8k-sprint178-books-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A01.books_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A01.limo_solution to "work/gsm8k-sprint178-limo-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A01.limo_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A01.tully_solution to "work/gsm8k-sprint178-tully-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A01.tully_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A01.darcie_solution to "work/gsm8k-sprint178-darcie-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A01.darcie_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A01.tennis_solution to "work/gsm8k-sprint178-tennis-balls-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A01.tennis_solution

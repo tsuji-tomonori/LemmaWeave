@@ -14,15 +14,15 @@ structure FuelModel where
 
 theorem fuel_tomorrow (m : FuelModel) : m.tomorrowMiles = 600 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem fuel_total_distance (m : FuelModel) : m.totalMiles = 1000 := by
   have hPrev := fuel_tomorrow m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem fuel_solution (m : FuelModel) : m.gallons = 4000 := by
   have hPrev := fuel_total_distance m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 
 structure VideosModel where
   lilaPerVideo : ℕ
@@ -36,11 +36,11 @@ structure VideosModel where
 
 theorem videos_lila_per (m : VideosModel) : m.lilaPerVideo = 50 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem videos_lila_total (m : VideosModel) : m.lilaTotal = 300 := by
   have hPrev := videos_lila_per m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem videos_roger_total (m : VideosModel) : m.rogerTotal = 600 := by
   have hPrev := videos_lila_total m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
@@ -48,7 +48,7 @@ theorem videos_roger_total (m : VideosModel) : m.rogerTotal = 600 := by
 theorem videos_solution (m : VideosModel) : m.combined = 900 := by
   have hPrev := videos_roger_total m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 
 structure JuniorModel where
   extraHours : ℕ
@@ -60,15 +60,15 @@ structure JuniorModel where
 
 theorem junior_extra (m : JuniorModel) : m.extraHours = 5 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 theorem junior_per_site (m : JuniorModel) : m.hoursPerSite = 25 := by
   have hPrev := junior_extra m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 theorem junior_solution (m : JuniorModel) : m.totalHours = 750 := by
   have hPrev := junior_per_site m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 
 structure MarblesModel where
   white : ℕ
@@ -80,15 +80,15 @@ structure MarblesModel where
 
 theorem marbles_white (m : MarblesModel) : m.white = 25 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 theorem marbles_green (m : MarblesModel) : m.green = 6 := by
   have hPrev := marbles_white m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 theorem marbles_solution (m : MarblesModel) : m.red = 7 := by
   have hPrev := marbles_green m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 
 structure PoleModel where
   cutMeters : ℕ
@@ -98,11 +98,11 @@ structure PoleModel where
 
 theorem pole_cut (m : PoleModel) : m.cutMeters = 6 := by
   rcases m with ⟨a,b,h1,h2⟩
-  omega
+  simp_all <;> omega
 theorem pole_solution (m : PoleModel) : m.remainingMeters = 14 := by
   have hPrev := pole_cut m
   rcases m with ⟨a,b,h1,h2⟩
-  omega
+  simp_all <;> omega
 
 structure WalkingGroupModel where
   routeMiles : ℕ
@@ -126,15 +126,15 @@ theorem walking_group_jamie (m : WalkingGroupModel) : m.jamieExtra = 12 := by
 theorem walking_group_sue (m : WalkingGroupModel) : m.sueExtra = 6 := by
   have hPrev := walking_group_jamie m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  omega
+  simp_all <;> omega
 theorem walking_group_route_solution (m : WalkingGroupModel) : m.routeTotal = 36 := by
   have hPrev := walking_group_sue m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  omega
+  simp_all <;> omega
 theorem walking_group_person_solution (m : WalkingGroupModel) : m.personMilesTotal = 108 := by
   have hPrev := walking_group_route_solution m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  omega
+  simp_all <;> omega
 theorem walking_group_ambiguity (m : WalkingGroupModel) :
     m.routeTotal = 36 ∧ m.personMilesTotal = 108 ∧ m.routeTotal ≠ m.personMilesTotal := by
   have hRoute := walking_group_route_solution m
@@ -157,15 +157,15 @@ theorem cookies_needed (m : CookiesModel) : m.cookies = 240 := by
 theorem cookies_boxes (m : CookiesModel) : m.boxes = 4 := by
   have hPrev := cookies_needed m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem cookies_cost_cents (m : CookiesModel) : m.costCents = 1400 := by
   have hPrev := cookies_boxes m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem cookies_solution (m : CookiesModel) : m.costDollars = 14 := by
   have hPrev := cookies_cost_cents m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 
 structure RiverModel where
   mayDepth : ℕ
@@ -175,11 +175,11 @@ structure RiverModel where
 
 theorem river_june (m : RiverModel) : m.juneDepth = 15 := by
   rcases m with ⟨a,b,h1,h2⟩
-  omega
+  simp_all <;> omega
 theorem river_solution (m : RiverModel) : m.mayDepth = 5 := by
   have hPrev := river_june m
   rcases m with ⟨a,b,h1,h2⟩
-  omega
+  simp_all <;> omega
 
 structure FruitModel where
   ounces : ℕ
@@ -201,15 +201,15 @@ theorem fruit_ounces (m : FruitModel) : m.ounces = 48 := by
 theorem fruit_blue_cost (m : FruitModel) : m.blueberryCost = 40 := by
   have hPrev := fruit_ounces m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem fruit_raspberry_cost (m : FruitModel) : m.raspberryCost = 18 := by
   have hPrev := fruit_blue_cost m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem fruit_solution (m : FruitModel) : m.savings = 22 := by
   have hPrev := fruit_raspberry_cost m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 
 structure MarketModel where
   jayda : ℕ
@@ -227,15 +227,15 @@ structure MarketModel where
 
 theorem market_extra (m : MarketModel) : m.extra = 160 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem market_more_solution (m : MarketModel) : m.totalMoreReading = 960 := by
   have hPrev := market_extra m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem market_multiplier_solution (m : MarketModel) : m.totalMultiplierReading = 560 := by
   have hPrev := market_more_solution m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem market_ambiguity (m : MarketModel) :
     m.totalMoreReading = 960 ∧ m.totalMultiplierReading = 560 ∧
       m.totalMoreReading ≠ m.totalMultiplierReading := by
@@ -259,19 +259,19 @@ structure FlavorsModel where
 
 theorem flavors_first (m : FlavorsModel) : m.firstYear = 25 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem flavors_last (m : FlavorsModel) : m.lastYear = 50 := by
   have hPrev := flavors_first m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem flavors_disjoint_solution (m : FlavorsModel) : m.disjointRemaining = 25 := by
   have hPrev := flavors_last m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem flavors_overlap_solution (m : FlavorsModel) : m.overlapRemaining = 50 := by
   have hPrev := flavors_disjoint_solution m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem flavors_ambiguity (m : FlavorsModel) :
     m.disjointRemaining = 25 ∧ m.overlapRemaining = 50 ∧
       m.disjointRemaining ≠ m.overlapRemaining := by
@@ -287,11 +287,11 @@ structure SkirtsModel where
 
 theorem skirts_total (m : SkirtsModel) : m.skirtsTotal = 30 := by
   rcases m with ⟨a,b,h1,h2⟩
-  omega
+  simp_all <;> omega
 theorem skirts_solution (m : SkirtsModel) : m.eachSkirt = 15 := by
   have hPrev := skirts_total m
   rcases m with ⟨a,b,h1,h2⟩
-  omega
+  simp_all <;> omega
 
 structure SnakeModel where
   head : ℕ
@@ -303,15 +303,15 @@ structure SnakeModel where
 
 theorem snake_head (m : SnakeModel) : m.head = 1 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 theorem snake_excluding_solution (m : SnakeModel) : m.excludingHead = 9 := by
   have hPrev := snake_head m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 theorem snake_literal_solution (m : SnakeModel) : m.literalSubtractAgain = 8 := by
   have hPrev := snake_excluding_solution m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  simp_all <;> omega
 theorem snake_ambiguity (m : SnakeModel) :
     m.excludingHead = 9 ∧ m.literalSubtractAgain = 8 ∧
       m.excludingHead ≠ m.literalSubtractAgain := by
@@ -339,19 +339,19 @@ theorem bridges_old_annual (m : BridgesModel) : m.oldAnnual = 24000 := by
 theorem bridges_new_monthly (m : BridgesModel) : m.newMonthly = 3200 := by
   have hPrev := bridges_old_annual m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem bridges_capacity_sufficient (m : BridgesModel) : m.newMonthly ≤ m.newCapacityMonthly := by
   have hPrev := bridges_new_monthly m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem bridges_new_annual (m : BridgesModel) : m.newAnnual = 38400 := by
   have hPrev := bridges_capacity_sufficient m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 theorem bridges_solution (m : BridgesModel) : m.combinedAnnual = 62400 := by
   have hPrev := bridges_new_annual m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  simp_all <;> omega
 
 structure LaundryModel where
   shirtPounds : ℕ
@@ -365,18 +365,18 @@ structure LaundryModel where
 
 theorem laundry_shirts (m : LaundryModel) : m.shirtPounds = 5 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem laundry_pants (m : LaundryModel) : m.pantsPounds = 10 := by
   have hPrev := laundry_shirts m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem laundry_total (m : LaundryModel) : m.totalPounds = 15 := by
   have hPrev := laundry_pants m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 theorem laundry_solution (m : LaundryModel) : m.loads = 3 := by
   have hPrev := laundry_total m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
-  omega
+  simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A05

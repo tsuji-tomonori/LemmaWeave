@@ -1,0 +1,137 @@
+{
+  "date": "2026-09-28",
+  "run_id": "gsm8k-20260928-1900-jst",
+  "planned_slot_local_hour": 19,
+  "planned_at": "2026-09-28T19:00:00+09:00",
+  "started_at": "2026-09-28T19:03:54+09:00",
+  "finished_at": "2026-09-28T19:14:21+09:00",
+  "schedule_offset_seconds": 234,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "3ce38043c9e5edd725299466981dc1713f840028",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:02921",
+    "external-gsm8k-main-3101c7d50724:train:02922",
+    "external-gsm8k-main-3101c7d50724:train:02923",
+    "external-gsm8k-main-3101c7d50724:train:02924",
+    "external-gsm8k-main-3101c7d50724:train:02925",
+    "external-gsm8k-main-3101c7d50724:train:02926",
+    "external-gsm8k-main-3101c7d50724:train:02927",
+    "external-gsm8k-main-3101c7d50724:train:02928",
+    "external-gsm8k-main-3101c7d50724:train:02929",
+    "external-gsm8k-main-3101c7d50724:train:02930",
+    "external-gsm8k-main-3101c7d50724:train:02931",
+    "external-gsm8k-main-3101c7d50724:train:02932",
+    "external-gsm8k-main-3101c7d50724:train:02933",
+    "external-gsm8k-main-3101c7d50724:train:02934",
+    "external-gsm8k-main-3101c7d50724:train:02935"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:02921",
+    "external-gsm8k-main-3101c7d50724:train:02922",
+    "external-gsm8k-main-3101c7d50724:train:02923",
+    "external-gsm8k-main-3101c7d50724:train:02924",
+    "external-gsm8k-main-3101c7d50724:train:02925",
+    "external-gsm8k-main-3101c7d50724:train:02926",
+    "external-gsm8k-main-3101c7d50724:train:02927",
+    "external-gsm8k-main-3101c7d50724:train:02928",
+    "external-gsm8k-main-3101c7d50724:train:02929",
+    "external-gsm8k-main-3101c7d50724:train:02930",
+    "external-gsm8k-main-3101c7d50724:train:02931",
+    "external-gsm8k-main-3101c7d50724:train:02932",
+    "external-gsm8k-main-3101c7d50724:train:02933",
+    "external-gsm8k-main-3101c7d50724:train:02934",
+    "external-gsm8k-main-3101c7d50724:train:02935"
+  ],
+  "deferred": [],
+  "conditional_ambiguities": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02931",
+      "reason_ja": "2/5 times as many booksの係り受けが、各机の本数か教室全体の本数か一意でない。",
+      "modeled_results_ja": ["各机200冊なら総数100000冊", "全体が机数の2/5なら総数200冊"]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02934",
+      "reason_ja": "2 times moreが追加購入量か購入後合計か一意でない。",
+      "modeled_results_ja": ["16本を追加するなら各6本", "合計16本なら各4本"]
+    }
+  ],
+  "claim": {
+    "created": false,
+    "serial_processing": true,
+    "lock_implementation_claimed": false,
+    "note_ja": "19時台帳が未存在であることと最新PR HEADを確認し、train:02921から直列処理した。"
+  },
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "checked_items": 15,
+    "matched_items": 15,
+    "mismatched_items": 0
+  },
+  "authored_artifacts": {
+    "model_file": "LemmaWeave/Problems/GSM8K/Sprint0928A19Models.lean",
+    "test_file": "tests/lean/GSM8KSprint0928A19.lean",
+    "batch_file": "corpus/method_batches/GSM8K-INDIVIDUAL-0230.json",
+    "model_sha256": "0d3add39c2e53e0b75cb5e7c4ab1b3d0312bff5e901af7ad048370189ede6248",
+    "theorem_count": 53,
+    "explanation_step_count": 53,
+    "recipe_count": 15,
+    "review_status": "self_review_only"
+  },
+  "checkpoints": [
+    {"problem_range":"train:02921..02925","commit":"1f40d4f3b9a36d8733548652aa4ac9bfb76f7c2f"},
+    {"problem_range":"train:02926..02930","commit":"ec3062d15a50dc5ea4fde341a7b0c0764f61314c"},
+    {"problem_range":"train:02931..02935","commit":"04d950b86f075f47af7aefe1ba79cb2d9d64b3b3"},
+    {"artifact":"solve_queue_refresh","commit":"cfd532f7ed21e0a9e6fcc747fa69f171e534a5e2"}
+  ],
+  "validation": {
+    "source_hashes": "pass_15_of_15",
+    "json_and_declaration_linkage": "pass",
+    "forbidden_token_scan": "pass",
+    "lean_command": "lake env lean tests/lean/GSM8KSprint0928A19.lean",
+    "lean_result": "not_run_lake_command_not_found",
+    "lean_exit_code": 127,
+    "axiom_and_dependency_audit": "pending_fixed_environment_execution",
+    "method_recipe_render": "blocked",
+    "method_recipe_blocker": "reports/dependencies/methods/dnc2026_cubic_derivative_individual.json.gz is missing",
+    "assurance_level": "INCONCLUSIVE"
+  },
+  "queue_snapshot": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 2419,
+    "pending": 5855,
+    "remaining": 8274,
+    "duplicate_ids": 0,
+    "pairwise_state_overlap": 0,
+    "missing_ids": 0
+  },
+  "missed_slots_today": [
+    {"planned_local_hour":13,"status":"unexecuted","reason_ja":"13時枠の実行台帳と解答成果が存在しない。"},
+    {"planned_local_hour":17,"status":"unexecuted","reason_ja":"17時枠の実行台帳と解答成果が存在しない。"}
+  ],
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "mergeable": true,
+    "checked_head_sha": "cfd532f7ed21e0a9e6fcc747fa69f171e534a5e2",
+    "exact_head_workflow_run_count": 0,
+    "commit_status_count": 0,
+    "submitted_reviews": 0,
+    "unresolved_review_threads": 0,
+    "merge_performed": false,
+    "merge_block_reason_ja": "正確なHEADの固定Lean成功、公理・実依存監査、現行成功証拠が未取得。"
+  },
+  "execution_control": {
+    "duplicate_slot_suppressed": false,
+    "new_math_work_performed": true,
+    "force_update": false,
+    "protection_bypass_used": false,
+    "recurring_automation_disabled": false
+  }
+}

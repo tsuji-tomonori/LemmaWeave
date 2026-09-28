@@ -206,4 +206,104 @@ theorem dragon_solution (m : DragonModel) : m.finalJewels = 24 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
   omega
 
+structure OrangesModel where
+  del : ℕ
+  juan : ℕ
+  hDel : del = 2 * 23
+  hTotal : del + juan = 107
+
+theorem oranges_del (m : OrangesModel) : m.del = 46 := by
+  rcases m with ⟨a,b,h1,h2⟩
+  omega
+theorem oranges_solution (m : OrangesModel) : m.juan = 61 := by
+  have hPrev := oranges_del m
+  rcases m with ⟨a,b,h1,h2⟩
+  omega
+
+structure SandwichesModel where
+  drinksCost : ℕ
+  sandwichesCost : ℕ
+  eachSandwich : ℕ
+  hDrinks : drinksCost = 2 * 4
+  hTotal : drinksCost + sandwichesCost = 26
+  hEach : sandwichesCost = 3 * eachSandwich
+
+theorem sandwiches_drinks (m : SandwichesModel) : m.drinksCost = 8 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem sandwiches_total (m : SandwichesModel) : m.sandwichesCost = 18 := by
+  have hPrev := sandwiches_drinks m
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem sandwiches_solution (m : SandwichesModel) : m.eachSandwich = 6 := by
+  have hPrev := sandwiches_total m
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+
+structure TierDiscountModel where
+  subtotal : ℕ
+  eligible : ℕ
+  discount : ℕ
+  paid : ℕ
+  hSubtotal : subtotal = 7 * 200
+  hEligible : eligible + 1000 = subtotal
+  hDiscount : 100 * discount = 10 * eligible
+  hPaid : paid + discount = subtotal
+
+theorem tier_subtotal (m : TierDiscountModel) : m.subtotal = 1400 := by
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem tier_eligible (m : TierDiscountModel) : m.eligible = 400 := by
+  have hPrev := tier_subtotal m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem tier_discount (m : TierDiscountModel) : m.discount = 40 := by
+  have hPrev := tier_eligible m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem tier_solution (m : TierDiscountModel) : m.paid = 1360 := by
+  have hPrev := tier_discount m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+
+structure DogCleaningModel where
+  shampooMinutes : ℕ
+  totalMinutes : ℕ
+  hShampoo : shampooMinutes = 3 * 15
+  hTotal : totalMinutes = 10 + shampooMinutes
+
+theorem dog_shampoo (m : DogCleaningModel) : m.shampooMinutes = 45 := by
+  rcases m with ⟨a,b,h1,h2⟩
+  omega
+theorem dog_solution (m : DogCleaningModel) : m.totalMinutes = 55 := by
+  have hPrev := dog_shampoo m
+  rcases m with ⟨a,b,h1,h2⟩
+  omega
+
+structure TreesModel where
+  cut : ℕ
+  remaining : ℕ
+  planted : ℕ
+  finalTrees : ℕ
+  hCut : 100 * cut = 20 * 400
+  hRemaining : remaining + cut = 400
+  hPlanted : planted = 5 * cut
+  hFinal : finalTrees = remaining + planted
+
+theorem trees_cut (m : TreesModel) : m.cut = 80 := by
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem trees_remaining (m : TreesModel) : m.remaining = 320 := by
+  have hPrev := trees_cut m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem trees_planted (m : TreesModel) : m.planted = 400 := by
+  have hPrev := trees_remaining m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+theorem trees_solution (m : TreesModel) : m.finalTrees = 720 := by
+  have hPrev := trees_planted m
+  rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0929A04

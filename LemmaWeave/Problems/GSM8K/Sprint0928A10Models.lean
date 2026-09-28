@@ -24,8 +24,16 @@ structure BakerModel where
   hPieRevenue : pieRevenue = pieCount * piePrice
   hTotal : totalRevenue = cakeRevenue + pieRevenue
 
-theorem baker_cake_revenue (m : BakerModel) : m.cakeRevenue = 5436 := by omega
-theorem baker_pie_revenue (m : BakerModel) : m.pieRevenue = 882 := by omega
+theorem baker_cake_revenue (m : BakerModel) : m.cakeRevenue = 5436 := by
+  have h := m.hCakeRevenue
+  rw [m.hCakeCount, m.hCakePrice] at h
+  norm_num at h ⊢
+  exact h
+theorem baker_pie_revenue (m : BakerModel) : m.pieRevenue = 882 := by
+  have h := m.hPieRevenue
+  rw [m.hPieCount, m.hPiePrice] at h
+  norm_num at h ⊢
+  exact h
 theorem baker_total (m : BakerModel) : m.totalRevenue = 6318 := by
   have h₁ := baker_cake_revenue m
   have h₂ := baker_pie_revenue m
@@ -92,10 +100,17 @@ structure FilletModel where
   hFilletsPerFish : filletsPerFish = 2
   hTotalFillets : totalFillets = filletsPerFish * totalFish
 
-theorem fillet_fish (m : FilletModel) : m.totalFish = 60 := by omega
+theorem fillet_fish (m : FilletModel) : m.totalFish = 60 := by
+  have h := m.hTotalFish
+  rw [m.hFishPerDay, m.hDays] at h
+  norm_num at h ⊢
+  exact h
 theorem fillet_total (m : FilletModel) : m.totalFillets = 120 := by
-  have h := fillet_fish m
-  omega
+  have hf := fillet_fish m
+  have h := m.hTotalFillets
+  rw [m.hFilletsPerFish, hf] at h
+  norm_num at h ⊢
+  exact h
 theorem fillets_solution (m : FilletModel) : m.totalFillets = 120 := fillet_total m
 
 structure CakeOrderModel where
@@ -109,7 +124,16 @@ structure CakeOrderModel where
   hTotal : total = chocolateCost + strawberryCost
 
 theorem cake_order_costs (m : CakeOrderModel) :
-    m.chocolateCost = 36 ∧ m.strawberryCost = 132 := by omega
+    m.chocolateCost = 36 ∧ m.strawberryCost = 132 := by
+  constructor
+  · have h := m.hChocolateCost
+    rw [m.hChocolateCount, m.hChocolatePrice] at h
+    norm_num at h ⊢
+    exact h
+  · have h := m.hStrawberryCost
+    rw [m.hStrawberryCount, m.hStrawberryPrice] at h
+    norm_num at h ⊢
+    exact h
 theorem cake_order_total (m : CakeOrderModel) : m.total = 168 := by
   have h := cake_order_costs m
   omega
@@ -156,12 +180,18 @@ structure ParkingModel where
   hWheelsPerMotorcycle : wheelsPerMotorcycle = 2
   hMotorcycles : wheelsPerMotorcycle * motorcycles = motorcycleWheels
 
-theorem parking_car_wheels (m : ParkingModel) : m.carWheels = 95 := by omega
+theorem parking_car_wheels (m : ParkingModel) : m.carWheels = 95 := by
+  have h := m.hCarWheels
+  rw [m.hCars, m.hWheelsPerCar] at h
+  norm_num at h ⊢
+  exact h
 theorem parking_motorcycle_wheels (m : ParkingModel) : m.motorcycleWheels = 22 := by
   have h := parking_car_wheels m
   omega
 theorem parking_count (m : ParkingModel) : m.motorcycles = 11 := by
-  have h := parking_motorcycle_wheels m
+  have hw := parking_motorcycle_wheels m
+  have h := m.hMotorcycles
+  rw [m.hWheelsPerMotorcycle, hw] at h
   omega
 theorem parking_solution (m : ParkingModel) : m.motorcycles = 11 := parking_count m
 
@@ -181,7 +211,21 @@ structure RideModel where
   hBuy : have + toBuy = total
 
 theorem ride_costs (m : RideModel) :
-    m.ferrisTickets = 4 ∧ m.coasterTickets = 15 ∧ m.logTickets = 7 := by omega
+    m.ferrisTickets = 4 ∧ m.coasterTickets = 15 ∧ m.logTickets = 7 := by
+  constructor
+  · have h := m.hFerrisTickets
+    rw [m.hFerrisRides, m.hFerrisPer] at h
+    norm_num at h ⊢
+    exact h
+  · constructor
+    · have h := m.hCoasterTickets
+      rw [m.hCoasterRides, m.hCoasterPer] at h
+      norm_num at h ⊢
+      exact h
+    · have h := m.hLogTickets
+      rw [m.hLogRides, m.hLogPer] at h
+      norm_num at h ⊢
+      exact h
 theorem ride_total (m : RideModel) : m.total = 26 := by
   have h := ride_costs m
   omega
@@ -198,7 +242,11 @@ structure RachelModel where
   hNextDay : nextDay = 16
   hTotal : total = bedtime + nextDay
 
-theorem rachel_bedtime (m : RachelModel) : m.bedtime = 60 := by omega
+theorem rachel_bedtime (m : RachelModel) : m.bedtime = 60 := by
+  have h := m.hBedtime
+  rw [m.hRate, m.hMinutes] at h
+  norm_num at h ⊢
+  exact h
 theorem rachel_total (m : RachelModel) : m.total = 76 := by
   have h := rachel_bedtime m
   omega
@@ -212,7 +260,11 @@ structure BikeModel where
   hAlready : already = 600
   hAdditional : already + additional = targetRotations
 
-theorem bike_target (m : BikeModel) : m.targetRotations = 1600 := by omega
+theorem bike_target (m : BikeModel) : m.targetRotations = 1600 := by
+  have h := m.hTarget
+  rw [m.hRotationsPerBlock, m.hTargetBlocks] at h
+  norm_num at h ⊢
+  exact h
 theorem bike_additional (m : BikeModel) : m.additional = 1000 := by
   have h := bike_target m
   omega
@@ -238,9 +290,15 @@ structure MosquitoModel where
   hLethalDrops : lethalDrops = dropsPerLiter * lethalLiters
   hMosquitoes : dropsPerFeed * mosquitoes = lethalDrops
 
-theorem mosquito_lethal_drops (m : MosquitoModel) : m.lethalDrops = 15000 := by omega
+theorem mosquito_lethal_drops (m : MosquitoModel) : m.lethalDrops = 15000 := by
+  have h := m.hLethalDrops
+  rw [m.hDropsPerLiter, m.hLethalLiters] at h
+  norm_num at h ⊢
+  exact h
 theorem mosquito_count (m : MosquitoModel) : m.mosquitoes = 750 := by
-  have h := mosquito_lethal_drops m
+  have hd := mosquito_lethal_drops m
+  have h := m.hMosquitoes
+  rw [m.hDropsPerFeed, hd] at h
   omega
 theorem mosquito_solution (m : MosquitoModel) : m.mosquitoes = 750 := mosquito_count m
 

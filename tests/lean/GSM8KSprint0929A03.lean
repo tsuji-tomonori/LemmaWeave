@@ -11,3 +11,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.detergent_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.bunnies_solution to "work/gsm8k-sprint179-bunnies-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.bunnies_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.flies_solution to "work/gsm8k-sprint179-flies-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.flies_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.furniture_solution to "work/gsm8k-sprint179-furniture-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.furniture_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.stuffy_solution to "work/gsm8k-sprint179-stuffy-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.stuffy_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.chess_solution to "work/gsm8k-sprint179-chess-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.chess_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.eraser_solution to "work/gsm8k-sprint179-eraser-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.eraser_solution

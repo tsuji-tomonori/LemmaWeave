@@ -21,3 +21,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.chess_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.eraser_solution to "work/gsm8k-sprint179-eraser-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.eraser_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.fence_solution to "work/gsm8k-sprint179-fence-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.fence_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.jump_solution to "work/gsm8k-sprint179-jump-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.jump_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.shirt_solution to "work/gsm8k-sprint179-shirt-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.shirt_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.guitar_solution to "work/gsm8k-sprint179-guitar-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.guitar_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A03.rewards_solution to "work/gsm8k-sprint179-rewards-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A03.rewards_solution

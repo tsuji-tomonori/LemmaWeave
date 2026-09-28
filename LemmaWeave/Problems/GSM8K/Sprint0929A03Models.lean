@@ -205,4 +205,89 @@ theorem eraser_solution (m : EraserModel) : m.hanna = 4 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
   omega
 
+structure FenceModel where
+  newFences : ℕ
+  total : ℕ
+  hMinutes : 30 * newFences = 8 * 60
+  hTotal : total = 10 + newFences
+
+theorem fence_new (m : FenceModel) : m.newFences = 16 := by
+  rcases m with ⟨a,b,h1,h2⟩
+  omega
+theorem fence_solution (m : FenceModel) : m.total = 26 := by
+  rcases m with ⟨a,b,h1,h2⟩
+  omega
+
+structure JumpModel where
+  betsy : ℕ
+  tina : ℕ
+  difference : ℕ
+  hBetsy : 2 * betsy = 12
+  hTina : tina = 3 * betsy
+  hDifference : difference + 12 = tina
+
+theorem jump_betsy (m : JumpModel) : m.betsy = 6 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem jump_tina (m : JumpModel) : m.tina = 18 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem jump_solution (m : JumpModel) : m.difference = 6 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+
+structure ShirtModel where
+  discountCents : ℕ
+  paidCents : ℕ
+  eachCents : ℕ
+  hDiscount : 100 * discountCents = 40 * 6000
+  hPaid : paidCents + discountCents = 6000
+  hEach : 3 * eachCents = paidCents
+
+theorem shirt_discount (m : ShirtModel) : m.discountCents = 2400 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem shirt_paid (m : ShirtModel) : m.paidCents = 3600 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem shirt_solution (m : ShirtModel) : m.eachCents = 1200 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+
+structure GuitarModel where
+  steve : ℕ
+  barbeck : ℕ
+  davey : ℕ
+  hBarbeck : barbeck = 2 * steve
+  hDavey : davey = 3 * barbeck
+  hTotal : steve + barbeck + davey = 27
+
+theorem guitar_steve (m : GuitarModel) : m.steve = 3 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem guitar_barbeck (m : GuitarModel) : m.barbeck = 6 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem guitar_solution (m : GuitarModel) : m.davey = 18 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+
+structure RewardsModel where
+  buyers : ℕ
+  given : ℕ
+  remaining : ℕ
+  hBuyers : 2 * buyers = 20
+  hGiven : given = 4 * buyers
+  hRemaining : remaining + given = 70
+
+theorem rewards_buyers (m : RewardsModel) : m.buyers = 10 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem rewards_given (m : RewardsModel) : m.given = 40 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+theorem rewards_solution (m : RewardsModel) : m.remaining = 30 := by
+  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0929A03

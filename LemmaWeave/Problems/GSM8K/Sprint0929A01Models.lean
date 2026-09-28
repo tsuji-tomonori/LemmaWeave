@@ -97,4 +97,104 @@ structure HomesModel where
   hfireplace : 5 * fireplace = nonwhite
   hpartition : nonwhite = fireplace + noFireplace
 
+theorem homes_white (m : HomesModel) : m.white = 100 := by omega
+theorem homes_nonwhite (m : HomesModel) : m.nonwhite = 300 := by omega
+theorem homes_fireplace (m : HomesModel) : m.fireplace = 60 := by omega
+theorem homes_no_fireplace (m : HomesModel) : m.noFireplace = 240 := by omega
+theorem homes_solution (m : HomesModel) : m.noFireplace = 240 := homes_no_fireplace m
+
+structure PebbleFriendsModel where
+  dozens pebbles perFriend friends : ℕ
+  hdozens : dozens = 3
+  hpebbles : pebbles = 3 * 12
+  hperFriend : perFriend = 4
+  hdistribution : pebbles = 4 * friends
+
+theorem pebble_friends_pebbles (m : PebbleFriendsModel) : m.pebbles = 36 := by omega
+theorem pebble_friends_count (m : PebbleFriendsModel) : m.friends = 9 := by omega
+theorem pebble_friends_solution (m : PebbleFriendsModel) : m.friends = 9 := pebble_friends_count m
+
+structure TypingModel where
+  wordsPerMinute minutesPerHour totalWords wordsPerHour hours : ℕ
+  hrate : wordsPerMinute = 60
+  hminutes : minutesPerHour = 60
+  hhourly : wordsPerHour = 60 * 60
+  htotal : totalWords = 10800
+  htime : totalWords = 3600 * hours
+
+theorem typing_hourly (m : TypingModel) : m.wordsPerHour = 3600 := by omega
+theorem typing_hours (m : TypingModel) : m.hours = 3 := by omega
+theorem typing_solution (m : TypingModel) : m.hours = 3 := typing_hours m
+
+structure BooksModel where
+  longest shortest middle : ℕ
+  hlongest : longest = 396
+  hshortest : 4 * shortest = longest
+  hmiddle : middle = 3 * shortest
+
+theorem books_shortest (m : BooksModel) : m.shortest = 99 := by omega
+theorem books_middle (m : BooksModel) : m.middle = 297 := by omega
+theorem books_solution (m : BooksModel) : m.middle = 297 := books_middle m
+
+structure LimoModel where
+  rides ridePay hours hourlyPay gallons pricePerGallon gasPay reviews reviewPay total : ℕ
+  hrides : rides = 3
+  hridePay : ridePay = 5 * rides
+  hhours : hours = 8
+  hhourlyPay : hourlyPay = 15 * hours
+  hgallons : gallons = 17
+  hprice : pricePerGallon = 3
+  hgasPay : gasPay = 17 * 3
+  hreviews : reviews = 2
+  hreviewPay : reviewPay = 20 * reviews
+  htotal : total = ridePay + hourlyPay + gasPay + reviewPay
+
+theorem limo_ride_pay (m : LimoModel) : m.ridePay = 15 := by omega
+theorem limo_hourly_pay (m : LimoModel) : m.hourlyPay = 120 := by omega
+theorem limo_gas_pay (m : LimoModel) : m.gasPay = 51 := by omega
+theorem limo_review_pay (m : LimoModel) : m.reviewPay = 40 := by omega
+theorem limo_total (m : LimoModel) : m.total = 226 := by omega
+theorem limo_solution (m : LimoModel) : m.total = 226 := limo_total m
+
+structure TullyModel where
+  kateNow kateFuture tullyFuture tullyNow tullyLastYear : ℕ
+  hkate : kateNow = 29
+  hkateFuture : kateFuture = kateNow + 3
+  htullyFuture : tullyFuture = 2 * kateFuture
+  htullyNow : tullyFuture = tullyNow + 3
+  htullyLast : tullyNow = tullyLastYear + 1
+
+theorem tully_kate_future (m : TullyModel) : m.kateFuture = 32 := by omega
+theorem tully_future (m : TullyModel) : m.tullyFuture = 64 := by omega
+theorem tully_now (m : TullyModel) : m.tullyNow = 61 := by omega
+theorem tully_last_year (m : TullyModel) : m.tullyLastYear = 60 := by omega
+theorem tully_solution (m : TullyModel) : m.tullyLastYear = 60 := tully_last_year m
+
+structure DarcieModel where
+  darcie mother father : ℕ
+  hdarcie : darcie = 4
+  hmother : mother = 6 * darcie
+  hfatherRatio : 5 * mother = 4 * father
+
+theorem darcie_mother (m : DarcieModel) : m.mother = 24 := by omega
+theorem darcie_father (m : DarcieModel) : m.father = 30 := by omega
+theorem darcie_solution (m : DarcieModel) : m.father = 30 := darcie_father m
+
+structure TennisBallsModel where
+  games worn lost canisters bought started given remaining : ℕ
+  hgames : games = 20
+  hworn : games = 10 * worn
+  hlost : games = 5 * lost
+  hcanisters : games = 4 * canisters
+  hbought : bought = 3 * canisters
+  hstarted : started = 2
+  hgiven : given = 1
+  hbalance : started + bought = given + worn + lost + remaining
+
+theorem tennis_worn (m : TennisBallsModel) : m.worn = 2 := by omega
+theorem tennis_lost (m : TennisBallsModel) : m.lost = 4 := by omega
+theorem tennis_bought (m : TennisBallsModel) : m.bought = 15 := by omega
+theorem tennis_remaining (m : TennisBallsModel) : m.remaining = 10 := by omega
+theorem tennis_solution (m : TennisBallsModel) : m.remaining = 10 := tennis_remaining m
+
 end LemmaWeave.Problems.GSM8K.Sprint0929A01

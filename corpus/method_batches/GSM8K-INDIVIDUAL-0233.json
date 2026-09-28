@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0233",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "76dfb12bafcd290f653b6475b45c2fd7c60e10003bd76ac2fb97aa039e8239d0",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0929A03Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02966",
+      "source_line_1based": 2967,
+      "source_record_sha256": "9523f9dac9f4e5247a9294c9f30826cd01520a9dd2921c670cff08e7735d851a",
+      "raw_question_sha256": "158926bb4daeefb323bd9b67ae0b2da78a11de2fe82ec64ea9f89162cd638cd7",
+      "normalized_question_sha256": "9438f723b28b90af2fffd6c04038edcbd94f2b169732973da66fb798db571e20",
+      "source_question": "Mark has a really bad headache.  He takes 2 Tylenol tablets of 500 mg each and he does every 4 hours for 12 hours.  How many grams of Tylenol does he end up taking?",
+      "recipe_id": "gsm8k_sprint179_tylenol",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_conditional",
+      "modeling_notes_ja": [
+        "原題の全数値条件、単位、求める結論を自然数モデルにした。",
+        "『4時間ごとに12時間』は端点を含めると4回とも読める。本解答は原データ解答の12÷4=3回という規約に条件付ける。端点込みなら4gであり、Leanでも別定理として保存した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02967",
+      "source_line_1based": 2968,
+      "source_record_sha256": "9d94e88f430f79e807da6d20ea8f99f937c4c3d1f89cd3b62da9b6ab08c0a1f3",
+      "raw_question_sha256": "18345608ab7d63670267abd2698482af2675faa4ac63125ff496627fdfb5dc75",
+      "normalized_question_sha256": "b79d24cf65051c124f2c24e5c833d5f5dad8a925008368c88a808b8a301cede8",
+      "source_question": "Dave weighs 175 pounds and can bench press three times his body weight.  Craig can only bench press 20% of the amount Dave can.  Mark is new and can bench press 50 pounds less than Craig.  How much can Mark bench press?",
+      "recipe_id": "gsm8k_sprint179_bench",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題の全数値条件、単位、求める結論を自然数モデルにした。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02968",
+      "source_line_1based": 2969,
+      "source_record_sha256": "5e2cfb94119cb6f635086c818261a94772d4f570ac19706394e9c8859e178ec9",
+      "raw_question_sha256": "0ca1c051fe328bcbdcd466a3ea97b967009cc9aa3bf1f31f0343b89265def73b",
+      "normalized_question_sha256": "0ca1c051fe328bcbdcd466a3ea97b967009cc9aa3bf1f31f0343b89265def73b",
+      "source_question": "Jon makes 3/4's the salary that Karen makes. John makes $3000 per month. How long will it take him to make the same amount of money that Karen does in 3 months?",
+      "recipe_id": "gsm8k_sprint179_salary",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_conditional",
+      "modeling_notes_ja": [
+        "原題の全数値条件、単位、求める結論を自然数モデルにした。",
+        "原文はJonとJohnを使い分けている。同一人物という追加条件の下で4か月。別人ならJonの月給だけではJohnの必要月数は定まらない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02969",
+      "source_line_1based": 2970,
+      "source_record_sha256": "bc3532ba0db410a12b122a9ccbc952df79bf53b1276f23e436b8270735f50b02",
+      "raw_question_sha256": "b28ca2890894abe8dc0a22b0bf6115dadc82be0a0d222fbd22cf39c54d12e0b8",
+      "normalized_question_sha256": "3bf7314c7779fa59d078fa2456352f1408cd69b5acbce1f6cfc7614db3d1f705",
+      "source_question": "Frank's laundry detergent is double concentrated and will wash 80 loads of laundry.  His detergent is usually $25.00 a bottle but they're having a sale.  If he buys 2 bottles, both bottles will drop to $20.00 a bottle.  How much does he spend, in cents, per load of laundry, if he buys 2 bottles of detergent?",
+      "recipe_id": "gsm8k_sprint179_detergent",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題の全数値条件、単位、求める結論を自然数モデルにした。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02970",
+      "source_line_1based": 2971,
+      "source_record_sha256": "540c4f1a6fae4e3752f9d1c7d71ef16558984d6046f1fc44e369dec9da1c72a2",
+      "raw_question_sha256": "473aa480fbe6952f1d723ad077dd3638eb276bf28178dba6e62081e7f6048980",
+      "normalized_question_sha256": "473aa480fbe6952f1d723ad077dd3638eb276bf28178dba6e62081e7f6048980",
+      "source_question": "Marlon had 30 female baby bunnies in his hutch. They matured after four months, and he gave 2/5 of them to his friend Rodney. If after another three months the bunnies conceived and gave birth to 2 kittens each, calculate the total number of bunnies Marlon has in his hutch now.",
+      "recipe_id": "gsm8k_sprint179_bunnies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題の全数値条件、単位、求める結論を自然数モデルにした。"
+      ],
+      "blockers": []
+    }
+  ]
+}

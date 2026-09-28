@@ -1,0 +1,127 @@
+{
+  "date": "2026-09-28",
+  "run_id": "gsm8k-20260928-1800-jst",
+  "planned_slot_local_hour": 18,
+  "planned_at": "2026-09-28T18:00:00+09:00",
+  "started_at": "2026-09-28T18:04:09+09:00",
+  "finished_at": "2026-09-28T18:16:27+09:00",
+  "schedule_offset_seconds": 249,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "9f13ff953939df28f6b90e903095d2a5c197891a",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:02906",
+    "external-gsm8k-main-3101c7d50724:train:02907",
+    "external-gsm8k-main-3101c7d50724:train:02908",
+    "external-gsm8k-main-3101c7d50724:train:02909",
+    "external-gsm8k-main-3101c7d50724:train:02910",
+    "external-gsm8k-main-3101c7d50724:train:02911",
+    "external-gsm8k-main-3101c7d50724:train:02912",
+    "external-gsm8k-main-3101c7d50724:train:02913",
+    "external-gsm8k-main-3101c7d50724:train:02914",
+    "external-gsm8k-main-3101c7d50724:train:02915",
+    "external-gsm8k-main-3101c7d50724:train:02916",
+    "external-gsm8k-main-3101c7d50724:train:02917",
+    "external-gsm8k-main-3101c7d50724:train:02918",
+    "external-gsm8k-main-3101c7d50724:train:02919",
+    "external-gsm8k-main-3101c7d50724:train:02920"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:02906",
+    "external-gsm8k-main-3101c7d50724:train:02907",
+    "external-gsm8k-main-3101c7d50724:train:02908",
+    "external-gsm8k-main-3101c7d50724:train:02909",
+    "external-gsm8k-main-3101c7d50724:train:02910",
+    "external-gsm8k-main-3101c7d50724:train:02911",
+    "external-gsm8k-main-3101c7d50724:train:02912",
+    "external-gsm8k-main-3101c7d50724:train:02913",
+    "external-gsm8k-main-3101c7d50724:train:02914",
+    "external-gsm8k-main-3101c7d50724:train:02915",
+    "external-gsm8k-main-3101c7d50724:train:02916",
+    "external-gsm8k-main-3101c7d50724:train:02917",
+    "external-gsm8k-main-3101c7d50724:train:02918",
+    "external-gsm8k-main-3101c7d50724:train:02919",
+    "external-gsm8k-main-3101c7d50724:train:02920"
+  ],
+  "deferred": [],
+  "conditional_ambiguities": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02910",
+      "reason_ja": "within an hourの端点と異なる列車間の人物重複が原題で明示されない。",
+      "modeled_condition_ja": "1時間を半開区間として12到着を数え、乗降客は列車間でも重複しない。"
+    }
+  ],
+  "claim": {
+    "created": false,
+    "serial_processing": true,
+    "lock_implementation_claimed": false,
+    "note_ja": "永続ロック機構を仮定せず、最新PR HEADを読み直してtrain:02906から直列処理した。"
+  },
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "checked_items": 15,
+    "matched_items": 15,
+    "mismatched_items": 0
+  },
+  "authored_artifacts": {
+    "model_file": "LemmaWeave/Problems/GSM8K/Sprint0928A18Models.lean",
+    "test_file": "tests/lean/GSM8KSprint0928A18.lean",
+    "batch_file": "corpus/method_batches/GSM8K-INDIVIDUAL-0229.json",
+    "model_sha256": "9ab769955e3ee8b45bfb1b96e1fa1313ff4f20829f346aeb3dbbca6f5ab23c59",
+    "theorem_count": 51,
+    "explanation_step_count": 51,
+    "recipe_count": 15,
+    "review_status": "self_review_only"
+  },
+  "checkpoints": [
+    {"problem_range":"train:02906..02910","commit":"ef7920d4c9af47716ad076df0e1f4043ecbb52c8"},
+    {"problem_range":"train:02911..02915","commit":"1f7bd48893099aee27e328ab410cb69ae99e2169"},
+    {"problem_range":"train:02916..02920","commit":"61fc9f5ce6a64fab6a64ae78183f3bce600fa0eb"},
+    {"artifact":"solve_queue_refresh","commit":"8aa2b2dee112869e35a43879010500c78d4442a1"}
+  ],
+  "validation": {
+    "source_hashes": "pass_15_of_15",
+    "json_and_declaration_linkage": "pass",
+    "forbidden_token_scan": "pass",
+    "lean_command": "lake env lean tests/lean/GSM8KSprint0928A18.lean",
+    "lean_result": "not_run_lake_command_not_found",
+    "lean_exit_code": 127,
+    "axiom_and_dependency_audit": "pending_fixed_environment_execution",
+    "method_recipe_render": "blocked",
+    "method_recipe_blocker": "reports/dependencies/methods/dnc2026_cubic_derivative_individual.json.gz is missing",
+    "assurance_level": "INCONCLUSIVE"
+  },
+  "queue_snapshot": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 2404,
+    "pending": 5870,
+    "remaining": 8274,
+    "duplicate_ids": 0,
+    "pairwise_state_overlap": 0,
+    "missing_ids": 0
+  },
+  "missed_slots_today": [
+    {"planned_local_hour":13,"status":"unexecuted","reason_ja":"13時枠の実行台帳と解答成果が存在しない。"},
+    {"planned_local_hour":17,"status":"unexecuted","reason_ja":"17時枠の実行台帳と解答成果が存在せず、18時枠で二重計上しなかった。"}
+  ],
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "checked_head_sha": "8aa2b2dee112869e35a43879010500c78d4442a1",
+    "merge_performed": false,
+    "merge_block_reason_ja": "正確なHEADの固定Lean成功、公理・実依存監査、現行成功証拠が未取得。"
+  },
+  "execution_control": {
+    "duplicate_slot_suppressed": false,
+    "new_math_work_performed": true,
+    "force_update": false,
+    "protection_bypass_used": false,
+    "recurring_automation_disabled": false
+  }
+}

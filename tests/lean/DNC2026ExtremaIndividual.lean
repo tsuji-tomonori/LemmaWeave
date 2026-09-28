@@ -24,10 +24,14 @@ theorem upper_bound (x : ℝ) (hx : InInterval x) :
   unfold Quadratic
   nlinarith [mul_nonneg h0 (show 0 ≤ 4 - x by linarith)]
 
-/-- The upper bound is attained at the left endpoint. -/
+/-- The global upper bound and its attainment at the left endpoint establish the maximum. -/
 theorem maximum_attained :
-    InInterval 0 ∧ Quadratic 0 = 5 := by
-  norm_num [InInterval, Quadratic]
+    (∀ x : ℝ, InInterval x → Quadratic x ≤ 5) ∧
+      (InInterval 0 ∧ Quadratic 0 = 5) := by
+  constructor
+  · intro x hx
+    exact upper_bound x hx
+  · norm_num [InInterval, Quadratic]
 
 /-- The lower bound is attained at the vertex x = 2. -/
 theorem minimum_attained :
@@ -36,9 +40,9 @@ theorem minimum_attained :
 
 /-- The bounds and both attaining arguments cover every demand of the subproblem. -/
 theorem individual_solution : ExtremaGoal := by
-  refine ⟨?_, maximum_attained, minimum_attained⟩
+  refine ⟨?_, maximum_attained.2, minimum_attained⟩
   intro x hx
-  exact ⟨lower_bound x hx, upper_bound x hx⟩
+  exact ⟨lower_bound x hx, maximum_attained.1 x hx⟩
 
 end LemmaWeave.Tests.DNC2026ExtremaIndividual
 

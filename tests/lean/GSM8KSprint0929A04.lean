@@ -11,3 +11,13 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A04.bottles_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A04.burgers_solution to "work/gsm8k-sprint180-burgers-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0929A04.burgers_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A04.phones_solution to "work/gsm8k-sprint180-phones-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A04.phones_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A04.books_solution to "work/gsm8k-sprint180-books-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A04.books_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A04.paintings_solution to "work/gsm8k-sprint180-paintings-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A04.paintings_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A04.matchbooks_solution to "work/gsm8k-sprint180-matchbooks-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A04.matchbooks_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0929A04.dragon_solution to "work/gsm8k-sprint180-dragon-graph.json"
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0929A04.dragon_solution

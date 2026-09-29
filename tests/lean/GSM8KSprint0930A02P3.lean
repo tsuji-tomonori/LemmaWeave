@@ -1,0 +1,32 @@
+import LemmaWeave.Problems.GSM8K.Sprint0930A02P3Models
+import LemmaWeave.Audit.Extract
+
+open LemmaWeave.Problems.GSM8K.Sprint0930A02P3
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.cookies_per_member
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.cookies_solution
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A02P3.cookies_solution
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.babysitter_old_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.babysitter_hourly_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.babysitter_scream_charge
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.babysitter_new_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.babysitter_solution
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A02P3.babysitter_solution
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.transport_original_kilograms
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.transport_new_bags
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.transport_new_weight
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.transport_new_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.transport_solution
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A02P3.transport_solution
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.eggs_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.eggs_people
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.eggs_solution
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A02P3.eggs_solution
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.dog_body
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.dog_head
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A02P3.dog_solution
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A02P3.dog_solution

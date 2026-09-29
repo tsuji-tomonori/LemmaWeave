@@ -5,7 +5,7 @@
   "slot_role": "retry_oldest_deferred_and_failed_proofs",
   "base_sha": "996ad0f27a053f6c585a4d4a877336edbb6d6ab7",
   "started_at": "2026-09-29T12:05:03Z",
-  "finished_at": "2026-09-29T12:50:03Z",
+  "finished_at": "2026-09-29T12:54:23.506Z",
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00514",
     "external-gsm8k-main-3101c7d50724:train:00515",
@@ -220,14 +220,21 @@
     "exact_head_ci": {
       "run_id": 36570745565,
       "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36570745565",
-      "status": "queued",
-      "conclusion": null
+      "status": "cancelled_after_record_commit",
+      "conclusion": "cancelled",
+      "note_ja": "コードHEADの実行は後続の台帳コミットで取り消されたため成功証拠として不採用。"
     },
     "model_hashes": "synchronized_4_models_25_recipes_4_batches",
     "lean_kernel": "pending_exact_head_ci",
     "axiom_output": "pending_exact_head_ci",
     "dependency_graphs": "pending_exact_head_ci",
-    "semantic_review_status": "self_review_only"
+    "semantic_review_status": "self_review_only",
+    "final_record_parent_sha": "63fa31355529465de673ed8ad5f54b5d08fd8c40",
+    "final_head_ci": {
+      "status": "not_started",
+      "conclusion": null,
+      "note_ja": "operations配下のみの更新後、最終HEADに紐づくworkflow runは確認できなかった。"
+    }
   },
   "id_reconciliation": {
     "total": 8792,
@@ -260,8 +267,10 @@
     "proof_repair": "4301fffc1e774cad00220c2eb6d0a994ed4ed536",
     "overdue_hash_repair": "42716227da1f0221346a0ff4230204e1e52f9ffd",
     "percentage_retry_2": "2b9e1a6ea428818be7af5aea7573bc4d73a0fe35",
-    "percentage_retry_3": "669f03f410378d9b4b24fe017b8733fbd2aee0a4"
+    "percentage_retry_3": "669f03f410378d9b4b24fe017b8733fbd2aee0a4",
+    "ledger_snapshot": "52b0c3d928b057d6263278bf80bee373cbae518b",
+    "claim_release": "63fa31355529465de673ed8ad5f54b5d08fd8c40"
   },
   "assurance": "INCONCLUSIVE",
-  "status_note_ja": "最古10問の現行モデルハッシュ不一致を修復した。A20 P1/P3は固定Lean 4.33.1でビルド成功し、P2は17件から射影簡約2件まで絞り、型を明示する3回目の修正を保存した。最新HEADのCI成功、公理、依存、証拠取込は未完のため25問は検証待ち、solution_ready昇格0、PRマージなし。"
+  "status_note_ja": "最古10問の現行モデルハッシュ不一致を修復した。A20 P1/P3は固定Lean 4.33.1でビルド成功し、P2は17件から射影簡約2件まで絞り、型を明示する3回目の修正を保存した。コードHEADのCIは後続の台帳コミットで取消となり、最終HEADのCI・公理・依存・証拠取込は未完のため25問は検証待ち、solution_ready昇格0、PRマージなし。"
 }

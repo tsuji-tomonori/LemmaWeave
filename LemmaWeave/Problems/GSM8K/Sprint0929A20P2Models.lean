@@ -20,21 +20,21 @@ structure SequentialSpendingModel where
 
 theorem spending_first_quarter (m : SequentialSpendingModel) : m.firstQuarter = 80 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem spending_after_books (m : SequentialSpendingModel) : m.afterBooks = 230 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem spending_dvd_fraction (m : SequentialSpendingModel) : m.dvdFraction = 92 := by
   have hAfter := spending_after_books m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem spending_solution (m : SequentialSpendingModel) : m.initial = 320 := by
   have hQuarter := spending_first_quarter m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 structure SandwichModel where
   cucumberMade : ℕ
@@ -64,22 +64,22 @@ structure SandwichModel where
 
 theorem sandwiches_cucumber_eaten (m : SandwichModel) : m.cucumberEaten = 7 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13⟩
-  norm_num at * <;> omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem sandwiches_egg_eaten (m : SandwichModel) : m.eggEaten = 6 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13⟩
-  norm_num at * <;> omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem sandwiches_total_eaten (m : SandwichModel) : m.sandwichesEaten = 13 := by
   have hCucumber := sandwiches_cucumber_eaten m
   have hEgg := sandwiches_egg_eaten m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem sandwiches_solution (m : SandwichModel) : m.breadSlices = 26 := by
   have hTotal := sandwiches_total_eaten m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13⟩
-  norm_num at *
+  subst_vars <;> norm_num at * <;> omega
 
 structure AnimalPercentModel where
   monkeysInitial : ℕ
@@ -99,17 +99,17 @@ structure AnimalPercentModel where
 
 theorem animals_birds_now (m : AnimalPercentModel) : m.birdsNow = 4 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem animals_total_now (m : AnimalPercentModel) : m.animalsNow = 10 := by
   have hBirds := animals_birds_now m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem animals_solution (m : AnimalPercentModel) : m.percentMonkeys = 60 := by
   have hTotal := animals_total_now m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at * <;> omega
+  subst_vars <;> norm_num at * <;> omega
 
 structure PieCreamModel where
   piesPerDay : ℕ
@@ -129,17 +129,17 @@ structure PieCreamModel where
 
 theorem pies_baked (m : PieCreamModel) : m.baked = 33 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at *
+  subst_vars <;> norm_num at * <;> omega
 
 theorem pies_remaining (m : PieCreamModel) : m.remaining = 29 := by
   have hBaked := pies_baked m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem pies_solution (m : PieCreamModel) : m.cans = 58 := by
   have hRemaining := pies_remaining m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at *
+  subst_vars <;> norm_num at * <;> omega
 
 structure ChocolateBoxModel where
   initial : ℕ
@@ -163,22 +163,22 @@ structure ChocolateBoxModel where
 
 theorem chocolate_group_taken (m : ChocolateBoxModel) : m.groupTaken = 50 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  norm_num at * <;> omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem chocolate_after_return (m : ChocolateBoxModel) : m.afterReturn = 155 := by
   have hGroup := chocolate_group_taken m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem chocolate_piper_takes (m : ChocolateBoxModel) : m.piperTakes = 45 := by
   have hGroup := chocolate_group_taken m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 theorem chocolate_solution (m : ChocolateBoxModel) : m.final = 110 := by
   have hAfter := chocolate_after_return m
   have hPiper := chocolate_piper_takes m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  omega
+  subst_vars <;> norm_num at * <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A20P2

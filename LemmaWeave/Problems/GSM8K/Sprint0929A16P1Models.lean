@@ -3,7 +3,11 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A16P1
 
 structure SyrupModel where
-  weeklyGallons gallonsPerBox boxCount pricePerBox totalCost : ℕ
+  weeklyGallons : ℕ
+  gallonsPerBox : ℕ
+  boxCount : ℕ
+  pricePerBox : ℕ
+  totalCost : ℕ
   hWeekly : weeklyGallons = 180
   hCapacity : gallonsPerBox = 30
   hBoxes : weeklyGallons = gallonsPerBox * boxCount
@@ -20,7 +24,11 @@ theorem syrup_solution (m : SyrupModel) : m.totalCost = 240 := by
   simp_all
 
 structure CrackersModel where
-  students nonEaters eaters crackersPerPack totalEaten : ℕ
+  students : ℕ
+  nonEaters : ℕ
+  eaters : ℕ
+  crackersPerPack : ℕ
+  totalEaten : ℕ
   hStudents : students = 20
   hNonEaters : nonEaters = 2
   hEaters : students = nonEaters + eaters
@@ -37,7 +45,13 @@ theorem crackers_solution (m : CrackersModel) : m.totalEaten = 180 := by
   simp_all
 
 structure CarnivalModel where
-  games found ticketValue totalValue totalTickets wonTickets perGame : ℕ
+  games : ℕ
+  found : ℕ
+  ticketValue : ℕ
+  totalValue : ℕ
+  totalTickets : ℕ
+  wonTickets : ℕ
+  perGame : ℕ
   hGames : games = 5
   hFound : found = 5
   hTicketValue : ticketValue = 3
@@ -61,7 +75,11 @@ theorem carnival_solution (m : CarnivalModel) : m.perGame = 1 := by
   simp_all <;> omega
 
 structure TipModel where
-  bill percent totalTip friendShare markShare : ℕ
+  bill : ℕ
+  percent : ℕ
+  totalTip : ℕ
+  friendShare : ℕ
+  markShare : ℕ
   hBill : bill = 200
   hPercent : percent = 20
   hTipRate : 100 * totalTip = percent * bill
@@ -78,7 +96,11 @@ theorem tip_solution (m : TipModel) : m.markShare = 30 := by
   simp_all <;> omega
 
 structure BusModel where
-  rows sectionsPerRow studentsPerSection sections capacity : ℕ
+  rows : ℕ
+  sectionsPerRow : ℕ
+  studentsPerSection : ℕ
+  sections : ℕ
+  capacity : ℕ
   hRows : rows = 13
   hSectionsPerRow : sectionsPerRow = 2
   hStudentsPerSection : studentsPerSection = 2

@@ -3,7 +3,15 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A16P3
 
 structure RentModel where
-  oldRate oldArea oldRent newTotal shareCount newRent monthlySaving months yearlySaving : ℕ
+  oldRate : ℕ
+  oldArea : ℕ
+  oldRent : ℕ
+  newTotal : ℕ
+  shareCount : ℕ
+  newRent : ℕ
+  monthlySaving : ℕ
+  months : ℕ
+  yearlySaving : ℕ
   hOldRate : oldRate = 2
   hOldArea : oldArea = 750
   hOldRent : oldRent = oldRate * oldArea
@@ -34,7 +42,12 @@ theorem rent_solution (m : RentModel) : m.yearlySaving = 1200 := by
   simp_all
 
 structure DebateModel where
-  third extra second multiplier first total : ℕ
+  third : ℕ
+  extra : ℕ
+  second : ℕ
+  multiplier : ℕ
+  first : ℕ
+  total : ℕ
   hThird : third = 200
   hExtra : extra = 40
   hSecond : second = third + extra
@@ -58,7 +71,13 @@ theorem debate_solution (m : DebateModel) : m.total = 920 := by
   simp_all
 
 structure MangoModel where
-  total ripe unripe kept given perJar jars : ℕ
+  total : ℕ
+  ripe : ℕ
+  unripe : ℕ
+  kept : ℕ
+  given : ℕ
+  perJar : ℕ
+  jars : ℕ
   hTotal : total = 54
   hThirdRipe : total = 3 * ripe
   hPartition : total = ripe + unripe
@@ -87,7 +106,14 @@ theorem mango_solution (m : MangoModel) : m.jars = 5 := by
   simp_all <;> omega
 
 structure JillConventionalModel where
-  goal first second third fourth last sold remaining : ℕ
+  goal : ℕ
+  first : ℕ
+  second : ℕ
+  third : ℕ
+  fourth : ℕ
+  last : ℕ
+  sold : ℕ
+  remaining : ℕ
   hGoal : goal = 150
   hFirst : first = 5
   hSecond : second = 4 * first
@@ -127,7 +153,12 @@ theorem jill_literal_more_no_whole_third : ¬ ∃ third : ℕ, 2 * third = 25 :=
   omega
 
 structure BeansModel where
-  total red afterRed white afterWhite green : ℕ
+  total : ℕ
+  red : ℕ
+  afterRed : ℕ
+  white : ℕ
+  afterWhite : ℕ
+  green : ℕ
   hTotal : total = 572
   hRed : total = 4 * red
   hAfterRed : total = red + afterRed

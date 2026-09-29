@@ -3,7 +3,13 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A16P2
 
 structure TomatoesModel where
-  firstShipment sold afterSales rotten remaining secondShipment total : ℕ
+  firstShipment : ℕ
+  sold : ℕ
+  afterSales : ℕ
+  rotten : ℕ
+  remaining : ℕ
+  secondShipment : ℕ
+  total : ℕ
   hFirst : firstShipment = 1000
   hSold : sold = 300
   hAfterSales : firstShipment = sold + afterSales
@@ -32,7 +38,13 @@ theorem tomatoes_solution (m : TomatoesModel) : m.total = 2500 := by
   simp_all
 
 structure CathyModel where
-  weeksPerMonth months baseWeeks extraWeeks hoursPerWeek workedWeeks totalHours : ℕ
+  weeksPerMonth : ℕ
+  months : ℕ
+  baseWeeks : ℕ
+  extraWeeks : ℕ
+  hoursPerWeek : ℕ
+  workedWeeks : ℕ
+  totalHours : ℕ
   hWeeksPerMonth : weeksPerMonth = 4
   hMonths : months = 2
   hBaseWeeks : baseWeeks = weeksPerMonth * months
@@ -56,7 +68,15 @@ theorem cathy_solution (m : CathyModel) : m.totalHours = 180 := by
   simp_all
 
 structure AnnieModel where
-  initial hamburgerPrice hamburgerCount hamburgerCost milkshakePrice milkshakeCount milkshakeCost spent remaining : ℕ
+  initial : ℕ
+  hamburgerPrice : ℕ
+  hamburgerCount : ℕ
+  hamburgerCost : ℕ
+  milkshakePrice : ℕ
+  milkshakeCount : ℕ
+  milkshakeCost : ℕ
+  spent : ℕ
+  remaining : ℕ
   hInitial : initial = 120
   hHamburgerPrice : hamburgerPrice = 4
   hHamburgerCount : hamburgerCount = 8
@@ -87,7 +107,12 @@ theorem annie_solution (m : AnnieModel) : m.remaining = 70 := by
   simp_all <;> omega
 
 structure CookiesModel where
-  firstRemoved secondTaken secondReturned sonRemoved totalRemoved remaining : ℕ
+  firstRemoved : ℕ
+  secondTaken : ℕ
+  secondReturned : ℕ
+  sonRemoved : ℕ
+  totalRemoved : ℕ
+  remaining : ℕ
   hFirst : firstRemoved = 3
   hSecondTaken : secondTaken = 3
   hSecondReturned : secondReturned = 2
@@ -109,7 +134,16 @@ theorem cookies_without_accuracy_counterexample :
   exact ⟨30, 19, by norm_num, by norm_num, by norm_num⟩
 
 structure MovieModel where
-  adultCount childCount seniorCount adultPrice childPrice seniorPrice adultCost childCost seniorCost total : ℕ
+  adultCount : ℕ
+  childCount : ℕ
+  seniorCount : ℕ
+  adultPrice : ℕ
+  childPrice : ℕ
+  seniorPrice : ℕ
+  adultCost : ℕ
+  childCost : ℕ
+  seniorCost : ℕ
+  total : ℕ
   hAdults : adultCount = 3
   hChildren : childCount = 2
   hSeniors : seniorCount = 2

@@ -5,7 +5,7 @@
   "slot_role": "retry_oldest_deferred_and_failed_proofs",
   "base_sha": "996ad0f27a053f6c585a4d4a877336edbb6d6ab7",
   "started_at": "2026-09-29T12:05:03Z",
-  "finished_at": "2026-09-29T12:54:23.506Z",
+  "finished_at": "2026-09-29T12:55:01.609Z",
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00514",
     "external-gsm8k-main-3101c7d50724:train:00515",
@@ -186,7 +186,7 @@
         "Sprint0929A20P3Models.lean": "22f165cf0c7b6f74a9338fa16e78b41d0036506cc90fca03f19089e9ade3a26c"
       },
       "updated_files": 21,
-      "status": "third_retry_ci_queued",
+      "status": "lean_build_succeeded_evidence_pipeline_cancelled",
       "attempts": [
         {
           "head": "4301fffc1e774cad00220c2eb6d0a994ed4ed536",
@@ -211,7 +211,14 @@
           "run_id": 36570745565,
           "result": "queued"
         }
-      ]
+      ],
+      "build_result": {
+        "head_sha": "669f03f410378d9b4b24fe017b8733fbd2aee0a4",
+        "lean_version": "4.33.1",
+        "jobs": 3020,
+        "conclusion": "success",
+        "workflow_run_conclusion": "cancelled_after_build"
+      }
     }
   },
   "verification": {
@@ -225,7 +232,7 @@
       "note_ja": "コードHEADの実行は後続の台帳コミットで取り消されたため成功証拠として不採用。"
     },
     "model_hashes": "synchronized_4_models_25_recipes_4_batches",
-    "lean_kernel": "pending_exact_head_ci",
+    "lean_kernel": "code_head_full_build_success_3020_jobs; final_head_exact_run_absent",
     "axiom_output": "pending_exact_head_ci",
     "dependency_graphs": "pending_exact_head_ci",
     "semantic_review_status": "self_review_only",
@@ -234,6 +241,14 @@
       "status": "not_started",
       "conclusion": null,
       "note_ja": "operations配下のみの更新後、最終HEADに紐づくworkflow runは確認できなかった。"
+    },
+    "cancelled_run_artifact": {
+      "run_id": 36570745565,
+      "artifact_id": 11033763036,
+      "name": "lean-evidence-669f03f410378d9b4b24fe017b8733fbd2aee0a4",
+      "size_in_bytes": 173011024,
+      "sha256": "cc9e880ac60249829f3b1d32a376a4a06ea6d99ff9869c310260b17be4fd6298",
+      "accepted_as_success_evidence": false
     }
   },
   "id_reconciliation": {
@@ -272,5 +287,5 @@
     "claim_release": "63fa31355529465de673ed8ad5f54b5d08fd8c40"
   },
   "assurance": "INCONCLUSIVE",
-  "status_note_ja": "最古10問の現行モデルハッシュ不一致を修復した。A20 P1/P3は固定Lean 4.33.1でビルド成功し、P2は17件から射影簡約2件まで絞り、型を明示する3回目の修正を保存した。コードHEADのCIは後続の台帳コミットで取消となり、最終HEADのCI・公理・依存・証拠取込は未完のため25問は検証待ち、solution_ready昇格0、PRマージなし。"
+  "status_note_ja": "最古10問の現行モデルハッシュ不一致を修復した。A20 P1〜P3を再試行し、コードHEAD 669f03f の固定Lean 4.33.1全3020ジョブはビルド成功した。後続の台帳コミットで実行全体が取消となり、公理・依存・最終HEAD照合・証拠取込は未完のため25問は検証待ち、solution_ready昇格0、PRマージなし。"
 }

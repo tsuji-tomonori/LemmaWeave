@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0267",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "193751e3a969fc527fe86af70ee3d9263432d21cbfc39be951d761e301a9af74",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0930A00P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03166",
+      "source_line_1based": 3167,
+      "source_record_sha256": "127ad007c4b1a1d0dfd2460ea7a2e757e9a00649d500e98c268f7e96025c4ab2",
+      "raw_question_sha256": "e872bfe472347d02cd7325dda6d83b3db6f1687ce28f54aaef0f275c4d9e7c32",
+      "normalized_question_sha256": "e872bfe472347d02cd7325dda6d83b3db6f1687ce28f54aaef0f275c4d9e7c32",
+      "source_question": "Louise is hanging 30 of her pictures on the wall. She hangs some of them vertically, half of them horizontally, then hangs the remaining 5 pictures haphazardly. How many pictures did Louise hang vertically?",
+      "recipe_id": "gsm8k_sprint213_pictures",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "縦・横・無造作の3区分が全30枚を尽くす条件を置いた。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03167",
+      "source_line_1based": 3168,
+      "source_record_sha256": "a9386b28a616523d2a35ad3657ea68c7dbf9515ee3646da618d0af22ad49b01d",
+      "raw_question_sha256": "8153f91a3b7fca6ccf7c47d932ae3488dd88887ff697aa4403dc6a243b687d85",
+      "normalized_question_sha256": "8153f91a3b7fca6ccf7c47d932ae3488dd88887ff697aa4403dc6a243b687d85",
+      "source_question": "A soccer ball takes twenty minutes to inflate. Alexia and Ermias are inflating balls, with Alexia inflating 20 balls and Ermias inflating 5 more balls than Alexia. Calculate the total time in minutes they took to inflate all the soccer balls.",
+      "recipe_id": "gsm8k_sprint213_soccer",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "作業者時間の和900分と並行作業の経過時間500分を分離し、差をLeanで証明した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03168",
+      "source_line_1based": 3169,
+      "source_record_sha256": "7c84c2a84b64517e82d21cb010bd0ad01cbbbcdc7e702a657eb70ae1ab647766",
+      "raw_question_sha256": "bb1f5d64eff9b38675c7a2e7b28c85fa162c8b0fe79aefa7b137e64b7801caa4",
+      "normalized_question_sha256": "bb1f5d64eff9b38675c7a2e7b28c85fa162c8b0fe79aefa7b137e64b7801caa4",
+      "source_question": "As soon as you enter the taxi, you pay a ride fee of $2. Michelle rode a taxi from her office to her home, which constitutes 4 miles. If the taxi charge per mile is $2.5, how much did pay Michelle pay in total for her ride?",
+      "recipe_id": "gsm8k_sprint213_taxi",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "小数を避け、金額をセント単位に統一した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03169",
+      "source_line_1based": 3170,
+      "source_record_sha256": "a5697f075e4133c5bdb372336e3eb43ce767015b0158fc38a1f3ccb2f70c4a7c",
+      "raw_question_sha256": "4c6b522e54d32da2b8864184c44942f2ed6818124d70a20b00b2bd2f24d9148b",
+      "normalized_question_sha256": "25af4fde0fda04c42f346f6a1e29be6cc47724b8e9bfac6953c898522d9b6910",
+      "source_question": "John cuts his grass to 2 inches.  It grows .5 inches per month.  When it gets to 4 inches he cuts it back down to 2 inches.  It cost $100 to get his grass cut.  How much does he pay per year?",
+      "recipe_id": "gsm8k_sprint213_grass",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "長さを0.5インチ単位にし、年末12か月目の刈取りを含む周期モデルを明示した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03170",
+      "source_line_1based": 3171,
+      "source_record_sha256": "769ae104315fd1fe719861c3aed2d52831241bb89d1d6953aa202e002f624f56",
+      "raw_question_sha256": "436c819957cc25fd1d80ab7d26f4fcd6080979ca5cd83388beb3f6540a73c2c2",
+      "normalized_question_sha256": "436c819957cc25fd1d80ab7d26f4fcd6080979ca5cd83388beb3f6540a73c2c2",
+      "source_question": "Karen is constantly trying to stop the raccoons from getting in her trash. The first lock she tries stalls them for 5 minutes. The next lock stalls them for 3 minutes less than three times as long as the first lock. When Karen tries both locks at once, it stalled the raccoons for five times as long as the second lock alone. How long is that?",
+      "recipe_id": "gsm8k_sprint213_locks",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "first、second、bothを別の時間としてモデル化した。"
+      ],
+      "blockers": []
+    }
+  ]
+}

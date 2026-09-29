@@ -5,7 +5,7 @@
   "slot_role": "retry_oldest_deferred_and_failed_proofs",
   "base_sha": "996ad0f27a053f6c585a4d4a877336edbb6d6ab7",
   "started_at": "2026-09-29T12:05:03Z",
-  "finished_at": "2026-09-29T12:13:34Z",
+  "finished_at": "2026-09-29T12:50:03Z",
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:00514",
     "external-gsm8k-main-3101c7d50724:train:00515",
@@ -182,20 +182,45 @@
       "repair": "structure fields explicitly typed; equations substituted before norm_num/omega",
       "repaired_model_hashes": {
         "Sprint0929A20P1Models.lean": "db8e47c2f4718a11120242995ac55f1ac912d4dfb69353530f36433048addc6c",
-        "Sprint0929A20P2Models.lean": "9c52cf104c4d85c2752fd9f5ccf9c93ffcf3314edd1b84e884d68a2bcbab73f0",
+        "Sprint0929A20P2Models.lean": "5c99f0961b5fbfdb36b7cbcd19895fdcaacd0857ecd3e604131c1083621589dc",
         "Sprint0929A20P3Models.lean": "22f165cf0c7b6f74a9338fa16e78b41d0036506cc90fca03f19089e9ade3a26c"
       },
       "updated_files": 21,
-      "status": "ci_pending"
+      "status": "third_retry_ci_queued",
+      "attempts": [
+        {
+          "head": "4301fffc1e774cad00220c2eb6d0a994ed4ed536",
+          "result": "cancelled_by_newer_head"
+        },
+        {
+          "head": "8b91d4deaf88bb2620fb72bf229de89b3ca28172",
+          "run_id": 36566821813,
+          "result": "P1/P3 built; P2 errors 17 to 1",
+          "artifact_id": 11033116479,
+          "artifact_sha256": "dcf9feeb37936d13e8e7c81b913f33208ed622b701f4ff74138a45e067428ad9"
+        },
+        {
+          "head": "2b9e1a6ea428818be7af5aea7573bc4d73a0fe35",
+          "run_id": 36569145500,
+          "result": "P1/P3 built; P2 projection normalization left 2 diagnostics",
+          "artifact_id": 11033672747,
+          "artifact_sha256": "007ddb2cb37f36737a67b339f4dcfc5ecb8f33815372181451496b46905e8970"
+        },
+        {
+          "head": "669f03f410378d9b4b24fe017b8733fbd2aee0a4",
+          "run_id": 36570745565,
+          "result": "queued"
+        }
+      ]
     }
   },
   "verification": {
     "fixed_lean_version": "4.33.1",
-    "code_head_sha": "42716227da1f0221346a0ff4230204e1e52f9ffd",
+    "code_head_sha": "669f03f410378d9b4b24fe017b8733fbd2aee0a4",
     "exact_head_ci": {
-      "run_id": 36566678936,
-      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36566678936",
-      "status": "pending",
+      "run_id": 36570745565,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36570745565",
+      "status": "queued",
       "conclusion": null
     },
     "model_hashes": "synchronized_4_models_25_recipes_4_batches",
@@ -233,8 +258,10 @@
   "commits": {
     "claim": "f2a0c2799517bcbc0dfa0fe0a4a79eb9ea978dee",
     "proof_repair": "4301fffc1e774cad00220c2eb6d0a994ed4ed536",
-    "overdue_hash_repair": "42716227da1f0221346a0ff4230204e1e52f9ffd"
+    "overdue_hash_repair": "42716227da1f0221346a0ff4230204e1e52f9ffd",
+    "percentage_retry_2": "2b9e1a6ea428818be7af5aea7573bc4d73a0fe35",
+    "percentage_retry_3": "669f03f410378d9b4b24fe017b8733fbd2aee0a4"
   },
   "assurance": "INCONCLUSIVE",
-  "status_note_ja": "最古10問の証拠取込を妨げていた現行モデルハッシュ不一致を修復し、直近CIで失敗したA20の3モデルも再試行した。最新HEADのCI成功、公理、依存、証拠取込が未完のため25問は検証待ち、solution_ready昇格0、PRマージなし。"
+  "status_note_ja": "最古10問の現行モデルハッシュ不一致を修復した。A20 P1/P3は固定Lean 4.33.1でビルド成功し、P2は17件から射影簡約2件まで絞り、型を明示する3回目の修正を保存した。最新HEADのCI成功、公理、依存、証拠取込は未完のため25問は検証待ち、solution_ready昇格0、PRマージなし。"
 }

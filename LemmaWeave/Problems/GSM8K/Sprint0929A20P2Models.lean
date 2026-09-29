@@ -109,7 +109,13 @@ theorem animals_total_now (m : AnimalPercentModel) : m.animalsNow = 10 := by
 theorem animals_solution (m : AnimalPercentModel) : m.percentMonkeys = 60 := by
   have hTotal := animals_total_now m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  subst_vars <;> norm_num at * <;> omega
+  have hPercentEq : g * 10 = 600 := by
+    calc
+      g * 10 = g * f := by simp [hTotal]
+      _ = d * 100 := h7
+      _ = 6 * 100 := by rw [h4, h1]
+      _ = 600 := by norm_num
+  omega
 
 structure PieCreamModel where
   piesPerDay : ℕ

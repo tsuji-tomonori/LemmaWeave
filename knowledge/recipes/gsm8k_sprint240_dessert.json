@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint240_dessert","title_ja":"アイスとプリンの支出差","problem_id":"external-gsm8k-main-3101c7d50724:train:03242","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P2.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"5ドルのアイス15個と2ドルのプリン5個の支出差を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.dessert_difference","graph":"work/gsm8k-sprint240-dessert-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"dessert_cone_cost","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.dessert_cone_cost","title_ja":"アイス代は75ドル。","claim_ja":"15×5=75。","method_ja":"個数と単価を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"15個、各5ドル。","conclusion_ja":"75ドル。","baseline_ja":"金額の乗法。"},
+    {"id":"dessert_pudding_cost","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.dessert_pudding_cost","title_ja":"プリン代は10ドル。","claim_ja":"5×2=10。","method_ja":"個数と単価を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"5個、各2ドル。","conclusion_ja":"10ドル。","baseline_ja":"金額の乗法。"},
+    {"id":"dessert_difference","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.dessert_difference","title_ja":"差は65ドル。","claim_ja":"75-10=65。","method_ja":"アイス代からプリン代を引く。","requires_steps":["dessert_cone_cost","dessert_pudding_cost"],"uses_nodes":[],"condition_ja":"moreは二支出の差。","conclusion_ja":"65ドル多い。","baseline_ja":"金額の差。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3243,"checked_model_hash":"ea56d70ee18231b7afd91320bd4531efb76060b6fe1bbf18e31a3e357a81d6ad","checks_ja":["各個数・単価・比較方向を照合した。","全説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

@@ -1,0 +1,124 @@
+{
+  "date": "2026-09-30",
+  "run_id": "20260930T200000+0900-solve-20",
+  "scheduled_slot": "2026-09-30T20:00:00+09:00",
+  "slot_role": "solve_15_individual_gsm8k",
+  "base_sha": "60e0b406dbed34f4ec71dcd7419a24b72d43d1d1",
+  "started_at": "2026-09-30T11:04:54Z",
+  "finished_at": "2026-09-30T11:31:50Z",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03446",
+    "external-gsm8k-main-3101c7d50724:train:03447",
+    "external-gsm8k-main-3101c7d50724:train:03448",
+    "external-gsm8k-main-3101c7d50724:train:03449",
+    "external-gsm8k-main-3101c7d50724:train:03450",
+    "external-gsm8k-main-3101c7d50724:train:03451",
+    "external-gsm8k-main-3101c7d50724:train:03452",
+    "external-gsm8k-main-3101c7d50724:train:03453",
+    "external-gsm8k-main-3101c7d50724:train:03454",
+    "external-gsm8k-main-3101c7d50724:train:03455",
+    "external-gsm8k-main-3101c7d50724:train:03456",
+    "external-gsm8k-main-3101c7d50724:train:03457",
+    "external-gsm8k-main-3101c7d50724:train:03458",
+    "external-gsm8k-main-3101c7d50724:train:03459",
+    "external-gsm8k-main-3101c7d50724:train:03460"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03446",
+    "external-gsm8k-main-3101c7d50724:train:03447",
+    "external-gsm8k-main-3101c7d50724:train:03448",
+    "external-gsm8k-main-3101c7d50724:train:03449",
+    "external-gsm8k-main-3101c7d50724:train:03450",
+    "external-gsm8k-main-3101c7d50724:train:03451",
+    "external-gsm8k-main-3101c7d50724:train:03452",
+    "external-gsm8k-main-3101c7d50724:train:03453",
+    "external-gsm8k-main-3101c7d50724:train:03454",
+    "external-gsm8k-main-3101c7d50724:train:03455",
+    "external-gsm8k-main-3101c7d50724:train:03456",
+    "external-gsm8k-main-3101c7d50724:train:03457",
+    "external-gsm8k-main-3101c7d50724:train:03458",
+    "external-gsm8k-main-3101c7d50724:train:03459",
+    "external-gsm8k-main-3101c7d50724:train:03460"
+  ],
+  "deferred": [],
+  "missed_slots_note_ja": "01時、03〜14時および17時は未実行のまま。20時割当だけを処理し、未実行枠を上乗せしていない。",
+  "answers": {
+    "train:03446": "96輪",
+    "train:03447": "168個",
+    "train:03448": "5日",
+    "train:03449": "3000個",
+    "train:03450": "108分",
+    "train:03451": "120kg",
+    "train:03452": "75分",
+    "train:03453": "170個（今日）/290個（2日合計）",
+    "train:03454": "19人",
+    "train:03455": "36本",
+    "train:03456": "4人",
+    "train:03457": "1000枚/箱",
+    "train:03458": "936部",
+    "train:03459": "27枚",
+    "train:03460": "6スクープ/人"
+  },
+  "self_review": {
+    "level": "self_review_only",
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "explanation_lines": 53,
+    "named_lean_theorems": 53,
+    "forbidden_tokens": 0,
+    "ambiguity_notes": [
+      "train:03453は設問の期間が曖昧なため、今日だけの170個と2日合計290個を分離して保持した。",
+      "train:03454の『increased enrollment by 5 times the amount』は、現員の5倍を追加して合計6倍と読む参照解答の解釈を明示した。"
+    ]
+  },
+  "model_sha256": {
+    "Sprint0930A20P1Models.lean": "478a9ef26a3dd24a07d3d616783022aaff5f28d336ceb3d562cf84a42acbb451",
+    "Sprint0930A20P2Models.lean": "8c64397561510a86f81fe38c28800ef7e83e8a6bfa5562b0284687c851ebcf91",
+    "Sprint0930A20P3Models.lean": "9dd6a01eedb3a78bdf99bd44f224c7d7be48a365f15ee8407cc4bf9f8907d75a"
+  },
+  "checkpoints": [
+    "25324d84d88e070b6a0628de99e68696426eeea6",
+    "f1b53d2c3eac6aad8db66841810ee1db085f2b9d",
+    "e108b4259d73009da9b34a821bbd572f813876b2"
+  ],
+  "queue": {
+    "commit": "ce3f1c45cf6104301a40f5448c1c6c85ee2e3c07",
+    "sha256": "67ed0ab22110d71d8f532df3ab789cb40c973d03e4a50248d1b7ab21afef17e0",
+    "total": 8792,
+    "unique_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "status_overlap": 0,
+    "solution_ready": 518,
+    "awaiting_verification": 2749,
+    "pending": 5525
+  },
+  "verification": {
+    "lean_version_target": "4.33.1",
+    "kernel_build": "not_run",
+    "axiom_audit": "not_run",
+    "dependency_audit": "not_run",
+    "static_forbidden_token_scan": "passed",
+    "static_explanation_mapping": "53/53",
+    "static_model_hashes": "3/3",
+    "reason_ja": "3モデル・15レシピ・3バッチの入力ハッシュ、53説明行と53名前付きLean宣言、禁止トークン0件を静的照合した。実行環境にlake/leanがなく、exact-head CI証拠は台帳作成時点で未取得。"
+  },
+  "ci": {
+    "exact_head_sha": null,
+    "status": "not_found_at_ledger_creation"
+  },
+  "pr": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merged": false
+  },
+  "commits": {
+    "checkpoint_1": "25324d84d88e070b6a0628de99e68696426eeea6",
+    "checkpoint_2": "f1b53d2c3eac6aad8db66841810ee1db085f2b9d",
+    "checkpoint_3": "e108b4259d73009da9b34a821bbd572f813876b2",
+    "queue": "ce3f1c45cf6104301a40f5448c1c6c85ee2e3c07"
+  },
+  "assurance": "INCONCLUSIVE"
+}

@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint249_labor",
+  "title_ja": "1日の人件費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03287",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A06P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "職種ごとの日給を100ドル基準で求めて合計する。",
+  "answer_ja": "650ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A06P2.labor_total",
+  "graph": "work/gsm8k-sprint249-labor-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "labor_construction",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P2.labor_construction",
+      "title_ja": "建設作業員2人で200ドル。",
+      "claim_ja": "建設作業員2人で200ドル。",
+      "method_ja": "2×100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各100ドル。",
+      "conclusion_ja": "200ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "labor_electrician",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P2.labor_electrician",
+      "title_ja": "電気工は200ドル。",
+      "claim_ja": "電気工は200ドル。",
+      "method_ja": "2×100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "作業員の2倍。",
+      "conclusion_ja": "200ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "labor_plumber",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P2.labor_plumber",
+      "title_ja": "配管工は250ドル。",
+      "claim_ja": "配管工は250ドル。",
+      "method_ja": "2.5×100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "作業員の250%。",
+      "conclusion_ja": "250ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "labor_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P2.labor_total",
+      "title_ja": "合計650ドル。",
+      "claim_ja": "合計650ドル。",
+      "method_ja": "200+200+250。",
+      "requires_steps": [
+        "labor_construction",
+        "labor_electrician",
+        "labor_plumber"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4人分を重複なく合計。",
+      "conclusion_ja": "650ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3288,
+    "checked_model_hash": "387ed7e0aa055bbe776ef4a6a8b3d6e9cd86721a865a7c3eaa53917d329337e1",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

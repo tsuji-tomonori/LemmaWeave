@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint242_chargers",
+  "title_ja": "充電器の個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03210",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A01P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "慣用読みと文字どおり読みを区別する。",
+  "answer_ja": "慣用読み4個、文字どおり読みは自然数解なし",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.chargers_answer",
+  "graph": "work/gsm8k-sprint242-chargers-graph.json",
+  "model_notes_ja": [
+    "five times moreを5倍と読む慣用解と、5倍多いという文字どおり読みを分離した。後者は自然数解なし。"
+  ],
+  "steps": [
+    {
+      "id": "chargers_phone",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.chargers_phone",
+      "title_ja": "慣用読みでは電話用4個。",
+      "claim_ja": "慣用読みでは電話用4個。",
+      "method_ja": "laptop=5×phone、合計24を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "five times moreを5倍と読む。",
+      "conclusion_ja": "4個。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "chargers_literal_impossible",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.chargers_literal_impossible",
+      "title_ja": "文字どおりの5倍多い読みは不可能。",
+      "claim_ja": "文字どおりの5倍多い読みは不可能。",
+      "method_ja": "laptop=phone+5×phoneなら合計は7の倍数。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "合計24、個数は自然数。",
+      "conclusion_ja": "自然数解なし。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "chargers_answer",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.chargers_answer",
+      "title_ja": "原文は読みで結果が変わる。",
+      "claim_ja": "原文は読みで結果が変わる。",
+      "method_ja": "二つの定理を併記する。",
+      "requires_steps": [
+        "chargers_phone",
+        "chargers_literal_impossible"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加解釈を黙って足さない。",
+      "conclusion_ja": "慣用読み4個、文字どおりは解なし。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3211,
+    "checked_model_hash": "545ad0961d7cf877642f3f6117c567afbd5fedaf3bb1106705e78489ae808522",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。下書きの算術答えを原文から再計算した。"
+    ]
+  }
+}

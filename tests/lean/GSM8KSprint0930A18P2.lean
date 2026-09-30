@@ -1,0 +1,28 @@
+import LemmaWeave.Problems.GSM8K.Sprint0930A18P2Models
+import LemmaWeave.Audit.Extract
+
+open LemmaWeave.Problems.GSM8K.Sprint0930A18P2
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.dogs_shepherds
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.dogs_bulldogs
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.dogs_total
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A18P2.dogs_total
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.puzzles_total_pieces
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.puzzles_minutes
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A18P2.puzzles_minutes
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.chickens_run
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.chickens_free_range
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A18P2.chickens_free_range
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.larry_spent
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.larry_initial
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A18P2.larry_initial
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.mojave_conventional_current
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.mojave_conventional_future
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.mojave_literal_current
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.mojave_literal_future
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A18P2.mojave_readings_differ
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A18P2.mojave_readings_differ

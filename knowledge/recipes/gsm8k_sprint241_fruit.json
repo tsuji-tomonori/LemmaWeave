@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_sprint241_fruit","title_ja":"イチゴとサクランボの代金","problem_id":"external-gsm8k-main-3101c7d50724:train:03249","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P3.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"1lb 2.20ドルのイチゴとその6倍のサクランボを各5lb買う総額を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.fruit_total","graph":"work/gsm8k-sprint241-fruit-graph.json","model_notes_ja":["金額はセント単位で厳密に表す。"],
+  "steps":[
+    {"id":"fruit_cherry_price","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.fruit_cherry_price","title_ja":"サクランボは1lb 1320セント。","claim_ja":"220×6=1320。","method_ja":"イチゴ単価を6倍する。","requires_steps":[],"uses_nodes":[],"condition_ja":"サクランボ単価は6倍。","conclusion_ja":"13.20ドル。","baseline_ja":"金額の乗法。"},
+    {"id":"fruit_strawberries","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.fruit_strawberries","title_ja":"イチゴ5lbは1100セント。","claim_ja":"220×5=1100。","method_ja":"単価と重量を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"5lb購入。","conclusion_ja":"11ドル。","baseline_ja":"単価計算。"},
+    {"id":"fruit_cherries","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.fruit_cherries","title_ja":"サクランボ5lbは6600セント。","claim_ja":"1320×5=6600。","method_ja":"サクランボ単価と重量を掛ける。","requires_steps":["fruit_cherry_price"],"uses_nodes":[],"condition_ja":"5lb購入。","conclusion_ja":"66ドル。","baseline_ja":"単価計算。"},
+    {"id":"fruit_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.fruit_total","title_ja":"合計77ドル。","claim_ja":"1100+6600=7700セント。","method_ja":"二つの代金を加える。","requires_steps":["fruit_strawberries","fruit_cherries"],"uses_nodes":[],"condition_ja":"両方を購入する。","conclusion_ja":"77ドル。","baseline_ja":"金額の加法。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3250,"checked_model_hash":"6612ca53c045c8c13f14e546df5c04fca6510a697aeb42de38aaaeed1fb54173","checks_ja":["各単価・倍率・重量を照合した。","セントとドルの換算を確認した。","独立レビューではなく作成者自己照合である。"]}
+}

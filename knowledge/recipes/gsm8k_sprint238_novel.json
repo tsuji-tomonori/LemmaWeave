@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint238_novel","title_ja":"小説の残りページ","problem_id":"external-gsm8k-main-3101c7d50724:train:03235","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A02P3.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"93ページの本を土曜30ページ、日曜20ページ読み、残りを求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.novel_remaining","graph":"work/gsm8k-sprint238-novel-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"novel_after_saturday","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.novel_after_saturday","title_ja":"土曜後は63ページ。","claim_ja":"93-30=63ページ。","method_ja":"全ページから土曜読了分を引く。","requires_steps":[],"uses_nodes":[],"condition_ja":"土曜に30ページ読む。","conclusion_ja":"63ページ残る。","baseline_ja":"自然数の減法。"},
+    {"id":"novel_remaining","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.novel_remaining","title_ja":"日曜後は43ページ。","claim_ja":"93-30-20=43ページ。","method_ja":"土曜・日曜の読了分と残りの分割式を解く。","requires_steps":["novel_after_saturday"],"uses_nodes":[],"condition_ja":"二日で重複なく計50ページ読む。","conclusion_ja":"43ページ残る。","baseline_ja":"自然数の減法。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3236,"checked_model_hash":"ed4648ceae6ac42546ebab314b213a4d7b7cf2bd1255bb61fa6490e4341e7d15","checks_ja":["全ページ数と二日分の読了数を原題に照合した。","説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

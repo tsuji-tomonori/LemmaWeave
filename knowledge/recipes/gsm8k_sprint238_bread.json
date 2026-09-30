@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint238_bread","title_ja":"三日後のパン残数","problem_id":"external-gsm8k-main-3101c7d50724:train:03231","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A02P3.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"200個のパンから初日に1/4、翌日に残りの2/5、三日目に残りの半分を食べた後の残数を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.bread_after_day3","graph":"work/gsm8k-sprint238-bread-graph.json","model_notes_ja":["各割合はその日の開始時点の残数を基準にし、全て整数個になる。"],
+  "steps":[
+    {"id":"bread_after_day1","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.bread_after_day1","title_ja":"初日後は150個。","claim_ja":"200の1/4=50個を食べ、150個残る。","method_ja":"4×初日消費=200と残数+消費=200を解く。","requires_steps":[],"uses_nodes":[],"condition_ja":"初日は元の200個を基準にする。","conclusion_ja":"150個。","baseline_ja":"分数と減法。"},
+    {"id":"bread_after_day2","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.bread_after_day2","title_ja":"二日目後は90個。","claim_ja":"150の2/5=60個を食べ、90個残る。","method_ja":"5×二日目消費=2×150を解き、残数を引く。","requires_steps":["bread_after_day1"],"uses_nodes":[],"condition_ja":"二日目の割合は初日後の150個を基準にする。","conclusion_ja":"90個。","baseline_ja":"分数と減法。"},
+    {"id":"bread_after_day3","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.bread_after_day3","title_ja":"三日目後は45個。","claim_ja":"90の半分45個を食べ、45個残る。","method_ja":"2×三日目消費=90と残数式を解く。","requires_steps":["bread_after_day2"],"uses_nodes":[],"condition_ja":"三日目の割合は二日目後の90個を基準にする。","conclusion_ja":"45個。","baseline_ja":"半分と減法。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3232,"checked_model_hash":"ed4648ceae6ac42546ebab314b213a4d7b7cf2bd1255bb61fa6490e4341e7d15","checks_ja":["各日の割合の基準を原題に照合した。","順次残数と説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

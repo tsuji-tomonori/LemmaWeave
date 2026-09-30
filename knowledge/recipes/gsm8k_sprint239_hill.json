@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint239_hill","title_ja":"丘の往復時間","problem_id":"external-gsm8k-main-3101c7d50724:train:03238","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P1.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"900フィートの丘を毎秒9フィートで上り、毎秒12フィートで下る往復時間を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.hill_total_time","graph":"work/gsm8k-sprint239-hill-graph.json","model_notes_ja":["上りと下りの距離はいずれも900フィート。"],
+  "steps":[
+    {"id":"hill_up_time","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.hill_up_time","title_ja":"上りは100秒。","claim_ja":"900÷9=100秒。","method_ja":"速さ×時間=距離を解く。","requires_steps":[],"uses_nodes":[],"condition_ja":"距離900フィート、速さ9フィート毎秒。","conclusion_ja":"100秒。","baseline_ja":"距離・速さ・時間。"},
+    {"id":"hill_down_time","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.hill_down_time","title_ja":"下りは75秒。","claim_ja":"900÷12=75秒。","method_ja":"速さ×時間=距離を解く。","requires_steps":[],"uses_nodes":[],"condition_ja":"距離900フィート、速さ12フィート毎秒。","conclusion_ja":"75秒。","baseline_ja":"距離・速さ・時間。"},
+    {"id":"hill_total_time","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.hill_total_time","title_ja":"往復は175秒。","claim_ja":"100+75=175秒。","method_ja":"上り時間と下り時間を加える。","requires_steps":["hill_up_time","hill_down_time"],"uses_nodes":[],"condition_ja":"上り後に下る。","conclusion_ja":"175秒。","baseline_ja":"時間の加法。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3239,"checked_model_hash":"c24d6d0174100c85a1464a1704b75775aa730bc48f2d65a920afb31ed72126e7","checks_ja":["往復の二つの距離と速度を照合した。","全説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

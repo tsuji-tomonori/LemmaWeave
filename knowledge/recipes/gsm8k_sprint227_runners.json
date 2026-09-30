@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint227_runners",
+  "title_ja": "追いつくまでの停止時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03433",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A19P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "56分後、第1走者は56÷8=7マイル、第2走者は56÷7=8マイル。差は1マイルで、第1走者は1マイルに8分かかるため停止できるのは8分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A19P1.runners_stop_time",
+  "graph": "work/gsm8k-sprint227-runners-graph.json",
+  "model_notes_ja": [
+    "停止中は第1走者だけが進むものとして、距離差1マイルを埋める時間を求めた。"
+  ],
+  "steps": [
+    {
+      "id": "runners_first_distance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P1.runners_first_distance",
+      "title_ja": "第1走者の距離",
+      "claim_ja": "第1走者は7マイル進む。",
+      "method_ja": "56=8×7を用いる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "第1走者は7マイル進む。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "runners_second_distance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P1.runners_second_distance",
+      "title_ja": "第2走者の距離",
+      "claim_ja": "第2走者は8マイル進む。",
+      "method_ja": "56=7×8を用いる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "第2走者は8マイル進む。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "runners_gap",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P1.runners_gap",
+      "title_ja": "距離差",
+      "claim_ja": "距離差は1マイル。",
+      "method_ja": "8マイルから7マイルを引く。",
+      "requires_steps": [
+        "runners_first_distance",
+        "runners_second_distance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "距離差は1マイル。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "runners_stop_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P1.runners_stop_time",
+      "title_ja": "停止可能時間",
+      "claim_ja": "停止できるのは8分。",
+      "method_ja": "第1走者が1マイル進む時間を使う。",
+      "requires_steps": [
+        "runners_gap"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "停止できるのは8分。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3434,
+    "checked_model_hash": "4b752d48057a5e10978714dbbb4052c3e6883a1b1781877e34c600b936baefa0",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

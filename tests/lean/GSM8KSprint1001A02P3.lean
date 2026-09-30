@@ -13,8 +13,8 @@ open LemmaWeave.Problems.GSM8K.Sprint1001A02P3
 #lw_dependencies popcorn_first
 #lw_dependencies popcorn_second
 #lw_dependencies popcorn_third
-#lw_dependencies popcorn_average
-#lw_dependencies popcorn_weighted_rate_not_82 to "work/gsm8k-sprint238-popcorn-graph.json"
+#lw_dependencies popcorn_weighted_rate_not_82
+#lw_dependencies popcorn_average to "work/gsm8k-sprint238-popcorn-graph.json"
 #lw_dependencies will_shelby
 #lw_dependencies will_remainder
 #lw_dependencies will_each_other to "work/gsm8k-sprint238-will-graph.json"

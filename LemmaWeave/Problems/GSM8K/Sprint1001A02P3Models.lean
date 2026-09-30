@@ -76,14 +76,15 @@ theorem popcorn_second (m : PopcornModel) : m.secondPercent = 84 := by
 theorem popcorn_third (m : PopcornModel) : m.thirdPercent = 82 := by
   cases m <;> omega
 
+theorem popcorn_weighted_rate_not_82 : 100 * (60 + 42 + 82) ≠ 82 * (75 + 50 + 100) := by
+  norm_num
+
 theorem popcorn_average (m : PopcornModel) : m.averagePercent = 82 := by
   have h1 := popcorn_first m
   have h2 := popcorn_second m
   have h3 := popcorn_third m
+  have hw := popcorn_weighted_rate_not_82
   cases m <;> omega
-
-theorem popcorn_weighted_rate_not_82 : 100 * (60 + 42 + 82) ≠ 82 * (75 + 50 + 100) := by
-  norm_num
 
 structure WillModel where
   estate : ℕ

@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint247_ribbon",
+  "title_ja": "リボンの残り",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03264",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A04P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1.5mを半メートル3単位として8個分を引く。",
+  "answer_ja": "3メートル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.ribbon_left_meters",
+  "graph": "work/gsm8k-sprint247-ribbon-graph.json",
+  "model_notes_ja": [
+    "1.5mを半メートル3単位として厳密な自然数算術で表した。"
+  ],
+  "steps": [
+    {
+      "id": "ribbon_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.ribbon_used",
+      "title_ja": "使用量は12m。",
+      "claim_ja": "使用量は12m。",
+      "method_ja": "1.5×8。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各贈り物1.5m。",
+      "conclusion_ja": "12m。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "ribbon_left_half_meters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.ribbon_left_half_meters",
+      "title_ja": "残りは半メートル6単位。",
+      "claim_ja": "残りは半メートル6単位。",
+      "method_ja": "30-24。",
+      "requires_steps": [
+        "ribbon_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "15m=30半m、使用12m=24半m。",
+      "conclusion_ja": "6半m。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "ribbon_left_meters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.ribbon_left_meters",
+      "title_ja": "残りは3m。",
+      "claim_ja": "残りは3m。",
+      "method_ja": "6半m÷2。",
+      "requires_steps": [
+        "ribbon_left_half_meters"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2半m=1m。",
+      "conclusion_ja": "3m。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3265,
+    "checked_model_hash": "af42e0440a119587f6cf7db2d94fa9f5aca6984bdaeb6a9f3dc5d074c2cf80c3",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

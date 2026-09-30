@@ -7,19 +7,19 @@ open LemmaWeave.Problems.GSM8K.Sprint0930A20P1
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.wheels_tricycle_riders
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.wheels_bicycle_count
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.wheels_tricycle_count
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.wheels_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.wheels_total to "work/gsm8k-sprint230-wheels-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.apples_combined_weekly
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.apples_monthly_order
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.apples_monthly_order to "work/gsm8k-sprint230-monthly-apples-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.towels_weekly_use
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.towels_two_week_need
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.towels_shortage
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.towels_no_clean_days
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.towels_no_clean_days to "work/gsm8k-sprint230-towels-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.tree_apples_per_tree
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.tree_apples_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.tree_apples_total to "work/gsm8k-sprint230-tree-apples-graph.json"
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.gardening_mow_minutes
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.gardening_total_flowers
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.gardening_planting_minutes
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.gardening_total_minutes
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A20P1.gardening_total_minutes to "work/gsm8k-sprint230-gardening-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0930A20P1.wheels_total
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0930A20P1.apples_monthly_order
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0930A20P1.towels_no_clean_days

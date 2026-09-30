@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint232_groups",
+  "title_ja": "4組目の人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03456",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A20P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初の3組は5+8+7=20人。全24人なので第4組は24-20=4人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A20P3.groups_fourth",
+  "graph": "work/gsm8k-sprint232-groups-graph.json",
+  "model_notes_ja": [
+    "4組が全24人を重複なく分割する。"
+  ],
+  "steps": [
+    {
+      "id": "groups_first_three",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P3.groups_first_three",
+      "title_ja": "最初の3組",
+      "claim_ja": "最初の3組は20人。",
+      "method_ja": "5+8+7を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3組の人数がそれぞれ5、8、7人。",
+      "conclusion_ja": "20人。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "groups_fourth",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P3.groups_fourth",
+      "title_ja": "第4組",
+      "claim_ja": "第4組は4人。",
+      "method_ja": "全24人から最初の3組20人を引く。",
+      "requires_steps": [
+        "groups_first_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4組が全学生を重複なく分割する。",
+      "conclusion_ja": "4人。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3457,
+    "checked_model_hash": "9dd6a01eedb3a78bdf99bd44f224c7d7be48a365f15ee8407cc4bf9f8907d75a",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

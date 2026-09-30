@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint244_mothers_roses",
+  "title_ja": "母の日のバラ購入費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03216",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "今年摘めた本数を目標から引いて購入費を出す。",
+  "answer_ja": "54ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.mothers_roses_spend",
+  "graph": "work/gsm8k-sprint244-mothers-roses-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "mothers_roses_this_year",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.mothers_roses_this_year",
+      "title_ja": "今年摘めたのは6本。",
+      "claim_ja": "今年摘めたのは6本。",
+      "method_ja": "12の半分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "昨年12本。",
+      "conclusion_ja": "6本。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "mothers_roses_target",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.mothers_roses_target",
+      "title_ja": "目標は24本。",
+      "claim_ja": "目標は24本。",
+      "method_ja": "昨年12本の2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "目標条件。",
+      "conclusion_ja": "24本。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "mothers_roses_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.mothers_roses_needed",
+      "title_ja": "購入は18本。",
+      "claim_ja": "購入は18本。",
+      "method_ja": "24-6。",
+      "requires_steps": [
+        "mothers_roses_this_year",
+        "mothers_roses_target"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "今年の6本を使用。",
+      "conclusion_ja": "18本。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "mothers_roses_spend",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.mothers_roses_spend",
+      "title_ja": "支出54ドル。",
+      "claim_ja": "支出54ドル。",
+      "method_ja": "18×3。",
+      "requires_steps": [
+        "mothers_roses_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1本3ドル。",
+      "conclusion_ja": "54ドル。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3217,
+    "checked_model_hash": "1794420c233867d3314da4c5188326642b8315e7c512478f366a4140c0f0afe2",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。下書きの算術答えを原文から再計算した。"
+    ]
+  }
+}

@@ -3,8 +3,9 @@
   "run_id": "20261001T040000+0900-solve-04",
   "scheduled_slot": "2026-10-01T04:00:00+09:00",
   "actual_started_at": "2026-09-30T19:56:29Z",
+  "finished_at": "2026-09-30T20:04:54Z",
   "base_sha": "3a95024eb34e6ea620d3b45fbda2f4e47e1421e6",
-  "status": "active",
+  "status": "released",
   "mode": "serial",
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:03251",
@@ -24,8 +25,32 @@
     "external-gsm8k-main-3101c7d50724:train:03265"
   ],
   "completed_problem_ids": [],
-  "verification_pending": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:03251",
+    "external-gsm8k-main-3101c7d50724:train:03252",
+    "external-gsm8k-main-3101c7d50724:train:03253",
+    "external-gsm8k-main-3101c7d50724:train:03254",
+    "external-gsm8k-main-3101c7d50724:train:03255",
+    "external-gsm8k-main-3101c7d50724:train:03256",
+    "external-gsm8k-main-3101c7d50724:train:03257",
+    "external-gsm8k-main-3101c7d50724:train:03258",
+    "external-gsm8k-main-3101c7d50724:train:03259",
+    "external-gsm8k-main-3101c7d50724:train:03260",
+    "external-gsm8k-main-3101c7d50724:train:03261",
+    "external-gsm8k-main-3101c7d50724:train:03262",
+    "external-gsm8k-main-3101c7d50724:train:03263",
+    "external-gsm8k-main-3101c7d50724:train:03264",
+    "external-gsm8k-main-3101c7d50724:train:03265"
+  ],
   "expires_at": "2026-09-30T21:56:29Z",
-  "checkpoint_commits": [],
-  "note_ja": "04時枠を予定どおり処理。共有ファイルへの同時書込みを避けるため直列実行する。"
+  "checkpoint_commits": [
+    "9bb38db835e01660c07bf7105697d228bddbf783",
+    "d58a564f25540cd6a852c35b0ccb2288923c7bd2",
+    "2aa2d34406480c0b26bcd662817c50461d09c760"
+  ],
+  "evidence_commit": "7887b2a8704150d6aee836d1622ff77f478a0703",
+  "ledger": "operations/daily/2026-10-01-0456.json",
+  "result": "15問の解答・Lean形式化・自己照合を保存し、固定Lean実行証拠待ちとしてキューへ登録した。",
+  "assurance": "INCONCLUSIVE",
+  "note_ja": "04時枠を実行した。train:03263の参照解答終端16は総本数であり、原題の虫歯数4とは不整合のため明示的に分離した。"
 }

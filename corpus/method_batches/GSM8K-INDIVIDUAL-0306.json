@@ -1,0 +1,93 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0306",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "5b0f5e04984a6201f121580db7520ef1dbe340a720fdfc949fc7e2f86decd806",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1001A07P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03301",
+      "source_line_1based": 3302,
+      "source_record_sha256": "b4bde182b379a0d05e5d6946c853ba0b344f042b00bcc3adcbead2515a57b227",
+      "raw_question_sha256": "51dd63217f3a4ba0bc53a6ffa7d891d14cf120e5b3cc070af0ad7657091b63ee",
+      "normalized_question_sha256": "28ed8f2d579e4782a54f00b22f01a28e385f5088bafbd05b31654fe5c5d83337",
+      "source_question": "Quinn catches twice the amount of frogs as Alster who caught 2.  Bret catches three times the amount of frogs as Quinn.  How many frogs did Bret catch?",
+      "recipe_id": "gsm8k_sprint252_frogs",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03302",
+      "source_line_1based": 3303,
+      "source_record_sha256": "6369ba877e052dcffcf0b7e58178b1c25ab0481b9274469356480d888f7dd02c",
+      "raw_question_sha256": "4314377dfd390bc668ff4d7f867904c0e133ebe1ed39ef8943603a9ea25c77b7",
+      "normalized_question_sha256": "4314377dfd390bc668ff4d7f867904c0e133ebe1ed39ef8943603a9ea25c77b7",
+      "source_question": "Gunner has a box of mittens with 20 fewer pairs than a box of plugs. He decides to put 30 more pairs of plugs into the box of plugs. If the box of mittens has 150 pairs of mittens, how many plugs are there?",
+      "recipe_id": "gsm8k_sprint252_plugs",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03303",
+      "source_line_1based": 3304,
+      "source_record_sha256": "c557ae9c41848cc05b657d3a80779116456cb3d761acb08169944c05f666e260",
+      "raw_question_sha256": "0561624748fe90dd13cdce6714b881d7a307262a23fa29954f25087089fe5fba",
+      "normalized_question_sha256": "0561624748fe90dd13cdce6714b881d7a307262a23fa29954f25087089fe5fba",
+      "source_question": "Anahi bought a 500 pages book to write some notes on. In the first week, she wrote on 150 pages. In the second week, she wrote on 30% of the remaining pages. While continuing writing, she accidentally spilled coffee on the book and damaged 20 percent of the empty pages she was to write on. Calculate the total number of empty pages available for her to write on now.",
+      "recipe_id": "gsm8k_sprint252_pages",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03304",
+      "source_line_1based": 3305,
+      "source_record_sha256": "7c6954f2231e10592f6c352510ab27e98e194f901ec38ae6912fe768cd1263e5",
+      "raw_question_sha256": "1d711c0edab6cdf927dec4aa694c1ee0e49cc7d8e895e7665c205e3666ced621",
+      "normalized_question_sha256": "1d711c0edab6cdf927dec4aa694c1ee0e49cc7d8e895e7665c205e3666ced621",
+      "source_question": "If there are four times as many apples as oranges in a certain fruit basket and the basket has 15 apples, how many fruits would Emiliano have consumed if he eats 2/3 of each fruit's quantity in the basket?",
+      "recipe_id": "gsm8k_sprint252_fruit",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_model",
+      "modeling_notes_ja": [
+        "標準的な英語読み apples=4×oranges と apples=15 は自然数個数で両立しない。参照解答の oranges=4×apples は追加条件として別モデル化。"
+      ],
+      "blockers": [
+        {
+          "type": "semantic_inconsistency",
+          "status": "resolved_as_conditional_answer",
+          "detail_ja": "原文の自然数条件は不整合。無条件の50個とはしない。"
+        }
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03305",
+      "source_line_1based": 3306,
+      "source_record_sha256": "d56d2aa98f2b8c888cfb6e7f5af55eb62e79a5eee8c1caad5365c020ac451d1b",
+      "raw_question_sha256": "6f87e2f0bdf42b387730fd6f20a6b9605f78bc26c55fe0e0966ade67fddb0fa4",
+      "normalized_question_sha256": "6f87e2f0bdf42b387730fd6f20a6b9605f78bc26c55fe0e0966ade67fddb0fa4",
+      "source_question": "Du Chin bakes 200 meat pies in a day. He sells them for $20 each and uses 3/5 of the sales to buy ingredients to make meat pies for sale on the next day. How much money does Du Chin remain with after setting aside the money for buying ingredients?",
+      "recipe_id": "gsm8k_sprint252_pies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    }
+  ]
+}

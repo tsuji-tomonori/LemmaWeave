@@ -1,0 +1,28 @@
+import LemmaWeave.Problems.GSM8K.Sprint0930A15P1Models
+import LemmaWeave.Audit.Extract
+
+open LemmaWeave.Problems.GSM8K.Sprint0930A15P1
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.chapters_progression_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.chapters_first
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A15P1.chapters_first
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.boxer_wins_before_loss
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.boxer_final_wins
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.boxer_difference
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A15P1.boxer_difference
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.egg_hunt_total_eggs
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.egg_hunt_people
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.egg_hunt_per_person
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A15P1.egg_hunt_per_person
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.insects_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.insects_per_group
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A15P1.insects_per_group
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.varsity_girls
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.varsity_boys
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.varsity_joined
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A15P1.varsity_not_joined
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A15P1.varsity_not_joined

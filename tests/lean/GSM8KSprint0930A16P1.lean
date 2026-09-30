@@ -1,0 +1,34 @@
+import LemmaWeave.Problems.GSM8K.Sprint0930A16P1Models
+import LemmaWeave.Audit.Extract
+
+open LemmaWeave.Problems.GSM8K.Sprint0930A16P1
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.bark_terrier
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.bark_poodle
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A16P1.bark_poodle
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.milk_small_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.milk_small_liters
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.milk_total_liters
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A16P1.milk_total_liters
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.suitcase_perfume_ounces
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.suitcase_soap_ounces
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.suitcase_jam_ounces
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.suitcase_other_ounces
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.suitcase_other_pounds
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.suitcase_total
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A16P1.suitcase_total
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.ram_increase
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.ram_raised_price
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.ram_decrease
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.ram_current_price
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A16P1.ram_current_price
+
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.pizza_cheese_paid
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.pizza_cheese_cost
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.pizza_meat_paid
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.pizza_meat_cost
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0930A16P1.pizza_total_cost
+#print axioms LemmaWeave.Problems.GSM8K.Sprint0930A16P1.pizza_total_cost

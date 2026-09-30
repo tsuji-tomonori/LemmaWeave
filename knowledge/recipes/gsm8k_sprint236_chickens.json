@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint236_chickens","title_ja":"雄鶏と雌鶏の比","problem_id":"external-gsm8k-main-3101c7d50724:train:03223","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A02P1.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"鶏9000羽を雄:雌=2:1に分け、雄鶏の数を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.chickens_roosters","graph":"work/gsm8k-sprint236-chickens-graph.json","model_notes_ja":["全鶏は雄鶏と雌鶏だけからなると原題どおり解釈した。"],
+  "steps":[
+    {"id":"chickens_hens","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.chickens_hens","title_ja":"雌鶏は3000羽。","claim_ja":"比の合計3部分で9000羽なので1部分は3000羽。","method_ja":"雄=2×雌、雄+雌=9000を解く。","requires_steps":[],"uses_nodes":[],"condition_ja":"雄鶏と雌鶏が全体を分割する。","conclusion_ja":"雌鶏3000羽。","baseline_ja":"比と一次方程式。"},
+    {"id":"chickens_roosters","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.chickens_roosters","title_ja":"雄鶏は6000羽。","claim_ja":"雌鶏3000羽の2倍で6000羽。","method_ja":"雄=2×雌へ3000を代入する。","requires_steps":["chickens_hens"],"uses_nodes":[],"condition_ja":"雄:雌=2:1。","conclusion_ja":"雄鶏6000羽。","baseline_ja":"自然数の乗法。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3224,"checked_model_hash":"94f28d28420d1048c78b6087a7da7206daf5b9ddc10222e76b2456e35b3c7a24","checks_ja":["比と総数を原題に照合した。","全説明行をLean定理に対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

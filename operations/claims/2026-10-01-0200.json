@@ -3,8 +3,9 @@
   "run_id": "20261001T020000+0900-solve-02",
   "scheduled_slot": "2026-10-01T02:00:00+09:00",
   "actual_started_at": "2026-09-30T17:05:04Z",
+  "finished_at": "2026-09-30T17:42:00Z",
   "base_sha": "95d7405310225e12d40fccdd2927d43b7bf16212",
-  "status": "active",
+  "status": "released",
   "mode": "serial",
   "selected_problem_ids": [
     "external-gsm8k-main-3101c7d50724:train:03221",
@@ -23,6 +24,34 @@
     "external-gsm8k-main-3101c7d50724:train:03234",
     "external-gsm8k-main-3101c7d50724:train:03235"
   ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:03221",
+    "external-gsm8k-main-3101c7d50724:train:03222",
+    "external-gsm8k-main-3101c7d50724:train:03223",
+    "external-gsm8k-main-3101c7d50724:train:03224",
+    "external-gsm8k-main-3101c7d50724:train:03225",
+    "external-gsm8k-main-3101c7d50724:train:03226",
+    "external-gsm8k-main-3101c7d50724:train:03227",
+    "external-gsm8k-main-3101c7d50724:train:03228",
+    "external-gsm8k-main-3101c7d50724:train:03229",
+    "external-gsm8k-main-3101c7d50724:train:03230",
+    "external-gsm8k-main-3101c7d50724:train:03231",
+    "external-gsm8k-main-3101c7d50724:train:03232",
+    "external-gsm8k-main-3101c7d50724:train:03233",
+    "external-gsm8k-main-3101c7d50724:train:03234",
+    "external-gsm8k-main-3101c7d50724:train:03235"
+  ],
   "expires_at": "2026-09-30T19:05:04Z",
-  "note_ja": "前日の日報で02時枠へ再配分された未実行15問を、01時枠の未実行を隠さず、重複を避けて直列処理する。"
+  "checkpoint_commits": [
+    "e95ebf4c3fcefaa046b244126ed99a4ecafcece0",
+    "290d2b6bc677afe9ec4ea9eb80f1c615762c5aeb",
+    "fc496327dac44bdf3a1a3eb03944f8ef36418b45"
+  ],
+  "correction_commit": "f189558d4cb0fd25d4889a711bf8bdbd0b5202d9",
+  "evidence_commit": "4df523cf4035eaa84f6fcbf506f095e7365bc866",
+  "ledger": "operations/daily/2026-10-01-0205.json",
+  "result": "15問の解答・Lean形式化・自己照合を保存し、固定Lean実行証拠待ちとしてキューへ登録した。",
+  "assurance": "INCONCLUSIVE",
+  "note_ja": "前日の日報で02時枠へ再配分された未実行15問を直列処理した。01時枠train:03206-train:03220は未実行のまま台帳へ明記した。"
 }

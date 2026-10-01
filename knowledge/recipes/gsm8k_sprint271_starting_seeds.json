@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint271_starting_seeds",
+  "title_ja": "Mikeが初めに持った種",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03413",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A14P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "左へ20粒、右へその2倍、後から30粒を投げ、30粒残ったときの開始数を求める。",
+  "answer_ja": "120粒",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.starting_seeds",
+  "graph": "work/gsm8k-sprint271-starting-seeds-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "right_group_seeds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.right_group_seeds",
+      "title_ja": "右の群へ40粒投げる。",
+      "claim_ja": "右の群へ40粒投げる。",
+      "method_ja": "左の20粒の2倍を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "twice as muchの基準は左の20粒。",
+      "conclusion_ja": "40粒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "initial_groups_seeds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.initial_groups_seeds",
+      "title_ja": "最初の2群へ合計60粒。",
+      "claim_ja": "最初の2群へ合計60粒。",
+      "method_ja": "左20粒と右40粒を足す。",
+      "requires_steps": [
+        "right_group_seeds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2群への投下を合計する。",
+      "conclusion_ja": "60粒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "starting_seeds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.starting_seeds",
+      "title_ja": "開始時は120粒。",
+      "claim_ja": "開始時は120粒。",
+      "method_ja": "60粒、追加の鳥へ30粒、残り30粒を足す。",
+      "requires_steps": [
+        "initial_groups_seeds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "投げた種と残った種で全量を分ける。",
+      "conclusion_ja": "120粒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3414,
+    "checked_model_hash": "d054eff63a475d3d7451b58637dac35d8a421e110dcc322aee9dc8ea144b77d4",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

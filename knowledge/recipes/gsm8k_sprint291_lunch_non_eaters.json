@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint291_lunch_non_eaters",
+  "title_ja": "昼食を食べない生徒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03566",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A02P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "60人の学級で、食堂利用10人、弁当持参はその3倍のとき、昼食を食べない人数。",
+  "answer_ja": "20人",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A02P1.no_lunch_students",
+  "graph": "work/gsm8k-sprint291-lunch-non-eaters-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cafeteria_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P1.cafeteria_students",
+      "title_ja": "食堂で食べる生徒は10人。",
+      "claim_ja": "食堂で食べる生徒は10人。",
+      "method_ja": "問題の与件を固定する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "食堂で食べる生徒は10人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "bring_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P1.bring_students",
+      "title_ja": "弁当持参は30人。",
+      "claim_ja": "弁当持参は30人。",
+      "method_ja": "食堂利用10人の3倍を求める。",
+      "requires_steps": [
+        "cafeteria_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "弁当持参は30人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "eating_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P1.eating_students",
+      "title_ja": "昼食を食べる生徒は40人。",
+      "claim_ja": "昼食を食べる生徒は40人。",
+      "method_ja": "食堂10人と弁当30人を加える。",
+      "requires_steps": [
+        "bring_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "昼食を食べる生徒は40人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "no_lunch_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P1.no_lunch_students",
+      "title_ja": "昼食を食べない生徒は20人。",
+      "claim_ja": "昼食を食べない生徒は20人。",
+      "method_ja": "全60人から昼食を食べる40人を分ける。",
+      "requires_steps": [
+        "eating_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "昼食を食べない生徒は20人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3567,
+    "checked_model_hash": "22b26becbebc732a15818c2b2b8125bf430ffed8036a5eae4d9ad162ae5f5a5e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

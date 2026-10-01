@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint291_second_test_grade",
+  "title_ja": "2回目の試験得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03570",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A02P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1回目78点、2回後の平均81点のときの2回目得点。",
+  "answer_ja": "84点",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A02P1.second_test_grade",
+  "graph": "work/gsm8k-sprint291-second-test-grade-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "two_test_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P1.two_test_points",
+      "title_ja": "2回の合計は162点。",
+      "claim_ja": "2回の合計は162点。",
+      "method_ja": "平均81点に試験数2を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "2回の合計は162点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "second_test_grade",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P1.second_test_grade",
+      "title_ja": "2回目は84点。",
+      "claim_ja": "2回目は84点。",
+      "method_ja": "合計162点から1回目78点を分ける。",
+      "requires_steps": [
+        "two_test_points"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "2回目は84点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3571,
+    "checked_model_hash": "22b26becbebc732a15818c2b2b8125bf430ffed8036a5eae4d9ad162ae5f5a5e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

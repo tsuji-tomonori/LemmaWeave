@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint280_wall_remaining_bricks",
+  "title_ja": "庭壁に残るレンガ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03504",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A17P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3段に2段追加し各段400個、最終段の半分を外した後の総数を求める。",
+  "answer_ja": "1800個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A17P3.wall_remaining_bricks",
+  "graph": "work/gsm8k-sprint280-wall-remaining-bricks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "wall_courses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P3.wall_courses",
+      "title_ja": "壁は5段。",
+      "claim_ja": "壁は5段。",
+      "method_ja": "3段に2段を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "追加後の段数。",
+      "conclusion_ja": "5段。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "wall_full_bricks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P3.wall_full_bricks",
+      "title_ja": "外す前は2000個。",
+      "claim_ja": "外す前は2000個。",
+      "method_ja": "5段×400個を計算する。",
+      "requires_steps": [
+        "wall_courses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各段400個。",
+      "conclusion_ja": "2000個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "wall_removed_bricks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P3.wall_removed_bricks",
+      "title_ja": "最終段から200個外す。",
+      "claim_ja": "最終段から200個外す。",
+      "method_ja": "400個の半分を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "外すのは最終段の半分。",
+      "conclusion_ja": "200個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "wall_remaining_bricks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P3.wall_remaining_bricks",
+      "title_ja": "壁には1800個残る。",
+      "claim_ja": "壁には1800個残る。",
+      "method_ja": "2000個から200個を引く。",
+      "requires_steps": [
+        "wall_full_bricks",
+        "wall_removed_bricks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ほかの段は変更しない。",
+      "conclusion_ja": "1800個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3505,
+    "checked_model_hash": "4dbdb208750895ce50705a04e2b16585b047b44314c69dc8adb8173b827633b2",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

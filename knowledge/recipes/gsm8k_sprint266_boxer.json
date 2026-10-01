@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint266_boxer",
+  "title_ja": "勝数と敗数の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03372",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初の15勝後に1敗し、通算勝数を30へ倍増してからもう1敗した戦績の差を求める。",
+  "answer_ja": "28勝分",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.boxer_difference",
+  "graph": "work/gsm8k-sprint266-boxer-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "boxer_before_first_loss",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.boxer_before_first_loss",
+      "title_ja": "最初の敗戦前は15勝。",
+      "claim_ja": "最初の敗戦前は15勝。",
+      "method_ja": "10+5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "最初の10勝後さらに5勝。",
+      "conclusion_ja": "15勝。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "boxer_wins",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.boxer_wins",
+      "title_ja": "引退時の勝数は30。",
+      "claim_ja": "引退時の勝数は30。",
+      "method_ja": "15を2倍する。",
+      "requires_steps": [
+        "boxer_before_first_loss"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "「勝数を倍にする」を通算勝数30と読む。",
+      "conclusion_ja": "30勝。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "boxer_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.boxer_difference",
+      "title_ja": "勝数は敗数より28多い。",
+      "claim_ja": "勝数は敗数より28多い。",
+      "method_ja": "30-2。",
+      "requires_steps": [
+        "boxer_wins"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "敗戦は2回。",
+      "conclusion_ja": "28。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3373,
+    "checked_model_hash": "8a04d69748a3c48e254703556f45c33a804bd03513a57190c3da3fadf5e4c587",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint266_egg_hunt",
+  "title_ja": "1人あたりの卵数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03373",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "15籠各12個の卵を、子ども12人と大人8人の計20人へ等分する。",
+  "answer_ja": "9個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.egg_each",
+  "graph": "work/gsm8k-sprint266-egg-hunt-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "egg_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.egg_total",
+      "title_ja": "卵は合計180個。",
+      "claim_ja": "卵は合計180個。",
+      "method_ja": "15×12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15籠すべてに12個。",
+      "conclusion_ja": "180個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "egg_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.egg_people",
+      "title_ja": "参加者は20人。",
+      "claim_ja": "参加者は20人。",
+      "method_ja": "2+10+1+7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "子どもと大人を重複なく数える。",
+      "conclusion_ja": "20人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "egg_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.egg_each",
+      "title_ja": "1人9個。",
+      "claim_ja": "1人9個。",
+      "method_ja": "180÷20。",
+      "requires_steps": [
+        "egg_total",
+        "egg_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全員へ等分する。",
+      "conclusion_ja": "9個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3374,
+    "checked_model_hash": "8a04d69748a3c48e254703556f45c33a804bd03513a57190c3da3fadf5e4c587",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

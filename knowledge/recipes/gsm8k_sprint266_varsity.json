@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint266_varsity",
+  "title_ja": "部活に入らなかった男子数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03375",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "150人の60%が女子なので男子は40%。男子の3分の1だけが部活に入り、残りを求める。",
+  "answer_ja": "40人",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.varsity_not_joined",
+  "graph": "work/gsm8k-sprint266-varsity-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "varsity_boys",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.varsity_boys",
+      "title_ja": "男子は60人。",
+      "claim_ja": "男子は60人。",
+      "method_ja": "150の40%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "女子60%、男女で全員。",
+      "conclusion_ja": "60人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "varsity_joined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.varsity_joined",
+      "title_ja": "入部した男子は20人。",
+      "claim_ja": "入部した男子は20人。",
+      "method_ja": "60÷3。",
+      "requires_steps": [
+        "varsity_boys"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "男子の3分の1。",
+      "conclusion_ja": "20人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "varsity_not_joined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P1.varsity_not_joined",
+      "title_ja": "入部しなかった男子は40人。",
+      "claim_ja": "入部しなかった男子は40人。",
+      "method_ja": "60-20。",
+      "requires_steps": [
+        "varsity_boys",
+        "varsity_joined"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "男子を入部・非入部に分割する。",
+      "conclusion_ja": "40人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3376,
+    "checked_model_hash": "8a04d69748a3c48e254703556f45c33a804bd03513a57190c3da3fadf5e4c587",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

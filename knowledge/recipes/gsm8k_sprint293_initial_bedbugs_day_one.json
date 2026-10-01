@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint293_initial_bedbugs_day_one",
+  "title_ja": "初日の南京虫の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03588",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A03P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "初日から毎日3倍になり、4日目に810匹になったと読むときの初日の数。",
+  "answer_ja": "30匹（初日を開始数とする読解）",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A03P2.initial_bedbugs_day_one",
+  "graph": "work/gsm8k-sprint293-initial-bedbugs-day-one-graph.json",
+  "model_notes_ja": [
+    "原資料の参照解答に合わせ、初日を開始数、4日目を810匹として3回の増加をモデル化した。開始前を0日目として4回増加すると読む追加条件なら10匹になるため、採用読解を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "bedbugs_day_two",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P2.bedbugs_day_two",
+      "title_ja": "2日目は90匹である。",
+      "claim_ja": "2日目は90匹である。",
+      "method_ja": "4日目810匹から3倍関係を2段階戻すと2日目は810÷3÷3である。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "2日目は90匹である。"
+    },
+    {
+      "id": "bedbugs_day_three",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P2.bedbugs_day_three",
+      "title_ja": "3日目は270匹である。",
+      "claim_ja": "3日目は270匹である。",
+      "method_ja": "4日目810匹の3分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "3日目は270匹である。"
+    },
+    {
+      "id": "initial_bedbugs_day_one",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P2.initial_bedbugs_day_one",
+      "title_ja": "初日は30匹である。",
+      "claim_ja": "初日は30匹である。",
+      "method_ja": "2日目90匹の3分の1を求める。",
+      "requires_steps": [
+        "bedbugs_day_two"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "初日は30匹である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3589,
+    "checked_model_hash": "834538336a991a4e541d039cb41135efc36e2baf9704085e27cfccc9092b633b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

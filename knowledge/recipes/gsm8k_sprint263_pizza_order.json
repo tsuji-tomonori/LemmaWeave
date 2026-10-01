@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint263_pizza_order",
+  "title_ja": "必要な大型ピザ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03359",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A12P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3人が各12切れ必要とし、小型1枚8切れを先に注文した後、14切れの大型を何枚注文するか求める。",
+  "answer_ja": "2枚",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A12P1.pizza_large_count",
+  "graph": "work/gsm8k-sprint263-pizza-order-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pizza_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P1.pizza_needed",
+      "title_ja": "必要なピザは36切れ。",
+      "claim_ja": "必要なピザは36切れ。",
+      "method_ja": "3×12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Benと兄弟2人の計3人。",
+      "conclusion_ja": "36切れ。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pizza_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P1.pizza_remaining",
+      "title_ja": "小型1枚後の不足は28切れ。",
+      "claim_ja": "小型1枚後の不足は28切れ。",
+      "method_ja": "36-8。",
+      "requires_steps": [
+        "pizza_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "小型は8切れ。",
+      "conclusion_ja": "28切れ。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pizza_large_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P1.pizza_large_count",
+      "title_ja": "大型ピザは2枚。",
+      "claim_ja": "大型ピザは2枚。",
+      "method_ja": "28÷14。",
+      "requires_steps": [
+        "pizza_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "大型1枚は14切れ。",
+      "conclusion_ja": "2枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3360,
+    "checked_model_hash": "5bf6ed9f520dfebb143bfd131e47c2eeb7bc34cd226dbf91ed5f18978f93b1b4",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

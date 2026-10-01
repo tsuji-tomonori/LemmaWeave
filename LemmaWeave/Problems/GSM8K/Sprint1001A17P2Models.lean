@@ -40,8 +40,11 @@ structure ArenaSimultaneousModel where
 theorem arena_simultaneous_time (m : ArenaSimultaneousModel) : m.elapsed = 40 := by
   cases m <;> omega
 
-theorem arena_readings_differ : (60 : ℕ) ≠ 40 := by
-  norm_num
+theorem arena_readings_differ (a : ArenaSumModel) (b : ArenaSimultaneousModel) :
+    a.summed ≠ b.elapsed := by
+  have h1 := arena_summed_time a
+  have h2 := arena_simultaneous_time b
+  omega
 
 structure PartyModel where
   harry multiplier total friendsCount friendsTotal each : ℕ

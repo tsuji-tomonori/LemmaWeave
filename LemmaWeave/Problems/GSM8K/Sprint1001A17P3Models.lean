@@ -47,8 +47,11 @@ structure CricketEachModel where
 theorem each_period_crickets (m : CricketEachModel) : m.total = 35 := by
   cases m <;> omega
 
-theorem cricket_readings_differ : (20 : ℕ) ≠ 35 := by
-  norm_num
+theorem cricket_readings_differ (a : CricketCombinedModel) (b : CricketEachModel) :
+    a.total ≠ b.total := by
+  have h1 := combined_reading_crickets a
+  have h2 := each_period_crickets b
+  omega
 
 structure WalkModel where
   miles alonePerMile brotherPerMile aloneTotal brotherTotal extra : ℕ

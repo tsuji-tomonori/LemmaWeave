@@ -40,8 +40,11 @@ structure CoffeeSplitModel where
 theorem coffee_split_total (m : CoffeeSplitModel) : m.total = 18 := by
   cases m <;> omega
 
-theorem coffee_readings_differ : (36 : ℕ) ≠ 18 := by
-  norm_num
+theorem coffee_readings_differ (a : CoffeeEachModel) (b : CoffeeSplitModel) :
+    a.total ≠ b.total := by
+  have h1 := coffee_each_total a
+  have h2 := coffee_split_total b
+  omega
 
 structure BillModel where
   total fiveValue fiveCount tenValue tenAmount tenCount twentyValue twentyCount twentyAmount billCount : ℕ

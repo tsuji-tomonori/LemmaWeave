@@ -17,7 +17,7 @@ open LemmaWeave.Problems.GSM8K.Sprint1001A19P1
 #lw_dependencies first_pair_weight
 #lw_dependencies second_pair_weight
 #lw_dependencies third_pair_weight
-#lw_dependencies dumbbell_total_weight to "work/gsm8k-sprint284-dumbbell-weight-graph.json"
+#lw_dependencies dumbbell_total_weight to "work/gsm8k-sprint284-dumbbell-total-weight-graph.json"
 #print axioms dumbbell_total_weight
 #lw_dependencies arm_tattoos
 #lw_dependencies leg_tattoos

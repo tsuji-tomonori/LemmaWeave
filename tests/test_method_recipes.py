@@ -115,3 +115,24 @@ class MethodTargetRegistration(unittest.TestCase):
                 '#lw_dependencies Example.solution to\n'
                 '  "work/example-graph.json"\n')
             self.assertEqual(missing_graph_directives(root, [recipe]), [])
+
+    def test_open_namespace_allows_unqualified_root(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'proof.lean').write_text(
+                'open Example\n'
+                '#lw_dependencies solution to "work/example-graph.json"\n')
+            recipe = {'id': 'recipe', 'lean_file': 'proof.lean',
+                      'root': 'Example.solution', 'graph': 'work/example-graph.json'}
+            self.assertEqual(missing_graph_directives(root, [recipe]), [])
+
+    def test_unqualified_root_without_matching_open_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'proof.lean').write_text(
+                'open Other\n'
+                '#lw_dependencies solution to "work/example-graph.json"\n')
+            recipe = {'id': 'recipe', 'lean_file': 'proof.lean',
+                      'root': 'Example.solution', 'graph': 'work/example-graph.json'}
+            self.assertEqual([item['id'] for item in missing_graph_directives(root, [recipe])],
+                             ['recipe'])

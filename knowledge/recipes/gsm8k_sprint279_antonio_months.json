@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint279_antonio_months",
+  "title_ja": "Antonioの月齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03499",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Isabellaは18か月後に10歳で現在Antonioの2倍の年齢のときAntonioの月齢を求める。",
+  "answer_ja": "51か月",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.antonio_months",
+  "graph": "work/gsm8k-sprint279-antonio-months-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "isabella_ten_months",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.isabella_ten_months",
+      "title_ja": "10歳は120か月。",
+      "claim_ja": "10歳は120か月。",
+      "method_ja": "10×12を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1年=12か月。",
+      "conclusion_ja": "120か月。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "isabella_current_months",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.isabella_current_months",
+      "title_ja": "Isabellaは現在102か月。",
+      "claim_ja": "Isabellaは現在102か月。",
+      "method_ja": "120か月から18か月を引く。",
+      "requires_steps": [
+        "isabella_ten_months"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "18か月後に120か月。",
+      "conclusion_ja": "102か月。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "antonio_months",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.antonio_months",
+      "title_ja": "Antonioは51か月。",
+      "claim_ja": "Antonioは51か月。",
+      "method_ja": "102か月を2で割る。",
+      "requires_steps": [
+        "isabella_current_months"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Isabellaは現在Antonioの2倍。",
+      "conclusion_ja": "51か月。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3500,
+    "checked_model_hash": "416904c009b0e023e865c02bf8537d23ee512d35886beb1f6dde02db667ef0f7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

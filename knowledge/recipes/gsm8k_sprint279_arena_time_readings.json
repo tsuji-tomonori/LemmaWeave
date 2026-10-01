@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint279_arena_time_readings",
+  "title_ja": "2人が競技場を回る時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03497",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Emmaが20時間、Fernandoがその2倍かかるとき、個人時間の合計と同時開始の経過時間を区別する。",
+  "answer_ja": "個人時間の合計60時間、同時開始なら40時間",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.arena_summed_time",
+  "graph": "work/gsm8k-sprint279-arena-time-readings-graph.json",
+  "model_notes_ja": [
+    "「total time」を個人所要時間の和と読む参照解答は60時間。同時開始から両者完了までの経過時間なら40時間で、原文のみでは観測量が曖昧。"
+  ],
+  "steps": [
+    {
+      "id": "fernando_arena_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.fernando_arena_time",
+      "title_ja": "Fernandoは40時間かかる。",
+      "claim_ja": "Fernandoは40時間かかる。",
+      "method_ja": "Emmaの20時間の2倍を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同じコースで2倍の時間。",
+      "conclusion_ja": "40時間。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "arena_summed_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.arena_summed_time",
+      "title_ja": "個人所要時間の合計は60時間。",
+      "claim_ja": "個人所要時間の合計は60時間。",
+      "method_ja": "20時間と40時間を足す。",
+      "requires_steps": [
+        "fernando_arena_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "totalを2人の所要時間の和と読む。",
+      "conclusion_ja": "60時間。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "arena_simultaneous_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.arena_simultaneous_time",
+      "title_ja": "同時開始から両者完了までは40時間。",
+      "claim_ja": "同時開始から両者完了までは40時間。",
+      "method_ja": "遅いFernandoの完了時刻を採る。",
+      "requires_steps": [
+        "fernando_arena_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同時に開始し、経過時間を問う読み。",
+      "conclusion_ja": "40時間。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "arena_readings_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.arena_readings_differ",
+      "title_ja": "2つの観測量は異なる。",
+      "claim_ja": "2つの観測量は異なる。",
+      "method_ja": "60と40が等しくないことを確認する。",
+      "requires_steps": [
+        "arena_summed_time",
+        "arena_simultaneous_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "total timeの意味が未指定。",
+      "conclusion_ja": "原文のみでは一意でない。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3498,
+    "checked_model_hash": "416904c009b0e023e865c02bf8537d23ee512d35886beb1f6dde02db667ef0f7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

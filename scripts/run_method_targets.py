@@ -86,20 +86,36 @@ def target_plan(root, target):
     return {'target': target, 'project_imports': project_imports}
 
 
-def run_lean_target(target):
-    """Run one target after the shared dependency build.
+def build_target_plan(plan):
+    """Build one target's imports and return its isolated outcome.
 
-    Selected targets have distinct source and graph paths. ``run.py`` also
-    allocates a unique evidence directory, so two workers do not share output
-    files.  Keep the default at two to avoid memory pressure on hosted runners.
+    A failed imported model is isolated to the targets that actually import it.
+    Builds stay serial because different targets may share imported modules and
+    therefore write the same Lake outputs.
     """
-    return subprocess.run([sys.executable, 'scripts/run.py', '--timeout', '900', '--',
-                           'lake', 'env', 'lean', target], cwd=ROOT, check=False).returncode
+    imports = plan['project_imports']
+    dependency = subprocess.run(['lake', 'build', *imports], cwd=ROOT, check=False) \
+        if imports else None
+    dependency_exit = dependency.returncode if dependency is not None else 0
+    return {
+        'target': plan['target'],
+        'dependency_build_exit_code': dependency_exit,
+        'lean_exit_code': None,
+    }
+
+
+def run_lean_target(target):
+    """Produce evidence for one target after its dependencies have built."""
+    return subprocess.run(
+        [sys.executable, 'scripts/run.py', '--timeout', '900', '--',
+         'lake', 'env', 'lean', target],
+        cwd=ROOT, check=False).returncode
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--all', action='store_true', help='replay every registered method target')
+    parser.add_argument('--all', action='store_true',
+                        help='replay every registered method target')
     parser.add_argument('--jobs', type=int, default=2,
                         help='number of independent Lean targets to check concurrently (1-4)')
     args = parser.parse_args()
@@ -113,33 +129,37 @@ def main():
               file=sys.stderr)
         return 1
     all_targets = sorted({r['lean_file'] for r in recipes})
-    targets = all_targets if args.all else select_targets(recipes, lambda r: evidence_is_current(ROOT, r))
+    targets = all_targets if args.all else select_targets(
+        recipes, lambda r: evidence_is_current(ROOT, r))
     plans = [target_plan(ROOT, target) for target in targets]
-    all_imports = sorted({name for plan in plans for name in plan['project_imports']})
-    # Building the union once avoids repeatedly traversing and rebuilding the
-    # same mathlib dependency graph for every Lean file.
-    dependency_build = subprocess.run(['lake', 'build', *all_imports],
-                                      cwd=ROOT, check=False) if all_imports else None
-    dependency_exit = dependency_build.returncode if dependency_build is not None else 0
-    lean_codes = {}
-    if dependency_exit == 0:
-        with ThreadPoolExecutor(max_workers=args.jobs) as executor:
-            codes = executor.map(run_lean_target, targets)
-            lean_codes = dict(zip(targets, codes))
+    outcomes = {plan['target']: build_target_plan(plan) for plan in plans}
+    runnable = [plan['target'] for plan in plans
+                if outcomes[plan['target']]['dependency_build_exit_code'] == 0]
+    with ThreadPoolExecutor(max_workers=args.jobs) as executor:
+        lean_codes = dict(zip(runnable, executor.map(run_lean_target, runnable)))
+    for target, lean_exit in lean_codes.items():
+        outcomes[target]['lean_exit_code'] = lean_exit
     results = []
     for plan in plans:
         target = plan['target']
+        outcome = outcomes[target]
         members = [r for r in recipes if r['lean_file'] == target]
-        missing_graphs = [r['graph'] for r in members if not (ROOT / r['graph']).is_file()]
-        lean_exit_code = lean_codes.get(target)
-        exit_code = dependency_exit or lean_exit_code or int(bool(missing_graphs))
-        results.append({'target': target, 'exit_code': exit_code,
-                        'dependency_build_exit_code': dependency_exit,
-                        'lean_exit_code': lean_exit_code,
-                        'project_imports': plan['project_imports'],
-                        'recipes': [r['id'] for r in members],
-                        'missing_graphs': missing_graphs})
-    (ROOT / 'reports/method-targets.json').write_text(json.dumps(results, indent=2) + '\n')
+        missing_graphs = [r['graph'] for r in members
+                          if not (ROOT / r['graph']).is_file()]
+        dependency_exit = outcome['dependency_build_exit_code']
+        lean_exit = outcome['lean_exit_code']
+        exit_code = dependency_exit or lean_exit or int(bool(missing_graphs))
+        results.append({
+            'target': target,
+            'exit_code': exit_code,
+            'dependency_build_exit_code': dependency_exit,
+            'lean_exit_code': lean_exit,
+            'project_imports': plan['project_imports'],
+            'recipes': [r['id'] for r in members],
+            'missing_graphs': missing_graphs,
+        })
+    (ROOT / 'reports/method-targets.json').write_text(
+        json.dumps(results, indent=2) + '\n')
     selection = {
         'mode': 'all' if args.all else 'stale_evidence_only',
         'registered_target_count': len(all_targets),
@@ -147,10 +167,13 @@ def main():
         'skipped_current_target_count': len(all_targets) - len(targets),
         'selected_targets': targets,
         'jobs': args.jobs,
-        'dependency_build_strategy': 'single_union_build_before_isolated_target_checks',
-        'safety_gate': 'check_method_recipes.proof_evidence over Lean import closure and graph hash'
+        'dependency_build_strategy':
+            'serial_per_target_build_then_parallel_isolated_check_continue_on_failure',
+        'safety_gate':
+            'check_method_recipes.proof_evidence over Lean import closure and graph hash',
     }
-    (ROOT / 'reports/method-target-selection.json').write_text(json.dumps(selection, indent=2) + '\n')
+    (ROOT / 'reports/method-target-selection.json').write_text(
+        json.dumps(selection, indent=2) + '\n')
     return int(any(r['exit_code'] for r in results))
 
 

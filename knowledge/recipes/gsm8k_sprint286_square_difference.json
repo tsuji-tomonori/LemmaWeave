@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint286_square_difference",
+  "title_ja": "正方形の辺長差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03533",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A19P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "面積25と81の正方形の辺長の差。",
+  "answer_ja": "4",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A19P3.square_side_difference",
+  "graph": "work/gsm8k-sprint286-square-difference-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "square_a_side",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P3.square_a_side",
+      "title_ja": "正方形Aの辺は5。",
+      "claim_ja": "正方形Aの辺は5。",
+      "method_ja": "非負の辺長の平方が25なので5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "正方形Aの辺は5。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "square_b_side",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P3.square_b_side",
+      "title_ja": "正方形Bの辺は9。",
+      "claim_ja": "正方形Bの辺は9。",
+      "method_ja": "非負の辺長の平方が81なので9。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "正方形Bの辺は9。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "square_side_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P3.square_side_difference",
+      "title_ja": "辺長差は4。",
+      "claim_ja": "辺長差は4。",
+      "method_ja": "9から5を引く。",
+      "requires_steps": [
+        "square_a_side",
+        "square_b_side"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "辺長差は4。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3534,
+    "checked_model_hash": "fa20c47f6418c70b4aa0f0bafbce3378c9dc8c1831b1838432175960baaddc2c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -107,6 +107,7 @@ def candidateFoldSchedule : FoldSchedule where
 theorem hugo_medium_box_time : 2 * 3 = 6 := by norm_num
 
 theorem folding_lower_bound (m : FoldSchedule) : 7200 ≤ m.elapsed := by
+  have hMedium := hugo_medium_box_time
   cases m <;> omega
 
 theorem folding_candidate_time : candidateFoldSchedule.elapsed = 7200 := by

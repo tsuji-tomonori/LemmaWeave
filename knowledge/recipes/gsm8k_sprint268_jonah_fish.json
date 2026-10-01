@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint268_jonah_fish",
+  "title_ja": "交換後の魚の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03280",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13RecoveryP3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "元の14匹から6匹食べられ、追加した2匹を返却し、交換で3匹加えた最終数を求める。",
+  "answer_ja": "11匹",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP3.jonah_fish",
+  "graph": "work/gsm8k-sprint268-jonah-fish-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "original_fish_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP3.original_fish_left",
+      "title_ja": "元の魚は8匹残る。",
+      "claim_ja": "元の魚は8匹残る。",
+      "method_ja": "14匹から食べられた6匹を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "食べられたのは元の魚6匹。",
+      "conclusion_ja": "8匹。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "predators_returned",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP3.predators_returned",
+      "title_ja": "追加した2匹は全て返却される。",
+      "claim_ja": "追加した2匹は全て返却される。",
+      "method_ja": "追加数2と返却数2を照合する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "追加した2匹を店へ戻す。",
+      "conclusion_ja": "水槽には追加した2匹が残らない。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "jonah_fish",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP3.jonah_fish",
+      "title_ja": "最終的に11匹。",
+      "claim_ja": "最終的に11匹。",
+      "method_ja": "残った元の8匹へ交換で得た3匹を加える。",
+      "requires_steps": [
+        "original_fish_left",
+        "predators_returned"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "返却した2匹は数えず、新しい3匹を数える。",
+      "conclusion_ja": "11匹。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3281,
+    "checked_model_hash": "6a5d3d03c14faa71a6edd64d3301123d51f3c4f1f701d6426efaed0d064950c9",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

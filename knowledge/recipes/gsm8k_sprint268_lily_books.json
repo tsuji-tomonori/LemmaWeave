@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint268_lily_books",
+  "title_ja": "Lilyが受け取った本",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03278",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13RecoveryP3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mikeが10冊、CoreyがMikeより15冊多く渡したときLilyの受取総数を求める。",
+  "answer_ja": "35冊",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP3.lily_books",
+  "graph": "work/gsm8k-sprint268-lily-books-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "corey_gives",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP3.corey_gives",
+      "title_ja": "Coreyは25冊渡す。",
+      "claim_ja": "Coreyは25冊渡す。",
+      "method_ja": "Mikeの10冊に15冊を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "CoreyはMikeより15冊多い。",
+      "conclusion_ja": "25冊。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "lily_books",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP3.lily_books",
+      "title_ja": "Lilyは35冊受け取る。",
+      "claim_ja": "Lilyは35冊受け取る。",
+      "method_ja": "Mikeの10冊とCoreyの25冊を足す。",
+      "requires_steps": [
+        "corey_gives"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両者から受け取った本を合計する。",
+      "conclusion_ja": "35冊。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3279,
+    "checked_model_hash": "6a5d3d03c14faa71a6edd64d3301123d51f3c4f1f701d6426efaed0d064950c9",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

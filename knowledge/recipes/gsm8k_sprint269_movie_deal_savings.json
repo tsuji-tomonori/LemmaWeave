@@ -1,0 +1,100 @@
+{
+  "id": "gsm8k_sprint269_movie_deal_savings",
+  "title_ja": "映画セットの節約額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03402",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A14P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "通常の映画券・ポップコーン・飲み物・菓子の合計と20ドルセットとの差を求める。",
+  "answer_ja": "2ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.movie_deal_savings",
+  "graph": "work/gsm8k-sprint269-movie-deal-savings-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "popcorn_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.popcorn_price",
+      "title_ja": "ポップコーンは5ドル。",
+      "claim_ja": "ポップコーンは5ドル。",
+      "method_ja": "映画券8ドルより3ドル安い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3 dollars lessを8-3と読む。",
+      "conclusion_ja": "5ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "drink_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.drink_price",
+      "title_ja": "飲み物は6ドル。",
+      "claim_ja": "飲み物は6ドル。",
+      "method_ja": "ポップコーン5ドルより1ドル高い。",
+      "requires_steps": [
+        "popcorn_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "a dollar moreを1ドル加算する。",
+      "conclusion_ja": "6ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "candy_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.candy_price",
+      "title_ja": "菓子は3ドル。",
+      "claim_ja": "菓子は3ドル。",
+      "method_ja": "飲み物6ドルの半額を求める。",
+      "requires_steps": [
+        "drink_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "半額で端数は生じない。",
+      "conclusion_ja": "3ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "normal_movie_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.normal_movie_total",
+      "title_ja": "通常価格は22ドル。",
+      "claim_ja": "通常価格は22ドル。",
+      "method_ja": "8+5+6+3を合計する。",
+      "requires_steps": [
+        "popcorn_price",
+        "drink_price",
+        "candy_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4品を各1個買う。",
+      "conclusion_ja": "22ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "movie_deal_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.movie_deal_savings",
+      "title_ja": "セットは2ドル節約になる。",
+      "claim_ja": "セットは2ドル節約になる。",
+      "method_ja": "通常22ドルからセット20ドルを引く。",
+      "requires_steps": [
+        "normal_movie_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ4品を比較する。",
+      "conclusion_ja": "2ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3403,
+    "checked_model_hash": "eb73855587bd0696d3db67c1cfd2be06c7ea346160f2879b73f91cf456490ce6",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

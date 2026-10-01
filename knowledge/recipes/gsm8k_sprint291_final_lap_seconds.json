@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint291_final_lap_seconds",
+  "title_ja": "Billyの最終ラップ時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03576",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A02P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Margaretは10分、Billyは30秒早く完走し、最初の9周が2分・4分・1分の区分のとき最終周の秒数。",
+  "answer_ja": "150秒",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.final_lap_seconds",
+  "graph": "work/gsm8k-sprint291-final-lap-seconds-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "margaret_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.margaret_seconds",
+      "title_ja": "Margaretの時間は600秒。",
+      "claim_ja": "Margaretの時間は600秒。",
+      "method_ja": "10分を1分60秒で換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Margaretの時間は600秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "first_nine_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.first_nine_seconds",
+      "title_ja": "Billyの最初の9周は420秒。",
+      "claim_ja": "Billyの最初の9周は420秒。",
+      "method_ja": "2分、4分、1分を秒換算して加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Billyの最初の9周は420秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "billy_total_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.billy_total_seconds",
+      "title_ja": "Billyの完走時間は570秒。",
+      "claim_ja": "Billyの完走時間は570秒。",
+      "method_ja": "600秒より30秒早い条件を使う。",
+      "requires_steps": [
+        "margaret_seconds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Billyの完走時間は570秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "final_lap_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.final_lap_seconds",
+      "title_ja": "最終周は150秒。",
+      "claim_ja": "最終周は150秒。",
+      "method_ja": "完走570秒を最初の9周420秒と最終周に分ける。",
+      "requires_steps": [
+        "first_nine_seconds",
+        "billy_total_seconds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "最終周は150秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3577,
+    "checked_model_hash": "df34a661be2820c7d47328ef0bd47c1b48df754bf039c3cb24153620a5073318",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

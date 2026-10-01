@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint291_pace_improvement_minutes",
+  "title_ja": "1マイル当たりの短縮時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03577",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A02P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1周3/4マイルを7周し、今年42分、昨年47.25分のとき1マイル当たりの短縮時間。",
+  "answer_ja": "1分",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.pace_improvement_minutes",
+  "graph": "work/gsm8k-sprint291-pace-improvement-minutes-graph.json",
+  "model_notes_ja": [
+    "距離は4分の1マイルを単位として21単位、昨年時間は4分の1分を単位として189単位に整数化した。"
+  ],
+  "steps": [
+    {
+      "id": "race_distance_quarter_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.race_distance_quarter_miles",
+      "title_ja": "距離は21/4マイル（5.25マイル）。",
+      "claim_ja": "距離は21/4マイル（5.25マイル）。",
+      "method_ja": "7周に各3/4マイルを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "距離は21/4マイル（5.25マイル）。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "current_minutes_per_mile",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.current_minutes_per_mile",
+      "title_ja": "今年は1マイル8分。",
+      "claim_ja": "今年は1マイル8分。",
+      "method_ja": "42分を21/4マイルで割る関係を交差積で表す。",
+      "requires_steps": [
+        "race_distance_quarter_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "今年は1マイル8分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "last_minutes_per_mile",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.last_minutes_per_mile",
+      "title_ja": "昨年は1マイル9分。",
+      "claim_ja": "昨年は1マイル9分。",
+      "method_ja": "47.25分を189/4分として交差積で表す。",
+      "requires_steps": [
+        "race_distance_quarter_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "昨年は1マイル9分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pace_improvement_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.pace_improvement_minutes",
+      "title_ja": "今年は1マイル当たり1分短い。",
+      "claim_ja": "今年は1マイル当たり1分短い。",
+      "method_ja": "昨年9分と今年8分の差を取る。",
+      "requires_steps": [
+        "current_minutes_per_mile",
+        "last_minutes_per_mile"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "今年は1マイル当たり1分短い。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3578,
+    "checked_model_hash": "df34a661be2820c7d47328ef0bd47c1b48df754bf039c3cb24153620a5073318",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

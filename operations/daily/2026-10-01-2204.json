@@ -3,7 +3,7 @@
   "run_id": "20261001T220440+0900-ci-evidence-22",
   "scheduled_slot": "2026-10-01T22:00:00+09:00",
   "started_at": "2026-10-01T13:04:40Z",
-  "finished_at": "2026-10-01T13:14:01Z",
+  "finished_at": "2026-10-01T13:26:31Z",
   "base_sha": "2d7e67dc17593fd232d1bf094f9ec726fb2e0fd7",
   "branch": "codex/sprint-20260919-0000",
   "role": "ci_evidence_recovery_and_integration",
@@ -102,7 +102,7 @@
       "expires_at": "2026-10-15T12:05:26Z"
     },
     "repair": {
-      "status": "committed_pending_new_head_ci",
+      "status": "second_repair_committed_pending_new_head_ci",
       "changed_files": [
         "scripts/run_method_targets.py",
         "tests/test_method_recipes.py",
@@ -112,9 +112,33 @@
         "qualified root remains accepted",
         "unqualified root is accepted only when its exact namespace is opened",
         "unqualified root without the matching open remains rejected"
+      ],
+      "additional_checks": [
+        "Python AST parse of the exact corrected script passed before commit",
+        "corrected script rebuilt from the complete parent version"
       ]
     },
-    "required_success": false
+    "required_success": false,
+    "retry_runs": [
+      {
+        "head_sha": "8fc388fa7309d05ec6563eebfb8c5f9bf05a256b",
+        "workflow_run_id": 36867201825,
+        "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36867201825",
+        "conclusion": "failure",
+        "started_at": "2026-10-01T13:14:08Z",
+        "finished_at": "2026-10-01T13:24:02Z",
+        "progress_ja": "登録ガード通過後に多数の対象ビルドが成功したが、生成時のJavaScript replacement展開でPythonソースが欠損しSyntaxError。",
+        "failing_run": "runs/20261001T132322-1a4c3b02/run.json",
+        "error": "SyntaxError: unterminated string literal in scripts/run_method_targets.py line 43",
+        "artifact": {
+          "id": 11165136456,
+          "size_bytes": 219308230,
+          "sha256": "9fd155f3c114b950bdb59540074f42653f25736fb3a9f3afc503389de946ecbd",
+          "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36867201825/artifacts/11165136456",
+          "expires_at": "2026-10-15T13:23:29Z"
+        }
+      }
+    ]
   },
   "pr": {
     "number": 5,
@@ -125,11 +149,11 @@
     "latest_review": "APPROVED",
     "unresolved_review_threads": 0,
     "merge_action": "not_merged",
-    "merge_blocker_ja": "修復後の正確なHEADに対する必須CI成功証拠がまだない。"
+    "merge_blocker_ja": "第1修復HEADの完全再生はSyntaxErrorで失敗した。第2修復HEADの必須CI成功証拠がまだない。"
   },
   "verification": {
     "assurance": "INCONCLUSIVE",
-    "reason_ja": "固定Lean 4.33.1の全ビルドと許容公理出力は成功したが、完全パイプラインはmethod target登録ガードで失敗した。修復後HEADの成功証拠が得られるまでsolution_readyへ昇格せず、PRもマージしない。"
+    "reason_ja": "固定Lean 4.33.1の全ビルドと許容公理出力は成功したが、第1修復HEADは生成時の置換展開によりPython構文エラー。完全な元スクリプトから再構成しAST構文確認済みだが、第2修復HEADの完全パイプライン成功まではINCONCLUSIVE。"
   },
-  "next_action_ja": "修復コミットのpush CIを取得し、method target再生、入力ハッシュ、公理、個別証拠を再照合する。"
+  "next_action_ja": "第2修復コミットのpush CIを取得し、method target再生、入力ハッシュ、公理、個別証拠を再照合する。"
 }

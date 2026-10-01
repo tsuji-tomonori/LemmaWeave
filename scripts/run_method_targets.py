@@ -40,111 +40,7 @@ def dependency_directive_present(source, root, graph):
     names = [root]
     if '.' in root:
         namespace, short_root = root.rsplit('.', 1)
-        open_directive = r'^\s*open\s+' + re.escape(namespace) + r'\s*    """Return malformed recipes and sources missing the required graph directive."""
-    sources = {}
-    missing = []
-    required = ('id', 'lean_file', 'root', 'graph')
-    for recipe in recipes:
-        missing_fields = [field for field in required if not recipe.get(field)]
-        if missing_fields:
-            missing.append({
-                'id': recipe.get('id'),
-                'lean_file': recipe.get('lean_file'),
-                'root': recipe.get('root'),
-                'graph': recipe.get('graph'),
-                'missing_fields': missing_fields,
-            })
-            continue
-        target = recipe['lean_file']
-        if target not in sources:
-            sources[target] = (root / target).read_text()
-        if not dependency_directive_present(
-                sources[target], recipe['root'], recipe['graph']):
-            missing.append({'id': recipe['id'], 'lean_file': target,
-                            'root': recipe['root'], 'graph': recipe['graph']})
-    return missing
-
-
-def target_plan(root, target):
-    confined(root, target)
-    source = (root / target).read_text()
-    project_imports = sorted(set(re.findall(
-        r'^\s*import\s+(LemmaWeave(?:\.[A-Za-z0-9_]+)+)\s*$',
-        source, re.MULTILINE)))
-    return {'target': target, 'project_imports': project_imports}
-
-
-def run_lean_target(target):
-    """Run one target after the shared dependency build.
-
-    Selected targets have distinct source and graph paths. ``run.py`` also
-    allocates a unique evidence directory, so two workers do not share output
-    files.  Keep the default at two to avoid memory pressure on hosted runners.
-    """
-    return subprocess.run([sys.executable, 'scripts/run.py', '--timeout', '900', '--',
-                           'lake', 'env', 'lean', target], cwd=ROOT, check=False).returncode
-
-
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--all', action='store_true', help='replay every registered method target')
-    parser.add_argument('--jobs', type=int, default=2,
-                        help='number of independent Lean targets to check concurrently (1-4)')
-    args = parser.parse_args()
-    if not 1 <= args.jobs <= 4:
-        parser.error('--jobs must be between 1 and 4')
-    recipes = [read(p) for p in sorted((ROOT / 'knowledge/recipes').glob('*.json'))]
-    missing_directives = missing_graph_directives(ROOT, recipes)
-    if missing_directives:
-        print(json.dumps({'error': 'missing_graph_directives',
-                          'recipes': missing_directives}, ensure_ascii=False, indent=2),
-              file=sys.stderr)
-        return 1
-    all_targets = sorted({r['lean_file'] for r in recipes})
-    targets = all_targets if args.all else select_targets(recipes, lambda r: evidence_is_current(ROOT, r))
-    plans = [target_plan(ROOT, target) for target in targets]
-    all_imports = sorted({name for plan in plans for name in plan['project_imports']})
-    # Building the union once avoids repeatedly traversing and rebuilding the
-    # same mathlib dependency graph for every Lean file.
-    dependency_build = subprocess.run(['lake', 'build', *all_imports],
-                                      cwd=ROOT, check=False) if all_imports else None
-    dependency_exit = dependency_build.returncode if dependency_build is not None else 0
-    lean_codes = {}
-    if dependency_exit == 0:
-        with ThreadPoolExecutor(max_workers=args.jobs) as executor:
-            codes = executor.map(run_lean_target, targets)
-            lean_codes = dict(zip(targets, codes))
-    results = []
-    for plan in plans:
-        target = plan['target']
-        members = [r for r in recipes if r['lean_file'] == target]
-        missing_graphs = [r['graph'] for r in members if not (ROOT / r['graph']).is_file()]
-        lean_exit_code = lean_codes.get(target)
-        exit_code = dependency_exit or lean_exit_code or int(bool(missing_graphs))
-        results.append({'target': target, 'exit_code': exit_code,
-                        'dependency_build_exit_code': dependency_exit,
-                        'lean_exit_code': lean_exit_code,
-                        'project_imports': plan['project_imports'],
-                        'recipes': [r['id'] for r in members],
-                        'missing_graphs': missing_graphs})
-    (ROOT / 'reports/method-targets.json').write_text(json.dumps(results, indent=2) + '\n')
-    selection = {
-        'mode': 'all' if args.all else 'stale_evidence_only',
-        'registered_target_count': len(all_targets),
-        'selected_target_count': len(targets),
-        'skipped_current_target_count': len(all_targets) - len(targets),
-        'selected_targets': targets,
-        'jobs': args.jobs,
-        'dependency_build_strategy': 'single_union_build_before_isolated_target_checks',
-        'safety_gate': 'check_method_recipes.proof_evidence over Lean import closure and graph hash'
-    }
-    (ROOT / 'reports/method-target-selection.json').write_text(json.dumps(selection, indent=2) + '\n')
-    return int(any(r['exit_code'] for r in results))
-
-
-if __name__ == '__main__':
-    raise SystemExit(main())
-
+        open_directive = r'^\s*open\s+' + re.escape(namespace) + r'\s*$'
         if re.search(open_directive, source, re.MULTILINE):
             names.append(short_root)
     for name in names:
@@ -174,9 +70,8 @@ def missing_graph_directives(root, recipes):
         target = recipe['lean_file']
         if target not in sources:
             sources[target] = (root / target).read_text()
-        directive = (r'#lw_dependencies\s+' + re.escape(recipe['root']) +
-                     r'\s+to\s+"' + re.escape(recipe['graph']) + r'"')
-        if not re.search(directive, sources[target], re.MULTILINE):
+        if not dependency_directive_present(
+                sources[target], recipe['root'], recipe['graph']):
             missing.append({'id': recipe['id'], 'lean_file': target,
                             'root': recipe['root'], 'graph': recipe['graph']})
     return missing

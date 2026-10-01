@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint297_water_cost",
+  "title_ja": "1日分の浄水費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03607",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A04P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1人1日1/2ガロン、6人家族、1ガロン1ドル。",
+  "answer_ja": "必要量は6×1/2=3ガロン。1ガロン1ドルなので3ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A04P3.water_cost",
+  "graph": "work/gsm8k-sprint297-water-cost-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "water_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A04P3.water_cost",
+      "title_ja": "必要量は6×1/2=3ガロン。1ガロン1ドルなので3ドル。",
+      "claim_ja": "必要量は6×1/2=3ガロン。1ガロン1ドルなので3ドル。",
+      "method_ja": "必要量は6×1/2=3ガロン。1ガロン1ドルなので3ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件（支出問題のみ金額を有理数で表現）。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "必要量は6×1/2=3ガロン。1ガロン1ドルなので3ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3608,
+    "checked_model_hash": "54074189943ce0f75e9ead3215399580b0c32836f24e6be71ec4ba71b7412581",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

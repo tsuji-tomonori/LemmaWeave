@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint283_comet_percent",
+  "title_ja": "彗星観察時間の割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03520",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A18P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "買物2時間、準備30分、軽食作りは準備の3倍、観察20分の全活動時間に対する観察割合を四捨五入する。",
+  "answer_ja": "8%",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A18P3.comet_watching_nearest_percent",
+  "graph": "work/gsm8k-sprint283-comet-percent-graph.json",
+  "model_notes_ja": [
+    "参照説明は総時間に観察20分を加えず240分としていた。原文の『all those activities』に従い260分とし、20/260=約7.69%を8%へ丸めた。"
+  ],
+  "steps": [
+    {
+      "id": "comet_shopping_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P3.comet_shopping_minutes",
+      "title_ja": "買物は120分。",
+      "claim_ja": "買物は120分。",
+      "method_ja": "2時間を分へ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1時間60分。",
+      "conclusion_ja": "120分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "comet_snack_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P3.comet_snack_minutes",
+      "title_ja": "軽食作りは90分。",
+      "claim_ja": "軽食作りは90分。",
+      "method_ja": "準備30分の3倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "準備時間は30分。",
+      "conclusion_ja": "90分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "comet_total_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P3.comet_total_minutes",
+      "title_ja": "全活動時間は260分。",
+      "claim_ja": "全活動時間は260分。",
+      "method_ja": "120、30、90、20分をすべて加える。",
+      "requires_steps": [
+        "comet_shopping_minutes",
+        "comet_snack_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "観察20分も全活動に含める。",
+      "conclusion_ja": "260分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "comet_watching_nearest_percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P3.comet_watching_nearest_percent",
+      "title_ja": "観察割合は最も近い整数で8%。",
+      "claim_ja": "観察割合は最も近い整数で8%。",
+      "method_ja": "20/260×100が7.5%以上8.5%未満であることを整数不等式で示す。",
+      "requires_steps": [
+        "comet_total_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "通常の0.5以上切上げによる整数%丸め。",
+      "conclusion_ja": "8%。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3521,
+    "checked_model_hash": "edd6347821dbb750083b7ceab1f3175c2fac5156ce0931f607f2003f3db94bf4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint268_adblock",
+  "title_ja": "遮断されず興味深くない広告割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03383",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全広告の20%が遮断されず、そのうち20%が興味深いとき、遮断されず興味深くない広告の全体割合を求める。",
+  "answer_ja": "16%",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.adblock_uninteresting_unblocked",
+  "graph": "work/gsm8k-sprint268-adblock-graph.json",
+  "model_notes_ja": [
+    "原文末尾の 'aren't interested' は文脈上 'aren't interesting' と解釈する。20%という後段割合の母数は遮断されなかった広告。"
+  ],
+  "steps": [
+    {
+      "id": "adblock_interesting_unblocked",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.adblock_interesting_unblocked",
+      "title_ja": "遮断されず興味深い広告は全体の4%。",
+      "claim_ja": "遮断されず興味深い広告は全体の4%。",
+      "method_ja": "20%×20%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "後段20%は遮断されない20%を母数とする。",
+      "conclusion_ja": "4%。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "adblock_uninteresting_unblocked",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.adblock_uninteresting_unblocked",
+      "title_ja": "遮断されず興味深くない広告は16%。",
+      "claim_ja": "遮断されず興味深くない広告は16%。",
+      "method_ja": "20%-4%。",
+      "requires_steps": [
+        "adblock_interesting_unblocked"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "遮断されない広告を興味あり・なしに分割する。",
+      "conclusion_ja": "16%。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3384,
+    "checked_model_hash": "7446a16359f271a43a9e47e331d2ae526037350dd47208da691c0608904dac38",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

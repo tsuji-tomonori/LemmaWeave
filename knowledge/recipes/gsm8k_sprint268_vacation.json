@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint268_vacation",
+  "title_ja": "残りの休暇日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03382",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "10勤務日につき1休暇日、300勤務日で30日を得て、3月5日と9月10日を使った残りを求める。",
+  "answer_ja": "15日",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.vacation_remaining",
+  "graph": "work/gsm8k-sprint268-vacation-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "vacation_earned",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.vacation_earned",
+      "title_ja": "獲得休暇は30日。",
+      "claim_ja": "獲得休暇は30日。",
+      "method_ja": "300÷10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10勤務日につき1日。",
+      "conclusion_ja": "30日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "vacation_september",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.vacation_september",
+      "title_ja": "9月の休暇は10日。",
+      "claim_ja": "9月の休暇は10日。",
+      "method_ja": "5×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3月の2倍。",
+      "conclusion_ja": "10日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "vacation_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.vacation_used",
+      "title_ja": "使用済みは15日。",
+      "claim_ja": "使用済みは15日。",
+      "method_ja": "5+10。",
+      "requires_steps": [
+        "vacation_september"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3月と9月を合計。",
+      "conclusion_ja": "15日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "vacation_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.vacation_remaining",
+      "title_ja": "残りは15日。",
+      "claim_ja": "残りは15日。",
+      "method_ja": "30-15。",
+      "requires_steps": [
+        "vacation_earned",
+        "vacation_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "獲得分から使用分を引く。",
+      "conclusion_ja": "15日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3383,
+    "checked_model_hash": "7446a16359f271a43a9e47e331d2ae526037350dd47208da691c0608904dac38",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

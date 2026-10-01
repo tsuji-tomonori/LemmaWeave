@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint268_vitamin",
+  "title_ja": "必要なビタミン瓶数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03384",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日2カプセル、1瓶60カプセルを180日分用意する瓶数を求める。",
+  "answer_ja": "6瓶",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.vitamin_bottles",
+  "graph": "work/gsm8k-sprint268-vitamin-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "vitamin_servings_per_bottle",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.vitamin_servings_per_bottle",
+      "title_ja": "1瓶は30日分。",
+      "claim_ja": "1瓶は30日分。",
+      "method_ja": "60÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日分は2カプセル。",
+      "conclusion_ja": "30日分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "vitamin_bottles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P3.vitamin_bottles",
+      "title_ja": "180日分には6瓶必要。",
+      "claim_ja": "180日分には6瓶必要。",
+      "method_ja": "180÷30。",
+      "requires_steps": [
+        "vitamin_servings_per_bottle"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "端数なく30日分ずつ。",
+      "conclusion_ja": "6瓶。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3385,
+    "checked_model_hash": "7446a16359f271a43a9e47e331d2ae526037350dd47208da691c0608904dac38",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

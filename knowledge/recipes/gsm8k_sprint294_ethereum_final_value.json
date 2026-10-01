@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint294_ethereum_final_value",
+  "title_ja": "2週間後の投資価値",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03591",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A03P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "400ドルが第1週に25%増え、第2週にはその時点の価値からさらに50%増えた後の価値。",
+  "answer_ja": "750ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A03P3.ethereum_final_value",
+  "graph": "work/gsm8k-sprint294-ethereum-final-value-graph.json",
+  "model_notes_ja": [
+    "第2週の50%は初期額400ドルではなく、第1週後の500ドルを基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "first_week_gain",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P3.first_week_gain",
+      "title_ja": "第1週の増加額は100ドルである。",
+      "claim_ja": "第1週の増加額は100ドルである。",
+      "method_ja": "400ドルの25%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "第1週の増加額は100ドルである。"
+    },
+    {
+      "id": "first_week_value",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P3.first_week_value",
+      "title_ja": "第1週後の価値は500ドルである。",
+      "claim_ja": "第1週後の価値は500ドルである。",
+      "method_ja": "元金400ドルに増加額100ドルを加える。",
+      "requires_steps": [
+        "first_week_gain"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "第1週後の価値は500ドルである。"
+    },
+    {
+      "id": "second_week_gain",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P3.second_week_gain",
+      "title_ja": "第2週の増加額は250ドルである。",
+      "claim_ja": "第2週の増加額は250ドルである。",
+      "method_ja": "第1週後の500ドルの50%を求める。",
+      "requires_steps": [
+        "first_week_value"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "第2週の増加額は250ドルである。"
+    },
+    {
+      "id": "ethereum_final_value",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P3.ethereum_final_value",
+      "title_ja": "現在の価値は750ドルである。",
+      "claim_ja": "現在の価値は750ドルである。",
+      "method_ja": "第1週後の500ドルに第2週の増加額250ドルを加える。",
+      "requires_steps": [
+        "first_week_value",
+        "second_week_gain"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "現在の価値は750ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3592,
+    "checked_model_hash": "0f8d0828fb8a372a71cd4cb0956ce8f25fb442261b1d1e458670187ee4e6cb1b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

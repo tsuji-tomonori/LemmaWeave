@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint282_fuel_cost",
+  "title_ja": "増槽・値上げ後の燃料費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03513",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A18P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "従来1槽200ドル、容量2倍、燃料単価20%上昇後の満タン費用。",
+  "answer_ja": "480ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A18P2.doubled_fuel_cost",
+  "graph": "work/gsm8k-sprint282-fuel-cost-graph.json",
+  "model_notes_ja": [
+    "20%上昇は同量の燃料費が1.2倍になると解釈した。"
+  ],
+  "steps": [
+    {
+      "id": "increased_tank_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P2.increased_tank_cost",
+      "title_ja": "旧1槽分の現在価格は240ドル。",
+      "claim_ja": "旧1槽分の現在価格は240ドル。",
+      "method_ja": "200ドルを20%増やす。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "燃料単価が20%上昇。",
+      "conclusion_ja": "240ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "doubled_fuel_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P2.doubled_fuel_cost",
+      "title_ja": "容量2倍の満タン費用は480ドル。",
+      "claim_ja": "容量2倍の満タン費用は480ドル。",
+      "method_ja": "240ドル×2。",
+      "requires_steps": [
+        "increased_tank_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加槽で総容量が従来の2倍。",
+      "conclusion_ja": "480ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3514,
+    "checked_model_hash": "308dda070c25b249f0df0b538320b28e868c1a3cb1c629019125762c4b1c4b8d",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

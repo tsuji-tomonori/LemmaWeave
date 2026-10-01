@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint282_grocery_balance",
+  "title_ja": "買物後の残高",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03511",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A18P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "500ドルから米2袋各20ドル、小麦粉3袋各25ドル、ソーダ150ドルを買った残高。",
+  "answer_ja": "235ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A18P2.grocery_balance",
+  "graph": "work/gsm8k-sprint282-grocery-balance-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rice_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P2.rice_cost",
+      "title_ja": "米代は40ドル。",
+      "claim_ja": "米代は40ドル。",
+      "method_ja": "2袋×20ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "米2袋、各20ドル。",
+      "conclusion_ja": "40ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "flour_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P2.flour_cost",
+      "title_ja": "小麦粉代は75ドル。",
+      "claim_ja": "小麦粉代は75ドル。",
+      "method_ja": "3袋×25ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "小麦粉3袋、各25ドル。",
+      "conclusion_ja": "75ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "grocery_total_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P2.grocery_total_spent",
+      "title_ja": "支出合計は265ドル。",
+      "claim_ja": "支出合計は265ドル。",
+      "method_ja": "40ドル、75ドル、150ドルを加える。",
+      "requires_steps": [
+        "rice_cost",
+        "flour_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ソーダは150ドル。",
+      "conclusion_ja": "265ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "grocery_balance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P2.grocery_balance",
+      "title_ja": "残高は235ドル。",
+      "claim_ja": "残高は235ドル。",
+      "method_ja": "500ドルから265ドルを引く。",
+      "requires_steps": [
+        "grocery_total_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "初期所持金500ドル。",
+      "conclusion_ja": "235ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3512,
+    "checked_model_hash": "308dda070c25b249f0df0b538320b28e868c1a3cb1c629019125762c4b1c4b8d",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

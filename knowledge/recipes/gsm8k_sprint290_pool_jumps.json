@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint290_pool_jumps",
+  "title_ja": "清掃前に可能なジャンプ回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03557",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2000Lのプールが80%未満になる前、1回400mLずつ失う場合のジャンプ回数。",
+  "answer_ja": "1000回",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.pool_safe_jump_count",
+  "graph": "work/gsm8k-sprint290-pool-jumps-graph.json",
+  "model_notes_ja": [
+    "清掃条件は80%未満。1000回後はちょうど80%であり、その時点までは条件を発動しない。"
+  ],
+  "steps": [
+    {
+      "id": "pool_capacity_ml",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.pool_capacity_ml",
+      "title_ja": "満水量は2,000,000mL。",
+      "claim_ja": "満水量は2,000,000mL。",
+      "method_ja": "2000Lを1000倍してmLへ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "満水量は2,000,000mL。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pool_threshold_ml",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.pool_threshold_ml",
+      "title_ja": "80%の水量は1,600,000mL。",
+      "claim_ja": "80%の水量は1,600,000mL。",
+      "method_ja": "満水量の5分の4を求める。",
+      "requires_steps": [
+        "pool_capacity_ml"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "80%の水量は1,600,000mL。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pool_allowed_loss_ml",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.pool_allowed_loss_ml",
+      "title_ja": "80%までに失える量は400,000mL。",
+      "claim_ja": "80%までに失える量は400,000mL。",
+      "method_ja": "満水量から閾値を引く。",
+      "requires_steps": [
+        "pool_capacity_ml",
+        "pool_threshold_ml"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "80%までに失える量は400,000mL。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pool_safe_jump_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.pool_safe_jump_count",
+      "title_ja": "清掃条件に入る前に1000回ジャンプできる。",
+      "claim_ja": "清掃条件に入る前に1000回ジャンプできる。",
+      "method_ja": "400,000mLを1回400mLで割る。",
+      "requires_steps": [
+        "pool_allowed_loss_ml"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "清掃条件に入る前に1000回ジャンプできる。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3558,
+    "checked_model_hash": "020cdee1ea13411c1334c93df472b3456875a0c40bed236bd20f22fa8aa70863",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -3,6 +3,7 @@
   "run_id": "20261002T070000+0900-solve-07",
   "scheduled_slot": "2026-10-02T07:00:00+09:00",
   "started_at": "2026-10-02T07:04:45+09:00",
+  "finished_at": "2026-10-02T07:16:00+09:00",
   "started_late_by_seconds": 285,
   "base_sha": "8ddc9aa0f95c4089898e08ca9fbf8f6e00be74c8",
   "branch": "codex/sprint-20260919-0000",
@@ -25,12 +26,442 @@
     "train:03640"
   ],
   "completed_problem_ids": [],
-  "authored_problem_ids": [],
-  "verification_pending": [],
-  "deferred": [],
+  "authored_problem_ids": [
+    "train:03626",
+    "train:03627",
+    "train:03628",
+    "train:03629",
+    "train:03630",
+    "train:03631",
+    "train:03632",
+    "train:03633",
+    "train:03634",
+    "train:03635",
+    "train:03636",
+    "train:03637",
+    "train:03638",
+    "train:03639",
+    "train:03640"
+  ],
+  "verification_pending": [
+    "train:03626",
+    "train:03627",
+    "train:03628",
+    "train:03629",
+    "train:03630",
+    "train:03631",
+    "train:03632",
+    "train:03633",
+    "train:03634",
+    "train:03635",
+    "train:03636",
+    "train:03637",
+    "train:03638",
+    "train:03639",
+    "train:03640"
+  ],
+  "answers": [
+    {
+      "problem_id": "train:03626",
+      "answer": "3台",
+      "reasoning_ja": "25セント硬貨80枚は20ドル、10セント硬貨100枚は10ドルなので1台30ドル。90÷30=3台。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P1.launderette_machine_count"
+    },
+    {
+      "problem_id": "train:03627",
+      "answer": "326歩（到着時に停止）",
+      "reasoning_ja": "5歩の動作で正味1歩進む。65周期で325歩動いて地点65に達し、次の前進1歩で地点66に到着するため326歩。",
+      "modeling_notes_ja": [
+        "参考解答330歩は到着後の4歩まで数える。"
+      ],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P1.mailbox_actual_steps"
+    },
+    {
+      "problem_id": "train:03628",
+      "answer": "64ドル",
+      "reasoning_ja": "通常分は2×12=24件、実施分は4×7×2=56件。追加32件を1件2ドルで64ドル。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P1.extra_chore_earnings"
+    },
+    {
+      "problem_id": "train:03629",
+      "answer": "75本",
+      "reasoning_ja": "赤60本、非赤20本のうち黄5本、白15本。赤または白は60+15=75本。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P1.red_or_white_roses"
+    },
+    {
+      "problem_id": "train:03630",
+      "answer": "1008枚",
+      "reasoning_ja": "2×12=24階、24×6=144戸、144×7=1008枚。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P1.apartment_doors"
+    },
+    {
+      "problem_id": "train:03631",
+      "answer": "6組",
+      "reasoning_ja": "5セットは15足。既存3足を引くと12足不足し、2足1組なので6組。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P2.sloth_shoe_pairs"
+    },
+    {
+      "problem_id": "train:03632",
+      "answer": "5セント",
+      "reasoning_ja": "総ページ100、5ドル=500セントなので500÷100=5セント。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P2.notebook_page_cents"
+    },
+    {
+      "problem_id": "train:03633",
+      "answer": "250分（初回が5分後なら）",
+      "reasoning_ja": "2000mlを40mlずつで50口。初回が5分後なら250分、時刻0なら49間隔で245分。",
+      "modeling_notes_ja": [
+        "初回時刻が未指定のため250分と245分の二解釈を保存。"
+      ],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P2.water_bottle_minutes"
+    },
+    {
+      "problem_id": "train:03634",
+      "answer": "84ドル",
+      "reasoning_ja": "3店の総額は97、98、84ドル。84が最小。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P2.cheapest_salon_cost"
+    },
+    {
+      "problem_id": "train:03635",
+      "answer": "3ドル",
+      "reasoning_ja": "青は7冊、青への支出は37-12-4=21ドル。21÷7=3ドル。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P2.blue_notebook_price"
+    },
+    {
+      "problem_id": "train:03636",
+      "answer": "775ドル",
+      "reasoning_ja": "2か月家賃2500ドルと敷金500ドルで3000ドル。3000-2225=775ドル。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.apartment_money_shortfall"
+    },
+    {
+      "problem_id": "train:03637",
+      "answer": "6回",
+      "reasoning_ja": "5回では最大15個で不足、6回なら最大18個なので最少6回。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.minimum_surface_trips"
+    },
+    {
+      "problem_id": "train:03638",
+      "answer": "258ドル",
+      "reasoning_ja": "売上は180+12+50=242ドル。500-242=258ドル。",
+      "modeling_notes_ja": [
+        "Leanでは金額をセントで表現。"
+      ],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.snack_fundraising_shortfall_cents"
+    },
+    {
+      "problem_id": "train:03639",
+      "answer": "10切れ",
+      "reasoning_ja": "総数28切れ、消費はGeorge 3、Bob 4、Susie 2、Bill・Fred・Mark各3で18切れ。残り10切れ。",
+      "modeling_notes_ja": [
+        "参考解答途中の人名誤記を原文に合わせて修正。"
+      ],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.pizza_slices_left"
+    },
+    {
+      "problem_id": "train:03640",
+      "answer": "4ドル",
+      "reasoning_ja": "売上100ドル。16冊は96ドルで買え、17冊は102ドルで買えない。残金4ドル。",
+      "modeling_notes_ja": [],
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.comic_book_remainder_cents"
+    }
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:03626",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03627",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03628",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03629",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03630",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03631",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03632",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03633",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03634",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03635",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03636",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03637",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03638",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03639",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    },
+    {
+      "problem_id": "train:03640",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head成功証拠が未取得のためsolution_readyへ昇格しない。",
+      "next_action_ja": "exact-head CI成功後に依存グラフ・公理出力・入力ハッシュを取り込み、現行レシピと照合する。"
+    }
+  ],
+  "source": {
+    "collection_id": "external-gsm8k-main-3101c7d50724",
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "records": [
+      {
+        "problem_id": "train:03626",
+        "source_line_1based": 3627,
+        "source_record_sha256": "d5e7c35f8e2c3848570ceb9faf55785d00fdea56eda1eb491ff27d3c3b190d7c",
+        "raw_question_sha256": "823f13f6f7b2b5af32082c68c9a615bde3b6001b7817d984ca678c4fd41ee073",
+        "normalized_question_sha256": "823f13f6f7b2b5af32082c68c9a615bde3b6001b7817d984ca678c4fd41ee073"
+      },
+      {
+        "problem_id": "train:03627",
+        "source_line_1based": 3628,
+        "source_record_sha256": "bc96940a7f1e39aea87ea144b4fb142cde8482151b9ae95a1606ea08370fbaff",
+        "raw_question_sha256": "0933d1f25d0c0e9be863c5dbff7121d3403d71cc8639399c32b127e1a152cc53",
+        "normalized_question_sha256": "0933d1f25d0c0e9be863c5dbff7121d3403d71cc8639399c32b127e1a152cc53"
+      },
+      {
+        "problem_id": "train:03628",
+        "source_line_1based": 3629,
+        "source_record_sha256": "cc86eca42d9a023f10b23f9b7099e61dfae4632f33ea937d92c19fb79229f05f",
+        "raw_question_sha256": "fa37c271cc67eecebe3cb1850aaafe6cc8f36e11ac068c14e350468973ca69a8",
+        "normalized_question_sha256": "fa37c271cc67eecebe3cb1850aaafe6cc8f36e11ac068c14e350468973ca69a8"
+      },
+      {
+        "problem_id": "train:03629",
+        "source_line_1based": 3630,
+        "source_record_sha256": "b4c0f71f473450a59f75ed26ab84877d3e23d0ba6ed32323d2ebb7e671191f00",
+        "raw_question_sha256": "cb84be201042f5a33e322e588c24ff1642336a0fd20f5e340074e5a5414263a6",
+        "normalized_question_sha256": "cb84be201042f5a33e322e588c24ff1642336a0fd20f5e340074e5a5414263a6"
+      },
+      {
+        "problem_id": "train:03630",
+        "source_line_1based": 3631,
+        "source_record_sha256": "ed711918388561671ddc6c688bca94bfea55a7533c73bb5ce992bf3b2193190d",
+        "raw_question_sha256": "666bddae9daeb53aa1f3de7162c2ef661db1bd325173ab20c202961b07ef9003",
+        "normalized_question_sha256": "666bddae9daeb53aa1f3de7162c2ef661db1bd325173ab20c202961b07ef9003"
+      },
+      {
+        "problem_id": "train:03631",
+        "source_line_1based": 3632,
+        "source_record_sha256": "99815d4ef6a911bffec731137ef34a9344c2ef58bb34ba64c180305db994d621",
+        "raw_question_sha256": "d200d0f8ccc03b8d79664432f4eaf684cd183d4f0c0a74c06e535140386dcb4b",
+        "normalized_question_sha256": "d200d0f8ccc03b8d79664432f4eaf684cd183d4f0c0a74c06e535140386dcb4b"
+      },
+      {
+        "problem_id": "train:03632",
+        "source_line_1based": 3633,
+        "source_record_sha256": "60d3835f326fcceb536b4ede0c6f0ed026ffadf0200e02c97f87b4f44ea188e3",
+        "raw_question_sha256": "a655d4f28c193e115b7236fc3f60c72c868a70d63e2e54c47538d53ab0779a42",
+        "normalized_question_sha256": "a655d4f28c193e115b7236fc3f60c72c868a70d63e2e54c47538d53ab0779a42"
+      },
+      {
+        "problem_id": "train:03633",
+        "source_line_1based": 3634,
+        "source_record_sha256": "3756b93d1f256ab39bc00ed55c04038e3e20ea187b3ee88cfa578fb5e3f574a8",
+        "raw_question_sha256": "d18216129d7dbcd4965a0d848b3e15a174500800da48f28fbdc9e5d2b34d709d",
+        "normalized_question_sha256": "d18216129d7dbcd4965a0d848b3e15a174500800da48f28fbdc9e5d2b34d709d"
+      },
+      {
+        "problem_id": "train:03634",
+        "source_line_1based": 3635,
+        "source_record_sha256": "04d615e19418e46ea8ae3e79846fb901b3b643d5b3dcfe97d4f305b84713e766",
+        "raw_question_sha256": "360e65180a863862ab6e6c3cf06bd4f9597fcd4c0324e7dd9207bd4815d5d208",
+        "normalized_question_sha256": "360e65180a863862ab6e6c3cf06bd4f9597fcd4c0324e7dd9207bd4815d5d208"
+      },
+      {
+        "problem_id": "train:03635",
+        "source_line_1based": 3636,
+        "source_record_sha256": "deb79f9b29516cce71a4f1d8c7bb2f0ab2d230f7468c10a9e0b123ae347d9fa3",
+        "raw_question_sha256": "f4f7720c3ff7605e835ffc26807c5a52f339a04c6688f641d677391fef56c37c",
+        "normalized_question_sha256": "f4f7720c3ff7605e835ffc26807c5a52f339a04c6688f641d677391fef56c37c"
+      },
+      {
+        "problem_id": "train:03636",
+        "source_line_1based": 3637,
+        "source_record_sha256": "aed7397159f3ce2f0f64f8e4d7f864d8e9a9aa0e5b741629e95f4afbb539c727",
+        "raw_question_sha256": "b4cad955baceb028e6a486aa656e60854632729b0029fc395b432924892bf813",
+        "normalized_question_sha256": "b4cad955baceb028e6a486aa656e60854632729b0029fc395b432924892bf813"
+      },
+      {
+        "problem_id": "train:03637",
+        "source_line_1based": 3638,
+        "source_record_sha256": "761739ba265d9fe6c94e4c5ce498adc9e4eb867f760bc261950364f5972a9fe6",
+        "raw_question_sha256": "1b4031ae588620483cfc5ff7eb10848f8dbdc7f3192c1f98491cc5f9db065541",
+        "normalized_question_sha256": "1b4031ae588620483cfc5ff7eb10848f8dbdc7f3192c1f98491cc5f9db065541"
+      },
+      {
+        "problem_id": "train:03638",
+        "source_line_1based": 3639,
+        "source_record_sha256": "7c48f05e03055b8f7545d0481a880fb8634a3ef499c8de525901d0c89cc3f7cc",
+        "raw_question_sha256": "a11217f49242dca4ef06a5afd47ac47598e5f135af88221e05b6f9bb3bd3d9dd",
+        "normalized_question_sha256": "a11217f49242dca4ef06a5afd47ac47598e5f135af88221e05b6f9bb3bd3d9dd"
+      },
+      {
+        "problem_id": "train:03639",
+        "source_line_1based": 3640,
+        "source_record_sha256": "fbfe527a64df5e1036840eb8689876fe43475c9b765dbe12a468f3e811f4053c",
+        "raw_question_sha256": "dc240e9725862e0c92237033168e44091f52fef7d3d87c75db8fcd270e7f4ae6",
+        "normalized_question_sha256": "dc240e9725862e0c92237033168e44091f52fef7d3d87c75db8fcd270e7f4ae6"
+      },
+      {
+        "problem_id": "train:03640",
+        "source_line_1based": 3641,
+        "source_record_sha256": "94db1e6debe91345342c4c6d19b8a3671545f0aa717aeb075f01e2c35b6073a7",
+        "raw_question_sha256": "5ecfe183f6e584b0a95ca0a4b69ce86e3b5344c843c3b9499aa8895f3b643d1d",
+        "normalized_question_sha256": "5ecfe183f6e584b0a95ca0a4b69ce86e3b5344c843c3b9499aa8895f3b643d1d"
+      }
+    ],
+    "hash_match_count": 15
+  },
+  "semantic_review": {
+    "status": "self_review_only",
+    "reviewer": "author",
+    "problem_count": 15,
+    "independent_review_claimed": false
+  },
+  "model_hashes": {
+    "P1": "b222df31706573925c066faab9e4b4fa11c58b50c2ac86e85095e5c37a440b55",
+    "P2": "f430addb9f4cd768f6a385bdeee2840597030bc79567b18c1b5c94112ba51e87",
+    "P3": "949c7a9ebe4c696a7f82456d9aa6f917dae0b1344ae5d14b4001f4725a799c1c"
+  },
+  "artifacts": {
+    "models": [
+      "LemmaWeave/Problems/GSM8K/Sprint1002A07P1Models.lean",
+      "LemmaWeave/Problems/GSM8K/Sprint1002A07P2Models.lean",
+      "LemmaWeave/Problems/GSM8K/Sprint1002A07P3Models.lean"
+    ],
+    "tests": [
+      "tests/lean/GSM8KSprint1002A07P1.lean",
+      "tests/lean/GSM8KSprint1002A07P2.lean",
+      "tests/lean/GSM8KSprint1002A07P3.lean"
+    ],
+    "method_batches": [
+      "corpus/method_batches/GSM8K-INDIVIDUAL-0359.json",
+      "corpus/method_batches/GSM8K-INDIVIDUAL-0360.json",
+      "corpus/method_batches/GSM8K-INDIVIDUAL-0361.json"
+    ],
+    "recipe_prefixes": [
+      "gsm8k_sprint301",
+      "gsm8k_sprint302",
+      "gsm8k_sprint303"
+    ],
+    "queue": "corpus/work_queue/gsm8k.jsonl.gz"
+  },
+  "static_verification": {
+    "fetched_files": 24,
+    "model_hash_match": true,
+    "recipe_model_hash_match": true,
+    "recipe_root_match": true,
+    "batch_model_hash_match": true,
+    "theorem_count": 15,
+    "dependency_commands": 15,
+    "axiom_prints": 15,
+    "forbidden_tokens": [],
+    "local_lake": "not_available",
+    "local_lean": "not_available",
+    "fixed_environment_executed": false
+  },
+  "assurance": {
+    "level": "INCONCLUSIVE",
+    "reason": "固定Lean 4.33.1/mathlibのexact-head kernel成功証拠がない。静的照合をカーネル検証と数えない。"
+  },
+  "queue": {
+    "before": {
+      "solution_ready": 518,
+      "awaiting_verification": 3109,
+      "pending": 5165
+    },
+    "after": {
+      "solution_ready": 518,
+      "awaiting_verification": 3124,
+      "pending": 5150
+    },
+    "main_reflected_solution_ready": 518,
+    "next_pending_problem_id": "train:03641",
+    "id_audit": {
+      "total": 8792,
+      "unique": 8792,
+      "exact_order": true,
+      "missing": 0,
+      "unexpected": 0,
+      "duplicates": 0,
+      "state_overlap": 0
+    }
+  },
   "claim": {
-    "status": "active",
+    "status": "released",
     "claimed_at": "2026-10-02T07:05:00+09:00",
+    "released_at": "2026-10-02T07:16:00+09:00",
     "expires_at": "2026-10-02T08:30:00+09:00",
     "problem_ids": [
       "train:03626",
@@ -50,8 +481,35 @@
       "train:03640"
     ]
   },
-  "assurance": "INCONCLUSIVE",
-  "notes": [
-    "07時枠の15問を直列処理でclaim。"
-  ]
+  "ci": {
+    "checked_head": "1bdcdc02e61ecc4ce7080ac116b0b22e70209ef5",
+    "workflow_runs": 0,
+    "commit_statuses": 0,
+    "state": "not_available",
+    "exact_head_success": false
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "head_before_record": "1bdcdc02e61ecc4ce7080ac116b0b22e70209ef5",
+    "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "mergeable": true,
+    "latest_review": "APPROVED",
+    "unresolved_review_threads": 0,
+    "merged": false,
+    "reason": "exact-head CI成功証拠なし"
+  },
+  "commits": {
+    "claim": "e6d7321872d83a87677dcf6d2f819f102333b0a1",
+    "checkpoint_1": "68731d37eae56c22179e573466384d33082c4e68",
+    "checkpoint_2": "007ee3c0c4d6e0fd4e25cbcd5f6b2e61256bdf37",
+    "checkpoint_3": "7fe03e47caba8f88c8380f5f0557d636ac69a943",
+    "queue": "1bdcdc02e61ecc4ce7080ac116b0b22e70209ef5",
+    "record": "this_commit"
+  },
+  "merge": {
+    "performed": false,
+    "reason": "exact-head CI成功証拠がないため保留"
+  }
 }

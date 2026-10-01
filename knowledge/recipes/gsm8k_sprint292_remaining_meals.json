@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint292_remaining_meals",
+  "title_ja": "残りの配布食数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03585",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A03P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "用意した113食に50食が追加され、85食を配った後の残数。",
+  "answer_ja": "78食",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.remaining_meals",
+  "graph": "work/gsm8k-sprint292-remaining-meals-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "total_meals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.total_meals",
+      "title_ja": "食事は合計163食である。",
+      "claim_ja": "食事は合計163食である。",
+      "method_ja": "113食と追加50食を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "食事は合計163食である。"
+    },
+    {
+      "id": "remaining_meals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.remaining_meals",
+      "title_ja": "残りは78食である。",
+      "claim_ja": "残りは78食である。",
+      "method_ja": "合計163食から配布済み85食を引く。",
+      "requires_steps": [
+        "total_meals"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "残りは78食である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3586,
+    "checked_model_hash": "ffcea47452472fe09efc4439752370c3857948ce49cec29b312b25c0ca006efc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

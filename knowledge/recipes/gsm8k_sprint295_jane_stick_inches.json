@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint295_jane_stick_inches",
+  "title_ja": "Janeの棒の長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03600",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A04P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Patの30インチの棒のうち7インチが土中。地上部分はSarahの半分で、JaneはSarahより2フィート短い。",
+  "answer_ja": "地上部分は23インチ、Sarahは46インチ。2フィート=24インチなのでJaneは46-24=22インチ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A04P1.jane_stick_inches",
+  "graph": "work/gsm8k-sprint295-jane-stick-inches-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jane_stick_inches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A04P1.jane_stick_inches",
+      "title_ja": "地上部分は23インチ、Sarahは46インチ。2フィート=24インチなのでJaneは46-24=22インチ。",
+      "claim_ja": "地上部分は23インチ、Sarahは46インチ。2フィート=24インチなのでJaneは46-24=22インチ。",
+      "method_ja": "地上部分は23インチ、Sarahは46インチ。2フィート=24インチなのでJaneは46-24=22インチ。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件（支出問題のみ金額を有理数で表現）。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "地上部分は23インチ、Sarahは46インチ。2フィート=24インチなのでJaneは46-24=22インチ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3601,
+    "checked_model_hash": "951094ef075a435fe713a884e1b4683b1a14a5a9e4f89d08175df0da266dffe2",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

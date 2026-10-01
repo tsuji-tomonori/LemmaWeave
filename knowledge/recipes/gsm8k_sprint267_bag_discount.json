@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint267_bag_discount",
+  "title_ja": "バッグの総値下げ額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03380",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "500ドルを5%引きにし、その475ドルをさらに4%引きした総値下げ額を求める。",
+  "answer_ja": "44ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.bag_total_reduction",
+  "graph": "work/gsm8k-sprint267-bag-discount-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bag_first_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.bag_first_discount",
+      "title_ja": "最初の値下げは25ドル、価格は475ドル。",
+      "claim_ja": "最初の値下げは25ドル、価格は475ドル。",
+      "method_ja": "500の5%を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5%の基準は元値500。",
+      "conclusion_ja": "475ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "bag_second_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.bag_second_discount",
+      "title_ja": "次の値下げは19ドル、価格は456ドル。",
+      "claim_ja": "次の値下げは19ドル、価格は456ドル。",
+      "method_ja": "475の4%を引く。",
+      "requires_steps": [
+        "bag_first_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4%の基準は値下げ後475。",
+      "conclusion_ja": "456ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "bag_total_reduction",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.bag_total_reduction",
+      "title_ja": "総値下げは44ドル。",
+      "claim_ja": "総値下げは44ドル。",
+      "method_ja": "25+19。",
+      "requires_steps": [
+        "bag_first_discount",
+        "bag_second_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二段階の値下げ額を合計する。",
+      "conclusion_ja": "44ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3381,
+    "checked_model_hash": "cb6fc3cb494f4f845b34dfc5074b456e88f05d00531bd8bc70fd0d807e0838d3",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

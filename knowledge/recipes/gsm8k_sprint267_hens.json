@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint267_hens",
+  "title_ja": "1羽あたり週の産卵数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03378",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3ドル/ダースで120ドル分を10羽が4週間に産み、全量販売した条件から1羽1週間の個数を求める。",
+  "answer_ja": "12個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.hen_eggs_per_week",
+  "graph": "work/gsm8k-sprint267-hens-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hen_total_dozen",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.hen_total_dozen",
+      "title_ja": "販売した卵は40ダース。",
+      "claim_ja": "販売した卵は40ダース。",
+      "method_ja": "120÷3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ダース3ドル。",
+      "conclusion_ja": "40ダース。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "hen_per_four_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.hen_per_four_weeks",
+      "title_ja": "1羽の4週間分は4ダース。",
+      "claim_ja": "1羽の4週間分は4ダース。",
+      "method_ja": "40÷10。",
+      "requires_steps": [
+        "hen_total_dozen"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10羽が同じ産卵数とする。",
+      "conclusion_ja": "4ダース。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "hen_per_week_dozen",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.hen_per_week_dozen",
+      "title_ja": "1羽1週間は1ダース。",
+      "claim_ja": "1羽1週間は1ダース。",
+      "method_ja": "4÷4。",
+      "requires_steps": [
+        "hen_per_four_weeks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4週間で等しい週産卵数。",
+      "conclusion_ja": "1ダース。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "hen_eggs_per_week",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13P2.hen_eggs_per_week",
+      "title_ja": "1羽1週間は12個。",
+      "claim_ja": "1羽1週間は12個。",
+      "method_ja": "1ダース=12個。",
+      "requires_steps": [
+        "hen_per_week_dozen"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ダースを個数へ換算する。",
+      "conclusion_ja": "12個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3379,
+    "checked_model_hash": "cb6fc3cb494f4f845b34dfc5074b456e88f05d00531bd8bc70fd0d807e0838d3",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

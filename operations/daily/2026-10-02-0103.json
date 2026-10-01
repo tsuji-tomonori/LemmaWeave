@@ -4,6 +4,7 @@
   "scheduled_slot": "2026-10-02T01:00:00+09:00",
   "started_at": "2026-10-01T16:03:07Z",
   "started_late_by_seconds": 187,
+  "finished_at": "2026-10-01T16:17:44Z",
   "base_sha": "a9f8eb23fb55181f90e3ec547025ac02ea2145f0",
   "branch": "codex/sprint-20260919-0000",
   "role": "individual_gsm8k_solve",
@@ -24,13 +25,147 @@
     "external-gsm8k-main-3101c7d50724:train:03564",
     "external-gsm8k-main-3101c7d50724:train:03565"
   ],
-  "authored_problem_ids": [],
+  "authored_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03551",
+    "external-gsm8k-main-3101c7d50724:train:03552",
+    "external-gsm8k-main-3101c7d50724:train:03553",
+    "external-gsm8k-main-3101c7d50724:train:03554",
+    "external-gsm8k-main-3101c7d50724:train:03555",
+    "external-gsm8k-main-3101c7d50724:train:03556",
+    "external-gsm8k-main-3101c7d50724:train:03557",
+    "external-gsm8k-main-3101c7d50724:train:03558",
+    "external-gsm8k-main-3101c7d50724:train:03559",
+    "external-gsm8k-main-3101c7d50724:train:03560",
+    "external-gsm8k-main-3101c7d50724:train:03561",
+    "external-gsm8k-main-3101c7d50724:train:03562",
+    "external-gsm8k-main-3101c7d50724:train:03563",
+    "external-gsm8k-main-3101c7d50724:train:03564",
+    "external-gsm8k-main-3101c7d50724:train:03565"
+  ],
   "completed_problem_ids": [],
-  "verification_pending_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03551",
+    "external-gsm8k-main-3101c7d50724:train:03552",
+    "external-gsm8k-main-3101c7d50724:train:03553",
+    "external-gsm8k-main-3101c7d50724:train:03554",
+    "external-gsm8k-main-3101c7d50724:train:03555",
+    "external-gsm8k-main-3101c7d50724:train:03556",
+    "external-gsm8k-main-3101c7d50724:train:03557",
+    "external-gsm8k-main-3101c7d50724:train:03558",
+    "external-gsm8k-main-3101c7d50724:train:03559",
+    "external-gsm8k-main-3101c7d50724:train:03560",
+    "external-gsm8k-main-3101c7d50724:train:03561",
+    "external-gsm8k-main-3101c7d50724:train:03562",
+    "external-gsm8k-main-3101c7d50724:train:03563",
+    "external-gsm8k-main-3101c7d50724:train:03564",
+    "external-gsm8k-main-3101c7d50724:train:03565"
+  ],
+  "answers": {
+    "train:03551": "24分",
+    "train:03552": "8,640本",
+    "train:03553": "90リットル",
+    "train:03554": "15匹",
+    "train:03555": "16本（原文解答どおり1か月を4週間として）",
+    "train:03556": "46ドル",
+    "train:03557": "1000回（1000回後はちょうど80%）",
+    "train:03558": "19試合",
+    "train:03559": "40セント",
+    "train:03560": "8株",
+    "train:03561": "600ページ",
+    "train:03562": "370枚",
+    "train:03563": "8個",
+    "train:03564": "50%",
+    "train:03565": "40フィート"
+  },
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "positions_and_hashes_verified": "15/15"
+  },
+  "semantic_notes": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03555",
+      "note_ja": "原文解答に合わせ、monthを4週間として第1週4本から第4週32本まで3回倍増するモデルを明示した。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03556",
+      "note_ja": "叔母の25ドルは貯金が125ドルを厳密に超える場合だけ支給される。112ドルなので不支給を条件付き定理として表した。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03557",
+      "note_ja": "清掃条件は80%未満。1000回後はちょうど80%なので、清掃条件に入る前に完了できる回数を1000回とした。"
+    }
+  ],
+  "artifacts": {
+    "model_files": 3,
+    "audit_files": 3,
+    "method_batches": 3,
+    "recipes": 15,
+    "explanation_lines": 45,
+    "named_lean_theorems": 45,
+    "dependency_audit_commands": 45,
+    "axiom_audit_commands": 15,
+    "forbidden_tokens": 0,
+    "model_sha256": {
+      "LemmaWeave/Problems/GSM8K/Sprint1002A01P1Models.lean": "294e5a62736ad99074285666a240aaf7b5f4e0eedfab1e325cc5fb9a8dd524ab",
+      "LemmaWeave/Problems/GSM8K/Sprint1002A01P2Models.lean": "020cdee1ea13411c1334c93df472b3456875a0c40bed236bd20f22fa8aa70863",
+      "LemmaWeave/Problems/GSM8K/Sprint1002A01P3Models.lean": "96208895e84989ac2a7ddacbc3dfcda6fce647073b053318ec5331157d17c18c"
+    },
+    "checkpoints": [
+      "f8ec89190653164fb60fa960fdb0c6b4b69b73ee",
+      "0cc83a73cd181afc62ae689a86e565d1a4de2038",
+      "2acfb1e1d338bd10d0ebad57bc1f82fdfaccf084"
+    ]
+  },
+  "verification": {
+    "semantic_self_review": "15/15",
+    "current_content_ref": "3d8cd2ff4c9e9505d518b6bb2c7a5198f36eb50b",
+    "input_hashes_current": true,
+    "recipe_model_hashes_current": true,
+    "declarations_present": true,
+    "explanation_dependency_edges_present": true,
+    "static_audit": {
+      "files_checked": 24,
+      "missing_declarations": 0,
+      "missing_dependency_commands": 0,
+      "forbidden_tokens": 0
+    },
+    "local_lean_4_33_1_available": false,
+    "lean_build": "not_run",
+    "axiom_output": "not_run",
+    "assurance": "INCONCLUSIVE",
+    "reason_ja": "固定Lean 4.33.1と固定mathlibの実行環境がなく、exact-head CIも未生成のためsolution_readyへ昇格しない。"
+  },
+  "queue": {
+    "total": 8792,
+    "unique_ids": 8792,
+    "sequence_exact": true,
+    "missing": 0,
+    "unexpected": 0,
+    "state_overlap": 0,
+    "before": {
+      "solution_ready": 518,
+      "awaiting_verification": 3034,
+      "pending": 5240
+    },
+    "after": {
+      "solution_ready": 518,
+      "awaiting_verification": 3049,
+      "pending": 5225
+    },
+    "main_reflected_solution_ready": 518,
+    "next_pending": "external-gsm8k-main-3101c7d50724:train:03566",
+    "update_commit": "3d8cd2ff4c9e9505d518b6bb2c7a5198f36eb50b",
+    "queue_blob_sha": "fcf427c148269dc070b7ca710612ba14570cd76a"
+  },
   "claim": {
-    "status": "active",
+    "status": "released",
     "claimed_at": "2026-10-02T01:03:07+09:00",
     "expires_at": "2026-10-02T02:30:00+09:00",
+    "released_at": "2026-10-02T01:17:44+09:00",
     "scope": "serial_single_writer",
     "problem_ids": [
       "external-gsm8k-main-3101c7d50724:train:03551",
@@ -50,10 +185,102 @@
       "external-gsm8k-main-3101c7d50724:train:03565"
     ]
   },
-  "deferred": [],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03551",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03552",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03553",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03554",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03555",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03556",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03557",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03558",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03559",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03560",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03561",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03562",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03563",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03564",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03565",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    }
+  ],
   "ci": {
-    "checked_head": "a9f8eb23fb55181f90e3ec547025ac02ea2145f0",
+    "checked_head": "3d8cd2ff4c9e9505d518b6bb2c7a5198f36eb50b",
     "workflow_runs": 0,
+    "commit_statuses": 0,
     "required_success": false
   },
   "pr": {
@@ -61,7 +288,21 @@
     "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
     "state": "open",
     "mergeable": true,
-    "latest_review": "APPROVED",
-    "unresolved_review_threads": 0
+    "merged": false,
+    "head_sha": "3d8cd2ff4c9e9505d518b6bb2c7a5198f36eb50b",
+    "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "latest_effective_review": "APPROVED",
+    "unresolved_review_threads": 0,
+    "merge_action": "not_merged",
+    "merge_blocker_ja": "正確なHEADの必須CI成功証拠がない。"
+  },
+  "commits": {
+    "claim": "c42cfb82822e3c3ebd461894ffef5f27dae149f0",
+    "problem_checkpoints": [
+      "f8ec89190653164fb60fa960fdb0c6b4b69b73ee",
+      "0cc83a73cd181afc62ae689a86e565d1a4de2038",
+      "2acfb1e1d338bd10d0ebad57bc1f82fdfaccf084"
+    ],
+    "queue": "3d8cd2ff4c9e9505d518b6bb2c7a5198f36eb50b"
   }
 }

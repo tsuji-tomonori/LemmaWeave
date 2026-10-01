@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint305_coupon_then_senior_discount_cents",
+  "title_ja": "クーポンと高齢者割引後の支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03647",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "7.50ドルから2.50ドルのクーポンを引き、さらに20%割引。",
+  "answer_ja": "クーポン後は5.00ドル。その80%を払うので4.00ドル。20%割引を先に適用してから定額クーポンを引く解釈なら3.50ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A08P2.coupon_then_senior_discount_cents",
+  "graph": "work/gsm8k-sprint305-coupon-then-senior-discount-cents-graph.json",
+  "model_notes_ja": [
+    "参考解答どおり、語順の「additional 20%」をクーポン適用後の価格に対する割引と解釈した。適用順が逆なら3.50ドル。"
+  ],
+  "steps": [
+    {
+      "id": "coupon_then_senior_discount_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A08P2.coupon_then_senior_discount_cents",
+      "title_ja": "クーポン後は5.00ドル。その80%を払うので4.00ドル。20%割引を先に適用してから定額クーポンを引く解釈なら3.50ドル。",
+      "claim_ja": "クーポン後は5.00ドル。その80%を払うので4.00ドル。20%割引を先に適用してから定額クーポンを引く解釈なら3.50ドル。",
+      "method_ja": "クーポン後は5.00ドル。その80%を払うので4.00ドル。20%割引を先に適用してから定額クーポンを引く解釈なら3.50ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "クーポン後は5.00ドル。その80%を払うので4.00ドル。20%割引を先に適用してから定額クーポンを引く解釈なら3.50ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3648,
+    "checked_model_hash": "db2032ffe685f9231786361e966ebc7aa88ad4a264420cb5664e10beeac3ed3f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

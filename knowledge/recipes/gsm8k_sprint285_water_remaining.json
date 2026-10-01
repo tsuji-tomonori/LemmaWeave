@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint285_water_remaining",
+  "title_ja": "残る水ボトル",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03528",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A19P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4ダースの水から11人が2本ずつ、さらに1本ずつ取った残数。",
+  "answer_ja": "15本",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A19P2.remaining_water_bottles",
+  "graph": "work/gsm8k-sprint285-water-remaining-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "initial_water_bottles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P2.initial_water_bottles",
+      "title_ja": "初めは48本。",
+      "claim_ja": "初めは48本。",
+      "method_ja": "1ダース12本なので4倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "初めは48本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "first_break_bottles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P2.first_break_bottles",
+      "title_ja": "最初の休憩で22本取る。",
+      "claim_ja": "最初の休憩で22本取る。",
+      "method_ja": "11人が2本ずつ取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "最初の休憩で22本取る。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "used_water_bottles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P2.used_water_bottles",
+      "title_ja": "合計33本取る。",
+      "claim_ja": "合計33本取る。",
+      "method_ja": "最初の22本に最後の11本を足す。",
+      "requires_steps": [
+        "first_break_bottles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "合計33本取る。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "remaining_water_bottles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P2.remaining_water_bottles",
+      "title_ja": "残りは15本。",
+      "claim_ja": "残りは15本。",
+      "method_ja": "48本から33本を引く。",
+      "requires_steps": [
+        "initial_water_bottles",
+        "used_water_bottles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "残りは15本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3529,
+    "checked_model_hash": "d148dde1107b76f92409e60edaa35ae8e57ebcbca64dc6952ad7b21fc8666266",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

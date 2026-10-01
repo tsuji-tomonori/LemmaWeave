@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint288_public_transit",
+  "title_ja": "公共交通を使う従業員",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03544",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A20P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100人中60%が運転し、運転しない人の半数が公共交通を使う人数。",
+  "answer_ja": "20人",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.employee_public_transit",
+  "graph": "work/gsm8k-sprint288-public-transit-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "employee_drivers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.employee_drivers",
+      "title_ja": "運転する従業員は60人。",
+      "claim_ja": "運転する従業員は60人。",
+      "method_ja": "100人の60%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "運転する従業員は60人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "employee_nondrivers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.employee_nondrivers",
+      "title_ja": "運転しない従業員は40人。",
+      "claim_ja": "運転しない従業員は40人。",
+      "method_ja": "全体100人から60人を除く。",
+      "requires_steps": [
+        "employee_drivers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "運転しない従業員は40人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "employee_public_transit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.employee_public_transit",
+      "title_ja": "公共交通を使うのは20人。",
+      "claim_ja": "公共交通を使うのは20人。",
+      "method_ja": "40人の半分を求める。",
+      "requires_steps": [
+        "employee_nondrivers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "公共交通を使うのは20人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3545,
+    "checked_model_hash": "db71c0ae4f867bdffb9f12c60f973fac9e17e6182a7818ceedec5198e9bcf27b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

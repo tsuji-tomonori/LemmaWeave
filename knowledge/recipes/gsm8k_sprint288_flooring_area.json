@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint288_flooring_area",
+  "title_ja": "床材を張った面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03543",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A20P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "10×10フィートの中央部と6×4フィートの廊下の合計面積。",
+  "answer_ja": "124平方フィート",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.flooring_total_area",
+  "graph": "work/gsm8k-sprint288-flooring-area-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "central_floor_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.central_floor_area",
+      "title_ja": "中央部は100平方フィート。",
+      "claim_ja": "中央部は100平方フィート。",
+      "method_ja": "10フィート×10フィート。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "中央部は100平方フィート。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "hallway_floor_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.hallway_floor_area",
+      "title_ja": "廊下は24平方フィート。",
+      "claim_ja": "廊下は24平方フィート。",
+      "method_ja": "6フィート×4フィート。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "廊下は24平方フィート。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "flooring_total_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.flooring_total_area",
+      "title_ja": "合計124平方フィート。",
+      "claim_ja": "合計124平方フィート。",
+      "method_ja": "100と24を足す。",
+      "requires_steps": [
+        "central_floor_area",
+        "hallway_floor_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "合計124平方フィート。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3544,
+    "checked_model_hash": "db71c0ae4f867bdffb9f12c60f973fac9e17e6182a7818ceedec5198e9bcf27b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

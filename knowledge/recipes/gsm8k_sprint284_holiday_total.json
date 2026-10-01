@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint284_holiday_total",
+  "title_ja": "休暇資金の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03522",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A19P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Samが1000ドル、Victoryが100ドル少なく貯めた合計。",
+  "answer_ja": "1900ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A19P1.holiday_total",
+  "graph": "work/gsm8k-sprint284-holiday-total-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "victory_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P1.victory_savings",
+      "title_ja": "Victoryは900ドル。",
+      "claim_ja": "Victoryは900ドル。",
+      "method_ja": "1000ドルから100ドルを引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Victoryは900ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "holiday_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P1.holiday_total",
+      "title_ja": "合計1900ドル。",
+      "claim_ja": "合計1900ドル。",
+      "method_ja": "1000ドルと900ドルを加える。",
+      "requires_steps": [
+        "victory_savings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "合計1900ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3523,
+    "checked_model_hash": "b9b380ba13bac36a11b34fe591d53f2589cb834522676dc0586af1acef57ec4d",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

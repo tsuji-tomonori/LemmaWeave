@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint270_soda_cost",
+  "title_ja": "ソーダ購入費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03409",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A14P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "80オンスを8オンス缶で過不足なく買い、1缶50セントの総額を求める。",
+  "answer_ja": "5ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.soda_cost",
+  "graph": "work/gsm8k-sprint270-soda-cost-graph.json",
+  "model_notes_ja": [
+    "参照説明の算術誤記を採用せず、原文の0.5ドル=50セントから再計算した。"
+  ],
+  "steps": [
+    {
+      "id": "soda_cans",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.soda_cans",
+      "title_ja": "必要な缶は10缶。",
+      "claim_ja": "必要な缶は10缶。",
+      "method_ja": "80÷8を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "必要量を過不足なく缶容量で割る。",
+      "conclusion_ja": "10缶。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "soda_cost_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.soda_cost_cents",
+      "title_ja": "総額は500セント。",
+      "claim_ja": "総額は500セント。",
+      "method_ja": "10缶×50セントを計算する。",
+      "requires_steps": [
+        "soda_cans"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各缶0.5ドル=50セント。",
+      "conclusion_ja": "500セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "soda_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.soda_cost",
+      "title_ja": "総額は5ドル。",
+      "claim_ja": "総額は5ドル。",
+      "method_ja": "500セントを100で割る。",
+      "requires_steps": [
+        "soda_cost_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "100セント=1ドル。参照説明の10×0.5=10は誤記。",
+      "conclusion_ja": "5ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3410,
+    "checked_model_hash": "2069d4c184c979f894f9653259462b9c984315e93160c6241de1b0f234b9a558",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0386",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "4718e28cbd5102f6e67d6c3f719e56a6e886b362a9e0cb1123cd524138f61098",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1002A18P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03761",
+      "source_line_1based": 3762,
+      "source_record_sha256": "571712551ed0cce2a0531af5d3367b8ccc11419c9a323475f410490e89f0883d",
+      "raw_question_sha256": "bad943d4213fa30cb8c10077a21022cef51189fb9feb882bab4f63b59dec8af5",
+      "normalized_question_sha256": "bad943d4213fa30cb8c10077a21022cef51189fb9feb882bab4f63b59dec8af5",
+      "source_question": "A dog is being treated for fleas. One flea treatment gets rid of half the fleas. After four treatments, the dog has 14 fleas left. How many more fleas did the dog have before the flea treatments than after?",
+      "recipe_id": "gsm8k_sprint328_flea_difference",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各治療はその時点のノミを正確に半減させ、途中の増減はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03762",
+      "source_line_1based": 3763,
+      "source_record_sha256": "63db6c4c3561d17987023ab976abd9a629db8a6b2a9f86afd8695fe7b53f9763",
+      "raw_question_sha256": "85e9526ab0badb8c9846c747cdb4608949f5d58e1adabd53e7aa0cec3d5544d3",
+      "normalized_question_sha256": "85e9526ab0badb8c9846c747cdb4608949f5d58e1adabd53e7aa0cec3d5544d3",
+      "source_question": "Between them, Mark and Sarah have 24 traffic tickets. Mark has twice as many parking tickets as Sarah, and they each have an equal number of speeding tickets. If Sarah has 6 speeding tickets, how many parking tickets does Mark have?",
+      "recipe_id": "gsm8k_sprint328_mark_parking_tickets",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "24枚は2人の速度違反と駐車違反だけで、Markの駐車違反はSarahのちょうど2倍。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03763",
+      "source_line_1based": 3764,
+      "source_record_sha256": "b53d92a002dc5dc7d51111f333a8c179a5ef5b81ba52fe4509f5112d1e72a17a",
+      "raw_question_sha256": "b2acdcea530de0323d418d7a6cd42c302f9aba890ef557ef59576647deefa476",
+      "normalized_question_sha256": "b2acdcea530de0323d418d7a6cd42c302f9aba890ef557ef59576647deefa476",
+      "source_question": "Cooper makes 7 apple pies a day. He does this for 12 days. Ashley then eats 50 of his pies. How many apple pies remain with Cooper?",
+      "recipe_id": "gsm8k_sprint328_remaining_apple_pies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "12日間は毎日7個作り、食べる前に廃棄や販売はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03764",
+      "source_line_1based": 3765,
+      "source_record_sha256": "2569ca5d4a511a16b82b07496e999a970ef07da8c3c7b015864f8f1810949e49",
+      "raw_question_sha256": "186ce1152709d37f8c42d39a3306378950e20679b6ce07d0f98e34092283887d",
+      "normalized_question_sha256": "f8b7b287ad975cc6cc5f5c41a402b8f67cda2e8caf0861656c3a051cb9ba2a28",
+      "source_question": "Lindsey bought 2 exercise bands to intensify her workout.  Each band adds an extra 5 pounds of resistance to her workout.  If she doubles up both sets of bands and places them around her legs and picks up a 10-pound dumbbell, how much weight will she squat?",
+      "recipe_id": "gsm8k_sprint328_squat_weight",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文のa 10-pound dumbbellを1個と読む。参照値30の二つの追加解釈も別に計算する。"
+      ],
+      "blockers": [
+        "原文はダンベル1個だが参照解答は2個としている。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03765",
+      "source_line_1based": 3766,
+      "source_record_sha256": "61bd3019f5f11b3691090b5aac26ada4c5b2a1e8a371f699e44f25dfb7fe5bd5",
+      "raw_question_sha256": "6fe2fa93573bc1687d6dae81ba2e63d3e8f67ccc0f573ecea67a2a7faa07713d",
+      "normalized_question_sha256": "6fe2fa93573bc1687d6dae81ba2e63d3e8f67ccc0f573ecea67a2a7faa07713d",
+      "source_question": "Wendy just started working at an Italian restaurant. She polished 50 small glasses and 10 more large glasses than small glasses. How many glasses did she polish?",
+      "recipe_id": "gsm8k_sprint328_polished_glasses",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "smallとlargeは別分類で重複しない。"
+      ],
+      "blockers": []
+    }
+  ]
+}

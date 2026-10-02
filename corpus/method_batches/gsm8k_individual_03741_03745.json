@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0382",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "d023a937725a0c27cd996238f3f0f32fcf8baf3f8f272c1197cc5b3063e95234",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1002A16P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03741",
+      "source_line_1based": 3742,
+      "source_record_sha256": "b79a285379fd11517a3a2b919236691813edcbebb4accab1e3c1c49866b0a128",
+      "raw_question_sha256": "d2356176427bef8539fc0c273b6ef29b21febc7ad0078721149cb7187c965efd",
+      "normalized_question_sha256": "dbc1299c377dc874e10e2e768cfc7eddefbd056a90c3b568f1f39c6ca4f2ceb6",
+      "source_question": "Roger uses his lunch break to walk the stairs in his office building.  He can walk 2,000 steps in 30 minutes.  If his daily goal is 10,000 steps, how many minutes will it take him to reach his goal?",
+      "recipe_id": "gsm8k_sprint324_walking_goal_minutes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "歩行速度は全区間で一定で、休憩時間を含めない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03742",
+      "source_line_1based": 3743,
+      "source_record_sha256": "6e3e527a40d787d1a271e299ec79953617b32a6f1453174e7c60699cb3b2184b",
+      "raw_question_sha256": "c8d00e333b97c352ead4c6d469b9e913819758fddc441e49f1b8b9ed548a873a",
+      "normalized_question_sha256": "c8d00e333b97c352ead4c6d469b9e913819758fddc441e49f1b8b9ed548a873a",
+      "source_question": "A retailer sells any shirt for the same price and any pair of pants for the same price, but the price of shirts and pants are not the same. Say you bought 2 shirts and 3 pairs of pants for $120 in total, then you realized you didn't need the extra pants. What's the price of 1 shirt at this place if when you returned all 3 pairs of pants you were refunded 25% of what you originally paid?",
+      "recipe_id": "gsm8k_sprint324_shirt_unit_price",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "「25% of what you originally paid」を購入総額120ドルの25%とする。パンツ代の25%しか返金されない意味ならパンツ元値が分からずシャツ価格は一意でない。"
+      ],
+      "blockers": [
+        "25%の基準が曖昧で、購入総額基準という参照解答の追加条件を明示した。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03743",
+      "source_line_1based": 3744,
+      "source_record_sha256": "e934eba7dee7ef82b8692739d51bc7cb99db741890dbabccee0d67ad91af615b",
+      "raw_question_sha256": "a1695501d5dcae7f5b58a85f0a1857cf852b356e157c92b887063919159d2c97",
+      "normalized_question_sha256": "a1695501d5dcae7f5b58a85f0a1857cf852b356e157c92b887063919159d2c97",
+      "source_question": "Calum runs a nightclub and decides to run a disco night to attract different customers. He is planning the event and is calculating how much he can spend on each item without spending more than he has budgeted. He only needs to buy 4 disco balls and 10 boxes of food. Each box of food costs $25. Calum’s budget for the disco balls and food is $330. How much, in dollars, can Calum afford to spend on each disco ball?",
+      "recipe_id": "gsm8k_sprint324_disco_ball_budget",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "予算330ドルは食品と4個のボールだけに使い、超過しない最大の均等単価を求める。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03744",
+      "source_line_1based": 3745,
+      "source_record_sha256": "6112e2e9f69f4e2fbe5448842f25ce026b747e2c38dfffb6e5af29d4b40bba43",
+      "raw_question_sha256": "53f4b10ff099231e06813ab99659fd3ca2580cc24511e10b2d5ddd60420aa92a",
+      "normalized_question_sha256": "53f4b10ff099231e06813ab99659fd3ca2580cc24511e10b2d5ddd60420aa92a",
+      "source_question": "Sally Draper gave her dad Don Draper 10oz of rum on his pancakes. Don can consume a maximum of 3 times that amount of rum for a healthy diet. If he already had 12oz of rum earlier that day, how many oz of rum can Don have after eating all of the rum and pancakes?",
+      "recipe_id": "gsm8k_sprint324_remaining_rum_allowance",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "最大量は1日合計であり、パンケーキの10オンスも摂取量へ含める。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03745",
+      "source_line_1based": 3746,
+      "source_record_sha256": "d739c071869c779944d1f5648e4836e476378ef34d61bb6aa7ab4738c3dff046",
+      "raw_question_sha256": "a16c73ca6afcea8c2e14725a586852b42119aeef41dd43a3a931e79e096be6b6",
+      "normalized_question_sha256": "dec86ba1f4135f684ac92af7d8f216ab5afc4d3cce36b43356a03cdcff3e6b9c",
+      "source_question": "Jenny wants to heat a dish for dinner.  It needs to be at 100 degrees before it is ready to eat.  It is 20 degrees when she places it in the oven, and it heats up 5 degrees every minute.  How many minutes will it take to be ready?",
+      "recipe_id": "gsm8k_sprint324_heating_minutes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "温度は毎分ちょうど5度ずつ直線的に上昇し、100度へ達した時点で完成。"
+      ],
+      "blockers": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint342_candles_interpretations",
+  "title_ja": "ろうそくの残数と部屋で使用中の本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03833",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Alyssa and Chelsea jointly bought 40 candles to decorate their room. Alyssa used half of them, and Chelsea used 70% of the remaining candles. How many candles are there in the room now?",
+  "answer_ja": "40本の半分20本をAlyssaが使用。残り20本の70%で14本をChelseaが使用する。未使用の残りは6本、飾り付けに使って部屋に置いた本数なら20+14=34本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A01P3.candles_interpretations",
+  "graph": "work/gsm8k-sprint342-candles-interpretations-graph.json",
+  "model_notes_ja": [
+    "『there in the room now』が未使用の残数を尋ねるなら参照値6本、実際に装飾へ使用され部屋にある本数なら34本となるため、両解釈を分離する。"
+  ],
+  "steps": [
+    {
+      "id": "candles_interpretations",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A01P3.candles_interpretations",
+      "title_ja": "ろうそくの残数と部屋で使用中の本数",
+      "claim_ja": "40本の半分20本をAlyssaが使用。残り20本の70%で14本をChelseaが使用する。未使用の残りは6本、飾り付けに使って部屋に置いた本数なら20+14=34本。",
+      "method_ja": "使用数と未使用数を同じ計算からそれぞれ導く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20本の70%は整数14本。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "未使用は6本、使用して部屋に置いた本数は34本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3834,
+    "checked_model_hash": "dca39a0beff1e6e27075948cdc18703de56fd79449f63dd5c3f5c9cb1f133f06",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

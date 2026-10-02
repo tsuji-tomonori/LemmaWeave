@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint326_combined_basketballs",
+  "title_ja": "バスケットボール総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03752",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lucca has 100 balls and 10 percent of his balls are basketballs. Lucien has 200 balls and 20 percent of them are basketballs. In total how many basketballs do Lucca and Lucien have?",
+  "answer_ja": "Luccaは100個の10%で10個、Lucienは200個の20%で40個。合わせて50個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P2.combined_basketballs",
+  "graph": "work/gsm8k-sprint326-combined-basketballs-graph.json",
+  "model_notes_ja": [
+    "百分率は各人の全ボール数へ適用し、2人の所有物は別々に数える。"
+  ],
+  "steps": [
+    {
+      "id": "combined_basketballs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P2.combined_basketballs",
+      "title_ja": "バスケットボール総数",
+      "claim_ja": "Luccaは100個の10%で10個、Lucienは200個の20%で40個。合わせて50個。",
+      "method_ja": "各総数へ割合を掛けて合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各積は100で割り切れ、個数は整数。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "合計50個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3753,
+    "checked_model_hash": "fb81d0f303f5c164319e5af31232307ed4524450eb00f121c5305497da69a977",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

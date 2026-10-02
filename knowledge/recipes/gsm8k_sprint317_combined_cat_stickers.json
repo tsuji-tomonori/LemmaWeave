@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint317_combined_cat_stickers",
+  "title_ja": "2人の猫シール合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03709",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A13P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "June liked to collect cat stickers.  She had a total of 76 in her collection.  Her twin sister Bonnie also collected cat stickers and had 63 in her collection.  For their birthday, their grandparents gave them 25 cat stickers each.  How many combined stickers did they have?",
+  "answer_ja": "Juneは76+25=101枚、Bonnieは63+25=88枚。合わせて101+88=189枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A13P2.combined_cat_stickers",
+  "graph": "work/gsm8k-sprint317-combined-cat-stickers-graph.json",
+  "model_notes_ja": [
+    "祖父母は2人それぞれに25枚を渡す。"
+  ],
+  "steps": [
+    {
+      "id": "combined_cat_stickers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A13P2.combined_cat_stickers",
+      "title_ja": "2人の猫シール合計",
+      "claim_ja": "Juneは76+25=101枚、Bonnieは63+25=88枚。合わせて101+88=189枚。",
+      "method_ja": "各人の増加後の枚数を求めて合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "枚数は自然数。",
+      "baseline_ja": "四則演算、比・平均・百分率のうち問題で明示したもの。",
+      "conclusion_ja": "合計189枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3710,
+    "checked_model_hash": "77504bbec0dd946011b7316c93cf7c1dfe2decba1a53f80e1b917472068ca961",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint321_calzone_total_minutes",
+  "title_ja": "カルツォーネ作りの総時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03728",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A15P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Marcus is making calzones. It takes him 20 minutes to saute the onions and a quarter of that time to saute the garlic and peppers. It takes him 30 minutes to knead the dough, twice as long to let it rest, and 1/10th the combined kneading and resting time to assemble the calzones. How many minutes does Marcus spend on the calzones total?",
+  "answer_ja": "ニンニクとピーマンは20÷4=5分。生地を休ませるのは30×2=60分で、こねる時間との合計90分の10分の1、9分が組立時間。すべて足して20+5+30+60+9=124分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A15P3.calzone_total_minutes",
+  "graph": "work/gsm8k-sprint321-calzone-total-minutes-graph.json",
+  "model_notes_ja": [
+    "各工程を順番に行い、重なりなく全時間を合計する。quarterと1/10はそれぞれ指定された時間へ適用する。"
+  ],
+  "steps": [
+    {
+      "id": "calzone_total_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A15P3.calzone_total_minutes",
+      "title_ja": "カルツォーネ作りの総時間",
+      "claim_ja": "ニンニクとピーマンは20÷4=5分。生地を休ませるのは30×2=60分で、こねる時間との合計90分の10分の1、9分が組立時間。すべて足して20+5+30+60+9=124分。",
+      "method_ja": "各派生時間を求め、5工程の時間を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20は4で、90は10で割り切れる。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "合計124分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3729,
+    "checked_model_hash": "03866a871da00c9e34a187b9da96f1045f855968e8da29397b81b04da35487e4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

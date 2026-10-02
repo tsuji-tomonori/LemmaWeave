@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint321_kristin_half_books_time",
+  "title_ja": "Kristinが10冊読む時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03730",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A15P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Peter and Kristin are to read 20 fantasy novels each in a week. Peter can read three times as fast as Kristin. If Peter reads one book in 18 hours, how long will Kristin read half of her books?",
+  "answer_ja": "Peterが1冊18時間で、PeterはKristinの3倍速だからKristinは1冊18×3=54時間。20冊の半分は10冊なので10×54=540時間。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A15P3.kristin_half_books_time",
+  "graph": "work/gsm8k-sprint321-kristin-half-books-time-graph.json",
+  "model_notes_ja": [
+    "2人は同じ長さの本を一定速度で読み、速さの倍率を所要時間の逆倍率として扱う。なお540時間は1週間168時間を超え、週20冊という目標とは両立しない。"
+  ],
+  "steps": [
+    {
+      "id": "kristin_half_books_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A15P3.kristin_half_books_time",
+      "title_ja": "Kristinが10冊読む時間",
+      "claim_ja": "Peterが1冊18時間で、PeterはKristinの3倍速だからKristinは1冊18×3=54時間。20冊の半分は10冊なので10×54=540時間。",
+      "method_ja": "1冊の所要時間、冊数、総時間の順に求め、週の時間との矛盾も確認する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "本の長さは同一で、読書時間を連続して合計する。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "10冊には540時間。週内達成は不可能。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3731,
+    "checked_model_hash": "03866a871da00c9e34a187b9da96f1045f855968e8da29397b81b04da35487e4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -12,7 +12,7 @@ structure ScatterReading
   a_front_lt_after : aFront < aAfter
 
 /-- 真偽表 0=(真,真), 1=(真,偽), 2=(偽,真), 3=(偽,偽) による解答番号。 -/
-def answerCode
+noncomputable def answerCode
     (afterCount meanCount : ℕ)
     (aFront aAfter aMean : ℝ) : ℕ :=
   if afterCount = meanCount then

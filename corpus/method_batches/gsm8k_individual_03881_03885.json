@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0801",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "d21b700efa17209cee6925382baa52730d9bc43c0a40ac6a4f3efb39b42db704",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A08P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03881",
+      "source_line_1based": 3882,
+      "source_record_sha256": "f015934f322333d73ec58bc3c4d6bfca1163d935231fb1f0d8c230d20fa3365d",
+      "raw_question_sha256": "76ea68978ba8ed31ba88cce6d5fa7896b344490fe87f6e1ccb7a36ba2222ef24",
+      "normalized_question_sha256": "76ea68978ba8ed31ba88cce6d5fa7896b344490fe87f6e1ccb7a36ba2222ef24",
+      "source_question": "Oliver is trying to decide between two different sized boxes of macaroni and cheese. He wants to know which is the better value, so instead of just looking at the overall price, he looks at the price per ounce. The larger box is 30 ounces and the smaller box is 20 ounces. The larger box costs $4.80. The smaller box costs $3.40. What is the price per ounce in cents of the box with the better value (lowest price per ounce)?",
+      "recipe_id": "gsm8k_sprint352_better_value_unit_price",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "金額をセント単位で整数化し、単位価格を比較する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03882",
+      "source_line_1based": 3883,
+      "source_record_sha256": "7da9c18c7aedbb3627c5b1323243190491bc49fcc9c907efcac3faed80fc62a1",
+      "raw_question_sha256": "c99cb25355a35963056a43d31584cdca02c5bc9497909a57c4cfdbcfbb083ed1",
+      "normalized_question_sha256": "c99cb25355a35963056a43d31584cdca02c5bc9497909a57c4cfdbcfbb083ed1",
+      "source_question": "Roland needs a length of thread to complete an exercise. He has a 12cm long thread but his teacher says he needs an additional three-quarters of what he has. What is the total length required?",
+      "recipe_id": "gsm8k_sprint352_thread_total_length",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "追加分の基準を元の12cmに固定する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03883",
+      "source_line_1based": 3884,
+      "source_record_sha256": "b3033860cbea2785c06f28236b82fd8b37fc4d7cd86428e3e02c3a47eebc9a3e",
+      "raw_question_sha256": "f17421d70fa5027286f5fac7ef39c5411f32d2307e9d468537f0c399f57625e1",
+      "normalized_question_sha256": "f17421d70fa5027286f5fac7ef39c5411f32d2307e9d468537f0c399f57625e1",
+      "source_question": "Donald drinks 3 more than twice the number of juice bottles Paul drinks in one day. If Paul drinks 3 bottles of juice per day, how many bottles does Donald drink per day?",
+      "recipe_id": "gsm8k_sprint352_juice_bottles",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "演算順序を2倍してから3を加える形に固定する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03884",
+      "source_line_1based": 3885,
+      "source_record_sha256": "f5b221e24db706056aa6b3bbafc7d1c096498646afecda001ae0fff1a3f99b8f",
+      "raw_question_sha256": "24dae86f5485382325bae73d042f642195bd4199fc254412ec61a905c8357baa",
+      "normalized_question_sha256": "24dae86f5485382325bae73d042f642195bd4199fc254412ec61a905c8357baa",
+      "source_question": "During the Easter egg hunt, Kevin found 5 eggs, Bonnie found 13 eggs, George found 9 and Cheryl found 56.  How many more eggs did Cheryl find than the other three children found?",
+      "recipe_id": "gsm8k_sprint352_egg_difference",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Cherylと各人個別ではなく、他の3人の合計との差を求める。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03885",
+      "source_line_1based": 3886,
+      "source_record_sha256": "dffad45df562fd71d6fd06186399b8149b6f53b8a437653e801a0ed30dc256c7",
+      "raw_question_sha256": "6810d42a4aed9308eb57bb0c8ae31ce3af3c4f488696e8247516dc669f48e4af",
+      "normalized_question_sha256": "6810d42a4aed9308eb57bb0c8ae31ce3af3c4f488696e8247516dc669f48e4af",
+      "source_question": "James scored 13 field goals worth 3 points and 20 shots worth two points.  How many total points did he score?",
+      "recipe_id": "gsm8k_sprint352_basketball_total_points",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "3点分と2点分を別々に計算する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

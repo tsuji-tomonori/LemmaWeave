@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint337_eel_cost",
+  "title_ja": "ウナギの価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03806",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A00P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "An avant-garde sushi house sells jellyfish for a certain amount and eel for nine times that amount. If the combined cost of one order each kind of sushi is $200, how much does the eel cost?",
+  "answer_ja": "クラゲをjドルとすると、ウナギは9jドルで、合計は10j=200ドル。よってj=20ドル、ウナギは9×20=180ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A00P1.eel_cost",
+  "graph": "work/gsm8k-sprint337-eel-cost-graph.json",
+  "model_notes_ja": [
+    "価格は非負の整数ドルで、クラゲ1匹とウナギ1匹の合計が200ドル。"
+  ],
+  "steps": [
+    {
+      "id": "eel_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A00P1.eel_cost",
+      "title_ja": "ウナギの価格",
+      "claim_ja": "クラゲをjドルとすると、ウナギは9jドルで、合計は10j=200ドル。よってj=20ドル、ウナギは9×20=180ドル。",
+      "method_ja": "比9:1と合計から1単位の価格を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "200は10で割り切れる。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "180ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3807,
+    "checked_model_hash": "9b6dbd122aec618fa76ab4fc2775acba7b85fb51bed51e56c4ffbed824ad1851",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

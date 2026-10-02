@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint308_summer_fruit_total",
+  "title_ja": "夏に収穫した果物",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03661",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A10P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "スイカ1個、桃はそれより12個多く、プラムは桃の3倍。収穫総数を求める。",
+  "answer_ja": "桃は1+12=13個。プラムは13×3=39個なので、合計は1+13+39=53個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A10P2.summer_fruit_total",
+  "graph": "work/gsm8k-sprint308-summer-fruit-total-graph.json",
+  "model_notes_ja": [
+    "「three times that number」は直前の桃13個の3倍と解釈。"
+  ],
+  "steps": [
+    {
+      "id": "summer_fruit_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A10P2.summer_fruit_total",
+      "title_ja": "桃は1+12=13個。プラムは13×3=39個なので、合計は1+13+39=53個。",
+      "claim_ja": "桃は1+12=13個。プラムは13×3=39個なので、合計は1+13+39=53個。",
+      "method_ja": "桃は1+12=13個。プラムは13×3=39個なので、合計は1+13+39=53個。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "桃は1+12=13個。プラムは13×3=39個なので、合計は1+13+39=53個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3662,
+    "checked_model_hash": "5bf0286def886c6afee372b8177ec2b0a70777b3cf4a0ee4497eddbd5b20cd63",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint345_initial_lunch_money",
+  "title_ja": "最初に持っていた金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03849",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A03P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Randy has some money. He spent $10 buying his lunch. He spent a quarter of the money he had left on an ice cream cone. If the ice cream cone cost $5, what is the amount of money, in dollars, Randy had at first?",
+  "answer_ja": "昼食後の残金の4分の1が5ドルなので、昼食後は5×4=20ドル。昼食代10ドルを戻すと最初は30ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A03P3.initial_lunch_money",
+  "graph": "work/gsm8k-sprint345-initial-lunch-money-graph.json",
+  "model_notes_ja": [
+    "アイス代5ドルは昼食後残金の正確に4分の1で、他の支出はない。"
+  ],
+  "steps": [
+    {
+      "id": "initial_lunch_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A03P3.initial_lunch_money",
+      "title_ja": "最初に持っていた金額",
+      "claim_ja": "昼食後の残金の4分の1が5ドルなので、昼食後は5×4=20ドル。昼食代10ドルを戻すと最初は30ドル。",
+      "method_ja": "割合から昼食後残金を逆算し、昼食代を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残金20ドルはアイス代5ドル以上。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "30ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3850,
+    "checked_model_hash": "74f8367e0eb6908307ee5d50426eabf0e8564ea48796f347f4d8f0caf47e2106",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

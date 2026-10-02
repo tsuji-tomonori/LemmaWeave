@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint331_animal_food_cost",
+  "title_ja": "動物の餌代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03776",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A19P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Julia has a parrot and a rabbit. She buys food for both of the animals for $30 in total a week. Julia has the rabbit for 5 weeks, and the parrot for 3 weeks. How much money did Julia already spend on food for her animals, if the weekly cost of the rabbit food is $12?",
+  "answer_ja": "うさぎの週額は12ドルなので、2匹合計30ドルから引いたオウムの週額は18ドル。うさぎ5週分は60ドル、オウム3週分は54ドルだから、合計114ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A19P1.animal_food_cost",
+  "graph": "work/gsm8k-sprint331-animal-food-cost-graph.json",
+  "model_notes_ja": [
+    "30ドルは両方を1週間飼ったときの合計で、各動物の週額は期間中一定。"
+  ],
+  "steps": [
+    {
+      "id": "animal_food_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A19P1.animal_food_cost",
+      "title_ja": "動物の餌代",
+      "claim_ja": "うさぎの週額は12ドルなので、2匹合計30ドルから引いたオウムの週額は18ドル。うさぎ5週分は60ドル、オウム3週分は54ドルだから、合計114ドル。",
+      "method_ja": "総週額からうさぎ分を引き、動物ごとに飼育週数を掛けて合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "30≥12で、各期間は週単位の自然数。",
+      "baseline_ja": "整数・分数・割合・一次方程式・面積・平均のうち問題で明示したもの。",
+      "conclusion_ja": "114ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3777,
+    "checked_model_hash": "fcea5647a3ae770bccf5ce7a386ee21ee3e4c7d1e54691a899a84aab67b63e68",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

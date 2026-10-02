@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint322_shared_lab_clothing",
+  "title_ja": "技師1人あたりの衣類数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03731",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A16P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "There are 6 times as many lab coats as uniforms in the lab. The number of lab techs is half of the number of uniforms. If there are 12 uniforms in the lab, and the lab techs share the coats and uniforms equally among them, how many coats and uniforms in total does each lab tech get?",
+  "answer_ja": "白衣は6×12=72着、制服と合わせて84着。技師は12÷2=6人なので84÷6=14着ずつ。内訳は白衣12着、制服2着。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A16P1.shared_lab_clothing",
+  "graph": "work/gsm8k-sprint322-shared-lab-clothing-graph.json",
+  "model_notes_ja": [
+    "白衣と制服を種類ごとにも均等分配し、全84着を6人で分ける。"
+  ],
+  "steps": [
+    {
+      "id": "shared_lab_clothing",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A16P1.shared_lab_clothing",
+      "title_ja": "技師1人あたりの衣類数",
+      "claim_ja": "白衣は6×12=72着、制服と合わせて84着。技師は12÷2=6人なので84÷6=14着ずつ。内訳は白衣12着、制服2着。",
+      "method_ja": "白衣数、総数、技師数を求め、総数と種類別の両方を人数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "84、72、12はいずれも6で割り切れる。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "1人あたり合計14着。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3732,
+    "checked_model_hash": "9bcea9feb95b1ead637e2f965667565d05966efbdeefc74fc8066b0c7a8366c4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

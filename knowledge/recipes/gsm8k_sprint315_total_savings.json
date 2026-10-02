@@ -1,0 +1,40 @@
+{
+  "id": "gsm8k_sprint315_total_savings",
+  "title_ja": "2回の勝金からの貯金総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03697",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100ドルの勝金の半分を貯金し、残り50ドルを再び賭けて60%の利益を得た。2回目の収益の半分も貯金したときの総貯金額を求める。",
+  "answer_ja": "最初の貯金は100÷2=50ドル。残り50ドルの60%の利益は30ドルで、返還される賭け金と合わせた収益は80ドル。その半分40ドルも貯金するので、合計は50+40=90ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A12P3.total_savings",
+  "graph": "work/gsm8k-sprint315-total-savings-graph.json",
+  "model_notes_ja": [
+    "2回目のearningsは返還された賭け金50ドルと利益30ドルの合計80ドルと解釈する。利益だけなら答えは65ドルになる。"
+  ],
+  "steps": [
+    {
+      "id": "total_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A12P3.total_savings",
+      "title_ja": "各回の貯金額を合計する",
+      "claim_ja": "最初の50ドルと2回目の40ドルを合わせ、貯金総額は90ドルである。",
+      "method_ja": "半分、60%の利益、返還賭け金を含む収益、その半分を順に計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "百分率は50ドルを基準とし、2回目の収益は元金返還を含む。",
+      "baseline_ja": "割合と四則計算。",
+      "conclusion_ja": "貯金総額は90ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3698,
+    "checked_model_hash": "65e6dc7d830630ef2e03fc19c9198d4f1187a601f3724ebe6176391c9873b7e0",
+    "checks_ja": ["原文の数量・型・単位・仮定・求める全結論を再照合した。", "記述解答を名前付きLean定理へ対応させた。", "独立レビューではなく作成者自己照合である。"]
+  }
+}

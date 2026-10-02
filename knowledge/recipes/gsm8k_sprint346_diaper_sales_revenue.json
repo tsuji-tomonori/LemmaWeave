@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint346_diaper_sales_revenue",
+  "title_ja": "おむつ全量販売時の売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03855",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A05P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Meadow has a business that sells baby diapers to her local townspeople. She orders 30 boxes of diapers containing 40 packs weekly, with each pack having 160 diapers. She sells each diaper for $5. How much money is Meadow making from selling all her diapers?",
+  "answer_ja": "30箱には30×40=1200パックある。1パック160枚なので1200×160=192000枚。1枚5ドルで全て売ると、192000×5=960000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A05P1.diaper_sales_revenue",
+  "graph": "work/gsm8k-sprint346-diaper-sales-revenue-graph.json",
+  "model_notes_ja": [
+    "週次注文1回分を全量販売した総売上として扱い、原価や利益とは区別する。"
+  ],
+  "steps": [
+    {
+      "id": "diaper_sales_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A05P1.diaper_sales_revenue",
+      "title_ja": "おむつ全量販売時の売上",
+      "claim_ja": "30箱には30×40=1200パックある。1パック160枚なので1200×160=192000枚。1枚5ドルで全て売ると、192000×5=960000ドル。",
+      "method_ja": "箱数からパック数、枚数、売上の順に単位を掛け合わせる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各箱40パック、各パック160枚で、全てを1枚5ドルで販売する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "960000ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3856,
+    "checked_model_hash": "60ed85987b3be1f1b82d6959683b818127ffef507e57a6e5100e31a8326d98ff",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

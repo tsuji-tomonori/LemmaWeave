@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint346_cheesecake_slices_eaten",
+  "title_ja": "食べたチーズケーキの切れ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03853",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A05P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Each slice of cheesecake contains 350 calories.  If there are a total of 2800 calories in every cheesecake, and Kiley ate 25% of the cheesecake, how many slices of cheesecake did Kiley eat?",
+  "answer_ja": "1切れ350カロリーで全体2800カロリーだから、全体は2800÷350=8切れ。Kileyは全体の25%を食べたので、8×25÷100=2切れ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A05P1.cheesecake_slices_eaten",
+  "graph": "work/gsm8k-sprint346-cheesecake-slices-eaten-graph.json",
+  "model_notes_ja": [
+    "各切れのカロリーが等しいため、カロリー割合と切れ数割合が一致する。"
+  ],
+  "steps": [
+    {
+      "id": "cheesecake_slices_eaten",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A05P1.cheesecake_slices_eaten",
+      "title_ja": "食べたチーズケーキの切れ数",
+      "claim_ja": "1切れ350カロリーで全体2800カロリーだから、全体は2800÷350=8切れ。Kileyは全体の25%を食べたので、8×25÷100=2切れ。",
+      "method_ja": "総カロリーを1切れ当たりで割り、全体の25%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全切れが350カロリーで均等であり、8切れの25%が整数になる。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "2切れ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3854,
+    "checked_model_hash": "60ed85987b3be1f1b82d6959683b818127ffef507e57a6e5100e31a8326d98ff",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

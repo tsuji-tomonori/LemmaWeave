@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint353_fourth_buoy_distance",
+  "title_ja": "第4ブイまでの距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03890",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Buoys are placed in the ocean at even intervals away from the beach to help swimmers monitor how far away from the beach they have swum. If a swimmer reaches the third buoy, they have swum out 72 meters. How many meters from the beach is the fourth buoy?",
+  "answer_ja": "浜を起点としてブイが等間隔なら、1区間は72÷3=24m。第4ブイは24×4=96m。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A08P2.fourth_buoy_distance",
+  "graph": "work/gsm8k-sprint353-fourth-buoy-distance-graph.json",
+  "model_notes_ja": [
+    "浜を0地点とする等間隔配置を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "fourth_buoy_distance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A08P2.fourth_buoy_distance",
+      "title_ja": "第4ブイまでの距離",
+      "claim_ja": "浜を起点としてブイが等間隔なら、1区間は72÷3=24m。第4ブイは24×4=96m。",
+      "method_ja": "第3ブイの距離を3等分して間隔を求め、4区間分にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "浜から第1ブイまでを含む各間隔が等しく、第nブイは浜からn区間先。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "96m。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3891,
+    "checked_model_hash": "020b25a8cd04d8f52d4159da699f30e9a7040cc43113af1a3355b5c7811fb57e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

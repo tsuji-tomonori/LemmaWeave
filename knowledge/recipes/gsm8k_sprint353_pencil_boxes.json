@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint353_pencil_boxes",
+  "title_ja": "色別に必要な鉛筆箱",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03889",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Louise is organizing her pencils, and decides she wants her boxes arranged by color. Each box holds 20 pencils each. She has 20 red pencils, twice as many blue pencils, 40 yellow pencils, and has as many green pencils as she has red and blue pencils combined. How many boxes does Louise need?",
+  "answer_ja": "青は赤20本の2倍で40本。緑は赤と青の合計なので20+40=60本。全体は20+40+40+60=160本で、1箱20本だから160÷20=8箱。各色の本数はいずれも20の倍数なので色別配置とも両立する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A08P2.pencil_boxes",
+  "graph": "work/gsm8k-sprint353-pencil-boxes-graph.json",
+  "model_notes_ja": [
+    "色別配置条件を確認し、単なる総容量計算で端数を隠さない。"
+  ],
+  "steps": [
+    {
+      "id": "pencil_boxes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A08P2.pencil_boxes",
+      "title_ja": "色別に必要な鉛筆箱",
+      "claim_ja": "青は赤20本の2倍で40本。緑は赤と青の合計なので20+40=60本。全体は20+40+40+60=160本で、1箱20本だから160÷20=8箱。各色の本数はいずれも20の倍数なので色別配置とも両立する。",
+      "method_ja": "色ごとの本数を復元し、合計を箱容量で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "箱は色別に用い、各箱の容量は20本。各色を別箱にしても端数は生じない。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "8箱。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3890,
+    "checked_model_hash": "020b25a8cd04d8f52d4159da699f30e9a7040cc43113af1a3355b5c7811fb57e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

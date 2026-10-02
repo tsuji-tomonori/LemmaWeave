@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint312_stars_still_needed",
+  "title_ja": "追加で必要な紙の星",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03685",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A11P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1容器を満たすのに85個必要で、同容量の容器4個を満たす。すでに33個作ったとき追加数を求める。",
+  "answer_ja": "4容器には85×4=340個必要。すでに33個あるので、追加は340-33=307個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A11P3.stars_still_needed",
+  "graph": "work/gsm8k-sprint312-stars-still-needed-graph.json",
+  "model_notes_ja": [
+    "原文はjarとbottlesを使い分けるが、4本はいずれも基準のガラス容器と同じ85個容量という追加条件の下で307個。容量が異なるなら一意に決まらない。"
+  ],
+  "steps": [
+    {
+      "id": "stars_still_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A11P3.stars_still_needed",
+      "title_ja": "4容器には85×4=340個必要。すでに33個あるので、追加は340-33=307個。",
+      "claim_ja": "4容器には85×4=340個必要。すでに33個あるので、追加は340-33=307個。",
+      "method_ja": "4容器には85×4=340個必要。すでに33個あるので、追加は340-33=307個。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "4容器には85×4=340個必要。すでに33個あるので、追加は340-33=307個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3686,
+    "checked_model_hash": "7c72dafa28fa74ef76a653a6a538bc8581e22ebe290aca48ff418093220df4f3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

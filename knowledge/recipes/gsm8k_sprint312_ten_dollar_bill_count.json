@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint312_ten_dollar_bill_count",
+  "title_ja": "10ドル札の枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03682",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A11P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "合計100ドルで、5ドル札4枚、20ドル札3枚、残りが10ドル札である。10ドル札の枚数を求める。",
+  "answer_ja": "5ドル札は4×5=20ドル、20ドル札は3×20=60ドル。残りは100-80=20ドルなので、10ドル札は2枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A11P3.ten_dollar_bill_count",
+  "graph": "work/gsm8k-sprint312-ten-dollar-bill-count-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ten_dollar_bill_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A11P3.ten_dollar_bill_count",
+      "title_ja": "5ドル札は4×5=20ドル、20ドル札は3×20=60ドル。残りは100-80=20ドルなので、10ドル札は2枚。",
+      "claim_ja": "5ドル札は4×5=20ドル、20ドル札は3×20=60ドル。残りは100-80=20ドルなので、10ドル札は2枚。",
+      "method_ja": "5ドル札は4×5=20ドル、20ドル札は3×20=60ドル。残りは100-80=20ドルなので、10ドル札は2枚。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "5ドル札は4×5=20ドル、20ドル札は3×20=60ドル。残りは100-80=20ドルなので、10ドル札は2枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3683,
+    "checked_model_hash": "7c72dafa28fa74ef76a653a6a538bc8581e22ebe290aca48ff418093220df4f3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint340_garbage_accumulated",
+  "title_ja": "2週間でたまったごみ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03823",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A01P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "The garbage truck passes through Daniel's neighborhood on Tuesdays, Thursdays, and Saturdays. In each garbage collection, an average of 200 kg is taken. Due to obstruction in the roads leading to Daniel's neighborhood, the garbage truck stops passing through for two weeks. During the first week, people in Daniel's neighborhood pile the extra garbage around the dumpster, during the second week they apply a policy of cutting their amount of garbage in half. How many kilograms of garbage have accumulated in Daniel's neighborhood during the 2 weeks?",
+  "answer_ja": "通常は週3回、1回200kgなので1週目は600kg。2週目は排出量を半分にして300kg。合計900kg。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A01P1.garbage_accumulated",
+  "graph": "work/gsm8k-sprint340-garbage-accumulated-graph.json",
+  "model_notes_ja": [
+    "収集停止は2週間全体に及び、2週目の半減は通常週600kgを基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "garbage_accumulated",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A01P1.garbage_accumulated",
+      "title_ja": "2週間でたまったごみ",
+      "claim_ja": "通常は週3回、1回200kgなので1週目は600kg。2週目は排出量を半分にして300kg。合計900kg。",
+      "method_ja": "週当たり通常量を求め、2週目だけ半減して加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "600は2で割り切れる。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "900kg。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3824,
+    "checked_model_hash": "ded4be989680689e29c8e33679f9e963bd03177aa1fe334dfd8f265ae986910e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

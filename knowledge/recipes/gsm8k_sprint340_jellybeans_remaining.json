@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint340_jellybeans_remaining",
+  "title_ja": "残ったジェリービーンズ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03825",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A01P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "There were 37 jellybeans in a jar. Pat removed 15 of them. Pat then added 5 of the removed jellybeans back in, and then removed 4 more. How many jellybeans are now in the jar?",
+  "answer_ja": "37個から15個を除くと22個。5個を戻して27個、さらに4個除いて23個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A01P1.jellybeans_remaining",
+  "graph": "work/gsm8k-sprint340-jellybeans-remaining-graph.json",
+  "model_notes_ja": [
+    "戻した5個は最初に除いた15個の一部であり、最後の4個はその時点の瓶から除く。"
+  ],
+  "steps": [
+    {
+      "id": "jellybeans_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A01P1.jellybeans_remaining",
+      "title_ja": "残ったジェリービーンズ",
+      "claim_ja": "37個から15個を除くと22個。5個を戻して27個、さらに4個除いて23個。",
+      "method_ja": "操作を時系列順に加減する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各減算で除く数は直前の個数以下。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "23個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3826,
+    "checked_model_hash": "ded4be989680689e29c8e33679f9e963bd03177aa1fe334dfd8f265ae986910e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

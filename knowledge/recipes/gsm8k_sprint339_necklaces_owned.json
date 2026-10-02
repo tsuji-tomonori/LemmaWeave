@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint339_necklaces_owned",
+  "title_ja": "現在持っているネックレス数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03819",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A00P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Becky has 50 necklaces in her jewelry collection. 3 of the necklaces have broken beads so she collects the unbroken beads for crafting and throws the other parts of the 3 the necklaces out. Becky buys 5 new necklaces that week. She decides to give 15 of her old necklaces to her friends as gifts. How many necklaces does she own now?",
+  "answer_ja": "50本のうち3本が壊れて47本。新たに5本買って52本。古い15本を譲ったので52−15=37本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A00P3.necklaces_owned",
+  "graph": "work/gsm8k-sprint339-necklaces-owned-graph.json",
+  "model_notes_ja": [
+    "原文のgives away 15を使用する。参照説明中の『gives 17』は誤記だが、式は15を引いており答え37本と整合する。"
+  ],
+  "steps": [
+    {
+      "id": "necklaces_owned",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A00P3.necklaces_owned",
+      "title_ja": "現在持っているネックレス数",
+      "claim_ja": "50本のうち3本が壊れて47本。新たに5本買って52本。古い15本を譲ったので52−15=37本。",
+      "method_ja": "破損分を引き、購入分を足し、譲渡分を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各減算時に引く本数は所持数以下。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "37本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3820,
+    "checked_model_hash": "0fc2e9ac7c21a73e5bb7aaa1112a028ad3f2c0aee48d45b0113ff87ea6f724b5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

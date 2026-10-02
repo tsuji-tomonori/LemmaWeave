@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint339_pet_sitting_earnings",
+  "title_ja": "ペットシッターの収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03816",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A00P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Goldie makes $5 an hour for pet-sitting. Last week, she worked for 20 hours while this week, she worked for 30 hours. How much did Goldie earn in two weeks for pet-sitting?",
+  "answer_ja": "1日の収入は犬20ドルと猫30ドルで50ドル。5日間では5×50=250ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A00P3.pet_sitting_earnings",
+  "graph": "work/gsm8k-sprint339-pet-sitting-earnings-graph.json",
+  "model_notes_ja": [
+    "5日間毎日、犬1匹と猫1匹の両方を世話する。"
+  ],
+  "steps": [
+    {
+      "id": "pet_sitting_earnings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A00P3.pet_sitting_earnings",
+      "title_ja": "ペットシッターの収入",
+      "claim_ja": "1日の収入は犬20ドルと猫30ドルで50ドル。5日間では5×50=250ドル。",
+      "method_ja": "日額を合計して日数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "追加費用や休業日はない。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "250ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3817,
+    "checked_model_hash": "0fc2e9ac7c21a73e5bb7aaa1112a028ad3f2c0aee48d45b0113ff87ea6f724b5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

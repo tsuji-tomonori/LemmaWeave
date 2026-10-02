@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0377",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "bffce2899801a3a38a56b4c9c991bcf387ff450bcc56f23c88b113005eb00cfa",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1002A15P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03716",
+      "source_line_1based": 3717,
+      "source_record_sha256": "c1ba1ba2d8b04f5a6081ec83cb7c5b47a173c5cdb6ae9c81fd5a7f6325e84b97",
+      "raw_question_sha256": "a0ab6238bf12f4edf679a4364ad384e16a9c9424bebbe0116a9f71fb3d13bb95",
+      "normalized_question_sha256": "211d94f0041554c0bded67b390673f7b3ab5285bccedd41ba9a9c25c57e7d9d1",
+      "source_question": "John starts at an elevation of 400 feet.  He travels downward at a rate of 10 feet down per minute for 5 minutes.  What is his elevation now?",
+      "recipe_id": "gsm8k_sprint319_elevation_after_descent",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "下降を標高の減少として扱い、下降速度10フィート/分が5分間一定である。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03717",
+      "source_line_1based": 3718,
+      "source_record_sha256": "bb63ee10dcb8d6cc3b28282fa11ee33f0d5fba72b93a27a1e47f017ec5680ea4",
+      "raw_question_sha256": "e5a2664c36033da9bbed671dfb9d98037905d3aecf077ad7135967663086a135",
+      "normalized_question_sha256": "9c9e42d24d6426cac4b742de8ba43b23154ebf259ce74450fbf769d7daeeb584",
+      "source_question": "Mark plants some strawberries in his backyard. Every month, the number of strawberry plants doubles. After 3 months, Mark digs up 4 strawberry plants and gives them to his friend.  If he still has 20 strawberry plants, how many did he initially plant?",
+      "recipe_id": "gsm8k_sprint319_initial_strawberry_plants",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "「3か月後」は倍増を3回行った直後で、その後4株を渡したと読む。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03718",
+      "source_line_1based": 3719,
+      "source_record_sha256": "6d7407baf54b93734adf744bae2c475405bfbe31d558932b9ae24be342789f08",
+      "raw_question_sha256": "9ef964f3584f99ac9fd479310efdb3bb096e44b6c8dc39e6e05f6452f0595185",
+      "normalized_question_sha256": "b207333dfb1214e2d3ff5c247d533719ab83ae347b3c37bfb3eb575410592467",
+      "source_question": "Tom opens an amusement park.  It cost $100,000 to open initially.  It also cost 1% of that to run per day.  He sells 150  tickets a day for $10 each.  How long will it take to make back his money?",
+      "recipe_id": "gsm8k_sprint319_amusement_park_break_even",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "チケット150枚を毎日すべて10ドルで売り、運営費は毎日初期費用100000ドルの1%で一定、利益を全額回収へ充てる。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03719",
+      "source_line_1based": 3720,
+      "source_record_sha256": "9c29919ac4451bab0efb030557cd73c36aed3e75ffc9d9176402e9669f5ecbc1",
+      "raw_question_sha256": "d1848c848baf4c5216edd26814e0e19f1bad2845075e4b929f502c8db1b8c6c6",
+      "normalized_question_sha256": "d1848c848baf4c5216edd26814e0e19f1bad2845075e4b929f502c8db1b8c6c6",
+      "source_question": "Georgia is working on a math test with 75 problems on it. After 20 minutes she has completed 10 problems. After another 20 minutes, she has completed twice as many problems. She has 40 minutes to complete the rest of the test. How many problems does she have left to solve?",
+      "recipe_id": "gsm8k_sprint319_remaining_test_problems",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "「twice as many problems」を第2区間で新たに20問解いた意味とする。もし40分時点の累計が20問という意味なら残りは75−20=55問であり、原文だけでは曖昧である。"
+      ],
+      "blockers": [
+        "「twice as many」の係り先が曖昧なため、参照解答の追加20問という条件と代替値55を明示した。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03720",
+      "source_line_1based": 3721,
+      "source_record_sha256": "616cdc6c0dbf218724392f3023eeddc1f9cc4f19d2376bda0f3b1b78c2c81e7e",
+      "raw_question_sha256": "6d688699eedc3a809881edb7e37fe6a09fd02174ece4e477521dab431d2c0da7",
+      "normalized_question_sha256": "6d688699eedc3a809881edb7e37fe6a09fd02174ece4e477521dab431d2c0da7",
+      "source_question": "A baker sells pastries for $5 and works 7 days a week. On Monday he sold 2. Every day the number of sales increases by 1 compared to the previous day. On average, how many pastries does he sell on each day of the week?",
+      "recipe_id": "gsm8k_sprint319_weekly_pastry_average",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "前日より1個増える規則が火曜から日曜まで毎日続く。販売価格5ドルは個数平均には不要。"
+      ],
+      "blockers": []
+    }
+  ]
+}

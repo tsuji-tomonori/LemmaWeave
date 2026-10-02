@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0374",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "4125c939b2add89e287a4ae004418c8ab1d660fe42938beffc645d104d5b534c",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1002A13P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03701",
+      "source_line_1based": 3702,
+      "source_record_sha256": "b5d4fdedeca069112de162d020344403cacb88620d24022277c7b8d31fc92d41",
+      "raw_question_sha256": "8b6790620e57c411a3b43fb888dd86fe4bd07843452c066e33f793ac9bf6a23e",
+      "normalized_question_sha256": "e6895c80e85357913fb153daf34f625f35bf843b96a8c895e84ce2e18ed503ff",
+      "source_question": "John has a sneezing fit for 2 minutes.  He sneezes once every 3 seconds.  How many times does he sneeze?",
+      "recipe_id": "gsm8k_sprint316_sneezing_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2分間は120秒であり、開始瞬間を追加の1回として数えず、各3秒区間に1回くしゃみをする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03702",
+      "source_line_1based": 3703,
+      "source_record_sha256": "09b4e5fb18d816f9efb73b9e30bc94521e1112db6f1f63536a11d8b3494a9d7b",
+      "raw_question_sha256": "71914cf214d7343cc86cd2c1c3156d90d98748a0a716f83722164b818719091f",
+      "normalized_question_sha256": "71914cf214d7343cc86cd2c1c3156d90d98748a0a716f83722164b818719091f",
+      "source_question": "Janet is considering two options to retile her bathroom. The turquoise tiles cost $13/tile and the purple tiles cost $11/tile. If Janet needs to tile two walls that measure 5 feet by 8 feet and 7 feet by 8 feet, and each square foot of wall takes 4 tiles, how much will Janet save by buying the purple tiles instead of the turquoise ones?",
+      "recipe_id": "gsm8k_sprint316_tile_cost_savings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2枚の壁は重ならず、各平方フィートに4枚必要で、両候補は同じ枚数を使う。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03703",
+      "source_line_1based": 3704,
+      "source_record_sha256": "a0423ca5ded6bc23483a1182bafaa54c4804677e8674f7c0327e808a4e5cb1d9",
+      "raw_question_sha256": "847eb79b704327a9fbfb47a82673a1de613ede2bdcfa75f2e59ed17827cde0e7",
+      "normalized_question_sha256": "847eb79b704327a9fbfb47a82673a1de613ede2bdcfa75f2e59ed17827cde0e7",
+      "source_question": "Jason is planning a parking garage that will have 12 floors. Every 3rd floor has a gate where drivers have to show ID, which takes two minutes. To get from one floor to the next, drivers have to drive 800 feet at 10 feet/second. How long, in seconds, does it take to get to the bottom of the garage from the top?",
+      "recipe_id": "gsm8k_sprint316_garage_travel_time",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "「上から下まで」を12個の800フィート区間とし、3、6、9、12階の4ゲートを通るという出典慣行を追加条件として明示する。最上階から1階までの11区間・途中3ゲートなら1240秒であり、原文だけでは一意でない。"
+      ],
+      "blockers": [
+        "原文の階間区間数と通過ゲート数が一意でないため、追加条件と反例を明示した。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03704",
+      "source_line_1based": 3705,
+      "source_record_sha256": "2c4626fa3c8f36ea3fcdb24c9f6fee1ba01b8297c02ecebe798599151e609ded",
+      "raw_question_sha256": "8a6ea627cb15ed829fd4d8a9d2c7a32b97c28b0869cef99dc091b0c68395c6b1",
+      "normalized_question_sha256": "8a6ea627cb15ed829fd4d8a9d2c7a32b97c28b0869cef99dc091b0c68395c6b1",
+      "source_question": "On Black Friday a popular electronics store sells 327 televisions. This is 50 more than they sold last Black Friday. If this sales trend continues and they sell 50 more televisions each year for three years, how many televisions will they sell on Black Friday three years from now?",
+      "recipe_id": "gsm8k_sprint316_television_sales_three_years",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "毎年の増加量50台が3年間変わらない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03705",
+      "source_line_1based": 3706,
+      "source_record_sha256": "f580bdcfb021d316dcc0678f1eafa878ed07494bcc4214131258f19565c232f1",
+      "raw_question_sha256": "562756195c3a0f85e5610c2fb08c5cf199ed9dc6b0ec53b829ecfef8a9b39589",
+      "normalized_question_sha256": "562756195c3a0f85e5610c2fb08c5cf199ed9dc6b0ec53b829ecfef8a9b39589",
+      "source_question": "One of the activities in Grade 6 PE class is to get the average weight of the students from each group. In one of the groups, the average weight of five girls is 45 kg while the average weight of five boys is 55 kg. What is the average weight of the ten students from that group?",
+      "recipe_id": "gsm8k_sprint316_combined_average_weight",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各群は5人で、示された平均は算術平均。"
+      ],
+      "blockers": []
+    }
+  ]
+}

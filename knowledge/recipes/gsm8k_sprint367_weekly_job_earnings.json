@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint367_weekly_job_earnings",
+  "title_ja": "主業と副業の週間収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03957",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Joanne makes $16.00 working at her main job for 8 hours a day.  She has a part-time job, working an extra 2 hours a day where she makes $13.50 an hour.  How much money does she make if she works this schedule 5 days a week?",
+  "answer_ja": "主業は8時間×16ドル×5日=640ドル。副業は2時間×13.50ドル×5日=135ドル。合計775ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P1.weekly_job_earnings_cents",
+  "graph": "work/gsm8k-sprint367-weekly-job-earnings-cents-graph.json",
+  "model_notes_ja": [
+    "各日とも記載された勤務時間で5日間働く。"
+  ],
+  "steps": [
+    {
+      "id": "weekly_job_earnings_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P1.weekly_job_earnings_cents",
+      "title_ja": "主業と副業の週間収入",
+      "claim_ja": "主業は8時間×16ドル×5日=640ドル。副業は2時間×13.50ドル×5日=135ドル。合計775ドル。",
+      "method_ja": "金額をセント単位にそろえ、各仕事の日給・週給を求めて加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各日とも記載された勤務時間で5日間働く。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "合計775ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3958,
+    "checked_model_hash": "542cff8d04efa8ce24ea3c3a077a4bfaa2fb0e6cef590f4614b6a149bc9b02db",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

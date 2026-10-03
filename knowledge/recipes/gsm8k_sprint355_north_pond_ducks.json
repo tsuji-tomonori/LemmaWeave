@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint355_north_pond_ducks",
+  "title_ja": "North Pondのアヒル",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03897",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Six more than twice as many ducks go to North Pond as go to Lake Michigan. If Lake Michigan has 100 ducks, how many ducks can you safely estimate there will be at North Pond?",
+  "answer_ja": "Lake Michiganの2倍は2×100=200羽。それより6羽多いので200+6=206羽。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A10P1.north_pond_ducks",
+  "graph": "work/gsm8k-sprint355-north-pond-ducks-graph.json",
+  "model_notes_ja": [
+    "twiceを100羽へ適用してから6羽を加える。"
+  ],
+  "steps": [
+    {
+      "id": "north_pond_ducks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A10P1.north_pond_ducks",
+      "title_ja": "North Pondのアヒル",
+      "claim_ja": "Lake Michiganの2倍は2×100=200羽。それより6羽多いので200+6=206羽。",
+      "method_ja": "twiceを先に適用し、その結果へ6を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "six more than twiceは2×100+6を意味する。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "206羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3898,
+    "checked_model_hash": "dbd8f6081ef438fa357cae28ec7e239a7f2745c3ea0656800b18029595710175",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

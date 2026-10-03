@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint394_amusement_park_cost",
+  "title_ja": "遊園地と軽食の総費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04129",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jeremie wants to go to an amusement park with 3 friends at the end of summer. Tickets are $18 for children and a set of snack cost $5. How much will it cost Jeremie and her 3 friends to go to the amusement park and buy each of them a set of snacks?",
+  "answer_ja": "Jeremie本人と友人3人で4人。1人当たりチケット18ドルと軽食5ドルで23ドルなので、合計は23×4=92ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P2.amusement_park_cost",
+  "graph": "work/gsm8k-sprint394-amusement-park-cost-graph.json",
+  "model_notes_ja": [
+    "全員に同じチケット代と軽食代がかかる。"
+  ],
+  "steps": [
+    {
+      "id": "amusement_park_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P2.amusement_park_cost",
+      "title_ja": "遊園地と軽食の総費用",
+      "claim_ja": "Jeremie本人と友人3人で4人。1人当たりチケット18ドルと軽食5ドルで23ドルなので、合計は23×4=92ドルである。",
+      "method_ja": "人数と1人当たり費用を求めて掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4人全員が子ども料金のチケットを買い、それぞれ軽食を1セット買う。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Jeremie本人と友人3人で4人。1人当たりチケット18ドルと軽食5ドルで23ドルなので、合計は23×4=92ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4130,
+    "checked_model_hash": "bc795f1e8fff7c0a300383f88251a2edb7f27481041ca5d9c3422c08564c5843",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

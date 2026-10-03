@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint371_diesel_gallons_two_weeks",
+  "title_ja": "2週間の軽油使用量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03979",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mr. Alvarez spends $36 on diesel fuel each week. If the cost of diesel fuel is $3 per gallon, how many gallons of diesel fuel does Mr. Alvarez use in two weeks?",
+  "answer_ja": "1週間は36÷3=12ガロン。2週間では12×2=24ガロン。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A15P2.diesel_gallons_two_weeks",
+  "graph": "work/gsm8k-sprint371-diesel-gallons-two-weeks-graph.json",
+  "model_notes_ja": [
+    "軽油価格は2週間を通じて1ガロン3ドルである。"
+  ],
+  "steps": [
+    {
+      "id": "diesel_gallons_two_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A15P2.diesel_gallons_two_weeks",
+      "title_ja": "2週間の軽油使用量",
+      "claim_ja": "1週間は36÷3=12ガロン。2週間では12×2=24ガロン。",
+      "method_ja": "週の支出を1ガロン当たり価格で割り、2週分へ倍にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "軽油価格は2週間を通じて1ガロン3ドルである。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1週間は36÷3=12ガロン。2週間では12×2=24ガロン。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3980,
+    "checked_model_hash": "c36008af9a9c293ad282864cce7b541ce2db52d073fe13afbe6420ec2310989c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

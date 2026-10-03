@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1032",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "bb75e4b7777b2b059f0545cff766ffed0cd057230cdd60c110d19ce1dff0fa06",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A02R2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04051",
+      "source_line_1based": 4052,
+      "source_record_sha256": "53c6fc9117da1465ef219eefcc4a6167f2fe497e3b5f978ac781760b24dc70ad",
+      "raw_question_sha256": "ec37fa529094be6ef9a6862a6d7e0230672843c2bde6a692a968666e53214984",
+      "normalized_question_sha256": "ec37fa529094be6ef9a6862a6d7e0230672843c2bde6a692a968666e53214984",
+      "source_question": "Five friends eat at Wendy's and ordered the following: a platter of Taco Salad that cost $10, 5 orders of Dave's Single hamburger that cost $5 each, 4 sets of french fries that cost $2.50, and 5 cups of peach lemonade that cost $2 each. How much will each of them pay if they will split the bill equally?",
+      "recipe_id": "gsm8k_sprint386_equal_restaurant_share_dollars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "フライドポテトは1セット2.50ドルとしてセント単位で計算し、5人が全請求額を均等負担する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04052",
+      "source_line_1based": 4053,
+      "source_record_sha256": "6a3c781e219072a6490128836d135c6519a622e3c7a37ec2e8328b4ffae729eb",
+      "raw_question_sha256": "a3d166409cfdc0c169eb4bc04561ca59a96f1b07af5abf0c9e4fc92f6603cf99",
+      "normalized_question_sha256": "a3d166409cfdc0c169eb4bc04561ca59a96f1b07af5abf0c9e4fc92f6603cf99",
+      "source_question": "Ernie's income is 4/5 of what it used to be and Jack's income is now twice what Ernie used to make. How much do they earn combined if Ernie used to make $6000?",
+      "recipe_id": "gsm8k_sprint386_combined_current_income_dollars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Jackの基準はErnieの現在収入ではなく、原文どおりErnieの以前の6000ドルである。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04053",
+      "source_line_1based": 4054,
+      "source_record_sha256": "553e4eb23f3f00c69779ff684136e0e480d60ceada2c73c14b45a6c75c4d5507",
+      "raw_question_sha256": "6c40b748aee2aa8e597fa7c77f53b6e3089ef8b9ecaf61b7c9049c15a69e1b75",
+      "normalized_question_sha256": "6c40b748aee2aa8e597fa7c77f53b6e3089ef8b9ecaf61b7c9049c15a69e1b75",
+      "source_question": "Seymour runs a plant shop. He has 4 flats of petunias with 8 petunias per flat, 3 flats of roses with 6 roses per flat, and two Venus flytraps. Each petunia needs 8 ounces of fertilizer, each rose needs 3 ounces of fertilizer, and each Venus flytrap needs 2 ounces of fertilizer. How many ounces of fertilizer does Seymour need in total?",
+      "recipe_id": "gsm8k_sprint386_total_fertilizer_ounces",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各flat内の株数と1株あたりの肥料量をそれぞれ掛け、3種類を合算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04054",
+      "source_line_1based": 4055,
+      "source_record_sha256": "c3459f7630357b3e8e1b215a37ec75b8dd5a84b5c5c343ed693b3dba98be55fa",
+      "raw_question_sha256": "3c8c7394137efdbdc0b9ece141f3c3a0c6986a1a555f9bea678a8e57ed86515e",
+      "normalized_question_sha256": "9fec3e56dc7687ee5ad3501255a4f227e08c06ea9a0ae5c71ac53ccfb5c16522",
+      "source_question": "John has to hire a lawyer.  He pays $1000 upfront.  He then gets charged $100 per hour.  The lawyer has to work 50 hours in court time.  It takes 2 times that long in prep time.  His brother pays half the fee.  How much did John pay?",
+      "recipe_id": "gsm8k_sprint386_john_lawyer_payment_dollars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "前払金もfeeに含み、兄弟は時間料金だけでなく総額の半分を負担する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04055",
+      "source_line_1based": 4056,
+      "source_record_sha256": "db0eef64d829b2611d3512b7086503edebf9c74562268e441b9dcefa109d4a69",
+      "raw_question_sha256": "f04434b8302fa0f28c46f7ca8835dcc020fcb8ba570978063ab80ad528303237",
+      "normalized_question_sha256": "f04434b8302fa0f28c46f7ca8835dcc020fcb8ba570978063ab80ad528303237",
+      "source_question": "Every year, four clowns and thirty children go on a carousel. This year, the candy seller, at the carousel, had 700 candies. The candy seller then sold 20 candies, to each of the clowns and the children, who attended. How many candies did he have left?",
+      "recipe_id": "gsm8k_sprint386_remaining_carousel_candies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "4人と30人の全員がそれぞれ20個を購入する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_sunflower_count",
+  "title_ja": "ひまわりの本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04084",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Rose bought her mother one dozen flowers. Two of the flowers are daisies. Three-fifths of the remaining flowers are tulips and the rest are sunflowers. How many sunflowers are there?",
+  "answer_ja": "1ダースは12本。デイジー2本を除くと10本で、その3/5の6本がチューリップ。残り10−6=4本がひまわりである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P2.sunflower_count",
+  "graph": "work/gsm8k-sprint392-sunflower-count-graph.json",
+  "model_notes_ja": [
+    "three-fifthsはデイジーを除いた10本に対する割合で、10×3は5で割り切れる。"
+  ],
+  "steps": [
+    {
+      "id": "sunflower_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P2.sunflower_count",
+      "title_ja": "ひまわりの本数",
+      "claim_ja": "1ダースは12本。デイジー2本を除くと10本で、その3/5の6本がチューリップ。残り10−6=4本がひまわりである。",
+      "method_ja": "three-fifthsはデイジーを除いた10本に対する割合で、10×3は5で割り切れる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "three-fifthsはデイジーを除いた10本に対する割合で、10×3は5で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1ダースは12本。デイジー2本を除くと10本で、その3/5の6本がチューリップ。残り10−6=4本がひまわりである。 答えは4本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4085,
+    "checked_model_hash": "e3c7715b4531e66eacee4db259cb91e35cb3282131f362bc8f38c96045535df7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

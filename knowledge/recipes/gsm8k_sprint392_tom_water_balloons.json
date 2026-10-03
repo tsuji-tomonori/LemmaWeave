@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_tom_water_balloons",
+  "title_ja": "Tomが作った水風船数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04082",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tom and his friends were filling up water balloons. Tom filled up 3 times as many water balloons as Luke. Luke filled up one fourth as many balloons as Anthony. If Anthony filled up 44 water balloons, how many did Tom fill up?",
+  "answer_ja": "LukeはAnthonyの4分の1なので44÷4=11個。TomはLukeの3倍なので11×3=33個である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P2.tom_water_balloons",
+  "graph": "work/gsm8k-sprint392-tom-water-balloons-graph.json",
+  "model_notes_ja": [
+    "one fourth as manyを1/4倍、3 times as manyを3倍として読む。"
+  ],
+  "steps": [
+    {
+      "id": "tom_water_balloons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P2.tom_water_balloons",
+      "title_ja": "Tomが作った水風船数",
+      "claim_ja": "LukeはAnthonyの4分の1なので44÷4=11個。TomはLukeの3倍なので11×3=33個である。",
+      "method_ja": "one fourth as manyを1/4倍、3 times as manyを3倍として読む。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "one fourth as manyを1/4倍、3 times as manyを3倍として読む。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "LukeはAnthonyの4分の1なので44÷4=11個。TomはLukeの3倍なので11×3=33個である。 答えは33個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4083,
+    "checked_model_hash": "e3c7715b4531e66eacee4db259cb91e35cb3282131f362bc8f38c96045535df7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

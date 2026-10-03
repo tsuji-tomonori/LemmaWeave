@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint387_dog_age_in_six_years",
+  "title_ja": "6年後の犬の年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04058",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A02R3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tom's brother is 4 times as old as Tom's dog. If in 6 years, Tom's brother will be 30 years, how old is Tom's dog going to be in six years?",
+  "answer_ja": "兄弟は6年後30歳なので現在24歳。現在の兄弟は犬の4倍の年齢だから、犬は現在24÷4=6歳。6年後は6+6=12歳である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A02R3.dog_age_in_six_years",
+  "graph": "work/gsm8k-sprint387-dog-age-in-six-years-graph.json",
+  "model_notes_ja": [
+    "4倍という関係は現在について述べられており、6年後の年齢比ではない。"
+  ],
+  "steps": [
+    {
+      "id": "dog_age_in_six_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A02R3.dog_age_in_six_years",
+      "title_ja": "6年後の犬の年齢",
+      "claim_ja": "兄弟は6年後30歳なので現在24歳。現在の兄弟は犬の4倍の年齢だから、犬は現在24÷4=6歳。6年後は6+6=12歳である。",
+      "method_ja": "4倍という関係は現在について述べられており、6年後の年齢比ではない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4倍という関係は現在について述べられており、6年後の年齢比ではない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "兄弟は6年後30歳なので現在24歳。現在の兄弟は犬の4倍の年齢だから、犬は現在24÷4=6歳。6年後は6+6=12歳である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4059,
+    "checked_model_hash": "8770782010f0164311c1f63d0b6348e1ec488cdb29da8bb5bc062b3b898c98e7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

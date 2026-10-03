@@ -1,55 +1,56 @@
 import LemmaWeave.Problems.GSM8K.Sprint0922A12Models
+import LemmaWeave.Audit.Extract
 
 namespace LemmaWeave.Tests.GSM8KSprint0922A12
 open LemmaWeave.Problems.GSM8K.Sprint0922A12
 
-theorem courses_sid := LemmaWeave.Problems.GSM8K.Sprint0922A12.courses_sid
-theorem courses_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.courses_solution
-theorem biology_total := LemmaWeave.Problems.GSM8K.Sprint0922A12.biology_total
-theorem biology_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.biology_solution
-theorem sharks_dana := LemmaWeave.Problems.GSM8K.Sprint0922A12.sharks_dana
-theorem sharks_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.sharks_solution
-theorem balloons_initial := LemmaWeave.Problems.GSM8K.Sprint0922A12.balloons_initial
-theorem balloons_sold := LemmaWeave.Problems.GSM8K.Sprint0922A12.balloons_sold
-theorem balloons_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.balloons_solution
-theorem makeup_available := LemmaWeave.Problems.GSM8K.Sprint0922A12.makeup_available
-theorem makeup_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.makeup_solution
-theorem glasses_females := LemmaWeave.Problems.GSM8K.Sprint0922A12.glasses_females
-theorem glasses_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.glasses_solution
-theorem reading_total_minutes := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_total_minutes
-theorem reading_each_minutes := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_each_minutes
-theorem reading_novels := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_novels
-theorem reading_graphic := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_graphic
-theorem reading_comics := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_comics
-theorem reading_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_solution
-theorem bucket_learning := LemmaWeave.Problems.GSM8K.Sprint0922A12.bucket_learning
-theorem bucket_climbing := LemmaWeave.Problems.GSM8K.Sprint0922A12.bucket_climbing
-theorem bucket_combined := LemmaWeave.Problems.GSM8K.Sprint0922A12.bucket_combined
-theorem bucket_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.bucket_solution
-theorem nails_kitchen := LemmaWeave.Problems.GSM8K.Sprint0922A12.nails_kitchen
-theorem nails_after_kitchen := LemmaWeave.Problems.GSM8K.Sprint0922A12.nails_after_kitchen
-theorem nails_fence := LemmaWeave.Problems.GSM8K.Sprint0922A12.nails_fence
-theorem nails_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.nails_solution
-theorem cookie_day2 := LemmaWeave.Problems.GSM8K.Sprint0922A12.cookie_day2
-theorem cookie_bag_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.cookie_bag_solution
-theorem library_adult_percent := LemmaWeave.Problems.GSM8K.Sprint0922A12.library_adult_percent
-theorem library_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.library_solution
-theorem janine_current := LemmaWeave.Problems.GSM8K.Sprint0922A12.janine_current
-theorem janine_books := LemmaWeave.Problems.GSM8K.Sprint0922A12.janine_books
-theorem janine_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.janine_solution
-theorem movie_popcorn_price := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_popcorn_price
-theorem movie_soda_price := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_soda_price
-theorem movie_ticket_cost := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_ticket_cost
-theorem movie_popcorn_cost := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_popcorn_cost
-theorem movie_soda_cost := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_soda_cost
-theorem movie_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_solution
-theorem weights_pair_rupert := LemmaWeave.Problems.GSM8K.Sprint0922A12.weights_pair_rupert
-theorem weights_pair_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.weights_pair_solution
-theorem paintings_day2 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day2
-theorem paintings_day3 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day3
-theorem paintings_day4 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day4
-theorem paintings_day5 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day5
-theorem paintings_solution := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_solution
+theorem courses_sid (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Courses) : m.sid=160 := LemmaWeave.Problems.GSM8K.Sprint0922A12.courses_sid m
+theorem courses_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Courses) : m.total=200 := LemmaWeave.Problems.GSM8K.Sprint0922A12.courses_solution m
+theorem biology_total (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Biology) : m.total=100 := LemmaWeave.Problems.GSM8K.Sprint0922A12.biology_total m
+theorem biology_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Biology) : m.boys=25 := LemmaWeave.Problems.GSM8K.Sprint0922A12.biology_solution m
+theorem sharks_dana (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Sharks) : m.dana=88 := LemmaWeave.Problems.GSM8K.Sprint0922A12.sharks_dana m
+theorem sharks_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Sharks) : m.total=110 := LemmaWeave.Problems.GSM8K.Sprint0922A12.sharks_solution m
+theorem balloons_initial (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Balloons) : m.initial=36 := LemmaWeave.Problems.GSM8K.Sprint0922A12.balloons_initial m
+theorem balloons_sold (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Balloons) : m.sold=15 := LemmaWeave.Problems.GSM8K.Sprint0922A12.balloons_sold m
+theorem balloons_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Balloons) : m.remaining=21 := LemmaWeave.Problems.GSM8K.Sprint0922A12.balloons_solution m
+theorem makeup_available (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Makeup) : m.available=55 := LemmaWeave.Problems.GSM8K.Sprint0922A12.makeup_available m
+theorem makeup_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Makeup) : m.needed=10 := LemmaWeave.Problems.GSM8K.Sprint0922A12.makeup_solution m
+theorem glasses_females (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Glasses) : m.females=3000 := LemmaWeave.Problems.GSM8K.Sprint0922A12.glasses_females m
+theorem glasses_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Glasses) : m.wearing=900 := LemmaWeave.Problems.GSM8K.Sprint0922A12.glasses_solution m
+theorem reading_total_minutes (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Reading) : m.totalMinutes=240 := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_total_minutes m
+theorem reading_each_minutes (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Reading) : m.eachMinutes=80 := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_each_minutes m
+theorem reading_novels (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Reading) : m.novelPages=28 := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_novels m
+theorem reading_graphic (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Reading) : m.graphicPages=40 := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_graphic m
+theorem reading_comics (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Reading) : m.comicPages=60 := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_comics m
+theorem reading_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Reading) : m.totalPages=128 := LemmaWeave.Problems.GSM8K.Sprint0922A12.reading_solution m
+theorem bucket_learning (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.BucketList) : m.learningYears=4 := LemmaWeave.Problems.GSM8K.Sprint0922A12.bucket_learning m
+theorem bucket_climbing (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.BucketList) : m.climbingMonths=35 := LemmaWeave.Problems.GSM8K.Sprint0922A12.bucket_climbing m
+theorem bucket_combined (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.BucketList) : m.combinedYears=4 := LemmaWeave.Problems.GSM8K.Sprint0922A12.bucket_combined m
+theorem bucket_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.BucketList) : m.totalYears=12 := LemmaWeave.Problems.GSM8K.Sprint0922A12.bucket_solution m
+theorem nails_kitchen (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Nails) : m.kitchen=120 := LemmaWeave.Problems.GSM8K.Sprint0922A12.nails_kitchen m
+theorem nails_after_kitchen (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Nails) : m.afterKitchen=280 := LemmaWeave.Problems.GSM8K.Sprint0922A12.nails_after_kitchen m
+theorem nails_fence (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Nails) : m.fence=196 := LemmaWeave.Problems.GSM8K.Sprint0922A12.nails_fence m
+theorem nails_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Nails) : m.remaining=84 := LemmaWeave.Problems.GSM8K.Sprint0922A12.nails_solution m
+theorem cookie_day2 (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.CookieBag) : m.day2=16 := LemmaWeave.Problems.GSM8K.Sprint0922A12.cookie_day2 m
+theorem cookie_bag_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.CookieBag) : m.initial=64 := LemmaWeave.Problems.GSM8K.Sprint0922A12.cookie_bag_solution m
+theorem library_adult_percent (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Library) : m.adultPercent=65 := LemmaWeave.Problems.GSM8K.Sprint0922A12.library_adult_percent m
+theorem library_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Library) : m.total=160 := LemmaWeave.Problems.GSM8K.Sprint0922A12.library_solution m
+theorem janine_current (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Janine) : m.currentBooks=10 := LemmaWeave.Problems.GSM8K.Sprint0922A12.janine_current m
+theorem janine_books (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Janine) : m.totalBooks=15 := LemmaWeave.Problems.GSM8K.Sprint0922A12.janine_books m
+theorem janine_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Janine) : m.pages=150 := LemmaWeave.Problems.GSM8K.Sprint0922A12.janine_solution m
+theorem movie_popcorn_price (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Movie) : m.popcornPrice=4 := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_popcorn_price m
+theorem movie_soda_price (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Movie) : m.sodaPrice=2 := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_soda_price m
+theorem movie_ticket_cost (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Movie) : m.ticketCost=20 := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_ticket_cost m
+theorem movie_popcorn_cost (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Movie) : m.popcornCost=8 := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_popcorn_cost m
+theorem movie_soda_cost (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Movie) : m.sodaCost=8 := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_soda_cost m
+theorem movie_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Movie) : m.total=36 := LemmaWeave.Problems.GSM8K.Sprint0922A12.movie_solution m
+theorem weights_pair_rupert (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.WeightsPair) : m.rupert=35 := LemmaWeave.Problems.GSM8K.Sprint0922A12.weights_pair_rupert m
+theorem weights_pair_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.WeightsPair) : m.antoinette=63 := LemmaWeave.Problems.GSM8K.Sprint0922A12.weights_pair_solution m
+theorem paintings_day2 (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Paintings) : m.day2=4 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day2 m
+theorem paintings_day3 (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Paintings) : m.day3=8 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day3 m
+theorem paintings_day4 (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Paintings) : m.day4=16 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day4 m
+theorem paintings_day5 (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Paintings) : m.day5=32 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_day5 m
+theorem paintings_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A12.Paintings) : m.total=62 := LemmaWeave.Problems.GSM8K.Sprint0922A12.paintings_solution m
 
 end LemmaWeave.Tests.GSM8KSprint0922A12
 

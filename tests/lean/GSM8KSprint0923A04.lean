@@ -2,63 +2,62 @@ import LemmaWeave.Problems.GSM8K.Sprint0923A04Models
 import LemmaWeave.Audit.Extract
 
 namespace LemmaWeave.Tests.GSM8KSprint0923A04
-namespace P := LemmaWeave.Problems.GSM8K.Sprint0923A04
 
-theorem salad_tomatoes (m : P.SaladBar) : m.tomatoes = 6 := P.salad_tomatoes m
-theorem salad_pickles (m : P.SaladBar) : m.pickles = 24 := P.salad_pickles m
-theorem salad_bacon (m : P.SaladBar) : m.bacon = 96 := P.salad_bacon m
-theorem salad_solution (m : P.SaladBar) : m.red = 32 := P.salad_solution m
-theorem flower_bought (m : P.FlowerPurchase) : m.bought = 36 := P.flower_bought m
-theorem flower_free (m : P.FlowerPurchase) : m.free = 6 := P.flower_free m
-theorem flower_solution (m : P.FlowerPurchase) : m.total = 42 := P.flower_solution m
-theorem soccer_athletes (m : P.SoccerStudents) : m.athletes = 208 := P.soccer_athletes m
-theorem soccer_solution (m : P.SoccerStudents) : m.soccer = 26 := P.soccer_solution m
-theorem toys_equation (m : P.ToyBoxes) : 2 * m.kamari + 30 = 160 := P.toys_equation m
-theorem toys_solution (m : P.ToyBoxes) : m.kamari = 65 := P.toys_solution m
-theorem basketball_mark_two (m : P.BasketballGame) : m.markTwo = 50 := P.basketball_mark_two m
-theorem basketball_mark_three (m : P.BasketballGame) : m.markThree = 24 := P.basketball_mark_three m
-theorem basketball_mark_total (m : P.BasketballGame) : m.markTotal = 84 := P.basketball_mark_total m
-theorem basketball_opponent_parts (m : P.BasketballGame) :
-    m.oppTwo = 100 ∧ m.oppThree = 12 ∧ m.oppFree = 5 := P.basketball_opponent_parts m
-theorem basketball_opponent_total (m : P.BasketballGame) : m.oppTotal = 117 :=
-  P.basketball_opponent_total m
-theorem basketball_solution (m : P.BasketballGame) : m.total = 201 := P.basketball_solution m
-theorem messages_wednesday (m : P.GroupMessages) : m.wednesday = 500 := P.messages_wednesday m
-theorem messages_thursday (m : P.GroupMessages) : m.thursday = 1000 := P.messages_thursday m
-theorem messages_solution (m : P.GroupMessages) : m.total = 2000 := P.messages_solution m
-theorem temperature_sum (m : P.TemperatureAverage) : m.sum = 420 := P.temperature_sum m
-theorem temperature_solution (m : P.TemperatureAverage) : m.average = 84 := P.temperature_solution m
-theorem waterpark_counts (m : P.Waterpark) : m.adults = 6 ∧ m.childPrice = 15 :=
-  P.waterpark_counts m
-theorem waterpark_adult_cost (m : P.Waterpark) : m.adultCost = 180 := P.waterpark_adult_cost m
-theorem waterpark_child_cost (m : P.Waterpark) : m.childCost = 60 := P.waterpark_child_cost m
-theorem waterpark_ticket_total (m : P.Waterpark) : m.ticketTotal = 240 := P.waterpark_ticket_total m
-theorem waterpark_discounted (m : P.Waterpark) : m.discounted = 192 := P.waterpark_discounted m
-theorem waterpark_solution (m : P.Waterpark) : m.total = 197 := P.waterpark_solution m
-theorem shirts_count (m : P.ShirtSale) : m.shirts = 6 := P.shirts_count m
-theorem shirts_discount (m : P.ShirtSale) : m.discountEach = 10 := P.shirts_discount m
-theorem shirts_sale_price (m : P.ShirtSale) : m.saleEach = 40 := P.shirts_sale_price m
-theorem shirts_solution (m : P.ShirtSale) : m.total = 240 := P.shirts_solution m
-theorem cards_june (m : P.TradingCards) : m.june = 25044 := P.cards_june m
-theorem cards_july (m : P.TradingCards) : m.july = 21122 := P.cards_july m
-theorem cards_solution (m : P.TradingCards) : m.total = 46166 := P.cards_solution m
-theorem warehouses_second (m : P.Warehouses) : m.second = 200 := P.warehouses_second m
-theorem warehouses_solution (m : P.Warehouses) : m.total = 600 := P.warehouses_solution m
-theorem jeremy_jerseys (m : P.JeremyBudget) : m.jerseys = 10 := P.jeremy_jerseys m
-theorem jeremy_spent (m : P.JeremyBudget) : m.spent = 36 := P.jeremy_spent m
-theorem jeremy_solution (m : P.JeremyBudget) : m.left = 14 := P.jeremy_solution m
-theorem juggling_toby (m : P.JugglingContest) : m.toby = 400 := P.juggling_toby m
-theorem juggling_friend (m : P.JugglingContest) : m.friend = 404 := P.juggling_friend m
-theorem juggling_solution (m : P.JugglingContest) : m.winner = 404 := P.juggling_solution m
-theorem jeans_pair_cost (m : P.JeansSale) : m.pairCost = 80 := P.jeans_pair_cost m
-theorem jeans_discount (m : P.JeansSale) : m.discount = 8 := P.jeans_discount m
-theorem jeans_discounted_pair (m : P.JeansSale) : m.discountedPair = 72 :=
-  P.jeans_discounted_pair m
-theorem jeans_solution (m : P.JeansSale) : m.total = 112 := P.jeans_solution m
-theorem fish_kingfisher (m : P.FishCatch) : m.kingfisher = 20 := P.fish_kingfisher m
-theorem fish_birds (m : P.FishCatch) : m.birds = 33 := P.fish_birds m
-theorem fish_fisherman (m : P.FishCatch) : m.fisherman = 99 := P.fish_fisherman m
-theorem fish_solution (m : P.FishCatch) : m.difference = 86 := P.fish_solution m
+theorem salad_tomatoes (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.SaladBar) : m.tomatoes = 6 := LemmaWeave.Problems.GSM8K.Sprint0923A04.salad_tomatoes m
+theorem salad_pickles (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.SaladBar) : m.pickles = 24 := LemmaWeave.Problems.GSM8K.Sprint0923A04.salad_pickles m
+theorem salad_bacon (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.SaladBar) : m.bacon = 96 := LemmaWeave.Problems.GSM8K.Sprint0923A04.salad_bacon m
+theorem salad_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.SaladBar) : m.red = 32 := LemmaWeave.Problems.GSM8K.Sprint0923A04.salad_solution m
+theorem flower_bought (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.FlowerPurchase) : m.bought = 36 := LemmaWeave.Problems.GSM8K.Sprint0923A04.flower_bought m
+theorem flower_free (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.FlowerPurchase) : m.free = 6 := LemmaWeave.Problems.GSM8K.Sprint0923A04.flower_free m
+theorem flower_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.FlowerPurchase) : m.total = 42 := LemmaWeave.Problems.GSM8K.Sprint0923A04.flower_solution m
+theorem soccer_athletes (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.SoccerStudents) : m.athletes = 208 := LemmaWeave.Problems.GSM8K.Sprint0923A04.soccer_athletes m
+theorem soccer_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.SoccerStudents) : m.soccer = 26 := LemmaWeave.Problems.GSM8K.Sprint0923A04.soccer_solution m
+theorem toys_equation (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.ToyBoxes) : 2 * m.kamari + 30 = 160 := LemmaWeave.Problems.GSM8K.Sprint0923A04.toys_equation m
+theorem toys_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.ToyBoxes) : m.kamari = 65 := LemmaWeave.Problems.GSM8K.Sprint0923A04.toys_solution m
+theorem basketball_mark_two (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.BasketballGame) : m.markTwo = 50 := LemmaWeave.Problems.GSM8K.Sprint0923A04.basketball_mark_two m
+theorem basketball_mark_three (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.BasketballGame) : m.markThree = 24 := LemmaWeave.Problems.GSM8K.Sprint0923A04.basketball_mark_three m
+theorem basketball_mark_total (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.BasketballGame) : m.markTotal = 84 := LemmaWeave.Problems.GSM8K.Sprint0923A04.basketball_mark_total m
+theorem basketball_opponent_parts (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.BasketballGame) :
+    m.oppTwo = 100 ∧ m.oppThree = 12 ∧ m.oppFree = 5 := LemmaWeave.Problems.GSM8K.Sprint0923A04.basketball_opponent_parts m
+theorem basketball_opponent_total (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.BasketballGame) : m.oppTotal = 117 :=
+  LemmaWeave.Problems.GSM8K.Sprint0923A04.basketball_opponent_total m
+theorem basketball_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.BasketballGame) : m.total = 201 := LemmaWeave.Problems.GSM8K.Sprint0923A04.basketball_solution m
+theorem messages_wednesday (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.GroupMessages) : m.wednesday = 500 := LemmaWeave.Problems.GSM8K.Sprint0923A04.messages_wednesday m
+theorem messages_thursday (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.GroupMessages) : m.thursday = 1000 := LemmaWeave.Problems.GSM8K.Sprint0923A04.messages_thursday m
+theorem messages_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.GroupMessages) : m.total = 2000 := LemmaWeave.Problems.GSM8K.Sprint0923A04.messages_solution m
+theorem temperature_sum (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.TemperatureAverage) : m.sum = 420 := LemmaWeave.Problems.GSM8K.Sprint0923A04.temperature_sum m
+theorem temperature_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.TemperatureAverage) : m.average = 84 := LemmaWeave.Problems.GSM8K.Sprint0923A04.temperature_solution m
+theorem waterpark_counts (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.Waterpark) : m.adults = 6 ∧ m.childPrice = 15 :=
+  LemmaWeave.Problems.GSM8K.Sprint0923A04.waterpark_counts m
+theorem waterpark_adult_cost (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.Waterpark) : m.adultCost = 180 := LemmaWeave.Problems.GSM8K.Sprint0923A04.waterpark_adult_cost m
+theorem waterpark_child_cost (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.Waterpark) : m.childCost = 60 := LemmaWeave.Problems.GSM8K.Sprint0923A04.waterpark_child_cost m
+theorem waterpark_ticket_total (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.Waterpark) : m.ticketTotal = 240 := LemmaWeave.Problems.GSM8K.Sprint0923A04.waterpark_ticket_total m
+theorem waterpark_discounted (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.Waterpark) : m.discounted = 192 := LemmaWeave.Problems.GSM8K.Sprint0923A04.waterpark_discounted m
+theorem waterpark_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.Waterpark) : m.total = 197 := LemmaWeave.Problems.GSM8K.Sprint0923A04.waterpark_solution m
+theorem shirts_count (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.ShirtSale) : m.shirts = 6 := LemmaWeave.Problems.GSM8K.Sprint0923A04.shirts_count m
+theorem shirts_discount (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.ShirtSale) : m.discountEach = 10 := LemmaWeave.Problems.GSM8K.Sprint0923A04.shirts_discount m
+theorem shirts_sale_price (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.ShirtSale) : m.saleEach = 40 := LemmaWeave.Problems.GSM8K.Sprint0923A04.shirts_sale_price m
+theorem shirts_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.ShirtSale) : m.total = 240 := LemmaWeave.Problems.GSM8K.Sprint0923A04.shirts_solution m
+theorem cards_june (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.TradingCards) : m.june = 25044 := LemmaWeave.Problems.GSM8K.Sprint0923A04.cards_june m
+theorem cards_july (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.TradingCards) : m.july = 21122 := LemmaWeave.Problems.GSM8K.Sprint0923A04.cards_july m
+theorem cards_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.TradingCards) : m.total = 46166 := LemmaWeave.Problems.GSM8K.Sprint0923A04.cards_solution m
+theorem warehouses_second (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.Warehouses) : m.second = 200 := LemmaWeave.Problems.GSM8K.Sprint0923A04.warehouses_second m
+theorem warehouses_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.Warehouses) : m.total = 600 := LemmaWeave.Problems.GSM8K.Sprint0923A04.warehouses_solution m
+theorem jeremy_jerseys (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JeremyBudget) : m.jerseys = 10 := LemmaWeave.Problems.GSM8K.Sprint0923A04.jeremy_jerseys m
+theorem jeremy_spent (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JeremyBudget) : m.spent = 36 := LemmaWeave.Problems.GSM8K.Sprint0923A04.jeremy_spent m
+theorem jeremy_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JeremyBudget) : m.left = 14 := LemmaWeave.Problems.GSM8K.Sprint0923A04.jeremy_solution m
+theorem juggling_toby (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JugglingContest) : m.toby = 400 := LemmaWeave.Problems.GSM8K.Sprint0923A04.juggling_toby m
+theorem juggling_friend (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JugglingContest) : m.friend = 404 := LemmaWeave.Problems.GSM8K.Sprint0923A04.juggling_friend m
+theorem juggling_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JugglingContest) : m.winner = 404 := LemmaWeave.Problems.GSM8K.Sprint0923A04.juggling_solution m
+theorem jeans_pair_cost (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JeansSale) : m.pairCost = 80 := LemmaWeave.Problems.GSM8K.Sprint0923A04.jeans_pair_cost m
+theorem jeans_discount (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JeansSale) : m.discount = 8 := LemmaWeave.Problems.GSM8K.Sprint0923A04.jeans_discount m
+theorem jeans_discounted_pair (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JeansSale) : m.discountedPair = 72 :=
+  LemmaWeave.Problems.GSM8K.Sprint0923A04.jeans_discounted_pair m
+theorem jeans_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.JeansSale) : m.total = 112 := LemmaWeave.Problems.GSM8K.Sprint0923A04.jeans_solution m
+theorem fish_kingfisher (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.FishCatch) : m.kingfisher = 20 := LemmaWeave.Problems.GSM8K.Sprint0923A04.fish_kingfisher m
+theorem fish_birds (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.FishCatch) : m.birds = 33 := LemmaWeave.Problems.GSM8K.Sprint0923A04.fish_birds m
+theorem fish_fisherman (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.FishCatch) : m.fisherman = 99 := LemmaWeave.Problems.GSM8K.Sprint0923A04.fish_fisherman m
+theorem fish_solution (m : LemmaWeave.Problems.GSM8K.Sprint0923A04.FishCatch) : m.difference = 86 := LemmaWeave.Problems.GSM8K.Sprint0923A04.fish_solution m
 
 end LemmaWeave.Tests.GSM8KSprint0923A04
 

@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A13P2
 
@@ -16,11 +16,13 @@ structure AgesModel where
 
 theorem ages_gap (m : AgesModel) : m.gap = 4 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem ages_solution (m : AgesModel) : m.targetRachel = 8 := by
   have hPrev := ages_gap m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all <;> omega
 
 structure BooksModel where
@@ -41,16 +43,19 @@ structure BooksModel where
 
 theorem books_donated (m : BooksModel) : m.donated = 50 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 theorem books_total (m : BooksModel) : m.totalAfter = 350 := by
   have hPrev := books_donated m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 theorem books_solution (m : BooksModel) : m.remaining = 210 := by
   have hPrev := books_total m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 structure WeightLossModel where
@@ -73,21 +78,25 @@ structure WeightLossModel where
 
 theorem weight_barbi (m : WeightLossModel) : m.barbiTotalHalfKg = 36 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all
 
 theorem weight_luca (m : WeightLossModel) : m.lucaTotalHalfKg = 198 := by
   have hPrev := weight_barbi m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all
 
 theorem weight_difference_half (m : WeightLossModel) : m.differenceHalfKg = 162 := by
   have hPrev := weight_luca m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem weight_solution (m : WeightLossModel) : m.differenceKg = 81 := by
   have hPrev := weight_difference_half m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all <;> omega
 
 structure JeansModel where
@@ -104,16 +113,19 @@ structure JeansModel where
 
 theorem jeans_after_summer (m : JeansModel) : m.afterSummerCents = 2450 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all
 
 theorem jeans_original_cents (m : JeansModel) : m.originalCents = 4900 := by
   have hPrev := jeans_after_summer m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all
 
 theorem jeans_solution (m : JeansModel) : m.originalDollars = 49 := by
   have hPrev := jeans_original_cents m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all <;> omega
 
 structure FishModel where
@@ -134,11 +146,13 @@ structure FishModel where
 
 theorem fish_changes (m : FishModel) : m.added = 10 ∧ m.died = 5 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 theorem fish_solution (m : FishModel) : m.final = 7 := by
   have hPrev := fish_changes m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A13P2

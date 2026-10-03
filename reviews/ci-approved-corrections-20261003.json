@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-03",
+  "scope": "Only authorized exam arithmetic and received-books direction corrections; original source and historical author reviews retained",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "implementation_authorization": "User approved implementing, publishing, validating and merging these two corrections; this is distinct from mathematical proof review",
+  "records": [
+    {
+      "recipe": "gsm8k_sprint99_exam",
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "source_line_1based": 1777,
+      "source_record_sha256": "d33cd19615fa973888d79fd1d35bc78d5a27fd390d603f6bd6f90baae5194011",
+      "source_reference_answer_sha256": "cfe0b60d961cd74d9aae0539bb8755fd97316f4ef7421ff2ab3dda1136d1ac43",
+      "original_reference_answer_label": "94",
+      "source_review": "current correction checked against pinned original question and answer",
+      "independent_check": "separate source/scope auditor checked original record, quantitative conditions and quantifiers; not a user-authored proof review",
+      "local_dependency_validation": {
+        "audit": "passed",
+        "steps": 8,
+        "dependency_links": "verified"
+      },
+      "evidence": {
+        "run": "runs/20261003T080244-7c77b505/run.json",
+        "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+        "github_run_id": null,
+        "raw_graph_sha256": "81350b92646f6cdcc5dad8664063bd9b64959946aed3d9c68f48c3dd9e72eb24"
+      },
+      "limitation": "Focused current-input checks; run commit precedes this documentation. Exact-head CI and whole-batch validation remain required. No ready-ledger update."
+    },
+    {
+      "recipe": "gsm8k_sprint185_library",
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0929A07P1Models.lean",
+      "model_hash": "2628a2a6e23c6cb1a85260a68dc3f4b7ac28e81b8b1b9af6d32492fa2d6b53e8",
+      "source_line_1based": 3028,
+      "source_record_sha256": "25a7478fd7cd501dc6f63f254906026c9ac6bd442b53f661404c4e3c96dac227",
+      "source_reference_answer_sha256": "6f1e317c2168408875ffac5fbc9c6c47a3b35216c8bf6094ae9654d52b210acc",
+      "original_reference_answer_label": "81",
+      "source_review": "current correction checked against pinned original question and answer",
+      "independent_check": "separate source/scope auditor checked original record, quantitative conditions and quantifiers; not a user-authored proof review",
+      "local_dependency_validation": {
+        "audit": "passed",
+        "steps": 4,
+        "dependency_links": "verified"
+      },
+      "evidence": {
+        "run": "runs/20261003T075640-6cbe4edd/run.json",
+        "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+        "github_run_id": null,
+        "raw_graph_sha256": "854463fbd23a39f7ffe0907b01f9caada8e0fd3f053bf7df60397c5981bf45a5"
+      },
+      "limitation": "Focused current-input checks; run commit precedes this documentation. Exact-head CI and whole-batch validation remain required. No ready-ledger update."
+    }
+  ]
+}

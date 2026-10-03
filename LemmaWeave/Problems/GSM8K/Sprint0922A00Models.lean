@@ -13,7 +13,7 @@ structure ReadingPages where
 theorem reading_oliver (m : ReadingPages) : m.oliver = 40 := m.hOliver
 theorem reading_lucy (m : ReadingPages) : m.lucy = 60 := by
   calc m.lucy = m.oliver + 20 := m.hLucy
-    _ = 40 + 20 := by rw [m.hOliver]
+    _ = 40 + 20 := by rw [reading_oliver m]
     _ = 60 := by norm_num
 theorem reading_solution (m : ReadingPages) : m.carter = 30 := by
   have h : 2 * m.carter = 60 := by rw [m.hCarter, reading_lucy m]

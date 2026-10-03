@@ -1,14 +1,14 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A04
 
 structure TennisModel where
   minutes : Nat
   points : Nat
-  matches : Nat
+  «matches» : Nat
   hMinutes : minutes = 2 * 60
   hPoints : 5 * points = minutes
-  hMatches : 8 * matches = points
+  hMatches : 8 * «matches» = points
 
 theorem tennis_minutes_points (m : TennisModel) :
     m.minutes = 120 ∧ m.points = 24 := by
@@ -100,9 +100,9 @@ theorem tickets_remaining (m : TicketsModel) : m.remainingTickets = 80 := by
   omega
 
 theorem tickets_average (m : TicketsModel) : m.dailyAverage = 5 := by
-  rcases tickets_first_days m with ⟨hf, hd⟩
-  have hr := tickets_remaining m
+  have hd := (tickets_first_days m).2
   have h := m.hAverage
+  rw [hd, tickets_remaining m] at h
   omega
 
 theorem tickets_solution (m : TicketsModel) : m.dailyAverage = 5 := by
@@ -299,8 +299,8 @@ theorem lizard_rate (m : LizardModel) : m.ratePerSecond = 4 := by
   omega
 
 theorem lizard_time (m : LizardModel) : m.seconds = 200 := by
-  have hr := lizard_rate m
   have h := m.hTime
+  rw [lizard_rate m] at h
   omega
 
 theorem lizard_solution (m : LizardModel) : m.seconds = 200 := by

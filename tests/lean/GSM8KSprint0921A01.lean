@@ -90,7 +90,7 @@ theorem boxes_remaining : (2160 : Nat) = 160 + 2000 := by
 theorem boxes_count : (2000 : Nat) = 100 * 20 := by
   calc
     (2000 : Nat) = 2160 - 160 := by norm_num
-    _ = 100 * 20 := by rw [boxes_remaining]; norm_num
+    _ = 100 * 20 := by rw [boxes_remaining] <;> norm_num
 theorem boxes_solution : AppleBoxes 180 12 2160 160 2000 20 100 := by unfold AppleBoxes; exact ⟨boxes_delivered, boxes_remaining, boxes_count⟩
 
 theorem basketball_twos : (8 : Nat) = 2 * 4 := by norm_num
@@ -153,7 +153,7 @@ theorem fish_east_remain : (3200 : Nat) = 1280 + 1920 := by
 theorem fish_total : (2870 : Nat) = 450 + 1920 + 500 := by
   calc
     (2870 : Nat) = (1800 - 1350) + (3200 - 1280) + 500 := by norm_num
-    _ = 450 + 1920 + 500 := by rw [fish_west_remain, fish_east_remain]; norm_num
+    _ = 450 + 1920 + 500 := by rw [fish_west_remain, fish_east_remain] <;> norm_num
 theorem fish_solution : FishRemaining 1800 3200 500 3 4 1350 450 2 5 1280 1920 2870 := by unfold FishRemaining; exact ⟨fish_west_caught, fish_west_remain, fish_east_caught, fish_east_remain, fish_total⟩
 
 #print axioms juice_solution

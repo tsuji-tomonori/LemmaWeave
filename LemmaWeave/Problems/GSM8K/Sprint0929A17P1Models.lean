@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A17P1
 
@@ -24,16 +24,19 @@ structure AirplaneModel where
 
 theorem airplane_after_texas (m : AirplaneModel) : m.afterTexas = 90 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   omega
 
 theorem airplane_final_passengers (m : AirplaneModel) : m.finalPassengers = 57 := by
   have hTexas := airplane_after_texas m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   omega
 
 theorem airplane_solution (m : AirplaneModel) : m.totalPeople = 67 := by
   have hFinal := airplane_final_passengers m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   omega
 
 structure SingerModel where
@@ -51,18 +54,18 @@ structure SingerModel where
   hTotal : totalPaid = baseCost + tip
 
 theorem singer_base_cost (m : SingerModel) : m.baseCost = 45 := by
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at * <;> omega
+  rw [m.hBase, m.hHours, m.hRate]
 
 theorem singer_tip (m : SingerModel) : m.tip = 9 := by
-  have hBase := singer_base_cost m
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at * <;> omega
+  have h := m.hTip
+  rw [m.hPercent, singer_base_cost m] at h
+  omega
 
 theorem singer_solution (m : SingerModel) : m.totalPaid = 54 := by
   have hBase := singer_base_cost m
   have hTip := singer_tip m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 
 structure CarLoanModel where
@@ -85,22 +88,24 @@ structure CarLoanModel where
 
 theorem car_loan_amount (m : CarLoanModel) : m.loan = 24000 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   omega
 
 theorem car_base_payment (m : CarLoanModel) : m.basePayment = 500 := by
-  have hLoan := car_loan_amount m
-  rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at * <;> omega
+  have h := m.hBasePayment
+  rw [car_loan_amount m, m.hMonths] at h
+  omega
 
 theorem car_monthly_interest (m : CarLoanModel) : m.interest = 25 := by
-  have hBase := car_base_payment m
-  rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at * <;> omega
+  have h := m.hInterest
+  rw [m.hInterestPercent, car_base_payment m] at h
+  omega
 
 theorem car_solution (m : CarLoanModel) : m.monthlyTotal = 525 := by
   have hBase := car_base_payment m
   have hInterest := car_monthly_interest m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   omega
 
 structure CansModel where
@@ -116,13 +121,12 @@ structure CansModel where
   hAfterTotal : 100 * afterTotal = afterPercent * beforeTotal
 
 theorem cans_before_total (m : CansModel) : m.beforeTotal = 1800 := by
-  rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at * <;> omega
+  rw [m.hBeforeTotal, m.hCount, m.hBeforeEach]
 
 theorem cans_solution (m : CansModel) : m.afterTotal = 360 := by
-  have hBefore := cans_before_total m
-  rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at * <;> omega
+  have h := m.hAfterTotal
+  rw [m.hPercent, cans_before_total m] at h
+  omega
 
 structure SoapModel where
   soapsPerPackage : ℕ
@@ -137,12 +141,9 @@ structure SoapModel where
   hTotal : totalSoaps = boxCount * soapsPerBox
 
 theorem soap_per_box (m : SoapModel) : m.soapsPerBox = 1152 := by
-  rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at *
+  rw [m.hPerBox, m.hPerPackage, m.hPackagesPerBox]
 
 theorem soap_solution (m : SoapModel) : m.totalSoaps = 2304 := by
-  have hPerBox := soap_per_box m
-  rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at *
+  rw [m.hTotal, m.hBoxes, soap_per_box m]
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A17P1

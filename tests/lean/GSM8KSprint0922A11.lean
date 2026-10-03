@@ -1,49 +1,50 @@
 import LemmaWeave.Problems.GSM8K.Sprint0922A11Models
+import LemmaWeave.Audit.Extract
 
 namespace LemmaWeave.Tests.GSM8KSprint0922A11
 open LemmaWeave.Problems.GSM8K.Sprint0922A11
 
-theorem height_gain := LemmaWeave.Problems.GSM8K.Sprint0922A11.height_gain
-theorem height_inches := LemmaWeave.Problems.GSM8K.Sprint0922A11.height_inches
-theorem height_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.height_solution
-theorem hockey_girl_percent := LemmaWeave.Problems.GSM8K.Sprint0922A11.hockey_girl_percent
-theorem hockey_girls := LemmaWeave.Problems.GSM8K.Sprint0922A11.hockey_girls
-theorem hockey_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.hockey_solution
-theorem drawings_page2 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_page2
-theorem drawings_page3 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_page3
-theorem drawings_page4 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_page4
-theorem drawings_page5 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_page5
-theorem drawings_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_solution
-theorem bonus_customers := LemmaWeave.Problems.GSM8K.Sprint0922A11.bonus_customers
-theorem bonus_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.bonus_solution
-theorem pets_rabbit := LemmaWeave.Problems.GSM8K.Sprint0922A11.pets_rabbit
-theorem pets_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.pets_solution
-theorem vegetables_peeling := LemmaWeave.Problems.GSM8K.Sprint0922A11.vegetables_peeling
-theorem vegetables_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.vegetables_solution
-theorem weights_brad := LemmaWeave.Problems.GSM8K.Sprint0922A11.weights_brad
-theorem weights_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.weights_solution
-theorem salary_ratio_total := LemmaWeave.Problems.GSM8K.Sprint0922A11.salary_ratio_total
-theorem salary_ratio_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.salary_ratio_solution
-theorem fruit_chosen := LemmaWeave.Problems.GSM8K.Sprint0922A11.fruit_chosen
-theorem fruit_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.fruit_solution
-theorem cupcake_gluten := LemmaWeave.Problems.GSM8K.Sprint0922A11.cupcake_gluten
-theorem cupcake_vegan_gluten := LemmaWeave.Problems.GSM8K.Sprint0922A11.cupcake_vegan_gluten
-theorem cupcake_types_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.cupcake_types_solution
-theorem weekend_hours := LemmaWeave.Problems.GSM8K.Sprint0922A11.weekend_hours
-theorem weekend_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.weekend_solution
-theorem cookies_mother := LemmaWeave.Problems.GSM8K.Sprint0922A11.cookies_mother
-theorem cookies_brother := LemmaWeave.Problems.GSM8K.Sprint0922A11.cookies_brother
-theorem cookies_eaten := LemmaWeave.Problems.GSM8K.Sprint0922A11.cookies_eaten
-theorem cookies_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.cookies_solution
-theorem camera_cost := LemmaWeave.Problems.GSM8K.Sprint0922A11.camera_cost
-theorem frames_cost := LemmaWeave.Problems.GSM8K.Sprint0922A11.frames_cost
-theorem purchase_subtotal := LemmaWeave.Problems.GSM8K.Sprint0922A11.purchase_subtotal
-theorem purchase_discount := LemmaWeave.Problems.GSM8K.Sprint0922A11.purchase_discount
-theorem purchase_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.purchase_solution
-theorem bread_batches := LemmaWeave.Problems.GSM8K.Sprint0922A11.bread_batches
-theorem bread_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.bread_solution
-theorem stove_wall := LemmaWeave.Problems.GSM8K.Sprint0922A11.stove_wall
-theorem stove_solution := LemmaWeave.Problems.GSM8K.Sprint0922A11.stove_solution
+theorem height_gain (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Height) : m.gain=6 := LemmaWeave.Problems.GSM8K.Sprint0922A11.height_gain m
+theorem height_inches (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Height) : m.inches=72 := LemmaWeave.Problems.GSM8K.Sprint0922A11.height_inches m
+theorem height_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Height) : m.feet=6 := LemmaWeave.Problems.GSM8K.Sprint0922A11.height_solution m
+theorem hockey_girl_percent (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Hockey) : m.girlPercent=40 := LemmaWeave.Problems.GSM8K.Sprint0922A11.hockey_girl_percent m
+theorem hockey_girls (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Hockey) : m.girls=20 := LemmaWeave.Problems.GSM8K.Sprint0922A11.hockey_girls m
+theorem hockey_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Hockey) : m.juniors=10 := LemmaWeave.Problems.GSM8K.Sprint0922A11.hockey_solution m
+theorem drawings_page2 (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Drawings) : m.page2=10 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_page2 m
+theorem drawings_page3 (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Drawings) : m.page3=15 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_page3 m
+theorem drawings_page4 (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Drawings) : m.page4=20 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_page4 m
+theorem drawings_page5 (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Drawings) : m.page5=25 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_page5 m
+theorem drawings_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Drawings) : m.total=75 := LemmaWeave.Problems.GSM8K.Sprint0922A11.drawings_solution m
+theorem bonus_customers (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Bonus) : m.customers=80 := LemmaWeave.Problems.GSM8K.Sprint0922A11.bonus_customers m
+theorem bonus_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Bonus) : m.points=16 := LemmaWeave.Problems.GSM8K.Sprint0922A11.bonus_solution m
+theorem pets_rabbit (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.PetsAge) : m.rabbit=4 := LemmaWeave.Problems.GSM8K.Sprint0922A11.pets_rabbit m
+theorem pets_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.PetsAge) : m.dog=12 := LemmaWeave.Problems.GSM8K.Sprint0922A11.pets_solution m
+theorem vegetables_peeling (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Vegetables) : m.peeling=30 := LemmaWeave.Problems.GSM8K.Sprint0922A11.vegetables_peeling m
+theorem vegetables_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Vegetables) : m.total=40 := LemmaWeave.Problems.GSM8K.Sprint0922A11.vegetables_solution m
+theorem weights_brad (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Weights) : m.brad=150 := LemmaWeave.Problems.GSM8K.Sprint0922A11.weights_brad m
+theorem weights_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Weights) : m.billy=159 := LemmaWeave.Problems.GSM8K.Sprint0922A11.weights_solution m
+theorem salary_ratio_total (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.SalaryRatio) : m.ratioTotal=15 := LemmaWeave.Problems.GSM8K.Sprint0922A11.salary_ratio_total m
+theorem salary_ratio_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.SalaryRatio) : m.salary=800 := LemmaWeave.Problems.GSM8K.Sprint0922A11.salary_ratio_solution m
+theorem fruit_chosen (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Fruit) : m.chosen=7 := LemmaWeave.Problems.GSM8K.Sprint0922A11.fruit_chosen m
+theorem fruit_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Fruit) : m.oranges=5 := LemmaWeave.Problems.GSM8K.Sprint0922A11.fruit_solution m
+theorem cupcake_gluten (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.CupcakeTypes) : m.glutenContaining=40 := LemmaWeave.Problems.GSM8K.Sprint0922A11.cupcake_gluten m
+theorem cupcake_vegan_gluten (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.CupcakeTypes) : m.veganGluten=12 := LemmaWeave.Problems.GSM8K.Sprint0922A11.cupcake_vegan_gluten m
+theorem cupcake_types_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.CupcakeTypes) : m.nonVeganGluten=28 := LemmaWeave.Problems.GSM8K.Sprint0922A11.cupcake_types_solution m
+theorem weekend_hours (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.WeekendWork) : m.hours=30 := LemmaWeave.Problems.GSM8K.Sprint0922A11.weekend_hours m
+theorem weekend_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.WeekendWork) : m.earnings=450 := LemmaWeave.Problems.GSM8K.Sprint0922A11.weekend_solution m
+theorem cookies_mother (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Cookies) : m.mother=5 := LemmaWeave.Problems.GSM8K.Sprint0922A11.cookies_mother m
+theorem cookies_brother (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Cookies) : m.brother=7 := LemmaWeave.Problems.GSM8K.Sprint0922A11.cookies_brother m
+theorem cookies_eaten (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Cookies) : m.eaten=22 := LemmaWeave.Problems.GSM8K.Sprint0922A11.cookies_eaten m
+theorem cookies_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Cookies) : m.remaining=8 := LemmaWeave.Problems.GSM8K.Sprint0922A11.cookies_solution m
+theorem camera_cost (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.CameraFrames) : m.cameraCost=220 := LemmaWeave.Problems.GSM8K.Sprint0922A11.camera_cost m
+theorem frames_cost (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.CameraFrames) : m.framesCost=360 := LemmaWeave.Problems.GSM8K.Sprint0922A11.frames_cost m
+theorem purchase_subtotal (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.CameraFrames) : m.subtotal=580 := LemmaWeave.Problems.GSM8K.Sprint0922A11.purchase_subtotal m
+theorem purchase_discount (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.CameraFrames) : m.discount=29 := LemmaWeave.Problems.GSM8K.Sprint0922A11.purchase_discount m
+theorem purchase_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.CameraFrames) : m.paid=551 := LemmaWeave.Problems.GSM8K.Sprint0922A11.purchase_solution m
+theorem bread_batches (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Bread) : m.batches=3 := LemmaWeave.Problems.GSM8K.Sprint0922A11.bread_batches m
+theorem bread_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Bread) : m.eggs=9 := LemmaWeave.Problems.GSM8K.Sprint0922A11.bread_solution m
+theorem stove_wall (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Stove) : m.wall=200 := LemmaWeave.Problems.GSM8K.Sprint0922A11.stove_wall m
+theorem stove_solution (m:LemmaWeave.Problems.GSM8K.Sprint0922A11.Stove) : m.total=1400 := LemmaWeave.Problems.GSM8K.Sprint0922A11.stove_solution m
 
 end LemmaWeave.Tests.GSM8KSprint0922A11
 

@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A19P1
 
@@ -12,12 +12,14 @@ structure TheaterModel where
 
 theorem theater_nachos (m : TheaterModel) : m.nachos = 8 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  norm_num at * <;> omega
+  dsimp at *
+  (try simp_all) <;> norm_num at * <;> omega
 
 theorem theater_solution (m : TheaterModel) : m.total = 24 := by
   have hNachos := theater_nachos m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 structure SnowModel where
   baldMeters : ℚ
@@ -39,22 +41,24 @@ structure SnowModel where
 
 theorem snow_bald_cm (m : SnowModel) : m.baldCm = 150 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem snow_billy_cm (m : SnowModel) : m.billyCm = 350 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem snow_combined_cm (m : SnowModel) : m.combinedCm = 476 := by
   have hBilly := snow_billy_cm m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem snow_solution (m : SnowModel) : m.differenceCm = 326 := by
-  have hBald := snow_bald_cm m
-  have hCombined := snow_combined_cm m
-  rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  have h := m.hDifference
+  rw [snow_combined_cm m, snow_bald_cm m] at h
+  linarith
 
 structure OrangeModel where
   treesPerGrove : ℕ
@@ -85,22 +89,26 @@ structure OrangeModel where
 theorem orange_grove_totals (m : OrangeModel) :
     m.gabrielaTotal = 66000 ∧ m.albaTotal = 44000 ∧ m.maricelaTotal = 55000 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,l,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem orange_all (m : OrangeModel) : m.allOranges = 165000 := by
   have hGroves := orange_grove_totals m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,l,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 theorem orange_cups (m : OrangeModel) : m.cups = 55000 := by
   have hAll := orange_all m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,l,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12⟩
-  norm_num at * <;> omega
+  dsimp at *
+  (try simp_all) <;> norm_num at * <;> omega
 
 theorem orange_solution (m : OrangeModel) : m.revenue = 220000 := by
   have hCups := orange_cups m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,l,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 structure StepsModel where
   days : ℕ
@@ -130,22 +138,26 @@ structure StepsModel where
 
 theorem steps_target_total (m : StepsModel) : m.targetTotal = 63000 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,l,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem steps_first_five (m : StepsModel) : m.firstFiveTotal = 44900 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,l,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem steps_remaining (m : StepsModel) : m.remainingTotal = 18100 := by
   have hTarget := steps_target_total m
   have hFirst := steps_first_five m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,l,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 theorem steps_solution (m : StepsModel) : m.remainingAverage = 9050 := by
   have hRemaining := steps_remaining m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,k,l,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12⟩
-  norm_num at * <;> omega
+  dsimp at *
+  (try simp_all) <;> norm_num at * <;> omega
 
 structure PoolModel where
   depthFeet : ℕ
@@ -167,16 +179,19 @@ structure PoolModel where
 
 theorem pool_volume (m : PoolModel) : m.cubicFeet = 1200 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem pool_liters (m : PoolModel) : m.liters = 30000 := by
   have hVolume := pool_volume m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem pool_solution (m : PoolModel) : m.cost = 90000 := by
   have hLiters := pool_liters m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A19P1

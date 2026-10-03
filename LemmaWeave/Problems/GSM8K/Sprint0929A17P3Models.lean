@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A17P3
 
@@ -23,28 +23,24 @@ structure CornPerKidModel where
   hBags : seeds = bags * seedsPerBag
 
 theorem corn_earnings (m : CornPerKidModel) : m.earnings = 72 := by
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  norm_num at *
+  rw [m.hHalfSpent, m.hDinner]
 
 theorem corn_rows (m : CornPerKidModel) : m.rows = 48 := by
   have hEarn := corn_earnings m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   norm_num at * <;> omega
 
 theorem corn_ears (m : CornPerKidModel) : m.ears = 3360 := by
-  have hRows := corn_rows m
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  norm_num at *
+  rw [m.hEars, corn_rows m, m.hEarsPerRow]
 
 theorem corn_seeds (m : CornPerKidModel) : m.seeds = 6720 := by
-  have hEars := corn_ears m
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  norm_num at *
+  rw [m.hSeeds, corn_ears m, m.hSeedsPerEar]
 
 theorem corn_solution (m : CornPerKidModel) : m.bags = 140 := by
-  have hSeeds := corn_seeds m
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  norm_num at * <;> omega
+  have h := m.hBags
+  rw [corn_seeds m, m.hBagSize] at h
+  omega
 
 structure AgesModel where
   femNow : ℕ
@@ -63,17 +59,18 @@ structure AgesModel where
   hTotal : totalFuture = femFuture + mattFuture
 
 theorem ages_matt_now (m : AgesModel) : m.mattNow = 44 := by
-  rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at *
+  rw [m.hMatt, m.hMultiplier, m.hFem]
 
 theorem ages_future_values (m : AgesModel) : m.femFuture = 13 ∧ m.mattFuture = 46 := by
   have hMatt := ages_matt_now m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   omega
 
 theorem ages_solution (m : AgesModel) : m.totalFuture = 59 := by
   have hFuture := ages_future_values m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   omega
 
 structure TripModel where
@@ -93,17 +90,16 @@ structure TripModel where
   hTotal : totalStudents = vanStudents + minibusStudents
 
 theorem trip_van_students (m : TripModel) : m.vanStudents = 60 := by
-  rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at *
+  rw [m.hVanStudents, m.hVans, m.hPerVan]
 
 theorem trip_minibus_students (m : TripModel) : m.minibusStudents = 96 := by
-  rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at *
+  rw [m.hMinibusStudents, m.hMinibuses, m.hPerMinibus]
 
 theorem trip_solution (m : TripModel) : m.totalStudents = 156 := by
   have hVan := trip_van_students m
   have hMini := trip_minibus_students m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   omega
 
 structure PlantsModel where
@@ -128,21 +124,20 @@ structure PlantsModel where
 
 theorem plants_self_roses (m : PlantsModel) : m.selfRoses = 4 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   omega
 
 theorem plants_rose_cost (m : PlantsModel) : m.roseCost = 300 := by
-  have hRoses := plants_self_roses m
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  norm_num at *
+  rw [m.hRoseCost, plants_self_roses m, m.hRosePrice]
 
 theorem plants_aloe_cost (m : PlantsModel) : m.aloeCost = 200 := by
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  norm_num at *
+  rw [m.hAloeCost, m.hAloeCount, m.hAloePrice]
 
 theorem plants_solution (m : PlantsModel) : m.selfTotal = 500 := by
   have hRose := plants_rose_cost m
   have hAloe := plants_aloe_cost m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   omega
 
 structure DriveModel where
@@ -161,11 +156,10 @@ structure DriveModel where
 
 theorem drive_hours (m : DriveModel) : m.drivingHours = 13 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 
 theorem drive_solution (m : DriveModel) : m.totalMiles = 780 := by
-  have hHours := drive_hours m
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at *
+  rw [m.hTotal, m.hSpeed, drive_hours m]
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A17P3

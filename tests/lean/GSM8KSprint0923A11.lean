@@ -85,7 +85,7 @@ end LemmaWeave.Tests.GSM8KSprint0923A11
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.purchase_solution to "work/gsm8k-sprint101-purchase-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.bench_solution to "work/gsm8k-sprint101-bench-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.guitar_solution to "work/gsm8k-sprint101-guitar-graph.json"
-#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.geometry_reference_solution to "work/gsm8k-sprint101-geometry-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.geometry_reference_solution to "work/gsm8k-sprint101-geometry-reference-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.eggs_solution to "work/gsm8k-sprint101-eggs-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.fish_solution to "work/gsm8k-sprint101-fish-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A11.cafeteria_solution to "work/gsm8k-sprint101-cafeteria-graph.json"

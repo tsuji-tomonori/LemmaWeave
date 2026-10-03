@@ -16,7 +16,7 @@
   "steps": [
     {
       "id": "fishing_first",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.fishing_first",
       "title_ja": "第1漁師は639匹を捕る。",
       "claim_ja": "第1漁師は639匹を捕る。",
       "method_ja": "1日3匹を213日続けるので3×213。",
@@ -28,7 +28,7 @@
     },
     {
       "id": "fishing_first_ninety",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_first_ninety",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.fishing_first_ninety",
       "title_ja": "第2漁師の最初の90日間は150匹。",
       "claim_ja": "第2漁師の最初の90日間は150匹。",
       "method_ja": "最初の30日は1匹/日、次の60日は2匹/日として1×30+2×60。",
@@ -40,7 +40,7 @@
     },
     {
       "id": "fishing_remaining_days",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_remaining_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.fishing_remaining_days",
       "title_ja": "残りは123日。",
       "claim_ja": "残りは123日。",
       "method_ja": "全213日から最初の90日を引く。",
@@ -52,7 +52,7 @@
     },
     {
       "id": "fishing_remainder_catch",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_remainder_catch",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.fishing_remainder_catch",
       "title_ja": "残り期間は492匹。",
       "claim_ja": "残り期間は492匹。",
       "method_ja": "123日を1日4匹で4×123。",
@@ -66,7 +66,7 @@
     },
     {
       "id": "fishing_second",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.fishing_second",
       "title_ja": "第2漁師は合計642匹を捕る。",
       "claim_ja": "第2漁師は合計642匹を捕る。",
       "method_ja": "最初の150匹と残り492匹を加える。",
@@ -96,13 +96,28 @@
     }
   ],
   "author_review": {
-    "reviewer": "author",
+    "reviewer": "ci-repair-regression-author",
     "status": "checked",
     "source_line_1based": 1765,
-    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checked_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
     "checks_ja": [
-      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
-      "各説明行の名前付きLean定理と依存関係を照合した。"
-    ]
-  }
+      "固定原本の当該問題文・参照解答とレコードhashを個別に照合した。",
+      "213 days at 3 gives 639; novice 30+120+492=642; excess 3. Counts and partition match source.",
+      "既存の構造体条件・定理型を基準版と比較し、意味と定義域を保持した。",
+      "現在入力の実Lean・許容公理・各説明行の依存を検査した。旧レビューを履歴に保持し、ready台帳を更新しない。"
+    ],
+    "review_record": "reviews/ci-correction-sibling-regression-20261003.json"
+  },
+  "author_review_history": [
+    {
+      "reviewer": "author",
+      "status": "checked",
+      "source_line_1based": 1765,
+      "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+      "checks_ja": [
+        "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+        "各説明行の名前付きLean定理と依存関係を照合した。"
+      ]
+    }
+  ]
 }

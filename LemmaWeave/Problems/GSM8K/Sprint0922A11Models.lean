@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0922A11
 
@@ -21,7 +21,7 @@ structure Hockey where
   hPercent : girlPercent+60=100
   hGirls : girls*100=50*girlPercent
   hJuniors : juniors*2=girls
-theorem hockey_girl_percent (m:Hockey) : m.girlPercent=40 := by cases m <;> omega
+theorem hockey_girl_percent (m:Hockey) : m.girlPercent=40 := by cases m <;> dsimp at * <;> omega
 theorem hockey_girls (m:Hockey) : m.girls=20 := by
   have h:=m.hGirls; rw [hockey_girl_percent m] at h; omega
 theorem hockey_solution (m:Hockey) : m.juniors=10 := by
@@ -59,7 +59,7 @@ structure PetsAge where
   dog : ℕ
   hRabbit : rabbit*2=8
   hDog : dog=3*rabbit
-theorem pets_rabbit (m:PetsAge) : m.rabbit=4 := by cases m <;> omega
+theorem pets_rabbit (m:PetsAge) : m.rabbit=4 := by cases m <;> dsimp at * <;> omega
 theorem pets_solution (m:PetsAge) : m.dog=12 := by rw [m.hDog, pets_rabbit m] <;> norm_num
 
 structure Vegetables where
@@ -103,8 +103,8 @@ structure CupcakeTypes where
   hGluten : glutenContaining*2=80
   hVeganGluten : veganGluten*2=24
   hPartition : nonVeganGluten+veganGluten=glutenContaining
-theorem cupcake_gluten (m:CupcakeTypes) : m.glutenContaining=40 := by cases m <;> omega
-theorem cupcake_vegan_gluten (m:CupcakeTypes) : m.veganGluten=12 := by cases m <;> omega
+theorem cupcake_gluten (m:CupcakeTypes) : m.glutenContaining=40 := by cases m <;> dsimp at * <;> omega
+theorem cupcake_vegan_gluten (m:CupcakeTypes) : m.veganGluten=12 := by cases m <;> dsimp at * <;> omega
 theorem cupcake_types_solution (m:CupcakeTypes) : m.nonVeganGluten=28 := by
   have h:=m.hPartition
   rw [cupcake_gluten m, cupcake_vegan_gluten m] at h
@@ -127,7 +127,7 @@ structure Cookies where
   hBrother : brother=mother+2
   hEaten : eaten=10+mother+brother
   hRemaining : remaining+eaten=30
-theorem cookies_mother (m:Cookies) : m.mother=5 := by cases m <;> omega
+theorem cookies_mother (m:Cookies) : m.mother=5 := by cases m <;> dsimp at * <;> omega
 theorem cookies_brother (m:Cookies) : m.brother=7 := by rw [m.hBrother, cookies_mother m] <;> norm_num
 theorem cookies_eaten (m:Cookies) : m.eaten=22 := by
   rw [m.hEaten, cookies_mother m, cookies_brother m] <;> norm_num
@@ -161,7 +161,7 @@ structure Bread where
   eggs : ℕ
   hBatches : batches*2=6
   hEggs : eggs=batches*3
-theorem bread_batches (m:Bread) : m.batches=3 := by cases m <;> omega
+theorem bread_batches (m:Bread) : m.batches=3 := by cases m <;> dsimp at * <;> omega
 theorem bread_solution (m:Bread) : m.eggs=9 := by rw [m.hEggs, bread_batches m] <;> norm_num
 
 structure Stove where
@@ -169,7 +169,7 @@ structure Stove where
   total : ℕ
   hWall : wall*6=1200
   hTotal : total=1200+wall
-theorem stove_wall (m:Stove) : m.wall=200 := by cases m <;> omega
+theorem stove_wall (m:Stove) : m.wall=200 := by cases m <;> dsimp at * <;> omega
 theorem stove_solution (m:Stove) : m.total=1400 := by rw [m.hTotal, stove_wall m] <;> norm_num
 
 end LemmaWeave.Problems.GSM8K.Sprint0922A11

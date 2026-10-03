@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A12P1
 
@@ -20,16 +20,19 @@ structure BowlModel where
 
 theorem bowl_food (m : BowlModel) : m.foodAdded = 180 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 theorem bowl_full (m : BowlModel) : m.fullWeight = 600 := by
   have hPrev := bowl_food m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 theorem bowl_solution (m : BowlModel) : m.currentWeight = 586 := by
   have hPrev := bowl_full m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 structure MargoModel where
@@ -46,11 +49,13 @@ structure MargoModel where
 
 theorem margo_now (m : MargoModel) : m.margoNow = 1 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem margo_solution (m : MargoModel) : m.margoFuture = 4 := by
   have hPrev := margo_now m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all
 
 structure BonesModel where
@@ -67,11 +72,13 @@ structure BonesModel where
 
 theorem bones_total (m : BonesModel) : m.total = 50 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all
 
 theorem bones_solution (m : BonesModel) : m.buried = 42 := by
   have hPrev := bones_total m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   simp_all <;> omega
 
 structure DogsModel where
@@ -90,26 +97,31 @@ structure DogsModel where
 
 theorem dogs_black (m : DogsModel) : m.black = 5 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 theorem dogs_white (m : DogsModel) : m.white = 8 := by
   have hPrev := dogs_black m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 theorem dogs_grey (m : DogsModel) : m.grey = 3 := by
   have hPrev := dogs_white m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem dogs_total (m : DogsModel) : m.total = 20 := by
   have hPrev := dogs_grey m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 theorem dogs_solution (m : DogsModel) : m.average = 5 := by
   have hPrev := dogs_total m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 structure CoalModel where
@@ -132,16 +144,19 @@ structure CoalModel where
 
 theorem coal_per_person (m : CoalModel) : m.perPersonDaily = 100 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem coal_daily (m : CoalModel) : m.dailyRate = 500 := by
   have hPrev := coal_per_person m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all
 
 theorem coal_solution (m : CoalModel) : m.newDays = 80 := by
   have hPrev := coal_daily m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A12P1

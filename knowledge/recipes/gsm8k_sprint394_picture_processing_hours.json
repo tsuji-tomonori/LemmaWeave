@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint394_picture_processing_hours",
+  "title_ja": "写真処理にかかる時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04122",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Alex is working on a science project and has taken pictures of all of the plants in a park near her home. She wants to find out how many of each plant she has pictures of, but she has 960 pictures, and counting them all will take her a long time. Her teacher suggested she use a program on the computer that can automatically tell her what plant is in each picture and count them for her. It will take the program 2 minutes to process each picture. How many hours will it take to process all of the pictures?",
+  "answer_ja": "960枚を1枚2分で処理するので、合計は960×2=1,920分。1時間60分だから1,920÷60=32時間である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.picture_processing_hours",
+  "graph": "work/gsm8k-sprint394-picture-processing-hours-graph.json",
+  "model_notes_ja": [
+    "逐次処理として1枚当たり時間を全枚数へ掛ける。"
+  ],
+  "steps": [
+    {
+      "id": "picture_processing_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.picture_processing_hours",
+      "title_ja": "写真処理にかかる時間",
+      "claim_ja": "960枚を1枚2分で処理するので、合計は960×2=1,920分。1時間60分だから1,920÷60=32時間である。",
+      "method_ja": "総分数を求め、60で割って時間へ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "写真を並列処理せず、各写真に2分ずつかかる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "960枚を1枚2分で処理するので、合計は960×2=1,920分。1時間60分だから1,920÷60=32時間である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4123,
+    "checked_model_hash": "a9f36a6c0272b72029af612047184e8743af2c4b1fe539d4e9e90a7a3205a51a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

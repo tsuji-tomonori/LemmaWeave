@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint394_good_ingredients_independent",
+  "title_ja": "3材料がすべて良品である確率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04121",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jackson is making pancakes with three ingredients: flour, milk and eggs. 20% of the bottles of milk are spoiled and the rest are fresh. 60% of the eggs are rotten. 1/4 of the cannisters of flour have weevils in them. If Jackson picks a bottle of milk, an egg and a canister of flour at random, what are the odds all three ingredients will be good?",
+  "answer_ja": "牛乳が良品である確率は4/5、卵は2/5、小麦粉は3/4。3回の抽出が独立という追加条件の下では、積は(4/5)(2/5)(3/4)=6/25=24%である。独立性が原文から保証されない場合、周辺割合だけでは同時確率は一意に決まらない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.good_ingredients_independent",
+  "graph": "work/gsm8k-sprint394-good-ingredients-independent-graph.json",
+  "model_notes_ja": [
+    "乗法公式の適用条件である独立性を明示し、無条件の24%とはしない。"
+  ],
+  "steps": [
+    {
+      "id": "good_ingredients_independent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.good_ingredients_independent",
+      "title_ja": "3材料がすべて良品である確率",
+      "claim_ja": "牛乳が良品である確率は4/5、卵は2/5、小麦粉は3/4。3回の抽出が独立という追加条件の下では、積は(4/5)(2/5)(3/4)=6/25=24%である。独立性が原文から保証されない場合、周辺割合だけでは同時確率は一意に決まらない。",
+      "method_ja": "各不良率の補集合を求め、独立条件の下で確率を乗算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "牛乳・卵・小麦粉の選択が互いに独立である場合。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "牛乳が良品である確率は4/5、卵は2/5、小麦粉は3/4。3回の抽出が独立という追加条件の下では、積は(4/5)(2/5)(3/4)=6/25=24%である。独立性が原文から保証されない場合、周辺割合だけでは同時確率は一意に決まらない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4122,
+    "checked_model_hash": "a9f36a6c0272b72029af612047184e8743af2c4b1fe539d4e9e90a7a3205a51a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

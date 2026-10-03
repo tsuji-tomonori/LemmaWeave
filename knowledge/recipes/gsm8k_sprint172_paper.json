@@ -1,9 +1,0 @@
-{
-  "id":"gsm8k_sprint172_paper","title_ja":"紙パッドの残りページ","problem_id":"external-gsm8k-main-3101c7d50724:train:02869","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0928A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"120ページの25%を理科、さらに10ページを数学に使った残り。","root":"LemmaWeave.Problems.GSM8K.Sprint0928A14.paper_solution","graph":"work/gsm8k-sprint172-paper-graph.json","model_notes_ja":[],
-  "steps":[
-    {"id":"paper_science","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.paper_science","title_ja":"理科で30ページ","claim_ja":"120の25%は30ページ。","method_ja":"百分率","requires_steps":[],"uses_nodes":[],"condition_ja":"25%は全120ページを基準とする。","conclusion_ja":"理科で30ページ使用。","baseline_ja":"120×25÷100=30。"},
-    {"id":"paper_remaining","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.paper_remaining","title_ja":"残り80ページ","claim_ja":"120−30−10=80ページ。","method_ja":"使用ページの減算","requires_steps":["paper_science"],"uses_nodes":[],"condition_ja":"数学で使う10ページは理科分とは別。","conclusion_ja":"残りは80ページ。","baseline_ja":"120−30−10=80。"},
-    {"id":"paper_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.paper_solution","title_ja":"答えは80ページ","claim_ja":"紙パッドには80ページ残る。","method_ja":"直前の結論","requires_steps":["paper_remaining"],"uses_nodes":[],"condition_ja":"使用後の残数を求める。","conclusion_ja":"答えは80ページ。","baseline_ja":"80ページ。"}
-  ],
-  "author_review":{"reviewer":"author","status":"checked","source_line_1based":2870,"checked_model_hash":"6bdc2b2b890105008f1bf78a7b1e5d0217af5f9c9e12871fb77358be639e4961","checks_ja":["25%の基準が120ページであることを確認した。","数学の10ページを追加で引いた。","独立レビューではない。"]}
-}

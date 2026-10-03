@@ -1,9 +1,0 @@
-{
-  "id":"gsm8k_sprint237_tips","title_ja":"三日間のチップ","problem_id":"external-gsm8k-main-3101c7d50724:train:03226","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A02P2.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"金曜28人、土曜はその3倍、日曜36人。1人2ドルのチップ総額を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A02P2.tips_total","graph":"work/gsm8k-sprint237-tips-graph.json","model_notes_ja":[],
-  "steps":[
-    {"id":"tips_saturday","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P2.tips_saturday","title_ja":"土曜は84人。","claim_ja":"28×3=84人。","method_ja":"金曜人数の3倍を計算する。","requires_steps":[],"uses_nodes":[],"condition_ja":"three timesを3倍と読む。","conclusion_ja":"84人。","baseline_ja":"自然数の乗法。"},
-    {"id":"tips_customers","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P2.tips_customers","title_ja":"合計148人。","claim_ja":"28+84+36=148人。","method_ja":"三日間の客数を加える。","requires_steps":["tips_saturday"],"uses_nodes":[],"condition_ja":"日ごとの客は別の来客として延べ人数を数える。","conclusion_ja":"148人。","baseline_ja":"自然数の加法。"},
-    {"id":"tips_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P2.tips_total","title_ja":"チップは296ドル。","claim_ja":"148人×2ドル=296ドル。","method_ja":"客数に1人当たりチップを掛ける。","requires_steps":["tips_customers"],"uses_nodes":[],"condition_ja":"各客が2ドルを支払う。","conclusion_ja":"296ドル。","baseline_ja":"単価×数量。"}
-  ],
-  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3227,"checked_model_hash":"4c03914453f9c5aeade8fa25a8be2b5548a78561875cbcba4d0a2e0c181d456c","checks_ja":["三日間の客数と単価を原題に照合した。","全説明行をLean定理に対応させた。","独立レビューではなく作成者自己照合である。"]}
-}

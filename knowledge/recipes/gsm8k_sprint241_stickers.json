@@ -1,9 +1,0 @@
-{
-  "id":"gsm8k_sprint241_stickers","title_ja":"シール代の半額負担","problem_id":"external-gsm8k-main-3101c7d50724:train:03250","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P3.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"30枚入り4パック、1枚10セントの総額を友人と半分ずつ払うJamesの負担額を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.stickers_james","graph":"work/gsm8k-sprint241-stickers-graph.json","model_notes_ja":["金額はセント単位で表す。"],
-  "steps":[
-    {"id":"stickers_count","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.stickers_count","title_ja":"シールは120枚。","claim_ja":"4×30=120。","method_ja":"パック数と各枚数を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"4パック、各30枚。","conclusion_ja":"120枚。","baseline_ja":"乗法。"},
-    {"id":"stickers_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.stickers_total","title_ja":"総額は1200セント。","claim_ja":"120×10=1200。","method_ja":"枚数と1枚10セントを掛ける。","requires_steps":["stickers_count"],"uses_nodes":[],"condition_ja":"各10セント。","conclusion_ja":"12ドル。","baseline_ja":"単価計算。"},
-    {"id":"stickers_james","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.stickers_james","title_ja":"Jamesは600セント払う。","claim_ja":"1200÷2=600。","method_ja":"2×James負担=総額を解く。","requires_steps":["stickers_total"],"uses_nodes":[],"condition_ja":"友人が半額を払い、Jamesが残り半額を払う。","conclusion_ja":"6ドル。","baseline_ja":"金額の等分。"}
-  ],
-  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3251,"checked_model_hash":"6612ca53c045c8c13f14e546df5c04fca6510a697aeb42de38aaaeed1fb54173","checks_ja":["パック数・枚数・単価・半額負担を照合した。","全説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
-}

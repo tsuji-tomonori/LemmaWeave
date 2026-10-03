@@ -1,8 +1,0 @@
-{
-  "id":"gsm8k_sprint174_school_steps","title_ja":"5日間の往復歩数","problem_id":"external-gsm8k-main-3101c7d50724:train:02893","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0928A16.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"学校まで片道150歩を5日間往復するときの総歩数。","root":"LemmaWeave.Problems.GSM8K.Sprint0928A16.school_steps_solution","graph":"work/gsm8k-sprint174-school-steps-graph.json","model_notes_ja":[],
-  "steps":[
-    {"id":"school_steps_daily","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A16.school_steps_daily","title_ja":"1日300歩","claim_ja":"往復は150×2=300歩。","method_ja":"往復","requires_steps":[],"uses_nodes":[],"condition_ja":"毎日1往復。","conclusion_ja":"1日300歩。","baseline_ja":"150×2=300。"},
-    {"id":"school_steps_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A16.school_steps_total","title_ja":"5日で1500歩","claim_ja":"300×5=1500歩。","method_ja":"日数倍","requires_steps":["school_steps_daily"],"uses_nodes":[],"condition_ja":"5日。","conclusion_ja":"1500歩。","baseline_ja":"300×5=1500。"},
-    {"id":"school_steps_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A16.school_steps_solution","title_ja":"答え1500歩","claim_ja":"合計1500歩。","method_ja":"直前結論","requires_steps":["school_steps_total"],"uses_nodes":[],"condition_ja":"同上。","conclusion_ja":"答え1500歩。","baseline_ja":"1500歩。"}
-  ],"author_review":{"reviewer":"author","status":"checked","source_line_1based":2894,"checked_model_hash":"3de568791b4252c7a2463e8e2c9fe800a474c75a0adff4d9be1b46819c378dfb","checks_ja":["往路・復路・5日を再読した。","独立レビューではない。"]}
-}

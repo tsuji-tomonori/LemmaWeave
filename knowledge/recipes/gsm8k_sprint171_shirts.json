@@ -1,9 +1,0 @@
-{
-  "id":"gsm8k_sprint171_shirts","title_ja":"Tシャツの合計枚数","problem_id":"external-gsm8k-main-3101c7d50724:train:02857","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0928A12.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"白6枚入りを3パック、青4枚入りを2パック買った合計枚数を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint0928A12.shirts_solution","graph":"work/gsm8k-sprint171-shirts-graph.json","model_notes_ja":[],
-  "steps":[
-    {"id":"shirts_parts","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.shirts_parts","title_ja":"白18枚・青8枚","claim_ja":"3×6=18枚、2×4=8枚。","method_ja":"パック数と入数の積","requires_steps":[],"uses_nodes":[],"condition_ja":"各色のパック入数は一定。","conclusion_ja":"白18枚、青8枚。","baseline_ja":"3×6=18、2×4=8。"},
-    {"id":"shirts_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.shirts_total","title_ja":"合計26枚","claim_ja":"18+8=26枚。","method_ja":"和","requires_steps":["shirts_parts"],"uses_nodes":[],"condition_ja":"白と青を合計する。","conclusion_ja":"26枚。","baseline_ja":"18+8=26。"},
-    {"id":"shirts_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.shirts_solution","title_ja":"答えは26枚","claim_ja":"Daveが買ったのは26枚。","method_ja":"直前の結論","requires_steps":["shirts_total"],"uses_nodes":[],"condition_ja":"両色の全パックを含む。","conclusion_ja":"答えは26枚。","baseline_ja":"26枚。"}
-  ],
-  "author_review":{"reviewer":"author","status":"checked","source_line_1based":2858,"checked_model_hash":"11afa6f876a633904526c1a9b47ceb060067cfbf23b68f118a54a7b15973254e","checks_ja":["各色のパック数と入数を再読した。","2色の合計を問いとして保持した。","独立レビューではない。"]}
-}

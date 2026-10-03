@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint391_lake_bright_population",
+  "title_ja": "Lake Brightの人口",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04077",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Three towns, Toadon, Gordonia, and Lake Bright, have 80000 people. Gordonia has 1/2 times the total population in the three cities. If the population of Toadon is 60 percent of Gordonia's population, how many people live in Lake Bright?",
+  "answer_ja": "Gordoniaは総人口80000人の半分なので40000人。Toadonはその60%で24000人。残りは80000−40000−24000=16000人である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P1.lake_bright_population",
+  "graph": "work/gsm8k-sprint391-lake-bright-population-graph.json",
+  "model_notes_ja": [
+    "三都市の人口合計が80000人で、1/2 timesを総人口の半分と読む。"
+  ],
+  "steps": [
+    {
+      "id": "lake_bright_population",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P1.lake_bright_population",
+      "title_ja": "Lake Brightの人口",
+      "claim_ja": "Gordoniaは総人口80000人の半分なので40000人。Toadonはその60%で24000人。残りは80000−40000−24000=16000人である。",
+      "method_ja": "三都市の人口合計が80000人で、1/2 timesを総人口の半分と読む。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "三都市の人口合計が80000人で、1/2 timesを総人口の半分と読む。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Gordoniaは総人口80000人の半分なので40000人。Toadonはその60%で24000人。残りは80000−40000−24000=16000人である。 答えは16000人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4078,
+    "checked_model_hash": "20068854e3f9e5c5b0a0da30398592d5dc5b0f6c7ea23bc1536450b4074bdf23",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

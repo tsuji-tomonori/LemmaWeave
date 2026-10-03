@@ -1,9 +1,0 @@
-{
-  "id":"gsm8k_sprint237_lemonade","title_ja":"レモネード販売数の差","problem_id":"external-gsm8k-main-3101c7d50724:train:03229","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A02P2.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"Stanleyは毎時4杯、Carlは毎時7杯。3時間の販売数の差を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A02P2.lemonade_difference","graph":"work/gsm8k-sprint237-lemonade-graph.json","model_notes_ja":[],
-  "steps":[
-    {"id":"lemonade_stanley","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P2.lemonade_stanley","title_ja":"Stanleyは12杯。","claim_ja":"4×3=12杯。","method_ja":"販売率×時間を計算する。","requires_steps":[],"uses_nodes":[],"condition_ja":"3時間を通して毎時4杯。","conclusion_ja":"12杯。","baseline_ja":"比例。"},
-    {"id":"lemonade_carl","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P2.lemonade_carl","title_ja":"Carlは21杯。","claim_ja":"7×3=21杯。","method_ja":"販売率×時間を計算する。","requires_steps":[],"uses_nodes":[],"condition_ja":"3時間を通して毎時7杯。","conclusion_ja":"21杯。","baseline_ja":"比例。"},
-    {"id":"lemonade_difference","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P2.lemonade_difference","title_ja":"差は9杯。","claim_ja":"21-12=9杯。","method_ja":"Carlの販売数からStanleyの販売数を引く。","requires_steps":["lemonade_stanley","lemonade_carl"],"uses_nodes":[],"condition_ja":"Carlの販売数が多い。","conclusion_ja":"Carlは9杯多い。","baseline_ja":"自然数の減法。"}
-  ],
-  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3230,"checked_model_hash":"4c03914453f9c5aeade8fa25a8be2b5548a78561875cbcba4d0a2e0c181d456c","checks_ja":["各販売率と3時間を原題に照合した。","全説明行をLean定理に対応させた。","独立レビューではなく作成者自己照合である。"]}
-}

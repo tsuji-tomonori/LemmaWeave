@@ -1,8 +1,0 @@
-{
-  "id":"gsm8k_sprint239_pancakes","title_ja":"二枚目のパンケーキ","problem_id":"external-gsm8k-main-3101c7d50724:train:03237","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P1.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"8人全員が2枚ずつ食べられるよう、既存12枚に何枚追加するか求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.pancakes_additional","graph":"work/gsm8k-sprint239-pancakes-graph.json","model_notes_ja":["second pancakeを各人合計2枚と解釈。"],
-  "steps":[
-    {"id":"pancakes_needed","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.pancakes_needed","title_ja":"必要総数は16枚。","claim_ja":"8人×2枚=16枚。","method_ja":"人数と1人当たり枚数を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"全員が2枚ずつ受け取る。","conclusion_ja":"16枚必要。","baseline_ja":"乗法。"},
-    {"id":"pancakes_additional","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.pancakes_additional","title_ja":"追加は4枚。","claim_ja":"16-12=4枚。","method_ja":"必要総数から作成済み12枚を引く。","requires_steps":["pancakes_needed"],"uses_nodes":[],"condition_ja":"12枚は既にある。","conclusion_ja":"4枚追加。","baseline_ja":"自然数の減法。"}
-  ],
-  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3238,"checked_model_hash":"c24d6d0174100c85a1464a1704b75775aa730bc48f2d65a920afb31ed72126e7","checks_ja":["人数・既存枚数・secondの意味を原題へ照合した。","全説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
-}

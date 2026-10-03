@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint395_ben_gross_monthly_income",
+  "title_ja": "Benの税引前月収",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04145",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ben spends 20% of his after-tax income on his car. If his car payment is $400 and he pays 1/3 of his gross income in taxes, how much does he make per month before taxes?",
+  "answer_ja": "車代400ドルは税引後収入の20%なので、税引後収入は400÷0.2=2,000ドル。税金は総収入の1/3だから手取りは総収入の2/3。よって総収入は2,000÷(2/3)=3,000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.ben_gross_monthly_income",
+  "graph": "work/gsm8k-sprint395-ben-gross-monthly-income-graph.json",
+  "model_notes_ja": [
+    "異なる割合の基準を混同せず、税引後収入を中間量にする。"
+  ],
+  "steps": [
+    {
+      "id": "ben_gross_monthly_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.ben_gross_monthly_income",
+      "title_ja": "Benの税引前月収",
+      "claim_ja": "車代400ドルは税引後収入の20%なので、税引後収入は400÷0.2=2,000ドル。税金は総収入の1/3だから手取りは総収入の2/3。よって総収入は2,000÷(2/3)=3,000ドル。",
+      "method_ja": "車代から手取りを逆算し、税引後比率2/3で割って総収入を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "税率1/3は総収入にかかり、車代比率20%は税引後収入にかかる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "車代400ドルは税引後収入の20%なので、税引後収入は400÷0.2=2,000ドル。税金は総収入の1/3だから手取りは総収入の2/3。よって総収入は2,000÷(2/3)=3,000ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4146,
+    "checked_model_hash": "e3cecdfc4e674a7dd97b9452abd2054305e562a573cca490a1b2a4ab3c1ce84c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

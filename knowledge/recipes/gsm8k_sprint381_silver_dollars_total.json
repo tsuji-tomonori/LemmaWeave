@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint381_silver_dollars_total",
+  "title_ja": "3人の銀貨合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04026",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A19P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mr. Ha owns 5 more silver dollars than Mr. Phung. Mr. Phung has 16 more silver dollars than Mr. Chiu has. If Mr. Chiu has 56 silver dollars, how many silver dollars the three have in total?",
+  "answer_ja": "Chiuは56枚。Phungは56+16=72枚、Haは72+5=77枚なので、合計56+72+77=205枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A19P3.silver_dollars_total",
+  "graph": "work/gsm8k-sprint381-silver-dollars-total-graph.json",
+  "model_notes_ja": [
+    "more thanは各比較対象より指定枚数多い意味である。"
+  ],
+  "steps": [
+    {
+      "id": "silver_dollars_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A19P3.silver_dollars_total",
+      "title_ja": "3人の銀貨合計",
+      "claim_ja": "Chiuは56枚。Phungは56+16=72枚、Haは72+5=77枚なので、合計56+72+77=205枚。",
+      "method_ja": "比較関係を順に加算し、3人分を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "more thanは各比較対象より指定枚数多い意味である。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "Chiuは56枚。Phungは56+16=72枚、Haは72+5=77枚なので、合計56+72+77=205枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4027,
+    "checked_model_hash": "f38929e9e1e2e5c4cceef14a3001ca67ebee033d818a93c38971578d79936b81",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

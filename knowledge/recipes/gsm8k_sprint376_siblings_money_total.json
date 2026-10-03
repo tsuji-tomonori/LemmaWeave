@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint376_siblings_money_total",
+  "title_ja": "3人の所持金合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04003",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A18P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Joanna has $8. Compared to her money, her brother has thrice as much while her sister has only half as much. How much money do the three of them have altogether?",
+  "answer_ja": "兄は8×3=24ドル、姉妹は8÷2=4ドル。Joannaの8ドルも合わせると8+24+4=36ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A18P1.siblings_money_total",
+  "graph": "work/gsm8k-sprint376-siblings-money-total-graph.json",
+  "model_notes_ja": [
+    "thrice as muchは8ドルの3倍、half as muchは8ドルの半分を意味する。"
+  ],
+  "steps": [
+    {
+      "id": "siblings_money_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A18P1.siblings_money_total",
+      "title_ja": "3人の所持金合計",
+      "claim_ja": "兄は8×3=24ドル、姉妹は8÷2=4ドル。Joannaの8ドルも合わせると8+24+4=36ドル。",
+      "method_ja": "基準額8ドルの3倍と半分を求め、本人の金額と合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "thrice as muchは8ドルの3倍、half as muchは8ドルの半分を意味する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "兄は8×3=24ドル、姉妹は8÷2=4ドル。Joannaの8ドルも合わせると8+24+4=36ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4004,
+    "checked_model_hash": "e256277dd7765d7c84d1461a49aeb75cdfd7c07f4c4d58912b4f7bacfdf0e15c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

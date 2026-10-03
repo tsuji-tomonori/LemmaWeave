@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_paris_trip_kilometers",
+  "title_ja": "目的地までの総移動距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04109",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kristine traveled to Paris in France to visit her friend. On the way, she has driven a train for 300 km and a bus for half that distance. After arriving in the city, she had to take a cab and drove three times fewer kilometers than she rode the bus. How many kilometers in total had Kristine traveled to reach her destination?",
+  "answer_ja": "バスは列車300 kmの半分で150 km。「three times fewer」を3分の1という通常解釈に固定すると、タクシーは150÷3=50 km。合計は300+150+50=500 kmである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P1.paris_trip_kilometers",
+  "graph": "work/gsm8k-sprint393-paris-trip-kilometers-graph.json",
+  "model_notes_ja": [
+    "曖昧な英語 three times fewer は参照解答どおり『3分の1』と明示して形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "paris_trip_kilometers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P1.paris_trip_kilometers",
+      "title_ja": "目的地までの総移動距離",
+      "claim_ja": "バスは列車300 kmの半分で150 km。「three times fewer」を3分の1という通常解釈に固定すると、タクシーは150÷3=50 km。合計は300+150+50=500 kmである。",
+      "method_ja": "半分と3分の1を順に計算し、3区間を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "three times fewer をバス距離の3分の1と解釈する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "バスは列車300 kmの半分で150 km。「three times fewer」を3分の1という通常解釈に固定すると、タクシーは150÷3=50 km。合計は300+150+50=500 kmである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4110,
+    "checked_model_hash": "ee7a31a4d7cc9649279d2000b17fb97892809970835aed0806ad399470404ea3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

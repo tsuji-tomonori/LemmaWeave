@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_boys_cans_total",
+  "title_ja": "3人が集めた缶の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04106",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Solomon collected three times as many cans as Juwan. Levi collected half of what Juwan collected. Solomon collected 66 cans. How many cans did the boys collect in all?",
+  "answer_ja": "Solomonの66個はJuwanの3倍なので、Juwanは66÷3=22個。Leviはその半分で22÷2=11個。したがって合計は66+22+11=99個である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P1.boys_cans_total",
+  "graph": "work/gsm8k-sprint393-boys-cans-total-graph.json",
+  "model_notes_ja": [
+    "個数を自然数とし、3倍・半分の関係を順に適用する。"
+  ],
+  "steps": [
+    {
+      "id": "boys_cans_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P1.boys_cans_total",
+      "title_ja": "3人が集めた缶の総数",
+      "claim_ja": "Solomonの66個はJuwanの3倍なので、Juwanは66÷3=22個。Leviはその半分で22÷2=11個。したがって合計は66+22+11=99個である。",
+      "method_ja": "Solomonの個数から逆算してJuwan、Leviを求め、3人分を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "66は3で、22は2で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Solomonの66個はJuwanの3倍なので、Juwanは66÷3=22個。Leviはその半分で22÷2=11個。したがって合計は66+22+11=99個である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4107,
+    "checked_model_hash": "ee7a31a4d7cc9649279d2000b17fb97892809970835aed0806ad399470404ea3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

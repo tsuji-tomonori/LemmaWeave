@@ -1,0 +1,100 @@
+{
+  "id": "gsm8k_sprint147_rocks",
+  "title_ja": "同点に必要な石の最小数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02494",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3日目直前の両者の所持数を求め、Connerが同点以上となる最小自然数を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.rocks_solution",
+  "graph": "work/gsm8k-sprint147-rocks-graph.json",
+  "model_notes_ja": [
+    "参照説明にはSydneyの最終数915・必要数37という誤記と、式から得られる905・27が混在する。原題から再計算すると905−878=27である。"
+  ],
+  "steps": [
+    {
+      "id": "rocks_conner_day1",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.rocks_conner_day1",
+      "title_ja": "Connerの1日目は32個",
+      "claim_ja": "Connerの1日目は32個",
+      "method_ja": "Sydneyの4個の8倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "Connerの1日目は32個",
+      "baseline_ja": "Connerの1日目は32個"
+    },
+    {
+      "id": "rocks_sydney_day3",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.rocks_sydney_day3",
+      "title_ja": "Sydneyの3日目は64個",
+      "claim_ja": "Sydneyの3日目は64個",
+      "method_ja": "Connerの1日目32個の2倍",
+      "requires_steps": [
+        "rocks_conner_day1"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "Sydneyの3日目は64個",
+      "baseline_ja": "Sydneyの3日目は64個"
+    },
+    {
+      "id": "rocks_sydney_final",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.rocks_sydney_final",
+      "title_ja": "Sydneyの最終数は905個",
+      "claim_ja": "Sydneyの最終数は905個",
+      "method_ja": "837、4、64を足す",
+      "requires_steps": [
+        "rocks_sydney_day3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "Sydneyの最終数は905個",
+      "baseline_ja": "Sydneyの最終数は905個"
+    },
+    {
+      "id": "rocks_conner_before",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.rocks_conner_before",
+      "title_ja": "Connerの3日目直前は878個",
+      "claim_ja": "Connerの3日目直前は878個",
+      "method_ja": "723、32、123を足す",
+      "requires_steps": [
+        "rocks_conner_day1"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "Connerの3日目直前は878個",
+      "baseline_ja": "Connerの3日目直前は878個"
+    },
+    {
+      "id": "rocks_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.rocks_solution",
+      "title_ja": "同点以上には27個以上が必要で、最小は27個",
+      "claim_ja": "同点以上には27個以上が必要で、最小は27個",
+      "method_ja": "不等式905≤878+nを27≤nへ同値変形する",
+      "requires_steps": [
+        "rocks_sydney_final",
+        "rocks_conner_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "同点以上には27個以上が必要で、最小は27個",
+      "baseline_ja": "同点以上には27個以上が必要で、最小は27個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2495,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

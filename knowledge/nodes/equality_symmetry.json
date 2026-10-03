@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "equality_symmetry",
+  "name_ja": "等号の対称性",
+  "statement_ja": "同じ型の要素a,bについて、a=bならb=aである。",
+  "assumptions": [
+    "α : Sort u",
+    "a b : α",
+    "a = b"
+  ],
+  "kind": "lemma",
+  "lean_declarations": [
+    "Eq.symm"
+  ],
+  "prerequisite_nodes": [],
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null
+  },
+  "explanation_outline_ja": [
+    "等号の向きを逆にする。"
+  ],
+  "unexpanded": [
+    "推移的前提の個別展開",
+    "課程の項目別照合"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "declared_but_not_in_graph": [],
+  "actual_declaration_types": {
+    "Eq.symm": "∀ {α : Sort u} {a b : α}, a = b → b = a"
+  },
+  "declaration_type_sha256": {
+    "Eq.symm": "330c7bbdd6bf52a25144f28e9e85280025e91ba24e5b68d6add5cbb61fc4a309"
+  },
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "Actual exported types compared with the Japanese claim; remaining foundational prerequisites are not discarded."
+  }
+}

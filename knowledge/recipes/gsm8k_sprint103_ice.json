@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint103_ice",
+  "title_ja": "氷の購入費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01830",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "必要な30ポンドを、1ポンド袋10個入りのパック単位で購入する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.ice_solution",
+  "graph": "work/gsm8k-sprint103-ice-graph.json",
+  "model_notes_ja": [
+    "『one pound bags ... a pack of 10』を、1ポンド袋10個入りで合計10ポンドのパックが3ドルと読む。参照説明の『10-pound bags』はこの包装単位の略記として扱った。"
+  ],
+  "steps": [
+    {
+      "id": "ice_pounds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.ice_pounds",
+      "title_ja": "必要量は30ポンド。",
+      "claim_ja": "必要量は30ポンド。",
+      "method_ja": "15×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15人に各2ポンド。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "ice_packs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.ice_packs",
+      "title_ja": "必要なのは3パック。",
+      "claim_ja": "必要なのは3パック。",
+      "method_ja": "30÷10。",
+      "requires_steps": [
+        "ice_pounds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1パックは1ポンド袋10個。",
+      "conclusion_ja": "3。",
+      "baseline_ja": "3。"
+    },
+    {
+      "id": "ice_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.ice_solution",
+      "title_ja": "費用は900セント=9ドル。",
+      "claim_ja": "費用は900セント=9ドル。",
+      "method_ja": "3×300。",
+      "requires_steps": [
+        "ice_packs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各パック3ドル。",
+      "conclusion_ja": "900。",
+      "baseline_ja": "900。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1831,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

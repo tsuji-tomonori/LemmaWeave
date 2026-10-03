@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily6_flowers","title_ja":"バラ以外の花の割合を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00055","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"バラ25本、チューリップ40本、デイジー35本のうち、バラ以外の百分率を求める。","root":"LemmaWeave.Tests.GSM8KDaily0908A.flowers_solution","graph":"work/gsm8k-daily6-flowers-graph.json","lean_file":"tests/lean/GSM8KDaily0908A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["挙げられた3種類が庭の花の全体であり、バラ以外はチューリップとデイジーである。"],
+  "steps":[
+    {"id":"flowers_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.flowers_total","title_ja":"花の総数","requires_steps":[],"uses_nodes":[],"condition_ja":"3種類の本数を合計する。","conclusion_ja":"25+40+35=100本。","baseline_ja":"中学校までの加法。"},
+    {"id":"flowers_nonroses","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.flowers_nonroses","title_ja":"バラ以外の本数","requires_steps":[],"uses_nodes":[],"condition_ja":"チューリップ40本とデイジー35本。","conclusion_ja":"75本。","baseline_ja":"中学校までの加法。"},
+    {"id":"flowers_percentage","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.flowers_percentage","title_ja":"百分率","requires_steps":["flowers_total","flowers_nonroses"],"uses_nodes":[],"condition_ja":"全体100本中75本。全体は0でない。","conclusion_ja":"75÷100×100=75%。","baseline_ja":"中学校までの割合。"},
+    {"id":"flowers_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0908A.flowers_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"総数100、バラ以外75、割合75と置く。","conclusion_ja":"本数と百分率の条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":56,"checked_model_hash":"25be0660a3ea49f64ae066a5c414124db69be9dec1af8c709e682107753e5ef2","checks_ja":["バラ以外の集合と全体を重複なく数え、百分率の分母を照合した。"]}
+}

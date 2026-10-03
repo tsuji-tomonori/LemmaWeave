@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint351_hay_upgrade_extra_cost",
+  "title_ja": "干し草の新条件による追加費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03880",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Chester must deliver ten bales of hay to Farmer Brown. Farmer Brown wants Chester to supply better quality hay and double the delivery of bales of hay. If the previous hay cost $15 per bale, and the better quality one cost $18 per bale, how much more money will Farmer Brown need to meet his own new requirements?",
+  "answer_ja": "旧計画は10×15=150ドル。新計画は数量を20個に倍増し、20×18=360ドル。したがって追加で360−150=210ドル必要。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A07P3.hay_upgrade_extra_cost",
+  "graph": "work/gsm8k-sprint351-hay-upgrade-extra-cost-graph.json",
+  "model_notes_ja": [
+    "単価差だけでなく、数量倍増後の新総額360ドルと旧総額150ドルを比較する。"
+  ],
+  "steps": [
+    {
+      "id": "hay_upgrade_extra_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A07P3.hay_upgrade_extra_cost",
+      "title_ja": "干し草の新条件による追加費用",
+      "claim_ja": "旧計画は10×15=150ドル。新計画は数量を20個に倍増し、20×18=360ドル。したがって追加で360−150=210ドル必要。",
+      "method_ja": "旧計画と新計画の総額をそれぞれ求め、その差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "「double the delivery」は10個から20個への倍増を表し、比較対象は旧計画全体。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "210ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3881,
+    "checked_model_hash": "3b9d41fb16b8e2f7392e15c8fe0c03910a4ecd5e0a583b327de376ee14394aaf",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

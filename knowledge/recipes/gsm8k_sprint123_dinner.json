@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint123_dinner",
+  "title_ja": "夕食後の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02130",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "第1・第2コースとデザートを購入した後の残金を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A14.dinner_solution",
+  "graph": "work/gsm8k-sprint123-dinner-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dinner_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.dinner_second",
+      "title_ja": "第2コースは20ドル。",
+      "claim_ja": "第2コースは20ドル。",
+      "method_ja": "15ドルより5ドル高い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "第2コースは20ドル。",
+      "baseline_ja": "第2コースは20ドル。"
+    },
+    {
+      "id": "dinner_dessert",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.dinner_dessert",
+      "title_ja": "デザートは5ドル。",
+      "claim_ja": "デザートは5ドル。",
+      "method_ja": "第2コース20ドルの25%。",
+      "requires_steps": [
+        "dinner_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "デザートは5ドル。",
+      "baseline_ja": "デザートは5ドル。"
+    },
+    {
+      "id": "dinner_spent",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.dinner_spent",
+      "title_ja": "合計支出は40ドル。",
+      "claim_ja": "合計支出は40ドル。",
+      "method_ja": "15+20+5。",
+      "requires_steps": [
+        "dinner_second",
+        "dinner_dessert"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "合計支出は40ドル。",
+      "baseline_ja": "合計支出は40ドル。"
+    },
+    {
+      "id": "dinner_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.dinner_solution",
+      "title_ja": "残金は20ドル。",
+      "claim_ja": "残金は20ドル。",
+      "method_ja": "60−40。",
+      "requires_steps": [
+        "dinner_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "残金は20ドル。",
+      "baseline_ja": "残金は20ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2131,
+    "checked_model_hash": "61d9d50f01023680e1b5a790b2cbb8b5dc80e11c2c055803236bd99c6da83155",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な表現は読解条件と別読解を明示した。"
+    ]
+  }
+}

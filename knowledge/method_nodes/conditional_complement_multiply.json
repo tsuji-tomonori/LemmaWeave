@@ -1,0 +1,20 @@
+{
+  "id": "conditional_complement_multiply",
+  "kind": "method_or_formula",
+  "name_ja": "補集合側にも乗法公式を適用する",
+  "statement_ja": "P(¬A∩B)=P(¬A)P(B|¬A)。",
+  "assumptions_ja": "P(¬A)>0。独立性は不要。",
+  "use_when_ja": "A以外の集団の中での割合がわかるとき。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.FiniteProbability.givenNotA",
+    "LemmaWeave.Lemmas.FiniteProbability.multiply_given_complement"
+  ],
+  "explanation_outline_ja": [
+    "¬Aの集団だけを取り出し、Bの割合を条件付き確率と定義する。",
+    "分母P(¬A)が正であることを確かめて掛け戻す。"
+  ],
+  "unexpanded": [
+    "有理数の四則演算・一次式の変形はユーザー指定の中学既習として扱う。"
+  ],
+  "educational_baseline": "user_instruction_20260906"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "gsm8k_sprint27_flight",
+  "title_ja": "乗継便の所要時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00691",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "月曜6時発から18時間後のNY到着と火曜10時のCape Town到着を時刻軸で照合する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A27.flight_solution",
+  "graph": "work/gsm8k-sprint27-flight-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A27.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "第2便の出発時刻が原文にないため一意に定まらない。即時乗継なら10時間、火曜2時発なら8時間。",
+    "参照解説の「10:00 p.m.」は設問のa.m.および10時間計算と矛盾する誤記。"
+  ],
+  "steps": [
+    {
+      "id": "flight_ny_arrival",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.flight_ny_arrival",
+      "title_ja": "NY到着",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜6時に18時間を加える。",
+      "conclusion_ja": "火曜0時。",
+      "baseline_ja": "6+18=24時。"
+    },
+    {
+      "id": "flight_immediate_duration",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.flight_immediate_duration",
+      "title_ja": "即時乗継の条件付き答え",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "火曜0時に直ちに出発すると追加仮定する。",
+      "conclusion_ja": "10時間。",
+      "baseline_ja": "火曜10時-0時=10時間。"
+    },
+    {
+      "id": "flight_delayed_duration",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.flight_delayed_duration",
+      "title_ja": "非一意性の反例",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "火曜2時発も「到着した日」に出発する条件を満たす。",
+      "conclusion_ja": "この場合8時間であり答えは一意でない。",
+      "baseline_ja": "火曜10時-2時=8時間。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 692,
+    "checked_model_hash": "bae0c782540d1aa92fadf4c4853475678247b5247c8e57098d3a584e0c34b521",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

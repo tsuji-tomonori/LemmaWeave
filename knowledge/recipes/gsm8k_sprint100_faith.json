@@ -1,0 +1,165 @@
+{
+  "id": "gsm8k_sprint100_faith",
+  "title_ja": "Faithの週給",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01780",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全金額をセント単位で保持し、通常40時間と残業10時間を計算する。残業単価が通常単価と同じ場合と1.5倍の場合を分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_two_pay_readings_differ",
+  "graph": "work/gsm8k-sprint100-faith-graph.json",
+  "model_notes_ja": [
+    "参照解答は残業10時間にも13.50ドルをそのまま適用する。『overtime』だけでは割増率が定まらないため、同率675ドルと1.5倍742.50ドルを分離した。"
+  ],
+  "steps": [
+    {
+      "id": "faith_same_regular_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_same_regular_hours",
+      "title_ja": "通常勤務は40時間。",
+      "claim_ja": "通常勤務は40時間。",
+      "method_ja": "8時間/日×5日。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "週5日。",
+      "conclusion_ja": "40。",
+      "baseline_ja": "40。"
+    },
+    {
+      "id": "faith_same_overtime_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_same_overtime_hours",
+      "title_ja": "残業は10時間。",
+      "claim_ja": "残業は10時間。",
+      "method_ja": "2時間/日×5日。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎勤務日に2時間。",
+      "conclusion_ja": "10。",
+      "baseline_ja": "10。"
+    },
+    {
+      "id": "faith_same_regular_pay",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_same_regular_pay",
+      "title_ja": "通常賃金は54,000セント。",
+      "claim_ja": "通常賃金は54,000セント。",
+      "method_ja": "40×1350。",
+      "requires_steps": [
+        "faith_same_regular_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "時給13.50ドル=1350セント。",
+      "conclusion_ja": "54000。",
+      "baseline_ja": "54000。"
+    },
+    {
+      "id": "faith_same_overtime_pay",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_same_overtime_pay",
+      "title_ja": "同一単価なら残業賃金は13,500セント。",
+      "claim_ja": "同一単価なら残業賃金は13,500セント。",
+      "method_ja": "10×1350。",
+      "requires_steps": [
+        "faith_same_overtime_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参照解答どおり残業にも同じ時給を適用。",
+      "conclusion_ja": "13500。",
+      "baseline_ja": "13500。"
+    },
+    {
+      "id": "faith_same_rate_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_same_rate_solution",
+      "title_ja": "同一単価なら週給は67,500セント=675ドル。",
+      "claim_ja": "同一単価なら週給は67,500セント=675ドル。",
+      "method_ja": "54000+13500。",
+      "requires_steps": [
+        "faith_same_regular_pay",
+        "faith_same_overtime_pay"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残業割増なし。",
+      "conclusion_ja": "67500。",
+      "baseline_ja": "67500。"
+    },
+    {
+      "id": "faith_premium_regular_pay",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_premium_regular_pay",
+      "title_ja": "1.5倍読解でも通常賃金は54,000セント。",
+      "claim_ja": "1.5倍読解でも通常賃金は54,000セント。",
+      "method_ja": "8×5×1350。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "通常40時間。",
+      "conclusion_ja": "54000。",
+      "baseline_ja": "54000。"
+    },
+    {
+      "id": "faith_premium_overtime_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_premium_overtime_hours",
+      "title_ja": "1.5倍読解の残業も10時間。",
+      "claim_ja": "1.5倍読解の残業も10時間。",
+      "method_ja": "2×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎勤務日に2時間。",
+      "conclusion_ja": "10。",
+      "baseline_ja": "10。"
+    },
+    {
+      "id": "faith_premium_overtime_pay",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_premium_overtime_pay",
+      "title_ja": "1.5倍なら残業賃金は20,250セント。",
+      "claim_ja": "1.5倍なら残業賃金は20,250セント。",
+      "method_ja": "10×1350×3/2。",
+      "requires_steps": [
+        "faith_premium_overtime_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加条件として残業単価が通常の1.5倍。",
+      "conclusion_ja": "20250×2=10×1350×3。",
+      "baseline_ja": "20250×2=10×1350×3。"
+    },
+    {
+      "id": "faith_time_and_half_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_time_and_half_solution",
+      "title_ja": "1.5倍なら週給は74,250セント=742.50ドル。",
+      "claim_ja": "1.5倍なら週給は74,250セント=742.50ドル。",
+      "method_ja": "54000+20250。",
+      "requires_steps": [
+        "faith_premium_regular_pay",
+        "faith_premium_overtime_pay"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残業割増1.5倍。",
+      "conclusion_ja": "74250。",
+      "baseline_ja": "74250。"
+    },
+    {
+      "id": "faith_two_pay_readings_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.faith_two_pay_readings_differ",
+      "title_ja": "二つの残業単価の答えは異なる。",
+      "claim_ja": "二つの残業単価の答えは異なる。",
+      "method_ja": "67500と74250を比較する。",
+      "requires_steps": [
+        "faith_same_rate_solution",
+        "faith_time_and_half_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文は残業割増率を明示しない。",
+      "conclusion_ja": "67500≠74250。",
+      "baseline_ja": "67500≠74250。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1781,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T05:00+09:00-gsm8k-15-a05",
+  "scheduled_local_hour": 5,
+  "scheduled_at": "2026-09-24T05:00:00+09:00",
+  "started_at": "2026-09-24T04:56:14+09:00",
+  "finished_at": "2026-09-24T05:05:00+09:00",
+  "start_delay_seconds": -226,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "5fc89f23452853dd501ae5c5f60591a1fa4cfa87",
+  "artifact_commit": "722fc171211b4356350540c896b687ebcbf2879c",
+  "selected_problem_ids": [
+    "train:02004", "train:02005", "train:02006", "train:02007", "train:02008",
+    "train:02009", "train:02010", "train:02011", "train:02012", "train:02013",
+    "train:02014", "train:02015", "train:02016", "train:02017", "train:02018"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02004", "train:02005", "train:02006", "train:02007", "train:02008",
+    "train:02009", "train:02010", "train:02011", "train:02012", "train:02013",
+    "train:02014", "train:02015", "train:02016", "train:02017", "train:02018"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02008", "commit": "6909426146603408481834b1047ae9a2a03231e2"},
+    {"through": "train:02013", "commit": "805dcf46aa84dc3a1a9785533da25654cc257790"},
+    {"through": "train:02018", "commit": "722fc171211b4356350540c896b687ebcbf2879c"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0169.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A05Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A05.lean",
+    "recipes": 15,
+    "explanation_lines": 45,
+    "named_lean_theorems": 45,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02008は母集団の25%という記述だけでは各潜水で4個の真珠入りを保証しない。各16個に正確に4個、各該当貝に真珠1個という追加条件付きで14回を形式化した。",
+    "train:02011は参照説明の160ドルという誤記を採用せず、480トークンを30枚/ドルで割って16ドルを導いた。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1504,
+    "pending": 6770,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02019",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持し、1時から5時までを重複なく実行した。"
+  },
+  "ci": {
+    "last_checked_head": "5fc89f23452853dd501ae5c5f60591a1fa4cfa87",
+    "workflow_run_id": 35908077332,
+    "status": "failure",
+    "reason": "legacy_audit_lean_errors",
+    "accepted_as_success_evidence": false,
+    "recovery_record": "operations/ci-recovery/2026-09-24-0500.json",
+    "new_head_status": "pending_after_ledger_commit"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T05:00+09:00",
+    "scope": "train:02004-train:02018",
+    "claimed_at": "2026-09-24T04:56:14+09:00",
+    "expires_at": "2026-09-24T05:56:14+09:00",
+    "released": true
+  }
+}

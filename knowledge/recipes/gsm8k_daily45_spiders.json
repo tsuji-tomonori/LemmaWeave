@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily45_spiders","title_ja":"クモの群れの脚の総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00449","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"1匹の脚8本の半数より10多い匹数のクモについて、脚の総数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917A.spiders_solution","graph":"work/gsm8k-daily45-spiders-graph.json","lean_file":"tests/lean/GSM8KDaily0917A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["原文は脚の本数8の半分という数4を、匹数を作る数値として用いている。"],
+  "steps":[
+    {"id":"spiders_count","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.spiders_count","title_ja":"クモの匹数","requires_steps":[],"uses_nodes":[],"condition_ja":"1匹の8本の脚の半数を数4として、その数より10匹多い。","conclusion_ja":"半数は8÷2=4で、群れは4+10=14匹。","baseline_ja":"半分を求める除法と追加の加法。"},
+    {"id":"spiders_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917A.spiders_total","title_ja":"脚の総数","requires_steps":["spiders_count"],"uses_nodes":[],"condition_ja":"クモは14匹で、各クモに脚が8本ある。","conclusion_ja":"脚は全部で14×8=112本。","baseline_ja":"1匹当たり本数と匹数の乗法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":450,"checked_model_hash":"66a0a87757473a16d430b61ee5f3fdc1565bf68aef9858072360f29af066a751","checks_ja":["脚の半数という次元の不自然な表現を原文の数値定義として明示した。","各クモが8本の脚を持つ条件を総数計算へ用いた。"]}
+}

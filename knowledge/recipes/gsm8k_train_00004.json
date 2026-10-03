@@ -1,0 +1,89 @@
+{
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "counting_note_ja": "既に収集したGSM8Kの1問。入試問題数・新規収集数には加えない。",
+  "graph": "work/gsm8k-first-reading-graph.json",
+  "id": "gsm8k_train_00004",
+  "lean_file": "tests/lean/GSM8KFirstSteps.lean",
+  "model_notes_ja": [
+    "原題のJulieと参考解答のMailaの名の違いを確認。基準量は今日まで読んだ後の残り。"
+  ],
+  "model_scope": "self_reviewed_model",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00003",
+  "problem_ja": "120ページを昨日12、今日はその2倍読む。明日は残りの半分。何ページか？",
+  "root": "LemmaWeave.Tests.GSM8KFirstSteps.reading_solution",
+  "semantic_review_status": "self_review_only",
+  "steps": [
+    {
+      "id": "reading_today",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.reading_today",
+      "title_ja": "今日の読書量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "昨日12の2倍。",
+      "conclusion_ja": "t=24ページ。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "reading_read",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.reading_read",
+      "title_ja": "既読合計",
+      "requires_steps": [
+        "reading_today"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "昨日と今日に別の未読ページを読む。",
+      "conclusion_ja": "12+24=36ページ。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "reading_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.reading_remaining",
+      "title_ja": "未読",
+      "requires_steps": [
+        "reading_read"
+      ],
+      "uses_nodes": [
+        "remaining_balance"
+      ],
+      "condition_ja": "既読36と未読rの合計120。",
+      "conclusion_ja": "r=120−36=84ページ。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "reading_tomorrow",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.reading_tomorrow",
+      "title_ja": "明日の量",
+      "requires_steps": [
+        "reading_remaining"
+      ],
+      "uses_nodes": [
+        "fraction_balance"
+      ],
+      "condition_ja": "2n=r、2≠0。",
+      "conclusion_ja": "n=84÷2=42ページ。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    },
+    {
+      "id": "reading_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KFirstSteps.reading_exists",
+      "title_ja": "充足例",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "今日24・未読84・明日42。",
+      "conclusion_ja": "非負整数で元の3関係を満たす。",
+      "baseline_ja": "中学既習の四則演算と等式変形。"
+    }
+  ],
+  "title_ja": "残りの半分を順序通り求める",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4,
+    "checked_model_hash": "f309dcf47412bffc8efe969f19a1310fc34fd5a37a3229bb1042688c03d85682",
+    "checks_ja": [
+      "原題のJulieと参考解答のMailaの名の違いを確認。基準量は今日まで読んだ後の残り。"
+    ]
+  }
+}

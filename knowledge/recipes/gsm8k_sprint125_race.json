@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint125_race",
+  "title_ja": "5マイル走の勝ち時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02169",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "15mphで5マイルを走る時間を分に直し、23分との差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.race_solution",
+  "graph": "work/gsm8k-sprint125-race-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "race_john_time",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.race_john_time",
+      "title_ja": "Johnは20分で完走する。",
+      "claim_ja": "Johnは20分で完走する。",
+      "method_ja": "5/15時間=1/3時間=20分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Johnは20分で完走する。",
+      "baseline_ja": "Johnは20分で完走する。"
+    },
+    {
+      "id": "race_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.race_solution",
+      "title_ja": "3分差で勝つ。",
+      "claim_ja": "3分差で勝つ。",
+      "method_ja": "23−20。",
+      "requires_steps": [
+        "race_john_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "3分差で勝つ。",
+      "baseline_ja": "3分差で勝つ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2170,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

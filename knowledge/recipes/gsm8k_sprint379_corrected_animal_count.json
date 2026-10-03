@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint379_corrected_animal_count",
+  "title_ja": "実際の動物数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04016",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A19P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mary is trying to count the animals in the petting zoo, but they kept moving around so she double-counts 7 sheep and forgets to count 3 pigs. If Mary thinks there are 60 animals, how many are there really?",
+  "answer_ja": "数えた60頭には羊7頭の二重計上があるので60−7=53頭。豚3頭は未計上なので53+3=56頭が実数である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A19P1.corrected_animal_count",
+  "graph": "work/gsm8k-sprint379-corrected-animal-count-graph.json",
+  "model_notes_ja": [
+    "二重計上した羊7頭は60に余分に含まれ、豚3頭は60に含まれない。"
+  ],
+  "steps": [
+    {
+      "id": "corrected_animal_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A19P1.corrected_animal_count",
+      "title_ja": "実際の動物数",
+      "claim_ja": "数えた60頭には羊7頭の二重計上があるので60−7=53頭。豚3頭は未計上なので53+3=56頭が実数である。",
+      "method_ja": "二重計上分を引き、未計上分を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二重計上した羊7頭は60に余分に含まれ、豚3頭は60に含まれない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "数えた60頭には羊7頭の二重計上があるので60−7=53頭。豚3頭は未計上なので53+3=56頭が実数である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4017,
+    "checked_model_hash": "9ea38a19dd9024550cb8379afda5d4e64eceff17d705bee5a86a054e8971c0fc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

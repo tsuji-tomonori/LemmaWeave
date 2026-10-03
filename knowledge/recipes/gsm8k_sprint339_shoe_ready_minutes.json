@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint339_shoe_ready_minutes",
+  "title_ja": "3人が靴を履き終えるまでの時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03820",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A00P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jack needs to put his shoes on, then help both his toddlers tie their shoes. If it takes Jack 4 minutes to put his shoes on, and three minutes longer to help each toddler with their shoes, how long does it take them to get ready?",
+  "answer_ja": "Jackは4分。幼児は各3分長いので1人7分。Jackが幼児2人を順に手伝う時間は2×7=14分で、Jack自身の4分と合わせ18分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A00P3.shoe_ready_minutes",
+  "graph": "work/gsm8k-sprint339-shoe-ready-minutes-graph.json",
+  "model_notes_ja": [
+    "Jackは自分の靴を履いた後、2人の幼児を同時ではなく順に手伝う。"
+  ],
+  "steps": [
+    {
+      "id": "shoe_ready_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A00P3.shoe_ready_minutes",
+      "title_ja": "3人が靴を履き終えるまでの時間",
+      "claim_ja": "Jackは4分。幼児は各3分長いので1人7分。Jackが幼児2人を順に手伝う時間は2×7=14分で、Jack自身の4分と合わせ18分。",
+      "method_ja": "幼児1人分を求め、2人分とJack自身の時間を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3人の作業時間は重ならない。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "18分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3821,
+    "checked_model_hash": "0fc2e9ac7c21a73e5bb7aaa1112a028ad3f2c0aee48d45b0113ff87ea6f724b5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

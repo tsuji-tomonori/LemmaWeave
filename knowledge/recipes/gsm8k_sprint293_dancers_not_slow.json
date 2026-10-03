@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint293_dancers_not_slow",
+  "title_ja": "スローダンスをしなかった生徒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03587",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A03P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "140人の4分の1がダンサーで、そのうち25人がスローダンスをしたときの残り。",
+  "answer_ja": "10人",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A03P2.dancers_not_slow",
+  "graph": "work/gsm8k-sprint293-dancers-not-slow-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "prom_dancers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P2.prom_dancers",
+      "title_ja": "ダンサーは35人である。",
+      "claim_ja": "ダンサーは35人である。",
+      "method_ja": "140人の4分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "ダンサーは35人である。"
+    },
+    {
+      "id": "dancers_not_slow",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P2.dancers_not_slow",
+      "title_ja": "スローダンスをしなかったダンサーは10人である。",
+      "claim_ja": "スローダンスをしなかったダンサーは10人である。",
+      "method_ja": "ダンサー35人をスローダンス25人とそれ以外に分ける。",
+      "requires_steps": [
+        "prom_dancers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "スローダンスをしなかったダンサーは10人である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3588,
+    "checked_model_hash": "4312e11b8af21e839b0e01cc3951d10e095dedca9858b37cabe0b15cdde7b32f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

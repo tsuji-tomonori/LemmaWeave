@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_mower","title_ja":"芝刈り機価格の曖昧な割合表現","problem_id":"external-gsm8k-main-3101c7d50724:train:00459","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"2/5 times lessの基準が曖昧なため、参照解と通常の割合解釈を分ける。","root":"LemmaWeave.Tests.GSM8KDaily0917B.mower_solution","graph":"work/gsm8k-daily46-mower-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["参照解は旧価格1800ドルの2/5を加える。通常の『現価格より2/5安い』では旧価格は現価格の3/5。"],
+  "steps":[
+    {"id":"mower_reference_unit","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.mower_reference_unit","title_ja":"参照解の価格","requires_steps":[],"uses_nodes":[],"condition_ja":"参照解どおり旧価格1800ドルの2/5を値上がり分とする。","conclusion_ja":"増加は720ドル、現価格は2520ドル、4台で10080ドル。","baseline_ja":"旧価格を基準とする割合増加。"},
+    {"id":"mower_two_readings","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.mower_two_readings","title_ja":"通常解釈との分離","requires_steps":["mower_reference_unit"],"uses_nodes":[],"condition_ja":"旧価格が現価格より2/5安いなら旧価格1800ドルは現価格の3/5。","conclusion_ja":"現価格は3000ドル、4台は12000ドルで、参照解10080ドルとは異なる。","baseline_ja":"割合の基準量を明示し、曖昧な二解釈を反例で区別する。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":460,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["参照解10080ドルを再現した。","割合の基準を現価格とする12000ドルも形式化し非一意性を明示した。"]}
+}

@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily35_sandwiches","title_ja":"学年中に食べたサンドイッチ数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00351","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"36週間の水曜・金曜から欠席した水曜1回と金曜2回を除く。","root":"LemmaWeave.Tests.GSM8KDaily0914A.sandwiches_solution","graph":"work/gsm8k-daily35-sandwiches-graph.json","lean_file":"tests/lean/GSM8KDaily0914A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["毎週水曜と金曜の2回を36週分数え、該当曜日の欠席だけを除く。"],
+  "steps":[
+    {"id":"sandwiches_scheduled","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.sandwiches_scheduled","title_ja":"予定された昼食回数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"36週間、毎週水曜と金曜の2回。","conclusion_ja":"予定は72回。","baseline_ja":"36×2を計算する。"},
+    {"id":"sandwiches_missed","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.sandwiches_missed","title_ja":"欠席回数を合計する","requires_steps":[],"uses_nodes":[],"condition_ja":"水曜1回と金曜2回を欠席した。","conclusion_ja":"該当曜日の欠席は3回。","baseline_ja":"1+2を計算する。"},
+    {"id":"sandwiches_eaten","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.sandwiches_eaten","title_ja":"実際に食べた回数を求める","requires_steps":["sandwiches_scheduled","sandwiches_missed"],"uses_nodes":[],"condition_ja":"予定72回から欠席3回を除く。","conclusion_ja":"69個食べた。","baseline_ja":"72−3を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":352,"checked_model_hash":"355a816ac7e4f5c79fe632b02995b66c3d07dd599393faa1dfce717b3ebfcbcf","checks_ja":["学校週数と週2曜日、曜日別欠席を原文の期間内で照合した。"]}
+}

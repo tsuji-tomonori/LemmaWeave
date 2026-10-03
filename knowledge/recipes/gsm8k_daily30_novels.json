@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily30_novels","title_ja":"排反な読書冊数区分から残り人数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00301","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"240人のうち、月3冊以上が1/6、2冊が35%、1冊が5/12で、残りの0冊人数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.novels_solution","graph":"work/gsm8k-daily30-novels-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["3冊以上・2冊・1冊・0冊は排反で全生徒を尽くす。"],
+  "steps":[
+    {"id":"novels_three","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.novels_three","title_ja":"3冊以上の人数","requires_steps":[],"uses_nodes":[],"condition_ja":"全240人の1/6。","conclusion_ja":"40人。","baseline_ja":"6×部分＝全体。"},
+    {"id":"novels_two","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.novels_two","title_ja":"2冊の人数","requires_steps":[],"uses_nodes":[],"condition_ja":"全240人の35%。","conclusion_ja":"84人。","baseline_ja":"100×部分＝35×全体。"},
+    {"id":"novels_one","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.novels_one","title_ja":"1冊の人数","requires_steps":[],"uses_nodes":[],"condition_ja":"全240人の5/12。","conclusion_ja":"100人。","baseline_ja":"12×部分＝5×全体。"},
+    {"id":"novels_none","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.novels_none","title_ja":"0冊の人数","requires_steps":["novels_three","novels_two","novels_one"],"uses_nodes":[],"condition_ja":"四区分が排反で240人を尽くし、既知三群が40、84、100人。","conclusion_ja":"0冊は16人。","baseline_ja":"全体＝各排反区分の人数の和。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":302,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["40+84+100=224、240-224=16を原文と照合した。"]}
+}

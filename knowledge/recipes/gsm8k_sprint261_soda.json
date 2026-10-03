@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint261_soda",
+  "title_ja": "週6本まで減る週数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03350",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "48本から毎週半分へ減らし、初めて週6本になるまでを求める。",
+  "answer_ja": "3週間",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.soda_first_reaches_six",
+  "graph": "work/gsm8k-sprint261-soda-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "soda_after_one",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.soda_after_one",
+      "title_ja": "1週間後は24本。",
+      "claim_ja": "1週間後は24本。",
+      "method_ja": "48÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各週に直前週の半分へ減らす。",
+      "conclusion_ja": "24本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "soda_after_two",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.soda_after_two",
+      "title_ja": "2週間後は12本。",
+      "claim_ja": "2週間後は12本。",
+      "method_ja": "24÷2。",
+      "requires_steps": [
+        "soda_after_one"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ半減を繰り返す。",
+      "conclusion_ja": "12本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "soda_after_three",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.soda_after_three",
+      "title_ja": "3週間後は6本。",
+      "claim_ja": "3週間後は6本。",
+      "method_ja": "12÷2。",
+      "requires_steps": [
+        "soda_after_two"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ半減を繰り返す。",
+      "conclusion_ja": "6本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "soda_first_reaches_six",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.soda_first_reaches_six",
+      "title_ja": "初めて6本になるのは3週間後。",
+      "claim_ja": "初めて6本になるのは3週間後。",
+      "method_ja": "24>6、12>6、3週目=6。",
+      "requires_steps": [
+        "soda_after_one",
+        "soda_after_two",
+        "soda_after_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "それ以前の週が6本より多いことも確認する。",
+      "conclusion_ja": "3週間。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3351,
+    "checked_model_hash": "a0f76cfdd10b82fdbb919ce5bb0b133a3278e03e095982680292d878ed2eab78",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

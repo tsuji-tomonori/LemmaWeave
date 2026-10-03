@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint118_seesaw",
+  "title_ja": "原題どおりJackが持つ場合は解なし。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02057",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、量・単位・割合・全要求を保って導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A08.seesaw_solution",
+  "graph": "work/gsm8k-sprint118-seesaw-graph.json",
+  "model_notes_ja": [
+    "Jackは既にAnnaより20ポンド重く、Jackが岩を持てば差は広がるため解なし。参照解5個はAnnaが持つ場合にのみ成立する。"
+  ],
+  "steps": [
+    {
+      "id": "seesaw_impossible",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A08.seesaw_impossible",
+      "title_ja": "Jackが岩を持って60+4n=40とする自然数nは存在しない。",
+      "claim_ja": "Jackが岩を持って60+4n=40とする自然数nは存在しない。",
+      "method_ja": "左辺は60以上なので反証。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "Jackが岩を持って60+4n=40とする自然数nは存在しない。",
+      "baseline_ja": "Jackが岩を持って60+4n=40とする自然数nは存在しない。"
+    },
+    {
+      "id": "seesaw_corrected",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A08.seesaw_corrected",
+      "title_ja": "Annaが持つなら5個で60ポンドに等しい。",
+      "claim_ja": "Annaが持つなら5個で60ポンドに等しい。",
+      "method_ja": "40+4×5=60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "Annaが持つなら5個で60ポンドに等しい。",
+      "baseline_ja": "Annaが持つなら5個で60ポンドに等しい。"
+    },
+    {
+      "id": "seesaw_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A08.seesaw_solution",
+      "title_ja": "原題どおりJackが持つ場合は解なし。",
+      "claim_ja": "原題どおりJackが持つ場合は解なし。",
+      "method_ja": "不可能性と修正条件を分離する。",
+      "requires_steps": [
+        "seesaw_impossible",
+        "seesaw_corrected"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "原題どおりJackが持つ場合は解なし。",
+      "baseline_ja": "原題どおりJackが持つ場合は解なし。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2058,
+    "checked_model_hash": "31ed1e67bc4527c967011014458dba06a47c40c5c831bb1db619cabb4ec3b19e",
+    "checks_ja": [
+      "固定原本を再読し、全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、誤記・曖昧さ・不可能性を黙って補わず明示した。"
+    ]
+  }
+}

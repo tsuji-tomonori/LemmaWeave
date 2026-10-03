@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "square_nonnegative",
+  "name_ja": "実数の平方の非負性",
+  "statement_ja": "任意の実数 t について 0 ≤ t² である。",
+  "assumptions": [
+    "t : ℝ"
+  ],
+  "kind": "lemma",
+  "lean_declarations": [
+    "sq_nonneg"
+  ],
+  "prerequisite_nodes": [],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "Actual exported types compared with the Japanese claim; remaining foundational prerequisites are not discarded."
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null
+  },
+  "explanation_outline_ja": [
+    "tの符号で場合分けする初等的説明が可能。",
+    "採用されたmathlib一般宣言との特殊化関係は型の抽出後に確認する。"
+  ],
+  "unexpanded": [
+    "項目ごとの公式学習指導要領との照合",
+    "前提宣言の推移的な数学内容の展開"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "declared_but_not_in_graph": [],
+  "actual_declaration_types": {
+    "sq_nonneg": "∀ {R : Type u} [inst : Semiring R] [inst_1 : LinearOrder R] [ExistsAddOfLE R] [PosMulMono R] [AddLeftMono R] (a : R),\n  0 ≤ a ^ 2"
+  },
+  "declaration_type_sha256": {
+    "sq_nonneg": "d7c78840fb0726896f4e9d8a605bb9f11277af0354e78ad12ae859262a89cb56"
+  },
+  "specialization": {
+    "relation": "specializes",
+    "domain": "ℝ",
+    "bridge_evidence": "Elaborated use in LemmaWeave.Problems.DNC2026M1.extrema_solution; general type and actual instance dependencies are preserved in the raw graph."
+  }
+}

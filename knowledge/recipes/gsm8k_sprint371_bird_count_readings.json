@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint371_bird_count_readings",
+  "title_ja": "木にいる鳥の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03980",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?",
+  "answer_ja": "swallowが2羽でbluebirdの半分だからbluebirdは4羽。『three times more』を通常の3倍と読めばcardinalは12羽で総数18羽。字義どおり300%多い=4倍なら16羽で総数22羽となる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A15P2.bird_count_readings",
+  "graph": "work/gsm8k-sprint371-bird-count-readings-graph.json",
+  "model_notes_ja": [
+    "非標準的な倍数表現のため、通常解釈18羽と字義どおりの解釈22羽を両方保存する。"
+  ],
+  "steps": [
+    {
+      "id": "bird_count_readings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A15P2.bird_count_readings",
+      "title_ja": "木にいる鳥の総数",
+      "claim_ja": "swallowが2羽でbluebirdの半分だからbluebirdは4羽。『three times more』を通常の3倍と読めばcardinalは12羽で総数18羽。字義どおり300%多い=4倍なら16羽で総数22羽となる。",
+      "method_ja": "swallowとbluebirdの比を先に解き、曖昧な倍数表現を二つの明示的モデルへ分ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参照解答18羽は『three times more』を『three times as many』と読む条件に対応する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "swallowが2羽でbluebirdの半分だからbluebirdは4羽。『three times more』を通常の3倍と読めばcardinalは12羽で総数18羽。字義どおり300%多い=4倍なら16羽で総数22羽となる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3981,
+    "checked_model_hash": "c36008af9a9c293ad282864cce7b541ce2db52d073fe13afbe6420ec2310989c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

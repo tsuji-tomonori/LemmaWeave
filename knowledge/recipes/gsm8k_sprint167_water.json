@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint167_water",
+  "title_ja": "1週間に飲んだ水量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02787",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "20オンスを1日3本、7日分からこぼした13オンスを引く。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A05.water_solution",
+  "graph": "work/gsm8k-sprint167-water-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "water_planned_spilled",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.water_planned_spilled",
+      "title_ja": "予定420、損失13オンス",
+      "claim_ja": "20×3×7=420オンス、こぼした量は5+8=13オンス。",
+      "method_ja": "一定量の反復と加法",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "20×3×7=420オンス、こぼした量は5+8=13オンス。",
+      "baseline_ja": "20×3×7=420オンス、こぼした量は5+8=13オンス。"
+    },
+    {
+      "id": "water_drank",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.water_drank",
+      "title_ja": "飲んだ量407オンス",
+      "claim_ja": "420-13=407オンス。",
+      "method_ja": "差",
+      "requires_steps": [
+        "water_planned_spilled"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "420-13=407オンス。",
+      "baseline_ja": "420-13=407オンス。"
+    },
+    {
+      "id": "water_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.water_solution",
+      "title_ja": "答えは407オンス",
+      "claim_ja": "実際に飲んだ量は407オンス。",
+      "method_ja": "直前の結論",
+      "requires_steps": [
+        "water_drank"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "実際に飲んだ量は407オンス。",
+      "baseline_ja": "実際に飲んだ量は407オンス。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2788,
+    "checked_model_hash": "f7a1e420295684b1a3ce1819164c097e1162dae701762324c7c1a8f14a0c27d6",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

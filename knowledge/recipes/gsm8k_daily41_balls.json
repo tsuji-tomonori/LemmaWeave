@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily41_balls","title_ja":"緑のボールの個数","problem_id":"external-gsm8k-main-3101c7d50724:train:00413","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"青11個の2倍として赤を求め、全40個から青赤の合計を引く。","root":"LemmaWeave.Tests.GSM8KDaily0915B.balls_solution","graph":"work/gsm8k-daily41-balls-graph.json","lean_file":"tests/lean/GSM8KDaily0915B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["全ボールは青・赤・緑の3色へ重複なく分かれ、restが緑を意味する。"],
+  "steps":[
+    {"id":"balls_red","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.balls_red","title_ja":"赤の個数","requires_steps":[],"uses_nodes":[],"condition_ja":"青は11個で、赤は青の2倍。","conclusion_ja":"赤は22個、青と赤は計33個。","baseline_ja":"倍の数量は元の数量に倍率を掛ける。"},
+    {"id":"balls_green","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.balls_solution","title_ja":"残る緑の個数","requires_steps":["balls_red"],"uses_nodes":[],"condition_ja":"全40個から青赤33個を引く。","conclusion_ja":"緑は7個。","baseline_ja":"残り=全体−既知の部分。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":414,"checked_model_hash":"e74a4210ca248991d2d8391f07fb0cc880ee33f5d619370a90295fd357ab18a3","checks_ja":["総数、青の個数、赤青比、残りが緑であることを照合した。"]}
+}

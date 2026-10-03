@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint128_garden",
+  "title_ja": "夏野菜の収穫数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02206",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "トマト6株の半分とピーマン4株のうち1株が枯れ、ナス2株を含む残り各株から7個収穫する。合計は",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A20.garden_solution",
+  "graph": "work/gsm8k-sprint128-garden-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "garden_tomatoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.garden_tomatoes",
+      "title_ja": "トマトは3株残る",
+      "claim_ja": "トマトは3株残る",
+      "method_ja": "6株の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "トマトは3株残る",
+      "baseline_ja": "トマトは3株残る"
+    },
+    {
+      "id": "garden_peppers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.garden_peppers",
+      "title_ja": "ピーマンは3株残る",
+      "claim_ja": "ピーマンは3株残る",
+      "method_ja": "4株から1株を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ピーマンは3株残る",
+      "baseline_ja": "ピーマンは3株残る"
+    },
+    {
+      "id": "garden_survivors",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.garden_survivors",
+      "title_ja": "残る株は8株",
+      "claim_ja": "残る株は8株",
+      "method_ja": "3、3、2株を足す",
+      "requires_steps": [
+        "garden_tomatoes",
+        "garden_peppers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残る株は8株",
+      "baseline_ja": "残る株は8株"
+    },
+    {
+      "id": "garden_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.garden_solution",
+      "title_ja": "収穫は56個",
+      "claim_ja": "収穫は56個",
+      "method_ja": "8株に各7個",
+      "requires_steps": [
+        "garden_survivors"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "収穫は56個",
+      "baseline_ja": "収穫は56個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2207,
+    "checked_model_hash": "be9ab873a50df496e12f7ec640da6afee66c564105c78477bc6213cb94a7cbe0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

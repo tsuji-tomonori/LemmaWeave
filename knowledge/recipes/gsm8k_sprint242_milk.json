@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint242_milk",
+  "title_ja": "牛乳容器の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03207",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A01P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "容器ごとの牛乳量を合計する。",
+  "answer_ja": "10リットル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.milk_total_liters",
+  "graph": "work/gsm8k-sprint242-milk-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "milk_two_liter_quarters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.milk_two_liter_quarters",
+      "title_ja": "2L容器3個は24四分リットル。",
+      "claim_ja": "2L容器3個は24四分リットル。",
+      "method_ja": "2L=8四分リットルとして3倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "容器3個。",
+      "conclusion_ja": "6L相当。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "milk_three_quarter_quarters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.milk_three_quarter_quarters",
+      "title_ja": "0.75L容器2個は6四分リットル。",
+      "claim_ja": "0.75L容器2個は6四分リットル。",
+      "method_ja": "0.75L=3四分リットルとして2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "容器2個。",
+      "conclusion_ja": "1.5L相当。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "milk_half_liter_quarters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.milk_half_liter_quarters",
+      "title_ja": "0.5L容器5個は10四分リットル。",
+      "claim_ja": "0.5L容器5個は10四分リットル。",
+      "method_ja": "0.5L=2四分リットルとして5倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "容器5個。",
+      "conclusion_ja": "2.5L相当。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "milk_total_quarters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.milk_total_quarters",
+      "title_ja": "合計は40四分リットル。",
+      "claim_ja": "合計は40四分リットル。",
+      "method_ja": "24+6+10。",
+      "requires_steps": [
+        "milk_two_liter_quarters",
+        "milk_three_quarter_quarters",
+        "milk_half_liter_quarters"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "三群を重複なく合計。",
+      "conclusion_ja": "40四分リットル。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "milk_total_liters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P1.milk_total_liters",
+      "title_ja": "合計は10L。",
+      "claim_ja": "合計は10L。",
+      "method_ja": "4四分リットル=1Lで換算。",
+      "requires_steps": [
+        "milk_total_quarters"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "合計40四分リットル。",
+      "conclusion_ja": "10L。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3208,
+    "checked_model_hash": "545ad0961d7cf877642f3f6117c567afbd5fedaf3bb1106705e78489ae808522",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。下書きの算術答えを原文から再計算した。"
+    ]
+  }
+}

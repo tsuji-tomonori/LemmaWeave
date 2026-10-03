@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint137_river",
+  "title_ja": "Billが投げた物の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02341",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tedは棒10本・石10個。Billは棒が6本多く、Tedの石はBillの2倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.river_solution",
+  "graph": "work/gsm8k-sprint137-river-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "river_sticks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.river_sticks",
+      "title_ja": "Billの棒は16本",
+      "claim_ja": "Billの棒は16本",
+      "method_ja": "10本に6本足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Billの棒は16本",
+      "baseline_ja": "Billの棒は16本"
+    },
+    {
+      "id": "river_rocks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.river_rocks",
+      "title_ja": "Billの石は5個",
+      "claim_ja": "Billの石は5個",
+      "method_ja": "Tedの10個を2で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Billの石は5個",
+      "baseline_ja": "Billの石は5個"
+    },
+    {
+      "id": "river_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.river_solution",
+      "title_ja": "Billは合計21個",
+      "claim_ja": "Billは合計21個",
+      "method_ja": "棒16本と石5個を足す",
+      "requires_steps": [
+        "river_sticks",
+        "river_rocks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Billは合計21個",
+      "baseline_ja": "Billは合計21個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2342,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

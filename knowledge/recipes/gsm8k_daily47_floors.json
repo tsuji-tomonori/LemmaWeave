@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily47_floors","title_ja":"建物の最上階","problem_id":"external-gsm8k-main-3101c7d50724:train:00471","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"1階からの上下移動と最上階までの差から階数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917C.floors_solution","graph":"work/gsm8k-daily47-floors-graph.json","lean_file":"tests/lean/GSM8KDaily0917C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["階番号に欠番がなく、9 floors awayを最上階との階番号差9とする追加条件。"],
+  "steps":[
+    {"id":"floors_current","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917C.floors_current","title_ja":"現在階","requires_steps":[],"uses_nodes":[],"condition_ja":"1階から5階上がり、2階下がり、7階上がる。","conclusion_ja":"6階、4階を経て11階にいる。","baseline_ja":"階番号の加減。"},
+    {"id":"floors_top","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917C.floors_top","title_ja":"最上階","requires_steps":["floors_current"],"uses_nodes":[],"condition_ja":"欠番なしで、11階と最上階の階番号差が9。","conclusion_ja":"最上階は11+9=20階。","baseline_ja":"追加条件下の階番号差。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":472,"checked_model_hash":"c7638dbc5d9768e007944e1ada2b2f940d2135fe03ee83db29542cd04702205d","checks_ja":["移動後が11階と確認した。","9 floors awayの解釈条件を明記した。"]}
+}

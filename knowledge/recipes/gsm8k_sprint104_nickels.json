@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint104_nickels",
+  "title_ja": "残ったニッケル硬貨",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01840",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "贈ったセントを引き、残額を5セントで割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.nickels_solution",
+  "graph": "work/gsm8k-sprint104-nickels-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "nickels_randi",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.nickels_randi",
+      "title_ja": "Randiへ50セント。",
+      "claim_ja": "Randiへ50セント。",
+      "method_ja": "25×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Peterの2倍。",
+      "conclusion_ja": "50。",
+      "baseline_ja": "50。"
+    },
+    {
+      "id": "nickels_remaining_cents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.nickels_remaining_cents",
+      "title_ja": "残額は20セント。",
+      "claim_ja": "残額は20セント。",
+      "method_ja": "95−25−50。",
+      "requires_steps": [
+        "nickels_randi"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2人への贈与を引く。",
+      "conclusion_ja": "20。",
+      "baseline_ja": "20。"
+    },
+    {
+      "id": "nickels_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.nickels_solution",
+      "title_ja": "残りは4枚。",
+      "claim_ja": "残りは4枚。",
+      "method_ja": "20÷5。",
+      "requires_steps": [
+        "nickels_remaining_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ニッケル1枚=5セント。",
+      "conclusion_ja": "4。",
+      "baseline_ja": "4。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1841,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

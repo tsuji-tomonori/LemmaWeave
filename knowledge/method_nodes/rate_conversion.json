@@ -1,0 +1,18 @@
+{
+  "id": "rate_conversion",
+  "kind": "method_or_formula",
+  "name_ja": "単価と時間の単位を換算する",
+  "statement_ja": "(単価÷単位時間)×時間 = 単価×(時間÷単位時間)。",
+  "assumptions_ja": "有理数の恒等式。実際の換算では単位時間>0、同一の一定単価、途中の丸めなし。",
+  "use_when_ja": "時給と分単位の時間から報酬を求める。",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.ArithmeticMethods.rate_conversion"
+  ],
+  "explanation_outline_ja": [
+    "1時間=60分なので、時給を60で割ると分給となる。",
+    "分給に分数を掛ける方法と、時間へ換算する方法の一致を示す。"
+  ],
+  "unexpanded": [
+    "単位量当たりの大きさ、比例モデル、乗法の結合・交換。"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "dnc2026_pair_individual",
+  "title_ja": "相対補集合との共通部分から全パラメータ対を求める",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "全体集合U={2,3,...,20}で、Aをaと1より大きい公約数をもつ元の集合、Bをbと1より大きい公約数をもつ元の集合とする。2≤a,b≤9のとき、AとUに関するBの補集合との共通部分が{5}となる(a,b)をすべて求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "answer_url": "https://www.dnc.ac.jp/kyotsu/kako_shiken_jouhou/r8/r8_honsiken_seikai.html",
+    "pdf_page_1_based": [
+      3,
+      4
+    ],
+    "printed_page_label": [
+      "32",
+      "33"
+    ],
+    "subquestion": "第1問[2](2)(ii) 解答欄タ・チ",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II.json",
+    "visual_review_status": "confirmed_2026-09-05_and_official_pdf_refetched_2026-09-27",
+    "official_answer_checked": "タ=5、チ=6",
+    "rights_note_ja": "原文画像は転載せず、出題位置、独自の要約、数学的定義と証明のみを保存する。"
+  },
+  "variables": [
+    {
+      "name": "a,b",
+      "type": "ℕ",
+      "domain_ja": "2≤a,b≤9"
+    },
+    {
+      "name": "k",
+      "type": "ℕ",
+      "domain_ja": "2≤k≤20"
+    }
+  ],
+  "assumptions_ja": [
+    "InA(a,k)は、kがUに属し、kとaが1より大きい公約数をもつことを表す。",
+    "InComplement(b,k)はUに関するBの相対補集合への所属を表す。",
+    "すべての自然数kについて、InA(a,k)かつInComplement(b,k)であることとk=5が同値である。"
+  ],
+  "required_conclusions_ja": [
+    "すべての2≤a,b≤9について、集合条件とa=5かつb=6が同値であることを示す。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026PairIndividual.individual_solution",
+  "graph": "work/dnc2026-pair-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026PairIndividual.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "existing_independently_reviewed_model_and_kernel_checked_shared_root_new_author_explanation",
+  "assurance_level": "MODEL_FORMALIZED",
+  "counting_note_ja": "既存台帳の1小問に個別記述解答を追加した。GSM8K固定8,792問へ加えず、新しい説明行とラッパー定理はexact-head成功証拠が得られるまで検証待ちとする。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "force_left_parameter",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026PairIndividual.left_parameter_forced",
+      "title_ja": "5からaを決める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "集合条件を満たすならa=5である。",
+      "method_ja": "5がAに属するので、5とaは1より大きい公約数をもつ。5の1より大きい約数は5だけであり、2≤a≤9だからa=5である。Leanでは、この推論を含む既存共有定理pair_solutionの必要方向を再利用する。",
+      "condition_ja": "2≤a,b≤9で、A∩(U\\B)={5}。",
+      "premise_ja": "5は右辺の唯一の元なのでAに属する。",
+      "conclusion_ja": "a=5。",
+      "baseline_ja": "集合の外延同値、素数5の約数、範囲内の倍数。"
+    },
+    {
+      "id": "force_right_parameter",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026PairIndividual.right_parameter_forced",
+      "title_ja": "10・15・20と5からbを決める",
+      "requires_steps": [
+        "force_left_parameter"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "集合条件を満たすならb=6である。",
+      "method_ja": "a=5ならA={5,10,15,20}。差集合が{5}なのでBは10・15・20を含み5を含まない。2≤b≤9を調べると、この条件を満たすのはb=6だけである。Leanでは同じ有限宇宙の全候補を検査済みのpair_solutionを再利用する。",
+      "condition_ja": "U={2,...,20}、2≤b≤9。",
+      "premise_ja": "A={5,10,15,20}かつA∩(U\\B)={5}。",
+      "conclusion_ja": "b=6。",
+      "baseline_ja": "公約数、有限範囲の候補確認。"
+    },
+    {
+      "id": "combine_necessity",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026PairIndividual.necessary_pair",
+      "title_ja": "必要条件を組にする",
+      "requires_steps": [
+        "force_left_parameter",
+        "force_right_parameter"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "集合条件から(a,b)=(5,6)が必要である。",
+      "method_ja": "前二行の等式を順序対としてまとめる。",
+      "condition_ja": "a,bはいずれも許容範囲内。",
+      "premise_ja": "a=5かつb=6。",
+      "conclusion_ja": "(a,b)=(5,6)。",
+      "baseline_ja": "連言と順序対。"
+    },
+    {
+      "id": "verify_sufficiency",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026PairIndividual.five_six_satisfy",
+      "title_ja": "(5,6)の十分性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "a=5、b=6ならA∩(U\\B)={5}である。",
+      "method_ja": "Aの元は5・10・15・20。Bは2または3を公約数にもつUの元を含むので、Aのうち10・15・20はBに入り、5だけがBに入らない。既存共有定理pair_solutionの十分方向で全自然数kへの外延同値を再利用する。",
+      "condition_ja": "相対補集合はUに関して取る。",
+      "premise_ja": "a=5、b=6。",
+      "conclusion_ja": "A∩(U\\B)={5}。",
+      "baseline_ja": "集合差と公約数。"
+    },
+    {
+      "id": "combine_iff",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026PairIndividual.individual_solution",
+      "title_ja": "必要十分条件を完成する",
+      "requires_steps": [
+        "combine_necessity",
+        "verify_sufficiency"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "許容される全パラメータ対について、集合条件と(a,b)=(5,6)は同値である。",
+      "method_ja": "必要方向と十分方向を結合する。",
+      "condition_ja": "2≤a,b≤9。",
+      "premise_ja": "前四行の結果。",
+      "conclusion_ja": "解答欄タは5、チは6。",
+      "baseline_ja": "同値の両方向。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-27T09:09:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "checked_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
+    "checks_ja": [
+      "公式PDF第3・4ページ（冊子32・33頁）を再取得し、U、a,bの範囲、AとBの定義、相対補集合、解答欄タ・チを目視確認した。",
+      "公式正解表でタ=5、チ=6を照合した。",
+      "必要方向では5の所属とA={5,10,15,20}から両パラメータを絞り、答えを仮定へ移していない。",
+      "十分方向ではa=5、b=6を原集合定義へ戻し、全自然数kに対する外延同値を既存共有定理から再利用した。",
+      "五つの説明行を五つの名前付きLean定理へ対応させた。新しい個別成果は自己照合のみで、exact-head固定Lean実行、公理監査、依存抽出は未完と表示した。"
+    ]
+  }
+}

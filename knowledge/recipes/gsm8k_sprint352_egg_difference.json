@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint352_egg_difference",
+  "title_ja": "Cherylが多く見つけた卵",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03884",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "During the Easter egg hunt, Kevin found 5 eggs, Bonnie found 13 eggs, George found 9 and Cheryl found 56.  How many more eggs did Cheryl find than the other three children found?",
+  "answer_ja": "他の3人の合計は5+13+9=27個。Cherylは56個なので、56−27=29個多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A08P1.egg_difference",
+  "graph": "work/gsm8k-sprint352-egg-difference-graph.json",
+  "model_notes_ja": [
+    "Cherylと各人個別ではなく、他の3人の合計との差を求める。"
+  ],
+  "steps": [
+    {
+      "id": "egg_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A08P1.egg_difference",
+      "title_ja": "Cherylが多く見つけた卵",
+      "claim_ja": "他の3人の合計は5+13+9=27個。Cherylは56個なので、56−27=29個多い。",
+      "method_ja": "比較対象の3人を合計してからCherylの個数との差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "「other three children」はKevin、Bonnie、Georgeの合計を指す。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "29個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3885,
+    "checked_model_hash": "d21b700efa17209cee6925382baa52730d9bc43c0a40ac6a4f3efb39b42db704",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

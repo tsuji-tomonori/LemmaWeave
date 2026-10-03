@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily48_juice","title_ja":"果汁の注文人数","problem_id":"external-gsm8k-main-3101c7d50724:train:00474","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"30人のうち2/5がレモン、残りの1/3がマンゴーを注文したとき、オレンジの人数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917D.juice_solution","graph":"work/gsm8k-daily48-juice-graph.json","lean_file":"tests/lean/GSM8KDaily0917D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["レモン12人を除いた18人の1/3である6人がマンゴー、残り12人がオレンジ。参照解答はマンゴーとオレンジを取り違えて最終値6としている。"],
+  "steps":[
+    {"id":"juice_lemon_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.juice_lemon_remaining","title_ja":"レモンと残りの人数","requires_steps":[],"uses_nodes":[],"condition_ja":"30人の2/5がレモンを注文した。","conclusion_ja":"レモンは12人、残りは18人。","baseline_ja":"割合と差。"},
+    {"id":"juice_mango_orange","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.juice_mango_orange","title_ja":"マンゴーとオレンジの人数","requires_steps":["juice_lemon_remaining"],"uses_nodes":[],"condition_ja":"残り18人の1/3がマンゴーで、それ以外がオレンジ。","conclusion_ja":"マンゴーは6人、オレンジは12人。","baseline_ja":"部分の割合と残数。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":475,"checked_model_hash":"36659505f7e047d68fd7fe15a6930aff0d84c83830512c7638ed07d8c6a5a95d","checks_ja":["one-third of the remainingの対象を18人と確認した。","参照解答の取り違えを原文から訂正した。"]}
+}

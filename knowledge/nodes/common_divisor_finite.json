@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "common_divisor_finite",
+  "name_ja": "公約数の有限探索への同値変換",
+  "statement_ja": "自然数 k と正の自然数 a について、1より大きい公約数 d が存在することと、2 ≤ d ≤ a を満たす公約数 d が存在することは同値である。",
+  "assumptions": [
+    "k a : ℕ",
+    "0 < a"
+  ],
+  "kind": "lemma",
+  "lean_declarations": [
+    "LemmaWeave.Lemmas.commonDivisor_iff_bounded"
+  ],
+  "prerequisite_nodes": [
+    "bounded_divisor",
+    "natural_divisibility"
+  ],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "Actual exported types compared with the Japanese claim; remaining foundational prerequisites are not discarded."
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null
+  },
+  "explanation_outline_ja": [
+    "順方向で約数の上界を用いる。",
+    "逆方向では探索区間の下端から1 < dを得る。"
+  ],
+  "unexpanded": [
+    "項目ごとの公式学習指導要領との照合",
+    "前提宣言の推移的な数学内容の展開"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "declared_but_not_in_graph": [],
+  "actual_declaration_types": {
+    "LemmaWeave.Lemmas.commonDivisor_iff_bounded": "∀ (k a : ℕ), 0 < a → ((∃ d, 1 < d ∧ d ∣ k ∧ d ∣ a) ↔ ∃ d ∈ Finset.Icc 2 a, d ∣ k ∧ d ∣ a)"
+  },
+  "declaration_type_sha256": {
+    "LemmaWeave.Lemmas.commonDivisor_iff_bounded": "d75765a34a60e5590c706706eabd7e201d5dd0b8b9951439e4b29e05ac5871ae"
+  }
+}

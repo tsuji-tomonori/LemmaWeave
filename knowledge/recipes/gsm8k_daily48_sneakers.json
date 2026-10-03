@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily48_sneakers","title_ja":"スニーカー代のための収入","problem_id":"external-gsm8k-main-3101c7d50724:train:00476","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"芝刈り、フィギュア販売、時給労働の収入がちょうど靴代になるとき価格を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917D.sneakers_solution","graph":"work/gsm8k-daily48-sneakers-graph.json","lean_file":"tests/lean/GSM8KDaily0917D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["3種類の収入をすべて靴代に充て、収入が価格をちょうど覆う。"],
+  "steps":[
+    {"id":"sneakers_income","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.sneakers_income","title_ja":"収入ごとの金額","requires_steps":[],"uses_nodes":[],"condition_ja":"芝刈り3件を各8ドル、フィギュア2個を各9ドル、10時間を時給5ドルで働く。","conclusion_ja":"収入は順に24ドル、18ドル、50ドル。","baseline_ja":"単価×数量。"},
+    {"id":"sneakers_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.sneakers_total","title_ja":"靴の価格","requires_steps":["sneakers_income"],"uses_nodes":[],"condition_ja":"3種類の収入が靴代をちょうど覆う。","conclusion_ja":"価格は24+18+50=92ドル。","baseline_ja":"収入の合計。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":477,"checked_model_hash":"36659505f7e047d68fd7fe15a6930aff0d84c83830512c7638ed07d8c6a5a95d","checks_ja":["3種類の数量と単価を原文に照合した。","just coverを合計収入と価格の等値とした。"]}
+}

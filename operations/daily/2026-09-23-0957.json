@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-23",
+  "run_id": "lemmaweave-sprint-20260923-0900-entrance-05",
+  "planned_slot_local_hour": 9,
+  "planned_at": "2026-09-23T09:00:00+09:00",
+  "role": "japanese_entrance_exam_high_school",
+  "base_sha": "8f0f2d3c9553524341467fb986778cce5345d9d0",
+  "started_at": "2026-09-23T09:57:32+09:00",
+  "finished_at": "2026-09-23T10:09:18+09:00",
+  "schedule_offset_seconds": 3452,
+  "schedule_note_ja": "予定時刻から57分32秒遅れて起動した。当日09時専用枠は未実行だったため重複せず割り当てた。10時GSM8K枠は本実行では消化していない。",
+  "selected_problem_ids": ["JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i"],
+  "authored_problem_ids": ["JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i"],
+  "completed_problem_ids": [],
+  "verification_pending": ["JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i"],
+  "deferred": [],
+  "claim": {
+    "problem_ids": ["JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i"],
+    "claimed_at": "2026-09-23T09:57:32+09:00",
+    "expires_at": "2026-09-23T10:57:32+09:00",
+    "status": "released_after_serial_write"
+  },
+  "source": {
+    "provider": "大学入試センター",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017550.pdf&n=2026_ol_18_sugaku2BC.pdf",
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554",
+    "pdf_page_1_based": [19],
+    "printed_page_label": ["22"],
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i.json",
+    "source_review_basis": "大学入試センター公式掲載ページから数学II・B・Cの公式PDFを取得し、PDF第19ページ（冊子22頁）の階差定義、初項1、bn=4n-1、ア・イ・ウ・エオの要求を画像で直接確認した。原文画像は再配布せず、独自要約と形式化のみ保存した。",
+    "rights_status": "candidate_restricted"
+  },
+  "written_solution_ja": [
+    "階差の一般項bn=4n-1へn=1を代入すると、b1=4*1-1=3である。",
+    "階差の定義b1=a2-a1とa1=1、b1=3から、3=a2-1、したがってa2=4である。",
+    "一般項へn=2を代入すると、b2=4*2-1=7である。",
+    "階差の定義b2=a3-a2とa2=4、b2=7から、7=a3-4、したがってa3=11である。"
+  ],
+  "entrance_exam_ledger_snapshot": {
+    "registered": 14,
+    "collected_kernel_checked": 5,
+    "candidate_not_started": 9,
+    "candidate_count_note_ja": "新規登録問題は自己照合済みだが、権利確認・独立レビュー・固定Lean検証・正式収集が未完のためcandidate_not_startedに残す。",
+    "individual_solutions_authored_this_week": 5,
+    "current_week_by_six_fields": {
+      "sets_logic_integers": 1,
+      "functions_equations_inequalities": 1,
+      "geometry_vectors_trigonometry": 1,
+      "combinatorics_probability_statistics": 1,
+      "sequences": 1,
+      "calculus": 0
+    },
+    "unconfirmed_scope_ja": "旧51掲載経路・36大学と現行14 IDの完全対応、2024〜2026共通テストおよび東京・京都・名古屋大学の全小問、高校6分野の対象全集合は未列挙。"
+  },
+  "gsm8k_progress_unchanged": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 1280,
+    "next_problem_id": "train:01794",
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "artifacts": {
+    "recipe": "knowledge/recipes/dnc2026_sequence_difference_individual.json",
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i.json",
+    "model_file": "LemmaWeave/Problems/DNC2026M2BC/SequenceDifferenceModel.lean",
+    "lean_file": "tests/lean/DNC2026SequenceDifferenceIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "model_sha256": "758172f2f6a09a1e37a85881705b7af583d581aae060e1fb022e13d5200395db",
+    "written_lines": 4,
+    "lean_line_theorems": 4,
+    "new_bytes_before_ledgers": 10248,
+    "semantic_review_status": "self_review_only"
+  },
+  "validation": {
+    "official_source_refetched": true,
+    "official_pdf_sha256_matched": true,
+    "source_page_visually_checked": true,
+    "registered_problem_record_json": "success",
+    "registered_id_set_count": 14,
+    "registered_id_duplicates": 0,
+    "candidate_count": 9,
+    "recipe_json_parse": "success",
+    "recipe_steps": 4,
+    "recipe_declaration_links": 4,
+    "arithmetic_check": "success: b1=3, a2=4, b2=7, a3=11",
+    "forbidden_lean_tokens_found": [],
+    "local_lean_available": false,
+    "fixed_lean_status": "pending_exact_head_ci",
+    "semantic_review_status": "self_review_only",
+    "method_target_note_ja": "ローカルには固定Lean 4.33.1環境がなく、新規依存グラフは未生成。exact-head CIでビルド、公理、依存を再実行する。"
+  },
+  "ci": {
+    "prior_head_sha": "8f0f2d3c9553524341467fb986778cce5345d9d0",
+    "prior_head_workflow_runs": 0,
+    "prior_head_statuses": 0,
+    "current_status": "pending_exact_head_ci",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "182aec90f1093fd3ec8abdbe0ba6300f5b0247fd",
+  "next_entrance_exam_field": "calculus",
+  "next_entrance_exam_candidate_ja": "現行台帳には微分・積分候補が0件なので、次の09時専用枠では公式出典から対象小問を新規登録してから解く。",
+  "note_ja": "数列の専用枠として公式PDFの1小問を新規登録し、四つの要求を4つの日本語説明行と名前付きLean定理へ対応させた。権利確認、独立レビュー、固定Lean成功証拠は未完のため正式完了には数えない。"
+}

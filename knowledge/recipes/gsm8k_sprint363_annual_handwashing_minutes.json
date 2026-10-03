@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint363_annual_handwashing_minutes",
+  "title_ja": "年間の手洗い時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03940",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A11P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Every 4 weeks, Helen hand washes her silk pillowcases.  It takes 30 minutes to hand wash all of them.  In 1 year, how much time does Helen spend hand washing her pillowcases?",
+  "answer_ja": "1年52週に4週ごとなので52÷4=13回。1回30分だから13×30=390分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A11P3.annual_handwashing_minutes",
+  "graph": "work/gsm8k-sprint363-annual-handwashing-minutes-graph.json",
+  "model_notes_ja": [
+    "1年を52週とし、年初から4週ごとの13回を数え、追加の端点洗濯はない。"
+  ],
+  "steps": [
+    {
+      "id": "annual_handwashing_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A11P3.annual_handwashing_minutes",
+      "title_ja": "年間の手洗い時間",
+      "claim_ja": "1年52週に4週ごとなので52÷4=13回。1回30分だから13×30=390分。",
+      "method_ja": "年間回数を求めて1回の時間を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "52は4で割り切れる。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "390分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3941,
+    "checked_model_hash": "523be3d9616e838b66e471414a5b319b63c2525d99a5fb40fdb22f7976d9e4bb",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

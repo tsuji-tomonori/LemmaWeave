@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint127_drinks",
+  "title_ja": "パーティーの飲料代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02191",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "男性15人、女性は男性より10人多い。全員に2缶ずつ、1箱8缶で5ドルなら費用はいくらか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drinks_solution",
+  "graph": "work/gsm8k-sprint127-drinks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "drinks_girls",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drinks_girls",
+      "title_ja": "女性は25人",
+      "claim_ja": "女性は25人",
+      "method_ja": "男性15人より10人多い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "女性は25人",
+      "baseline_ja": "女性は25人"
+    },
+    {
+      "id": "drinks_attendees",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drinks_attendees",
+      "title_ja": "参加者は40人",
+      "claim_ja": "参加者は40人",
+      "method_ja": "男性15人と女性25人を足す。",
+      "requires_steps": [
+        "drinks_girls"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "参加者は40人",
+      "baseline_ja": "参加者は40人"
+    },
+    {
+      "id": "drinks_cans",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drinks_cans",
+      "title_ja": "必要な缶は80缶",
+      "claim_ja": "必要な缶は80缶",
+      "method_ja": "40人に2缶ずつ。",
+      "requires_steps": [
+        "drinks_attendees"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "必要な缶は80缶",
+      "baseline_ja": "必要な缶は80缶"
+    },
+    {
+      "id": "drinks_boxes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drinks_boxes",
+      "title_ja": "必要な箱は10箱",
+      "claim_ja": "必要な箱は10箱",
+      "method_ja": "80缶を1箱8缶で割る。",
+      "requires_steps": [
+        "drinks_cans"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "必要な箱は10箱",
+      "baseline_ja": "必要な箱は10箱"
+    },
+    {
+      "id": "drinks_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drinks_solution",
+      "title_ja": "費用は50ドル",
+      "claim_ja": "費用は50ドル",
+      "method_ja": "10箱に1箱5ドルを掛ける。",
+      "requires_steps": [
+        "drinks_boxes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "費用は50ドル",
+      "baseline_ja": "費用は50ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2192,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

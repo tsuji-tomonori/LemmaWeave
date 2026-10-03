@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily51_running","title_ja":"4日間の平均走行距離","problem_id":"external-gsm8k-main-3101c7d50724:train:00506","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"4.2、3.8、3.6、4.4マイルの4日分について、走った日の平均距離を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918B.running_solution","graph":"work/gsm8k-daily51-running-graph.json","lean_file":"tests/lean/GSM8KDaily0918B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["小数誤差を避けるため各距離を0.1マイル単位の自然数で表す。"],
+  "steps":[
+    {"id":"running_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.running_total","title_ja":"総距離","requires_steps":[],"uses_nodes":[],"condition_ja":"42、38、36、44という0.1マイル単位の値を合計する。","conclusion_ja":"総距離は160単位、すなわち16マイル。","baseline_ja":"小数を10倍した整数の加法。"},
+    {"id":"running_average_tenths","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.running_average_tenths","title_ja":"平均の0.1マイル単位値","requires_steps":["running_total"],"uses_nodes":[],"condition_ja":"160単位を走った4日で等分する。","conclusion_ja":"平均は40単位。","baseline_ja":"平均＝合計÷個数。"},
+    {"id":"running_average_miles","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918B.running_average_miles","title_ja":"マイルへ戻す","requires_steps":["running_average_tenths"],"uses_nodes":[],"condition_ja":"10単位が1マイル。","conclusion_ja":"平均距離は4マイル。","baseline_ja":"単位換算。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":507,"checked_model_hash":"f8eb7be4d1b942b76912236d18a8b53348adc325ae6e063d55f6a62f786e1f1a","checks_ja":["平均の分母は週7日ではなく、実際に走った4日である。"]}
+}

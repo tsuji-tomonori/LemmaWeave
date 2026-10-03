@@ -1,0 +1,121 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-1400-gsm8k-65",
+  "planned_slot_local_hour": 14,
+  "planned_at": "2026-09-21T14:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "0642546b97ec809c745945b184ca0c6bdd24f650",
+  "started_at": "2026-09-21T14:04:20+09:00",
+  "finished_at": "2026-09-21T14:13:59+09:00",
+  "schedule_offset_seconds": 260,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01254",
+    "external-gsm8k-main-3101c7d50724:train:01255",
+    "external-gsm8k-main-3101c7d50724:train:01256",
+    "external-gsm8k-main-3101c7d50724:train:01257",
+    "external-gsm8k-main-3101c7d50724:train:01258",
+    "external-gsm8k-main-3101c7d50724:train:01259",
+    "external-gsm8k-main-3101c7d50724:train:01260",
+    "external-gsm8k-main-3101c7d50724:train:01261",
+    "external-gsm8k-main-3101c7d50724:train:01262",
+    "external-gsm8k-main-3101c7d50724:train:01263",
+    "external-gsm8k-main-3101c7d50724:train:01264",
+    "external-gsm8k-main-3101c7d50724:train:01265",
+    "external-gsm8k-main-3101c7d50724:train:01266",
+    "external-gsm8k-main-3101c7d50724:train:01267",
+    "external-gsm8k-main-3101c7d50724:train:01268"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01254",
+    "external-gsm8k-main-3101c7d50724:train:01255",
+    "external-gsm8k-main-3101c7d50724:train:01256",
+    "external-gsm8k-main-3101c7d50724:train:01257",
+    "external-gsm8k-main-3101c7d50724:train:01258",
+    "external-gsm8k-main-3101c7d50724:train:01259",
+    "external-gsm8k-main-3101c7d50724:train:01260",
+    "external-gsm8k-main-3101c7d50724:train:01261",
+    "external-gsm8k-main-3101c7d50724:train:01262",
+    "external-gsm8k-main-3101c7d50724:train:01263",
+    "external-gsm8k-main-3101c7d50724:train:01264",
+    "external-gsm8k-main-3101c7d50724:train:01265",
+    "external-gsm8k-main-3101c7d50724:train:01266",
+    "external-gsm8k-main-3101c7d50724:train:01267",
+    "external-gsm8k-main-3101c7d50724:train:01268"
+  ],
+  "verification_pending_cumulative": {
+    "count": 755,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01268"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01254-01268",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを完走し、入力SHA・許容公理・52説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {"problem_ids": "train:01254-01258", "commit": "f04cc7f6d8e0215f1b38a040cc2456559f1789b3"},
+    {"problem_ids": "train:01259-01263", "commit": "12fe832d04637b7c7b85617c84276801b0f10935"},
+    {"problem_ids": "train:01264-01268 and registration", "commit": "cb4eae83f7134641f7f3492c76b22b5bd2ced773"}
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 52,
+    "recipe_declaration_mappings_checked": 52,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_hash": "1b6922843a325ae3a452af016598efeed82b7a6e535387cc3738d5707ff56fa7",
+    "semantic_blockers": [
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01255",
+        "reason_ja": "原文どおり25=2×野球券+6とすると奇数=偶数となり、自然数解がない。参照解答56枚は比較方向を逆にしているため採用しない。"
+      },
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01257",
+        "reason_ja": "five times moreを最終額が元本の5倍と読むと差額6000ドル、利益が元本の5倍と読むと差額8000ドルとなるため、両解釈と非一意性を形式化した。"
+      }
+    ]
+  },
+  "measurements": {
+    "elapsed_seconds": 579,
+    "artifact_bytes": 58427,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0,
+    "local_execution_success_rate": 1,
+    "ci_seconds": null
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records, 15 raw questions, 15 normalized questions, and 52 declarations checked",
+    "solve_queue_write": "passed on exact PR head checkout",
+    "queue_partition": "solution_ready 518, awaiting_verification 755, pending 7519; total 8792",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_until_fixed_ci_graphs",
+    "method_recipe_render_detail": "依存グラフが未生成のためdnc2026_geometry_area_individual.json.gz読込でFileNotFoundError。検査規則は緩和していない。",
+    "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "0642546b97ec809c745945b184ca0c6bdd24f650",
+    "previous_run_id": null,
+    "previous_status": "not_triggered",
+    "accepted_as_success_evidence": false,
+    "solution_commit_sha": "cb4eae83f7134641f7f3492c76b22b5bd2ced773",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "cb4eae83f7134641f7f3492c76b22b5bd2ced773",
+  "progress_before": {"solution_ready": 518, "remaining": 8274, "verification_pending": 740},
+  "progress_after": {"solution_ready": 518, "remaining": 8274, "verification_pending": 755},
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01269",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・52個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01255は原条件に自然数解がないこと、train:01257はfive times moreの二解釈を、条件を黙って補わず形式化した。"
+}

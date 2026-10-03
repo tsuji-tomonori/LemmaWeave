@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint44_fish",
+  "title_ja": "2週間のサーモン販売量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00952",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "初週50kgに対するthree times moreを3倍または4倍と読む場合の2週合計を分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.fish_solution",
+  "graph": "work/gsm8k-sprint44-fish-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "three times moreは3倍と読む用法と、基準に3倍分を加えた4倍と読む用法があり、原文だけでは一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "fish_triple_next",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.fish_triple_next",
+      "title_ja": "3倍解釈の翌週",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "three timesを3倍と読む。",
+      "conclusion_ja": "翌週150kg。",
+      "baseline_ja": "3×50=150。"
+    },
+    {
+      "id": "fish_triple_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.fish_triple_total",
+      "title_ja": "3倍解釈の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "初週50kgと翌週150kg。",
+      "conclusion_ja": "合計200kg。",
+      "baseline_ja": "50+150=200。"
+    },
+    {
+      "id": "fish_additive_next",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.fish_additive_next",
+      "title_ja": "加算解釈の翌週",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "three times moreを初週量に3倍分を加えると読む。",
+      "conclusion_ja": "翌週200kg。",
+      "baseline_ja": "50+3×50=200。"
+    },
+    {
+      "id": "fish_additive_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.fish_additive_total",
+      "title_ja": "加算解釈の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "初週50kgと翌週200kg。",
+      "conclusion_ja": "合計250kg。",
+      "baseline_ja": "50+200=250。"
+    },
+    {
+      "id": "fish_nonunique",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.fish_nonunique",
+      "title_ja": "非一意性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2つの通常解釈が異なる合計を与える。",
+      "conclusion_ja": "原文だけでは200kgか250kgか一意でない。",
+      "baseline_ja": "200≠250。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 953,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

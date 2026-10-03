@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0391",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "cd6d81d9b74882b1a26cc886af78537e1be793d517d49f9a93263347de896d65",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1002A19P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03786",
+      "source_line_1based": 3787,
+      "source_record_sha256": "d18ca28f2eed8f32a2b90bda9219cfeb460aa03be24b56358222584c49f758b7",
+      "raw_question_sha256": "8980d79fbfb66168bdea9ef4720606e0fee9a8a9532a56cf7ee2b52b84d4376d",
+      "normalized_question_sha256": "8980d79fbfb66168bdea9ef4720606e0fee9a8a9532a56cf7ee2b52b84d4376d",
+      "source_question": "Patricia is growing her long very long to donate it to a charity that makes wigs for cancer survivors. Her hair is 14 inches long. She needs to donate 23 inches to make a wig. She wants her hair to be 12 inches long after the donation. How much longer does she have to grow her hair?",
+      "recipe_id": "gsm8k_sprint333_hair_growth",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "寄付する23インチと残す12インチは同じ切断時点の全長を分ける。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03787",
+      "source_line_1based": 3788,
+      "source_record_sha256": "7b4161f06b200d28ac45caa5b819c216ac868dd38637323d4e12481049ad40a4",
+      "raw_question_sha256": "9e396f7a5801502bdc1faf510ab2d3b114265e7e43ffd91c5815bc4fd41ea810",
+      "normalized_question_sha256": "289422764116b1823e5d90bceea943854f2cc28c5aee8f3a77bb51eb53836b57",
+      "source_question": "Jason joined the military when he turned 18.  It took him 8 years to raise to the rank of chief.  Then 25% longer than that to go from chief to master chief.  He then spent 10 years more in the military before retiring.  How old was he when he retired?",
+      "recipe_id": "gsm8k_sprint333_retirement_age",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "25% longerはchiefからmaster chiefまでの期間を8年の1.25倍にする。最後の10年はその後に加える。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03788",
+      "source_line_1based": 3789,
+      "source_record_sha256": "1c0b60bf7c4006b5b770f3babfd98184b6cade3e22addaf2cb6c6697d44c89fe",
+      "raw_question_sha256": "8e58d3c44aa7ff331c36ab8c2e03fb0a2d71245582b14c46396ee134187a2ebf",
+      "normalized_question_sha256": "8e58d3c44aa7ff331c36ab8c2e03fb0a2d71245582b14c46396ee134187a2ebf",
+      "source_question": "Mabel is counting sharks in the ocean. She knows that of the fish that she sees, 25% will be sharks and 75% will be another type of fish. On day one she counts 15 fish. On day 2 she counts three times as many. How many sharks did she count over those two days?",
+      "recipe_id": "gsm8k_sprint333_sharks_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "両日とも見た魚の25%がサメで、日をまたぐ重複個体は数えない算数モデル。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03789",
+      "source_line_1based": 3790,
+      "source_record_sha256": "f19189ece61e71fd530040c380593e7cb64c64cd0a0727fd78a09233c4d1c980",
+      "raw_question_sha256": "d7881a94fbe42442b0114c53842d50d30400a87f1953a3f63940d62edc1e49dd",
+      "normalized_question_sha256": "d7881a94fbe42442b0114c53842d50d30400a87f1953a3f63940d62edc1e49dd",
+      "source_question": "Doris works at the Widget Factory in the packing department. She puts 3 widgets in each carton, which are 4 inches wide, 4 inches long, and 5 inches tall. She then packs those cartons into a shipping box before sending it to the loading bay. The shipping boxes are 20 inches wide, 20 inches long, and 20 inches high. How many widgets get shipped in each shipping box?",
+      "recipe_id": "gsm8k_sprint333_widgets_per_shipping_box",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "カートンを4×4×5の向きで軸に平行に整列し、箱内寸を20×20×20とする。参照解答のareaはvolumeの誤記。"
+      ],
+      "blockers": [
+        "参照解答は体積をsquare inchesおよびareaと誤記している。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03790",
+      "source_line_1based": 3791,
+      "source_record_sha256": "259e66ab854fe3ceed0b5f6ecce875fe24722c42674df44f5de5fc8b2e15bf6b",
+      "raw_question_sha256": "ba5ff18827aef436f41294fc6fa5559681061f2dab35add78449fcdebe98c311",
+      "normalized_question_sha256": "1074983b6aaa6b79db082f8172a94e6b1c795554e828ad6c9b71a0a99c7c2c90",
+      "source_question": "James buys jars for his honey.  He has 5 hives that each produce 20 liters of honey.  Each jar can hold .5 liters.  How many jars will he need to buy if his friend is bringing his own jars for half the honey?",
+      "recipe_id": "gsm8k_sprint333_honey_jars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各巣の生産量は20リットルで、友人の瓶は総量のちょうど半分を収容する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

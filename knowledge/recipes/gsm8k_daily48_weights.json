@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily48_weights","title_ja":"3人の合計体重","problem_id":"external-gsm8k-main-3101c7d50724:train:00478","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"Jimが110ポンド、Steveが8ポンド軽く、StanがSteveより5ポンド重いとき合計を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917D.weights_solution","graph":"work/gsm8k-daily48-weights-graph.json","lean_file":"tests/lean/GSM8KDaily0917D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["比較の基準をJim→Steve→Stanの順に保持する。"],
+  "steps":[
+    {"id":"weights_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.weights_each","title_ja":"SteveとStanの体重","requires_steps":[],"uses_nodes":[],"condition_ja":"Jimは110ポンド、SteveはJimより8ポンド軽く、StanはSteveより5ポンド重い。","conclusion_ja":"Steveは102ポンド、Stanは107ポンド。","baseline_ja":"差の加減。"},
+    {"id":"weights_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.weights_total","title_ja":"3人の合計","requires_steps":["weights_each"],"uses_nodes":[],"condition_ja":"3人は110、102、107ポンド。","conclusion_ja":"合計は319ポンド。","baseline_ja":"3数量の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":479,"checked_model_hash":"36659505f7e047d68fd7fe15a6930aff0d84c83830512c7638ed07d8c6a5a95d","checks_ja":["Steveの比較対象がJimであることを確認した。","合計110+102+107を照合した。"]}
+}

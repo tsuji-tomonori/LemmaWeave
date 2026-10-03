@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily42_market","title_ja":"市場での買い物後の残金","problem_id":"external-gsm8k-main-3101c7d50724:train:00423","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"バナナ2袋と他3品の代金を合計し、持参した55ユーロから差し引く。","root":"LemmaWeave.Tests.GSM8KDaily0915C.market_solution","graph":"work/gsm8k-daily42-market-graph.json","lean_file":"tests/lean/GSM8KDaily0915C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["バナナは1袋4ユーロのものを2袋買い、他の価格は各品目の合計額と読む。"],
+  "steps":[
+    {"id":"market_spent","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.market_spent","title_ja":"支出合計","requires_steps":[],"uses_nodes":[],"condition_ja":"バナナ2袋×4ユーロ、梨2、アスパラガス6、鶏肉11ユーロ。","conclusion_ja":"支出は8+2+6+11=27ユーロ。","baseline_ja":"同一品の数量×単価と各品目の加算。"},
+    {"id":"market_left","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915C.market_solution","title_ja":"残金","requires_steps":["market_spent"],"uses_nodes":[],"condition_ja":"持参金55ユーロから27ユーロを支払う。","conclusion_ja":"残金は28ユーロ。","baseline_ja":"所持金=支出+残金を用いる。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":424,"checked_model_hash":"2f5eed7ec2376156e0083a231117cbc02d3c0be1b2c7c0253db83d5619787329","checks_ja":["初期所持金、バナナの袋数と単価、他3品の価格を照合した。"]}
+}

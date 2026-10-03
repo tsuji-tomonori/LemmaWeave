@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily28_property","title_ja":"家と納屋の面積単価評価","problem_id":"external-gsm8k-main-3101c7d50724:train:00278","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"家2400平方フィートと納屋1000平方フィートを1平方フィート98ドルで評価した物件価格を求める。",
+  "root":"LemmaWeave.Tests.GSM8KDaily0912B.property_solution","graph":"work/gsm8k-daily28-property-graph.json","lean_file":"tests/lean/GSM8KDaily0912B.lean","semantic_review_status":"self_review_only","model_scope":"conditional","counting_note_ja":"取得済み固定GSM8Kの1問。同一単価の適用条件を明示した。","model_notes_ja":["98ドルの単価を納屋にも適用する条件付き解答。別単価なら原文だけでは一意でない。"],
+  "steps":[
+    {"id":"property_area","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.property_area","title_ja":"物件の評価面積","requires_steps":[],"uses_nodes":[],"condition_ja":"家2400平方フィートと納屋1000平方フィートの両方を評価対象とする。","conclusion_ja":"合計面積は3400平方フィート。","baseline_ja":"全体面積＝各建物面積の和。"},
+    {"id":"property_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.property_total","title_ja":"条件付き物件価格","requires_steps":["property_area"],"uses_nodes":[],"condition_ja":"合計3400平方フィート全体に同じ単価98ドルを適用する。","conclusion_ja":"物件価格は333200ドル。","baseline_ja":"価格＝面積×単価。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":279,"checked_model_hash":"6b16310f0a116b0f5920805ef148e39e64b00ecbd5bcf0656596c75a079178bd","checks_ja":["納屋への同一単価適用が暗黙条件であることを明記し、3400×98を照合した。"]}
+}

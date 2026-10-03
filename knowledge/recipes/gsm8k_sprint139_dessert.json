@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint139_dessert",
+  "title_ja": "デザート代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02376",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ブラウニー2.50ドル、アイス2杯、シロップ2回、ナッツ。金額はセントで計算する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.dessert_solution",
+  "graph": "work/gsm8k-sprint139-dessert-graph.json",
+  "model_notes_ja": [
+    "小数誤差を避けるため、Leanでは金額をセント単位の自然数で表す。"
+  ],
+  "steps": [
+    {
+      "id": "dessert_ice_cream",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.dessert_ice_cream",
+      "title_ja": "アイスは200セント",
+      "claim_ja": "アイスは200セント",
+      "method_ja": "2杯に100セント",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "アイスは200セント",
+      "baseline_ja": "アイスは200セント"
+    },
+    {
+      "id": "dessert_syrup",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.dessert_syrup",
+      "title_ja": "シロップは100セント",
+      "claim_ja": "シロップは100セント",
+      "method_ja": "2回に50セント",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "シロップは100セント",
+      "baseline_ja": "シロップは100セント"
+    },
+    {
+      "id": "dessert_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.dessert_solution",
+      "title_ja": "合計700セント=7ドル",
+      "claim_ja": "合計700セント=7ドル",
+      "method_ja": "250、200、100、150を足す",
+      "requires_steps": [
+        "dessert_ice_cream",
+        "dessert_syrup"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計700セント=7ドル",
+      "baseline_ja": "合計700セント=7ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2377,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "gsm8k_daily38_bakery",
+  "title_ja": "パン屋の5日分の条件付き売上を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00378",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1日平均でカップケーキ20個を各1.50ドル、クッキー10袋を各2ドル、ビスケット20袋を各1ドルで全量販売するとき、5日分の売上を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914D.bakery_solution",
+  "graph": "work/gsm8k-daily38-bakery-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914D.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["原文は生産可能数しか示さないため、毎日全量を表示価格で販売し、費用等を引かない追加条件付き。金額はセント。"],
+  "steps": [
+    {"id": "bakery_categories", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.bakery_categories", "title_ja": "商品別の1日売上を求める", "requires_steps": [], "uses_nodes": [], "condition_ja": "全量販売し、単価は順に150、200、100セント。", "conclusion_ja": "売上はカップケーキ3000、クッキー2000、ビスケット2000セント。", "baseline_ja": "売上は販売数量×単価。"},
+    {"id": "bakery_daily", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.bakery_daily", "title_ja": "1日売上を合計する", "requires_steps": ["bakery_categories"], "uses_nodes": [], "condition_ja": "3商品の売上を重複なく合計する。", "conclusion_ja": "1日売上は3000+2000+2000=7000セント、すなわち70ドル。", "baseline_ja": "異なる商品の売上を加える。"},
+    {"id": "bakery_total", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.bakery_total", "title_ja": "5日分へ広げる", "requires_steps": ["bakery_daily"], "uses_nodes": [], "condition_ja": "5日とも1日平均7000セントを全量販売する。", "conclusion_ja": "5日分は5×7000=35000セント、すなわち350ドル。", "baseline_ja": "同じ日額の反復合計は日数との積。"}
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {"reviewer": "author", "status": "checked", "source_line_1based": 379, "checked_model_hash": "bde21e632c1d91cc6aa9dce6b254a3a8f5f5ecf02910d6c56c9727929ed2fe88", "checks_ja": ["生産数と実売数の不足条件を明示し、追加条件付き解答とした。"]}
+}

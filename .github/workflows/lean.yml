@@ -1,0 +1,76 @@
+name: Lean environment and audit fixtures
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install fixed elan release
+        run: |
+          mkdir -p "$RUNNER_TEMP/lemmaweave-elan"
+          curl --fail --location --retry 2 --max-time 120 --output "$RUNNER_TEMP/lemmaweave-elan/elan.tar.gz" https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz
+          sha256sum "$RUNNER_TEMP/lemmaweave-elan/elan.tar.gz"
+          tar -xzf "$RUNNER_TEMP/lemmaweave-elan/elan.tar.gz" -C "$RUNNER_TEMP/lemmaweave-elan"
+          "$RUNNER_TEMP/lemmaweave-elan/elan-init" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Install and observe the pinned Lean toolchain
+        run: |
+          python3 scripts/run.py --timeout 600 -- lean --version
+          python3 scripts/run.py -- lake --version
+      - name: Retrieve the pinned mathlib cache for all project imports
+        run: python3 scripts/run.py --timeout 1800 -- lake exe cache get
+      - name: Replay the complete fixed-environment pipeline
+        run: python3 scripts/run.py --timeout 6000 -- python3 scripts/replay.py
+      - name: Print command output
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, os
+          for record in sorted(Path('runs').glob('*/run.json')):
+              data = json.loads(record.read_text())
+              if data['environment'].get('github_run_id') == os.environ['GITHUB_RUN_ID']:
+                  for key in ['stdout_log', 'stderr_log']:
+                      p = Path(data[key])
+                      print(str(p))
+                      print(p.read_text(errors='replace'))
+          PY
+      - name: Preserve execution evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lean-evidence-${{ github.sha }}
+          path: |
+            runs/
+            work/*-graph.json
+            work/*-locations.json
+            work/locations.lean
+            work/audit_*.lean
+            reports/target-run-results.json
+            reports/extractor-fixtures.json
+            reports/inventory.json
+            reports/declaration-index.csv
+            reports/acceptance.json
+            reports/metrics.json
+            reports/method-recipes.json
+            reports/method-targets.json
+            reports/method-target-selection.json
+            reports/method-batches.json
+            reports/source-mapping.json
+            knowledge/learning-graph.json
+            knowledge/educational-frontier.json.gz
+          retention-days: 14

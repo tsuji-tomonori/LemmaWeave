@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily5_fabric","title_ja":"長方形の布を切った残りの面積を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00051","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"16×12平方フィートの布から4×6と2×4の長方形を切り、残面積を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907E.fabric_solution","graph":"work/gsm8k-daily5-fabric-graph.json","lean_file":"tests/lean/GSM8KDaily0907E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["2枚を重ならず切り出せるものとし、使用面積を各長方形の面積の和とする。"],
+  "steps":[
+    {"id":"fabric_bolt","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.fabric_bolt","title_ja":"布全体の面積","requires_steps":[],"uses_nodes":[],"condition_ja":"布は16フィート×12フィート。","conclusion_ja":"192平方フィート。","baseline_ja":"中学校までの長方形の面積。"},
+    {"id":"fabric_living","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.fabric_living","title_ja":"居間用の面積","requires_steps":[],"uses_nodes":[],"condition_ja":"4フィート×6フィート。","conclusion_ja":"24平方フィート。","baseline_ja":"中学校までの長方形の面積。"},
+    {"id":"fabric_bedroom","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.fabric_bedroom","title_ja":"寝室用の面積","requires_steps":[],"uses_nodes":[],"condition_ja":"2フィート×4フィート。","conclusion_ja":"8平方フィート。","baseline_ja":"中学校までの長方形の面積。"},
+    {"id":"fabric_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.fabric_remaining","title_ja":"残面積","requires_steps":["fabric_bolt","fabric_living","fabric_bedroom"],"uses_nodes":[],"condition_ja":"全体から重ならない2枚の面積を引く。","conclusion_ja":"192-24-8=160平方フィート。","baseline_ja":"中学校までの減法。"},
+    {"id":"fabric_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.fabric_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"各面積を192、24、8、160と置く。","conclusion_ja":"長方形と残面積の条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":52,"checked_model_hash":"adc4c0f4dec3dbed083ddd2439540f62981d1039ced1f4d455c23cc025e0e734","checks_ja":["原文どおり寝室の長方形を用い、2枚が重ならない適用条件を明記した。"]}
+}

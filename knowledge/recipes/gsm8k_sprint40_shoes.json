@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint40_shoes",
+  "title_ja": "手作り靴の支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00885",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "型代と80%に割り引かれた作業代を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.shoes_solution",
+  "graph": "work/gsm8k-sprint40-shoes-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "80%割引ではなく、原文どおり通常作業代の80%を請求する。"
+  ],
+  "steps": [
+    {
+      "id": "shoes_labor",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.shoes_labor",
+      "title_ja": "通常作業代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時給75ドルで8時間。",
+      "conclusion_ja": "600ドル。",
+      "baseline_ja": "75×8=600。"
+    },
+    {
+      "id": "shoes_discounted",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.shoes_discounted",
+      "title_ja": "割引後作業代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "作業代600ドルの80%。",
+      "conclusion_ja": "480ドル。",
+      "baseline_ja": "480×100=600×80。"
+    },
+    {
+      "id": "shoes_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.shoes_total",
+      "title_ja": "総支払額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "型代250ドルと作業代480ドル。",
+      "conclusion_ja": "730ドル。",
+      "baseline_ja": "250+480=730。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 886,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

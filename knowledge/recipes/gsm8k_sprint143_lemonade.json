@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint143_lemonade",
+  "title_ja": "レモネード売上の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02429",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Beaは25セントを10杯、Dawnは28セントを8杯売る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.lemonade_solution",
+  "graph": "work/gsm8k-sprint143-lemonade-graph.json",
+  "model_notes_ja": [
+    "金額はセント単位で正確に扱う。"
+  ],
+  "steps": [
+    {
+      "id": "lemonade_bea",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.lemonade_bea",
+      "title_ja": "Beaは250セント",
+      "claim_ja": "Beaは250セント",
+      "method_ja": "25に10を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Beaは250セント",
+      "baseline_ja": "Beaは250セント"
+    },
+    {
+      "id": "lemonade_dawn",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.lemonade_dawn",
+      "title_ja": "Dawnは224セント",
+      "claim_ja": "Dawnは224セント",
+      "method_ja": "28に8を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Dawnは224セント",
+      "baseline_ja": "Dawnは224セント"
+    },
+    {
+      "id": "lemonade_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.lemonade_solution",
+      "title_ja": "Beaが26セント多い",
+      "claim_ja": "Beaが26セント多い",
+      "method_ja": "250から224を引く",
+      "requires_steps": [
+        "lemonade_bea",
+        "lemonade_dawn"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Beaが26セント多い",
+      "baseline_ja": "Beaが26セント多い"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2430,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0280",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "21163a9ed03838e13b740839979f6f7ca76a52d3c88b08015281aa2dccb13eb7",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0930A18P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03426",
+      "source_line_1based": 3427,
+      "source_record_sha256": "c1d808ef7acd21073948690cc22582e6686fdaca288813b08f43a95f73b4bba7",
+      "raw_question_sha256": "8bd23c8603a15367ba1f4f0622390e044bb5f15c77eceaeee2439281412b7d77",
+      "normalized_question_sha256": "8bd23c8603a15367ba1f4f0622390e044bb5f15c77eceaeee2439281412b7d77",
+      "source_question": "Lorie has 2 pieces of $100 bills. He requested to change one piece of the $100 bills into $50 bills. Half of the remaining $100 bill is changed to $10 bills while the rest is changed to $5 bills. How many pieces of bills will she have?",
+      "recipe_id": "gsm8k_sprint226_bills",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2枚の100ドル札を、50ドル札へ替える1枚と二等分して10・5ドル札へ替える1枚に分けた。",
+        "He/sheの代名詞不一致は金額計算へ影響しない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03427",
+      "source_line_1based": 3428,
+      "source_record_sha256": "51d6244ee4f4fc58fe26cff54da1b0e851969c4d61836a74b18e37d7b3f3fe84",
+      "raw_question_sha256": "8928456f917bd735fb420ca028b01e3c2bf6dc0948c36be14bead70493c392e7",
+      "normalized_question_sha256": "8928456f917bd735fb420ca028b01e3c2bf6dc0948c36be14bead70493c392e7",
+      "source_question": "In four years, Annika will be three times as old as Hans. If Hans is now 8 years old, how old is Annika now?",
+      "recipe_id": "gsm8k_sprint226_ages",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2人とも同じ4年だけ年齢が増えることを明示した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03428",
+      "source_line_1based": 3429,
+      "source_record_sha256": "bdc51ac1b40dd322ebfee1f6818992cb4fcd45c121d2ae9f704b3241fb02533b",
+      "raw_question_sha256": "fca8d8c8f386db8a198a4c4a10cb43b9f6c39c14b37415b7c7ade8a1f3266c30",
+      "normalized_question_sha256": "fca8d8c8f386db8a198a4c4a10cb43b9f6c39c14b37415b7c7ade8a1f3266c30",
+      "source_question": "Jorge bought 24 tickets for $7 each. For purchasing so many, he is given a discount of 50%. How much, in dollars, did he spend on tickets?",
+      "recipe_id": "gsm8k_sprint226_tickets",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "50%割引後の支払額を subtotal の50%として積等式で表した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03429",
+      "source_line_1based": 3430,
+      "source_record_sha256": "5c9ce6fd15f67932cc58e065cc375966f1764d52c47e9663d94290fd883f18ed",
+      "raw_question_sha256": "fd8f36e4ed06be76744dcbcc2d83ecf9b16b997e63d411aa6c9d19284173e966",
+      "normalized_question_sha256": "66420a05a5899735b5ea722fda4959b41b6186ee9e44abfac8db7ace1d22456a",
+      "source_question": "From Monday to Friday, Elle practices piano for 30 minutes. On Saturday, she practices piano three times as much as on a weekday. There is no practice on Sunday.  How many hours does Elle spend practicing piano each week?",
+      "recipe_id": "gsm8k_sprint226_piano",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "平日5日・土曜・日曜0分を区分し、最後に分から時間へ換算した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03430",
+      "source_line_1based": 3431,
+      "source_record_sha256": "522bae364ed7411848606ba7eb6c75e45a75aeeff8b46890faef50fe7e8e175f",
+      "raw_question_sha256": "b34e198f974930c8648e1be6b3a58bffd2fbacf20b5e0d6b49d35514d6478c44",
+      "normalized_question_sha256": "b34e198f974930c8648e1be6b3a58bffd2fbacf20b5e0d6b49d35514d6478c44",
+      "source_question": "Samantha sleeps an average of 8 hours a night. Her baby sister sleeps 2.5 times as much as Samantha does. Because her father is so tired from watching the baby, for every hour the baby sleeps, he sleeps 30 minutes. How many hours does her father sleep in a week?",
+      "recipe_id": "gsm8k_sprint226_sleep",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2.5倍を2×baby=5×Samantha、30分/時を2×father=babyの整数等式で表した。"
+      ],
+      "blockers": []
+    }
+  ]
+}

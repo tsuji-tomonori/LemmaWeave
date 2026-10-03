@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-30",
+  "run_id": "20260930T180000+0900-solve-18",
+  "scheduled_slot": "2026-09-30T18:00:00+09:00",
+  "slot_role": "solve_15_individual_gsm8k",
+  "base_sha": "6d72fa632709fd485c4213a8fa056805fbc6581d",
+  "started_at": "2026-09-30T09:05:03Z",
+  "finished_at": "2026-09-30T09:45:08Z",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03416",
+    "external-gsm8k-main-3101c7d50724:train:03417",
+    "external-gsm8k-main-3101c7d50724:train:03418",
+    "external-gsm8k-main-3101c7d50724:train:03419",
+    "external-gsm8k-main-3101c7d50724:train:03420",
+    "external-gsm8k-main-3101c7d50724:train:03421",
+    "external-gsm8k-main-3101c7d50724:train:03422",
+    "external-gsm8k-main-3101c7d50724:train:03423",
+    "external-gsm8k-main-3101c7d50724:train:03424",
+    "external-gsm8k-main-3101c7d50724:train:03425",
+    "external-gsm8k-main-3101c7d50724:train:03426",
+    "external-gsm8k-main-3101c7d50724:train:03427",
+    "external-gsm8k-main-3101c7d50724:train:03428",
+    "external-gsm8k-main-3101c7d50724:train:03429",
+    "external-gsm8k-main-3101c7d50724:train:03430"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03416",
+    "external-gsm8k-main-3101c7d50724:train:03417",
+    "external-gsm8k-main-3101c7d50724:train:03418",
+    "external-gsm8k-main-3101c7d50724:train:03419",
+    "external-gsm8k-main-3101c7d50724:train:03420",
+    "external-gsm8k-main-3101c7d50724:train:03421",
+    "external-gsm8k-main-3101c7d50724:train:03422",
+    "external-gsm8k-main-3101c7d50724:train:03423",
+    "external-gsm8k-main-3101c7d50724:train:03424",
+    "external-gsm8k-main-3101c7d50724:train:03425",
+    "external-gsm8k-main-3101c7d50724:train:03426",
+    "external-gsm8k-main-3101c7d50724:train:03427",
+    "external-gsm8k-main-3101c7d50724:train:03428",
+    "external-gsm8k-main-3101c7d50724:train:03429",
+    "external-gsm8k-main-3101c7d50724:train:03430"
+  ],
+  "deferred": [],
+  "missed_slots_note_ja": "01時、03〜14時および17時は未実行のまま。18時割当だけを処理し、未実行枠を上乗せしていない。",
+  "answers": {
+    "train:03416": "53度",
+    "train:03417": "35%",
+    "train:03418": "3500枚",
+    "train:03419": "5ドル",
+    "train:03420": "55ドル",
+    "train:03421": "17匹",
+    "train:03422": "400分",
+    "train:03423": "52羽",
+    "train:03424": "22ドル",
+    "train:03425": "16800人（慣用読み）/22400人（文字どおりの増加量読み）",
+    "train:03426": "17枚",
+    "train:03427": "32歳",
+    "train:03428": "84ドル",
+    "train:03429": "4時間",
+    "train:03430": "70時間"
+  },
+  "self_review": {
+    "level": "self_review_only",
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "explanation_lines": 47,
+    "named_lean_theorems": 47,
+    "forbidden_tokens": 0,
+    "ambiguity_notes": [
+      "train:03425のincreased three timesを、慣用的な3倍と、原値の3倍だけ増えた文字どおり読みへ分離した。",
+      "train:03426のHe/she代名詞不整合は算術条件を変えないが、原文注記として保持した。"
+    ]
+  },
+  "model_sha256": {
+    "Sprint0930A18P1Models.lean": "3dab5e548f50aba94acfd45168ccdb51b8e105eb2d6a48d2405bc2bd1b3ec5fd",
+    "Sprint0930A18P2Models.lean": "dd79c5dd0173e51c30a91f73b7c59bd6f5ff39fd1313031bdaf5eea16f135179",
+    "Sprint0930A18P3Models.lean": "21163a9ed03838e13b740839979f6f7ca76a52d3c88b08015281aa2dccb13eb7"
+  },
+  "checkpoints": [
+    "df150752f9809c82f59f3103b7cd06140f6fc0ad",
+    "e0e1cb75bbc83d01c87a2e7c497d1c26775709bf",
+    "e468b33da03dedd10ecdc07bdfa622dca4094b41"
+  ],
+  "queue": {
+    "commit": "ffb1a1ddb0ffce32860c30cc58b396be2bacf477",
+    "sha256": "978eb23f735c5fedc6142fc575ca087c4a5721d5ff18d980ccc7dca9b7d16fe6",
+    "total": 8792,
+    "unique_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "status_overlap": 0,
+    "solution_ready": 518,
+    "awaiting_verification": 2719,
+    "pending": 5555
+  },
+  "verification": {
+    "lean_version_target": "4.33.1",
+    "kernel_build": "not_run",
+    "axiom_audit": "not_run",
+    "dependency_audit": "not_run",
+    "static_forbidden_token_scan": "passed",
+    "reason_ja": "3モデル・15レシピ・3バッチのハッシュ、47説明行と47名前付きLean宣言、禁止トークン0件を静的照合した。実行環境にlake/leanがなく、exact-head CI証拠も未取得。"
+  },
+  "pr": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merged": false
+  },
+  "assurance": "INCONCLUSIVE"
+}

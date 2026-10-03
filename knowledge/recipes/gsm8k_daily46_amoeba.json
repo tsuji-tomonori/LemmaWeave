@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_amoeba","title_ja":"アメーバが16匹になる日数","problem_id":"external-gsm8k-main-3101c7d50724:train:00455","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"2日ごとの二分裂で1匹が16匹になるまでの倍加回数と日数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917B.amoeba_solution","graph":"work/gsm8k-daily46-amoeba-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["全個体が各周期に同時に二分裂する通常の読みを採用する。"],
+  "steps":[
+    {"id":"amoeba_counts","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.amoeba_counts","title_ja":"4回の倍加","requires_steps":[],"uses_nodes":[],"condition_ja":"1匹から各分裂周期に個体数が2倍になる。","conclusion_ja":"1→2→4→8→16なので分裂周期は4回。","baseline_ja":"二分裂による倍加を繰り返す。"},
+    {"id":"amoeba_days","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.amoeba_days","title_ja":"経過日数","requires_steps":["amoeba_counts"],"uses_nodes":[],"condition_ja":"1周期は2日で、16匹まで4周期。","conclusion_ja":"4×2=8日。","baseline_ja":"同じ期間の繰返し回数と期間の積。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":456,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["1匹を時点0として4回倍加することを確認した。","各周期2日を4回分掛けた。"]}
+}

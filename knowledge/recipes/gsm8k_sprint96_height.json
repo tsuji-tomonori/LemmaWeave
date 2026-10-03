@@ -1,0 +1,53 @@
+{
+  "id": "gsm8k_sprint96_height",
+  "title_ja": "Janaの身長",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01728",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A03Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jess72インチ、Kellyは3インチ低く、JanaはKellyより5インチ高い。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.height_solution",
+  "graph": "work/gsm8k-sprint96-height-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "height_kelly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.height_kelly",
+      "title_ja": "Kellyは69インチ。",
+      "claim_ja": "Kellyは69インチ。",
+      "method_ja": "72−3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "shorter thanは減算。",
+      "conclusion_ja": "69+3=72。",
+      "baseline_ja": "69+3=72。"
+    },
+    {
+      "id": "height_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.height_solution",
+      "title_ja": "Janaは74インチ。",
+      "claim_ja": "Janaは74インチ。",
+      "method_ja": "69+5。",
+      "requires_steps": [
+        "height_kelly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "JanaはKellyより5高い。",
+      "conclusion_ja": "69+5=74。",
+      "baseline_ja": "69+5=74。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1729,
+    "checked_model_hash": "c7ae9e73613030285ef5ac0f94bc1cc2c890986bccfb58f5ed826d20e789cb8c",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

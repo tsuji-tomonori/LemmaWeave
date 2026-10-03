@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint362_room_count",
+  "title_ja": "部屋数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03932",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "There is a lot of dust in Susie's house. It takes her 2 hours to vacuum the whole house. She can vacuum each room in 20 minutes. How many rooms does she have in her house?",
+  "answer_ja": "2時間は120分。1部屋20分で家全体を120分かけるので120÷20=6部屋。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A11P2.room_count",
+  "graph": "work/gsm8k-sprint362-room-count-graph.json",
+  "model_notes_ja": [
+    "各部屋に同じ20分かかり、廊下など別作業時間はない。"
+  ],
+  "steps": [
+    {
+      "id": "room_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A11P2.room_count",
+      "title_ja": "部屋数",
+      "claim_ja": "2時間は120分。1部屋20分で家全体を120分かけるので120÷20=6部屋。",
+      "method_ja": "総時間を1部屋当たり時間で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "120は20で割り切れる。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "6部屋。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3933,
+    "checked_model_hash": "bf386837913d8e6ebf18d221a2522f93842f6cfdf1a6821ffac27018a183f8d6",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

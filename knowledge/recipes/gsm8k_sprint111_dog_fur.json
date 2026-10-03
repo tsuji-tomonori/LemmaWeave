@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint111_dog_fur",
+  "title_ja": "犬の毛についた異物総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01954",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の全数量関係を順に式へ移し、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.fur_solution",
+  "graph": "work/gsm8k-sprint111-dog-fur-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fur_ticks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.fur_ticks",
+      "title_ja": "ダニは72匹。",
+      "claim_ja": "ダニは72匹。",
+      "method_ja": "12×6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "ダニは72匹。",
+      "baseline_ja": "ダニは72匹。"
+    },
+    {
+      "id": "fur_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.fur_solution",
+      "title_ja": "異物は合計84個。",
+      "claim_ja": "異物は合計84個。",
+      "method_ja": "72+12。",
+      "requires_steps": [
+        "fur_ticks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "異物は合計84個。",
+      "baseline_ja": "異物は合計84個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1955,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

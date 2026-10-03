@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily43_profit","title_ja":"本の利益から顧客数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00432","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"1冊当たり利益から販売冊数を求め、1人2冊の条件で顧客数へ換算する。","root":"LemmaWeave.Tests.GSM8KDaily0915D.profit_solution","graph":"work/gsm8k-daily43-profit-graph.json","lean_file":"tests/lean/GSM8KDaily0915D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["getting $20 for each bookを売価20ドルとし、製作費5ドルを引いた額を1冊当たり利益とする。"],
+  "steps":[
+    {"id":"profit_per_book","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.profit_per_book","title_ja":"1冊当たり利益","requires_steps":[],"uses_nodes":[],"condition_ja":"1冊を20ドルで売り、製作費は5ドル。","conclusion_ja":"1冊当たり利益は15ドル。","baseline_ja":"利益=売価−費用。"},
+    {"id":"profit_books","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.profit_books","title_ja":"販売冊数","requires_steps":["profit_per_book"],"uses_nodes":[],"condition_ja":"1冊15ドルの利益で総利益120ドル。","conclusion_ja":"8冊販売した。","baseline_ja":"個数=総量÷単位量。"},
+    {"id":"profit_customers","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.profit_customers","title_ja":"顧客数","requires_steps":["profit_per_book","profit_books"],"uses_nodes":[],"condition_ja":"販売8冊で、各顧客が2冊ずつ買う。","conclusion_ja":"顧客は4人。","baseline_ja":"組数=総個数÷1組の個数。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":433,"checked_model_hash":"a6933f19dea1184a4024944d3d5c0521ede1267552f17298f26c6083f9418f8e","checks_ja":["売価20ドル、費用5ドル、総利益120ドル、1人2冊を照合した。"]}
+}

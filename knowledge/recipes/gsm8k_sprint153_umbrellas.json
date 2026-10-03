@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint153_umbrellas",
+  "title_ja": "傘3本の代金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02577",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "家に2本、車に1本の傘があり、各8ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A10.umbrellas_solution",
+  "graph": "work/gsm8k-sprint153-umbrellas-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "umbrellas_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.umbrellas_total",
+      "title_ja": "傘は合計3本",
+      "claim_ja": "傘は合計3本",
+      "method_ja": "2本と1本を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "傘は合計3本",
+      "baseline_ja": "傘は合計3本"
+    },
+    {
+      "id": "umbrellas_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.umbrellas_solution",
+      "title_ja": "代金は24ドル",
+      "claim_ja": "代金は24ドル",
+      "method_ja": "3本に8ドルを掛ける",
+      "requires_steps": [
+        "umbrellas_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "代金は24ドル",
+      "baseline_ja": "代金は24ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2578,
+    "checked_model_hash": "46e79fb8178be609e6fbfa0886df34cbbb62c16290d04ba3642b6415e85d7526",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

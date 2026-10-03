@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint29_crafts",
+  "title_ja": "工芸品売却損と品目不整合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00720",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "絵画と木製玩具の値下げによる総損失を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A29.crafts_solution",
+  "graph": "work/gsm8k-sprint29-crafts-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A29.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "原文は購入品をwooden toysとした後、15%安い品目をhatと呼び不一致。",
+    "字義どおりでは木製玩具の売価がなく総損失は一意でない。",
+    "hatをwooden toyの誤記と補正する場合のみ総損失64ドル。"
+  ],
+  "steps": [
+    {
+      "id": "crafts_painting_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.crafts_painting_loss",
+      "title_ja": "絵画の損失",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "40ドルの10%を10枚。",
+      "conclusion_ja": "1枚4ドル、計40ドル。",
+      "baseline_ja": "40×10%=4、10×4=40。"
+    },
+    {
+      "id": "crafts_toy_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.crafts_toy_loss",
+      "title_ja": "木製玩具の条件付き損失",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "hatをwooden toyと補正し、20ドルの15%を8個。",
+      "conclusion_ja": "1個3ドル、計24ドル。",
+      "baseline_ja": "20×15%=3、8×3=24。"
+    },
+    {
+      "id": "crafts_total_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.crafts_total_loss",
+      "title_ja": "条件付き総損失",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "絵画40ドル、玩具24ドル。",
+      "conclusion_ja": "64ドル。",
+      "baseline_ja": "40+24=64。"
+    },
+    {
+      "id": "crafts_literal_underdetermined",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.crafts_literal_underdetermined",
+      "title_ja": "字義的な非一意性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "木製玩具の値下げ率を原文から固定しない。",
+      "conclusion_ja": "玩具1個3ドル損なら64ドル、損失0なら40ドル。",
+      "baseline_ja": "異なる総損失が同じ明示条件と両立する。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 721,
+    "checked_model_hash": "970f410138a3166065bfbe0fe681e913ec80aca7d2c0a0d8dd1e56f06eeceae5",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

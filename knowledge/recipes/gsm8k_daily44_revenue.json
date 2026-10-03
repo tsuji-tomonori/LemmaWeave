@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily44_revenue","title_ja":"靴とシャツの売上の均等分配","problem_id":"external-gsm8k-main-3101c7d50724:train:00443","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"靴6足を各3ドル、シャツ18枚を各2ドルで売った売上をSabとDaneで均等に分ける。","root":"LemmaWeave.Tests.GSM8KDaily0915E.revenue_solution","graph":"work/gsm8k-daily44-revenue-graph.json","lean_file":"tests/lean/GSM8KDaily0915E.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["costは販売価格を指すものとして、2人が総売上を等分すると読む。"],
+  "steps":[
+    {"id":"revenue_parts","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.revenue_parts","title_ja":"品目別売上","requires_steps":[],"uses_nodes":[],"condition_ja":"靴6足を各3ドル、シャツ18枚を各2ドルで売る。","conclusion_ja":"靴の売上は18ドル、シャツの売上は36ドル。","baseline_ja":"売上は単価×販売数。"},
+    {"id":"revenue_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.revenue_total","title_ja":"総売上","requires_steps":["revenue_parts"],"uses_nodes":[],"condition_ja":"品目別売上が18ドルと36ドル。","conclusion_ja":"総売上は18+36=54ドル。","baseline_ja":"品目別売上の加法。"},
+    {"id":"revenue_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915E.revenue_each","title_ja":"1人当たりの取り分","requires_steps":["revenue_total"],"uses_nodes":[],"condition_ja":"総売上54ドルを2人で均等に分ける。","conclusion_ja":"1人当たり54÷2=27ドル。","baseline_ja":"均等分配は総量を人数で割る。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":444,"checked_model_hash":"25f1e737e2139d253456901513753639661f651ebe225cf88ccbdecdf78cca1f","checks_ja":["pairs of shoesを6組の商品として単価3ドルを掛けた。","SabとDaneの2人による均等分配とした。"]}
+}

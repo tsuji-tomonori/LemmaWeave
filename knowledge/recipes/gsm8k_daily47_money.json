@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily47_money","title_ja":"JamesとAliの所持金","problem_id":"external-gsm8k-main-3101c7d50724:train:00473","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"合計250ドル、差40ドルからJamesの所持金を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917C.money_solution","graph":"work/gsm8k-daily47-money-graph.json","lean_file":"tests/lean/GSM8KDaily0917C.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["JamesはAliより40ドル多い。"],
+  "steps":[
+    {"id":"money_ali","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917C.money_ali","title_ja":"Aliの所持金","requires_steps":[],"uses_nodes":[],"condition_ja":"James=Ali+40、両者の合計は250。","conclusion_ja":"Aliは105ドル。","baseline_ja":"和と差の一次方程式。"},
+    {"id":"money_james","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917C.money_james","title_ja":"Jamesの所持金","requires_steps":["money_ali"],"uses_nodes":[],"condition_ja":"Aliは105ドルで、Jamesは40ドル多い。","conclusion_ja":"Jamesは145ドル。","baseline_ja":"差の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":474,"checked_model_hash":"c7638dbc5d9768e007944e1ada2b2f940d2135fe03ee83db29542cd04702205d","checks_ja":["和250と差40を同時に満たすことを確認した。","Jamesの145ドルを照合した。"]}
+}

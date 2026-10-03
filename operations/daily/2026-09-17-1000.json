@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-17",
+  "started_at": "2026-09-17T10:04:27+09:00",
+  "finished_at": "2026-09-17T11:17:40+09:00",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00464",
+    "external-gsm8k-main-3101c7d50724:train:00465",
+    "external-gsm8k-main-3101c7d50724:train:00466",
+    "external-gsm8k-main-3101c7d50724:train:00467",
+    "external-gsm8k-main-3101c7d50724:train:00468",
+    "external-gsm8k-main-3101c7d50724:train:00469",
+    "external-gsm8k-main-3101c7d50724:train:00470",
+    "external-gsm8k-main-3101c7d50724:train:00471",
+    "external-gsm8k-main-3101c7d50724:train:00472",
+    "external-gsm8k-main-3101c7d50724:train:00473"
+  ],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00464",
+    "external-gsm8k-main-3101c7d50724:train:00465",
+    "external-gsm8k-main-3101c7d50724:train:00466",
+    "external-gsm8k-main-3101c7d50724:train:00467",
+    "external-gsm8k-main-3101c7d50724:train:00468",
+    "external-gsm8k-main-3101c7d50724:train:00469",
+    "external-gsm8k-main-3101c7d50724:train:00470",
+    "external-gsm8k-main-3101c7d50724:train:00471",
+    "external-gsm8k-main-3101c7d50724:train:00472",
+    "external-gsm8k-main-3101c7d50724:train:00473"
+  ],
+  "deferred": [],
+  "status": "completed",
+  "ci": {
+    "previous_success_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35160059249",
+    "proof_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35171755417",
+    "final_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35174036667",
+    "artifact": {
+      "id": 10477237481,
+      "name": "lean-evidence-98d29c3d2dadac47f20a731343f02a9aedef9c79",
+      "sha256": "4e3d671632d287164c2fc85c63337dbf2858e7e8b5a6b6360cac8976da12e65c",
+      "filtered_sha256": "41f16ac60bd67d2f2f150db0a12ee5f34bbaddf642e3b03ca0c9f156080bfc0c",
+      "size": 187739903,
+      "input_commit": "98d29c3d2dadac47f20a731343f02a9aedef9c79"
+    },
+    "attempts": [
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35170475319",
+        "commit": "ebeb359d68418a7ad3669b1b488b40294d52c728",
+        "conclusion": "failure",
+        "reason_ja": "10問のLean証明と許容公理監査は成功したが、意味モデルの凍結ハッシュを単一ファイルSHAとして記録し、規約のモデル集合ハッシュと一致しなかったため台帳検査で失敗した。規約どおりのmodel_hashへ修正した。"
+      },
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35171755417",
+        "commit": "98d29c3d2dadac47f20a731343f02a9aedef9c79",
+        "conclusion": "success",
+        "reason_ja": "固定Lean 4.33.1、許容公理監査、20説明行の実依存照合、原題・意味モデルのSHA-256照合、51件の回帰検査が成功した。"
+      }
+    ]
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
+  "commit": "d0cf992db20b7120c3ffaf3ad005d86dad9c6af3",
+  "progress_before": {"completed": 468, "remaining": 8324, "today_completed": 20},
+  "progress_after": {"completed": 478, "remaining": 8314, "today_completed": 30},
+  "forecast": {
+    "initial_target_date": "2027-03-01",
+    "measured_completed_per_day_7d": 40.0,
+    "measured_forecast_date": "2027-04-12"
+  },
+  "supplemental_high_school_fields": {"completed": 0, "target": 6, "status": "unmet"},
+  "note_ja": "train:00464〜00473の10問・20説明行について、日本語記述式解答、Leanモデル、レシピ、individual_lines_v1対応を作成した。階数問題は階番号に欠番がなく最上階との階番号差が9という条件を明記した。固定Lean 4.33.1、許容公理監査、20説明行の実依存照合、原題・意味モデルSHA-256照合、51件の回帰検査が成功し、CI成果物の入力commitと出力証拠を照合して保存した。"
+}

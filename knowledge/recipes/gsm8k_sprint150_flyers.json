@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint150_flyers",
+  "title_ja": "チラシ配達の6週間の賃金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02535",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "時給10ドルで週2日、毎回3時間のチラシ配達を6週間行う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A05.flyers_solution",
+  "graph": "work/gsm8k-sprint150-flyers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "flyers_weekly_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.flyers_weekly_hours",
+      "title_ja": "週6時間働く",
+      "claim_ja": "週6時間働く",
+      "method_ja": "週2回に各3時間を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "週6時間働く",
+      "baseline_ja": "週6時間働く"
+    },
+    {
+      "id": "flyers_total_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.flyers_total_hours",
+      "title_ja": "6週間で36時間働く",
+      "claim_ja": "6週間で36時間働く",
+      "method_ja": "週6時間に6週間を掛ける",
+      "requires_steps": [
+        "flyers_weekly_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "6週間で36時間働く",
+      "baseline_ja": "6週間で36時間働く"
+    },
+    {
+      "id": "flyers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.flyers_solution",
+      "title_ja": "賃金は360ドル",
+      "claim_ja": "賃金は360ドル",
+      "method_ja": "36時間に時給10ドルを掛ける",
+      "requires_steps": [
+        "flyers_total_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "賃金は360ドル",
+      "baseline_ja": "賃金は360ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2536,
+    "checked_model_hash": "d22ff5dac8369c5bb0cf3b6dc40dd25b92362c75e000ad1567feb652ca63ea2f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

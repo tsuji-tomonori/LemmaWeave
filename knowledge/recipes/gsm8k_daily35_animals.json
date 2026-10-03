@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily35_animals","title_ja":"農場のヤギの頭数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00349","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"豚は牛の2倍、牛はヤギより4頭多く、合計56頭のときのヤギを求める。","root":"LemmaWeave.Tests.GSM8KDaily0914A.animals_solution","graph":"work/gsm8k-daily35-animals-graph.json","lean_file":"tests/lean/GSM8KDaily0914A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["ヤギを基準に牛=ヤギ+4、豚=2×牛という連立関係を置く。"],
+  "steps":[
+    {"id":"animals_goats","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.animals_goats","title_ja":"ヤギの頭数を解く","requires_steps":[],"uses_nodes":[],"condition_ja":"牛=ヤギ+4、豚=2×牛、3種合計56。","conclusion_ja":"ヤギは11頭。","baseline_ja":"代入して4×ヤギ+12=56となる一次方程式を解く。"},
+    {"id":"animals_cows","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.animals_cows","title_ja":"牛の頭数を求める","requires_steps":["animals_goats"],"uses_nodes":[],"condition_ja":"牛はヤギ11頭より4頭多い。","conclusion_ja":"牛は15頭。","baseline_ja":"11+4を計算する。"},
+    {"id":"animals_pigs","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.animals_pigs","title_ja":"豚と合計を照合する","requires_steps":["animals_cows"],"uses_nodes":[],"condition_ja":"豚は牛15頭の2倍。","conclusion_ja":"豚は30頭で、11+15+30=56。","baseline_ja":"15×2と3種の和を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":350,"checked_model_hash":"355a816ac7e4f5c79fe632b02995b66c3d07dd599393faa1dfce717b3ebfcbcf","checks_ja":["3種だけで56頭を構成する連立関係と各頭数を照合した。"]}
+}

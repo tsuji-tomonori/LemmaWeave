@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint01_errand","title_ja":"用事の走行距離と燃料代","problem_id":"external-gsm8k-main-3101c7d50724:train:00525","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"各区間の走行距離から必要燃料と代金を求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A01.errand_solution","graph":"work/gsm8k-sprint01-errand-graph.json","lean_file":"tests/lean/GSM8KSprint0919A01.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["帰宅区間は学校から練習場までの12マイルの2倍。金額はセントで表した。"],
+  "steps":[
+    {"id":"errand_home_leg","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.errand_home_leg","title_ja":"最後の帰宅距離","requires_steps":[],"uses_nodes":[],"condition_ja":"12マイルの2倍を走る。","conclusion_ja":"帰宅区間は24マイル。","baseline_ja":"倍の関係。"},
+    {"id":"errand_total_miles","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.errand_total_miles","title_ja":"総走行距離","requires_steps":["errand_home_leg"],"uses_nodes":[],"condition_ja":"8、6、12、24マイルの4区間をすべて足す。","conclusion_ja":"総距離は50マイル。","baseline_ja":"道のりの加法。"},
+    {"id":"errand_gallons","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.errand_gallons","title_ja":"必要燃料","requires_steps":["errand_total_miles"],"uses_nodes":[],"condition_ja":"燃費25マイル/ガロンで50マイル走る。","conclusion_ja":"2ガロン必要。","baseline_ja":"総距離=燃費×燃料量。"},
+    {"id":"errand_cost","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A01.errand_cost","title_ja":"燃料代","requires_steps":["errand_gallons"],"uses_nodes":[],"condition_ja":"1ガロン250セントを2ガロン買う。","conclusion_ja":"500セント、すなわち5ドル。","baseline_ja":"単価×数量。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":526,"checked_model_hash":"6aa795b9f3d289553b97bad684d0451d163e1c6651bba299ed3d6835de9e2fca","checks_ja":["4区間を重複なく列挙し、燃費と価格の単位を照合した。"]}
+}

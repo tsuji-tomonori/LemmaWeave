@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint264_discount_shirts",
+  "title_ja": "40%引きシャツの支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03364",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "50ドルのポロシャツ2枚の通常価格から40%を引く。",
+  "answer_ja": "60ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A12P2.shirts_paid",
+  "graph": "work/gsm8k-sprint264-discount-shirts-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shirts_regular",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P2.shirts_regular",
+      "title_ja": "通常価格は100ドル。",
+      "claim_ja": "通常価格は100ドル。",
+      "method_ja": "2×50。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同価格の2枚。",
+      "conclusion_ja": "100ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "shirts_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P2.shirts_discount",
+      "title_ja": "割引額は40ドル。",
+      "claim_ja": "割引額は40ドル。",
+      "method_ja": "100の40%。",
+      "requires_steps": [
+        "shirts_regular"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "40%引き。",
+      "conclusion_ja": "40ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "shirts_paid",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P2.shirts_paid",
+      "title_ja": "支払額は60ドル。",
+      "claim_ja": "支払額は60ドル。",
+      "method_ja": "100-40。",
+      "requires_steps": [
+        "shirts_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "割引額を通常価格から引く。",
+      "conclusion_ja": "60ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3365,
+    "checked_model_hash": "3149c07809efc68da1e78f5fc5bb17ffdda98364e245698712ae1bc5802aa316",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

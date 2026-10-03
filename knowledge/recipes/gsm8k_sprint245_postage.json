@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint245_postage",
+  "title_ja": "国際郵便の追加料金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03254",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A04P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "標準料金をセントに直し、差額を国際郵便2通で割る。",
+  "answer_ja": "1通14セント",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A04P1.postage_extra_each",
+  "graph": "work/gsm8k-sprint245-postage-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "postage_standard_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P1.postage_standard_total",
+      "title_ja": "標準料金は4通で432セント。",
+      "claim_ja": "標準料金は4通で432セント。",
+      "method_ja": "108×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1通1.08ドル=108セント。",
+      "conclusion_ja": "432セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "postage_international_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P1.postage_international_total",
+      "title_ja": "国際追加料金の合計は28セント。",
+      "claim_ja": "国際追加料金の合計は28セント。",
+      "method_ja": "460-432。",
+      "requires_steps": [
+        "postage_standard_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "支払総額4.60ドル=460セント。",
+      "conclusion_ja": "28セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "postage_extra_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P1.postage_extra_each",
+      "title_ja": "国際郵便1通の追加料金は14セント。",
+      "claim_ja": "国際郵便1通の追加料金は14セント。",
+      "method_ja": "28÷2。",
+      "requires_steps": [
+        "postage_international_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "国際郵便は2通。",
+      "conclusion_ja": "14セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3255,
+    "checked_model_hash": "d0b25be9005e17a8c780d7b301d61c17309b4bb716473619acd9b5fec8883e21",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint100_commission",
+  "title_ja": "Dawnの時給",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01793",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "12枚に必要な総時間を求め、報酬3600ドルを割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.commission_solution",
+  "graph": "work/gsm8k-sprint100-commission-graph.json",
+  "model_notes_ja": [
+    "参照説明中の『$3,6000.00』は誤記とみなし、原題の$3,600.00を採用した。"
+  ],
+  "steps": [
+    {
+      "id": "commission_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.commission_hours",
+      "title_ja": "総作業時間は24時間。",
+      "claim_ja": "総作業時間は24時間。",
+      "method_ja": "2時間/枚×12枚。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各絵に2時間。",
+      "conclusion_ja": "24。",
+      "baseline_ja": "24。"
+    },
+    {
+      "id": "commission_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.commission_solution",
+      "title_ja": "時給は150ドル。",
+      "claim_ja": "時給は150ドル。",
+      "method_ja": "3600÷24。",
+      "requires_steps": [
+        "commission_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の報酬3600ドルを用いる。",
+      "conclusion_ja": "150×24=3600。",
+      "baseline_ja": "150×24=3600。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1794,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

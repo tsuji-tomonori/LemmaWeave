@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint381_ice_pops_needed_for_pencils",
+  "title_ja": "鉛筆100本に必要なアイスポップ販売数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04029",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A19P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "To raise money, a school is selling ice-pops for $1.50. It costs 90 cents to make each pop, and the money from the pops will be used to buy pencils, which cost $1.80 each. How many pops must be sold to buy 100 pencils?",
+  "answer_ja": "鉛筆100本には100×180=18000セント必要。1本の純利益は150−90=60セントなので、18000÷60=300本売る必要がある。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A19P3.ice_pops_needed_for_pencils",
+  "graph": "work/gsm8k-sprint381-ice-pops-needed-for-pencils-graph.json",
+  "model_notes_ja": [
+    "売上全額ではなく製造費を引いた純利益を鉛筆購入に使い、端数はない。"
+  ],
+  "steps": [
+    {
+      "id": "ice_pops_needed_for_pencils",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A19P3.ice_pops_needed_for_pencils",
+      "title_ja": "鉛筆100本に必要なアイスポップ販売数",
+      "claim_ja": "鉛筆100本には100×180=18000セント必要。1本の純利益は150−90=60セントなので、18000÷60=300本売る必要がある。",
+      "method_ja": "必要資金をセントで求め、1本当たり純利益で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "売上全額ではなく製造費を引いた純利益を鉛筆購入に使い、端数はない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "鉛筆100本には100×180=18000セント必要。1本の純利益は150−90=60セントなので、18000÷60=300本売る必要がある。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4030,
+    "checked_model_hash": "f38929e9e1e2e5c4cceef14a3001ca67ebee033d818a93c38971578d79936b81",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

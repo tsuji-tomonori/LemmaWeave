@@ -1,0 +1,109 @@
+{
+  "date": "2026-09-22",
+  "run_id": "lemmaweave-sprint-20260922-1500-gsm8k-86",
+  "scheduled_slot": {
+    "role": "gsm8k_individual_solution",
+    "hour_jst": 15,
+    "planned_at": "2026-09-22T15:00:00+09:00",
+    "started_at": "2026-09-22T14:55:32+09:00",
+    "slot_shift_ja": "予定枠の4分28秒前に起動したため、完了済み14時枠を重複実行せず、未実行の15時枠として直列実行した。"
+  },
+  "base_sha": "c9a0406b4a41c8dea87cf51edc6baf5440a9ccae",
+  "started_at": "2026-09-22T14:55:32+09:00",
+  "finished_at": "2026-09-22T15:07:47+09:00",
+  "selected_problem_ids": [
+    "train:01569", "train:01570", "train:01571", "train:01572", "train:01573",
+    "train:01574", "train:01575", "train:01576", "train:01577", "train:01578",
+    "train:01579", "train:01580", "train:01581", "train:01582", "train:01583"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01569", "train:01570", "train:01571", "train:01572", "train:01573",
+    "train:01574", "train:01575", "train:01576", "train:01577", "train:01578",
+    "train:01579", "train:01580", "train:01581", "train:01582", "train:01583"
+  ],
+  "deferred": [{
+    "problem_id": "train:01569-train:01583",
+    "retry_on": "exact-head fixed Lean 4.33.1 CI success and evidence import",
+    "reason_ja": "現在HEADに固定Lean成功証拠がない。最後の完全replayは既存Sprint0921A20Models.leanの非線形計算51件で失敗し、ローカル環境にもlakeがないため、今回15問をsolution_readyへ昇格しない。",
+    "next_action_ja": "既存A20の非線形証明を個別calcへ修復後、完全replayを実行し、成功証拠を問題単位で取り込む。"
+  }],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "lines_1based": [1570, 1584],
+    "record_hash_matches": 15,
+    "raw_question_hash_matches": 15,
+    "normalized_question_hash_matches": 15
+  },
+  "self_review": {
+    "status": "self_review_only",
+    "problems_checked": 15,
+    "individual_solution_steps": 51,
+    "lean_declaration_matches": 51,
+    "sorry_admit_custom_axiom_count": 0,
+    "notes_ja": [
+      "各原題を再読し、数値・単位・条件・求める全結論とLeanモデルを自己照合した。",
+      "train:01569はJohnとJakeの名前混在を数値条件に影響しない表記不整合として明記した。",
+      "train:01576は参照途中式のfeetを採用せず、原文の6 meters当たり3足跡を形式化した。",
+      "train:01580はtwo times moreの2倍解釈による赤42本と、加法的3倍解釈による赤30本の反例を分離した。"
+    ]
+  },
+  "checks": {
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "recipe_to_lean_declarations": "51/51",
+    "queue_total_and_unique_ids": "8792/8792",
+    "forbidden_tokens": 0,
+    "fixed_lean_kernel": "not_run"
+  },
+  "checkpoints": [
+    {"problem_ids": ["train:01569", "train:01570", "train:01571", "train:01572", "train:01573"], "commit": "28c247cad82b2462222bd7ad5a096b6fedaaab6d"},
+    {"problem_ids": ["train:01574", "train:01575", "train:01576", "train:01577", "train:01578"], "commit": "aaee7d8f2cb62814fb0edd8ac3af5a854b2ee9ff"},
+    {"problem_ids": ["train:01579", "train:01580", "train:01581", "train:01582", "train:01583"], "commit": "15dff6438bbba94537a7fe5dbe14eeb454523a2e"}
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1070,
+    "pending": 7204,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 1055},
+    "after": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 1070},
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01584",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": ["train:01569", "train:01583"],
+    "base_sha": "c9a0406b4a41c8dea87cf51edc6baf5440a9ccae",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "not_started",
+    "local_fixed_lean_status": "unavailable_lake_not_installed",
+    "last_full_replay_run_id": 35670885067,
+    "last_full_replay_head": "bf40c0e4f97c04370bf1273f42567fe1cef66cfe",
+    "last_full_replay_conclusion": "failure",
+    "last_failure_ja": "既存Sprint0921A20Models.leanの非線形計算51件。今回A15固有のkernel検証は未実行。",
+    "artifact_id": 10671081248,
+    "artifact_size_bytes": 197153357
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "15dff6438bbba94537a7fe5dbe14eeb454523a2e"
+  }
+}

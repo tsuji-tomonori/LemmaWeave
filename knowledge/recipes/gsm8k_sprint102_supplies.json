@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint102_supplies",
+  "title_ja": "残った画材の個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01811",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "紙片と糊瓶を個別の品物として数え、半分紛失後に紙5枚を追加する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.supplies_solution",
+  "graph": "work/gsm8k-sprint102-supplies-graph.json",
+  "model_notes_ja": [
+    "原題のsuppliesを異種用品の個数として数え、画用紙1枚と糊1瓶をそれぞれ1個とする参照解答の単位規約を明示した。"
+  ],
+  "steps": [
+    {
+      "id": "supplies_paper",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.supplies_paper",
+      "title_ja": "画用紙は24枚。",
+      "claim_ja": "画用紙は24枚。",
+      "method_ja": "8×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "8人が各3枚。",
+      "conclusion_ja": "24。",
+      "baseline_ja": "24。"
+    },
+    {
+      "id": "supplies_bought",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.supplies_bought",
+      "title_ja": "最初の用品は30個。",
+      "claim_ja": "最初の用品は30個。",
+      "method_ja": "紙24+糊6。",
+      "requires_steps": [
+        "supplies_paper"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "紙片と瓶を各1用品と数える。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "supplies_dropped",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.supplies_dropped",
+      "title_ja": "落としたのは15個。",
+      "claim_ja": "落としたのは15個。",
+      "method_ja": "30の半分。",
+      "requires_steps": [
+        "supplies_bought"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "half=1/2。",
+      "conclusion_ja": "15。",
+      "baseline_ja": "15。"
+    },
+    {
+      "id": "supplies_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.supplies_remaining",
+      "title_ja": "落とした後は15個。",
+      "claim_ja": "落とした後は15個。",
+      "method_ja": "30−15。",
+      "requires_steps": [
+        "supplies_bought",
+        "supplies_dropped"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残存数。",
+      "conclusion_ja": "15。",
+      "baseline_ja": "15。"
+    },
+    {
+      "id": "supplies_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.supplies_solution",
+      "title_ja": "買い足した後は20個。",
+      "claim_ja": "買い足した後は20個。",
+      "method_ja": "15+5。",
+      "requires_steps": [
+        "supplies_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "紙5枚を追加。",
+      "conclusion_ja": "20。",
+      "baseline_ja": "20。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1812,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

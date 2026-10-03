@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint364_joe_height",
+  "title_ja": "Joeの身長",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03944",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Sara and Joe have a combined height of 120 inches. Joe is 6 inches more than double Sara's height. How tall is Joe?",
+  "answer_ja": "Saraをs、Joeをjインチとするとs+j=120、j=2s+6。代入して3s+6=120よりs=38、したがってj=82。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A13P1.joe_height",
+  "graph": "work/gsm8k-sprint364-joe-height-graph.json",
+  "model_notes_ja": [
+    "結論を仮定せず、合計と倍数関係から導く。"
+  ],
+  "steps": [
+    {
+      "id": "joe_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A13P1.joe_height",
+      "title_ja": "Joeの身長",
+      "claim_ja": "Saraをs、Joeをjインチとするとs+j=120、j=2s+6。代入して3s+6=120よりs=38、したがってj=82。",
+      "method_ja": "連立一次方程式を代入法で解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "身長は自然数インチで、与えた2式を同時に満たす。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "82インチ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3945,
+    "checked_model_hash": "b6ac7933ea202b8c9114ce8cded36df8e7a8a1c47dc3f1cdee33c216ec427a4f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

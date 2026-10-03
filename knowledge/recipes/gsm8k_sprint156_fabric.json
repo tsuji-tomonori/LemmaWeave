@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint156_fabric",
+  "title_ja": "3日分の布地",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02631",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日3枚のシャツに各2ヤード、5本のパンツに各5ヤードを使う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A13.fabric_solution",
+  "graph": "work/gsm8k-sprint156-fabric-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fabric_shirts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.fabric_shirts",
+      "title_ja": "シャツは1日6ヤード",
+      "claim_ja": "シャツは1日6ヤード",
+      "method_ja": "3枚に2ヤードを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "シャツは1日6ヤード",
+      "baseline_ja": "シャツは1日6ヤード"
+    },
+    {
+      "id": "fabric_pants",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.fabric_pants",
+      "title_ja": "パンツは1日25ヤード",
+      "claim_ja": "パンツは1日25ヤード",
+      "method_ja": "5本に5ヤードを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "パンツは1日25ヤード",
+      "baseline_ja": "パンツは1日25ヤード"
+    },
+    {
+      "id": "fabric_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.fabric_solution",
+      "title_ja": "3日で93ヤード",
+      "claim_ja": "3日で93ヤード",
+      "method_ja": "1日31ヤードに3日を掛ける",
+      "requires_steps": [
+        "fabric_shirts",
+        "fabric_pants"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3日で93ヤード",
+      "baseline_ja": "3日で93ヤード"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2632,
+    "checked_model_hash": "e51225f4b98dc13b8a03c785cc65a942c1c801353b83ac6b37239ea1b6a1f5af",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

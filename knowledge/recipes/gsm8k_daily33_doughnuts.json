@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily33_doughnuts","title_ja":"ダースを個数へ直して均等分配する","problem_id":"external-gsm8k-main-3101c7d50724:train:00329","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"合計5ダースを購入者2人と他の友人8人で均等に分ける。","root":"LemmaWeave.Tests.GSM8KDaily0913B.doughnuts_solution","graph":"work/gsm8k-daily33-doughnuts-graph.json","lean_file":"tests/lean/GSM8KDaily0913B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["their 8 other friendsはSamuelとCathy以外の8人なので、分配人数は10人。"],
+  "steps":[
+    {"id":"doughnuts_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.doughnuts_total","title_ja":"総個数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"2ダースと3ダースを合わせ、1ダースは12個。","conclusion_ja":"合計60個。","baseline_ja":"(2+3)×12を計算する。"},
+    {"id":"doughnuts_people","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.doughnuts_people","title_ja":"分配人数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"購入者2人と、そのほかの友人8人で分ける。","conclusion_ja":"分配人数は10人。","baseline_ja":"互いに別の2人と8人を加える。"},
+    {"id":"doughnuts_each","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.doughnuts_each","title_ja":"一人分を求める","requires_steps":["doughnuts_total","doughnuts_people"],"uses_nodes":[],"condition_ja":"60個を10人で均等に分ける。","conclusion_ja":"一人6個。","baseline_ja":"60=10×6を用いる。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":330,"checked_model_hash":"83680282c69fb05a6b65fef48a3956db83b4848bfee745d30d9f2d4bf1d207ac","checks_ja":["ダース換算とother friendsによる人数の読みを照合した。"]}
+}

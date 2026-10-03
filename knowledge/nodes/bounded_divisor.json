@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "bounded_divisor",
+  "name_ja": "正の自然数の約数の上界",
+  "statement_ja": "自然数 a が正で、d が a を割り切るならば d ≤ a である。",
+  "assumptions": [
+    "a : ℕ",
+    "d : ℕ",
+    "0 < a",
+    "d ∣ a"
+  ],
+  "kind": "lemma",
+  "lean_declarations": [
+    "Nat.le_of_dvd"
+  ],
+  "prerequisite_nodes": [
+    "natural_divisibility"
+  ],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "Actual exported types compared with the Japanese claim; remaining foundational prerequisites are not discarded."
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null
+  },
+  "explanation_outline_ja": [
+    "a = d * q と表す。",
+    "a > 0 より q ≥ 1 を導き、積の大小を使う。"
+  ],
+  "unexpanded": [
+    "項目ごとの公式学習指導要領との照合",
+    "前提宣言の推移的な数学内容の展開"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "declared_but_not_in_graph": [],
+  "actual_declaration_types": {
+    "Nat.le_of_dvd": "∀ {m n : ℕ}, 0 < n → m ∣ n → m ≤ n"
+  },
+  "declaration_type_sha256": {
+    "Nat.le_of_dvd": "f884481d1df6cdb33e97471255e96478d123f0d853798592d4fbb7c1fcf0b1c6"
+  }
+}

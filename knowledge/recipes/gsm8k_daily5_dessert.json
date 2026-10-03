@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily5_dessert","title_ja":"2種類の冷菓代の差を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00053","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"アイス10箱を各4ドル、フローズンヨーグルト4箱を各1ドルで買った費用の差を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907E.dessert_solution","graph":"work/gsm8k-daily5-dessert-graph.json","lean_file":"tests/lean/GSM8KDaily0907E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["それぞれの箱数と単価から費用を求め、アイス代からヨーグルト代を引く。"],
+  "steps":[
+    {"id":"dessert_ice","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.dessert_ice","title_ja":"アイス代","requires_steps":[],"uses_nodes":[],"condition_ja":"10箱、1箱4ドル。","conclusion_ja":"40ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"dessert_yogurt","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.dessert_yogurt","title_ja":"ヨーグルト代","requires_steps":[],"uses_nodes":[],"condition_ja":"4箱、1箱1ドル。","conclusion_ja":"4ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"dessert_difference","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.dessert_difference","title_ja":"費用の差","requires_steps":["dessert_ice","dessert_yogurt"],"uses_nodes":[],"condition_ja":"アイス代40ドルからヨーグルト代4ドルを引く。","conclusion_ja":"36ドル多い。","baseline_ja":"中学校までの減法。"},
+    {"id":"dessert_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.dessert_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"各費用を40ドル、4ドル、差36ドルと置く。","conclusion_ja":"購入数、単価、差の条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":54,"checked_model_hash":"adc4c0f4dec3dbed083ddd2439540f62981d1039ced1f4d455c23cc025e0e734","checks_ja":["各種類の費用を別々に計算し、差の向きを照合した。"]}
+}

@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint234_discount",
+  "title_ja": "20%引きの購入額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03182",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A00P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "20%引きは元値の80%。シャツ48ドル、上着72ドルなので5着と10着で960ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A00P2.discount_total",
+  "graph": "work/gsm8k-sprint234-discount-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "discount_shirt_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P2.discount_shirt_price",
+      "title_ja": "シャツは48ドル。",
+      "claim_ja": "シャツは48ドル。",
+      "method_ja": "60ドルの80%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "シャツは48ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "discount_jacket_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P2.discount_jacket_price",
+      "title_ja": "上着は72ドル。",
+      "claim_ja": "上着は72ドル。",
+      "method_ja": "90ドルの80%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "上着は72ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "discount_shirts_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P2.discount_shirts_cost",
+      "title_ja": "シャツ5着は240ドル。",
+      "claim_ja": "シャツ5着は240ドル。",
+      "method_ja": "48ドルを5着分。",
+      "requires_steps": [
+        "discount_shirt_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "シャツ5着は240ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "discount_jackets_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P2.discount_jackets_cost",
+      "title_ja": "上着10着は720ドル。",
+      "claim_ja": "上着10着は720ドル。",
+      "method_ja": "72ドルを10着分。",
+      "requires_steps": [
+        "discount_jacket_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "上着10着は720ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "discount_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P2.discount_total",
+      "title_ja": "合計960ドル。",
+      "claim_ja": "合計960ドル。",
+      "method_ja": "240ドルと720ドルを足す。",
+      "requires_steps": [
+        "discount_shirts_cost",
+        "discount_jackets_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "合計960ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3183,
+    "checked_model_hash": "a39f758d2c4ed6156307272d76faa75766675957ea27387839b3859eea1ec578",
+    "checks_ja": [
+      "固定commitの原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

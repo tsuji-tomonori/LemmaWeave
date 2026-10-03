@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint343_dark_blue_marbles",
+  "title_ja": "濃青のビー玉数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03840",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A03P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Fred has 38 red marbles, half as many green ones, and the rest are dark blue. If he has 63 marbles, how many of them are dark blue?",
+  "answer_ja": "緑は赤38個の半分で19個。全63個から赤38個と緑19個を引くと、濃青は6個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A03P1.dark_blue_marbles",
+  "graph": "work/gsm8k-sprint343-dark-blue-marbles-graph.json",
+  "model_notes_ja": [
+    "赤・緑・濃青の3色が全63個を重複なく分割する。"
+  ],
+  "steps": [
+    {
+      "id": "dark_blue_marbles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A03P1.dark_blue_marbles",
+      "title_ja": "濃青のビー玉数",
+      "claim_ja": "緑は赤38個の半分で19個。全63個から赤38個と緑19個を引くと、濃青は6個。",
+      "method_ja": "緑を求め、全体から既知2色を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "38は2で割り切れ、38+19は63以下。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "6個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3841,
+    "checked_model_hash": "beceeebbd1021a164afe40b6e8d93cb2dd12ab1b8284c71f79c904c4434fdb2a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

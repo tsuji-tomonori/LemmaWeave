@@ -1,0 +1,195 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-2100-retry-oldest",
+  "planned_slot_local_hour": 21,
+  "planned_at": "2026-09-21T21:00:00+09:00",
+  "role": "retry_overdue_or_failed",
+  "base_sha": "07815f3ee176ed98c73c94503e419ad72ce15fca",
+  "started_at": "2026-09-21T20:56:59+09:00",
+  "finished_at": "2026-09-21T22:07:50+09:00",
+  "schedule_offset_seconds": -181,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523"
+  ],
+  "verification_pending_cumulative": {
+    "count": 845,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01358"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514-00523",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean完全replayは最古10問を含む旧対象を通過したが、新規Sprint0921A20モデルの証明で失敗し、成功成果物が生成されていないため証拠を取り込めない。",
+      "next_action_ja": "汎用タクティクの再試行を打ち切り、Sprint0921A20の51定理を各構造体のhフィールドと先行する名前付き定理を明示したcalc証明へ書き換える。その後、完全replay成功成果物からtrain:00514-00523の現入力ハッシュを照合してimport_evidence.pyで取り込む。"
+    }
+  ],
+  "claim": {
+    "claim_id": "lemmaweave-sprint-20260921-2100-retry-oldest",
+    "problem_ids": [
+      "external-gsm8k-main-3101c7d50724:train:00514",
+      "external-gsm8k-main-3101c7d50724:train:00515",
+      "external-gsm8k-main-3101c7d50724:train:00516",
+      "external-gsm8k-main-3101c7d50724:train:00517",
+      "external-gsm8k-main-3101c7d50724:train:00518",
+      "external-gsm8k-main-3101c7d50724:train:00519",
+      "external-gsm8k-main-3101c7d50724:train:00520",
+      "external-gsm8k-main-3101c7d50724:train:00521",
+      "external-gsm8k-main-3101c7d50724:train:00522",
+      "external-gsm8k-main-3101c7d50724:train:00523"
+    ],
+    "acquired_at": "2026-09-21T20:56:59+09:00",
+    "expires_at": "2026-09-21T23:30:00+09:00",
+    "status": "released_deferred"
+  },
+  "checkpoints": [
+    {
+      "scope": "A10 reserved identifier repair",
+      "commit": "95cf8e3088860df6c499ee4036fd9fdbfe972570"
+    },
+    {
+      "scope": "A20 dependency shrink and model-hash synchronization",
+      "commit": "8accbd735a9ee5576104141cfde7029f0ba1df3e"
+    },
+    {
+      "scope": "A20 Lean 4.33 structure-field expansion",
+      "commit": "565791a04febb4a41748ff1dc9cf3a853a02b041"
+    },
+    {
+      "scope": "A20 structure decomposition before omega",
+      "commit": "53d56fddf39448ea055b8b09a6900dfeca920f4f"
+    }
+  ],
+  "retry_summary": {
+    "attempted_problem_ids": [
+      "external-gsm8k-main-3101c7d50724:train:00514",
+      "external-gsm8k-main-3101c7d50724:train:00515",
+      "external-gsm8k-main-3101c7d50724:train:00516",
+      "external-gsm8k-main-3101c7d50724:train:00517",
+      "external-gsm8k-main-3101c7d50724:train:00518",
+      "external-gsm8k-main-3101c7d50724:train:00519",
+      "external-gsm8k-main-3101c7d50724:train:00520",
+      "external-gsm8k-main-3101c7d50724:train:00521",
+      "external-gsm8k-main-3101c7d50724:train:00522",
+      "external-gsm8k-main-3101c7d50724:train:00523"
+    ],
+    "canonical_current_batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0054.json",
+    "historical_batch_label": "batch 52",
+    "approaches": [
+      "reserved Lean identifier replacement in Sprint0921A10",
+      "A20 import reduced from Mathlib to Mathlib.Tactic",
+      "grouped structure fields expanded for Lean 4.33.1",
+      "structure values destructured before omega"
+    ],
+    "successful_stage": "complete replay reaches Sprint0921A20; Sprint0921A10 through A19 build",
+    "remaining_stage": "Sprint0921A20 theorem proofs"
+  },
+  "measurements": {
+    "elapsed_seconds": 4251,
+    "selected": 10,
+    "promoted": 0,
+    "formal_completion_rate": 0,
+    "ci_runs_observed": 5,
+    "ci_success_rate": 0,
+    "latest_ci_seconds": 490,
+    "latest_artifact_bytes": 196010366
+  },
+  "local_checks": {
+    "fixed_lean": "not_available_locally",
+    "source_and_current_evidence_match": "not_imported_no_successful_complete_replay",
+    "forbidden_tokens": "no new sorry/admit/custom axiom introduced",
+    "queue_partition": "solution_ready 518, awaiting_verification 845, pending 7429; total 8792; duplicate IDs 0",
+    "ledger_validate": "pending_repository_ci",
+    "next_action_ja": "51定理を明示的なcalc証明へ分解し、依存するhフィールドと先行定理を一行ずつ固定する。"
+  },
+  "ci": {
+    "exact_head_before_ledger": "53d56fddf39448ea055b8b09a6900dfeca920f4f",
+    "runs": [
+      {
+        "run_id": 35593180221,
+        "head_sha": "07815f3ee176ed98c73c94503e419ad72ce15fca",
+        "conclusion": "failure",
+        "reason": "Sprint0921A10 reserved identifier",
+        "accepted_as_success_evidence": false
+      },
+      {
+        "run_id": 35597445242,
+        "head_sha": "95cf8e3088860df6c499ee4036fd9fdbfe972570",
+        "conclusion": "failure",
+        "reason": "Sprint0921A20 full Mathlib import exceeded per-command timeout",
+        "accepted_as_success_evidence": false
+      },
+      {
+        "run_id": 35599734894,
+        "head_sha": "8accbd735a9ee5576104141cfde7029f0ba1df3e",
+        "conclusion": "failure",
+        "reason": "Sprint0921A20 grouped structure fields rejected",
+        "accepted_as_success_evidence": false
+      },
+      {
+        "run_id": 35600880754,
+        "head_sha": "565791a04febb4a41748ff1dc9cf3a853a02b041",
+        "conclusion": "failure",
+        "reason": "omega did not expose record hypotheses",
+        "accepted_as_success_evidence": false
+      },
+      {
+        "run_id": 35602203978,
+        "head_sha": "53d56fddf39448ea055b8b09a6900dfeca920f4f",
+        "conclusion": "failure",
+        "reason": "nonlinear chains require explicit named equalities",
+        "artifact_id": 10639329809,
+        "artifact_bytes": 196010366,
+        "accepted_as_success_evidence": false
+      }
+    ],
+    "latest_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35602203978",
+    "current_status": "failed_diagnostic_only",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "mergeable": true,
+    "reviews_unresolved": 0,
+    "merged": false,
+    "merge_blocked_reason_ja": "exact-head固定CIの成功証拠がない。"
+  },
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 845,
+    "pending_unstarted": 7429
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 845,
+    "pending_unstarted": 7429
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01359",
+  "note_ja": "最古の証拠取込待ち10問を再試行した。A10の予約語、A20の依存タイムアウト、構造体構文を順に修復し、完全replayをA20まで進めた。A20の51定理は暗黙の汎用omegaをやめ、次回はhフィールドと名前付き定理を明示する個別calc証明へ切り替える。成功成果物がないため正式完了数は変更していない。"
+}

@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint235_boxwood",
+  "title_ja": "ツゲの手入れ料金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03190",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A00P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "conditional",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全30本の基本手入れ150ドルに4本の成形料60ドルを追加するなら210ドル。成形料が基本手入れを置換するなら190ドルで、原文だけでは一意でない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.boxwood_interpretations_differ",
+  "graph": "work/gsm8k-sprint235-boxwood-graph.json",
+  "model_notes_ja": [
+    "15ドルが5ドルの基本手入れに加算されるか、置き換えるかが原文では明示されない。"
+  ],
+  "steps": [
+    {
+      "id": "boxwood_base_trim",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.boxwood_base_trim",
+      "title_ja": "全30本の基本手入れは150ドル。",
+      "claim_ja": "全30本の基本手入れは150ドル。",
+      "method_ja": "30×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "全30本の基本手入れは150ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "boxwood_shape_charge",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.boxwood_shape_charge",
+      "title_ja": "4本の成形料は60ドル。",
+      "claim_ja": "4本の成形料は60ドル。",
+      "method_ja": "4×15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "4本の成形料は60ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "boxwood_additional_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.boxwood_additional_total",
+      "title_ja": "追加料金なら合計210ドル。",
+      "claim_ja": "追加料金なら合計210ドル。",
+      "method_ja": "150+60。",
+      "requires_steps": [
+        "boxwood_base_trim",
+        "boxwood_shape_charge"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "15ドルを基本5ドルに追加する条件。",
+      "conclusion_ja": "追加料金なら合計210ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "boxwood_replacement_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.boxwood_replacement_total",
+      "title_ja": "置換料金なら合計190ドル。",
+      "claim_ja": "置換料金なら合計190ドル。",
+      "method_ja": "成形しない26本を5ドル、成形4本を15ドルで計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15ドルが基本5ドルを置き換える条件。",
+      "conclusion_ja": "置換料金なら合計190ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "boxwood_interpretations_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.boxwood_interpretations_differ",
+      "title_ja": "二つの答え210ドルと190ドルは異なる。",
+      "claim_ja": "二つの答え210ドルと190ドルは異なる。",
+      "method_ja": "料金文の二つの整合的な読みを比較する。",
+      "requires_steps": [
+        "boxwood_additional_total",
+        "boxwood_replacement_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加か置換かが指定されていない。",
+      "conclusion_ja": "二つの答え210ドルと190ドルは異なる。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3191,
+    "checked_model_hash": "a5b648eb31a38c4742a02fd9e647e595efe31e93d325d88ff6084580ed562cd9",
+    "checks_ja": [
+      "固定commitの原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

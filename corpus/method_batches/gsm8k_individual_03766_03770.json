@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0387",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "2224fabff2d857803971c96cb779e90b3a87a1e0276a201c196e8f8bc664a7e4",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1002A18P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03766",
+      "source_line_1based": 3767,
+      "source_record_sha256": "3cd2aac504140492ca0ef09096ff6aa381575440c22b545535f7245d470ce0b1",
+      "raw_question_sha256": "c955f17ad48459a4951edc64d7eaccd7df0067828cdd0ac14f291879d9412b0c",
+      "normalized_question_sha256": "c955f17ad48459a4951edc64d7eaccd7df0067828cdd0ac14f291879d9412b0c",
+      "source_question": "Miss Darlington has a basket of 20 blueberries. She picked 9 more baskets with the same amount of berries. How many blueberries did Miss Darlington have in all?",
+      "recipe_id": "gsm8k_sprint329_total_blueberries",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "picked 9 more basketsは元の1籠に追加する意味で、全籠に20粒ずつ入る。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03767",
+      "source_line_1based": 3768,
+      "source_record_sha256": "be0458fbe8d99922a22a0873d8cfa9dee6b66de6358915f9851476570671d2fc",
+      "raw_question_sha256": "00c19d9f514aa25689d7fa3e1b7a9d6d1aa55253af018dccc8d378c864910754",
+      "normalized_question_sha256": "00c19d9f514aa25689d7fa3e1b7a9d6d1aa55253af018dccc8d378c864910754",
+      "source_question": "In a basketball game, Jon scored 3 points. Jack scored 5 points more than Jon, and Tom scored 4 less than the points of Jon and Jack together. How many points did they score altogether?",
+      "recipe_id": "gsm8k_sprint329_basketball_points",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Tomの4 lessはJonとJackの合計得点11点に適用する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03768",
+      "source_line_1based": 3769,
+      "source_record_sha256": "d071b227dea2ea8a5b5d1f91b6eb84ac2626dcf84fa279d50ac2b3d5afdd424f",
+      "raw_question_sha256": "c9fe91d7871ba6406f095da146627e7a7b5c7fe97a3658d5bcb8b8a2563eccec",
+      "normalized_question_sha256": "c9fe91d7871ba6406f095da146627e7a7b5c7fe97a3658d5bcb8b8a2563eccec",
+      "source_question": "In a shipping container, there are 10 crates. Each crate is filled with 6 boxes and each box is filled with 4 washing machines. A worker removes 1 washing machine from each box. There are no other changes. How many washing machines were removed from the shipping container?",
+      "recipe_id": "gsm8k_sprint329_removed_washing_machines",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "全10クレートに6箱ずつあり、作業者は例外なく各箱から1台取り除く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03769",
+      "source_line_1based": 3770,
+      "source_record_sha256": "171221a9ce4600e303aaf448bbdc28cf01c8a2c8aaf7c3f8004ff406c92b5983",
+      "raw_question_sha256": "d0043b6df7f1d142f24f9df3689328815d84f91bd0de6fa5d9bfba3faf085d5b",
+      "normalized_question_sha256": "d0043b6df7f1d142f24f9df3689328815d84f91bd0de6fa5d9bfba3faf085d5b",
+      "source_question": "Darnell has 1000 square feet of fabric that he's using to make mini flags. He makes square flags that are 4 feet by 4 feet, wide rectangular flags that are 5 feet by 3 feet, and tall rectangular flags that are 3 feet by 5 feet. He has already made 16 square flags, 20 wide flags, and 10 tall flags. How many square feet of fabric does he have left?",
+      "recipe_id": "gsm8k_sprint329_remaining_fabric",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "裁断くずや縫い代はなく、旗の面積だけ布を使う。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03770",
+      "source_line_1based": 3771,
+      "source_record_sha256": "8f69b035aefb03ec7fa9f0c12454588d79715ed77a359c5cdd9a3997d6b1ce52",
+      "raw_question_sha256": "9d23ce4c553ba5ffc6f80a7493f9010daf9892784c14a4947b10ed025433d05f",
+      "normalized_question_sha256": "9d23ce4c553ba5ffc6f80a7493f9010daf9892784c14a4947b10ed025433d05f",
+      "source_question": "Matthias has 40 soccer balls and 15 basketballs. 30 soccer balls and 7 basketballs have a hole in them. How many balls in total does Matthias have without holes in them?",
+      "recipe_id": "gsm8k_sprint329_balls_without_holes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各ボールは穴あり・なしのどちらかで、2種類は重複しない。"
+      ],
+      "blockers": []
+    }
+  ]
+}

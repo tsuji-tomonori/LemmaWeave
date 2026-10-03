@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily17_age","title_ja":"Katherineが24歳のときのMelの年齢","problem_id":"external-gsm8k-main-3101c7d50724:train:00170","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"MelはKatherineより3歳若い。Katherineが2ダース歳のときのMelの年齢を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910A.age_solution","graph":"work/gsm8k-daily17-age-graph.json","lean_file":"tests/lean/GSM8KDaily0910A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["年齢差3年は時点が進んでも一定。"],
+  "steps":[
+    {"id":"age_katherine","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.age_katherine","title_ja":"Katherineの年齢","requires_steps":[],"uses_nodes":[],"condition_ja":"1ダースは12、2ダース歳。","conclusion_ja":"Katherineは24歳。","baseline_ja":"ダースの換算と乗法。"},
+    {"id":"age_mel","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.age_mel","title_ja":"Melの年齢","requires_steps":["age_katherine"],"uses_nodes":[],"condition_ja":"MelはKatherineより3歳若い。","conclusion_ja":"24-3=21歳。","baseline_ja":"一定の年齢差を引く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":171,"checked_model_hash":"8d560b66e65f6153528fc090945267f3173ba02c8df0a2cef113393ea49676d5","checks_ja":["2ダースの換算、年齢差の向きを照合した。"]}
+}

@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint264_ages",
+  "title_ja": "AgnesがJaneの2倍になるまで",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03361",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "現在25歳と6歳の2人が同じ年数だけ年を取るとして、Agnesの年齢がJaneの2倍になる時点を求める。",
+  "answer_ja": "13年後",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A12P2.age_years",
+  "graph": "work/gsm8k-sprint264-ages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "age_equation",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P2.age_equation",
+      "title_ja": "x年後の条件は25+x=2(6+x)。",
+      "claim_ja": "x年後の条件は25+x=2(6+x)。",
+      "method_ja": "両者の現在年齢へ同じx年を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "xは0以上の整数年。",
+      "conclusion_ja": "一次方程式を得る。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "age_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P2.age_years",
+      "title_ja": "方程式の解はx=13。",
+      "claim_ja": "方程式の解はx=13。",
+      "method_ja": "25+x=12+2xを整理する。",
+      "requires_steps": [
+        "age_equation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "年数は自然数。",
+      "conclusion_ja": "13年後。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3362,
+    "checked_model_hash": "3149c07809efc68da1e78f5fc5bb17ffdda98364e245698712ae1bc5802aa316",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

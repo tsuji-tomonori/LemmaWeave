@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint145_pay",
+  "title_ja": "往復運転の報酬",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02460",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "片道400マイル。参考解答に合わせ、$0.40 per mile、すなわち1マイル40セントと解釈する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.pay_solution_conditional",
+  "graph": "work/gsm8k-sprint145-pay-graph.json",
+  "model_notes_ja": [
+    "原題の『$0.40 cents』はドル記号とcentsが矛盾する。参考解答の320ドルは$0.40/mi（40セント/mi）という条件付き。0.40セント/miを文字どおり取ると3.20ドル。"
+  ],
+  "steps": [
+    {
+      "id": "pay_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.pay_miles",
+      "title_ja": "往復は800マイル",
+      "claim_ja": "往復は800マイル",
+      "method_ja": "400を2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "往復は800マイル",
+      "baseline_ja": "往復は800マイル"
+    },
+    {
+      "id": "pay_literal_differs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.pay_literal_differs",
+      "title_ja": "文字どおり0.40セントなら3.20ドルとなり、320ドルと異なる",
+      "claim_ja": "文字どおり0.40セントなら3.20ドルとなり、320ドルと異なる",
+      "method_ja": "単位表記の二解釈を比較する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "文字どおり0.40セントなら3.20ドルとなり、320ドルと異なる",
+      "baseline_ja": "文字どおり0.40セントなら3.20ドルとなり、320ドルと異なる"
+    },
+    {
+      "id": "pay_solution_conditional",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.pay_solution_conditional",
+      "title_ja": "40セント毎マイルなら32000セント、すなわち320ドル",
+      "claim_ja": "40セント毎マイルなら32000セント、すなわち320ドル",
+      "method_ja": "800に40セントを掛ける",
+      "requires_steps": [
+        "pay_miles",
+        "pay_literal_differs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "40セント毎マイルなら32000セント、すなわち320ドル",
+      "baseline_ja": "40セント毎マイルなら32000セント、すなわち320ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2461,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

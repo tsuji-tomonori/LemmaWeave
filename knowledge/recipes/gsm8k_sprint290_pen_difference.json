@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint290_pen_difference",
+  "title_ja": "1か月後のペンの差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03555",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A01P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "第1週4本から毎週倍増し、4週目にJaneが16本のときの差。",
+  "answer_ja": "16本",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.pens_difference",
+  "graph": "work/gsm8k-sprint290-pen-difference-graph.json",
+  "model_notes_ja": [
+    "monthを原文解答どおり4週間として固定する。"
+  ],
+  "steps": [
+    {
+      "id": "pens_week2",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.pens_week2",
+      "title_ja": "第2週は8本。",
+      "claim_ja": "第2週は8本。",
+      "method_ja": "4本を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "第2週は8本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pens_week3",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.pens_week3",
+      "title_ja": "第3週は16本。",
+      "claim_ja": "第3週は16本。",
+      "method_ja": "8本を2倍する。",
+      "requires_steps": [
+        "pens_week2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "第3週は16本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pens_week4",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.pens_week4",
+      "title_ja": "第4週は32本。",
+      "claim_ja": "第4週は32本。",
+      "method_ja": "16本を2倍する。",
+      "requires_steps": [
+        "pens_week3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "第4週は32本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pens_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.pens_difference",
+      "title_ja": "Janeとの差は16本。",
+      "claim_ja": "Janeとの差は16本。",
+      "method_ja": "32本から16本を引く。",
+      "requires_steps": [
+        "pens_week4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Janeとの差は16本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3556,
+    "checked_model_hash": "294e5a62736ad99074285666a240aaf7b5f4e0eedfab1e325cc5fb9a8dd524ab",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

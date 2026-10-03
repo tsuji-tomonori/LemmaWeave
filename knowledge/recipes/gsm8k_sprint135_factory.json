@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint135_factory",
+  "title_ja": "Tシャツ工場の日利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02309",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A new factory opens up and hires 20 people to make t-shirts. Each person makes on average 20 shirts per day during their 8-hour shift. The employees each get paid $12 an hour plus $5 per shirt they make. The company sells shirts for $35 each. Nonemployee expenses come out to $1000 a day. How much does the company make in profits per day?",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A08.factory_solution",
+  "graph": "work/gsm8k-sprint135-factory-graph.json",
+  "model_notes_ja": [
+    "20人全員が平均20枚を作るという原題の平均値を日次総数へ用いる。"
+  ],
+  "steps": [
+    {
+      "id": "factory_employee_pay",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.factory_employee_pay",
+      "title_ja": "1人の日給は196ドル",
+      "claim_ja": "1人の日給は196ドル",
+      "method_ja": "20×5+8×12",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "出来高給と時給を合算。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "196ドル",
+      "baseline_ja": "196ドル"
+    },
+    {
+      "id": "factory_payroll",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.factory_payroll",
+      "title_ja": "給与総額は3920ドル",
+      "claim_ja": "給与総額は3920ドル",
+      "method_ja": "20×196",
+      "requires_steps": [
+        "factory_employee_pay"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "従業員20人。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "3920ドル",
+      "baseline_ja": "3920ドル"
+    },
+    {
+      "id": "factory_shirts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.factory_shirts",
+      "title_ja": "生産は400枚",
+      "claim_ja": "生産は400枚",
+      "method_ja": "20×20",
+      "requires_steps": [
+        "factory_payroll"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20人が各20枚。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "400枚",
+      "baseline_ja": "400枚"
+    },
+    {
+      "id": "factory_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.factory_revenue",
+      "title_ja": "売上は14000ドル",
+      "claim_ja": "売上は14000ドル",
+      "method_ja": "400×35",
+      "requires_steps": [
+        "factory_shirts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1枚35ドル。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "14000ドル",
+      "baseline_ja": "14000ドル"
+    },
+    {
+      "id": "factory_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A08.factory_solution",
+      "title_ja": "利益は9080ドル",
+      "claim_ja": "利益は9080ドル",
+      "method_ja": "14000-3920-1000",
+      "requires_steps": [
+        "factory_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "給与と非従業員費を控除。原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "9080ドル",
+      "baseline_ja": "9080ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2310,
+    "checked_model_hash": "09727ea8b83923dcba25a51809b427129da247433051572eb21111290845717f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

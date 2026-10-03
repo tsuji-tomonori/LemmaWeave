@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint33_paper",
+  "title_ja": "12週間に必要な紙の連数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00786",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "参照解説の52週と設問の12週の不一致を明示し、二解釈とも購入単位では3連と証明する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.paper_solution",
+  "graph": "work/gsm8k-sprint33-paper-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "短編は12週間分。1200ページの長編を期間内に丸ごと書く解釈と、年52週へ均等配分する解釈を分離する。"
+  ],
+  "steps": [
+    {
+      "id": "paper_weekly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.paper_weekly",
+      "title_ja": "短編の週ページ数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "週3編、各50ページ。",
+      "conclusion_ja": "150ページ。",
+      "baseline_ja": "3×50=150。"
+    },
+    {
+      "id": "paper_short",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.paper_short",
+      "title_ja": "12週の短編",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "150ページを12週。",
+      "conclusion_ja": "1,800ページ。",
+      "baseline_ja": "12×150=1800。"
+    },
+    {
+      "id": "paper_whole_pages",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.paper_whole_pages",
+      "title_ja": "長編を丸ごと含む総ページ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "短編1,800と長編1,200を加える。",
+      "conclusion_ja": "3,000ページ。",
+      "baseline_ja": "1800+1200=3000。"
+    },
+    {
+      "id": "paper_whole_sheets",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.paper_whole_sheets",
+      "title_ja": "必要枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚に2ページ。",
+      "conclusion_ja": "1,500枚。",
+      "baseline_ja": "3000=1500×2。"
+    },
+    {
+      "id": "paper_whole_reams",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.paper_whole_reams",
+      "title_ja": "長編全体解釈の連数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1連500枚。",
+      "conclusion_ja": "3連。",
+      "baseline_ja": "1500=3×500。"
+    },
+    {
+      "id": "paper_prorated_lower",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.paper_prorated_lower",
+      "title_ja": "均等配分時の下限",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12週分は2連の2,000ページ容量を超える。",
+      "conclusion_ja": "2連では不足。",
+      "baseline_ja": "2000×13<27000。"
+    },
+    {
+      "id": "paper_prorated_upper",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.paper_prorated_upper",
+      "title_ja": "均等配分時の上限",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12週分は3連の3,000ページ容量以下。",
+      "conclusion_ja": "3連で足りる。",
+      "baseline_ja": "27000≤3000×13。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 787,
+    "checked_model_hash": "0a6fea94355faf3a43d36de816d85f2538fb96a31d7a715966e463512fb98210",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

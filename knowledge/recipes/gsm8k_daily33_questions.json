@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily33_questions","title_ja":"毎時倍増する作問数を合計する","problem_id":"external-gsm8k-main-3101c7d50724:train:00325","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"1時間目13問、以後毎時2倍の作問数を3時間分合計する。","root":"LemmaWeave.Tests.GSM8KDaily0913B.questions_solution","graph":"work/gsm8k-daily33-questions-graph.json","lean_file":"tests/lean/GSM8KDaily0913B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各区間は同じ1時間であり、rateの倍化をその時間に作る問題数の倍化として扱う。"],
+  "steps":[
+    {"id":"questions_second","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.questions_second","title_ja":"2時間目を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"1時間目は13問で、2時間目はその2倍。","conclusion_ja":"2時間目は26問。","baseline_ja":"13×2を計算する。"},
+    {"id":"questions_third","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.questions_third","title_ja":"3時間目を求める","requires_steps":["questions_second"],"uses_nodes":[],"condition_ja":"3時間目は2時間目26問の2倍。","conclusion_ja":"3時間目は52問。","baseline_ja":"26×2を計算する。"},
+    {"id":"questions_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913B.questions_total","title_ja":"3時間の合計を求める","requires_steps":["questions_second","questions_third"],"uses_nodes":[],"condition_ja":"各時間の作問数は13、26、52問。","conclusion_ja":"合計は91問。","baseline_ja":"互いに異なる時間区間の個数を加える。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":326,"checked_model_hash":"83680282c69fb05a6b65fef48a3956db83b4848bfee745d30d9f2d4bf1d207ac","checks_ja":["倍化の基準が直前の時間であることを原文と照合した。"]}
+}

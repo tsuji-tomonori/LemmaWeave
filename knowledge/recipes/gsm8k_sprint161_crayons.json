@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint161_crayons",
+  "title_ja": "クレヨンの総本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02703",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "橙8本入り6箱、青5本入り7箱、赤11本入り1箱。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A20.crayons_solution",
+  "graph": "work/gsm8k-sprint161-crayons-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "crayons_orange",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.crayons_orange",
+      "title_ja": "橙は48本",
+      "claim_ja": "橙は48本",
+      "method_ja": "6箱に8本を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "橙は48本",
+      "baseline_ja": "橙は48本"
+    },
+    {
+      "id": "crayons_blue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.crayons_blue",
+      "title_ja": "青は35本",
+      "claim_ja": "青は35本",
+      "method_ja": "7箱に5本を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "青は35本",
+      "baseline_ja": "青は35本"
+    },
+    {
+      "id": "crayons_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.crayons_solution",
+      "title_ja": "合計94本",
+      "claim_ja": "合計94本",
+      "method_ja": "48・35・11を足す",
+      "requires_steps": [
+        "crayons_orange",
+        "crayons_blue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計94本",
+      "baseline_ja": "合計94本"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2704,
+    "checked_model_hash": "47a92d66753e615bdac10f267e9b76de1ad7810b4a09d9859c11e601529c35c2",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

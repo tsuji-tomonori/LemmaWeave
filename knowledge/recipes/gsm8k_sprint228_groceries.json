@@ -1,0 +1,128 @@
+{
+  "id": "gsm8k_sprint228_groceries",
+  "title_ja": "食材と軽食の必要金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03440",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A19P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "パスタを1kg当たり1.5ドルと読むと3ドル、牛肉2ドル、ソース4ドル、ケサディーヤ6ドルで合計15ドル。『2kgのパスタが1.5ドル』を全体価格と読むと合計13.50ドル。原文だけでは両者を一意に選べない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.groceries_totals_differ",
+  "graph": "work/gsm8k-sprint228-groceries-graph.json",
+  "model_notes_ja": [
+    "パスタの$1.5が単価か2kg全体価格かを分離し、追加条件なしに一意化しなかった。",
+    "金額はセントで形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "groceries_conventional_pasta",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.groceries_conventional_pasta",
+      "title_ja": "単価読みのパスタ",
+      "claim_ja": "単価読みでは300セント。",
+      "method_ja": "2kg×150セント/kg。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "単価読みでは300セント。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "groceries_literal_pasta",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.groceries_literal_pasta",
+      "title_ja": "全体価格読みのパスタ",
+      "claim_ja": "全体価格読みでは150セント。",
+      "method_ja": "記載の1.5ドルを2kg全体へ適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "全体価格読みでは150セント。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "groceries_beef",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.groceries_beef",
+      "title_ja": "牛肉",
+      "claim_ja": "牛肉は200セント。",
+      "method_ja": "800セント/kgの4分の1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "牛肉は200セント。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "groceries_sauce",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.groceries_sauce",
+      "title_ja": "ソース",
+      "claim_ja": "ソースは400セント。",
+      "method_ja": "2瓶×200セント。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "ソースは400セント。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "groceries_conventional_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.groceries_conventional_total",
+      "title_ja": "単価読みの合計",
+      "claim_ja": "単価読みの合計は1500セント。",
+      "method_ja": "各費用と600セントを合計する。",
+      "requires_steps": [
+        "groceries_conventional_pasta",
+        "groceries_beef",
+        "groceries_sauce"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "単価読みの合計は1500セント。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "groceries_literal_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.groceries_literal_total",
+      "title_ja": "全体価格読みの合計",
+      "claim_ja": "全体価格読みの合計は1350セント。",
+      "method_ja": "各費用と600セントを合計する。",
+      "requires_steps": [
+        "groceries_literal_pasta",
+        "groceries_beef",
+        "groceries_sauce"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "全体価格読みの合計は1350セント。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "groceries_totals_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.groceries_totals_differ",
+      "title_ja": "非一意性",
+      "claim_ja": "1500セントと1350セントは異なる。",
+      "method_ja": "2つの読みの結果を比較する。",
+      "requires_steps": [
+        "groceries_conventional_total",
+        "groceries_literal_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文がパスタ価格の基準を明示していない。",
+      "conclusion_ja": "1500セントと1350セントは異なる。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3441,
+    "checked_model_hash": "d5acf92b307ec3d7ed43b4d378592d8647ade414daa809efcf43159ea2a3869e",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

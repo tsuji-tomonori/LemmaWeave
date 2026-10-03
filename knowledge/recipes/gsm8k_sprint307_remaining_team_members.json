@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint307_remaining_team_members",
+  "title_ja": "残った選手と応援団員",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03657",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "選手13人から10人、応援団員16人から4人が辞めた。残人数の合計を求める。",
+  "answer_ja": "選手は13-10=3人、応援団員は16-4=12人。したがって残りは3+12=15人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A10P1.remaining_team_members",
+  "graph": "work/gsm8k-sprint307-remaining-team-members-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "remaining_team_members",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A10P1.remaining_team_members",
+      "title_ja": "選手は13-10=3人、応援団員は16-4=12人。したがって残りは3+12=15人。",
+      "claim_ja": "選手は13-10=3人、応援団員は16-4=12人。したがって残りは3+12=15人。",
+      "method_ja": "選手は13-10=3人、応援団員は16-4=12人。したがって残りは3+12=15人。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "選手は13-10=3人、応援団員は16-4=12人。したがって残りは3+12=15人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3658,
+    "checked_model_hash": "e7a9d85fc960a9085ae59b766dcc22533999929a52b2db984aba0ca6acea87c5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

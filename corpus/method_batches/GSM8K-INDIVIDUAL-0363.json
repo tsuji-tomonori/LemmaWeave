@@ -1,0 +1,91 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0363",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "db2032ffe685f9231786361e966ebc7aa88ad4a264420cb5664e10beeac3ed3f",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1002A08P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03646",
+      "source_line_1based": 3647,
+      "source_record_sha256": "cdd0e71993d40e836466d77bd5353297d2bf6530470e122320b1658432176887",
+      "raw_question_sha256": "9d0b179ffd6df5021b6facbe63106acbb41bff65dc66ffdd734494f1f701d35d",
+      "normalized_question_sha256": "9d0b179ffd6df5021b6facbe63106acbb41bff65dc66ffdd734494f1f701d35d",
+      "source_question": "Barney's grocery store sold out all of its items at the beginning of the pandemic, so they ordered extra items to restock the shelves. However, they ended up ordering far too much and have to keep the leftover items in the storeroom. If they ordered 4458 items, sold another 1561 items that day, and have 575 items in the storeroom, how many items do they have left in the whole store?",
+      "recipe_id": "gsm8k_sprint305_store_inventory_readings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参考解答3472点は倉庫575点を残在庫へ再加算している。原文の「leftover items in the storeroom」では内数と読むのが自然で、2897点を主解とした。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03647",
+      "source_line_1based": 3648,
+      "source_record_sha256": "fbbb17a80588e31d2c59aacb7cfabfdd73fd4f8dd29babef84609304fa3204c1",
+      "raw_question_sha256": "edb64559886db70e7449d92802ef3882cdab59d00bcd1239c96718fc45b8cc7a",
+      "normalized_question_sha256": "edb64559886db70e7449d92802ef3882cdab59d00bcd1239c96718fc45b8cc7a",
+      "source_question": "Carla's order at Mcdonald's costs $7.50, but she has a coupon for $2.50. If she gets an additional 20% discount for being a senior citizen, how much does she pay for her order in dollars total?",
+      "recipe_id": "gsm8k_sprint305_coupon_then_senior_discount_cents",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参考解答どおり、語順の「additional 20%」をクーポン適用後の価格に対する割引と解釈した。適用順が逆なら3.50ドル。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03648",
+      "source_line_1based": 3649,
+      "source_record_sha256": "00c532414fc7d11197bfc1383225b3926d478aa4bba32d06b636f4a056a1da68",
+      "raw_question_sha256": "c1fad6db72e409bd25a69905c595eda9188c1beffc35cedcb3e7df2bbbb19b03",
+      "normalized_question_sha256": "c1fad6db72e409bd25a69905c595eda9188c1beffc35cedcb3e7df2bbbb19b03",
+      "source_question": "Carla is dividing up chores for her two kids, Anna and Billy. She wants each of them to spend the same number of minutes working. Sweeping takes 3 minutes per room, washing the dishes takes 2 minutes per dish, and doing laundry takes 9 minutes per load. If Anna does the sweeping for 10 rooms and Billy does two loads of laundry, how many dishes should Billy wash so they spend the same amount of time doing chores?",
+      "recipe_id": "gsm8k_sprint305_equal_chore_dishes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03649",
+      "source_line_1based": 3650,
+      "source_record_sha256": "867df076dae5ef2cac7ad299d7afef2d174c049fbec6be946cc4432e4c7e671f",
+      "raw_question_sha256": "6dd4ec71372ef2547a7ff4d00aad8e1aae212c1e362e039e4423cb0313222dda",
+      "normalized_question_sha256": "6dd4ec71372ef2547a7ff4d00aad8e1aae212c1e362e039e4423cb0313222dda",
+      "source_question": "Uncle Ben has 440 chickens on his farm. 39 are roosters and the rest are hens. 15 of his hens do not lay eggs, and the rest do. If each egg-laying hen lays 3 eggs, how many eggs will Uncle Ben have?",
+      "recipe_id": "gsm8k_sprint305_eggs_from_laying_hens",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03650",
+      "source_line_1based": 3651,
+      "source_record_sha256": "5a14ff7ba1d787ab8b479e6b4b78eb643d612650e308ed0f125882a93bf64ea2",
+      "raw_question_sha256": "09007520560bfd2e3a34bd25472bd154fc9f80ce4c13ca290d77da9d322a7293",
+      "normalized_question_sha256": "09007520560bfd2e3a34bd25472bd154fc9f80ce4c13ca290d77da9d322a7293",
+      "source_question": "Martin went to a store to buy a new television set. He decided to spend no more than $1,000 and the sales clerk offered him the TV for $100 less and an additional 20% off. How much lower was the price of the television than the amount Martin decided to spend?",
+      "recipe_id": "gsm8k_sprint305_television_savings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "「100ドル安い」の基準を、参考解答どおりMartinの上限1000ドルと解釈した。別の元値は原文にない。"
+      ],
+      "blockers": []
+    }
+  ]
+}

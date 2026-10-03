@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint368_conference_attendance",
+  "title_ja": "会議センターの参加者数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03964",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A conference center has six rooms. Each room can hold up to 80 people. Today, the conference center is only 2/3 full. How many people are in the conference center?",
+  "answer_ja": "収容人数は6室×80人=480人。全体の3分の2が埋まっているので480×2/3=320人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P2.conference_attendance",
+  "graph": "work/gsm8k-sprint368-conference-attendance-graph.json",
+  "model_notes_ja": [
+    "各室の定員が80人で、全体の占有率が正確に2/3。"
+  ],
+  "steps": [
+    {
+      "id": "conference_attendance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P2.conference_attendance",
+      "title_ja": "会議センターの参加者数",
+      "claim_ja": "収容人数は6室×80人=480人。全体の3分の2が埋まっているので480×2/3=320人。",
+      "method_ja": "全収容人数を求め、占有率2/3を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各室の定員が80人で、全体の占有率が正確に2/3。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "全体の3分の2が埋まっているので480×2/3=320人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3965,
+    "checked_model_hash": "6ee2020ec3883e324fc362d1e0f24bb6ce1e9bdc192499bc0ce7d908c4c029d9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

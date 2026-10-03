@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint382_usa_scientist_count",
+  "title_ja": "米国出身の科学者数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04032",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A20P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Paul is working at a university. He is part of a big project, which involves 70 scientists in total. Half of them are from Europe and one-fifth are from Canada. The rest are from the USA. How many scientists in this project are from the USA?",
+  "answer_ja": "欧州出身は70÷2=35人、カナダ出身は70÷5=14人。3分類が全員を尽くすので、米国出身は70−35−14=21人である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A20P1.usa_scientist_count",
+  "graph": "work/gsm8k-sprint382-usa-scientist-count-graph.json",
+  "model_notes_ja": [
+    "欧州・カナダ・米国の3分類は互いに重ならず、70人全員を尽くす。"
+  ],
+  "steps": [
+    {
+      "id": "usa_scientist_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A20P1.usa_scientist_count",
+      "title_ja": "米国出身の科学者数",
+      "claim_ja": "欧州出身は70÷2=35人、カナダ出身は70÷5=14人。3分類が全員を尽くすので、米国出身は70−35−14=21人である。",
+      "method_ja": "全体に各割合を掛け、既知の互いに重ならない分類を全体から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "欧州・カナダ・米国の3分類は互いに重ならず、70人全員を尽くす。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "欧州出身は70÷2=35人、カナダ出身は70÷5=14人。3分類が全員を尽くすので、米国出身は70−35−14=21人である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4033,
+    "checked_model_hash": "26134c4e7c84a0d028455c6f5fa88e363490fc2e0f91cb5e14bef2fca548216b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

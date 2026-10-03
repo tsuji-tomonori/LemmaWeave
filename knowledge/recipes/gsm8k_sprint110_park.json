@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint110_park",
+  "title_ja": "家族7人の入園料とアトラクション料",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01943",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "人数、共通入園料、子ども料金、大人料金を分けて合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.park_solution",
+  "graph": "work/gsm8k-sprint110-park-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "park_people",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.park_people",
+      "title_ja": "家族は7人。",
+      "claim_ja": "家族は7人。",
+      "method_ja": "子4+親2+祖母1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "park_entrance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.park_entrance",
+      "title_ja": "入園料は35ドル。",
+      "claim_ja": "入園料は35ドル。",
+      "method_ja": "7×5。",
+      "requires_steps": [
+        "park_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "park_children",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.park_children",
+      "title_ja": "子どものアトラクション料は8ドル。",
+      "claim_ja": "子どものアトラクション料は8ドル。",
+      "method_ja": "4×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "park_adults",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.park_adults",
+      "title_ja": "親2人と祖母の料金は12ドル。",
+      "claim_ja": "親2人と祖母の料金は12ドル。",
+      "method_ja": "3×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "park_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.park_solution",
+      "title_ja": "合計55ドル。",
+      "claim_ja": "合計55ドル。",
+      "method_ja": "35+8+12。",
+      "requires_steps": [
+        "park_entrance",
+        "park_children",
+        "park_adults"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1944,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

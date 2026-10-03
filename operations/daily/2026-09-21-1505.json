@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-1500-gsm8k-66",
+  "planned_slot_local_hour": 15,
+  "planned_at": "2026-09-21T15:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "41d6dd19120f11eae4084bb4b02fe7f8f3d7c2f4",
+  "started_at": "2026-09-21T15:05:29+09:00",
+  "finished_at": "2026-09-21T15:14:46+09:00",
+  "schedule_offset_seconds": 329,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01269",
+    "external-gsm8k-main-3101c7d50724:train:01270",
+    "external-gsm8k-main-3101c7d50724:train:01271",
+    "external-gsm8k-main-3101c7d50724:train:01272",
+    "external-gsm8k-main-3101c7d50724:train:01273",
+    "external-gsm8k-main-3101c7d50724:train:01274",
+    "external-gsm8k-main-3101c7d50724:train:01275",
+    "external-gsm8k-main-3101c7d50724:train:01276",
+    "external-gsm8k-main-3101c7d50724:train:01277",
+    "external-gsm8k-main-3101c7d50724:train:01278",
+    "external-gsm8k-main-3101c7d50724:train:01279",
+    "external-gsm8k-main-3101c7d50724:train:01280",
+    "external-gsm8k-main-3101c7d50724:train:01281",
+    "external-gsm8k-main-3101c7d50724:train:01282",
+    "external-gsm8k-main-3101c7d50724:train:01283"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01269",
+    "external-gsm8k-main-3101c7d50724:train:01270",
+    "external-gsm8k-main-3101c7d50724:train:01271",
+    "external-gsm8k-main-3101c7d50724:train:01272",
+    "external-gsm8k-main-3101c7d50724:train:01273",
+    "external-gsm8k-main-3101c7d50724:train:01274",
+    "external-gsm8k-main-3101c7d50724:train:01275",
+    "external-gsm8k-main-3101c7d50724:train:01276",
+    "external-gsm8k-main-3101c7d50724:train:01277",
+    "external-gsm8k-main-3101c7d50724:train:01278",
+    "external-gsm8k-main-3101c7d50724:train:01279",
+    "external-gsm8k-main-3101c7d50724:train:01280",
+    "external-gsm8k-main-3101c7d50724:train:01281",
+    "external-gsm8k-main-3101c7d50724:train:01282",
+    "external-gsm8k-main-3101c7d50724:train:01283"
+  ],
+  "verification_pending_cumulative": {
+    "count": 770,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01283"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01269-01283",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを完走し、入力SHA・許容公理・58説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {"problem_ids": "train:01269-01273", "commit": "556e1693fc286e3d0f4a273251f0321420be7631"},
+    {"problem_ids": "train:01274-01278", "commit": "e129101f1ef14ae99d07bb5aeb4997fce7a31cb3"},
+    {"problem_ids": "train:01279-01283 and registration", "commit": "35a1f5992731941252df36ab7bd31fa7183fd7aa"}
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 58,
+    "recipe_declaration_mappings_checked": 58,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_hash": "1db2889e03133e154c895817b07463cc0acc50d48d3bcec2ccde163fd3c5551b",
+    "semantic_blockers": [
+      {"problem_id": "external-gsm8k-main-3101c7d50724:train:01273", "reason_ja": "ガム1本の価格はあるが1パック当たり本数がない。1本入り6ドルと2本入り7.5ドルを形式化した。"},
+      {"problem_id": "external-gsm8k-main-3101c7d50724:train:01277", "reason_ja": "4かごへ均等に分けた条件がない。均等なら各13個だが、不均等な分配では10個と14個が両立する。"},
+      {"problem_id": "external-gsm8k-main-3101c7d50724:train:01283", "reason_ja": "高単価作業は1時間10ドル、低単価作業は100ドルで、設問が示唆するmoreの向きと逆になる。差額90ドルと比較方向を形式化した。"}
+    ]
+  },
+  "measurements": {"elapsed_seconds": 557, "artifact_bytes": 60393, "selected": 15, "written": 15, "formal_completion_rate": 0, "local_execution_success_rate": 1, "ci_seconds": null},
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records, 15 raw questions, 15 normalized questions, and 58 declarations checked",
+    "solve_queue_write": "passed on exact PR head checkout",
+    "queue_partition": "solution_ready 518, awaiting_verification 770, pending 7504; total 8792",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_until_fixed_ci_graphs",
+    "method_recipe_render_detail": "依存グラフが未生成のためdnc2026_geometry_area_individual.json.gz読込でFileNotFoundError。検査規則は緩和していない。",
+    "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {"previous_head_sha": "41d6dd19120f11eae4084bb4b02fe7f8f3d7c2f4", "previous_run_id": null, "previous_status": "not_triggered", "accepted_as_success_evidence": false, "solution_commit_sha": "35a1f5992731941252df36ab7bd31fa7183fd7aa", "current_run_id": null, "current_run_url": null, "current_status": "pending_exact_head_ci"},
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "35a1f5992731941252df36ab7bd31fa7183fd7aa",
+  "progress_before": {"solution_ready": 518, "remaining": 8274, "verification_pending": 755},
+  "progress_after": {"solution_ready": 518, "remaining": 8274, "verification_pending": 770},
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01284",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・58個の名前付き行定理・原文ハッシュ・自己照合を保存した。条件不足3問は追加条件付き解・反例・比較方向を明示した。"
+}

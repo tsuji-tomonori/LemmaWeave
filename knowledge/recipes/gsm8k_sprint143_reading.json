@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint143_reading",
+  "title_ja": "本と雑誌の購入額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02430",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "本は9冊と7冊で各11ドル、雑誌3冊は各1ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.reading_solution",
+  "graph": "work/gsm8k-sprint143-reading-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "reading_books",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.reading_books",
+      "title_ja": "本は16冊",
+      "claim_ja": "本は16冊",
+      "method_ja": "9と7を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "本は16冊",
+      "baseline_ja": "本は16冊"
+    },
+    {
+      "id": "reading_book_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.reading_book_cost",
+      "title_ja": "本代は176ドル",
+      "claim_ja": "本代は176ドル",
+      "method_ja": "16に11を掛ける",
+      "requires_steps": [
+        "reading_books"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "本代は176ドル",
+      "baseline_ja": "本代は176ドル"
+    },
+    {
+      "id": "reading_magazine_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.reading_magazine_cost",
+      "title_ja": "雑誌代は3ドル",
+      "claim_ja": "雑誌代は3ドル",
+      "method_ja": "3に1を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "雑誌代は3ドル",
+      "baseline_ja": "雑誌代は3ドル"
+    },
+    {
+      "id": "reading_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.reading_solution",
+      "title_ja": "合計179ドル",
+      "claim_ja": "合計179ドル",
+      "method_ja": "176と3を足す",
+      "requires_steps": [
+        "reading_book_cost",
+        "reading_magazine_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計179ドル",
+      "baseline_ja": "合計179ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2431,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

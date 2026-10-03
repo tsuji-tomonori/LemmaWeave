@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint373_original_sweets",
+  "title_ja": "菓子袋の元の個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03986",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A17P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "48 children are trying to share a pack of sweets. After taking 4 sweets each, there is still a third of the original amount left. What is the original number of sweets in the pack?",
+  "answer_ja": "48人が4個ずつ取った個数は48×4=192個。残りが元の1/3なので、取った192個は元の2/3に当たる。したがって元の個数は192×3÷2=288個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A17P1.original_sweets",
+  "graph": "work/gsm8k-sprint373-original-sweets-graph.json",
+  "model_notes_ja": [
+    "各児童は4個ずつ受け取り、その後の残りは元の個数のちょうど1/3である。"
+  ],
+  "steps": [
+    {
+      "id": "original_sweets",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A17P1.original_sweets",
+      "title_ja": "菓子袋の元の個数",
+      "claim_ja": "48人が4個ずつ取った個数は48×4=192個。残りが元の1/3なので、取った192個は元の2/3に当たる。したがって元の個数は192×3÷2=288個。",
+      "method_ja": "取った量を求め、それが全体の2/3である一次方程式を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各児童は4個ずつ受け取り、その後の残りは元の個数のちょうど1/3である。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "48人が4個ずつ取った個数は48×4=192個。残りが元の1/3なので、取った192個は元の2/3に当たる。したがって元の個数は192×3÷2=288個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3987,
+    "checked_model_hash": "a2e772de3440208a2a3e9dde5bb20856ae64116367d3eb8be2a57884ac8edbc0",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

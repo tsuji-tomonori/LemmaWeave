@@ -1,0 +1,326 @@
+{
+  "date": "2026-09-28",
+  "run_id": "ci-recovery-20260928-2200-jst",
+  "planned_slot_local_hour": 22,
+  "planned_at": "2026-09-28T22:00:00+09:00",
+  "started_at": "2026-09-28T22:08:39+09:00",
+  "finished_at": "2026-09-28T22:15:24.787+09:00",
+  "schedule_offset_seconds": 519,
+  "role": "ci_evidence_recovery_and_integration",
+  "base_sha": "a5a4bcc7404c3640fa4b501820635f89b5288b44",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523",
+    "external-gsm8k-main-3101c7d50724:train:02936",
+    "external-gsm8k-main-3101c7d50724:train:02937",
+    "external-gsm8k-main-3101c7d50724:train:02938",
+    "external-gsm8k-main-3101c7d50724:train:02939",
+    "external-gsm8k-main-3101c7d50724:train:02940",
+    "external-gsm8k-main-3101c7d50724:train:02941",
+    "external-gsm8k-main-3101c7d50724:train:02942",
+    "external-gsm8k-main-3101c7d50724:train:02943",
+    "external-gsm8k-main-3101c7d50724:train:02944",
+    "external-gsm8k-main-3101c7d50724:train:02945",
+    "external-gsm8k-main-3101c7d50724:train:02946",
+    "external-gsm8k-main-3101c7d50724:train:02947",
+    "external-gsm8k-main-3101c7d50724:train:02948",
+    "external-gsm8k-main-3101c7d50724:train:02949",
+    "external-gsm8k-main-3101c7d50724:train:02950"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523",
+    "external-gsm8k-main-3101c7d50724:train:02936",
+    "external-gsm8k-main-3101c7d50724:train:02937",
+    "external-gsm8k-main-3101c7d50724:train:02938",
+    "external-gsm8k-main-3101c7d50724:train:02939",
+    "external-gsm8k-main-3101c7d50724:train:02940",
+    "external-gsm8k-main-3101c7d50724:train:02941",
+    "external-gsm8k-main-3101c7d50724:train:02942",
+    "external-gsm8k-main-3101c7d50724:train:02943",
+    "external-gsm8k-main-3101c7d50724:train:02944",
+    "external-gsm8k-main-3101c7d50724:train:02945",
+    "external-gsm8k-main-3101c7d50724:train:02946",
+    "external-gsm8k-main-3101c7d50724:train:02947",
+    "external-gsm8k-main-3101c7d50724:train:02948",
+    "external-gsm8k-main-3101c7d50724:train:02949",
+    "external-gsm8k-main-3101c7d50724:train:02950"
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00515",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00516",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00517",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00518",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00519",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00520",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00521",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00522",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00523",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02936",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02937",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02938",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02939",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02940",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02941",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02942",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02943",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02944",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02945",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02946",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02947",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02948",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02949",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02950",
+      "retry_on": "next_exact_head_fixed_lean_4_33_1_success_artifact",
+      "reason_ja": "exact-head CIは固定Lean 4.33.1で開始したが、監査対象75件の依存グラフ出力先指定欠落により全体replayが失敗し、成功証拠として取込不可。",
+      "next_action_ja": "修復コミットのexact-head CI成功後、成果物を現在入力SHAへ照合してscripts/import_evidence.pyで取り込む。"
+    }
+  ],
+  "exact_head_ci": {
+    "checked_sha": "a5a4bcc7404c3640fa4b501820635f89b5288b44",
+    "run_id": 36419952689,
+    "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36419952689",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "failure",
+    "started_at": "2026-09-28T12:08:50Z",
+    "completed_at": "2026-09-28T12:18:07Z",
+    "duration_seconds": 557,
+    "lean_version": "4.33.1",
+    "lake_version": "5.0.0",
+    "toolchain_setup": "success",
+    "mathlib_cache_restore": "success",
+    "replay_exit_code": 1,
+    "failed_child_run": "runs/20260928T121737-48cb500a/run.json",
+    "failure_code": "missing_graph_directives",
+    "missing_directive_recipe_count": 75,
+    "affected_lean_files": [
+      "tests/lean/GSM8KSprint0928A15.lean",
+      "tests/lean/GSM8KSprint0928A16.lean",
+      "tests/lean/GSM8KSprint0928A18.lean",
+      "tests/lean/GSM8KSprint0928A19.lean",
+      "tests/lean/GSM8KSprint0928A20.lean"
+    ],
+    "artifact": {
+      "id": 10968649820,
+      "name": "lean-evidence-a5a4bcc7404c3640fa4b501820635f89b5288b44",
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36419952689/artifacts/10968649820",
+      "size_bytes": 212658077,
+      "sha256": "3608677897021b1f46b4b1d9e32e51af3dc996241e17737251d00e561f7a4ea0",
+      "expires_at": "2026-10-12T12:18:03Z",
+      "accepted_for_import": false,
+      "rejection_reason_ja": "全体replay失敗のため成功証拠ではない。"
+    }
+  },
+  "visibility_correction": {
+    "previous_record": "operations/daily/2026-09-28-2104.json",
+    "prior_claim": "exact_head_workflow_run_count=0",
+    "corrected_claim": "push eventのexact-head run #36419952689が1件存在しfailure",
+    "cause_ja": "以前の取得方法がpull_requestイベントのworkflow runだけを返し、pushイベントを除外していた。",
+    "source": "GitHub Actions REST runs?head_sha=a5a4bcc7404c3640fa4b501820635f89b5288b44"
+  },
+  "repair": {
+    "type": "restore_required_lw_dependency_graph_output_paths",
+    "affected_recipe_count": 75,
+    "changed_files": [
+      {
+        "path": "tests/lean/GSM8KSprint0928A15.lean",
+        "recipe_count": 15
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0928A16.lean",
+        "recipe_count": 15
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0928A18.lean",
+        "recipe_count": 15
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0928A19.lean",
+        "recipe_count": 15
+      },
+      {
+        "path": "tests/lean/GSM8KSprint0928A20.lean",
+        "recipe_count": 15
+      }
+    ],
+    "static_validation": "75/75 recipe root and graph pairs now have exact #lw_dependencies ... to \"...\" directives",
+    "mathematical_statements_changed": false
+  },
+  "evidence_decision": {
+    "import_evidence": "not_run_failed_workflow_artifact",
+    "promoted_problem_count": 0,
+    "assurance_level": "INCONCLUSIVE",
+    "reason_ja": "固定kernel成功と宣言単位の公理・実依存証拠を含む全体成功成果物がまだない。"
+  },
+  "queue": {
+    "authoritative_snapshot": {
+      "total": 8792,
+      "solution_ready": 518,
+      "awaiting_verification": 2419,
+      "pending": 5855,
+      "remaining": 8274,
+      "deferred_count": 16
+    },
+    "promotion_count": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "checked_head_sha": "a5a4bcc7404c3640fa4b501820635f89b5288b44",
+    "mergeable": true,
+    "mergeable_state": "unstable",
+    "submitted_reviews": 0,
+    "unresolved_review_threads": 0,
+    "merge_performed": false,
+    "merge_block_reason_ja": "exact-head required CI failure。修復後の新HEAD成功証拠を確認するまでマージしない。"
+  },
+  "execution_control": {
+    "new_math_work_performed": false,
+    "ci_infrastructure_repair_performed": true,
+    "force_update": false,
+    "protection_bypass_used": false,
+    "recurring_automation_disabled": false
+  }
+}

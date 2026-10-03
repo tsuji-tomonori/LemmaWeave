@@ -1,0 +1,51 @@
+{
+  "id": "gsm8k_daily39_coffee",
+  "title_ja": "コーヒーの日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00390",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "3ポンド、1ポンド40杯分を1日3杯飲む。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914E.coffee_solution",
+  "graph": "work/gsm8k-daily39-coffee-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914E.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "毎日同量を飲み最後まで同じ抽出量。"
+  ],
+  "steps": [
+    {
+      "id": "coffee_cups",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.coffee_cups",
+      "title_ja": "総杯数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3ポンド、各40杯。",
+      "conclusion_ja": "120杯。",
+      "baseline_ja": "単位数×単位当たり量。"
+    },
+    {
+      "id": "coffee_days",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914E.coffee_days",
+      "title_ja": "日数",
+      "requires_steps": [
+        "coffee_cups"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "120杯を1日3杯。",
+      "conclusion_ja": "40日。",
+      "baseline_ja": "総量=日量×日数。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 391,
+    "checked_model_hash": "1d7e9c846015dbd622f541ddd3274ab243abb629ea52d275f4d638dff0721b06",
+    "checks_ja": [
+      "原文の数量関係、単位、問いと結論を照合した。"
+    ]
+  }
+}

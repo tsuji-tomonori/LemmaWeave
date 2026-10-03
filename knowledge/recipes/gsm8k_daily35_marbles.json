@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily35_marbles","title_ja":"二段階で失ったビー玉の元の個数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00344","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"路上で60%、残りの半分を下水へ失い、20個残ったときの最初の個数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914A.marbles_solution","graph":"work/gsm8k-daily35-marbles-graph.json","lean_file":"tests/lean/GSM8KDaily0914A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["割合は順に適用し、下水へ失う直前の残りを基準に半分を取る。"],
+  "steps":[
+    {"id":"marbles_after_street","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.marbles_after_street","title_ja":"下水へ失う前の個数を戻す","requires_steps":[],"uses_nodes":[],"condition_ja":"下水へ残りの半分を失った後が20個。","conclusion_ja":"下水へ失う前は40個で、失ったのは20個。","baseline_ja":"半分が20なら全体は20×2とする。"},
+    {"id":"marbles_start","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.marbles_start","title_ja":"最初の個数を求める","requires_steps":["marbles_after_street"],"uses_nodes":[],"condition_ja":"路上で60%失ったので40個は最初の40%。","conclusion_ja":"最初は100個。","baseline_ja":"40÷0.4を、5×残り=2×最初の整数関係で解く。"},
+    {"id":"marbles_losses","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.marbles_losses","title_ja":"各段階の個数を照合する","requires_steps":["marbles_after_street","marbles_start"],"uses_nodes":[],"condition_ja":"最初100個から60%を路上で失い、その残りの半分を下水へ失う。","conclusion_ja":"路上60個、下水20個を失い20個残る。","baseline_ja":"各段階の保存関係を照合する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":345,"checked_model_hash":"355a816ac7e4f5c79fe632b02995b66c3d07dd599393faa1dfce717b3ebfcbcf","checks_ja":["60%と半分を同じ初期値へ同時適用せず、二段階の順序で原文と照合した。"]}
+}

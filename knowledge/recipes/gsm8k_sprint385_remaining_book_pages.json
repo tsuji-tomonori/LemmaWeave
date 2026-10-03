@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint385_remaining_book_pages",
+  "title_ja": "本の残りページ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04049",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A02R1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ethan is reading a sci-fi book that has 360 pages. He read 40 pages on Saturday morning and another 10 pages at night. The next day he read twice the total pages as on Saturday. How many pages does he have left to read?",
+  "answer_ja": "土曜日は40+10=50ページ読んだ。翌日はその2倍で100ページ。合計150ページ読んだので、残りは360−150=210ページである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A02R1.remaining_book_pages",
+  "graph": "work/gsm8k-sprint385-remaining-book-pages-graph.json",
+  "model_notes_ja": [
+    "the next day は土曜日の翌日で、その日に読んだ総ページ数は土曜日の総数の2倍である。"
+  ],
+  "steps": [
+    {
+      "id": "remaining_book_pages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A02R1.remaining_book_pages",
+      "title_ja": "本の残りページ数",
+      "claim_ja": "土曜日は40+10=50ページ読んだ。翌日はその2倍で100ページ。合計150ページ読んだので、残りは360−150=210ページである。",
+      "method_ja": "the next day は土曜日の翌日で、その日に読んだ総ページ数は土曜日の総数の2倍である。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "the next day は土曜日の翌日で、その日に読んだ総ページ数は土曜日の総数の2倍である。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "土曜日は40+10=50ページ読んだ。翌日はその2倍で100ページ。合計150ページ読んだので、残りは360−150=210ページである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4050,
+    "checked_model_hash": "17904e8bb30fa482ed0620fd2f95f284f95995454b76bf40b6509a50bc086c15",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

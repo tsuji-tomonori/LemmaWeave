@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint129_circus",
+  "title_ja": "サーカスで使ったチケット",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02227",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jenは5枚必要な射撃を2回、Russelは3枚必要な回転木馬を3回利用した。合計を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.circus_solution",
+  "graph": "work/gsm8k-sprint129-circus-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "circus_jen",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.circus_jen",
+      "title_ja": "Jenは10枚",
+      "claim_ja": "Jenは10枚",
+      "method_ja": "5枚を2回分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Jenは10枚",
+      "baseline_ja": "Jenは10枚"
+    },
+    {
+      "id": "circus_russel",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.circus_russel",
+      "title_ja": "Russelは9枚",
+      "claim_ja": "Russelは9枚",
+      "method_ja": "3枚を3回分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Russelは9枚",
+      "baseline_ja": "Russelは9枚"
+    },
+    {
+      "id": "circus_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.circus_solution",
+      "title_ja": "合計19枚",
+      "claim_ja": "合計19枚",
+      "method_ja": "10枚と9枚を足す",
+      "requires_steps": [
+        "circus_jen",
+        "circus_russel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計19枚",
+      "baseline_ja": "合計19枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2228,
+    "checked_model_hash": "13f3fd6d8fb4e423b9fcfe6fe744d66bdf53e12e65ec6e255bd35e6de12aeb35",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

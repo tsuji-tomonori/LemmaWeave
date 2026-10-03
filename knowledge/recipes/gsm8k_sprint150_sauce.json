@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint150_sauce",
+  "title_ja": "ホットソースがもつ日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02537",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1クォートより2オンス少ない瓶から、0.5オンスを1回分として毎日3回分使う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A05.sauce_solution",
+  "graph": "work/gsm8k-sprint150-sauce-graph.json",
+  "model_notes_ja": [
+    "0.5オンスを1単位とする半オンス単位で整数化する。1クォートは32オンス、すなわち64半オンスである。"
+  ],
+  "steps": [
+    {
+      "id": "sauce_jar",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.sauce_jar",
+      "title_ja": "瓶は30オンス、すなわち60半オンス",
+      "claim_ja": "瓶は30オンス、すなわち60半オンス",
+      "method_ja": "32オンスから2オンスを引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "瓶は30オンス、すなわち60半オンス",
+      "baseline_ja": "瓶は30オンス、すなわち60半オンス"
+    },
+    {
+      "id": "sauce_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.sauce_daily",
+      "title_ja": "1日3半オンス、すなわち1.5オンス使う",
+      "claim_ja": "1日3半オンス、すなわち1.5オンス使う",
+      "method_ja": "0.5オンスを3回分掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "1日3半オンス、すなわち1.5オンス使う",
+      "baseline_ja": "1日3半オンス、すなわち1.5オンス使う"
+    },
+    {
+      "id": "sauce_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A05.sauce_solution",
+      "title_ja": "20日もつ",
+      "claim_ja": "20日もつ",
+      "method_ja": "60半オンスを1日3半オンスで等分する",
+      "requires_steps": [
+        "sauce_jar",
+        "sauce_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "20日もつ",
+      "baseline_ja": "20日もつ"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2538,
+    "checked_model_hash": "d22ff5dac8369c5bb0cf3b6dc40dd25b92362c75e000ad1567feb652ca63ea2f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

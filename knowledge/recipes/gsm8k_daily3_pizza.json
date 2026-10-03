@@ -1,0 +1,13 @@
+{
+  "id":"gsm8k_daily3_pizza","title_ja":"4人のピザの未食部分を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00030","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"各4切れのピザを4人が買い、2人は50%、2人は75%食べた。残りは何切れか。","root":"LemmaWeave.Tests.GSM8KDaily0907C.pizza_solution","graph":"work/gsm8k-daily3-pizza-graph.json","lean_file":"tests/lean/GSM8KDaily0907C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model",
+  "counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["AnnとCateについて原文のthe pizzasは各自のピザを指すと読む。4切れなので50%・75%とも整数切れになる。"],
+  "steps":[
+    {"id":"pizza_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.pizza_total","title_ja":"全切れ数","requires_steps":[],"uses_nodes":[],"condition_ja":"4人が各4切れのピザを持つ。","conclusion_ja":"全部で16切れ。","baseline_ja":"中学校までの乗法。"},
+    {"id":"pizza_bill_dale","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.pizza_bill_dale","title_ja":"BillとDale","requires_steps":[],"uses_nodes":[],"condition_ja":"2人が各4切れの50%を食べる。","conclusion_ja":"2×4×1/2=4切れ。","baseline_ja":"中学校までの割合。"},
+    {"id":"pizza_ann_cate","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.pizza_ann_cate","title_ja":"AnnとCate","requires_steps":[],"uses_nodes":[],"condition_ja":"2人が各4切れの75%を食べる。","conclusion_ja":"2×4×3/4=6切れ。","baseline_ja":"中学校までの割合。"},
+    {"id":"pizza_eaten","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.pizza_eaten","title_ja":"食べた合計","requires_steps":["pizza_bill_dale","pizza_ann_cate"],"uses_nodes":[],"condition_ja":"2組は別の人のピザ。","conclusion_ja":"4+6=10切れ。","baseline_ja":"中学校までの加法。"},
+    {"id":"pizza_uneaten","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.pizza_uneaten","title_ja":"未食部分","requires_steps":["pizza_total","pizza_eaten"],"uses_nodes":[],"condition_ja":"全16切れから食べた10切れを引く。","conclusion_ja":"6切れ残る。","baseline_ja":"中学校までの減法。"},
+    {"id":"pizza_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907C.pizza_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"全16、各組4・6、食べた10、残り6。","conclusion_ja":"全条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":31,"checked_model_hash":"4c6fae1d26f4bd2b4ccf8fe3b82b58372e6a731d0de84fa73b594ece6dca72d1","checks_ja":["各人1枚・各4切れとし、人物群ごとの割合を別々に適用した。"]}
+}

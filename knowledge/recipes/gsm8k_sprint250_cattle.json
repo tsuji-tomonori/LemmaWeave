@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint250_cattle",
+  "title_ja": "2年後の牛の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03294",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A06P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "毎年その時点の半数だけ増える。",
+  "answer_ja": "450頭",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A06P3.cattle_after_two",
+  "graph": "work/gsm8k-sprint250-cattle-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cattle_after_one",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P3.cattle_after_one",
+      "title_ja": "1年後は300頭。",
+      "claim_ja": "1年後は300頭。",
+      "method_ja": "200+200/2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "初め200頭。",
+      "conclusion_ja": "300頭。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cattle_after_two",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P3.cattle_after_two",
+      "title_ja": "2年後は450頭。",
+      "claim_ja": "2年後は450頭。",
+      "method_ja": "300+300/2。",
+      "requires_steps": [
+        "cattle_after_one"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2年目は1年後の頭数を基準。",
+      "conclusion_ja": "450頭。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3295,
+    "checked_model_hash": "484a85f1cc4d45ce06123a28c0cedc0ae4e3bd823de0f0f40c80d38446fcc670",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

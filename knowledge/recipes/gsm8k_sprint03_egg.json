@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_sprint03_egg","title_ja":"卵3ダースの代金","problem_id":"external-gsm8k-main-3101c7d50724:train:00535","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"3ダースを個数に直し、1個50セントの代金を求める。","root":"LemmaWeave.Tests.GSM8KSprint0919A03.egg_solution","graph":"work/gsm8k-sprint03-egg-graph.json","lean_file":"tests/lean/GSM8KSprint0919A03.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["金額はセントで統一し、1800セントを18ドルと読む。"],
+  "steps":[
+    {"id":"egg_count","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A03.egg_count","title_ja":"卵の個数","requires_steps":[],"uses_nodes":[],"condition_ja":"3ダース、1ダース12個。","conclusion_ja":"36個。","baseline_ja":"ダース数×12。"},
+    {"id":"egg_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A03.egg_total","title_ja":"支払額","requires_steps":["egg_count"],"uses_nodes":[],"condition_ja":"36個を1個50セントで買う。","conclusion_ja":"1800セント、すなわち18ドル。","baseline_ja":"単価×数量。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":536,"checked_model_hash":"f17b7e1bcf601d1468679e3f5a4e23b093925978f614b88bfd31c85035bc4a4e","checks_ja":["ダース換算とドル・セント換算を照合した。"]}
+}

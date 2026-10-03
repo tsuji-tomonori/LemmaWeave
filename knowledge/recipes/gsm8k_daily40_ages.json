@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily40_ages","title_ja":"3人の平均年齢","problem_id":"external-gsm8k-main-3101c7d50724:train:00403","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"Kimikoを基準にOmiとArletteの年齢を求め、3人の平均を計算する。","root":"LemmaWeave.Tests.GSM8KDaily0915A.ages_solution","graph":"work/gsm8k-daily40-ages-graph.json","lean_file":"tests/lean/GSM8KDaily0915A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["3/4 timesをKimikoの年齢の3/4と解釈する。"],
+  "steps":[
+    {"id":"ages_individual","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.ages_individual","title_ja":"2人の年齢","requires_steps":[],"uses_nodes":[],"condition_ja":"Kimikoは28歳、Omiは2倍、Arletteは3/4倍。","conclusion_ja":"Omiは56歳、Arletteは21歳。","baseline_ja":"基準年齢に倍率を掛ける。"},
+    {"id":"ages_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.ages_total","title_ja":"年齢の合計","requires_steps":["ages_individual"],"uses_nodes":[],"condition_ja":"28、56、21歳を足す。","conclusion_ja":"合計105歳。","baseline_ja":"3人の年齢を加える。"},
+    {"id":"ages_average","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.ages_solution","title_ja":"平均年齢","requires_steps":["ages_individual","ages_total"],"uses_nodes":[],"condition_ja":"合計105歳を3人で等分する。","conclusion_ja":"平均35歳。","baseline_ja":"平均=合計÷個数。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":404,"checked_model_hash":"b1c735783c0e2fb3e158ebd21f9dd4b78fa11ad24991ed80e51465c2cc5b3451","checks_ja":["人物、倍率、基準年齢、平均の対象人数を照合した。"]}
+}

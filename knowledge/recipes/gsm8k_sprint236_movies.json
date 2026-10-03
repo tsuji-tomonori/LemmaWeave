@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint236_movies","title_ja":"映画の平均購入価格","problem_id":"external-gsm8k-main-3101c7d50724:train:03225","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A02P1.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"DVD8本を各12ドル、Blu-ray4本を各18ドルで買ったときの1本当たり平均価格を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.movies_average","graph":"work/gsm8k-sprint236-movies-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"movies_count","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.movies_count","title_ja":"映画は12本。","claim_ja":"8+4=12本。","method_ja":"二形式の購入本数を合計する。","requires_steps":[],"uses_nodes":[],"condition_ja":"DVDとBlu-rayの購入本数を数える。","conclusion_ja":"12本。","baseline_ja":"自然数の加法。"},
+    {"id":"movies_cost","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.movies_cost","title_ja":"総額は168ドル。","claim_ja":"8×12+4×18=96+72=168ドル。","method_ja":"各形式の本数×単価を合計する。","requires_steps":[],"uses_nodes":[],"condition_ja":"価格は1本当たりドル。","conclusion_ja":"168ドル。","baseline_ja":"金額の乗法と加法。"},
+    {"id":"movies_average","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.movies_average","title_ja":"平均は14ドル。","claim_ja":"168ドル÷12本=14ドル/本。","method_ja":"平均×本数=総額を解く。","requires_steps":["movies_count","movies_cost"],"uses_nodes":[],"condition_ja":"本数12は0でなく、総額は割り切れる。","conclusion_ja":"平均価格14ドル。","baseline_ja":"算術平均。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3226,"checked_model_hash":"94f28d28420d1048c78b6087a7da7206daf5b9ddc10222e76b2456e35b3c7a24","checks_ja":["本数・単価・平均の分母を原題と照合した。","全説明行をLean定理に対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

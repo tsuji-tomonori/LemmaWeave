@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint103_food",
+  "title_ja": "食品銀行への寄付総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01824",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各社の寄付数をFoster Farmsの45羽から順に求めて加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.food_solution",
+  "graph": "work/gsm8k-sprint103-food-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "food_water",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.food_water",
+      "title_ja": "American Summitsは90本。",
+      "claim_ja": "American Summitsは90本。",
+      "method_ja": "45×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "鶏45羽の2倍。",
+      "conclusion_ja": "90。",
+      "baseline_ja": "90。"
+    },
+    {
+      "id": "food_hormel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.food_hormel",
+      "title_ja": "Hormelは135個。",
+      "claim_ja": "Hormelは135個。",
+      "method_ja": "45×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "鶏45羽の3倍。",
+      "conclusion_ja": "135。",
+      "baseline_ja": "135。"
+    },
+    {
+      "id": "food_boudin",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.food_boudin",
+      "title_ja": "Boudinは45個。",
+      "claim_ja": "Boudinは45個。",
+      "method_ja": "135÷3。",
+      "requires_steps": [
+        "food_hormel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Hormelの3分の1。",
+      "conclusion_ja": "45。",
+      "baseline_ja": "45。"
+    },
+    {
+      "id": "food_del_monte",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.food_del_monte",
+      "title_ja": "Del Monteは60本。",
+      "claim_ja": "Del Monteは60本。",
+      "method_ja": "90−30。",
+      "requires_steps": [
+        "food_water"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "American Summitsより30本少ない。",
+      "conclusion_ja": "60。",
+      "baseline_ja": "60。"
+    },
+    {
+      "id": "food_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.food_solution",
+      "title_ja": "寄付総数は375個。",
+      "claim_ja": "寄付総数は375個。",
+      "method_ja": "45+90+135+45+60。",
+      "requires_steps": [
+        "food_water",
+        "food_hormel",
+        "food_boudin",
+        "food_del_monte"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各食品を1品として数える。",
+      "conclusion_ja": "375。",
+      "baseline_ja": "375。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1825,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

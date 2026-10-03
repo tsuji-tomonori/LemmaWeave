@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint292_seed_gallons",
+  "title_ja": "芝種の使用量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03583",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A03P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "種は肥料の3倍で、両方の合計が60ガロンのときの種の量。",
+  "answer_ja": "45ガロン",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.seed_gallons",
+  "graph": "work/gsm8k-sprint292-seed-gallons-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fertilizer_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.fertilizer_gallons",
+      "title_ja": "肥料は15ガロンである。",
+      "claim_ja": "肥料は15ガロンである。",
+      "method_ja": "種:肥料=3:1なので合計4等分の1つが肥料であり、60÷4を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "肥料は15ガロンである。"
+    },
+    {
+      "id": "seed_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.seed_gallons",
+      "title_ja": "種は45ガロンである。",
+      "claim_ja": "種は45ガロンである。",
+      "method_ja": "肥料15ガロンの3倍を求める。",
+      "requires_steps": [
+        "fertilizer_gallons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "種は45ガロンである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3584,
+    "checked_model_hash": "de05f56d2abca41a07786da3e75d3b4a33dc8d9c863d26a5abfa63e94ebbb856",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

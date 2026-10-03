@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily37_books","title_ja":"4倍の蔵書数を合計する","problem_id":"external-gsm8k-main-3101c7d50724:train:00364","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Stuが9冊、AlbertがStuの4倍の本を持つとき、2人の合計冊数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914C.books_solution","graph":"work/gsm8k-daily37-books-graph.json","lean_file":"tests/lean/GSM8KDaily0914C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["4倍はStuの冊数9に倍率4を掛ける意味とする。"],
+  "steps":[
+    {"id":"books_albert","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914C.books_albert","title_ja":"Albertの冊数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"AlbertはStuの4倍で、Stuは9冊。","conclusion_ja":"Albertは4×9=36冊。","baseline_ja":"倍の量は基準量に倍率を掛ける。"},
+    {"id":"books_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914C.books_total","title_ja":"2人分を合計する","requires_steps":["books_albert"],"uses_nodes":[],"condition_ja":"Stuの9冊とAlbertの36冊は別々の蔵書。","conclusion_ja":"合計は9+36=45冊。","baseline_ja":"重ならない二つの個数を加える。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":365,"checked_model_hash":"3c832a116f4b0451923e89c123e3bd803379cba62a4e594c0d7c626448442596","checks_ja":["原文の4倍関係と合計対象を照合した。"]}
+}

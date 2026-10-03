@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint241_healing","title_ja":"皮膚移植を含む回復期間","problem_id":"external-gsm8k-main-3101c7d50724:train:03247","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P3.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"移植まで4週間、その後は4週間より50%長く回復にかかる総期間を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.healing_total","graph":"work/gsm8k-sprint241-healing-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"healing_graft","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.healing_graft","title_ja":"移植後は6週間。","claim_ja":"4×1.5=6週間。","method_ja":"50%長いので元期間の3/2、2×期間=3×4を解く。","requires_steps":[],"uses_nodes":[],"condition_ja":"比較基準は移植前の4週間。","conclusion_ja":"6週間。","baseline_ja":"百分率増加。"},
+    {"id":"healing_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.healing_total","title_ja":"合計10週間。","claim_ja":"4+6=10。","method_ja":"移植までと移植後の期間を加える。","requires_steps":["healing_graft"],"uses_nodes":[],"condition_ja":"二期間は連続する。","conclusion_ja":"10週間。","baseline_ja":"期間の加法。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3248,"checked_model_hash":"6612ca53c045c8c13f14e546df5c04fca6510a697aeb42de38aaaeed1fb54173","checks_ja":["4週間・50%長い・総期間を照合した。","全説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

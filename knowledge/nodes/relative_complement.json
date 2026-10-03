@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "relative_complement",
+  "name_ja": "全体集合に対する補集合",
+  "statement_ja": "全体集合 U と部分集合 A に対し、相対補集合の要素 k は、k∈U かつ k∉A を満たす。",
+  "assumptions": [
+    "A ⊆ U"
+  ],
+  "kind": "definition",
+  "lean_declarations": [
+    "LemmaWeave.Problems.DNC2026M1.InComplement"
+  ],
+  "prerequisite_nodes": [],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "Actual exported types compared with the Japanese claim; remaining foundational prerequisites are not discarded."
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null
+  },
+  "explanation_outline_ja": [
+    "否定だけでは全体集合外の要素も入る。",
+    "共通部分や差集合の要素条件を論理式に分解する。"
+  ],
+  "unexpanded": [
+    "項目ごとの公式学習指導要領との照合",
+    "前提宣言の推移的な数学内容の展開"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "declared_but_not_in_graph": [],
+  "actual_declaration_types": {
+    "LemmaWeave.Problems.DNC2026M1.InComplement": "ℕ → ℕ → Prop"
+  },
+  "declaration_type_sha256": {
+    "LemmaWeave.Problems.DNC2026M1.InComplement": "a0b510baf20d1b3ffb64c496ea019b4a42f7bb80699b8960366bddd782dbd787"
+  }
+}

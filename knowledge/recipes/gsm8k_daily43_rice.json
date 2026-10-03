@@ -1,0 +1,12 @@
+{
+  "id":"gsm8k_daily43_rice","title_ja":"米の残量と原文・参照解の解釈差","problem_id":"external-gsm8k-main-3101c7d50724:train:00424","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"朝に9/10キログラムを炊き、残りの1/4を夕方に炊いた後の米をグラムで求める。","root":"LemmaWeave.Tests.GSM8KDaily0915D.rice_solution","graph":"work/gsm8k-daily43-rice-graph.json","lean_file":"tests/lean/GSM8KDaily0915D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["原文は朝に9/10キログラムを炊いたと述べるため、主結果は6825グラム。参考解答が採った『全体の9/10を炊く』という別解釈では750グラムになることも、条件を区別して示す。"],
+  "steps":[
+    {"id":"rice_literal_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.rice_literal_remaining","title_ja":"朝の残量","requires_steps":[],"uses_nodes":[],"condition_ja":"開始時は10キログラムで、朝に9/10キログラムを炊く。","conclusion_ja":"朝の残量は10−9/10=91/10キログラム。","baseline_ja":"分数の減法。"},
+    {"id":"rice_literal_evening","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.rice_literal_evening","title_ja":"夕方に炊く量と残量","requires_steps":["rice_literal_remaining"],"uses_nodes":[],"condition_ja":"朝の残り91/10キログラムの1/4を夕方に炊く。","conclusion_ja":"夕方に91/40キログラム炊き、273/40キログラム残る。","baseline_ja":"ある量の分数倍と、全体から部分を引く計算。"},
+    {"id":"rice_literal_grams","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.rice_literal_grams","title_ja":"グラム換算","requires_steps":["rice_literal_remaining","rice_literal_evening"],"uses_nodes":[],"condition_ja":"残量は273/40キログラムで、1キログラムは1000グラム。","conclusion_ja":"原文どおりの残量は6825グラム。","baseline_ja":"単位換算ではキログラム数に1000を掛ける。"},
+    {"id":"rice_alternative","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.rice_solution","title_ja":"参照解の別解釈","requires_steps":["rice_literal_remaining","rice_literal_evening","rice_literal_grams"],"uses_nodes":[],"condition_ja":"朝の9/10を『9/10キログラム』でなく『全体の9/10』と追加解釈する場合。","conclusion_ja":"この別条件では朝に1キログラム残り、その3/4である750グラムが残る。主結果6825グラムとは区別する。","baseline_ja":"割合の残りと単位換算。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":425,"checked_model_hash":"a6933f19dea1184a4024944d3d5c0521ede1267552f17298f26c6083f9418f8e","checks_ja":["原文の数量単位がkilogramsであり、of the riceとは書かれていないことを再読した。","原文どおりの主結果と参考解答の追加解釈を別のLeanモデルで照合した。"]}
+}

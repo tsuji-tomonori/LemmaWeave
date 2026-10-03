@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint341_syndrome_patients",
+  "title_ja": "ZYX症候群と診断される見込み人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03830",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A psychologist believes one in every four people has a disorder he calls ZYX syndrome. The clinic where he works has recently doubled its previous number of 26 patients. How many patients is the psychologist likely to diagnose with ZYX syndrome?",
+  "answer_ja": "患者は26人の2倍で52人。4人に1人という仮定を適用すると52÷4=13人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A01P2.syndrome_patients",
+  "graph": "work/gsm8k-sprint341-syndrome-patients-graph.json",
+  "model_notes_ja": [
+    "one in every fourを現在の52人へ一様に適用し、人数の期待的な見積りとする。"
+  ],
+  "steps": [
+    {
+      "id": "syndrome_patients",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A01P2.syndrome_patients",
+      "title_ja": "ZYX症候群と診断される見込み人数",
+      "claim_ja": "患者は26人の2倍で52人。4人に1人という仮定を適用すると52÷4=13人。",
+      "method_ja": "患者数を倍にし4で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "52は4で割り切れる。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "13人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3831,
+    "checked_model_hash": "3e95ef9500685ba134265487fc829b0bf39fea63a369c859c1545bd2672779a5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

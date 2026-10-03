@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily21_lions","title_ja":"1年前のライオン数","problem_id":"external-gsm8k-main-3101c7d50724:train:00206","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"毎月5頭生まれ1頭死に、1年後148頭のときの初期頭数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910E.lions_solution","graph":"work/gsm8k-daily21-lions-graph.json","lean_file":"tests/lean/GSM8KDaily0910E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["出生率と死亡率が毎月一定で、ほかの増減がない。"],
+  "steps":[
+    {"id":"lions_net","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.lions_net","title_ja":"毎月の純増","requires_steps":[],"uses_nodes":[],"condition_ja":"毎月5頭生まれ、1頭死ぬ。","conclusion_ja":"毎月の純増は5−1=4頭。","baseline_ja":"増加量と減少量の差。"},
+    {"id":"lions_increase","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.lions_increase","title_ja":"1年間の純増","requires_steps":["lions_net"],"uses_nodes":[],"condition_ja":"毎月4頭の純増が12か月続く。","conclusion_ja":"1年間の純増は4×12=48頭。","baseline_ja":"一定率の反復を乗法で表す。"},
+    {"id":"lions_initial","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.lions_initial","title_ja":"初期頭数","requires_steps":["lions_increase"],"uses_nodes":[],"condition_ja":"最終148頭は初期頭数に48頭を加えたもの。","conclusion_ja":"答えは148−48=100頭。","baseline_ja":"加法関係の逆算。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":207,"checked_model_hash":"31bcdf0c5d3a5dea5a167757075342d7c667364bb651d24831fc06828ac80874","checks_ja":["月当たりの出生・死亡、12か月、最終頭数を照合し、一定率の条件を明示した。"]}
+}

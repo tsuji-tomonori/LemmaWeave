@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint291_father_seedlings",
+  "title_ja": "父が植えた苗数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03580",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A02P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Remiが初日200本、2日目にその2倍を植え、2日間の総移植数1200本のとき父の担当数。",
+  "answer_ja": "600本",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.father_seedlings",
+  "graph": "work/gsm8k-sprint291-father-seedlings-graph.json",
+  "model_notes_ja": [
+    "原文の2日目の「he planted twice」をRemiが400本植えた意味と読み、父の本数を総数の残りとして明示した。父との合計が400本という別読解は追加しない。"
+  ],
+  "steps": [
+    {
+      "id": "remi_second_day_seedlings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.remi_second_day_seedlings",
+      "title_ja": "Remiは2日目に400本植えた。",
+      "claim_ja": "Remiは2日目に400本植えた。",
+      "method_ja": "初日200本を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Remiは2日目に400本植えた。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "father_seedlings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.father_seedlings",
+      "title_ja": "父は600本植えた。",
+      "claim_ja": "父は600本植えた。",
+      "method_ja": "総数1200本をRemiの初日200本、2日目400本、父の本数に分ける。",
+      "requires_steps": [
+        "remi_second_day_seedlings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "父は600本植えた。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3581,
+    "checked_model_hash": "df34a661be2820c7d47328ef0bd47c1b48df754bf039c3cb24153620a5073318",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

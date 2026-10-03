@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-13",
+  "started_at": "2026-09-13T17:56:31+09:00",
+  "finished_at": "2026-09-13T19:28:40+09:00",
+  "target_count": 10,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00334",
+    "external-gsm8k-main-3101c7d50724:train:00335",
+    "external-gsm8k-main-3101c7d50724:train:00336",
+    "external-gsm8k-main-3101c7d50724:train:00337",
+    "external-gsm8k-main-3101c7d50724:train:00338",
+    "external-gsm8k-main-3101c7d50724:train:00339",
+    "external-gsm8k-main-3101c7d50724:train:00340",
+    "external-gsm8k-main-3101c7d50724:train:00341",
+    "external-gsm8k-main-3101c7d50724:train:00342",
+    "external-gsm8k-main-3101c7d50724:train:00343"
+  ],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00334",
+    "external-gsm8k-main-3101c7d50724:train:00335",
+    "external-gsm8k-main-3101c7d50724:train:00336",
+    "external-gsm8k-main-3101c7d50724:train:00337",
+    "external-gsm8k-main-3101c7d50724:train:00338",
+    "external-gsm8k-main-3101c7d50724:train:00339",
+    "external-gsm8k-main-3101c7d50724:train:00340",
+    "external-gsm8k-main-3101c7d50724:train:00341",
+    "external-gsm8k-main-3101c7d50724:train:00342",
+    "external-gsm8k-main-3101c7d50724:train:00343"
+  ],
+  "deferred": [],
+  "authored_explanation_lines": 34,
+  "status": "completed",
+  "previous_ci_recovered": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/34739747641",
+  "previous_head": "19f13cf70225e8b59578be08c3bf900b9a59ffc7",
+  "ci": [
+    {
+      "run_id": 34749304316,
+      "commit": "d43d36ae2904c5a1d7287cdf65da913150f94b4d",
+      "conclusion": "failure",
+      "artifact_id": 10315003158,
+      "artifact_sha256": "4009b5a305d515007bd039557534b727093f61bd49fa3b51936b5dc7c25e9676",
+      "reason_ja": "新モデルにMathlib.Data.Nat.Basicのimportが不足していた。"
+    },
+    {
+      "run_id": 34749634563,
+      "commit": "66431abfdb7c7eac3f44b7531ed46f2c9b656a2d",
+      "conclusion": "failure",
+      "artifact_id": 10315408548,
+      "artifact_sha256": "3fae8f2b0b7903775f5b0d78c427ab8fc50e8f8081a60b037f8ab684741ed834",
+      "reason_ja": "Lean証明と公理監査は通過したが、凍結モデルの意味ハッシュ形式が不一致だった。"
+    },
+    {
+      "run_id": 34750607135,
+      "commit": "04a8166f53b99aca57d9ac0937afa8e297121363",
+      "conclusion": "success",
+      "artifact_id": 10316650302,
+      "artifact_sha256": "256539447a8327f83f1390a82112562106279752fd67e9ebf3e1a279c4dcc816"
+    }
+  ],
+  "pr": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
+  "commit": "04a8166f53b99aca57d9ac0937afa8e297121363",
+  "evidence_commit": "3a3b05757792bdb039713a85eeb8b560060a1264",
+  "progress": {
+    "completed_this_run": 10,
+    "completed_today": 30,
+    "target_today": 50,
+    "solution_ready": 348,
+    "remaining": 8444,
+    "initial_target_date": "2027-03-01",
+    "measured_forecast_date": null,
+    "calibration_date": "2026-09-14"
+  },
+  "daily_shortfall": {
+    "count": 20,
+    "reason_ja": "本日の実行で3バッチ30問を完了した。最終バッチでは固定環境の全件再検証と証拠保存に加え、import不足と意味ハッシュ形式の2件を修正して再検証したため、日次計画50問には20問届かなかった。"
+  },
+  "weekly_expansion": {
+    "completed_this_run": 0,
+    "target": 6,
+    "note_ja": "高校6分野の追加出典付き問題は未実施。固定GSM8Kを高校全分野の網羅に数えない。"
+  },
+  "resume_ja": "次回は external-gsm8k-main-3101c7d50724:train:00344 から 00353 を対象とする。"
+}

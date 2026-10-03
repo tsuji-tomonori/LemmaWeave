@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint100_restaurant",
+  "title_ja": "ピザ1枚とバーガー3個の代金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01782",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ピザ代とバーガー代を別に求めて加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.restaurant_solution",
+  "graph": "work/gsm8k-sprint100-restaurant-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "restaurant_pizza",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.restaurant_pizza",
+      "title_ja": "ピザ1枚は18ドル。",
+      "claim_ja": "ピザ1枚は18ドル。",
+      "method_ja": "バーガー9ドルの2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "twice as much=2倍。",
+      "conclusion_ja": "18。",
+      "baseline_ja": "18。"
+    },
+    {
+      "id": "restaurant_burgers",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.restaurant_burgers",
+      "title_ja": "バーガー3個は27ドル。",
+      "claim_ja": "バーガー3個は27ドル。",
+      "method_ja": "3×9。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各9ドル。",
+      "conclusion_ja": "27。",
+      "baseline_ja": "27。"
+    },
+    {
+      "id": "restaurant_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.restaurant_solution",
+      "title_ja": "合計45ドル。",
+      "claim_ja": "合計45ドル。",
+      "method_ja": "18+27。",
+      "requires_steps": [
+        "restaurant_pizza",
+        "restaurant_burgers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各品目を1回加える。",
+      "conclusion_ja": "45。",
+      "baseline_ja": "45。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1783,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

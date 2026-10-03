@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint163_wages",
+  "title_ja": "2週間の通常・残業賃金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02735",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "通常時給5ドル、週40時間超は時給6ドル。44時間と48時間働いた2週間の賃金を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.wages_solution",
+  "graph": "work/gsm8k-sprint163-wages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "wages_regular",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.wages_regular",
+      "title_ja": "通常賃金は400ドル",
+      "claim_ja": "通常分400ドル",
+      "method_ja": "40時間×2週×5ドル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "通常分400ドル",
+      "baseline_ja": "通常分400ドル"
+    },
+    {
+      "id": "wages_overtime",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.wages_overtime",
+      "title_ja": "残業賃金は72ドル",
+      "claim_ja": "残業分72ドル",
+      "method_ja": "(4+8)時間×6ドル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "残業分72ドル",
+      "baseline_ja": "残業分72ドル"
+    },
+    {
+      "id": "wages_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.wages_solution",
+      "title_ja": "合計472ドル",
+      "claim_ja": "総賃金472ドル",
+      "method_ja": "400+72",
+      "requires_steps": [
+        "wages_regular",
+        "wages_overtime"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "総賃金472ドル",
+      "baseline_ja": "総賃金472ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2736,
+    "checked_model_hash": "82bd64d2ad7b9d2e0d7e0640dca9a4d3c12a9e15e2684f002e94f20163c657ad",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

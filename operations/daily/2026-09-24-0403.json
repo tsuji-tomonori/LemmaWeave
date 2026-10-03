@@ -1,0 +1,97 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T04:00+09:00-gsm8k-15-a04",
+  "scheduled_local_hour": 4,
+  "scheduled_at": "2026-09-24T04:00:00+09:00",
+  "started_at": "2026-09-24T04:03:43+09:00",
+  "finished_at": "2026-09-24T04:14:00+09:00",
+  "start_delay_seconds": 223,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "ae263d72a341598ad6fbf511cf9c64b318c7b7b3",
+  "artifact_commit": "a9f8ff4a2a458acff2d33a5b2145c7bde20917fa",
+  "selected_problem_ids": [
+    "train:01989", "train:01990", "train:01991", "train:01992", "train:01993",
+    "train:01994", "train:01995", "train:01996", "train:01997", "train:01998",
+    "train:01999", "train:02000", "train:02001", "train:02002", "train:02003"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01989", "train:01990", "train:01991", "train:01992", "train:01993",
+    "train:01994", "train:01995", "train:01996", "train:01997", "train:01998",
+    "train:01999", "train:02000", "train:02001", "train:02002", "train:02003"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:01993", "commit": "4f7d12b820e348910f4e5681fb07ce3a1c75a4ee"},
+    {"through": "train:01998", "commit": "85e345872baffc301da35c15cd2ee3e63faf7129"},
+    {"through": "train:02003", "commit": "a9f8ff4a2a458acff2d33a5b2145c7bde20917fa"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0168.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A04Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A04.lean",
+    "recipes": 15,
+    "explanation_lines": 45,
+    "named_lean_theorems": 45,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:01997は10 times more thanを慣用的な10倍と文字どおりの11倍に分離し、差60ポンドと580/11ポンドの両モデルから一意でないことを形式化した。",
+    "train:01999は参照説明の変数名誤りを修正し、Sarahの深さsについて2s+5=15から5フィートを導いた。",
+    "train:02000は参照説明の35/7=5という誤記を採用せず、1冊5ドルから最初の7冊と合計25冊を形式化した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1489,
+    "pending": 6785,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02004",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持し、1時から4時までを重複なく実行した。"
+  },
+  "ci": {
+    "last_checked_head": "ae263d72a341598ad6fbf511cf9c64b318c7b7b3",
+    "workflow_run_id": 35900687480,
+    "status": "failure",
+    "reason": "complete_replay_timeout_exit_124",
+    "accepted_as_success_evidence": false,
+    "recovery_record": "operations/ci-recovery/2026-09-24-0400.json",
+    "new_head_status": "pending_after_ledger_commit"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T04:00+09:00",
+    "scope": "train:01989-train:02003",
+    "claimed_at": "2026-09-24T04:03:43+09:00",
+    "expires_at": "2026-09-24T05:03:43+09:00",
+    "released": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint134_prom",
+  "title_ja": "プロムに来たカップル数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02295",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "123人中3人は単独参加し、残りは2人組",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.prom_solution",
+  "graph": "work/gsm8k-sprint134-prom-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "prom_paired",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.prom_paired",
+      "title_ja": "カップル参加者は120人",
+      "claim_ja": "カップル参加者は120人",
+      "method_ja": "123人から3人引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "カップル参加者は120人",
+      "baseline_ja": "カップル参加者は120人"
+    },
+    {
+      "id": "prom_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.prom_solution",
+      "title_ja": "60組来た",
+      "claim_ja": "60組来た",
+      "method_ja": "120人を2人ずつに分ける",
+      "requires_steps": [
+        "prom_paired"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "60組来た",
+      "baseline_ja": "60組来た"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2296,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

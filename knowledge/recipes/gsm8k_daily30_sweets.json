@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily30_sweets","title_ja":"半分と追加取得後の残りから元の個数を逆算","problem_id":"external-gsm8k-main-3101c7d50724:train:00298","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Jackが全体の半分と4個を取り、残り7個をPaulが取った。最初の個数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.sweets_solution","graph":"work/gsm8k-daily30-sweets-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["Jackの取得後に残った全7個をPaulが取る。"],
+  "steps":[
+    {"id":"sweets_half","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.sweets_half","title_ja":"最初の半分を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"全体Tは2H、かつT=(H+4)+7である。","conclusion_ja":"半分Hは11個。","baseline_ja":"2H=H+11という自然数一次方程式を解く。"},
+    {"id":"sweets_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.sweets_total","title_ja":"最初の全体を求める","requires_steps":["sweets_half"],"uses_nodes":[],"condition_ja":"最初の半分が11個。","conclusion_ja":"最初は22個。","baseline_ja":"全体＝2×半分。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":299,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["Jackが15個、Paulが7個を取るので22個となることを照合した。"]}
+}

@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint253_jog",
+  "title_ja": "2週間のジョギング時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03306",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "走った日数を合計し、分から時間へ換算する。",
+  "answer_ja": "4時間",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A07P3.jog_hours",
+  "graph": "work/gsm8k-sprint253-jog-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jog_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P3.jog_days",
+      "title_ja": "合計8日。",
+      "claim_ja": "合計8日。",
+      "method_ja": "3+5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "第1週3日、第2週5日。",
+      "conclusion_ja": "8日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "jog_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P3.jog_minutes",
+      "title_ja": "合計240分。",
+      "claim_ja": "合計240分。",
+      "method_ja": "8×30。",
+      "requires_steps": [
+        "jog_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1日30分。",
+      "conclusion_ja": "240分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "jog_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P3.jog_hours",
+      "title_ja": "合計4時間。",
+      "claim_ja": "合計4時間。",
+      "method_ja": "240÷60。",
+      "requires_steps": [
+        "jog_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1時間60分。",
+      "conclusion_ja": "4時間。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3307,
+    "checked_model_hash": "4dede6327fc9371a2f776e6eb5494fd8283c37c31cc33900c559ab8c16b624f7",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint260_pizza",
+  "title_ja": "2人が食べたピザの合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03342",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Donが80枚、Dariaがその2.5倍を食べるときの合計。",
+  "answer_ja": "280枚",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.pizza_total",
+  "graph": "work/gsm8k-sprint260-pizza-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pizza_daria",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.pizza_daria",
+      "title_ja": "Dariaは200枚食べる。",
+      "claim_ja": "Dariaは200枚食べる。",
+      "method_ja": "80×2.5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2.5倍を2Daria=5Donとして扱う。",
+      "conclusion_ja": "200枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pizza_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.pizza_total",
+      "title_ja": "2人の合計は280枚。",
+      "claim_ja": "2人の合計は280枚。",
+      "method_ja": "80+200。",
+      "requires_steps": [
+        "pizza_daria"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2人分を合計する。",
+      "conclusion_ja": "280枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3343,
+    "checked_model_hash": "7215defe3b292431c0361d8db0ef226c162674f9bc6bfa62bbbb2648ba23765f",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

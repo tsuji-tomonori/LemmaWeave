@@ -1,0 +1,109 @@
+{
+  "id": "gsm8k_sprint289_fleet_capacity",
+  "title_ja": "輸送バン車隊の総容量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03547",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A20P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6台のうち2台が8000ガロン、1台が30%小さく、残りが50%大きいときの総容量。",
+  "answer_ja": "57,600ガロン",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.fleet_capacity",
+  "graph": "work/gsm8k-sprint289-fleet-capacity-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "remaining_large_vans",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.remaining_large_vans",
+      "title_ja": "大型バンは3台。",
+      "claim_ja": "大型バンは3台。",
+      "method_ja": "6台から基準2台と小型1台を除く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "大型バンは3台。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "small_van_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.small_van_capacity",
+      "title_ja": "小型バンは5600ガロン。",
+      "claim_ja": "小型バンは5600ガロン。",
+      "method_ja": "8000ガロンの70%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "小型バンは5600ガロン。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "base_vans_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.base_vans_capacity",
+      "title_ja": "基準2台は16000ガロン。",
+      "claim_ja": "基準2台は16000ガロン。",
+      "method_ja": "8000ガロンを2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "基準2台は16000ガロン。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "large_van_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.large_van_capacity",
+      "title_ja": "大型1台は12000ガロン。",
+      "claim_ja": "大型1台は12000ガロン。",
+      "method_ja": "8000ガロンの150%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "大型1台は12000ガロン。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "large_vans_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.large_vans_capacity",
+      "title_ja": "大型3台は36000ガロン。",
+      "claim_ja": "大型3台は36000ガロン。",
+      "method_ja": "12000ガロンを3倍する。",
+      "requires_steps": [
+        "remaining_large_vans",
+        "large_van_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "大型3台は36000ガロン。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "fleet_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.fleet_capacity",
+      "title_ja": "総容量は57600ガロン。",
+      "claim_ja": "総容量は57600ガロン。",
+      "method_ja": "5600、16000、36000を足す。",
+      "requires_steps": [
+        "small_van_capacity",
+        "base_vans_capacity",
+        "large_vans_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "総容量は57600ガロン。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3548,
+    "checked_model_hash": "41cf00f22e5d310f4dcc6cc6c0b5176be5ec2cc241a452b35ee0f41fffab6755",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

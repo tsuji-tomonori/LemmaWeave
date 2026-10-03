@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint172_cookies","title_ja":"オートミールレーズンクッキーの枚数","problem_id":"external-gsm8k-main-3101c7d50724:train:02872","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0928A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"40人の10%が希望し、1人2枚作るオートミールレーズンクッキーの枚数。","root":"LemmaWeave.Problems.GSM8K.Sprint0928A14.cookie_solution","graph":"work/gsm8k-sprint172-cookies-graph.json","model_notes_ja":["参考解答の『40 students want』は直後の計算4人と矛盾するため、原題の10%=4人を採用。"],
+  "steps":[
+    {"id":"cookie_wanting","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.cookie_wanting","title_ja":"希望者4人","claim_ja":"40人の10%は4人。","method_ja":"百分率","requires_steps":[],"uses_nodes":[],"condition_ja":"10%は40人のクラス全体を基準とする。","conclusion_ja":"希望者は4人。","baseline_ja":"40×10÷100=4。"},
+    {"id":"cookie_count","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.cookie_count","title_ja":"8枚作る","claim_ja":"4×2=8枚。","method_ja":"人数と1人あたり枚数の積","requires_steps":["cookie_wanting"],"uses_nodes":[],"condition_ja":"各希望者に2枚。","conclusion_ja":"8枚作る。","baseline_ja":"4×2=8。"},
+    {"id":"cookie_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.cookie_solution","title_ja":"答えは8枚","claim_ja":"オートミールレーズンは8枚。","method_ja":"直前の結論","requires_steps":["cookie_count"],"uses_nodes":[],"condition_ja":"希望者以外の種類は求めない。","conclusion_ja":"答えは8枚。","baseline_ja":"8枚。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":2873,"checked_model_hash":"6bdc2b2b890105008f1bf78a7b1e5d0217af5f9c9e12871fb77358be639e4961","checks_ja":["40人・10%・1人2枚を再読した。","参考解答の文章上の40人という誤記を採用しなかった。","独立レビューではない。"]}
+}

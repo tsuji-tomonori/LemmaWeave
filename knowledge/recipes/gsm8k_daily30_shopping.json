@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily30_shopping","title_ja":"三品の支出を合計して残金を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00294","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"95ドルからオレンジ14ドル、リンゴ25ドル、菓子6ドルを支払った残金を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.shopping_solution","graph":"work/gsm8k-daily30-shopping-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["列挙された三品以外の支出はない。"],
+  "steps":[
+    {"id":"shopping_spent","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.shopping_spent","title_ja":"支出を合計する","requires_steps":[],"uses_nodes":[],"condition_ja":"支出は14ドル、25ドル、6ドルの三品である。","conclusion_ja":"支出合計は45ドル。","baseline_ja":"互いに異なる品目の代金を加える。"},
+    {"id":"shopping_remaining","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.shopping_remaining","title_ja":"残金を求める","requires_steps":["shopping_spent"],"uses_nodes":[],"condition_ja":"95ドルのうち45ドルを支払った。","conclusion_ja":"残金は50ドル。","baseline_ja":"初期額＝支出＋残額。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":295,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["14+25+6=45、95-45=50を原文と照合した。"]}
+}

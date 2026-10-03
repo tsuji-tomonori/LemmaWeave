@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint131_cards",
+  "title_ja": "カードの均等配分",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02254",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "52枚に2枚追加し、本人と他2人の3人で均等に分ける。各人の枚数を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A03.cards_solution",
+  "graph": "work/gsm8k-sprint131-cards-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cards_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.cards_total",
+      "title_ja": "カードは54枚",
+      "claim_ja": "カードは54枚",
+      "method_ja": "52枚に2枚足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "カードは54枚",
+      "baseline_ja": "カードは54枚"
+    },
+    {
+      "id": "cards_players",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.cards_players",
+      "title_ja": "プレイヤーは3人",
+      "claim_ja": "プレイヤーは3人",
+      "method_ja": "本人1人と他2人",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "プレイヤーは3人",
+      "baseline_ja": "プレイヤーは3人"
+    },
+    {
+      "id": "cards_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A03.cards_solution",
+      "title_ja": "各人18枚",
+      "claim_ja": "各人18枚",
+      "method_ja": "54枚を3人で割る",
+      "requires_steps": [
+        "cards_total",
+        "cards_players"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "各人18枚",
+      "baseline_ja": "各人18枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2255,
+    "checked_model_hash": "d407bec39797f06b98831461e1a7bcc4e711e6ce05ce92e31e1c6af155b9e1e1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

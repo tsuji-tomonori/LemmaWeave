@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint105_theater",
+  "title_ja": "映画館の稼働時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01860",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1.5時間を90分にして広告20分を各回へ加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.theater_solution",
+  "graph": "work/gsm8k-sprint105-theater-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "theater_show",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.theater_show",
+      "title_ja": "1回110分。",
+      "claim_ja": "1回110分。",
+      "method_ja": "90+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "theater_minutes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.theater_minutes",
+      "title_ja": "6回で660分。",
+      "claim_ja": "6回で660分。",
+      "method_ja": "6×110。",
+      "requires_steps": [
+        "theater_show"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "theater_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.theater_solution",
+      "title_ja": "稼働時間は11時間。",
+      "claim_ja": "稼働時間は11時間。",
+      "method_ja": "660÷60。",
+      "requires_steps": [
+        "theater_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1861,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

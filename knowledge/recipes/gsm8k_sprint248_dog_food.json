@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint248_dog_food",
+  "title_ja": "犬の餌の日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03281",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A06P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "朝夕の1日量を求め、袋の32カップを割る。",
+  "answer_ja": "16日",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A06P1.dog_food_days",
+  "graph": "work/gsm8k-sprint248-dog-food-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dog_food_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P1.dog_food_daily",
+      "title_ja": "1日の消費は2カップ。",
+      "claim_ja": "1日の消費は2カップ。",
+      "method_ja": "1+1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "朝夕各1カップ。",
+      "conclusion_ja": "2カップ。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "dog_food_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P1.dog_food_days",
+      "title_ja": "袋は16日分。",
+      "claim_ja": "袋は16日分。",
+      "method_ja": "32÷2。",
+      "requires_steps": [
+        "dog_food_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "袋32カップを毎日2カップずつ使う。",
+      "conclusion_ja": "16日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3282,
+    "checked_model_hash": "33dc55c429b4009cdaa0c22dc5291bab604edf08fb2f6d582162dd92997e4ea0",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

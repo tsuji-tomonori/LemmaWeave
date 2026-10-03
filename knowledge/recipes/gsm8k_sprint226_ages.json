@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint226_ages",
+  "title_ja": "Annikaの現在年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03427",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A18P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4年後のHansは8+4=12歳。そのときAnnikaは3×12=36歳なので、現在は36-4=32歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A18P3.ages_annika_now",
+  "graph": "work/gsm8k-sprint226-ages-graph.json",
+  "model_notes_ja": [
+    "2人とも同じ4年だけ年齢が増えることを明示した。"
+  ],
+  "steps": [
+    {
+      "id": "ages_hans_future",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P3.ages_hans_future",
+      "title_ja": "Hansの4年後",
+      "claim_ja": "12歳。",
+      "method_ja": "8+4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "現在8歳。",
+      "conclusion_ja": "12歳。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "ages_annika_future",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P3.ages_annika_future",
+      "title_ja": "Annikaの4年後",
+      "claim_ja": "36歳。",
+      "method_ja": "Hansの4年後の3倍。",
+      "requires_steps": [
+        "ages_hans_future"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ時点を比較する。",
+      "conclusion_ja": "36歳。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "ages_annika_now",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P3.ages_annika_now",
+      "title_ja": "Annikaの現在",
+      "claim_ja": "32歳。",
+      "method_ja": "36から4年を戻す。",
+      "requires_steps": [
+        "ages_annika_future"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4年後36歳。",
+      "conclusion_ja": "32歳。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3428,
+    "checked_model_hash": "21163a9ed03838e13b740839979f6f7ca76a52d3c88b08015281aa2dccb13eb7",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

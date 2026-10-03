@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint110_rent",
+  "title_ja": "5年間の家賃総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01934",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初の3年と最後の2年を月数に直して別々に計算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.rent_solution",
+  "graph": "work/gsm8k-sprint110-rent-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rent_first_years",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.rent_first_years",
+      "title_ja": "最初の3年は10800ドル。",
+      "claim_ja": "最初の3年は10800ドル。",
+      "method_ja": "300×12×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "rent_last_years",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.rent_last_years",
+      "title_ja": "最後の2年は8400ドル。",
+      "claim_ja": "最後の2年は8400ドル。",
+      "method_ja": "350×12×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "rent_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.rent_solution",
+      "title_ja": "5年間で19200ドル。",
+      "claim_ja": "5年間で19200ドル。",
+      "method_ja": "10800+8400。",
+      "requires_steps": [
+        "rent_first_years",
+        "rent_last_years"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1935,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

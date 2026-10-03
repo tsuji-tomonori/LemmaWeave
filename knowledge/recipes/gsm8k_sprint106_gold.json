@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint106_gold",
+  "title_ja": "1時間当たりの金貨",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01883",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "小袋、全金貨、時間当たりを順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.gold_solution",
+  "graph": "work/gsm8k-sprint106-gold-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "gold_bag_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.gold_bag_each",
+      "title_ja": "小袋1個は50枚。",
+      "claim_ja": "小袋1個は50枚。",
+      "method_ja": "100の半分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "gold_bags",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.gold_bags",
+      "title_ja": "小袋2個で100枚。",
+      "claim_ja": "小袋2個で100枚。",
+      "method_ja": "50×2。",
+      "requires_steps": [
+        "gold_bag_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "gold_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.gold_total",
+      "title_ja": "金貨は合計200枚。",
+      "claim_ja": "金貨は合計200枚。",
+      "method_ja": "宝箱100枚と小袋100枚を足す。",
+      "requires_steps": [
+        "gold_bags"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "gold_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.gold_solution",
+      "title_ja": "1時間当たり25枚。",
+      "claim_ja": "1時間当たり25枚。",
+      "method_ja": "200÷8。",
+      "requires_steps": [
+        "gold_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1884,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

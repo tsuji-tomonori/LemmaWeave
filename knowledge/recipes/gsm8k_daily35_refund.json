@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily35_refund","title_ja":"家具代の過払い返金額を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00353","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"150点を1点134ドルで買う正規代金と20,700ドルとの差を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914A.refund_solution","graph":"work/gsm8k-daily35-refund-graph.json","lean_file":"tests/lean/GSM8KDaily0914A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["返金額は実支払額から正規代金を引いた過払い分とする。"],
+  "steps":[
+    {"id":"refund_correct_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.refund_correct_total","title_ja":"正規代金を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"家具150点の単価は134ドル。","conclusion_ja":"正規代金は20,100ドル。","baseline_ja":"150×134を計算する。"},
+    {"id":"refund_amount","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914A.refund_amount","title_ja":"返金額を求める","requires_steps":["refund_correct_total"],"uses_nodes":[],"condition_ja":"20,700ドルを支払い、正規代金は20,100ドル。","conclusion_ja":"返金額は600ドル。","baseline_ja":"20,700−20,100を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":354,"checked_model_hash":"355a816ac7e4f5c79fe632b02995b66c3d07dd599393faa1dfce717b3ebfcbcf","checks_ja":["単価×点数の正規代金と実支払額との差を原文と照合した。"]}
+}

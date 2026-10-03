@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint290_first_round_knockouts",
+  "title_ja": "第1ラウンドKO数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03558",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "190試合の50%がKO、その20%が第1ラウンドKOのときの試合数。",
+  "answer_ja": "19試合",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.first_round_knockouts",
+  "graph": "work/gsm8k-sprint290-first-round-knockouts-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "knockout_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.knockout_count",
+      "title_ja": "KOは95試合。",
+      "claim_ja": "KOは95試合。",
+      "method_ja": "190の50%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "KOは95試合。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "first_round_knockouts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.first_round_knockouts",
+      "title_ja": "第1ラウンドKOは19試合。",
+      "claim_ja": "第1ラウンドKOは19試合。",
+      "method_ja": "95の20%を求める。",
+      "requires_steps": [
+        "knockout_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "第1ラウンドKOは19試合。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3559,
+    "checked_model_hash": "020cdee1ea13411c1334c93df472b3456875a0c40bed236bd20f22fa8aa70863",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

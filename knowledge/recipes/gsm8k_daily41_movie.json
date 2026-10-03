@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily41_movie","title_ja":"調理と映画鑑賞の合計時間","problem_id":"external-gsm8k-main-3101c7d50724:train:00406","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"2本の映画時間とポップコーン・フライ調理時間を分へ統一し、合計を時間へ戻す。","root":"LemmaWeave.Tests.GSM8KDaily0915B.movie_solution","graph":"work/gsm8k-daily41-movie-graph.json","lean_file":"tests/lean/GSM8KDaily0915B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["調理は映画の前に順に行われ、重複時間はないと解釈する。"],
+  "steps":[
+    {"id":"movie_lengths","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.movie_lengths","title_ja":"映画2本の時間","requires_steps":[],"uses_nodes":[],"condition_ja":"1本目は90分、2本目は30分長い。","conclusion_ja":"2本目は120分、鑑賞時間は210分。","baseline_ja":"時間単位を分へそろえて加える。"},
+    {"id":"movie_cooking","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.movie_cooking","title_ja":"調理時間","requires_steps":[],"uses_nodes":[],"condition_ja":"ポップコーン10分、フライはその2倍。","conclusion_ja":"フライ20分、調理合計30分。","baseline_ja":"倍の時間を求めて加える。"},
+    {"id":"movie_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.movie_solution","title_ja":"全所要時間","requires_steps":["movie_lengths","movie_cooking"],"uses_nodes":[],"condition_ja":"鑑賞210分と調理30分を足し、1時間60分で換算する。","conclusion_ja":"合計240分、すなわち4時間。","baseline_ja":"合計分数を60で割って時間へ換算する。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":407,"checked_model_hash":"e74a4210ca248991d2d8391f07fb0cc880ee33f5d619370a90295fd357ab18a3","checks_ja":["映画時間、30分差、調理時間の倍率、問われる単位を照合した。"]}
+}

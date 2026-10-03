@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint29_vodka",
+  "title_ja": "純アルコール量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00717",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "8ショットを2人で等分したときJakeが飲んだ純アルコール量を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A29.vodka_solution",
+  "graph": "work/gsm8k-sprint29-vodka-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A29.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "splits ... with his friend は2人で等分と解釈する。",
+    "1.5オンスと50%を有理数3/2、1/2で厳密に表す。"
+  ],
+  "steps": [
+    {
+      "id": "vodka_jake_shots",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.vodka_jake_shots",
+      "title_ja": "Jakeのショット数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "8ショットを2人で等分。",
+      "conclusion_ja": "4ショット。",
+      "baseline_ja": "8÷2=4。"
+    },
+    {
+      "id": "vodka_ounces",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.vodka_ounces",
+      "title_ja": "ウォッカ量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ショット3/2オンスを4ショット。",
+      "conclusion_ja": "6オンス。",
+      "baseline_ja": "4×3/2=6。"
+    },
+    {
+      "id": "vodka_pure",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.vodka_pure",
+      "title_ja": "純アルコール量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6オンスの50%。",
+      "conclusion_ja": "3オンス。",
+      "baseline_ja": "6×1/2=3。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 718,
+    "checked_model_hash": "970f410138a3166065bfbe0fe681e913ec80aca7d2c0a0d8dd1e56f06eeceae5",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

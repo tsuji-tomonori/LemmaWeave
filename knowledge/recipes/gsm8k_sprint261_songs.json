@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint261_songs",
+  "title_ja": "Skylerが書いた曲数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03348",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Top 10が25曲、Top 100が35曲、未発表が20曲だが、2つのチャート集合の重なりが明示されない。",
+  "answer_ja": "別カテゴリなら80曲。Top 10がTop 100に包含されるなら55曲で、原文だけでは一意でない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.songs_not_unique",
+  "graph": "work/gsm8k-sprint261-songs-graph.json",
+  "model_notes_ja": [
+    "Top 10とTop 100を排反カテゴリと読むか、順位集合の包含と読むかで重なりが0または25になる。"
+  ],
+  "steps": [
+    {
+      "id": "songs_disjoint_example",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.songs_disjoint_example",
+      "title_ja": "排反カテゴリ読みでは80曲。",
+      "claim_ja": "排反カテゴリ読みでは80曲。",
+      "method_ja": "25+35+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Top 10曲とTop 100曲を別カテゴリとする追加条件。",
+      "conclusion_ja": "80曲。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "songs_nested_example",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.songs_nested_example",
+      "title_ja": "Top 10がTop 100に含まれる読みでは55曲。",
+      "claim_ja": "Top 10がTop 100に含まれる読みでは55曲。",
+      "method_ja": "35+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "25曲すべてが35曲側に含まれる追加条件。",
+      "conclusion_ja": "55曲。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "songs_not_unique",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.songs_not_unique",
+      "title_ja": "原文だけでは総数は一意でない。",
+      "claim_ja": "原文だけでは総数は一意でない。",
+      "method_ja": "80≠55の2具体例。",
+      "requires_steps": [
+        "songs_disjoint_example",
+        "songs_nested_example"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "チャート集合の重なりが未指定。",
+      "conclusion_ja": "追加条件が必要。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3349,
+    "checked_model_hash": "a0f76cfdd10b82fdbb919ce5bb0b133a3278e03e095982680292d878ed2eab78",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

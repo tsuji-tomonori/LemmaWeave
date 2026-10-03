@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint259_competition",
+  "title_ja": "相手より多い得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03340",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A10P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Sammyから2倍ずつ得点を求め、チーム合計と相手85点との差を取る。",
+  "answer_ja": "55点",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A10P3.competition_more",
+  "graph": "work/gsm8k-sprint259-competition-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "competition_individual",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P3.competition_individual",
+      "title_ja": "Sammy20、Gab40、Cher80点。",
+      "claim_ja": "Sammy20、Gab40、Cher80点。",
+      "method_ja": "20、20×2、40×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "GabとCherは直前選手の2倍。",
+      "conclusion_ja": "20、40、80点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "competition_team",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P3.competition_team",
+      "title_ja": "チーム合計は140点。",
+      "claim_ja": "チーム合計は140点。",
+      "method_ja": "20+40+80。",
+      "requires_steps": [
+        "competition_individual"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人の得点を合計する。",
+      "conclusion_ja": "140点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "competition_more",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P3.competition_more",
+      "title_ja": "相手より55点多い。",
+      "claim_ja": "相手より55点多い。",
+      "method_ja": "140-85。",
+      "requires_steps": [
+        "competition_team"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "相手は85点。",
+      "conclusion_ja": "55点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3341,
+    "checked_model_hash": "03fb9cdcfb750a33818cb87af9eaa4f1435703b63b63c997cb9916f2ebc30f22",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

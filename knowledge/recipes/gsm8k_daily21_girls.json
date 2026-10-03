@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily21_girls","title_ja":"遠足に参加する女子生徒数","problem_id":"external-gsm8k-main-3101c7d50724:train:00209","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"28人乗りのバン5台に乗る生徒のうち男子60人を除いた女子人数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910E.girls_solution","graph":"work/gsm8k-daily21-girls-graph.json","lean_file":"tests/lean/GSM8KDaily0910E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各バンが28人を運び、生徒全体を男子と女子に分ける。"],
+  "steps":[
+    {"id":"girls_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.girls_total","title_ja":"生徒総数","requires_steps":[],"uses_nodes":[],"condition_ja":"5台の各バンに28人乗る。","conclusion_ja":"生徒総数は5×28=140人。","baseline_ja":"総量=台数×1台当たり人数。"},
+    {"id":"girls_count","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910E.girls_count","title_ja":"女子生徒数","requires_steps":["girls_total"],"uses_nodes":[],"condition_ja":"140人を男子60人と女子に分ける。","conclusion_ja":"答えは140−60=80人。","baseline_ja":"全体から一方の部分を引く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":210,"checked_model_hash":"31bcdf0c5d3a5dea5a167757075342d7c667364bb651d24831fc06828ac80874","checks_ja":["台数、1台当たり人数、男子数、女子への分割を照合した。"]}
+}

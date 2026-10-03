@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint390_red_apple_total",
+  "title_ja": "2本の木の赤いリンゴ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04073",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Brogan has two apple trees and goes to harvest them. The first tree is 40% red and 60% green. The second tree is 50% red and 50% green. If they each produce 20 apples, how many red apples does he get?",
+  "answer_ja": "1本目の赤いリンゴは20×40%=8個、2本目は20×50%=10個。合わせて8+10=18個である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A01P3.red_apple_total",
+  "graph": "work/gsm8k-sprint390-red-apple-total-graph.json",
+  "model_notes_ja": [
+    "each produce 20 apples は2本の木がそれぞれ20個実らせる意味である。各割合は整数個になる。"
+  ],
+  "steps": [
+    {
+      "id": "red_apple_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A01P3.red_apple_total",
+      "title_ja": "2本の木の赤いリンゴ総数",
+      "claim_ja": "1本目の赤いリンゴは20×40%=8個、2本目は20×50%=10個。合わせて8+10=18個である。",
+      "method_ja": "each produce 20 apples は2本の木がそれぞれ20個実らせる意味である。各割合は整数個になる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "each produce 20 apples は2本の木がそれぞれ20個実らせる意味である。各割合は整数個になる。",
+      "baseline_ja": "整数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1本目の赤いリンゴは20×40%=8個、2本目は20×50%=10個。合わせて8+10=18個である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4074,
+    "checked_model_hash": "48ce680488600d0fa6487e3beeb94a225b4ef8a916b733fa3a5db5229ed5bdb0",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

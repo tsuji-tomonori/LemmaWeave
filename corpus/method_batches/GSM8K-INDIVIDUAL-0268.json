@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0268",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "3b72b94daa8434c20c207175e11cdc9a24b0b68253654ca5a4e76fdc18905a85",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0930A00P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03171",
+      "source_line_1based": 3172,
+      "source_record_sha256": "ef30bd0437a8731a95474386d30c03d4b9307c5a74beca86c737c80de8d7aca1",
+      "raw_question_sha256": "0f0dc059962c53381505e56d830464e5db627b3b81542061b6eb4bd1d38d5298",
+      "normalized_question_sha256": "0f0dc059962c53381505e56d830464e5db627b3b81542061b6eb4bd1d38d5298",
+      "source_question": "Brian is taping up some boxes. Each box needs three pieces of tape, one as long as the long side and two as long as the short side. If Brian tapes up 5 boxes that measure 15 inches by 30 inches and 2 boxes that measure 40 inches square, how much tape does he need?",
+      "recipe_id": "gsm8k_sprint214_tape",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "長辺1本と短辺2本という3片を箱形状ごとに計算した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03172",
+      "source_line_1based": 3173,
+      "source_record_sha256": "f647113c0396e425592d22c9a6a6694a8683e1f4f6cd0bf6d51a9397ac60e9e2",
+      "raw_question_sha256": "af5d1e72345a972a8472df009310dc05b1e31eece816ef7350a82af63d836ff8",
+      "normalized_question_sha256": "af5d1e72345a972a8472df009310dc05b1e31eece816ef7350a82af63d836ff8",
+      "source_question": "Three friends agreed to pay an equal amount of money for buying 5 bags of chips. If they each pay $5, how much does each bag of chips cost?",
+      "recipe_id": "gsm8k_sprint214_chips",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "支払総額と5袋の等価格をモデル化した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03173",
+      "source_line_1based": 3174,
+      "source_record_sha256": "6d0852428ad25ce3d71c98a12bf6b55e54182fb7a21fb359a74fa5792dd21128",
+      "raw_question_sha256": "4d28fc649015d1a1fbe7cd6960eba6f3cd22f9ce03620e23281e217d3bbc5150",
+      "normalized_question_sha256": "062e370e640abd3868a30cd8249039471b3fd5211648445b6d62b6164282b6ce",
+      "source_question": "Phil likes to collect baseball cards.  He buys a pack of twenty each week for a year, but then loses half of them one day in a fire.  How many baseball cards does Phil have left?",
+      "recipe_id": "gsm8k_sprint214_cards",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "1年52週という問題の慣用換算を明示した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03174",
+      "source_line_1based": 3175,
+      "source_record_sha256": "7b631630986d9f8e4d07fb517aa0b86bf120d39aa50f29f39064da2c3b1ed02f",
+      "raw_question_sha256": "d8e68e7c813891149ae32359a8bfaa2278fbfc631af1ca9c5abc8f30c8c8abbf",
+      "normalized_question_sha256": "d8e68e7c813891149ae32359a8bfaa2278fbfc631af1ca9c5abc8f30c8c8abbf",
+      "source_question": "There were 30 women and 20 men who attended the party. After few hours, 2/5 of the total number of people left. If 9 men left the party, how many more women stayed at the party than men?",
+      "recipe_id": "gsm8k_sprint214_party",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "帰った20人を男女へ分割し、初期人数との保存式を置いた。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03175",
+      "source_line_1based": 3176,
+      "source_record_sha256": "0d3fc8d07f2acae3e02065275201befca48bd3d1fe774a315bea7150c8be1cea",
+      "raw_question_sha256": "b0420f455720dca2652b82a319150793a87a842f1f79c008e2558e1d9490913a",
+      "normalized_question_sha256": "b0420f455720dca2652b82a319150793a87a842f1f79c008e2558e1d9490913a",
+      "source_question": "Bill is laying power cable for a new neighborhood. There are going to be 18 east-west streets that are 2 miles long and 10 north-south streets that are four miles long. It takes 5 miles of cable to electrify 1 mile of street. If cable costs $2000/mile, what is the total cost of cable for the neighborhood?",
+      "recipe_id": "gsm8k_sprint214_cable",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "道路距離、ケーブル距離、費用の単位を段階ごとに分けた。"
+      ],
+      "blockers": []
+    }
+  ]
+}

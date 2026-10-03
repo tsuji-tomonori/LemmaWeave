@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint290_ham_bread_percent",
+  "title_ja": "ハムとパンの費用割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03564",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "パン50ドル、ハム150ドル、ケーキ200ドルの合計に占めるパンとハムの割合。",
+  "answer_ja": "50%",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A01P3.ham_bread_percent",
+  "graph": "work/gsm8k-sprint290-ham-bread-percent-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ham_bread_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P3.ham_bread_cost",
+      "title_ja": "パンとハムは200ドル。",
+      "claim_ja": "パンとハムは200ドル。",
+      "method_ja": "50+150を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "パンとハムは200ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "purchase_total_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P3.purchase_total_cost",
+      "title_ja": "購入総額は400ドル。",
+      "claim_ja": "購入総額は400ドル。",
+      "method_ja": "部分200ドルにケーキ200ドルを足す。",
+      "requires_steps": [
+        "ham_bread_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "購入総額は400ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "ham_bread_half_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P3.ham_bread_half_total",
+      "title_ja": "パンとハムは総額の半分。",
+      "claim_ja": "パンとハムは総額の半分。",
+      "method_ja": "200×2=400を確認する。",
+      "requires_steps": [
+        "ham_bread_cost",
+        "purchase_total_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "パンとハムは総額の半分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "ham_bread_percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P3.ham_bread_percent",
+      "title_ja": "パンとハムは総額の50%。",
+      "claim_ja": "パンとハムは総額の50%。",
+      "method_ja": "半分を100%の半分へ換算する。",
+      "requires_steps": [
+        "ham_bread_half_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "パンとハムは総額の50%。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3565,
+    "checked_model_hash": "96208895e84989ac2a7ddacbc3dfcda6fce647073b053318ec5331157d17c18c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

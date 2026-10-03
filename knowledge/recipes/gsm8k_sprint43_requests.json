@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint43_requests",
+  "title_ja": "5日後の未処理依頼数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00932",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "毎日6件受け、4件処理する状態を5日続けた未処理依頼数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A11.requests_solution",
+  "graph": "work/gsm8k-sprint43-requests-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "初日の開始時点の未処理依頼は0件で、未処理分は翌日以降へ持ち越すモデルとした。"
+  ],
+  "steps": [
+    {
+      "id": "requests_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.requests_daily",
+      "title_ja": "1日当たりの増加",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎日6件受けて4件処理する。",
+      "conclusion_ja": "未処理が毎日2件増える。",
+      "baseline_ja": "6=4+2。"
+    },
+    {
+      "id": "requests_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.requests_total",
+      "title_ja": "5日後の未処理数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "未処理2件/日が5日分。",
+      "conclusion_ja": "10件残る。",
+      "baseline_ja": "5×2=10。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 933,
+    "checked_model_hash": "881a98f47252976fe9a699be8850a410dba97738f0a04e0f969fcced6462a82f",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

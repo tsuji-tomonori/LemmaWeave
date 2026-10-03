@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint148_relay",
+  "title_ja": "リレーの総距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02507",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Sadie、Ariana、Sarahの時間と速度から各区間距離を求め、合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.relay_solution",
+  "graph": "work/gsm8k-sprint148-relay-graph.json",
+  "model_notes_ja": [
+    "0.5時間と4.5時間は半時間単位の整数関係で正確に表す。"
+  ],
+  "steps": [
+    {
+      "id": "relay_sadie",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.relay_sadie",
+      "title_ja": "Sadieは6マイル",
+      "claim_ja": "Sadieは6マイル",
+      "method_ja": "時速3マイルで2時間走る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Sadieは6マイル",
+      "baseline_ja": "Sadieは6マイル"
+    },
+    {
+      "id": "relay_ariana",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.relay_ariana",
+      "title_ja": "Arianaは3マイル",
+      "claim_ja": "Arianaは3マイル",
+      "method_ja": "時速6マイルで0.5時間走る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Arianaは3マイル",
+      "baseline_ja": "Arianaは3マイル"
+    },
+    {
+      "id": "relay_sarah_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.relay_sarah_time",
+      "title_ja": "Sarahは2時間、すなわち半時間4個分走る",
+      "claim_ja": "Sarahは2時間、すなわち半時間4個分走る",
+      "method_ja": "総4.5時間から2時間と0.5時間を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Sarahは2時間、すなわち半時間4個分走る",
+      "baseline_ja": "Sarahは2時間、すなわち半時間4個分走る"
+    },
+    {
+      "id": "relay_sarah_distance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.relay_sarah_distance",
+      "title_ja": "Sarahは8マイル",
+      "claim_ja": "Sarahは8マイル",
+      "method_ja": "時速4マイルで2時間走る",
+      "requires_steps": [
+        "relay_sarah_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Sarahは8マイル",
+      "baseline_ja": "Sarahは8マイル"
+    },
+    {
+      "id": "relay_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.relay_solution",
+      "title_ja": "総距離は17マイル",
+      "claim_ja": "総距離は17マイル",
+      "method_ja": "6、3、8を足す",
+      "requires_steps": [
+        "relay_sadie",
+        "relay_ariana",
+        "relay_sarah_distance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "総距離は17マイル",
+      "baseline_ja": "総距離は17マイル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2508,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

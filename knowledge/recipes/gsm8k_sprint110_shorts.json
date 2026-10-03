@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint110_shorts",
+  "title_ja": "まとめ買いで節約する額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01942",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "通常価格、10%割引額、割引後価格を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.shorts_solution",
+  "graph": "work/gsm8k-sprint110-shorts-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shorts_regular",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shorts_regular",
+      "title_ja": "3着の通常価格は30ドル。",
+      "claim_ja": "3着の通常価格は30ドル。",
+      "method_ja": "3×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shorts_discount",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shorts_discount",
+      "title_ja": "割引額は3ドル。",
+      "claim_ja": "割引額は3ドル。",
+      "method_ja": "30の10%。",
+      "requires_steps": [
+        "shorts_regular"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shorts_sale",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shorts_sale",
+      "title_ja": "支払額は27ドル。",
+      "claim_ja": "支払額は27ドル。",
+      "method_ja": "30−3。",
+      "requires_steps": [
+        "shorts_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "shorts_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.shorts_solution",
+      "title_ja": "節約額は3ドル。",
+      "claim_ja": "節約額は3ドル。",
+      "method_ja": "30−27。",
+      "requires_steps": [
+        "shorts_regular",
+        "shorts_sale"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1943,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

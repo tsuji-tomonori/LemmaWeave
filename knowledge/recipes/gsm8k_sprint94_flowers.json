@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint94_flowers",
+  "title_ja": "ピンクと紫の花の本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01699",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全105本、オレンジ10本、赤は2倍、黄は赤より5本少なく、残りのピンクと紫は同数。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.flowers_solution",
+  "graph": "work/gsm8k-sprint94-flowers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "flowers_red",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.flowers_red",
+      "title_ja": "赤",
+      "claim_ja": "20本。",
+      "method_ja": "10×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤はオレンジの2倍。",
+      "conclusion_ja": "2×10=20。",
+      "baseline_ja": "2×10=20。"
+    },
+    {
+      "id": "flowers_yellow",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.flowers_yellow",
+      "title_ja": "黄",
+      "claim_ja": "15本。",
+      "method_ja": "20-5。",
+      "requires_steps": [
+        "flowers_red"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "赤より5本少ない。",
+      "conclusion_ja": "15+5=20。",
+      "baseline_ja": "15+5=20。"
+    },
+    {
+      "id": "flowers_known",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.flowers_known",
+      "title_ja": "既知三色",
+      "claim_ja": "45本。",
+      "method_ja": "10+20+15。",
+      "requires_steps": [
+        "flowers_red",
+        "flowers_yellow"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "オレンジ・赤・黄を合計。",
+      "conclusion_ja": "10+20+15=45。",
+      "baseline_ja": "10+20+15=45。"
+    },
+    {
+      "id": "flowers_pair",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.flowers_pair",
+      "title_ja": "ピンクと紫の合計",
+      "claim_ja": "60本。",
+      "method_ja": "105-45。",
+      "requires_steps": [
+        "flowers_known"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ほかの色はない。",
+      "conclusion_ja": "60+45=105。",
+      "baseline_ja": "60+45=105。"
+    },
+    {
+      "id": "flowers_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.flowers_solution",
+      "title_ja": "各色",
+      "claim_ja": "ピンク30本、紫30本。",
+      "method_ja": "60を等分する。",
+      "requires_steps": [
+        "flowers_pair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ピンクと紫は同数。",
+      "conclusion_ja": "30×2=60。",
+      "baseline_ja": "30×2=60。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1700,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

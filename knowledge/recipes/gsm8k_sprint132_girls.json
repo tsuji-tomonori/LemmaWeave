@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint132_girls",
+  "title_ja": "バスケットボール好きの女子割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02270",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "25人中60%が女子。男子の40%が好き、女子の好きな人数は嫌いな男子の2倍",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A04.girls_solution",
+  "graph": "work/gsm8k-sprint132-girls-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "girls_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.girls_count",
+      "title_ja": "女子は15人",
+      "claim_ja": "女子は15人",
+      "method_ja": "25人の60%",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "女子は15人",
+      "baseline_ja": "女子は15人"
+    },
+    {
+      "id": "girls_boys",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.girls_boys",
+      "title_ja": "男子は10人",
+      "claim_ja": "男子は10人",
+      "method_ja": "25人から15人を引く",
+      "requires_steps": [
+        "girls_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "男子は10人",
+      "baseline_ja": "男子は10人"
+    },
+    {
+      "id": "girls_boys_dislike",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.girls_boys_dislike",
+      "title_ja": "嫌いな男子は6人",
+      "claim_ja": "嫌いな男子は6人",
+      "method_ja": "男子10人の60%",
+      "requires_steps": [
+        "girls_boys"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "嫌いな男子は6人",
+      "baseline_ja": "嫌いな男子は6人"
+    },
+    {
+      "id": "girls_like",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.girls_like",
+      "title_ja": "好きな女子は12人",
+      "claim_ja": "好きな女子は12人",
+      "method_ja": "6人の2倍",
+      "requires_steps": [
+        "girls_boys_dislike"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "好きな女子は12人",
+      "baseline_ja": "好きな女子は12人"
+    },
+    {
+      "id": "girls_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.girls_solution",
+      "title_ja": "好きな女子は80%",
+      "claim_ja": "好きな女子は80%",
+      "method_ja": "12人を女子15人で割る",
+      "requires_steps": [
+        "girls_count",
+        "girls_like"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "好きな女子は80%",
+      "baseline_ja": "好きな女子は80%"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2271,
+    "checked_model_hash": "1b9f70468554e9981c06f87268115033a93ac640809512751f109819832445b3",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

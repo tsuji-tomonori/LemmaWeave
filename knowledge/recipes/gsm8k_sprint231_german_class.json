@@ -1,0 +1,114 @@
+{
+  "id": "gsm8k_sprint231_german_class",
+  "title_ja": "ドイツ語クラスの残留者",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03454",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A20P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初8人に8人が関心を持ち、その1/4の2人と別の2人が抜けて12人。5倍分を追加して72人、2人減って70人、6人増えて76人。半数脱落で38人、その半数卒業で19人が在籍する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A20P2.german_still_enrolled",
+  "graph": "work/gsm8k-sprint231-german-class-graph.json",
+  "model_notes_ja": [
+    "increased enrollment by 5 times the amountを、現員の5倍を追加して合計6倍と読む。"
+  ],
+  "steps": [
+    {
+      "id": "german_after_first_drops",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P2.german_after_first_drops",
+      "title_ja": "最初の離脱後",
+      "claim_ja": "12人。",
+      "method_ja": "16人から2人と2人を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "8人の1/4は2人。",
+      "conclusion_ja": "12人。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "german_after_first_rally",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P2.german_after_first_rally",
+      "title_ja": "最初の集会後",
+      "claim_ja": "72人。",
+      "method_ja": "12人に現員の5倍60人を追加する。",
+      "requires_steps": [
+        "german_after_first_drops"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "増加量が現員の5倍。",
+      "conclusion_ja": "72人。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "german_after_scheduling_drop",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P2.german_after_scheduling_drop",
+      "title_ja": "予定都合の離脱後",
+      "claim_ja": "70人。",
+      "method_ja": "72人から2人を引く。",
+      "requires_steps": [
+        "german_after_first_rally"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2人が離脱。",
+      "conclusion_ja": "70人。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "german_before_half_drop",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P2.german_before_half_drop",
+      "title_ja": "最後の集会後",
+      "claim_ja": "76人。",
+      "method_ja": "70人に6人を加える。",
+      "requires_steps": [
+        "german_after_scheduling_drop"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "新規6人が在籍。",
+      "conclusion_ja": "76人。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "german_after_half_drop",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P2.german_after_half_drop",
+      "title_ja": "半数脱落後",
+      "claim_ja": "38人。",
+      "method_ja": "76人の半数が残る。",
+      "requires_steps": [
+        "german_before_half_drop"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ちょうど半数が脱落。",
+      "conclusion_ja": "38人。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "german_still_enrolled",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P2.german_still_enrolled",
+      "title_ja": "卒業後の在籍者",
+      "claim_ja": "19人が在籍。",
+      "method_ja": "残る38人の半数が卒業する。",
+      "requires_steps": [
+        "german_after_half_drop"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "卒業者以外の半数が残る。",
+      "conclusion_ja": "19人が在籍。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3455,
+    "checked_model_hash": "8c64397561510a86f81fe38c28800ef7e83e8a6bfa5562b0284687c851ebcf91",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

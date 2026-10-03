@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_daily36_fruit","title_ja":"二つの購入式からバナナ束の価格を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00363","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"リンゴ2ダースとバナナ1束が7ドル、リンゴ1ダースと同じバナナ1束が5ドルのとき、バナナ1束の価格を求める。","root":"LemmaWeave.Tests.GSM8KDaily0914B.fruit_solution","graph":"work/gsm8k-daily36-fruit-graph.json","lean_file":"tests/lean/GSM8KDaily0914B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["両者が買ったバナナ1束は同価格、リンゴは1ダース当たり同価格とする。"],
+  "steps":[
+    {"id":"fruit_apple_price","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.fruit_apple_price","title_ja":"リンゴ1ダースの価格を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"二つの購入はバナナ1束が共通で、Tonyの方がリンゴ1ダース多く総額は2ドル高い。","conclusion_ja":"リンゴ1ダースは2ドル。","baseline_ja":"二つの一次方程式を引いて共通項を消去する。"},
+    {"id":"fruit_banana_price","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0914B.fruit_banana_price","title_ja":"バナナ1束の価格を求める","requires_steps":["fruit_apple_price"],"uses_nodes":[],"condition_ja":"Arnoldの5ドルはリンゴ1ダース2ドルとバナナ1束の合計。","conclusion_ja":"バナナ1束は3ドル。","baseline_ja":"5-2を計算する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":364,"checked_model_hash":"1b1f7073ac4914ef961072da33cb3e459a036225c1a34caad7b5468adee49bb8","checks_ja":["同じ商品の単価が共通という買い物問題の条件で二式を照合した。"]}
+}

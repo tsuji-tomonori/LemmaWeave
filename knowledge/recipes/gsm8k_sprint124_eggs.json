@@ -1,0 +1,110 @@
+{
+  "id": "gsm8k_sprint124_eggs",
+  "title_ja": "毎週残る卵",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02150",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "家族の各組が食べる数を組全体の量と読む場合の残数と、各人量と読む場合の整合性を調べる。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A16.eggs_solution",
+  "graph": "work/gsm8k-sprint124-eggs-graph.json",
+  "model_notes_ja": [
+    "『son and daughter eat 2』『Rhea and husband eat 4』は組全体量と各人量の両方に読める。参照答6は組全体量という追加読解付きであり、各人量なら購入数を超える。"
+  ],
+  "steps": [
+    {
+      "id": "eggs_purchased",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.eggs_purchased",
+      "title_ja": "購入量は48個。",
+      "claim_ja": "購入量は48個。",
+      "method_ja": "24個入り2トレイ。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2個・4個を各組全体の1日量と読む条件を明示し、各人量の別読解も検査する。",
+      "conclusion_ja": "購入量は48個。",
+      "baseline_ja": "購入量は48個。"
+    },
+    {
+      "id": "eggs_children",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.eggs_children",
+      "title_ja": "子ども2人の組全体で週14個。",
+      "claim_ja": "子ども2人の組全体で週14個。",
+      "method_ja": "朝2個×7日。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2個・4個を各組全体の1日量と読む条件を明示し、各人量の別読解も検査する。",
+      "conclusion_ja": "子ども2人の組全体で週14個。",
+      "baseline_ja": "子ども2人の組全体で週14個。"
+    },
+    {
+      "id": "eggs_parents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.eggs_parents",
+      "title_ja": "両親の組全体で週28個。",
+      "claim_ja": "両親の組全体で週28個。",
+      "method_ja": "夜4個×7日。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2個・4個を各組全体の1日量と読む条件を明示し、各人量の別読解も検査する。",
+      "conclusion_ja": "両親の組全体で週28個。",
+      "baseline_ja": "両親の組全体で週28個。"
+    },
+    {
+      "id": "eggs_eaten",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.eggs_eaten",
+      "title_ja": "組全体量の読解では計42個食べる。",
+      "claim_ja": "組全体量の読解では計42個食べる。",
+      "method_ja": "14+28。",
+      "requires_steps": [
+        "eggs_children",
+        "eggs_parents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2個・4個を各組全体の1日量と読む条件を明示し、各人量の別読解も検査する。",
+      "conclusion_ja": "組全体量の読解では計42個食べる。",
+      "baseline_ja": "組全体量の読解では計42個食べる。"
+    },
+    {
+      "id": "eggs_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.eggs_solution",
+      "title_ja": "その読解で6個残る。",
+      "claim_ja": "その読解で6個残る。",
+      "method_ja": "48−42。",
+      "requires_steps": [
+        "eggs_purchased",
+        "eggs_eaten"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2個・4個を各組全体の1日量と読む条件を明示し、各人量の別読解も検査する。",
+      "conclusion_ja": "その読解で6個残る。",
+      "baseline_ja": "その読解で6個残る。"
+    },
+    {
+      "id": "eggs_each_person_impossible",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.eggs_each_person_impossible",
+      "title_ja": "各人がそれぞれ2個・4個と読むと週84個必要で、購入48個から非負の残数は定まらない。",
+      "claim_ja": "各人がそれぞれ2個・4個と読むと週84個必要で、購入48個から非負の残数は定まらない。",
+      "method_ja": "left+84=48を満たす自然数leftは存在しない。",
+      "requires_steps": [
+        "eggs_purchased"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2個・4個を各組全体の1日量と読む条件を明示し、各人量の別読解も検査する。",
+      "conclusion_ja": "各人がそれぞれ2個・4個と読むと週84個必要で、購入48個から非負の残数は定まらない。",
+      "baseline_ja": "各人がそれぞれ2個・4個と読むと週84個必要で、購入48個から非負の残数は定まらない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2151,
+    "checked_model_hash": "1ef653f2f5493b131faeaf7e8e4695e102a0b2223657f79e1a4a788f945d875f",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、矛盾や複数読解は訂正条件・反例と分離した。"
+    ]
+  }
+}

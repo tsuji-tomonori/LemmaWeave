@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint375_rectangle_area_difference",
+  "title_ja": "2枚の布の面積差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03999",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A17P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Toby has two rectangles of cloth. The first is 4 inches wide and 5 inches tall. The second is 3 inches wide and 6 inches tall. How many more square inches is the area of the first compared to the second?",
+  "answer_ja": "1枚目は4×5=20平方インチ、2枚目は3×6=18平方インチ。1枚目の方が20−18=2平方インチ大きい。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A17P3.rectangle_area_difference",
+  "graph": "work/gsm8k-sprint375-rectangle-area-difference-graph.json",
+  "model_notes_ja": [
+    "寸法はインチで、求めるのは1枚目の面積から2枚目の面積を引いた値である。"
+  ],
+  "steps": [
+    {
+      "id": "rectangle_area_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A17P3.rectangle_area_difference",
+      "title_ja": "2枚の布の面積差",
+      "claim_ja": "1枚目は4×5=20平方インチ、2枚目は3×6=18平方インチ。1枚目の方が20−18=2平方インチ大きい。",
+      "method_ja": "長方形の面積=幅×高さを各布へ適用し、差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "寸法はインチで、求めるのは1枚目の面積から2枚目の面積を引いた値である。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1枚目は4×5=20平方インチ、2枚目は3×6=18平方インチ。1枚目の方が20−18=2平方インチ大きい。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4000,
+    "checked_model_hash": "a59c99315beb2c61cb5fb9b87db210ff472537b985f914da926f6af72c243bf1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily40_firewood","title_ja":"薪の残りの担当量","problem_id":"external-gsm8k-main-3101c7d50724:train:00401","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"3人の合計35ポンドから2人分を引き、Elaの量を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915A.firewood_solution","graph":"work/gsm8k-daily40-firewood-graph.json","lean_file":"tests/lean/GSM8KDaily0915A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["3人の収集量は重複せず合計できる。"],
+  "steps":[
+    {"id":"firewood_known","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.firewood_known","title_ja":"既知の2人分","requires_steps":[],"uses_nodes":[],"condition_ja":"Kimberleyが10、Houstonが12ポンド。","conclusion_ja":"2人で22ポンド。","baseline_ja":"既知量を加える。"},
+    {"id":"firewood_ela","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.firewood_solution","title_ja":"Elaの量","requires_steps":["firewood_known"],"uses_nodes":[],"condition_ja":"3人合計35ポンドから既知の22ポンドを引く。","conclusion_ja":"Elaは13ポンド。","baseline_ja":"未知の一部分=全体−既知部分。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":402,"checked_model_hash":"b1c735783c0e2fb3e158ebd21f9dd4b78fa11ad24991ed80e51465c2cc5b3451","checks_ja":["3人の名前、各既知量、合計を照合した。"]}
+}

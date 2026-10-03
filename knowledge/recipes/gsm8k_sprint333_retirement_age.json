@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint333_retirement_age",
+  "title_ja": "退役時の年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03787",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A19P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jason joined the military when he turned 18.  It took him 8 years to raise to the rank of chief.  Then 25% longer than that to go from chief to master chief.  He then spent 10 years more in the military before retiring.  How old was he when he retired?",
+  "answer_ja": "chiefまで8年。master chiefまではそれより25%長いので8+2=10年。入隊後8+10+10=28年勤務し、18歳で入隊したので退役時は46歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A19P3.retirement_age",
+  "graph": "work/gsm8k-sprint333-retirement-age-graph.json",
+  "model_notes_ja": [
+    "25% longerはchiefからmaster chiefまでの期間を8年の1.25倍にする。最後の10年はその後に加える。"
+  ],
+  "steps": [
+    {
+      "id": "retirement_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A19P3.retirement_age",
+      "title_ja": "退役時の年齢",
+      "claim_ja": "chiefまで8年。master chiefまではそれより25%長いので8+2=10年。入隊後8+10+10=28年勤務し、18歳で入隊したので退役時は46歳。",
+      "method_ja": "各階級までの期間と退役前期間を時系列に加え、入隊年齢へ足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "8年の25%は2年。",
+      "baseline_ja": "整数・分数・割合・一次方程式・面積・平均のうち問題で明示したもの。",
+      "conclusion_ja": "46歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3788,
+    "checked_model_hash": "cd6d81d9b74882b1a26cc886af78537e1be793d517d49f9a93263347de896d65",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

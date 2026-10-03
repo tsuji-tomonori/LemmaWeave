@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint157_amusement",
+  "title_ja": "遊園地後の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02639",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "75ドルから食事30ドル、乗り物13ドル、ゲーム23ドルを支払う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A15.amusement_solution",
+  "graph": "work/gsm8k-sprint157-amusement-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "amusement_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.amusement_spent",
+      "title_ja": "支出は66ドル",
+      "claim_ja": "支出は66ドル",
+      "method_ja": "30・13・23を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "支出は66ドル",
+      "baseline_ja": "支出は66ドル"
+    },
+    {
+      "id": "amusement_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A15.amusement_solution",
+      "title_ja": "残金は9ドル",
+      "claim_ja": "残金は9ドル",
+      "method_ja": "75ドルから66ドルを引く",
+      "requires_steps": [
+        "amusement_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残金は9ドル",
+      "baseline_ja": "残金は9ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2640,
+    "checked_model_hash": "f2698317144a7c7a5dc6f358b00d73ee853507476a16755e7d88106f51612ecf",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

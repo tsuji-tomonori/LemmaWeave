@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint273_opponent_score",
+  "title_ja": "決勝の相手得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03466",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "過去24試合で720点のチームが、決勝で過去1試合平均の半分より2点少なく得点し、相手が2点差で負けたとき相手得点を求める。",
+  "answer_ja": "11点",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.opponent_score",
+  "graph": "work/gsm8k-sprint273-opponent-score-graph.json",
+  "model_notes_ja": [
+    "「previously scored in each of the 24 games」は24試合の1試合平均としてモデル化した。"
+  ],
+  "steps": [
+    {
+      "id": "previous_game_average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.previous_game_average",
+      "title_ja": "過去1試合平均は30点。",
+      "claim_ja": "過去1試合平均は30点。",
+      "method_ja": "720点を24試合で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "24試合の総得点が720点。",
+      "conclusion_ja": "30点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "half_previous_average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.half_previous_average",
+      "title_ja": "過去平均の半分は15点。",
+      "claim_ja": "過去平均の半分は15点。",
+      "method_ja": "30点を2で割る。",
+      "requires_steps": [
+        "previous_game_average"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "半分を整数点として扱う。",
+      "conclusion_ja": "15点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "championship_team_score",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.championship_team_score",
+      "title_ja": "決勝でUFは13点。",
+      "claim_ja": "決勝でUFは13点。",
+      "method_ja": "15点から2点を引く。",
+      "requires_steps": [
+        "half_previous_average"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "決勝得点は半分より2点少ない。",
+      "conclusion_ja": "13点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "opponent_score",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.opponent_score",
+      "title_ja": "相手得点は11点。",
+      "claim_ja": "相手得点は11点。",
+      "method_ja": "UFの13点から敗戦差2点を引く。",
+      "requires_steps": [
+        "championship_team_score"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "相手はUFに2点差で敗れた。",
+      "conclusion_ja": "11点。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3467,
+    "checked_model_hash": "ef15f25ba0f0bc2e4892a0b2810a992e78d5302ec3ede731968675ab6c0b7b7a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

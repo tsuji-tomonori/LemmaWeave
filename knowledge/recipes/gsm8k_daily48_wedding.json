@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily48_wedding","title_ja":"結婚披露宴の友人客","problem_id":"external-gsm8k-main-3101c7d50724:train:00477","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"180人の披露宴で新郎新婦が各20組の親族夫婦を招いたとき友人の人数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917D.wedding_solution","graph":"work/gsm8k-daily48-wedding-graph.json","lean_file":"tests/lean/GSM8KDaily0917D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各夫婦2人が全員出席し、両家の親族客は重複せず、残りが友人という条件。"],
+  "steps":[
+    {"id":"wedding_family","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.wedding_family","title_ja":"親族客の人数","requires_steps":[],"uses_nodes":[],"condition_ja":"新婦側と新郎側がそれぞれ20組の夫婦を招き、各組2人が出席する。","conclusion_ja":"両家の親族客はそれぞれ40人。","baseline_ja":"組数×2人。"},
+    {"id":"wedding_friends","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.wedding_friends","title_ja":"友人客の人数","requires_steps":["wedding_family"],"uses_nodes":[],"condition_ja":"総数180人から両家の親族客40人ずつを除く。","conclusion_ja":"友人は180−40−40=100人。","baseline_ja":"全体から部分を引く。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":478,"checked_model_hash":"36659505f7e047d68fd7fe15a6930aff0d84c83830512c7638ed07d8c6a5a95d","checks_ja":["coupleを2人として数えた。","全員出席・重複なしの条件を明記した。"]}
+}

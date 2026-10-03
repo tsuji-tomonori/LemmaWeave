@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint389_weekly_food_business_net_dollars",
+  "title_ja": "食品販売の週純収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04070",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lucius owns a small business and spends $10 every day on ingredients. He then makes a portion of French Fries and a portion of Poutine and sells them to the market, paying ten percent of his weekly income as tax. If the price of French fries is $12 and the price of Poutine is $8, how much does he earn every week after paying the taxes, selling all his products, and buying all the ingredients?",
+  "answer_ja": "1日の売上は12+8=20ドル、週の売上は20×7=140ドル。税は売上の10%で14ドル、材料費は10×7=70ドルである。したがって手元に残る額は140−14−70=56ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A01P2.weekly_food_business_net_dollars",
+  "graph": "work/gsm8k-sprint389-weekly-food-business-net-dollars-graph.json",
+  "model_notes_ja": [
+    "weekly income を材料費控除前の週売上140ドルと読み、その10%を税とする。毎日両商品を各1 portion販売する。"
+  ],
+  "steps": [
+    {
+      "id": "weekly_food_business_net_dollars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A01P2.weekly_food_business_net_dollars",
+      "title_ja": "食品販売の週純収入",
+      "claim_ja": "1日の売上は12+8=20ドル、週の売上は20×7=140ドル。税は売上の10%で14ドル、材料費は10×7=70ドルである。したがって手元に残る額は140−14−70=56ドルである。",
+      "method_ja": "weekly income を材料費控除前の週売上140ドルと読み、その10%を税とする。毎日両商品を各1 portion販売する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "weekly income を材料費控除前の週売上140ドルと読み、その10%を税とする。毎日両商品を各1 portion販売する。",
+      "baseline_ja": "整数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1日の売上は12+8=20ドル、週の売上は20×7=140ドル。税は売上の10%で14ドル、材料費は10×7=70ドルである。したがって手元に残る額は140−14−70=56ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4071,
+    "checked_model_hash": "68cad773f21e07d094f0728acbf5d8a347949c62d72b59735e037a941dc252ee",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

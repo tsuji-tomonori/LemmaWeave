@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint130_pizza",
+  "title_ja": "家族が注文するピザ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02231",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "夫婦2人は各3切れ、子6人は各1切れを望む。1枚4切れのピザは何枚必要か",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.pizza_solution",
+  "graph": "work/gsm8k-sprint130-pizza-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pizza_couple",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.pizza_couple",
+      "title_ja": "夫婦には6切れ必要",
+      "claim_ja": "夫婦には6切れ必要",
+      "method_ja": "2人に各3切れ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "夫婦には6切れ必要",
+      "baseline_ja": "夫婦には6切れ必要"
+    },
+    {
+      "id": "pizza_children",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.pizza_children",
+      "title_ja": "子どもには6切れ必要",
+      "claim_ja": "子どもには6切れ必要",
+      "method_ja": "6人に各1切れ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "子どもには6切れ必要",
+      "baseline_ja": "子どもには6切れ必要"
+    },
+    {
+      "id": "pizza_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.pizza_total",
+      "title_ja": "合計12切れ必要",
+      "claim_ja": "合計12切れ必要",
+      "method_ja": "6切れずつを足す",
+      "requires_steps": [
+        "pizza_couple",
+        "pizza_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計12切れ必要",
+      "baseline_ja": "合計12切れ必要"
+    },
+    {
+      "id": "pizza_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.pizza_solution",
+      "title_ja": "注文は3枚",
+      "claim_ja": "注文は3枚",
+      "method_ja": "12切れを1枚4切れで割る",
+      "requires_steps": [
+        "pizza_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "注文は3枚",
+      "baseline_ja": "注文は3枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2232,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

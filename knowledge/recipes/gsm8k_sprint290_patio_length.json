@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint290_patio_length",
+  "title_ja": "長方形パティオの長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03565",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "長さが幅の4倍で周長100フィートの長方形の長さ。",
+  "answer_ja": "40フィート",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A01P3.patio_length",
+  "graph": "work/gsm8k-sprint290-patio-length-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "patio_width",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P3.patio_width",
+      "title_ja": "幅は10フィート。",
+      "claim_ja": "幅は10フィート。",
+      "method_ja": "周長2w+2(4w)=100を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "幅は10フィート。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "patio_length",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P3.patio_length",
+      "title_ja": "長さは40フィート。",
+      "claim_ja": "長さは40フィート。",
+      "method_ja": "幅10フィートを4倍する。",
+      "requires_steps": [
+        "patio_width"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "長さは40フィート。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3566,
+    "checked_model_hash": "96208895e84989ac2a7ddacbc3dfcda6fce647073b053318ec5331157d17c18c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

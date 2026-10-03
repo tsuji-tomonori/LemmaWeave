@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint126_books",
+  "title_ja": "3人の本の合計と倍率表現",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02175",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Beatrixは30冊、Alannahは20冊多い。QueenはAlannahより「1/5 times more」冊である。3人の合計は何冊か。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.books_answer_scope",
+  "graph": "work/gsm8k-sprint126-books-graph.json",
+  "model_notes_ja": [
+    "1/5 times more books の係り方が曖昧。参照解140冊は20%増という解釈に限る。"
+  ],
+  "steps": [
+    {
+      "id": "books_alannah",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.books_alannah",
+      "title_ja": "Alannahは50冊",
+      "claim_ja": "Alannahは50冊",
+      "method_ja": "Beatrixの30冊より20冊多い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "Alannahは50冊",
+      "baseline_ja": "Alannahは50冊"
+    },
+    {
+      "id": "books_more_reading",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.books_more_reading",
+      "title_ja": "1/5だけ多い読解では140冊",
+      "claim_ja": "1/5だけ多い読解では140冊",
+      "method_ja": "Queenは50冊より10冊多い60冊。3人で30+50+60。",
+      "requires_steps": [
+        "books_alannah"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "1/5だけ多い読解では140冊",
+      "baseline_ja": "1/5だけ多い読解では140冊"
+    },
+    {
+      "id": "books_of_reading",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.books_of_reading",
+      "title_ja": "1/5倍の冊数という読解では90冊",
+      "claim_ja": "1/5倍の冊数という読解では90冊",
+      "method_ja": "Queenは50÷5=10冊。3人で30+50+10。",
+      "requires_steps": [
+        "books_alannah"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "1/5倍の冊数という読解では90冊",
+      "baseline_ja": "1/5倍の冊数という読解では90冊"
+    },
+    {
+      "id": "books_readings_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.books_readings_differ",
+      "title_ja": "140冊と90冊は異なる",
+      "claim_ja": "140冊と90冊は異なる",
+      "method_ja": "原文の1/5 times moreの解釈差を保持する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "140冊と90冊は異なる",
+      "baseline_ja": "140冊と90冊は異なる"
+    },
+    {
+      "id": "books_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.books_answer_scope",
+      "title_ja": "増加率の解釈を指定しないと一意でない",
+      "claim_ja": "増加率の解釈を指定しないと一意でない",
+      "method_ja": "条件別の両結論を残す。",
+      "requires_steps": [
+        "books_more_reading",
+        "books_of_reading",
+        "books_readings_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "増加率の解釈を指定しないと一意でない",
+      "baseline_ja": "増加率の解釈を指定しないと一意でない"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2176,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

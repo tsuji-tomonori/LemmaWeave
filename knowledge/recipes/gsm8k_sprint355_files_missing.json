@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint355_files_missing",
+  "title_ja": "紛失したファイル数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03896",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Edith is a receptionist at a local office and is organizing files into cabinets. She had 60 files and finished organizing half of them this morning. She has another 15 files to organize in the afternoon and the rest of the files are missing. How many files are missing?",
+  "answer_ja": "朝に整理したのは60÷2=30件。午後に整理予定の15件を合わせると所在が分かるのは45件なので、紛失は60−45=15件。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A10P1.files_missing",
+  "graph": "work/gsm8k-sprint355-files-missing-graph.json",
+  "model_notes_ja": [
+    "60件を朝に整理済み・午後に整理予定・紛失の3区分へ分ける。"
+  ],
+  "steps": [
+    {
+      "id": "files_missing",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A10P1.files_missing",
+      "title_ja": "紛失したファイル数",
+      "claim_ja": "朝に整理したのは60÷2=30件。午後に整理予定の15件を合わせると所在が分かるのは45件なので、紛失は60−45=15件。",
+      "method_ja": "60件を三つの排反区分へ分け、既知2区分を全体から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "朝に整理済み30件と午後に整理予定15件は重複せず、残りが紛失分である。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "15件。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3897,
+    "checked_model_hash": "dbd8f6081ef438fa357cae28ec7e239a7f2745c3ea0656800b18029595710175",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

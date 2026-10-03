@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint155_eggmeals",
+  "title_ja": "次の3食の卵数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02614",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2ダースから調理に6個使い、残りの半分を叔母へ渡し、手元分を3食に等分する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A12.meals_solution",
+  "graph": "work/gsm8k-sprint155-eggmeals-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "meals_initial",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.meals_initial",
+      "title_ja": "最初は24個",
+      "claim_ja": "最初は24個",
+      "method_ja": "2ダースに12個を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最初は24個",
+      "baseline_ja": "最初は24個"
+    },
+    {
+      "id": "meals_after_cooking",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.meals_after_cooking",
+      "title_ja": "調理後は18個",
+      "claim_ja": "調理後は18個",
+      "method_ja": "24個から2個と4個を引く",
+      "requires_steps": [
+        "meals_initial"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "調理後は18個",
+      "baseline_ja": "調理後は18個"
+    },
+    {
+      "id": "meals_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.meals_remaining",
+      "title_ja": "叔母へ半分渡した後は9個",
+      "claim_ja": "叔母へ半分渡した後は9個",
+      "method_ja": "18個の半分を手元に残す",
+      "requires_steps": [
+        "meals_after_cooking"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "叔母へ半分渡した後は9個",
+      "baseline_ja": "叔母へ半分渡した後は9個"
+    },
+    {
+      "id": "meals_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.meals_solution",
+      "title_ja": "1食3個",
+      "claim_ja": "1食3個",
+      "method_ja": "9個を3食に等分する",
+      "requires_steps": [
+        "meals_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1食3個",
+      "baseline_ja": "1食3個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2615,
+    "checked_model_hash": "e7456ead757e31e01855c8bdf9ea2e415b763b370f320dc110796823d9f96001",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

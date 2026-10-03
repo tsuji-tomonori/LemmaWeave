@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint109_bounce",
+  "title_ja": "5回目の跳ね返り高さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01918",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "毎回直前の半分となる高さを順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.bounce_solution",
+  "graph": "work/gsm8k-sprint109-bounce-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bounce_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bounce_first",
+      "title_ja": "1回目は48フィート。",
+      "claim_ja": "1回目は48フィート。",
+      "method_ja": "96÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bounce_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bounce_second",
+      "title_ja": "2回目は24フィート。",
+      "claim_ja": "2回目は24フィート。",
+      "method_ja": "48÷2。",
+      "requires_steps": [
+        "bounce_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bounce_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bounce_third",
+      "title_ja": "3回目は12フィート。",
+      "claim_ja": "3回目は12フィート。",
+      "method_ja": "24÷2。",
+      "requires_steps": [
+        "bounce_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bounce_fourth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bounce_fourth",
+      "title_ja": "4回目は6フィート。",
+      "claim_ja": "4回目は6フィート。",
+      "method_ja": "12÷2。",
+      "requires_steps": [
+        "bounce_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bounce_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.bounce_solution",
+      "title_ja": "5回目は3フィート。",
+      "claim_ja": "5回目は3フィート。",
+      "method_ja": "6÷2。",
+      "requires_steps": [
+        "bounce_fourth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1919,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

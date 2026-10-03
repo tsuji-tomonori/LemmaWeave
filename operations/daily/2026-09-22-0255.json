@@ -1,0 +1,121 @@
+{
+  "date": "2026-09-22",
+  "run_id": "lemmaweave-sprint-20260922-0300-gsm8k-75",
+  "planned_slot_local_hour": 3,
+  "planned_at": "2026-09-22T03:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "7025b4005b930462698aad3b0053cf3cd77dc8eb",
+  "started_at": "2026-09-22T02:55:39+09:00",
+  "finished_at": "2026-09-22T03:13:24+09:00",
+  "schedule_offset_seconds": -261,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01404",
+    "external-gsm8k-main-3101c7d50724:train:01405",
+    "external-gsm8k-main-3101c7d50724:train:01406",
+    "external-gsm8k-main-3101c7d50724:train:01407",
+    "external-gsm8k-main-3101c7d50724:train:01408",
+    "external-gsm8k-main-3101c7d50724:train:01409",
+    "external-gsm8k-main-3101c7d50724:train:01410",
+    "external-gsm8k-main-3101c7d50724:train:01411",
+    "external-gsm8k-main-3101c7d50724:train:01412",
+    "external-gsm8k-main-3101c7d50724:train:01413",
+    "external-gsm8k-main-3101c7d50724:train:01414",
+    "external-gsm8k-main-3101c7d50724:train:01415",
+    "external-gsm8k-main-3101c7d50724:train:01416",
+    "external-gsm8k-main-3101c7d50724:train:01417",
+    "external-gsm8k-main-3101c7d50724:train:01418"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01404",
+    "external-gsm8k-main-3101c7d50724:train:01405",
+    "external-gsm8k-main-3101c7d50724:train:01406",
+    "external-gsm8k-main-3101c7d50724:train:01407",
+    "external-gsm8k-main-3101c7d50724:train:01408",
+    "external-gsm8k-main-3101c7d50724:train:01409",
+    "external-gsm8k-main-3101c7d50724:train:01410",
+    "external-gsm8k-main-3101c7d50724:train:01411",
+    "external-gsm8k-main-3101c7d50724:train:01412",
+    "external-gsm8k-main-3101c7d50724:train:01413",
+    "external-gsm8k-main-3101c7d50724:train:01414",
+    "external-gsm8k-main-3101c7d50724:train:01415",
+    "external-gsm8k-main-3101c7d50724:train:01416",
+    "external-gsm8k-main-3101c7d50724:train:01417",
+    "external-gsm8k-main-3101c7d50724:train:01418"
+  ],
+  "verification_pending_cumulative": {
+    "count": 905,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01418"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01404-01418",
+      "retry_on": "2026-09-22",
+      "reason_ja": "現HEADの固定Lean 4.33.1 exact-head CI成功証拠と依存グラフが未確定のためsolution_readyへ昇格できない。直前HEADのCIは既存A20の非線形計算連鎖で失敗した。",
+      "next_action_ja": "現HEADの完全replayを確認し、新規A03の62定理・入力SHA・許容公理・説明行依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {"problem_ids": "train:01404-01408", "commit": "eface5a26174631e5d41ce1d1b3d98a5ddfe03cb"},
+    {"problem_ids": "train:01409-01413", "commit": "b12b99106d32bf94e23c4ec6c65e037e34150b7f"},
+    {"problem_ids": "train:01414-01418 and registration", "commit": "bf189c4fa15e21d2a04bc32a084fa596c1f66091"}
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 62,
+    "recipe_declaration_mappings_checked": 62,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": null,
+    "model_hash": "2581ce2f38a11a2cc2d8086fdb54ed3b9be03f3dfdc26f2a73df7c0c29feba59",
+    "semantic_blockers": []
+  },
+  "measurements": {
+    "elapsed_seconds": 1065,
+    "artifact_bytes": 135908,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0,
+    "connector_static_validation_rate": 1,
+    "local_execution_success_rate": null,
+    "ci_seconds": 617
+  },
+  "local_checks": {
+    "ledger_validate": "recorded_exact_solution_head_ci_failure",
+    "python_unittest": "not_run_transient_workspace_without_repository",
+    "source_and_recipe_hash_check": "15 exact source records/questions, 15 current model hashes, and 62 declaration mappings checked",
+    "solve_queue_write": "equivalent deterministic queue update applied through Git Data API",
+    "queue_partition": "solution_ready 518, awaiting_verification 905, pending 7369; total 8792; duplicate IDs 0",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "not_accepted_due_complete_replay_failure",
+    "static_audit": "passed: 15 recipes, 62 steps, 0 missing test declarations, 0 forbidden sorry/admit/custom axiom tokens",
+    "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "7025b4005b930462698aad3b0053cf3cd77dc8eb",
+    "previous_run_id": 35631437651,
+    "previous_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35631437651",
+    "previous_status": "failure_existing_A20_nonlinear_omega_chain",
+    "previous_artifact_id": 10654551495,
+    "previous_artifact_bytes": 196385679,
+    "accepted_as_success_evidence": false,
+    "solution_commit_sha": "bf189c4fa15e21d2a04bc32a084fa596c1f66091",
+    "current_run_id": 35637270550,
+    "current_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35637270550",
+    "current_job_id": 106458242444,
+    "current_status": "failure_existing_A20_nonlinear_omega_chain",
+    "current_artifact_id": 10657575807,
+    "current_artifact_bytes": 196513680,
+    "failure_location": "LemmaWeave/Problems/GSM8K/Sprint0921A20Models.lean",
+    "failure_summary_ja": "完全replayはA20の既知の非線形積・自然数減算を汎用omegaだけで解こうとする箇所で失敗した。新規A03の個別エラーは出力されていないが、完全replay未完のため成功証拠とはしない。"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "bf189c4fa15e21d2a04bc32a084fa596c1f66091",
+  "progress_before": {"solution_ready": 518, "remaining": 8274, "verification_pending": 890},
+  "progress_after": {"solution_ready": 518, "remaining": 8274, "verification_pending": 905},
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01419",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・62個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01411はLeo/Lucasの名前不整合、train:01412はtree timesの誤植、train:01418はthree times moreと少なくとも5リットルによる非一意性を、追加条件付き結論と反例に分離した。"
+}

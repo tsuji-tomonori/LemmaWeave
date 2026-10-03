@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily48_jogging","title_ja":"5日間のジョギング消費カロリー","problem_id":"external-gsm8k-main-3101c7d50724:train:00482","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"毎晩100フィートを5周走り、5日間で25フィート当たり1カロリー消費するとき総量を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917D.jogging_solution","graph":"work/gsm8k-daily48-jogging-graph.json","lean_file":"tests/lean/GSM8KDaily0917D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["問題が指定する期間は5日であり、参照解答中のweekという語は5日間として扱う。"],
+  "steps":[
+    {"id":"jogging_distance","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.jogging_distance","title_ja":"5日間の走行距離","requires_steps":[],"uses_nodes":[],"condition_ja":"1周100フィートを1日5周、5日間走る。","conclusion_ja":"1日500フィート、5日で2500フィート。","baseline_ja":"周回数×距離×日数。"},
+    {"id":"jogging_calories","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.jogging_calories","title_ja":"消費カロリー","requires_steps":["jogging_distance"],"uses_nodes":[],"condition_ja":"25フィート走るごとに1カロリーを消費する。","conclusion_ja":"2500÷25=100カロリー。","baseline_ja":"総距離÷単位距離。割り切れる条件。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":483,"checked_model_hash":"36659505f7e047d68fd7fe15a6930aff0d84c83830512c7638ed07d8c6a5a95d","checks_ja":["5周・100フィート・5日を照合した。","25フィート当たり1カロリーを正確な比例として扱った。"]}
+}

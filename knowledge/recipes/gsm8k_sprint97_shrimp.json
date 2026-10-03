@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint97_shrimp",
+  "title_ja": "エビ前菜の費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01743",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "必要尾数、必要ポンド数、費用の順に計算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.shrimp_solution",
+  "graph": "work/gsm8k-sprint97-shrimp-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shrimp_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.shrimp_count",
+      "title_ja": "必要なエビは200尾。",
+      "claim_ja": "必要なエビは200尾。",
+      "method_ja": "5尾/人×40人。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全40人へ各5尾。",
+      "conclusion_ja": "5×40=200。",
+      "baseline_ja": "5×40=200。"
+    },
+    {
+      "id": "shrimp_pounds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.shrimp_pounds",
+      "title_ja": "必要量は10ポンド。",
+      "claim_ja": "必要量は10ポンド。",
+      "method_ja": "200尾÷20尾/ポンド。",
+      "requires_steps": [
+        "shrimp_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1ポンドに20尾で端数なし。",
+      "conclusion_ja": "10×20=200。",
+      "baseline_ja": "10×20=200。"
+    },
+    {
+      "id": "shrimp_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.shrimp_solution",
+      "title_ja": "費用は170ドル。",
+      "claim_ja": "費用は170ドル。",
+      "method_ja": "10ポンド×17ドル/ポンド。",
+      "requires_steps": [
+        "shrimp_pounds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "単価は17ドル/ポンド。",
+      "conclusion_ja": "10×17=170。",
+      "baseline_ja": "10×17=170。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1744,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

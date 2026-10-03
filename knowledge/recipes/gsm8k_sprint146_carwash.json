@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint146_carwash",
+  "title_ja": "洗車会社の5日間売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02476",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日80台、1台5ドルを5日間続ける。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.carwash_solution",
+  "graph": "work/gsm8k-sprint146-carwash-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "carwash_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.carwash_daily",
+      "title_ja": "1日400ドル",
+      "claim_ja": "1日400ドル",
+      "method_ja": "80に5を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "1日400ドル",
+      "baseline_ja": "1日400ドル"
+    },
+    {
+      "id": "carwash_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.carwash_solution",
+      "title_ja": "5日で2000ドル",
+      "claim_ja": "5日で2000ドル",
+      "method_ja": "400に5を掛ける",
+      "requires_steps": [
+        "carwash_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "5日で2000ドル",
+      "baseline_ja": "5日で2000ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2477,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

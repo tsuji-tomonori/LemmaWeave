@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint245_cats",
+  "title_ja": "大型ネコの総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03253",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A04P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ライオンとトラの合計の半分をクーガー数として合計する。",
+  "answer_ja": "39頭",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A04P1.cats_total",
+  "graph": "work/gsm8k-sprint245-cats-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cats_combined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P1.cats_combined",
+      "title_ja": "ライオンとトラは26頭。",
+      "claim_ja": "ライオンとトラは26頭。",
+      "method_ja": "12+14。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二種を合計。",
+      "conclusion_ja": "26頭。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cats_cougars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P1.cats_cougars",
+      "title_ja": "クーガーは13頭。",
+      "claim_ja": "クーガーは13頭。",
+      "method_ja": "26÷2。",
+      "requires_steps": [
+        "cats_combined"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "クーガーは二種合計の半分。",
+      "conclusion_ja": "13頭。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cats_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P1.cats_total",
+      "title_ja": "全体は39頭。",
+      "claim_ja": "全体は39頭。",
+      "method_ja": "26+13。",
+      "requires_steps": [
+        "cats_combined",
+        "cats_cougars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "三種を合計。",
+      "conclusion_ja": "39頭。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3254,
+    "checked_model_hash": "d0b25be9005e17a8c780d7b301d61c17309b4bb716473619acd9b5fec8883e21",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

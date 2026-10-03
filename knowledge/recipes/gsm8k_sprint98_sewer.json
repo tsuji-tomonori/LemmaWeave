@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint98_sewer",
+  "title_ja": "下水が処理できる連続降雨日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01751",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "容量を毎時流出量で割って時間を求め、24時間/日で日数へ換算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.sewer_solution",
+  "graph": "work/gsm8k-sprint98-sewer-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sewer_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.sewer_hours",
+      "title_ja": "処理可能時間は240時間。",
+      "claim_ja": "処理可能時間は240時間。",
+      "method_ja": "240000÷1000。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "流出は毎時1000ガロンで一定。",
+      "conclusion_ja": "240×1000=240000。",
+      "baseline_ja": "240×1000=240000。"
+    },
+    {
+      "id": "sewer_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.sewer_solution",
+      "title_ja": "処理できるのは10日。",
+      "claim_ja": "処理できるのは10日。",
+      "method_ja": "240÷24。",
+      "requires_steps": [
+        "sewer_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1日24時間、容量ちょうどまではoverflowしない。",
+      "conclusion_ja": "10×24=240。",
+      "baseline_ja": "10×24=240。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1752,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

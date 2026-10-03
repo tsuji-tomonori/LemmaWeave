@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily30_flour","title_ja":"二種類の袋の全組合せから小麦粉費用を最小化","problem_id":"external-gsm8k-main-3101c7d50724:train:00303","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"12斤に各4ポンド必要。10ポンド10ドル袋と12ポンド13ドル袋を混ぜてもよいとき、十分な量を最安で買う費用を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.flour_solution","graph":"work/gsm8k-daily30-flour-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["参照解の同種袋比較を強め、10・12ポンド袋の任意の非負整数組合せを検査する一般命題にした。"],
+  "steps":[
+    {"id":"flour_need","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.flour_need","title_ja":"必要量","requires_steps":[],"uses_nodes":[],"condition_ja":"12斤それぞれに4ポンド使う。","conclusion_ja":"48ポンド必要。","baseline_ja":"総量＝斤数×一斤当たり量。"},
+    {"id":"flour_candidate","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.flour_candidate","title_ja":"50ドルの購入案","requires_steps":[],"uses_nodes":[],"condition_ja":"10ポンド10ドル袋を5袋、12ポンド袋を0袋買う。","conclusion_ja":"50ポンドを50ドルで得て48ポンド以上を満たす。","baseline_ja":"袋数×内容量と袋数×単価を用いる。"},
+    {"id":"flour_minimal","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.flour_minimal","title_ja":"全組合せに対する下界","requires_steps":[],"uses_nodes":[],"condition_ja":"10ポンド袋をx個、12ポンド袋をy個買い、x,yは非負整数で合計48ポンド以上。","conclusion_ja":"どの組合せも費用は50ドル以上。よって候補50ドルが最安。","baseline_ja":"10x+12y≥48と費用10x+13yを自然数線形算術で比較する。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":304,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["純粋な2候補だけでなく混合袋も含め、50ドルの実現と全実行可能購入の50ドル下界を照合した。"]}
+}

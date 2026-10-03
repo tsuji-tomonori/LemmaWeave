@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint100_breakfast",
+  "title_ja": "朝食の調理時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01787",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ソーセージと卵を一品ずつ別々に調理する時間を加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.breakfast_solution",
+  "graph": "work/gsm8k-sprint100-breakfast-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "breakfast_sausages",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.breakfast_sausages",
+      "title_ja": "ソーセージは15分。",
+      "claim_ja": "ソーセージは15分。",
+      "method_ja": "3本×5分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各本を別々に調理。",
+      "conclusion_ja": "15。",
+      "baseline_ja": "15。"
+    },
+    {
+      "id": "breakfast_eggs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.breakfast_eggs",
+      "title_ja": "卵は24分。",
+      "claim_ja": "卵は24分。",
+      "method_ja": "6個×4分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各卵を別々に調理。",
+      "conclusion_ja": "24。",
+      "baseline_ja": "24。"
+    },
+    {
+      "id": "breakfast_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.breakfast_solution",
+      "title_ja": "合計39分。",
+      "claim_ja": "合計39分。",
+      "method_ja": "15+24。",
+      "requires_steps": [
+        "breakfast_sausages",
+        "breakfast_eggs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全品を逐次調理する。",
+      "conclusion_ja": "39。",
+      "baseline_ja": "39。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1788,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint316_sneezing_count",
+  "title_ja": "くしゃみの回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03701",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "John has a sneezing fit for 2 minutes.  He sneezes once every 3 seconds.  How many times does he sneeze?",
+  "answer_ja": "2分を120秒へ直し、3秒に1回なので120÷3=40回。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A13P1.sneezing_count",
+  "graph": "work/gsm8k-sprint316-sneezing-count-graph.json",
+  "model_notes_ja": [
+    "2分間は120秒であり、開始瞬間を追加の1回として数えず、各3秒区間に1回くしゃみをする。"
+  ],
+  "steps": [
+    {
+      "id": "sneezing_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A13P1.sneezing_count",
+      "title_ja": "くしゃみの回数",
+      "claim_ja": "2分を120秒へ直し、3秒に1回なので120÷3=40回。",
+      "method_ja": "時間の単位換算と等間隔の回数を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2分=120秒で、3秒ごとに1回である。",
+      "baseline_ja": "四則演算、比・平均・百分率のうち問題で明示したもの。",
+      "conclusion_ja": "くしゃみは40回。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3702,
+    "checked_model_hash": "4125c939b2add89e287a4ae004418c8ab1d660fe42938beffc645d104d5b534c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

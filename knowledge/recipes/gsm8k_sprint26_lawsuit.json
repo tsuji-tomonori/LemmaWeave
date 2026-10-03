@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint26_lawsuit",
+  "title_ja": "2訴訟の勝敗確率差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00675",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "第1訴訟の勝率30%、第2訴訟の勝率50%から、両方敗訴と両方勝訴の確率差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A26.lawsuit_solution",
+  "graph": "work/gsm8k-sprint26-lawsuit-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A26.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "独立性を仮定しなくても、包除原理により両方敗訴と両方勝訴の差は常に20パーセントポイントになる。",
+    "参照解答の独立モデルでは両勝訴15%、両敗訴35%。"
+  ],
+  "steps": [
+    {
+      "id": "lawsuit_difference",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.lawsuit_difference",
+      "title_ja": "独立性不要の確率差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "両勝訴確率をp%とすると包除原理で両敗訴は20+p%。",
+      "conclusion_ja": "差は常に20パーセントポイント。",
+      "baseline_ja": "(20+p)-p=20。"
+    },
+    {
+      "id": "lawsuit_independent_joint",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.lawsuit_independent_joint",
+      "title_ja": "独立モデルの両勝訴",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "独立と追加仮定する場合に30%と50%を掛ける。",
+      "conclusion_ja": "両勝訴は15%。",
+      "baseline_ja": "30×50/100=15。"
+    },
+    {
+      "id": "lawsuit_independent_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.lawsuit_independent_loss",
+      "title_ja": "独立モデルの照合",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "独立モデルの数値として両勝訴15%・両敗訴35%を固定し、確率和と差を検算する。",
+      "conclusion_ja": "差は20ポイントで一般式と一致。",
+      "baseline_ja": "35-15=20。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 676,
+    "checked_model_hash": "916d85cf91b2b878437a08560919c67499293ac4d5422b70e189384b4426aceb",
+    "checks_ja": [
+      "確率の差を相対増加率ではなくパーセントポイント差として確認し、独立性不要の式を示した。"
+    ]
+  }
+}

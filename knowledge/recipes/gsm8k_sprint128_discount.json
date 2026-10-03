@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint128_discount",
+  "title_ja": "バッグの割引率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02204",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "150ドルから135ドルになった。割引率は何%か",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A20.discount_solution",
+  "graph": "work/gsm8k-sprint128-discount-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "discount_reduction",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.discount_reduction",
+      "title_ja": "値引額は15ドル",
+      "claim_ja": "値引額は15ドル",
+      "method_ja": "150から135を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "値引額は15ドル",
+      "baseline_ja": "値引額は15ドル"
+    },
+    {
+      "id": "discount_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.discount_solution",
+      "title_ja": "割引率は10%",
+      "claim_ja": "割引率は10%",
+      "method_ja": "15を150で割り100倍する",
+      "requires_steps": [
+        "discount_reduction"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "割引率は10%",
+      "baseline_ja": "割引率は10%"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2205,
+    "checked_model_hash": "be9ab873a50df496e12f7ec640da6afee66c564105c78477bc6213cb94a7cbe0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

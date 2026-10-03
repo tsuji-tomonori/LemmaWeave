@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily43_bank","title_ja":"4年間の貯金総額","problem_id":"external-gsm8k-main-3101c7d50724:train:00427","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"現在までの貯金と家族の追加額に、4年間の毎月積立額を加える。","root":"LemmaWeave.Tests.GSM8KDaily0915D.bank_solution","graph":"work/gsm8k-daily43-bank-graph.json","lean_file":"tests/lean/GSM8KDaily0915D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["利息や引出しは記載がないため加減せず、今日から4年間の48回を積み立てる。"],
+  "steps":[
+    {"id":"bank_current","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.bank_current","title_ja":"今日の残高","requires_steps":[],"uses_nodes":[],"condition_ja":"先週まで3000ドル、今日家族が7000ドル追加した。","conclusion_ja":"今日の残高は10000ドル。","baseline_ja":"二つの金額の加法。"},
+    {"id":"bank_future","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.bank_future","title_ja":"将来の積立","requires_steps":[],"uses_nodes":[],"condition_ja":"1年12か月として4年間、毎月276ドルを積み立てる。","conclusion_ja":"48か月で13248ドル積み立てる。","baseline_ja":"期間の単位換算と一定額の反復加法を乗法で表す。"},
+    {"id":"bank_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.bank_total","title_ja":"4年後の総額","requires_steps":["bank_current","bank_future"],"uses_nodes":[],"condition_ja":"今日の10000ドルに今後の13248ドルを加える。","conclusion_ja":"4年後は23248ドル。","baseline_ja":"現在額と将来積立額の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":428,"checked_model_hash":"a6933f19dea1184a4024944d3d5c0521ede1267552f17298f26c6083f9418f8e","checks_ja":["既存3000ドル、家族の7000ドル、毎月276ドル、4年間を照合した。"]}
+}

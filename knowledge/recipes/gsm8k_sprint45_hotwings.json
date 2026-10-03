@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint45_hotwings",
+  "title_ja": "記録を破る毎分増加量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00964",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Kevinが8分で64本、Alanが毎分5本のとき、整数本/分で記録を破る最小増加量を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.hotwings_solution",
+  "graph": "work/gsm8k-sprint45-hotwings-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "1分当たりの本数を自然数とし、同じ速度を8分間保つ。"
+  ],
+  "steps": [
+    {
+      "id": "hotwings_kevin",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.hotwings_kevin",
+      "title_ja": "Kevinの速度",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "64本を8分で食べる。",
+      "conclusion_ja": "毎分8本。",
+      "baseline_ja": "64=8×8。"
+    },
+    {
+      "id": "hotwings_target",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.hotwings_target",
+      "title_ja": "記録を破る最小速度",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "整数速度で毎分8本を超える最小値。",
+      "conclusion_ja": "毎分9本。",
+      "baseline_ja": "9=8+1。"
+    },
+    {
+      "id": "hotwings_extra",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.hotwings_extra",
+      "title_ja": "Alanの増加量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎分5本から9本へ増やす。",
+      "conclusion_ja": "毎分4本増。",
+      "baseline_ja": "9=5+4。"
+    },
+    {
+      "id": "hotwings_minimum",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.hotwings_minimum",
+      "title_ja": "最小性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5+rが8を超える自然数rを考える。",
+      "conclusion_ja": "必ず4≤r。",
+      "baseline_ja": "自然数の順序から証明する。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 965,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

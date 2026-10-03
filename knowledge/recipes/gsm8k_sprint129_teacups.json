@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint129_teacups",
+  "title_ja": "取り出し後のティーカップ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02224",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "26箱のうち6箱は鍋、残る半分は飾り、残りはカップ。各カップ箱は5行×4個で、箱を持つたび2個割る。残りを求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A01.teacups_solution",
+  "graph": "work/gsm8k-sprint129-teacups-graph.json",
+  "model_notes_ja": [
+    "各ティーカップ箱を取り出すため1回ずつ持ち上げ、その都度その箱の2個が割れるという読解を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "teacups_candidate_boxes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.teacups_candidate_boxes",
+      "title_ja": "鍋以外は20箱",
+      "claim_ja": "鍋以外は20箱",
+      "method_ja": "26箱から6箱を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "鍋以外は20箱",
+      "baseline_ja": "鍋以外は20箱"
+    },
+    {
+      "id": "teacups_boxes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.teacups_boxes",
+      "title_ja": "カップ箱は10箱",
+      "claim_ja": "カップ箱は10箱",
+      "method_ja": "残る20箱の半分が飾り、残り半分がカップ",
+      "requires_steps": [
+        "teacups_candidate_boxes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "カップ箱は10箱",
+      "baseline_ja": "カップ箱は10箱"
+    },
+    {
+      "id": "teacups_per_box",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.teacups_per_box",
+      "title_ja": "1箱は20個",
+      "claim_ja": "1箱は20個",
+      "method_ja": "5行に各4個",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "1箱は20個",
+      "baseline_ja": "1箱は20個"
+    },
+    {
+      "id": "teacups_after_breakage",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.teacups_after_breakage",
+      "title_ja": "1箱につき18個残る",
+      "claim_ja": "1箱につき18個残る",
+      "method_ja": "20個から2個を引く",
+      "requires_steps": [
+        "teacups_per_box"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "1箱につき18個残る",
+      "baseline_ja": "1箱につき18個残る"
+    },
+    {
+      "id": "teacups_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A01.teacups_solution",
+      "title_ja": "残るカップは180個",
+      "claim_ja": "残るカップは180個",
+      "method_ja": "10箱に各18個",
+      "requires_steps": [
+        "teacups_boxes",
+        "teacups_after_breakage"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "残るカップは180個",
+      "baseline_ja": "残るカップは180個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2225,
+    "checked_model_hash": "13f3fd6d8fb4e423b9fcfe6fe744d66bdf53e12e65ec6e255bd35e6de12aeb35",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

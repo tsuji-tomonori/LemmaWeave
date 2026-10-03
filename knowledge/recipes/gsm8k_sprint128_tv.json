@@ -1,0 +1,124 @@
+{
+  "id": "gsm8k_sprint128_tv",
+  "title_ja": "番組1シーズンの制作費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02212",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "22話の前半は1話1000ドル、後半は120% more expensive。合計は",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A20.tv_answer_scope",
+  "graph": "work/gsm8k-sprint128-tv-graph.json",
+  "model_notes_ja": [
+    "120% moreは通常120%増だが、120% as expensiveとの混同可能性を別読解として記録。"
+  ],
+  "steps": [
+    {
+      "id": "tv_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.tv_first",
+      "title_ja": "前半11話は11000ドル",
+      "claim_ja": "前半11話は11000ドル",
+      "method_ja": "1000ドルを11話分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "前半11話は11000ドル",
+      "baseline_ja": "前半11話は11000ドル"
+    },
+    {
+      "id": "tv_second_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.tv_second_each",
+      "title_ja": "120%多い読解では1話2200ドル",
+      "claim_ja": "120%多い読解では1話2200ドル",
+      "method_ja": "1000ドルに1200ドル増額する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "120%多い読解では1話2200ドル",
+      "baseline_ja": "120%多い読解では1話2200ドル"
+    },
+    {
+      "id": "tv_second_half",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.tv_second_half",
+      "title_ja": "後半は24200ドル",
+      "claim_ja": "後半は24200ドル",
+      "method_ja": "2200ドルを11話分",
+      "requires_steps": [
+        "tv_second_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "後半は24200ドル",
+      "baseline_ja": "後半は24200ドル"
+    },
+    {
+      "id": "tv_literal_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.tv_literal_solution",
+      "title_ja": "120%多い読解では合計35200ドル",
+      "claim_ja": "120%多い読解では合計35200ドル",
+      "method_ja": "11000と24200を足す",
+      "requires_steps": [
+        "tv_first",
+        "tv_second_half"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "120%多い読解では合計35200ドル",
+      "baseline_ja": "120%多い読解では合計35200ドル"
+    },
+    {
+      "id": "tv_as_expensive_alternative",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.tv_as_expensive_alternative",
+      "title_ja": "120%の価格という読解では24200ドル",
+      "claim_ja": "120%の価格という読解では24200ドル",
+      "method_ja": "後半1話1200ドルとして合計する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "120%の価格という読解では24200ドル",
+      "baseline_ja": "120%の価格という読解では24200ドル"
+    },
+    {
+      "id": "tv_readings_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.tv_readings_differ",
+      "title_ja": "35200と24200ドルは異なる",
+      "claim_ja": "35200と24200ドルは異なる",
+      "method_ja": "倍率表現の読解差を保持する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "35200と24200ドルは異なる",
+      "baseline_ja": "35200と24200ドルは異なる"
+    },
+    {
+      "id": "tv_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.tv_answer_scope",
+      "title_ja": "参照解35200ドルは120%増の読解",
+      "claim_ja": "参照解35200ドルは120%増の読解",
+      "method_ja": "条件別の両結論を残す",
+      "requires_steps": [
+        "tv_literal_solution",
+        "tv_as_expensive_alternative",
+        "tv_readings_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "参照解35200ドルは120%増の読解",
+      "baseline_ja": "参照解35200ドルは120%増の読解"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2213,
+    "checked_model_hash": "be9ab873a50df496e12f7ec640da6afee66c564105c78477bc6213cb94a7cbe0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

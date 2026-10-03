@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint166_olaf",
+  "title_ja": "Olaf親子の得点（曖昧表現）",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02779",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "“three times more”は慣用的な3倍と、字義的な3倍増しの二読解を分ける。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A04.olaf_solution",
+  "graph": "work/gsm8k-sprint166-olaf-graph.json",
+  "model_notes_ja": [
+    "“three times more”は英語として曖昧。参考解答の3倍読解を追加条件として答え、字義読解との非一意性も証明する。"
+  ],
+  "steps": [
+    {
+      "id": "olaf_conventional_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.olaf_conventional_total",
+      "title_ja": "慣用読解では28点",
+      "claim_ja": "Olafを7の3倍=21点と読めば合計28点。",
+      "method_ja": "慣用的な倍数表現",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "Olafを7の3倍=21点と読めば合計28点。",
+      "baseline_ja": "Olafを7の3倍=21点と読めば合計28点。"
+    },
+    {
+      "id": "olaf_literal_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.olaf_literal_total",
+      "title_ja": "字義読解では35点",
+      "claim_ja": "3倍多いを7+3×7=28点と読めば合計35点。",
+      "method_ja": "増加量としての倍数表現",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "3倍多いを7+3×7=28点と読めば合計35点。",
+      "baseline_ja": "3倍多いを7+3×7=28点と読めば合計35点。"
+    },
+    {
+      "id": "olaf_readings_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.olaf_readings_differ",
+      "title_ja": "二つの答えは異なる",
+      "claim_ja": "28≠35なので原文だけでは一意でない。",
+      "method_ja": "数値の非等号",
+      "requires_steps": [
+        "olaf_conventional_total",
+        "olaf_literal_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "28≠35なので原文だけでは一意でない。",
+      "baseline_ja": "28≠35なので原文だけでは一意でない。"
+    },
+    {
+      "id": "olaf_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.olaf_solution",
+      "title_ja": "追加条件付き答えは28点",
+      "claim_ja": "参考解答と同じ慣用読解を明示すれば28点。",
+      "method_ja": "明示した読解条件",
+      "requires_steps": [
+        "olaf_conventional_total",
+        "olaf_readings_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "参考解答と同じ慣用読解を明示すれば28点。",
+      "baseline_ja": "参考解答と同じ慣用読解を明示すれば28点。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2780,
+    "checked_model_hash": "0a72e44473da6012f2c3e13597de2c7523a2b4aca208e4fca162240ccab79f3e",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

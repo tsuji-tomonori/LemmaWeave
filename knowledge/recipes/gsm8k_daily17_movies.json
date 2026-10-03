@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily17_movies","title_ja":"2日間に見た長編映画数","problem_id":"external-gsm8k-main-3101c7d50724:train:00166","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"1本90分の映画を火曜に4時間30分見て、水曜に火曜の2倍の本数を見たとき、2日間の最大本数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910A.movies_solution","graph":"work/gsm8k-daily17-movies-graph.json","lean_file":"tests/lean/GSM8KDaily0910A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["full-length movieだけを数え、火曜の270分は90分映画3本でちょうど尽くされる。"],
+  "steps":[
+    {"id":"movies_minutes","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.movies_minutes","title_ja":"火曜の視聴分数","requires_steps":[],"uses_nodes":[],"condition_ja":"4時間30分を分に直す。","conclusion_ja":"4×60+30=270分。","baseline_ja":"時間から分への単位換算。"},
+    {"id":"movies_tuesday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.movies_tuesday","title_ja":"火曜の映画本数","requires_steps":["movies_minutes"],"uses_nodes":[],"condition_ja":"1本90分で合計270分、全編を見た映画だけを数える。","conclusion_ja":"火曜は3本。","baseline_ja":"総時間÷1本の時間。"},
+    {"id":"movies_wednesday","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.movies_wednesday","title_ja":"水曜の映画本数","requires_steps":["movies_tuesday"],"uses_nodes":[],"condition_ja":"水曜は火曜3本の2倍。","conclusion_ja":"水曜は6本。","baseline_ja":"倍率の乗法。"},
+    {"id":"movies_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.movies_total","title_ja":"2日間の最大本数","requires_steps":["movies_tuesday","movies_wednesday"],"uses_nodes":[],"condition_ja":"火曜3本と水曜6本。","conclusion_ja":"合計9本。","baseline_ja":"日別本数の加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":167,"checked_model_hash":"8d560b66e65f6153528fc090945267f3173ba02c8df0a2cef113393ea49676d5","checks_ja":["映画1本の時間、火曜の総時間、水曜の倍率、全編視聴条件を照合した。"]}
+}

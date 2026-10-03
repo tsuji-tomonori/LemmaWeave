@@ -1,0 +1,40 @@
+{
+  "baseline": {
+    "active_recipes": 14,
+    "baseline_commit": "3645f80d2864874b212547ed9e8ea061e197c17f",
+    "ci_run_id": "34036070145",
+    "compressed_graph_bytes": 13956106,
+    "exact_duplicate_node_occurrences": 41400,
+    "job_seconds": 335,
+    "names_with_different_records": 0,
+    "node_occurrences": 48417,
+    "note_ja": "比較対象は前回commitの有効レシピのみ。名前だけで証拠を再利用せず、宣言レコード全体のハッシュを区別。",
+    "raw_graph_bytes": 246453777,
+    "replay_step_seconds": 233,
+    "unique_name_and_record_hash": 7017
+  },
+  "current": {
+    "active_recipes": 19,
+    "compressed_graph_bytes": 17841132,
+    "exact_duplicate_node_occurrences": 53578,
+    "names_with_different_records": 0,
+    "node_occurrences": 62774,
+    "raw_graph_bytes": 312721060,
+    "unique_name_and_record_hash": 9196,
+    "proof_commit": "48c783c977213e2129fb38907e5fda865ef3a1c1",
+    "ci_run_id": "34048723408",
+    "job_seconds": 367,
+    "replay_step_seconds": 267
+  },
+  "date": "2026-09-07",
+  "improvement_deadline": "2026-09-14",
+  "next_steps_ja": [
+    "変更対象のLeanファイルとローカルimport閉包・ツールチェーン・lock・抽出器・意味対応の入力ハッシュを選択根拠とする。",
+    "共有補題変更時に影響する全対象、削除・追加された宣言、型だけの参照、根拠リンク変更を必ず再検査する。",
+    "宣言名だけでなく型・証明項・保存レコードの内容ハッシュで重複排除し、各根の到達グラフと公理検査・出力ハッシュは保持する。",
+    "未変更の正しい証拠は再利用し、変更・出力改ざん・依存欠落・別根からの流用を拒否する回帰検査を追加してから導入する。",
+    "この回では方式を実装済みとはしない。全件再検証を維持する。"
+  ],
+  "status": "measurement_only_no_evidence_reuse_relaxation",
+  "comparison_note_ja": "有効レシピ14→19、行単位の既存5問も更新した混合差分なので、時間差を問題1問当たりの固定コストや50問/日の実測能力とはしない。"
+}

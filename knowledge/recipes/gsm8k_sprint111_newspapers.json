@@ -1,0 +1,109 @@
+{
+  "id": "gsm8k_sprint111_newspapers",
+  "title_ja": "新聞販売の利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01957",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の全数量関係を順に式へ移し、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.news_solution",
+  "graph": "work/gsm8k-sprint111-newspapers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "news_sold",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.news_sold",
+      "title_ja": "400部売る。",
+      "claim_ja": "400部売る。",
+      "method_ja": "500の80%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "400部売る。",
+      "baseline_ja": "400部売る。"
+    },
+    {
+      "id": "news_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.news_revenue",
+      "title_ja": "売上は800ドル。",
+      "claim_ja": "売上は800ドル。",
+      "method_ja": "400×2。",
+      "requires_steps": [
+        "news_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "売上は800ドル。",
+      "baseline_ja": "売上は800ドル。"
+    },
+    {
+      "id": "news_discount",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.news_discount",
+      "title_ja": "仕入れ値引きは1部150セント。",
+      "claim_ja": "仕入れ値引きは1部150セント。",
+      "method_ja": "200セントの75%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "仕入れ値引きは1部150セント。",
+      "baseline_ja": "仕入れ値引きは1部150セント。"
+    },
+    {
+      "id": "news_cost_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.news_cost_each",
+      "title_ja": "仕入単価は50セント。",
+      "claim_ja": "仕入単価は50セント。",
+      "method_ja": "200−150。",
+      "requires_steps": [
+        "news_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "仕入単価は50セント。",
+      "baseline_ja": "仕入単価は50セント。"
+    },
+    {
+      "id": "news_cost_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.news_cost_total",
+      "title_ja": "500部の仕入総額は250ドル。",
+      "claim_ja": "500部の仕入総額は250ドル。",
+      "method_ja": "500×50セント。",
+      "requires_steps": [
+        "news_cost_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "500部の仕入総額は250ドル。",
+      "baseline_ja": "500部の仕入総額は250ドル。"
+    },
+    {
+      "id": "news_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.news_solution",
+      "title_ja": "利益は550ドル。",
+      "claim_ja": "利益は550ドル。",
+      "method_ja": "800−250。",
+      "requires_steps": [
+        "news_revenue",
+        "news_cost_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "利益は550ドル。",
+      "baseline_ja": "利益は550ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1958,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

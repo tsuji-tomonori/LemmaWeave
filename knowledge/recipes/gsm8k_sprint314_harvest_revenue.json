@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint314_harvest_revenue",
+  "title_ja": "収穫物の売上合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03691",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "イチゴ5株から各14個、トマト7株から各16個を収穫し、7個ずつ籠詰めする。イチゴ籠9ドル、トマト籠6ドルの売上を求める。",
+  "answer_ja": "イチゴ70個は10籠で90ドル。トマト112個は16籠で96ドル。合計は90+96=186ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A12P2.harvest_revenue",
+  "graph": "work/gsm8k-sprint314-harvest-revenue-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "harvest_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A12P2.harvest_revenue",
+      "title_ja": "イチゴ70個は10籠で90ドル。トマト112個は16籠で96ドル。合計は90+96=186ドル。",
+      "claim_ja": "イチゴ70個は10籠で90ドル。トマト112個は16籠で96ドル。合計は90+96=186ドル。",
+      "method_ja": "イチゴ70個は10籠で90ドル。トマト112個は16籠で96ドル。合計は90+96=186ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "イチゴ70個は10籠で90ドル。トマト112個は16籠で96ドル。合計は90+96=186ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3692,
+    "checked_model_hash": "f1c33bddddfd820751b22889eed1bde45c50c477ec7071a66c77338b19ceacea",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+# レビュー記録の構造例。レビューを実施したという意味ではない。
+schema_version: "0.1"
+is_template: true
+review_id: "TEMPLATE-REVIEW"
+role: null                    # semantic / proof_audit / dependency / baseline / release
+reviewer_id: null
+session_id: null
+independence: not_established # independent / self_review_only
+reviewed_at: null
+target:
+  problem_id: null
+  revision: null
+  git_commit: null
+  source_hash: null
+  semantic_model_hash: null
+  theorem_type_hash: null
+  proof_hash: null
+source_pages_directly_checked: []
+checks: []                    # criterion_id / result / evidence / concise rationale
+findings: []                  # severity / location / correction needed
+verdict: not_reviewed
+invalidated_by: null

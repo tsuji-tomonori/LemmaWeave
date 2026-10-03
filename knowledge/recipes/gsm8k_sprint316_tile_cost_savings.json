@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint316_tile_cost_savings",
+  "title_ja": "紫色タイルによる節約額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03702",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Janet is considering two options to retile her bathroom. The turquoise tiles cost $13/tile and the purple tiles cost $11/tile. If Janet needs to tile two walls that measure 5 feet by 8 feet and 7 feet by 8 feet, and each square foot of wall takes 4 tiles, how much will Janet save by buying the purple tiles instead of the turquoise ones?",
+  "answer_ja": "壁の面積は5×8=40平方フィートと7×8=56平方フィート、合計96平方フィート。必要枚数は96×4=384枚。1枚あたり13−11=2ドル安いので、節約額は384×2=768ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A13P1.tile_cost_savings",
+  "graph": "work/gsm8k-sprint316-tile-cost-savings-graph.json",
+  "model_notes_ja": [
+    "2枚の壁は重ならず、各平方フィートに4枚必要で、両候補は同じ枚数を使う。"
+  ],
+  "steps": [
+    {
+      "id": "tile_cost_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A13P1.tile_cost_savings",
+      "title_ja": "紫色タイルによる節約額",
+      "claim_ja": "壁の面積は5×8=40平方フィートと7×8=56平方フィート、合計96平方フィート。必要枚数は96×4=384枚。1枚あたり13−11=2ドル安いので、節約額は384×2=768ドル。",
+      "method_ja": "面積、必要枚数、単価差の順に積を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "長さと単価は非負で、タイル枚数は整数。",
+      "baseline_ja": "四則演算、比・平均・百分率のうち問題で明示したもの。",
+      "conclusion_ja": "節約額は768ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3703,
+    "checked_model_hash": "4125c939b2add89e287a4ae004418c8ab1d660fe42938beffc645d104d5b534c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

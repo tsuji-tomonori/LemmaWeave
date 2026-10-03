@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint120_nes",
+  "title_ja": "NESのセール価格は160ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02085",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A11.nes_solution",
+  "graph": "work/gsm8k-sprint120-nes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "nes_trade_credit",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.nes_trade_credit",
+      "title_ja": "SNESの下取り額は120ドル。",
+      "claim_ja": "SNESの下取り額は120ドル。",
+      "method_ja": "150ドルの80%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "SNESの下取り額は120ドル。",
+      "baseline_ja": "SNESの下取り額は120ドル。"
+    },
+    {
+      "id": "nes_tendered",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.nes_tendered",
+      "title_ja": "下取りと現金を合わせて200ドルを差し出した。",
+      "claim_ja": "下取りと現金を合わせて200ドルを差し出した。",
+      "method_ja": "120+80。",
+      "requires_steps": [
+        "nes_trade_credit"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "下取りと現金を合わせて200ドルを差し出した。",
+      "baseline_ja": "下取りと現金を合わせて200ドルを差し出した。"
+    },
+    {
+      "id": "nes_nonconsole",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.nes_nonconsole",
+      "title_ja": "釣り10ドルとゲーム30ドルの価値は計40ドル。",
+      "claim_ja": "釣り10ドルとゲーム30ドルの価値は計40ドル。",
+      "method_ja": "10+30。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "釣り10ドルとゲーム30ドルの価値は計40ドル。",
+      "baseline_ja": "釣り10ドルとゲーム30ドルの価値は計40ドル。"
+    },
+    {
+      "id": "nes_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.nes_solution",
+      "title_ja": "NESのセール価格は160ドル。",
+      "claim_ja": "NESのセール価格は160ドル。",
+      "method_ja": "200ドルから釣りとゲームの40ドルを除く。",
+      "requires_steps": [
+        "nes_tendered",
+        "nes_nonconsole"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "NESのセール価格は160ドル。",
+      "baseline_ja": "NESのセール価格は160ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2086,
+    "checked_model_hash": "4fbbba05067cfd5efc01e3ad45a6bbdfe8355bb6f13cb453952d1e22052f2cc5",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、解釈条件や参照解の誤記を黙って補わず明示した。"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily32_robots","title_ja":"セント単位で商品代・税・釣銭を合計する","problem_id":"external-gsm8k-main-3101c7d50724:train:00320","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"8.75ドルのロボット7個、税7.22ドル、釣銭11.53ドルから所持金を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913A.robots_solution","graph":"work/gsm8k-daily32-robots-graph.json","lean_file":"tests/lean/GSM8KDaily0913A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["小数丸めを避けるため全金額を1ドル=100セントで表す。"],
+  "steps":[
+    {"id":"robots_goods","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.robots_goods","title_ja":"商品代を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"1個875セントのロボットを7個買う。","conclusion_ja":"商品代は6125セント。","baseline_ja":"875×7を計算する。"},
+    {"id":"robots_spent","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.robots_spent","title_ja":"支払額を求める","requires_steps":["robots_goods"],"uses_nodes":[],"condition_ja":"商品代6125セントへ税722セントを加える。","conclusion_ja":"支払額は6847セント。","baseline_ja":"6125+722を計算する。"},
+    {"id":"robots_start","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.robots_start","title_ja":"最初の所持金を求める","requires_steps":["robots_spent"],"uses_nodes":[],"condition_ja":"6847セントを払い、1153セントが残った。","conclusion_ja":"最初は8000セント、すなわち80ドル。","baseline_ja":"支払額と釣銭を6847+1153と足す。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":321,"checked_model_hash":"4fec31cdef21e66aa97dac7c4991bc909e72e5b4b85a2a604a5de1d92c1baa4f","checks_ja":["ドル表記をセントへ正確に換算し、7個分・税・釣銭の関係を照合した。"]}
+}

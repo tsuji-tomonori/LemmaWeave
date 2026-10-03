@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint46_salary","title_ja":"週給","problem_id":"external-gsm8k-main-3101c7d50724:train:00976","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"週4日は日給10ドル、金土日は半日分として週給を求める。","root":"LemmaWeave.Tests.GSM8KSprint0920A14.salary_solution","graph":"work/gsm8k-sprint46-salary-graph.json","lean_file":"tests/lean/GSM8KSprint0920A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["日給10ドルを一日勤務の賃金とし、半日はその半額と解釈した。"],
+  "steps":[
+    {"id":"salary_full","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.salary_full","title_ja":"平日4日分","requires_steps":[],"uses_nodes":[],"condition_ja":"4日を日給10ドルで働く。","conclusion_ja":"40ドル。","baseline_ja":"40=4×10。"},
+    {"id":"salary_half","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.salary_half","title_ja":"半日分","requires_steps":[],"uses_nodes":[],"condition_ja":"日給10ドルの半分。","conclusion_ja":"5ドル。","baseline_ja":"10=5×2。"},
+    {"id":"salary_weekend","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.salary_weekend","title_ja":"3半日分","requires_steps":[],"uses_nodes":[],"condition_ja":"金土日の3日を各5ドル。","conclusion_ja":"15ドル。","baseline_ja":"15=3×5。"},
+    {"id":"salary_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.salary_total","title_ja":"週給合計","requires_steps":[],"uses_nodes":[],"condition_ja":"40ドルと15ドルを足す。","conclusion_ja":"55ドル。","baseline_ja":"55=40+15。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":977,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["曜日数と半日賃金の意味を照合した。"]}
+}

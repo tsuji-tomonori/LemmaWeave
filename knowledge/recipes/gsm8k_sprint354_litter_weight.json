@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint354_litter_weight",
+  "title_ja": "集めたごみの総重量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03892",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Gina is participating in a neighborhood clean-up filling bags with litter. She was able to collect two bags of litter herself. The rest of the neighborhood together collected 82 times as much as Gina did by herself. Each bag of litter weighs 4 pounds. How many pounds was all the litter they collected?",
+  "answer_ja": "Gina以外は2×82=164袋。Ginaの2袋を足して166袋。1袋4ポンドなので166×4=664ポンド。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A08P3.litter_weight",
+  "graph": "work/gsm8k-sprint354-litter-weight-graph.json",
+  "model_notes_ja": [
+    "82倍にGina本人の2袋は含めず、最後に加える。"
+  ],
+  "steps": [
+    {
+      "id": "litter_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A08P3.litter_weight",
+      "title_ja": "集めたごみの総重量",
+      "claim_ja": "Gina以外は2×82=164袋。Ginaの2袋を足して166袋。1袋4ポンドなので166×4=664ポンド。",
+      "method_ja": "Gina以外の袋数を倍率から求め、本人分を加えて重量へ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "82 times as muchはGina以外の地域全体がGinaの袋数の82倍を集めた意味。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "664ポンド。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3893,
+    "checked_model_hash": "9d1083ab8d77513b695b12ed12e42b1866c393d6229a4cf06ed99d2551ea7a3c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

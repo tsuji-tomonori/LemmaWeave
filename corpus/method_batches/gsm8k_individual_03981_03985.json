@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1018",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "69eb19080eaf337abe0e4f83d9342ea536de68dd3d66b5ead03218d1617f0e31",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A15P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03981",
+      "source_line_1based": 3982,
+      "source_record_sha256": "9391d553930780dfa576cca501aa033035d3e33a1c7e71f23462260aeb3b8305",
+      "raw_question_sha256": "25bc4396db24339a6d3b10b428ddfe14eea565eb56b68b02bd52db63f7a36216",
+      "normalized_question_sha256": "ce11571fbb6a24c03ee369e427ac89e3f849840f002b73890217b71cc32feccf",
+      "source_question": "James visits 20 houses to try and make a sale.  He manages to sell something in every house.  The next day he visits twice as many houses but only sold to 80% of houses.  If he sold two things at each house in each of the two days, how many items did he sell?",
+      "recipe_id": "gsm8k_sprint372_two_day_sales_items",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "80%は40軒を基準とし、販売できた各家で2個ずつ売る。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03982",
+      "source_line_1based": 3983,
+      "source_record_sha256": "d790a881cfd33635ae9112f366af56b138556fefbcceeb2383027b30df191c44",
+      "raw_question_sha256": "c971a2af3ea81bfa5abf7bc226d6727bff6f9af22961a14c892e458cb5f196bc",
+      "normalized_question_sha256": "c971a2af3ea81bfa5abf7bc226d6727bff6f9af22961a14c892e458cb5f196bc",
+      "source_question": "Angela's contribution is triple Brittany's contribution, and Brittany's contribution is triple Niraj's. If Niraj contributed $80, how much did everyone contribute in total?",
+      "recipe_id": "gsm8k_sprint372_contribution_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各tripleは直前に指定された人物の寄付額を基準とする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03983",
+      "source_line_1based": 3984,
+      "source_record_sha256": "5739e945468803a6590c33adab06ef3b8a009401a7947da6d42690d0c66f5245",
+      "raw_question_sha256": "e0416ad9a843908232aef4dbc7b3e02f28a91475ec0580ea7580067371b5cdf6",
+      "normalized_question_sha256": "85401baf546a34bf6550a3372353428304c6f0402a7487eeec4a8598f9a6d1fb",
+      "source_question": "Roberta wants to have a dinner party centered around soufflés.  Each savory souffle calls for 8 eggs each and the dessert ones call for 6 eggs each.  She wants to make 3 savory soufflés and 5 dessert soufflés for the party.  How many eggs will she need?",
+      "recipe_id": "gsm8k_sprint372_souffle_eggs",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各スフレは記載された卵数を使い、種類間で卵を重複利用しない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03984",
+      "source_line_1based": 3985,
+      "source_record_sha256": "9ac5b0cb3b55626f7571065d0ccc839c8e2e3ae907baf82e8a599f2721043a76",
+      "raw_question_sha256": "68f9e83e2cdba1809c6754260e7ec71804ac4eb14b864998a04fa5200d4253c2",
+      "normalized_question_sha256": "68f9e83e2cdba1809c6754260e7ec71804ac4eb14b864998a04fa5200d4253c2",
+      "source_question": "Judson, Camilo, and Kenny decided to contribute money to paint their house. Judson contributed $500, Kenny contributed 20% more money than Judson, and Camilo contributed $200 more than Kenny. How much was the cost of painting the house?",
+      "recipe_id": "gsm8k_sprint372_painting_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "3人の拠出額が塗装費用の全額である。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03985",
+      "source_line_1based": 3986,
+      "source_record_sha256": "ee389b28032c828edbca0a39ecb37a103e9c970a9bb703c22493fdd853d29fac",
+      "raw_question_sha256": "0a3d5bfc9bb54d7100d96f4a7cc93ed402a80a985c306cc43d00bc403fc2e271",
+      "normalized_question_sha256": "194bfa35a8341de10601423da4751f72d56823b28cec1d447fb66ee0d7505d97",
+      "source_question": "Lefty scores 20 points in a game and his teammate Righty scores half as many as Lefty does.  Their other teammate scores 6 times as much as Righty does.  What are the average points scored per player on the team?",
+      "recipe_id": "gsm8k_sprint372_average_team_points",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "チームとして平均する選手は問題文の3人である。"
+      ],
+      "blockers": []
+    }
+  ]
+}

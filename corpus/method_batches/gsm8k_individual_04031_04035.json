@@ -1,0 +1,99 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1028",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "26134c4e7c84a0d028455c6f5fa88e363490fc2e0f91cb5e14bef2fca548216b",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A20P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04031",
+      "source_line_1based": 4032,
+      "source_record_sha256": "bec7613803e7355254ee5498ef65904102ef6122b6fb8f4c3128e4b498f050aa",
+      "raw_question_sha256": "e06cc206927f78cd809d1eb2dac017f270b32c78c673bc07f24780595de249bc",
+      "normalized_question_sha256": "e06cc206927f78cd809d1eb2dac017f270b32c78c673bc07f24780595de249bc",
+      "source_question": "Cheryl placed 300 strawberries into 5 buckets. After she did that she decided to take 20 out of each bucket so they wouldn't get smashed. How many strawberries were left in each bucket?",
+      "recipe_id": "gsm8k_sprint382_strawberries_per_bucket_after_removal",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "300個は5個のバケツへ等分され、各バケツからちょうど20個を取り出す。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04032",
+      "source_line_1based": 4033,
+      "source_record_sha256": "c7c0d80f74cd6426b90cf5366f02d2b1f9015e0d67870d30f1b27765f447d649",
+      "raw_question_sha256": "90f6e45421f39d2bb061b2db20601e14beb51fee502acedcd6ad3da0db4036eb",
+      "normalized_question_sha256": "90f6e45421f39d2bb061b2db20601e14beb51fee502acedcd6ad3da0db4036eb",
+      "source_question": "Paul is working at a university. He is part of a big project, which involves 70 scientists in total. Half of them are from Europe and one-fifth are from Canada. The rest are from the USA. How many scientists in this project are from the USA?",
+      "recipe_id": "gsm8k_sprint382_usa_scientist_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "欧州・カナダ・米国の3分類は互いに重ならず、70人全員を尽くす。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04033",
+      "source_line_1based": 4034,
+      "source_record_sha256": "df9d2fa7ac4fa4780485020d24cdb9bdceda72eb218fda65b2c11988526d7cd7",
+      "raw_question_sha256": "7e9a2977804ba74575cbdcbc6f22936d796c735119ea2c3036b93740d0da4721",
+      "normalized_question_sha256": "757051343ec3731236360225fe7e56c9900b8b5a42493e6cd9ba04c4788e11a4",
+      "source_question": "Tom decided to send his wife 2 dozen roses every day for the week.  How many total roses did he send?",
+      "recipe_id": "gsm8k_sprint382_weekly_rose_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照解答のfor the monthは原題のfor the weekに対する文章上の誤記であり、計算24×7と最終値168は原題に一致する。"
+      ],
+      "blockers": [
+        "reference_prose_typo"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04034",
+      "source_line_1based": 4035,
+      "source_record_sha256": "e0bd3ca3746175b366b1968aa12b28079a8510bd3f724d0a59baff61f7576b9f",
+      "raw_question_sha256": "68972399a86fceced23e5c5816cc0829c436dca83077b14020c58693f01b0f9e",
+      "normalized_question_sha256": "68972399a86fceced23e5c5816cc0829c436dca83077b14020c58693f01b0f9e",
+      "source_question": "Out of the 80 students who took the biology exam, only 2/5 of them managed to score 100%. If a score below 80% qualified as failing, and 50 percent of the remaining students who didn't score 100% managed to score over 80%, calculate the number of students who failed the exam.",
+      "recipe_id": "gsm8k_sprint382_biology_exam_failure_range_conditional_and_nonunique",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "残る24人に80%ちょうどが何人いるか原文にないため、参照値24は『80%ちょうどが0人』という追加条件下でのみ成立する。"
+      ],
+      "blockers": [
+        "missing_boundary_distribution"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04035",
+      "source_line_1based": 4036,
+      "source_record_sha256": "dd5e7c2f868cdbe559a8145a5c0becae9eb3e0d99c19d0a78c5926f64b440ecb",
+      "raw_question_sha256": "2577f24c030cb109959d304ba0b20958f2088bbf0d3f5b25103acd14f1d6a200",
+      "normalized_question_sha256": "dda377b62a84fd45e61815fe3a71c010de994c0de546fe4e35c360e12bc6ccbf",
+      "source_question": "Randy feeds his pigs 10 pounds of feed per pig per day.  If Randy has 2 pigs, how many pounds of pig feed will Randy's pigs be fed per week?",
+      "recipe_id": "gsm8k_sprint382_weekly_pig_feed_pounds",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2頭はいずれも7日間、毎日10ポンドずつ食べる。"
+      ],
+      "blockers": []
+    }
+  ]
+}

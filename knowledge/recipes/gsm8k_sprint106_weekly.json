@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint106_weekly",
+  "title_ja": "2週間の読書ページ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01877",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "先週分、今週分、合計を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.weekly_solution",
+  "graph": "work/gsm8k-sprint106-weekly-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "weekly_last",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.weekly_last",
+      "title_ja": "先週は1500ページ。",
+      "claim_ja": "先週は1500ページ。",
+      "method_ja": "5×300。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "weekly_this",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.weekly_this",
+      "title_ja": "今週は3000ページ。",
+      "claim_ja": "今週は3000ページ。",
+      "method_ja": "先週の2倍。",
+      "requires_steps": [
+        "weekly_last"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "weekly_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.weekly_solution",
+      "title_ja": "合計4500ページ。",
+      "claim_ja": "合計4500ページ。",
+      "method_ja": "1500+3000。",
+      "requires_steps": [
+        "weekly_last",
+        "weekly_this"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1878,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

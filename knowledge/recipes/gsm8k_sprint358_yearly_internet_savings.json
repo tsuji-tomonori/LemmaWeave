@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint358_yearly_internet_savings",
+  "title_ja": "年間の通信費節約額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03913",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A12P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Marites internet speed is 10 megabits per second and her monthly internet bill is $20. Marites is planning to upgrade her service and choosing between 20 Mbps and 30 Mbps. If the price of the 30 Mbps is twice the amount of her current monthly bill and the price of the 20 Mbps is $10 more than her current monthly bill, how much will she save per year if she chooses the 20 Mbps than 30 Mbps?",
+  "answer_ja": "30 Mbpsは月20×2=40ドル、20 Mbpsは月20+10=30ドル。月差10ドルを12か月分にすると年間120ドル節約できる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A12P1.yearly_internet_savings",
+  "graph": "work/gsm8k-sprint358-yearly-internet-savings-graph.json",
+  "model_notes_ja": [
+    "料金は12か月一定で、初期費用や税はない。"
+  ],
+  "steps": [
+    {
+      "id": "yearly_internet_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A12P1.yearly_internet_savings",
+      "title_ja": "年間の通信費節約額",
+      "claim_ja": "30 Mbpsは月20×2=40ドル、20 Mbpsは月20+10=30ドル。月差10ドルを12か月分にすると年間120ドル節約できる。",
+      "method_ja": "2プランの月額差を求めて12倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "40ドルは30ドル以上。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "120ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3914,
+    "checked_model_hash": "b2ac950c818e7f4b27654ae43de19158eabe5781455758360a2f9163d50391db",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

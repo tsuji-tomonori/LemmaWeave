@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint125_truck",
+  "title_ja": "トラック運転の純収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02167",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "走行距離、必要燃料、燃料費、運賃を求め、差を取る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.truck_solution",
+  "graph": "work/gsm8k-sprint125-truck-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "truck_miles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.truck_miles",
+      "title_ja": "走行距離は300マイル。",
+      "claim_ja": "走行距離は300マイル。",
+      "method_ja": "30mph×10時間。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "走行距離は300マイル。",
+      "baseline_ja": "走行距離は300マイル。"
+    },
+    {
+      "id": "truck_gallons",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.truck_gallons",
+      "title_ja": "必要燃料は30ガロン。",
+      "claim_ja": "必要燃料は30ガロン。",
+      "method_ja": "300÷10mpg。",
+      "requires_steps": [
+        "truck_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "必要燃料は30ガロン。",
+      "baseline_ja": "必要燃料は30ガロン。"
+    },
+    {
+      "id": "truck_fuel_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.truck_fuel_cost",
+      "title_ja": "燃料費は60ドル。",
+      "claim_ja": "燃料費は60ドル。",
+      "method_ja": "30×2ドル。",
+      "requires_steps": [
+        "truck_gallons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "燃料費は60ドル。",
+      "baseline_ja": "燃料費は60ドル。"
+    },
+    {
+      "id": "truck_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.truck_revenue",
+      "title_ja": "運賃収入は150ドル。",
+      "claim_ja": "運賃収入は150ドル。",
+      "method_ja": "300×0.50ドル。",
+      "requires_steps": [
+        "truck_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "運賃収入は150ドル。",
+      "baseline_ja": "運賃収入は150ドル。"
+    },
+    {
+      "id": "truck_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.truck_solution",
+      "title_ja": "純収入は90ドル。",
+      "claim_ja": "純収入は90ドル。",
+      "method_ja": "150−60。",
+      "requires_steps": [
+        "truck_fuel_cost",
+        "truck_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "純収入は90ドル。",
+      "baseline_ja": "純収入は90ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2168,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

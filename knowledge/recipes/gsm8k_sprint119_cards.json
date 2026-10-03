@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint119_cards",
+  "title_ja": "Dexterに29枚渡した後、20枚を自分用に残した。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02068",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.cards_solution",
+  "graph": "work/gsm8k-sprint119-cards-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cards_initial",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.cards_initial",
+      "title_ja": "もともとのカードは17枚。",
+      "claim_ja": "もともとのカードは17枚。",
+      "method_ja": "4+13。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "もともとのカードは17枚。",
+      "baseline_ja": "もともとのカードは17枚。"
+    },
+    {
+      "id": "cards_all",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.cards_all",
+      "title_ja": "注文分を加えると53枚。",
+      "claim_ja": "注文分を加えると53枚。",
+      "method_ja": "17+36。",
+      "requires_steps": [
+        "cards_initial"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "注文分を加えると53枚。",
+      "baseline_ja": "注文分を加えると53枚。"
+    },
+    {
+      "id": "cards_usable",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.cards_usable",
+      "title_ja": "傷んだ4枚を捨てると49枚。",
+      "claim_ja": "傷んだ4枚を捨てると49枚。",
+      "method_ja": "53−4。",
+      "requires_steps": [
+        "cards_all"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "傷んだ4枚を捨てると49枚。",
+      "baseline_ja": "傷んだ4枚を捨てると49枚。"
+    },
+    {
+      "id": "cards_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.cards_solution",
+      "title_ja": "Dexterに29枚渡した後、20枚を自分用に残した。",
+      "claim_ja": "Dexterに29枚渡した後、20枚を自分用に残した。",
+      "method_ja": "49−29。",
+      "requires_steps": [
+        "cards_usable"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "Dexterに29枚渡した後、20枚を自分用に残した。",
+      "baseline_ja": "Dexterに29枚渡した後、20枚を自分用に残した。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2069,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

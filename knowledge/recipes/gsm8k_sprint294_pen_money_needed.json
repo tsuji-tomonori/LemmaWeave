@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint294_pen_money_needed",
+  "title_ja": "ペン購入に不足する金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03593",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A03P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "30ドルのペンに対して代金の3分の1だけ持っているときの不足額。",
+  "answer_ja": "20ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A03P3.pen_money_needed",
+  "graph": "work/gsm8k-sprint294-pen-money-needed-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pen_money_available",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P3.pen_money_available",
+      "title_ja": "持っている金額は10ドルである。",
+      "claim_ja": "持っている金額は10ドルである。",
+      "method_ja": "30ドルの3分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "持っている金額は10ドルである。"
+    },
+    {
+      "id": "pen_money_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P3.pen_money_needed",
+      "title_ja": "不足額は20ドルである。",
+      "claim_ja": "不足額は20ドルである。",
+      "method_ja": "代金30ドルから所持金10ドルを引く。",
+      "requires_steps": [
+        "pen_money_available"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "不足額は20ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3594,
+    "checked_model_hash": "f346213f1f35347f77db92a2e5e680b083447408e3adfc5878905babdf1b4000",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint323_grace_age",
+  "title_ja": "Graceの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03740",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A16P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Grace's age is 3/8th the age of her grandmother. Her grandmother is twice the age of Grace's mother. If Grace's mother is 80 years old, how old is Grace?",
+  "answer_ja": "祖母は母80歳の2倍で160歳。Graceは祖母の3/8なので3×160÷8=60歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A16P2.grace_age",
+  "graph": "work/gsm8k-sprint323-grace-age-graph.json",
+  "model_notes_ja": [
+    "年齢の比率を問題文どおり正確な有理比として扱い、誕生日差は考えない。"
+  ],
+  "steps": [
+    {
+      "id": "grace_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A16P2.grace_age",
+      "title_ja": "Graceの年齢",
+      "claim_ja": "祖母は母80歳の2倍で160歳。Graceは祖母の3/8なので3×160÷8=60歳。",
+      "method_ja": "祖母の年齢を求めて3/8を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "160は8で割り切れる。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "Graceは60歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3741,
+    "checked_model_hash": "bf8188df65085c3931481c38656e9de89a0791a510cfc6d1be1ba7c3a8de11ac",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

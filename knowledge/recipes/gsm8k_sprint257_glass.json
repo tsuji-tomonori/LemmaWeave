@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint257_glass",
+  "title_ja": "透明なガラス片の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03329",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "緑35片が全体の25%であることから全体と透明片を求める。",
+  "answer_ja": "85片",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.glass_clear",
+  "graph": "work/gsm8k-sprint257-glass-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "glass_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.glass_total",
+      "title_ja": "全体は140片。",
+      "claim_ja": "全体は140片。",
+      "method_ja": "35÷25%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "緑35片が全体の25%。",
+      "conclusion_ja": "140片。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "glass_clear",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.glass_clear",
+      "title_ja": "透明は85片。",
+      "claim_ja": "透明は85片。",
+      "method_ja": "140-20-35。",
+      "requires_steps": [
+        "glass_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "琥珀・緑・透明が全体を分割する。",
+      "conclusion_ja": "85片。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3330,
+    "checked_model_hash": "13b710467fa3350801459e2a43edfe7b3e1ea7f1e199fb5b5ea726ef0f4f842c",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

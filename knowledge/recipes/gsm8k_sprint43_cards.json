@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint43_cards",
+  "title_ja": "Malcomに残る野球カード",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00931",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Brandonより8枚多い28枚の半分を譲った後の残数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A11.cards_solution",
+  "graph": "work/gsm8k-sprint43-cards-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cards_malcom",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.cards_malcom",
+      "title_ja": "Malcomの当初枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Brandon20枚より8枚多い。",
+      "conclusion_ja": "28枚。",
+      "baseline_ja": "20+8=28。"
+    },
+    {
+      "id": "cards_given",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.cards_given",
+      "title_ja": "譲った枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "28枚の半分をMarkへ渡す。",
+      "conclusion_ja": "14枚。",
+      "baseline_ja": "14×2=28。"
+    },
+    {
+      "id": "cards_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.cards_remaining",
+      "title_ja": "残数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "28枚から14枚を譲る。",
+      "conclusion_ja": "14枚残る。",
+      "baseline_ja": "28=14+14。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 932,
+    "checked_model_hash": "881a98f47252976fe9a699be8850a410dba97738f0a04e0f969fcced6462a82f",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

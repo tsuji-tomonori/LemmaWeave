@@ -1,0 +1,14 @@
+{
+  "id": "gsm8k_daily28_marble", "title_ja": "ビー玉の倍率と差", "problem_id": "external-gsm8k-main-3101c7d50724:train:00274", "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Mabelが85個でKatrinaの5倍、Amandaに12個足すとKatrinaの2倍になるとき、MabelとAmandaの差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0912B.marble_solution", "graph": "work/gsm8k-daily28-marble-graph.json", "lean_file": "tests/lean/GSM8KDaily0912B.lean",
+  "semantic_review_status": "self_review_only", "model_scope": "self_reviewed_model", "counting_note_ja": "取得済み固定GSM8Kの1問。", "model_notes_ja": ["個数は自然数とし、倍率と不足分を等式で表す。"],
+  "steps": [
+    {"id":"marble_katrina","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.marble_katrina","title_ja":"Katrinaの個数","requires_steps":[],"uses_nodes":[],"condition_ja":"Mabelの85個はKatrinaの5倍。","conclusion_ja":"Katrinaは17個。","baseline_ja":"全体＝倍率×基準量の整数方程式。"},
+    {"id":"marble_twice","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.marble_twice","title_ja":"Katrinaの2倍","requires_steps":["marble_katrina"],"uses_nodes":[],"condition_ja":"Katrinaは17個。","conclusion_ja":"その2倍は34個。","baseline_ja":"倍の量＝2×基準量。"},
+    {"id":"marble_amanda","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.marble_amanda","title_ja":"Amandaの個数","requires_steps":["marble_twice"],"uses_nodes":[],"condition_ja":"Amandaに12個足すと34個。","conclusion_ja":"Amandaは22個。","baseline_ja":"不足分を加えた等式を解く。"},
+    {"id":"marble_difference","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.marble_difference","title_ja":"個数の差","requires_steps":["marble_amanda"],"uses_nodes":[],"condition_ja":"Mabelは85個、Amandaは22個。","conclusion_ja":"MabelはAmandaより63個多い。","baseline_ja":"大きい量＝小さい量＋差。"}
+  ],
+  "solution_format":"individual_lines_v1", "authorship":"llm_individual",
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":275,"checked_model_hash":"6b16310f0a116b0f5920805ef148e39e64b00ecbd5bcf0656596c75a079178bd","checks_ja":["85÷5=17、2×17−12=22、85−22=63を原文の関係と照合した。"]}
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint320_birthday_bank_deposit",
+  "title_ja": "銀行へ預けた金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03724",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bruce recently had a birthday. His aunt sent him a card with $75 and his grandfather sent him a card that had $150 in it. He wants to go on a trip to Europe soon, so he decides to put one-fifth of the money he got for his birthday in the bank. How much money did he put in the bank?",
+  "answer_ja": "受け取った金額は75+150=225ドル。その5分の1は225÷5=45ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A15P2.birthday_bank_deposit",
+  "graph": "work/gsm8k-sprint320-birthday-bank-deposit-graph.json",
+  "model_notes_ja": [
+    "誕生日にもらった金額は2枚のカードの合計だけで、one-fifthは合計額に掛ける。"
+  ],
+  "steps": [
+    {
+      "id": "birthday_bank_deposit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A15P2.birthday_bank_deposit",
+      "title_ja": "銀行へ預けた金額",
+      "claim_ja": "受け取った金額は75+150=225ドル。その5分の1は225÷5=45ドル。",
+      "method_ja": "合計を求めて5で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "225は5で割り切れる。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "45ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3725,
+    "checked_model_hash": "4edbbfe0668c3d448458046a77bed00a48418826eda9cde81179caacdc0dac8a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

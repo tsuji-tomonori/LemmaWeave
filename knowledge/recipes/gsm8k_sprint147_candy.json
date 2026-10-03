@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint147_candy",
+  "title_ja": "菓子店の売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02491",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "端数ドルを避けてセント単位で各商品の売上を合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.candy_solution",
+  "graph": "work/gsm8k-sprint147-candy-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "candy_fudge",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.candy_fudge",
+      "title_ja": "ファッジ売上は5000セント",
+      "claim_ja": "ファッジ売上は5000セント",
+      "method_ja": "20ポンドに250セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "ファッジ売上は5000セント",
+      "baseline_ja": "ファッジ売上は5000セント"
+    },
+    {
+      "id": "candy_truffles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.candy_truffles",
+      "title_ja": "トリュフ売上は9000セント",
+      "claim_ja": "トリュフ売上は9000セント",
+      "method_ja": "5ダースを60個に直し150セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "トリュフ売上は9000セント",
+      "baseline_ja": "トリュフ売上は9000セント"
+    },
+    {
+      "id": "candy_pretzels",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.candy_pretzels",
+      "title_ja": "プレッツェル売上は7200セント",
+      "claim_ja": "プレッツェル売上は7200セント",
+      "method_ja": "3ダースを36個に直し200セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "プレッツェル売上は7200セント",
+      "baseline_ja": "プレッツェル売上は7200セント"
+    },
+    {
+      "id": "candy_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.candy_solution",
+      "title_ja": "合計売上は212ドル",
+      "claim_ja": "合計売上は212ドル",
+      "method_ja": "合計21200セントをドルへ戻す",
+      "requires_steps": [
+        "candy_fudge",
+        "candy_truffles",
+        "candy_pretzels"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計売上は212ドル",
+      "baseline_ja": "合計売上は212ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2492,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

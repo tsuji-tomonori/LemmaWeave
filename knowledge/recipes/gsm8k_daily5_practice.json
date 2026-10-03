@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily5_practice","title_ja":"4週間の楽器練習時間を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00046","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"ピアノ20分、バイオリンはその3倍を週6日練習する。4週間の合計時間を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907E.practice_solution","graph":"work/gsm8k-daily5-practice-graph.json","lean_file":"tests/lean/GSM8KDaily0907E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["両楽器を各練習日に練習し、問題指定どおり1か月を4週間とする。"],
+  "steps":[
+    {"id":"practice_violin","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.practice_violin","title_ja":"1日のバイオリン時間","requires_steps":[],"uses_nodes":[],"condition_ja":"ピアノ20分の3倍。","conclusion_ja":"60分。","baseline_ja":"中学校までの乗法。"},
+    {"id":"practice_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.practice_daily","title_ja":"1日の合計","requires_steps":["practice_violin"],"uses_nodes":[],"condition_ja":"ピアノ20分とバイオリン60分を足す。","conclusion_ja":"80分。","baseline_ja":"中学校までの加法。"},
+    {"id":"practice_weekly","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.practice_weekly","title_ja":"1週間の合計","requires_steps":["practice_daily"],"uses_nodes":[],"condition_ja":"1日80分を週6日。","conclusion_ja":"480分。","baseline_ja":"中学校までの乗法。"},
+    {"id":"practice_monthly","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.practice_monthly","title_ja":"4週間の合計","requires_steps":["practice_weekly"],"uses_nodes":[],"condition_ja":"1週480分を4週間。","conclusion_ja":"1920分。","baseline_ja":"中学校までの乗法。"},
+    {"id":"practice_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.practice_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"各段階を60、80、480、1920分と置く。","conclusion_ja":"日、週、月の全条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":47,"checked_model_hash":"adc4c0f4dec3dbed083ddd2439540f62981d1039ced1f4d455c23cc025e0e734","checks_ja":["1日内の2楽器を合計してから週6日、4週間を順に適用した。"]}
+}

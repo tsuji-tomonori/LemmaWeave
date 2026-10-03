@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint134_snow",
+  "title_ja": "58個になるまでの時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02301",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初10個で5分ごとに4個増える。58個になるまでを求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.snow_solution",
+  "graph": "work/gsm8k-sprint134-snow-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "snow_additional",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.snow_additional",
+      "title_ja": "追加分は48個",
+      "claim_ja": "追加分は48個",
+      "method_ja": "58個から最初の10個を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "追加分は48個",
+      "baseline_ja": "追加分は48個"
+    },
+    {
+      "id": "snow_intervals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.snow_intervals",
+      "title_ja": "12回の5分区間が必要",
+      "claim_ja": "12回の5分区間が必要",
+      "method_ja": "48個を1回4個で割る",
+      "requires_steps": [
+        "snow_additional"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "12回の5分区間が必要",
+      "baseline_ja": "12回の5分区間が必要"
+    },
+    {
+      "id": "snow_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.snow_solution",
+      "title_ja": "60分経過",
+      "claim_ja": "60分経過",
+      "method_ja": "12回に5分を掛ける",
+      "requires_steps": [
+        "snow_intervals"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "60分経過",
+      "baseline_ja": "60分経過"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2302,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

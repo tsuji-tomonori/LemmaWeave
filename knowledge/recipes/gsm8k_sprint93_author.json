@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint93_author",
+  "title_ja": "作家の累計収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01682",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2か月に1冊を20年間書き、1冊平均30000ドルを得る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.author_solution",
+  "graph": "work/gsm8k-sprint93-author-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "author_yearly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.author_yearly",
+      "title_ja": "年間冊数",
+      "claim_ja": "年6冊。",
+      "method_ja": "12か月を2か月ごとに区切る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "執筆間隔は一定。",
+      "conclusion_ja": "6×2=12。",
+      "baseline_ja": "6×2=12。"
+    },
+    {
+      "id": "author_books",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.author_books",
+      "title_ja": "20年の冊数",
+      "claim_ja": "120冊。",
+      "method_ja": "6×20。",
+      "requires_steps": [
+        "author_yearly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20年間同じペース。",
+      "conclusion_ja": "6×20=120。",
+      "baseline_ja": "6×20=120。"
+    },
+    {
+      "id": "author_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.author_solution",
+      "title_ja": "累計収入",
+      "claim_ja": "3600000ドル。",
+      "method_ja": "120×30000。",
+      "requires_steps": [
+        "author_books"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "平均額を総冊数に掛ける。",
+      "conclusion_ja": "120×30000=3600000。",
+      "baseline_ja": "120×30000=3600000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1683,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

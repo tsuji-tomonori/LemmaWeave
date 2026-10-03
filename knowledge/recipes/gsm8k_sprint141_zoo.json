@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint141_zoo",
+  "title_ja": "2人が持参した餌の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02407",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Wandaのパン90個は菓子の3倍。Wandaの菓子はJaneの半分で、Janeのパンは菓子の75%。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.zoo_solution",
+  "graph": "work/gsm8k-sprint141-zoo-graph.json",
+  "model_notes_ja": [
+    "75%は4分の3という正確な比率で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "zoo_wanda_treats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.zoo_wanda_treats",
+      "title_ja": "Wandaの菓子は30個",
+      "claim_ja": "Wandaの菓子は30個",
+      "method_ja": "90を3等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Wandaの菓子は30個",
+      "baseline_ja": "Wandaの菓子は30個"
+    },
+    {
+      "id": "zoo_jane_treats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.zoo_jane_treats",
+      "title_ja": "Janeの菓子は60個",
+      "claim_ja": "Janeの菓子は60個",
+      "method_ja": "30の2倍",
+      "requires_steps": [
+        "zoo_wanda_treats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Janeの菓子は60個",
+      "baseline_ja": "Janeの菓子は60個"
+    },
+    {
+      "id": "zoo_jane_bread",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.zoo_jane_bread",
+      "title_ja": "Janeのパンは45個",
+      "claim_ja": "Janeのパンは45個",
+      "method_ja": "60の75%を4分の3として求める",
+      "requires_steps": [
+        "zoo_jane_treats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Janeのパンは45個",
+      "baseline_ja": "Janeのパンは45個"
+    },
+    {
+      "id": "zoo_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.zoo_solution",
+      "title_ja": "全体で225個",
+      "claim_ja": "全体で225個",
+      "method_ja": "90、30、60、45を足す",
+      "requires_steps": [
+        "zoo_wanda_treats",
+        "zoo_jane_treats",
+        "zoo_jane_bread"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "全体で225個",
+      "baseline_ja": "全体で225個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2408,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

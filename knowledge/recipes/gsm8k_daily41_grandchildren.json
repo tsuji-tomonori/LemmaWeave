@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily41_grandchildren","title_ja":"孫の総人数","problem_id":"external-gsm8k-main-3101c7d50724:train:00411","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"8人の子のうち例外の2人と残り6人を分け、それぞれの子どもの人数を合計する。","root":"LemmaWeave.Tests.GSM8KDaily0915B.grandchildren_solution","graph":"work/gsm8k-daily41-grandchildren-graph.json","lean_file":"tests/lean/GSM8KDaily0915B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["except for 2は、2人だけが各5人で、残りはMaxと同じ8人の子を持つと解釈する。"],
+  "steps":[
+    {"id":"grandchildren_counts","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.grandchildren_counts","title_ja":"二群の孫人数","requires_steps":[],"uses_nodes":[],"condition_ja":"8人の子のうち2人は各5人、残りは各8人の子を持つ。","conclusion_ja":"残りは6人で、その群に48人、例外群に10人の孫がいる。","baseline_ja":"補集合の人数を引き算で求め、各群は人数×1人当たりで数える。"},
+    {"id":"grandchildren_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.grandchildren_solution","title_ja":"孫の総数","requires_steps":["grandchildren_counts"],"uses_nodes":[],"condition_ja":"二群は重ならず、48人と10人を足す。","conclusion_ja":"孫は合計58人。","baseline_ja":"互いに重ならない群の要素数は加法で合計する。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":412,"checked_model_hash":"e74a4210ca248991d2d8391f07fb0cc880ee33f5d619370a90295fd357ab18a3","checks_ja":["Maxの子の人数、例外人数、各群の子どもの人数を照合した。"]}
+}

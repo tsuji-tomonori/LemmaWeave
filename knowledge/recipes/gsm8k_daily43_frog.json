@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily43_frog","title_ja":"4日間に産む卵の総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00428","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"各日の規則から1日ごとの個数を求め、4日間を合計する。","root":"LemmaWeave.Tests.GSM8KDaily0915D.frog_solution","graph":"work/gsm8k-daily43-frog-graph.json","lean_file":"tests/lean/GSM8KDaily0915D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["last day she doubles the first three days totalを、4日目の産卵数が最初の3日合計の2倍という意味にした。"],
+  "steps":[
+    {"id":"frog_early","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.frog_early","title_ja":"最初の3日","requires_steps":[],"uses_nodes":[],"condition_ja":"1日目50個、2日目はその2倍、3日目は2日目より20個多い。","conclusion_ja":"2日目100個、3日目120個、最初の3日合計270個。","baseline_ja":"倍と増加分を順に計算して加える。"},
+    {"id":"frog_last","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.frog_last","title_ja":"4日目","requires_steps":["frog_early"],"uses_nodes":[],"condition_ja":"4日目は最初の3日合計270個の2倍。","conclusion_ja":"4日目は540個。","baseline_ja":"2倍の乗法。"},
+    {"id":"frog_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.frog_total","title_ja":"4日間の合計","requires_steps":["frog_early","frog_last"],"uses_nodes":[],"condition_ja":"最初の3日270個と4日目540個を合わせる。","conclusion_ja":"4日間で810個。","baseline_ja":"期間別の量の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":429,"checked_model_hash":"a6933f19dea1184a4024944d3d5c0521ede1267552f17298f26c6083f9418f8e","checks_ja":["4日それぞれの数量規則と、問われる4日間合計を照合した。"]}
+}

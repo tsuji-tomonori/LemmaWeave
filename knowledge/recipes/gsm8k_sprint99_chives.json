@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint99_chives",
+  "title_ja": "植えるチャイブの本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01767",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "パセリとローズマリーの行を除き、残り行数に1行10本を掛ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.chives_solution",
+  "graph": "work/gsm8k-sprint99-chives-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "chives_reserved_rows",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.chives_reserved_rows",
+      "title_ja": "他の植物に使うのは5行。",
+      "claim_ja": "他の植物に使うのは5行。",
+      "method_ja": "最初の3行と最後の2行を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20行中で両区間は重ならない。",
+      "conclusion_ja": "3+2=5。",
+      "baseline_ja": "3+2=5。"
+    },
+    {
+      "id": "chives_rows",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.chives_rows",
+      "title_ja": "チャイブ用は15行。",
+      "claim_ja": "チャイブ用は15行。",
+      "method_ja": "20行から5行を引く。",
+      "requires_steps": [
+        "chives_reserved_rows"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残りの全行をチャイブに使う。",
+      "conclusion_ja": "15+5=20。",
+      "baseline_ja": "15+5=20。"
+    },
+    {
+      "id": "chives_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.chives_solution",
+      "title_ja": "チャイブは150本。",
+      "claim_ja": "チャイブは150本。",
+      "method_ja": "15行×10本/行。",
+      "requires_steps": [
+        "chives_rows"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各行10本。",
+      "conclusion_ja": "15×10=150。",
+      "baseline_ja": "15×10=150。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1768,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "natural_zero_product",
+  "name_ja": "自然数と零の積",
+  "statement_ja": "任意の自然数nについてn×0=0および0×n=0。",
+  "assumptions": [
+    "n:ℕ。"
+  ],
+  "kind": "lemma",
+  "lean_declarations": [
+    "Nat.mul_zero",
+    "Nat.zero_mul"
+  ],
+  "prerequisite_nodes": [
+    "natural_multiplication"
+  ],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root/classification",
+    "session": "fa629044271f/root/classification",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "固定版で抽出済みの完全な型と照合し、量化・型・仮定・結論を日本語化。数学的な命題として個別保持。説明骨子は独自記述であり原証明の逐語訳ではない。",
+    "source_locations": {
+      "Nat.mul_zero": {
+        "module_relative_file": "Init/Data/Nat/Basic.lean",
+        "name": "Nat.mul_zero",
+        "original_kind": "some (Lean.ConstantKind.thm)",
+        "range": "{ range := { pos := { line := 195, column := 0 },\n             charUtf16 := 0,\n             endPos := { line := 196, column := 5 },\n             endCharUtf16 := 5 },\n  selectionRange := { pos := { line := 195, column := 26 },\n                      charUtf16 := 26,\n                      endPos := { line := 195, column := 34 },\n                      endCharUtf16 := 34 } }",
+        "source_module": "Init.Data.Nat.Basic",
+        "status": "module_and_range"
+      },
+      "Nat.zero_mul": {
+        "module_relative_file": "Init/Data/Nat/Basic.lean",
+        "name": "Nat.zero_mul",
+        "original_kind": "some (Lean.ConstantKind.thm)",
+        "range": "{ range := { pos := { line := 204, column := 0 },\n             charUtf16 := 0,\n             endPos := { line := 206, column := 56 },\n             endCharUtf16 := 56 },\n  selectionRange := { pos := { line := 204, column := 26 },\n                      charUtf16 := 26,\n                      endPos := { line := 204, column := 34 },\n                      endCharUtf16 := 34 } }",
+        "source_module": "Init.Data.Nat.Basic",
+        "status": "module_and_range"
+      }
+    }
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null,
+    "note": "一般の型・集合・自然数についての命題を保持。小中の既習認定は行っていない。"
+  },
+  "explanation_outline_ja": [
+    "乗法の再帰定義と零の加法を使い、必要な側は帰納法を行う。",
+    "依存する一般的な定義・推論規則は生グラフで保存し、以下の未展開事項として残す。"
+  ],
+  "unexpanded": [
+    "自然数と零の積の固定版の証明項から、学習者向けの全中間推論への分解。",
+    "型・集合・自然数のモデルと学校で使う対象の対応の説明。"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "actual_declaration_types": {
+    "Nat.mul_zero": "∀ (n : ℕ), n * 0 = 0",
+    "Nat.zero_mul": "∀ (n : ℕ), 0 * n = 0"
+  },
+  "declaration_type_sha256": {
+    "Nat.mul_zero": "4c4180cda097a09b57d858ec15126cc0becd4d0687d9a67f74b25133d39cf22e",
+    "Nat.zero_mul": "bd56bb456799937aa46dbcaf8ffa68fa26b373e96e9910b9aca643b9a692d2f4"
+  }
+}

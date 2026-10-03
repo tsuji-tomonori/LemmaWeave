@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint163_wallet",
+  "title_ja": "ケーキ購入後の所持金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02738",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "20ドル札2枚、5ドル札3枚、硬貨4.50ドルから17.50ドルのケーキを買う。残額を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.wallet_solution",
+  "graph": "work/gsm8k-sprint163-wallet-graph.json",
+  "model_notes_ja": [
+    "金額はセント単位の自然数で表し、小数丸めを避ける。"
+  ],
+  "steps": [
+    {
+      "id": "wallet_initial",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.wallet_initial",
+      "title_ja": "購入前は5950セント",
+      "claim_ja": "59.50ドル",
+      "method_ja": "4000+1500+450",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "金額はセント単位の自然数で表し、小数丸めを避ける。",
+      "conclusion_ja": "59.50ドル",
+      "baseline_ja": "59.50ドル"
+    },
+    {
+      "id": "wallet_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.wallet_solution",
+      "title_ja": "残り4200セント",
+      "claim_ja": "42ドル",
+      "method_ja": "5950-1750",
+      "requires_steps": [
+        "wallet_initial"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "金額はセント単位の自然数で表し、小数丸めを避ける。",
+      "conclusion_ja": "42ドル",
+      "baseline_ja": "42ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2739,
+    "checked_model_hash": "82bd64d2ad7b9d2e0d7e0640dca9a4d3c12a9e15e2684f002e94f20163c657ad",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

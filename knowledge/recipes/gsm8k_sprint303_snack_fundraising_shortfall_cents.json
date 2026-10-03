@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint303_snack_fundraising_shortfall_cents",
+  "title_ja": "募金目標までの不足額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03638",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "目標500ドル。ピザ15箱を各12ドル、フライ40袋を各0.30ドル、ソーダ25缶を各2ドルで販売。",
+  "answer_ja": "セントで計算すると、ピザ18000、フライ1200、ソーダ5000で合計24200セント（242ドル）。目標50000セントとの差は25800セント、すなわち258ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.snack_fundraising_shortfall_cents",
+  "graph": "work/gsm8k-sprint303-snack-fundraising-shortfall-cents-graph.json",
+  "model_notes_ja": [
+    "小数誤差を避けるためLeanモデルでは金額をセントの自然数で表した。"
+  ],
+  "steps": [
+    {
+      "id": "snack_fundraising_shortfall_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.snack_fundraising_shortfall_cents",
+      "title_ja": "セントで計算すると、ピザ18000、フライ1200、ソーダ5000で合計24200セント（242ドル）。目標50000セントとの差は25800セント、すなわち258ドル。",
+      "claim_ja": "セントで計算すると、ピザ18000、フライ1200、ソーダ5000で合計24200セント（242ドル）。目標50000セントとの差は25800セント、すなわち258ドル。",
+      "method_ja": "セントで計算すると、ピザ18000、フライ1200、ソーダ5000で合計24200セント（242ドル）。目標50000セントとの差は25800セント、すなわち258ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "セントで計算すると、ピザ18000、フライ1200、ソーダ5000で合計24200セント（242ドル）。目標50000セントとの差は25800セント、すなわち258ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3639,
+    "checked_model_hash": "949c7a9ebe4c696a7f82456d9aa6f917dae0b1344ae5d14b4001f4725a799c1c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

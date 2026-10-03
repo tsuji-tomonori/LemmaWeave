@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint390_cake_more_calories",
+  "title_ja": "ケーキの超過カロリー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04072",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A cake has 8 slices and each slice contains 347 calories.  A pan of brownies has 6 brownies and each slice contains 375 calories.  How many more calories does the cake have?",
+  "answer_ja": "ケーキ全体は8×347=2776カロリー。ブラウニー全体は6×375=2250カロリー。差は2776−2250=526カロリーで、ケーキの方が526カロリー多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A01P3.cake_more_calories",
+  "graph": "work/gsm8k-sprint390-cake-more-calories-graph.json",
+  "model_notes_ja": [
+    "ブラウニーについて『each slice』とあるが、直前の6 browniesを6個の単位として各375カロリーと読む。"
+  ],
+  "steps": [
+    {
+      "id": "cake_more_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A01P3.cake_more_calories",
+      "title_ja": "ケーキの超過カロリー",
+      "claim_ja": "ケーキ全体は8×347=2776カロリー。ブラウニー全体は6×375=2250カロリー。差は2776−2250=526カロリーで、ケーキの方が526カロリー多い。",
+      "method_ja": "ブラウニーについて『each slice』とあるが、直前の6 browniesを6個の単位として各375カロリーと読む。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ブラウニーについて『each slice』とあるが、直前の6 browniesを6個の単位として各375カロリーと読む。",
+      "baseline_ja": "整数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "ケーキ全体は8×347=2776カロリー。ブラウニー全体は6×375=2250カロリー。差は2776−2250=526カロリーで、ケーキの方が526カロリー多い。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4073,
+    "checked_model_hash": "48ce680488600d0fa6487e3beeb94a225b4ef8a916b733fa3a5db5229ed5bdb0",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

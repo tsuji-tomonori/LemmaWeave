@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint40_bitcoin",
+  "title_ja": "Bitcoinの残数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00879",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "寄付・半分譲渡・3倍・再寄付を順に適用する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.bitcoin_solution",
+  "graph": "work/gsm8k-sprint40-bitcoin-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bitcoin_after_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.bitcoin_after_first",
+      "title_ja": "最初の寄付後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "80枚から20枚を寄付する。",
+      "conclusion_ja": "60枚。",
+      "baseline_ja": "60+20=80。"
+    },
+    {
+      "id": "bitcoin_retained",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.bitcoin_retained",
+      "title_ja": "兄への譲渡後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "60枚の半分を兄へ渡し、半分を保持する。",
+      "conclusion_ja": "30枚。",
+      "baseline_ja": "30×2=60。"
+    },
+    {
+      "id": "bitcoin_tripled",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.bitcoin_tripled",
+      "title_ja": "3倍後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "保持した30枚を3倍にする。",
+      "conclusion_ja": "90枚。",
+      "baseline_ja": "3×30=90。"
+    },
+    {
+      "id": "bitcoin_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.bitcoin_remaining",
+      "title_ja": "最後の寄付後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "90枚から10枚を寄付する。",
+      "conclusion_ja": "80枚。",
+      "baseline_ja": "80+10=90。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 880,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

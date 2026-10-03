@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint29_coins",
+  "title_ja": "4人の硬貨合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00716",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "各人の所持金をセントに統一して合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A29.coins_solution",
+  "graph": "work/gsm8k-sprint29-coins-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A29.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "3/4ドルは75セント、quarterは25セント、dimeは10セント。"
+  ],
+  "steps": [
+    {
+      "id": "coins_margaret",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.coins_margaret",
+      "title_ja": "Margaretの所持金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ドル=100セント、3/4ドル。",
+      "conclusion_ja": "75セント。",
+      "baseline_ja": "100×3/4=75。"
+    },
+    {
+      "id": "coins_guy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.coins_guy",
+      "title_ja": "Guyの所持金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "quarter 2枚とdime 1枚。",
+      "conclusion_ja": "60セント。",
+      "baseline_ja": "2×25+10=60。"
+    },
+    {
+      "id": "coins_bill",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.coins_bill",
+      "title_ja": "Billの所持金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "dime 6枚。",
+      "conclusion_ja": "60セント。",
+      "baseline_ja": "6×10=60。"
+    },
+    {
+      "id": "coins_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A29.coins_total",
+      "title_ja": "合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Lance 70、Margaret 75、Guy 60、Bill 60セント。",
+      "conclusion_ja": "265セント。",
+      "baseline_ja": "70+75+60+60=265。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 717,
+    "checked_model_hash": "970f410138a3166065bfbe0fe681e913ec80aca7d2c0a0d8dd1e56f06eeceae5",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

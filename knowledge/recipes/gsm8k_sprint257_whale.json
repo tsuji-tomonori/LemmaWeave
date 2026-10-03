@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint257_whale",
+  "title_ja": "シロナガスクジラの舌の重さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03326",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6000ポンドを1トン2000ポンドで換算する。",
+  "answer_ja": "3トン",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.whale_tons",
+  "graph": "work/gsm8k-sprint257-whale-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "whale_pounds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.whale_pounds",
+      "title_ja": "舌は6000ポンド。",
+      "claim_ja": "舌は6000ポンド。",
+      "method_ja": "原文の重量を固定する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "tonguePounds=6000。",
+      "conclusion_ja": "6000ポンド。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "whale_tons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.whale_tons",
+      "title_ja": "舌は3トン。",
+      "claim_ja": "舌は3トン。",
+      "method_ja": "6000÷2000。",
+      "requires_steps": [
+        "whale_pounds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1トン=2000ポンド。",
+      "conclusion_ja": "3トン。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3327,
+    "checked_model_hash": "13b710467fa3350801459e2a43edfe7b3e1ea7f1e199fb5b5ea726ef0f4f842c",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "finite_table_lifting",
+  "name_ja": "有限表から全自然数への拡張",
+  "statement_ja": "自然数の述語 P,Q がともに2以上20以下でしか成立せず、0から20の各値についてPとQが同値なら、全自然数についてPとQは同値である。",
+  "assumptions": [
+    "∀k, P k → 2 ≤ k ∧ k ≤ 20",
+    "∀k, Q k → 2 ≤ k ∧ k ≤ 20",
+    "∀k : Fin 21, P k ↔ Q k"
+  ],
+  "kind": "lemma",
+  "lean_declarations": [
+    "LemmaWeave.Problems.DNC2026M1.lift_finite_table"
+  ],
+  "prerequisite_nodes": [],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "Actual exported types compared with the Japanese claim; remaining foundational prerequisites are not discarded."
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null
+  },
+  "explanation_outline_ja": [
+    "21未満では有限表を適用する。",
+    "21以上ではP,Qのいずれの成立も上界に矛盾する。"
+  ],
+  "unexpanded": [
+    "項目ごとの公式学習指導要領との照合",
+    "前提宣言の推移的な数学内容の展開"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "declared_but_not_in_graph": [],
+  "actual_declaration_types": {
+    "LemmaWeave.Problems.DNC2026M1.lift_finite_table": "∀ (P Q : ℕ → Prop),\n  (∀ (k : ℕ), P k → LemmaWeave.Problems.DNC2026M1.InUniverse k) →\n    (∀ (k : ℕ), Q k → LemmaWeave.Problems.DNC2026M1.InUniverse k) → (∀ (k : Fin 21), P ↑k ↔ Q ↑k) → ∀ (k : ℕ), P k ↔ Q k"
+  },
+  "declaration_type_sha256": {
+    "LemmaWeave.Problems.DNC2026M1.lift_finite_table": "22635013342bf359dd57b92be0049876e6c60045f261d33b84e2405833813975"
+  }
+}

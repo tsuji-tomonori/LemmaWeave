@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "natural_addition",
+  "name_ja": "自然数の加法の定義",
+  "statement_ja": "自然数の加法はm+0=m、m+succ n=succ(m+n)という再帰で定義する。",
+  "assumptions": [
+    "m,n : Nat。加法の定義に正値条件はない。"
+  ],
+  "kind": "foundation",
+  "lean_declarations": [
+    "Nat.add"
+  ],
+  "prerequisite_nodes": [
+    "natural_construction"
+  ],
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02I",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.extrema_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.pair_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.parameter_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "session": "fa629044271f",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "固定版の実際の型とLean 4.33.1 Init.Preludeの構成・消去規則を照合。数学的基盤として残し実装詳細にしない。",
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.1/src/Init/Prelude.lean"
+  },
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null,
+    "note": "形式論理・依存型の基礎として保持。小中の既習認定はしていない。"
+  },
+  "explanation_outline_ja": [
+    "右の引数0で左の数を返す。",
+    "右の引数が後者なら再帰した結果の後者を返す。"
+  ],
+  "unexpanded": [
+    "加法の結合則・交換則は定義とは別の定理"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "actual_declaration_types": {
+    "Nat.add": "ℕ → ℕ → ℕ"
+  },
+  "declaration_type_sha256": {
+    "Nat.add": "1ac7afdd8e3a9df25c2024b0e04dbc069ee04b6951e7f6bdaae1a83f03222038"
+  }
+}

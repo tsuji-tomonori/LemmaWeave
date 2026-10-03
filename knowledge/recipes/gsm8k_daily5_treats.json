@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily5_treats","title_ja":"ピニャータと菓子の総費用を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00045","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"13ドルのピニャータと、4袋×9ドル、3袋×5ドル、5袋×7ドルの菓子の総費用を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907E.treats_solution","graph":"work/gsm8k-daily5-treats-graph.json","lean_file":"tests/lean/GSM8KDaily0907E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各価格は1袋当たりで、ピニャータ本体も総額に含める。"],
+  "steps":[
+    {"id":"treats_reeses","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.treats_reeses","title_ja":"Reese's代","requires_steps":[],"uses_nodes":[],"condition_ja":"4袋、1袋9ドル。","conclusion_ja":"4×9=36ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"treats_snickers","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.treats_snickers","title_ja":"Snickers代","requires_steps":[],"uses_nodes":[],"condition_ja":"3袋、1袋5ドル。","conclusion_ja":"3×5=15ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"treats_skittles","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.treats_skittles","title_ja":"Skittles代","requires_steps":[],"uses_nodes":[],"condition_ja":"5袋、1袋7ドル。","conclusion_ja":"5×7=35ドル。","baseline_ja":"中学校までの乗法。"},
+    {"id":"treats_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.treats_total","title_ja":"総費用","requires_steps":["treats_reeses","treats_snickers","treats_skittles"],"uses_nodes":[],"condition_ja":"本体13ドルと3種類の菓子代を足す。","conclusion_ja":"13+36+15+35=99ドル。","baseline_ja":"中学校までの加法。"},
+    {"id":"treats_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907E.treats_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"各菓子代と総額を36、15、35、99ドルと置く。","conclusion_ja":"全ての購入条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":46,"checked_model_hash":"adc4c0f4dec3dbed083ddd2439540f62981d1039ced1f4d455c23cc025e0e734","checks_ja":["袋数と単価を種類ごとに掛け、本体価格を含むことを照合した。"]}
+}

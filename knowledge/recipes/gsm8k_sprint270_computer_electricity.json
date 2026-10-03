@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint270_computer_electricity",
+  "title_ja": "コンピュータ50時間の電気代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03408",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A14P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "旧800Wの50%増の消費電力と、旧12セント/kWhの25%増の単価で50時間の費用を求める。",
+  "answer_ja": "9ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.computer_electricity",
+  "graph": "work/gsm8k-sprint270-computer-electricity-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "new_computer_watts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.new_computer_watts",
+      "title_ja": "新PCは1200W。",
+      "claim_ja": "新PCは1200W。",
+      "method_ja": "800Wの50%増なので800×3/2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "50% moreは元の150%。",
+      "conclusion_ja": "1200W。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "new_electricity_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.new_electricity_price",
+      "title_ja": "新単価は15セント/kWh。",
+      "claim_ja": "新単価は15セント/kWh。",
+      "method_ja": "12セントの25%増なので12×5/4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "25%値上げは元の125%。",
+      "conclusion_ja": "15セント/kWh。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "computer_energy",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.computer_energy",
+      "title_ja": "50時間の使用量は60kWh。",
+      "claim_ja": "50時間の使用量は60kWh。",
+      "method_ja": "1200W=1.2kWに50時間を掛ける。",
+      "requires_steps": [
+        "new_computer_watts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "消費電力が50時間一定。",
+      "conclusion_ja": "60kWh。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "computer_cost_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.computer_cost_cents",
+      "title_ja": "費用は900セント。",
+      "claim_ja": "費用は900セント。",
+      "method_ja": "60kWh×15セントを計算する。",
+      "requires_steps": [
+        "new_electricity_price",
+        "computer_energy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "単価は1kWhあたり。",
+      "conclusion_ja": "900セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "computer_electricity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P2.computer_electricity",
+      "title_ja": "費用は9ドル。",
+      "claim_ja": "費用は9ドル。",
+      "method_ja": "900セントを100で割る。",
+      "requires_steps": [
+        "computer_cost_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "100セント=1ドル。",
+      "conclusion_ja": "9ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3409,
+    "checked_model_hash": "2069d4c184c979f894f9653259462b9c984315e93160c6241de1b0f234b9a558",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

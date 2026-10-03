@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint386_total_fertilizer_ounces",
+  "title_ja": "肥料の総オンス数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04053",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A02R2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Seymour runs a plant shop. He has 4 flats of petunias with 8 petunias per flat, 3 flats of roses with 6 roses per flat, and two Venus flytraps. Each petunia needs 8 ounces of fertilizer, each rose needs 3 ounces of fertilizer, and each Venus flytrap needs 2 ounces of fertilizer. How many ounces of fertilizer does Seymour need in total?",
+  "answer_ja": "ペチュニアは4×8=32株で肥料256オンス。バラは3×6=18株で54オンス。ハエトリグサは2株で4オンス。合計は256+54+4=314オンスである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A02R2.total_fertilizer_ounces",
+  "graph": "work/gsm8k-sprint386-total-fertilizer-ounces-graph.json",
+  "model_notes_ja": [
+    "各flat内の株数と1株あたりの肥料量をそれぞれ掛け、3種類を合算する。"
+  ],
+  "steps": [
+    {
+      "id": "total_fertilizer_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A02R2.total_fertilizer_ounces",
+      "title_ja": "肥料の総オンス数",
+      "claim_ja": "ペチュニアは4×8=32株で肥料256オンス。バラは3×6=18株で54オンス。ハエトリグサは2株で4オンス。合計は256+54+4=314オンスである。",
+      "method_ja": "各flat内の株数と1株あたりの肥料量をそれぞれ掛け、3種類を合算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各flat内の株数と1株あたりの肥料量をそれぞれ掛け、3種類を合算する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "ペチュニアは4×8=32株で肥料256オンス。バラは3×6=18株で54オンス。ハエトリグサは2株で4オンス。合計は256+54+4=314オンスである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4054,
+    "checked_model_hash": "bb75e4b7777b2b059f0545cff766ffed0cd057230cdd60c110d19ce1dff0fa06",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

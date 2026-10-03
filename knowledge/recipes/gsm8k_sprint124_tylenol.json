@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint124_tylenol",
+  "title_ja": "1日の服用量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02140",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1回375mgを2錠、6時間ごとに服用するときの1日量を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A16.tylenol_solution",
+  "graph": "work/gsm8k-sprint124-tylenol-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "tylenol_dose",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.tylenol_dose",
+      "title_ja": "1回量は750mg。",
+      "claim_ja": "1回量は750mg。",
+      "method_ja": "375mg×2錠。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1回量は750mg。",
+      "baseline_ja": "1回量は750mg。"
+    },
+    {
+      "id": "tylenol_doses",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.tylenol_doses",
+      "title_ja": "1日は4回。",
+      "claim_ja": "1日は4回。",
+      "method_ja": "24時間÷6時間。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1日は4回。",
+      "baseline_ja": "1日は4回。"
+    },
+    {
+      "id": "tylenol_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.tylenol_solution",
+      "title_ja": "1日量は3000mg。",
+      "claim_ja": "1日量は3000mg。",
+      "method_ja": "750mg×4回。",
+      "requires_steps": [
+        "tylenol_dose",
+        "tylenol_doses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1日量は3000mg。",
+      "baseline_ja": "1日量は3000mg。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2141,
+    "checked_model_hash": "1ef653f2f5493b131faeaf7e8e4695e102a0b2223657f79e1a4a788f945d875f",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、矛盾や複数読解は訂正条件・反例と分離した。"
+    ]
+  }
+}

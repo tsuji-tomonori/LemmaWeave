@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily32_flags","title_ja":"招待客と主催者の旗をまとめ買いする費用を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00323","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"招待客58人と主催者2人の旗を、5本1ドルで買う費用を求める。","root":"LemmaWeave.Tests.GSM8KDaily0913A.flags_solution","graph":"work/gsm8k-daily32-flags-graph.json","lean_file":"tests/lean/GSM8KDaily0913A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["JayとGloria自身の2本も必要数へ加え、60本が5本単位で割り切れることを使う。"],
+  "steps":[
+    {"id":"flags_guests","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.flags_guests","title_ja":"招待客数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"Jayが22人、Gloriaが36人を招く。","conclusion_ja":"招待客は58人。","baseline_ja":"22+36を計算する。"},
+    {"id":"flags_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.flags_total","title_ja":"必要な旗の本数を求める","requires_steps":["flags_guests"],"uses_nodes":[],"condition_ja":"58人の招待客に加え、主催者2人も各1本必要。","conclusion_ja":"必要数は60本。","baseline_ja":"58+2を計算する。"},
+    {"id":"flags_cost","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0913A.flags_cost","title_ja":"購入費用を求める","requires_steps":["flags_total"],"uses_nodes":[],"condition_ja":"60本を5本1ドルで買う。","conclusion_ja":"費用は12ドル。","baseline_ja":"60=5×12となる組数を求める。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":324,"checked_model_hash":"4fec31cdef21e66aa97dac7c4991bc909e72e5b4b85a2a604a5de1d92c1baa4f","checks_ja":["招待客だけでなく主催者2人を含む60本であることと、5本組12個を照合した。"]}
+}

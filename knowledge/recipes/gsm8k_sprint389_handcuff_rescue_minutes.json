@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint389_handcuff_rescue_minutes",
+  "title_ja": "3人を手錠から救う時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04068",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Maryann can pick the lock on a cheap pair of handcuffs in 6 minutes and on an expensive pair of handcuffs in 8 minutes. If Maryann needs to rescue three of her friends who have expensive handcuffs on their hands and cheap handcuffs on their ankles, how long will it take for her to free all of them?",
+  "answer_ja": "1人につき高価な手錠8分と安価な手錠6分を外すので、8+6=14分かかる。3人を順に救う合計は14×3=42分である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A01P2.handcuff_rescue_minutes",
+  "graph": "work/gsm8k-sprint389-handcuff-rescue-minutes-graph.json",
+  "model_notes_ja": [
+    "Maryannが各手錠を順番に1組ずつ解錠し、並行作業はしない。"
+  ],
+  "steps": [
+    {
+      "id": "handcuff_rescue_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A01P2.handcuff_rescue_minutes",
+      "title_ja": "3人を手錠から救う時間",
+      "claim_ja": "1人につき高価な手錠8分と安価な手錠6分を外すので、8+6=14分かかる。3人を順に救う合計は14×3=42分である。",
+      "method_ja": "Maryannが各手錠を順番に1組ずつ解錠し、並行作業はしない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Maryannが各手錠を順番に1組ずつ解錠し、並行作業はしない。",
+      "baseline_ja": "整数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1人につき高価な手錠8分と安価な手錠6分を外すので、8+6=14分かかる。3人を順に救う合計は14×3=42分である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4069,
+    "checked_model_hash": "68cad773f21e07d094f0728acbf5d8a347949c62d72b59735e037a941dc252ee",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily46_questions","title_ja":"3人が2時間で解く問題数","problem_id":"external-gsm8k-main-3101c7d50724:train:00457","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"3人の1時間当たりの問題数を求め、同じ量を解く次の1時間を加える。","root":"LemmaWeave.Tests.GSM8KDaily0917B.questions_solution","graph":"work/gsm8k-daily46-questions-graph.json","lean_file":"tests/lean/GSM8KDaily0917B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["翌時間も各人が第1時間と同数を解く。"],
+  "steps":[
+    {"id":"questions_hourly","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.questions_hourly","title_ja":"1時間の3人分","requires_steps":[],"uses_nodes":[],"condition_ja":"Fionaは36問、Shirleyはその2倍、Kianaは2人の合計の半分。","conclusion_ja":"Shirleyは72問、Kianaは54問、3人で162問。","baseline_ja":"倍の乗法、半分の除法、合計の加法。"},
+    {"id":"questions_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917B.questions_total","title_ja":"2時間の合計","requires_steps":["questions_hourly"],"uses_nodes":[],"condition_ja":"次の1時間も各人が同数を解く。","conclusion_ja":"162×2=324問。","baseline_ja":"同じ1時間分を2回繰り返す乗法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":458,"checked_model_hash":"e43de17a464b0a6b47d0fa96cdb3fc50a57a8e6a7b95296a1a6860aa78490748","checks_ja":["Kianaの半分の基準をFionaとShirleyの合計とした。","2時間目の同数条件を全員へ適用した。"]}
+}

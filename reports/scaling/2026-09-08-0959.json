@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-08",
+  "github_run_id": 34177460773,
+  "commit": "2a11e7d0801a5015e6c0e2a5cbe1adb5ce8f85a4",
+  "full_pipeline_seconds": 745,
+  "artifact_zip_bytes": 95721542,
+  "artifact_expanded_bytes": 1411385164,
+  "new_dependency_graphs": 10,
+  "new_dependency_graph_raw_bytes": 65823532,
+  "new_dependency_graph_gzip_bytes": 3925930,
+  "new_dependency_graph_reduction_percent": 94.04,
+  "measurement_note_ja": "固定環境の全パイプラインを実行した実測。展開量にはruns配下の重複証拠を含む。正本の依存グラフはmtime固定gzipで保存する。",
+  "improvement_status_ja": "fresh cloneで既存88問が10問へ退行する事象を検出し、参照中の成功runを永続化して回帰検査を追加した。変更証明と推移的依存だけを安全に選ぶ差分再検証、およびCI成果物内のruns重複削減は2026-09-14までの継続課題。入力・出力ハッシュ照合は緩和しない。"
+}

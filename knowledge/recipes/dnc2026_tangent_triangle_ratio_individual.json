@@ -1,0 +1,166 @@
+{
+  "id": "dnc2026_tangent_triangle_ratio_individual",
+  "title_ja": "円への接線でできる三角形の辺比",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q02-S02-02i",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "半径6の円が線分PQへ接し、PとQから引いた別の接線の長さがそれぞれ12と5である。接線の交点Rについて、三角形PQRの三辺の比を求め、PRとPQを比較する。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "pdf_page_1_based": [9, 10, 11],
+    "printed_page_label": [38, 39, 40],
+    "subquestion": "第2問〔2〕(2)(i)",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q02-S02-02i.json",
+    "visual_review_status": "official_pdf_visually_checked_2026-09-29",
+    "rights_note_ja": "原文・選択肢表・図・PDF画像は保存せず、掲載位置、独自要約、数学的定義と証明だけを保存する。既存のrelease=restrictedとrights_uncertainを維持する。"
+  },
+  "variables": [
+    {"name": "PM, PK, QM, QL, radius, PQ, PR, QR", "type": "ℝ", "domain_ja": "正の長さ"},
+    {"name": "areaP, areaQ", "type": "ℝ", "domain_ja": "二つの接線四角形の面積"},
+    {"name": "sinP, cosP, sinQ, cosQ, sinR", "type": "ℝ", "domain_ja": "角P、角Q、角PRQの三角比を表す実数"}
+  ],
+  "assumptions_ja": [
+    "同一点から円へ引いた二本の接線は等しいのでPM=PK=12、QM=QL=5であり、半径は6である。",
+    "接点の半径は接線に垂直であり、二つの直角三角形の面積和と前小問の四角形面積公式が使える。",
+    "PとQは鋭角で、sin^2+cos^2=1を満たす。",
+    "交点Rが円の中心と同じ側にある配置では∠PRQ=Q-Pであり、三角形PQRへ正弦定理を適用できる。"
+  ],
+  "required_conclusions_ja": [
+    "sin P=4/5、sin Q=60/61、sin(Q-P)=136/305を導く。",
+    "PR=75/2、QR=61/2、PQ=17を導く。",
+    "PR:RQ:PQ=75:61:34かつPR>2PQを導く。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.individual_solution",
+  "graph": "work/dnc2026-tangent-triangle-ratio-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026TangentTriangleRatioIndividual.lean",
+  "model_file": "LemmaWeave/Problems/DNC2026M1/TangentTriangleRatioModel.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_algebraic_consequence_model_after_tangency_and_angle_geometry; original_text_and_figure_not_republished",
+  "assurance_level": "INCONCLUSIVE",
+  "counting_note_ja": "GSM8K固定8,792問とは別集計。候補問題のrights_uncertainと固定Lean未実行を維持し、収集済み件数またはsolution_readyへ昇格させない。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "areaP_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.areaP_value",
+      "title_ja": "P側四角形の面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "接点で半径と接線が直交するので、四角形PMOKは二つの直角三角形へ分かれる。",
+      "method_ja": "三角形の面積(1/2)×底辺×高さと面積の加法性。",
+      "condition_ja": "PM=PK=12、OM=OK=6で、各半径は対応する接線に垂直である。",
+      "premise_ja": "接線長と半径の値。",
+      "conclusion_ja": "面積は36+36=72。",
+      "baseline_ja": "二つの直角三角形の面積を加えた。"
+    },
+    {
+      "id": "sinP_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.sinP_value",
+      "title_ja": "sin P",
+      "requires_steps": ["areaP_value"],
+      "uses_nodes": [],
+      "claim_ja": "前小問の四角形面積公式をPMOKへ適用する。",
+      "method_ja": "S=(1/2)(PM·PK+OM·OK)sin P。",
+      "condition_ja": "PMOKの向かい合う二つの角はともに90度であり、前小問の適用条件を満たす。",
+      "premise_ja": "面積72と、PM=PK=12、OM=OK=6。",
+      "conclusion_ja": "72=90 sin Pよりsin P=4/5。",
+      "baseline_ja": "面積公式へ数値を代入し一次方程式を解いた。"
+    },
+    {
+      "id": "sinQ_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.sinQ_value",
+      "title_ja": "sin Q",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "Q側も同様に二つの直角三角形へ分ける。",
+      "method_ja": "面積の加法性と同じ四角形面積公式。",
+      "condition_ja": "QM=QL=5、OM=OL=6で、接点の直角を用いる。",
+      "premise_ja": "面積30=(1/2)(25+36)sin Q。",
+      "conclusion_ja": "sin Q=60/61。",
+      "baseline_ja": "両辺を61/2で割った。"
+    },
+    {
+      "id": "cosine_values",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.cosine_values",
+      "title_ja": "二つの余弦",
+      "requires_steps": ["sinP_value", "sinQ_value"],
+      "uses_nodes": [],
+      "claim_ja": "PとQは鋭角なので余弦は正である。",
+      "method_ja": "sin²θ+cos²θ=1と正の平方根。",
+      "condition_ja": "図の配置から0<P,Q<90度である。",
+      "premise_ja": "sin P=4/5、sin Q=60/61。",
+      "conclusion_ja": "cos P=3/5、cos Q=11/61。",
+      "baseline_ja": "三平方関係から正の余弦を選んだ。"
+    },
+    {
+      "id": "sinR_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.sinR_value",
+      "title_ja": "交点Rの角の正弦",
+      "requires_steps": ["sinP_value", "sinQ_value", "cosine_values"],
+      "uses_nodes": [],
+      "claim_ja": "三角形PQRの内角はP、180度-Q、Q-Pである。",
+      "method_ja": "角の和と正弦の差の公式sin(Q-P)=sinQ cosP-cosQ sinP。",
+      "condition_ja": "Rが直線PQに関して円の中心と同じ側にある。",
+      "premise_ja": "前各行の正弦・余弦。",
+      "conclusion_ja": "sin∠PRQ=136/305。",
+      "baseline_ja": "角の配置を確定し、差の公式へ代入した。"
+    },
+    {
+      "id": "pq_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.pq_value",
+      "title_ja": "底辺PQ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "接点Mは線分PQの内部にある。",
+      "method_ja": "線分の加法性。",
+      "condition_ja": "P-M-Qの順に一直線上に並ぶ。",
+      "premise_ja": "PM=12、MQ=5。",
+      "conclusion_ja": "PQ=17。",
+      "baseline_ja": "12+5を計算した。"
+    },
+    {
+      "id": "remaining_side_values",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.remaining_side_values",
+      "title_ja": "正弦定理で残る二辺",
+      "requires_steps": ["sinP_value", "sinQ_value", "sinR_value", "pq_value"],
+      "uses_nodes": [],
+      "claim_ja": "三角形PQRへ正弦定理を適用する。",
+      "method_ja": "PR/sinQ=PQ/sin(Q-P)、QR/sinP=PQ/sin(Q-P)。",
+      "condition_ja": "sin(Q-P)=136/305>0なので分母は0でない。",
+      "premise_ja": "PQ=17と前各行の三角比。",
+      "conclusion_ja": "PR=75/2、QR=61/2。",
+      "baseline_ja": "正弦定理を交差積にして解いた。"
+    },
+    {
+      "id": "side_ratio_and_comparison",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual.side_ratio_and_comparison",
+      "title_ja": "三辺比と比較",
+      "requires_steps": ["remaining_side_values", "pq_value"],
+      "uses_nodes": [],
+      "claim_ja": "三辺の値を同じ倍率で整数化する。",
+      "method_ja": "三辺を2倍し、大小を比較する。",
+      "condition_ja": "比は正の共通倍率で変えてよい。",
+      "premise_ja": "PR=75/2、QR=61/2、PQ=17。",
+      "conclusion_ja": "PR:RQ:PQ=75:61:34、また75/2>34なのでPR>2PQ。",
+      "baseline_ja": "同じ正数2を掛け、整数比と不等式を得た。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-29T09:10:17+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q02-S02-02i",
+    "checked_model_hash": "e72c8809b43eabf8489cc12983b3ea85ecd510676180cd7860981eb3f240a366",
+    "checks_ja": [
+      "公式PDF9〜11ページ・冊子38〜40頁で円、接点、接線長、交点Rの側、比と不等式の全要求を再確認した。",
+      "同一点からの接線長、接点での直角、面積公式、角の配置、正弦定理の適用条件を各使用箇所へ明示した。",
+      "各説明行を名前付きLean定理へ対応させ、最終定理が前行を実際に参照する構成にした。",
+      "原文・選択肢表・図を保存せず、独自要約と数学コードに限定した。",
+      "自己照合だけであり、固定Lean実行、公理監査、依存抽出、独立レビューは未完と明示した。"
+    ]
+  }
+}

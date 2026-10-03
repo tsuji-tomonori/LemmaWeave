@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily31_bus","title_ja":"乗降を順に反映して空席数を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00311","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"23行4席のバスで、初期乗客と二停留所の乗降後に残る空席数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0912E.bus_solution","graph":"work/gsm8k-daily31-bus-graph.json","lean_file":"tests/lean/GSM8KDaily0912E.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["各停留所では乗車人数を加え、降車人数を引いた人数が次の状態になる。","自然数の切り捨てを避け、乗車前人数＋乗車人数＝乗車後人数＋降車人数で表す。"],
+  "steps":[
+    {"id":"bus_capacity","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.bus_capacity","title_ja":"座席総数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"23行あり各行に4席ある。","conclusion_ja":"座席総数は92席。","baseline_ja":"行数×1行当たり席数を計算する。"},
+    {"id":"bus_first","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.bus_first","title_ja":"第一停留所後の乗客数を求める","requires_steps":[],"uses_nodes":[],"condition_ja":"初め16人、第一停留所で15人乗り3人降りる。","conclusion_ja":"第一停留所後は28人。","baseline_ja":"乗降保存式として後人数＋3＝16＋15を解く。"},
+    {"id":"bus_second","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.bus_second","title_ja":"第二停留所後の乗客数を求める","requires_steps":["bus_first"],"uses_nodes":[],"condition_ja":"28人から17人乗り10人降りる。","conclusion_ja":"第二停留所後は35人。","baseline_ja":"後人数＋10＝28＋17を解く。"},
+    {"id":"bus_empty","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912E.bus_empty","title_ja":"空席数を求める","requires_steps":["bus_capacity","bus_second"],"uses_nodes":[],"condition_ja":"全92席に35人が乗っている。","conclusion_ja":"空席は57席。","baseline_ja":"座席総数＝乗客数＋空席数の自然数方程式を解く。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":312,"checked_model_hash":"fd1028e6170a8f5134aecf64d7e1cf4d126aea7a3c6ed093bd3a45c738751619","checks_ja":["92席、二段階の乗降28人・35人、空席57席を原文順に照合した。"]}
+}

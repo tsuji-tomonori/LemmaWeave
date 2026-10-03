@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint151_apples",
+  "title_ja": "りんご購入額の解釈",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02554",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "小1.5ドル、中2ドル、大3ドルで、『6 small and medium apples』と大8個を買う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.apples_solution",
+  "graph": "work/gsm8k-sprint151-apples-graph.json",
+  "model_notes_ja": [
+    "『6 small and medium apples』は小6個かつ中6個なら45ドル。小と中を合わせて6個という読みでは、内訳により33ドル（小6・中0）から36ドル（小0・中6）まで変わり一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "apples_intended_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.apples_intended_solution",
+      "title_ja": "参考解釈では4500セント、すなわち45ドル",
+      "claim_ja": "参考解釈では4500セント、すなわち45ドル",
+      "method_ja": "小6個、中6個、大8個の代金を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "参考解釈では4500セント、すなわち45ドル",
+      "baseline_ja": "参考解釈では4500セント、すなわち45ドル"
+    },
+    {
+      "id": "apples_combined_all_small",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.apples_combined_all_small",
+      "title_ja": "合計6個を全て小と読めば33ドル",
+      "claim_ja": "合計6個を全て小と読めば33ドル",
+      "method_ja": "小6個と大8個の代金を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "合計6個を全て小と読めば33ドル",
+      "baseline_ja": "合計6個を全て小と読めば33ドル"
+    },
+    {
+      "id": "apples_combined_all_medium",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.apples_combined_all_medium",
+      "title_ja": "合計6個を全て中と読めば36ドル",
+      "claim_ja": "合計6個を全て中と読めば36ドル",
+      "method_ja": "中6個と大8個の代金を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "合計6個を全て中と読めば36ドル",
+      "baseline_ja": "合計6個を全て中と読めば36ドル"
+    },
+    {
+      "id": "apples_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.apples_solution",
+      "title_ja": "参考解釈45ドルと、合計6個解釈の非一意性を分離する",
+      "claim_ja": "参考解釈45ドルと、合計6個解釈の非一意性を分離する",
+      "method_ja": "明示した複数の内訳を反例として比較する",
+      "requires_steps": [
+        "apples_intended_solution",
+        "apples_combined_all_small",
+        "apples_combined_all_medium"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "参考解釈45ドルと、合計6個解釈の非一意性を分離する",
+      "baseline_ja": "参考解釈45ドルと、合計6個解釈の非一意性を分離する"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2555,
+    "checked_model_hash": "d2ba0eb5fd55009570291284735b025b7fd39756a17f14df9e6018a2e9eeed92",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

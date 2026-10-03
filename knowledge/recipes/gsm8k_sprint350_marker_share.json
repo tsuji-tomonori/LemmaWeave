@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint350_marker_share",
+  "title_ja": "最後のグループが受け取るマーカー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03871",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A class is completing an art project. Each of the 30 students is assigned to a separate group and will need to take markers from the 22 boxes of markers. The first group has 10 students who will have 2 markers each and the second group has 15 students who will have 4 markers each. The last group takes the remaining markers and divides them equally. If each box of markers contains 5 markers, how many markers does each of the students in the last group receive?",
+  "answer_ja": "全体は22×5=110本。第1グループは10×2=20本、第2グループは15×4=60本を使うので、残りは110−80=30本。最後のグループは30−10−15=5人だから、1人30÷5=6本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A07P2.marker_share",
+  "graph": "work/gsm8k-sprint350-marker-share-graph.json",
+  "model_notes_ja": [
+    "各生徒はちょうど1グループに属し、最後の5人が残り30本を等分する。"
+  ],
+  "steps": [
+    {
+      "id": "marker_share",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A07P2.marker_share",
+      "title_ja": "最後のグループが受け取るマーカー",
+      "claim_ja": "全体は22×5=110本。第1グループは10×2=20本、第2グループは15×4=60本を使うので、残りは110−80=30本。最後のグループは30−10−15=5人だから、1人30÷5=6本。",
+      "method_ja": "全体量から先の2グループの使用量を引き、残った人数で等分する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3グループは重複せず30人全員を含み、全マーカーをこの3グループだけで分ける。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1人6本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3872,
+    "checked_model_hash": "8ea217df0a78a66f52176f6c92526025b28a9c65f8b204c9286014dbb3a73eb1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily43_library","title_ja":"国外出版の英語本の冊数","problem_id":"external-gsm8k-main-3101c7d50724:train:00429","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"全蔵書から英語本を求め、そのうち国内出版分を除いて国外出版分を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915D.library_solution","graph":"work/gsm8k-daily43-library-graph.json","lean_file":"tests/lean/GSM8KDaily0915D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["these booksは直前の英語本を指し、国外出版は英語本の国内出版以外とする。"],
+  "steps":[
+    {"id":"library_english","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.library_english","title_ja":"英語本","requires_steps":[],"uses_nodes":[],"condition_ja":"全2300冊の80%が英語本。","conclusion_ja":"英語本は1840冊。","baseline_ja":"全体×百分率の割合計算。"},
+    {"id":"library_domestic","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.library_domestic","title_ja":"国内出版の英語本","requires_steps":["library_english"],"uses_nodes":[],"condition_ja":"英語本1840冊の60%が国内出版。","conclusion_ja":"国内出版の英語本は1104冊。","baseline_ja":"部分集合に対する百分率計算。"},
+    {"id":"library_outside","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.library_outside","title_ja":"国外出版の英語本","requires_steps":["library_english","library_domestic"],"uses_nodes":[],"condition_ja":"英語本1840冊を国内出版1104冊と国外出版に分ける。","conclusion_ja":"国外出版の英語本は736冊。","baseline_ja":"全体から既知の部分を引く。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":430,"checked_model_hash":"a6933f19dea1184a4024944d3d5c0521ede1267552f17298f26c6083f9418f8e","checks_ja":["全2300冊、英語本80%、そのうち国内出版60%、求める国外出版英語本を照合した。"]}
+}

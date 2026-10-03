@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint111_bag_chips",
+  "title_ja": "チップスを食べ終える日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01951",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の全数量関係を順に式へ移し、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.bag_solution",
+  "graph": "work/gsm8k-sprint111-bag-chips-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bag_first_day",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.bag_first_day",
+      "title_ja": "初日に10枚食べた。",
+      "claim_ja": "初日に10枚食べた。",
+      "method_ja": "5+5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "初日に10枚食べた。",
+      "baseline_ja": "初日に10枚食べた。"
+    },
+    {
+      "id": "bag_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.bag_remaining",
+      "title_ja": "残りは90枚。",
+      "claim_ja": "残りは90枚。",
+      "method_ja": "100−10。",
+      "requires_steps": [
+        "bag_first_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "残りは90枚。",
+      "baseline_ja": "残りは90枚。"
+    },
+    {
+      "id": "bag_later_days",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.bag_later_days",
+      "title_ja": "2日目以降は9日かかる。",
+      "claim_ja": "2日目以降は9日かかる。",
+      "method_ja": "90÷10。",
+      "requires_steps": [
+        "bag_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "2日目以降は9日かかる。",
+      "baseline_ja": "2日目以降は9日かかる。"
+    },
+    {
+      "id": "bag_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.bag_solution",
+      "title_ja": "合計10日。",
+      "claim_ja": "合計10日。",
+      "method_ja": "初日1日と以後9日を足す。",
+      "requires_steps": [
+        "bag_later_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "合計10日。",
+      "baseline_ja": "合計10日。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1952,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

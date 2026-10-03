@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily40_movie","title_ja":"映画会社の利益","problem_id":"external-gsm8k-main-3101c7d50724:train:00402","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"総興行収入、会社取り分、製作費から利益を求める。金額は百万ドル単位。","root":"LemmaWeave.Tests.GSM8KDaily0915A.movie_solution","graph":"work/gsm8k-daily40-movie-graph.json","lean_file":"tests/lean/GSM8KDaily0915A.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["profitは会社取り分から製作費だけを引いた値とし、他費用・税は含めない。"],
+  "steps":[
+    {"id":"movie_gross","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.movie_gross","title_ja":"総興行収入","requires_steps":[],"uses_nodes":[],"condition_ja":"公開週末120百万ドルの3.5倍。","conclusion_ja":"全期間の興行収入は420百万ドル。","baseline_ja":"3.5倍を7/2倍として計算する。"},
+    {"id":"movie_kept","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.movie_kept","title_ja":"会社取り分","requires_steps":["movie_gross"],"uses_nodes":[],"condition_ja":"420百万ドルの60%を会社が受け取る。","conclusion_ja":"取り分は252百万ドル。","baseline_ja":"割合に基準量を掛ける。"},
+    {"id":"movie_profit","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915A.movie_solution","title_ja":"利益","requires_steps":["movie_gross","movie_kept"],"uses_nodes":[],"condition_ja":"会社取り分252百万ドルから製作費60百万ドルを引く。","conclusion_ja":"利益は192百万ドル、すなわち192,000,000ドル。","baseline_ja":"利益=収入−費用。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":403,"checked_model_hash":"b1c735783c0e2fb3e158ebd21f9dd4b78fa11ad24991ed80e51465c2cc5b3451","checks_ja":["3.5倍、60%、製作費、百万ドル単位を照合した。"]}
+}

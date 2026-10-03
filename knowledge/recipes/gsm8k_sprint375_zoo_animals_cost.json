@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint375_zoo_animals_cost",
+  "title_ja": "ヤギとラマの購入総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03998",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A17P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tim decides to get animals for his zoo.  He buys 3 goats for $400 each.  He gets twice as many llamas which cost 50% more each.  How much did he spend?",
+  "answer_ja": "ヤギは3×400=1200ドル。ラマは2倍の6頭で、1頭は400ドルより50%高い600ドルだから計3600ドル。総額は1200+3600=4800ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A17P3.zoo_animals_cost",
+  "graph": "work/gsm8k-sprint375-zoo-animals-cost-graph.json",
+  "model_notes_ja": [
+    "ラマの『twice as many』はヤギ3頭の2倍、50%増の基準はヤギ1頭400ドルである。"
+  ],
+  "steps": [
+    {
+      "id": "zoo_animals_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A17P3.zoo_animals_cost",
+      "title_ja": "ヤギとラマの購入総額",
+      "claim_ja": "ヤギは3×400=1200ドル。ラマは2倍の6頭で、1頭は400ドルより50%高い600ドルだから計3600ドル。総額は1200+3600=4800ドル。",
+      "method_ja": "頭数の2倍と単価の50%増をそれぞれ求め、動物種ごとの費用を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ラマの『twice as many』はヤギ3頭の2倍、50%増の基準はヤギ1頭400ドルである。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "ヤギは3×400=1200ドル。ラマは2倍の6頭で、1頭は400ドルより50%高い600ドルだから計3600ドル。総額は1200+3600=4800ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3999,
+    "checked_model_hash": "a59c99315beb2c61cb5fb9b87db210ff472537b985f914da926f6af72c243bf1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

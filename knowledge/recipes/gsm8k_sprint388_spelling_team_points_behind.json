@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint388_spelling_team_points_behind",
+  "title_ja": "スペリングチームの得点差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04065",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A01P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "In the spelling bee, Max has 5 points, Dulce has 3 points, and Val has twice the combined points of Max and Dulce. If they are on the same team and their opponents' team has a total of 40 points, how many points are their team behind?",
+  "answer_ja": "MaxとDulceの合計は5+3=8点。Valはその2倍で16点だから、チーム合計は8+16=24点。相手の40点との差は40−24=16点である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A01P1.spelling_team_points_behind",
+  "graph": "work/gsm8k-sprint388-spelling-team-points-behind-graph.json",
+  "model_notes_ja": [
+    "behind は相手得点から自チーム得点を引く。"
+  ],
+  "steps": [
+    {
+      "id": "spelling_team_points_behind",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A01P1.spelling_team_points_behind",
+      "title_ja": "スペリングチームの得点差",
+      "claim_ja": "MaxとDulceの合計は5+3=8点。Valはその2倍で16点だから、チーム合計は8+16=24点。相手の40点との差は40−24=16点である。",
+      "method_ja": "behind は相手得点から自チーム得点を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "behind は相手得点から自チーム得点を引く。",
+      "baseline_ja": "整数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "MaxとDulceの合計は5+3=8点。Valはその2倍で16点だから、チーム合計は8+16=24点。相手の40点との差は40−24=16点である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4066,
+    "checked_model_hash": "4b003df66ba51de68f995834be189d55cb3f61ea45db23a977c6d30d32df4140",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

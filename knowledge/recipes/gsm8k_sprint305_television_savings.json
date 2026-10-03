@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint305_television_savings",
+  "title_ja": "予算より安くなったテレビ価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03650",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "上限1000ドルから100ドル安くし、さらに20%引き。",
+  "answer_ja": "100ドル引きで900ドル。20%は180ドルなので最終価格720ドル。1000-720=280ドル安い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A08P2.television_savings",
+  "graph": "work/gsm8k-sprint305-television-savings-graph.json",
+  "model_notes_ja": [
+    "「100ドル安い」の基準を、参考解答どおりMartinの上限1000ドルと解釈した。別の元値は原文にない。"
+  ],
+  "steps": [
+    {
+      "id": "television_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A08P2.television_savings",
+      "title_ja": "100ドル引きで900ドル。20%は180ドルなので最終価格720ドル。1000-720=280ドル安い。",
+      "claim_ja": "100ドル引きで900ドル。20%は180ドルなので最終価格720ドル。1000-720=280ドル安い。",
+      "method_ja": "100ドル引きで900ドル。20%は180ドルなので最終価格720ドル。1000-720=280ドル安い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "100ドル引きで900ドル。20%は180ドルなので最終価格720ドル。1000-720=280ドル安い。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3651,
+    "checked_model_hash": "db2032ffe685f9231786361e966ebc7aa88ad4a264420cb5664e10beeac3ed3f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

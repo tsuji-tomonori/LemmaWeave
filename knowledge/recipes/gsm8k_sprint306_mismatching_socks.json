@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint306_mismatching_socks",
+  "title_ja": "組にならない靴下",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03651",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "靴下25足のうち、合う組が4組ある。",
+  "answer_ja": "合う靴下は4×2=8足。残りは25-8=17足なので、組にならない靴下は17足。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A08P3.mismatching_socks",
+  "graph": "work/gsm8k-sprint306-mismatching-socks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "mismatching_socks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A08P3.mismatching_socks",
+      "title_ja": "合う靴下は4×2=8足。残りは25-8=17足なので、組にならない靴下は17足。",
+      "claim_ja": "合う靴下は4×2=8足。残りは25-8=17足なので、組にならない靴下は17足。",
+      "method_ja": "合う靴下は4×2=8足。残りは25-8=17足なので、組にならない靴下は17足。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "合う靴下は4×2=8足。残りは25-8=17足なので、組にならない靴下は17足。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3652,
+    "checked_model_hash": "1410486c984fbaada19f00f71a9b21c8b2a390d284985447342c10eae88d6f27",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

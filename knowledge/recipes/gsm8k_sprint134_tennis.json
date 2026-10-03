@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint134_tennis",
+  "title_ja": "Archibaldの勝率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02299",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Archibaldが12勝、兄弟が18勝。全試合に占める勝率を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.tennis_solution",
+  "graph": "work/gsm8k-sprint134-tennis-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "tennis_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.tennis_total",
+      "title_ja": "全30試合",
+      "claim_ja": "全30試合",
+      "method_ja": "12勝と18勝を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "全30試合",
+      "baseline_ja": "全30試合"
+    },
+    {
+      "id": "tennis_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.tennis_solution",
+      "title_ja": "勝率40%",
+      "claim_ja": "勝率40%",
+      "method_ja": "12÷30×100",
+      "requires_steps": [
+        "tennis_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "勝率40%",
+      "baseline_ja": "勝率40%"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2300,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

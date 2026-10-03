@@ -1,0 +1,106 @@
+{
+  "date": "2026-09-19",
+  "run_id": "lemmaweave-sprint-20260919-2000-gsm8k-32",
+  "planned_slot_local_hour": 20,
+  "planned_at": "2026-09-19T20:00:00+09:00",
+  "role": "gsm8k_individual_15",
+  "base_sha": "288ba93d737210f6890fdb56529bac2b103b14a6",
+  "started_at": "2026-09-19T20:10:09+09:00",
+  "finished_at": "2026-09-19T20:48:00+09:00",
+  "schedule_offset_seconds": 609,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00759",
+    "external-gsm8k-main-3101c7d50724:train:00760",
+    "external-gsm8k-main-3101c7d50724:train:00761",
+    "external-gsm8k-main-3101c7d50724:train:00762",
+    "external-gsm8k-main-3101c7d50724:train:00763",
+    "external-gsm8k-main-3101c7d50724:train:00764",
+    "external-gsm8k-main-3101c7d50724:train:00765",
+    "external-gsm8k-main-3101c7d50724:train:00766",
+    "external-gsm8k-main-3101c7d50724:train:00767",
+    "external-gsm8k-main-3101c7d50724:train:00768",
+    "external-gsm8k-main-3101c7d50724:train:00769",
+    "external-gsm8k-main-3101c7d50724:train:00770",
+    "external-gsm8k-main-3101c7d50724:train:00771",
+    "external-gsm8k-main-3101c7d50724:train:00772",
+    "external-gsm8k-main-3101c7d50724:train:00773"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00759",
+    "external-gsm8k-main-3101c7d50724:train:00760",
+    "external-gsm8k-main-3101c7d50724:train:00761",
+    "external-gsm8k-main-3101c7d50724:train:00762",
+    "external-gsm8k-main-3101c7d50724:train:00763",
+    "external-gsm8k-main-3101c7d50724:train:00764",
+    "external-gsm8k-main-3101c7d50724:train:00765",
+    "external-gsm8k-main-3101c7d50724:train:00766",
+    "external-gsm8k-main-3101c7d50724:train:00767",
+    "external-gsm8k-main-3101c7d50724:train:00768",
+    "external-gsm8k-main-3101c7d50724:train:00769",
+    "external-gsm8k-main-3101c7d50724:train:00770",
+    "external-gsm8k-main-3101c7d50724:train:00771",
+    "external-gsm8k-main-3101c7d50724:train:00772",
+    "external-gsm8k-main-3101c7d50724:train:00773"
+  ],
+  "verification_pending_cumulative": {
+    "count": 260,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:00773"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00759-00773",
+      "retry_on": "2026-09-19",
+      "reason_ja": "HEAD a6a5224f の固定Lean CIはA32全定理と公理監査を通過後、先行A30/A31レシピの誤った行間依存宣言で失敗した。失敗成果物は成功証拠に採用しない。",
+      "next_action_ja": "A27〜A31の誤依存を修復したHEADを固定Lean CIで再実行し、次に検出された不一致があればrecipe/step単位で実証明へ合わせる。"
+    }
+  ],
+  "execution_control": {
+    "serialized": true,
+    "shared_lock_implementation": false,
+    "claim_status": "released_after_serial_write",
+    "note_ja": "排他機構の実装を仮定せず、単一ブランチへSHA確認付きの非force更新を直列実行した。"
+  },
+  "self_review": {
+    "status": "self_review_only",
+    "source_hashes_checked": 15,
+    "recipe_declaration_mappings_checked": 46,
+    "sorry_admit_custom_axiom_matches": 0,
+    "model_sha256": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b"
+  },
+  "ci": {
+    "preceding_head_sha": "288ba93d737210f6890fdb56529bac2b103b14a6",
+    "preceding_status": "no_run_observed_before_A32_push",
+    "current_status": "failed_recipe_dependency_validation_repair_prepared",
+    "workflow_run_id": 35439720673,
+    "workflow_job_id": 105888331630,
+    "tested_head_sha": "a6a5224f2fc1dfffb16f04b219f641ad19383eea",
+    "lean_version": "4.33.1",
+    "a32_lean_and_axiom_audit": "passed",
+    "failure": "previous written line absent from this line proof",
+    "artifact_id": 10583891682,
+    "artifact_sha256": "dec6026ff374308778532a2fdad5fcb0f5a7ef011ce5ca7f8fa02b29b02ed36c",
+    "artifact_size_bytes": 258640422,
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "checkpoint_commits": [
+    "787beb9ee50df22eda844c4abc4531a8d8e5f547",
+    "6fec62bc32810664fcd33b16b2dc0719e6db8883",
+    "80232ab4302b3fbce1ad3a5f63b34fbe592966cd"
+  ],
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 245
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 260
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00774",
+  "note_ja": "15問を原題から個別に読解し、46説明行、Leanモデル、行別定理、原文ハッシュ、自己照合を保存した。ペン問題は参照解説のHalfを原題どおりone-fourthへ訂正した。固定Lean 4.33.1ではA32全15問のビルドと公理監査が通過したが、全体レシピ検査で先行A30/A31の説明行依存宣言と実証明の不一致を検出したため、失敗成果物を採用せず修復した。正式完了への昇格とマージは修復HEADの成功証拠まで保留する。",
+  "commit": "80232ab4302b3fbce1ad3a5f63b34fbe592966cd"
+}

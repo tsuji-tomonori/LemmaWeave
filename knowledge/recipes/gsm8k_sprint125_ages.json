@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint125_ages",
+  "title_ja": "ColleteとRachelの年齢差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02157",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ronaが8歳のとき、2倍のRachelと半分のColleteの年齢差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.ages_solution",
+  "graph": "work/gsm8k-sprint125-ages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ages_rachel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.ages_rachel",
+      "title_ja": "Rachelは16歳。",
+      "claim_ja": "Rachelは16歳。",
+      "method_ja": "8×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Rachelは16歳。",
+      "baseline_ja": "Rachelは16歳。"
+    },
+    {
+      "id": "ages_collete",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.ages_collete",
+      "title_ja": "Colleteは4歳。",
+      "claim_ja": "Colleteは4歳。",
+      "method_ja": "8÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Colleteは4歳。",
+      "baseline_ja": "Colleteは4歳。"
+    },
+    {
+      "id": "ages_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.ages_solution",
+      "title_ja": "年齢差は12歳。",
+      "claim_ja": "年齢差は12歳。",
+      "method_ja": "16−4。",
+      "requires_steps": [
+        "ages_rachel",
+        "ages_collete"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "年齢差は12歳。",
+      "baseline_ja": "年齢差は12歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2158,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

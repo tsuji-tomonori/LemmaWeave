@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily41_river","title_ja":"川幅に入る競走艇の最大数","problem_id":"external-gsm8k-main-3101c7d50724:train:00405","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"両岸と艇間に2フィート以上の間隔を置いて、幅42フィートに並べられる幅3フィートの艇の最大数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0915B.river_solution","graph":"work/gsm8k-daily41-river-graph.json","lean_file":"tests/lean/GSM8KDaily0915B.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["艇を横一列に並べ、n艇には艇幅n個と両岸を含む間隔n+1個が必要とする。"],
+  "steps":[
+    {"id":"river_maximum","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.river_boats","title_ja":"幅の不等式","requires_steps":[],"uses_nodes":[],"condition_ja":"n艇の必要幅は3n+2(n+1)で42以下、n+1艇では42を超える。","conclusion_ja":"最大艇数は8艇。","baseline_ja":"各艇の幅と全間隔を数え、次の整数が入らないことまで確認する。"},
+    {"id":"river_answer","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915B.river_solution","title_ja":"配置確認","requires_steps":["river_maximum"],"uses_nodes":[],"condition_ja":"8艇では8×3+9×2=42フィートを使う。","conclusion_ja":"ちょうど収まり、9艇は収まらないので答えは8艇。","baseline_ja":"候補が条件を満たすことと最大性を同時に確認する。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":406,"checked_model_hash":"e74a4210ca248991d2d8391f07fb0cc880ee33f5d619370a90295fd357ab18a3","checks_ja":["艇幅、艇間隔、両岸との間隔、川幅を原文と照合した。"]}
+}

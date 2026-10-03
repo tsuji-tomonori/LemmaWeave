@@ -1,0 +1,170 @@
+{
+  "id": "gsm8k_sprint94_baylor",
+  "title_ja": "フリーランス報酬後の残高",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01689",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "現在残高4000ドル。第1顧客はその半額、第2顧客は第1顧客の「2/5 times more」、第3顧客は前二者合計の2倍を支払う。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_solution_additive",
+  "graph": "work/gsm8k-sprint94-baylor-graph.json",
+  "model_notes_ja": [
+    "2/5 times more を40%上乗せと読む場合の18400ドルと、単純に2/5倍と読む場合の12400ドルを分離した。"
+  ],
+  "steps": [
+    {
+      "id": "baylor_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_first",
+      "title_ja": "第1顧客",
+      "claim_ja": "2000ドル。",
+      "method_ja": "4000÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "現在残高の半額。",
+      "conclusion_ja": "2×2000=4000。",
+      "baseline_ja": "2×2000=4000。"
+    },
+    {
+      "id": "baylor_second_additive",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_second_additive",
+      "title_ja": "第2顧客（上乗せ読み）",
+      "claim_ja": "2800ドル。",
+      "method_ja": "2000にその2/5の800を加える。",
+      "requires_steps": [
+        "baylor_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "moreを40%上乗せと読む。",
+      "conclusion_ja": "5×2800=7×2000。",
+      "baseline_ja": "5×2800=7×2000。"
+    },
+    {
+      "id": "baylor_pair_additive",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_pair_additive",
+      "title_ja": "前二者合計（上乗せ読み）",
+      "claim_ja": "4800ドル。",
+      "method_ja": "2000+2800。",
+      "requires_steps": [
+        "baylor_first",
+        "baylor_second_additive"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両方の仕事が完了する。",
+      "conclusion_ja": "2000+2800=4800。",
+      "baseline_ja": "2000+2800=4800。"
+    },
+    {
+      "id": "baylor_third_additive",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_third_additive",
+      "title_ja": "第3顧客（上乗せ読み）",
+      "claim_ja": "9600ドル。",
+      "method_ja": "4800の2倍。",
+      "requires_steps": [
+        "baylor_pair_additive"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第3顧客は前二者合計の2倍。",
+      "conclusion_ja": "2×4800=9600。",
+      "baseline_ja": "2×4800=9600。"
+    },
+    {
+      "id": "baylor_solution_additive",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_solution_additive",
+      "title_ja": "最終残高（上乗せ読み）",
+      "claim_ja": "18400ドル。",
+      "method_ja": "元の4000と三顧客の報酬を加える。",
+      "requires_steps": [
+        "baylor_pair_additive",
+        "baylor_third_additive"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "報酬を既存残高へ加算する。",
+      "conclusion_ja": "4000+4800+9600=18400。",
+      "baseline_ja": "4000+4800+9600=18400。"
+    },
+    {
+      "id": "baylor_first_multiplicative",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_first_multiplicative",
+      "title_ja": "第1顧客（倍率読み）",
+      "claim_ja": "2000ドル。",
+      "method_ja": "4000÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "代替モデルでも第1顧客は同じ。",
+      "conclusion_ja": "2×2000=4000。",
+      "baseline_ja": "2×2000=4000。"
+    },
+    {
+      "id": "baylor_second_multiplicative",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_second_multiplicative",
+      "title_ja": "第2顧客（単純倍率）",
+      "claim_ja": "800ドル。",
+      "method_ja": "2000の2/5。",
+      "requires_steps": [
+        "baylor_first_multiplicative"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2/5 timesを単純倍率と読む。",
+      "conclusion_ja": "5×800=2×2000。",
+      "baseline_ja": "5×800=2×2000。"
+    },
+    {
+      "id": "baylor_pair_multiplicative",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_pair_multiplicative",
+      "title_ja": "前二者合計（倍率読み）",
+      "claim_ja": "2800ドル。",
+      "method_ja": "2000+800。",
+      "requires_steps": [
+        "baylor_first_multiplicative",
+        "baylor_second_multiplicative"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二報酬を合計する。",
+      "conclusion_ja": "2000+800=2800。",
+      "baseline_ja": "2000+800=2800。"
+    },
+    {
+      "id": "baylor_third_multiplicative",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_third_multiplicative",
+      "title_ja": "第3顧客（倍率読み）",
+      "claim_ja": "5600ドル。",
+      "method_ja": "2800の2倍。",
+      "requires_steps": [
+        "baylor_pair_multiplicative"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "前二者合計の2倍。",
+      "conclusion_ja": "2×2800=5600。",
+      "baseline_ja": "2×2800=5600。"
+    },
+    {
+      "id": "baylor_solution_multiplicative",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.baylor_solution_multiplicative",
+      "title_ja": "最終残高（倍率読み）",
+      "claim_ja": "12400ドル。",
+      "method_ja": "4000+2800+5600。",
+      "requires_steps": [
+        "baylor_pair_multiplicative",
+        "baylor_third_multiplicative"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "代替解釈を上乗せ読みと混同しない。",
+      "conclusion_ja": "4000+2800+5600=12400。",
+      "baseline_ja": "4000+2800+5600=12400。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1690,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

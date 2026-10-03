@@ -1,0 +1,77 @@
+{
+  "id": "gsm8k_sprint45_shirts",
+  "title_ja": "残るシャツ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00968",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "青26枚の半分と茶36枚の3分の1を譲った後の合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.shirts_solution",
+  "graph": "work/gsm8k-sprint45-shirts-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shirts_blue_given",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.shirts_blue_given",
+      "title_ja": "譲る青シャツ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "26枚の半分。",
+      "conclusion_ja": "13枚。",
+      "baseline_ja": "26=2×13。"
+    },
+    {
+      "id": "shirts_brown_given",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.shirts_brown_given",
+      "title_ja": "譲る茶シャツ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "36枚の3分の1。",
+      "conclusion_ja": "12枚。",
+      "baseline_ja": "36=3×12。"
+    },
+    {
+      "id": "shirts_blue_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.shirts_blue_left",
+      "title_ja": "残る青シャツ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "26枚から13枚を譲る。",
+      "conclusion_ja": "13枚。",
+      "baseline_ja": "26=13+13。"
+    },
+    {
+      "id": "shirts_brown_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.shirts_brown_left",
+      "title_ja": "残る茶シャツ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "36枚から12枚を譲る。",
+      "conclusion_ja": "24枚。",
+      "baseline_ja": "36=12+24。"
+    },
+    {
+      "id": "shirts_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.shirts_total",
+      "title_ja": "残る総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "青13枚と茶24枚。",
+      "conclusion_ja": "37枚。",
+      "baseline_ja": "13+24=37。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 969,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

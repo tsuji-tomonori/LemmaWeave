@@ -1,0 +1,113 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-0400-gsm8k-37",
+  "planned_slot_local_hour": 4,
+  "planned_at": "2026-09-20T04:00:00+09:00",
+  "role": "gsm8k_individual_15",
+  "base_sha": "d29ad023c8df6511f0bbdeb85756e8260b68a1df",
+  "started_at": "2026-09-20T05:04:57+09:00",
+  "finished_at": "2026-09-20T05:15:11+09:00",
+  "schedule_offset_seconds": 3897,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00834",
+    "external-gsm8k-main-3101c7d50724:train:00835",
+    "external-gsm8k-main-3101c7d50724:train:00836",
+    "external-gsm8k-main-3101c7d50724:train:00837",
+    "external-gsm8k-main-3101c7d50724:train:00838",
+    "external-gsm8k-main-3101c7d50724:train:00839",
+    "external-gsm8k-main-3101c7d50724:train:00840",
+    "external-gsm8k-main-3101c7d50724:train:00841",
+    "external-gsm8k-main-3101c7d50724:train:00842",
+    "external-gsm8k-main-3101c7d50724:train:00843",
+    "external-gsm8k-main-3101c7d50724:train:00844",
+    "external-gsm8k-main-3101c7d50724:train:00845",
+    "external-gsm8k-main-3101c7d50724:train:00846",
+    "external-gsm8k-main-3101c7d50724:train:00847",
+    "external-gsm8k-main-3101c7d50724:train:00848"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00834",
+    "external-gsm8k-main-3101c7d50724:train:00835",
+    "external-gsm8k-main-3101c7d50724:train:00836",
+    "external-gsm8k-main-3101c7d50724:train:00837",
+    "external-gsm8k-main-3101c7d50724:train:00838",
+    "external-gsm8k-main-3101c7d50724:train:00839",
+    "external-gsm8k-main-3101c7d50724:train:00840",
+    "external-gsm8k-main-3101c7d50724:train:00841",
+    "external-gsm8k-main-3101c7d50724:train:00842",
+    "external-gsm8k-main-3101c7d50724:train:00843",
+    "external-gsm8k-main-3101c7d50724:train:00844",
+    "external-gsm8k-main-3101c7d50724:train:00845",
+    "external-gsm8k-main-3101c7d50724:train:00846",
+    "external-gsm8k-main-3101c7d50724:train:00847",
+    "external-gsm8k-main-3101c7d50724:train:00848"
+  ],
+  "deferred": [],
+  "verification_pending_reason_ja": "15問の原文・質問ハッシュ、57説明行、Leanモデル、名前付き行定理、自己照合を保存し、固定Lean環境でビルド・許容公理・実依存監査を通した。exact-head GitHub CIの成功証拠をまだ取り込んでいないためsolution_readyへ昇格しない。",
+  "next_action_ja": "現HEADのexact-head CIを確認し、成功時だけ証拠を問題単位で取り込む。失敗時は成果物を診断用として保存し、失敗工程を修復する。次の数学問題はtrain:00849から再開する。",
+  "checkpoint_commits": [
+    {"range":"train:00834..00838","status":"saved","commit_sha":"2f013e9133d88fe38a1b75dafe7b6f14e0db66fc"},
+    {"range":"train:00839..00843","status":"saved","commit_sha":"ab5d5b7f17da9d01f8c381854120c6998b81f2a4"},
+    {"range":"train:00844..00848","status":"saved","commit_sha":"f6b88be9d97b627618aa2c3df228565d09b25ff7"}
+  ],
+  "source_verification": {
+    "upstream_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_lines_1based": [835, 849],
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "record_hashes_checked": 15,
+    "question_hashes_checked": 15
+  },
+  "artifacts": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0091.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0920A05Models.lean",
+    "proof": "tests/lean/GSM8KSprint0920A05.lean",
+    "recipes": 15,
+    "written_lines": 57,
+    "artifact_bytes": 55188,
+    "semantic_review_status": "self_review_only",
+    "sorry_admit_custom_axiom_count": 0
+  },
+  "modeling_notes_ja": [
+    "train:00835のtwo times moreは、前方より2倍分多い解釈では増加300台、単純な2倍解釈では増加400台となるため両方を形式化した。",
+    "train:00839は半オムレツ単位へ整数化し、全量292個と卵584個を結び付けた。",
+    "train:00846はセント単位で形式化し、1200セント=12ドルとした。",
+    "train:00848は参照解答の途中に現れる120を牛・週の延べ量として扱い、5週間で割った24頭を直接5×18×24=2160で検証した。"
+  ],
+  "local_validation": {
+    "full_lake_build": "success_3020_jobs",
+    "model_build": "success",
+    "proof_replay": "success",
+    "axiom_audit": "success_allowed_only_propext_classical_choice_quot_sound",
+    "new_recipe_dependency_validation": "15_recipes_57_lines_success",
+    "python_regression_tests": 52,
+    "python_regression_status": "success",
+    "source_hash_check": "15_records_15_questions_success",
+    "diff_check": "success"
+  },
+  "timing_seconds": {
+    "total_run": 614,
+    "model_and_proof_build": 13.3,
+    "recipe_hash_regression_validation": 1.2,
+    "full_lake_build": 2.3
+  },
+  "progress_before": {"solution_ready":518,"remaining":8274,"verification_pending":320},
+  "progress_after": {"solution_ready":518,"remaining":8274,"verification_pending":335},
+  "ci": {
+    "previous_exact_head_run_id": 35463323801,
+    "previous_exact_head_sha": "d29ad023c8df6511f0bbdeb85756e8260b68a1df",
+    "previous_exact_head_status": "failure_in_complete_replay",
+    "previous_artifact_id": 10591210011,
+    "previous_artifact_sha256": "53221652fd7ebe4a9578ac1fef00c15d2f3685152df47f90e182c671c9e90d09",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": {"base_sha":"d29ad023c8df6511f0bbdeb85756e8260b68a1df","solution_commit_sha":"f6b88be9d97b627618aa2c3df228565d09b25ff7"},
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00849",
+  "execution_control": {
+    "serialized": true,
+    "shared_lock_implementation": false,
+    "claim": {"problem_range":"train:00834..00848","claimed_at":"2026-09-20T05:04:57+09:00","expires_at":"2026-09-20T06:04:57+09:00","status":"released_after_serial_write"},
+    "note_ja": "同一ブランチHEADを読み直し、SHA付きの非force更新で5問以内のチェックポイントを保存した。"
+  }
+}

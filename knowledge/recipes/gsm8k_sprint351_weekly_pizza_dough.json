@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint351_weekly_pizza_dough",
+  "title_ja": "1週間のピザ生地",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03879",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bruce can make 15 batches of pizza dough using a sack of flour. If he uses 5 sacks of flour per day, how many pizza doughs can he make in a week?",
+  "answer_ja": "1日に15×5=75バッチ。1週間は7日なので75×7=525バッチ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A07P3.weekly_pizza_dough",
+  "graph": "work/gsm8k-sprint351-weekly-pizza-dough-graph.json",
+  "model_notes_ja": [
+    "weekを7日とし、毎日同じ袋数を使う。"
+  ],
+  "steps": [
+    {
+      "id": "weekly_pizza_dough",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A07P3.weekly_pizza_dough",
+      "title_ja": "1週間のピザ生地",
+      "claim_ja": "1日に15×5=75バッチ。1週間は7日なので75×7=525バッチ。",
+      "method_ja": "1袋当たり、1日当たり袋数、7日を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎日5袋を7日間使い、各袋から15バッチ作る。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "525バッチ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3880,
+    "checked_model_hash": "3b9d41fb16b8e2f7392e15c8fe0c03910a4ecd5e0a583b327de376ee14394aaf",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

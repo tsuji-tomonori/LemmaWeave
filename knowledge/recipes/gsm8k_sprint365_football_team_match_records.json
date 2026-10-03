@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint365_football_team_match_records",
+  "title_ja": "両チームの試合記録合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03950",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A13P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A rival football team has won twice as many matches as the home team they will be playing did. If records show that the home team has won three matches, and each team drew four matches and lost none, how many matches have both teams played in total?",
+  "answer_ja": "ホームは3勝4分で7試合、相手は6勝4分で10試合。チーム別の試合記録を合計すると17。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A13P2.football_team_match_records",
+  "graph": "work/gsm8k-sprint365-football-team-match-records-graph.json",
+  "model_notes_ja": [
+    "両チームが対戦した同一試合を重複除去した異なる試合数は、原文だけでは決まらない。"
+  ],
+  "steps": [
+    {
+      "id": "football_team_match_records",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A13P2.football_team_match_records",
+      "title_ja": "両チームの試合記録合計",
+      "claim_ja": "ホームは3勝4分で7試合、相手は6勝4分で10試合。チーム別の試合記録を合計すると17。",
+      "method_ja": "各チームの勝・分・敗を合計してから足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "“total”をチーム別試合数の総和と解釈する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "17チーム試合。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3951,
+    "checked_model_hash": "2e79fed27a89220347bac8cb669b37fd55be2536466c54b73073606a30307dae",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

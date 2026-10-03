@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily4_candy","title_ja":"家ごとの菓子数から兄妹の差を求める","problem_id":"external-gsm8k-main-3101c7d50724:train:00039","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"Annaは60軒で各14個、Billyは75軒で各11個の菓子を得る。Annaが何個多いか求める。","root":"LemmaWeave.Tests.GSM8KDaily0907D.candy_solution","graph":"work/gsm8k-daily4-candy-graph.json","lean_file":"tests/lean/GSM8KDaily0907D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["各分譲地の全戸を回り、1軒当たりの個数が一定であるとする。"],
+  "steps":[
+    {"id":"candy_anna","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.candy_anna","title_ja":"Annaの総数","requires_steps":[],"uses_nodes":[],"condition_ja":"60軒で1軒14個を得る。","conclusion_ja":"Annaは14×60=840個。","baseline_ja":"中学校までの乗法。"},
+    {"id":"candy_billy","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.candy_billy","title_ja":"Billyの総数","requires_steps":[],"uses_nodes":[],"condition_ja":"75軒で1軒11個を得る。","conclusion_ja":"Billyは11×75=825個。","baseline_ja":"中学校までの乗法。"},
+    {"id":"candy_difference","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.candy_difference","title_ja":"菓子数の差","requires_steps":["candy_anna","candy_billy"],"uses_nodes":[],"condition_ja":"Annaの840個からBillyの825個を引く。","conclusion_ja":"Annaは15個多い。","baseline_ja":"中学校までの減法。"},
+    {"id":"candy_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.candy_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"Anna 840個、Billy 825個、差15個。","conclusion_ja":"家数、単価、差の条件を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":40,"checked_model_hash":"07bd783c11d4cbce75db4088991e65667c8ee97f6f9c74593199d03730fde2e4","checks_ja":["両者の1軒当たり個数と家数を別々に掛け、差の向きを照合した。"]}
+}

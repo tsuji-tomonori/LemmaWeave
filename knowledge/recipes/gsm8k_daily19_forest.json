@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily19_forest","title_ja":"3週間後のイタチとウサギ","problem_id":"external-gsm8k-main-3101c7d50724:train:00191","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"3匹の狐が各週に捕る種別個体数から3週間後の残数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910C.forest_solution","graph":"work/gsm8k-daily19-forest-graph.json","lean_file":"tests/lean/GSM8KDaily0910C.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["狐数、週数、種別捕獲数を別々に掛ける。"],
+  "steps":[
+    {"id":"forest_caught_weasels","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.forest_caught_weasels","title_ja":"捕獲されたイタチ","requires_steps":[],"uses_nodes":[],"condition_ja":"狐3匹が1匹4匹ずつを週3回捕る。","conclusion_ja":"36匹捕獲。","baseline_ja":"単位当たり量の乗法。"},
+    {"id":"forest_caught_rabbits","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.forest_caught_rabbits","title_ja":"捕獲されたウサギ","requires_steps":[],"uses_nodes":[],"condition_ja":"狐3匹が1匹2匹ずつを週3回捕る。","conclusion_ja":"18匹捕獲。","baseline_ja":"単位当たり量の乗法。"},
+    {"id":"forest_left_weasels","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.forest_left_weasels","title_ja":"残るイタチ","requires_steps":["forest_caught_weasels"],"uses_nodes":[],"condition_ja":"初期100匹から36匹を引く。","conclusion_ja":"64匹残る。","baseline_ja":"減法。"},
+    {"id":"forest_left_rabbits","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.forest_left_rabbits","title_ja":"残るウサギ","requires_steps":["forest_caught_rabbits"],"uses_nodes":[],"condition_ja":"初期50匹から18匹を引く。","conclusion_ja":"32匹残る。","baseline_ja":"減法。"},
+    {"id":"forest_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910C.forest_total","title_ja":"合計残数","requires_steps":["forest_left_weasels","forest_left_rabbits"],"uses_nodes":[],"condition_ja":"残った64匹と32匹を合算。","conclusion_ja":"合計96匹。","baseline_ja":"加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":192,"checked_model_hash":"9733a87ab59be1a7f4eae722999756336063da4a2b245397fedff3d3842e5241","checks_ja":["種別ごとの捕獲数を混ぜず、3匹・3週間を両方反映した。"]}
+}

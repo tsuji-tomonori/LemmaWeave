@@ -1,0 +1,80 @@
+{
+  "id": "gsm8k_sprint34_goodie",
+  "title_ja": "ハロウィーン袋の最小費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00803",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "各テーマを別に最小化し、余った袋を捨ててもよい通常の購入解釈で合計16ドルを証明する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.goodie_solution",
+  "graph": "work/gsm8k-sprint34-goodie-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "異なるテーマの5個パックは相互に代用できないため別々に最小化する。",
+    "全員分を購入する条件は必要数以上であり、余りを禁止していない。かぼちゃ袋は3パック15個を9ドルで買う方が、2パックと単品4個の10ドルより安い。"
+  ],
+  "steps": [
+    {
+      "id": "goodie_vampire_plan",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.goodie_vampire_plan",
+      "title_ja": "吸血鬼袋の構成",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "11個を5個パックと単品で満たす。",
+      "conclusion_ja": "2パックと単品1個。",
+      "baseline_ja": "2×5+1=11。"
+    },
+    {
+      "id": "goodie_vampire_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.goodie_vampire_cost",
+      "title_ja": "吸血鬼袋の費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "パック3ドル、単品1ドル。",
+      "conclusion_ja": "7ドル。",
+      "baseline_ja": "2×3+1=7。"
+    },
+    {
+      "id": "goodie_pumpkin_plan",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.goodie_pumpkin_plan",
+      "title_ja": "かぼちゃ袋の構成",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "14人全員分を5個パックで満たす。余りは禁止されていない。",
+      "conclusion_ja": "3パックで15個を確保できる。",
+      "baseline_ja": "14≤3×5=15。"
+    },
+    {
+      "id": "goodie_pumpkin_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.goodie_pumpkin_cost",
+      "title_ja": "かぼちゃ袋の費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3パックを各3ドルで買う。",
+      "conclusion_ja": "9ドル。",
+      "baseline_ja": "3×3=9。"
+    },
+    {
+      "id": "goodie_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.goodie_total",
+      "title_ja": "全費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各テーマの最小費用を合計する。",
+      "conclusion_ja": "16ドル。",
+      "baseline_ja": "7+9=16。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 804,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

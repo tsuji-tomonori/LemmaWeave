@@ -1,0 +1,116 @@
+{
+  "id": "gsm8k_sprint247_cavities",
+  "title_ja": "虫歯の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03263",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A04P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "与えられた本数、購入本数、総本数を順に求め4本ごとに数える。",
+  "answer_ja": "4個（参照解答の終端16は総本数であり不整合）",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.cavities_answer",
+  "graph": "work/gsm8k-sprint247-cavities-graph.json",
+  "model_notes_ja": [
+    "参照解答本文は虫歯4個を導く一方、終端####16は飴の総本数。原題の問いに従い4個とし、不一致をLean定理で明示した。"
+  ],
+  "steps": [
+    {
+      "id": "cavities_given",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.cavities_given",
+      "title_ja": "与えられた飴は14本。",
+      "claim_ja": "与えられた飴は14本。",
+      "method_ja": "2+3×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "親から2本、教師4人から各3本。",
+      "conclusion_ja": "14本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cavities_bought",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.cavities_bought",
+      "title_ja": "購入は2本。",
+      "claim_ja": "購入は2本。",
+      "method_ja": "14÷7。",
+      "requires_steps": [
+        "cavities_given"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた本数の1/7。",
+      "conclusion_ja": "2本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cavities_total_canes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.cavities_total_canes",
+      "title_ja": "食べる飴は16本。",
+      "claim_ja": "食べる飴は16本。",
+      "method_ja": "14+2。",
+      "requires_steps": [
+        "cavities_given",
+        "cavities_bought"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた分と購入分。",
+      "conclusion_ja": "16本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cavities_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.cavities_count",
+      "title_ja": "虫歯は4個。",
+      "claim_ja": "虫歯は4個。",
+      "method_ja": "16÷4。",
+      "requires_steps": [
+        "cavities_total_canes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4本ごとに1個。",
+      "conclusion_ja": "4個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cavities_source_terminal_inconsistent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.cavities_source_terminal_inconsistent",
+      "title_ja": "参照解答終端の16は虫歯数ではない。",
+      "claim_ja": "参照解答終端の16は虫歯数ではない。",
+      "method_ja": "4≠16を確認する。",
+      "requires_steps": [
+        "cavities_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "本文計算は虫歯4個を導く。",
+      "conclusion_ja": "終端16と不一致。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cavities_answer",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.cavities_answer",
+      "title_ja": "答えは4個で、終端16は不整合。",
+      "claim_ja": "答えは4個で、終端16は不整合。",
+      "method_ja": "虫歯数定理と不一致定理を併記。",
+      "requires_steps": [
+        "cavities_count",
+        "cavities_source_terminal_inconsistent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の問いは虫歯数。",
+      "conclusion_ja": "4個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3264,
+    "checked_model_hash": "af42e0440a119587f6cf7db2d94fa9f5aca6984bdaeb6a9f3dc5d074c2cf80c3",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint137_burger",
+  "title_ja": "PauloとJeremyの注文総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02349",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6ドルのバーガーとその1/3価格のソーダを、Pauloは各1個、Jeremyは各2個注文する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.burger_solution",
+  "graph": "work/gsm8k-sprint137-burger-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "burger_soda",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.burger_soda",
+      "title_ja": "ソーダは2ドル",
+      "claim_ja": "ソーダは2ドル",
+      "method_ja": "6ドルを3で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ソーダは2ドル",
+      "baseline_ja": "ソーダは2ドル"
+    },
+    {
+      "id": "burger_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.burger_count",
+      "title_ja": "各商品は計3個",
+      "claim_ja": "各商品は計3個",
+      "method_ja": "Pauloの1個とJeremyの2個を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "各商品は計3個",
+      "baseline_ja": "各商品は計3個"
+    },
+    {
+      "id": "burger_subtotals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.burger_subtotals",
+      "title_ja": "バーガー18ドル、ソーダ6ドル",
+      "claim_ja": "バーガー18ドル、ソーダ6ドル",
+      "method_ja": "各単価に3個を掛ける",
+      "requires_steps": [
+        "burger_soda",
+        "burger_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "バーガー18ドル、ソーダ6ドル",
+      "baseline_ja": "バーガー18ドル、ソーダ6ドル"
+    },
+    {
+      "id": "burger_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.burger_solution",
+      "title_ja": "合計24ドル",
+      "claim_ja": "合計24ドル",
+      "method_ja": "18ドルと6ドルを足す",
+      "requires_steps": [
+        "burger_subtotals"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計24ドル",
+      "baseline_ja": "合計24ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2350,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

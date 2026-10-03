@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint300_monthly_payroll",
+  "title_ja": "月間給与総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03621",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A06P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "週40時間、30時間、25時間働く3人を時給20ドルで雇う。",
+  "answer_ja": "週の総労働は95時間、週給1900ドル。1か月を4週とする条件で1900×4=7600ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A06P3.monthly_payroll",
+  "graph": "work/gsm8k-sprint300-monthly-payroll-graph.json",
+  "model_notes_ja": [
+    "参照解答に合わせ、1か月を4週とする追加条件を明示した。"
+  ],
+  "steps": [
+    {
+      "id": "monthly_payroll",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A06P3.monthly_payroll",
+      "title_ja": "週の総労働は95時間、週給1900ドル。1か月を4週とする条件で1900×4=7600ドル。",
+      "claim_ja": "週の総労働は95時間、週給1900ドル。1か月を4週とする条件で1900×4=7600ドル。",
+      "method_ja": "週の総労働は95時間、週給1900ドル。1か月を4週とする条件で1900×4=7600ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "週の総労働は95時間、週給1900ドル。1か月を4週とする条件で1900×4=7600ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3622,
+    "checked_model_hash": "8a995a12e8ff330b2054579cee06eaee4651c3d36aff92d4ad5179e7fd63b792",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint364_babysitting_nights",
+  "title_ja": "ピザ代を稼ぐ夜数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03945",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Nelly wants to buy pizza for herself and her 14 friends. Each pizza costs $12 and can feed 3 people. If Nelly earns $4 a night babysitting the neighbors' kids, how many nights will she have to babysit to afford the pizza?",
+  "answer_ja": "Nellyを含め15人。3人で1枚なので5枚必要で、代金は5×12=60ドル。1夜4ドルだから60÷4=15夜。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A13P1.babysitting_nights",
+  "graph": "work/gsm8k-sprint364-babysitting-nights-graph.json",
+  "model_notes_ja": [
+    "15は3で、60は4で割り切れる。"
+  ],
+  "steps": [
+    {
+      "id": "babysitting_nights",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A13P1.babysitting_nights",
+      "title_ja": "ピザ代を稼ぐ夜数",
+      "claim_ja": "Nellyを含め15人。3人で1枚なので5枚必要で、代金は5×12=60ドル。1夜4ドルだから60÷4=15夜。",
+      "method_ja": "人数から必要枚数、代金、必要勤務夜数を順に求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各ピザはちょうど3人分、収入は毎夜4ドルで他の資金はない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "15夜。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3946,
+    "checked_model_hash": "b6ac7933ea202b8c9114ce8cded36df8e7a8a1c47dc3f1cdee33c216ec427a4f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

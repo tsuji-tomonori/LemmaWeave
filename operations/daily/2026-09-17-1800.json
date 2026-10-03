@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-17",
+  "started_at": "2026-09-17T17:55:37+09:00",
+  "finished_at": "2026-09-17T19:19:37+09:00",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00484",
+    "external-gsm8k-main-3101c7d50724:train:00485",
+    "external-gsm8k-main-3101c7d50724:train:00486",
+    "external-gsm8k-main-3101c7d50724:train:00487",
+    "external-gsm8k-main-3101c7d50724:train:00488",
+    "external-gsm8k-main-3101c7d50724:train:00489",
+    "external-gsm8k-main-3101c7d50724:train:00490",
+    "external-gsm8k-main-3101c7d50724:train:00491",
+    "external-gsm8k-main-3101c7d50724:train:00492",
+    "external-gsm8k-main-3101c7d50724:train:00493"
+  ],
+  "completed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00484",
+    "external-gsm8k-main-3101c7d50724:train:00485",
+    "external-gsm8k-main-3101c7d50724:train:00486",
+    "external-gsm8k-main-3101c7d50724:train:00487",
+    "external-gsm8k-main-3101c7d50724:train:00488",
+    "external-gsm8k-main-3101c7d50724:train:00489",
+    "external-gsm8k-main-3101c7d50724:train:00490",
+    "external-gsm8k-main-3101c7d50724:train:00491",
+    "external-gsm8k-main-3101c7d50724:train:00492",
+    "external-gsm8k-main-3101c7d50724:train:00493"
+  ],
+  "deferred": [],
+  "status": "completed",
+  "ci": {
+    "previous_success_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35189110173",
+    "proof_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35207190749",
+    "final_run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35210272862",
+    "artifact": {
+      "id": 10490721970,
+      "name": "lean-evidence-833d54aa3d33d36c5c772ed0d5597dbde34ae238",
+      "size_in_bytes": 189109255,
+      "full_archive_sha256": "041d4fdbc012f7ea23f6cc004939114d5578db63f7a5d3aaff1a12d9307fd74e",
+      "filtered_archive_sha256": "a6dfa74cd7c402ba75433c10407ea9fee48d1d2e5c0b354210dc1d905136a5e2",
+      "input_commit": "833d54aa3d33d36c5c772ed0d5597dbde34ae238"
+    },
+    "attempts": [
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35203404754",
+        "commit": "5c4bed5082c188b843c06183cae804b2052ed041",
+        "conclusion": "failure",
+        "reason_ja": "9問のLean証明と公理監査は成功した。割引問題のモデルは9変数だが、3つの補助定理で誤って10変数を渡していたため型検査に失敗し、変数個数と結論の位置を修正した。"
+      },
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35204482837",
+        "commit": "b0056085f378ade32c23475be9cc9c5c16a2c986",
+        "conclusion": "failure",
+        "reason_ja": "9問は引き続き成功した。割引問題の表示価格を導く式に自然数の可変積と切断減算が残り、omegaが直接処理できなかったため、既知定数をnorm_numで先に代入して線形式へ正規化した。"
+      },
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35205533781",
+        "commit": "d9e38cc45eb63c98e4052d15ee38d1f97d9b84bb",
+        "conclusion": "failure",
+        "reason_ja": "10問すべてのLean証明、公理監査、依存抽出は成功した。バッチのsemantic_model_hashを単一ファイルSHAとして記録していたが、正規仕様はパス別SHA辞書のハッシュであるため、正規model_hashへ修正した。"
+      },
+      {
+        "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35207190749",
+        "commit": "833d54aa3d33d36c5c772ed0d5597dbde34ae238",
+        "conclusion": "success",
+        "reason_ja": "固定Lean 4.33.1で10問すべての証明、公理監査、行別実依存照合、レシピ検査、51件の回帰検査が成功した。成果物全体のSHA-256をGitHub記録と照合し、今回に必要な4実行と10依存グラフを保存した。"
+      }
+    ]
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/3",
+  "commit": "8b928f178adcca54733b6248f75580637e121938",
+  "progress_before": {"completed": 488, "remaining": 8304, "today_completed": 40},
+  "progress_after": {
+    "completed": 498,
+    "remaining": 8294,
+    "today_completed": 50
+  },
+  "forecast": {
+    "initial_target_date": "2027-03-01",
+    "measured_completed_per_day_7d": 40.0,
+    "measured_forecast_date": "2027-04-12"
+  },
+  "supplemental_high_school_fields": {"completed": 0, "target": 6, "status": "unmet"},
+  "note_ja": "train:00484〜00493の10問を個別に読んで解答・Leanモデル・23説明行を作成した。雨量問題は平日5日平均4と、土日0の追加条件下の暦週平均20/7を分離した。パイナップル問題は原文どおりの利益2ドルと、72個すべてを4個5ドルで売る追加条件下の利益72ドルを分離した。固定Lean 4.33.1で証明・許容公理監査・行別実依存照合を完了した。自然言語と形式モデルの対応は作成者が自己照合しており、Leanが保証するのは明示した仮定下のモデルである。高校6分野追加枠は0/6で未達。"
+}

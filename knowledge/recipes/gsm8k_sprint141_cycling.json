@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint141_cycling",
+  "title_ja": "2人の週間走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02403",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Onurは週5日毎日250km、Hanilは毎日Onurより40km多く走る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cycling_solution",
+  "graph": "work/gsm8k-sprint141-cycling-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cycling_onur",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cycling_onur",
+      "title_ja": "Onurは1250km",
+      "claim_ja": "Onurは1250km",
+      "method_ja": "250に5を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Onurは1250km",
+      "baseline_ja": "Onurは1250km"
+    },
+    {
+      "id": "cycling_hanil_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cycling_hanil_day",
+      "title_ja": "Hanilは1日290km",
+      "claim_ja": "Hanilは1日290km",
+      "method_ja": "250に40を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Hanilは1日290km",
+      "baseline_ja": "Hanilは1日290km"
+    },
+    {
+      "id": "cycling_hanil",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cycling_hanil",
+      "title_ja": "Hanilは1450km",
+      "claim_ja": "Hanilは1450km",
+      "method_ja": "290に5を掛ける",
+      "requires_steps": [
+        "cycling_hanil_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Hanilは1450km",
+      "baseline_ja": "Hanilは1450km"
+    },
+    {
+      "id": "cycling_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cycling_solution",
+      "title_ja": "2人で2700km",
+      "claim_ja": "2人で2700km",
+      "method_ja": "1250と1450を足す",
+      "requires_steps": [
+        "cycling_onur",
+        "cycling_hanil"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2人で2700km",
+      "baseline_ja": "2人で2700km"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2404,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint382_biology_exam_failure_range_conditional_and_nonunique",
+  "title_ja": "生物試験の不合格者数の範囲",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04034",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A20P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Out of the 80 students who took the biology exam, only 2/5 of them managed to score 100%. If a score below 80% qualified as failing, and 50 percent of the remaining students who didn't score 100% managed to score over 80%, calculate the number of students who failed the exam.",
+  "answer_ja": "満点者は80×2/5=32人、満点でない48人の半数24人は80%超である。残る24人は80%以下だが、80%ちょうどは不合格ではない。80%ちょうどをx人とすると不合格者は24−x人で、0〜24人の範囲となり原文だけでは一意に決まらない。80%ちょうどが0人という追加条件なら24人である。実際、x=24なら不合格0人、x=0なら24人となる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A20P1.biology_exam_failure_range_conditional_and_nonunique",
+  "graph": "work/gsm8k-sprint382-biology-exam-failure-range-conditional-and-nonunique-graph.json",
+  "model_notes_ja": [
+    "残る24人に80%ちょうどが何人いるか原文にないため、参照値24は『80%ちょうどが0人』という追加条件下でのみ成立する。"
+  ],
+  "steps": [
+    {
+      "id": "biology_exam_failure_range_conditional_and_nonunique",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A20P1.biology_exam_failure_range_conditional_and_nonunique",
+      "title_ja": "生物試験の不合格者数の範囲",
+      "claim_ja": "満点者は80×2/5=32人、満点でない48人の半数24人は80%超である。残る24人は80%以下だが、80%ちょうどは不合格ではない。80%ちょうどをx人とすると不合格者は24−x人で、0〜24人の範囲となり原文だけでは一意に決まらない。80%ちょうどが0人という追加条件なら24人である。実際、x=24なら不合格0人、x=0なら24人となる。",
+      "method_ja": "満点・80%超・80%ちょうど・80%未満を分け、境界値80%を落とさずに範囲と追加条件付きの値を示す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "不合格は80%未満であり、80%ちょうどは不合格に含めない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "満点者は80×2/5=32人、満点でない48人の半数24人は80%超である。残る24人は80%以下だが、80%ちょうどは不合格ではない。80%ちょうどをx人とすると不合格者は24−x人で、0〜24人の範囲となり原文だけでは一意に決まらない。80%ちょうどが0人という追加条件なら24人である。実際、x=24なら不合格0人、x=0なら24人となる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4035,
+    "checked_model_hash": "26134c4e7c84a0d028455c6f5fa88e363490fc2e0f91cb5e14bef2fca548216b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

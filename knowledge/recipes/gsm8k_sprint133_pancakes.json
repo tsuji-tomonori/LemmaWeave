@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint133_pancakes",
+  "title_ja": "朝食に作るパンケーキ枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02281",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "娘と友達3人は各1.5人前、息子は3人前。1人前4枚",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A06.pancakes_solution",
+  "graph": "work/gsm8k-sprint133-pancakes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pancakes_girls",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.pancakes_girls",
+      "title_ja": "女子は4人",
+      "claim_ja": "女子は4人",
+      "method_ja": "娘1人と友達3人",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "女子は4人",
+      "baseline_ja": "女子は4人"
+    },
+    {
+      "id": "pancakes_each_girl",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.pancakes_each_girl",
+      "title_ja": "女子1人分は6枚",
+      "claim_ja": "女子1人分は6枚",
+      "method_ja": "1.5人前に1人前4枚を掛ける",
+      "requires_steps": [
+        "pancakes_girls"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "女子1人分は6枚",
+      "baseline_ja": "女子1人分は6枚"
+    },
+    {
+      "id": "pancakes_girls_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.pancakes_girls_total",
+      "title_ja": "女子分は24枚",
+      "claim_ja": "女子分は24枚",
+      "method_ja": "4人に各6枚",
+      "requires_steps": [
+        "pancakes_each_girl"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "女子分は24枚",
+      "baseline_ja": "女子分は24枚"
+    },
+    {
+      "id": "pancakes_son",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.pancakes_son",
+      "title_ja": "息子分は12枚",
+      "claim_ja": "息子分は12枚",
+      "method_ja": "3人前に4枚を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "息子分は12枚",
+      "baseline_ja": "息子分は12枚"
+    },
+    {
+      "id": "pancakes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.pancakes_solution",
+      "title_ja": "合計36枚",
+      "claim_ja": "合計36枚",
+      "method_ja": "女子24枚と息子12枚を足す",
+      "requires_steps": [
+        "pancakes_girls_total",
+        "pancakes_son"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計36枚",
+      "baseline_ja": "合計36枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2282,
+    "checked_model_hash": "f57c0c51ecac149c58ab9991cfaff90a4b06f84527cc15a56b74fbe4c5afc072",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

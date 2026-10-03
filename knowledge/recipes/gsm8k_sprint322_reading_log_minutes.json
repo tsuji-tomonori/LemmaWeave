@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint322_reading_log_minutes",
+  "title_ja": "読書時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03732",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A16P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "David finished his homework in 60 minutes. He spent 15 minutes on his math homework and 18 minutes on his spelling homework. He spent the rest of the time reading for his daily reading log. How many minutes did he spend reading?",
+  "answer_ja": "数学と綴りに15+18=33分使ったため、残りは60−33=27分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A16P1.reading_log_minutes",
+  "graph": "work/gsm8k-sprint322-reading-log-minutes-graph.json",
+  "model_notes_ja": [
+    "60分は数学・綴り・読書の3活動だけで重複しない。"
+  ],
+  "steps": [
+    {
+      "id": "reading_log_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A16P1.reading_log_minutes",
+      "title_ja": "読書時間",
+      "claim_ja": "数学と綴りに15+18=33分使ったため、残りは60−33=27分。",
+      "method_ja": "既知時間を合計して全体から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "既知33分は全体60分以下。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "読書は27分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3733,
+    "checked_model_hash": "9bcea9feb95b1ead637e2f965667565d05966efbdeefc74fc8066b0c7a8366c4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

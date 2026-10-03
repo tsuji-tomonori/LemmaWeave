@@ -1,0 +1,122 @@
+{
+  "id": "gsm8k_sprint100_backpacks",
+  "title_ja": "バックパック販売の利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01781",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "三つの販売群の個数と売上を求め、総売上から仕入れ576ドルを引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.backpacks_solution",
+  "graph": "work/gsm8k-sprint100-backpacks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "backpacks_first_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.backpacks_first_revenue",
+      "title_ja": "17個の売上は306ドル。",
+      "claim_ja": "17個の売上は306ドル。",
+      "method_ja": "17×18。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個18ドル。",
+      "conclusion_ja": "306。",
+      "baseline_ja": "306。"
+    },
+    {
+      "id": "backpacks_second_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.backpacks_second_revenue",
+      "title_ja": "10個の売上は250ドル。",
+      "claim_ja": "10個の売上は250ドル。",
+      "method_ja": "10×25。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個25ドル。",
+      "conclusion_ja": "250。",
+      "baseline_ja": "250。"
+    },
+    {
+      "id": "backpacks_first_two_sold",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.backpacks_first_two_sold",
+      "title_ja": "最初の二群は27個。",
+      "claim_ja": "最初の二群は27個。",
+      "method_ja": "17+10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二群は別の商品。",
+      "conclusion_ja": "27。",
+      "baseline_ja": "27。"
+    },
+    {
+      "id": "backpacks_remainder",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.backpacks_remainder",
+      "title_ja": "残りは21個。",
+      "claim_ja": "残りは21個。",
+      "method_ja": "48−27。",
+      "requires_steps": [
+        "backpacks_first_two_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ケースに48個。",
+      "conclusion_ja": "21+27=48。",
+      "baseline_ja": "21+27=48。"
+    },
+    {
+      "id": "backpacks_remainder_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.backpacks_remainder_revenue",
+      "title_ja": "残りの売上は462ドル。",
+      "claim_ja": "残りの売上は462ドル。",
+      "method_ja": "21×22。",
+      "requires_steps": [
+        "backpacks_remainder"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残りは1個22ドル。",
+      "conclusion_ja": "462。",
+      "baseline_ja": "462。"
+    },
+    {
+      "id": "backpacks_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.backpacks_revenue",
+      "title_ja": "総売上は1,018ドル。",
+      "claim_ja": "総売上は1,018ドル。",
+      "method_ja": "306+250+462。",
+      "requires_steps": [
+        "backpacks_first_revenue",
+        "backpacks_second_revenue",
+        "backpacks_remainder_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全48個を3群に分ける。",
+      "conclusion_ja": "1018。",
+      "baseline_ja": "1018。"
+    },
+    {
+      "id": "backpacks_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.backpacks_solution",
+      "title_ja": "利益は442ドル。",
+      "claim_ja": "利益は442ドル。",
+      "method_ja": "1018−576。",
+      "requires_steps": [
+        "backpacks_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "利益=売上−仕入原価。",
+      "conclusion_ja": "442+576=1018。",
+      "baseline_ja": "442+576=1018。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1782,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

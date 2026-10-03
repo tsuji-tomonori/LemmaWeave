@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint360_branches_per_foot_readings",
+  "title_ja": "1フィート当たりの枝数の平均",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03921",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Daisy is climbing trees all around her neighborhood and starts to notice the number of branches and the height. The first tree she climbs is 50 feet tall and has 200 branches. The second tree she climbs is 40 feet tall and has 180 branches. The third tree she climbs is 60 feet tall and has 180 branches. The final tree she climbs is 34 feet tall and has 153 branches. On average, how many branches do these trees have per foot?",
+  "answer_ja": "各木の密度は4、4.5、3、4.5本/ftで、その算術平均は4本/ft。一方、4本を一本の集合として総枝数÷総高さを取ると713/184≈3.875本/ft。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A12P3.branches_per_foot_readings",
+  "graph": "work/gsm8k-sprint360-branches-per-foot-readings-graph.json",
+  "model_notes_ja": [
+    "『平均』の母集団を木ごとの比率とするか、全枝・全高さの集約比とするかを分離する。"
+  ],
+  "steps": [
+    {
+      "id": "branches_per_foot_readings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A12P3.branches_per_foot_readings",
+      "title_ja": "1フィート当たりの枝数の平均",
+      "claim_ja": "各木の密度は4、4.5、3、4.5本/ftで、その算術平均は4本/ft。一方、4本を一本の集合として総枝数÷総高さを取ると713/184≈3.875本/ft。",
+      "method_ja": "各木の比率の平均と、総量比の両方を正確な有理数で計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "高さはすべて正で分母は0でない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "木ごとの密度の算術平均なら4本/ft。集約密度なら713/184本/ft。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3922,
+    "checked_model_hash": "67e6322e717a307289e614372f5678c6dc4f2d29ac0cd6b401bf841054fd07bb",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

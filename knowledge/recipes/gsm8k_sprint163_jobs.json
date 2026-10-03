@@ -1,0 +1,43 @@
+{
+  "id": "gsm8k_sprint163_jobs",
+  "title_ja": "5件の仕事の総賃金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02729",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3人が1時間で1件を終え、各人時給10ドル。5件完了時の総賃金を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.jobs_solution",
+  "graph": "work/gsm8k-sprint163-jobs-graph.json",
+  "model_notes_ja": [
+    "同じ3人が各仕事を1時間ずつ直列に行う。"
+  ],
+  "steps": [
+    {
+      "id": "jobs_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.jobs_solution",
+      "title_ja": "総賃金は150ドル",
+      "claim_ja": "総賃金150ドル",
+      "method_ja": "3人×5件×1時間×10ドル",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同じ3人が各仕事を1時間ずつ直列に行う。",
+      "conclusion_ja": "総賃金150ドル",
+      "baseline_ja": "総賃金150ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2730,
+    "checked_model_hash": "82bd64d2ad7b9d2e0d7e0640dca9a4d3c12a9e15e2684f002e94f20163c657ad",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

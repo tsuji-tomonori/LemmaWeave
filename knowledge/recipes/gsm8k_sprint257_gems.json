@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint257_gems",
+  "title_ja": "ボーナス後の宝石数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03327",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "250ドル分の宝石に20%のボーナスを加える。",
+  "answer_ja": "30,000個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.gems_total",
+  "graph": "work/gsm8k-sprint257-gems-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "gems_base",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.gems_base",
+      "title_ja": "購入分は25,000個。",
+      "claim_ja": "購入分は25,000個。",
+      "method_ja": "250×100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ドルにつき100個。",
+      "conclusion_ja": "25,000個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "gems_bonus",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.gems_bonus",
+      "title_ja": "ボーナスは5,000個。",
+      "claim_ja": "ボーナスは5,000個。",
+      "method_ja": "25,000×20%。",
+      "requires_steps": [
+        "gems_base"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "購入分に20%を適用する。",
+      "conclusion_ja": "5,000個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "gems_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A10P1.gems_total",
+      "title_ja": "合計は30,000個。",
+      "claim_ja": "合計は30,000個。",
+      "method_ja": "25,000+5,000。",
+      "requires_steps": [
+        "gems_base",
+        "gems_bonus"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "購入分と追加分を合計する。",
+      "conclusion_ja": "30,000個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3328,
+    "checked_model_hash": "13b710467fa3350801459e2a43edfe7b3e1ea7f1e199fb5b5ea726ef0f4f842c",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

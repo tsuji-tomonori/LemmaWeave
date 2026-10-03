@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_daily2_joy",
+  "title_ja": "読む速さから120ページに必要な時間を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00014",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "20分で8ページ読むJoyが120ページを読むのに何時間か。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907B.joy_solution",
+  "graph": "work/gsm8k-daily2-joy-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907B.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "速度が全読書中一定で、休憩時間を含めない通常の文章題モデル。",
+    "ページ数・分・時間の単位を区別し、300分から5時間へ換算する。"
+  ],
+  "steps": [
+    {
+      "id": "joy_minutes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.joy_minutes",
+      "title_ja": "ページ数の比例式",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "読書速度が一定で、8ページに20分、120ページにm分。",
+      "conclusion_ja": "8m=120×20よりm=300分。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "joy_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.joy_hours",
+      "title_ja": "分を時間へ換算",
+      "requires_steps": [
+        "joy_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1時間=60分、h時間=300分。",
+      "conclusion_ja": "60h=300よりh=5時間。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "joy_unit_check",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.joy_unit_check",
+      "title_ja": "元の読書量を検算",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20分ごとに8ページの一定速度。",
+      "conclusion_ja": "300分では(8/20)×300=120ページ。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    },
+    {
+      "id": "joy_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907B.joy_exists",
+      "title_ja": "条件を満たす量の存在",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "m=300分、h=5時間。",
+      "conclusion_ja": "両方の比例式を同時に満たす。",
+      "baseline_ja": "中学校までの比例・一次方程式・四則演算。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 15,
+    "checked_model_hash": "071951fc7f8c9bcc0728b2ed6b942a2734b9e2b5240e023d7f21a18d0b62bed3",
+    "checks_ja": [
+      "速度が全読書中一定で、休憩時間を含めない通常の文章題モデル。",
+      "ページ数・分・時間の単位を区別し、300分から5時間へ換算する。"
+    ]
+  }
+}

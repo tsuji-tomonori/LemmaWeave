@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1017",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "c36008af9a9c293ad282864cce7b541ce2db52d073fe13afbe6420ec2310989c",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A15P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03976",
+      "source_line_1based": 3977,
+      "source_record_sha256": "2d6aa6bd9da809628d1ea89feb1c4aa4206ed470b0b1df51ff3ac6c84a8cff28",
+      "raw_question_sha256": "eab2a3ce4b81107c4e66468312d607341b99ac965d67ad28dc9ce0120d31d58b",
+      "normalized_question_sha256": "eab2a3ce4b81107c4e66468312d607341b99ac965d67ad28dc9ce0120d31d58b",
+      "source_question": "Jess and her family play Jenga, a game made up of 54 stacked blocks in which each player removes one block in turns until the stack falls. The 5 players, including Jess, play 5 rounds in which each player removes one block. In the sixth round, Jess's father goes first. He removes a block, causing the tower to almost fall. Next, Jess tries to remove another block knocking down the tower. How many blocks did the tower have before Jess's turn?",
+      "recipe_id": "gsm8k_sprint371_jenga_blocks_before_turn",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各人は各ラウンドに1個だけ取り、第6ラウンドでは父の次がJessである。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03977",
+      "source_line_1based": 3978,
+      "source_record_sha256": "7fab3f5d72b45e3278dba54216b352b6405b946a04cc4ae4a1f7d0720cccfb73",
+      "raw_question_sha256": "9d56c84d0bd5578cfff331de553212b9d10e0441379498a4e1c0a4470f64c3f6",
+      "normalized_question_sha256": "9d56c84d0bd5578cfff331de553212b9d10e0441379498a4e1c0a4470f64c3f6",
+      "source_question": "Jane is sewing sequins onto her trapeze artist costume. She sews 6 rows of 8 blue sequins each, 5 rows of 12 purple sequins each, and 9 rows of 6 green sequins each. How many sequins does she add total?",
+      "recipe_id": "gsm8k_sprint371_sequins_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各色の行は重複しない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03978",
+      "source_line_1based": 3979,
+      "source_record_sha256": "bace9ccfc43ae6b21e2963093099abbf771c93328f40243c462a5d8cb363338d",
+      "raw_question_sha256": "0b845d0e776d7bd8c77bda50e9fdc30fe912c63c4eea1271a7cb4aa443804fec",
+      "normalized_question_sha256": "6415002926af295f34ed89250f12d9f4d4edb30b2b56d81a3a76bf03e46f3b56",
+      "source_question": "James writes 10 pages an hour.  If he writes 5 pages a day to 2 different people, how many hours a week does he spend writing?",
+      "recipe_id": "gsm8k_sprint371_weekly_writing_hours",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "『5 pages a day to 2 different people』は各人5ページと2人合計5ページの両方に読めるため、7時間と7/2時間を分けて示す。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03979",
+      "source_line_1based": 3980,
+      "source_record_sha256": "1d0acb23d2df98a201f8da5b8537392e94fad2296dbc24689b9176db6f55c1a5",
+      "raw_question_sha256": "57c5a9843606215f96dc9cce6b6117e3bb2de03bab96e8cd10c94ff249465f9e",
+      "normalized_question_sha256": "57c5a9843606215f96dc9cce6b6117e3bb2de03bab96e8cd10c94ff249465f9e",
+      "source_question": "Mr. Alvarez spends $36 on diesel fuel each week. If the cost of diesel fuel is $3 per gallon, how many gallons of diesel fuel does Mr. Alvarez use in two weeks?",
+      "recipe_id": "gsm8k_sprint371_diesel_gallons_two_weeks",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "軽油価格は2週間を通じて1ガロン3ドルである。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03980",
+      "source_line_1based": 3981,
+      "source_record_sha256": "864c02554f63c554f568e3112157c69a65c9e92e7ce7dfa794f2e127a0d3d6df",
+      "raw_question_sha256": "8265a249c672cca98f4b3095a72bda6f491f71d4d8250460d13fd22bcb1e4bc5",
+      "normalized_question_sha256": "72e2a059ce3af1e30bc72c4452c43509fbd349c557316adb0c47be3b9901fa23",
+      "source_question": "Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?",
+      "recipe_id": "gsm8k_sprint371_bird_count_readings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "非標準的な倍数表現のため、通常解釈18羽と字義どおりの解釈22羽を両方保存する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

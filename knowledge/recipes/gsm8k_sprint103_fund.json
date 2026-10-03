@@ -1,0 +1,184 @@
+{
+  "id": "gsm8k_sprint103_fund",
+  "title_ja": "2年後の投資残高",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01828",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "利息計上と毎月の追加入金の順序が未指定なので、参照読解と別読解を分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_timing_changes_answer",
+  "graph": "work/gsm8k-sprint103-fund-graph.json",
+  "model_notes_ja": [
+    "年利の計上日、月次入金日、複利規約が原文にない。参照解答の『各年12回分を先に一括入金して年利10%』なら3982ドルだが、各年の利息計上後に12回分を加えるモデルでは3730ドルになるため、一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "fund_ref_year1_base",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_ref_year1_base",
+      "title_ja": "参照読解の1年目元金は2200ドル。",
+      "claim_ja": "参照読解の1年目元金は2200ドル。",
+      "method_ja": "1000+12×100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12回の入金を利息前に全額加える。",
+      "conclusion_ja": "2200。",
+      "baseline_ja": "2200。"
+    },
+    {
+      "id": "fund_ref_year1_interest",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_ref_year1_interest",
+      "title_ja": "1年目利息は220ドル。",
+      "claim_ja": "1年目利息は220ドル。",
+      "method_ja": "2200×10%。",
+      "requires_steps": [
+        "fund_ref_year1_base"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "年利10%。",
+      "conclusion_ja": "220。",
+      "baseline_ja": "220。"
+    },
+    {
+      "id": "fund_ref_year1_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_ref_year1_total",
+      "title_ja": "1年目末は2420ドル。",
+      "claim_ja": "1年目末は2420ドル。",
+      "method_ja": "2200+220。",
+      "requires_steps": [
+        "fund_ref_year1_base",
+        "fund_ref_year1_interest"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "利息を加える。",
+      "conclusion_ja": "2420。",
+      "baseline_ja": "2420。"
+    },
+    {
+      "id": "fund_ref_year2_base",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_ref_year2_base",
+      "title_ja": "2年目利息前は3620ドル。",
+      "claim_ja": "2年目利息前は3620ドル。",
+      "method_ja": "2420+12×100。",
+      "requires_steps": [
+        "fund_ref_year1_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2年目の12回も先に加える。",
+      "conclusion_ja": "3620。",
+      "baseline_ja": "3620。"
+    },
+    {
+      "id": "fund_ref_year2_interest",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_ref_year2_interest",
+      "title_ja": "2年目利息は362ドル。",
+      "claim_ja": "2年目利息は362ドル。",
+      "method_ja": "3620×10%。",
+      "requires_steps": [
+        "fund_ref_year2_base"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "年利10%。",
+      "conclusion_ja": "362。",
+      "baseline_ja": "362。"
+    },
+    {
+      "id": "fund_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_reference_solution",
+      "title_ja": "参照読解では3982ドル。",
+      "claim_ja": "参照読解では3982ドル。",
+      "method_ja": "3620+362。",
+      "requires_steps": [
+        "fund_ref_year2_base",
+        "fund_ref_year2_interest"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全月次入金が各年の利息対象。",
+      "conclusion_ja": "3982。",
+      "baseline_ja": "3982。"
+    },
+    {
+      "id": "fund_end_interest1",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_end_interest1",
+      "title_ja": "年末入金読解の1年目利息は100ドル。",
+      "claim_ja": "年末入金読解の1年目利息は100ドル。",
+      "method_ja": "1000×10%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "入金は利息計上後。",
+      "conclusion_ja": "100。",
+      "baseline_ja": "100。"
+    },
+    {
+      "id": "fund_end_year1",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_end_year1",
+      "title_ja": "年末入金読解の1年目末は2300ドル。",
+      "claim_ja": "年末入金読解の1年目末は2300ドル。",
+      "method_ja": "1000+100+1200。",
+      "requires_steps": [
+        "fund_end_interest1"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "利息後に12回分を加える。",
+      "conclusion_ja": "2300。",
+      "baseline_ja": "2300。"
+    },
+    {
+      "id": "fund_end_interest2",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_end_interest2",
+      "title_ja": "2年目利息は230ドル。",
+      "claim_ja": "2年目利息は230ドル。",
+      "method_ja": "2300×10%。",
+      "requires_steps": [
+        "fund_end_year1"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2年目入金前の残高が利息対象。",
+      "conclusion_ja": "230。",
+      "baseline_ja": "230。"
+    },
+    {
+      "id": "fund_end_year_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_end_year_solution",
+      "title_ja": "年末入金読解では3730ドル。",
+      "claim_ja": "年末入金読解では3730ドル。",
+      "method_ja": "2300+230+1200。",
+      "requires_steps": [
+        "fund_end_year1",
+        "fund_end_interest2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2年目入金も利息後。",
+      "conclusion_ja": "3730。",
+      "baseline_ja": "3730。"
+    },
+    {
+      "id": "fund_timing_changes_answer",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.fund_timing_changes_answer",
+      "title_ja": "入金時期で答えが異なる。",
+      "claim_ja": "入金時期で答えが異なる。",
+      "method_ja": "3982と3730を比較する。",
+      "requires_steps": [
+        "fund_reference_solution",
+        "fund_end_year_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "利息の計算時点が原文にない。",
+      "conclusion_ja": "3982≠3730。",
+      "baseline_ja": "3982≠3730。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1829,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

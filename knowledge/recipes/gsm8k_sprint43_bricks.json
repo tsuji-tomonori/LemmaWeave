@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint43_bricks",
+  "title_ja": "れんが1000個の購入費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00929",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1000個の半分を50%引き、残りを1個50セントで買う総費用を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A11.bricks_solution",
+  "graph": "work/gsm8k-sprint43-bricks-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bricks_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.bricks_half",
+      "title_ja": "半数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1000個を半分に分ける。",
+      "conclusion_ja": "各500個。",
+      "baseline_ja": "500×2=1000。"
+    },
+    {
+      "id": "bricks_discount_price",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.bricks_discount_price",
+      "title_ja": "割引単価",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "50セントの50%引き。",
+      "conclusion_ja": "25セント。",
+      "baseline_ja": "25×100=50×50。"
+    },
+    {
+      "id": "bricks_discounted_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.bricks_discounted_cost",
+      "title_ja": "割引分の費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "500個を各25セントで買う。",
+      "conclusion_ja": "12500セント。",
+      "baseline_ja": "500×25=12500。"
+    },
+    {
+      "id": "bricks_full_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.bricks_full_cost",
+      "title_ja": "定価分の費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "500個を各50セントで買う。",
+      "conclusion_ja": "25000セント。",
+      "baseline_ja": "500×50=25000。"
+    },
+    {
+      "id": "bricks_total_cents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.bricks_total_cents",
+      "title_ja": "総費用（セント）",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "割引分と定価分を加える。",
+      "conclusion_ja": "37500セント。",
+      "baseline_ja": "12500+25000=37500。"
+    },
+    {
+      "id": "bricks_dollars",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.bricks_dollars",
+      "title_ja": "総費用（ドル）",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "100セントを1ドルとする。",
+      "conclusion_ja": "375ドル。",
+      "baseline_ja": "37500=375×100。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 930,
+    "checked_model_hash": "881a98f47252976fe9a699be8850a410dba97738f0a04e0f969fcced6462a82f",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

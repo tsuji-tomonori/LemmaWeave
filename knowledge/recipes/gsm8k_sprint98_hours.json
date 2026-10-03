@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint98_hours",
+  "title_ja": "必要額を得る最小整数勤務時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01756",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "必要額を合計し、時給15ドルで到達する最小の整数時間を達成可能性と下界で示す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.hours_solution",
+  "graph": "work/gsm8k-sprint98-hours-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hours_total_need",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.hours_total_need",
+      "title_ja": "必要額は2,060ドル。",
+      "claim_ja": "必要額は2,060ドル。",
+      "method_ja": "1200+400+200+60+200。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "家賃・食費・医療費・光熱費・緊急貯蓄を各1回加える。",
+      "conclusion_ja": "合計2060。",
+      "baseline_ja": "合計2060。"
+    },
+    {
+      "id": "hours_138_enough",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.hours_138_enough",
+      "title_ja": "138時間なら必要額以上を得られる。",
+      "claim_ja": "138時間なら必要額以上を得られる。",
+      "method_ja": "138×15と2060を比較する。",
+      "requires_steps": [
+        "hours_total_need"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "勤務時間は整数時間。",
+      "conclusion_ja": "2060≤138×15=2070。",
+      "baseline_ja": "2060≤138×15=2070。"
+    },
+    {
+      "id": "hours_lower_bound",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.hours_lower_bound",
+      "title_ja": "必要額を得る整数時間は138時間以上。",
+      "claim_ja": "必要額を得る整数時間は138時間以上。",
+      "method_ja": "15h≥2060から整数下界を得る。",
+      "requires_steps": [
+        "hours_total_need"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "137×15=2055では5ドル不足する。",
+      "conclusion_ja": "138≤hours。",
+      "baseline_ja": "138≤hours。"
+    },
+    {
+      "id": "hours_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.hours_solution",
+      "title_ja": "最小勤務時間は138時間。",
+      "claim_ja": "最小勤務時間は138時間。",
+      "method_ja": "138時間の達成とすべての可能な時間の下界を合わせる。",
+      "requires_steps": [
+        "hours_138_enough",
+        "hours_lower_bound"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "端数時間ではなく整数時間として最小性を要求する。",
+      "conclusion_ja": "hours=138。",
+      "baseline_ja": "hours=138。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1757,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

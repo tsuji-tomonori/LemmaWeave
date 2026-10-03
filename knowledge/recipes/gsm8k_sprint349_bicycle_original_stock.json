@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint349_bicycle_original_stock",
+  "title_ja": "自転車店の元の在庫",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03866",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A bicycle shop owner adds 3 bikes to her stock every week. After 1 month, she had sold 18 bikes but still had 45 bikes in stock. How many bikes did she have originally?",
+  "answer_ja": "1か月を4週間とする。追加した自転車は3×4=12台。元の在庫を51台とすると、51+12−18=45台となる。逆算して45−12+18=51台。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A07P1.bicycle_original_stock",
+  "graph": "work/gsm8k-sprint349-bicycle-original-stock-graph.json",
+  "model_notes_ja": [
+    "原文の1か月は日数を特定しないため、参照解答と同じ4週間の近似条件を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "bicycle_original_stock",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A07P1.bicycle_original_stock",
+      "title_ja": "自転車店の元の在庫",
+      "claim_ja": "1か月を4週間とする。追加した自転車は3×4=12台。元の在庫を51台とすると、51+12−18=45台となる。逆算して45−12+18=51台。",
+      "method_ja": "1か月の追加分を求め、現在在庫から追加分を戻して販売分を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "この問題では1か月を4週間と近似し、追加・販売以外の在庫変動はない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "51台。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3867,
+    "checked_model_hash": "e71f624d8600b04a2f830891a2af7d630837a670ca0e9fb29f7aeaca1dc63c2c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

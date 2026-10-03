@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily50_reading","title_ja":"毎日の読書ページ数","problem_id":"external-gsm8k-main-3101c7d50724:train:00503","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"180ページと100ページの本を2週間で同じページ数ずつ読了するための1日量を求める。","root":"LemmaWeave.Tests.GSM8KDaily0918A.reading_solution","graph":"work/gsm8k-daily50-reading-graph.json","lean_file":"tests/lean/GSM8KDaily0918A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["2週間を14日とし、合計ページ数を等分する。"],
+  "steps":[
+    {"id":"reading_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.reading_total","title_ja":"総ページ数","requires_steps":[],"uses_nodes":[],"condition_ja":"180ページと100ページを合計する。","conclusion_ja":"総ページ数は280ページ。","baseline_ja":"加法。"},
+    {"id":"reading_days","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.reading_days","title_ja":"読書日数","requires_steps":[],"uses_nodes":[],"condition_ja":"1週7日で2週間。","conclusion_ja":"14日間。","baseline_ja":"単位換算。"},
+    {"id":"reading_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0918A.reading_daily","title_ja":"1日ページ数","requires_steps":["reading_total","reading_days"],"uses_nodes":[],"condition_ja":"280ページを14日に等分する。","conclusion_ja":"毎日20ページ。","baseline_ja":"等分。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":504,"checked_model_hash":"69d658f73115a09dc53753d617eaa49ff1bcf7dc787b529e6ccd9c37d9c7c001","checks_ja":["both booksのページ数を合計し、every dayを14日すべてと対応させた。"]}
+}

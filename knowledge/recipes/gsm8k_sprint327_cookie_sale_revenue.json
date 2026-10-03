@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint327_cookie_sale_revenue",
+  "title_ja": "クッキー売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03760",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Clementine, Jake, and Tory make cookies for the school bake sale. Clementine baked 72 cookies. Jake baked twice as many cookies as Clementine. Tory baked half as many cookies as Jake and Clementine combined. They sell their cookies for $2 each. If they sell all their cookies, how much money do they make?",
+  "answer_ja": "Jakeは72×2=144枚。ToryはClementineとJakeの合計216枚の半分で108枚。合計324枚を1枚2ドルで売るので648ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P3.cookie_sale_revenue",
+  "graph": "work/gsm8k-sprint327-cookie-sale-revenue-graph.json",
+  "model_notes_ja": [
+    "全クッキーを同じ2ドルで売り切り、Toryのhalfは2人の合計に掛かる。"
+  ],
+  "steps": [
+    {
+      "id": "cookie_sale_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P3.cookie_sale_revenue",
+      "title_ja": "クッキー売上",
+      "claim_ja": "Jakeは72×2=144枚。ToryはClementineとJakeの合計216枚の半分で108枚。合計324枚を1枚2ドルで売るので648ドル。",
+      "method_ja": "人数ごとの枚数を順に求め、総数へ単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "216は2で割り切れる。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "売上648ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3761,
+    "checked_model_hash": "7c9156b897939d8389cb18eecea50c74066a80e0d4d940093bf9f6db3923dc4e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

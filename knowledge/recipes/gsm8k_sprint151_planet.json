@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint151_planet",
+  "title_ja": "月の質量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02555",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "鉄50%、炭素20%、残りがその他で、同組成の火星は月の2倍の質量、その他が150トンである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.planet_solution",
+  "graph": "work/gsm8k-sprint151-planet-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "planet_other_percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.planet_other_percent",
+      "title_ja": "その他の元素は30%",
+      "claim_ja": "その他の元素は30%",
+      "method_ja": "100から50と20を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "その他の元素は30%",
+      "baseline_ja": "その他の元素は30%"
+    },
+    {
+      "id": "planet_mars_mass",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.planet_mars_mass",
+      "title_ja": "火星は500トン",
+      "claim_ja": "火星は500トン",
+      "method_ja": "150トンが30%となる全体を求める",
+      "requires_steps": [
+        "planet_other_percent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "火星は500トン",
+      "baseline_ja": "火星は500トン"
+    },
+    {
+      "id": "planet_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.planet_solution",
+      "title_ja": "月は250トン",
+      "claim_ja": "月は250トン",
+      "method_ja": "火星500トンの半分を求める",
+      "requires_steps": [
+        "planet_mars_mass"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "月は250トン",
+      "baseline_ja": "月は250トン"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2556,
+    "checked_model_hash": "d2ba0eb5fd55009570291284735b025b7fd39756a17f14df9e6018a2e9eeed92",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

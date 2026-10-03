@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint367_weekly_vlog_earnings",
+  "title_ja": "Leilaの週間動画収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03960",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Voltaire and Leila are vloggers, Voltaire has an average of 50 viewers per day while Leila has twice the number of viewers Voltaire has. If they earn $0.50 per view, how much does Leila earn per week?",
+  "answer_ja": "Leilaの1日視聴数は50の2倍で100回。1回0.50ドルなので1日50ドル、7日で350ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P1.weekly_vlog_earnings_cents",
+  "graph": "work/gsm8k-sprint367-weekly-vlog-earnings-cents-graph.json",
+  "model_notes_ja": [
+    "1週間を7日とし、毎日平均100回の視聴がある。"
+  ],
+  "steps": [
+    {
+      "id": "weekly_vlog_earnings_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P1.weekly_vlog_earnings_cents",
+      "title_ja": "Leilaの週間動画収入",
+      "claim_ja": "Leilaの1日視聴数は50の2倍で100回。1回0.50ドルなので1日50ドル、7日で350ドル。",
+      "method_ja": "視聴数を倍数関係から求め、1回当たり単価と7日を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1週間を7日とし、毎日平均100回の視聴がある。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1回0.50ドルなので1日50ドル、7日で350ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3961,
+    "checked_model_hash": "542cff8d04efa8ce24ea3c3a077a4bfaa2fb0e6cef590f4614b6a149bc9b02db",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

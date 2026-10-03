@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1027",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "f38929e9e1e2e5c4cceef14a3001ca67ebee033d818a93c38971578d79936b81",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A19P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04026",
+      "source_line_1based": 4027,
+      "source_record_sha256": "b4433308838be377255abeec8c56fd9204dc7496edf3a34e5effc40d95042cca",
+      "raw_question_sha256": "e195fb8a656a413fe3f7346087033a5dbf3612736d76f28eef738b82401c3a93",
+      "normalized_question_sha256": "e195fb8a656a413fe3f7346087033a5dbf3612736d76f28eef738b82401c3a93",
+      "source_question": "Mr. Ha owns 5 more silver dollars than Mr. Phung. Mr. Phung has 16 more silver dollars than Mr. Chiu has. If Mr. Chiu has 56 silver dollars, how many silver dollars the three have in total?",
+      "recipe_id": "gsm8k_sprint381_silver_dollars_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "more thanは各比較対象より指定枚数多い意味である。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04027",
+      "source_line_1based": 4028,
+      "source_record_sha256": "fa3f1370dd76b9d937255328b8ba6475e31133e88830d1290d9558304bda239b",
+      "raw_question_sha256": "bc24f1f05d54f19925a2198d97044a0284d504ed03da814cbef595a651cc7e29",
+      "normalized_question_sha256": "bc24f1f05d54f19925a2198d97044a0284d504ed03da814cbef595a651cc7e29",
+      "source_question": "Lionel went to the grocery store and bought 14 boxes of Graham crackers and 15 packets of Oreos. To make an Oreo cheesecake, Lionel needs 2 boxes of Graham crackers and 3 packets of Oreos. After making the maximum number of Oreo cheesecakes he can with the ingredients he bought, how many boxes of Graham crackers would he have left over?",
+      "recipe_id": "gsm8k_sprint381_graham_boxes_left_after_max_cheesecakes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照説明の4 cheesecakesは直前の最大5個および2×5=10と不一致なので5個へ訂正する。"
+      ],
+      "blockers": [
+        "reference_prose_typo"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04028",
+      "source_line_1based": 4029,
+      "source_record_sha256": "6ad4e69d060092a96cf22c70629bbff0effe90a210f871f18805f8041451031c",
+      "raw_question_sha256": "72c3eb6d843bdb49d5b1cca9140af115ecbe7cf726643b4bec8a7e5da95ac79e",
+      "normalized_question_sha256": "72c3eb6d843bdb49d5b1cca9140af115ecbe7cf726643b4bec8a7e5da95ac79e",
+      "source_question": "Lucas wants to get a dog but his parents think he already has too many pets and won't have enough space. He already has 12 pet beds in his room but manages to fit another 8 pet beds. His parents argue that each pet is going to need 2 beds each to feel comfortable. According to his parent's argument, how many pets does Lucas have enough room for?",
+      "recipe_id": "gsm8k_sprint381_pet_capacity_from_beds",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各ペットがちょうど2台を専有し、共有や余分な空間条件はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04029",
+      "source_line_1based": 4030,
+      "source_record_sha256": "21819468b64719b3c815e0a25877318499c7e072174fd509b924a6ec95e8d8d6",
+      "raw_question_sha256": "2cc0947a84c380d8f8e5466bf3b03b02dae6517d97ed6e83cb3492320aaec212",
+      "normalized_question_sha256": "2cc0947a84c380d8f8e5466bf3b03b02dae6517d97ed6e83cb3492320aaec212",
+      "source_question": "To raise money, a school is selling ice-pops for $1.50. It costs 90 cents to make each pop, and the money from the pops will be used to buy pencils, which cost $1.80 each. How many pops must be sold to buy 100 pencils?",
+      "recipe_id": "gsm8k_sprint381_ice_pops_needed_for_pencils",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "売上全額ではなく製造費を引いた純利益を鉛筆購入に使い、端数はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04030",
+      "source_line_1based": 4031,
+      "source_record_sha256": "a1b3da206a70d024f7ded8a195d34d0c7fff3812457338198d456934972330c9",
+      "raw_question_sha256": "815267bd265da554013edc6f4a735b5dd829d7a7f3f03a3a14df6eaf6e23ba28",
+      "normalized_question_sha256": "815267bd265da554013edc6f4a735b5dd829d7a7f3f03a3a14df6eaf6e23ba28",
+      "source_question": "In the beginning, Justine had 10 more rubber bands than Bailey but 2 fewer bands than Ylona. Bailey decided to give two bands each to Justine and Ylona so that he is left with only 8 rubber bands. How many rubber bands did Ylona have in the beginning?",
+      "recipe_id": "gsm8k_sprint381_initial_ylona_bands",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "冒頭の比較はいずれも譲渡前の個数について述べる。"
+      ],
+      "blockers": []
+    }
+  ]
+}

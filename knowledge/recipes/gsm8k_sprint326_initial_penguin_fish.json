@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint326_initial_penguin_fish",
+  "title_ja": "初年度開始時の1日魚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03755",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A group of researchers are studying a colony of penguins. Their results show that the size doubled in the first year they watched the colony, then tripled in the next year. This year, however, harsh conditions meant the colony only gained 129 penguins. The colony has 1077 penguins in it now. Each penguin eats one and a half fish every day. How many fish did the whole colony catch per day to eat at the beginning of the first year?",
+  "answer_ja": "現在1077羽から今年増えた129羽を引くと948羽。前年の3倍なので948÷3=316羽、その前年は2倍なので316÷2=158羽。1羽1.5匹だから158×3÷2=237匹/日。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P2.initial_penguin_fish",
+  "graph": "work/gsm8k-sprint326-initial-penguin-fish-graph.json",
+  "model_notes_ja": [
+    "倍増・3倍化は各年の開始個体数から次年開始個体数への変化とし、摂餌量は初年度開始時にも同じ。"
+  ],
+  "steps": [
+    {
+      "id": "initial_penguin_fish",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P2.initial_penguin_fish",
+      "title_ja": "初年度開始時の1日魚数",
+      "claim_ja": "現在1077羽から今年増えた129羽を引くと948羽。前年の3倍なので948÷3=316羽、その前年は2倍なので316÷2=158羽。1羽1.5匹だから158×3÷2=237匹/日。",
+      "method_ja": "増分を戻し、倍率を逆算して1羽あたり魚数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "948は3で、316は2で割り切れ、158×3も2で割り切れる。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "237匹/日。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3756,
+    "checked_model_hash": "fb81d0f303f5c164319e5af31232307ed4524450eb00f121c5305497da69a977",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

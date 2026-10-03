@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint367_orange_price",
+  "title_ja": "12kgのオレンジ代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03959",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "At the supermarket, the price paid for oranges is proportional to the mass purchased. Annie paid $6 for 2 kg of oranges. How much will Annie pay for 12 kg of oranges?",
+  "answer_ja": "価格は質量に比例し、2kgで6ドルだから1kgは3ドル。12kgでは12×3=36ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P1.orange_price",
+  "graph": "work/gsm8k-sprint367-orange-price-graph.json",
+  "model_notes_ja": [
+    "価格が購入質量に比例する。"
+  ],
+  "steps": [
+    {
+      "id": "orange_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P1.orange_price",
+      "title_ja": "12kgのオレンジ代",
+      "claim_ja": "価格は質量に比例し、2kgで6ドルだから1kgは3ドル。12kgでは12×3=36ドル。",
+      "method_ja": "比例定数である1kg当たり価格を求めて12kgへ掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "価格が購入質量に比例する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "12kgでは12×3=36ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3960,
+    "checked_model_hash": "542cff8d04efa8ce24ea3c3a077a4bfaa2fb0e6cef590f4614b6a149bc9b02db",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

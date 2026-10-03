@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily28_card","title_ja":"2種類のカード6枚ずつの代金","problem_id":"external-gsm8k-main-3101c7d50724:train:00280","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"1.25ドルと1.75ドルのカードを各6枚買った総額を求める。",
+  "root":"LemmaWeave.Tests.GSM8KDaily0912B.card_solution","graph":"work/gsm8k-daily28-card-graph.json","lean_file":"tests/lean/GSM8KDaily0912B.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["金額はセント単位の自然数で厳密に扱う。"],
+  "steps":[
+    {"id":"card_pair","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.card_pair","title_ja":"各種類1枚ずつの代金","requires_steps":[],"uses_nodes":[],"condition_ja":"価格は125セントと175セント。","conclusion_ja":"1組は300セント。","baseline_ja":"組の価格＝各価格の和。"},
+    {"id":"card_cents","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.card_cents","title_ja":"6組の代金","requires_steps":["card_pair"],"uses_nodes":[],"condition_ja":"1組300セントを6組買う。","conclusion_ja":"合計1800セント。","baseline_ja":"総額＝組数×組単価。"},
+    {"id":"card_dollars","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912B.card_dollars","title_ja":"ドルへの換算","requires_steps":["card_cents"],"uses_nodes":[],"condition_ja":"100セント＝1ドル。","conclusion_ja":"合計18ドル。","baseline_ja":"セント総額＝ドル額×100。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":281,"checked_model_hash":"6b16310f0a116b0f5920805ef148e39e64b00ecbd5bcf0656596c75a079178bd","checks_ja":["小数をセントへ換算し、(125+175)×6=1800セントを照合した。"]}
+}

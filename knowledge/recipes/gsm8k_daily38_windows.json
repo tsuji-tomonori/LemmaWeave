@@ -1,0 +1,21 @@
+{
+  "id": "gsm8k_daily38_windows",
+  "title_ja": "一定速度で64枚の窓を洗う時間を求める",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00382",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "4枚の窓を10分で洗う一定速度で、64枚を順次洗う時間を求める。",
+  "root": "LemmaWeave.Tests.GSM8KDaily0914D.windows_solution",
+  "graph": "work/gsm8k-daily38-windows-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0914D.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。",
+  "model_notes_ja": ["窓4枚ごとの時間が常に10分で、並行作業せず順次洗う条件を置く。"],
+  "steps": [
+    {"id": "windows_groups", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.windows_groups", "title_ja": "4枚組の個数を求める", "requires_steps": [], "uses_nodes": [], "condition_ja": "全64枚を4枚ずつの組に分け、余りはない。", "conclusion_ja": "組数は64÷4=16組。", "baseline_ja": "全体量を1組の量で割って組数を求める。"},
+    {"id": "windows_time", "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0914D.windows_time", "title_ja": "全組の所要時間を求める", "requires_steps": ["windows_groups"], "uses_nodes": [], "condition_ja": "16組を、各組10分で順次洗う。", "conclusion_ja": "所要時間は16×10=160分。", "baseline_ja": "一定の1組当たり時間の反復は組数との積。"}
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {"reviewer": "author", "status": "checked", "source_line_1based": 383, "checked_model_hash": "bde21e632c1d91cc6aa9dce6b254a3a8f5f5ecf02910d6c56c9727929ed2fe88", "checks_ja": ["一定速度・順次作業という比例計算の条件を明示した。"]}
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint124_ship",
+  "title_ja": "宇宙船出発時の人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02154",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "満員人数を求め、その3分の1より100人少ない人数を計算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A16.ship_solution",
+  "graph": "work/gsm8k-sprint124-ship-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ship_capacity",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.ship_capacity",
+      "title_ja": "満員は1200人。",
+      "claim_ja": "満員は1200人。",
+      "method_ja": "300家族×4人。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "満員は1200人。",
+      "baseline_ja": "満員は1200人。"
+    },
+    {
+      "id": "ship_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.ship_third",
+      "title_ja": "満員の3分の1は400人。",
+      "claim_ja": "満員の3分の1は400人。",
+      "method_ja": "1200÷3。",
+      "requires_steps": [
+        "ship_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "満員の3分の1は400人。",
+      "baseline_ja": "満員の3分の1は400人。"
+    },
+    {
+      "id": "ship_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.ship_solution",
+      "title_ja": "出発時は300人。",
+      "claim_ja": "出発時は300人。",
+      "method_ja": "400−100。",
+      "requires_steps": [
+        "ship_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "出発時は300人。",
+      "baseline_ja": "出発時は300人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2155,
+    "checked_model_hash": "1ef653f2f5493b131faeaf7e8e4695e102a0b2223657f79e1a4a788f945d875f",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、矛盾や複数読解は訂正条件・反例と分離した。"
+    ]
+  }
+}

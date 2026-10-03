@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1",
+  "learning_node_id": "finset_singleton_membership",
+  "name_ja": "単集合の要素",
+  "statement_ja": "bが単集合{a}に属することと、b=aは同値である。",
+  "assumptions": [
+    "α : Type u",
+    "a b : α"
+  ],
+  "kind": "lemma",
+  "lean_declarations": [
+    "Finset.mem_singleton"
+  ],
+  "prerequisite_nodes": [],
+  "curriculum": {
+    "classification": "unclassified",
+    "version": null,
+    "evidence": null
+  },
+  "explanation_outline_ja": [
+    "要素を一つだけ持つ集合の定義を用いる。"
+  ],
+  "unexpanded": [
+    "推移的前提の個別展開",
+    "課程の項目別照合"
+  ],
+  "formal_status": "linked_to_kernel_checked_dependency",
+  "educational_expansion_status": "outline",
+  "declared_but_not_in_graph": [],
+  "actual_declaration_types": {
+    "Finset.mem_singleton": "∀ {α : Type u_1} {a b : α}, b ∈ {a} ↔ b = a"
+  },
+  "declaration_type_sha256": {
+    "Finset.mem_singleton": "f2de06fdff1f217a66e0132b612414ef7a5fe71e282c4f23f6b4476ee0947fb3"
+  },
+  "used_by_problems": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S01-01",
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01"
+  ],
+  "extraction_sources": [
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.inequalities_solution.json.gz",
+    "reports/dependencies/raw/LemmaWeave.Problems.DNC2026M1.sets_solution.json.gz"
+  ],
+  "classification_evidence": {
+    "reviewer": "/root",
+    "independence": "self_review_only",
+    "status": "explicit_named_declaration_review",
+    "rationale": "Actual exported types compared with the Japanese claim; remaining foundational prerequisites are not discarded."
+  }
+}

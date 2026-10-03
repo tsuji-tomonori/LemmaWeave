@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint271_obstacle_seconds",
+  "title_ja": "障害物コースの総時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03411",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A14P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "7分23秒、73秒、5分58秒の3区間を合計した秒数を求める。",
+  "answer_ja": "874秒",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.obstacle_seconds",
+  "graph": "work/gsm8k-sprint271-obstacle-seconds-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "first_course_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.first_course_seconds",
+      "title_ja": "最初の区間は443秒。",
+      "claim_ja": "最初の区間は443秒。",
+      "method_ja": "7分を420秒へ換算し23秒を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1分=60秒。",
+      "conclusion_ja": "443秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "door_elapsed_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.door_elapsed_seconds",
+      "title_ja": "扉を開け終えるまで516秒。",
+      "claim_ja": "扉を開け終えるまで516秒。",
+      "method_ja": "443秒に73秒を加える。",
+      "requires_steps": [
+        "first_course_seconds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "扉操作は最初の通過後。",
+      "conclusion_ja": "516秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "return_course_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.return_course_seconds",
+      "title_ja": "戻りの区間は358秒。",
+      "claim_ja": "戻りの区間は358秒。",
+      "method_ja": "5分を300秒へ換算し58秒を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1分=60秒。",
+      "conclusion_ja": "358秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "obstacle_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P3.obstacle_seconds",
+      "title_ja": "総時間は874秒。",
+      "claim_ja": "総時間は874秒。",
+      "method_ja": "516秒と358秒を足す。",
+      "requires_steps": [
+        "door_elapsed_seconds",
+        "return_course_seconds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3区間を重複なく合計する。",
+      "conclusion_ja": "874秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3412,
+    "checked_model_hash": "d054eff63a475d3d7451b58637dac35d8a421e110dcc322aee9dc8ea144b77d4",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

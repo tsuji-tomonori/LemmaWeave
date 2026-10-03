@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint266_grocery_total",
+  "title_ja": "食料品の支払総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03270",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A13RecoveryP1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Spam12缶各3ドル、ピーナツバター3瓶各5ドル、パン4斤各2ドルの総額を求める。",
+  "answer_ja": "59ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP1.grocery_total",
+  "graph": "work/gsm8k-sprint266-grocery-total-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "spam_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP1.spam_cost",
+      "title_ja": "Spamは36ドル。",
+      "claim_ja": "Spamは36ドル。",
+      "method_ja": "12×3を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12缶を各3ドル。",
+      "conclusion_ja": "36ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "peanut_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP1.peanut_cost",
+      "title_ja": "ピーナツバターは15ドル。",
+      "claim_ja": "ピーナツバターは15ドル。",
+      "method_ja": "3×5を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3瓶を各5ドル。",
+      "conclusion_ja": "15ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "bread_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP1.bread_cost",
+      "title_ja": "パンは8ドル。",
+      "claim_ja": "パンは8ドル。",
+      "method_ja": "4×2を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4斤を各2ドル。",
+      "conclusion_ja": "8ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "grocery_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP1.grocery_total",
+      "title_ja": "支払総額は59ドル。",
+      "claim_ja": "支払総額は59ドル。",
+      "method_ja": "36+15+8を計算する。",
+      "requires_steps": [
+        "spam_cost",
+        "peanut_cost",
+        "bread_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3品目以外の支払はない。",
+      "conclusion_ja": "59ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3271,
+    "checked_model_hash": "8bc06990cb4871d94c8911d424f2635b8ec99bb64cbf76517cffbffae8176a08",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

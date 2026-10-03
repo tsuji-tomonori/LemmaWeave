@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-19",
+  "run_id": "lemmaweave-sprint-20260919-0900",
+  "planned_slot_local_hour": 9,
+  "planned_at": "2026-09-19T09:00:00+09:00",
+  "role": "japanese_entrance_exam_high_school",
+  "base_sha": "776777b88240d741c3fc9266468c6305316f561f",
+  "local_equivalent_tree_commit_at_start": "97175627c70597528aefcf929ec0e133e2649106",
+  "base_tree_sha": "edddb07590f95ea235dd702dd8732b01c9b0cbc7",
+  "started_at": "2026-09-19T08:56:38+09:00",
+  "finished_at": "2026-09-19T09:05:24+09:00",
+  "schedule_offset_seconds": -202,
+  "schedule_note_ja": "予定時刻の202秒前に起動した。08時枠は既に台帳済みで、09時専用枠は未実行だったため、重複せず09時枠へ割り当てた。ローカル開始コミットとPR HEADは履歴が分岐していたがtree SHAが一致したため、GitHub上のPR HEADを親にして非force更新する。",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-01"
+  ],
+  "deferred": [],
+  "claim": {
+    "problem_ids": ["JP-DNC-CT-2026-MAIN-M1-Q01-S02-01"],
+    "status": "checkpoint_saved",
+    "expires_at": "2026-09-19T12:00:00+09:00"
+  },
+  "source": {
+    "provider": "大学入試センター",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "pdf_page_1_based": [3, 4],
+    "printed_page_label": ["32", "33"],
+    "source_review_basis": "2026-09-05に保存された原ページ直接確認・独立意味レビューを再照合した。原資料そのものは再配布しない。"
+  },
+  "entrance_exam_ledger_snapshot": {
+    "registered": 13,
+    "collected_kernel_checked": 5,
+    "candidate_not_started": 8,
+    "current_week_by_six_fields": {
+      "sets_logic_integers": 1,
+      "functions_equations_inequalities": 0,
+      "geometry_vectors_trigonometry": 0,
+      "combinatorics_probability_statistics": 0,
+      "sequences": 0,
+      "calculus": 0
+    },
+    "unconfirmed_scope_ja": "旧51掲載経路・36大学と現行13 IDの完全対応、2024〜2026共通テストおよび東京・京都・名古屋大学の全小問、高校6分野の対象全集合は未列挙。"
+  },
+  "gsm8k_progress_unchanged": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 125,
+    "note_ja": "本問はGSM8K 8,792問の分母へ混ぜない。"
+  },
+  "validation": {
+    "source_record_hash_matched": true,
+    "registered_id_set_matched": true,
+    "registered_id_duplicates": 0,
+    "recipe_steps": 4,
+    "recipe_declaration_links": 4,
+    "forbidden_lean_tokens_found": [],
+    "python_regression_tests": "51 passed",
+    "local_lean_available": false,
+    "fixed_lean_status": "pending_exact_head_ci",
+    "semantic_review_status": "self_review_only_for_new_individual_solution",
+    "render_note_ja": "check_method_recipes.py --renderは新規依存グラフが固定Lean実行前のため未生成で停止した。成功証拠として扱わない。"
+  },
+  "ci": {
+    "prior_head_sha": "776777b88240d741c3fc9266468c6305316f561f",
+    "prior_status": "no_workflow_run_or_success_evidence_observed",
+    "head_sha": "a73df9e20e043571b81b4adc3a7110d1b7bd8d30",
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "a73df9e20e043571b81b4adc3a7110d1b7bd8d30",
+  "note_ja": "集合・論理・整数の専用枠として既存の共通テスト1小問を原題台帳から再読し、四つの要求を個別の日本語説明行とLean定理へ対応させた。既存の独立レビュー済みモデルは変更せず、新しい解答はself_review_only。現HEADの固定Lean成功証拠と証拠取込前なので正式完了には数えない。"
+}

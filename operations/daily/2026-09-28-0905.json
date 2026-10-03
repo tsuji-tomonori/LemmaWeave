@@ -1,0 +1,135 @@
+{
+  "date": "2026-09-28",
+  "run_id": "2026-09-28T09:00+09:00-entrance-exam-functions-equations-inequalities",
+  "scheduled_local_hour": 9,
+  "scheduled_at": "2026-09-28T09:00:00+09:00",
+  "started_at": "2026-09-28T09:05:19+09:00",
+  "finished_at": "2026-09-28T10:19:17+09:00",
+  "start_offset_seconds": 319,
+  "schedule_note_ja": "09時専用枠へ割り当てた。08時枠はoperations/daily/2026-09-28-0820.jsonで台帳済みのため二重実行しなかった。循環上は場合の数・確率・統計を確認したが、未着手候補JP-DNC-CT-2026-MAIN-M1-Q04-S01-03iはrights_uncertainかつ原文転記未完のため推測補完せず、未選択の収集済み関数問題へ安全に切り替えた。GSM8Kとは別集計。",
+  "role": "japanese_entrance_exam_individual_solution",
+  "domain": "functions_equations_inequalities",
+  "base_sha": "ce3b533422e28b25219b78fdd055789163be8d4d",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "completed_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01"
+  ],
+  "verification_pending_problem_ids": [],
+  "deferred": [
+    {
+      "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q04-S01-03i",
+      "retry_on": "rights_and_source_transcription_resolved",
+      "reason_ja": "場合の数・確率・統計の循環候補だが、台帳上rights_uncertainで数学的仕様・原文転記が未完。原資料を推測補完しない。",
+      "next_action_ja": "DNC処理条件を確認し、公式PDFの対象ページと全小問要求を再照合してからcollectedへ昇格する。"
+    }
+  ],
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "answer_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honsiken_seikai.html",
+    "pdf_page_1_based": [
+      15
+    ],
+    "printed_page_label": [
+      "44"
+    ],
+    "subquestion": "第3問[2](1) 解答欄タ・チ・ツ・テト",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "source_review_basis": "2026-09-05の公式PDF直接確認・独立意味照合記録と、2026-09-28時点の固定問題記録・文書SHA256を再照合。原文画像は再配布しない。",
+    "official_answer_checked": true
+  },
+  "outputs": {
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q03-S02-01.json",
+    "recipe": "knowledge/recipes/dnc2026_extrema_individual.json",
+    "shared_proof": "LemmaWeave/Problems/DNC2026M1/ProofExtrema.lean",
+    "lean_test": "tests/lean/DNC2026ExtremaIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "explanation_lines": 5,
+    "named_lean_theorems": 6,
+    "self_review_status": "self_review_only"
+  },
+  "written_solution_ja": [
+    "f(x)=2x^2-8x+5=2(x-2)^2-3と平方完成する。",
+    "実数の平方は0以上なので、区間内のすべてのxについてf(x)≥-3である。",
+    "またf(x)-5=2x(x-4)であり、0≤x≤3ではx≥0かつx-4≤0だからf(x)≤5である。",
+    "x=0は区間内でf(0)=5となるので、最大値は5で、その達成点はx=0である。",
+    "x=2も区間内でf(2)=-3となるので、最小値は-3で、その達成点はx=2である。"
+  ],
+  "static_checks": {
+    "json_parse": "pass",
+    "recipe_step_to_named_theorem_missing": 0,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "fixed_lean_build": "pass_target_exact_head_4affb68478f3f8d5af4afecf8465f8a04cd0dcf5",
+    "axiom_audit": "pass_allowed_only_propext_Classical.choice_Quot.sound",
+    "dependency_audit": "pass_current_graph_and_recipe",
+    "recipe_validation": "pass_solution_ready_target_specific",
+    "source_record_hash_matched": true,
+    "official_answer_matched": true,
+    "all_extrema_requirements_covered": true,
+    "assurance_level": "MODEL_FORMALIZED"
+  },
+  "entrance_exam_ledger_after": {
+    "registered_count": 15,
+    "collected_kernel_checked_count": 5,
+    "candidate_not_started_count": 10,
+    "weekly_domain_counts": [
+      3,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "unconfirmed_scope_preserved": true
+  },
+  "gsm8k_counts_unchanged": {
+    "solution_ready": 518,
+    "awaiting_verification": 2314,
+    "pending": 5960,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02831",
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "ci": {
+    "validated_code_head_sha": "4affb68478f3f8d5af4afecf8465f8a04cd0dcf5",
+    "run_id": 36364353455,
+    "job_id": 108747684727,
+    "overall_status": "failure_legacy_gsm8k_targets",
+    "target_run_record": "runs/20260928T010323-1891d080/run.json",
+    "target_exit_code": 0,
+    "target_lean_evidence_accepted": true,
+    "artifact_id": 10947302283,
+    "artifact_sha256": "809b94dd64a7db5bb060a68fae215ed54f9f5085e1444214c76563ed4db885c9",
+    "artifact_size_bytes": 211739320,
+    "dependency_graph_sha256": "fd4ee4fbaf500829a6adeaef738b377707abc69d827a3268d1ca5253ab74c995",
+    "accepted_as_success_evidence": false,
+    "current_status": "target_pass_full_replay_failed_legacy"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "source_head_sha": "4affb68478f3f8d5af4afecf8465f8a04cd0dcf5",
+    "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "state": "open",
+    "merged": false,
+    "mergeable_at_start": true,
+    "reviews_at_start": 0,
+    "unresolved_review_threads_at_start": 0,
+    "merge_status": "held_for_full_ci_red"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-28T09:00+09:00",
+    "scope": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01",
+    "claimed_at": "2026-09-28T09:05:19+09:00",
+    "expires_at": "2026-09-28T10:00:00+09:00",
+    "released": true
+  },
+  "note_ja": "既存の独立意味照合・旧カーネル証拠がある未個別化小問を原題記録から再読し、平方完成、上下界、両達成点を5行の記述解答へ展開した。初回証拠の依存監査で最大値行が上界証明へ実依存していない不整合を検出し、maximum_attainedがupper_boundを直接参照するよう修正した。commit 4affb684のexact-head固定Leanでは個別ターゲットがexit 0、許容公理のみ、現行グラフとレシピの全5行依存照合も合格した。全体CIは既存GSM8Kターゲット群で赤のためPRはマージしない。"
+}

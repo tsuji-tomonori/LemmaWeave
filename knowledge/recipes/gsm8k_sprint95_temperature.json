@@ -1,0 +1,53 @@
+{
+  "id": "gsm8k_sprint95_temperature",
+  "title_ja": "5年間の平均最高気温",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01710",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5個の華氏温度90,90,90,79,71の算術平均を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.temperature_solution",
+  "graph": "work/gsm8k-sprint95-temperature-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "temperature_sum",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.temperature_sum",
+      "title_ja": "温度合計",
+      "claim_ja": "420度。",
+      "method_ja": "5年分を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同じ単位の5観測値。",
+      "conclusion_ja": "90+90+90+79+71=420。",
+      "baseline_ja": "90+90+90+79+71=420。"
+    },
+    {
+      "id": "temperature_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.temperature_solution",
+      "title_ja": "平均",
+      "claim_ja": "84度。",
+      "method_ja": "合計420を観測数5で割る。",
+      "requires_steps": [
+        "temperature_sum"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "算術平均で、420は5で割り切れる。",
+      "conclusion_ja": "84×5=420。",
+      "baseline_ja": "84×5=420。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1711,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint354_gas_spending_interpretations",
+  "title_ja": "4週間のガソリン購入費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03894",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tony drives a car that gets 25 miles to the gallon.  He drives 50 miles round trip to work 5 days a week.  His tank holds 10 gallons.  He begins the week with a full tank and when he runs out he fills up at the local gas station for $2 a gallon.  How much money does Tony spend on gas in 4 weeks?",
+  "answer_ja": "週250マイル、4週間で1000マイル。満タン10ガロンの航続距離は250マイルなので4回空になる。4週間終了時にも「空になったら満タン」を実行する読みでは4×10×2=80ドル。開始時の満タンを所与とし、1000マイルの走行完了までに追加購入が必要な燃料だけなら3×10×2=60ドル。原文の期末補充を含めるかで答えが分かれる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A08P3.gas_spending_interpretations",
+  "graph": "work/gsm8k-sprint354-gas-spending-interpretations-graph.json",
+  "model_notes_ja": [
+    "初期満タンは購入費に含まれない。最終250マイル後の即時補充を含めるかが原文だけでは明確でないため、80ドルと60ドルを条件付きで併記する。"
+  ],
+  "steps": [
+    {
+      "id": "gas_spending_interpretations",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A08P3.gas_spending_interpretations",
+      "title_ja": "4週間のガソリン購入費",
+      "claim_ja": "週250マイル、4週間で1000マイル。満タン10ガロンの航続距離は250マイルなので4回空になる。4週間終了時にも「空になったら満タン」を実行する読みでは4×10×2=80ドル。開始時の満タンを所与とし、1000マイルの走行完了までに追加購入が必要な燃料だけなら3×10×2=60ドル。原文の期末補充を含めるかで答えが分かれる。",
+      "method_ja": "総走行距離と満タン航続距離を求め、期末直後の補充を数えるかを分離する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "80ドルは4週間終了時に空になった直後も満タン補充する条件。60ドルは走行完了後の補充を期間内費用へ含めない条件。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "参照解釈では80ドル。走行に必要な追加購入だけなら60ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3895,
+    "checked_model_hash": "9d1083ab8d77513b695b12ed12e42b1866c393d6229a4cf06ed99d2551ea7a3c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

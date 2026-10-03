@@ -1,0 +1,77 @@
+{
+  "id": "gsm8k_sprint34_appetizers",
+  "title_ja": "追加で必要な前菜",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00798",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "必要180個から作成済み84個を引き、8ダースと求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.appetizers_solution",
+  "graph": "work/gsm8k-sprint34-appetizers-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "appetizers_needed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.appetizers_needed",
+      "title_ja": "必要数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "30人に各6個。",
+      "conclusion_ja": "180個。",
+      "baseline_ja": "30×6=180。"
+    },
+    {
+      "id": "appetizers_dozen",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.appetizers_dozen",
+      "title_ja": "作成済みダース",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3+2+2ダース。",
+      "conclusion_ja": "7ダース。",
+      "baseline_ja": "3+2+2=7。"
+    },
+    {
+      "id": "appetizers_made",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.appetizers_made",
+      "title_ja": "作成済み個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ダース12個。",
+      "conclusion_ja": "84個。",
+      "baseline_ja": "7×12=84。"
+    },
+    {
+      "id": "appetizers_missing",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.appetizers_missing",
+      "title_ja": "不足個数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "必要180個、作成済み84個。",
+      "conclusion_ja": "96個。",
+      "baseline_ja": "180-84=96。"
+    },
+    {
+      "id": "appetizers_answer",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.appetizers_answer",
+      "title_ja": "不足ダース",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "96個を12個ずつまとめる。",
+      "conclusion_ja": "8ダース。",
+      "baseline_ja": "96=8×12。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 799,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint313_phone_bill_expense",
+  "title_ja": "Sandyの月額電話料金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03690",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A12P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2年後のSandyは2年後のKimの3倍の年齢で、Kimは現在10歳。現在年齢の10倍が月額料金のドル数。料金を求める。",
+  "answer_ja": "2年後のKimは12歳、Sandyは36歳。現在のSandyは36-2=34歳なので、料金は10×34=340ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A12P1.phone_bill_expense",
+  "graph": "work/gsm8k-sprint313-phone-bill-expense-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "phone_bill_expense",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A12P1.phone_bill_expense",
+      "title_ja": "2年後のKimは12歳、Sandyは36歳。現在のSandyは36-2=34歳なので、料金は10×34=340ドル。",
+      "claim_ja": "2年後のKimは12歳、Sandyは36歳。現在のSandyは36-2=34歳なので、料金は10×34=340ドル。",
+      "method_ja": "2年後のKimは12歳、Sandyは36歳。現在のSandyは36-2=34歳なので、料金は10×34=340ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "2年後のKimは12歳、Sandyは36歳。現在のSandyは36-2=34歳なので、料金は10×34=340ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3691,
+    "checked_model_hash": "e14ffa94f3da20846fb03aad4d9b98e8448e6d6796691fe4654d2ccff66451fc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

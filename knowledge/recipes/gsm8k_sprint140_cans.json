@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint140_cans",
+  "title_ja": "戸棚に入る缶数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02385",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1列12缶、棚1段に4列、戸棚に10段。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cans_solution",
+  "graph": "work/gsm8k-sprint140-cans-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cans_shelf",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cans_shelf",
+      "title_ja": "1段48缶",
+      "claim_ja": "1段48缶",
+      "method_ja": "12に4を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1段48缶",
+      "baseline_ja": "1段48缶"
+    },
+    {
+      "id": "cans_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cans_solution",
+      "title_ja": "戸棚1つ480缶",
+      "claim_ja": "戸棚1つ480缶",
+      "method_ja": "48に10を掛ける",
+      "requires_steps": [
+        "cans_shelf"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "戸棚1つ480缶",
+      "baseline_ja": "戸棚1つ480缶"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2386,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

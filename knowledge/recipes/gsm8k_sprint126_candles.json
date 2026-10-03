@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint126_candles",
+  "title_ja": "家のろうそくの総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02172",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "寝室にろうそくが20本あり、居間の2倍である。兄弟がさらに20本持ち込むと家の合計は何本か。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.candles_solution",
+  "graph": "work/gsm8k-sprint126-candles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "candles_living",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.candles_living",
+      "title_ja": "居間には10本ある",
+      "claim_ja": "居間には10本ある",
+      "method_ja": "寝室20本は居間の2倍なので2で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "居間には10本ある",
+      "baseline_ja": "居間には10本ある"
+    },
+    {
+      "id": "candles_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.candles_solution",
+      "title_ja": "追加後の家には50本ある",
+      "claim_ja": "追加後の家には50本ある",
+      "method_ja": "寝室20本、居間10本、持ち込んだ20本を足す。",
+      "requires_steps": [
+        "candles_living"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "追加後の家には50本ある",
+      "baseline_ja": "追加後の家には50本ある"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2173,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

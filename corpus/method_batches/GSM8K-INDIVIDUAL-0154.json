@@ -1,0 +1,223 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0154",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0923A08Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01779",
+      "source_line_1based": 1780,
+      "source_record_sha256": "dbde07fb2f870a644527e3de7d633ed6e44e4dda04a006dadf66e2242468f795",
+      "raw_question_sha256": "e34e04be0d43169e69f850f3de189da24c56c167410e4fa38de48861f29d2658",
+      "normalized_question_sha256": "e34e04be0d43169e69f850f3de189da24c56c167410e4fa38de48861f29d2658",
+      "source_question": "Gavin has had 4 dreams every day for a year now. If he had twice as many dreams last year as he had this year, calculate the total number of dreams he's had in the two years.",
+      "recipe_id": "gsm8k_sprint100_dreams",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照解答は1年=365日を採るが、原文だけではうるう年を排除しない。365日の4380回と366日の4392回を別モデルにした。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01780",
+      "source_line_1based": 1781,
+      "source_record_sha256": "7d20b014953bc68f4450bac56c226ee6dfab14e39ba30afc383f85b1d6cd886e",
+      "raw_question_sha256": "db2da5b2caa338d3a2e12638443636a052dc3c0fd851b6b12b5dae70ab0a8abd",
+      "normalized_question_sha256": "db2da5b2caa338d3a2e12638443636a052dc3c0fd851b6b12b5dae70ab0a8abd",
+      "source_question": "Faith is getting paid $13.50 per hour. She normally works 8 hours a day, 5 days a week, plus 2 hours of overtime per day. How much will she earn by the end of the week?",
+      "recipe_id": "gsm8k_sprint100_faith",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照解答は残業10時間にも13.50ドルをそのまま適用する。『overtime』だけでは割増率が定まらないため、同率675ドルと1.5倍742.50ドルを分離した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01781",
+      "source_line_1based": 1782,
+      "source_record_sha256": "b7ef1485d65ea1a240de09493ee98b1485c2a1ded1d4d4c08989d155beb895d1",
+      "raw_question_sha256": "a9838167d3e5af202a1ef2d9b6e5bf317119e9e0c0d9b5022ae2f904a4893edc",
+      "normalized_question_sha256": "a9838167d3e5af202a1ef2d9b6e5bf317119e9e0c0d9b5022ae2f904a4893edc",
+      "source_question": "A salesman bought a case of 48 backpacks for $576. He sold 17 of them for $18 at the swap meet, 10 were sold to a department store for $25 each. If the remainder were sold for $22 each. How much was the salesman's profit?",
+      "recipe_id": "gsm8k_sprint100_backpacks",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01782",
+      "source_line_1based": 1783,
+      "source_record_sha256": "6a26d4a81e64456457b412835dcb79cf27a4d1dc8cbfa70af8efdcf2f387b828",
+      "raw_question_sha256": "e362195542ca11d8bcf05c9f19e7d23ed8059da5331e07d1ab69ec89de088f7a",
+      "normalized_question_sha256": "e362195542ca11d8bcf05c9f19e7d23ed8059da5331e07d1ab69ec89de088f7a",
+      "source_question": "In a restaurant, a burger costs $9, and a pizza twice as much. How much would cost one pizza and three burgers?",
+      "recipe_id": "gsm8k_sprint100_restaurant",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01783",
+      "source_line_1based": 1784,
+      "source_record_sha256": "ba2d75e1c413a20d76be1925e916219a04b45f791ec3c3c9c6b8af4b32ae3683",
+      "raw_question_sha256": "94c8a73f663c242b9b51224c0482109fb57360793eb2cc7f3210883efabd6dce",
+      "normalized_question_sha256": "94c8a73f663c242b9b51224c0482109fb57360793eb2cc7f3210883efabd6dce",
+      "source_question": "Mia has 4 times as many shells as David. Ava has 20 more shells than Mia. Alice has half the number of shells Ava has. If David has 15 shells, what the total number of conch shells they all have?",
+      "recipe_id": "gsm8k_sprint100_shells",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01784",
+      "source_line_1based": 1785,
+      "source_record_sha256": "1dfe10b63a1072bf644f14aee1c13f1a5cb2421c160f2ff3aa58b68b2f77f400",
+      "raw_question_sha256": "3780564b31b779b51284836126ea07461bfa8330150c5e1f4dbaa7003de29646",
+      "normalized_question_sha256": "3780564b31b779b51284836126ea07461bfa8330150c5e1f4dbaa7003de29646",
+      "source_question": "Nancy has a bag containing 22 tortilla chips. She gives 7 tortilla chips to her brother and 5 tortilla chips to her sister, keeping the rest for herself. How many did Nancy keep for herself?",
+      "recipe_id": "gsm8k_sprint100_chips",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01785",
+      "source_line_1based": 1786,
+      "source_record_sha256": "5e960dff0a3500753272d7b02e72aaddf9375005b6eee5477623dd56e1c5c102",
+      "raw_question_sha256": "8c56fbf683a448f94e476efcbea0ada983d1e343b3bd7c4f9e627e917a34644a",
+      "normalized_question_sha256": "8c56fbf683a448f94e476efcbea0ada983d1e343b3bd7c4f9e627e917a34644a",
+      "source_question": "Angeli had 90 assorted candies. One-third of the candies were lollipops and the rest were candy canes. She then shared the lollipops equally among the boys such that each boy received 3. She then shared the candy canes equally among the girls such that each received 2. How many boys and girls were given altogether?",
+      "recipe_id": "gsm8k_sprint100_candies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01786",
+      "source_line_1based": 1787,
+      "source_record_sha256": "7320b1c148fa6e4a86a0c3825061add731ecf3946bba70d659b5ae0f080f40b9",
+      "raw_question_sha256": "68467aac887bb850c935667c48c9facb1c0399d0c299d004e617b9805c7491af",
+      "normalized_question_sha256": "68467aac887bb850c935667c48c9facb1c0399d0c299d004e617b9805c7491af",
+      "source_question": "4/5 of the Easter eggs are blue and 1/5 are purple. Half the purple eggs have five pieces of candy each, and 1/4 of the blue eggs do. The rest of the eggs only have one piece of candy. If Jerry opens one egg at random, what is the percentage chance he'll get 5 pieces of candy?",
+      "recipe_id": "gsm8k_sprint100_easter_eggs",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01787",
+      "source_line_1based": 1788,
+      "source_record_sha256": "89bcae78dd6c915731f50506b368484d3cf6cf14c3eb76c6dc3094e00226c072",
+      "raw_question_sha256": "660ebd073c835d3cd22435684ce6068180c924cc771f452ee5a64351022a44c9",
+      "normalized_question_sha256": "660ebd073c835d3cd22435684ce6068180c924cc771f452ee5a64351022a44c9",
+      "source_question": "Kira is making breakfast for herself. She fries 3 sausages then scrambles 6 eggs and cooks each item of food separately. If it takes 5 minutes to fry each sausage and 4 minutes to scramble each egg then how long, in minutes, did it take for Kira to make her breakfast?",
+      "recipe_id": "gsm8k_sprint100_breakfast",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01788",
+      "source_line_1based": 1789,
+      "source_record_sha256": "aee62b4c9a7ab057498a925a97807c5cd3dbff58f2afbad64e419d73508abc1d",
+      "raw_question_sha256": "119f75dca91724f09820a47159d15ec5cbdbcd97b1e59c029ca3d341e68c4299",
+      "normalized_question_sha256": "119f75dca91724f09820a47159d15ec5cbdbcd97b1e59c029ca3d341e68c4299",
+      "source_question": "Mr. Shaefer harvested 500 lychees in a carton and took them to the market. He sold half of them and took home the remaining number of lychees where they ate 3/5 of them. Calculate the number of lychees remaining.",
+      "recipe_id": "gsm8k_sprint100_lychees",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01789",
+      "source_line_1based": 1790,
+      "source_record_sha256": "2422b4f6a019e668c402f1f08bcf226025942f65f2a874b99b8d6350199afac1",
+      "raw_question_sha256": "a222b310723ca3396efb290f8f4ef45779c0e33cb1fe808837680ff43c021a67",
+      "normalized_question_sha256": "a222b310723ca3396efb290f8f4ef45779c0e33cb1fe808837680ff43c021a67",
+      "source_question": "Padma is trading cards with Robert. Padma started with 75 cards and traded 2 or her valuable ones for 10 of Robert's cards. Robert started with 88 of his own cards and traded another 8 of his cards for 15 of Padma's cards. How many cards were traded between both Padma and Robert?",
+      "recipe_id": "gsm8k_sprint100_cards",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01790",
+      "source_line_1based": 1791,
+      "source_record_sha256": "b3c5490205ebe86e08c716aee450fd741030c6de91f857266666d6eb7b200dc0",
+      "raw_question_sha256": "2a0b8b81255efae165ad1f899a7197c4bdab2c057947d5fe1acad735cb29cab4",
+      "normalized_question_sha256": "2a0b8b81255efae165ad1f899a7197c4bdab2c057947d5fe1acad735cb29cab4",
+      "source_question": "The number of coronavirus cases in a certain country was 300 infections per day during the first wave. However, the number of cases increased by four times more per day as a new coronavirus variant started infecting people in a second wave. What was the total number of infections during the second wave in 2 weeks?",
+      "recipe_id": "gsm8k_sprint100_coronavirus",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "“increased by four times more”は、元の4倍を追加する参照解答では21,000件、総数が元の4倍なら16,800件となる。両方を形式化した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01791",
+      "source_line_1based": 1792,
+      "source_record_sha256": "828868f0a377f67b52db8df2e8d25a1b37f24fdab8f1eca27140cf47290e8c03",
+      "raw_question_sha256": "dbdf00257a4d3ff2ddeb431d5fc029d0ff14c1c22b189f7e593eb52abf963c35",
+      "normalized_question_sha256": "dbdf00257a4d3ff2ddeb431d5fc029d0ff14c1c22b189f7e593eb52abf963c35",
+      "source_question": "At a convention, 16 of 36 delegates arrived with pre-printed name badges. Half of the remaining delegates made their own, hand-written name badges. How many delegates were not wearing name badges?",
+      "recipe_id": "gsm8k_sprint100_badges",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01792",
+      "source_line_1based": 1793,
+      "source_record_sha256": "618d5bb09b5dead2d3de07b36781f105e98052a9a8010996f52b1bf39bc15b1e",
+      "raw_question_sha256": "aefcf9c23df4ced0665027a18fdcd718bbea642898fd1d6ec27a5191ccf63916",
+      "normalized_question_sha256": "1c1ba4fc7b6c73bcd66f4fec897deafcd9f80a220837ec57d88415c4c86fb4e6",
+      "source_question": "Marta is arranging floral centerpieces for a reception party.  Each arrangement needs to have 8 roses,12 daisies, 3 snapdragons and twice as many lilies.  The reception will have 10 tables.  How many flowers will she need in total to fill this order?",
+      "recipe_id": "gsm8k_sprint100_flowers",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01793",
+      "source_line_1based": 1794,
+      "source_record_sha256": "7b0350e8108f246678b11653abd66600ad084199a8d8797c19c7f72e7a8734fb",
+      "raw_question_sha256": "f81c6161d9c53ae75c685b16c0925dc0165c3ee34375c3a5b9f6c9d0bfa2ab7b",
+      "normalized_question_sha256": "bf514fb52557276f013530bc4fbce4eefe6d5706ac641747daa60840f00cd0fa",
+      "source_question": "It takes Dawn 2 hours to paint 1 watercolor painting.  She was recently commissioned to paint a series of 12 paintings.  Dawn will earn $3,600.00 for these 12 paintings.  How much money does Dawn make per hour?",
+      "recipe_id": "gsm8k_sprint100_commission",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照説明中の『$3,6000.00』は誤記とみなし、原題の$3,600.00を採用した。"
+      ],
+      "blockers": []
+    }
+  ]
+}

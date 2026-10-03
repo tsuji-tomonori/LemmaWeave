@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint253_experience",
+  "title_ja": "総勤務経験月数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03308",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各職の年数を月へ直し、余分な6か月を含めて合計する。",
+  "answer_ja": "150か月",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A07P3.experience_total",
+  "graph": "work/gsm8k-sprint253-experience-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "experience_bartender",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P3.experience_bartender",
+      "title_ja": "バーテンダーは108か月。",
+      "claim_ja": "バーテンダーは108か月。",
+      "method_ja": "9×12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1年12か月。",
+      "conclusion_ja": "108か月。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "experience_manager",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P3.experience_manager",
+      "title_ja": "管理職は42か月。",
+      "claim_ja": "管理職は42か月。",
+      "method_ja": "3×12+6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3年6か月。",
+      "conclusion_ja": "42か月。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "experience_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P3.experience_total",
+      "title_ja": "総経験は150か月。",
+      "claim_ja": "総経験は150か月。",
+      "method_ja": "108+42。",
+      "requires_steps": [
+        "experience_bartender",
+        "experience_manager"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二職の期間を合計。",
+      "conclusion_ja": "150か月。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3309,
+    "checked_model_hash": "4dede6327fc9371a2f776e6eb5494fd8283c37c31cc33900c559ab8c16b624f7",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint142_pineapple",
+  "title_ja": "送料込みのパイナップル単価",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02420",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1個1.25ドルを12個買い、送料21ドルを均等に含める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.pineapple_solution",
+  "graph": "work/gsm8k-sprint142-pineapple-graph.json",
+  "model_notes_ja": [
+    "小数金額を丸めず、セント単位で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "pineapple_fruit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.pineapple_fruit",
+      "title_ja": "果物代は1500セント",
+      "claim_ja": "果物代は1500セント",
+      "method_ja": "12に125セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "果物代は1500セント",
+      "baseline_ja": "果物代は1500セント"
+    },
+    {
+      "id": "pineapple_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.pineapple_total",
+      "title_ja": "送料込み3600セント",
+      "claim_ja": "送料込み3600セント",
+      "method_ja": "1500と2100を足す",
+      "requires_steps": [
+        "pineapple_fruit"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "送料込み3600セント",
+      "baseline_ja": "送料込み3600セント"
+    },
+    {
+      "id": "pineapple_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.pineapple_solution",
+      "title_ja": "1個300セント、すなわち3ドル",
+      "claim_ja": "1個300セント、すなわち3ドル",
+      "method_ja": "3600を12個へ等分する",
+      "requires_steps": [
+        "pineapple_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1個300セント、すなわち3ドル",
+      "baseline_ja": "1個300セント、すなわち3ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2421,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

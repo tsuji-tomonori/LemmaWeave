@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_sprint26_carrot",
+  "title_ja": "犬用ニンジンの年間費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00672",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1日1本、袋5本、1袋2ドルのニンジンについて年間費用を求め、年の日数の解釈も示す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A26.carrot_solution",
+  "graph": "work/gsm8k-sprint26-carrot-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A26.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "参照解答は平年365日を採用する。",
+    "うるう年366日なら袋単位購入のため74袋、148ドルになる。"
+  ],
+  "steps": [
+    {
+      "id": "carrot_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.carrot_total",
+      "title_ja": "平年の必要本数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "平年365日に毎日1本与える。",
+      "conclusion_ja": "365本必要。",
+      "baseline_ja": "365×1=365。"
+    },
+    {
+      "id": "carrot_bags",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.carrot_bags",
+      "title_ja": "平年の必要袋数",
+      "requires_steps": [
+        "carrot_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1袋5本で365本を用意する。",
+      "conclusion_ja": "73袋必要。",
+      "baseline_ja": "365÷5=73。"
+    },
+    {
+      "id": "carrot_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.carrot_cost",
+      "title_ja": "平年の費用",
+      "requires_steps": [
+        "carrot_bags"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "73袋を各2ドルで買う。",
+      "conclusion_ja": "146ドル。",
+      "baseline_ja": "73×2=146。"
+    },
+    {
+      "id": "carrot_leap_year",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.carrot_leap_year",
+      "title_ja": "うるう年の場合",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "366本には73袋では足りず74袋で足りる。",
+      "conclusion_ja": "費用は148ドル。",
+      "baseline_ja": "73×5=365<366≤74×5、74×2=148。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 673,
+    "checked_model_hash": "916d85cf91b2b878437a08560919c67499293ac4d5422b70e189384b4426aceb",
+    "checks_ja": [
+      "平年と閏年を黙って同一視せず、必要袋数と費用をそれぞれ確認した。"
+    ]
+  }
+}

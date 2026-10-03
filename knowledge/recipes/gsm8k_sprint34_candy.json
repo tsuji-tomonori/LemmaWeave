@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint34_candy",
+  "title_ja": "残ったキャンディー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00794",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "黄と青の個数を求め、黄色を除いた赤と青を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.candy_solution",
+  "graph": "work/gsm8k-sprint34-candy-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "candy_yellow",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.candy_yellow",
+      "title_ja": "黄色",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤40個の3倍より20個少ない。",
+      "conclusion_ja": "100個。",
+      "baseline_ja": "3×40-20=100。"
+    },
+    {
+      "id": "candy_blue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.candy_blue",
+      "title_ja": "青色",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "黄色の半分。",
+      "conclusion_ja": "50個。",
+      "baseline_ja": "2×50=100。"
+    },
+    {
+      "id": "candy_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.candy_remaining",
+      "title_ja": "残数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "黄色はすべて食べられ、赤と青だけ残る。",
+      "conclusion_ja": "90個。",
+      "baseline_ja": "40+50=90。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 795,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

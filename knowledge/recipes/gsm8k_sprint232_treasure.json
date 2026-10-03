@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint232_treasure",
+  "title_ja": "宝箱1個の硬貨",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03457",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A20P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "金貨は3500÷5=700枚、銀貨は500÷5=100枚、銅貨は(2×500)÷5=200枚。合計は700+100+200=1000枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A20P3.treasure_total_each",
+  "graph": "work/gsm8k-sprint232-treasure-graph.json",
+  "model_notes_ja": [
+    "金貨・銀貨・銅貨はいずれも5箱へ等分する。"
+  ],
+  "steps": [
+    {
+      "id": "treasure_gold_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P3.treasure_gold_each",
+      "title_ja": "金貨",
+      "claim_ja": "各箱700枚。",
+      "method_ja": "3500枚を5箱へ等分する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5箱へ等分できる。",
+      "conclusion_ja": "700枚。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "treasure_silver_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P3.treasure_silver_each",
+      "title_ja": "銀貨",
+      "claim_ja": "各箱100枚。",
+      "method_ja": "500枚を5箱へ等分する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5箱へ等分できる。",
+      "conclusion_ja": "100枚。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "treasure_bronze_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P3.treasure_bronze_each",
+      "title_ja": "銅貨",
+      "claim_ja": "各箱200枚。",
+      "method_ja": "銀貨500枚の2倍1000枚を5箱へ等分する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "銅貨総数は銀貨総数の2倍。",
+      "conclusion_ja": "200枚。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "treasure_total_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A20P3.treasure_total_each",
+      "title_ja": "1箱の総数",
+      "claim_ja": "各箱1000枚。",
+      "method_ja": "各箱の金貨・銀貨・銅貨を足す。",
+      "requires_steps": [
+        "treasure_gold_each",
+        "treasure_silver_each",
+        "treasure_bronze_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3種類の貨幣をすべて数える。",
+      "conclusion_ja": "1000枚。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3458,
+    "checked_model_hash": "9dd6a01eedb3a78bdf99bd44f224c7d7be48a365f15ee8407cc4bf9f8907d75a",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

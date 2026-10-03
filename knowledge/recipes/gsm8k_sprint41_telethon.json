@@ -1,0 +1,77 @@
+{
+  "id": "gsm8k_sprint41_telethon",
+  "title_ja": "テレソン募金総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00908",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "最初の12時間と20%増の14時間を分けて合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A09.telethon_solution",
+  "graph": "work/gsm8k-sprint41-telethon-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A09.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "telethon_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.telethon_first",
+      "title_ja": "最初の12時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎時5000ドル。",
+      "conclusion_ja": "60000ドル。",
+      "baseline_ja": "12×5000=60000。"
+    },
+    {
+      "id": "telethon_increase",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.telethon_increase",
+      "title_ja": "20%増分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5000ドルの20%。",
+      "conclusion_ja": "1000ドル/時。",
+      "baseline_ja": "1000×100=5000×20。"
+    },
+    {
+      "id": "telethon_rate",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.telethon_rate",
+      "title_ja": "増加後の時給",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5000に1000を加える。",
+      "conclusion_ja": "6000ドル/時。",
+      "baseline_ja": "5000+1000=6000。"
+    },
+    {
+      "id": "telethon_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.telethon_remaining",
+      "title_ja": "残り14時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎時6000ドル。",
+      "conclusion_ja": "84000ドル。",
+      "baseline_ja": "14×6000=84000。"
+    },
+    {
+      "id": "telethon_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.telethon_total",
+      "title_ja": "総額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "両時間帯を合計する。",
+      "conclusion_ja": "144000ドル。",
+      "baseline_ja": "60000+84000=144000。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 909,
+    "checked_model_hash": "89dd3a16cd8df99f34c31f37d1627e251cf211069adff173f7367caa5578cd5c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

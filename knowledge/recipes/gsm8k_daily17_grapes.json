@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily17_grapes","title_ja":"20%増産後の年間ブドウ量","problem_id":"external-gsm8k-main-3101c7d50724:train:00169","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"6か月ごとに90kg使う酒屋が生産を20%増やすとき、1年間に必要なブドウ量を求める。","root":"LemmaWeave.Tests.GSM8KDaily0910A.grapes_solution","graph":"work/gsm8k-daily17-grapes-graph.json","lean_file":"tests/lean/GSM8KDaily0910A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["1年を6か月の期間2回として、年間基準量全体に20%を加える。"],
+  "steps":[
+    {"id":"grapes_baseline","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.grapes_baseline","title_ja":"増産前の年間量","requires_steps":[],"uses_nodes":[],"condition_ja":"6か月で90kg、1年には6か月が2回ある。","conclusion_ja":"年間180kg。","baseline_ja":"期間数×期間当たり量。"},
+    {"id":"grapes_increase","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.grapes_increase","title_ja":"20%の増加量","requires_steps":["grapes_baseline"],"uses_nodes":[],"condition_ja":"年間180kgの20%。","conclusion_ja":"36kg増える。","baseline_ja":"百分率。"},
+    {"id":"grapes_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.grapes_total","title_ja":"増産後の年間必要量","requires_steps":["grapes_baseline","grapes_increase"],"uses_nodes":[],"condition_ja":"基準180kgに36kgを加える。","conclusion_ja":"216kg。","baseline_ja":"基準量と増加量の加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":170,"checked_model_hash":"8d560b66e65f6153528fc090945267f3173ba02c8df0a2cef113393ea49676d5","checks_ja":["6か月量、年間の期間数、増産率の適用基準を照合した。"]}
+}

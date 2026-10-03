@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint311_tree_age",
+  "title_ja": "木が23フィートになる年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03678",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1歳で5フィートの木が毎年3フィート伸びる。23フィート時の年齢を求める。",
+  "answer_ja": "必要な伸びは23-5=18フィート。18÷3=6年後なので、1+6=7歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A11P2.tree_age",
+  "graph": "work/gsm8k-sprint311-tree-age-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "tree_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A11P2.tree_age",
+      "title_ja": "必要な伸びは23-5=18フィート。18÷3=6年後なので、1+6=7歳。",
+      "claim_ja": "必要な伸びは23-5=18フィート。18÷3=6年後なので、1+6=7歳。",
+      "method_ja": "必要な伸びは23-5=18フィート。18÷3=6年後なので、1+6=7歳。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "必要な伸びは23-5=18フィート。18÷3=6年後なので、1+6=7歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3679,
+    "checked_model_hash": "7afa676e85668826bfdbf46a8b15ba22726e0c6dc964dda77a4d577df9e89dc7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

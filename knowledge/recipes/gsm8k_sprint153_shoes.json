@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint153_shoes",
+  "title_ja": "勤続3年以上の靴代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02585",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "85ドルから20%引きし、その割引後価格からさらに25%引く。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A10.shoes_solution",
+  "graph": "work/gsm8k-sprint153-shoes-graph.json",
+  "model_notes_ja": [
+    "25%引きは、最初の20%引き後の68ドルへ順次適用する。"
+  ],
+  "steps": [
+    {
+      "id": "shoes_first_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.shoes_first_discount",
+      "title_ja": "最初の値引きは17ドル",
+      "claim_ja": "最初の値引きは17ドル",
+      "method_ja": "85ドルの20%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "25%引きは、最初の20%引き後の68ドルへ順次適用する。",
+      "conclusion_ja": "最初の値引きは17ドル",
+      "baseline_ja": "最初の値引きは17ドル"
+    },
+    {
+      "id": "shoes_first_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.shoes_first_price",
+      "title_ja": "最初の割引後は68ドル",
+      "claim_ja": "最初の割引後は68ドル",
+      "method_ja": "85ドルから17ドルを引く",
+      "requires_steps": [
+        "shoes_first_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "25%引きは、最初の20%引き後の68ドルへ順次適用する。",
+      "conclusion_ja": "最初の割引後は68ドル",
+      "baseline_ja": "最初の割引後は68ドル"
+    },
+    {
+      "id": "shoes_second_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.shoes_second_discount",
+      "title_ja": "追加値引きは17ドル",
+      "claim_ja": "追加値引きは17ドル",
+      "method_ja": "68ドルの25%を求める",
+      "requires_steps": [
+        "shoes_first_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "25%引きは、最初の20%引き後の68ドルへ順次適用する。",
+      "conclusion_ja": "追加値引きは17ドル",
+      "baseline_ja": "追加値引きは17ドル"
+    },
+    {
+      "id": "shoes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.shoes_solution",
+      "title_ja": "支払額は51ドル",
+      "claim_ja": "支払額は51ドル",
+      "method_ja": "68ドルから17ドルを引く",
+      "requires_steps": [
+        "shoes_second_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "25%引きは、最初の20%引き後の68ドルへ順次適用する。",
+      "conclusion_ja": "支払額は51ドル",
+      "baseline_ja": "支払額は51ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2586,
+    "checked_model_hash": "46e79fb8178be609e6fbfa0886df34cbbb62c16290d04ba3642b6415e85d7526",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

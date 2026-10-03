@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_daily48_apples","title_ja":"3人のリンゴの平均","problem_id":"external-gsm8k-main-3101c7d50724:train:00475","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"3人の平均が30個で、2人が40個と28個のときLaylaの個数を求める。","root":"LemmaWeave.Tests.GSM8KDaily0917D.apples_solution","graph":"work/gsm8k-daily48-apples-graph.json","lean_file":"tests/lean/GSM8KDaily0917D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["平均×人数で3人の合計を求める。"],
+  "steps":[
+    {"id":"apples_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.apples_total","title_ja":"3人の合計","requires_steps":[],"uses_nodes":[],"condition_ja":"3人の平均が30個。","conclusion_ja":"合計は30×3=90個。","baseline_ja":"平均の定義。"},
+    {"id":"apples_layla","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0917D.apples_layla","title_ja":"Laylaの個数","requires_steps":["apples_total"],"uses_nodes":[],"condition_ja":"合計90個のうちMaggieが40個、Kelseyが28個。","conclusion_ja":"Laylaは90−40−28=22個。","baseline_ja":"合計から既知の部分を引く。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":476,"checked_model_hash":"36659505f7e047d68fd7fe15a6930aff0d84c83830512c7638ed07d8c6a5a95d","checks_ja":["平均の人数が3人であることを確認した。","40+28+22=90を照合した。"]}
+}

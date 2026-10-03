@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily17_race","title_ja":"亀が同着するための時間差","problem_id":"external-gsm8k-main-3101c7d50724:train:00173","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"20フィート競走で、秒速10フィートのウサギと秒速1フィートの亀が同着するため、亀を何秒先に出すか求める。","root":"LemmaWeave.Tests.GSM8KDaily0910A.race_solution","graph":"work/gsm8k-daily17-race-graph.json","lean_file":"tests/lean/GSM8KDaily0910A.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["両者が一定速度で同じ20フィートを進むとし、所要時間の差だけ亀を先に出す。"],
+  "steps":[
+    {"id":"race_hare_time","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.race_hare_time","title_ja":"ウサギの所要時間","requires_steps":[],"uses_nodes":[],"condition_ja":"20フィートを秒速10フィートで走る。","conclusion_ja":"2秒。","baseline_ja":"時間=距離÷速さ。"},
+    {"id":"race_turtle_time","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.race_turtle_time","title_ja":"亀の所要時間","requires_steps":[],"uses_nodes":[],"condition_ja":"20フィートを秒速1フィートで進む。","conclusion_ja":"20秒。","baseline_ja":"時間=距離÷速さ。"},
+    {"id":"race_head_start","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0910A.race_head_start","title_ja":"必要な先行時間","requires_steps":["race_hare_time","race_turtle_time"],"uses_nodes":[],"condition_ja":"同着には亀の20秒とウサギの2秒の所要時間差だけ先に出す。","conclusion_ja":"20-2=18秒。","baseline_ja":"所要時間差。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":174,"checked_model_hash":"8d560b66e65f6153528fc090945267f3173ba02c8df0a2cef113393ea49676d5","checks_ja":["距離、各速度、head startが距離差でなく開始時刻差であることを照合した。"]}
+}

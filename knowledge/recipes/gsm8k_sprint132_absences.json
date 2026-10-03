@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint132_absences",
+  "title_ja": "3日間の欠席者延べ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02269",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全280人。3日目は1/7欠席、2日目欠席は3日目の2倍、2日目出席は1日目より40人多い",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A04.absences_solution",
+  "graph": "work/gsm8k-sprint132-absences-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "absences_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.absences_third",
+      "title_ja": "3日目欠席は40人",
+      "claim_ja": "3日目欠席は40人",
+      "method_ja": "280人の1/7",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3日目欠席は40人",
+      "baseline_ja": "3日目欠席は40人"
+    },
+    {
+      "id": "absences_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.absences_second",
+      "title_ja": "2日目欠席は80人",
+      "claim_ja": "2日目欠席は80人",
+      "method_ja": "40人の2倍",
+      "requires_steps": [
+        "absences_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2日目欠席は80人",
+      "baseline_ja": "2日目欠席は80人"
+    },
+    {
+      "id": "absences_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.absences_first",
+      "title_ja": "1日目欠席は120人",
+      "claim_ja": "1日目欠席は120人",
+      "method_ja": "2日目出席200人から1日目出席160人を導く",
+      "requires_steps": [
+        "absences_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1日目欠席は120人",
+      "baseline_ja": "1日目欠席は120人"
+    },
+    {
+      "id": "absences_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.absences_solution",
+      "title_ja": "3日間の延べ欠席は240人",
+      "claim_ja": "3日間の延べ欠席は240人",
+      "method_ja": "120、80、40人を足す",
+      "requires_steps": [
+        "absences_first",
+        "absences_second",
+        "absences_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3日間の延べ欠席は240人",
+      "baseline_ja": "3日間の延べ欠席は240人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2270,
+    "checked_model_hash": "1b9f70468554e9981c06f87268115033a93ac640809512751f109819832445b3",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint326_monkey_swing_distance",
+  "title_ja": "サルが移動する距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03751",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A monkey swings from branch to branch at an average distance of 1.2 meters per second. How far will a monkey swing in meters if it consistently swings from branches for 30 minutes?",
+  "answer_ja": "30分は1800秒。秒速1.2m=6/5mなので、(6/5)×1800=2160m。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P2.monkey_swing_distance",
+  "graph": "work/gsm8k-sprint326-monkey-swing-distance-graph.json",
+  "model_notes_ja": [
+    "30分間ずっと平均秒速1.2mで移動し続ける。"
+  ],
+  "steps": [
+    {
+      "id": "monkey_swing_distance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P2.monkey_swing_distance",
+      "title_ja": "サルが移動する距離",
+      "claim_ja": "30分は1800秒。秒速1.2m=6/5mなので、(6/5)×1800=2160m。",
+      "method_ja": "時間を秒へ換算して速さを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時間と速さの単位を秒とメートルにそろえる。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "2160m。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3752,
+    "checked_model_hash": "fb81d0f303f5c164319e5af31232307ed4524450eb00f121c5305497da69a977",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

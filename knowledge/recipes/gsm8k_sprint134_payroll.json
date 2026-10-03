@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint134_payroll",
+  "title_ja": "JoshとCarlの月給合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02300",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Joshは1日8時間、週5日、月4週で時給9ドル。Carlは毎日2時間少なく時給は半額",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.payroll_solution",
+  "graph": "work/gsm8k-sprint134-payroll-graph.json",
+  "model_notes_ja": [
+    "4.50ドルを正確に扱うため金額はセントで形式化し、最後にドルへ換算する。"
+  ],
+  "steps": [
+    {
+      "id": "payroll_josh_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.payroll_josh_hours",
+      "title_ja": "Joshは月160時間",
+      "claim_ja": "Joshは月160時間",
+      "method_ja": "8×5×4",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Joshは月160時間",
+      "baseline_ja": "Joshは月160時間"
+    },
+    {
+      "id": "payroll_carl_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.payroll_carl_hours",
+      "title_ja": "Carlは月120時間",
+      "claim_ja": "Carlは月120時間",
+      "method_ja": "6×5×4",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Carlは月120時間",
+      "baseline_ja": "Carlは月120時間"
+    },
+    {
+      "id": "payroll_josh_pay",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.payroll_josh_pay",
+      "title_ja": "Joshは1440ドル",
+      "claim_ja": "Joshは1440ドル",
+      "method_ja": "160時間×9ドル",
+      "requires_steps": [
+        "payroll_josh_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Joshは1440ドル",
+      "baseline_ja": "Joshは1440ドル"
+    },
+    {
+      "id": "payroll_carl_pay",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.payroll_carl_pay",
+      "title_ja": "Carlは540ドル",
+      "claim_ja": "Carlは540ドル",
+      "method_ja": "120時間×4.50ドル",
+      "requires_steps": [
+        "payroll_carl_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Carlは540ドル",
+      "baseline_ja": "Carlは540ドル"
+    },
+    {
+      "id": "payroll_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.payroll_solution",
+      "title_ja": "合計1980ドル",
+      "claim_ja": "合計1980ドル",
+      "method_ja": "1440ドルと540ドルを足す",
+      "requires_steps": [
+        "payroll_josh_pay",
+        "payroll_carl_pay"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計1980ドル",
+      "baseline_ja": "合計1980ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2301,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

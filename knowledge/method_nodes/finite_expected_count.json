@@ -1,0 +1,16 @@
+{
+  "id": "finite_expected_count",
+  "kind": "method_or_formula",
+  "name_ja": "成功回数の期待値と期待値の線形性",
+  "statement_ja": "有限標本上で、各回の成功指示変数I_iの期待値がpなら、n回の成功回数の期待値はE[ΣI_i]=ΣE[I_i]=np。",
+  "assumptions_ja": "有限標本・有限回数。確率としては重みが非負で総和1、指示変数は成功時1・失敗時0。各回の成功確率pが同じ。線形性自体には独立性は不要。",
+  "use_when_ja": "復元抽出などで、何回成功するかの平均を求める。必ずその回数起きるとは主張しない。",
+  "lean_declarations": ["LemmaWeave.Lemmas.FiniteExpectation.expected_count"],
+  "explanation_outline_ja": [
+    "成功回数を0/1の指示変数の和として表す。",
+    "有限期待値をΣω w(ω)X(ω)と定義する。",
+    "分配法則と有限二重和の順序交換によりE[ΣI_i]=ΣE[I_i]。",
+    "指示変数の平均は成功確率pであり、pをn個足すとnpになる。"
+  ],
+  "unexpanded": ["一般の無限標本・測度論的期待値は対象外。公平な抽出と周辺確率の対応は問題のモデル化として自己照合する。"]
+}

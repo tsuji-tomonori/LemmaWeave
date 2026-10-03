@@ -1,0 +1,11 @@
+{
+  "id":"gsm8k_daily43_legs","title_ja":"世帯の人とペットの脚数","problem_id":"external-gsm8k-main-3101c7d50724:train:00431","collection_id":"external-gsm8k-main-3101c7d50724",
+  "problem_ja":"人の人数とペットの匹数を別々に数え、脚数を合計する。","root":"LemmaWeave.Tests.GSM8KDaily0915D.legs_solution","graph":"work/gsm8k-daily43-legs-graph.json","lean_file":"tests/lean/GSM8KDaily0915D.lean",
+  "semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["人は各2本脚、犬と猫は各4本脚として数える。"],
+  "steps":[
+    {"id":"legs_humans","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.legs_humans","title_ja":"人の脚","requires_steps":[],"uses_nodes":[],"condition_ja":"Javier本人1人、妻1人、子3人は各2本脚。","conclusion_ja":"5人で10本。","baseline_ja":"人数の加法と同じ本数の反復加法。"},
+    {"id":"legs_pets","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.legs_pets","title_ja":"ペットの脚","requires_steps":[],"uses_nodes":[],"condition_ja":"犬2匹と猫1匹は各4本脚。","conclusion_ja":"3匹で12本。","baseline_ja":"匹数の加法と4倍。"},
+    {"id":"legs_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0915D.legs_total","title_ja":"世帯全体","requires_steps":["legs_humans","legs_pets"],"uses_nodes":[],"condition_ja":"人の脚10本とペットの脚12本を合わせる。","conclusion_ja":"合計22本。","baseline_ja":"重複しない二群の加法。"}
+  ],
+  "solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":432,"checked_model_hash":"a6933f19dea1184a4024944d3d5c0521ede1267552f17298f26c6083f9418f8e","checks_ja":["Javierを含む家族構成、犬2匹、猫1匹、合計脚数を照合した。"]}
+}

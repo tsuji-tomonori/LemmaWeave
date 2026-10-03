@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint121_farm",
+  "title_ja": "6個入りの箱を315箱満たす。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02098",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.farm_solution",
+  "graph": "work/gsm8k-sprint121-farm-graph.json",
+  "model_notes_ja": [
+    "雄鶏3羽と作業時間は、雌鶏270羽が毎朝各1個産む卵を6個箱に詰める箱数には影響しない。"
+  ],
+  "steps": [
+    {
+      "id": "farm_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.farm_daily",
+      "title_ja": "270羽の雌鶏が毎朝産む卵は270個。",
+      "claim_ja": "270羽の雌鶏が毎朝産む卵は270個。",
+      "method_ja": "各雌鶏1個。雄鶏3羽は産卵数に含めない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "270羽の雌鶏が毎朝産む卵は270個。",
+      "baseline_ja": "270羽の雌鶏が毎朝産む卵は270個。"
+    },
+    {
+      "id": "farm_weekly_eggs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.farm_weekly_eggs",
+      "title_ja": "7日間の卵は1890個。",
+      "claim_ja": "7日間の卵は1890個。",
+      "method_ja": "270×7。",
+      "requires_steps": [
+        "farm_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "7日間の卵は1890個。",
+      "baseline_ja": "7日間の卵は1890個。"
+    },
+    {
+      "id": "farm_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.farm_solution",
+      "title_ja": "6個入りの箱を315箱満たす。",
+      "claim_ja": "6個入りの箱を315箱満たす。",
+      "method_ja": "1890÷6。収集時間と運搬時間は箱数に影響しない。",
+      "requires_steps": [
+        "farm_weekly_eggs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "6個入りの箱を315箱満たす。",
+      "baseline_ja": "6個入りの箱を315箱満たす。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2099,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

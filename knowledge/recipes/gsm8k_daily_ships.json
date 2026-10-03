@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_daily_ships",
+  "title_ja": "倍増する3隻の乗員を最初の人数で表す",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00010",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "百年に1回船を食べる怪物。300年の3隻で847人、各船の人数は前の2倍。最初の船は何人？",
+  "root": "LemmaWeave.Tests.GSM8KDaily0907.ships_solution",
+  "graph": "work/gsm8k-daily-ships-graph.json",
+  "lean_file": "tests/lean/GSM8KDaily0907.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "取得済み固定GSM8Kの1問。LLMが原文から個別に解答し、新規取得件数・日本入試件数へ混ぜない。",
+  "model_notes_ja": [
+    "300年は3回の襲撃を含む問題の区切りとして読む。期間の両端を二重に数えない。",
+    "数値だけを仮定せず、未知の最初の人数から倍増と総和の関係を導く。"
+  ],
+  "steps": [
+    {
+      "id": "ships_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.ships_second",
+      "title_ja": "2隻目を表す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "最初a人、次b人。",
+      "conclusion_ja": "b=2a。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "ships_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.ships_third",
+      "title_ja": "3隻目を表す",
+      "requires_steps": [
+        "ships_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3隻目cは2隻目の2倍。",
+      "conclusion_ja": "c=2b=4a。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "ships_balance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.ships_balance",
+      "title_ja": "総人数の保存",
+      "requires_steps": [
+        "ships_second",
+        "ships_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3隻の合計847人。",
+      "conclusion_ja": "a+2a+4a=7a=847。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "ships_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.ships_first",
+      "title_ja": "最初の人数",
+      "requires_steps": [
+        "ships_balance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "7a=847、7≠0。",
+      "conclusion_ja": "a=847÷7=121人。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    },
+    {
+      "id": "ships_exists",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KDaily0907.ships_exists",
+      "title_ja": "条件の充足",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各船121,242,484人。",
+      "conclusion_ja": "倍増し合計847、人数は正整数。",
+      "baseline_ja": "中学既習の四則演算と一次方程式。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 11,
+    "checked_model_hash": "e958c9ce30982deaaa1eb14f7c3ca5549c125b26322604f46616e26a65934542",
+    "checks_ja": [
+      "300年は3回の襲撃を含む問題の区切りとして読む。期間の両端を二重に数えない。",
+      "数値だけを仮定せず、未知の最初の人数から倍増と総和の関係を導く。"
+    ]
+  }
+}

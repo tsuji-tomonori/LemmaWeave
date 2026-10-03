@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint308_combined_money",
+  "title_ja": "BethとJanの所持金合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03663",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A10P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bethは35ドル増えると105ドル。Janは10ドル減るとBethの現在額と同額。二人の合計を求める。",
+  "answer_ja": "Bethは105-35=70ドル。Janは10ドル減ると70ドルなので現在80ドル。合計は70+80=150ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A10P2.combined_money",
+  "graph": "work/gsm8k-sprint308-combined-money-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "combined_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A10P2.combined_money",
+      "title_ja": "Bethは105-35=70ドル。Janは10ドル減ると70ドルなので現在80ドル。合計は70+80=150ドル。",
+      "claim_ja": "Bethは105-35=70ドル。Janは10ドル減ると70ドルなので現在80ドル。合計は70+80=150ドル。",
+      "method_ja": "Bethは105-35=70ドル。Janは10ドル減ると70ドルなので現在80ドル。合計は70+80=150ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "Bethは105-35=70ドル。Janは10ドル減ると70ドルなので現在80ドル。合計は70+80=150ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3664,
+    "checked_model_hash": "5bf0286def886c6afee372b8177ec2b0a70777b3cf4a0ee4497eddbd5b20cd63",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint96_longjump",
+  "title_ja": "走行と跳躍の距離差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01731",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A03Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ricciana総24ft、跳躍4ft。Margaritaは走行18ft、跳躍は2倍より1ft短い。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.longjump_solution",
+  "graph": "work/gsm8k-sprint96-longjump-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "longjump_jump",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.longjump_jump",
+      "title_ja": "Margaritaの跳躍7ft。",
+      "claim_ja": "Margaritaの跳躍7ft。",
+      "method_ja": "2×4−1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1 foot less than twice。",
+      "conclusion_ja": "7+1=2×4。",
+      "baseline_ja": "7+1=2×4。"
+    },
+    {
+      "id": "longjump_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.longjump_total",
+      "title_ja": "Margarita総25ft。",
+      "claim_ja": "Margarita総25ft。",
+      "method_ja": "18+7。",
+      "requires_steps": [
+        "longjump_jump"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "走行と跳躍を加える。",
+      "conclusion_ja": "18+7=25。",
+      "baseline_ja": "18+7=25。"
+    },
+    {
+      "id": "longjump_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.longjump_solution",
+      "title_ja": "1ft遠い。",
+      "claim_ja": "1ft遠い。",
+      "method_ja": "25−24。",
+      "requires_steps": [
+        "longjump_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "MargaritaからRiccianaを引く。",
+      "conclusion_ja": "1+24=25。",
+      "baseline_ja": "1+24=25。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1732,
+    "checked_model_hash": "c7ae9e73613030285ef5ac0f94bc1cc2c890986bccfb58f5ed826d20e789cb8c",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

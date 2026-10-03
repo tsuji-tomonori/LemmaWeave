@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_daily4_tea","title_ja":"1杯分の比率を人数と容量へ比例させる","problem_id":"external-gsm8k-main-3101c7d50724:train:00038","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"8オンスの1杯に茶を1オンス使う比率で、12人へ6オンスずつ用意する。必要な茶を求める。","root":"LemmaWeave.Tests.GSM8KDaily0907D.tea_solution","graph":"work/gsm8k-daily4-tea-graph.json","lean_file":"tests/lean/GSM8KDaily0907D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。原文をLLMが個別に解答し、他コレクションへ混ぜない。","model_notes_ja":["1オンスの茶で8オンスの飲料を作るレシピ比率が量に比例し、12人全員が6オンスを飲むとする。"],
+  "steps":[
+    {"id":"tea_party_drink","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.tea_party_drink","title_ja":"飲料の総量","requires_steps":[],"uses_nodes":[],"condition_ja":"12人が1人6オンスずつ飲む。","conclusion_ja":"総量は12×6=72オンス。","baseline_ja":"中学校までの乗法。"},
+    {"id":"tea_batches","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.tea_batches","title_ja":"8オンス分の組数","requires_steps":["tea_party_drink"],"uses_nodes":[],"condition_ja":"総量72オンスを1組8オンスで分ける。","conclusion_ja":"72÷8=9組分。","baseline_ja":"中学校までの比例と除法。"},
+    {"id":"tea_amount","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.tea_amount","title_ja":"必要な茶","requires_steps":["tea_batches"],"uses_nodes":[],"condition_ja":"1組につき茶1オンスを9組作る。","conclusion_ja":"必要な茶は9オンス。","baseline_ja":"中学校までの比例と乗法。"},
+    {"id":"tea_exists","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0907D.tea_exists","title_ja":"条件の充足","requires_steps":[],"uses_nodes":[],"condition_ja":"総量72、9組、茶9オンス。","conclusion_ja":"人数、容量、レシピ比率を満たす。","baseline_ja":"中学校までの等式確認。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":39,"checked_model_hash":"07bd783c11d4cbce75db4088991e65667c8ee97f6f9c74593199d03730fde2e4","checks_ja":["8オンス飲料あたり茶1オンスというレシピ比率を12人分へ比例させた。"]}
+}

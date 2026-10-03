@@ -1,0 +1,80 @@
+{
+  "id": "gsm8k_sprint103_coins",
+  "title_ja": "3人の貯金総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01835",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全硬貨をセント換算して加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.coins_solution",
+  "graph": "work/gsm8k-sprint103-coins-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "coins_pennies",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.coins_pennies",
+      "title_ja": "ペニーは200セント。",
+      "claim_ja": "ペニーは200セント。",
+      "method_ja": "200×1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚1セント。",
+      "conclusion_ja": "200。",
+      "baseline_ja": "200。"
+    },
+    {
+      "id": "coins_nickels",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.coins_nickels",
+      "title_ja": "ニッケルは500セント。",
+      "claim_ja": "ニッケルは500セント。",
+      "method_ja": "100×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚5セント。",
+      "conclusion_ja": "500。",
+      "baseline_ja": "500。"
+    },
+    {
+      "id": "coins_dimes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.coins_dimes",
+      "title_ja": "ダイムは3300セント。",
+      "claim_ja": "ダイムは3300セント。",
+      "method_ja": "330×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚10セント。",
+      "conclusion_ja": "3300。",
+      "baseline_ja": "3300。"
+    },
+    {
+      "id": "coins_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.coins_solution",
+      "title_ja": "合計4000セント=40ドル。",
+      "claim_ja": "合計4000セント=40ドル。",
+      "method_ja": "200+500+3300。",
+      "requires_steps": [
+        "coins_pennies",
+        "coins_nickels",
+        "coins_dimes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "通貨単位をセントに統一。",
+      "conclusion_ja": "4000。",
+      "baseline_ja": "4000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1836,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

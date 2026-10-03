@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint137_insurance",
+  "title_ja": "新しい保険料",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02344",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "月50ドルから事故1件で10%増、違反切符3枚で各5ドル増。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.insurance_solution",
+  "graph": "work/gsm8k-sprint137-insurance-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "insurance_accident",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.insurance_accident",
+      "title_ja": "事故による増額は5ドル",
+      "claim_ja": "事故による増額は5ドル",
+      "method_ja": "50ドルの10%",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "事故による増額は5ドル",
+      "baseline_ja": "事故による増額は5ドル"
+    },
+    {
+      "id": "insurance_tickets",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.insurance_tickets",
+      "title_ja": "切符による増額は15ドル",
+      "claim_ja": "切符による増額は15ドル",
+      "method_ja": "5ドルを3枚分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "切符による増額は15ドル",
+      "baseline_ja": "切符による増額は15ドル"
+    },
+    {
+      "id": "insurance_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.insurance_solution",
+      "title_ja": "新保険料は70ドル",
+      "claim_ja": "新保険料は70ドル",
+      "method_ja": "50、5、15ドルを足す",
+      "requires_steps": [
+        "insurance_accident",
+        "insurance_tickets"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "新保険料は70ドル",
+      "baseline_ja": "新保険料は70ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2345,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

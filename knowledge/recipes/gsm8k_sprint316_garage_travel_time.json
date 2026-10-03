@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint316_garage_travel_time",
+  "title_ja": "駐車場を下りる所要時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03703",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jason is planning a parking garage that will have 12 floors. Every 3rd floor has a gate where drivers have to show ID, which takes two minutes. To get from one floor to the next, drivers have to drive 800 feet at 10 feet/second. How long, in seconds, does it take to get to the bottom of the garage from the top?",
+  "answer_ja": "出典の数え方では12÷3=4ゲート、待ち時間は4×2×60=480秒。1階分の走行は800÷10=80秒、12階分で960秒。合計1440秒。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A13P1.garage_travel_time",
+  "graph": "work/gsm8k-sprint316-garage-travel-time-graph.json",
+  "model_notes_ja": [
+    "「上から下まで」を12個の800フィート区間とし、3、6、9、12階の4ゲートを通るという出典慣行を追加条件として明示する。最上階から1階までの11区間・途中3ゲートなら1240秒であり、原文だけでは一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "garage_travel_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A13P1.garage_travel_time",
+      "title_ja": "駐車場を下りる所要時間",
+      "claim_ja": "出典の数え方では12÷3=4ゲート、待ち時間は4×2×60=480秒。1階分の走行は800÷10=80秒、12階分で960秒。合計1440秒。",
+      "method_ja": "ゲート待ちと走行時間を別々に求めて加える。併せて別解釈の反例計算も形式化する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "速度は10フィート毎秒で一定、各ゲート待ちは2分。1440秒には12区間・4ゲートの追加条件が必要。",
+      "baseline_ja": "四則演算、比・平均・百分率のうち問題で明示したもの。",
+      "conclusion_ja": "出典慣行では1440秒。別解釈では1240秒。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3704,
+    "checked_model_hash": "4125c939b2add89e287a4ae004418c8ab1d660fe42938beffc645d104d5b534c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

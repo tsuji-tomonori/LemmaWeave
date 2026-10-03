@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint104_cds",
+  "title_ja": "CD購入資金の不足額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01845",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4種類1組の価格を求め、4枚ずつの総額から所持金を引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.cds_solution",
+  "graph": "work/gsm8k-sprint104-cds-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cds_unit_sum",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.cds_unit_sum",
+      "title_ja": "各種類1枚ずつは25ドル。",
+      "claim_ja": "各種類1枚ずつは25ドル。",
+      "method_ja": "5+10+3+7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4種類を各1枚。",
+      "conclusion_ja": "25。",
+      "baseline_ja": "25。"
+    },
+    {
+      "id": "cds_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.cds_total",
+      "title_ja": "購入総額は100ドル。",
+      "claim_ja": "購入総額は100ドル。",
+      "method_ja": "4×25。",
+      "requires_steps": [
+        "cds_unit_sum"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各種類4枚。",
+      "conclusion_ja": "100。",
+      "baseline_ja": "100。"
+    },
+    {
+      "id": "cds_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.cds_solution",
+      "title_ja": "25ドル不足。",
+      "claim_ja": "25ドル不足。",
+      "method_ja": "100−75。",
+      "requires_steps": [
+        "cds_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "所持金75ドル。",
+      "conclusion_ja": "25。",
+      "baseline_ja": "25。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1846,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

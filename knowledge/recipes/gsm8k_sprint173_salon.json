@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint173_salon",
+  "title_ja": "サロンにいる非顧客数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02880",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "売上と単価から顧客数、指総数から人数を求め、その差を取る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A15.salon_solution",
+  "graph": "work/gsm8k-sprint173-salon-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "salon_clients",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A15.salon_clients",
+      "title_ja": "顧客10人",
+      "claim_ja": "200÷20=10人。",
+      "method_ja": "売上÷単価",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全マニキュア客が20ドルを支払う。",
+      "conclusion_ja": "顧客10人。",
+      "baseline_ja": "20×10=200。"
+    },
+    {
+      "id": "salon_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A15.salon_people",
+      "title_ja": "総人数21人",
+      "claim_ja": "210÷10=21人。",
+      "method_ja": "指総数÷1人の指",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全員10本の指。",
+      "conclusion_ja": "21人。",
+      "baseline_ja": "10×21=210。"
+    },
+    {
+      "id": "salon_nonclients",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A15.salon_nonclients",
+      "title_ja": "非顧客11人",
+      "claim_ja": "21−10=11人。",
+      "method_ja": "差",
+      "requires_steps": [
+        "salon_clients",
+        "salon_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "顧客は総人数に含まれる。",
+      "conclusion_ja": "11人。",
+      "baseline_ja": "21=10+11。"
+    },
+    {
+      "id": "salon_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A15.salon_solution",
+      "title_ja": "答え11人",
+      "claim_ja": "非顧客は11人。",
+      "method_ja": "直前結論",
+      "requires_steps": [
+        "salon_nonclients"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同上。",
+      "conclusion_ja": "答え11人。",
+      "baseline_ja": "11人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2881,
+    "checked_model_hash": "428f98a8271cd0ff703b44f6441837f76b0f66ef0ac41d972f519e9a6cab3272",
+    "checks_ja": [
+      "原題の全数量・単位・求める結論を再読した。",
+      "独立レビューではない。"
+    ]
+  }
+}

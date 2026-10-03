@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint100_lychees",
+  "title_ja": "残ったライチ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01788",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "市場で半分を売り、持ち帰り分の3/5を食べ、残りを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.lychees_solution",
+  "graph": "work/gsm8k-sprint100-lychees-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lychees_sold",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.lychees_sold",
+      "title_ja": "売ったのは250個。",
+      "claim_ja": "売ったのは250個。",
+      "method_ja": "500の半分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "half=1/2。",
+      "conclusion_ja": "250×2=500。",
+      "baseline_ja": "250×2=500。"
+    },
+    {
+      "id": "lychees_brought_home",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.lychees_brought_home",
+      "title_ja": "持ち帰りは250個。",
+      "claim_ja": "持ち帰りは250個。",
+      "method_ja": "500−250。",
+      "requires_steps": [
+        "lychees_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "売らなかった全量を持ち帰る。",
+      "conclusion_ja": "250+250=500。",
+      "baseline_ja": "250+250=500。"
+    },
+    {
+      "id": "lychees_eaten",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.lychees_eaten",
+      "title_ja": "食べたのは150個。",
+      "claim_ja": "食べたのは150個。",
+      "method_ja": "250の3/5。",
+      "requires_steps": [
+        "lychees_brought_home"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "持ち帰り分に3/5を適用。",
+      "conclusion_ja": "150×5=250×3。",
+      "baseline_ja": "150×5=250×3。"
+    },
+    {
+      "id": "lychees_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.lychees_solution",
+      "title_ja": "残りは100個。",
+      "claim_ja": "残りは100個。",
+      "method_ja": "250−150。",
+      "requires_steps": [
+        "lychees_brought_home",
+        "lychees_eaten"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "食べなかった持ち帰り分。",
+      "conclusion_ja": "100+150=250。",
+      "baseline_ja": "100+150=250。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1789,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

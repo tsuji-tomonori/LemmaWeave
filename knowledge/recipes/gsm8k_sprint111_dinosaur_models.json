@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint111_dinosaur_models",
+  "title_ja": "恐竜模型の割引後代金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01953",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の全数量関係を順に式へ移し、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.dino_solution",
+  "graph": "work/gsm8k-sprint111-dinosaur-models-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "dino_elementary",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.dino_elementary",
+      "title_ja": "小学校図書館用は4個。",
+      "claim_ja": "小学校図書館用は4個。",
+      "method_ja": "2×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "小学校図書館用は4個。",
+      "baseline_ja": "小学校図書館用は4個。"
+    },
+    {
+      "id": "dino_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.dino_total",
+      "title_ja": "合計6個で、5個より多い。",
+      "claim_ja": "合計6個で、5個より多い。",
+      "method_ja": "2+4。",
+      "requires_steps": [
+        "dino_elementary"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "合計6個で、5個より多い。",
+      "baseline_ja": "合計6個で、5個より多い。"
+    },
+    {
+      "id": "dino_discount",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.dino_discount",
+      "title_ja": "1個あたりの値引きは5ドル。",
+      "claim_ja": "1個あたりの値引きは5ドル。",
+      "method_ja": "100の5%。",
+      "requires_steps": [
+        "dino_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "1個あたりの値引きは5ドル。",
+      "baseline_ja": "1個あたりの値引きは5ドル。"
+    },
+    {
+      "id": "dino_price",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.dino_price",
+      "title_ja": "値引き後は1個95ドル。",
+      "claim_ja": "値引き後は1個95ドル。",
+      "method_ja": "100−5。",
+      "requires_steps": [
+        "dino_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "値引き後は1個95ドル。",
+      "baseline_ja": "値引き後は1個95ドル。"
+    },
+    {
+      "id": "dino_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.dino_solution",
+      "title_ja": "支払額は570ドル。",
+      "claim_ja": "支払額は570ドル。",
+      "method_ja": "95×6。",
+      "requires_steps": [
+        "dino_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "支払額は570ドル。",
+      "baseline_ja": "支払額は570ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1954,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

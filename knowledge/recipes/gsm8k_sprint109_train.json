@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint109_train",
+  "title_ja": "列車が運んだ延べ乗客数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01928",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1往復の往路・復路を合計し、追加3往復と最初の1往復を足す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.train_solution",
+  "graph": "work/gsm8k-sprint109-train-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "train_per_round",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.train_per_round",
+      "title_ja": "1往復で160人。",
+      "claim_ja": "1往復で160人。",
+      "method_ja": "100+60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "train_later_rounds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.train_later_rounds",
+      "title_ja": "追加3往復で480人。",
+      "claim_ja": "追加3往復で480人。",
+      "method_ja": "160×3。",
+      "requires_steps": [
+        "train_per_round"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "train_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.train_solution",
+      "title_ja": "全4往復で640人。",
+      "claim_ja": "全4往復で640人。",
+      "method_ja": "160+480。",
+      "requires_steps": [
+        "train_per_round",
+        "train_later_rounds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1929,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

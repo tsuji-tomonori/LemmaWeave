@@ -1,0 +1,134 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-1200-gsm8k-63",
+  "planned_slot_local_hour": 12,
+  "planned_at": "2026-09-21T12:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "94bbcd6a92e906c763415278d219e6cd3a60b384",
+  "started_at": "2026-09-21T12:03:17+09:00",
+  "finished_at": "2026-09-21T12:13:12+09:00",
+  "schedule_offset_seconds": 197,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01224",
+    "external-gsm8k-main-3101c7d50724:train:01225",
+    "external-gsm8k-main-3101c7d50724:train:01226",
+    "external-gsm8k-main-3101c7d50724:train:01227",
+    "external-gsm8k-main-3101c7d50724:train:01228",
+    "external-gsm8k-main-3101c7d50724:train:01229",
+    "external-gsm8k-main-3101c7d50724:train:01230",
+    "external-gsm8k-main-3101c7d50724:train:01231",
+    "external-gsm8k-main-3101c7d50724:train:01232",
+    "external-gsm8k-main-3101c7d50724:train:01233",
+    "external-gsm8k-main-3101c7d50724:train:01234",
+    "external-gsm8k-main-3101c7d50724:train:01235",
+    "external-gsm8k-main-3101c7d50724:train:01236",
+    "external-gsm8k-main-3101c7d50724:train:01237",
+    "external-gsm8k-main-3101c7d50724:train:01238"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01224",
+    "external-gsm8k-main-3101c7d50724:train:01225",
+    "external-gsm8k-main-3101c7d50724:train:01226",
+    "external-gsm8k-main-3101c7d50724:train:01227",
+    "external-gsm8k-main-3101c7d50724:train:01228",
+    "external-gsm8k-main-3101c7d50724:train:01229",
+    "external-gsm8k-main-3101c7d50724:train:01230",
+    "external-gsm8k-main-3101c7d50724:train:01231",
+    "external-gsm8k-main-3101c7d50724:train:01232",
+    "external-gsm8k-main-3101c7d50724:train:01233",
+    "external-gsm8k-main-3101c7d50724:train:01234",
+    "external-gsm8k-main-3101c7d50724:train:01235",
+    "external-gsm8k-main-3101c7d50724:train:01236",
+    "external-gsm8k-main-3101c7d50724:train:01237",
+    "external-gsm8k-main-3101c7d50724:train:01238"
+  ],
+  "verification_pending_cumulative": {
+    "count": 725,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01238"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01224-01238",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを完走し、入力SHA・許容公理・56説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:01224-01228",
+      "commit": "fc96853ef76d60da3df331e896ca3bd96545656a"
+    },
+    {
+      "problem_ids": "train:01229-01233",
+      "commit": "7945f6a587ed1db4e930f099421e6919b3379a83"
+    },
+    {
+      "problem_ids": "train:01234-01238 and registration",
+      "commit": "d7212cb006d4cc687a75a803cd81fe69651c92ab"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 56,
+    "recipe_declaration_mappings_checked": 56,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_hash": "e1f64b2f27d347da933ca932a3614b657a4bf14d4ae3b9260cff2dc2db52fa86",
+    "semantic_blockers": [
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01226",
+        "reason_ja": "価格はイヤリング1組10ドルだが販売数は20 earringsと個数表現であり、20組なら565ドル、20個=10組なら465ドルとなる。参照解答を無条件に採用せず、両解釈と非一意性を形式化した。"
+      }
+    ]
+  },
+  "measurements": {
+    "elapsed_seconds": 595,
+    "artifact_bytes": 60362,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0,
+    "local_execution_success_rate": 1,
+    "ci_seconds": null
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records, 15 raw questions, 15 normalized questions, and 56 declarations checked",
+    "solve_queue_write": "passed on exact PR head checkout",
+    "queue_partition": "solution_ready 518, awaiting_verification 725, pending 7549; total 8792",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_until_fixed_ci_graphs",
+    "method_recipe_render_detail": "新規および直前の依存グラフが未生成のためdnc2026_geometry_area_individual.json.gz読込でFileNotFoundError。検査規則は緩和していない。",
+    "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "94bbcd6a92e906c763415278d219e6cd3a60b384",
+    "previous_run_id": null,
+    "previous_status": "not_triggered",
+    "accepted_as_success_evidence": false,
+    "solution_commit_sha": "d7212cb006d4cc687a75a803cd81fe69651c92ab",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "d7212cb006d4cc687a75a803cd81fe69651c92ab",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 710
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 725
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01239",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・56個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01226はイヤリングの販売単位が曖昧であり、20組なら565ドル、20個なら465ドルとなる非一意性を明示した。"
+}

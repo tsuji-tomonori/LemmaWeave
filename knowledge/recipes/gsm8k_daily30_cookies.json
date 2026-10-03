@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_daily30_cookies","title_ja":"一日のクッキー量を30日分へ換算する","problem_id":"external-gsm8k-main-3101c7d50724:train:00299","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"朝と就寝前に半個ずつ、日中に2個食べる犬の30日分を、45個入り箱で何箱用意するか求める。","root":"LemmaWeave.Tests.GSM8KDaily0912D.cookies_solution","graph":"work/gsm8k-daily30-cookies-graph.json","lean_file":"tests/lean/GSM8KDaily0912D.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"取得済み固定GSM8Kの1問。","model_notes_ja":["毎日同量を食べ、箱の45個を余りなく使える。"],
+  "steps":[
+    {"id":"cookies_daily","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.cookies_daily","title_ja":"一日の個数","requires_steps":[],"uses_nodes":[],"condition_ja":"朝1/2個、就寝前1/2個、日中2個。","conclusion_ja":"一日3個。","baseline_ja":"同じ単位の分数と整数を加える。"},
+    {"id":"cookies_total","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.cookies_total","title_ja":"30日分","requires_steps":["cookies_daily"],"uses_nodes":[],"condition_ja":"一日3個を30日続ける。","conclusion_ja":"90個必要。","baseline_ja":"総量＝一日量×日数。"},
+    {"id":"cookies_boxes","lean_declaration":"LemmaWeave.Tests.GSM8KDaily0912D.cookies_boxes","title_ja":"箱数を求める","requires_steps":["cookies_total"],"uses_nodes":[],"condition_ja":"90個必要で、一箱45個入り。","conclusion_ja":"2箱必要。","baseline_ja":"総個数＝箱数×一箱の個数。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":300,"checked_model_hash":"b714e67ab9853f81c325302543d2e3f681b14a744efcc067f6f5103cf5c42839","checks_ja":["1/2+1/2+2=3、3×30=90、90=2×45を原文と照合した。"]}
+}

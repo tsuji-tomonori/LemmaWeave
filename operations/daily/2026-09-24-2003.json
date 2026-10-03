@@ -1,0 +1,135 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T20:00+09:00-gsm8k-15-a20",
+  "scheduled_local_hour": 20,
+  "scheduled_at": "2026-09-24T20:00:00+09:00",
+  "started_at": "2026-09-24T20:03:45+09:00",
+  "finished_at": "2026-09-24T20:08:00+09:00",
+  "start_offset_seconds": 225,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "766c41fe2ce96b62f5e764a2300b8934087e80d3",
+  "artifact_commit": "d9b8504a7bb9928f72e5c85a4aea62f2cad0440b",
+  "selected_problem_ids": [
+    "train:02200",
+    "train:02201",
+    "train:02202",
+    "train:02203",
+    "train:02204",
+    "train:02205",
+    "train:02206",
+    "train:02207",
+    "train:02208",
+    "train:02209",
+    "train:02210",
+    "train:02211",
+    "train:02212",
+    "train:02213",
+    "train:02214"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02200",
+    "train:02201",
+    "train:02202",
+    "train:02203",
+    "train:02204",
+    "train:02205",
+    "train:02206",
+    "train:02207",
+    "train:02208",
+    "train:02209",
+    "train:02210",
+    "train:02211",
+    "train:02212",
+    "train:02213",
+    "train:02214"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {
+      "through": "train:02204",
+      "commit": "6c9843523f2d8e9db471069e240031465fd54b37"
+    },
+    {
+      "through": "train:02209",
+      "commit": "7d212ee3741f017a961d05eb9a1f6775af1b3366"
+    },
+    {
+      "through": "train:02214",
+      "commit": "d9b8504a7bb9928f72e5c85a4aea62f2cad0440b"
+    }
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0182.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A20Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A20.lean",
+    "recipes": 15,
+    "explanation_lines": 51,
+    "named_lean_theorems": 51,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02202のインク使用量はabout 20mlで誤差幅がない。正確に20mlなら100ドル、19mlなら95ドルとなるため、100ドルは追加条件付き。",
+    "train:02210の不自然な『come in 30 packs』は、参照解どおり1パック30本という読解を明示した。",
+    "train:02212は120% moreを120%増と読む35200ドルと、120%の価格と混同した場合の24200ドルを分離した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "question_hash_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0,
+    "pinned_lean_build": "pending_ci",
+    "axiom_dependency_audit": "pending_ci"
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1699,
+    "pending": 6575,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02215",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [
+      0,
+      15
+    ],
+    "note_ja": "0時枠と15時枠は未実行。直前のtrain:02185〜02199と重複しない。"
+  },
+  "ci": {
+    "prior_head": "766c41fe2ce96b62f5e764a2300b8934087e80d3",
+    "prior_run_id": 35985126172,
+    "prior_status_at_start": "in_progress",
+    "current_artifact_head": "d9b8504a7bb9928f72e5c85a4aea62f2cad0440b",
+    "current_run_id": null,
+    "current_status": "workflow_not_yet_listed_before_ledger_commit",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "base_main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "reviews": 0,
+    "unresolved_review_threads": 0,
+    "merge_status": "held_for_current_ci_and_evidence"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T20:00+09:00",
+    "scope": "train:02200-train:02214",
+    "claimed_at": "2026-09-24T20:03:45+09:00",
+    "expires_at": "2026-09-24T21:03:45+09:00",
+    "released": true
+  }
+}

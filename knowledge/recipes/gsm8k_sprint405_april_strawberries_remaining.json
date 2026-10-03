@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint405_april_strawberries_remaining",
+  "title_ja": "4月末に残るイチゴ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04160",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Hannah harvests 5 strawberries daily for the next whole month of April, which has 30 days. If she gives away 20 strawberries to her friends and 30 strawberries are stolen, how many strawberries does she have by the end of April?",
+  "answer_ja": "4月30日間で5×30=150個収穫する。20個を譲り、30個盗まれるので150-20-30=100個残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.april_strawberries_remaining",
+  "graph": "work/gsm8k-sprint405-april-strawberries-remaining-graph.json",
+  "model_notes_ja": [
+    "収穫量・贈与量・盗難量を同じ個数単位で扱う。"
+  ],
+  "steps": [
+    {
+      "id": "april_strawberries_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.april_strawberries_remaining",
+      "title_ja": "4月末に残るイチゴ数",
+      "claim_ja": "4月30日間で5×30=150個収穫する。20個を譲り、30個盗まれるので150-20-30=100個残る。",
+      "method_ja": "日産量を日数倍し、二つの減少量を順に引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『next whole month of April』は30日全日を指し、初期在庫や他の増減はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4月30日間で5×30=150個収穫する。20個を譲り、30個盗まれるので150-20-30=100個残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4161,
+    "checked_model_hash": "92dabab23308bc83266c91e418f16c052e4f57ad71e370e80166885fde24b7bd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

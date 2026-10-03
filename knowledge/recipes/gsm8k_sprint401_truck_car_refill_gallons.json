@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint401_truck_car_refill_gallons",
+  "title_ja": "トラックと車に補給するガソリン量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04156",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Wendy's truck has a gas tank that can hold 20 gallons. She also has a car with a gas tank that holds 12 gallons. The truck's tank is half full. The car's tank is 1/3 full. If she fills them both up completely, how many gallons does she add?",
+  "answer_ja": "トラックは20ガロンの半分で10ガロン入っているため10ガロン補給する。車は12ガロンの1/3で4ガロン入っているため8ガロン補給する。合計18ガロン。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.truck_car_refill_gallons",
+  "graph": "work/gsm8k-sprint401-truck-car-refill-gallons-graph.json",
+  "model_notes_ja": [
+    "分数を各タンク容量に適用する。"
+  ],
+  "steps": [
+    {
+      "id": "truck_car_refill_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.truck_car_refill_gallons",
+      "title_ja": "トラックと車に補給するガソリン量",
+      "claim_ja": "トラックは20ガロンの半分で10ガロン入っているため10ガロン補給する。車は12ガロンの1/3で4ガロン入っているため8ガロン補給する。合計18ガロン。",
+      "method_ja": "各タンクの現在量を容量と充填割合から求め、満タンとの差を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "両方とも漏れや移送なしで、それぞれ公称容量まで満たす。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "トラックは20ガロンの半分で10ガロン入っているため10ガロン補給する。車は12ガロンの1/3で4ガロン入っているため8ガロン補給する。合計18ガロン。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4157,
+    "checked_model_hash": "92dabab23308bc83266c91e418f16c052e4f57ad71e370e80166885fde24b7bd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

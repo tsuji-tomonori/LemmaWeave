@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint394_papaya_height_five_years",
+  "title_ja": "5年後のパパイヤの高さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04132",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A papaya tree will grow 2 feet in the first year.  In the second year, it will grow 50% more than the first year.  In the third year, the tree will grow 50% more than in the second year.  In the fourth year, it will grow twice as much as the third year.  In the fifth year, it will grow half as much as the fourth year.  When the tree is 5 years old, how tall is the tree?",
+  "answer_ja": "各年の成長量は順に2、2×1.5=3、3×1.5=4.5、4.5×2=9、9÷2=4.5フィート。初期の高さを0フィートとすると、5年分の合計は2+3+4.5+9+4.5=23フィートである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P3.papaya_height_five_years",
+  "graph": "work/gsm8k-sprint394-papaya-height-five-years-graph.json",
+  "model_notes_ja": [
+    "整数でない4.5フィートを正確な有理数9/2として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "papaya_height_five_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P3.papaya_height_five_years",
+      "title_ja": "5年後のパパイヤの高さ",
+      "claim_ja": "各年の成長量は順に2、2×1.5=3、3×1.5=4.5、4.5×2=9、9÷2=4.5フィート。初期の高さを0フィートとすると、5年分の合計は2+3+4.5+9+4.5=23フィートである。",
+      "method_ja": "前年の成長量へ指定倍率を掛け、5年分を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "植え付け時の高さを0フィートとし、各記述はその年の成長量を表す。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "各年の成長量は順に2、2×1.5=3、3×1.5=4.5、4.5×2=9、9÷2=4.5フィート。初期の高さを0フィートとすると、5年分の合計は2+3+4.5+9+4.5=23フィートである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4133,
+    "checked_model_hash": "627ce023408d9b79cd0f5ee382af3e71ea0aa5a43e399e7a43e4372be28fab80",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

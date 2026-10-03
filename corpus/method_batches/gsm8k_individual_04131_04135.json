@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1046",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "627ce023408d9b79cd0f5ee382af3e71ea0aa5a43e399e7a43e4372be28fab80",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1004A05P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04131",
+      "source_line_1based": 4132,
+      "source_record_sha256": "8b8a1e9d4600e5fc1559609142152abf6174877f015bc931a14022e02fd58319",
+      "raw_question_sha256": "20dc60b109980c98fb8a842d563d733f4474179ee4a544cea7aefa9e4cce537a",
+      "normalized_question_sha256": "20dc60b109980c98fb8a842d563d733f4474179ee4a544cea7aefa9e4cce537a",
+      "source_question": "Bill's take-home salary is $40,000. He pays $2,000 in property taxes, $3,000 in sales taxes, and 10% of his gross salary in income taxes. What is Bill's gross salary?",
+      "recipe_id": "gsm8k_sprint394_gross_salary_interpretations",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "会計上の語義が曖昧なので2通りを明示し、参照解答の50,000ドルだけを無条件に断定しない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04132",
+      "source_line_1based": 4133,
+      "source_record_sha256": "41fd1d1ed748cd1e034bad4796afdc5b70f8474a1a0dbc6cf506304dc3cc8841",
+      "raw_question_sha256": "eb4fafd06c693daa3925980ebf641d61b885aebd15510a111e0c784acbf12479",
+      "normalized_question_sha256": "eb4fafd06c693daa3925980ebf641d61b885aebd15510a111e0c784acbf12479",
+      "source_question": "A papaya tree will grow 2 feet in the first year.  In the second year, it will grow 50% more than the first year.  In the third year, the tree will grow 50% more than in the second year.  In the fourth year, it will grow twice as much as the third year.  In the fifth year, it will grow half as much as the fourth year.  When the tree is 5 years old, how tall is the tree?",
+      "recipe_id": "gsm8k_sprint394_papaya_height_five_years",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "整数でない4.5フィートを正確な有理数9/2として扱う。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04133",
+      "source_line_1based": 4134,
+      "source_record_sha256": "2a7a3906db96477a1cbedd18f9a2da55335527327b638a282357f3ecb1cc9af4",
+      "raw_question_sha256": "405b037489be8ff9ce7650e7a6a94cd208d86da604e0651e17a88fb77e854618",
+      "normalized_question_sha256": "405b037489be8ff9ce7650e7a6a94cd208d86da604e0651e17a88fb77e854618",
+      "source_question": "Anna wants to plant red and yellow tulips in the shape of a smiley face. She needs 8 red tulips for each eye and 18 red tulips for the smile. If she needs 9 times the number of tulips in the smile to make the yellow background of the face, how many tulips does she need total?",
+      "recipe_id": "gsm8k_sprint394_smiley_tulips_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "部位ごとの本数が重複しないものとして合計する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04134",
+      "source_line_1based": 4135,
+      "source_record_sha256": "98b4ca94c9351340efa54566eb8a29e81aa774106a19cb96202644e236a1bad2",
+      "raw_question_sha256": "8840cd6e2fe4578eeaeffb61ae3a7fd983749d9b9c4627d5b914936e1164b524",
+      "normalized_question_sha256": "8840cd6e2fe4578eeaeffb61ae3a7fd983749d9b9c4627d5b914936e1164b524",
+      "source_question": "Elliott drew a right-angle triangle on his book. It had a base of 4 inches, a height of 3 inches and a certain length of the hypotenuse. What was the length of the perimeter of the triangle that he drew?",
+      "recipe_id": "gsm8k_sprint394_right_triangle_perimeter",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "3-4-5の直角三角形として平方関係と周長を形式化する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04135",
+      "source_line_1based": 4136,
+      "source_record_sha256": "4f41f4694c608c23133117a8d27326feb393392c087860e4024b4345a50e9747",
+      "raw_question_sha256": "93fe9f2785b75e8b889364a306576870b39dcc064dcb14a04ca0d63e916d8472",
+      "normalized_question_sha256": "93fe9f2785b75e8b889364a306576870b39dcc064dcb14a04ca0d63e916d8472",
+      "source_question": "Four adults with 32 teeth went to the dentist for a checkup after realizing they were having severe tooth pain. They were found to have different numbers of damaged teeth, and each person had some teeth removed. The first person had 1/4 of all his teeth removed, and the second person had 3/8 of his teeth removed, the third person had half of his teeth removed, while the last person only had 4 teeth removed. What's the total number of teeth removed at the dental clinic?",
+      "recipe_id": "gsm8k_sprint394_teeth_removed_each_adult_32",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "修飾句の曖昧さを明示し、各成人32本という追加条件を黙って置かない。"
+      ],
+      "blockers": []
+    }
+  ]
+}

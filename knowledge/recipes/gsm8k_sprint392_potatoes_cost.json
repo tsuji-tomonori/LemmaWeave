@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_potatoes_cost",
+  "title_ja": "じゃがいもの代金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04096",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mrs. Thompson bought 3 chickens for $3 each. She also bought a bag of potatoes. Mrs. Thompson paid $15 in total. How much did the potatoes cost?",
+  "answer_ja": "鶏3羽は1羽3ドルなので9ドル。合計15ドルから9ドルを引き、じゃがいもは6ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P2.potatoes_cost",
+  "graph": "work/gsm8k-sprint392-potatoes-cost-graph.json",
+  "model_notes_ja": [
+    "合計額から鶏の代金を差し引く。"
+  ],
+  "steps": [
+    {
+      "id": "potatoes_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P2.potatoes_cost",
+      "title_ja": "じゃがいもの代金",
+      "claim_ja": "鶏3羽は1羽3ドルなので9ドル。合計15ドルから9ドルを引き、じゃがいもは6ドルである。",
+      "method_ja": "合計額から鶏の代金を差し引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "合計額から鶏の代金を差し引く。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "鶏3羽は1羽3ドルなので9ドル。合計15ドルから9ドルを引き、じゃがいもは6ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4097,
+    "checked_model_hash": "902d8e1800a5f49b192446abb23e5fe5b0250b68325994efac70a36029dae8a9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

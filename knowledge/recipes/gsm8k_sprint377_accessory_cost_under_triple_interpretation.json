@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint377_accessory_cost_under_triple_interpretation",
+  "title_ja": "マウスとキーボードの合計額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04006",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A18P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Fabian bought a brand new computer mouse and keyboard to be able to work from home. The cost of the keyboard was three times greater than the cost of the mouse. If the mouse cost $16, how much did Fabian spent on his new accessories?",
+  "answer_ja": "問題の意図どおり「three times greater」を「3倍」と読むと、キーボードは16×3=48ドル、合計は48+16=64ドル。厳密に「300% greater（元より3倍多い）」と読むならキーボード64ドル、合計80ドルとなるため、64ドルは3倍という解釈を明示した条件付き回答である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A18P2.accessory_cost_under_triple_interpretation",
+  "graph": "work/gsm8k-sprint377-accessory-cost-under-triple-interpretation-graph.json",
+  "model_notes_ja": [
+    "別解釈では合計80ドルになり、原文だけでは表現上の曖昧さが残る。"
+  ],
+  "steps": [
+    {
+      "id": "accessory_cost_under_triple_interpretation",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A18P2.accessory_cost_under_triple_interpretation",
+      "title_ja": "マウスとキーボードの合計額",
+      "claim_ja": "問題の意図どおり「three times greater」を「3倍」と読むと、キーボードは16×3=48ドル、合計は48+16=64ドル。厳密に「300% greater（元より3倍多い）」と読むならキーボード64ドル、合計80ドルとなるため、64ドルは3倍という解釈を明示した条件付き回答である。",
+      "method_ja": "曖昧な比較表現の解釈を固定し、キーボード代と合計を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "three times greaterをデータセット参照解答どおりthree times as much、すなわちマウス代の3倍と解釈する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "問題の意図どおり「three times greater」を「3倍」と読むと、キーボードは16×3=48ドル、合計は48+16=64ドル。厳密に「300% greater（元より3倍多い）」と読むならキーボード64ドル、合計80ドルとなるため、64ドルは3倍という解釈を明示した条件付き回答である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4007,
+    "checked_model_hash": "2592e3e809200dabe58fc3cd86884cd5e5c868771c90ba03d6a5f281550dd6e9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

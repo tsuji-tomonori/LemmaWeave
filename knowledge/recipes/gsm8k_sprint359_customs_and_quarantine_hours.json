@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint359_customs_and_quarantine_hours",
+  "title_ja": "総待機時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03917",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "When Jack traveled to Canada, he had to wait 20 hours to get through customs, plus 14 days in coronavirus quarantine. How many hours total did Jack have to wait?",
+  "answer_ja": "14日は14×24=336時間。税関の20時間を加えると356時間。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A12P2.customs_and_quarantine_hours",
+  "graph": "work/gsm8k-sprint359-customs-and-quarantine-hours-graph.json",
+  "model_notes_ja": [
+    "1日=24時間で、税関待ちと隔離期間は連続して加算される。"
+  ],
+  "steps": [
+    {
+      "id": "customs_and_quarantine_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A12P2.customs_and_quarantine_hours",
+      "title_ja": "総待機時間",
+      "claim_ja": "14日は14×24=336時間。税関の20時間を加えると356時間。",
+      "method_ja": "日を時間へ換算して20時間を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時間単位をそろえている。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "356時間。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3918,
+    "checked_model_hash": "5d16339e4fc2def0dfd32e0d9c712df461e0c44f53d75c0bcdee7f3d655587db",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1042",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "b8e272094fd45bc669d71e114ad1b7bdd7634db50185b019fc9c24ebfb5984b3",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1004A02P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04111",
+      "source_line_1based": 4112,
+      "source_record_sha256": "2969fd6d1238b1243f7e19b80e5e1234461ef65c7f7c3ca5b9a8fe49a848c4bc",
+      "raw_question_sha256": "6854d00a63307cc2ae6e56c4ca634127193dea963d2c571d040dbb078e639217",
+      "normalized_question_sha256": "6854d00a63307cc2ae6e56c4ca634127193dea963d2c571d040dbb078e639217",
+      "source_question": "Ali has a store that sells fruits and vegetables. He puts 23 kg of kidney apples, 37 kg of golden apples and 14 kg of Canada apples on the shelves. By noon, 36 kg of apples were sold. What is the mass of apples that he has left?",
+      "recipe_id": "gsm8k_sprint393_apples_remaining_kg",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "3種類の質量を合計し、売れた質量を差し引く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04112",
+      "source_line_1based": 4113,
+      "source_record_sha256": "0ee2c012a863c73da48569bfff04efcd51ecdaeee5c8a6a7ff6ce39d9d66e47f",
+      "raw_question_sha256": "119065aaf243eb8c5ebf582d668d3cbc108de03cb18be5a312bc1dbef205b1b9",
+      "normalized_question_sha256": "119065aaf243eb8c5ebf582d668d3cbc108de03cb18be5a312bc1dbef205b1b9",
+      "source_question": "A farmer gets 20 pounds of bacon on average from a pig. He sells each pound for $6 at the monthly farmer’s market. This month’s pig is a runt that grew to only half the size of the average pig. How many dollars will the farmer make from the pig’s bacon?",
+      "recipe_id": "gsm8k_sprint393_runt_pig_bacon_revenue",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "体格半分から産出量半分を導く比例仮定を明示し、反例候補も保存する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04113",
+      "source_line_1based": 4114,
+      "source_record_sha256": "788f4d9314ec354bae1aca2a2b91efff03dec0bc41d8a615db1c06b7321b3899",
+      "raw_question_sha256": "a0b4fe91e4fd997773c62e153b99d66620cecbff7361b9fa50ea9d0eb6ddd8df",
+      "normalized_question_sha256": "a0b4fe91e4fd997773c62e153b99d66620cecbff7361b9fa50ea9d0eb6ddd8df",
+      "source_question": "Nicholas bought six times as much fabric as Kenneth. If Kenneth paid $40 for an oz of fabric and bought 700oz, calculate the amount of money that Nicholas paid more than Kenneth for the fabric he bought.",
+      "recipe_id": "gsm8k_sprint393_fabric_cost_difference",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "両者に同じ1 oz当たり40ドルの単価を適用する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04114",
+      "source_line_1based": 4115,
+      "source_record_sha256": "26b54845d5bc318f725d76fe7b2a36f1d38d3425fdcf6dc6462367872da10625",
+      "raw_question_sha256": "0aac5307361f9d8d9e69a6c91b5610bd7d8eb81f4c5b9eac22c99425ab560165",
+      "normalized_question_sha256": "0aac5307361f9d8d9e69a6c91b5610bd7d8eb81f4c5b9eac22c99425ab560165",
+      "source_question": "Kristin can run three times faster than Sarith. If Kristin runs 12 times around the adult football field and Sarith runs at the same time around the children's football field that is half the distance as the other field, how many laps did Sarith go around the children's football field?",
+      "recipe_id": "gsm8k_sprint393_sarith_child_field_laps",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "同時間の距離比は速度比と等しく、周長比で周回数へ換算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04115",
+      "source_line_1based": 4116,
+      "source_record_sha256": "9c3ae47aafc737af4f10ce3a0f28b8a2995e992f9437fac5ff902b0f54bed2b7",
+      "raw_question_sha256": "daab452c76c510dd50fc09b9469d006e3a8acb57f54bcbfdd0f80b7457feee8c",
+      "normalized_question_sha256": "daab452c76c510dd50fc09b9469d006e3a8acb57f54bcbfdd0f80b7457feee8c",
+      "source_question": "Linda was going to pass out homemade cookies to each of her 24 classmates on the last day of school.  She wanted to give each student 10 cookies and wanted to make chocolate chip cookies and oatmeal raisin cookies.  Each cookie recipe made exactly 4 dozen cookies.  She was able to make 2 batches of chocolate chip cookies before running out of chocolate chips.  She made 1 batch of oatmeal raisin cookies.  How many more batches of cookies does Linda need to bake?",
+      "recipe_id": "gsm8k_sprint393_cookie_batches_remaining",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "dozenを12個として1バッチ48個に換算する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_fabric_cost_difference",
+  "title_ja": "布代の差額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04113",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Nicholas bought six times as much fabric as Kenneth. If Kenneth paid $40 for an oz of fabric and bought 700oz, calculate the amount of money that Nicholas paid more than Kenneth for the fabric he bought.",
+  "answer_ja": "Kennethは700×40=28,000ドル。Nicholasは6×700=4,200 ozを同じ単価で買うので4,200×40=168,000ドル。差額は168,000-28,000=140,000ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.fabric_cost_difference",
+  "graph": "work/gsm8k-sprint393-fabric-cost-difference-graph.json",
+  "model_notes_ja": [
+    "両者に同じ1 oz当たり40ドルの単価を適用する。"
+  ],
+  "steps": [
+    {
+      "id": "fabric_cost_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.fabric_cost_difference",
+      "title_ja": "布代の差額",
+      "claim_ja": "Kennethは700×40=28,000ドル。Nicholasは6×700=4,200 ozを同じ単価で買うので4,200×40=168,000ドル。差額は168,000-28,000=140,000ドルである。",
+      "method_ja": "各人の量と代金を求め、差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "NicholasにもKennethと同じ単価40ドル/ozが適用される。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Kennethは700×40=28,000ドル。Nicholasは6×700=4,200 ozを同じ単価で買うので4,200×40=168,000ドル。差額は168,000-28,000=140,000ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4114,
+    "checked_model_hash": "b8e272094fd45bc669d71e114ad1b7bdd7634db50185b019fc9c24ebfb5984b3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

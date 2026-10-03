@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_sarith_child_field_laps",
+  "title_ja": "子ども用競技場の周回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04114",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kristin can run three times faster than Sarith. If Kristin runs 12 times around the adult football field and Sarith runs at the same time around the children's football field that is half the distance as the other field, how many laps did Sarith go around the children's football field?",
+  "answer_ja": "同じ時間ならSarithの走行距離はKristinの3分の1。Kristinの12周に対し大人用競技場換算で12÷3=4周分である。子ども用は1周が半分なので4×2=8周である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.sarith_child_field_laps",
+  "graph": "work/gsm8k-sprint393-sarith-child-field-laps-graph.json",
+  "model_notes_ja": [
+    "同時間の距離比は速度比と等しく、周長比で周回数へ換算する。"
+  ],
+  "steps": [
+    {
+      "id": "sarith_child_field_laps",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.sarith_child_field_laps",
+      "title_ja": "子ども用競技場の周回数",
+      "claim_ja": "同じ時間ならSarithの走行距離はKristinの3分の1。Kristinの12周に対し大人用競技場換算で12÷3=4周分である。子ども用は1周が半分なので4×2=8周である。",
+      "method_ja": "速度比から距離を3分の1にし、半周長の競技場では周回数を2倍にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2人は同じ時間走り、各自の速さは一定、子ども用の周長は大人用の半分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "同じ時間ならSarithの走行距離はKristinの3分の1。Kristinの12周に対し大人用競技場換算で12÷3=4周分である。子ども用は1周が半分なので4×2=8周である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4115,
+    "checked_model_hash": "b8e272094fd45bc669d71e114ad1b7bdd7634db50185b019fc9c24ebfb5984b3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

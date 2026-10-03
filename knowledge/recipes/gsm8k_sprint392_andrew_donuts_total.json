@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_andrew_donuts_total",
+  "title_ja": "3日間のドーナツ合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04105",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Andrew eats 14 donuts on Monday, and half as many on Tuesday. On Wednesday Andrew eats 4 times as many as he did on Monday.  How many donuts did Andrew eat total in the three days?",
+  "answer_ja": "月曜14個、火曜は半分で7個。水曜は月曜の4倍なので56個であり、合計は14+7+56=77個。参照解答は水曜を誤って火曜の4倍28個としている。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.andrew_donuts_total",
+  "graph": "work/gsm8k-sprint392-andrew-donuts-total-graph.json",
+  "model_notes_ja": [
+    "Wednesdayの比較対象は原文どおりMondayの14個である。"
+  ],
+  "steps": [
+    {
+      "id": "andrew_donuts_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.andrew_donuts_total",
+      "title_ja": "3日間のドーナツ合計",
+      "claim_ja": "月曜14個、火曜は半分で7個。水曜は月曜の4倍なので56個であり、合計は14+7+56=77個。参照解答は水曜を誤って火曜の4倍28個としている。",
+      "method_ja": "Wednesdayの比較対象は原文どおりMondayの14個である。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Wednesdayの比較対象は原文どおりMondayの14個である。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "月曜14個、火曜は半分で7個。水曜は月曜の4倍なので56個であり、合計は14+7+56=77個。参照解答は水曜を誤って火曜の4倍28個としている。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4106,
+    "checked_model_hash": "3fe47e3810c27e222620f5e581e0a1ee48da0796c5f0b5e3c94c86ff9405b7bc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

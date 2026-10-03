@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_detergent_cost",
+  "title_ja": "洗濯洗剤の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04103",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Abraham is buying some toiletries and creates a budget of $60 for his shopping. He buys 4 shower gels for $4 each, a tube of toothpaste for $3, and a box of laundry detergent. If he has $30 remaining in his budget, how much money, in dollars, did Abraham spend on the box of laundry detergent?",
+  "answer_ja": "シャワージェルは4×4=16ドル、歯磨き粉と合わせて19ドル。60ドルの予算から30ドル残ったので支出は30ドル、洗剤は30-19=11ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.detergent_cost",
+  "graph": "work/gsm8k-sprint392-detergent-cost-graph.json",
+  "model_notes_ja": [
+    "残額から総支出を出し、既知商品の代金を差し引く。"
+  ],
+  "steps": [
+    {
+      "id": "detergent_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.detergent_cost",
+      "title_ja": "洗濯洗剤の価格",
+      "claim_ja": "シャワージェルは4×4=16ドル、歯磨き粉と合わせて19ドル。60ドルの予算から30ドル残ったので支出は30ドル、洗剤は30-19=11ドルである。",
+      "method_ja": "残額から総支出を出し、既知商品の代金を差し引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残額から総支出を出し、既知商品の代金を差し引く。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "シャワージェルは4×4=16ドル、歯磨き粉と合わせて19ドル。60ドルの予算から30ドル残ったので支出は30ドル、洗剤は30-19=11ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4104,
+    "checked_model_hash": "3fe47e3810c27e222620f5e581e0a1ee48da0796c5f0b5e3c94c86ff9405b7bc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1025",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "9ea38a19dd9024550cb8379afda5d4e64eceff17d705bee5a86a054e8971c0fc",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A19P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04016",
+      "source_line_1based": 4017,
+      "source_record_sha256": "3a66776a4f61459c607293aa4d05a546a3a8830d94c01803817c1cc08d7dbedf",
+      "raw_question_sha256": "c29f790fb5abed09c3625d73276b0168dbc2a3990c696352c4b0afb64a7e7ff7",
+      "normalized_question_sha256": "c29f790fb5abed09c3625d73276b0168dbc2a3990c696352c4b0afb64a7e7ff7",
+      "source_question": "Mary is trying to count the animals in the petting zoo, but they kept moving around so she double-counts 7 sheep and forgets to count 3 pigs. If Mary thinks there are 60 animals, how many are there really?",
+      "recipe_id": "gsm8k_sprint379_corrected_animal_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "二重計上した羊7頭は60に余分に含まれ、豚3頭は60に含まれない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04017",
+      "source_line_1based": 4018,
+      "source_record_sha256": "315bb39727ad925a3b17495e001c57d191b66b17c4ddbb49e2a7d12c660b487d",
+      "raw_question_sha256": "30b280a57db11128597faf43c19f1d01d4696491c9a47d2656ad9b40807c274d",
+      "normalized_question_sha256": "8b260c52e59d2d84506982d7407e6edb2c0f3985e73cd23d622b0a8e2a6575d2",
+      "source_question": "Tom broke his leg and needed to go to the doctor.  The visit cost $300 and the cast cost $200.  If insurance covered 60% how much was Tom's out-of-pocket cost?",
+      "recipe_id": "gsm8k_sprint379_medical_out_of_pocket_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "60%は総費用500ドル全体に適用され、免責額や追加費用はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04018",
+      "source_line_1based": 4019,
+      "source_record_sha256": "4c7b8f1cc80ade15ddf9f77d53038b5bd871670e1a95a8646c192236db24884d",
+      "raw_question_sha256": "b1de2b7e69e78f169448fcefb27c46d290d3cb715996e7b3c0468bf3a6393e2e",
+      "normalized_question_sha256": "b1de2b7e69e78f169448fcefb27c46d290d3cb715996e7b3c0468bf3a6393e2e",
+      "source_question": "Two friends, Hubert and Ian, are planning to have a pizza party. One box of pizza is worth $14, and a can of soda is worth $1.80. Hubert orders eight boxes of pizza and ten cans of soda. Ian buys ten boxes of pizza and fifteen cans of soda. How much do they spend in all?",
+      "recipe_id": "gsm8k_sprint379_pizza_party_cost_cents",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "金額をセントに統一し、税や追加料金はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04019",
+      "source_line_1based": 4020,
+      "source_record_sha256": "fd1b5488cf853797fe73013d6a6c12f0e03296aa42becaf823ac36e0d219ddc5",
+      "raw_question_sha256": "6d2208749ac8bca2f1ef57d9194341c8c7bf59be0a4eb4da2096cb70eeefc4e4",
+      "normalized_question_sha256": "6d2208749ac8bca2f1ef57d9194341c8c7bf59be0a4eb4da2096cb70eeefc4e4",
+      "source_question": "The price per organic egg is 50 cents. The price of a tray of eggs that contains 30 eggs is $12. How much can you save, in cents, per egg if you buy a tray versus individual eggs?",
+      "recipe_id": "gsm8k_sprint379_egg_saving_per_egg_cents",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "トレーには30個すべて使用可能な卵が入り、価格以外の費用はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04020",
+      "source_line_1based": 4021,
+      "source_record_sha256": "304d61dbe79bd2aa94a3509ca215568e55440bf072ed53267cb0ee9960c7a26c",
+      "raw_question_sha256": "2af8345353b52ae403de6c786e652bf68dead251f16e7e4744e5191a8e9b9342",
+      "normalized_question_sha256": "2af8345353b52ae403de6c786e652bf68dead251f16e7e4744e5191a8e9b9342",
+      "source_question": "There are 10 books on the table. Two-fifths of them are reading books and three-tenths of them are math books. There is one fewer science book than math books and the rest are history books. How many history books are there?",
+      "recipe_id": "gsm8k_sprint379_history_book_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "4分類は互いに重ならず、全10冊を尽くす。"
+      ],
+      "blockers": []
+    }
+  ]
+}

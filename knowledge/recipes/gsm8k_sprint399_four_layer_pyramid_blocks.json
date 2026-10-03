@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint399_four_layer_pyramid_blocks",
+  "title_ja": "4層ピラミッドのブロック総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04154",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A four-layer pyramid is being built with each layer having three times as many sandstone blocks as the layer above it. The top layer is a single block. How many sandstone blocks are in the pyramid?",
+  "answer_ja": "上から1、3、9、27個。したがって総数は1+3+9+27=40個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.four_layer_pyramid_blocks",
+  "graph": "work/gsm8k-sprint399-four-layer-pyramid-blocks-graph.json",
+  "model_notes_ja": [
+    "等比数列の最初の4項を明示的に計算する。"
+  ],
+  "steps": [
+    {
+      "id": "four_layer_pyramid_blocks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.four_layer_pyramid_blocks",
+      "title_ja": "4層ピラミッドのブロック総数",
+      "claim_ja": "上から1、3、9、27個。したがって総数は1+3+9+27=40個。",
+      "method_ja": "各層が直上の3倍という漸化関係を3回適用し、4層分を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "最上層を第1層とし、層は全部で4層である。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "上から1、3、9、27個。したがって総数は1+3+9+27=40個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4155,
+    "checked_model_hash": "0ce23b525790f66cf6c451589c4d739fd6e9f85eb4e50c882fbe4d719ec4e1ea",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

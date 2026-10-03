@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint397_coat_savings_over_thirty_years",
+  "title_ja": "30年間のコート代の節約額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04152",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Karen is considering her winter coat options. One coast costs $300 and will last for 15 years. The other coat costs $120 and will last for five years. How much money would Karen save over 30 years by buying the more expensive cost?",
+  "answer_ja": "120ドルのコートは30÷5=6着必要で720ドル。300ドルのコートは30÷15=2着必要で600ドル。高価な方を買うと720-600=120ドル節約できる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_savings_over_thirty_years",
+  "graph": "work/gsm8k-sprint397-coat-savings-over-thirty-years-graph.json",
+  "model_notes_ja": [
+    "原文のcoast/costはcoat/costの綴り誤りとして数量関係を読む。"
+  ],
+  "steps": [
+    {
+      "id": "coat_savings_over_thirty_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_savings_over_thirty_years",
+      "title_ja": "30年間のコート代の節約額",
+      "claim_ja": "120ドルのコートは30÷5=6着必要で720ドル。300ドルのコートは30÷15=2着必要で600ドル。高価な方を買うと720-600=120ドル節約できる。",
+      "method_ja": "30年を各耐用年数で割って必要着数を求め、総費用の差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "耐用年数の終了ごとに同じ価格の新品へ買い替え、30年は両耐用年数で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "120ドルのコートは30÷5=6着必要で720ドル。300ドルのコートは30÷15=2着必要で600ドル。高価な方を買うと720-600=120ドル節約できる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4153,
+    "checked_model_hash": "0ce23b525790f66cf6c451589c4d739fd6e9f85eb4e50c882fbe4d719ec4e1ea",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

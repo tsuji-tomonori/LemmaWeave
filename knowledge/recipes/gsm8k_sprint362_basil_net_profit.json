@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint362_basil_net_profit",
+  "title_ja": "バジル販売の純利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03933",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Burt spent $2.00 on a packet of basil seeds and $8.00 on potting soil.  The packet of seeds yielded 20 basil plants.  He sells each basil plant for $5.00 at the local farmer's market.  What is the net profit from his basil plants?",
+  "answer_ja": "種2ドルと土8ドルで費用10ドル。20株を各5ドルで売ると売上100ドル。純利益は100−10=90ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A11P2.basil_net_profit",
+  "graph": "work/gsm8k-sprint362-basil-net-profit-graph.json",
+  "model_notes_ja": [
+    "20株すべて売れ、追加費用・税・手数料はない。"
+  ],
+  "steps": [
+    {
+      "id": "basil_net_profit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A11P2.basil_net_profit",
+      "title_ja": "バジル販売の純利益",
+      "claim_ja": "種2ドルと土8ドルで費用10ドル。20株を各5ドルで売ると売上100ドル。純利益は100−10=90ドル。",
+      "method_ja": "費用合計と売上を求め、売上から費用を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "売上100ドルは費用10ドル以上。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "90ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3934,
+    "checked_model_hash": "bf386837913d8e6ebf18d221a2522f93842f6cfdf1a6821ffac27018a183f8d6",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

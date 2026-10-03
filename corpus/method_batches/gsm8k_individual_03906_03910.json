@@ -1,0 +1,83 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1003",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "5e6df200d8ab6383aa2133a2ff8d39956b03cbea2268ac9b07ed825226fc6e28",
+  "model_files": ["LemmaWeave/Problems/GSM8K/Sprint1003A10P3Models.lean"],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03906",
+      "source_line_1based": 3907,
+      "source_record_sha256": "43bb9f4cb6a929f09276e378be9cf166014e8f098215a7edee230e9bc896eb9e",
+      "raw_question_sha256": "2713d1390a2e5860b88fad7366a70b0aef4084cfdb96617d46d9442eafb81a5e",
+      "normalized_question_sha256": "2713d1390a2e5860b88fad7366a70b0aef4084cfdb96617d46d9442eafb81a5e",
+      "source_question": "Verna weighs 17 pounds more than Haley, and Verna weighs half as much as Sherry. If Haley weighs 103 pounds, how many pounds do Verna and Sherry weigh together?",
+      "recipe_id": "gsm8k_sprint357_combined_weight",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["HaleyからVerna、VernaからSherryの順に体重を求める。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03907",
+      "source_line_1based": 3908,
+      "source_record_sha256": "ab85ec498e2b38c57180a419c8bf08690b65fab666d2af55541d911bb851bd7b",
+      "raw_question_sha256": "d220ddc7a9d17e1d09cdcfc6c1aeadd645d1304e46b2334d5abe189d0f5c2ac8",
+      "normalized_question_sha256": "d220ddc7a9d17e1d09cdcfc6c1aeadd645d1304e46b2334d5abe189d0f5c2ac8",
+      "source_question": "Melany has to fence a 5000 feet square field with wire mesh. If one foot of wire mesh is sold at $30, and she had $120000, how many feet of the field will not be fenced?",
+      "recipe_id": "gsm8k_sprint357_unfenced_length",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["原文の5000 feetを必要な柵の総延長と読む。square fieldの辺長・面積とは解釈しない。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03908",
+      "source_line_1based": 3909,
+      "source_record_sha256": "4e6a057715bfafd1bcd3ed86a2be97a2f752836aa8f7805572931945ca324f5e",
+      "raw_question_sha256": "3721bde2fdc4ec026ec318743699922fff5eae4ff4a8015b4a2f087da89dbedc",
+      "normalized_question_sha256": "3721bde2fdc4ec026ec318743699922fff5eae4ff4a8015b4a2f087da89dbedc",
+      "source_question": "To get clean, Michael takes a bath twice a week and a shower once a week. How many total times does he clean himself in 52 weeks, which is about one year?",
+      "recipe_id": "gsm8k_sprint357_yearly_cleanings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["週3回を52週間について数える。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03909",
+      "source_line_1based": 3910,
+      "source_record_sha256": "d8e7053827c2cc1d9e05830b84ce812dadf573e8f8a68c58c89579a99f19e9b5",
+      "raw_question_sha256": "f6f1f7985422863d94e23a1337108f5a47e2d5a6cec36dceea2e96a85e676a94",
+      "normalized_question_sha256": "6f6fba2c22315dbce2870e7c08e011c72fff9a19db75c5cae3ace77f257a6e19",
+      "source_question": "John is performing in 3 plays.  Each play has 5 Acts.  He wears 2 wigs per act.  Each wig cost $5.  He drops one of the plays and sells all of the wigs for that play for $4.  How much money did he spend?",
+      "recipe_id": "gsm8k_sprint357_wig_cost_interpretations",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["for $4が各かつら4ドルか、一括4ドルかで曖昧。参照解釈の110ドルと一括解釈の146ドルを併記する。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03910",
+      "source_line_1based": 3911,
+      "source_record_sha256": "b895610e8d55795c2c8b09c62198efa5ee1cc2bc84e8089813d6bc8b45b7d47e",
+      "raw_question_sha256": "875f0048d074b058928d5b2928a6bccd38e03c89ac6da403e3dc3f1e364243d6",
+      "normalized_question_sha256": "875f0048d074b058928d5b2928a6bccd38e03c89ac6da403e3dc3f1e364243d6",
+      "source_question": "Mason is three times younger than Sydney and Sydney is six years younger than Mason's father. If Mason is 20 years old, how old is his father?",
+      "recipe_id": "gsm8k_sprint357_father_age_conventional",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["three times youngerは非標準で曖昧。Masonの年齢がSydneyの3分の1という参照解釈を追加条件として66歳を得る。"],
+      "blockers": []
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A19P3
 
@@ -22,28 +22,20 @@ structure CaloriesModel where
 
 theorem calories_lunch_increase (m : CaloriesModel) : m.lunchIncrease = 125 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   norm_num at * <;> omega
 
 theorem calories_lunch (m : CaloriesModel) : m.lunch = 625 := by
-  have hIncrease := calories_lunch_increase m
-  rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  rw [m.hLunch, m.hBreakfast, calories_lunch_increase m]
 
 theorem calories_dinner (m : CaloriesModel) : m.dinner = 1250 := by
-  have hLunch := calories_lunch m
-  rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  rw [m.hDinner, calories_lunch m]
 
 theorem calories_shakes (m : CaloriesModel) : m.shakes = 900 := by
-  rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  rw [m.hShakes, m.hShakeCount, m.hCaloriesPerShake]
 
 theorem calories_solution (m : CaloriesModel) : m.total = 3275 := by
-  have hLunch := calories_lunch m
-  have hDinner := calories_dinner m
-  have hShakes := calories_shakes m
-  rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
-  norm_num at *
+  rw [m.hTotal, m.hBreakfast, calories_lunch m, calories_dinner m, calories_shakes m]
 
 structure OilModel where
   smallCapacity : ℕ
@@ -63,21 +55,22 @@ structure OilModel where
 
 theorem oil_transferred (m : OilModel) : m.transferred = 3000 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   norm_num at * <;> omega
 
 theorem oil_current (m : OilModel) : m.current = 6000 := by
-  have hTransferred := oil_transferred m
-  rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at *
+  rw [m.hCurrent, m.hExisting, oil_transferred m]
 
 theorem oil_half_target (m : OilModel) : m.halfTarget = 10000 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   norm_num at * <;> omega
 
 theorem oil_solution (m : OilModel) : m.needed = 4000 := by
   have hCurrent := oil_current m
   have hTarget := oil_half_target m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   omega
 
 structure CandyModel where
@@ -95,24 +88,18 @@ structure CandyModel where
   hBaskets : totalCandies = baskets * candiesPerBasket
 
 theorem candy_mms (m : CandyModel) : m.mms = 35 := by
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at *
+  rw [m.hMms, m.hChocolate]
 
 theorem candy_marshmallows (m : CandyModel) : m.marshmallows = 210 := by
-  have hMms := candy_mms m
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at *
+  rw [m.hMarshmallows, candy_mms m]
 
 theorem candy_total (m : CandyModel) : m.totalCandies = 250 := by
-  have hMms := candy_mms m
-  have hMarshmallows := candy_marshmallows m
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at *
+  rw [m.hTotal, m.hChocolate, candy_mms m, candy_marshmallows m]
 
 theorem candy_solution (m : CandyModel) : m.baskets = 25 := by
-  have hTotal := candy_total m
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at * <;> omega
+  have h := m.hBaskets
+  rw [candy_total m, m.hPerBasket] at h
+  omega
 
 structure InvestmentModel where
   currentValue : ℕ
@@ -128,17 +115,16 @@ structure InvestmentModel where
 
 theorem investment_principal (m : InvestmentModel) : m.principal = 30 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   norm_num at * <;> omega
 
 theorem investment_returns (m : InvestmentModel) : m.totalReturns = 60 := by
-  have hPrincipal := investment_principal m
-  rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at *
+  rw [m.hTwiceOver, investment_principal m]
 
 theorem investment_solution (m : InvestmentModel) : m.monthlyReturn = 12 := by
-  have hReturns := investment_returns m
-  rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at * <;> omega
+  have h := m.hEqualMonthly
+  rw [investment_returns m, m.hMonths] at h
+  omega
 
 structure BoatHourlyModel where
   sailHourly : ℕ
@@ -157,8 +143,12 @@ structure BoatHourlyModel where
   hDifference : skiTotal = sailTotal + difference
 
 theorem boat_hourly_solution (m : BoatHourlyModel) : m.difference = 120 := by
-  rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at * <;> omega
+  have hs := m.hSailTotal
+  rw [m.hSailHourly, m.hHours, m.hDays] at hs
+  have hk := m.hSkiTotal
+  rw [m.hSkiHourly, m.hHours, m.hDays] at hk
+  have hd := m.hDifference
+  omega
 
 structure BoatFlatModel where
   sailFlat : ℕ
@@ -177,8 +167,12 @@ structure BoatFlatModel where
   hDifference : skiTotal = sailTotal + difference
 
 theorem boat_flat_solution (m : BoatFlatModel) : m.difference = 420 := by
-  rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
-  norm_num at * <;> omega
+  have hs := m.hSailTotal
+  rw [m.hSailFlat] at hs
+  have hk := m.hSkiTotal
+  rw [m.hSkiHourly, m.hHours, m.hDays] at hk
+  have hd := m.hDifference
+  omega
 
 theorem boat_readings_differ (hourly : BoatHourlyModel) (flat : BoatFlatModel) :
     hourly.difference = 120 ∧ flat.difference = 420 ∧ hourly.difference ≠ flat.difference := by

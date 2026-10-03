@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A16P3
 
@@ -24,21 +24,25 @@ structure RentModel where
 
 theorem rent_old (m : RentModel) : m.oldRent = 1500 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all
 
 theorem rent_new (m : RentModel) : m.newRent = 1400 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem rent_monthly (m : RentModel) : m.monthlySaving = 100 := by
   have hOld := rent_old m
   have hNew := rent_new m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem rent_solution (m : RentModel) : m.yearlySaving = 1200 := by
   have hPrev := rent_monthly m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all
 
 structure DebateModel where
@@ -57,17 +61,20 @@ structure DebateModel where
 
 theorem debate_second (m : DebateModel) : m.second = 240 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 theorem debate_first (m : DebateModel) : m.first = 480 := by
   have hPrev := debate_second m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 theorem debate_solution (m : DebateModel) : m.total = 920 := by
   have hSecond := debate_second m
   have hFirst := debate_first m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 structure MangoModel where
@@ -88,21 +95,25 @@ structure MangoModel where
 
 theorem mango_ripe (m : MangoModel) : m.ripe = 18 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem mango_unripe (m : MangoModel) : m.unripe = 36 := by
   have hPrev := mango_ripe m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem mango_given (m : MangoModel) : m.given = 20 := by
   have hPrev := mango_unripe m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem mango_solution (m : MangoModel) : m.jars = 5 := by
   have hPrev := mango_given m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 structure JillConventionalModel where
@@ -125,16 +136,19 @@ structure JillConventionalModel where
 
 theorem jill_second (m : JillConventionalModel) : m.second = 20 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all
 
 theorem jill_third (m : JillConventionalModel) : m.third = 10 := by
   have hPrev := jill_second m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem jill_fourth (m : JillConventionalModel) : m.fourth = 30 := by
   have hPrev := jill_third m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all
 
 theorem jill_sold (m : JillConventionalModel) : m.sold = 75 := by
@@ -142,11 +156,13 @@ theorem jill_sold (m : JillConventionalModel) : m.sold = 75 := by
   have hThird := jill_third m
   have hFourth := jill_fourth m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all
 
 theorem jill_solution_conventional (m : JillConventionalModel) : m.remaining = 75 := by
   have hPrev := jill_sold m
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem jill_literal_more_no_whole_third : ¬ ∃ third : ℕ, 2 * third = 25 := by
@@ -168,27 +184,32 @@ structure BeansModel where
 
 theorem beans_red (m : BeansModel) : m.red = 143 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem beans_after_red (m : BeansModel) : m.afterRed = 429 := by
   have hPrev := beans_red m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem beans_white (m : BeansModel) : m.white = 143 := by
   have hPrev := beans_after_red m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem beans_after_white (m : BeansModel) : m.afterWhite = 286 := by
   have hA := beans_after_red m
   have hW := beans_white m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem beans_solution (m : BeansModel) : m.green = 143 := by
   have hPrev := beans_after_white m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A16P3

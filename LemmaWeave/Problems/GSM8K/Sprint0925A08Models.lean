@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0925A08
 
@@ -12,9 +12,8 @@ structure RopeCut where
   hUnit : unit * 5 = total
   hShorter : shorter = 2 * unit
 theorem rope_parts (m : RopeCut) : m.parts = 5 := by cases m; omega
-theorem rope_unit (m : RopeCut) : m.unit = 8 := by cases m; omega
-theorem rope_solution (m : RopeCut) : m.shorter = 16 := by cases m; omega
-
+theorem rope_unit (m : RopeCut) : m.unit = 8 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem rope_solution (m : RopeCut) : m.shorter = 16 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure MovieTickets where
   adultPrice : ℕ
   adults : ℕ
@@ -31,11 +30,10 @@ structure MovieTickets where
   hPaid : paidCents = subtotal - discount
   hDollars : paidCents = 100 * paidDollars
 theorem movies_adult_price (m : MovieTickets) : m.adultPrice = 750 := by cases m; omega
-theorem movies_adults (m : MovieTickets) : m.adults = 1500 := by cases m; omega
+theorem movies_adults (m : MovieTickets) : m.adults = 1500 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem movies_children (m : MovieTickets) : m.children = 1700 := by cases m; omega
-theorem movies_subtotal (m : MovieTickets) : m.subtotal = 3200 := by cases m; omega
-theorem movies_solution (m : MovieTickets) : m.paidDollars = 30 := by cases m; omega
-
+theorem movies_subtotal (m : MovieTickets) : m.subtotal = 3200 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem movies_solution (m : MovieTickets) : m.paidDollars = 30 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure Sandbox where
   area : ℕ
   bags : ℕ
@@ -44,9 +42,8 @@ structure Sandbox where
   hBags : area = 3 * bags
   hCost : cost = 4 * bags
 theorem sandbox_area (m : Sandbox) : m.area = 9 := by cases m; omega
-theorem sandbox_bags (m : Sandbox) : m.bags = 3 := by cases m; omega
-theorem sandbox_solution (m : Sandbox) : m.cost = 12 := by cases m; omega
-
+theorem sandbox_bags (m : Sandbox) : m.bags = 3 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem sandbox_solution (m : Sandbox) : m.cost = 12 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure Bandages where
   start : ℕ
   used : ℕ
@@ -56,8 +53,7 @@ structure Bandages where
   hRemaining : remaining = start - used
 theorem bandages_start (m : Bandages) : m.start = 16 := by cases m; omega
 theorem bandages_used (m : Bandages) : m.used = 5 := by cases m; omega
-theorem bandages_solution (m : Bandages) : m.remaining = 11 := by cases m; omega
-
+theorem bandages_solution (m : Bandages) : m.remaining = 11 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure Factory where
   employeePay : ℕ
   payroll : ℕ
@@ -70,19 +66,17 @@ structure Factory where
   hRevenue : revenue = 35 * shirts
   hProfit : profit + payroll + 1000 = revenue
 theorem factory_employee_pay (m : Factory) : m.employeePay = 196 := by cases m; omega
-theorem factory_payroll (m : Factory) : m.payroll = 3920 := by cases m; omega
+theorem factory_payroll (m : Factory) : m.payroll = 3920 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem factory_shirts (m : Factory) : m.shirts = 400 := by cases m; omega
-theorem factory_revenue (m : Factory) : m.revenue = 14000 := by cases m; omega
-theorem factory_solution (m : Factory) : m.profit = 9080 := by cases m; omega
-
+theorem factory_revenue (m : Factory) : m.revenue = 14000 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem factory_solution (m : Factory) : m.profit = 9080 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure HarryBook where
   half : ℕ
   pages : ℕ
   hHalf : 2 * half = 400
   hPages : pages + 20 = half
-theorem book_half (m : HarryBook) : m.half = 200 := by cases m; omega
-theorem book_solution (m : HarryBook) : m.pages = 180 := by cases m; omega
-
+theorem book_half (m : HarryBook) : m.half = 200 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem book_solution (m : HarryBook) : m.pages = 180 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure DogFood where
   dailyHalfUnits : ℕ
   weeklyHalfUnits : ℕ
@@ -93,10 +87,9 @@ structure DogFood where
   hRemaining : remainingHalfUnits + weeklyHalfUnits = 30 * 2
   hPounds : remainingHalfUnits = 2 * remainingPounds
 theorem dog_food_daily_half_units (m : DogFood) : m.dailyHalfUnits = 2 := by cases m; omega
-theorem dog_food_weekly_half_units (m : DogFood) : m.weeklyHalfUnits = 42 := by cases m; omega
-theorem dog_food_remaining_half_units (m : DogFood) : m.remainingHalfUnits = 18 := by cases m; omega
-theorem dog_food_solution (m : DogFood) : m.remainingPounds = 9 := by cases m; omega
-
+theorem dog_food_weekly_half_units (m : DogFood) : m.weeklyHalfUnits = 42 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem dog_food_remaining_half_units (m : DogFood) : m.remainingHalfUnits = 18 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem dog_food_solution (m : DogFood) : m.remainingPounds = 9 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure GiftPrice where
   saved : ℕ
   mother : ℕ
@@ -110,11 +103,10 @@ structure GiftPrice where
   hRaised : raised = saved + mother + brother
   hShort : short = 400
   hPrice : price = raised + short
-theorem gift_mother (m : GiftPrice) : m.mother = 720 := by cases m; omega
-theorem gift_brother (m : GiftPrice) : m.brother = 1440 := by cases m; omega
-theorem gift_raised (m : GiftPrice) : m.raised = 3360 := by cases m; omega
-theorem gift_solution (m : GiftPrice) : m.price = 3760 := by cases m; omega
-
+theorem gift_mother (m : GiftPrice) : m.mother = 720 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem gift_brother (m : GiftPrice) : m.brother = 1440 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem gift_raised (m : GiftPrice) : m.raised = 3360 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem gift_solution (m : GiftPrice) : m.price = 3760 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure ChristianAge where
   brianNow : ℕ
   christianNow : ℕ
@@ -122,10 +114,9 @@ structure ChristianAge where
   hBrian : brianNow + 8 = 40
   hChristian : christianNow = 2 * brianNow
   hFuture : christianFuture = christianNow + 8
-theorem christian_brian_now (m : ChristianAge) : m.brianNow = 32 := by cases m; omega
-theorem christian_now (m : ChristianAge) : m.christianNow = 64 := by cases m; omega
-theorem christian_solution (m : ChristianAge) : m.christianFuture = 72 := by cases m; omega
-
+theorem christian_brian_now (m : ChristianAge) : m.brianNow = 32 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem christian_now (m : ChristianAge) : m.christianNow = 64 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem christian_solution (m : ChristianAge) : m.christianFuture = 72 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure Weights where
   peter : ℕ
   tyler : ℕ
@@ -133,9 +124,8 @@ structure Weights where
   hPeter : peter = 65
   hHalf : tyler = 2 * peter
   hMore : tyler = sam + 25
-theorem weights_tyler (m : Weights) : m.tyler = 130 := by cases m; omega
-theorem weights_solution (m : Weights) : m.sam = 105 := by cases m; omega
-
+theorem weights_tyler (m : Weights) : m.tyler = 130 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem weights_solution (m : Weights) : m.sam = 105 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure SamirAge where
   haniaNow : ℕ
   haniaPast : ℕ
@@ -145,11 +135,10 @@ structure SamirAge where
   hHaniaPast : haniaPast + 10 = haniaNow
   hSamir : 2 * samirNow = haniaPast
   hFuture : samirFuture = samirNow + 5
-theorem samir_hania_now (m : SamirAge) : m.haniaNow = 40 := by cases m; omega
-theorem samir_hania_past (m : SamirAge) : m.haniaPast = 30 := by cases m; omega
-theorem samir_now (m : SamirAge) : m.samirNow = 15 := by cases m; omega
-theorem samir_solution (m : SamirAge) : m.samirFuture = 20 := by cases m; omega
-
+theorem samir_hania_now (m : SamirAge) : m.haniaNow = 40 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem samir_hania_past (m : SamirAge) : m.haniaPast = 30 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem samir_now (m : SamirAge) : m.samirNow = 15 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem samir_solution (m : SamirAge) : m.samirFuture = 20 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure StickerClass where
   given : ℕ
   friendStickers : ℕ
@@ -161,12 +150,11 @@ structure StickerClass where
   hOthers : otherStickers + friendStickers = given
   hOtherStudents : otherStickers = 2 * otherStudents
   hTotalStudents : totalStudents = 1 + 5 + otherStudents
-theorem stickers_class_given (m : StickerClass) : m.given = 42 := by cases m; omega
+theorem stickers_class_given (m : StickerClass) : m.given = 42 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem stickers_class_friends (m : StickerClass) : m.friendStickers = 20 := by cases m; omega
-theorem stickers_class_others (m : StickerClass) : m.otherStickers = 22 := by cases m; omega
-theorem stickers_class_other_students (m : StickerClass) : m.otherStudents = 11 := by cases m; omega
-theorem stickers_class_solution (m : StickerClass) : m.totalStudents = 17 := by cases m; omega
-
+theorem stickers_class_others (m : StickerClass) : m.otherStickers = 22 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem stickers_class_other_students (m : StickerClass) : m.otherStudents = 11 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem stickers_class_solution (m : StickerClass) : m.totalStudents = 17 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure RestaurantBill where
   twins : ℕ
   desserts : ℕ
@@ -182,10 +170,9 @@ structure RestaurantBill where
   hDollars : finalCents = 100 * finalDollars
 theorem restaurant_twins (m : RestaurantBill) : m.twins = 2700 := by cases m; omega
 theorem restaurant_desserts (m : RestaurantBill) : m.desserts = 2400 := by cases m; omega
-theorem restaurant_subtotal (m : RestaurantBill) : m.subtotal = 12000 := by cases m; omega
-theorem restaurant_tip (m : RestaurantBill) : m.tip = 2400 := by cases m; omega
-theorem restaurant_solution (m : RestaurantBill) : m.finalDollars = 144 := by cases m; omega
-
+theorem restaurant_subtotal (m : RestaurantBill) : m.subtotal = 12000 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem restaurant_tip (m : RestaurantBill) : m.tip = 2400 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem restaurant_solution (m : RestaurantBill) : m.finalDollars = 144 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure DogGroomer where
   longPerDog : ℕ
   shortTotal : ℕ
@@ -199,10 +186,9 @@ structure DogGroomer where
   hHours : minutes = 60 * hours
 theorem groomer_long_per_dog (m : DogGroomer) : m.longPerDog = 20 := by cases m; omega
 theorem groomer_short_total (m : DogGroomer) : m.shortTotal = 60 := by cases m; omega
-theorem groomer_long_total (m : DogGroomer) : m.longTotal = 180 := by cases m; omega
-theorem groomer_minutes (m : DogGroomer) : m.minutes = 240 := by cases m; omega
-theorem groomer_solution (m : DogGroomer) : m.hours = 4 := by cases m; omega
-
+theorem groomer_long_total (m : DogGroomer) : m.longTotal = 180 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem groomer_minutes (m : DogGroomer) : m.minutes = 240 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem groomer_solution (m : DogGroomer) : m.hours = 4 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 structure CorgiSale where
   profitEach : ℕ
   priceEach : ℕ
@@ -210,8 +196,7 @@ structure CorgiSale where
   hProfit : 100 * profitEach = 30 * 1000
   hPrice : priceEach = 1000 + profitEach
   hTotal : total = 2 * priceEach
-theorem corgi_profit (m : CorgiSale) : m.profitEach = 300 := by cases m; omega
-theorem corgi_price (m : CorgiSale) : m.priceEach = 1300 := by cases m; omega
-theorem corgi_solution (m : CorgiSale) : m.total = 2600 := by cases m; omega
-
+theorem corgi_profit (m : CorgiSale) : m.profitEach = 300 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem corgi_price (m : CorgiSale) : m.priceEach = 1300 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem corgi_solution (m : CorgiSale) : m.total = 2600 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 end LemmaWeave.Problems.GSM8K.Sprint0925A08

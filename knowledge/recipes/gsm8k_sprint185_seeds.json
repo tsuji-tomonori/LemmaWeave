@@ -1,1 +1,107 @@
-{"id":"gsm8k_sprint185_seeds","title_ja":"タンポポ由来の種の割合","problem_id":"external-gsm8k-main-3101c7d50724:train:03026","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0929A07P1.lean","semantic_review_status":"self_review_only","model_scope":"complete","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"ヒマワリは6×9=54粒、タンポポは8×12=96粒で、全体は150粒。したがって96÷150×100=64%がタンポポ由来である。","root":"LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_solution","graph":"work/gsm8k-sprint185-seeds-graph.json","model_notes_ja":["植物数・1株当たりの種数・百分率を自然数の等式で保存した。"],"steps":[{"id":"seeds_sunflower","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_sunflower","title_ja":"ヒマワリの種","claim_ja":"6×9=54粒。","method_ja":"個数×1株当たり","requires_steps":[],"uses_nodes":[],"condition_ja":"6株すべてが9粒ずつ持つ。","conclusion_ja":"54粒。","baseline_ja":"自然数の乗法。"},{"id":"seeds_dandelion","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_dandelion","title_ja":"タンポポの種","claim_ja":"8×12=96粒。","method_ja":"個数×1株当たり","requires_steps":["seeds_sunflower"],"uses_nodes":[],"condition_ja":"8株すべてが12粒ずつ持つ。","conclusion_ja":"96粒。","baseline_ja":"自然数の乗法。"},{"id":"seeds_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_total","title_ja":"総数","claim_ja":"54+96=150粒。","method_ja":"排反な2群の加法","requires_steps":["seeds_dandelion"],"uses_nodes":[],"condition_ja":"全種はヒマワリかタンポポのどちらか。","conclusion_ja":"150粒。","baseline_ja":"自然数の加法。"},{"id":"seeds_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_solution","title_ja":"百分率","claim_ja":"96/150×100=64%。","method_ja":"部分÷全体×100","requires_steps":["seeds_total"],"uses_nodes":[],"condition_ja":"全体150は0でなく、整数百分率64が等式64×150=100×96を満たす。","conclusion_ja":"64%。","baseline_ja":"割合の定義。"}],"author_review":{"reviewer":"author","status":"checked","source_line_1based":3027,"checked_model_hash":"623c7676db9e2bbdb74e9361c097a158e57cbc448391813c49333d4cd48cab61","checks_ja":["固定source commitの原題を再読した。","植物数・種数・百分率の全要求をLeanモデルと照合した。","独立レビューではない。"]}}
+{
+  "id": "gsm8k_sprint185_seeds",
+  "title_ja": "タンポポ由来の種の割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03026",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0929A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ヒマワリは6×9=54粒、タンポポは8×12=96粒で、全体は150粒。したがって96÷150×100=64%がタンポポ由来である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_solution",
+  "graph": "work/gsm8k-sprint185-seeds-graph.json",
+  "model_notes_ja": [
+    "植物数・1株当たりの種数・百分率を自然数の等式で保存した。"
+  ],
+  "steps": [
+    {
+      "id": "seeds_sunflower",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_sunflower",
+      "title_ja": "ヒマワリの種",
+      "claim_ja": "6×9=54粒。",
+      "method_ja": "個数×1株当たり",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6株すべてが9粒ずつ持つ。",
+      "conclusion_ja": "54粒。",
+      "baseline_ja": "自然数の乗法。"
+    },
+    {
+      "id": "seeds_dandelion",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_dandelion",
+      "title_ja": "タンポポの種",
+      "claim_ja": "8×12=96粒。",
+      "method_ja": "個数×1株当たり",
+      "requires_steps": [
+        "seeds_sunflower"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8株すべてが12粒ずつ持つ。",
+      "conclusion_ja": "96粒。",
+      "baseline_ja": "自然数の乗法。"
+    },
+    {
+      "id": "seeds_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_total",
+      "title_ja": "総数",
+      "claim_ja": "54+96=150粒。",
+      "method_ja": "排反な2群の加法",
+      "requires_steps": [
+        "seeds_dandelion"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全種はヒマワリかタンポポのどちらか。",
+      "conclusion_ja": "150粒。",
+      "baseline_ja": "自然数の加法。"
+    },
+    {
+      "id": "seeds_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0929A07P1.seeds_solution",
+      "title_ja": "百分率",
+      "claim_ja": "96/150×100=64%。",
+      "method_ja": "部分÷全体×100",
+      "requires_steps": [
+        "seeds_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全体150は0でなく、整数百分率64が等式64×150=100×96を満たす。",
+      "conclusion_ja": "64%。",
+      "baseline_ja": "割合の定義。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "ci-repair-regression-author",
+    "status": "checked",
+    "source_line_1based": 3027,
+    "checked_model_hash": "2628a2a6e23c6cb1a85260a68dc3f4b7ac28e81b8b1b9af6d32492fa2d6b53e8",
+    "checks_ja": [
+      "固定原本の当該問題文・参照解答とレコードhashを個別に照合した。",
+      "6*9 sunflower54;8*12 dandelion96;total150 positive;100*96/150=64 percent, exact integer instance.",
+      "既存の構造体条件・定理型を基準版と比較し、意味と定義域を保持した。",
+      "現在入力の実Lean・許容公理・各説明行の依存を検査した。旧レビューを履歴に保持し、ready台帳を更新しない。"
+    ],
+    "review_record": "reviews/ci-correction-sibling-regression-20261003.json"
+  },
+  "author_review_history": [
+    {
+      "reviewer": "author",
+      "status": "checked",
+      "source_line_1based": 3027,
+      "checked_model_hash": "623c7676db9e2bbdb74e9361c097a158e57cbc448391813c49333d4cd48cab61",
+      "checks_ja": [
+        "固定source commitの原題を再読した。",
+        "植物数・種数・百分率の全要求をLeanモデルと照合した。",
+        "独立レビューではない。"
+      ]
+    }
+  ],
+  "model_scope_history": [
+    {
+      "model_scope": "complete",
+      "source_commit": "f6b8d12930760eb4f52658e3150fc656fdf3269e",
+      "note": "Historical recipe label retained. Current label is conservatively aligned downward to the unchanged batch item self_reviewed_model after scoped source and current proof/dependency review; mathematical content is unchanged by this metadata alignment, and no ready-ledger promotion is made."
+    }
+  ]
+}

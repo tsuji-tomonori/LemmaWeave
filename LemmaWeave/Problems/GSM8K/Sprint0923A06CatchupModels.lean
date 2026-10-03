@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup
 
@@ -19,7 +19,7 @@ structure FishingSeason where
 theorem fishing_first (m : FishingSeason) : m.first = 639 := by rw [m.hFirst]
 theorem fishing_first_ninety (m : FishingSeason) : m.firstNinety = 150 := by
   rw [m.hFirstNinety]
-theorem fishing_remaining_days (m : FishingSeason) : m.remainingDays = 123 := by cases m <;> omega
+theorem fishing_remaining_days (m : FishingSeason) : m.remainingDays = 123 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem fishing_remainder_catch (m : FishingSeason) : m.remainderCatch = 492 := by
   rw [m.hRemainderCatch, fishing_remaining_days m]
 theorem fishing_second (m : FishingSeason) : m.second = 642 := by
@@ -44,7 +44,7 @@ structure BirdWorms where
 theorem worms_daily (m : BirdWorms) : m.daily = 18 := by rw [m.hDaily]
 theorem worms_needed (m : BirdWorms) : m.needed = 54 := by
   rw [m.hNeeded, worms_daily m]
-theorem worms_mama_net (m : BirdWorms) : m.mamaNet = 11 := by cases m <;> omega
+theorem worms_mama_net (m : BirdWorms) : m.mamaNet = 11 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem worms_available (m : BirdWorms) : m.available = 20 := by
   rw [m.hAvailable, worms_mama_net m]
 theorem worms_solution (m : BirdWorms) : m.more = 34 := by
@@ -108,8 +108,8 @@ structure FavoriteColors where
   hPink : pink * 3 = 18
   hTotal : yellow + green + pink = 30
 
-theorem colors_green (m : FavoriteColors) : m.green = 15 := by cases m <;> omega
-theorem colors_pink (m : FavoriteColors) : m.pink = 6 := by cases m <;> omega
+theorem colors_green (m : FavoriteColors) : m.green = 15 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
+theorem colors_pink (m : FavoriteColors) : m.pink = 6 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem colors_solution (m : FavoriteColors) : m.yellow = 9 := by
   have h := m.hTotal
   rw [colors_green m, colors_pink m] at h
@@ -196,7 +196,7 @@ structure SquirrelCounts where
   hSecond : second = 12 + extra
   hTotal : total = 12 + second
 
-theorem squirrels_extra (m : SquirrelCounts) : m.extra = 4 := by cases m <;> omega
+theorem squirrels_extra (m : SquirrelCounts) : m.extra = 4 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem squirrels_second (m : SquirrelCounts) : m.second = 16 := by
   rw [m.hSecond, squirrels_extra m]
 theorem squirrels_solution (m : SquirrelCounts) : m.total = 28 := by
@@ -213,20 +213,34 @@ structure ExamScore where
   hEnough : targetTotal ≤ previousSum + william
   hMinimal : ∀ s : ℕ, targetTotal ≤ previousSum + s → william ≤ s
 
-theorem exam_previous_count (m : ExamScore) : m.previousCount = 29 := by cases m <;> omega
+theorem exam_previous_count (m : ExamScore) : m.previousCount = 29 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem exam_previous_sum (m : ExamScore) : m.previousSum = 2146 := by
   rw [m.hPrevious, exam_previous_count m]
 theorem exam_target_total (m : ExamScore) : m.targetTotal = 2250 := by rw [m.hTarget]
-theorem exam_94_enough (m : ExamScore) : m.targetTotal ≤ m.previousSum + 94 := by
+theorem exam_104_enough (m : ExamScore) : m.targetTotal ≤ m.previousSum + 104 := by
   rw [exam_target_total m, exam_previous_sum m]
-theorem exam_lower_bound (m : ExamScore) : 94 ≤ m.william := by
+theorem exam_lower_bound (m : ExamScore) : 104 ≤ m.william := by
   have h := m.hEnough
   rw [exam_target_total m, exam_previous_sum m] at h
   omega
-theorem exam_solution (m : ExamScore) : m.william = 94 := by
+theorem exam_solution (m : ExamScore) : m.william = 104 := by
   apply Nat.le_antisymm
-  · exact m.hMinimal 94 (exam_94_enough m)
+  · exact m.hMinimal 104 (exam_104_enough m)
   · exact exam_lower_bound m
+
+/-- The bound of 100% is an explicit additional condition on the candidate score,
+not a new field of ExamScore. Without this cap the arithmetic threshold is 104%. -/
+theorem exam_capped_scores_not_enough (m : ExamScore) :
+    ∀ s : ℕ, s ≤ 100 → ¬ m.targetTotal ≤ m.previousSum + s := by
+  intro s hcap henough
+  rw [exam_target_total m, exam_previous_sum m] at henough
+  omega
+
+/-- Erratum candidate: arithmetic minimum in the existing unbounded model,
+together with infeasibility when a separate 100% cap is imposed. -/
+theorem exam_erratum_solution (m : ExamScore) :
+    m.william = 104 ∧ (∀ s : ℕ, s ≤ 100 → ¬ m.targetTotal ≤ m.previousSum + s) := by
+  exact ⟨exam_solution m, exam_capped_scores_not_enough m⟩
 
 /-- Reading A: 300 is the post-discard count that the class must organize. -/
 structure DonationsToOrganize where
@@ -243,7 +257,7 @@ structure DonationsToOrganize where
   hIncluded : included * 2 = 60
   hTotalBalls : totalBalls = standalone + included
 
-theorem donations_organize_damaged (m : DonationsToOrganize) : m.damaged = 30 := by cases m <;> omega
+theorem donations_organize_damaged (m : DonationsToOrganize) : m.damaged = 30 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem donations_organize_usable (m : DonationsToOrganize) : m.usableFloats = 90 := by
   have h := m.hUsable
   rw [donations_organize_damaged m] at h
@@ -254,7 +268,7 @@ theorem donations_organize_standalone (m : DonationsToOrganize) : m.standalone =
   have h := m.hStandalone
   rw [donations_organize_other m] at h
   omega
-theorem donations_included (m : DonationsToOrganize) : m.included = 30 := by cases m <;> omega
+theorem donations_included (m : DonationsToOrganize) : m.included = 30 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem donations_organize_solution (m : DonationsToOrganize) : m.totalBalls = 90 := by
   rw [m.hTotalBalls, donations_organize_standalone m, donations_included m]
 
@@ -274,10 +288,19 @@ theorem donations_original_standalone (m : DonationsOriginallyGiven) : m.standal
   have h := m.hStandalone
   rw [donations_original_other m] at h
   omega
-theorem donations_original_included (m : DonationsOriginallyGiven) : m.included = 30 := by cases m <;> omega
+theorem donations_original_included (m : DonationsOriginallyGiven) : m.included = 30 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem donations_original_solution (m : DonationsOriginallyGiven) : m.totalBalls = 60 := by
   rw [m.hTotalBalls, donations_original_standalone m, donations_original_included m]
-theorem donations_two_readings_differ : (90 : ℕ) ≠ 60 := by norm_num
+theorem donations_two_readings_differ : (90 : ℕ) ≠ 60 := by
+  let organized : DonationsToOrganize :=
+    ⟨30, 90, 240, 60, 30, 90, by norm_num, by norm_num, by norm_num,
+      by norm_num, by norm_num, by norm_num⟩
+  let original : DonationsOriginallyGiven :=
+    ⟨270, 30, 30, 60, by norm_num, by norm_num, by norm_num, by norm_num⟩
+  have hDifferent : organized.totalBalls ≠ original.totalBalls := by decide
+  intro h
+  exact hDifferent ((donations_organize_solution organized).trans
+    (h.trans (donations_original_solution original).symm))
 
 structure DoughnutProfit where
   revenue : ℕ

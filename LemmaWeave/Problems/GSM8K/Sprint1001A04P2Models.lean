@@ -1,28 +1,37 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint1001A04P2
 
 structure SandwichModel where
-  initial firstDay secondDay left : ℕ
+  initial : ℕ
+  firstDay : ℕ
+  secondDay : ℕ
+  left : ℕ
   hInitial : initial = 12
   hFirst : 2 * firstDay = initial
   hSecond : secondDay + 2 = firstDay
   hLeft : left + firstDay + secondDay = initial
 
 theorem sandwich_first_day (m : SandwichModel) : m.firstDay = 6 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem sandwich_second_day (m : SandwichModel) : m.secondDay = 4 := by
   have h := sandwich_first_day m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem sandwich_left (m : SandwichModel) : m.left = 2 := by
   have h1 := sandwich_first_day m
   have h2 := sandwich_second_day m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure BusModel where
-  initial firstBoard afterFirst off laterBoard afterOff final : ℕ
+  initial : ℕ
+  firstBoard : ℕ
+  afterFirst : ℕ
+  off : ℕ
+  laterBoard : ℕ
+  afterOff : ℕ
+  final : ℕ
   hInitial : initial = 50
   hFirstBoard : firstBoard = 16
   hAfterFirst : afterFirst = initial + firstBoard
@@ -32,18 +41,24 @@ structure BusModel where
   hFinal : final = afterOff + laterBoard
 
 theorem bus_after_first (m : BusModel) : m.afterFirst = 66 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem bus_after_off (m : BusModel) : m.afterOff = 44 := by
   have h := bus_after_first m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem bus_final (m : BusModel) : m.final = 49 := by
   have h := bus_after_off m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure SausageModel where
-  initial mondayEaten mondayRemaining tuesdayEaten tuesdayRemaining fridayEaten left : ℕ
+  initial : ℕ
+  mondayEaten : ℕ
+  mondayRemaining : ℕ
+  tuesdayEaten : ℕ
+  tuesdayRemaining : ℕ
+  fridayEaten : ℕ
+  left : ℕ
   hInitial : initial = 600
   hMondayEaten : 5 * mondayEaten = 2 * initial
   hMondayRemaining : mondayRemaining + mondayEaten = initial
@@ -53,23 +68,28 @@ structure SausageModel where
   hLeft : left + fridayEaten = tuesdayRemaining
 
 theorem sausage_monday_remaining (m : SausageModel) : m.mondayRemaining = 360 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem sausage_tuesday_remaining (m : SausageModel) : m.tuesdayRemaining = 180 := by
   have h := sausage_monday_remaining m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem sausage_friday_eaten (m : SausageModel) : m.fridayEaten = 135 := by
   have h := sausage_tuesday_remaining m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem sausage_left (m : SausageModel) : m.left = 45 := by
   have h1 := sausage_tuesday_remaining m
   have h2 := sausage_friday_eaten m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure BrotherMoneyModel where
-  michael gift candy left beforeCandy initialBrother : ℕ
+  michael : ℕ
+  gift : ℕ
+  candy : ℕ
+  left : ℕ
+  beforeCandy : ℕ
+  initialBrother : ℕ
   hMichael : michael = 42
   hGift : 2 * gift = michael
   hCandy : candy = 3
@@ -78,18 +98,24 @@ structure BrotherMoneyModel where
   hInitialBrother : initialBrother + gift = beforeCandy
 
 theorem brother_gift (m : BrotherMoneyModel) : m.gift = 21 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem brother_before_candy (m : BrotherMoneyModel) : m.beforeCandy = 38 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem brother_initial (m : BrotherMoneyModel) : m.initialBrother = 17 := by
   have h1 := brother_gift m
   have h2 := brother_before_candy m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure CoffeeModel where
-  lattePrice latteDays icedPrice icedDays weekly yearly savings : ℕ
+  lattePrice : ℕ
+  latteDays : ℕ
+  icedPrice : ℕ
+  icedDays : ℕ
+  weekly : ℕ
+  yearly : ℕ
+  savings : ℕ
   hLattePrice : lattePrice = 4
   hLatteDays : latteDays = 5
   hIcedPrice : icedPrice = 2
@@ -99,14 +125,14 @@ structure CoffeeModel where
   hSavings : 4 * savings = yearly
 
 theorem coffee_weekly (m : CoffeeModel) : m.weekly = 26 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem coffee_yearly (m : CoffeeModel) : m.yearly = 1352 := by
   have h := coffee_weekly m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem coffee_savings (m : CoffeeModel) : m.savings = 338 := by
   have h := coffee_yearly m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A04P2

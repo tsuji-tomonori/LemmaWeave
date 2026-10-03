@@ -1,9 +1,18 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint1001A18P2
 
 structure GroceryModel where
-  ricePackets riceEach riceCost flourPackets flourEach flourCost soda spent initial balance : ℕ
+  ricePackets : ℕ
+  riceEach : ℕ
+  riceCost : ℕ
+  flourPackets : ℕ
+  flourEach : ℕ
+  flourCost : ℕ
+  soda : ℕ
+  spent : ℕ
+  initial : ℕ
+  balance : ℕ
   hRicePackets : ricePackets = 2
   hRiceEach : riceEach = 20
   hRiceCost : riceCost = ricePackets * riceEach
@@ -16,22 +25,26 @@ structure GroceryModel where
   hBalance : initial = spent + balance
 
 theorem rice_cost (m : GroceryModel) : m.riceCost = 40 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem flour_cost (m : GroceryModel) : m.flourCost = 75 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem grocery_total_spent (m : GroceryModel) : m.spent = 265 := by
   have h1 := rice_cost m
   have h2 := flour_cost m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem grocery_balance (m : GroceryModel) : m.balance = 235 := by
   have h := grocery_total_spent m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure SportsModel where
-  schoolDays missed present hoursPerDay totalHours : ℕ
+  schoolDays : ℕ
+  missed : ℕ
+  present : ℕ
+  hoursPerDay : ℕ
+  totalHours : ℕ
   hSchoolDays : schoolDays = 5
   hMissed : missed = 2
   hPresent : schoolDays = missed + present
@@ -39,14 +52,18 @@ structure SportsModel where
   hTotal : totalHours = present * hoursPerDay
 
 theorem sports_present_days (m : SportsModel) : m.present = 3 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem sports_hours (m : SportsModel) : m.totalHours = 6 := by
   have h := sports_present_days m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure FuelModel where
-  oldCost increasePercent newUnitCost capacityMultiplier totalCost : ℕ
+  oldCost : ℕ
+  increasePercent : ℕ
+  newUnitCost : ℕ
+  capacityMultiplier : ℕ
+  totalCost : ℕ
   hOld : oldCost = 200
   hIncrease : increasePercent = 20
   hNewUnit : 100 * newUnitCost = (100 + increasePercent) * oldCost
@@ -54,14 +71,19 @@ structure FuelModel where
   hTotal : totalCost = capacityMultiplier * newUnitCost
 
 theorem increased_tank_cost (m : FuelModel) : m.newUnitCost = 240 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem doubled_fuel_cost (m : FuelModel) : m.totalCost = 480 := by
   have h := increased_tank_cost m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure NotebookModel where
-  children fatherEach motherEach fatherTotal motherTotal total : ℕ
+  children : ℕ
+  fatherEach : ℕ
+  motherEach : ℕ
+  fatherTotal : ℕ
+  motherTotal : ℕ
+  total : ℕ
   hChildren : children = 3
   hFatherEach : fatherEach = 2
   hMotherEach : motherEach = 5
@@ -70,18 +92,24 @@ structure NotebookModel where
   hTotal : total = fatherTotal + motherTotal
 
 theorem father_notebooks (m : NotebookModel) : m.fatherTotal = 6 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem mother_notebooks (m : NotebookModel) : m.motherTotal = 15 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem notebook_total (m : NotebookModel) : m.total = 21 := by
   have h1 := father_notebooks m
   have h2 := mother_notebooks m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure FoldSchedule where
-  hugoSmall hugoMedium tomSmall tomMedium hugoTime tomTime elapsed : ℕ
+  hugoSmall : ℕ
+  hugoMedium : ℕ
+  tomSmall : ℕ
+  tomMedium : ℕ
+  hugoTime : ℕ
+  tomTime : ℕ
+  elapsed : ℕ
   hSmall : hugoSmall + tomSmall = 2400
   hMedium : hugoMedium + tomMedium = 1800
   hHugoTime : hugoTime = 3 * hugoSmall + 6 * hugoMedium
@@ -108,7 +136,7 @@ theorem hugo_medium_box_time : 2 * 3 = 6 := by norm_num
 
 theorem folding_lower_bound (m : FoldSchedule) : 7200 ≤ m.elapsed := by
   have hMedium := hugo_medium_box_time
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem folding_candidate_time : candidateFoldSchedule.elapsed = 7200 := by
   rfl

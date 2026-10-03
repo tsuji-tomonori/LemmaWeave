@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A11P1
 
@@ -14,11 +14,13 @@ structure TripModel where
 
 theorem trip_first_two (m : TripModel) : m.firstDay + m.secondDay = 348 := by
   rcases m with ⟨a, b, c, d, h1, h2, h3, h4⟩
+  dsimp at *
   simp_all
 
 theorem trip_solution (m : TripModel) : m.thirdDay = 145 := by
   have hPrev := trip_first_two m
   rcases m with ⟨a, b, c, d, h1, h2, h3, h4⟩
+  dsimp at *
   simp_all <;> omega
 
 structure DriveModel where
@@ -35,11 +37,13 @@ structure DriveModel where
 
 theorem drive_distance (m : DriveModel) : m.totalDistance = 693 := by
   rcases m with ⟨a, b, c, d, e, h1, h2, h3, h4, h5⟩
+  dsimp at *
   simp_all
 
 theorem drive_solution (m : DriveModel) : m.minSpeed = 63 := by
   have hPrev := drive_distance m
   rcases m with ⟨a, b, c, d, e, h1, h2, h3, h4, h5⟩
+  dsimp at *
   simp_all <;> omega
 
 structure ButtonsModel where
@@ -54,16 +58,19 @@ structure ButtonsModel where
 
 theorem buttons_gifted (m : ButtonsModel) : m.gifted = 42 := by
   rcases m with ⟨a, b, c, d, h1, h2, h3, h4⟩
+  dsimp at *
   simp_all
 
 theorem buttons_before (m : ButtonsModel) : m.beforeGiving = 56 := by
   have hPrev := buttons_gifted m
   rcases m with ⟨a, b, c, d, h1, h2, h3, h4⟩
+  dsimp at *
   simp_all
 
 theorem buttons_solution (m : ButtonsModel) : m.finalButtons = 28 := by
   have hPrev := buttons_before m
   rcases m with ⟨a, b, c, d, h1, h2, h3, h4⟩
+  dsimp at *
   simp_all <;> omega
 
 structure LasagnaModel where
@@ -82,16 +89,19 @@ structure LasagnaModel where
 
 theorem lasagna_required (m : LasagnaModel) : m.requiredNoodles = 20 := by
   rcases m with ⟨a, b, c, d, e, f, h1, h2, h3, h4, h5, h6⟩
+  dsimp at *
   simp_all
 
 theorem lasagna_needed (m : LasagnaModel) : m.neededNoodles = 16 := by
   have hPrev := lasagna_required m
   rcases m with ⟨a, b, c, d, e, f, h1, h2, h3, h4, h5, h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem lasagna_solution (m : LasagnaModel) : m.packages = 8 := by
   have hPrev := lasagna_needed m
   rcases m with ⟨a, b, c, d, e, f, h1, h2, h3, h4, h5, h6⟩
+  dsimp at *
   simp_all <;> omega
 
 structure FunfairModel where
@@ -110,21 +120,25 @@ structure FunfairModel where
 
 theorem funfair_total (m : FunfairModel) : m.total = 3000 := by
   rcases m with ⟨a, b, c, d, e, f, h1, h2, h3, h4, h5, h6⟩
+  dsimp at *
   simp_all
 
 theorem funfair_after_fourth (m : FunfairModel) : m.afterFourth = 2100 := by
   have hPrev := funfair_total m
   rcases m with ⟨a, b, c, d, e, f, h1, h2, h3, h4, h5, h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem funfair_after_fifth (m : FunfairModel) : m.afterFifth = 1050 := by
   have hPrev := funfair_after_fourth m
   rcases m with ⟨a, b, c, d, e, f, h1, h2, h3, h4, h5, h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem funfair_solution (m : FunfairModel) : m.unsold = 950 := by
   have hPrev := funfair_after_fifth m
   rcases m with ⟨a, b, c, d, e, f, h1, h2, h3, h4, h5, h6⟩
+  dsimp at *
   simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A11P1

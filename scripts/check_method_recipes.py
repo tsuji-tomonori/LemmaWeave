@@ -26,6 +26,10 @@ def validate_recipe(recipe, nodes, graph):
         review = recipe.get('author_review', {})
         if recipe.get('authorship') != 'llm_individual' or review.get('status') != 'checked' or not review.get('checks_ja'):
             raise ValueError('individual solution needs recorded author semantic review')
+        # A historical author check cannot override a later semantic rejection
+        # or stale review. Dependency success alone must never promote it.
+        if recipe.get('semantic_review_status') not in {'self_review_only', 'independent_checked'}:
+            raise ValueError('individual solution has an unapproved semantic review status')
     if not recipe['steps']:
         raise ValueError('recipe has no justified steps')
     completed = set()

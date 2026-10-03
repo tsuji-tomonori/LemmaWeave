@@ -1,22 +1,27 @@
 {
   "id": "gsm8k_sprint99_exam",
-  "title_ja": "ピザ会に必要なWilliamの最小得点",
+  "title_ja": "Williamの必要得点104%と100%上限での不成立（訂正候補）",
   "problem_id": "external-gsm8k-main-3101c7d50724:train:01776",
   "collection_id": "external-gsm8k-main-3101c7d50724",
-  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "lean_file": "tests/lean/GSM8KSprint0923A06CatchupExamErratum.lean",
   "semantic_review_status": "self_review_only",
   "model_scope": "self_reviewed_model",
-  "counting_note_ja": "固定GSM8Kの1問。",
+  "counting_note_ja": "固定GSM8Kの1問。参照解答の減算誤りに対する未承認の訂正候補。解答完成・readyには加えない。",
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
-  "problem_ja": "29人の得点合計と30人で平均75に必要な合計を求め、達成可能性と最小性の両方を示す。",
-  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_solution",
-  "graph": "work/gsm8k-sprint99-exam-graph.json",
-  "model_notes_ja": [],
+  "problem_ja": "全30人のうちWilliam以外の29人の平均は74%。全員の平均を75%以上にするための必要値を求める。上限を置かない整数モデルの算術上の最小値と、得点を100%以下に制限する場合を分けて示す。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_erratum_solution",
+  "graph": "work/gsm8k-sprint99-exam-erratum-graph.json",
+  "model_notes_ja": [
+    "原参照解答は2250−2146を94としたが、正しくは104である。原データの本文・解答・出典hashは変更しない。",
+    "原文の得点単位は%。既存の上限なし自然数モデルでは必要な算術値は104%。実際の試験で104%を取得できるとは主張しない。",
+    "通常の100%上限を別条件として置くと、どの得点でも目標平均75%を満たせない。原文には上限や加点の明示がないため、ExamScoreの仮定に上限を追加しない。",
+    "author_reviewとchecked_model_hashは過去の記録として保持する。今回の変更への意味承認ではなく、現在のモデルとのhash不一致を解消していない。"
+  ],
   "steps": [
     {
       "id": "exam_previous_count",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_previous_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_previous_count",
       "title_ja": "William以外は29人。",
       "claim_ja": "William以外は29人。",
       "method_ja": "30−1。",
@@ -28,84 +33,129 @@
     },
     {
       "id": "exam_previous_sum",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_previous_sum",
-      "title_ja": "29人の得点合計は2,146点。",
-      "claim_ja": "29人の得点合計は2,146点。",
-      "method_ja": "平均74×29人。",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_previous_sum",
+      "title_ja": "29人の百分率得点の合計は2146。",
+      "claim_ja": "29人の百分率得点の合計は2146。",
+      "method_ja": "74×29を計算する。",
       "requires_steps": [
         "exam_previous_count"
       ],
       "uses_nodes": [],
-      "condition_ja": "平均74は29人の正確な算術平均。",
+      "condition_ja": "平均74%は29人の正確な算術平均。各百分率の数値を合計する。",
       "conclusion_ja": "29×74=2146。",
       "baseline_ja": "29×74=2146。"
     },
     {
       "id": "exam_target_total",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_target_total",
-      "title_ja": "平均75に必要な合計は2,250点。",
-      "claim_ja": "平均75に必要な合計は2,250点。",
-      "method_ja": "30人×75点。",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_target_total",
+      "title_ja": "平均75%に必要な合計は2250。",
+      "claim_ja": "平均75%に必要な合計は2250。",
+      "method_ja": "30×75を計算する。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "少なくとも平均75を要求する。",
+      "condition_ja": "全30人の平均が75%以上であることを要求する。",
       "conclusion_ja": "30×75=2250。",
       "baseline_ja": "30×75=2250。"
     },
     {
-      "id": "exam_94_enough",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_94_enough",
-      "title_ja": "94点なら平均75に到達する。",
-      "claim_ja": "94点なら平均75に到達する。",
-      "method_ja": "2146+94と2250を比較する。",
+      "id": "exam_104_enough",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_104_enough",
+      "title_ja": "上限なしの算術では104が目標を満たす。",
+      "claim_ja": "上限なしの算術では104が目標を満たす。",
+      "method_ja": "2146+104と2250を比較する。",
       "requires_steps": [
         "exam_previous_sum",
         "exam_target_total"
       ],
       "uses_nodes": [],
-      "condition_ja": "得点は自然数。",
-      "conclusion_ja": "2146+94=2250。",
-      "baseline_ja": "2146+94=2250。"
+      "condition_ja": "百分率得点の数値を上限なしの自然数として扱う。現実の取得可能性は仮定しない。",
+      "conclusion_ja": "2146+104=2250。",
+      "baseline_ja": "2146+104=2250。"
     },
     {
       "id": "exam_lower_bound",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_lower_bound",
-      "title_ja": "必要得点は94点以上。",
-      "claim_ja": "必要得点は94点以上。",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_lower_bound",
+      "title_ja": "目標を満たすには104以上が必要。",
+      "claim_ja": "目標を満たすには104以上が必要。",
       "method_ja": "2146+score≥2250を解く。",
       "requires_steps": [
         "exam_previous_sum",
         "exam_target_total"
       ],
       "uses_nodes": [],
-      "condition_ja": "平均が少なくとも75。",
-      "conclusion_ja": "94≤score。",
-      "baseline_ja": "94≤score。"
+      "condition_ja": "目標合計を満たす得点について考える。",
+      "conclusion_ja": "104≤score。",
+      "baseline_ja": "104≤score。"
     },
     {
       "id": "exam_solution",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_solution",
-      "title_ja": "最小得点は94点。",
-      "claim_ja": "最小得点は94点。",
-      "method_ja": "94点の達成可能性と、全達成得点に対する94点の下界を合わせる。",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_solution",
+      "title_ja": "既存の上限なしモデルの算術上の最小値は104%。",
+      "claim_ja": "既存の上限なしモデルの算術上の最小値は104%。",
+      "method_ja": "104で合計条件を満たすことと下界を合わせる。",
       "requires_steps": [
-        "exam_94_enough",
+        "exam_104_enough",
         "exam_lower_bound"
       ],
       "uses_nodes": [],
-      "condition_ja": "最小性を量化して確認する。",
-      "conclusion_ja": "score=94。",
-      "baseline_ja": "score=94。"
+      "condition_ja": "ExamScoreの得点は自然数で、上限を設定していない。実際の取得可能性は別問題。",
+      "conclusion_ja": "score=104。",
+      "baseline_ja": "score=104。"
+    },
+    {
+      "id": "exam_capped_scores_not_enough",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_capped_scores_not_enough",
+      "title_ja": "100%以下に制限すると目標を満たせない。",
+      "claim_ja": "100%以下に制限すると目標を満たせない。",
+      "method_ja": "2146+score≤2246<2250を使う。",
+      "requires_steps": [
+        "exam_previous_sum",
+        "exam_target_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ここだけで候補得点score≤100を追加する。既存モデルの仮定は変えない。",
+      "conclusion_ja": "すべての自然数score≤100について、2146+score<2250。",
+      "baseline_ja": "すべての自然数score≤100について、2146+score<2250。"
+    },
+    {
+      "id": "exam_erratum_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.exam_erratum_solution",
+      "title_ja": "104%という必要値と、100%上限での不成立を区別する。",
+      "claim_ja": "104%という必要値と、100%上限での不成立を区別する。",
+      "method_ja": "上限なしモデルの最小値と、別に上限を置いた場合の不成立を併記する。",
+      "requires_steps": [
+        "exam_solution",
+        "exam_capped_scores_not_enough"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文に上限や加点の明示はない。通常の100%上限なら目標は達成できない。",
+      "conclusion_ja": "上限なしモデルではscore=104。100%以下の得点では目標平均75%を満たせない。",
+      "baseline_ja": "上限なしモデルではscore=104。100%以下の得点では目標平均75%を満たせない。"
     }
   ],
   "author_review": {
-    "reviewer": "author",
+    "reviewer": "ci-repair-author",
     "status": "checked",
     "source_line_1based": 1777,
-    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checked_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
     "checks_ja": [
-      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
-      "各説明行の名前付きLean定理と依存関係を照合した。"
-    ]
-  }
+      "2026-10-03に固定原本の全ファイルhashと当該レコードhashを照合し、問題文と参照解答を再読した。",
+      "今回承認された2件の訂正のうち、この問題の条件・定義域・結論を現在モデルと照合した。訂正理由と旧条件は docs/EXAM_SCORE_ERRATUM_CANDIDATE.md に保持した。",
+      "別監査担当が原資料との対応と量化条件を照合した。ユーザー承認を数学的独立レビューとして扱わない。",
+      "現在入力で専用driverのLean実行、公理依存、説明行の実依存を検査した。バッチ同居問題や全体CIの成功、ready台帳昇格を意味しない。"
+    ],
+    "review_record": "reviews/ci-approved-corrections-20261003.json"
+  },
+  "author_review_history": [
+    {
+      "reviewer": "author",
+      "status": "checked",
+      "source_line_1based": 1777,
+      "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+      "checks_ja": [
+        "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+        "各説明行の名前付きLean定理と依存関係を照合した。"
+      ]
+    }
+  ]
 }

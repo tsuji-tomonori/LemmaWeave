@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0930A00P2
 
@@ -14,11 +14,13 @@ structure PictureModel where
 
 theorem pictures_horizontal (m : PictureModel) : m.horizontal = 15 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 
 theorem pictures_solution (m : PictureModel) : m.vertical = 10 := by
   have h := pictures_horizontal m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 
 structure SoccerModel where
@@ -39,21 +41,25 @@ structure SoccerModel where
 
 theorem soccer_alexia_time (m : SoccerModel) : m.alexiaMinutes = 400 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem soccer_ermias_time (m : SoccerModel) : m.ermiasMinutes = 500 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem soccer_solution (m : SoccerModel) : m.totalLaborMinutes = 900 := by
   have h1 := soccer_alexia_time m
   have h2 := soccer_ermias_time m
   rcases m with ⟨a,b,c,d,e,f,g,p1,p2,p3,p4,p5,p6,p7⟩
+  dsimp at *
   omega
 
 theorem soccer_parallel_elapsed (m : SoccerModel) : m.parallelElapsedMinutes = 500 := by
   have h := soccer_ermias_time m
   rcases m with ⟨a,b,c,d,e,f,g,p1,p2,p3,p4,p5,p6,p7⟩
+  dsimp at *
   omega
 
 theorem soccer_time_readings_differ (m : SoccerModel) :
@@ -76,11 +82,13 @@ structure TaxiModel where
 
 theorem taxi_distance_charge (m : TaxiModel) : m.distanceChargeCents = 1000 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem taxi_solution (m : TaxiModel) : m.totalCents = 1200 := by
   have h := taxi_distance_charge m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 structure GrassModel where
@@ -105,22 +113,26 @@ structure GrassModel where
 
 theorem grass_growth_needed (m : GrassModel) : m.growthNeededHalfInches = 4 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   omega
 
 theorem grass_months_between (m : GrassModel) : m.monthsBetweenCuts = 4 := by
   have h := grass_growth_needed m
   rcases m with ⟨a,b,c,d,e,f,g,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem grass_cuts_per_year (m : GrassModel) : m.cutsPerYear = 3 := by
   have h := grass_months_between m
   rcases m with ⟨a,b,c,d,e,f,g,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem grass_solution (m : GrassModel) : m.annualCostDollars = 300 := by
   have h1 := grass_months_between m
   have h2 := grass_cuts_per_year m
   rcases m with ⟨a,b,c,d,e,f,g,i,j,p1,p2,p3,p4,p5,p6,p7,p8,p9⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 structure LockModel where
@@ -133,11 +145,13 @@ structure LockModel where
 
 theorem locks_second (m : LockModel) : m.secondMinutes = 12 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 theorem locks_solution (m : LockModel) : m.bothMinutes = 60 := by
   have h := locks_second m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0930A00P2

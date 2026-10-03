@@ -23,6 +23,7 @@ COMMANDS = [
     ['lake', 'env', 'lean', 'tests/lean/Smoke.lean'],
     ['lake', 'env', 'lean', 'tests/lean/DependencyFixtures.lean'],
     ['python3', 'scripts/check_extractor.py'],
+    ['lake', 'env', 'lean', 'tests/lean/DependencyNameResolution.lean'],
     ['lake', 'build', 'LemmaWeave.Lemmas.QuadraticMethods'],
     ['lake', 'build', 'LemmaWeave.Lemmas.ArithmeticMethods', 'LemmaWeave.Problems.GSM8K.Goals'],
     ['lake', 'build', 'LemmaWeave.Problems.Probability.Model'],

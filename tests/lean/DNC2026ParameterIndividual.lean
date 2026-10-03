@@ -30,7 +30,8 @@ theorem three_divisor_forced (a : ℕ)
   rcases h3A.2 with ⟨d, hd1, hd3, hda⟩
   have hdle : d ≤ 3 := Nat.le_of_dvd (by norm_num) hd3
   have hdeq : d = 3 := by
-    interval_cases d <;> norm_num at hd1 hd3 ⊢
+    have hdposs : d = 1 ∨ d = 3 := (Nat.dvd_prime (by decide : Nat.Prime 3)).mp hd3
+    omega
   simpa [hdeq] using hda
 
 /-- 2 以上 9 以下で 2 と 3 の双方を約数にもつ自然数は 6 に限る。 -/
@@ -40,6 +41,12 @@ theorem only_candidate_is_six (a : ℕ) (ha : AllowedParameter a)
   rcases h2 with ⟨u, hu⟩
   rcases h3 with ⟨v, hv⟩
   omega
+
+/-- 前二行の必要条件を実際に用いて、唯一の候補へ進む。 -/
+theorem candidate_is_six_from_condition (a : ℕ) (ha : AllowedParameter a)
+    (h : ComplementHasNoTwoOrThree a) : a = 6 := by
+  exact only_candidate_is_six a ha
+    (even_divisor_forced a h) (three_divisor_forced a h)
 
 /-- a = 6 なら、補集合には 2 の倍数も 3 の倍数も残らない。 -/
 theorem six_satisfies_condition : ComplementHasNoTwoOrThree 6 := by
@@ -55,8 +62,7 @@ theorem individual_solution : ParameterGoal := by
   intro a ha
   constructor
   · intro h
-    exact only_candidate_is_six a ha
-      (even_divisor_forced a h) (three_divisor_forced a h)
+    exact candidate_is_six_from_condition a ha h
   · intro h
     subst a
     exact six_satisfies_condition

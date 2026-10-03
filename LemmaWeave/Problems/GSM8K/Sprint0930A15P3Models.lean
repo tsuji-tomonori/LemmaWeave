@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0930A15P3
 
@@ -21,19 +21,19 @@ structure ShirtsModel where
   hTotal : totalCost = cheapCost + expensiveCost
 
 theorem shirts_cheap_cost (m : ShirtsModel) : m.cheapCost = 45 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem shirts_remaining (m : ShirtsModel) : m.expensiveShirts = 2 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem shirts_expensive_cost (m : ShirtsModel) : m.expensiveCost = 40 := by
   have h := shirts_remaining m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem shirts_total_cost (m : ShirtsModel) : m.totalCost = 85 := by
   have h1 := shirts_cheap_cost m
   have h2 := shirts_expensive_cost m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure VacationModel where
   workedDays : ℕ
@@ -52,19 +52,19 @@ structure VacationModel where
   hRemaining : earned = used + remaining
 
 theorem vacation_earned (m : VacationModel) : m.earned = 30 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem vacation_september (m : VacationModel) : m.septemberUsed = 10 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem vacation_used (m : VacationModel) : m.used = 15 := by
   have h := vacation_september m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem vacation_remaining (m : VacationModel) : m.remaining = 15 := by
   have h1 := vacation_earned m
   have h2 := vacation_used m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure AdBlockModel where
   totalPercent : ℕ
@@ -79,11 +79,12 @@ structure AdBlockModel where
   hRequested : 100 * requestedPercent = unblockedPercent * uninterestingAmongUnblockedPercent
 
 theorem adblock_uninteresting_among_unblocked (m : AdBlockModel) : m.uninterestingAmongUnblockedPercent = 80 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem adblock_requested_percent (m : AdBlockModel) : m.requestedPercent = 16 := by
-  have h := adblock_uninteresting_among_unblocked m
-  cases m <;> norm_num at * <;> omega
+  have h := m.hRequested
+  rw [m.hUnblocked, adblock_uninteresting_among_unblocked m] at h
+  omega
 
 structure VitaminModel where
   days : ℕ
@@ -98,11 +99,11 @@ structure VitaminModel where
   hBottles : days = bottles * servingsPerBottle
 
 theorem vitamin_servings_per_bottle (m : VitaminModel) : m.servingsPerBottle = 30 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem vitamin_bottles (m : VitaminModel) : m.bottles = 6 := by
   have h := vitamin_servings_per_bottle m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 structure FurnitureModel where
   couch : ℕ
@@ -119,10 +120,10 @@ structure FurnitureModel where
   hOwed : total = initialPayment + owed
 
 theorem furniture_total (m : FurnitureModel) : m.total = 900 := by
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 theorem furniture_owed (m : FurnitureModel) : m.owed = 400 := by
   have h := furniture_total m
-  cases m <;> omega
+  cases m <;> dsimp at * <;> (try simp_all) <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0930A15P3

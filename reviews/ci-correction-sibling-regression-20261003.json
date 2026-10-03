@@ -1,0 +1,1060 @@
+{
+  "schema_version": "0.1",
+  "reviewed_at": "2026-10-03T08:00:42.294559+00:00",
+  "reviewer": "dot",
+  "review_kind": "source_model_static_preservation_audit",
+  "review_status": "18 source/static-preservation reviews and18 exact-current kernel/axiom/dependency validations complete",
+  "base_sha": "ea31980aece6a1857994a314afff4d87f4407a34",
+  "worktree_head": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "scope": "18 unchanged sibling problems only. Exam and books approved semantic corrections are separately reviewed. No source record or reference answer is rewritten. No independent-human approval or ready promotion.",
+  "models": {
+    "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean": {
+      "content_sha256": "84d65df4ff9e39052d069a2c1e251d714bc02b503dfb663c6f61b3e10b8d8f00",
+      "lw_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54"
+    },
+    "LemmaWeave/Problems/GSM8K/Sprint0929A07P1Models.lean": {
+      "content_sha256": "08a558c7fda7d20e67b621859a9e90cc96b21b8ac51fb02d5a25650d20daff63",
+      "lw_model_hash": "2628a2a6e23c6cb1a85260a68dc3f4b7ac28e81b8b1b9af6d32492fa2d6b53e8"
+    }
+  },
+  "reviews": [
+    {
+      "recipe_id": "gsm8k_sprint99_fishing",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01764",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1765,
+      "source_record_sha256": "9e184f0b594a9e15128ccd9dd7171231e8534f5b6506ad1d661941954df4d59b",
+      "raw_question_sha256": "740003ecccd90cc202a6e6838fd6a96697ff47d322839e0835dda56093e7ffe4",
+      "reference_answer": "3",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "FishingSeason"
+      ],
+      "reviewed_theorems": [
+        "fishing_first",
+        "fishing_first_ninety",
+        "fishing_remaining_days",
+        "fishing_remainder_catch",
+        "fishing_second",
+        "fishing_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "FishingSeason": true,
+        "fishing_first": true,
+        "fishing_first_ninety": true,
+        "fishing_remaining_days": true,
+        "fishing_remainder_catch": true,
+        "fishing_second": true,
+        "fishing_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "213 days at 3 gives 639; novice 30+120+492=642; excess 3. Counts and partition match source.",
+      "manual_satisfying_field_values": [
+        639,
+        150,
+        123,
+        492,
+        642,
+        3
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_fishing",
+        "status": "passed",
+        "steps": 6,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "c8619080172497b5e98752e23cb7593b81a3cd6aa0051e893da5b5bfeafd4719"
+        },
+        "graph_sha256": "c8619080172497b5e98752e23cb7593b81a3cd6aa0051e893da5b5bfeafd4719"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_worms",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01765",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1766,
+      "source_record_sha256": "5ce95e9802933a940c2ceb594084229faebae529ff5dc01570a0ee2048694cee",
+      "raw_question_sha256": "f402853fd04f95575127d4454829dbbb5edabd4ee88ccda40119ea5720809333",
+      "reference_answer": "34",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "BirdWorms"
+      ],
+      "reviewed_theorems": [
+        "worms_daily",
+        "worms_needed",
+        "worms_mama_net",
+        "worms_available",
+        "worms_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "BirdWorms": true,
+        "worms_daily": true,
+        "worms_needed": true,
+        "worms_mama_net": true,
+        "worms_available": true,
+        "worms_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "6 babies times 3 worms times 3 days gives54; available13-2+9=20; deficit34.",
+      "manual_satisfying_field_values": [
+        18,
+        54,
+        11,
+        20,
+        34
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_worms",
+        "status": "passed",
+        "steps": 5,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "402acf3c80348d8177902581e013da4f8be4cd1626ce13119fce7f1ba0bc65c0"
+        },
+        "graph_sha256": "402acf3c80348d8177902581e013da4f8be4cd1626ce13119fce7f1ba0bc65c0"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_necklaces",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01766",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1767,
+      "source_record_sha256": "433959c89d92582026bc509efd6cf505c66d4bd501629ca8e84e72d3b0f004fa",
+      "raw_question_sha256": "095787bbb4270f7eaa997323350ade215ad34be80bd3458914b6ec75cb50576b",
+      "reference_answer": "153",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "NecklaceMachines"
+      ],
+      "reviewed_theorems": [
+        "necklaces_first",
+        "necklaces_second",
+        "necklaces_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "NecklaceMachines": true,
+        "necklaces_first": true,
+        "necklaces_second": true,
+        "necklaces_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "second*10=first*24 encodes2.4 exactly; first45,second108,total153.",
+      "manual_satisfying_field_values": [
+        45,
+        108,
+        153
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_necklaces",
+        "status": "passed",
+        "steps": 3,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "889738ba6fb75c84053a1b41234e40af445fda64baad22774b009bbbac1b3d77"
+        },
+        "graph_sha256": "889738ba6fb75c84053a1b41234e40af445fda64baad22774b009bbbac1b3d77"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_chives",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01767",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1768,
+      "source_record_sha256": "7913cf2ac49aa482c2857152dc48476ca2c3677a6a9d7a89e2f67f3ef27bf841",
+      "raw_question_sha256": "7335a4f5370382018027f9d4b4d9ab35b22254f6a9864d610f05ff18b15fb022",
+      "reference_answer": "150",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "ChiveGarden"
+      ],
+      "reviewed_theorems": [
+        "chives_reserved_rows",
+        "chives_rows",
+        "chives_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "ChiveGarden": true,
+        "chives_reserved_rows": true,
+        "chives_rows": true,
+        "chives_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "20 rows minus disjoint3 parsley and2 rosemary rows leaves15 rows times10 plants.",
+      "manual_satisfying_field_values": [
+        5,
+        15,
+        150
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_chives",
+        "status": "passed",
+        "steps": 3,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "4d8932753111ae823bd3a4dae8438fb6ceb76757faf8c471b891c3c7757752d2"
+        },
+        "graph_sha256": "4d8932753111ae823bd3a4dae8438fb6ceb76757faf8c471b891c3c7757752d2"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_shelter",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01768",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1769,
+      "source_record_sha256": "e37990c8ca845fe6cdc903bbc6629edaf859e10235251f8d77ed21df5e492be7",
+      "raw_question_sha256": "b62d20352f9502942a8e5fea9195f70e01865cc10c58d3baeb562cdc178e5107",
+      "reference_answer": "17",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "CatShelter"
+      ],
+      "reviewed_theorems": [
+        "shelter_before_adoption",
+        "shelter_adopted",
+        "shelter_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "CatShelter": true,
+        "shelter_before_adoption": true,
+        "shelter_adopted": true,
+        "shelter_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "20+2+1 admissions minus3 adopters times2 cats gives17.",
+      "manual_satisfying_field_values": [
+        23,
+        6,
+        17
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_shelter",
+        "status": "passed",
+        "steps": 3,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "3ea98c9d73e5d6bd043a0111d595744931c0b5bf3d3c71532e21a46ec61dcc6e"
+        },
+        "graph_sha256": "3ea98c9d73e5d6bd043a0111d595744931c0b5bf3d3c71532e21a46ec61dcc6e"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_colors",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01769",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1770,
+      "source_record_sha256": "0cbf0b9c8de0b137b1cce3663ede7d6d732aba82be4b837b90513e6f59d9f973",
+      "raw_question_sha256": "6461957f4153e12ba48cfab67813550f12b00c44430b97a48225263aa205037c",
+      "reference_answer": "9",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "FavoriteColors"
+      ],
+      "reviewed_theorems": [
+        "colors_green",
+        "colors_pink",
+        "colors_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "FavoriteColors": true,
+        "colors_green": true,
+        "colors_pink": true,
+        "colors_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "Half of30 is15; one third of18 girls is6; documented disjoint/exhaustive color partition gives9 yellow.",
+      "manual_satisfying_field_values": [
+        15,
+        6,
+        9
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_colors",
+        "status": "passed",
+        "steps": 3,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "12b6844adad5cb9bfcdde70ed17a117a49e60d475af283f70a4e7693da2bd056"
+        },
+        "graph_sha256": "12b6844adad5cb9bfcdde70ed17a117a49e60d475af283f70a4e7693da2bd056"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_essay",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01770",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1771,
+      "source_record_sha256": "ac1b929913d54ca77cbc2b93c216c503da9ca8d16c2b2cbae0a0b2b44e5fa59e",
+      "raw_question_sha256": "91436c7aa4cc59beb42f6d4bbd994e729d1a862c39f4a9b22f7f9dfb67183456",
+      "reference_answer": "800",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "EssaySections"
+      ],
+      "reviewed_theorems": [
+        "essay_conclusion",
+        "essay_body_total",
+        "essay_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "EssaySections": true,
+        "essay_conclusion": true,
+        "essay_body_total": true,
+        "essay_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "Introduction450,conclusion1350,four equal body sections total3200,each800; body-section interpretation matches reference.",
+      "manual_satisfying_field_values": [
+        1350,
+        3200,
+        800
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_essay",
+        "status": "passed",
+        "steps": 3,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "0441c23bdc8e2944510bb67953d64465111ecc32f6b36daf73bfd59f14b1b6dc"
+        },
+        "graph_sha256": "0441c23bdc8e2944510bb67953d64465111ecc32f6b36daf73bfd59f14b1b6dc"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_bakery",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01771",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1772,
+      "source_record_sha256": "346cdeb56fb7d65b5d2296c189a404b5bc9fd4049694e4a99c5922f63b54c2f9",
+      "raw_question_sha256": "cca92a8efbbbe02f0b958d50d46fef77a9c855afb0292be5d55f3b8f62439d63",
+      "reference_answer": "33",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "BakeryPurchase"
+      ],
+      "reviewed_theorems": [
+        "bakery_cupcakes",
+        "bakery_doughnuts",
+        "bakery_pie",
+        "bakery_cookies",
+        "bakery_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "BakeryPurchase": true,
+        "bakery_cupcakes": true,
+        "bakery_doughnuts": true,
+        "bakery_pie": true,
+        "bakery_cookies": true,
+        "bakery_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "Costs expressed in cents:5*200+6*100+4*200+15*60=3300=$33.",
+      "manual_satisfying_field_values": [
+        1000,
+        600,
+        800,
+        900,
+        3300
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_bakery",
+        "status": "passed",
+        "steps": 5,
+        "axioms": [],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "8fc1174f786c462f307efdefd5ec0278bc7ac791ca72b8053aa346680a77d298"
+        },
+        "graph_sha256": "8fc1174f786c462f307efdefd5ec0278bc7ac791ca72b8053aa346680a77d298"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_trip",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01772",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1773,
+      "source_record_sha256": "32689b96e6f64ed998e95408152236df80f50b945e15900219034642fb4d20e5",
+      "raw_question_sha256": "3b1cfb05db7480b780aafb66c497994b895f5c2687ca3459806304f60449d572",
+      "reference_answer": "6",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "RoadTrip"
+      ],
+      "reviewed_theorems": [
+        "trip_distance",
+        "trip_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "RoadTrip": true,
+        "trip_distance": true,
+        "trip_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "Route length55+95=150, not straight-line displacement; speed25 yields6 hours.",
+      "manual_satisfying_field_values": [
+        150,
+        6
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_trip",
+        "status": "passed",
+        "steps": 2,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "5834e52f4c607409b2c9f665a274b4dcde9ff900dfd8c285a6b8a81e61920f52"
+        },
+        "graph_sha256": "5834e52f4c607409b2c9f665a274b4dcde9ff900dfd8c285a6b8a81e61920f52"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_wrapping",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01773",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1774,
+      "source_record_sha256": "8fcb2b767d52645d69dee1a371ae2a1b2aed829762b0875ce5ac0a2d2d191793",
+      "raw_question_sha256": "f035947dce39b114afcf968347d2052420d95928b670bf35f0b47fca974c53ec",
+      "reference_answer": "4",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "WrappingPaper"
+      ],
+      "reviewed_theorems": [
+        "wrapping_first_two",
+        "wrapping_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "WrappingPaper": true,
+        "wrapping_first_two": true,
+        "wrapping_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "Disjoint gifts wrapped by first two rolls3+5=8;12-8=4 on third.",
+      "manual_satisfying_field_values": [
+        8,
+        4
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_wrapping",
+        "status": "passed",
+        "steps": 2,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "03b9a0bf6c9d8f12a2c31391b30e4790b9bc585f296db02ccb0fa25c13900d22"
+        },
+        "graph_sha256": "03b9a0bf6c9d8f12a2c31391b30e4790b9bc585f296db02ccb0fa25c13900d22"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_pie_samples",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01774",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1775,
+      "source_record_sha256": "042443a49def879f793aa1f2680f7866daf02b01a5e3ed61776d83c370b9aa04",
+      "raw_question_sha256": "dc6544f224b8bbccbea40e08a8e94d3c495ab222bb80e4c10b7b2733a3b23343",
+      "reference_answer": "130",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "PieSamples"
+      ],
+      "reviewed_theorems": [
+        "pie_samples_per_pie",
+        "pie_samples_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "PieSamples": true,
+        "pie_samples_per_pie": true,
+        "pie_samples_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "13 pies times2 halves times5 samples=130; one person per sample explicitly recorded.",
+      "manual_satisfying_field_values": [
+        10,
+        130
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_pie_samples",
+        "status": "passed",
+        "steps": 2,
+        "axioms": [],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "afa9185fdb1c30ff817d16d5107e238755687ccb503fcebd7b5836acf32b6365"
+        },
+        "graph_sha256": "afa9185fdb1c30ff817d16d5107e238755687ccb503fcebd7b5836acf32b6365"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_squirrels",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01775",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1776,
+      "source_record_sha256": "ba23a37a841b13b56a870090e8e90171b9e25afbff9646328c7598cd15d9a9c7",
+      "raw_question_sha256": "015ff9ba7b312d0ec974b8886b6474fd3526b192fe599f3c736020e371fdbf5e",
+      "reference_answer": "28",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "SquirrelCounts"
+      ],
+      "reviewed_theorems": [
+        "squirrels_extra",
+        "squirrels_second",
+        "squirrels_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "SquirrelCounts": true,
+        "squirrels_extra": true,
+        "squirrels_second": true,
+        "squirrels_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "A third more than12 is16; summed observations28, not a claim of distinct physical squirrels.",
+      "manual_satisfying_field_values": [
+        4,
+        16,
+        28
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_squirrels",
+        "status": "passed",
+        "steps": 3,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "1409e74909c01ad5536bd23d6a59097a3fd2e8d62a481381e0ac8c7b0ae367b0"
+        },
+        "graph_sha256": "1409e74909c01ad5536bd23d6a59097a3fd2e8d62a481381e0ac8c7b0ae367b0"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_donations",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01777",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1778,
+      "source_record_sha256": "bab8ff3306608c98cd213f169475f671852fc34fb5401fa6034f2b5b7fdb1da3",
+      "raw_question_sha256": "9115eddd0095521f48f582fefb601a87051d8f76275235a3d9df06b2715b3f6a",
+      "reference_answer": "90",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "DonationsToOrganize",
+        "DonationsOriginallyGiven"
+      ],
+      "reviewed_theorems": [
+        "donations_organize_damaged",
+        "donations_organize_usable",
+        "donations_organize_other",
+        "donations_organize_standalone",
+        "donations_included",
+        "donations_organize_solution",
+        "donations_original_other",
+        "donations_original_standalone",
+        "donations_original_included",
+        "donations_original_solution",
+        "donations_two_readings_differ"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "DonationsToOrganize": true,
+        "DonationsOriginallyGiven": true,
+        "donations_organize_damaged": true,
+        "donations_organize_usable": true,
+        "donations_organize_other": true,
+        "donations_organize_standalone": true,
+        "donations_included": true,
+        "donations_organize_solution": true,
+        "donations_original_other": true,
+        "donations_original_standalone": true,
+        "donations_original_included": true,
+        "donations_original_solution": true,
+        "donations_two_readings_differ": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "Reference reading takes300 donations after discarded floats:30 damaged,90 usable,240 non-ball donations,60 standalone+30 included=90 balls. Existing alternative explicitly treats300 before discard:270 non-ball,30 standalone+30 included=60. Both interpretations and their separate structures predate correction. Final numeric inequality must connect to both actual proof chains.",
+      "manual_satisfying_field_values": {
+        "post_discard": [
+          30,
+          90,
+          240,
+          60,
+          30,
+          90
+        ],
+        "pre_discard": [
+          270,
+          30,
+          30,
+          60
+        ]
+      },
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_donations",
+        "status": "passed",
+        "steps": 11,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "b70e8f867caf7ccd8746be369df1a20dc6facc302cb4333462ae52596567c842"
+        },
+        "graph_sha256": "b70e8f867caf7ccd8746be369df1a20dc6facc302cb4333462ae52596567c842",
+        "each_step_reachable": true,
+        "declared_dependency_mutation_rejected": {
+          "donations_organize_damaged": true,
+          "donations_organize_usable": true,
+          "donations_organize_other": true,
+          "donations_organize_standalone": true,
+          "donations_included": true,
+          "donations_organize_solution": true,
+          "donations_original_other": true,
+          "donations_original_standalone": true,
+          "donations_original_included": true,
+          "donations_original_solution": true
+        }
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "resolved_technical_blocker": "Original numeric-only final proof had no model theorem dependencies; bounded proof-body and11 declaration-link repair now under validation.",
+      "resolution": "Only original numeric-inequality proof body now instantiates both unchanged models and composes their named solution proofs. Eleven technical recipe declaration links point to actual model theorem declarations. Strict graph and10 negative dependency-mutation checks passed."
+    },
+    {
+      "recipe_id": "gsm8k_sprint99_doughnuts",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01778",
+      "batch": "GSM8K-INDIVIDUAL-0153",
+      "source_line_1based": 1779,
+      "source_record_sha256": "6a5d7d6e019b6dd4573267f48e5a3ac37361c35e0ea455eb4d20f94edd729291",
+      "raw_question_sha256": "269ea37e572a144331feba6b3984cd586f326defede487a00483abce028af804",
+      "reference_answer": "22",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0923A06CatchupModels.lean",
+      "current_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
+      "structures": [
+        "DoughnutProfit"
+      ],
+      "reviewed_theorems": [
+        "doughnuts_revenue",
+        "doughnuts_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "DoughnutProfit": true,
+        "doughnuts_revenue": true,
+        "doughnuts_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "All25 doughnuts sold at3 gives75; subtract stated ingredient cost53 gives22.",
+      "manual_satisfying_field_values": [
+        75,
+        22
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint99_doughnuts",
+        "status": "passed",
+        "steps": 2,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080102-b6504c33/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "bbedbd322b2a3954ea993843a1c4776a29f3dc92e517441652ac347e1e969b92"
+        },
+        "graph_sha256": "bbedbd322b2a3954ea993843a1c4776a29f3dc92e517441652ac347e1e969b92"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint185_seeds",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03026",
+      "batch": "GSM8K-INDIVIDUAL-0239",
+      "source_line_1based": 3027,
+      "source_record_sha256": "925fb386d2d73658d99e42e6ab822b47b18bdebc79c54d87ec664d849078b1ab",
+      "raw_question_sha256": "52e6ac29063ffed572c64ed1cbfedf398f6b5176909788e81a4b1f72e1fa7564",
+      "reference_answer": "64",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0929A07P1Models.lean",
+      "current_model_hash": "2628a2a6e23c6cb1a85260a68dc3f4b7ac28e81b8b1b9af6d32492fa2d6b53e8",
+      "structures": [
+        "SeedsModel"
+      ],
+      "reviewed_theorems": [
+        "seeds_sunflower",
+        "seeds_dandelion",
+        "seeds_total",
+        "seeds_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "SeedsModel": true,
+        "seeds_sunflower": true,
+        "seeds_dandelion": true,
+        "seeds_total": true,
+        "seeds_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "6*9 sunflower54;8*12 dandelion96;total150 positive;100*96/150=64 percent, exact integer instance.",
+      "manual_satisfying_field_values": [
+        54,
+        96,
+        150,
+        64
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint185_seeds",
+        "status": "passed",
+        "steps": 4,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080243-cdc4d665/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "1ba6b234ae2a701cd7de0aaeb6539fb8fe5040b4ed5295c293bb318a7f4b1439"
+        },
+        "graph_sha256": "1ba6b234ae2a701cd7de0aaeb6539fb8fe5040b4ed5295c293bb318a7f4b1439"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint185_castles",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03028",
+      "batch": "GSM8K-INDIVIDUAL-0239",
+      "source_line_1based": 3029,
+      "source_record_sha256": "dc07e76689ebd35e3d9f38d3738f3f5f9a76603cbd7a90123a91a63eadb1106f",
+      "raw_question_sha256": "bf3777275c156191fd0d4f7462cabd5ba916f626151ac0db10bd2582b0e6d7f6",
+      "reference_answer": "580",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0929A07P1Models.lean",
+      "current_model_hash": "2628a2a6e23c6cb1a85260a68dc3f4b7ac28e81b8b1b9af6d32492fa2d6b53e8",
+      "structures": [
+        "SandcastlesModel"
+      ],
+      "reviewed_theorems": [
+        "castles_mark_towers",
+        "castles_jeff_castles",
+        "castles_jeff_towers",
+        "castles_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "SandcastlesModel": true,
+        "castles_mark_towers": true,
+        "castles_jeff_castles": true,
+        "castles_jeff_towers": true,
+        "castles_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "Mark20 castles and200 towers;Jeff60 castles and300 towers; allfour source categories sum580.",
+      "manual_satisfying_field_values": [
+        200,
+        60,
+        300,
+        580
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint185_castles",
+        "status": "passed",
+        "steps": 4,
+        "axioms": [
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080243-cdc4d665/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "8c489e596c86e24cfbe63295714b6360460e3c9a2f53969311ca2ded5b8e87a5"
+        },
+        "graph_sha256": "8c489e596c86e24cfbe63295714b6360460e3c9a2f53969311ca2ded5b8e87a5"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint185_lawn",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03029",
+      "batch": "GSM8K-INDIVIDUAL-0239",
+      "source_line_1based": 3030,
+      "source_record_sha256": "4fa5f4ed444f110e4a5852e6c8fd9e7b5080cc881f026696e29f520c6ed0cba1",
+      "raw_question_sha256": "9c3dd1f510e0047602ee0000bee0bcff3a1ca0f597a9a11da1900a5e446922e9",
+      "reference_answer": "9",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0929A07P1Models.lean",
+      "current_model_hash": "2628a2a6e23c6cb1a85260a68dc3f4b7ac28e81b8b1b9af6d32492fa2d6b53e8",
+      "structures": [
+        "LawnModel"
+      ],
+      "reviewed_theorems": [
+        "lawn_high",
+        "lawn_low",
+        "lawn_annual",
+        "lawn_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "LawnModel": true,
+        "lawn_high": true,
+        "lawn_low": true,
+        "lawn_annual": true,
+        "lawn_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "April throughSeptember six months*15=90;October throughMarch six*3=18;108/12=9 monthly. One mowing per stated mowing day matches source answer.",
+      "manual_satisfying_field_values": [
+        90,
+        18,
+        108,
+        9
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint185_lawn",
+        "status": "passed",
+        "steps": 4,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080243-cdc4d665/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "0cd96ba2cb72498afaa5d0df6b5a88ac810ee9fe03c7b782c81e71ea285805a7"
+        },
+        "graph_sha256": "0cd96ba2cb72498afaa5d0df6b5a88ac810ee9fe03c7b782c81e71ea285805a7"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    },
+    {
+      "recipe_id": "gsm8k_sprint185_videos",
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03030",
+      "batch": "GSM8K-INDIVIDUAL-0239",
+      "source_line_1based": 3031,
+      "source_record_sha256": "e66a6cdb375b41db7d220c7f83eadc702f776f2a9bfe03cc346a512861e02990",
+      "raw_question_sha256": "7e6af38730639a1c8012473e3c6b58c81f8855aff1bce816c849d5beeea459c4",
+      "reference_answer": "160",
+      "source_question_and_hashes_match_ledger": true,
+      "model_file": "LemmaWeave/Problems/GSM8K/Sprint0929A07P1Models.lean",
+      "current_model_hash": "2628a2a6e23c6cb1a85260a68dc3f4b7ac28e81b8b1b9af6d32492fa2d6b53e8",
+      "structures": [
+        "CardsModel"
+      ],
+      "reviewed_theorems": [
+        "cards_uma",
+        "cards_ekon",
+        "cards_solution"
+      ],
+      "structure_and_theorem_statement_preserved_against_base": {
+        "CardsModel": true,
+        "cards_uma": true,
+        "cards_ekon": true,
+        "cards_solution": true
+      },
+      "domain": "Natural-number fixed-instance models; universal quantification over model values where applicable. Donations final root retains (90 : Nat) != 60.",
+      "adequacy_finding": "Ekon+17=Uma;Kelsey=Ekon+43;sum411 givesUma134,Ekon117,Kelsey160. CardsModel name is cosmetic.",
+      "manual_satisfying_field_values": [
+        134,
+        117,
+        160
+      ],
+      "source_adequacy": "pass_under_recorded_interpretation",
+      "current_kernel_axiom_dependency_evidence": {
+        "recipe": "gsm8k_sprint185_videos",
+        "status": "passed",
+        "steps": 3,
+        "axioms": [
+          "Quot.sound",
+          "propext"
+        ],
+        "proof_evidence": {
+          "run": "runs/20261003T080243-cdc4d665/run.json",
+          "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+          "github_run_id": null,
+          "raw_graph_sha256": "b3b2897f737049f20e0dfee75bde0b4ec28d44f36442cb273ab7f9c717a91ebd"
+        },
+        "graph_sha256": "b3b2897f737049f20e0dfee75bde0b4ec28d44f36442cb273ab7f9c717a91ebd"
+      },
+      "recommendation": "Refresh only this problem review binding after exact-current Lean, axiom and strict explanation dependency evidence. No ready-ledger promotion.",
+      "known_technical_blocker": null
+    }
+  ],
+  "approved_exam_current_evidence": {
+    "recipe": "gsm8k_sprint99_exam",
+    "status": "passed",
+    "steps": 8,
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "proof_evidence": {
+      "run": "runs/20261003T080244-7c77b505/run.json",
+      "git_commit": "2f04a80dd1ba04a13bb73c9cbacfa89a68ff17dd",
+      "github_run_id": null,
+      "raw_graph_sha256": "81350b92646f6cdcc5dad8664063bd9b64959946aed3d9c68f48c3dd9e72eb24"
+    },
+    "graph_sha256": "81350b92646f6cdcc5dad8664063bd9b64959946aed3d9c68f48c3dd9e72eb24"
+  },
+  "bounded_binding_refresh_recommendation": {
+    "recipes": [
+      "gsm8k_sprint99_fishing",
+      "gsm8k_sprint99_worms",
+      "gsm8k_sprint99_necklaces",
+      "gsm8k_sprint99_chives",
+      "gsm8k_sprint99_shelter",
+      "gsm8k_sprint99_colors",
+      "gsm8k_sprint99_essay",
+      "gsm8k_sprint99_bakery",
+      "gsm8k_sprint99_trip",
+      "gsm8k_sprint99_wrapping",
+      "gsm8k_sprint99_pie_samples",
+      "gsm8k_sprint99_squirrels",
+      "gsm8k_sprint99_donations",
+      "gsm8k_sprint99_doughnuts",
+      "gsm8k_sprint185_seeds",
+      "gsm8k_sprint185_castles",
+      "gsm8k_sprint185_lawn",
+      "gsm8k_sprint185_videos"
+    ],
+    "allowed_only_after_recorded_validation": true,
+    "preserve_original_author_review_history": true,
+    "preserve_original_batch_hash_history": true,
+    "scope": "Only these18 sibling records plus2 separately approved corrected records and corresponding2 batch whole-file bindings; no other meanings or status upgrades, and no ready ledger writes"
+  }
+}

@@ -23,7 +23,7 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A19.aqua_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A19.table_books_solution to "work/gsm8k-sprint176-table-books-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A19.table_books_solution
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A19.table_books_alternative_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A19.table_books_alternative_solution to "work/lw-line-LemmaWeave.Problems.GSM8K.Sprint0928A19.table_books_alternative_solution-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A19.table_books_alternative_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A19.multitool_solution to "work/gsm8k-sprint176-multitool-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A19.multitool_solution
@@ -31,7 +31,7 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A19.library_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A19.screws_solution to "work/gsm8k-sprint176-screws-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A19.screws_solution
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A19.screws_alternative_solution
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A19.screws_alternative_solution to "work/lw-line-LemmaWeave.Problems.GSM8K.Sprint0928A19.screws_alternative_solution-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A19.screws_alternative_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A19.toy_store_solution to "work/gsm8k-sprint176-toy-store-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A19.toy_store_solution

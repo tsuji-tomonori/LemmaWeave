@@ -1,62 +1,63 @@
 import LemmaWeave.Problems.GSM8K.Sprint0922A06Models
+import LemmaWeave.Audit.Extract
 
 namespace LemmaWeave.Tests.GSM8KSprint0922A06
 open LemmaWeave.Problems.GSM8K.Sprint0922A06
 
-theorem safari_saturday := LemmaWeave.Problems.GSM8K.Sprint0922A06.safari_saturday
-theorem safari_sunday := LemmaWeave.Problems.GSM8K.Sprint0922A06.safari_sunday
-theorem safari_monday := LemmaWeave.Problems.GSM8K.Sprint0922A06.safari_monday
-theorem safari_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.safari_solution
-theorem socks_after_loss := LemmaWeave.Problems.GSM8K.Sprint0922A06.socks_after_loss
-theorem socks_donated := LemmaWeave.Problems.GSM8K.Sprint0922A06.socks_donated
-theorem socks_remaining := LemmaWeave.Problems.GSM8K.Sprint0922A06.socks_remaining
-theorem socks_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.socks_solution
-theorem followers_gained := LemmaWeave.Problems.GSM8K.Sprint0922A06.followers_gained
-theorem followers_before_unfollow := LemmaWeave.Problems.GSM8K.Sprint0922A06.followers_before_unfollow
-theorem followers_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.followers_solution
-theorem arrival_abel_hours := LemmaWeave.Problems.GSM8K.Sprint0922A06.arrival_abel_hours
-theorem arrival_alice_hours := LemmaWeave.Problems.GSM8K.Sprint0922A06.arrival_alice_hours
-theorem arrival_absolute_gap := LemmaWeave.Problems.GSM8K.Sprint0922A06.arrival_absolute_gap
-theorem arrival_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.arrival_solution
-theorem chocolate_grams := LemmaWeave.Problems.GSM8K.Sprint0922A06.chocolate_grams
-theorem chocolate_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.chocolate_solution
-theorem lease_weekly_miles := LemmaWeave.Problems.GSM8K.Sprint0922A06.lease_weekly_miles
-theorem lease_mileage_cost := LemmaWeave.Problems.GSM8K.Sprint0922A06.lease_mileage_cost
-theorem lease_weekly_cost := LemmaWeave.Problems.GSM8K.Sprint0922A06.lease_weekly_cost
-theorem lease_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.lease_solution
-theorem tomatoes_first := LemmaWeave.Problems.GSM8K.Sprint0922A06.tomatoes_first
-theorem tomatoes_second := LemmaWeave.Problems.GSM8K.Sprint0922A06.tomatoes_second
-theorem tomatoes_totals := LemmaWeave.Problems.GSM8K.Sprint0922A06.tomatoes_totals
-theorem tomatoes_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.tomatoes_solution
-theorem fishing_jackson := LemmaWeave.Problems.GSM8K.Sprint0922A06.fishing_jackson
-theorem fishing_jonah := LemmaWeave.Problems.GSM8K.Sprint0922A06.fishing_jonah
-theorem fishing_george := LemmaWeave.Problems.GSM8K.Sprint0922A06.fishing_george
-theorem fishing_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.fishing_solution
-theorem rice_increase := LemmaWeave.Problems.GSM8K.Sprint0922A06.rice_increase
-theorem rice_second := LemmaWeave.Problems.GSM8K.Sprint0922A06.rice_second
-theorem rice_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.rice_solution
-theorem restaurant_entrees := LemmaWeave.Problems.GSM8K.Sprint0922A06.restaurant_entrees
-theorem restaurant_subtotal := LemmaWeave.Problems.GSM8K.Sprint0922A06.restaurant_subtotal
-theorem restaurant_tip := LemmaWeave.Problems.GSM8K.Sprint0922A06.restaurant_tip
-theorem restaurant_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.restaurant_solution
-theorem coffee_people := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_people
-theorem coffee_daily_cups := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_daily_cups
-theorem coffee_daily_ounces := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_daily_ounces
-theorem coffee_weekly_ounces := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_weekly_ounces
-theorem coffee_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_solution
-theorem journey_first_distance := LemmaWeave.Problems.GSM8K.Sprint0922A06.journey_first_distance
-theorem journey_remaining_distance := LemmaWeave.Problems.GSM8K.Sprint0922A06.journey_remaining_distance
-theorem journey_remaining_time := LemmaWeave.Problems.GSM8K.Sprint0922A06.journey_remaining_time
-theorem journey_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.journey_solution
-theorem chalkboard_length := LemmaWeave.Problems.GSM8K.Sprint0922A06.chalkboard_length
-theorem chalkboard_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.chalkboard_solution
-theorem colouring_lollipops := LemmaWeave.Problems.GSM8K.Sprint0922A06.colouring_lollipops
-theorem colouring_hard_total := LemmaWeave.Problems.GSM8K.Sprint0922A06.colouring_hard_total
-theorem colouring_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.colouring_solution
-theorem bomb_climbed := LemmaWeave.Problems.GSM8K.Sprint0922A06.bomb_climbed
-theorem bomb_remaining_flights := LemmaWeave.Problems.GSM8K.Sprint0922A06.bomb_remaining_flights
-theorem bomb_climb_time := LemmaWeave.Problems.GSM8K.Sprint0922A06.bomb_climb_time
-theorem bomb_solution := LemmaWeave.Problems.GSM8K.Sprint0922A06.bomb_solution
+theorem safari_saturday (m:Safari) : m.sat=5 := LemmaWeave.Problems.GSM8K.Sprint0922A06.safari_saturday m
+theorem safari_sunday (m:Safari) : m.sun=7 := LemmaWeave.Problems.GSM8K.Sprint0922A06.safari_sunday m
+theorem safari_monday (m:Safari) : m.mon=8 := LemmaWeave.Problems.GSM8K.Sprint0922A06.safari_monday m
+theorem safari_solution (m:Safari) : m.total=20 := LemmaWeave.Problems.GSM8K.Sprint0922A06.safari_solution m
+theorem socks_after_loss (m:Socks) : m.afterLoss=36 := LemmaWeave.Problems.GSM8K.Sprint0922A06.socks_after_loss m
+theorem socks_donated (m:Socks) : m.donated=24 := LemmaWeave.Problems.GSM8K.Sprint0922A06.socks_donated m
+theorem socks_remaining (m:Socks) : m.remaining=12 := LemmaWeave.Problems.GSM8K.Sprint0922A06.socks_remaining m
+theorem socks_solution (m:Socks) : m.final=25 := LemmaWeave.Problems.GSM8K.Sprint0922A06.socks_solution m
+theorem followers_gained (m:Followers) : m.gained=365000 := LemmaWeave.Problems.GSM8K.Sprint0922A06.followers_gained m
+theorem followers_before_unfollow (m:Followers) : m.beforeLoss=465000 := LemmaWeave.Problems.GSM8K.Sprint0922A06.followers_before_unfollow m
+theorem followers_solution (m:Followers) : m.final=445000 := LemmaWeave.Problems.GSM8K.Sprint0922A06.followers_solution m
+theorem arrival_abel_hours (m:Arrival) : m.abelHours=20 := LemmaWeave.Problems.GSM8K.Sprint0922A06.arrival_abel_hours m
+theorem arrival_alice_hours (m:Arrival) : m.aliceHours=25 := LemmaWeave.Problems.GSM8K.Sprint0922A06.arrival_alice_hours m
+theorem arrival_absolute_gap (m:Arrival) : m.gapHours=6 := LemmaWeave.Problems.GSM8K.Sprint0922A06.arrival_absolute_gap m
+theorem arrival_solution (m:Arrival) : m.gapMinutes=360 := LemmaWeave.Problems.GSM8K.Sprint0922A06.arrival_solution m
+theorem chocolate_grams (m:Chocolate) : m.grams=2000 := LemmaWeave.Problems.GSM8K.Sprint0922A06.chocolate_grams m
+theorem chocolate_solution (m:Chocolate) : m.bars=16 := LemmaWeave.Problems.GSM8K.Sprint0922A06.chocolate_solution m
+theorem lease_weekly_miles (m:CarLease) : m.weeklyMiles=500 := LemmaWeave.Problems.GSM8K.Sprint0922A06.lease_weekly_miles m
+theorem lease_mileage_cost (m:CarLease) : m.mileageCents=5000 := LemmaWeave.Problems.GSM8K.Sprint0922A06.lease_mileage_cost m
+theorem lease_weekly_cost (m:CarLease) : m.weeklyDollars=150 := LemmaWeave.Problems.GSM8K.Sprint0922A06.lease_weekly_cost m
+theorem lease_solution (m:CarLease) : m.annualDollars=7800 := LemmaWeave.Problems.GSM8K.Sprint0922A06.lease_solution m
+theorem tomatoes_first (m:Tomatoes) : m.first=2 := LemmaWeave.Problems.GSM8K.Sprint0922A06.tomatoes_first m
+theorem tomatoes_second (m:Tomatoes) : m.second=5 := LemmaWeave.Problems.GSM8K.Sprint0922A06.tomatoes_second m
+theorem tomatoes_totals (m:Tomatoes) : m.tomatoTotal=7 ∧ m.plantTotal=35 := LemmaWeave.Problems.GSM8K.Sprint0922A06.tomatoes_totals m
+theorem tomatoes_solution (m:Tomatoes) : m.percent=20 := LemmaWeave.Problems.GSM8K.Sprint0922A06.tomatoes_solution m
+theorem fishing_jackson (m:Fishing) : m.jackson=30 := LemmaWeave.Problems.GSM8K.Sprint0922A06.fishing_jackson m
+theorem fishing_jonah (m:Fishing) : m.jonah=20 := LemmaWeave.Problems.GSM8K.Sprint0922A06.fishing_jonah m
+theorem fishing_george (m:Fishing) : m.george=40 := LemmaWeave.Problems.GSM8K.Sprint0922A06.fishing_george m
+theorem fishing_solution (m:Fishing) : m.total=90 := LemmaWeave.Problems.GSM8K.Sprint0922A06.fishing_solution m
+theorem rice_increase (m:Rice) : m.increase=4 := LemmaWeave.Problems.GSM8K.Sprint0922A06.rice_increase m
+theorem rice_second (m:Rice) : m.second=24 := LemmaWeave.Problems.GSM8K.Sprint0922A06.rice_second m
+theorem rice_solution (m:Rice) : m.total=44 := LemmaWeave.Problems.GSM8K.Sprint0922A06.rice_solution m
+theorem restaurant_entrees (m:Restaurant) : m.entrees=80 := LemmaWeave.Problems.GSM8K.Sprint0922A06.restaurant_entrees m
+theorem restaurant_subtotal (m:Restaurant) : m.subtotal=90 := LemmaWeave.Problems.GSM8K.Sprint0922A06.restaurant_subtotal m
+theorem restaurant_tip (m:Restaurant) : m.tip=18 := LemmaWeave.Problems.GSM8K.Sprint0922A06.restaurant_tip m
+theorem restaurant_solution (m:Restaurant) : m.total=108 := LemmaWeave.Problems.GSM8K.Sprint0922A06.restaurant_solution m
+theorem coffee_people (m:Coffee) : m.people=4 := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_people m
+theorem coffee_daily_cups (m:Coffee) : m.dailyCups=8 := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_daily_cups m
+theorem coffee_daily_ounces (m:Coffee) : m.dailyOunces=4 := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_daily_ounces m
+theorem coffee_weekly_ounces (m:Coffee) : m.weeklyOunces=28 := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_weekly_ounces m
+theorem coffee_solution (m:Coffee) : m.weeklyDollars=35 := LemmaWeave.Problems.GSM8K.Sprint0922A06.coffee_solution m
+theorem journey_first_distance (m:Journey) : m.firstDistance=16 := LemmaWeave.Problems.GSM8K.Sprint0922A06.journey_first_distance m
+theorem journey_remaining_distance (m:Journey) : m.remainingDistance=8 := LemmaWeave.Problems.GSM8K.Sprint0922A06.journey_remaining_distance m
+theorem journey_remaining_time (m:Journey) : m.remainingTime=4 := LemmaWeave.Problems.GSM8K.Sprint0922A06.journey_remaining_time m
+theorem journey_solution (m:Journey) : m.speed=2 := LemmaWeave.Problems.GSM8K.Sprint0922A06.journey_solution m
+theorem chalkboard_length (m:Chalkboard) : m.length=6 := LemmaWeave.Problems.GSM8K.Sprint0922A06.chalkboard_length m
+theorem chalkboard_solution (m:Chalkboard) : m.area=18 := LemmaWeave.Problems.GSM8K.Sprint0922A06.chalkboard_solution m
+theorem colouring_lollipops (m:Colouring) : m.lollipop=500 := LemmaWeave.Problems.GSM8K.Sprint0922A06.colouring_lollipops m
+theorem colouring_hard_total (m:Colouring) : m.hardTotal=100 := LemmaWeave.Problems.GSM8K.Sprint0922A06.colouring_hard_total m
+theorem colouring_solution (m:Colouring) : m.eachHard=20 := LemmaWeave.Problems.GSM8K.Sprint0922A06.colouring_solution m
+theorem bomb_climbed (m:Bomb) : m.climbed=15 := LemmaWeave.Problems.GSM8K.Sprint0922A06.bomb_climbed m
+theorem bomb_remaining_flights (m:Bomb) : m.remainingFlights=5 := LemmaWeave.Problems.GSM8K.Sprint0922A06.bomb_remaining_flights m
+theorem bomb_climb_time (m:Bomb) : m.climbTime=55 := LemmaWeave.Problems.GSM8K.Sprint0922A06.bomb_climb_time m
+theorem bomb_solution (m:Bomb) : m.diffuseTime=17 := LemmaWeave.Problems.GSM8K.Sprint0922A06.bomb_solution m
 
 end LemmaWeave.Tests.GSM8KSprint0922A06
 

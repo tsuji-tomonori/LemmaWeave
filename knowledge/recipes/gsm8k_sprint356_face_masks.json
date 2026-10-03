@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint356_face_masks",
+  "title_ja": "4時間で作るマスク",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03903",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A10P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "For the first hour of work, Manolo can make face-masks at the rate of one every four minutes. Thereafter, he can make face-masks at the rate of one every six minutes. How many face-masks does Manola make in a four-hour shift?",
+  "answer_ja": "最初の1時間は60÷4=15枚。残り3時間は1時間に60÷6=10枚なので30枚。合計15+30=45枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A10P2.face_masks",
+  "graph": "work/gsm8k-sprint356-face-masks-graph.json",
+  "model_notes_ja": [
+    "Manolo/Manolaは同一人物の綴り揺れと読み、最初の1時間と残り3時間を分ける。"
+  ],
+  "steps": [
+    {
+      "id": "face_masks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A10P2.face_masks",
+      "title_ja": "4時間で作るマスク",
+      "claim_ja": "最初の1時間は60÷4=15枚。残り3時間は1時間に60÷6=10枚なので30枚。合計15+30=45枚。",
+      "method_ja": "時間帯ごとの生産速度で個数を求めて加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ManoloとManolaは同一人物の綴り揺れで、各時間は中断なく各速度で作業する。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "45枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3904,
+    "checked_model_hash": "881b9e0b07d2ba59de3dc6d686c22211371d9b33f7907075e3f748a7f544b572",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

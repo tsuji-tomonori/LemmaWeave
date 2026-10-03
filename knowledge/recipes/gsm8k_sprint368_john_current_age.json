@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint368_john_current_age",
+  "title_ja": "Johnの現在年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03963",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "9 years from now, John will be 3 times as old as he was 11 years ago. How old is he now?",
+  "answer_ja": "現在をj歳とする。9年後はj+9歳、11年前はj−11歳なので、j+9=3(j−11)。展開するとj+9=3j−33、よって42=2j、j=21歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P2.john_current_age",
+  "graph": "work/gsm8k-sprint368-john-current-age-graph.json",
+  "model_notes_ja": [
+    "年齢を整数年で測り、原文の倍数関係を正確な等式とする。"
+  ],
+  "steps": [
+    {
+      "id": "john_current_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P2.john_current_age",
+      "title_ja": "Johnの現在年齢",
+      "claim_ja": "現在をj歳とする。9年後はj+9歳、11年前はj−11歳なので、j+9=3(j−11)。展開するとj+9=3j−33、よって42=2j、j=21歳。",
+      "method_ja": "時点ごとの年齢を現在年齢の一次式で表し、一次方程式を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "年齢を整数年で測り、原文の倍数関係を正確な等式とする。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "展開するとj+9=3j−33、よって42=2j、j=21歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3964,
+    "checked_model_hash": "6ee2020ec3883e324fc362d1e0f24bb6ce1e9bdc192499bc0ce7d908c4c029d9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint368_austin_fruit_bags",
+  "title_ja": "Austinが摘んだ果物袋数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03965",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Dallas and Austin went to the pick-your-own orchard. Dallas picked 14 bags of apples and 9 bags of pears. Austin picked 6 bags of apples more than Dallas, and 5 fewer bags of pears than Dallas. How many bags of fruit did Austin pick, in total?",
+  "answer_ja": "りんごはDallasより6袋多いので14+6=20袋。梨は5袋少ないので9−5=4袋。合計24袋。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P2.austin_fruit_bags",
+  "graph": "work/gsm8k-sprint368-austin-fruit-bags-graph.json",
+  "model_notes_ja": [
+    "りんご袋と梨袋を重複なく数える。"
+  ],
+  "steps": [
+    {
+      "id": "austin_fruit_bags",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P2.austin_fruit_bags",
+      "title_ja": "Austinが摘んだ果物袋数",
+      "claim_ja": "りんごはDallasより6袋多いので14+6=20袋。梨は5袋少ないので9−5=4袋。合計24袋。",
+      "method_ja": "果物ごとに比較量を計算し、最後に加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "りんご袋と梨袋を重複なく数える。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "合計24袋。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3966,
+    "checked_model_hash": "6ee2020ec3883e324fc362d1e0f24bb6ce1e9bdc192499bc0ce7d908c4c029d9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

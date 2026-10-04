@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-04",
+  "run_id": "20261004T190000+0900-ci-repair",
+  "scheduled_slot": "2026-10-04T19:00:00+09:00",
+  "started_at": "2026-10-04T19:03:47+09:00",
+  "finished_at": "2026-10-04T19:06:16+09:00",
+  "schedule_deviation_minutes": 4,
+  "schedule_deviation_reason_ja": "19時枠を実起動時刻から約4分遅れで開始した。",
+  "role": "ci_repair_override_user_instruction",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "424327c3f910b835bd6f373a4ff167e96c26456c",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [],
+  "deferred": [],
+  "problem_processing": {
+    "status": "paused_by_latest_user_instruction_until_ci_success",
+    "next_pending": "external-gsm8k-main-3101c7d50724:train:04256"
+  },
+  "repair": {
+    "target": "LemmaWeave/Problems/DNC2026M2BC/SequenceClosedFormModel.lean",
+    "evidence_run_id": 37113010759,
+    "failure_ja": "固定Lean 4.33.1で有限和の構文糖 `∑ k in ...` が unexpected token 'in' となった。",
+    "classification": "proof_maintenance_only",
+    "semantic_change": false,
+    "change_ja": "2箇所の有限和を同値な `Finset.sum (Finset.range ...) (fun k => ...)` へ展開した。",
+    "repair_commit": "1cc614b4f15b0170189e7e02783335272f93336c"
+  },
+  "validation": {
+    "authoritative_model_fields_unchanged": true,
+    "theorem_statement_mathematics_unchanged": true,
+    "proof_body_unchanged": true,
+    "forbidden_holes_added": 0,
+    "local_lean_build": "not_run_tool_unavailable",
+    "exact_head_ci": "pending"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "unique": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_pending_exact_head_ci"
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "固定Lean 4.33.1・固定mathlibの正確なHEADでCIと公理監査が成功するまで検証済みとはしない。"
+  }
+}

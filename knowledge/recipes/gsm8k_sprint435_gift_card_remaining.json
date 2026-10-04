@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint435_gift_card_remaining",
+  "title_ja": "ギフトカードの残高",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04190",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Marlon has a gift card for $200. He spent half of it on Monday and one-fourth of the remainder on Tuesday. How much was left on his gift card?",
+  "answer_ja": "月曜後は200-100=100ドル。火曜は残りの4分の1で25ドル使うので、残高は100-25=75ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.gift_card_remaining",
+  "graph": "work/gsm8k-sprint435-gift-card-remaining-graph.json",
+  "model_notes_ja": [
+    "火曜の4分の1は元額でなく月曜後の残額に対する割合。"
+  ],
+  "steps": [
+    {
+      "id": "monday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.gift_card_after_monday",
+      "title_ja": "月曜後の残高",
+      "claim_ja": "200-200/2=100ドル。",
+      "method_ja": "元額の半分を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜に元額の半分を使う。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "200-200/2=100ドル。"
+    },
+    {
+      "id": "tuesday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.gift_card_tuesday_spend",
+      "title_ja": "火曜の使用額",
+      "claim_ja": "100/4=25ドル。",
+      "method_ja": "月曜後の残額の4分の1を取る。",
+      "requires_steps": [
+        "monday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "割合の基準は残額100ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "100/4=25ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.gift_card_remaining",
+      "title_ja": "最終残高",
+      "claim_ja": "100-25=75ドル。",
+      "method_ja": "月曜後残高から火曜使用額を引く。",
+      "requires_steps": [
+        "monday",
+        "tuesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加の支出はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "100-25=75ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4191,
+    "checked_model_hash": "36520a5493dfbeeee6398f2298aaa7f53f29221fd77d96b96c3e12b29d3acde8",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

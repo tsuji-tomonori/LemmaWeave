@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint433_discounted_shirt_price",
+  "title_ja": "割引後のシャツ価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04188",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?",
+  "answer_ja": "割引額は80×15%=12ドル。支払額は80-12=68ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.discounted_shirt_price",
+  "graph": "work/gsm8k-sprint433-discounted-shirt-price-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.shirt_discount_amount",
+      "title_ja": "割引額",
+      "claim_ja": "80×15%=12ドル。",
+      "method_ja": "定価に割引率を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "定価80ドル、割引率15%。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "80×15%=12ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.discounted_shirt_price",
+      "title_ja": "支払額",
+      "claim_ja": "80-12=68ドル。",
+      "method_ja": "定価から割引額を引く。",
+      "requires_steps": [
+        "discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加料金や税は原文にない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "80-12=68ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4189,
+    "checked_model_hash": "36520a5493dfbeeee6398f2298aaa7f53f29221fd77d96b96c3e12b29d3acde8",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

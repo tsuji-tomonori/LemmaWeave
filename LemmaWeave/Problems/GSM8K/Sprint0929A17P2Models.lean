@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A17P2
 
@@ -16,12 +16,13 @@ structure PizzaModel where
 
 theorem pizza_eaten (m : PizzaModel) : m.eaten = 3 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem pizza_solution (m : PizzaModel) : m.remaining = 5 := by
-  have hEaten := pizza_eaten m
-  rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at *
+  have h := m.hRemaining
+  rw [m.hTotal, pizza_eaten m] at h
+  linarith
 
 structure BasketsModel where
   pointsPerBasket : ℕ
@@ -39,17 +40,20 @@ structure BasketsModel where
 
 theorem baskets_matt (m : BasketsModel) : m.mattBaskets = 3 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at * <;> omega
+  dsimp at *
+  (try simp_all) <;> norm_num at * <;> omega
 
 theorem baskets_shawn (m : BasketsModel) : m.shawnBaskets = 2 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at * <;> omega
+  dsimp at *
+  (try simp_all) <;> norm_num at * <;> omega
 
 theorem baskets_solution (m : BasketsModel) : m.totalBaskets = 5 := by
   have hMatt := baskets_matt m
   have hShawn := baskets_shawn m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 structure WaterSevenConsumedFillsModel where
   target : ℕ
@@ -65,12 +69,14 @@ structure WaterSevenConsumedFillsModel where
 
 theorem water_consumed_under_seven_fills (m : WaterSevenConsumedFillsModel) : m.consumed = 84 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem water_solution_under_seven_consumed_fills (m : WaterSevenConsumedFillsModel) : m.remaining = 16 := by
   have hConsumed := water_consumed_under_seven_fills m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 theorem water_literal_seven_refills_after_initial_fill :
     (100 : ℕ) - 12 * (1 + 7) = 4 := by
@@ -92,28 +98,32 @@ structure NicoleClothesModel where
 
 theorem nicole_first_sister (m : NicoleClothesModel) : m.firstSister = 5 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at * <;> omega
+  dsimp at *
+  (try simp_all) <;> norm_num at * <;> omega
 
 theorem nicole_next_sister (m : NicoleClothesModel) : m.nextSister = 12 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 theorem nicole_youngest_three (m : NicoleClothesModel) : m.youngestThreeTotal = 27 := by
   have hFirst := nicole_first_sister m
   have hNext := nicole_next_sister m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 theorem nicole_oldest_sister (m : NicoleClothesModel) : m.oldestSister = 9 := by
-  have hYoungest := nicole_youngest_three m
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  norm_num at * <;> omega
+  have h := m.hOldestAverage
+  rw [nicole_youngest_three m] at h
+  omega
 
 theorem nicole_solution (m : NicoleClothesModel) : m.finalTotal = 36 := by
   have hYoungest := nicole_youngest_three m
   have hOldest := nicole_oldest_sister m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 structure VanHelsingModel where
   vampireRate : ℕ
@@ -139,26 +149,27 @@ structure VanHelsingModel where
 
 theorem van_werewolf_earnings (m : VanHelsingModel) : m.werewolfEarnings = 80 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
-  norm_num at *
+  dsimp at *
+  (try simp_all) <;> norm_num at *
 
 theorem van_vampires_removed (m : VanHelsingModel) : m.vampiresRemoved = 5 := by
   have hWolf := van_werewolf_earnings m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
-  norm_num at * <;> omega
+  dsimp at *
+  (try simp_all) <;> norm_num at * <;> omega
 
 theorem van_total_vampires (m : VanHelsingModel) : m.totalVampires = 10 := by
   have hRemoved := van_vampires_removed m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
-  omega
+  dsimp at *
+  (try simp_all) <;> omega
 
 theorem van_total_werewolves (m : VanHelsingModel) : m.totalWerewolves = 40 := by
-  have hVampires := van_total_vampires m
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
-  norm_num at *
+  rw [m.hFourTimes, van_total_vampires m]
 
 theorem van_solution (m : VanHelsingModel) : m.percentWerewolvesRemoved = 20 := by
-  have hWolves := van_total_werewolves m
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
-  norm_num at * <;> omega
+  have h := m.hPercent
+  rw [m.hWerewolvesRemoved, van_total_werewolves m] at h
+  omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A17P2

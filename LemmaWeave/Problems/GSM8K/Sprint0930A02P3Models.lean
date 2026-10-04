@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0930A02P3
 
@@ -16,11 +16,13 @@ structure CookieModel where
 
 theorem cookies_per_member (m : CookieModel) : m.cookiesPerMember = 160 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem cookies_solution (m : CookieModel) : m.totalCookies = 16000 := by
   have h := cookies_per_member m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 structure BabysitterModel where
@@ -47,26 +49,31 @@ structure BabysitterModel where
 
 theorem babysitter_old_total (m : BabysitterModel) : m.oldTotal = 96 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem babysitter_hourly_total (m : BabysitterModel) : m.newHourlyTotal = 72 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem babysitter_scream_charge (m : BabysitterModel) : m.screamCharge = 6 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem babysitter_new_total (m : BabysitterModel) : m.newTotal = 78 := by
   have h1 := babysitter_hourly_total m
   have h2 := babysitter_scream_charge m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10⟩
+  dsimp at *
   omega
 
 theorem babysitter_solution (m : BabysitterModel) : m.savings = 18 := by
   have h1 := babysitter_old_total m
   have h2 := babysitter_new_total m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10⟩
+  dsimp at *
   omega
 
 structure TransportModel where
@@ -89,25 +96,30 @@ structure TransportModel where
 
 theorem transport_original_kilograms (m : TransportModel) : m.originalKilograms = 4000 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem transport_new_bags (m : TransportModel) : m.newBags = 240 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   omega
 
 theorem transport_new_weight (m : TransportModel) : m.newKilogramsPerBag = 30 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,h1,h2,h3,h4,h5,h6,h7,h8⟩
+  dsimp at *
   omega
 
 theorem transport_new_total (m : TransportModel) : m.newKilograms = 7200 := by
   have h1 := transport_new_bags m
   have h2 := transport_new_weight m
   rcases m with ⟨a,b,c,d,e,f,g,h,p1,p2,p3,p4,p5,p6,p7,p8⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem transport_solution (m : TransportModel) : m.newCost = 10800 := by
   have h := transport_new_total m
   rcases m with ⟨a,b,c,d,e,f,g,h,p1,p2,p3,p4,p5,p6,p7,p8⟩
+  dsimp at *
   omega
 
 structure EggModel where
@@ -126,16 +138,19 @@ structure EggModel where
 
 theorem eggs_total (m : EggModel) : m.totalEggs = 24 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem eggs_people (m : EggModel) : m.people = 4 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 
 theorem eggs_solution (m : EggModel) : m.eggsEach = 6 := by
   have h1 := eggs_total m
   have h2 := eggs_people m
   rcases m with ⟨a,b,c,d,e,f,p1,p2,p3,p4,p5,p6⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 structure DogModel where
@@ -150,16 +165,19 @@ structure DogModel where
 
 theorem dog_body (m : DogModel) : m.bodyLength = 18 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 
 theorem dog_head (m : DogModel) : m.headLength = 3 := by
   have h := dog_body m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 
 theorem dog_solution (m : DogModel) : m.tailLength = 9 := by
   have h := dog_body m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0930A02P3

@@ -2,56 +2,56 @@ import LemmaWeave.Problems.GSM8K.Sprint0924A12Models
 import LemmaWeave.Audit.Extract
 
 namespace LemmaWeave.Tests.GSM8KSprint0924A12
-namespace P := LemmaWeave.Problems.GSM8K.Sprint0924A12
 
-theorem chips_blue : m.blue=10 := P.chips_blue
-theorem chips_nongreen : m.nongreen=44 := P.chips_nongreen
-theorem chips_solution : m.green=16 := P.chips_solution
-theorem peas_equation : m.peas=2*m.corn+15 := P.peas_equation
-theorem peas_solution : m.corn=10 := P.peas_solution
-theorem wallets_nada : m.nada=12 := P.wallets_nada
-theorem wallets_solution : m.john=48 := P.wallets_solution
-theorem wallets_literal_impossible : ¬ ∃ (n a j : ℕ), a+5=n ∧ j=5*n ∧ n+a+j=67 := P.wallets_literal_impossible
-theorem farm_daily : m.daily=270 := P.farm_daily
-theorem farm_weekly_eggs : m.weekly=1890 := P.farm_weekly_eggs
-theorem farm_solution : m.boxes=315 := P.farm_solution
-theorem books_laura : m.laura=8 := P.books_laura
-theorem books_solution : m.stu=4 := P.books_solution
-theorem snacks_pizza : m.pizza=24 := P.snacks_pizza
-theorem snacks_juice : m.juice=4 := P.snacks_juice
-theorem snacks_spent : m.spent=28 := P.snacks_spent
-theorem snacks_solution : m.change=22 := P.snacks_solution
-theorem pizza_people : m.people=10 := P.pizza_people
-theorem pizza_slices : m.slices=20 := P.pizza_slices
-theorem pizza_solution : m.pizzas=5 := P.pizza_solution
-theorem salary_tax : m.tax=400 := P.salary_tax
-theorem salary_insurance : m.insurance=100 := P.salary_insurance
-theorem salary_after_deductions : m.afterDeductions=1500 := P.salary_after_deductions
-theorem salary_utilities : m.utilities=375 := P.salary_utilities
-theorem salary_solution : m.final=1125 := P.salary_solution
-theorem sandbox_area : m.area=1600 := P.sandbox_area
-theorem sandbox_bags : m.bags=20 := P.sandbox_bags
-theorem sandbox_solution : m.pounds=600 := P.sandbox_solution
-theorem omelets_peppers : m.peppers=12 := P.omelets_peppers
-theorem omelets_onions : m.onions=8 := P.omelets_onions
-theorem omelets_cheese : m.cheese=5 := P.omelets_cheese
-theorem omelets_cook : m.cooking=25 := P.omelets_cook
-theorem omelets_solution : m.total=50 := P.omelets_solution
-theorem dance_paid_lessons : m.paid=8 := P.dance_paid_lessons
-theorem dance_solution : m.total=80 := P.dance_solution
-theorem homes_combined_months : m.combinedMonths=90 := P.homes_combined_months
-theorem homes_relation : m.emilio=2*m.felipe := P.homes_relation
-theorem homes_solution : m.felipe=30 := P.homes_solution
-theorem rent_tax : m.tax=500 := P.rent_tax
-theorem rent_after_tax : m.afterTax=4500 := P.rent_after_tax
-theorem rent_two_months : m.twoMonths=2700 := P.rent_two_months
-theorem rent_solution : m.monthly=1350 := P.rent_solution
-theorem apples_tuesday : m.tuesday=45 := P.apples_tuesday
-theorem apples_wednesday : m.wednesday=180 := P.apples_wednesday
-theorem apples_solution : m.total=240 := P.apples_solution
-theorem volcanoes_first : m.firstErupted=40 ∧ m.afterFirst=160 := P.volcanoes_first
-theorem volcanoes_second : m.secondErupted=64 ∧ m.afterSecond=96 := P.volcanoes_second
-theorem volcanoes_solution : m.final=48 := P.volcanoes_solution
+
+theorem chips_blue (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Chips) : m.blue=10 := LemmaWeave.Problems.GSM8K.Sprint0924A12.chips_blue m
+theorem chips_nongreen (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Chips) : m.nongreen=44 := LemmaWeave.Problems.GSM8K.Sprint0924A12.chips_nongreen m
+theorem chips_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Chips) : m.green=16 := LemmaWeave.Problems.GSM8K.Sprint0924A12.chips_solution m
+theorem peas_equation (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Peas) : m.peas=2*m.corn+15 := LemmaWeave.Problems.GSM8K.Sprint0924A12.peas_equation m
+theorem peas_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Peas) : m.corn=10 := LemmaWeave.Problems.GSM8K.Sprint0924A12.peas_solution m
+theorem wallets_nada (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Wallets) : m.nada=12 := LemmaWeave.Problems.GSM8K.Sprint0924A12.wallets_nada m
+theorem wallets_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Wallets) : m.john=48 := LemmaWeave.Problems.GSM8K.Sprint0924A12.wallets_solution m
+theorem wallets_literal_impossible : ¬ ∃ (n a j : ℕ), a+5=n ∧ j=5*n ∧ n+a+j=67 := LemmaWeave.Problems.GSM8K.Sprint0924A12.wallets_literal_impossible
+theorem farm_daily (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Farm) : m.daily=270 := LemmaWeave.Problems.GSM8K.Sprint0924A12.farm_daily m
+theorem farm_weekly_eggs (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Farm) : m.weekly=1890 := LemmaWeave.Problems.GSM8K.Sprint0924A12.farm_weekly_eggs m
+theorem farm_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Farm) : m.boxes=315 := LemmaWeave.Problems.GSM8K.Sprint0924A12.farm_solution m
+theorem books_laura (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Books) : m.laura=8 := LemmaWeave.Problems.GSM8K.Sprint0924A12.books_laura m
+theorem books_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Books) : m.stu=4 := LemmaWeave.Problems.GSM8K.Sprint0924A12.books_solution m
+theorem snacks_pizza (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Snacks) : m.pizza=24 := LemmaWeave.Problems.GSM8K.Sprint0924A12.snacks_pizza m
+theorem snacks_juice (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Snacks) : m.juice=4 := LemmaWeave.Problems.GSM8K.Sprint0924A12.snacks_juice m
+theorem snacks_spent (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Snacks) : m.spent=28 := LemmaWeave.Problems.GSM8K.Sprint0924A12.snacks_spent m
+theorem snacks_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Snacks) : m.change=22 := LemmaWeave.Problems.GSM8K.Sprint0924A12.snacks_solution m
+theorem pizza_people (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Pizza) : m.people=10 := LemmaWeave.Problems.GSM8K.Sprint0924A12.pizza_people m
+theorem pizza_slices (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Pizza) : m.slices=20 := LemmaWeave.Problems.GSM8K.Sprint0924A12.pizza_slices m
+theorem pizza_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Pizza) : m.pizzas=5 := LemmaWeave.Problems.GSM8K.Sprint0924A12.pizza_solution m
+theorem salary_tax (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Salary) : m.tax=400 := LemmaWeave.Problems.GSM8K.Sprint0924A12.salary_tax m
+theorem salary_insurance (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Salary) : m.insurance=100 := LemmaWeave.Problems.GSM8K.Sprint0924A12.salary_insurance m
+theorem salary_after_deductions (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Salary) : m.afterDeductions=1500 := LemmaWeave.Problems.GSM8K.Sprint0924A12.salary_after_deductions m
+theorem salary_utilities (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Salary) : m.utilities=375 := LemmaWeave.Problems.GSM8K.Sprint0924A12.salary_utilities m
+theorem salary_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Salary) : m.final=1125 := LemmaWeave.Problems.GSM8K.Sprint0924A12.salary_solution m
+theorem sandbox_area (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Sandbox) : m.area=1600 := LemmaWeave.Problems.GSM8K.Sprint0924A12.sandbox_area m
+theorem sandbox_bags (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Sandbox) : m.bags=20 := LemmaWeave.Problems.GSM8K.Sprint0924A12.sandbox_bags m
+theorem sandbox_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Sandbox) : m.pounds=600 := LemmaWeave.Problems.GSM8K.Sprint0924A12.sandbox_solution m
+theorem omelets_peppers (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Omelets) : m.peppers=12 := LemmaWeave.Problems.GSM8K.Sprint0924A12.omelets_peppers m
+theorem omelets_onions (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Omelets) : m.onions=8 := LemmaWeave.Problems.GSM8K.Sprint0924A12.omelets_onions m
+theorem omelets_cheese (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Omelets) : m.cheese=5 := LemmaWeave.Problems.GSM8K.Sprint0924A12.omelets_cheese m
+theorem omelets_cook (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Omelets) : m.cooking=25 := LemmaWeave.Problems.GSM8K.Sprint0924A12.omelets_cook m
+theorem omelets_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Omelets) : m.total=50 := LemmaWeave.Problems.GSM8K.Sprint0924A12.omelets_solution m
+theorem dance_paid_lessons (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Dance) : m.paid=8 := LemmaWeave.Problems.GSM8K.Sprint0924A12.dance_paid_lessons m
+theorem dance_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Dance) : m.total=80 := LemmaWeave.Problems.GSM8K.Sprint0924A12.dance_solution m
+theorem homes_combined_months (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Homes) : m.combinedMonths=90 := LemmaWeave.Problems.GSM8K.Sprint0924A12.homes_combined_months m
+theorem homes_relation (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Homes) : m.emilio=2*m.felipe := LemmaWeave.Problems.GSM8K.Sprint0924A12.homes_relation m
+theorem homes_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Homes) : m.felipe=30 := LemmaWeave.Problems.GSM8K.Sprint0924A12.homes_solution m
+theorem rent_tax (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Rent) : m.tax=500 := LemmaWeave.Problems.GSM8K.Sprint0924A12.rent_tax m
+theorem rent_after_tax (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Rent) : m.afterTax=4500 := LemmaWeave.Problems.GSM8K.Sprint0924A12.rent_after_tax m
+theorem rent_two_months (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Rent) : m.twoMonths=2700 := LemmaWeave.Problems.GSM8K.Sprint0924A12.rent_two_months m
+theorem rent_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Rent) : m.monthly=1350 := LemmaWeave.Problems.GSM8K.Sprint0924A12.rent_solution m
+theorem apples_tuesday (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Apples) : m.tuesday=45 := LemmaWeave.Problems.GSM8K.Sprint0924A12.apples_tuesday m
+theorem apples_wednesday (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Apples) : m.wednesday=180 := LemmaWeave.Problems.GSM8K.Sprint0924A12.apples_wednesday m
+theorem apples_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Apples) : m.total=240 := LemmaWeave.Problems.GSM8K.Sprint0924A12.apples_solution m
+theorem volcanoes_first (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Volcanoes) : m.firstErupted=40 ∧ m.afterFirst=160 := LemmaWeave.Problems.GSM8K.Sprint0924A12.volcanoes_first m
+theorem volcanoes_second (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Volcanoes) : m.secondErupted=64 ∧ m.afterSecond=96 := LemmaWeave.Problems.GSM8K.Sprint0924A12.volcanoes_second m
+theorem volcanoes_solution (m:LemmaWeave.Problems.GSM8K.Sprint0924A12.Volcanoes) : m.final=48 := LemmaWeave.Problems.GSM8K.Sprint0924A12.volcanoes_solution m
 
 end LemmaWeave.Tests.GSM8KSprint0924A12
 

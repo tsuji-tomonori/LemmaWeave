@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A16P2
 
@@ -20,21 +20,25 @@ structure TomatoesModel where
 
 theorem tomatoes_after_sales (m : TomatoesModel) : m.afterSales = 700 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem tomatoes_remaining (m : TomatoesModel) : m.remaining = 500 := by
   have hPrev := tomatoes_after_sales m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem tomatoes_second_shipment (m : TomatoesModel) : m.secondShipment = 2000 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 theorem tomatoes_solution (m : TomatoesModel) : m.total = 2500 := by
   have hRemain := tomatoes_remaining m
   have hSecond := tomatoes_second_shipment m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 structure CathyModel where
@@ -55,16 +59,19 @@ structure CathyModel where
 
 theorem cathy_base_weeks (m : CathyModel) : m.baseWeeks = 8 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 theorem cathy_worked_weeks (m : CathyModel) : m.workedWeeks = 9 := by
   have hPrev := cathy_base_weeks m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 theorem cathy_solution (m : CathyModel) : m.totalHours = 180 := by
   have hPrev := cathy_worked_weeks m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   simp_all
 
 structure AnnieModel where
@@ -89,21 +96,25 @@ structure AnnieModel where
 
 theorem annie_hamburgers (m : AnnieModel) : m.hamburgerCost = 32 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all
 
 theorem annie_milkshakes (m : AnnieModel) : m.milkshakeCost = 18 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all
 
 theorem annie_spent (m : AnnieModel) : m.spent = 50 := by
   have hA := annie_hamburgers m
   have hB := annie_milkshakes m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all
 
 theorem annie_solution (m : AnnieModel) : m.remaining = 70 := by
   have hPrev := annie_spent m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all <;> omega
 
 structure CookiesModel where
@@ -122,11 +133,13 @@ structure CookiesModel where
 
 theorem cookies_removed (m : CookiesModel) : m.totalRemoved = 11 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem cookies_solution_if_accusation_accurate (m : CookiesModel) : m.remaining = 11 := by
   have hPrev := cookies_removed m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 theorem cookies_without_accuracy_counterexample :
@@ -159,14 +172,17 @@ theorem movie_age14_not_child : ¬ (3 ≤ 14 ∧ 14 ≤ 12) := by norm_num
 
 theorem movie_adult_cost (m : MovieModel) : m.adultCost = 33 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
+  dsimp at *
   simp_all
 
 theorem movie_child_cost (m : MovieModel) : m.childCost = 16 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
+  dsimp at *
   simp_all
 
 theorem movie_senior_cost (m : MovieModel) : m.seniorCost = 18 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
+  dsimp at *
   simp_all
 
 theorem movie_solution (m : MovieModel) : m.total = 67 := by
@@ -174,6 +190,7 @@ theorem movie_solution (m : MovieModel) : m.total = 67 := by
   have hC := movie_child_cost m
   have hS := movie_senior_cost m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10⟩
+  dsimp at *
   simp_all
 
 theorem movie_reference_64_inconsistent (m : MovieModel) : m.total ≠ 64 := by

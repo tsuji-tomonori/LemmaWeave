@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0922A08
 
@@ -7,7 +7,7 @@ structure Jerky where
   days : ℕ
   hNeeded : needed+20=60
   hDays : days*10=needed
-theorem jerky_needed (m:Jerky) : m.needed=40 := by cases m <;> omega
+theorem jerky_needed (m:Jerky) : m.needed=40 := by cases m <;> dsimp at * <;> omega
 theorem jerky_solution (m:Jerky) : m.days=4 := by have h:=m.hDays; rw [jerky_needed m] at h; omega
 
 structure BananaSplit where
@@ -35,7 +35,7 @@ structure Activities where
   hTv : tvWeek=4*7
   hGame : gameWeek=gameDaily*3
   hTotal : total=tvWeek+gameWeek
-theorem activities_game_daily (m:Activities) : m.gameDaily=2 := by cases m <;> omega
+theorem activities_game_daily (m:Activities) : m.gameDaily=2 := by cases m <;> dsimp at * <;> omega
 theorem activities_tv_week (m:Activities) : m.tvWeek=28 := by rw [m.hTv] <;> norm_num
 theorem activities_game_week (m:Activities) : m.gameWeek=6 := by rw [m.hGame, activities_game_daily m] <;> norm_num
 theorem activities_solution (m:Activities) : m.total=34 := by rw [m.hTotal, activities_tv_week m, activities_game_week m] <;> norm_num
@@ -70,7 +70,7 @@ structure LucyMoney where
   initial : ℕ
   hAfter : 3*afterSpending=4*15
   hInitial : 2*initial=3*afterSpending
-theorem lucy_after_spending (m:LucyMoney) : m.afterSpending=20 := by cases m <;> omega
+theorem lucy_after_spending (m:LucyMoney) : m.afterSpending=20 := by cases m <;> dsimp at * <;> omega
 theorem lucy_solution (m:LucyMoney) : m.initial=30 := by have h:=m.hInitial; rw [lucy_after_spending m] at h; omega
 
 structure Balls where
@@ -80,7 +80,7 @@ structure Balls where
   hRemaining : remaining+20+10=50
   hPink : pink=3*orange
   hColors : pink+orange=remaining
-theorem balls_remaining (m:Balls) : m.remaining=20 := by cases m <;> omega
+theorem balls_remaining (m:Balls) : m.remaining=20 := by cases m <;> dsimp at * <;> omega
 theorem balls_relation (m:Balls) : m.pink=3*m.orange := m.hPink
 theorem balls_solution (m:Balls) : m.orange=5 := by have h:=m.hColors; rw [balls_remaining m, m.hPink] at h; omega
 
@@ -94,7 +94,7 @@ structure Haircuts where
   hPaid : paidTotal=earnedCycles+currentCycle
   hAll : allServices=paidTotal+5
 theorem haircuts_earned_cycles (m:Haircuts) : m.earnedCycles=70 := by rw [m.hEarned] <;> norm_num
-theorem haircuts_current_cycle (m:Haircuts) : m.currentCycle=9 := by cases m <;> omega
+theorem haircuts_current_cycle (m:Haircuts) : m.currentCycle=9 := by cases m <;> dsimp at * <;> omega
 theorem haircuts_paid_total (m:Haircuts) : m.paidTotal=79 := by rw [m.hPaid, haircuts_earned_cycles m, haircuts_current_cycle m] <;> norm_num
 theorem haircuts_all_services (m:Haircuts) : m.allServices=84 := by rw [m.hAll, haircuts_paid_total m] <;> norm_num
 theorem haircuts_solution_both (m:Haircuts) : m.paidTotal=79 ∧ m.allServices=84 :=
@@ -110,7 +110,7 @@ structure Hens where
   hFifteen : eggsPerHenFifteen=eggsPerHenFive*3
   hTotal : totalEggs=totalHens*eggsPerHenFifteen
 theorem hens_total (m:Hens) : m.totalHens=25 := by rw [m.hHens] <;> norm_num
-theorem hens_rate_block (m:Hens) : m.eggsPerHenFive=4 := by cases m <;> omega
+theorem hens_rate_block (m:Hens) : m.eggsPerHenFive=4 := by cases m <;> dsimp at * <;> omega
 theorem hens_each_fifteen (m:Hens) : m.eggsPerHenFifteen=12 := by rw [m.hFifteen, hens_rate_block m] <;> norm_num
 theorem hens_solution (m:Hens) : m.totalEggs=300 := by rw [m.hTotal, hens_total m, hens_each_fifteen m] <;> norm_num
 
@@ -121,7 +121,7 @@ structure Earrings where
   hMonica : 25*monica=100*10
   hRachel : monica=2*rachel
   hTotal : total=10+monica+rachel
-theorem earrings_monica (m:Earrings) : m.monica=40 := by cases m <;> omega
+theorem earrings_monica (m:Earrings) : m.monica=40 := by cases m <;> dsimp at * <;> omega
 theorem earrings_rachel (m:Earrings) : m.rachel=20 := by have h:=m.hRachel; rw [earrings_monica m] at h; omega
 theorem earrings_solution (m:Earrings) : m.total=70 := by rw [m.hTotal, earrings_monica m, earrings_rachel m] <;> norm_num
 
@@ -163,7 +163,7 @@ structure Shoes where
   total : ℕ
   hRiley : riley+3=8
   hTotal : total=8+riley
-theorem shoes_riley (m:Shoes) : m.riley=5 := by cases m <;> omega
+theorem shoes_riley (m:Shoes) : m.riley=5 := by cases m <;> dsimp at * <;> omega
 theorem shoes_solution (m:Shoes) : m.total=13 := by rw [m.hTotal, shoes_riley m] <;> norm_num
 
 structure Travel where
@@ -178,9 +178,9 @@ structure Travel where
   hSlowerRest : 50*slowerRest=300
   hSlowerTotal : slowerTotal=first+slowerRest
 theorem travel_first (m:Travel) : m.first=1 := m.hFirst
-theorem travel_same_speed_rest (m:Travel) : m.sameSpeedRest=3 := by cases m <;> omega
+theorem travel_same_speed_rest (m:Travel) : m.sameSpeedRest=3 := by cases m <;> dsimp at * <;> omega
 theorem travel_solution_same_speed (m:Travel) : m.sameSpeedTotal=4 := by rw [m.hSameTotal, travel_first m, travel_same_speed_rest m] <;> norm_num
-theorem travel_slower_rest (m:Travel) : m.slowerRest=6 := by cases m <;> omega
+theorem travel_slower_rest (m:Travel) : m.slowerRest=6 := by cases m <;> dsimp at * <;> omega
 theorem travel_solution_slower (m:Travel) : m.slowerTotal=7 := by rw [m.hSlowerTotal, travel_first m, travel_slower_rest m] <;> norm_num
 theorem travel_solution_nonunique (m:Travel) : m.sameSpeedTotal=4 ∧ m.slowerTotal=7 :=
   ⟨travel_solution_same_speed m, travel_solution_slower m⟩

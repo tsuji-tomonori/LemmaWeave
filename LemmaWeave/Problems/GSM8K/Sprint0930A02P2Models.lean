@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0930A02P2
 
@@ -18,11 +18,13 @@ structure CandyModel where
 
 theorem candies_total (m : CandyModel) : m.total = 90 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 
 theorem candies_solution (m : CandyModel) : m.each = 30 := by
   have h := candies_total m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 structure PetModel where
@@ -39,17 +41,20 @@ structure PetModel where
 
 theorem pets_after_escape (m : PetModel) : m.afterEscape = 10 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 
 theorem pets_died (m : PetModel) : m.died = 2 := by
   have h := pets_after_escape m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 
 theorem pets_solution (m : PetModel) : m.remaining = 8 := by
   have h1 := pets_after_escape m
   have h2 := pets_died m
   rcases m with ⟨a,b,c,d,e,p1,p2,p3,p4,p5⟩
+  dsimp at *
   omega
 
 structure SpellingModel where
@@ -70,21 +75,25 @@ structure SpellingModel where
 
 theorem spelling_drew_total (m : SpellingModel) : m.drewTotal = 26 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   omega
 
 theorem spelling_carla_wrong (m : SpellingModel) : m.carlaWrong = 12 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   omega
 
 theorem spelling_carla_total (m : SpellingModel) : m.carlaTotal = 26 := by
   have h := spelling_carla_wrong m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   omega
 
 theorem spelling_solution (m : SpellingModel) : m.contestTotal = 52 := by
   have h1 := spelling_drew_total m
   have h2 := spelling_carla_total m
   rcases m with ⟨a,b,c,d,e,f,g,p1,p2,p3,p4,p5,p6,p7⟩
+  dsimp at *
   omega
 
 structure SonnetModel where
@@ -101,11 +110,13 @@ structure SonnetModel where
 
 theorem sonnets_unheard (m : SonnetModel) : m.unheardSonnets = 5 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem sonnets_solution (m : SonnetModel) : m.totalSonnets = 12 := by
   have h := sonnets_unheard m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 
 structure RibbonModel where
@@ -124,16 +135,19 @@ structure RibbonModel where
 
 theorem ribbon_cut (m : RibbonModel) : m.cutCentimeters = 1500 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem ribbon_remaining_centimeters (m : RibbonModel) : m.remainingCentimeters = 3600 := by
   have h := ribbon_cut m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 
 theorem ribbon_solution (m : RibbonModel) : m.remainingMeters = 36 := by
   have h := ribbon_remaining_centimeters m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0930A02P2

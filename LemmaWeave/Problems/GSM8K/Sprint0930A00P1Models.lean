@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0930A00P1
 
@@ -20,11 +20,13 @@ structure EggModel where
 
 theorem eggs_collected (m : EggModel) : m.collected = 11 := by
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem eggs_solution (m : EggModel) : m.left = 9 := by
   have h := eggs_collected m
   rcases m with ⟨a,b,c,d,e,f,g,h1,h2,h3,h4,h5,h6,h7⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 structure MarbleModel where
@@ -41,11 +43,13 @@ structure MarbleModel where
 
 theorem marbles_after_gift (m : MarbleModel) : m.mineAfter = 14 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 
 theorem marbles_solution (m : MarbleModel) : m.mineBefore = 16 := by
   have h := marbles_after_gift m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 
 structure PizzaModel where
@@ -70,21 +74,25 @@ structure PizzaModel where
 
 theorem pizza_total_slices (m : PizzaModel) : m.totalSlices = 108 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem pizza_leftovers (m : PizzaModel) : m.leftovers = 12 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem pizza_eaten (m : PizzaModel) : m.eaten = 96 := by
   have hTotal := pizza_total_slices m
   have hLeft := pizza_leftovers m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 theorem pizza_solution (m : PizzaModel) : m.students = 32 := by
   have h := pizza_eaten m
   rcases m with ⟨a,b,c,d,e,f,g,i,j,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   subst_vars <;> norm_num at * <;> omega
 
 structure StampModel where
@@ -97,11 +105,13 @@ structure StampModel where
 
 theorem stamps_before (m : StampModel) : m.before = 150 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 theorem stamps_solution (m : StampModel) : m.totalAfter = 450 := by
   have h := stamps_before m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 structure AgeModel where
@@ -118,17 +128,20 @@ structure AgeModel where
 
 theorem ages_talia_now (m : AgeModel) : m.taliaNow = 13 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 
 theorem ages_mother_now (m : AgeModel) : m.motherNow = 39 := by
   have h := ages_talia_now m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 
 theorem ages_solution (m : AgeModel) : m.fatherNow = 36 := by
   have h1 := ages_talia_now m
   have h2 := ages_mother_now m
   rcases m with ⟨a,b,c,d,e,p1,p2,p3,p4,p5⟩
+  dsimp at *
   omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0930A00P1

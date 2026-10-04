@@ -101,7 +101,8 @@ def extract (root : Name) (limit : Nat := 100000) : CommandElabM Json := do
     ("closure_status", toJson "requires_fixture_validation_and_body_availability_review")]
 
 elab "#lw_dependencies " name:ident " to " path:str : command => do
-  let result ← extract name.getId
+  let root ← resolveGlobalConstNoOverload name
+  let result ← extract root
   if let some parent := (System.FilePath.mk path.getString).parent then
     liftIO <| IO.FS.createDirAll parent
   liftIO <| IO.FS.writeFile path.getString result.compress

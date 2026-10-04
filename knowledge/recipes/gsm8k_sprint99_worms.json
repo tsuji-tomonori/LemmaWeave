@@ -16,7 +16,7 @@
   "steps": [
     {
       "id": "worms_daily",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.worms_daily",
       "title_ja": "1日に18匹のミミズが必要。",
       "claim_ja": "1日に18匹のミミズが必要。",
       "method_ja": "雛6羽×各3匹。",
@@ -28,7 +28,7 @@
     },
     {
       "id": "worms_needed",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.worms_needed",
       "title_ja": "3日で54匹必要。",
       "claim_ja": "3日で54匹必要。",
       "method_ja": "1日18匹×3日。",
@@ -42,7 +42,7 @@
     },
     {
       "id": "worms_mama_net",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_mama_net",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.worms_mama_net",
       "title_ja": "母鳥の手元には11匹。",
       "claim_ja": "母鳥の手元には11匹。",
       "method_ja": "捕まえた13匹から盗まれた2匹を引く。",
@@ -54,7 +54,7 @@
     },
     {
       "id": "worms_available",
-      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.worms_available",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0923A06Catchup.worms_available",
       "title_ja": "父鳥分と合わせて20匹ある。",
       "claim_ja": "父鳥分と合わせて20匹ある。",
       "method_ja": "母鳥の11匹に父鳥の9匹を加える。",
@@ -83,13 +83,28 @@
     }
   ],
   "author_review": {
-    "reviewer": "author",
+    "reviewer": "ci-repair-regression-author",
     "status": "checked",
     "source_line_1based": 1766,
-    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checked_model_hash": "d19320e892c6df60e00e8dc657e81718df16cb69facec7f10f7a3c5d81285d54",
     "checks_ja": [
-      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
-      "各説明行の名前付きLean定理と依存関係を照合した。"
-    ]
-  }
+      "固定原本の当該問題文・参照解答とレコードhashを個別に照合した。",
+      "6 babies times 3 worms times 3 days gives54; available13-2+9=20; deficit34.",
+      "既存の構造体条件・定理型を基準版と比較し、意味と定義域を保持した。",
+      "現在入力の実Lean・許容公理・各説明行の依存を検査した。旧レビューを履歴に保持し、ready台帳を更新しない。"
+    ],
+    "review_record": "reviews/ci-correction-sibling-regression-20261003.json"
+  },
+  "author_review_history": [
+    {
+      "reviewer": "author",
+      "status": "checked",
+      "source_line_1based": 1766,
+      "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+      "checks_ja": [
+        "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+        "各説明行の名前付きLean定理と依存関係を照合した。"
+      ]
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A13P3
 
@@ -12,11 +12,13 @@ structure PatchesModel where
 
 theorem patches_pea (m : PatchesModel) : m.peaArea = 30 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   simp_all
 
 theorem patches_solution (m : PatchesModel) : m.radishArea = 15 := by
   have hPrev := patches_pea m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   simp_all <;> omega
 
 structure ShellsModel where
@@ -31,16 +33,19 @@ structure ShellsModel where
 
 theorem shells_mimi (m : ShellsModel) : m.mimi = 24 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   simp_all
 
 theorem shells_kyle (m : ShellsModel) : m.kyle = 48 := by
   have hPrev := shells_mimi m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   simp_all
 
 theorem shells_solution (m : ShellsModel) : m.leigh = 16 := by
   have hPrev := shells_kyle m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   simp_all <;> omega
 
 structure MarblesModel where
@@ -65,22 +70,24 @@ structure MarblesModel where
 
 theorem marbles_counts (m : MarblesModel) : m.white = 20 ∧ m.black = 30 ∧ m.colored = 50 := by
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem marbles_revenue_parts (m : MarblesModel) :
     m.whiteCents = 100 ∧ m.blackCents = 300 ∧ m.coloredCents = 1000 := by
   have hPrev := marbles_counts m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all
 
 theorem marbles_total_cents (m : MarblesModel) : m.totalCents = 1400 := by
-  have hPrev := marbles_revenue_parts m
-  rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
-  simp_all
+  have h := marbles_revenue_parts m
+  rw [m.hTotalCents, h.1, h.2.1, h.2.2]
 
 theorem marbles_solution (m : MarblesModel) : m.totalDollars = 14 := by
   have hPrev := marbles_total_cents m
   rcases m with ⟨a,b,c,d,e,f,g,h,i,h1,h2,h3,h4,h5,h6,h7,h8,h9⟩
+  dsimp at *
   simp_all <;> omega
 
 structure StrawberriesModel where
@@ -99,16 +106,19 @@ structure StrawberriesModel where
 
 theorem strawberries_basket_rate (m : StrawberriesModel) : m.basketPerHandful = 4 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem strawberries_handfuls (m : StrawberriesModel) : m.handfuls = 15 := by
   have hPrev := strawberries_basket_rate m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem strawberries_solution (m : StrawberriesModel) : m.totalPicked = 75 := by
   have hPrev := strawberries_handfuls m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 structure CoinsModel where
@@ -127,26 +137,28 @@ structure CoinsModel where
 
 theorem coins_nickels (m : CoinsModel) : m.nickels = 40 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem coins_dimes (m : CoinsModel) : m.dimes = 8 := by
   have hPrev := coins_nickels m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem coins_quarters (m : CoinsModel) : m.quarters = 16 := by
   have hPrev := coins_dimes m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all
 
 theorem coins_total_cents (m : CoinsModel) : m.totalCents = 800 := by
-  have hPrev := coins_quarters m
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  simp_all
+  rw [m.hTotal, m.hPennies, coins_nickels m, coins_dimes m, coins_quarters m]
 
 theorem coins_solution (m : CoinsModel) : m.totalDollars = 8 := by
   have hPrev := coins_total_cents m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A13P3

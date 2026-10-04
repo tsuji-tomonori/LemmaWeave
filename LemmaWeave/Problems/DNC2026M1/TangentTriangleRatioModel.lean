@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Data.Real.Basic
 
 namespace LemmaWeave.Problems.DNC2026M1.TangentTriangleRatio
 

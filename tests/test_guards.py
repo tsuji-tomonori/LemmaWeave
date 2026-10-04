@@ -2,6 +2,7 @@ import copy
 import importlib.util
 import json
 import pathlib
+import re
 import tempfile
 import unittest
 
@@ -28,9 +29,23 @@ def graph(nodes, pairs, roots=None):
 
 class GraphGuards(unittest.TestCase):
     def test_method_target_sweep_has_growth_headroom(self):
-        self.assertEqual(replay.command_timeout(['python3', 'scripts/run_method_targets.py']), 1500)
+        # Keep the configured 70-minute method sweep inside the actual outer
+        # replay budget, with 30 minutes reserved for the other pipeline work.
+        # This checks configuration consistency, not unmeasured corpus capacity.
+        workflow = (ROOT / '.github/workflows/lean.yml').read_text()
+        replay_match = re.search(
+            r'--timeout (\d+) -- python3 scripts/replay\.py', workflow)
+        job_match = re.search(r'timeout-minutes: (\d+)', workflow)
+        self.assertIsNotNone(replay_match, 'workflow must bound the outer replay')
+        self.assertIsNotNone(job_match, 'workflow must bound the Lean job')
+        replay_timeout = int(replay_match.group(1))
+        job_timeout = 60 * int(job_match.group(1))
+        method_timeout = replay.command_timeout(['python3', 'scripts/run_method_targets.py'])
+        self.assertEqual(method_timeout, 4200)
         self.assertEqual(replay.command_timeout(['lake', 'build']), 900)
-        self.assertLess(replay.METHOD_TARGET_TIMEOUT, 1800)
+        self.assertGreater(method_timeout, 2 * replay.DEFAULT_COMMAND_TIMEOUT)
+        self.assertGreaterEqual(replay_timeout - method_timeout, 1800)
+        self.assertGreaterEqual(job_timeout - replay_timeout, 600)
 
     def test_changed_method_selection_replays_whole_shared_target(self):
         recipes = [

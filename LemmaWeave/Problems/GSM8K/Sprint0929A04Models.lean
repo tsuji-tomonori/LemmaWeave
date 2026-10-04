@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A04
 
@@ -16,14 +16,17 @@ structure WalkingModel where
 
 theorem walking_daily_difference (m : WalkingModel) : m.dailyDifferenceTenths = 5 := by
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 theorem walking_six_day_difference (m : WalkingModel) : m.sixDayDifferenceTenths = 30 := by
   have hPrev := walking_daily_difference m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 theorem walking_solution (m : WalkingModel) : m.answerMiles = 3 := by
   have hPrev := walking_six_day_difference m
   rcases m with ⟨a,b,c,d,e,h1,h2,h3,h4,h5⟩
+  dsimp at *
   omega
 
 structure GiftsModel where
@@ -34,10 +37,11 @@ structure GiftsModel where
 
 theorem gifts_teachers (m : GiftsModel) : m.teachers = 7 := by
   rcases m with ⟨a,b,h1,h2⟩
+  dsimp at *
   omega
 theorem gifts_solution (m : GiftsModel) : m.costPerGift = 10 := by
-  have hPrev := gifts_teachers m
-  rcases m with ⟨a,b,h1,h2⟩
+  have h := m.hCost
+  rw [gifts_teachers m] at h
   omega
 
 structure TankModel where
@@ -50,14 +54,16 @@ structure TankModel where
 
 theorem tank_daily (m : TankModel) : m.dailyMl = 2500 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem tank_capacity (m : TankModel) : m.capacityMl = 50000 := by
   have hPrev := tank_daily m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem tank_solution (m : TankModel) : m.days = 20 := by
-  have hPrev := tank_capacity m
-  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  have h := m.hFill
+  rw [tank_daily m, tank_capacity m] at h
   omega
 
 structure BottlesModel where
@@ -68,10 +74,12 @@ structure BottlesModel where
 
 theorem bottles_packed (m : BottlesModel) : m.packed = 120 := by
   rcases m with ⟨a,b,h1,h2⟩
+  dsimp at *
   omega
 theorem bottles_solution (m : BottlesModel) : m.unpacked = 10 := by
   have hPrev := bottles_packed m
   rcases m with ⟨a,b,h1,h2⟩
+  dsimp at *
   omega
 
 structure BurgersModel where
@@ -90,19 +98,20 @@ structure BurgersModel where
 
 theorem burgers_half_guests (m : BurgersModel) : m.halfGuests = 15 := by
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 theorem burgers_total (m : BurgersModel) : m.totalBurgers = 45 := by
   have hPrev := burgers_half_guests m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 theorem burgers_batches (m : BurgersModel) : m.batches = 9 := by
   have hPrev := burgers_total m
   rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
+  dsimp at *
   omega
 theorem burgers_solution (m : BurgersModel) : m.totalMinutes = 72 := by
-  have hPrev := burgers_batches m
-  rcases m with ⟨a,b,c,d,e,f,h1,h2,h3,h4,h5,h6⟩
-  omega
+  rw [m.hTime, burgers_batches m, m.hBatchTime]
 
 structure PhonesModel where
   subtotal : ℕ
@@ -114,14 +123,17 @@ structure PhonesModel where
 
 theorem phones_subtotal (m : PhonesModel) : m.subtotal = 1600 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem phones_discount (m : PhonesModel) : m.discount = 80 := by
   have hPrev := phones_subtotal m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem phones_solution (m : PhonesModel) : m.paid = 1520 := by
   have hPrev := phones_discount m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 structure BooksModel where
@@ -136,14 +148,17 @@ structure BooksModel where
 
 theorem books_novels (m : BooksModel) : m.novels = 78 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 theorem books_comics (m : BooksModel) : m.comics = 24 := by
   have hPrev := books_novels m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 theorem books_solution (m : BooksModel) : m.comicPercent = 20 := by
   have hPrev := books_comics m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 
 structure PaintingsModel where
@@ -156,34 +171,40 @@ structure PaintingsModel where
 
 theorem paintings_rate (m : PaintingsModel) : m.rate = 2 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem paintings_extra (m : PaintingsModel) : m.extraHours = 10 := by
-  have hPrev := paintings_rate m
-  rcases m with ⟨a,b,c,h1,h2,h3⟩
+  have h := m.hExtra
+  rw [paintings_rate m] at h
   omega
+
 theorem paintings_solution (m : PaintingsModel) : m.totalHours = 16 := by
   have hPrev := paintings_extra m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 structure MatchbooksModel where
-  matches : ℕ
+  «matches» : ℕ
   tradedStamps : ℕ
   stampsLeft : ℕ
-  hMatches : matches = 5 * 24
-  hTrade : matches = 12 * tradedStamps
+  hMatches : «matches» = 5 * 24
+  hTrade : «matches» = 12 * tradedStamps
   hLeft : stampsLeft + tradedStamps = 13
 
 theorem matchbooks_matches (m : MatchbooksModel) : m.matches = 120 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem matchbooks_trade (m : MatchbooksModel) : m.tradedStamps = 10 := by
   have hPrev := matchbooks_matches m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem matchbooks_solution (m : MatchbooksModel) : m.stampsLeft = 3 := by
   have hPrev := matchbooks_trade m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 structure DragonModel where
@@ -196,14 +217,17 @@ structure DragonModel where
 
 theorem dragon_crown (m : DragonModel) : m.crownJewels = 6 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem dragon_original (m : DragonModel) : m.originalJewels = 18 := by
   have hPrev := dragon_crown m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem dragon_solution (m : DragonModel) : m.finalJewels = 24 := by
   have hPrev := dragon_original m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 structure OrangesModel where
@@ -214,10 +238,12 @@ structure OrangesModel where
 
 theorem oranges_del (m : OrangesModel) : m.del = 46 := by
   rcases m with ⟨a,b,h1,h2⟩
+  dsimp at *
   omega
 theorem oranges_solution (m : OrangesModel) : m.juan = 61 := by
   have hPrev := oranges_del m
   rcases m with ⟨a,b,h1,h2⟩
+  dsimp at *
   omega
 
 structure SandwichesModel where
@@ -230,14 +256,17 @@ structure SandwichesModel where
 
 theorem sandwiches_drinks (m : SandwichesModel) : m.drinksCost = 8 := by
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem sandwiches_total (m : SandwichesModel) : m.sandwichesCost = 18 := by
   have hPrev := sandwiches_drinks m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 theorem sandwiches_solution (m : SandwichesModel) : m.eachSandwich = 6 := by
   have hPrev := sandwiches_total m
   rcases m with ⟨a,b,c,h1,h2,h3⟩
+  dsimp at *
   omega
 
 structure TierDiscountModel where
@@ -252,18 +281,22 @@ structure TierDiscountModel where
 
 theorem tier_subtotal (m : TierDiscountModel) : m.subtotal = 1400 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 theorem tier_eligible (m : TierDiscountModel) : m.eligible = 400 := by
   have hPrev := tier_subtotal m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 theorem tier_discount (m : TierDiscountModel) : m.discount = 40 := by
   have hPrev := tier_eligible m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 theorem tier_solution (m : TierDiscountModel) : m.paid = 1360 := by
   have hPrev := tier_discount m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 
 structure DogCleaningModel where
@@ -274,10 +307,12 @@ structure DogCleaningModel where
 
 theorem dog_shampoo (m : DogCleaningModel) : m.shampooMinutes = 45 := by
   rcases m with ⟨a,b,h1,h2⟩
+  dsimp at *
   omega
 theorem dog_solution (m : DogCleaningModel) : m.totalMinutes = 55 := by
   have hPrev := dog_shampoo m
   rcases m with ⟨a,b,h1,h2⟩
+  dsimp at *
   omega
 
 structure TreesModel where
@@ -292,18 +327,22 @@ structure TreesModel where
 
 theorem trees_cut (m : TreesModel) : m.cut = 80 := by
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 theorem trees_remaining (m : TreesModel) : m.remaining = 320 := by
   have hPrev := trees_cut m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 theorem trees_planted (m : TreesModel) : m.planted = 400 := by
   have hPrev := trees_remaining m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 theorem trees_solution (m : TreesModel) : m.finalTrees = 720 := by
   have hPrev := trees_planted m
   rcases m with ⟨a,b,c,d,h1,h2,h3,h4⟩
+  dsimp at *
   omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A04

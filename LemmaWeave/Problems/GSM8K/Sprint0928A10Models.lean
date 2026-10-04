@@ -1,21 +1,31 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A10
 
 structure MedSchoolModel where
-  researched applied accepted : ℕ
+  researched : ℕ
+  applied : ℕ
+  accepted : ℕ
   hResearched : researched = 42
   hApplied : 3 * applied = researched
   hAccepted : 2 * accepted = applied
 
-theorem med_school_applied (m : MedSchoolModel) : m.applied = 14 := by omega
+theorem med_school_applied (m : MedSchoolModel) : m.applied = 14 := by cases m <;> dsimp at * <;> (try simp_all) <;> omega
 theorem med_school_accepted (m : MedSchoolModel) : m.accepted = 7 := by
-  have := med_school_applied m
+  have h := m.hAccepted
+  rw [med_school_applied m] at h
   omega
+
 theorem med_school_solution (m : MedSchoolModel) : m.accepted = 7 := med_school_accepted m
 
 structure BakerModel where
-  cakeCount cakePrice cakeRevenue pieCount piePrice pieRevenue totalRevenue : ℕ
+  cakeCount : ℕ
+  cakePrice : ℕ
+  cakeRevenue : ℕ
+  pieCount : ℕ
+  piePrice : ℕ
+  pieRevenue : ℕ
+  totalRevenue : ℕ
   hCakeCount : cakeCount = 453
   hCakePrice : cakePrice = 12
   hCakeRevenue : cakeRevenue = cakeCount * cakePrice
@@ -35,13 +45,16 @@ theorem baker_pie_revenue (m : BakerModel) : m.pieRevenue = 882 := by
   norm_num at h ⊢
   exact h
 theorem baker_total (m : BakerModel) : m.totalRevenue = 6318 := by
-  have h₁ := baker_cake_revenue m
-  have h₂ := baker_pie_revenue m
-  omega
+  rw [m.hTotal, baker_cake_revenue m, baker_pie_revenue m]
+
 theorem baker_solution (m : BakerModel) : m.totalRevenue = 6318 := baker_total m
 
 structure SurveyModel where
-  classSize johnson feldstein henderson total : ℕ
+  classSize : ℕ
+  johnson : ℕ
+  feldstein : ℕ
+  henderson : ℕ
+  total : ℕ
   hClassSize : classSize = 30
   hJohnson : 6 * johnson = classSize
   hFeldstein : 3 * feldstein = 2 * classSize
@@ -49,14 +62,27 @@ structure SurveyModel where
   hTotal : total = johnson + feldstein + henderson
 
 theorem survey_class_counts (m : SurveyModel) :
-    m.johnson = 5 ∧ m.feldstein = 20 ∧ m.henderson = 6 := by omega
-theorem survey_total (m : SurveyModel) : m.total = 31 := by
-  have h := survey_class_counts m
+    m.johnson = 5 ∧ m.feldstein = 20 ∧ m.henderson = 6 := by
+  have h1 := m.hJohnson
+  have h2 := m.hFeldstein
+  have h3 := m.hHenderson
+  rw [m.hClassSize] at h1 h2 h3
   omega
+
+theorem survey_total (m : SurveyModel) : m.total = 31 := by
+  rcases survey_class_counts m with ⟨h1,h2,h3⟩
+  rw [m.hTotal,h1,h2,h3]
+
 theorem survey_solution (m : SurveyModel) : m.total = 31 := survey_total m
 
 structure PracticeModel where
-  marvinYesterday marvinToday marvinTotal arvinYesterday arvinToday arvinTotal combined : ℕ
+  marvinYesterday : ℕ
+  marvinToday : ℕ
+  marvinTotal : ℕ
+  arvinYesterday : ℕ
+  arvinToday : ℕ
+  arvinTotal : ℕ
+  combined : ℕ
   hMarvinYesterday : marvinYesterday = 40
   hMarvinToday : marvinToday = 3 * marvinYesterday
   hMarvinTotal : marvinTotal = marvinYesterday + marvinToday
@@ -66,34 +92,56 @@ structure PracticeModel where
   hCombined : combined = marvinTotal + arvinTotal
 
 theorem practice_daily (m : PracticeModel) :
-    m.marvinToday = 120 ∧ m.arvinYesterday = 80 ∧ m.arvinToday = 240 := by omega
+    m.marvinToday = 120 ∧ m.arvinYesterday = 80 ∧ m.arvinToday = 240 := by
+  rw [m.hMarvinToday, m.hArvinYesterday, m.hArvinToday, m.hMarvinToday, m.hMarvinYesterday]
+  norm_num
+
 theorem practice_totals (m : PracticeModel) : m.marvinTotal = 160 ∧ m.arvinTotal = 320 := by
-  have h := practice_daily m
-  omega
+  rcases practice_daily m with ⟨h1,h2,h3⟩
+  rw [m.hMarvinTotal, m.hArvinTotal, h1, h2, h3, m.hMarvinYesterday]
+  norm_num
+
 theorem practice_combined (m : PracticeModel) : m.combined = 480 := by
-  have h := practice_totals m
-  omega
+  rcases practice_totals m with ⟨h1,h2⟩
+  rw [m.hCombined,h1,h2]
+
 theorem practice_solution (m : PracticeModel) : m.combined = 480 := practice_combined m
 
 structure SurferModel where
-  first second third total average : ℕ
+  first : ℕ
+  second : ℕ
+  third : ℕ
+  total : ℕ
+  average : ℕ
   hFirst : first = 1500
   hSecond : second = first + 600
   hThird : 5 * third = 2 * first
   hTotal : total = first + second + third
   hAverage : 3 * average = total
 
-theorem surfer_days (m : SurferModel) : m.second = 2100 ∧ m.third = 600 := by omega
+theorem surfer_days (m : SurferModel) : m.second = 2100 ∧ m.third = 600 := by
+  have h1 := m.hSecond
+  have h2 := m.hThird
+  rw [m.hFirst] at h1 h2
+  omega
+
 theorem surfer_total (m : SurferModel) : m.total = 4200 := by
-  have h := surfer_days m
-  omega
+  rcases surfer_days m with ⟨h1,h2⟩
+  rw [m.hTotal, h1, h2, m.hFirst]
+
 theorem surfer_average (m : SurferModel) : m.average = 1400 := by
-  have h := surfer_total m
+  have h := m.hAverage
+  rw [surfer_total m] at h
   omega
+
 theorem surfers_solution (m : SurferModel) : m.average = 1400 := surfer_average m
 
 structure FilletModel where
-  days fishPerDay totalFish filletsPerFish totalFillets : ℕ
+  days : ℕ
+  fishPerDay : ℕ
+  totalFish : ℕ
+  filletsPerFish : ℕ
+  totalFillets : ℕ
   hDays : days = 30
   hFishPerDay : fishPerDay = 2
   hTotalFish : totalFish = fishPerDay * days
@@ -114,7 +162,13 @@ theorem fillet_total (m : FilletModel) : m.totalFillets = 120 := by
 theorem fillets_solution (m : FilletModel) : m.totalFillets = 120 := fillet_total m
 
 structure CakeOrderModel where
-  chocolateCount chocolatePrice chocolateCost strawberryCount strawberryPrice strawberryCost total : ℕ
+  chocolateCount : ℕ
+  chocolatePrice : ℕ
+  chocolateCost : ℕ
+  strawberryCount : ℕ
+  strawberryPrice : ℕ
+  strawberryCost : ℕ
+  total : ℕ
   hChocolateCount : chocolateCount = 3
   hChocolatePrice : chocolatePrice = 12
   hChocolateCost : chocolateCost = chocolateCount * chocolatePrice
@@ -135,12 +189,18 @@ theorem cake_order_costs (m : CakeOrderModel) :
     norm_num at h ⊢
     exact h
 theorem cake_order_total (m : CakeOrderModel) : m.total = 168 := by
-  have h := cake_order_costs m
-  omega
+  rcases cake_order_costs m with ⟨h1,h2⟩
+  rw [m.hTotal,h1,h2]
+
 theorem cake_order_solution (m : CakeOrderModel) : m.total = 168 := cake_order_total m
 
 structure DistanceModel where
-  miles yards niklausFeet lionelFeet estherFeet totalFeet : ℕ
+  miles : ℕ
+  yards : ℕ
+  niklausFeet : ℕ
+  lionelFeet : ℕ
+  estherFeet : ℕ
+  totalFeet : ℕ
   hMiles : miles = 4
   hYards : yards = 975
   hNiklausFeet : niklausFeet = 1287
@@ -149,14 +209,23 @@ structure DistanceModel where
   hTotal : totalFeet = lionelFeet + estherFeet + niklausFeet
 
 theorem distance_conversions (m : DistanceModel) :
-    m.lionelFeet = 21120 ∧ m.estherFeet = 2925 := by omega
+    m.lionelFeet = 21120 ∧ m.estherFeet = 2925 := by
+  rw [m.hLionelFeet,m.hEstherFeet,m.hMiles,m.hYards]
+  norm_num
+
 theorem distance_total (m : DistanceModel) : m.totalFeet = 25332 := by
-  have h := distance_conversions m
-  omega
+  rcases distance_conversions m with ⟨h1,h2⟩
+  rw [m.hTotal,h1,h2,m.hNiklausFeet]
+
 theorem distance_solution (m : DistanceModel) : m.totalFeet = 25332 := distance_total m
 
 structure SmoreModel where
-  crackers crackersPerSmore smores marshmallowsHave marshmallowsNeeded toBuy : ℕ
+  crackers : ℕ
+  crackersPerSmore : ℕ
+  smores : ℕ
+  marshmallowsHave : ℕ
+  marshmallowsNeeded : ℕ
+  toBuy : ℕ
   hCrackers : crackers = 48
   hCrackersPerSmore : crackersPerSmore = 2
   hSmores : crackersPerSmore * smores = crackers
@@ -164,14 +233,26 @@ structure SmoreModel where
   hNeeded : marshmallowsNeeded = smores
   hBuy : marshmallowsHave + toBuy = marshmallowsNeeded
 
-theorem smore_count (m : SmoreModel) : m.smores = 24 := by omega
-theorem smore_buy (m : SmoreModel) : m.toBuy = 18 := by
-  have h := smore_count m
+theorem smore_count (m : SmoreModel) : m.smores = 24 := by
+  have h := m.hSmores
+  rw [m.hCrackersPerSmore,m.hCrackers] at h
   omega
+
+theorem smore_buy (m : SmoreModel) : m.toBuy = 18 := by
+  have h := m.hBuy
+  rw [m.hMarshmallowsHave,m.hNeeded,smore_count m] at h
+  omega
+
 theorem smores_solution (m : SmoreModel) : m.toBuy = 18 := smore_buy m
 
 structure ParkingModel where
-  cars wheelsPerCar carWheels allWheels motorcycleWheels wheelsPerMotorcycle motorcycles : ℕ
+  cars : ℕ
+  wheelsPerCar : ℕ
+  carWheels : ℕ
+  allWheels : ℕ
+  motorcycleWheels : ℕ
+  wheelsPerMotorcycle : ℕ
+  motorcycles : ℕ
   hCars : cars = 19
   hWheelsPerCar : wheelsPerCar = 5
   hCarWheels : carWheels = cars * wheelsPerCar
@@ -186,8 +267,10 @@ theorem parking_car_wheels (m : ParkingModel) : m.carWheels = 95 := by
   norm_num at h ⊢
   exact h
 theorem parking_motorcycle_wheels (m : ParkingModel) : m.motorcycleWheels = 22 := by
-  have h := parking_car_wheels m
+  have h := m.hMotorcycleWheels
+  rw [parking_car_wheels m,m.hAllWheels] at h
   omega
+
 theorem parking_count (m : ParkingModel) : m.motorcycles = 11 := by
   have hw := parking_motorcycle_wheels m
   have h := m.hMotorcycles
@@ -196,7 +279,18 @@ theorem parking_count (m : ParkingModel) : m.motorcycles = 11 := by
 theorem parking_solution (m : ParkingModel) : m.motorcycles = 11 := parking_count m
 
 structure RideModel where
-  ferrisRides ferrisPer ferrisTickets coasterRides coasterPer coasterTickets logRides logPer logTickets total have toBuy : ℕ
+  ferrisRides : ℕ
+  ferrisPer : ℕ
+  ferrisTickets : ℕ
+  coasterRides : ℕ
+  coasterPer : ℕ
+  coasterTickets : ℕ
+  logRides : ℕ
+  logPer : ℕ
+  logTickets : ℕ
+  total : ℕ
+  «have» : ℕ
+  toBuy : ℕ
   hFerrisRides : ferrisRides = 2
   hFerrisPer : ferrisPer = 2
   hFerrisTickets : ferrisTickets = ferrisRides * ferrisPer
@@ -207,8 +301,8 @@ structure RideModel where
   hLogPer : logPer = 1
   hLogTickets : logTickets = logRides * logPer
   hTotal : total = ferrisTickets + coasterTickets + logTickets
-  hHave : have = 20
-  hBuy : have + toBuy = total
+  hHave : «have» = 20
+  hBuy : «have» + toBuy = total
 
 theorem ride_costs (m : RideModel) :
     m.ferrisTickets = 4 ∧ m.coasterTickets = 15 ∧ m.logTickets = 7 := by
@@ -227,15 +321,22 @@ theorem ride_costs (m : RideModel) :
       norm_num at h ⊢
       exact h
 theorem ride_total (m : RideModel) : m.total = 26 := by
-  have h := ride_costs m
-  omega
+  rcases ride_costs m with ⟨h1,h2,h3⟩
+  rw [m.hTotal,h1,h2,h3]
+
 theorem ride_buy (m : RideModel) : m.toBuy = 6 := by
-  have h := ride_total m
+  have h := m.hBuy
+  rw [m.hHave,ride_total m] at h
   omega
+
 theorem rides_solution (m : RideModel) : m.toBuy = 6 := ride_buy m
 
 structure RachelModel where
-  rate minutes bedtime nextDay total : ℕ
+  rate : ℕ
+  minutes : ℕ
+  bedtime : ℕ
+  nextDay : ℕ
+  total : ℕ
   hRate : rate = 5
   hMinutes : minutes = 12
   hBedtime : bedtime = rate * minutes
@@ -248,12 +349,16 @@ theorem rachel_bedtime (m : RachelModel) : m.bedtime = 60 := by
   norm_num at h ⊢
   exact h
 theorem rachel_total (m : RachelModel) : m.total = 76 := by
-  have h := rachel_bedtime m
-  omega
+  rw [m.hTotal,rachel_bedtime m,m.hNextDay]
+
 theorem rachel_solution (m : RachelModel) : m.total = 76 := rachel_total m
 
 structure BikeModel where
-  rotationsPerBlock targetBlocks targetRotations already additional : ℕ
+  rotationsPerBlock : ℕ
+  targetBlocks : ℕ
+  targetRotations : ℕ
+  already : ℕ
+  additional : ℕ
   hRotationsPerBlock : rotationsPerBlock = 200
   hTargetBlocks : targetBlocks = 8
   hTarget : targetRotations = rotationsPerBlock * targetBlocks
@@ -266,24 +371,34 @@ theorem bike_target (m : BikeModel) : m.targetRotations = 1600 := by
   norm_num at h ⊢
   exact h
 theorem bike_additional (m : BikeModel) : m.additional = 1000 := by
-  have h := bike_target m
+  have h := m.hAdditional
+  rw [m.hAlready,bike_target m] at h
   omega
+
 theorem bike_solution (m : BikeModel) : m.additional = 1000 := bike_additional m
 
 structure DollModel where
-  added original total : ℕ
+  added : ℕ
+  original : ℕ
+  total : ℕ
   hAdded : added = 2
   hIncrease : 4 * added = original
   hTotal : total = original + added
 
-theorem doll_original (m : DollModel) : m.original = 8 := by omega
+theorem doll_original (m : DollModel) : m.original = 8 := by
+  rw [←m.hIncrease,m.hAdded]
+
 theorem doll_total (m : DollModel) : m.total = 10 := by
-  have h := doll_original m
-  omega
+  rw [m.hTotal,doll_original m,m.hAdded]
+
 theorem dolls_solution (m : DollModel) : m.total = 10 := doll_total m
 
 structure MosquitoModel where
-  dropsPerFeed dropsPerLiter lethalLiters lethalDrops mosquitoes : ℕ
+  dropsPerFeed : ℕ
+  dropsPerLiter : ℕ
+  lethalLiters : ℕ
+  lethalDrops : ℕ
+  mosquitoes : ℕ
   hDropsPerFeed : dropsPerFeed = 20
   hDropsPerLiter : dropsPerLiter = 5000
   hLethalLiters : lethalLiters = 3

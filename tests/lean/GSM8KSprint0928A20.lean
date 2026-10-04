@@ -5,7 +5,7 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.cars_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.lunch_solution to "work/gsm8k-sprint177-lunchroom-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.lunch_solution
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.lunch_reference_168_false
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.lunch_reference_168_false to "work/lw-line-LemmaWeave.Problems.GSM8K.Sprint0928A20.lunch_reference_168_false-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.lunch_reference_168_false
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.downpayment_solution to "work/gsm8k-sprint177-downpayment-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.downpayment_solution
@@ -29,9 +29,9 @@ import LemmaWeave.Audit.Extract
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.rabbits_solution
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_solution to "work/gsm8k-sprint177-lego-pyramid-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_solution
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_boundary_total
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_boundary_total to "work/lw-line-LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_boundary_total-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_boundary_total
-#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_readings_differ
+#lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_readings_differ to "work/lw-line-LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_readings_differ-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.lego_readings_differ
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0928A20.bathroom_solution to "work/gsm8k-sprint177-bathroom-graph.json"
 #print axioms LemmaWeave.Problems.GSM8K.Sprint0928A20.bathroom_solution

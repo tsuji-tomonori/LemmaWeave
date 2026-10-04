@@ -57,6 +57,19 @@ class MethodRecipes(unittest.TestCase):
         self.assertTrue(result['solution_ready'])
         self.assertEqual(result['individual_lines'][0]['type_pretty'],'line claim')
 
+    def test_historical_author_check_cannot_override_semantic_rejection(self):
+        self.individual()
+        for status in ['changes_requested', 'stale', 'draft', 'not_started', None, 'unknown']:
+            with self.subTest(status=status):
+                self.recipe['semantic_review_status'] = status
+                with self.assertRaisesRegex(ValueError, 'unapproved semantic review status'):
+                    validate_recipe(self.recipe, self.nodes, self.graph)
+
+    def test_independent_semantic_review_remains_eligible(self):
+        self.individual()
+        self.recipe['semantic_review_status'] = 'independent_checked'
+        self.assertTrue(validate_recipe(self.recipe, self.nodes, self.graph)['solution_ready'])
+
     def test_method_in_final_proof_but_not_in_written_line_is_rejected(self):
         self.individual()
         self.graph['edges']=[{'from':'solution','to':'line'},{'from':'solution','to':'lemma'}]

@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Tactic
 
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A07P3
 
@@ -12,16 +12,19 @@ structure BooksaleModel where
 
 theorem booksale_high (m : BooksaleModel) : m.highPriceBooks = 4 := by
   rcases m with ⟨a, b, c, h1, h2, h3⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem booksale_low (m : BooksaleModel) : m.lowPriceBooks = 6 := by
   have hPrev := booksale_high m
   rcases m with ⟨a, b, c, h1, h2, h3⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem booksale_solution (m : BooksaleModel) : m.revenueCents = 2200 := by
   have hPrev := booksale_low m
   rcases m with ⟨a, b, c, h1, h2, h3⟩
+  dsimp at *
   simp_all <;> omega
 
 structure VisitorsModel where
@@ -32,11 +35,13 @@ structure VisitorsModel where
 
 theorem visitors_ill (m : VisitorsModel) : m.ill = 200 := by
   rcases m with ⟨a, b, h1, h2⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem visitors_solution (m : VisitorsModel) : m.notIll = 300 := by
   have hPrev := visitors_ill m
   rcases m with ⟨a, b, h1, h2⟩
+  dsimp at *
   simp_all <;> omega
 
 structure SpaceshipModel where
@@ -47,11 +52,13 @@ structure SpaceshipModel where
 
 theorem spaceship_hours (m : SpaceshipModel) : m.travelHours = 40 := by
   rcases m with ⟨a, b, h1, h2⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem spaceship_solution (m : SpaceshipModel) : m.speed = 100 := by
   have hPrev := spaceship_hours m
   rcases m with ⟨a, b, h1, h2⟩
+  dsimp at *
   simp_all <;> omega
 
 structure CurrentModel where
@@ -62,11 +69,13 @@ structure CurrentModel where
 
 theorem current_running (m : CurrentModel) : m.runningCurrent = 120 := by
   rcases m with ⟨a, b, h1, h2⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem current_solution (m : CurrentModel) : m.startingCurrent = 240 := by
   have hPrev := current_running m
   rcases m with ⟨a, b, h1, h2⟩
+  dsimp at *
   simp_all <;> omega
 
 structure AgesModel where
@@ -79,16 +88,19 @@ structure AgesModel where
 
 theorem ages_rommel (m : AgesModel) : m.rommel = 15 := by
   rcases m with ⟨a, b, c, h1, h2, h3⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem ages_jenny (m : AgesModel) : m.jenny = 17 := by
   have hPrev := ages_rommel m
   rcases m with ⟨a, b, c, h1, h2, h3⟩
+  dsimp at *
   simp_all <;> omega
 
 theorem ages_solution (m : AgesModel) : m.difference = 12 := by
   have hPrev := ages_jenny m
   rcases m with ⟨a, b, c, h1, h2, h3⟩
+  dsimp at *
   simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0929A07P3

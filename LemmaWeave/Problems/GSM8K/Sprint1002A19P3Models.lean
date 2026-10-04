@@ -10,6 +10,10 @@ theorem sharks_count : (3 * 15 : ℕ) = 45 ∧ 15 + 45 = 60 ∧ 60 * 25 / 100 = 
 
 theorem widgets_per_shipping_box : (20 / 4 : ℕ) = 5 ∧ 20 / 4 = 5 ∧ 20 / 5 = 4 ∧ 5 * 5 * 4 = 100 ∧ 3 * 100 = 300 := by norm_num
 
-theorem honey_jars : ((5 : ℚ) * 20) = 100 ∧ 100 / 2 = 50 ∧ 50 / (1 / 2) = 100 := by norm_num
+theorem honey_jars :
+    ((5 : ℚ) * 20) = 100 ∧
+    ((100 : ℚ) / 2) = 50 ∧
+    ((50 : ℚ) / (1 / 2)) = 100 := by
+  norm_num
 
 end LemmaWeave.Problems.GSM8K.Sprint1002A19P3

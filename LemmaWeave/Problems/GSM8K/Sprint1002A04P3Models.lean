@@ -10,6 +10,11 @@ theorem customer_group_size : (3 * 10 : ℕ) = 30 ∧ 54 - 30 = 24 ∧ 24 / 4 = 
 
 theorem bus_capacity : (4 * 10 : ℕ) = 40 ∧ 40 * 6 = 240 := by norm_num
 
-theorem mary_extra_spending : (20 + 2 : ℚ) = 22 ∧ 4 * (3 / 2) = 6 ∧ 6 + 10 + 5 = 21 ∧ 22 - 21 = 1 := by norm_num
+theorem mary_extra_spending :
+    (20 + 2 : ℚ) = 22 ∧
+    (4 : ℚ) * (3 / 2) = 6 ∧
+    (6 + 10 + 5 : ℚ) = 21 ∧
+    (22 - 21 : ℚ) = 1 := by
+  norm_num
 
 end LemmaWeave.Problems.GSM8K.Sprint1002A04P3

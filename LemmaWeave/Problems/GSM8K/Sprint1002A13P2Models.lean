@@ -6,7 +6,11 @@ theorem paycheck_after_deductions : (450 / 3 : ℕ) = 150 ∧ 450 * 8 / 100 = 36
 
 theorem chocolate_pieces_average : (108 / 3 : ℕ) = 36 ∧ 108 + 36 = 144 ∧ 144 / 48 = 3 := by norm_num
 
-theorem total_running_time : (5 * 10 : ℚ) = 50 ∧ 4 * (19 / 2) = 38 ∧ 50 + 38 = 88 := by norm_num
+theorem total_running_time :
+    (5 * 10 : ℚ) = 50 ∧
+    (4 : ℚ) * (19 / 2) = 38 ∧
+    (50 + 38 : ℚ) = 88 := by
+  norm_num
 
 theorem combined_cat_stickers : (76 + 25 : ℕ) = 101 ∧ 63 + 25 = 88 ∧ 101 + 88 = 189 := by norm_num
 

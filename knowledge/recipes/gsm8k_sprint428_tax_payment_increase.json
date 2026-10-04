@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint428_tax_payment_increase",
+  "title_ja": "税額の増加",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04183",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A country used to have a tax rate of 20%.  They raised it to 30%.  In that same time frame, John went from making 1,000,000 a year to 1,500,000 a year.  How much more does he pay in taxes now compared to then?",
+  "answer_ja": "以前の税額は1,000,000×20%=200,000、現在は1,500,000×30%=450,000。差は250,000。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.tax_payment_increase",
+  "graph": "work/gsm8k-sprint428-tax-payment-increase-graph.json",
+  "model_notes_ja": [
+    "各時点の所得にその時点の税率を適用する。"
+  ],
+  "steps": [
+    {
+      "id": "old",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.old_tax_payment",
+      "title_ja": "以前の税額",
+      "claim_ja": "1,000,000×20%=200,000。",
+      "method_ja": "所得に旧税率を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "旧所得1,000,000、旧税率20%。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1,000,000×20%=200,000。"
+    },
+    {
+      "id": "new",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.new_tax_payment",
+      "title_ja": "現在の税額",
+      "claim_ja": "1,500,000×30%=450,000。",
+      "method_ja": "所得に新税率を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "新所得1,500,000、新税率30%。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1,500,000×30%=450,000。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.tax_payment_increase",
+      "title_ja": "税額差",
+      "claim_ja": "450,000-200,000=250,000。",
+      "method_ja": "新旧税額の差を取る。",
+      "requires_steps": [
+        "old",
+        "new"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "比較する期間単位はどちらも年。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "450,000-200,000=250,000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4184,
+    "checked_model_hash": "7a7d51b8cc7c4ebc53c5529c25cc2c31f175483460effa650b5fe9f8b7721b95",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

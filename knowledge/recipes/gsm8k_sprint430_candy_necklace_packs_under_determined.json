@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint430_candy_necklace_packs_under_determined",
+  "title_ja": "開けたキャンディ袋数の条件不足",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04185",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Emily bought 9 packs of candy necklaces to give her classmates at school for Valentine’s Day. Each pack had 8 candy necklaces in it. Emily opened one pack at a time. After her classmates took as many as they wanted, there were 40 candy necklaces left. How many packs did Emily open for her classmates?",
+  "answer_ja": "全72個から32個取られた。4袋を開けて全32個を取った場合も、5袋を開けて8個を開封袋に残した場合も、残りは40個である。よって開封袋数は一意に決まらない。各開封袋を空にした追加条件なら4袋。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.candy_necklace_packs_under_determined",
+  "graph": "work/gsm8k-sprint430-candy-necklace-packs-under-determined-graph.json",
+  "model_notes_ja": [
+    "「40個残った」は開封済み袋の残りを禁止していない。",
+    "4袋開封と5袋開封の二つの具体例で非一意性を示す。"
+  ],
+  "steps": [
+    {
+      "id": "total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.candy_necklace_total",
+      "title_ja": "購入総数",
+      "claim_ja": "9×8=72個。",
+      "method_ja": "袋数に1袋の個数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "9袋、各8個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "9×8=72個。"
+    },
+    {
+      "id": "taken",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.candy_necklaces_taken",
+      "title_ja": "取られた個数",
+      "claim_ja": "72-40=32個。",
+      "method_ja": "総数から残数を引く。",
+      "requires_steps": [
+        "total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り40個は全袋を通じた残数。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "72-40=32個。"
+    },
+    {
+      "id": "four",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.candy_four_pack_scenario",
+      "title_ja": "4袋開封の例",
+      "claim_ja": "4袋の32個を全て取り、未開封5袋の40個が残る。",
+      "method_ja": "具体的な残数を計算する。",
+      "requires_steps": [
+        "taken"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4袋を開けた場合。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4袋の32個を全て取り、未開封5袋の40個が残る。"
+    },
+    {
+      "id": "five",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.candy_five_pack_scenario",
+      "title_ja": "5袋開封の例",
+      "claim_ja": "5袋を開けて32個を取り、開封袋に8個、未開封4袋に32個が残る。",
+      "method_ja": "別の具体的な残数を計算する。",
+      "requires_steps": [
+        "taken"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "開封済み袋に残りを許す。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5袋を開けて32個を取り、開封袋に8個、未開封4袋に32個が残る。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.candy_necklace_packs_under_determined",
+      "title_ja": "非一意性",
+      "claim_ja": "4袋と5袋の両方が残数40個を満たすため一意に決まらない。",
+      "method_ja": "異なる二つの適合例を比較する。",
+      "requires_steps": [
+        "four",
+        "five"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各開封袋を空にしたときだけ4袋に固定される。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4袋と5袋の両方が残数40個を満たすため一意に決まらない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4186,
+    "checked_model_hash": "7a7d51b8cc7c4ebc53c5529c25cc2c31f175483460effa650b5fe9f8b7721b95",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

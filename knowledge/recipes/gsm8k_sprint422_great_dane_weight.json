@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint422_great_dane_weight",
+  "title_ja": "グレートデーンの体重",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04177",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A10P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A chihuahua, pitbull, and great dane weigh a combined weight of 439 pounds. The pitbull weighs 3 times as much as the chihuahua.  The great dane weighs 10 more pounds than triple the pitbull.  How much does the great dane weigh?",
+  "answer_ja": "チワワをxポンドとすると、ピットブルは3x、グレートデーンは3(3x)+10=9x+10。x+3x+9x+10=439より13x=429、x=33。したがってグレートデーンは9×33+10=307ポンド。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.great_dane_weight",
+  "graph": "work/gsm8k-sprint422-great-dane-weight-graph.json",
+  "model_notes_ja": [
+    "「triple the pitbull」にさらに10ポンドを足す。"
+  ],
+  "steps": [
+    {
+      "id": "great_dane_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.great_dane_weight",
+      "title_ja": "グレートデーンの体重",
+      "claim_ja": "チワワをxポンドとすると、ピットブルは3x、グレートデーンは3(3x)+10=9x+10。x+3x+9x+10=439より13x=429、x=33。したがってグレートデーンは9×33+10=307ポンド。",
+      "method_ja": "各犬の体重をチワワの体重xで表し、合計の一次方程式を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3頭の体重は自然数ポンドで、合計439ポンド。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "チワワをxポンドとすると、ピットブルは3x、グレートデーンは3(3x)+10=9x+10。x+3x+9x+10=439より13x=429、x=33。したがってグレートデーンは9×33+10=307ポンド。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4178,
+    "checked_model_hash": "5b0988cb3f6315379122f53bd4556fef01851ff68e21620d2e91c1da36f28540",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

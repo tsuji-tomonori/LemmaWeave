@@ -12,7 +12,8 @@ theorem stationary_points (x : ℝ) :
   constructor
   · intro h
     have hfactor : (x - 1) * (x - 3) = 0 := by
-      nlinarith [h]
+      simp only [cubicDerivative] at h
+      nlinarith
     rcases mul_eq_zero.mp hfactor with h1 | h3
     · left
       linarith

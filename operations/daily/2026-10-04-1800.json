@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-04",
+  "run_id": "20261004T180000+0900-ci-repair",
+  "scheduled_slot": "2026-10-04T18:00:00+09:00",
+  "started_at": "2026-10-04T18:02:17+09:00",
+  "finished_at": "2026-10-04T18:07:06+09:00",
+  "schedule_deviation_minutes": 2,
+  "schedule_deviation_reason_ja": "18時枠を実起動時刻から約2分遅れで開始した。",
+  "role": "ci_repair_override_user_instruction",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "445ca99d12f42660a82f040915d6a4ebcb571ea8",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [],
+  "deferred": [],
+  "problem_processing": {
+    "status": "paused_by_latest_user_instruction_until_ci_success",
+    "next_pending": "external-gsm8k-main-3101c7d50724:train:04256"
+  },
+  "repair": {
+    "target": "tests/lean/GSM8KSprint0923A02.lean",
+    "failure_source_run_id": 37182479828,
+    "failure_head_sha": "672f06cc83188e616045526be10108d16b918529",
+    "failure_ja": "namespace alias P とその参照が固定Lean 4.33.1のテストドライバで解決されず、unknown identifierと終了エラーになった。",
+    "change_ja": "別名を除去し、47個のラッパー定理を元モデルの完全修飾名へ接続した。",
+    "repair_commit": "9145b44f9c56d779b583cf244e5fa53b357ba0e7",
+    "source_of_fix": "draft PR #6の同一ファイル差分。PR #6全体は取り込まず、A02を通過した局所変更だけを抽出した。"
+  },
+  "validation": {
+    "git_diff_check": "passed",
+    "namespace_alias_references_remaining": 0,
+    "axiom_audit_commands": 17,
+    "dependency_exports": 15,
+    "forbidden_holes": 0,
+    "local_lean_build": "not_run_tool_unavailable",
+    "exact_head_ci": "pending"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "unique": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_pending_exact_head_ci"
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "固定Lean 4.33.1・固定mathlibの正確なHEADでCIと公理監査が成功するまで検証済みとはしない。"
+  }
+}

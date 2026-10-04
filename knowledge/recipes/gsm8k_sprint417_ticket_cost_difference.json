@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint417_ticket_cost_difference",
+  "title_ja": "大人券と子供券の総額差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04172",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A10P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Nine adults went to a play with seven children. Adult tickets are $11 each and children's tickets are $7 each. How many dollars more did the adults' tickets cost in total than the children's tickets in total?",
+  "answer_ja": "大人券は9×11=99ドル、子供券は7×7=49ドル。差は99-49=50ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P2.ticket_cost_difference",
+  "graph": "work/gsm8k-sprint417-ticket-cost-difference-graph.json",
+  "model_notes_ja": [
+    "比較は1枚の単価差ではなく各区分の総額差。"
+  ],
+  "steps": [
+    {
+      "id": "ticket_cost_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P2.ticket_cost_difference",
+      "title_ja": "大人券と子供券の総額差",
+      "claim_ja": "大人券は9×11=99ドル、子供券は7×7=49ドル。差は99-49=50ドル。",
+      "method_ja": "区分ごとの人数と単価を掛け、総額差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "9人全員が大人券、7人全員が子供券を1枚ずつ買う。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "大人券は9×11=99ドル、子供券は7×7=49ドル。差は99-49=50ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4173,
+    "checked_model_hash": "9eb33fa5f60cac3e758cdfc11582f1317b15a477355f05adcee8138242260b9e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

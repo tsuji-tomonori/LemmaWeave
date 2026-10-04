@@ -3,7 +3,9 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0924A18
 
 structure Barrettes where
-  kristine crystal combined : ℕ
+  kristine : ℕ
+  crystal : ℕ
+  combined : ℕ
   hKristine : kristine = 3 + 1
   hCrystal : crystal = 3 * 3 + 1
   hCombined : combined = kristine + crystal
@@ -81,12 +83,15 @@ theorem books_answer_scope (m : Books) :
   exact ⟨books_more_reading m, books_of_reading m, books_readings_differ⟩
 
 structure OriginalAges where
-  maiya first : ℕ
+  maiya : ℕ
+  first : ℕ
   hTwice : first = 2 * maiya
   hYounger : first + 1 = maiya
 theorem ages_original_inconsistent (m : OriginalAges) : False := by cases m; omega
 structure CorrectedAges where
-  maiya first second : ℕ
+  maiya : ℕ
+  first : ℕ
+  second : ℕ
   hTwice : first = 2 * maiya
   hSecondYounger : second + 1 = maiya
   hAverage : maiya + first + second = 3 * 5

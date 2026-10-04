@@ -3,7 +3,10 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A20
 
 structure CarsModel where
-  total blue red black : ℕ
+  total : ℕ
+  blue : ℕ
+  red : ℕ
+  black : ℕ
   htotal : total = 516
   hblue : 3 * blue = total
   hred : 2 * red = total
@@ -15,7 +18,13 @@ theorem cars_black (m : CarsModel) : m.black = 86 := by omega
 theorem cars_solution (m : CarsModel) : m.black = 86 := cars_black m
 
 structure LunchroomModel where
-  monitors students girls boys girlCartons boyCartons totalCartons : ℕ
+  monitors : ℕ
+  students : ℕ
+  girls : ℕ
+  boys : ℕ
+  girlCartons : ℕ
+  boyCartons : ℕ
+  totalCartons : ℕ
   hmonitors : monitors = 8
   hmonitorRatio : 15 * monitors = 2 * students
   hgirls : 5 * girls = 2 * students
@@ -32,7 +41,11 @@ theorem lunch_reference_168_false (m : LunchroomModel) : m.totalCartons ≠ 168 
 theorem lunch_solution (m : LunchroomModel) : m.totalCartons = 84 := lunch_total m
 
 structure DownpaymentModel where
-  salary annualSavings houseCost downpayment years : ℕ
+  salary : ℕ
+  annualSavings : ℕ
+  houseCost : ℕ
+  downpayment : ℕ
+  years : ℕ
   hsalary : salary = 150000
   hsavings : 10 * annualSavings = salary
   hhouse : houseCost = 450000
@@ -45,7 +58,9 @@ theorem downpayment_years (m : DownpaymentModel) : m.years = 6 := by omega
 theorem downpayment_solution (m : DownpaymentModel) : m.years = 6 := downpayment_years m
 
 structure PebblesModel where
-  candy lance difference : ℕ
+  candy : ℕ
+  lance : ℕ
+  difference : ℕ
   hcandy : candy = 4
   hlance : lance = 3 * candy
   hdifference : lance = candy + difference
@@ -55,7 +70,14 @@ theorem pebbles_difference (m : PebblesModel) : m.difference = 8 := by omega
 theorem pebbles_solution (m : PebblesModel) : m.difference = 8 := pebbles_difference m
 
 structure MountainModel where
-  baseSpeed ascentSpeed descentSpeed ascentDistance descentDistance ascentHours descentHours totalHours : ℕ
+  baseSpeed : ℕ
+  ascentSpeed : ℕ
+  descentSpeed : ℕ
+  ascentDistance : ℕ
+  descentDistance : ℕ
+  ascentHours : ℕ
+  descentHours : ℕ
+  totalHours : ℕ
   hbase : baseSpeed = 30
   hascentSpeed : 2 * ascentSpeed = baseSpeed
   hdescentSpeed : 5 * descentSpeed = 6 * baseSpeed
@@ -77,7 +99,12 @@ theorem mountain_total (m : MountainModel) : m.totalHours = 6 := by
 theorem mountain_solution (m : MountainModel) : m.totalHours = 6 := mountain_total m
 
 structure CommuteModel where
-  daysPerWeek absentDays workDays weeks distancePerDay totalDistance : ℕ
+  daysPerWeek : ℕ
+  absentDays : ℕ
+  workDays : ℕ
+  weeks : ℕ
+  distancePerDay : ℕ
+  totalDistance : ℕ
   hdays : daysPerWeek = 7
   habsent : absentDays = 3
   hworkDays : daysPerWeek = absentDays + workDays
@@ -91,7 +118,11 @@ theorem commute_total (m : CommuteModel) : m.totalDistance = 2240 := by omega
 theorem commute_solution (m : CommuteModel) : m.totalDistance = 2240 := commute_total m
 
 structure TractorModel where
-  monthlyPayment monthsPerYear years months financed : ℕ
+  monthlyPayment : ℕ
+  monthsPerYear : ℕ
+  years : ℕ
+  months : ℕ
+  financed : ℕ
   hmonthly : monthlyPayment = 150
   hmonthsPerYear : monthsPerYear = 12
   hyears : years = 5
@@ -103,7 +134,11 @@ theorem tractor_financed (m : TractorModel) : m.financed = 9000 := by omega
 theorem tractor_solution (m : TractorModel) : m.financed = 9000 := tractor_financed m
 
 structure ThermostatModel where
-  initial doubled afterFather afterMother final : ℕ
+  initial : ℕ
+  doubled : ℕ
+  afterFather : ℕ
+  afterMother : ℕ
+  final : ℕ
   hinitial : initial = 40
   hdoubled : doubled = 2 * initial
   hfather : doubled = afterFather + 30
@@ -117,7 +152,11 @@ theorem thermostat_final (m : ThermostatModel) : m.final = 59 := by omega
 theorem thermostat_solution (m : ThermostatModel) : m.final = 59 := thermostat_final m
 
 structure RunningModel where
-  kilometers meters hours minutes speedMetersPerMinute : ℕ
+  kilometers : ℕ
+  meters : ℕ
+  hours : ℕ
+  minutes : ℕ
+  speedMetersPerMinute : ℕ
   hkilometers : kilometers = 3
   hmeters : meters = 1000 * kilometers
   hhours : hours = 2
@@ -132,7 +171,14 @@ theorem running_speed (m : RunningModel) : m.speedMetersPerMinute = 25 := by
 theorem running_solution (m : RunningModel) : m.speedMetersPerMinute = 25 := running_speed m
 
 structure ChessModel where
-  totalMoves movesEach pollySecondsPerMove peterSecondsPerMove pollySeconds peterSeconds totalSeconds minutes : ℕ
+  totalMoves : ℕ
+  movesEach : ℕ
+  pollySecondsPerMove : ℕ
+  peterSecondsPerMove : ℕ
+  pollySeconds : ℕ
+  peterSeconds : ℕ
+  totalSeconds : ℕ
+  minutes : ℕ
   htotalMoves : totalMoves = 30
   halternating : totalMoves = 2 * movesEach
   hpollyRate : pollySecondsPerMove = 28
@@ -150,7 +196,11 @@ theorem chess_minutes (m : ChessModel) : m.minutes = 17 := by omega
 theorem chess_solution (m : ChessModel) : m.minutes = 17 := chess_minutes m
 
 structure MoviesModel where
-  people ticketPrice brought spent change : ℕ
+  people : ℕ
+  ticketPrice : ℕ
+  brought : ℕ
+  spent : ℕ
+  change : ℕ
   hpeople : people = 2
   hprice : ticketPrice = 8
   hbrought : brought = 25
@@ -162,7 +212,11 @@ theorem movies_change (m : MoviesModel) : m.change = 9 := by omega
 theorem movies_solution (m : MoviesModel) : m.change = 9 := movies_change m
 
 structure RabbitsModel where
-  whitePerMinute brownPerMinute combinedPerMinute minutes totalDistance : ℕ
+  whitePerMinute : ℕ
+  brownPerMinute : ℕ
+  combinedPerMinute : ℕ
+  minutes : ℕ
+  totalDistance : ℕ
   hwhite : whitePerMinute = 15
   hbrown : brownPerMinute = 12
   hcombined : combinedPerMinute = whitePerMinute + brownPerMinute
@@ -174,7 +228,13 @@ theorem rabbits_total (m : RabbitsModel) : m.totalDistance = 135 := by omega
 theorem rabbits_solution (m : RabbitsModel) : m.totalDistance = 135 := rabbits_total m
 
 structure LegoFilledModel where
-  bottomSide middleSide topSide bottom middle top total : ℕ
+  bottomSide : ℕ
+  middleSide : ℕ
+  topSide : ℕ
+  bottom : ℕ
+  middle : ℕ
+  top : ℕ
+  total : ℕ
   hbottomSide : bottomSide = 7
   hmiddleSide : middleSide = 6
   htopSide : topSide = 5
@@ -188,7 +248,10 @@ theorem lego_filled_total (m : LegoFilledModel) : m.total = 110 := by omega
 theorem lego_solution (m : LegoFilledModel) : m.total = 110 := lego_filled_total m
 
 structure LegoBoundaryModel where
-  bottom middle top total : ℕ
+  bottom : ℕ
+  middle : ℕ
+  top : ℕ
+  total : ℕ
   hbottom : bottom = 4 * 7 - 4
   hmiddle : middle = 4 * 6 - 4
   htop : top = 4 * 5 - 4
@@ -201,7 +264,12 @@ theorem lego_readings_differ (mf : LegoFilledModel) (mb : LegoBoundaryModel) : m
   decide
 
 structure BathroomModel where
-  available oldest youngest husband familyUsed remaining : ℕ
+  available : ℕ
+  oldest : ℕ
+  youngest : ℕ
+  husband : ℕ
+  familyUsed : ℕ
+  remaining : ℕ
   havailable : available = 150
   holdest : oldest = 45
   hyoungest : youngest = 30
@@ -215,7 +283,11 @@ theorem bathroom_remaining (m : BathroomModel) : m.remaining = 55 := by omega
 theorem bathroom_solution (m : BathroomModel) : m.remaining = 55 := bathroom_remaining m
 
 structure ParkingLevelsModel where
-  first second third fourth total : ℕ
+  first : ℕ
+  second : ℕ
+  third : ℕ
+  fourth : ℕ
+  total : ℕ
   hfirst : first = 4
   hsecond : second = first + 7
   hthird : third = second + 6

@@ -3,7 +3,11 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A15P2
 
 structure SodasModel where
-  initial doubled extra gift total : ℕ
+  initial : ℕ
+  doubled : ℕ
+  extra : ℕ
+  gift : ℕ
+  total : ℕ
   hInitial : initial = 22
   hDoubled : doubled = 2 * initial
   hExtra : extra = 12
@@ -25,10 +29,19 @@ theorem sodas_solution (m : SodasModel) : m.total = 78 := by
   simp_all
 
 structure HardwareModel where
-  graphicsCount graphicsPrice graphicsRevenue : ℕ
-  drivesCount drivesPrice drivesRevenue : ℕ
-  cpuCount cpuPrice cpuRevenue : ℕ
-  ramPairs ramPrice ramRevenue totalRevenue : ℕ
+  graphicsCount : ℕ
+  graphicsPrice : ℕ
+  graphicsRevenue : ℕ
+  drivesCount : ℕ
+  drivesPrice : ℕ
+  drivesRevenue : ℕ
+  cpuCount : ℕ
+  cpuPrice : ℕ
+  cpuRevenue : ℕ
+  ramPairs : ℕ
+  ramPrice : ℕ
+  ramRevenue : ℕ
+  totalRevenue : ℕ
   hGraphicsCount : graphicsCount = 10
   hGraphicsPrice : graphicsPrice = 600
   hGraphicsRevenue : graphicsRevenue = graphicsCount * graphicsPrice
@@ -68,7 +81,12 @@ theorem hardware_solution (m : HardwareModel) : m.totalRevenue = 8960 := by
   simp_all
 
 structure SeedsModel where
-  targetFlowers requiredSeeds packSize packCount packCost totalCost : ℕ
+  targetFlowers : ℕ
+  requiredSeeds : ℕ
+  packSize : ℕ
+  packCount : ℕ
+  packCost : ℕ
+  totalCost : ℕ
   hTarget : targetFlowers = 20
   hExactHalfAssumption : requiredSeeds = 2 * targetFlowers
   hPackSize : packSize = 25
@@ -92,7 +110,15 @@ theorem seeds_solution (m : SeedsModel) : m.totalCost = 10 := by
   simp_all
 
 structure WageModel where
-  roseCups roseRate roseHours lilyCups lilyRate lilyHours totalHours pay hourlyPay : ℕ
+  roseCups : ℕ
+  roseRate : ℕ
+  roseHours : ℕ
+  lilyCups : ℕ
+  lilyRate : ℕ
+  lilyHours : ℕ
+  totalHours : ℕ
+  pay : ℕ
+  hourlyPay : ℕ
   hRoseCups : roseCups = 6
   hRoseRate : roseRate = 6
   hRoseTime : roseCups = roseRate * roseHours
@@ -123,7 +149,10 @@ theorem wage_solution (m : WageModel) : m.hourlyPay = 30 := by
   simp_all <;> omega
 
 structure ZooModel where
-  giraffes penguins totalAnimals elephants : ℕ
+  giraffes : ℕ
+  penguins : ℕ
+  totalAnimals : ℕ
+  elephants : ℕ
   hGiraffes : giraffes = 5
   hPenguins : penguins = 2 * giraffes
   hPenguinPercent : 100 * penguins = 20 * totalAnimals

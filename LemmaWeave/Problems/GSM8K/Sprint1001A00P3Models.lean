@@ -36,8 +36,7 @@ theorem monsters_total (m : MonstersModel) : m.total = 62 := by
   have h3 := monsters_day3 m
   have h4 := monsters_day4 m
   have h5 := monsters_day5 m
-  cases m <;> omega
-
+  omega
 structure YogaModel where
   posesPerWeekday : ℕ
   weekdaysPerWeek : ℕ
@@ -126,8 +125,7 @@ theorem boxwood_shape_charge (m : BoxwoodModel) : m.shaped * m.shapeCharge = 60 
 theorem boxwood_additional_total (m : BoxwoodModel) : m.additionalTotal = 210 := by
   have h1 := boxwood_base_trim m
   have h2 := boxwood_shape_charge m
-  cases m <;> omega
-
+  omega
 theorem boxwood_replacement_total (m : BoxwoodModel) : m.replacementTotal = 190 := by
   cases m <;> norm_num at *
 

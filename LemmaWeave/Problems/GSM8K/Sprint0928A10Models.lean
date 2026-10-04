@@ -3,7 +3,9 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A10
 
 structure MedSchoolModel where
-  researched applied accepted : ℕ
+  researched : ℕ
+  applied : ℕ
+  accepted : ℕ
   hResearched : researched = 42
   hApplied : 3 * applied = researched
   hAccepted : 2 * accepted = applied
@@ -15,7 +17,13 @@ theorem med_school_accepted (m : MedSchoolModel) : m.accepted = 7 := by
 theorem med_school_solution (m : MedSchoolModel) : m.accepted = 7 := med_school_accepted m
 
 structure BakerModel where
-  cakeCount cakePrice cakeRevenue pieCount piePrice pieRevenue totalRevenue : ℕ
+  cakeCount : ℕ
+  cakePrice : ℕ
+  cakeRevenue : ℕ
+  pieCount : ℕ
+  piePrice : ℕ
+  pieRevenue : ℕ
+  totalRevenue : ℕ
   hCakeCount : cakeCount = 453
   hCakePrice : cakePrice = 12
   hCakeRevenue : cakeRevenue = cakeCount * cakePrice
@@ -41,7 +49,11 @@ theorem baker_total (m : BakerModel) : m.totalRevenue = 6318 := by
 theorem baker_solution (m : BakerModel) : m.totalRevenue = 6318 := baker_total m
 
 structure SurveyModel where
-  classSize johnson feldstein henderson total : ℕ
+  classSize : ℕ
+  johnson : ℕ
+  feldstein : ℕ
+  henderson : ℕ
+  total : ℕ
   hClassSize : classSize = 30
   hJohnson : 6 * johnson = classSize
   hFeldstein : 3 * feldstein = 2 * classSize
@@ -56,7 +68,13 @@ theorem survey_total (m : SurveyModel) : m.total = 31 := by
 theorem survey_solution (m : SurveyModel) : m.total = 31 := survey_total m
 
 structure PracticeModel where
-  marvinYesterday marvinToday marvinTotal arvinYesterday arvinToday arvinTotal combined : ℕ
+  marvinYesterday : ℕ
+  marvinToday : ℕ
+  marvinTotal : ℕ
+  arvinYesterday : ℕ
+  arvinToday : ℕ
+  arvinTotal : ℕ
+  combined : ℕ
   hMarvinYesterday : marvinYesterday = 40
   hMarvinToday : marvinToday = 3 * marvinYesterday
   hMarvinTotal : marvinTotal = marvinYesterday + marvinToday
@@ -76,7 +94,11 @@ theorem practice_combined (m : PracticeModel) : m.combined = 480 := by
 theorem practice_solution (m : PracticeModel) : m.combined = 480 := practice_combined m
 
 structure SurferModel where
-  first second third total average : ℕ
+  first : ℕ
+  second : ℕ
+  third : ℕ
+  total : ℕ
+  average : ℕ
   hFirst : first = 1500
   hSecond : second = first + 600
   hThird : 5 * third = 2 * first
@@ -93,7 +115,11 @@ theorem surfer_average (m : SurferModel) : m.average = 1400 := by
 theorem surfers_solution (m : SurferModel) : m.average = 1400 := surfer_average m
 
 structure FilletModel where
-  days fishPerDay totalFish filletsPerFish totalFillets : ℕ
+  days : ℕ
+  fishPerDay : ℕ
+  totalFish : ℕ
+  filletsPerFish : ℕ
+  totalFillets : ℕ
   hDays : days = 30
   hFishPerDay : fishPerDay = 2
   hTotalFish : totalFish = fishPerDay * days
@@ -114,7 +140,13 @@ theorem fillet_total (m : FilletModel) : m.totalFillets = 120 := by
 theorem fillets_solution (m : FilletModel) : m.totalFillets = 120 := fillet_total m
 
 structure CakeOrderModel where
-  chocolateCount chocolatePrice chocolateCost strawberryCount strawberryPrice strawberryCost total : ℕ
+  chocolateCount : ℕ
+  chocolatePrice : ℕ
+  chocolateCost : ℕ
+  strawberryCount : ℕ
+  strawberryPrice : ℕ
+  strawberryCost : ℕ
+  total : ℕ
   hChocolateCount : chocolateCount = 3
   hChocolatePrice : chocolatePrice = 12
   hChocolateCost : chocolateCost = chocolateCount * chocolatePrice
@@ -140,7 +172,12 @@ theorem cake_order_total (m : CakeOrderModel) : m.total = 168 := by
 theorem cake_order_solution (m : CakeOrderModel) : m.total = 168 := cake_order_total m
 
 structure DistanceModel where
-  miles yards niklausFeet lionelFeet estherFeet totalFeet : ℕ
+  miles : ℕ
+  yards : ℕ
+  niklausFeet : ℕ
+  lionelFeet : ℕ
+  estherFeet : ℕ
+  totalFeet : ℕ
   hMiles : miles = 4
   hYards : yards = 975
   hNiklausFeet : niklausFeet = 1287
@@ -156,7 +193,12 @@ theorem distance_total (m : DistanceModel) : m.totalFeet = 25332 := by
 theorem distance_solution (m : DistanceModel) : m.totalFeet = 25332 := distance_total m
 
 structure SmoreModel where
-  crackers crackersPerSmore smores marshmallowsHave marshmallowsNeeded toBuy : ℕ
+  crackers : ℕ
+  crackersPerSmore : ℕ
+  smores : ℕ
+  marshmallowsHave : ℕ
+  marshmallowsNeeded : ℕ
+  toBuy : ℕ
   hCrackers : crackers = 48
   hCrackersPerSmore : crackersPerSmore = 2
   hSmores : crackersPerSmore * smores = crackers
@@ -171,7 +213,13 @@ theorem smore_buy (m : SmoreModel) : m.toBuy = 18 := by
 theorem smores_solution (m : SmoreModel) : m.toBuy = 18 := smore_buy m
 
 structure ParkingModel where
-  cars wheelsPerCar carWheels allWheels motorcycleWheels wheelsPerMotorcycle motorcycles : ℕ
+  cars : ℕ
+  wheelsPerCar : ℕ
+  carWheels : ℕ
+  allWheels : ℕ
+  motorcycleWheels : ℕ
+  wheelsPerMotorcycle : ℕ
+  motorcycles : ℕ
   hCars : cars = 19
   hWheelsPerCar : wheelsPerCar = 5
   hCarWheels : carWheels = cars * wheelsPerCar
@@ -196,7 +244,18 @@ theorem parking_count (m : ParkingModel) : m.motorcycles = 11 := by
 theorem parking_solution (m : ParkingModel) : m.motorcycles = 11 := parking_count m
 
 structure RideModel where
-  ferrisRides ferrisPer ferrisTickets coasterRides coasterPer coasterTickets logRides logPer logTickets total have toBuy : ℕ
+  ferrisRides : ℕ
+  ferrisPer : ℕ
+  ferrisTickets : ℕ
+  coasterRides : ℕ
+  coasterPer : ℕ
+  coasterTickets : ℕ
+  logRides : ℕ
+  logPer : ℕ
+  logTickets : ℕ
+  total : ℕ
+  have : ℕ
+  toBuy : ℕ
   hFerrisRides : ferrisRides = 2
   hFerrisPer : ferrisPer = 2
   hFerrisTickets : ferrisTickets = ferrisRides * ferrisPer
@@ -235,7 +294,11 @@ theorem ride_buy (m : RideModel) : m.toBuy = 6 := by
 theorem rides_solution (m : RideModel) : m.toBuy = 6 := ride_buy m
 
 structure RachelModel where
-  rate minutes bedtime nextDay total : ℕ
+  rate : ℕ
+  minutes : ℕ
+  bedtime : ℕ
+  nextDay : ℕ
+  total : ℕ
   hRate : rate = 5
   hMinutes : minutes = 12
   hBedtime : bedtime = rate * minutes
@@ -253,7 +316,11 @@ theorem rachel_total (m : RachelModel) : m.total = 76 := by
 theorem rachel_solution (m : RachelModel) : m.total = 76 := rachel_total m
 
 structure BikeModel where
-  rotationsPerBlock targetBlocks targetRotations already additional : ℕ
+  rotationsPerBlock : ℕ
+  targetBlocks : ℕ
+  targetRotations : ℕ
+  already : ℕ
+  additional : ℕ
   hRotationsPerBlock : rotationsPerBlock = 200
   hTargetBlocks : targetBlocks = 8
   hTarget : targetRotations = rotationsPerBlock * targetBlocks
@@ -271,7 +338,9 @@ theorem bike_additional (m : BikeModel) : m.additional = 1000 := by
 theorem bike_solution (m : BikeModel) : m.additional = 1000 := bike_additional m
 
 structure DollModel where
-  added original total : ℕ
+  added : ℕ
+  original : ℕ
+  total : ℕ
   hAdded : added = 2
   hIncrease : 4 * added = original
   hTotal : total = original + added
@@ -283,7 +352,11 @@ theorem doll_total (m : DollModel) : m.total = 10 := by
 theorem dolls_solution (m : DollModel) : m.total = 10 := doll_total m
 
 structure MosquitoModel where
-  dropsPerFeed dropsPerLiter lethalLiters lethalDrops mosquitoes : ℕ
+  dropsPerFeed : ℕ
+  dropsPerLiter : ℕ
+  lethalLiters : ℕ
+  lethalDrops : ℕ
+  mosquitoes : ℕ
   hDropsPerFeed : dropsPerFeed = 20
   hDropsPerLiter : dropsPerLiter = 5000
   hLethalLiters : lethalLiters = 3

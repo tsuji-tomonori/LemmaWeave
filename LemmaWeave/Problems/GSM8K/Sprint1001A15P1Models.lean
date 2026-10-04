@@ -3,7 +3,11 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint1001A15P1
 
 structure MeatModel where
-  lion tiger daily supply days : ℕ
+  lion : ℕ
+  tiger : ℕ
+  daily : ℕ
+  supply : ℕ
+  days : ℕ
   hLion : lion = 25
   hTiger : tiger = 20
   hDaily : daily = lion + tiger
@@ -11,14 +15,16 @@ structure MeatModel where
   hLasts : supply = daily * days
 
 theorem daily_meat (m : MeatModel) : m.daily = 45 := by
-  cases m <;> omega
-
+  omega
 theorem meat_days (m : MeatModel) : m.days = 2 := by
   have h := daily_meat m
-  cases m <;> omega
-
+  omega
 structure CatModel where
-  original firstRelocated afterFirst secondRelocated remaining : ℕ
+  original : ℕ
+  firstRelocated : ℕ
+  afterFirst : ℕ
+  secondRelocated : ℕ
+  remaining : ℕ
   hOriginal : original = 1800
   hFirstRelocated : firstRelocated = 600
   hAfterFirst : original = firstRelocated + afterFirst
@@ -26,19 +32,20 @@ structure CatModel where
   hRemaining : afterFirst = secondRelocated + remaining
 
 theorem cats_after_first (m : CatModel) : m.afterFirst = 1200 := by
-  cases m <;> omega
-
+  omega
 theorem cats_second_relocation (m : CatModel) : m.secondRelocated = 600 := by
   have h := cats_after_first m
-  cases m <;> omega
-
+  omega
 theorem cats_remaining (m : CatModel) : m.remaining = 600 := by
   have h1 := cats_after_first m
   have h2 := cats_second_relocation m
-  cases m <;> omega
-
+  omega
 structure CardModel where
-  christmas birthday totalCards pricePerCard spent : ℕ
+  christmas : ℕ
+  birthday : ℕ
+  totalCards : ℕ
+  pricePerCard : ℕ
+  spent : ℕ
   hChristmas : christmas = 20
   hBirthday : birthday = 15
   hTotal : totalCards = christmas + birthday
@@ -46,14 +53,18 @@ structure CardModel where
   hSpent : spent = totalCards * pricePerCard
 
 theorem total_cards (m : CardModel) : m.totalCards = 35 := by
-  cases m <;> omega
-
+  omega
 theorem card_spend (m : CardModel) : m.spent = 70 := by
   have h := total_cards m
-  cases m <;> omega
-
+  omega
 structure WalkModel where
-  metersPerMinute minutesPerHour hoursPerDay minutesPerDay dailyMeters days totalMeters : ℕ
+  metersPerMinute : ℕ
+  minutesPerHour : ℕ
+  hoursPerDay : ℕ
+  minutesPerDay : ℕ
+  dailyMeters : ℕ
+  days : ℕ
+  totalMeters : ℕ
   hRate : metersPerMinute = 10
   hMinutesPerHour : minutesPerHour = 60
   hHours : hoursPerDay = 1
@@ -63,18 +74,23 @@ structure WalkModel where
   hTotal : totalMeters = dailyMeters * days
 
 theorem walking_minutes_per_day (m : WalkModel) : m.minutesPerDay = 60 := by
-  cases m <;> omega
-
+  omega
 theorem walking_meters_per_day (m : WalkModel) : m.dailyMeters = 600 := by
   have h := walking_minutes_per_day m
-  cases m <;> omega
-
+  omega
 theorem two_day_walk (m : WalkModel) : m.totalMeters = 1200 := by
   have h := walking_meters_per_day m
-  cases m <;> omega
-
+  omega
 structure WyattModel where
-  initial loaves breadPrice breadCost cartons juicePrice juiceCost totalCost remaining : ℕ
+  initial : ℕ
+  loaves : ℕ
+  breadPrice : ℕ
+  breadCost : ℕ
+  cartons : ℕ
+  juicePrice : ℕ
+  juiceCost : ℕ
+  totalCost : ℕ
+  remaining : ℕ
   hInitial : initial = 74
   hLoaves : loaves = 5
   hBreadPrice : breadPrice = 5
@@ -86,18 +102,14 @@ structure WyattModel where
   hRemaining : initial = totalCost + remaining
 
 theorem bread_cost (m : WyattModel) : m.breadCost = 25 := by
-  cases m <;> omega
-
+  omega
 theorem juice_cost (m : WyattModel) : m.juiceCost = 8 := by
-  cases m <;> omega
-
+  omega
 theorem total_purchase_cost (m : WyattModel) : m.totalCost = 33 := by
   have h1 := bread_cost m
   have h2 := juice_cost m
-  cases m <;> omega
-
+  omega
 theorem wyatt_money_left (m : WyattModel) : m.remaining = 41 := by
   have h := total_purchase_cost m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint1001A15P1

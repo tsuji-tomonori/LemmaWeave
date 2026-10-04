@@ -3,8 +3,15 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A15P3
 
 structure TemperatureModel where
-  startHour endHour elapsedHours intervalHours steps : ℕ
-  startHalfDegrees incrementHalfDegrees finalHalfDegrees finalDegrees : ℕ
+  startHour : ℕ
+  endHour : ℕ
+  elapsedHours : ℕ
+  intervalHours : ℕ
+  steps : ℕ
+  startHalfDegrees : ℕ
+  incrementHalfDegrees : ℕ
+  finalHalfDegrees : ℕ
+  finalDegrees : ℕ
   hStartHour : startHour = 3
   hEndHour : endHour = 11
   hElapsed : elapsedHours = endHour - startHour
@@ -30,7 +37,12 @@ theorem temperature_solution (m : TemperatureModel) : m.finalDegrees = 56 := by
   simp_all <;> omega
 
 structure ShipsModel where
-  distance theonSpeed yaraSpeed theonHours yaraHours leadHours : ℕ
+  distance : ℕ
+  theonSpeed : ℕ
+  yaraSpeed : ℕ
+  theonHours : ℕ
+  yaraHours : ℕ
+  leadHours : ℕ
   hDistance : distance = 90
   hTheonSpeed : theonSpeed = 15
   hYaraSpeed : yaraSpeed = 30
@@ -53,7 +65,10 @@ theorem ships_solution (m : ShipsModel) : m.leadHours = 3 := by
   simp_all <;> omega
 
 structure AgesModel where
-  youngest middle oldest total : ℕ
+  youngest : ℕ
+  middle : ℕ
+  oldest : ℕ
+  total : ℕ
   hConsecutiveMiddle : middle = youngest + 1
   hConsecutiveOldest : oldest = youngest + 2
   hTotal : total = youngest + middle + oldest
@@ -68,9 +83,15 @@ theorem ages_solution (m : AgesModel) : m.youngest = 31 := by
   omega
 
 structure ExerciseModel where
-  natashaMinutesPerDay natashaDays natashaMinutes : ℕ
-  estebanMinutesPerDay estebanDays estebanMinutes : ℕ
-  totalMinutes minutesPerHour totalHours : ℕ
+  natashaMinutesPerDay : ℕ
+  natashaDays : ℕ
+  natashaMinutes : ℕ
+  estebanMinutesPerDay : ℕ
+  estebanDays : ℕ
+  estebanMinutes : ℕ
+  totalMinutes : ℕ
+  minutesPerHour : ℕ
+  totalHours : ℕ
   hNatashaRate : natashaMinutesPerDay = 30
   hNatashaDays : natashaDays = 7
   hNatashaTotal : natashaMinutes = natashaMinutesPerDay * natashaDays
@@ -101,7 +122,11 @@ theorem exercise_solution (m : ExerciseModel) : m.totalHours = 5 := by
   simp_all <;> omega
 
 structure FruitModel where
-  bonnies blueberries apples berryAndBonnieTotal totalFruits : ℕ
+  bonnies : ℕ
+  blueberries : ℕ
+  apples : ℕ
+  berryAndBonnieTotal : ℕ
+  totalFruits : ℕ
   hBonnies : bonnies = 60
   hBlueberries : 4 * blueberries = 3 * bonnies
   hApples : apples = 3 * blueberries

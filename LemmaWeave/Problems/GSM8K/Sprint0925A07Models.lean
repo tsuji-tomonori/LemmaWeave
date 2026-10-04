@@ -77,7 +77,12 @@ theorem tennis_solution (m : TennisWins) : m.percent = 40 := by cases m; omega
 
 -- Money is represented in cents so Carl's $4.50 hourly rate is exact.
 structure MonthlyPayroll where
-  joshHours carlHours joshPayCents carlPayCents totalCents totalDollars : ℕ
+  joshHours : ℕ
+  carlHours : ℕ
+  joshPayCents : ℕ
+  carlPayCents : ℕ
+  totalCents : ℕ
+  totalDollars : ℕ
   hJoshHours : joshHours = 8 * 5 * 4
   hCarlHours : carlHours = 6 * 5 * 4
   hJoshPay : joshPayCents = 900 * joshHours

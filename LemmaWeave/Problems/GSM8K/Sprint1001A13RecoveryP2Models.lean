@@ -3,7 +3,12 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP2
 
 structure TextModel where
-  recipients mondayEach tuesdayEach monday tuesday total : ℕ
+  recipients : ℕ
+  mondayEach : ℕ
+  tuesdayEach : ℕ
+  monday : ℕ
+  tuesday : ℕ
+  total : ℕ
   hRecipients : recipients = 2
   hMondayEach : mondayEach = 5
   hTuesdayEach : tuesdayEach = 15
@@ -12,18 +17,21 @@ structure TextModel where
   hTotal : total = monday + tuesday
 
 theorem monday_texts (m : TextModel) : m.monday = 10 := by
-  cases m <;> omega
-
+  omega
 theorem tuesday_texts (m : TextModel) : m.tuesday = 30 := by
-  cases m <;> omega
-
+  omega
 theorem text_total (m : TextModel) : m.total = 40 := by
   have h1 := monday_texts m
   have h2 := tuesday_texts m
-  cases m <;> omega
-
+  omega
 structure ToiletModel where
-  oldPerFlush reductionPercent savedPerFlush flushesPerDay dailySaved juneDays totalSaved : ℕ
+  oldPerFlush : ℕ
+  reductionPercent : ℕ
+  savedPerFlush : ℕ
+  flushesPerDay : ℕ
+  dailySaved : ℕ
+  juneDays : ℕ
+  totalSaved : ℕ
   hOld : oldPerFlush = 5
   hReduction : reductionPercent = 80
   hPercent : 100 * savedPerFlush = reductionPercent * oldPerFlush
@@ -33,18 +41,22 @@ structure ToiletModel where
   hTotal : totalSaved = dailySaved * juneDays
 
 theorem saved_per_flush (m : ToiletModel) : m.savedPerFlush = 4 := by
-  cases m <;> omega
-
+  omega
 theorem daily_savings (m : ToiletModel) : m.dailySaved = 60 := by
   have h := saved_per_flush m
-  cases m <;> omega
-
+  omega
 theorem toilet_savings (m : ToiletModel) : m.totalSaved = 1800 := by
   have h := daily_savings m
-  cases m <;> omega
-
+  omega
 structure CornModel where
-  seedsPerBag bagCost seedsPerEar costPerEar salePerEar profitPerEar totalProfit ears : ℕ
+  seedsPerBag : ℕ
+  bagCost : ℕ
+  seedsPerEar : ℕ
+  costPerEar : ℕ
+  salePerEar : ℕ
+  profitPerEar : ℕ
+  totalProfit : ℕ
+  ears : ℕ
   hSeedsPerBag : seedsPerBag = 100
   hBagCost : bagCost = 50
   hSeedsPerEar : seedsPerEar = 4
@@ -55,18 +67,24 @@ structure CornModel where
   hEars : profitPerEar * ears = totalProfit
 
 theorem corn_cost_per_ear (m : CornModel) : m.costPerEar = 2 := by
-  cases m <;> omega
-
+  omega
 theorem corn_profit_per_ear (m : CornModel) : m.profitPerEar = 8 := by
   have h := corn_cost_per_ear m
-  cases m <;> omega
-
+  omega
 theorem corn_ears (m : CornModel) : m.ears = 500 := by
   have h := corn_profit_per_ear m
-  cases m <;> omega
-
+  omega
 structure WormModel where
-  weeksBefore weeksAfter daysPerWeek days eatenPerDay eaten initial added available remaining : ℕ
+  weeksBefore : ℕ
+  weeksAfter : ℕ
+  daysPerWeek : ℕ
+  days : ℕ
+  eatenPerDay : ℕ
+  eaten : ℕ
+  initial : ℕ
+  added : ℕ
+  available : ℕ
+  remaining : ℕ
   hBefore : weeksBefore = 2
   hAfter : weeksAfter = 1
   hDaysPerWeek : daysPerWeek = 7
@@ -79,22 +97,22 @@ structure WormModel where
   hRemaining : remaining + eaten = available
 
 theorem worm_days (m : WormModel) : m.days = 21 := by
-  cases m <;> omega
-
+  omega
 theorem worm_eaten (m : WormModel) : m.eaten = 42 := by
   have h := worm_days m
-  cases m <;> omega
-
+  omega
 theorem worm_available (m : WormModel) : m.available = 68 := by
-  cases m <;> omega
-
+  omega
 theorem worm_remaining (m : WormModel) : m.remaining = 26 := by
   have h1 := worm_eaten m
   have h2 := worm_available m
-  cases m <;> omega
-
+  omega
 structure CakeModel where
-  grams parts onePart pierreMultiplier pierre : ℕ
+  grams : ℕ
+  parts : ℕ
+  onePart : ℕ
+  pierreMultiplier : ℕ
+  pierre : ℕ
   hGrams : grams = 400
   hParts : parts = 8
   hEqualParts : parts * onePart = grams
@@ -102,10 +120,8 @@ structure CakeModel where
   hPierre : pierre = pierreMultiplier * onePart
 
 theorem one_cake_part (m : CakeModel) : m.onePart = 50 := by
-  cases m <;> omega
-
+  omega
 theorem pierre_cake (m : CakeModel) : m.pierre = 100 := by
   have h := one_cake_part m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP2

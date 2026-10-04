@@ -3,7 +3,11 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A15
 
 structure LoanModel where
-  monthly months principal interest total : ℕ
+  monthly : ℕ
+  months : ℕ
+  principal : ℕ
+  interest : ℕ
+  total : ℕ
   hmonthly : monthly = 100
   hmonths : months = 12
   hprincipal : principal = monthly * months
@@ -16,7 +20,11 @@ theorem loan_total (m : LoanModel) : m.total = 1320 := by omega
 theorem loan_solution (m : LoanModel) : m.total = 1320 := loan_total m
 
 structure RouteModel where
-  firstDistance firstTime secondDistance secondTime fastestTime : ℕ
+  firstDistance : ℕ
+  firstTime : ℕ
+  secondDistance : ℕ
+  secondTime : ℕ
+  fastestTime : ℕ
   hfirstDistance : firstDistance = 1500
   hfirstTravel : firstDistance = 75 * firstTime
   hsecondDistance : secondDistance = 750
@@ -29,7 +37,14 @@ theorem route_comparison (m : RouteModel) : m.firstTime < m.secondTime := by ome
 theorem route_solution (m : RouteModel) : m.fastestTime = 20 := by omega
 
 structure LightModel where
-  bedroomRate officeRate livingRate hours bedroomEnergy officeEnergy livingEnergy total : ℕ
+  bedroomRate : ℕ
+  officeRate : ℕ
+  livingRate : ℕ
+  hours : ℕ
+  bedroomEnergy : ℕ
+  officeEnergy : ℕ
+  livingEnergy : ℕ
+  total : ℕ
   hbedroom : bedroomRate = 6
   hoffice : officeRate = 3 * bedroomRate
   hliving : livingRate = 4 * bedroomRate
@@ -46,7 +61,11 @@ theorem light_total (m : LightModel) : m.total = 96 := by omega
 theorem light_solution (m : LightModel) : m.total = 96 := light_total m
 
 structure BrushingModel where
-  minutesPerBrush brushesPerDay days totalMinutes totalHours : ℕ
+  minutesPerBrush : ℕ
+  brushesPerDay : ℕ
+  days : ℕ
+  totalMinutes : ℕ
+  totalHours : ℕ
   hminutes : minutesPerBrush = 2
   hbrushes : brushesPerDay = 3
   hdays : days = 30
@@ -59,7 +78,13 @@ theorem brushing_hours (m : BrushingModel) : m.totalHours = 3 := by omega
 theorem brushing_solution (m : BrushingModel) : m.totalHours = 3 := brushing_hours m
 
 structure SalonModel where
-  revenue pricePerClient clients fingers fingersPerPerson people nonClients : ℕ
+  revenue : ℕ
+  pricePerClient : ℕ
+  clients : ℕ
+  fingers : ℕ
+  fingersPerPerson : ℕ
+  people : ℕ
+  nonClients : ℕ
   hrevenue : revenue = 200
   hprice : pricePerClient = 20
   hclients : revenue = pricePerClient * clients
@@ -74,7 +99,12 @@ theorem salon_nonclients (m : SalonModel) : m.nonClients = 11 := by omega
 theorem salon_solution (m : SalonModel) : m.nonClients = 11 := salon_nonclients m
 
 structure PondModel where
-  initialFish initialTadpoles caughtFish fishLeft tadpolesLeft difference : ℕ
+  initialFish : ℕ
+  initialTadpoles : ℕ
+  caughtFish : ℕ
+  fishLeft : ℕ
+  tadpolesLeft : ℕ
+  difference : ℕ
   hinitialFish : initialFish = 50
   hinitialTadpoles : initialTadpoles = 3 * initialFish
   hcaught : caughtFish = 7
@@ -89,7 +119,13 @@ theorem pond_solution (m : PondModel) : m.difference = 32 := pond_difference m
 
 /-- Paint quantities are measured in eighths of a gallon. One eighth gallon is half a liter. -/
 structure PaintModel where
-  oneGallon dexterUsed jayUsed literalLeft twoGallonLeft literalLiters twoGallonLiters : ℕ
+  oneGallon : ℕ
+  dexterUsed : ℕ
+  jayUsed : ℕ
+  literalLeft : ℕ
+  twoGallonLeft : ℕ
+  literalLiters : ℕ
+  twoGallonLiters : ℕ
   hone : oneGallon = 8
   hdexter : dexterUsed = 3
   hjay : jayUsed = 5
@@ -107,7 +143,11 @@ theorem paint_solution (m : PaintModel) :
   ⟨paint_literal_left m, paint_two_gallon_left m⟩
 
 structure PizzaModel where
-  pizzas slicesPerPizza people totalSlices each : ℕ
+  pizzas : ℕ
+  slicesPerPizza : ℕ
+  people : ℕ
+  totalSlices : ℕ
+  each : ℕ
   hpizzas : pizzas = 3
   hslices : slicesPerPizza = 8
   hpeople : people = 6
@@ -119,7 +159,11 @@ theorem pizza_each (m : PizzaModel) : m.each = 4 := by omega
 theorem pizza_solution (m : PizzaModel) : m.each = 4 := pizza_each m
 
 structure LiftModel where
-  brotherLift brotherWeight felixWeight conventionalLift literalLift : ℕ
+  brotherLift : ℕ
+  brotherWeight : ℕ
+  felixWeight : ℕ
+  conventionalLift : ℕ
+  literalLift : ℕ
   hbrotherLift : brotherLift = 600
   hbrotherRatio : brotherLift = 3 * brotherWeight
   hweightRatio : brotherWeight = 2 * felixWeight
@@ -136,7 +180,14 @@ theorem lift_solution (m : LiftModel) :
   ⟨lift_conventional m, lift_literal m⟩
 
 structure SavingsModel where
-  june july august books shoes saved spent left : ℕ
+  june : ℕ
+  july : ℕ
+  august : ℕ
+  books : ℕ
+  shoes : ℕ
+  saved : ℕ
+  spent : ℕ
+  left : ℕ
   hjune : june = 27
   hjuly : july = 14
   haugust : august = 21
@@ -152,7 +203,9 @@ theorem savings_left (m : SavingsModel) : m.left = 40 := by omega
 theorem savings_solution (m : SavingsModel) : m.left = 40 := savings_left m
 
 structure StairsModel where
-  samir veronica together : ℕ
+  samir : ℕ
+  veronica : ℕ
+  together : ℕ
   hsamir : samir = 318
   hveronica : 2 * veronica = samir + 36
   htogether : together = samir + veronica
@@ -162,7 +215,9 @@ theorem stairs_together (m : StairsModel) : m.together = 495 := by omega
 theorem stairs_solution (m : StairsModel) : m.together = 495 := stairs_together m
 
 structure AgeModel where
-  grandmother mother cara : ℕ
+  grandmother : ℕ
+  mother : ℕ
+  cara : ℕ
   hgrandmother : grandmother = 75
   hmother : grandmother = mother + 15
   hcara : mother = cara + 20
@@ -172,7 +227,13 @@ theorem age_cara (m : AgeModel) : m.cara = 40 := by omega
 theorem age_solution (m : AgeModel) : m.cara = 40 := age_cara m
 
 structure DiscountModel where
-  chlorinePrice soapPrice chlorineSaving soapSaving chlorineCount soapCount totalSaving : ℕ
+  chlorinePrice : ℕ
+  soapPrice : ℕ
+  chlorineSaving : ℕ
+  soapSaving : ℕ
+  chlorineCount : ℕ
+  soapCount : ℕ
+  totalSaving : ℕ
   hchlorinePrice : chlorinePrice = 10
   hsoapPrice : soapPrice = 16
   hchlorineSaving : 5 * chlorineSaving = chlorinePrice
@@ -189,7 +250,11 @@ theorem discount_total (m : DiscountModel) : m.totalSaving = 26 := by omega
 theorem discount_solution (m : DiscountModel) : m.totalSaving = 26 := discount_total m
 
 structure WeddingModel where
-  invited yes no responded silent : ℕ
+  invited : ℕ
+  yes : ℕ
+  no : ℕ
+  responded : ℕ
+  silent : ℕ
   hinvited : invited = 200
   hyes : 100 * yes = 83 * invited
   hno : 100 * no = 9 * invited
@@ -202,7 +267,10 @@ theorem wedding_silent (m : WeddingModel) : m.silent = 16 := by omega
 theorem wedding_solution (m : WeddingModel) : m.silent = 16 := wedding_silent m
 
 structure KyleModel where
-  dave initial spent left : ℕ
+  dave : ℕ
+  initial : ℕ
+  spent : ℕ
+  left : ℕ
   hdave : dave = 46
   hinitial : initial + 12 = 3 * dave
   hspent : 3 * spent = initial

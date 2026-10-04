@@ -3,7 +3,12 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A14
 
 structure PlayoffModel where
-  played won remaining total required futureWins : ℕ
+  played : ℕ
+  won : ℕ
+  remaining : ℕ
+  total : ℕ
+  required : ℕ
+  futureWins : ℕ
   hPlayed : played = 20
   hWon : won = 12
   hRemaining : remaining = 10
@@ -21,7 +26,14 @@ theorem playoff_future (m : PlayoffModel) : m.futureWins = 8 := by
 theorem playoff_solution (m : PlayoffModel) : m.futureWins = 8 := playoff_future m
 
 structure DecorModel where
-  curtainPairs curtainPrice printCount printPrice installation curtainCost printCost total : ℕ
+  curtainPairs : ℕ
+  curtainPrice : ℕ
+  printCount : ℕ
+  printPrice : ℕ
+  installation : ℕ
+  curtainCost : ℕ
+  printCost : ℕ
+  total : ℕ
   hCurtainPairs : curtainPairs = 2
   hCurtainPrice : curtainPrice = 30
   hPrintCount : printCount = 9
@@ -38,7 +50,12 @@ theorem decor_total (m : DecorModel) : m.total = 245 := by
 theorem decor_solution (m : DecorModel) : m.total = 245 := decor_total m
 
 structure SolarModel where
-  homes panelsPer required shortage available completed : ℕ
+  homes : ℕ
+  panelsPer : ℕ
+  required : ℕ
+  shortage : ℕ
+  available : ℕ
+  completed : ℕ
   hHomes : homes = 20
   hPanelsPer : panelsPer = 10
   hRequired : required = homes * panelsPer
@@ -56,7 +73,10 @@ theorem solar_completed (m : SolarModel) : m.completed = 15 := by
 theorem solar_solution (m : SolarModel) : m.completed = 15 := solar_completed m
 
 structure TurtleModel where
-  kristen kris trey more : ℕ
+  kristen : ℕ
+  kris : ℕ
+  trey : ℕ
+  more : ℕ
   hKristen : kristen = 12
   hKris : 4 * kris = kristen
   hTrey : trey = 7 * kris
@@ -72,7 +92,13 @@ theorem turtle_more (m : TurtleModel) : m.more = 9 := by
 theorem turtle_solution (m : TurtleModel) : m.more = 9 := turtle_more m
 
 structure PeachModel where
-  perBasket baskets delivered eaten remaining perBox boxes : ℕ
+  perBasket : ℕ
+  baskets : ℕ
+  delivered : ℕ
+  eaten : ℕ
+  remaining : ℕ
+  perBox : ℕ
+  boxes : ℕ
   hPerBasket : perBasket = 25
   hBaskets : baskets = 5
   hDelivered : delivered = perBasket * baskets
@@ -91,7 +117,10 @@ theorem peach_boxes (m : PeachModel) : m.boxes = 8 := by
 theorem peach_solution (m : PeachModel) : m.boxes = 8 := peach_boxes m
 
 structure MiniseriesModel where
-  episodes minutesPer totalMinutes hours : ℕ
+  episodes : ℕ
+  minutesPer : ℕ
+  totalMinutes : ℕ
+  hours : ℕ
   hEpisodes : episodes = 6
   hMinutesPer : minutesPer = 50
   hTotal : totalMinutes = episodes * minutesPer
@@ -104,8 +133,13 @@ theorem miniseries_hours (m : MiniseriesModel) : m.hours = 5 := by
 theorem miniseries_solution (m : MiniseriesModel) : m.hours = 5 := miniseries_hours m
 
 structure MarathonModel where
-  deanHours micahHalfHours jakeHalfHours totalHalfHours : ℕ
-  referenceMicahHours referenceJakeHours referenceTotalHours : ℕ
+  deanHours : ℕ
+  micahHalfHours : ℕ
+  jakeHalfHours : ℕ
+  totalHalfHours : ℕ
+  referenceMicahHours : ℕ
+  referenceJakeHours : ℕ
+  referenceTotalHours : ℕ
   hDean : deanHours = 9
   hSpeedReading : 2 * micahHalfHours = 3 * (2 * deanHours)
   hJakeReading : 3 * jakeHalfHours = 4 * micahHalfHours
@@ -136,7 +170,10 @@ theorem marathon_solution (m : MarathonModel) :
     marathon_readings_disagree m⟩
 
 structure PenModel where
-  red black blue total : ℕ
+  red : ℕ
+  black : ℕ
+  blue : ℕ
+  total : ℕ
   hRed : red = 8
   hBlack : black = red + 10
   hBlue : blue = red + 7
@@ -149,7 +186,11 @@ theorem pen_total (m : PenModel) : m.total = 41 := by
 theorem pen_solution (m : PenModel) : m.total = 41 := pen_total m
 
 structure PaperModel where
-  total percent science math remaining : ℕ
+  total : ℕ
+  percent : ℕ
+  science : ℕ
+  math : ℕ
+  remaining : ℕ
   hTotal : total = 120
   hPercent : percent = 25
   hScience : 100 * science = percent * total
@@ -163,7 +204,12 @@ theorem paper_remaining (m : PaperModel) : m.remaining = 80 := by
 theorem paper_solution (m : PaperModel) : m.remaining = 80 := paper_remaining m
 
 structure RoseModel where
-  money price total jenna imma friends : ℕ
+  money : ℕ
+  price : ℕ
+  total : ℕ
+  jenna : ℕ
+  imma : ℕ
+  friends : ℕ
   hMoney : money = 300
   hPrice : price = 2
   hTotal : price * total = money
@@ -181,8 +227,19 @@ theorem rose_friends (m : RoseModel) : m.friends = 125 := by
 theorem rose_solution (m : RoseModel) : m.friends = 125 := rose_friends m
 
 structure CabinModel where
-  cash cypressCount cypressPrice pineCount pinePrice mapleCount maplePrice : ℕ
-  cypressRevenue pineRevenue mapleRevenue funds cabinCost left : ℕ
+  cash : ℕ
+  cypressCount : ℕ
+  cypressPrice : ℕ
+  pineCount : ℕ
+  pinePrice : ℕ
+  mapleCount : ℕ
+  maplePrice : ℕ
+  cypressRevenue : ℕ
+  pineRevenue : ℕ
+  mapleRevenue : ℕ
+  funds : ℕ
+  cabinCost : ℕ
+  left : ℕ
   hCash : cash = 150
   hCypressCount : cypressCount = 20
   hCypressPrice : cypressPrice = 100
@@ -208,7 +265,11 @@ theorem cabin_left (m : CabinModel) : m.left = 350 := by
 theorem cabin_solution (m : CabinModel) : m.left = 350 := cabin_left m
 
 structure CookieModel where
-  students percent wanting cookiesPer cookies : ℕ
+  students : ℕ
+  percent : ℕ
+  wanting : ℕ
+  cookiesPer : ℕ
+  cookies : ℕ
   hStudents : students = 40
   hPercent : percent = 10
   hWanting : 100 * wanting = percent * students
@@ -222,7 +283,11 @@ theorem cookie_count (m : CookieModel) : m.cookies = 8 := by
 theorem cookie_solution (m : CookieModel) : m.cookies = 8 := cookie_count m
 
 structure NewbornModel where
-  total toddlers factor teenagers newborns : ℕ
+  total : ℕ
+  toddlers : ℕ
+  factor : ℕ
+  teenagers : ℕ
+  newborns : ℕ
   hTotal : total = 40
   hToddlers : toddlers = 6
   hFactor : factor = 5
@@ -236,7 +301,14 @@ theorem newborn_count (m : NewbornModel) : m.newborns = 4 := by
 theorem newborn_solution (m : NewbornModel) : m.newborns = 4 := newborn_count m
 
 structure TextModel where
-  monday tuesday otherDaily otherDays otherTotal total days average : ℕ
+  monday : ℕ
+  tuesday : ℕ
+  otherDaily : ℕ
+  otherDays : ℕ
+  otherTotal : ℕ
+  total : ℕ
+  days : ℕ
+  average : ℕ
   hMonday : monday = 220
   hTuesday : 2 * tuesday = monday
   hOtherDaily : otherDaily = 50
@@ -256,7 +328,9 @@ theorem text_average (m : TextModel) : m.average = 96 := by
 theorem text_solution (m : TextModel) : m.average = 96 := text_average m
 
 structure RoadModel where
-  kenDawn maryDawn route : ℕ
+  kenDawn : ℕ
+  maryDawn : ℕ
+  route : ℕ
   hKenDawn : kenDawn = 4
   hTwice : kenDawn = 2 * maryDawn
   hRoute : route = kenDawn + maryDawn + maryDawn + kenDawn

@@ -3,7 +3,12 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0929A15P1
 
 structure RetailModel where
-  employees hoursPerDay days wagePerHour totalHours totalPay : ℕ
+  employees : ℕ
+  hoursPerDay : ℕ
+  days : ℕ
+  wagePerHour : ℕ
+  totalHours : ℕ
+  totalPay : ℕ
   hEmployees : employees = 50
   hHours : hoursPerDay = 8
   hDays : days = 5
@@ -26,7 +31,13 @@ theorem retail_solution (m : RetailModel) : m.totalPay = 28000 := by
   simp_all
 
 structure ReadingModel where
-  totalPages days sessionsPerDay pagesPerSession requiredPerDay plannedPerDay extraPerDay : ℕ
+  totalPages : ℕ
+  days : ℕ
+  sessionsPerDay : ℕ
+  pagesPerSession : ℕ
+  requiredPerDay : ℕ
+  plannedPerDay : ℕ
+  extraPerDay : ℕ
   hTotal : totalPages = 140
   hDays : days = 7
   hRequired : totalPages = days * requiredPerDay
@@ -50,7 +61,13 @@ theorem reading_solution (m : ReadingModel) : m.extraPerDay = 2 := by
   simp_all <;> omega
 
 structure FuelModel where
-  oneWayMiles tankLiters consumptionLiters milesPerTank roundTripMiles tankfuls refillsFromFull : ℕ
+  oneWayMiles : ℕ
+  tankLiters : ℕ
+  consumptionLiters : ℕ
+  milesPerTank : ℕ
+  roundTripMiles : ℕ
+  tankfuls : ℕ
+  refillsFromFull : ℕ
   hOneWay : oneWayMiles = 280
   hTank : tankLiters = 8
   hConsumption : consumptionLiters = 8
@@ -74,7 +91,9 @@ theorem fuel_solution (m : FuelModel) : m.tankfuls = 14 ∧ m.refillsFromFull = 
   simp_all <;> omega
 
 structure DonationModel where
-  firstWeek laterFiveWeeks total : ℕ
+  firstWeek : ℕ
+  laterFiveWeeks : ℕ
+  total : ℕ
   hLaterAggregate : laterFiveWeeks = 10 * firstWeek
   hTotal : total = firstWeek + laterFiveWeeks
   hKnown : total = 99
@@ -92,7 +111,9 @@ theorem donation_per_week_reading_impossible :
   omega
 
 structure RobotModel where
-  standard minimum maximum : ℕ
+  standard : ℕ
+  minimum : ℕ
+  maximum : ℕ
   hStandard : standard = 100
   hMinimumExact : minimum = standard + 5
   hMaximum : maximum = 2 * minimum

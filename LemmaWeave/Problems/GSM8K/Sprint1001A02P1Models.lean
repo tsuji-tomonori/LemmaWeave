@@ -11,12 +11,10 @@ structure SiblingAgesModel where
   hOldest : oldestAge = 4 * youngestAge
 
 theorem sibling_youngest (m : SiblingAgesModel) : m.youngestAge = 11 := by
-  cases m <;> omega
-
+  omega
 theorem sibling_oldest (m : SiblingAgesModel) : m.oldestAge = 44 := by
   have h := sibling_youngest m
-  cases m <;> omega
-
+  omega
 structure PokemonCardsModel where
   nicole : ℕ
   cindy : ℕ
@@ -30,20 +28,16 @@ structure PokemonCardsModel where
   hShare : 4 * rexShare = rex
 
 theorem cards_cindy (m : PokemonCardsModel) : m.cindy = 800 := by
-  cases m <;> omega
-
+  omega
 theorem cards_combined (m : PokemonCardsModel) : m.combined = 1200 := by
   have h := cards_cindy m
-  cases m <;> omega
-
+  omega
 theorem cards_rex (m : PokemonCardsModel) : m.rex = 600 := by
   have h := cards_combined m
-  cases m <;> omega
-
+  omega
 theorem cards_share (m : PokemonCardsModel) : m.rexShare = 150 := by
   have h := cards_rex m
-  cases m <;> omega
-
+  omega
 structure ChickensModel where
   hens : ℕ
   roosters : ℕ
@@ -53,12 +47,10 @@ structure ChickensModel where
   hPartition : total = hens + roosters
 
 theorem chickens_hens (m : ChickensModel) : m.hens = 3000 := by
-  cases m <;> omega
-
+  omega
 theorem chickens_roosters (m : ChickensModel) : m.roosters = 6000 := by
   have h := chickens_hens m
-  cases m <;> omega
-
+  omega
 structure BicycleModel where
   firstMiles : ℕ
   secondMiles : ℕ
@@ -70,20 +62,16 @@ structure BicycleModel where
   hTotal : totalMiles = firstMiles + secondMiles + thirdMiles
 
 theorem bicycle_first (m : BicycleModel) : m.firstMiles = 4 := by
-  cases m <;> omega
-
+  omega
 theorem bicycle_second (m : BicycleModel) : m.secondMiles = 3 := by
-  cases m <;> omega
-
+  omega
 theorem bicycle_third (m : BicycleModel) : m.thirdMiles = 5 := by
-  cases m <;> omega
-
+  omega
 theorem bicycle_total (m : BicycleModel) : m.totalMiles = 12 := by
   have h1 := bicycle_first m
   have h2 := bicycle_second m
   have h3 := bicycle_third m
-  cases m <;> omega
-
+  omega
 structure MoviesModel where
   dvdCount : ℕ
   dvdPrice : ℕ
@@ -101,14 +89,12 @@ structure MoviesModel where
   hAverage : averagePrice * movieCount = totalCost
 
 theorem movies_count (m : MoviesModel) : m.movieCount = 12 := by
-  cases m <;> omega
-
+  omega
 theorem movies_cost (m : MoviesModel) : m.totalCost = 168 := by
   cases m <;> norm_num at *
 
 theorem movies_average (m : MoviesModel) : m.averagePrice = 14 := by
   have h1 := movies_count m
   have h2 := movies_cost m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint1001A02P1

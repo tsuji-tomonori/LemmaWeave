@@ -3,7 +3,13 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint1002A02P3
 
 structure SwimModel where
-  margaret firstFive nextThree ninth firstNine billyTotal finalLap : ℕ
+  margaret : ℕ
+  firstFive : ℕ
+  nextThree : ℕ
+  ninth : ℕ
+  firstNine : ℕ
+  billyTotal : ℕ
+  finalLap : ℕ
   hMargaret : margaret = 10 * 60
   hFirstFive : firstFive = 2 * 60
   hNextThree : nextThree = 4 * 60
@@ -12,19 +18,21 @@ structure SwimModel where
   hWinMargin : billyTotal + 30 = margaret
   hFinal : billyTotal = firstNine + finalLap
 
-theorem margaret_seconds (m : SwimModel) : m.margaret = 600 := by cases m <;> omega
-theorem first_nine_seconds (m : SwimModel) : m.firstNine = 420 := by cases m <;> omega
+theorem margaret_seconds (m : SwimModel) : m.margaret = 600 := by omega
+theorem first_nine_seconds (m : SwimModel) : m.firstNine = 420 := by omega
 theorem billy_total_seconds (m : SwimModel) : m.billyTotal = 570 := by
   have h := margaret_seconds m
-  cases m <;> omega
+  omega
 theorem final_lap_seconds (m : SwimModel) : m.finalLap = 150 := by
   have h1 := first_nine_seconds m
   have h2 := billy_total_seconds m
-  cases m <;> omega
-
+  omega
 structure RaceModel where
   laps quarterMilesPerLap distanceQuarterMiles currentTotalMinutes
-    lastTotalQuarterMinutes currentPace lastPace improvement : ℕ
+    lastTotalQuarterMinutes : ℕ
+    currentPace : ℕ
+    lastPace : ℕ
+    improvement : ℕ
   hLaps : laps = 7
   hQuarterMilesPerLap : quarterMilesPerLap = 3
   hDistance : distanceQuarterMiles = 7 * 3
@@ -34,41 +42,44 @@ structure RaceModel where
   hLastPace : 21 * lastPace = lastTotalQuarterMinutes
   hImprovement : currentPace + improvement = lastPace
 
-theorem race_distance_quarter_miles (m : RaceModel) : m.distanceQuarterMiles = 21 := by cases m <;> omega
-theorem current_minutes_per_mile (m : RaceModel) : m.currentPace = 8 := by cases m <;> omega
-theorem last_minutes_per_mile (m : RaceModel) : m.lastPace = 9 := by cases m <;> omega
+theorem race_distance_quarter_miles (m : RaceModel) : m.distanceQuarterMiles = 21 := by omega
+theorem current_minutes_per_mile (m : RaceModel) : m.currentPace = 8 := by omega
+theorem last_minutes_per_mile (m : RaceModel) : m.lastPace = 9 := by omega
 theorem pace_improvement_minutes (m : RaceModel) : m.improvement = 1 := by
   have h1 := current_minutes_per_mile m
   have h2 := last_minutes_per_mile m
-  cases m <;> omega
-
+  omega
 structure DressModel where
-  ana lisa total : ℕ
+  ana : ℕ
+  lisa : ℕ
+  total : ℕ
   hDifference : lisa = ana + 18
   hTotal : lisa + ana = 48
 
-theorem ana_dresses (m : DressModel) : m.ana = 15 := by cases m <;> omega
+theorem ana_dresses (m : DressModel) : m.ana = 15 := by omega
 
 structure WaterModel where
-  daily weekly : ℕ
+  daily : ℕ
+  weekly : ℕ
   hDaily : daily = 8 + 7 + 9
   hWeekly : weekly = 7 * daily
 
-theorem sibling_daily_cups (m : WaterModel) : m.daily = 24 := by cases m <;> omega
+theorem sibling_daily_cups (m : WaterModel) : m.daily = 24 := by omega
 theorem sibling_weekly_cups (m : WaterModel) : m.weekly = 168 := by
   have h := sibling_daily_cups m
-  cases m <;> omega
-
+  omega
 structure SeedlingModel where
-  remiFirst remiSecond father total : ℕ
+  remiFirst : ℕ
+  remiSecond : ℕ
+  father : ℕ
+  total : ℕ
   hFirst : remiFirst = 200
   hSecond : remiSecond = 2 * remiFirst
   hTotal : total = 1200
   hPartition : remiFirst + remiSecond + father = total
 
-theorem remi_second_day_seedlings (m : SeedlingModel) : m.remiSecond = 400 := by cases m <;> omega
+theorem remi_second_day_seedlings (m : SeedlingModel) : m.remiSecond = 400 := by omega
 theorem father_seedlings (m : SeedlingModel) : m.father = 600 := by
   have h := remi_second_day_seedlings m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint1002A02P3

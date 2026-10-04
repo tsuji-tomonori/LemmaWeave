@@ -17,12 +17,10 @@ structure GroupsModel where
   hPartition : firstThree + fourth = total
 
 theorem groups_first_three (m : GroupsModel) : m.firstThree = 20 := by
-  cases m <;> omega
-
+  omega
 theorem groups_fourth (m : GroupsModel) : m.fourth = 4 := by
   have h := groups_first_three m
-  cases m <;> omega
-
+  omega
 structure TreasureModel where
   goldTotal : ℕ
   silverTotal : ℕ
@@ -42,20 +40,16 @@ structure TreasureModel where
   hTotalEach : totalEach = goldEach + silverEach + bronzeEach
 
 theorem treasure_gold_each (m : TreasureModel) : m.goldEach = 700 := by
-  cases m <;> omega
-
+  omega
 theorem treasure_silver_each (m : TreasureModel) : m.silverEach = 100 := by
-  cases m <;> omega
-
+  omega
 theorem treasure_bronze_each (m : TreasureModel) : m.bronzeEach = 200 := by
-  cases m <;> omega
-
+  omega
 theorem treasure_total_each (m : TreasureModel) : m.totalEach = 1000 := by
   have h1 := treasure_gold_each m
   have h2 := treasure_silver_each m
   have h3 := treasure_bronze_each m
-  cases m <;> omega
-
+  omega
 structure NewspapersModel where
   jakeWeekly : ℕ
   mirandaWeekly : ℕ
@@ -71,20 +65,16 @@ structure NewspapersModel where
   hDifference : jakeMonthly + monthlyDifference = mirandaMonthly
 
 theorem newspapers_miranda_weekly (m : NewspapersModel) : m.mirandaWeekly = 468 := by
-  cases m <;> omega
-
+  omega
 theorem newspapers_jake_monthly (m : NewspapersModel) : m.jakeMonthly = 936 := by
-  cases m <;> omega
-
+  omega
 theorem newspapers_miranda_monthly (m : NewspapersModel) : m.mirandaMonthly = 1872 := by
   have h := newspapers_miranda_weekly m
-  cases m <;> omega
-
+  omega
 theorem newspapers_monthly_difference (m : NewspapersModel) : m.monthlyDifference = 936 := by
   have h1 := newspapers_jake_monthly m
   have h2 := newspapers_miranda_monthly m
-  cases m <;> omega
-
+  omega
 structure CdsModel where
   dawn : ℕ
   extraKristine : ℕ
@@ -96,12 +86,10 @@ structure CdsModel where
   hTogether : together = dawn + kristine
 
 theorem cds_kristine (m : CdsModel) : m.kristine = 17 := by
-  cases m <;> omega
-
+  omega
 theorem cds_together (m : CdsModel) : m.together = 27 := by
   have h := cds_kristine m
-  cases m <;> omega
-
+  omega
 structure IceCreamModel where
   brothers : ℕ
   savedEachCents : ℕ
@@ -127,27 +115,21 @@ structure IceCreamModel where
   hEqualSplit : totalScoops = 2 * scoopsEach
 
 theorem ice_total_saved (m : IceCreamModel) : m.totalSavedCents = 8000 := by
-  cases m <;> omega
-
+  omega
 theorem ice_dinner_bill (m : IceCreamModel) : m.dinnerBillCents = 6000 := by
   have h := ice_total_saved m
-  cases m <;> omega
-
+  omega
 theorem ice_after_dinner (m : IceCreamModel) : m.afterDinnerCents = 2000 := by
   have h1 := ice_total_saved m
   have h2 := ice_dinner_bill m
-  cases m <;> omega
-
+  omega
 theorem ice_spent (m : IceCreamModel) : m.iceCreamSpentCents = 1800 := by
   have h := ice_after_dinner m
-  cases m <;> omega
-
+  omega
 theorem ice_total_scoops (m : IceCreamModel) : m.totalScoops = 12 := by
   have h := ice_spent m
-  cases m <;> omega
-
+  omega
 theorem ice_scoops_each (m : IceCreamModel) : m.scoopsEach = 6 := by
   have h := ice_total_scoops m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint0930A20P3

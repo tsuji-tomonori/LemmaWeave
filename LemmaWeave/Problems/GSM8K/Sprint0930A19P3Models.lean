@@ -11,12 +11,10 @@ structure GeckosModel where
   hProfit : salePriceDollars = storeCostDollars + profitDollars
 
 theorem geckos_sale_price (m : GeckosModel) : m.salePriceDollars = 305 := by
-  cases m <;> omega
-
+  omega
 theorem geckos_profit (m : GeckosModel) : m.profitDollars = 205 := by
   have h := geckos_sale_price m
-  cases m <;> omega
-
+  omega
 structure BakeSaleModel where
   cakeFlourHalfPoundUnits : ℕ
   halfPoundUnitsPerCake : ℕ
@@ -42,21 +40,17 @@ structure BakeSaleModel where
   hTotal : totalRevenueCents = cakeRevenueCents + cupcakeRevenueCents
 
 theorem bake_cakes (m : BakeSaleModel) : m.cakes = 8 := by
-  cases m <;> omega
-
+  omega
 theorem bake_cupcakes (m : BakeSaleModel) : m.cupcakes = 10 := by
-  cases m <;> omega
-
+  omega
 theorem bake_cake_revenue (m : BakeSaleModel) : m.cakeRevenueCents = 2000 := by
   have h := bake_cakes m
-  cases m <;> omega
-
+  omega
 theorem bake_total_revenue (m : BakeSaleModel) : m.totalRevenueCents = 3000 := by
   have h1 := bake_cakes m
   have h2 := bake_cupcakes m
   have h3 := bake_cake_revenue m
-  cases m <;> omega
-
+  omega
 structure PayModel where
   hourlyDollars : ℕ
   hours : ℕ
@@ -74,16 +68,13 @@ structure PayModel where
   hNet : grossDollars = deductionDollars + netDollars
 
 theorem pay_gross (m : PayModel) : m.grossDollars = 540 := by
-  cases m <;> omega
-
+  omega
 theorem pay_deduction (m : PayModel) : m.deductionDollars = 15 := by
-  cases m <;> omega
-
+  omega
 theorem pay_net (m : PayModel) : m.netDollars = 525 := by
   have h1 := pay_gross m
   have h2 := pay_deduction m
-  cases m <;> omega
-
+  omega
 structure ShoppingModel where
   initialCents : ℕ
   milkRegularCents : ℕ
@@ -111,24 +102,19 @@ structure ShoppingModel where
   hLeft : initialCents = totalCents + leftCents
 
 theorem shopping_milk (m : ShoppingModel) : m.milkSaleCents = 200 := by
-  cases m <;> omega
-
+  omega
 theorem shopping_detergent (m : ShoppingModel) : m.detergentCents = 900 := by
-  cases m <;> omega
-
+  omega
 theorem shopping_bananas (m : ShoppingModel) : m.bananaCents = 150 := by
-  cases m <;> omega
-
+  omega
 theorem shopping_total (m : ShoppingModel) : m.totalCents = 1600 := by
   have h1 := shopping_milk m
   have h2 := shopping_detergent m
   have h3 := shopping_bananas m
-  cases m <;> omega
-
+  omega
 theorem shopping_left (m : ShoppingModel) : m.leftCents = 400 := by
   have h := shopping_total m
-  cases m <;> omega
-
+  omega
 structure MealsModel where
   regularBurgerCents : ℕ
   regularFriesCents : ℕ
@@ -164,22 +150,17 @@ structure MealsModel where
     regularMeals * regularSavingCents + kidMeals * kidSavingCents
 
 theorem meals_regular_individual (m : MealsModel) : m.regularIndividualCents = 1100 := by
-  cases m <;> omega
-
+  omega
 theorem meals_regular_saving (m : MealsModel) : m.regularSavingCents = 150 := by
   have h := meals_regular_individual m
-  cases m <;> omega
-
+  omega
 theorem meals_kid_individual (m : MealsModel) : m.kidIndividualCents = 700 := by
-  cases m <;> omega
-
+  omega
 theorem meals_kid_saving (m : MealsModel) : m.kidSavingCents = 200 := by
   have h := meals_kid_individual m
-  cases m <;> omega
-
+  omega
 theorem meals_total_saving (m : MealsModel) : m.totalSavingCents = 1000 := by
   have h1 := meals_regular_saving m
   have h2 := meals_kid_saving m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint0930A19P3

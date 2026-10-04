@@ -11,16 +11,13 @@ structure AgesModel where
   hFreddy : freddy = matthew + 4
 
 theorem ages_rebecca (m : AgesModel) : m.rebecca = 9 := by
-  cases m <;> omega
-
+  omega
 theorem ages_matthew (m : AgesModel) : m.matthew = 11 := by
   have h := ages_rebecca m
-  cases m <;> omega
-
+  omega
 theorem ages_freddy (m : AgesModel) : m.freddy = 15 := by
   have h := ages_matthew m
-  cases m <;> omega
-
+  omega
 structure LaundryModel where
   wednesday : ℕ
   thursday : ℕ
@@ -34,21 +31,17 @@ structure LaundryModel where
   hTotal : weeklyTotal = wednesday + thursday + friday + saturday
 
 theorem laundry_thursday (m : LaundryModel) : m.thursday = 12 := by
-  cases m <;> omega
-
+  omega
 theorem laundry_friday (m : LaundryModel) : m.friday = 6 := by
   have h := laundry_thursday m
-  cases m <;> omega
-
+  omega
 theorem laundry_saturday (m : LaundryModel) : m.saturday = 2 := by
-  cases m <;> omega
-
+  omega
 theorem laundry_total (m : LaundryModel) : m.weeklyTotal = 26 := by
   have h1 := laundry_thursday m
   have h2 := laundry_friday m
   have h3 := laundry_saturday m
-  cases m <;> omega
-
+  omega
 structure RunningModel where
   circuitMeters : ℕ
   morningLaps : ℕ
@@ -74,8 +67,7 @@ theorem running_afternoon (m : RunningModel) : m.afternoonMeters = 1095 := by
 theorem running_daily (m : RunningModel) : m.dailyMeters = 3650 := by
   have h1 := running_morning m
   have h2 := running_afternoon m
-  cases m <;> omega
-
+  omega
 theorem running_weekly (m : RunningModel) : m.weeklyMeters = 25550 := by
   have h := running_daily m
   cases m <;> norm_num at *
@@ -101,12 +93,10 @@ theorem shopping_smartphones (m : ShoppingModel) : m.smartphoneCost = 1600 := by
 theorem shopping_total (m : ShoppingModel) : m.totalCost = 2800 := by
   have h1 := shopping_laptops m
   have h2 := shopping_smartphones m
-  cases m <;> omega
-
+  omega
 theorem shopping_change (m : ShoppingModel) : m.change = 200 := by
   have h := shopping_total m
-  cases m <;> omega
-
+  omega
 structure BreakfastModel where
   targetCalories : ℕ
   breadCalories : ℕ
@@ -120,10 +110,8 @@ structure BreakfastModel where
   hServings : peanutCaloriesNeeded = servings * peanutCaloriesPerServing
 
 theorem breakfast_peanut_calories (m : BreakfastModel) : m.peanutCaloriesNeeded = 400 := by
-  cases m <;> omega
-
+  omega
 theorem breakfast_servings (m : BreakfastModel) : m.servings = 2 := by
   have h := breakfast_peanut_calories m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint1001A00P1

@@ -15,16 +15,13 @@ structure TipsModel where
   hTips : tips = 2 * customers
 
 theorem tips_saturday (m : TipsModel) : m.saturday = 84 := by
-  cases m <;> omega
-
+  omega
 theorem tips_customers (m : TipsModel) : m.customers = 148 := by
   have h := tips_saturday m
-  cases m <;> omega
-
+  omega
 theorem tips_total (m : TipsModel) : m.tips = 296 := by
   have h := tips_customers m
-  cases m <;> omega
-
+  omega
 structure HouseAreaModel where
   bedroomArea : ℕ
   bedroomsArea : ℕ
@@ -48,8 +45,7 @@ theorem area_bathrooms (m : HouseAreaModel) : m.bathroomsArea = 96 := by
 theorem area_kitchen (m : HouseAreaModel) : m.kitchenArea = 265 := by
   have h1 := area_bedrooms m
   have h2 := area_bathrooms m
-  cases m <;> omega
-
+  omega
 structure MealsModel where
   breakfastCents : ℕ
   lunchCents : ℕ
@@ -67,8 +63,7 @@ theorem meals_lunch (m : MealsModel) : m.lunchCents = 900 := by
 theorem meals_difference (m : MealsModel) : m.differenceCents = 300 := by
   have h1 := meals_breakfast m
   have h2 := meals_lunch m
-  cases m <;> omega
-
+  omega
 structure LemonadeModel where
   stanleyPerHour : ℕ
   carlPerHour : ℕ
@@ -92,8 +87,7 @@ theorem lemonade_carl (m : LemonadeModel) : m.carlTotal = 21 := by
 theorem lemonade_difference (m : LemonadeModel) : m.difference = 9 := by
   have h1 := lemonade_stanley m
   have h2 := lemonade_carl m
-  cases m <;> omega
-
+  omega
 structure StatuesModel where
   jade : ℕ
   giraffeCount : ℕ
@@ -109,22 +103,17 @@ structure StatuesModel where
   hDifference : giraffeRevenue + difference = elephantRevenue
 
 theorem statues_giraffes (m : StatuesModel) : m.giraffeCount = 16 := by
-  cases m <;> omega
-
+  omega
 theorem statues_elephants (m : StatuesModel) : m.elephantCount = 8 := by
-  cases m <;> omega
-
+  omega
 theorem statues_giraffe_revenue (m : StatuesModel) : m.giraffeRevenue = 2400 := by
   have h := statues_giraffes m
-  cases m <;> omega
-
+  omega
 theorem statues_elephant_revenue (m : StatuesModel) : m.elephantRevenue = 2800 := by
   have h := statues_elephants m
-  cases m <;> omega
-
+  omega
 theorem statues_difference (m : StatuesModel) : m.difference = 400 := by
   have h1 := statues_giraffe_revenue m
   have h2 := statues_elephant_revenue m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint1001A02P2

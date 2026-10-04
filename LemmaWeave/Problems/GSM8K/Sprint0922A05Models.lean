@@ -49,7 +49,7 @@ structure Instruments where
   hTotal : total=charlie+carli
 theorem instruments_charlie (m:Instruments) : m.charlie=4 := by rw [m.hCharlie] <;> norm_num
 theorem instruments_carli_flutes (m:Instruments) : m.carliFlutes=2 := by rw [m.hFlutes] <;> norm_num
-theorem instruments_carli_horns (m:Instruments) : m.carliHorns=1 := by cases m <;> omega
+theorem instruments_carli_horns (m:Instruments) : m.carliHorns=1 := by omega
 theorem instruments_carli (m:Instruments) : m.carli=3 := by rw [m.hCarli, instruments_carli_flutes m, instruments_carli_horns m] <;> norm_num
 theorem instruments_solution (m:Instruments) : m.total=7 := by rw [m.hTotal, instruments_charlie m, instruments_carli m] <;> norm_num
 
@@ -73,7 +73,7 @@ structure Soup where
   h2 : 2*d2=d1
   h3 : 2*d3=d2
   h4 : 2*d4=d3
-theorem soup_day_one (m:Soup) : m.d1=40 := by cases m <;> omega
+theorem soup_day_one (m:Soup) : m.d1=40 := by omega
 theorem soup_day_two (m:Soup) : m.d2=20 := by have h:=m.h2; rw [soup_day_one m] at h; omega
 theorem soup_day_three (m:Soup) : m.d3=10 := by have h:=m.h3; rw [soup_day_two m] at h; omega
 theorem soup_solution (m:Soup) : m.d4=5 := by have h:=m.h4; rw [soup_day_three m] at h; omega
@@ -141,7 +141,7 @@ structure Jeans where
   hCardDiscount : 100*cardDiscount=10*afterCoupon
   hPaid : paid+cardDiscount=afterCoupon
   hSaved : saved+paid=125
-theorem jeans_sale_discount (m:Jeans) : m.saleDiscount=25 := by cases m <;> omega
+theorem jeans_sale_discount (m:Jeans) : m.saleDiscount=25 := by omega
 theorem jeans_after_sale (m:Jeans) : m.afterSale=100 := by have h:=m.hAfterSale; rw [jeans_sale_discount m] at h; omega
 theorem jeans_after_coupon (m:Jeans) : m.afterCoupon=90 := by have h:=m.hAfterCoupon; rw [jeans_after_sale m] at h; omega
 theorem jeans_card_discount (m:Jeans) : m.cardDiscount=9 := by have h:=m.hCardDiscount; rw [jeans_after_coupon m] at h; omega
@@ -158,7 +158,7 @@ structure Credits where
   hTotal : total=aria+20+spencer
   hTwice : twiceTotal=2*total
 theorem credits_aria (m:Credits) : m.aria=40 := by rw [m.hAria] <;> norm_num
-theorem credits_spencer (m:Credits) : m.spencer=10 := by cases m <;> omega
+theorem credits_spencer (m:Credits) : m.spencer=10 := by omega
 theorem credits_total (m:Credits) : m.total=70 := by rw [m.hTotal, credits_aria m, credits_spencer m] <;> norm_num
 theorem credits_solution (m:Credits) : m.twiceTotal=140 := by rw [m.hTwice, credits_total m] <;> norm_num
 
@@ -200,8 +200,8 @@ structure Sledding where
   hMary : 90*mary=630
   hAnn : 40*ann=800
   hDifference : difference+mary=ann
-theorem sled_mary (m:Sledding) : m.mary=7 := by cases m <;> omega
-theorem sled_ann (m:Sledding) : m.ann=20 := by cases m <;> omega
+theorem sled_mary (m:Sledding) : m.mary=7 := by omega
+theorem sled_ann (m:Sledding) : m.ann=20 := by omega
 theorem sled_solution (m:Sledding) : m.difference=13 := by have h:=m.hDifference; rw [sled_mary m, sled_ann m] at h; omega
 
 structure Notebooks where
@@ -213,7 +213,7 @@ structure Notebooks where
   hThree : three=half*3
   hFive : five=half*5
   hTotal : total=three+five
-theorem notebooks_half (m:Notebooks) : m.half=14 := by cases m <;> omega
+theorem notebooks_half (m:Notebooks) : m.half=14 := by omega
 theorem notebooks_three (m:Notebooks) : m.three=42 := by rw [m.hThree, notebooks_half m] <;> norm_num
 theorem notebooks_five (m:Notebooks) : m.five=70 := by rw [m.hFive, notebooks_half m] <;> norm_num
 theorem notebooks_solution (m:Notebooks) : m.total=112 := by rw [m.hTotal, notebooks_three m, notebooks_five m] <;> norm_num

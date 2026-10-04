@@ -21,20 +21,16 @@ structure LiftsModel where
   hTotal : total = newSquat + bench + newDeadlift
 
 theorem lifts_squat_loss (m : LiftsModel) : m.squatLoss = 210 := by
-  cases m <;> omega
-
+  omega
 theorem lifts_new_squat (m : LiftsModel) : m.newSquat = 490 := by
   have h := lifts_squat_loss m
-  cases m <;> omega
-
+  omega
 theorem lifts_new_deadlift (m : LiftsModel) : m.newDeadlift = 600 := by
-  cases m <;> omega
-
+  omega
 theorem lifts_total (m : LiftsModel) : m.total = 1490 := by
   have h1 := lifts_new_squat m
   have h2 := lifts_new_deadlift m
-  cases m <;> omega
-
+  omega
 structure PracticeModel where
   totalMinutes : ℕ
   shootingMinutes : ℕ
@@ -48,11 +44,9 @@ structure PracticeModel where
   hRunning : runningMinutes = 2 * liftingMinutes
 
 theorem practice_other_minutes (m : PracticeModel) : m.otherMinutes = 60 := by
-  cases m <;> omega
-
+  omega
 theorem practice_running_relation (m : PracticeModel) : m.otherMinutes = 3 * m.liftingMinutes := by
-  cases m <;> omega
-
+  omega
 theorem practice_lifting_minutes (m : PracticeModel) : m.liftingMinutes = 20 := by
   have h1 := practice_other_minutes m
   have h2 := practice_running_relation m
@@ -75,16 +69,13 @@ structure HensModel where
   hRate : eggs = hens * weeks * eggsPerHenWeek
 
 theorem hens_dozens (m : HensModel) : m.dozens = 40 := by
-  cases m <;> omega
-
+  omega
 theorem hens_eggs (m : HensModel) : m.eggs = 480 := by
   have h := hens_dozens m
-  cases m <;> omega
-
+  omega
 theorem hens_per_week (m : HensModel) : m.eggsPerHenWeek = 12 := by
   have h := hens_eggs m
-  cases m <;> omega
-
+  omega
 structure QuizModel where
   nicole : ℕ
   kim : ℕ
@@ -94,12 +85,10 @@ structure QuizModel where
   hKimMore : kim = cherry + 8
 
 theorem quiz_kim (m : QuizModel) : m.kim = 25 := by
-  cases m <;> omega
-
+  omega
 theorem quiz_cherry (m : QuizModel) : m.cherry = 17 := by
   have h := quiz_kim m
-  cases m <;> omega
-
+  omega
 structure BagModel where
   original : ℕ
   firstReduction : ℕ
@@ -115,23 +104,18 @@ structure BagModel where
   hReduction : original = finalPrice + totalReduction
 
 theorem bag_first_reduction (m : BagModel) : m.firstReduction = 25 := by
-  cases m <;> omega
-
+  omega
 theorem bag_after_first (m : BagModel) : m.afterFirst = 475 := by
   have h := bag_first_reduction m
-  cases m <;> omega
-
+  omega
 theorem bag_second_reduction (m : BagModel) : m.secondReduction = 19 := by
   have h := bag_after_first m
-  cases m <;> omega
-
+  omega
 theorem bag_final_price (m : BagModel) : m.finalPrice = 456 := by
   have h1 := bag_after_first m
   have h2 := bag_second_reduction m
-  cases m <;> omega
-
+  omega
 theorem bag_total_reduction (m : BagModel) : m.totalReduction = 44 := by
   have h := bag_final_price m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint0930A15P2

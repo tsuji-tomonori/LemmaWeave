@@ -3,7 +3,13 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A18
 
 structure WheelsModel where
-  bicycles cars motorcycles bicycleWheels carWheels motorcycleWheels total : ℕ
+  bicycles : ℕ
+  cars : ℕ
+  motorcycles : ℕ
+  bicycleWheels : ℕ
+  carWheels : ℕ
+  motorcycleWheels : ℕ
+  total : ℕ
   hbicycles : bicycles = 20
   hcars : cars = 10
   hmotorcycles : motorcycles = 5
@@ -18,7 +24,9 @@ theorem wheels_total (m : WheelsModel) : m.total = 90 := by omega
 theorem wheels_solution (m : WheelsModel) : m.total = 90 := wheels_total m
 
 structure TreesModel where
-  total pine nonPine : ℕ
+  total : ℕ
+  pine : ℕ
+  nonPine : ℕ
   htotal : total = 350
   hpine : 100 * pine = 70 * total
   hpartition : total = pine + nonPine
@@ -28,7 +36,12 @@ theorem trees_nonpine (m : TreesModel) : m.nonPine = 105 := by omega
 theorem trees_solution (m : TreesModel) : m.nonPine = 105 := trees_nonpine m
 
 structure CharityModel where
-  revenue ingredients remainder shelterShare ownDonation shelterTotal : ℕ
+  revenue : ℕ
+  ingredients : ℕ
+  remainder : ℕ
+  shelterShare : ℕ
+  ownDonation : ℕ
+  shelterTotal : ℕ
   hrevenue : revenue = 400
   hingredients : ingredients = 100
   hremainder : revenue = ingredients + remainder
@@ -42,7 +55,13 @@ theorem charity_total (m : CharityModel) : m.shelterTotal = 160 := by omega
 theorem charity_solution (m : CharityModel) : m.shelterTotal = 160 := charity_total m
 
 structure MarketModel where
-  eggs eggPrice chickens chickenPrice eggCost chickenCost total : ℕ
+  eggs : ℕ
+  eggPrice : ℕ
+  chickens : ℕ
+  chickenPrice : ℕ
+  eggCost : ℕ
+  chickenCost : ℕ
+  total : ℕ
   heggs : eggs = 20
   heggPrice : eggPrice = 2
   hchickens : chickens = 6
@@ -56,7 +75,13 @@ theorem market_total (m : MarketModel) : m.total = 88 := by omega
 theorem market_solution (m : MarketModel) : m.total = 88 := market_total m
 
 structure StationModel where
-  minutes interval arrivals leaving boarding perTrain total : ℕ
+  minutes : ℕ
+  interval : ℕ
+  arrivals : ℕ
+  leaving : ℕ
+  boarding : ℕ
+  perTrain : ℕ
+  total : ℕ
   hminutes : minutes = 60
   hinterval : interval = 5
   harrivals : minutes = interval * arrivals
@@ -71,7 +96,12 @@ theorem station_total (m : StationModel) : m.total = 6240 := by omega
 theorem station_solution (m : StationModel) : m.total = 6240 := station_total m
 
 structure GranolaModel where
-  pack days traded remaining sisters each : ℕ
+  pack : ℕ
+  days : ℕ
+  traded : ℕ
+  remaining : ℕ
+  sisters : ℕ
+  each : ℕ
   hpack : pack = 20
   hdays : days = 7
   htraded : traded = 3
@@ -84,7 +114,11 @@ theorem granola_each (m : GranolaModel) : m.each = 5 := by omega
 theorem granola_solution (m : GranolaModel) : m.each = 5 := granola_each m
 
 structure PyramidModel where
-  level1 level2 level3 top total : ℕ
+  level1 : ℕ
+  level2 : ℕ
+  level3 : ℕ
+  top : ℕ
+  total : ℕ
   htop : top = 64
   hlevel3 : 5 * top = 4 * level3
   hlevel2 : 5 * level3 = 4 * level2
@@ -97,7 +131,12 @@ theorem pyramid_total (m : PyramidModel) : m.total = 369 := by omega
 theorem pyramid_solution (m : PyramidModel) : m.total = 369 := pyramid_total m
 
 structure TicketsModel where
-  capacity jude andrea sandra sold remaining : ℕ
+  capacity : ℕ
+  jude : ℕ
+  andrea : ℕ
+  sandra : ℕ
+  sold : ℕ
+  remaining : ℕ
   hcapacity : capacity = 100
   hjude : jude = 16
   handrea : andrea = 2 * jude
@@ -112,7 +151,15 @@ theorem tickets_remaining (m : TicketsModel) : m.remaining = 40 := by omega
 theorem tickets_solution (m : TicketsModel) : m.remaining = 40 := tickets_remaining m
 
 structure BirdseedModel where
-  bought pantry boxes gramsPerBox weeklyParrot weeklyCockatiel weekly totalGrams weeks : ℕ
+  bought : ℕ
+  pantry : ℕ
+  boxes : ℕ
+  gramsPerBox : ℕ
+  weeklyParrot : ℕ
+  weeklyCockatiel : ℕ
+  weekly : ℕ
+  totalGrams : ℕ
+  weeks : ℕ
   hbought : bought = 3
   hpantry : pantry = 5
   hboxes : boxes = bought + pantry
@@ -129,7 +176,10 @@ theorem birdseed_weeks (m : BirdseedModel) : m.weeks = 12 := by omega
 theorem birdseed_solution (m : BirdseedModel) : m.weeks = 12 := birdseed_weeks m
 
 structure BrothersModel where
-  adam tom target years : ℕ
+  adam : ℕ
+  tom : ℕ
+  target : ℕ
+  years : ℕ
   hadam : adam = 8
   htom : tom = 12
   htarget : target = 44
@@ -140,7 +190,11 @@ theorem brothers_years (m : BrothersModel) : m.years = 12 := by omega
 theorem brothers_solution (m : BrothersModel) : m.years = 12 := brothers_years m
 
 structure MeatModel where
-  people halfPounds pricePerPound totalHalfPounds totalCost : ℕ
+  people : ℕ
+  halfPounds : ℕ
+  pricePerPound : ℕ
+  totalHalfPounds : ℕ
+  totalCost : ℕ
   hpeople : people = 6
   hhalfPounds : halfPounds = 1
   hprice : pricePerPound = 15
@@ -152,7 +206,9 @@ theorem meat_cost (m : MeatModel) : m.totalCost = 45 := by omega
 theorem meat_solution (m : MeatModel) : m.totalCost = 45 := meat_cost m
 
 structure ToyPilesModel where
-  smaller larger total : ℕ
+  smaller : ℕ
+  larger : ℕ
+  total : ℕ
   htotal : total = 120
   hlarger : larger = 2 * smaller
   hsum : total = smaller + larger
@@ -162,7 +218,11 @@ theorem toy_larger (m : ToyPilesModel) : m.larger = 80 := by omega
 theorem toy_solution (m : ToyPilesModel) : m.larger = 80 := toy_larger m
 
 structure CateringModel where
-  guests price subtotal discount revenue : ℕ
+  guests : ℕ
+  price : ℕ
+  subtotal : ℕ
+  discount : ℕ
+  revenue : ℕ
   hguests : guests = 20
   hprice : price = 25
   hsubtotal : subtotal = guests * price
@@ -175,7 +235,14 @@ theorem catering_revenue (m : CateringModel) : m.revenue = 450 := by omega
 theorem catering_solution (m : CateringModel) : m.revenue = 450 := catering_revenue m
 
 structure DivingModel where
-  weekdays weekendDays weekdayClassesPerDay weekendClassesPerDay classesPerWeek peoplePerClass weeks total : ℕ
+  weekdays : ℕ
+  weekendDays : ℕ
+  weekdayClassesPerDay : ℕ
+  weekendClassesPerDay : ℕ
+  classesPerWeek : ℕ
+  peoplePerClass : ℕ
+  weeks : ℕ
+  total : ℕ
   hweekdays : weekdays = 5
   hweekendDays : weekendDays = 2
   hweekdayClasses : weekdayClassesPerDay = 2
@@ -191,7 +258,12 @@ theorem diving_total (m : DivingModel) : m.total = 270 := by omega
 theorem diving_solution (m : DivingModel) : m.total = 270 := diving_total m
 
 structure AverageAgeModel where
-  average count total molly hakimi jared : ℕ
+  average : ℕ
+  count : ℕ
+  total : ℕ
+  molly : ℕ
+  hakimi : ℕ
+  jared : ℕ
   haverage : average = 40
   hcount : count = 3
   htotal : total = average * count

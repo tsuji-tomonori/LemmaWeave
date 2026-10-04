@@ -3,7 +3,13 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint1001A14P1
 
 structure NotebookModel where
-  gerald extra initial toPaula afterPaula toMike left : ℕ
+  gerald : ℕ
+  extra : ℕ
+  initial : ℕ
+  toPaula : ℕ
+  afterPaula : ℕ
+  toMike : ℕ
+  left : ℕ
   hGerald : gerald = 8
   hExtra : extra = 13
   hInitial : initial = gerald + extra
@@ -13,18 +19,21 @@ structure NotebookModel where
   hLeft : left + toMike = afterPaula
 
 theorem jack_initial_notebooks (m : NotebookModel) : m.initial = 21 := by
-  cases m <;> omega
-
+  omega
 theorem after_paula_notebooks (m : NotebookModel) : m.afterPaula = 16 := by
   have h := jack_initial_notebooks m
-  cases m <;> omega
-
+  omega
 theorem notebooks_left (m : NotebookModel) : m.left = 10 := by
   have h := after_paula_notebooks m
-  cases m <;> omega
-
+  omega
 structure MovieDealModel where
-  ticket popcorn drink candy normal deal savings : ℕ
+  ticket : ℕ
+  popcorn : ℕ
+  drink : ℕ
+  candy : ℕ
+  normal : ℕ
+  deal : ℕ
+  savings : ℕ
   hTicket : ticket = 8
   hPopcorn : popcorn + 3 = ticket
   hDrink : drink = popcorn + 1
@@ -34,28 +43,30 @@ structure MovieDealModel where
   hSavings : savings + deal = normal
 
 theorem popcorn_price (m : MovieDealModel) : m.popcorn = 5 := by
-  cases m <;> omega
-
+  omega
 theorem drink_price (m : MovieDealModel) : m.drink = 6 := by
   have h := popcorn_price m
-  cases m <;> omega
-
+  omega
 theorem candy_price (m : MovieDealModel) : m.candy = 3 := by
   have h := drink_price m
-  cases m <;> omega
-
+  omega
 theorem normal_movie_total (m : MovieDealModel) : m.normal = 22 := by
   have h1 := popcorn_price m
   have h2 := drink_price m
   have h3 := candy_price m
-  cases m <;> omega
-
+  omega
 theorem movie_deal_savings (m : MovieDealModel) : m.savings = 2 := by
   have h := normal_movie_total m
-  cases m <;> omega
-
+  omega
 structure AgeModel where
-  willPast yearsSince willNow dianeNow yearsAhead willFuture dianeFuture totalFuture : ℕ
+  willPast : ℕ
+  yearsSince : ℕ
+  willNow : ℕ
+  dianeNow : ℕ
+  yearsAhead : ℕ
+  willFuture : ℕ
+  dianeFuture : ℕ
+  totalFuture : ℕ
   hWillPast : willPast = 4
   hYearsSince : yearsSince = 3
   hWillNow : willNow = willPast + yearsSince
@@ -66,23 +77,23 @@ structure AgeModel where
   hTotal : totalFuture = willFuture + dianeFuture
 
 theorem will_now_age (m : AgeModel) : m.willNow = 7 := by
-  cases m <;> omega
-
+  omega
 theorem diane_now_age (m : AgeModel) : m.dianeNow = 14 := by
   have h := will_now_age m
-  cases m <;> omega
-
+  omega
 theorem will_future_age (m : AgeModel) : m.willFuture = 12 := by
   have h := will_now_age m
-  cases m <;> omega
-
+  omega
 theorem future_age_sum (m : AgeModel) : m.totalFuture = 31 := by
   have h1 := diane_now_age m
   have h2 := will_future_age m
-  cases m <;> omega
-
+  omega
 structure MeetingModel where
-  seatedStudents seatedTeachers seated standingStudents total : ℕ
+  seatedStudents : ℕ
+  seatedTeachers : ℕ
+  seated : ℕ
+  standingStudents : ℕ
+  total : ℕ
   hStudents : seatedStudents = 300
   hTeachers : seatedTeachers = 30
   hSeated : seated = seatedStudents + seatedTeachers
@@ -90,14 +101,20 @@ structure MeetingModel where
   hTotal : total = seated + standingStudents
 
 theorem seated_attendance (m : MeetingModel) : m.seated = 330 := by
-  cases m <;> omega
-
+  omega
 theorem meeting_attendance (m : MeetingModel) : m.total = 355 := by
   have h := seated_attendance m
-  cases m <;> omega
-
+  omega
 structure TailoringModel where
-  shirts shirtMinutes shirtTotal pants pantsMinutes pantsTotal totalMinutes hourlyRate cost : ℕ
+  shirts : ℕ
+  shirtMinutes : ℕ
+  shirtTotal : ℕ
+  pants : ℕ
+  pantsMinutes : ℕ
+  pantsTotal : ℕ
+  totalMinutes : ℕ
+  hourlyRate : ℕ
+  cost : ℕ
   hShirts : shirts = 10
   hShirtMinutes : shirtMinutes = 90
   hShirtTotal : shirtTotal = shirts * shirtMinutes
@@ -109,18 +126,14 @@ structure TailoringModel where
   hCost : 60 * cost = totalMinutes * hourlyRate
 
 theorem shirt_minutes (m : TailoringModel) : m.shirtTotal = 900 := by
-  cases m <;> omega
-
+  omega
 theorem pants_minutes (m : TailoringModel) : m.pantsTotal = 2160 := by
-  cases m <;> omega
-
+  omega
 theorem tailoring_minutes (m : TailoringModel) : m.totalMinutes = 3060 := by
   have h1 := shirt_minutes m
   have h2 := pants_minutes m
-  cases m <;> omega
-
+  omega
 theorem tailoring_cost (m : TailoringModel) : m.cost = 1530 := by
   have h := tailoring_minutes m
-  cases m <;> omega
-
+  omega
 end LemmaWeave.Problems.GSM8K.Sprint1001A14P1

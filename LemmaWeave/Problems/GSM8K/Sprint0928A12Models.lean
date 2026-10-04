@@ -3,7 +3,13 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A12
 
 structure GameModel where
-  game candy hourly hours earnings spending left : ℕ
+  game : ℕ
+  candy : ℕ
+  hourly : ℕ
+  hours : ℕ
+  earnings : ℕ
+  spending : ℕ
+  left : ℕ
   hGame : game = 60
   hCandy : candy = 5
   hHourly : hourly = 8
@@ -25,7 +31,13 @@ theorem game_left (m : GameModel) : m.left = 7 := by
 theorem game_solution (m : GameModel) : m.left = 7 := game_left m
 
 structure MushroomModel where
-  piecesPer kenny karla remaining usedPieces totalPieces mushrooms : ℕ
+  piecesPer : ℕ
+  kenny : ℕ
+  karla : ℕ
+  remaining : ℕ
+  usedPieces : ℕ
+  totalPieces : ℕ
+  mushrooms : ℕ
   hPiecesPer : piecesPer = 4
   hKenny : kenny = 38
   hKarla : karla = 42
@@ -44,7 +56,13 @@ theorem mushroom_count (m : MushroomModel) : m.mushrooms = 22 := by
 theorem mushroom_solution (m : MushroomModel) : m.mushrooms = 22 := mushroom_count m
 
 structure PaintModel where
-  area coverage coats gallons price total share : ℕ
+  area : ℕ
+  coverage : ℕ
+  coats : ℕ
+  gallons : ℕ
+  price : ℕ
+  total : ℕ
+  share : ℕ
   hArea : area = 1600
   hCoverage : coverage = 400
   hCoats : coats = 2
@@ -66,7 +84,13 @@ theorem paint_share (m : PaintModel) : m.share = 180 := by
 theorem paint_solution (m : PaintModel) : m.share = 180 := paint_share m
 
 structure MealModel where
-  bagel juice sandwich milk breakfast lunch difference : ℕ
+  bagel : ℕ
+  juice : ℕ
+  sandwich : ℕ
+  milk : ℕ
+  breakfast : ℕ
+  lunch : ℕ
+  difference : ℕ
   hBagel : bagel = 95
   hJuice : juice = 85
   hSandwich : sandwich = 465
@@ -82,7 +106,10 @@ theorem meal_difference (m : MealModel) : m.difference = 400 := by
 theorem meal_solution (m : MealModel) : m.difference = 400 := meal_difference m
 
 structure TransportModel where
-  income percent fare left : ℕ
+  income : ℕ
+  percent : ℕ
+  fare : ℕ
+  left : ℕ
   hIncome : income = 2000
   hPercent : percent = 5
   hFare : 100 * fare = percent * income
@@ -95,7 +122,10 @@ theorem transport_left (m : TransportModel) : m.left = 1900 := by
 theorem transport_solution (m : TransportModel) : m.left = 1900 := transport_left m
 
 structure SiblingsModel where
-  aaron sister henry total : ℕ
+  aaron : ℕ
+  sister : ℕ
+  henry : ℕ
+  total : ℕ
   hAaron : aaron = 15
   hSister : sister = 3 * aaron
   hHenry : henry = 4 * sister
@@ -112,7 +142,15 @@ theorem siblings_total (m : SiblingsModel) : m.total = 240 := by
 theorem siblings_solution (m : SiblingsModel) : m.total = 240 := siblings_total m
 
 structure SodiumModel where
-  saltTeaspoons saltPer cheeseOunces cheesePer saltSodium cheeseSodium total reduction fewerOunces : ℕ
+  saltTeaspoons : ℕ
+  saltPer : ℕ
+  cheeseOunces : ℕ
+  cheesePer : ℕ
+  saltSodium : ℕ
+  cheeseSodium : ℕ
+  total : ℕ
+  reduction : ℕ
+  fewerOunces : ℕ
   hSaltTeaspoons : saltTeaspoons = 2
   hSaltPer : saltPer = 50
   hCheeseOunces : cheeseOunces = 8
@@ -142,7 +180,14 @@ theorem sodium_fewer (m : SodiumModel) : m.fewerOunces = 4 := by
 theorem sodium_solution (m : SodiumModel) : m.fewerOunces = 4 := sodium_fewer m
 
 structure FilmingModel where
-  episodeMinutes extraPercent filmingMinutes weeklyEpisodes weeks episodes totalMinutes hours : ℕ
+  episodeMinutes : ℕ
+  extraPercent : ℕ
+  filmingMinutes : ℕ
+  weeklyEpisodes : ℕ
+  weeks : ℕ
+  episodes : ℕ
+  totalMinutes : ℕ
+  hours : ℕ
   hEpisodeMinutes : episodeMinutes = 20
   hExtraPercent : extraPercent = 50
   hFilming : 100 * filmingMinutes = (100 + extraPercent) * episodeMinutes
@@ -168,7 +213,13 @@ theorem filming_hours (m : FilmingModel) : m.hours = 10 := by
 theorem filming_solution (m : FilmingModel) : m.hours = 10 := filming_hours m
 
 structure ExerciseModel where
-  javierDaily javierDays javier sandaDaily sandaDays sanda total : ℕ
+  javierDaily : ℕ
+  javierDays : ℕ
+  javier : ℕ
+  sandaDaily : ℕ
+  sandaDays : ℕ
+  sanda : ℕ
+  total : ℕ
   hJavierDaily : javierDaily = 50
   hJavierDays : javierDays = 7
   hJavier : javier = javierDaily * javierDays
@@ -193,7 +244,19 @@ theorem exercise_total (m : ExerciseModel) : m.total = 620 := by
 theorem exercise_solution (m : ExerciseModel) : m.total = 620 := exercise_total m
 
 structure IceCreamModel where
-  mwfDays mwfPrice mwfCost ttDays ttPrice ttCost weekendDays weekendPrice weekendCost weekly weeks totalCents totalDollars : ℕ
+  mwfDays : ℕ
+  mwfPrice : ℕ
+  mwfCost : ℕ
+  ttDays : ℕ
+  ttPrice : ℕ
+  ttCost : ℕ
+  weekendDays : ℕ
+  weekendPrice : ℕ
+  weekendCost : ℕ
+  weekly : ℕ
+  weeks : ℕ
+  totalCents : ℕ
+  totalDollars : ℕ
   hMwfDays : mwfDays = 3
   hMwfPrice : mwfPrice = 200
   hMwfCost : mwfCost = mwfDays * mwfPrice
@@ -233,7 +296,14 @@ theorem ice_cream_total (m : IceCreamModel) : m.totalDollars = 90 := by
 theorem ice_cream_solution (m : IceCreamModel) : m.totalDollars = 90 := ice_cream_total m
 
 structure TripModel where
-  uberWait drive bagCheck security boardWait takeoffWait totalMinutes hours : ℕ
+  uberWait : ℕ
+  drive : ℕ
+  bagCheck : ℕ
+  security : ℕ
+  boardWait : ℕ
+  takeoffWait : ℕ
+  totalMinutes : ℕ
+  hours : ℕ
   hUberWait : uberWait = 10
   hDrive : drive = 5 * uberWait
   hBagCheck : bagCheck = 15
@@ -254,7 +324,13 @@ theorem trip_hours (m : TripModel) : m.hours = 3 := by
 theorem trip_solution (m : TripModel) : m.hours = 3 := trip_hours m
 
 structure ShirtsModel where
-  whitePacks whitePer white bluePacks bluePer blue total : ℕ
+  whitePacks : ℕ
+  whitePer : ℕ
+  white : ℕ
+  bluePacks : ℕ
+  bluePer : ℕ
+  blue : ℕ
+  total : ℕ
   hWhitePacks : whitePacks = 3
   hWhitePer : whitePer = 6
   hWhite : white = whitePacks * whitePer
@@ -279,7 +355,13 @@ theorem shirts_total (m : ShirtsModel) : m.total = 26 := by
 theorem shirts_solution (m : ShirtsModel) : m.total = 26 := shirts_total m
 
 structure GuestsModel where
-  total women men children menLeft childrenLeft stayed : ℕ
+  total : ℕ
+  women : ℕ
+  men : ℕ
+  children : ℕ
+  menLeft : ℕ
+  childrenLeft : ℕ
+  stayed : ℕ
   hTotal : total = 60
   hWomen : 2 * women = total
   hMen : men = 15
@@ -297,7 +379,13 @@ theorem guests_stayed (m : GuestsModel) : m.stayed = 50 := by
 theorem guests_solution (m : GuestsModel) : m.stayed = 50 := guests_stayed m
 
 structure PizzaModel where
-  boxes price order tip paid spent change : ℕ
+  boxes : ℕ
+  price : ℕ
+  order : ℕ
+  tip : ℕ
+  paid : ℕ
+  spent : ℕ
+  change : ℕ
   hBoxes : boxes = 5
   hPrice : price = 7
   hOrder : order = boxes * price
@@ -321,7 +409,11 @@ theorem pizza_change (m : PizzaModel) : m.change = 60 := by
 theorem pizza_solution (m : PizzaModel) : m.change = 60 := pizza_change m
 
 structure GoalsModel where
-  pizzas slicesPer totalGoals games average : ℕ
+  pizzas : ℕ
+  slicesPer : ℕ
+  totalGoals : ℕ
+  games : ℕ
+  average : ℕ
   hPizzas : pizzas = 6
   hSlicesPer : slicesPer = 12
   hTotalGoals : totalGoals = pizzas * slicesPer

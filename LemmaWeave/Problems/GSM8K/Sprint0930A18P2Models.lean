@@ -15,16 +15,13 @@ structure DogsModel where
   hTotal : peterTotal = peterShepherds + peterBulldogs
 
 theorem dogs_shepherds (m : DogsModel) : m.peterShepherds = 9 := by
-  cases m <;> omega
-
+  omega
 theorem dogs_bulldogs (m : DogsModel) : m.peterBulldogs = 8 := by
-  cases m <;> omega
-
+  omega
 theorem dogs_total (m : DogsModel) : m.peterTotal = 17 := by
   have h1 := dogs_shepherds m
   have h2 := dogs_bulldogs m
-  cases m <;> omega
-
+  omega
 structure PuzzlesModel where
   puzzleCount : ℕ
   piecesEach : ℕ
@@ -40,12 +37,10 @@ structure PuzzlesModel where
   hTime : ratePieces * totalMinutes = totalPieces * rateMinutes
 
 theorem puzzles_total_pieces (m : PuzzlesModel) : m.totalPieces = 4000 := by
-  cases m <;> omega
-
+  omega
 theorem puzzles_minutes (m : PuzzlesModel) : m.totalMinutes = 400 := by
   have h := puzzles_total_pieces m
-  cases m <;> omega
-
+  omega
 structure ChickensModel where
   coop : ℕ
   run : ℕ
@@ -55,12 +50,10 @@ structure ChickensModel where
   hFreeRange : freeRange + 4 = 2 * run
 
 theorem chickens_run (m : ChickensModel) : m.run = 28 := by
-  cases m <;> omega
-
+  omega
 theorem chickens_free_range (m : ChickensModel) : m.freeRange = 52 := by
   have h := chickens_run m
-  cases m <;> omega
-
+  omega
 structure LarryModel where
   lunch : ℕ
   brother : ℕ
@@ -74,12 +67,10 @@ structure LarryModel where
   hInitial : initial = current + spent
 
 theorem larry_spent (m : LarryModel) : m.spent = 7 := by
-  cases m <;> omega
-
+  omega
 theorem larry_initial (m : LarryModel) : m.initial = 22 := by
   have h := larry_spent m
-  cases m <;> omega
-
+  omega
 structure MojaveModel where
   original : ℕ
   conventionalCurrent : ℕ
@@ -93,19 +84,15 @@ structure MojaveModel where
   hLiteralFuture : 100 * literalFuture = 140 * literalCurrent
 
 theorem mojave_conventional_current (m : MojaveModel) : m.conventionalCurrent = 12000 := by
-  cases m <;> omega
-
+  omega
 theorem mojave_conventional_future (m : MojaveModel) : m.conventionalFuture = 16800 := by
   have h := mojave_conventional_current m
-  cases m <;> omega
-
+  omega
 theorem mojave_literal_current (m : MojaveModel) : m.literalCurrent = 16000 := by
-  cases m <;> omega
-
+  omega
 theorem mojave_literal_future (m : MojaveModel) : m.literalFuture = 22400 := by
   have h := mojave_literal_current m
-  cases m <;> omega
-
+  omega
 theorem mojave_readings_differ (m : MojaveModel) :
     m.conventionalFuture ≠ m.literalFuture := by
   have h1 := mojave_conventional_future m

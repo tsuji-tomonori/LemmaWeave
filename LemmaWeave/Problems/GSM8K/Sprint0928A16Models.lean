@@ -3,7 +3,9 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint0928A16
 
 structure HillModel where
-  riverbedToBase riverbedToPeak hillHeight : ℕ
+  riverbedToBase : ℕ
+  riverbedToPeak : ℕ
+  hillHeight : ℕ
   hbase : riverbedToBase = 300
   hquarter : riverbedToPeak = 4 * riverbedToBase
   hheight : riverbedToPeak = riverbedToBase + hillHeight
@@ -13,7 +15,11 @@ theorem hill_height (m : HillModel) : m.hillHeight = 900 := by omega
 theorem hill_solution (m : HillModel) : m.hillHeight = 900 := hill_height m
 
 structure SpeedModel where
-  distance hours speed limit excess : ℕ
+  distance : ℕ
+  hours : ℕ
+  speed : ℕ
+  limit : ℕ
+  excess : ℕ
   hdistance : distance = 150
   hhours : hours = 2
   htravel : distance = speed * hours
@@ -25,7 +31,10 @@ theorem speed_excess (m : SpeedModel) : m.excess = 15 := by omega
 theorem speed_solution (m : SpeedModel) : m.excess = 15 := speed_excess m
 
 structure SchoolStepsModel where
-  oneWay roundTrip days total : ℕ
+  oneWay : ℕ
+  roundTrip : ℕ
+  days : ℕ
+  total : ℕ
   honeWay : oneWay = 150
   hroundTrip : roundTrip = 2 * oneWay
   hdays : days = 5
@@ -36,7 +45,11 @@ theorem school_steps_total (m : SchoolStepsModel) : m.total = 1500 := by omega
 theorem school_steps_solution (m : SchoolStepsModel) : m.total = 1500 := school_steps_total m
 
 structure SurveyModel where
-  hours hourly earned spent left : ℕ
+  hours : ℕ
+  hourly : ℕ
+  earned : ℕ
+  spent : ℕ
+  left : ℕ
   hhours : hours = 8
   hhourly : hourly = 18
   hearned : earned = hours * hourly
@@ -49,7 +62,14 @@ theorem survey_left (m : SurveyModel) : m.left = 72 := by omega
 theorem survey_solution (m : SurveyModel) : m.left = 72 := survey_left m
 
 structure JourneyModel where
-  distance speed drivingHours lunchMinutes bathroomMinutes breakMinutes breakHours totalHours : ℕ
+  distance : ℕ
+  speed : ℕ
+  drivingHours : ℕ
+  lunchMinutes : ℕ
+  bathroomMinutes : ℕ
+  breakMinutes : ℕ
+  breakHours : ℕ
+  totalHours : ℕ
   hdistance : distance = 480
   hspeed : speed = 60
   hdriving : distance = speed * drivingHours
@@ -65,7 +85,11 @@ theorem journey_total (m : JourneyModel) : m.totalHours = 9 := by omega
 theorem journey_solution (m : JourneyModel) : m.totalHours = 9 := journey_total m
 
 structure LogModel where
-  totalLength pieces pieceLength poundsPerFoot pieceWeight : ℕ
+  totalLength : ℕ
+  pieces : ℕ
+  pieceLength : ℕ
+  poundsPerFoot : ℕ
+  pieceWeight : ℕ
   htotalLength : totalLength = 20
   hpieces : pieces = 2
   hsplit : totalLength = pieces * pieceLength
@@ -77,7 +101,12 @@ theorem log_piece_weight (m : LogModel) : m.pieceWeight = 1500 := by omega
 theorem log_solution (m : LogModel) : m.pieceWeight = 1500 := log_piece_weight m
 
 structure SunscreenModel where
-  months bottles price subtotal discount finalCost : ℕ
+  months : ℕ
+  bottles : ℕ
+  price : ℕ
+  subtotal : ℕ
+  discount : ℕ
+  finalCost : ℕ
   hmonths : months = 12
   hbottles : bottles = months
   hprice : price = 30
@@ -91,7 +120,15 @@ theorem sunscreen_cost (m : SunscreenModel) : m.finalCost = 252 := by omega
 theorem sunscreen_solution (m : SunscreenModel) : m.finalCost = 252 := sunscreen_cost m
 
 structure ElevatorModel where
-  totalFloors firstFloors nextFloors finalFloors firstMinutes nextMinutes finalMinutes totalMinutes hours : ℕ
+  totalFloors : ℕ
+  firstFloors : ℕ
+  nextFloors : ℕ
+  finalFloors : ℕ
+  firstMinutes : ℕ
+  nextMinutes : ℕ
+  finalMinutes : ℕ
+  totalMinutes : ℕ
+  hours : ℕ
   htotalFloors : totalFloors = 20
   hfirstFloors : 2 * firstFloors = totalFloors
   hnextFloors : nextFloors = 5
@@ -109,7 +146,11 @@ theorem elevator_hours (m : ElevatorModel) : m.hours = 2 := by omega
 theorem elevator_solution (m : ElevatorModel) : m.hours = 2 := elevator_hours m
 
 structure StoreModel where
-  initial half third firstExtra secondExtra : ℕ
+  initial : ℕ
+  half : ℕ
+  third : ℕ
+  firstExtra : ℕ
+  secondExtra : ℕ
   hhalf : initial = 2 * half
   hthird : initial = 3 * third
   hfirstExtra : firstExtra = 14
@@ -121,7 +162,11 @@ theorem store_initial (m : StoreModel) : m.initial = 180 := by omega
 theorem store_solution (m : StoreModel) : m.initial = 180 := store_initial m
 
 structure RaffleModel where
-  winnings donated afterDonation hotDog left : ℕ
+  winnings : ℕ
+  donated : ℕ
+  afterDonation : ℕ
+  hotDog : ℕ
+  left : ℕ
   hhalf : winnings = 2 * donated
   hafterDonation : afterDonation + donated = winnings
   hhotDog : hotDog = 2
@@ -133,7 +178,11 @@ theorem raffle_winnings (m : RaffleModel) : m.winnings = 114 := by omega
 theorem raffle_solution (m : RaffleModel) : m.winnings = 114 := raffle_winnings m
 
 structure CatWalkModel where
-  resisting distance rate walking total : ℕ
+  resisting : ℕ
+  distance : ℕ
+  rate : ℕ
+  walking : ℕ
+  total : ℕ
   hresisting : resisting = 20
   hdistance : distance = 64
   hrate : rate = 8
@@ -145,7 +194,14 @@ theorem cat_total (m : CatWalkModel) : m.total = 28 := by omega
 theorem cat_solution (m : CatWalkModel) : m.total = 28 := cat_total m
 
 structure FlowersModel where
-  daughters each initial newFlowers died remaining baskets perBasket : ℕ
+  daughters : ℕ
+  each : ℕ
+  initial : ℕ
+  newFlowers : ℕ
+  died : ℕ
+  remaining : ℕ
+  baskets : ℕ
+  perBasket : ℕ
   hdaughters : daughters = 2
   heach : each = 5
   hinitial : initial = daughters * each
@@ -161,7 +217,10 @@ theorem flowers_each_basket (m : FlowersModel) : m.perBasket = 4 := by omega
 theorem flowers_solution (m : FlowersModel) : m.perBasket = 4 := flowers_each_basket m
 
 structure SiblingAgeModel where
-  lexie brother sister difference : ℕ
+  lexie : ℕ
+  brother : ℕ
+  sister : ℕ
+  difference : ℕ
   hlexie : lexie = 8
   hbrother : lexie = brother + 6
   hsister : sister = 2 * lexie
@@ -172,7 +231,13 @@ theorem sibling_difference (m : SiblingAgeModel) : m.difference = 14 := by omega
 theorem sibling_solution (m : SiblingAgeModel) : m.difference = 14 := sibling_difference m
 
 structure MechanicModel where
-  totalDollars partPrice parts partsCost laborDollars minutes hours : ℕ
+  totalDollars : ℕ
+  partPrice : ℕ
+  parts : ℕ
+  partsCost : ℕ
+  laborDollars : ℕ
+  minutes : ℕ
+  hours : ℕ
   htotal : totalDollars = 220
   hpartPrice : partPrice = 20
   hparts : parts = 2
@@ -187,7 +252,10 @@ theorem mechanic_hours (m : MechanicModel) : m.hours = 6 := by omega
 theorem mechanic_solution (m : MechanicModel) : m.hours = 6 := mechanic_hours m
 
 structure StationeryModel where
-  rubber pen pencil total : ℕ
+  rubber : ℕ
+  pen : ℕ
+  pencil : ℕ
+  total : ℕ
   hpencil : pencil = 12
   hpenShorter : pen + 2 = pencil
   hpenLonger : rubber + 3 = pen

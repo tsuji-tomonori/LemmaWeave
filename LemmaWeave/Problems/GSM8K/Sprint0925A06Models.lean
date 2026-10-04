@@ -5,7 +5,9 @@ namespace LemmaWeave.Problems.GSM8K.Sprint0925A06
 -- The source omits the number of trees.  The dataset answer is valid only
 -- after adding the explicit condition that eight trees were planted.
 structure AppleTrees where
-  eaten plantedApples trees : ℕ
+  eaten : ℕ
+  plantedApples : ℕ
+  trees : ℕ
   hBought : eaten + plantedApples = 6
   hTrees : trees = 2 * plantedApples
 theorem apples_planted_if_eight (m : AppleTrees) (h : m.trees = 8) :
@@ -18,7 +20,9 @@ theorem apples_not_determined :
     ⟨2, 4, 8, by decide, by decide⟩, rfl, rfl⟩
 
 structure RaspberrySyrup where
-  juiceCups reducedCups finalCups : ℕ
+  juiceCups : ℕ
+  reducedCups : ℕ
+  finalCups : ℕ
   hJuice : juiceCups = 6 * 4
   hReduced : 12 * reducedCups = juiceCups
   hFinal : finalCups = reducedCups + 1
@@ -27,7 +31,9 @@ theorem syrup_reduced (m : RaspberrySyrup) : m.reducedCups = 2 := by cases m; om
 theorem syrup_solution (m : RaspberrySyrup) : m.finalCups = 3 := by cases m; omega
 
 structure FriendsByWeek where
-  total girls boys : ℕ
+  total : ℕ
+  girls : ℕ
+  boys : ℕ
   hTotal : total = 2 * 7
   hGirls : girls = 3
   hSplit : boys + girls = total
@@ -36,7 +42,14 @@ theorem week_friends_solution (m : FriendsByWeek) : m.boys = 11 := by cases m; o
 
 -- Pay is modeled per dog, matching the dataset reading.
 structure DogWalking where
-  longDogs longHours longPay remainingHours shortDogs shortPay daily weekly : ℕ
+  longDogs : ℕ
+  longHours : ℕ
+  longPay : ℕ
+  remainingHours : ℕ
+  shortDogs : ℕ
+  shortPay : ℕ
+  daily : ℕ
+  weekly : ℕ
   hLongDogs : longDogs = 6
   hLongHours : 3 * longHours = longDogs
   hLongPay : longPay = 20 * longDogs
@@ -52,7 +65,9 @@ theorem dogs_daily (m : DogWalking) : m.daily = 300 := by cases m; omega
 theorem dogs_solution (m : DogWalking) : m.weekly = 1500 := by cases m; omega
 
 structure ShoePolish where
-  total polished remaining : ℕ
+  total : ℕ
+  polished : ℕ
+  remaining : ℕ
   hTotal : total = 10 * 2
   hPolished : 100 * polished = 45 * total
   hRemaining : remaining + polished = total
@@ -61,7 +76,10 @@ theorem polish_done (m : ShoePolish) : m.polished = 9 := by cases m; omega
 theorem polish_solution (m : ShoePolish) : m.remaining = 11 := by cases m; omega
 
 structure RopeGiving where
-  allan afterAllan jack left : ℕ
+  allan : ℕ
+  afterAllan : ℕ
+  jack : ℕ
+  left : ℕ
   hAllan : 4 * allan = 20
   hAfterAllan : afterAllan + allan = 20
   hJack : 3 * jack = 2 * afterAllan
@@ -72,7 +90,11 @@ theorem rope_jack (m : RopeGiving) : m.jack = 10 := by cases m; omega
 theorem rope_solution (m : RopeGiving) : m.left = 5 := by cases m; omega
 
 structure PancakeBreakfast where
-  girls eachGirl girlsTotal son total : ℕ
+  girls : ℕ
+  eachGirl : ℕ
+  girlsTotal : ℕ
+  son : ℕ
+  total : ℕ
   hGirls : girls = 1 + 3
   hEachGirl : 2 * eachGirl = 3 * 4
   hGirlsTotal : girlsTotal = 4 * eachGirl
@@ -85,7 +107,9 @@ theorem pancakes_son (m : PancakeBreakfast) : m.son = 12 := by cases m; omega
 theorem pancakes_solution (m : PancakeBreakfast) : m.total = 36 := by cases m; omega
 
 structure DiscountShoes where
-  discount paid saved : ℕ
+  discount : ℕ
+  paid : ℕ
+  saved : ℕ
   hDiscount : 100 * discount = 30 * 120
   hPaid : paid + discount = 120
   hSaved : saved + paid = 130
@@ -94,7 +118,12 @@ theorem shoes_paid (m : DiscountShoes) : m.paid = 84 := by cases m; omega
 theorem shoes_solution (m : DiscountShoes) : m.saved = 46 := by cases m; omega
 
 structure Orchestra where
-  percussion brass strings woodwinds maestro total : ℕ
+  percussion : ℕ
+  brass : ℕ
+  strings : ℕ
+  woodwinds : ℕ
+  maestro : ℕ
+  total : ℕ
   hPercussion : percussion = 1
   hBrass : brass = 4 + 2 + 1
   hStrings : strings = 3 + 1 + 1
@@ -107,7 +136,10 @@ theorem orchestra_woodwinds (m : Orchestra) : m.woodwinds = 7 := by cases m; ome
 theorem orchestra_solution (m : Orchestra) : m.total = 21 := by cases m; omega
 
 structure DanceStudios where
-  first second third total : ℕ
+  first : ℕ
+  second : ℕ
+  third : ℕ
+  total : ℕ
   hFirst : first = 110
   hSecond : second = 135
   hTotal : total = 376
@@ -116,7 +148,11 @@ theorem dance_first_two (m : DanceStudios) : m.first + m.second = 245 := by case
 theorem dance_solution (m : DanceStudios) : m.third = 131 := by cases m; omega
 
 structure BankTransfers where
-  mother sister transferred before after : ℕ
+  mother : ℕ
+  sister : ℕ
+  transferred : ℕ
+  before : ℕ
+  after : ℕ
   hMother : mother = 60
   hSister : 2 * sister = mother
   hTransferred : transferred = mother + sister
@@ -127,7 +163,10 @@ theorem bank_transferred (m : BankTransfers) : m.transferred = 90 := by cases m;
 theorem bank_solution (m : BankTransfers) : m.before = 190 := by cases m; omega
 
 structure FarmWork where
-  total tips wages hours : ℕ
+  total : ℕ
+  tips : ℕ
+  wages : ℕ
+  hours : ℕ
   hTotal : total = 240
   hTips : tips = 50
   hWages : wages + tips = total
@@ -137,7 +176,9 @@ theorem farm_solution (m : FarmWork) : m.hours = 19 := by cases m; omega
 
 -- The source says 312 total; the reference prose has one isolated 315 typo.
 structure CarColors where
-  green red purple : ℕ
+  green : ℕ
+  red : ℕ
+  purple : ℕ
   hGreen : green = 4 * red
   hRed : red = purple + 6
   hTotal : green + red + purple = 312
@@ -146,7 +187,11 @@ theorem cars_green (m : CarColors) : m.green = 212 := by cases m; omega
 theorem cars_solution (m : CarColors) : m.purple = 47 := by cases m; omega
 
 structure MarbleRatio where
-  unit brittany alex transfer finalAlex : ℕ
+  unit : ℕ
+  brittany : ℕ
+  alex : ℕ
+  transfer : ℕ
+  finalAlex : ℕ
   hUnit : 15 * unit = 600
   hBrittany : brittany = 3 * unit
   hAlex : alex = 5 * unit
@@ -160,7 +205,12 @@ theorem ratio_solution (m : MarbleRatio) : m.finalAlex = 260 := by cases m; omeg
 
 -- All monetary values are cents.
 structure BookDiscount where
-  firstTwo discount discountedFirstTwo otherTwo subtotal more : ℕ
+  firstTwo : ℕ
+  discount : ℕ
+  discountedFirstTwo : ℕ
+  otherTwo : ℕ
+  subtotal : ℕ
+  more : ℕ
   hFirstTwo : firstTwo = 1300 + 1500
   hDiscount : 100 * discount = 25 * firstTwo
   hDiscounted : discountedFirstTwo + discount = firstTwo

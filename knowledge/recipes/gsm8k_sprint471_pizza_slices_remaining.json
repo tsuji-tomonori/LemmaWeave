@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint471_pizza_slices_remaining",
+  "title_ja": "ピザの残り枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04226",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P1.lean",
+  "problem_ja": "1枚8切れの大型ピザを2枚注文し、7切れ食べた。残りは何切れか。",
+  "answer_ja": "全体は8×2=16切れ。7切れ食べるので16−7=9切れ残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.pizza_slices_remaining",
+  "graph": "work/gsm8k-sprint471-pizza-slices-remaining-graph.json",
+  "model_notes_ja": [
+    "ピザ2枚はいずれも8切れで、食べた7切れはその合計から差し引く。"
+  ],
+  "steps": [
+    {
+      "id": "total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.pizza_total_slices",
+      "title_ja": "全切れ数",
+      "claim_ja": "8×2=16切れ。",
+      "method_ja": "1枚当たりの切れ数に枚数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2枚とも同じ8切れ。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "16切れ。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.pizza_slices_remaining",
+      "title_ja": "残り",
+      "claim_ja": "16−7=9切れ。",
+      "method_ja": "全体から食べた切れ数を引く。",
+      "requires_steps": [
+        "total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "食べた数は全体以下。",
+      "baseline_ja": "自然数の減法。",
+      "conclusion_ja": "9切れ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4227,
+    "checked_model_hash": "ae18cb5fb3fc58ba40a510e6c1db26f67abb0871b1f07d55a1676ba6f5b02e88",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

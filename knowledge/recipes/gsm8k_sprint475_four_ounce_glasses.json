@@ -1,0 +1,100 @@
+{
+  "id": "gsm8k_sprint475_four_ounce_glasses",
+  "title_ja": "満たせる4オンスグラス",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04230",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P1.lean",
+  "problem_ja": "122オンスの水から5オンスグラス6個と8オンスグラス4個を満たした。残りで4オンスグラスを何個満たせるか。",
+  "answer_ja": "使用量は4×8=32オンスと6×5=30オンス、計62オンス。残り60オンスなので60÷4=15個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.four_ounce_glasses",
+  "graph": "work/gsm8k-sprint475-four-ounce-glasses-graph.json",
+  "model_notes_ja": [
+    "グラスはすべて満杯にし、こぼれはない。"
+  ],
+  "steps": [
+    {
+      "id": "eight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.water_in_eight_ounce_glasses",
+      "title_ja": "8オンスグラスの使用量",
+      "claim_ja": "4×8=32オンス。",
+      "method_ja": "個数に容量を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4個すべて満杯。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "32オンス。"
+    },
+    {
+      "id": "five",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.water_in_five_ounce_glasses",
+      "title_ja": "5オンスグラスの使用量",
+      "claim_ja": "6×5=30オンス。",
+      "method_ja": "個数に容量を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6個すべて満杯。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "30オンス。"
+    },
+    {
+      "id": "used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.water_used",
+      "title_ja": "使用量合計",
+      "claim_ja": "32+30=62オンス。",
+      "method_ja": "2種類の使用量を足す。",
+      "requires_steps": [
+        "eight",
+        "five"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ体積単位。",
+      "baseline_ja": "自然数の加法。",
+      "conclusion_ja": "62オンス。"
+    },
+    {
+      "id": "remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.water_remaining",
+      "title_ja": "残量",
+      "claim_ja": "122−62=60オンス。",
+      "method_ja": "初期量から使用量を引く。",
+      "requires_steps": [
+        "used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "使用量は初期量以下。",
+      "baseline_ja": "自然数の減法。",
+      "conclusion_ja": "60オンス。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.four_ounce_glasses",
+      "title_ja": "満たせる個数",
+      "claim_ja": "60÷4=15個。",
+      "method_ja": "残量を1個の容量で割る。",
+      "requires_steps": [
+        "remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "60は4で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "15個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4231,
+    "checked_model_hash": "ae18cb5fb3fc58ba40a510e6c1db26f67abb0871b1f07d55a1676ba6f5b02e88",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

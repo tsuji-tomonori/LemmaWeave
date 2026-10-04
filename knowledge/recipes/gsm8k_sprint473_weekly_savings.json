@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint473_weekly_savings",
+  "title_ja": "1週間の貯金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04228",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P1.lean",
+  "problem_ja": "日当12ドルの半分を毎日貯金するが、1週間のうち1日だけ4分の1しか貯金しなかった。合計はいくらか。",
+  "answer_ja": "通常日は12÷2=6ドルで6日あるから36ドル。例外日は12÷4=3ドル。合計39ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.weekly_savings",
+  "graph": "work/gsm8k-sprint473-weekly-savings-graph.json",
+  "model_notes_ja": [
+    "1週間を通常6日と例外1日に分ける。"
+  ],
+  "steps": [
+    {
+      "id": "half",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.savings_half_daily",
+      "title_ja": "通常日の貯金",
+      "claim_ja": "12÷2=6ドル。",
+      "method_ja": "半分を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12は2で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "6ドル。"
+    },
+    {
+      "id": "days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.savings_half_days",
+      "title_ja": "通常日数",
+      "claim_ja": "7−1=6日。",
+      "method_ja": "1週間から例外1日を除く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1週間は7日。",
+      "baseline_ja": "自然数の減法。",
+      "conclusion_ja": "6日。"
+    },
+    {
+      "id": "regular",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.savings_six_days",
+      "title_ja": "通常日の合計",
+      "claim_ja": "6×6=36ドル。",
+      "method_ja": "日額に日数を掛ける。",
+      "requires_steps": [
+        "half",
+        "days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "6日とも同額。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "36ドル。"
+    },
+    {
+      "id": "quarter",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.savings_quarter_day",
+      "title_ja": "例外日の貯金",
+      "claim_ja": "12÷4=3ドル。",
+      "method_ja": "4分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12は4で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "3ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.weekly_savings",
+      "title_ja": "週の合計",
+      "claim_ja": "36+3=39ドル。",
+      "method_ja": "通常日と例外日を足す。",
+      "requires_steps": [
+        "regular",
+        "quarter"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "7日を重複なく分割した。",
+      "baseline_ja": "自然数の加法。",
+      "conclusion_ja": "39ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4229,
+    "checked_model_hash": "ae18cb5fb3fc58ba40a510e6c1db26f67abb0871b1f07d55a1676ba6f5b02e88",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint472_fence_total_rods",
+  "title_ja": "フェンスに必要な金属棒",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04227",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P1.lean",
+  "problem_ja": "1パネルは金属板3枚と梁2本からなり、板1枚は棒10本、梁1本は棒4本でできる。10パネルに必要な棒は何本か。",
+  "answer_ja": "1パネルの板には3×10=30本、梁には2×4=8本。計38本なので、10パネルで38×10=380本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.fence_total_rods",
+  "graph": "work/gsm8k-sprint472-fence-total-rods-graph.json",
+  "model_notes_ja": [
+    "板用と梁用の棒を1パネル単位で合算してから10倍する。"
+  ],
+  "steps": [
+    {
+      "id": "sheet",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.fence_sheet_rods_per_panel",
+      "title_ja": "板用の棒",
+      "claim_ja": "3×10=30本。",
+      "method_ja": "板の枚数に1枚当たりの棒数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各板が10本。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "30本。"
+    },
+    {
+      "id": "beam",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.fence_beam_rods_per_panel",
+      "title_ja": "梁用の棒",
+      "claim_ja": "2×4=8本。",
+      "method_ja": "梁の本数に1本当たりの棒数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各梁が4本。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "8本。"
+    },
+    {
+      "id": "panel",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.fence_rods_per_panel",
+      "title_ja": "1パネルの棒",
+      "claim_ja": "30+8=38本。",
+      "method_ja": "板用と梁用を足す。",
+      "requires_steps": [
+        "sheet",
+        "beam"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "用途が重複しない。",
+      "baseline_ja": "自然数の加法。",
+      "conclusion_ja": "38本。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P1.fence_total_rods",
+      "title_ja": "全フェンスの棒",
+      "claim_ja": "38×10=380本。",
+      "method_ja": "1パネル分を10倍する。",
+      "requires_steps": [
+        "panel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10パネルは同じ構成。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "380本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4228,
+    "checked_model_hash": "ae18cb5fb3fc58ba40a510e6c1db26f67abb0871b1f07d55a1676ba6f5b02e88",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

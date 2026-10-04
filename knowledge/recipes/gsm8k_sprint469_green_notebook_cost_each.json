@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint469_green_notebook_cost_each",
+  "title_ja": "緑のノート1冊の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04224",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A13P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ノート4冊の合計45ドル。緑2冊、黒15ドル、桃10ドル。緑1冊はいくらか。",
+  "answer_ja": "黒と桃は25ドル、緑2冊は45-25=20ドル。1冊20÷2=10ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.green_notebook_cost_each",
+  "graph": "work/gsm8k-sprint469-green-notebook-cost-each-graph.json",
+  "model_notes_ja": [
+    "2冊の緑ノートは同価格と読む。"
+  ],
+  "steps": [
+    {
+      "id": "other",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.nongreen_notebook_cost",
+      "title_ja": "黒と桃の合計",
+      "claim_ja": "15+10=25ドル。",
+      "method_ja": "既知2冊を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同一通貨。",
+      "baseline_ja": "整数の加法。",
+      "conclusion_ja": "25ドル。"
+    },
+    {
+      "id": "green_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.green_notebooks_total",
+      "title_ja": "緑2冊の合計",
+      "claim_ja": "45-25=20ドル。",
+      "method_ja": "全体から既知分を引く。",
+      "requires_steps": [
+        "other"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全4冊は緑2冊・黒1冊・桃1冊。",
+      "baseline_ja": "整数の減法。",
+      "conclusion_ja": "20ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.green_notebook_cost_each",
+      "title_ja": "緑1冊",
+      "claim_ja": "20÷2=10ドル。",
+      "method_ja": "等価格2冊で割る。",
+      "requires_steps": [
+        "other",
+        "green_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "緑2冊は同価格。",
+      "baseline_ja": "整数の除法。",
+      "conclusion_ja": "10ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4225,
+    "checked_model_hash": "bffe572f3947af4029de2f2ecee9bd81e5f16b143c9dfd173a66d321dea9c7e9",
+    "checks_ja": [
+      "原題の数量・単位・求める結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

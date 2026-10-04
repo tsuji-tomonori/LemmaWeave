@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint470_flame_seconds_per_minute",
+  "title_ja": "1分間の炎の秒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04225",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A13P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "平均15秒ごとに発射し、1回5秒炎を出す。平均して1分に何秒炎を出すか。",
+  "answer_ja": "1分に60÷15=4回発射する。各5秒なので4×5=20秒。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.flame_seconds_per_minute",
+  "graph": "work/gsm8k-sprint470-flame-seconds-per-minute-graph.json",
+  "model_notes_ja": [
+    "15秒間隔の発射と5秒の炎は重ならない。定常的な1分区間の平均回数を4回とする。"
+  ],
+  "steps": [
+    {
+      "id": "firings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.firings_per_minute",
+      "title_ja": "1分の発射回数",
+      "claim_ja": "60÷15=4回。",
+      "method_ja": "1分を発射間隔で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1分60秒、平均間隔15秒。",
+      "baseline_ja": "時間換算・除法。",
+      "conclusion_ja": "4回。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.flame_seconds_per_minute",
+      "title_ja": "炎の秒数",
+      "claim_ja": "4×5=20秒。",
+      "method_ja": "回数に各持続時間を掛ける。",
+      "requires_steps": [
+        "firings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "炎の区間は重ならない。",
+      "baseline_ja": "整数の乗法。",
+      "conclusion_ja": "20秒。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4226,
+    "checked_model_hash": "bffe572f3947af4029de2f2ecee9bd81e5f16b143c9dfd173a66d321dea9c7e9",
+    "checks_ja": [
+      "原題の数量・単位・求める結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

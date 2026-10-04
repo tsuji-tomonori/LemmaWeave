@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint412_sleepover_donuts_total",
+  "title_ja": "お泊まり会に必要なドーナツ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04167",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Andrew is having two of his friends over for a sleepover. For one friend, Brian, he asks his mother to buy 3 donuts. He asks for his other friend, Samuel, to get the same. A day before the sleepover Andrew ends up inviting two more friends and asks his mother to buy them the same amount of donuts. Just in case, Andrew’s mother wants to buy one more donut for each of Andrew’s friends. Andrew’s mother is going to buy the same amount of donuts for Andrew as everybody else. How many donuts will Andrew’s mother need to buy?",
+  "answer_ja": "友人は最初の2人に追加2人で4人。各人は3個に予備1個を足して4個、Andrewも同じ4個なので、5×4=20個必要。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P1.sleepover_donuts_total",
+  "graph": "work/gsm8k-sprint412-sleepover-donuts-total-graph.json",
+  "model_notes_ja": [
+    "Andrew本人も人数に含める。"
+  ],
+  "steps": [
+    {
+      "id": "sleepover_donuts_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P1.sleepover_donuts_total",
+      "title_ja": "お泊まり会に必要なドーナツ数",
+      "claim_ja": "友人は最初の2人に追加2人で4人。各人は3個に予備1個を足して4個、Andrewも同じ4個なので、5×4=20個必要。",
+      "method_ja": "招待人数、1人分の基本個数と追加個数を確定して人数分を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "「everybody else」と同じ量は、友人と同じくAndrewにも3個+予備1個を買う意味とする。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "友人は最初の2人に追加2人で4人。各人は3個に予備1個を足して4個、Andrewも同じ4個なので、5×4=20個必要。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4168,
+    "checked_model_hash": "3c32e187637ccbd46a88237a9571baa51f29659c3285ecc656e312e8eb1b2b18",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

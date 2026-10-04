@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint499_degrees_above_fever_threshold",
+  "title_ja": "発熱閾値を超える度数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04254",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P3.lean",
+  "problem_ja": "平熱95度が病気で10度上昇。発熱閾値100度より何度高いか。",
+  "answer_ja": "体温105度なので、100度より5度高い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.degrees_above_fever_threshold",
+  "graph": "work/gsm8k-sprint499-degrees-above-fever-threshold-graph.json",
+  "model_notes_ja": [
+    "問題の尺度に従い度数差だけを扱う。"
+  ],
+  "steps": [
+    {
+      "id": "temperature",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.sick_temperature",
+      "title_ja": "病気時の体温",
+      "claim_ja": "95+10=105度。",
+      "method_ja": "平熱へ上昇分を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "95+10=105度。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.degrees_above_fever_threshold",
+      "title_ja": "閾値との差",
+      "claim_ja": "105−100=5度。",
+      "method_ja": "体温から閾値を引く。",
+      "requires_steps": [
+        "temperature"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "105−100=5度。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4255,
+    "checked_model_hash": "87aec0262e304d940cc88d20579d61d74ffded95ebec605199d4dcf0f07fc6dc",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

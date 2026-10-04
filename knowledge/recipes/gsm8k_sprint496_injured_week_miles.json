@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint496_injured_week_miles",
+  "title_ja": "負傷週の走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04251",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P3.lean",
+  "problem_ja": "1週目2マイル、2週目は2倍+3、3週目は2週目の9/7、次週は5マイル減。負傷週は。",
+  "answer_ja": "2週目7マイル、3週目9マイル、負傷週は4マイル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.injured_week_miles",
+  "graph": "work/gsm8k-sprint496-injured-week-miles-graph.json",
+  "model_notes_ja": [
+    "9/7倍は7マイルに適用するため整数9マイルになる。"
+  ],
+  "steps": [
+    {
+      "id": "week2",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.second_week_miles",
+      "title_ja": "2週目",
+      "claim_ja": "2×2+3=7マイル。",
+      "method_ja": "2倍して3を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "2×2+3=7マイル。"
+    },
+    {
+      "id": "week3",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.third_week_miles",
+      "title_ja": "3週目",
+      "claim_ja": "7×9÷7=9マイル。",
+      "method_ja": "2週目の9/7倍を求める。",
+      "requires_steps": [
+        "week2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "7×9÷7=9マイル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.injured_week_miles",
+      "title_ja": "負傷週",
+      "claim_ja": "9−5=4マイル。",
+      "method_ja": "3週目から5マイル減らす。",
+      "requires_steps": [
+        "week3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "9−5=4マイル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4252,
+    "checked_model_hash": "87aec0262e304d940cc88d20579d61d74ffded95ebec605199d4dcf0f07fc6dc",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

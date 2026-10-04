@@ -3,9 +3,18 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint1004A17P1
 
 theorem ludo_extra_marbles : (16 / 4 : ℕ) = 4 := by norm_num
-theorem ludo_total_marbles : (16 + 4 : ℕ) = 20 := by norm_num
-theorem wolfgang_ludo_total : (16 + 20 : ℕ) = 36 := by norm_num
-theorem michael_marbles : (36 * 2 / 3 : ℕ) = 24 := by norm_num
+theorem ludo_total_marbles : (16 + 4 : ℕ) = 20 := by
+  calc
+    16 + 4 = 16 + (16 / 4) := by rw [ludo_extra_marbles]
+    _ = 20 := by norm_num
+theorem wolfgang_ludo_total : (16 + 20 : ℕ) = 36 := by
+  calc
+    16 + 20 = 16 + (16 + 4) := by rw [ludo_total_marbles]
+    _ = 36 := by norm_num
+theorem michael_marbles : (36 * 2 / 3 : ℕ) = 24 := by
+  calc
+    36 * 2 / 3 = (16 + 20) * 2 / 3 := by rw [wolfgang_ludo_total]
+    _ = 24 := by norm_num
 theorem shared_marbles_each :
     (16 / 4 : ℕ) = 4 ∧
       16 + 4 = 20 ∧
@@ -28,7 +37,10 @@ theorem crown_total_payment :
   exact ⟨crown_tip, by norm_num⟩
 
 theorem mary_chickens : (10 + 6 : ℕ) = 16 := by norm_num
-theorem john_chickens : (16 + 5 : ℕ) = 21 := by norm_num
+theorem john_chickens : (16 + 5 : ℕ) = 21 := by
+  calc
+    16 + 5 = (10 + 6) + 5 := by rw [mary_chickens]
+    _ = 21 := by norm_num
 theorem john_more_than_ray :
     (10 + 6 : ℕ) = 16 ∧
       16 + 5 = 21 ∧
@@ -36,9 +48,18 @@ theorem john_more_than_ray :
   exact ⟨mary_chickens, john_chickens, by norm_num⟩
 
 theorem rob_animals : (6 / 2 : ℕ) = 3 := by norm_num
-theorem sam_rob_animals : (6 + 3 : ℕ) = 9 := by norm_num
-theorem mark_animals : (9 / 3 : ℕ) = 3 := by norm_num
-theorem peter_animals : (3 * 3 : ℕ) = 9 := by norm_num
+theorem sam_rob_animals : (6 + 3 : ℕ) = 9 := by
+  calc
+    6 + 3 = 6 + (6 / 2) := by rw [rob_animals]
+    _ = 9 := by norm_num
+theorem mark_animals : (9 / 3 : ℕ) = 3 := by
+  calc
+    9 / 3 = (6 + 3) / 3 := by rw [sam_rob_animals]
+    _ = 3 := by norm_num
+theorem peter_animals : (3 * 3 : ℕ) = 9 := by
+  calc
+    3 * 3 = (9 / 3) * 3 := by rw [mark_animals]
+    _ = 9 := by norm_num
 theorem hunted_animals_total :
     (6 / 2 : ℕ) = 3 ∧
       6 + 3 = 9 ∧
@@ -48,4 +69,3 @@ theorem hunted_animals_total :
   exact ⟨rob_animals, sam_rob_animals, mark_animals, peter_animals, by norm_num⟩
 
 end LemmaWeave.Problems.GSM8K.Sprint1004A17P1
-

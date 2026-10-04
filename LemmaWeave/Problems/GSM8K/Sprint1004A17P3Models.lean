@@ -3,7 +3,10 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint1004A17P3
 
 theorem second_week_miles : (2 * 2 + 3 : ℕ) = 7 := by norm_num
-theorem third_week_miles : (7 * 9 / 7 : ℕ) = 9 := by norm_num
+theorem third_week_miles : (7 * 9 / 7 : ℕ) = 9 := by
+  calc
+    7 * 9 / 7 = (2 * 2 + 3) * 9 / 7 := by rw [second_week_miles]
+    _ = 9 := by norm_num
 theorem injured_week_miles :
     (2 * 2 + 3 : ℕ) = 7 ∧
       7 * 9 / 7 = 9 ∧
@@ -17,7 +20,10 @@ theorem zoo_ticket_payment :
   exact ⟨zoo_ticket_discount, by norm_num⟩
 
 theorem ham_cheese_slices : (10 * 2 : ℕ) = 20 := by norm_num
-theorem grilled_cheese_slices : (50 - 20 : ℕ) = 30 := by norm_num
+theorem grilled_cheese_slices : (50 - 20 : ℕ) = 30 := by
+  calc
+    50 - 20 = 50 - (10 * 2) := by rw [ham_cheese_slices]
+    _ = 30 := by norm_num
 theorem grilled_cheese_sandwiches :
     (10 * 2 : ℕ) = 20 ∧
       50 - 20 = 30 ∧
@@ -39,4 +45,3 @@ theorem hike_total_hours :
   exact ⟨outward_hike_hours, return_hike_hours, by norm_num⟩
 
 end LemmaWeave.Problems.GSM8K.Sprint1004A17P3
-

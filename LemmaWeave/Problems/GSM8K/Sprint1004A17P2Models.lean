@@ -3,7 +3,10 @@ import Mathlib
 namespace LemmaWeave.Problems.GSM8K.Sprint1004A17P2
 
 theorem first_two_tomato_plants : (8 + (8 + 4) : ℕ) = 20 := by norm_num
-theorem each_remaining_tomato_plant : (20 * 3 : ℕ) = 60 := by norm_num
+theorem each_remaining_tomato_plant : (20 * 3 : ℕ) = 60 := by
+  calc
+    20 * 3 = (8 + (8 + 4)) * 3 := by rw [first_two_tomato_plants]
+    _ = 60 := by norm_num
 theorem tomatoes_total :
     (8 + (8 + 4) : ℕ) = 20 ∧
       20 * 3 = 60 ∧
@@ -11,7 +14,11 @@ theorem tomatoes_total :
   exact ⟨first_two_tomato_plants, each_remaining_tomato_plant, by norm_num⟩
 
 theorem highlight_total_seconds : (130 + 145 + 85 + 60 + 180 : ℕ) = 600 := by norm_num
-theorem highlight_total_minutes : (600 / 60 : ℕ) = 10 := by norm_num
+theorem highlight_total_minutes : (600 / 60 : ℕ) = 10 := by
+  calc
+    600 / 60 = (130 + 145 + 85 + 60 + 180) / 60 := by
+      rw [highlight_total_seconds]
+    _ = 10 := by norm_num
 theorem average_minutes_per_player :
     (130 + 145 + 85 + 60 + 180 : ℕ) = 600 ∧
       600 / 60 = 10 ∧
@@ -40,7 +47,11 @@ theorem chairs_reference_reading :
       5 * 50 = 250 := by
   exact ⟨chair_students, chairs_per_student, by norm_num⟩
 theorem chairs_collective_trip_reading : (10 * 5 : ℕ) = 50 := by norm_num
-theorem chair_readings_differ : (250 : ℕ) ≠ 50 := by norm_num
+theorem chair_readings_differ : (250 : ℕ) ≠ 50 := by
+  intro h
+  rw [← chairs_reference_reading.2.2] at h
+  rw [← chairs_collective_trip_reading] at h
+  norm_num at h
 theorem chair_trip_wording_is_not_unique :
     ((4 + 1 : ℕ) = 5 ∧ 5 * 10 = 50 ∧ 5 * 50 = 250) ∧
       (10 * 5 : ℕ) = 50 ∧

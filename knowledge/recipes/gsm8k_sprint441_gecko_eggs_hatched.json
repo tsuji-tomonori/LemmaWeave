@@ -1,0 +1,24 @@
+{
+  "id": "gsm8k_sprint441_gecko_eggs_hatched",
+  "title_ja": "ヤモリの卵の孵化数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04196",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A12P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ヤモリは年30個産卵する。20%は不妊で、残る卵の3分の1は石灰化のため孵化しない。実際に孵化する卵はいくつか。",
+  "answer_ja": "不妊卵は30×20/100=6個なので、残りは24個。石灰化で孵化しない卵は24÷3=8個。したがって孵化するのは24-8=16個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A12P1.gecko_eggs_hatched",
+  "graph": "work/gsm8k-sprint441-gecko-eggs-hatched-graph.json",
+  "model_notes_ja": ["3分の1の基準は不妊卵を除いた残り。"],
+  "steps": [
+    {"id":"infertile","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1004A12P1.gecko_infertile_eggs","title_ja":"不妊卵","claim_ja":"30個の20%は6個。","method_ja":"全体に百分率を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"百分率の基準は30個すべて。","baseline_ja":"整数・割合・分数・単位。","conclusion_ja":"不妊卵は6個。"},
+    {"id":"fertile","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1004A12P1.gecko_fertile_eggs","title_ja":"残る卵","claim_ja":"30-6=24個。","method_ja":"全体から不妊卵を引く。","requires_steps":["infertile"],"uses_nodes":[],"condition_ja":"不妊卵6個を除く。","baseline_ja":"整数の減法。","conclusion_ja":"残りは24個。"},
+    {"id":"calcification","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1004A12P1.gecko_calcification_failures","title_ja":"石灰化で孵化しない卵","claim_ja":"24÷3=8個。","method_ja":"残りの3分の1を求める。","requires_steps":["fertile"],"uses_nodes":[],"condition_ja":"24は3で割り切れる。","baseline_ja":"整数・分数。","conclusion_ja":"8個が孵化しない。"},
+    {"id":"root","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1004A12P1.gecko_eggs_hatched","title_ja":"孵化する卵","claim_ja":"24-8=16個。","method_ja":"残る卵から石灰化分を引く。","requires_steps":["infertile","fertile","calcification"],"uses_nodes":[],"condition_ja":"不妊と石灰化の基準を順番に適用する。","baseline_ja":"整数の減法。","conclusion_ja":"16個が孵化する。"}
+  ],
+  "author_review": {"reviewer":"author","status":"checked","source_line_1based":4197,"checked_model_hash":"50b6c7e6449c6b134a699acac9983794324483bfb949473087f3fa888db497e5","checks_ja":["原文の割合の基準と順序を再照合した。","各説明行を名前付きLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

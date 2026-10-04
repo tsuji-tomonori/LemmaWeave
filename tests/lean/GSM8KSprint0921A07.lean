@@ -62,7 +62,7 @@ theorem pool_30_cleanings : (10 : Nat) * 3 ≤ 30 ∧ 30 < (10 + 1) * 3 := by no
 theorem pool_tip : (15 : Nat) * 100 = 150 * 10 := by norm_num
 theorem pool_visit : (165 : Nat) = 150 + 15 := by
   calc (165 : Nat) = 150 + (150 * 10 / 100) := by norm_num
-       _ = 150 + 15 := by rw [← pool_tip]; norm_num
+       _ = 150 + 15 := by rw [← pool_tip]
 theorem pool_cleaning_cost_30 : (1650 : Nat) = 165 * 10 := by
   calc (1650 : Nat) = (150 + 15) * 10 := by norm_num
        _ = 165 * 10 := by rw [← pool_visit]
@@ -103,10 +103,10 @@ theorem stockings_count : (45 : Nat) = 9 * 5 := by
 theorem stockings_discount : (2 : Nat) * 100 = 20 * 10 := by norm_num
 theorem stockings_discounted : (20 : Nat) = 18 + 2 := by
   calc (20 : Nat) = 18 + (20 * 10 / 100) := by norm_num
-       _ = 18 + 2 := by rw [← stockings_discount]; norm_num
+       _ = 18 + 2 := by rw [← stockings_discount]
 theorem stockings_unit : (23 : Nat) = 18 + 5 := by
   calc (23 : Nat) = (20 - 2) + 5 := by norm_num
-       _ = 18 + 5 := by rw [stockings_discounted]; norm_num
+       _ = 18 + 5 := by rw [stockings_discounted]
 theorem stockings_total : (1035 : Nat) = 45 * 23 := by
   calc (1035 : Nat) = (9 * 5) * (18 + 5) := by norm_num
        _ = 45 * 23 := by rw [← stockings_count, ← stockings_unit]
@@ -118,7 +118,7 @@ theorem stockings_solution : Stockings 5 4 9 5 45 20 10 2 18 5 23 1035 := by
 theorem turtle_george : (6 : Nat) = 4 + 2 := by norm_num
 theorem turtle_gloria : (8 : Nat) = 4 * 2 := by
   calc (8 : Nat) = (6 - 2) * 2 := by norm_num
-       _ = 4 * 2 := by rw [turtle_george]; norm_num
+       _ = 4 * 2 := by rw [turtle_george]
 theorem turtle_solution : TurtleRace 6 2 4 2 8 := by
   unfold TurtleRace; exact ⟨turtle_george, turtle_gloria⟩
 
@@ -127,10 +127,8 @@ theorem bead_tuesday : (300 : Nat) * 4 = 1200 := by norm_num
 theorem bead_wednesday : (1200 : Nat) = 400 + 300 + 500 := by
   have hMonday : (1200 : Nat) / 3 = 400 := by
     rw [← bead_monday]
-    norm_num
   have hTuesday : (1200 : Nat) / 4 = 300 := by
     rw [← bead_tuesday]
-    norm_num
   calc (1200 : Nat) = (1200 / 3) + (1200 / 4) + 500 := by norm_num
        _ = 400 + 300 + 500 := by rw [hMonday, hTuesday]
 theorem bead_solution : BeadshopProfit 1200 400 300 500 := by
@@ -159,17 +157,17 @@ theorem grocery_solution : GroceryDelivery 10 20 200 5 1000 := by
 theorem shopping_shoe_discount : (60 : Nat) * 100 = 200 * 30 := by norm_num
 theorem shopping_shoe_paid : (200 : Nat) = 140 + 60 := by
   calc (200 : Nat) = 140 + (200 * 30 / 100) := by norm_num
-       _ = 140 + 60 := by rw [← shopping_shoe_discount]; norm_num
+       _ = 140 + 60 := by rw [← shopping_shoe_discount]
 theorem shopping_shirts : (160 : Nat) = 2 * 80 := by norm_num
 theorem shopping_subtotal : (300 : Nat) = 140 + 160 := by
   calc (300 : Nat) = (200 - 60) + (2 * 80) := by norm_num
-       _ = 140 + 160 := by rw [shopping_shoe_paid, ← shopping_shirts]; norm_num
+       _ = 140 + 160 := by rw [shopping_shoe_paid, ← shopping_shirts]
 theorem shopping_checkout_discount : (15 : Nat) * 100 = 300 * 5 := by
   calc (15 : Nat) * 100 = (140 + 160) * 5 := by norm_num
        _ = 300 * 5 := by rw [← shopping_subtotal]
 theorem shopping_total : (300 : Nat) = 285 + 15 := by
   calc (300 : Nat) = 285 + (300 * 5 / 100) := by norm_num
-       _ = 285 + 15 := by rw [← shopping_checkout_discount]; norm_num
+       _ = 285 + 15 := by rw [← shopping_checkout_discount]
 theorem shopping_solution : ShoppingDiscount 200 30 60 140 2 80 160 300 5 15 285 := by
   unfold ShoppingDiscount
   exact ⟨shopping_shoe_discount, shopping_shoe_paid, shopping_shirts,
@@ -202,7 +200,6 @@ theorem granola_for_children : (200 : Nat) = 80 + 120 := by norm_num
 theorem granola_children : (120 : Nat) = 20 * 6 := by
   calc (120 : Nat) = 200 - 80 := by
          rw [granola_for_children]
-         norm_num
        _ = 20 * 6 := by norm_num
 theorem granola_solution : GranolaChildren 200 80 120 20 6 := by
   unfold GranolaChildren; exact ⟨granola_for_children, granola_children⟩

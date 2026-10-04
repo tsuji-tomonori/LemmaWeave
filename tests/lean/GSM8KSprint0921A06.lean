@@ -90,12 +90,11 @@ theorem basketball_target_wins : (30 : Nat) * 100 = 50 * 60 := by
 theorem basketball_needed_wins : (30 : Nat) = 28 + 2 := by
   calc (30 : Nat) = (50 * 60 / 100) := by
          rw [← basketball_target_wins]
-         norm_num
        _ = (40 * 70 / 100) + 2 := by norm_num
-       _ = 28 + 2 := by rw [← basketball_old_wins]; norm_num
+       _ = 28 + 2 := by rw [← basketball_old_wins]
 theorem basketball_losses : (10 : Nat) = 2 + 8 := by
   calc (10 : Nat) = (30 - 28) + 8 := by norm_num
-       _ = 2 + 8 := by rw [basketball_needed_wins]; norm_num
+       _ = 2 + 8 := by rw [basketball_needed_wins]
 theorem basketball_solution : Basketball 40 70 28 10 50 60 30 2 8 := by
   unfold Basketball
   exact ⟨basketball_old_wins, basketball_final_games, basketball_target_wins,
@@ -106,7 +105,7 @@ theorem pets_puppies : (9 : Nat) = 3 + 6 := by norm_num
 theorem pets_spiders : (15 : Nat) = 7 + 8 := by norm_num
 theorem pets_total : (25 : Nat) = 6 + 6 + 5 + 8 := by
   calc (25 : Nat) = (12 / 2) + (9 - 3) + 5 + (15 - 7) := by norm_num
-       _ = 6 + 6 + 5 + 8 := by rw [pets_birds, pets_puppies, pets_spiders]; norm_num
+       _ = 6 + 6 + 5 + 8 := by rw [pets_birds, pets_puppies, pets_spiders]
 theorem pets_solution : PetStore 12 6 9 3 6 5 15 7 8 25 := by
   unfold PetStore; exact ⟨pets_birds, pets_puppies, pets_spiders, pets_total⟩
 
@@ -150,7 +149,7 @@ theorem bulbs_irises : (20 : Nat) = 10 * 2 := by norm_num
 theorem bulbs_crocuses : (90 : Nat) = 30 * 3 := by norm_num
 theorem bulbs_total : (150 : Nat) = 20 + 10 + 30 + 90 := by
   calc (150 : Nat) = 20 + (20 / 2) + 30 + (30 * 3) := by norm_num
-       _ = 20 + 10 + 30 + 90 := by rw [bulbs_irises, ← bulbs_crocuses]; norm_num
+       _ = 20 + 10 + 30 + 90 := by rw [bulbs_irises, ← bulbs_crocuses]
 theorem bulbs_earnings_half : (150 : Nat) = 150 * 1 := by
   calc (150 : Nat) = 20 + 10 + 30 + 90 := bulbs_total
        _ = 150 * 1 := by norm_num
@@ -164,7 +163,7 @@ theorem bulbs_solution : BulbsHalfDollars 20 10 30 90 150 1 150 75 := by
 theorem city_volume_difference : (9000 : Nat) = 6400 + 2600 := by norm_num
 theorem city_people_difference : (208000 : Nat) = 2600 * 80 := by
   calc (208000 : Nat) = (9000 - 6400) * 80 := by norm_num
-       _ = 2600 * 80 := by rw [city_volume_difference]; norm_num
+       _ = 2600 * 80 := by rw [city_volume_difference]
 theorem city_solution : CityPopulationDifference 9000 6400 2600 80 208000 := by
   unfold CityPopulationDifference; exact ⟨city_volume_difference, city_people_difference⟩
 

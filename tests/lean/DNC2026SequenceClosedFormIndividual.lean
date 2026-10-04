@@ -9,12 +9,12 @@ open LemmaWeave.Problems.DNC2026M2BC.SequenceClosedForm
 /-- 公式の上端は `n - 1` であり、`b₁` から `bₙ₋₁` までを足す。 -/
 theorem term_as_difference_sum (n : ℕ) :
     sequenceTerm n =
-      1 + ∑ k in Finset.range (n - 1), difference (k + 1) := by
+      1 + Finset.sum (Finset.range (n - 1)) (fun k => difference (k + 1)) := by
   rfl
 
 /-- `bₖ = 4k - 1` を `k = 1, ..., m` まで足した値。 -/
 theorem difference_sum_value (m : ℕ) :
-    (∑ k in Finset.range m, difference (k + 1)) =
+    Finset.sum (Finset.range m) (fun k => difference (k + 1)) =
       2 * (m : ℤ) ^ 2 + (m : ℤ) := by
   exact difference_sum_closed_form m
 

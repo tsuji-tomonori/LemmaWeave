@@ -1,7 +1,6 @@
 import LemmaWeave.Problems.DNC2026M1.TangentTriangleRatioModel
 import LemmaWeave.Audit.Extract
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Nlinarith
+import Mathlib.Tactic
 
 namespace LemmaWeave.Tests.DNC2026TangentTriangleRatioIndividual
 

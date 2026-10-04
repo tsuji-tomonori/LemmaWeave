@@ -56,7 +56,7 @@ theorem cards_basketball : (40 : Nat) = 4 * 10 := by norm_num
 theorem cards_baseball : (40 : Nat) = 5 * 8 := by norm_num
 theorem cards_total : (80 : Nat) = 40 + 40 := by
   calc (80 : Nat) = (4 * 10) + (5 * 8) := by norm_num
-       _ = 40 + 40 := by rw [← cards_basketball, ← cards_baseball]
+       _ = 40 + 40 := by norm_num
 theorem cards_left : (80 : Nat) = 58 + 22 := by norm_num
 theorem cards_solution : CardCollection 4 10 40 5 8 40 80 58 22 := by
   unfold CardCollection

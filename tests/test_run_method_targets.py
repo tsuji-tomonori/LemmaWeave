@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 
-from run_method_targets import build_target_plan, run_lean_target
+from run_method_targets import build_target_plan, build_target_plans, run_lean_target
 
 
 class MethodTargetIsolation(unittest.TestCase):
@@ -19,6 +19,20 @@ class MethodTargetIsolation(unittest.TestCase):
         self.assertEqual(outcome['dependency_build_exit_code'], 1)
         self.assertIsNone(outcome['lean_exit_code'])
         run.assert_called_once()
+
+    @patch('run_method_targets.subprocess.run')
+    def test_successful_batch_build_runs_once_for_all_imports(self, run):
+        run.return_value.returncode = 0
+        plans = [
+            {'target': 'tests/lean/A.lean', 'project_imports': ['LemmaWeave.A', 'LemmaWeave.Shared']},
+            {'target': 'tests/lean/B.lean', 'project_imports': ['LemmaWeave.B', 'LemmaWeave.Shared']},
+        ]
+        outcomes = build_target_plans(plans)
+        self.assertEqual(set(outcomes), {'tests/lean/A.lean', 'tests/lean/B.lean'})
+        self.assertTrue(all(o['dependency_build_exit_code'] == 0 for o in outcomes.values()))
+        run.assert_called_once_with(
+            ['lake', 'build', 'LemmaWeave.A', 'LemmaWeave.B', 'LemmaWeave.Shared'],
+            cwd=Path(__file__).resolve().parents[1], check=False)
 
     @patch('run_method_targets.subprocess.run')
     def test_lean_check_uses_evidence_wrapper(self, run):

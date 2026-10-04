@@ -1,4 +1,6 @@
 import LemmaWeave.Problems.DNC2026M2BC.CubicDerivativeModel
+import LemmaWeave.Audit.Extract
+import Mathlib
 
 namespace LemmaWeave.Tests.DNC2026CubicDerivativeIndividual
 

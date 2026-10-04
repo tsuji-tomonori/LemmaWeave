@@ -104,6 +104,31 @@ def build_target_plan(plan):
     }
 
 
+def build_target_plans(plans):
+    """Build all imports once; isolate per target only if the batch fails."""
+    imports = sorted({name for plan in plans for name in plan['project_imports']})
+    if not imports:
+        return {
+            plan['target']: {
+                'target': plan['target'],
+                'dependency_build_exit_code': 0,
+                'lean_exit_code': None,
+            }
+            for plan in plans
+        }
+    batch = subprocess.run(['lake', 'build', *imports], cwd=ROOT, check=False)
+    if batch.returncode == 0:
+        return {
+            plan['target']: {
+                'target': plan['target'],
+                'dependency_build_exit_code': 0,
+                'lean_exit_code': None,
+            }
+            for plan in plans
+        }
+    return {plan['target']: build_target_plan(plan) for plan in plans}
+
+
 def run_lean_target(target):
     """Produce evidence for one target after its dependencies have built."""
     return subprocess.run(
@@ -132,7 +157,7 @@ def main():
     targets = all_targets if args.all else select_targets(
         recipes, lambda r: evidence_is_current(ROOT, r))
     plans = [target_plan(ROOT, target) for target in targets]
-    outcomes = {plan['target']: build_target_plan(plan) for plan in plans}
+    outcomes = build_target_plans(plans)
     runnable = [plan['target'] for plan in plans
                 if outcomes[plan['target']]['dependency_build_exit_code'] == 0]
     with ThreadPoolExecutor(max_workers=args.jobs) as executor:
@@ -168,7 +193,7 @@ def main():
         'selected_targets': targets,
         'jobs': args.jobs,
         'dependency_build_strategy':
-            'serial_per_target_build_then_parallel_isolated_check_continue_on_failure',
+            'single_batch_build_with_failure_isolation_then_parallel_checks',
         'safety_gate':
             'check_method_recipes.proof_evidence over Lean import closure and graph hash',
     }

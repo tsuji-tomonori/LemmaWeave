@@ -1,0 +1,101 @@
+{
+  "id": "gsm8k_sprint480_town_population_interpretations",
+  "title_ja": "町の元人口（時点解釈の分岐）",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04235",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P2.lean",
+  "problem_ja": "100人が転入し、元住民400人が転出した。その後毎年人口が半減し、4年後に60人。転入前の元人口を求める。",
+  "answer_ja": "本文どおり転出後から4回半減したと読むと、転出後人口は60×2^4=960人で、元人口は960+400−100=1260人。データセット参照値780は半減を3回と数える追加の時点規約（60×2^3=480）でのみ得られる。したがって通常解釈の答えは1260人で、780人には追加条件が必要。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.town_population_interpretations",
+  "graph": "work/gsm8k-sprint480-town-population-interpretations-graph.json",
+  "model_notes_ja": [
+    "「毎年その後」「4年後」は通常4回の半減を表すため1260人とした。",
+    "参照解答は3回の半減しか戻しておらず、本文との不一致を隠さない。両計算を別定理として形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "literal_after",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.town_after_moves_literal",
+      "title_ja": "通常解釈の転出後人口",
+      "claim_ja": "60×16=960人。",
+      "method_ja": "4回の半減を逆向きに4回倍にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "転出後から4年後まで毎年1回、計4回半減。",
+      "baseline_ja": "反復する2倍と自然数の乗法。",
+      "conclusion_ja": "960人。"
+    },
+    {
+      "id": "literal_original",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.town_original_literal",
+      "title_ja": "通常解釈の元人口",
+      "claim_ja": "960+400−100=1260人。",
+      "method_ja": "転出400人を戻し、転入100人を除く。",
+      "requires_steps": [
+        "literal_after"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "転入者100人と転出した元住民400人を区別する。",
+      "baseline_ja": "自然数の加減法。",
+      "conclusion_ja": "1260人。"
+    },
+    {
+      "id": "reference_after",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.town_after_moves_reference_convention",
+      "title_ja": "追加規約での転出後人口",
+      "claim_ja": "60×8=480人。",
+      "method_ja": "半減を3回と数える追加規約で3回倍に戻す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4年後を第4年開始時点とみなし、半減を3回と数える追加条件。",
+      "baseline_ja": "反復する2倍と自然数の乗法。",
+      "conclusion_ja": "480人。"
+    },
+    {
+      "id": "reference_original",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.town_original_reference_convention",
+      "title_ja": "追加規約での元人口",
+      "claim_ja": "480+400−100=780人。",
+      "method_ja": "転出を戻し転入を除く。",
+      "requires_steps": [
+        "reference_after"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "上記の追加時点規約を採用する場合だけ。",
+      "baseline_ja": "自然数の加減法。",
+      "conclusion_ja": "780人。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.town_population_interpretations",
+      "title_ja": "解釈の分離",
+      "claim_ja": "通常解釈1260人と追加規約780人の両方を、異なる前提として保持する。",
+      "method_ja": "4回半減と3回半減を混同せず対で示す。",
+      "requires_steps": [
+        "literal_original",
+        "reference_original"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文だけなら通常解釈を優先し、参照値には追加条件を明記する。",
+      "baseline_ja": "場合分けと連言。",
+      "conclusion_ja": "通常解釈1260人、追加規約では780人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4236,
+    "checked_model_hash": "55ae5d5498b686c7630e33d3267cfe9267ee8cfa64ca937376d60ba130c07c68",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

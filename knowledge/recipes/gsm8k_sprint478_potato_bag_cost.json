@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint478_potato_bag_cost",
+  "title_ja": "ジャガイモの購入費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04233",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P2.lean",
+  "problem_ja": "40人が1人1.5ポンド食べる。20ポンド袋が5ドルのとき費用はいくらか。",
+  "answer_ja": "半ポンド単位では1人3単位なので3×40=120単位=60ポンド。20ポンド袋3袋が必要で、3×5=15ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.potato_bag_cost",
+  "graph": "work/gsm8k-sprint478-potato-bag-cost-graph.json",
+  "model_notes_ja": [
+    "必要量60ポンドは袋容量20ポンドで割り切れる。半ポンド単位で小数を厳密に表す。"
+  ],
+  "steps": [
+    {
+      "id": "half",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.potato_half_pounds",
+      "title_ja": "必要量（半ポンド単位）",
+      "claim_ja": "3×40=120半ポンド単位。",
+      "method_ja": "1.5ポンドを半ポンド3単位として人数倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "40人が同量を食べる。",
+      "baseline_ja": "単位換算と自然数の乗法。",
+      "conclusion_ja": "120半ポンド単位。"
+    },
+    {
+      "id": "pounds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.potato_total_pounds",
+      "title_ja": "必要ポンド数",
+      "claim_ja": "120÷2=60ポンド。",
+      "method_ja": "半ポンド2単位を1ポンドに直す。",
+      "requires_steps": [
+        "half"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "120は2で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "60ポンド。"
+    },
+    {
+      "id": "bags",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.potato_bags",
+      "title_ja": "必要袋数",
+      "claim_ja": "60÷20=3袋。",
+      "method_ja": "必要量を袋容量で割る。",
+      "requires_steps": [
+        "pounds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "60は20で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "3袋。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.potato_bag_cost",
+      "title_ja": "費用",
+      "claim_ja": "3×5=15ドル。",
+      "method_ja": "袋数に単価を掛ける。",
+      "requires_steps": [
+        "bags"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各袋5ドル。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "15ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4234,
+    "checked_model_hash": "55ae5d5498b686c7630e33d3267cfe9267ee8cfa64ca937376d60ba130c07c68",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

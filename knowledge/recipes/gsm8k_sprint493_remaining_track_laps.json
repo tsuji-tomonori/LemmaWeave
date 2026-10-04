@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint493_remaining_track_laps",
+  "title_ja": "残りの完全な周回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04248",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P2.lean",
+  "problem_ja": "99m走る必要があり、1周9m。すでに6周なら残り何周か。",
+  "answer_ja": "全部で11周、残り5周。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.remaining_track_laps",
+  "graph": "work/gsm8k-sprint493-remaining-track-laps-graph.json",
+  "model_notes_ja": [
+    "99mは9mのちょうど11周で、端数はない。"
+  ],
+  "steps": [
+    {
+      "id": "total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.total_track_laps",
+      "title_ja": "必要総周回",
+      "claim_ja": "99÷9=11周。",
+      "method_ja": "距離を1周の長さで割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "99÷9=11周。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.remaining_track_laps",
+      "title_ja": "残り周回",
+      "claim_ja": "11−6=5周。",
+      "method_ja": "すでに走った6周を引く。",
+      "requires_steps": [
+        "total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "11−6=5周。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4249,
+    "checked_model_hash": "f5a08687b9ea27be27902fe90737d0b84d81e5c02a8633343c41821b73e03ec4",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

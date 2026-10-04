@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint491_tomatoes_total",
+  "title_ja": "4株のトマト合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04246",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P2.lean",
+  "problem_ja": "1株目は8個、2株目は4個多い。残り2株はそれぞれ最初の2株合計の3倍。合計は。",
+  "answer_ja": "2株目12個、最初の2株で20個。残りは各60個なので合計140個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.tomatoes_total",
+  "graph": "work/gsm8k-sprint491-tomatoes-total-graph.json",
+  "model_notes_ja": [
+    "残り2株の各々が20個の3倍を実らせる。"
+  ],
+  "steps": [
+    {
+      "id": "first_two",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.first_two_tomato_plants",
+      "title_ja": "最初の2株",
+      "claim_ja": "8+(8+4)=20個。",
+      "method_ja": "2株目を求めて足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "8+(8+4)=20個。"
+    },
+    {
+      "id": "remaining_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.each_remaining_tomato_plant",
+      "title_ja": "残り各株",
+      "claim_ja": "20×3=60個。",
+      "method_ja": "最初の2株合計の3倍を求める。",
+      "requires_steps": [
+        "first_two"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "20×3=60個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.tomatoes_total",
+      "title_ja": "全4株の合計",
+      "claim_ja": "8+12+60+60=140個。",
+      "method_ja": "4株分を足す。",
+      "requires_steps": [
+        "first_two",
+        "remaining_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "8+12+60+60=140個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4247,
+    "checked_model_hash": "f5a08687b9ea27be27902fe90737d0b84d81e5c02a8633343c41821b73e03ec4",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -30,7 +30,8 @@ theorem three_divisor_forced (a : ℕ)
   rcases h3A.2 with ⟨d, hd1, hd3, hda⟩
   have hdle : d ≤ 3 := Nat.le_of_dvd (by norm_num) hd3
   have hdeq : d = 3 := by
-    interval_cases d <;> norm_num at hd1 hd3 ⊢
+    interval_cases d
+    all_goals norm_num at hd1 hd3 ⊢
   simpa [hdeq] using hda
 
 /-- 2 以上 9 以下で 2 と 3 の双方を約数にもつ自然数は 6 に限る。 -/

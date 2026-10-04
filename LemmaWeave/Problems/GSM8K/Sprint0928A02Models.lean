@@ -260,6 +260,11 @@ theorem zoe_solution (m : ZoeEarningsModel) :
   · exact zoe_equal_rate_pool m
   · exact zoe_unequal_rate_counterexample
 
+/-- Stable recipe and audit root for Zoe's earnings solution. -/
+theorem zoe_earnings_solution (m : ZoeEarningsModel) :
+    m.poolCleaning = 2600 ∧ (600 : Nat) + 600 + 500 + 6300 = 8000 := by
+  exact zoe_solution m
+
 structure CardsModel where
   matias : Nat
   jorge : Nat

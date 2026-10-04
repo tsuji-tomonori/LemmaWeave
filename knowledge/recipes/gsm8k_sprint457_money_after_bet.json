@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint457_money_after_bet",
+  "title_ja": "賭けに勝った後の所持金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04212",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "所持金400ドルの2倍を勝者が受け取る賭けに勝ったとき、所持金はいくらか。",
+  "answer_ja": "賞金は2×400=800ドル。元の400ドルに加えて400+800=1200ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.money_after_bet",
+  "graph": "work/gsm8k-sprint457-money-after-bet-graph.json",
+  "model_notes_ja": [
+    "勝者への支払額は元のmoney boxの2倍であり、元金へ追加される。"
+  ],
+  "steps": [
+    {
+      "id": "winnings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.bet_winnings",
+      "title_ja": "賞金",
+      "claim_ja": "2×400=800ドル。",
+      "method_ja": "元金の2倍を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "賞金は元金400ドルの2倍。",
+      "baseline_ja": "整数の乗法・通貨単位。",
+      "conclusion_ja": "800ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.money_after_bet",
+      "title_ja": "勝利後の総額",
+      "claim_ja": "400+800=1200ドル。",
+      "method_ja": "元金と賞金を加える。",
+      "requires_steps": [
+        "winnings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "賞金は元金を置き換えず追加される。",
+      "baseline_ja": "整数の加法。",
+      "conclusion_ja": "1200ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4213,
+    "checked_model_hash": "be83fb7b408d3a971c49a3828e75ee7b0b50efaf996100a29dbcb2a11323f1f5",
+    "checks_ja": [
+      "原題の数量・単位・求める結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

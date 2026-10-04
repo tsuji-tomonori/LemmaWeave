@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint459_music_book_spending",
+  "title_ja": "音楽本への支出",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04214",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "500ドルから数学本4冊各20ドル、数学本より6冊多い科学本各10ドル、数学本の2倍の美術本各20ドルを買った。残りを音楽本に使った額はいくらか。",
+  "answer_ja": "数学80ドル、科学(4+6)×10=100ドル、美術(2×4)×20=160ドル。既知支出340ドルなので音楽本は500-340=160ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.music_book_spending",
+  "graph": "work/gsm8k-sprint459-music-book-spending-graph.json",
+  "model_notes_ja": [
+    "問題は500ドルのうち列挙された本以外を音楽本に使ったと読む。"
+  ],
+  "steps": [
+    {
+      "id": "math",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.math_book_cost",
+      "title_ja": "数学本代",
+      "claim_ja": "4×20=80ドル。",
+      "method_ja": "冊数に単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4冊、各20ドル。",
+      "baseline_ja": "整数の乗法。",
+      "conclusion_ja": "80ドル。"
+    },
+    {
+      "id": "science",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.science_book_cost",
+      "title_ja": "科学本代",
+      "claim_ja": "(4+6)×10=100ドル。",
+      "method_ja": "冊数を求め単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "数学本より6冊多く各10ドル。",
+      "baseline_ja": "加法・乗法。",
+      "conclusion_ja": "100ドル。"
+    },
+    {
+      "id": "art",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.art_book_cost",
+      "title_ja": "美術本代",
+      "claim_ja": "(2×4)×20=160ドル。",
+      "method_ja": "冊数を2倍し単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "数学本の2倍の冊数、各20ドル。",
+      "baseline_ja": "乗法。",
+      "conclusion_ja": "160ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.music_book_spending",
+      "title_ja": "音楽本代",
+      "claim_ja": "500-(80+100+160)=160ドル。",
+      "method_ja": "予算から既知支出を引く。",
+      "requires_steps": [
+        "math",
+        "science",
+        "art"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "500ドルを全てこれらの本に使う。",
+      "baseline_ja": "加法・減法。",
+      "conclusion_ja": "160ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4215,
+    "checked_model_hash": "be83fb7b408d3a971c49a3828e75ee7b0b50efaf996100a29dbcb2a11323f1f5",
+    "checks_ja": [
+      "原題の数量・単位・求める結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

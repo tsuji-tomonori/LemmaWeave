@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint489_john_more_than_ray",
+  "title_ja": "JohnとRayの鶏の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04244",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P1.lean",
+  "problem_ja": "JohnはMaryより5羽多く、RayはMaryより6羽少ない。Rayが10羽ならJohnはRayより何羽多いか。",
+  "answer_ja": "Maryは16羽、Johnは21羽。JohnはRayより11羽多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.john_more_than_ray",
+  "graph": "work/gsm8k-sprint489-john-more-than-ray-graph.json",
+  "model_notes_ja": [
+    "「RayはMaryより6羽少ない」をMary=Ray+6として使う。"
+  ],
+  "steps": [
+    {
+      "id": "mary",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.mary_chickens",
+      "title_ja": "Maryの羽数",
+      "claim_ja": "10+6=16羽。",
+      "method_ja": "Rayへ差6を戻す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "10+6=16羽。"
+    },
+    {
+      "id": "john",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.john_chickens",
+      "title_ja": "Johnの羽数",
+      "claim_ja": "16+5=21羽。",
+      "method_ja": "Maryへ5羽足す。",
+      "requires_steps": [
+        "mary"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "16+5=21羽。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.john_more_than_ray",
+      "title_ja": "JohnとRayの差",
+      "claim_ja": "21−10=11羽。",
+      "method_ja": "JohnからRayを引く。",
+      "requires_steps": [
+        "john"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "21−10=11羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4245,
+    "checked_model_hash": "fcf51b3fa89d32dc263def3ca76872f4df2e3fb9328388fd5358bb6fd15f320e",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "gsm8k_sprint486_shared_marbles_each",
+  "title_ja": "3人で等分するビー玉",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04241",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P1.lean",
+  "problem_ja": "Wolfgangは16個、LudoはWolfgangより4分の1多く、Michaelは前2人の合計の3分の2を買う。3人で等分すると1人何個か。",
+  "answer_ja": "Ludoの増加分は4個なので20個。前2人は36個、Michaelは24個、合計60個。3人で等分して20個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.shared_marbles_each",
+  "graph": "work/gsm8k-sprint486-shared-marbles-each-graph.json",
+  "model_notes_ja": [
+    "「1/4 times more」は参考解答どおり「4分の1だけ多い」と読む。単に4分の1倍だとMichaelの個数が整数にならず、離散的なビー玉の条件と整合しない。"
+  ],
+  "steps": [
+    {
+      "id": "extra",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.ludo_extra_marbles",
+      "title_ja": "Ludoの増加分",
+      "claim_ja": "16÷4=4個。",
+      "method_ja": "4分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "16÷4=4個。"
+    },
+    {
+      "id": "ludo",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.ludo_total_marbles",
+      "title_ja": "Ludoの個数",
+      "claim_ja": "16+4=20個。",
+      "method_ja": "元の個数へ増加分を足す。",
+      "requires_steps": [
+        "extra"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "16+4=20個。"
+    },
+    {
+      "id": "pair",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.wolfgang_ludo_total",
+      "title_ja": "前2人の合計",
+      "claim_ja": "16+20=36個。",
+      "method_ja": "2人分を足す。",
+      "requires_steps": [
+        "ludo"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "16+20=36個。"
+    },
+    {
+      "id": "michael",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.michael_marbles",
+      "title_ja": "Michaelの個数",
+      "claim_ja": "36×2÷3=24個。",
+      "method_ja": "合計の3分の2を求める。",
+      "requires_steps": [
+        "pair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "36×2÷3=24個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.shared_marbles_each",
+      "title_ja": "等分後の個数",
+      "claim_ja": "(36+24)÷3=20個。",
+      "method_ja": "全体を3人で等分する。",
+      "requires_steps": [
+        "pair",
+        "michael"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "(36+24)÷3=20個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4242,
+    "checked_model_hash": "fcf51b3fa89d32dc263def3ca76872f4df2e3fb9328388fd5358bb6fd15f320e",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

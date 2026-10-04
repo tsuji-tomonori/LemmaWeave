@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint487_comics_in_box",
+  "title_ja": "箱の漫画冊数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04242",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P1.lean",
+  "problem_ja": "床に150ページあり、1冊25ページ。直した漫画を既存の無傷5冊へ戻すと何冊か。",
+  "answer_ja": "150÷25=6冊を直し、既存5冊と合わせて11冊。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.comics_in_box",
+  "graph": "work/gsm8k-sprint487-comics-in-box-graph.json",
+  "model_notes_ja": [
+    "全150ページが25ページずつの完全な漫画に復元できる。"
+  ],
+  "steps": [
+    {
+      "id": "repaired",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.repaired_comics",
+      "title_ja": "直した冊数",
+      "claim_ja": "150÷25=6冊。",
+      "method_ja": "総ページ数を1冊のページ数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "150÷25=6冊。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.comics_in_box",
+      "title_ja": "箱の合計",
+      "claim_ja": "6+5=11冊。",
+      "method_ja": "直した冊数と無傷の冊数を足す。",
+      "requires_steps": [
+        "repaired"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "6+5=11冊。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4243,
+    "checked_model_hash": "fcf51b3fa89d32dc263def3ca76872f4df2e3fb9328388fd5358bb6fd15f320e",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

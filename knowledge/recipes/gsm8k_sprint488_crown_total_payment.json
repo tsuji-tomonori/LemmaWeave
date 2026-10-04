@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint488_crown_total_payment",
+  "title_ja": "王冠代とチップ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04243",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P1.lean",
+  "problem_ja": "2万ドルの王冠に10%のチップを払う。支払総額はいくらか。",
+  "answer_ja": "チップは2,000ドル、支払総額は22,000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.crown_total_payment",
+  "graph": "work/gsm8k-sprint488-crown-total-payment-graph.json",
+  "model_notes_ja": [
+    "金額はドル単位の自然数で、10%は100分の10として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "tip",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.crown_tip",
+      "title_ja": "チップ",
+      "claim_ja": "20000×10÷100=2000ドル。",
+      "method_ja": "10%を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "20000×10÷100=2000ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.crown_total_payment",
+      "title_ja": "支払総額",
+      "claim_ja": "20000+2000=22000ドル。",
+      "method_ja": "価格とチップを足す。",
+      "requires_steps": [
+        "tip"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "20000+2000=22000ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4244,
+    "checked_model_hash": "fcf51b3fa89d32dc263def3ca76872f4df2e3fb9328388fd5358bb6fd15f320e",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

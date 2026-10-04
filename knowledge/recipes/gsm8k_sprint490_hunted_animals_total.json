@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint490_hunted_animals_total",
+  "title_ja": "4人が狩る動物の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04245",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P1.lean",
+  "problem_ja": "Samは6匹、Robはその半分、MarkはSamとRobの合計の3分の1、PeterはMarkの3倍。合計は。",
+  "answer_ja": "Rob3匹、SamとRobで9匹、Mark3匹、Peter9匹なので合計21匹。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.hunted_animals_total",
+  "graph": "work/gsm8k-sprint490-hunted-animals-total-graph.json",
+  "model_notes_ja": [
+    "全数量は1日あたりの動物数。"
+  ],
+  "steps": [
+    {
+      "id": "rob",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.rob_animals",
+      "title_ja": "Robの数",
+      "claim_ja": "6÷2=3匹。",
+      "method_ja": "Samの半分を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "6÷2=3匹。"
+    },
+    {
+      "id": "sam_rob",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.sam_rob_animals",
+      "title_ja": "SamとRobの合計",
+      "claim_ja": "6+3=9匹。",
+      "method_ja": "2人分を足す。",
+      "requires_steps": [
+        "rob"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "6+3=9匹。"
+    },
+    {
+      "id": "mark",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.mark_animals",
+      "title_ja": "Markの数",
+      "claim_ja": "9÷3=3匹。",
+      "method_ja": "合計の3分の1を求める。",
+      "requires_steps": [
+        "sam_rob"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "9÷3=3匹。"
+    },
+    {
+      "id": "peter",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.peter_animals",
+      "title_ja": "Peterの数",
+      "claim_ja": "3×3=9匹。",
+      "method_ja": "Markの3倍を求める。",
+      "requires_steps": [
+        "mark"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "3×3=9匹。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P1.hunted_animals_total",
+      "title_ja": "4人の合計",
+      "claim_ja": "6+3+3+9=21匹。",
+      "method_ja": "4人分を足す。",
+      "requires_steps": [
+        "rob",
+        "mark",
+        "peter"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "6+3+3+9=21匹。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4246,
+    "checked_model_hash": "fcf51b3fa89d32dc263def3ca76872f4df2e3fb9328388fd5358bb6fd15f320e",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

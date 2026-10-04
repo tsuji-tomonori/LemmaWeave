@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A19
+import LemmaWeave.Problems.GSM8K.Sprint0925A19Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A19.raisins_solution to "work/gsm8k-sprint145-raisins-graph.json"

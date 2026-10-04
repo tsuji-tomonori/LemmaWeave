@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A12
+import LemmaWeave.Problems.GSM8K.Sprint0925A12Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A12.phone_solution to "work/gsm8k-sprint138-phone-graph.json"

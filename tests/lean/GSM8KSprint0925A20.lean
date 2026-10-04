@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A20
+import LemmaWeave.Problems.GSM8K.Sprint0925A20Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A20.hotel_solution to "work/gsm8k-sprint146-hotel-graph.json"

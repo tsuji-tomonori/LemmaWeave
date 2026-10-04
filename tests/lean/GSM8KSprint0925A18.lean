@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A18
+import LemmaWeave.Problems.GSM8K.Sprint0925A18Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A18.fish_solution to "work/gsm8k-sprint144-fish-graph.json"

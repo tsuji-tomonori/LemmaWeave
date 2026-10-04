@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A04
+import LemmaWeave.Problems.GSM8K.Sprint0925A04Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A04.school_solution to "work/gsm8k-sprint132-school-graph.json"

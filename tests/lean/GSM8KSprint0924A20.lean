@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0924A20
+import LemmaWeave.Problems.GSM8K.Sprint0924A20Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0924A20.legs_solution to "work/gsm8k-sprint128-legs-graph.json"

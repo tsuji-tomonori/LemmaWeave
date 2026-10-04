@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0924A18
+import LemmaWeave.Problems.GSM8K.Sprint0924A18Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0924A18.barrettes_solution to "work/gsm8k-sprint126-barrettes-graph.json"

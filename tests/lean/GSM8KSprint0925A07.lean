@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A07
+import LemmaWeave.Problems.GSM8K.Sprint0925A07Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A07.stickers_solution to "work/gsm8k-sprint134-stickers-graph.json"

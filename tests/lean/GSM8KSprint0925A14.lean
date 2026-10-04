@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A14
+import LemmaWeave.Problems.GSM8K.Sprint0925A14Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A14.milk_solution to "work/gsm8k-sprint140-milk-graph.json"

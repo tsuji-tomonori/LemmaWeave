@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0927A03
+import LemmaWeave.Problems.GSM8K.Sprint0927A03Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A03.ages_solution to "work/gsm8k-sprint148-ages-graph.json"

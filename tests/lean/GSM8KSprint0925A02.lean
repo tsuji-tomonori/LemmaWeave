@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A02
+import LemmaWeave.Problems.GSM8K.Sprint0925A02Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A02.helmet_solution to "work/gsm8k-sprint130-helmet-graph.json"

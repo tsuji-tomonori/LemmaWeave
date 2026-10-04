@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0927A04
+import LemmaWeave.Problems.GSM8K.Sprint0927A04Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A04.balloons_solution to "work/gsm8k-sprint149-balloons-graph.json"

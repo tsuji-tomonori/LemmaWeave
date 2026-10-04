@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A01
+import LemmaWeave.Problems.GSM8K.Sprint0925A01Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A01.race_solution to "work/gsm8k-sprint129-race-graph.json"

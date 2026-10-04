@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A15
+import LemmaWeave.Problems.GSM8K.Sprint0925A15Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A15.punch_solution to "work/gsm8k-sprint141-punch-graph.json"

@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0924A19
+import LemmaWeave.Problems.GSM8K.Sprint0924A19Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0924A19.flowers_solution to "work/gsm8k-sprint127-flowers-graph.json"

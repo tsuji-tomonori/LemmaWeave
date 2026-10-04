@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A03
+import LemmaWeave.Problems.GSM8K.Sprint0925A03Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A03.lions_solution to "work/gsm8k-sprint131-lions-graph.json"

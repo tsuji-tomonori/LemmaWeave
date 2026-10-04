@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A06
+import LemmaWeave.Problems.GSM8K.Sprint0925A06Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A06.apples_not_determined to "work/gsm8k-sprint133-apples-graph.json"

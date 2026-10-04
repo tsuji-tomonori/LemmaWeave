@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A13
+import LemmaWeave.Problems.GSM8K.Sprint0925A13Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A13.dig_solution to "work/gsm8k-sprint139-dig-graph.json"

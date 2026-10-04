@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0927A02
+import LemmaWeave.Problems.GSM8K.Sprint0927A02Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0927A02.reading_solution to "work/gsm8k-sprint147-reading-graph.json"

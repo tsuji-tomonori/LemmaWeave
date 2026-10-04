@@ -1,4 +1,4 @@
-import LemmaWeave.Problems.GSM8K.Sprint0925A11
+import LemmaWeave.Problems.GSM8K.Sprint0925A11Models
 import LemmaWeave.Audit.Extract
 
 #lw_dependencies LemmaWeave.Problems.GSM8K.Sprint0925A11.bread_solution to "work/gsm8k-sprint137-bread-graph.json"

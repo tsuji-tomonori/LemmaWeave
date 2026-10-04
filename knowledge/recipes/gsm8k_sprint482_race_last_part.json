@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint482_race_last_part",
+  "title_ja": "レース最終区間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04237",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P3.lean",
+  "problem_ja": "全長74.5km。第1区間15.5km、第2・第3区間は各21.5km。第4区間は何kmか。",
+  "answer_ja": "0.1km単位で既知区間は155+215+215=585単位。全体745単位との差は160単位=16km。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.race_last_part",
+  "graph": "work/gsm8k-sprint482-race-last-part-graph.json",
+  "model_notes_ja": [
+    "小数を0.1km単位の自然数へ正確に換算する。"
+  ],
+  "steps": [
+    {
+      "id": "known",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.race_known_tenths",
+      "title_ja": "既知3区間",
+      "claim_ja": "155+215+215=585（0.1km単位）。",
+      "method_ja": "3区間を同じ単位で足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15.5km=155単位、21.5km=215単位。",
+      "baseline_ja": "単位換算と加法。",
+      "conclusion_ja": "58.5km。"
+    },
+    {
+      "id": "last_tenths",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.race_last_tenths",
+      "title_ja": "残りの0.1km単位",
+      "claim_ja": "745−585=160単位。",
+      "method_ja": "全長から既知区間を引く。",
+      "requires_steps": [
+        "known"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "既知区間は全長以下。",
+      "baseline_ja": "自然数の減法。",
+      "conclusion_ja": "160単位。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.race_last_part",
+      "title_ja": "km換算",
+      "claim_ja": "160÷10=16km。",
+      "method_ja": "0.1km単位10個を1kmに直す。",
+      "requires_steps": [
+        "last_tenths"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "160は10で割り切れる。",
+      "baseline_ja": "単位換算と除法。",
+      "conclusion_ja": "16km。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4238,
+    "checked_model_hash": "746f87000a26b560eb8d5d423b7a9035191592ba9368520a2b74425ae9dc05f7",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

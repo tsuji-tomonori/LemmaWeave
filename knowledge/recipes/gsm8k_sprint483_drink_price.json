@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint483_drink_price",
+  "title_ja": "飲み物の値段",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04238",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P3.lean",
+  "problem_ja": "通常8ドルのサンドイッチを4分の1引きで買い、アボカド1ドルを追加した。飲み物と3ドルのサラダを含む合計が12ドル。飲み物はいくらか。",
+  "answer_ja": "値引きは8÷4=2ドル。サンドイッチは8−2+1=7ドル。サラダ込み10ドルなので飲み物は12−10=2ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.drink_price",
+  "graph": "work/gsm8k-sprint483-drink-price-graph.json",
+  "model_notes_ja": [
+    "各価格はドル単位の整数で、追加料金と値引きを順に反映する。"
+  ],
+  "steps": [
+    {
+      "id": "coupon",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.lunch_coupon_saving",
+      "title_ja": "値引き額",
+      "claim_ja": "8÷4=2ドル。",
+      "method_ja": "価格の4分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "8は4で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "2ドル。"
+    },
+    {
+      "id": "sandwich",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.lunch_sandwich_with_avocado",
+      "title_ja": "サンドイッチ代",
+      "claim_ja": "8−2+1=7ドル。",
+      "method_ja": "値引き後に追加料金を足す。",
+      "requires_steps": [
+        "coupon"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "値引きは通常価格以下。",
+      "baseline_ja": "自然数の加減法。",
+      "conclusion_ja": "7ドル。"
+    },
+    {
+      "id": "without",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.lunch_without_drink",
+      "title_ja": "飲み物以外",
+      "claim_ja": "7+3=10ドル。",
+      "method_ja": "サンドイッチとサラダを足す。",
+      "requires_steps": [
+        "sandwich"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ通貨単位。",
+      "baseline_ja": "自然数の加法。",
+      "conclusion_ja": "10ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.drink_price",
+      "title_ja": "飲み物代",
+      "claim_ja": "12−10=2ドル。",
+      "method_ja": "総額から他の品代を引く。",
+      "requires_steps": [
+        "without"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "他の品代は総額以下。",
+      "baseline_ja": "自然数の減法。",
+      "conclusion_ja": "2ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4239,
+    "checked_model_hash": "746f87000a26b560eb8d5d423b7a9035191592ba9368520a2b74425ae9dc05f7",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

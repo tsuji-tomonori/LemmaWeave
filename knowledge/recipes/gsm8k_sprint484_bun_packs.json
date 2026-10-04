@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint484_bun_packs",
+  "title_ja": "必要なバンズのパック数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04239",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P3.lean",
+  "problem_ja": "友人10人を招き1人3個のバーガーを出す。1人は肉を食べず自分の食事を持参し、別の1人はパンを食べない。バンズは8個入り。何パック必要か。",
+  "answer_ja": "肉を食べる友人は9人。そのうち別の1人はバンズ不要なので、バンズを食べるのは8人。3個ずつで24個、8個入り3パック。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.bun_packs",
+  "graph": "work/gsm8k-sprint484-bun-packs-graph.json",
+  "model_notes_ja": [
+    "“Another one” により、肉を食べない友人とパンを食べない友人は別人。",
+    "Alex自身の分は問題文の「each guest」に含めない。"
+  ],
+  "steps": [
+    {
+      "id": "meat",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.burger_meat_eaters",
+      "title_ja": "肉を食べる友人",
+      "claim_ja": "10−1=9人。",
+      "method_ja": "持参者1人を除く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "招待客は10人。",
+      "baseline_ja": "自然数の減法。",
+      "conclusion_ja": "9人。"
+    },
+    {
+      "id": "bread",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.burger_bun_eaters",
+      "title_ja": "バンズを食べる友人",
+      "claim_ja": "9−1=8人。",
+      "method_ja": "別のパンを食べない1人を除く。",
+      "requires_steps": [
+        "meat"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2人は“another”により別人。",
+      "baseline_ja": "自然数の減法。",
+      "conclusion_ja": "8人。"
+    },
+    {
+      "id": "buns",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.burger_buns_needed",
+      "title_ja": "必要なバンズ",
+      "claim_ja": "8×3=24個。",
+      "method_ja": "人数に1人当たり個数を掛ける。",
+      "requires_steps": [
+        "bread"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各対象客に3個。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "24個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.bun_packs",
+      "title_ja": "必要パック数",
+      "claim_ja": "24÷8=3パック。",
+      "method_ja": "必要個数を1パックの個数で割る。",
+      "requires_steps": [
+        "buns"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "24は8で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "3パック。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4240,
+    "checked_model_hash": "746f87000a26b560eb8d5d423b7a9035191592ba9368520a2b74425ae9dc05f7",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

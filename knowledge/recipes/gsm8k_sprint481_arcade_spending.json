@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint481_arcade_spending",
+  "title_ja": "ゲームセンターの支出",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04236",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P3.lean",
+  "problem_ja": "3時間遊び、6分ごとに0.50ドル使う。支出はいくらか。",
+  "answer_ja": "3時間=180分。支払いは180÷6=30回。50セント×30=1500セント=15ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.arcade_spending",
+  "graph": "work/gsm8k-sprint481-arcade-spending-graph.json",
+  "model_notes_ja": [
+    "ドル小数を避け、50セント単位で厳密に計算する。"
+  ],
+  "steps": [
+    {
+      "id": "minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.arcade_total_minutes",
+      "title_ja": "総分数",
+      "claim_ja": "3×60=180分。",
+      "method_ja": "時間を分に直す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1時間60分。",
+      "baseline_ja": "単位換算と乗法。",
+      "conclusion_ja": "180分。"
+    },
+    {
+      "id": "payments",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.arcade_payments",
+      "title_ja": "支払回数",
+      "claim_ja": "180÷6=30回。",
+      "method_ja": "総分数を6分で割る。",
+      "requires_steps": [
+        "minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "180は6で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "30回。"
+    },
+    {
+      "id": "cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.arcade_total_cents",
+      "title_ja": "総セント",
+      "claim_ja": "30×50=1500セント。",
+      "method_ja": "回数に50セントを掛ける。",
+      "requires_steps": [
+        "payments"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "毎回同額。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "1500セント。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P3.arcade_spending",
+      "title_ja": "ドル換算",
+      "claim_ja": "1500÷100=15ドル。",
+      "method_ja": "100セントを1ドルに直す。",
+      "requires_steps": [
+        "cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1500は100で割り切れる。",
+      "baseline_ja": "単位換算と除法。",
+      "conclusion_ja": "15ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4237,
+    "checked_model_hash": "746f87000a26b560eb8d5d423b7a9035191592ba9368520a2b74425ae9dc05f7",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

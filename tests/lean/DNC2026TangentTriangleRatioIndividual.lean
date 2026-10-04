@@ -75,8 +75,10 @@ theorem remaining_side_values
   have hqr := h.sine_law_qr
   rw [sinR_value PM PK QM QL radius areaP areaQ sinP cosP sinQ cosQ sinR PQ PR QR h,
     pq_value PM PK QM QL radius areaP areaQ sinP cosP sinQ cosQ sinR PQ PR QR h,
-    sinP_value PM PK QM QL radius areaP areaQ sinP cosP sinQ cosQ sinR PQ PR QR h,
-    sinQ_value PM PK QM QL radius areaP areaQ sinP cosP sinQ cosQ sinR PQ PR QR h] at hpr hqr
+    sinQ_value PM PK QM QL radius areaP areaQ sinP cosP sinQ cosQ sinR PQ PR QR h] at hpr
+  rw [sinR_value PM PK QM QL radius areaP areaQ sinP cosP sinQ cosQ sinR PQ PR QR h,
+    pq_value PM PK QM QL radius areaP areaQ sinP cosP sinQ cosQ sinR PQ PR QR h,
+    sinP_value PM PK QM QL radius areaP areaQ sinP cosP sinQ cosQ sinR PQ PR QR h] at hqr
   constructor <;> norm_num at hpr hqr ⊢ <;> linarith
 
 /-- 三辺の整数比 `75 : 61 : 34` と `PR > 2 PQ` を得る。 -/

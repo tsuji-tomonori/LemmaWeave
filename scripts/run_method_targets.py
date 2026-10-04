@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """現在証拠がないレシピを含むLean対象だけを安全に再実行する。"""
 import argparse
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import gzip
 import json
 import re
@@ -141,7 +141,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--all', action='store_true',
                         help='replay every registered method target')
-    parser.add_argument('--jobs', type=int, default=2,
+    parser.add_argument('--jobs', type=int, default=4,
                         help='number of independent Lean targets to check concurrently (1-4)')
     args = parser.parse_args()
     if not 1 <= args.jobs <= 4:
@@ -160,10 +160,25 @@ def main():
     outcomes = build_target_plans(plans)
     runnable = [plan['target'] for plan in plans
                 if outcomes[plan['target']]['dependency_build_exit_code'] == 0]
+    lean_codes = {}
     with ThreadPoolExecutor(max_workers=args.jobs) as executor:
-        lean_codes = dict(zip(runnable, executor.map(run_lean_target, runnable)))
-    for target, lean_exit in lean_codes.items():
-        outcomes[target]['lean_exit_code'] = lean_exit
+        futures = {executor.submit(run_lean_target, target): target
+                   for target in runnable}
+        for future in as_completed(futures):
+            target = futures[future]
+            lean_exit = future.result()
+            lean_codes[target] = lean_exit
+            outcomes[target]['lean_exit_code'] = lean_exit
+            checkpoint = {
+                'selected_target_count': len(targets),
+                'completed_target_count': len(lean_codes),
+                'remaining_target_count': len(runnable) - len(lean_codes),
+                'jobs': args.jobs,
+                'completed_outcomes': [outcomes[name]
+                                       for name in sorted(lean_codes)],
+            }
+            (ROOT / 'reports/method-target-checkpoint.json').write_text(
+                json.dumps(checkpoint, indent=2) + '\\n')
     results = []
     for plan in plans:
         target = plan['target']

@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint463_kirill_height",
+  "title_ja": "Kirillの身長",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04218",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A13P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kirillは兄より14cm低く、2人の合計は112cm。Kirillの身長はいくらか。",
+  "answer_ja": "Kirillをk、兄をbとするとk+14=b、k+b=112。連立するとb=63、k=49cm。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.kirill_height",
+  "graph": "work/gsm8k-sprint463-kirill-height-graph.json",
+  "model_notes_ja": [
+    "身長は自然数センチメートルとしてモデル化する。"
+  ],
+  "steps": [
+    {
+      "id": "brother",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.kirill_brother_height",
+      "title_ja": "兄の身長",
+      "claim_ja": "k+14=bかつk+b=112からb=63。",
+      "method_ja": "2本の一次方程式を連立する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "自然数上で与えられた等式を満たす。",
+      "baseline_ja": "一次方程式。",
+      "conclusion_ja": "兄は63cm。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.kirill_height",
+      "title_ja": "Kirillの身長",
+      "claim_ja": "k=49cm。",
+      "method_ja": "兄63cmと14cm差を用いる。",
+      "requires_steps": [
+        "brother"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "k+14=b。",
+      "baseline_ja": "一次方程式。",
+      "conclusion_ja": "49cm。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4219,
+    "checked_model_hash": "eb3f0ee9f374bbd28fa9500507e9a64de177c155db3d00a6d32c4be2cd0c9d08",
+    "checks_ja": [
+      "原題の数量・単位・求める結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

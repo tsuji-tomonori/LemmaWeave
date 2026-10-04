@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint465_gum_sticks_total",
+  "title_ja": "ガムの棒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04220",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A13P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1カートン5パック、1パック3本、1箱4カートン。8箱には何本あるか。",
+  "answer_ja": "1カートンは5×3=15本。8箱は8×4=32カートン。32×15=480本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.gum_sticks_total",
+  "graph": "work/gsm8k-sprint465-gum-sticks-total-graph.json",
+  "model_notes_ja": [
+    "箱→カートン→パック→本の包含関係を順に掛ける。"
+  ],
+  "steps": [
+    {
+      "id": "carton",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.sticks_per_carton",
+      "title_ja": "1カートンの本数",
+      "claim_ja": "5×3=15本。",
+      "method_ja": "パック数に各本数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1カートン5パック、各3本。",
+      "baseline_ja": "整数の乗法。",
+      "conclusion_ja": "15本。"
+    },
+    {
+      "id": "boxes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.cartons_in_boxes",
+      "title_ja": "8箱のカートン数",
+      "claim_ja": "8×4=32カートン。",
+      "method_ja": "箱数に各カートン数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1箱4カートン。",
+      "baseline_ja": "整数の乗法。",
+      "conclusion_ja": "32カートン。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.gum_sticks_total",
+      "title_ja": "総本数",
+      "claim_ja": "32×15=480本。",
+      "method_ja": "カートン数に各本数を掛ける。",
+      "requires_steps": [
+        "carton",
+        "boxes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各カートンの構成は同じ。",
+      "baseline_ja": "整数の乗法。",
+      "conclusion_ja": "480本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4221,
+    "checked_model_hash": "eb3f0ee9f374bbd28fa9500507e9a64de177c155db3d00a6d32c4be2cd0c9d08",
+    "checks_ja": [
+      "原題の数量・単位・求める結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

@@ -158,7 +158,7 @@ COMMANDS = [
 # The method-target sweep now includes over a hundred Lean files and each
 # target records its own Lean and dependency evidence.  The outer replay
 # bound leaves 1800 seconds for other checks and command startup.
-METHOD_TARGET_TIMEOUT = 4200
+METHOD_TARGET_TIMEOUT = 6000
 DEFAULT_COMMAND_TIMEOUT = 900
 
 

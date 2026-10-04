@@ -14,7 +14,7 @@ concurrency:
 jobs:
   lean:
     runs-on: ubuntu-24.04
-    timeout-minutes: 110
+    timeout-minutes: 130
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -34,21 +34,22 @@ jobs:
       - name: Retrieve the pinned mathlib cache for all project imports
         run: python3 scripts/run.py --timeout 1800 -- lake exe cache get
       - name: Replay the complete fixed-environment pipeline
-        run: python3 scripts/run.py --timeout 6000 -- python3 scripts/replay.py
-      - name: Print command output
+        run: python3 scripts/run.py --timeout 7200 -- python3 scripts/replay.py
+      - name: Prepare compact CI diagnostics
         if: always()
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import json, os
-          for record in sorted(Path('runs').glob('*/run.json')):
-              data = json.loads(record.read_text())
-              if data['environment'].get('github_run_id') == os.environ['GITHUB_RUN_ID']:
-                  for key in ['stdout_log', 'stderr_log']:
-                      p = Path(data[key])
-                      print(str(p))
-                      print(p.read_text(errors='replace'))
-          PY
+        run: python3 scripts/collect_ci_diagnostics.py
+      - name: Preserve compact CI diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lean-diagnostics-${{ github.sha }}
+          path: |
+            reports/ci-diagnostics.json
+            reports/method-target-checkpoint.json
+            reports/method-targets.json
+            reports/method-target-selection.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Preserve execution evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

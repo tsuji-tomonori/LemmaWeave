@@ -12,11 +12,11 @@ def difference (n : ℕ) : ℤ := 4 * (n : ℤ) - 1
 `Finset.range (n - 1)` の添字 `k = 0, ..., n-2` を `k + 1` へずらしている。
 -/
 def sequenceTerm (n : ℕ) : ℤ :=
-  1 + ∑ k in Finset.range (n - 1), difference (k + 1)
+  1 + Finset.sum (Finset.range (n - 1)) (fun k => difference (k + 1))
 
 /-- 最初の `m` 個の階差の和は `2m² + m`。 -/
 theorem difference_sum_closed_form (m : ℕ) :
-    (∑ k in Finset.range m, difference (k + 1)) =
+    Finset.sum (Finset.range m) (fun k => difference (k + 1)) =
       2 * (m : ℤ) ^ 2 + (m : ℤ) := by
   induction m with
   | zero => simp

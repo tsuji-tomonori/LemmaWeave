@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint436_combined_work_experience",
+  "title_ja": "3人の経験年数の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04191",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "James has 20 years of experience.  8 years ago John had twice as much experience as James.  Mike started when John had 16 years of experience.  What is their combined experience?",
+  "answer_ja": "8年前のJamesは12年、Johnはその2倍の24年なので現在32年。Johnが16年経験の時から現在まで16年なので、同時に始めたMikeは16年。合計20+32+16=68年。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.combined_work_experience",
+  "graph": "work/gsm8k-sprint436-combined-work-experience-graph.json",
+  "model_notes_ja": [
+    "経験年数が暦年と同じ速さで増え、中断がないと読む。"
+  ],
+  "steps": [
+    {
+      "id": "james",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.james_experience_eight_years_ago",
+      "title_ja": "8年前のJames",
+      "claim_ja": "20-8=12年。",
+      "method_ja": "現在経験から8年を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "経験が毎年1年増える。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20-8=12年。"
+    },
+    {
+      "id": "john",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.john_current_experience",
+      "title_ja": "現在のJohn",
+      "claim_ja": "8年前24年、現在32年。",
+      "method_ja": "Jamesの2倍を求め8年を足す。",
+      "requires_steps": [
+        "james"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8年前のJohnはJamesの2倍。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8年前24年、現在32年。"
+    },
+    {
+      "id": "mike",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.mike_current_experience",
+      "title_ja": "現在のMike",
+      "claim_ja": "Johnの経験が16年から32年になる16年間がMikeの経験年数。",
+      "method_ja": "Johnの経験差を経過年数とする。",
+      "requires_steps": [
+        "john"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "MikeはJohnが16年経験の時に開始し中断しない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Johnの経験が16年から32年になる16年間がMikeの経験年数。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.combined_work_experience",
+      "title_ja": "合計経験年数",
+      "claim_ja": "20+32+16=68年。",
+      "method_ja": "3人の現在経験を加える。",
+      "requires_steps": [
+        "john",
+        "mike"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ時点の現在値を合計する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20+32+16=68年。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4192,
+    "checked_model_hash": "d07ed89bb53634a8184aa39f8bc6e7a5b77bea33009ebeffa250d0b03cc268c1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

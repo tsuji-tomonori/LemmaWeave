@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint355_apple_count",
+  "title_ja": "箱のリンゴ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03899",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "There are 56 pieces of fruit in a box. One-fourth of the box contains oranges. There are half as many peaches as oranges and five times as many apples as peaches. How many apples are in the box?",
+  "answer_ja": "オレンジは56÷4=14個。桃はその半分で14÷2=7個。リンゴは桃の5倍なので5×7=35個。実際14+7+35=56で全体とも一致する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A10P1.apple_count",
+  "graph": "work/gsm8k-sprint355-apple-count-graph.json",
+  "model_notes_ja": [
+    "オレンジ、桃、リンゴの順で依存する個数を求め、合計56個とも照合する。"
+  ],
+  "steps": [
+    {
+      "id": "apple_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A10P1.apple_count",
+      "title_ja": "箱のリンゴ数",
+      "claim_ja": "オレンジは56÷4=14個。桃はその半分で14÷2=7個。リンゴは桃の5倍なので5×7=35個。実際14+7+35=56で全体とも一致する。",
+      "method_ja": "全体からオレンジ、オレンジから桃、桃からリンゴを順に求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "問題文の3種類が箱の56個を尽くし、各比率は個数について述べる。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "35個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3900,
+    "checked_model_hash": "dbd8f6081ef438fa357cae28ec7e239a7f2745c3ea0656800b18029595710175",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

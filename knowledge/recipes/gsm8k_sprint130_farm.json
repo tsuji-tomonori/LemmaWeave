@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint130_farm",
+  "title_ja": "農場の雌鶏数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02244",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "雌鶏は雄鶏の9倍より5羽少なく、全75羽。雌鶏数を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.farm_solution",
+  "graph": "work/gsm8k-sprint130-farm-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "farm_roosters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.farm_roosters",
+      "title_ja": "雄鶏は8羽",
+      "claim_ja": "雄鶏は8羽",
+      "method_ja": "hens=9×roosters−5と合計75を連立する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "雄鶏は8羽",
+      "baseline_ja": "雄鶏は8羽"
+    },
+    {
+      "id": "farm_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.farm_solution",
+      "title_ja": "雌鶏は67羽",
+      "claim_ja": "雌鶏は67羽",
+      "method_ja": "9×8から5を引く",
+      "requires_steps": [
+        "farm_roosters"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "雌鶏は67羽",
+      "baseline_ja": "雌鶏は67羽"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2245,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

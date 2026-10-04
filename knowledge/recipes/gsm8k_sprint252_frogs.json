@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint252_frogs",
+  "title_ja": "Bretのカエル数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03301",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "AlsterからQuinn、QuinnからBretへ倍率を適用する。",
+  "answer_ja": "12匹",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.frogs_bret",
+  "graph": "work/gsm8k-sprint252-frogs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "frogs_quinn",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.frogs_quinn",
+      "title_ja": "Quinnは4匹。",
+      "claim_ja": "Quinnは4匹。",
+      "method_ja": "2×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Alsterの2倍。",
+      "conclusion_ja": "4匹。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "frogs_bret",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.frogs_bret",
+      "title_ja": "Bretは12匹。",
+      "claim_ja": "Bretは12匹。",
+      "method_ja": "4×3。",
+      "requires_steps": [
+        "frogs_quinn"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Quinnの3倍。",
+      "conclusion_ja": "12匹。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3302,
+    "checked_model_hash": "5b0f5e04984a6201f121580db7520ef1dbe340a720fdfc949fc7e2f86decd806",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

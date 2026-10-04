@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint380_village_duration_weeks",
+  "title_ja": "村がもつ週数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04025",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A19P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A vampire drains three people a week. His best friend is a werewolf who eats five people a week, but only fresh ones, never drained ones. How many weeks will a village of 72 people last them both?",
+  "answer_ja": "吸血鬼3人と人狼5人は重ならない計8人を毎週必要とする。72÷8=9なので、村は9週間もつ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A19P2.village_duration_weeks",
+  "graph": "work/gsm8k-sprint380-village-duration-weeks-graph.json",
+  "model_notes_ja": [
+    "人狼は吸血鬼が血を吸った人を食べないため、毎週の3人と5人は別人である。"
+  ],
+  "steps": [
+    {
+      "id": "village_duration_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A19P2.village_duration_weeks",
+      "title_ja": "村がもつ週数",
+      "claim_ja": "吸血鬼3人と人狼5人は重ならない計8人を毎週必要とする。72÷8=9なので、村は9週間もつ。",
+      "method_ja": "互いに重ならない週当たり消費人数を合計し、村人数を割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "人狼は吸血鬼が血を吸った人を食べないため、毎週の3人と5人は別人である。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "吸血鬼3人と人狼5人は重ならない計8人を毎週必要とする。72÷8=9なので、村は9週間もつ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4026,
+    "checked_model_hash": "d6fba46527f70479bebf71690c8f4895c8d2f006e2a4c5b1b87d5f6a65e91466",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

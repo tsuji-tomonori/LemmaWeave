@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint138_age",
+  "title_ja": "Marthaの現在年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02361",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ellenは今10歳。Marthaは6年後のEllenの2倍の年齢。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A12.age_solution",
+  "graph": "work/gsm8k-sprint138-age-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "age_future",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.age_future",
+      "title_ja": "6年後のEllenは16歳",
+      "claim_ja": "6年後のEllenは16歳",
+      "method_ja": "10に6を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "6年後のEllenは16歳",
+      "baseline_ja": "6年後のEllenは16歳"
+    },
+    {
+      "id": "age_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.age_solution",
+      "title_ja": "Marthaは32歳",
+      "claim_ja": "Marthaは32歳",
+      "method_ja": "16の2倍",
+      "requires_steps": [
+        "age_future"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Marthaは32歳",
+      "baseline_ja": "Marthaは32歳"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2362,
+    "checked_model_hash": "e89e0a8fed68bf87ef0de72e11cd924e42bf43e793c002049a2ea2520267d828",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

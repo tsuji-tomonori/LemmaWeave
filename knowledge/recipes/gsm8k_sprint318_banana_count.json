@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint318_banana_count",
+  "title_ja": "バナナの個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03711",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A13P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "If Katherine has 4 apples and 3 times as many pears in her fridge, how many bananas does she have if she has a total of 21 pieces of fruit?",
+  "answer_ja": "梨はりんご4個の3倍で12個。りんごと梨は16個なので、全21個との差21−16=5個がバナナ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A13P3.banana_count",
+  "graph": "work/gsm8k-sprint318-banana-count-graph.json",
+  "model_notes_ja": [
+    "果物はりんご・梨・バナナの3種類で全体を尽くす。"
+  ],
+  "steps": [
+    {
+      "id": "banana_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A13P3.banana_count",
+      "title_ja": "バナナの個数",
+      "claim_ja": "梨はりんご4個の3倍で12個。りんごと梨は16個なので、全21個との差21−16=5個がバナナ。",
+      "method_ja": "梨の数を求め、既知の果物を全体から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "個数は自然数で、既知個数は総数以下。",
+      "baseline_ja": "四則演算、比・平均・百分率のうち問題で明示したもの。",
+      "conclusion_ja": "バナナは5本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3712,
+    "checked_model_hash": "5153e11515d05988e6140dbdd661462827ce1690e18c04f79559dd2866778072",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

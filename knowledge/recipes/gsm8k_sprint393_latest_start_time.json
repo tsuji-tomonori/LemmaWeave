@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_latest_start_time",
+  "title_ja": "映画に間に合う最遅開始時刻",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04108",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Justin wanted to watch a movie that came on at 8 pm that night.  His parents agreed as long as he finished his homework and chores before the movie started.  He wouldn't be home until 5 pm because of baseball practice.  He knew dinner would take 45 minutes, and he figured his homework would take 30 minutes to finish.  He needed to clean his room, which would take 30 minutes; then take out the trash, which would take about 5 minutes; and empty the dishwasher,  which would take another 10 minutes.  What was the latest time that Justin could start his chores and homework to be done by 8 pm to watch his movie?",
+  "answer_ja": "夕食45分、宿題30分、部屋30分、ごみ5分、食器10分の合計は120分。20時は正午から480分であり、120分戻すと18時、すなわち午後6時が最遅開始時刻である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P1.latest_start_time",
+  "graph": "work/gsm8k-sprint393-latest-start-time-graph.json",
+  "model_notes_ja": [
+    "問題文が列挙した夕食も映画前に必要な時間として合算する。"
+  ],
+  "steps": [
+    {
+      "id": "latest_start_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P1.latest_start_time",
+      "title_ja": "映画に間に合う最遅開始時刻",
+      "claim_ja": "夕食45分、宿題30分、部屋30分、ごみ5分、食器10分の合計は120分。20時は正午から480分であり、120分戻すと18時、すなわち午後6時が最遅開始時刻である。",
+      "method_ja": "所要時間を分で合計し、20時から逆算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "列挙した作業を重ねず連続して行い、夕食も映画前に済ませる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "夕食45分、宿題30分、部屋30分、ごみ5分、食器10分の合計は120分。20時は正午から480分であり、120分戻すと18時、すなわち午後6時が最遅開始時刻である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4109,
+    "checked_model_hash": "ee7a31a4d7cc9649279d2000b17fb97892809970835aed0806ad399470404ea3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

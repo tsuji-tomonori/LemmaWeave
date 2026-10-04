@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1007",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "e6d5c99d54d6516ab220b8c259dd2ec645c0a8d4275137919a653cd47ce82238",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A11P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03926",
+      "source_line_1based": 3927,
+      "source_record_sha256": "369f1ec18dfe3181071512eb1eddd497fac6c1c99ffa8120ea48bd4204db47ab",
+      "raw_question_sha256": "39a5e27564b2e99f38100510f7a362112ddeb0815381da2ea7638be2e0ab8084",
+      "normalized_question_sha256": "39a5e27564b2e99f38100510f7a362112ddeb0815381da2ea7638be2e0ab8084",
+      "source_question": "Fred had 212 sheets of paper. He received another 307 sheets of paper from Jane and gave Charles 156 sheets of paper. How many sheets of paper does Fred have left?",
+      "recipe_id": "gsm8k_sprint361_paper_sheets_left",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "受取った紙と渡した紙は同じ紙の在庫を増減し、他の増減はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03927",
+      "source_line_1based": 3928,
+      "source_record_sha256": "27ebf6339cd99ee8e88bd8732edf0135c5d4f7d652a3057f461ca9ae14532caa",
+      "raw_question_sha256": "3cff3a25968293115d9ec127194f8179eda862238707dbfa80312188e2b663c9",
+      "normalized_question_sha256": "3cff3a25968293115d9ec127194f8179eda862238707dbfa80312188e2b663c9",
+      "source_question": "Cindy can run at 3 miles per hour and walk at 1 mile per hour. If she runs for half a mile and then walks for half a mile, how many minutes will it take her to travel the full mile?",
+      "recipe_id": "gsm8k_sprint361_run_walk_minutes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "速度は各区間で一定で、休憩時間はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03928",
+      "source_line_1based": 3929,
+      "source_record_sha256": "c9c5d0e56e038140d72f0bbcb46ad3ba6aeff420c512202e550f7cbd8c8295f1",
+      "raw_question_sha256": "9023152d26566ef15430243ec08a129abeb2057263157c556e1686d07b8e22f2",
+      "normalized_question_sha256": "9023152d26566ef15430243ec08a129abeb2057263157c556e1686d07b8e22f2",
+      "source_question": "If it takes 20 minutes to paint a house, how many houses can you paint in 3 hours?",
+      "recipe_id": "gsm8k_sprint361_houses_painted",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各家に正確に20分かかり、家の間の移動・準備時間はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03929",
+      "source_line_1based": 3930,
+      "source_record_sha256": "815422aac40354baae4831b1ec243006a8070180157e27e90bd232fd42146b73",
+      "raw_question_sha256": "926e75a07ff149788d10b3263d1d82158fedc58feba527c8dcb1de7df1355c18",
+      "normalized_question_sha256": "926e75a07ff149788d10b3263d1d82158fedc58feba527c8dcb1de7df1355c18",
+      "source_question": "Matthew, Patrick and Alvin are eating dinner together. Matthew eats three times as many egg rolls as Patrick eats. Patrick eats half as many egg rolls as Alvin eats. If Alvin ate 4 egg rolls, how many did Matthew eat?",
+      "recipe_id": "gsm8k_sprint361_matthew_egg_rolls",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "half as manyを正確に半分、three times as manyを正確に3倍とする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03930",
+      "source_line_1based": 3931,
+      "source_record_sha256": "17031bc66c5b13bcf0ff38a9c3053eec306e09cd1a9b3032cea06925230a690c",
+      "raw_question_sha256": "d19189331b841daa0b8dd604eb11320b19270bdc88ea9ce8e90687656054df84",
+      "normalized_question_sha256": "d19189331b841daa0b8dd604eb11320b19270bdc88ea9ce8e90687656054df84",
+      "source_question": "Jonsey is awake for 2/3 of the day and spends 1/2 her time awake playing outside and the rest inside. Her brother, Riley, is awake for 3/4 of the day and spends 1/3 of his day outside and the rest inside. How much time, on average, do they spend inside?",
+      "recipe_id": "gsm8k_sprint361_inside_hours_readings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "睡眠時間は室内時間に数えず、outsideとinsideは起きている時間を分割する。曖昧なdayの基準を2通りに分離する。"
+      ],
+      "blockers": [
+        "Rileyの1/3 of his day outsideが起床時間を指すか24時間全体を指すか曖昧なため両解釈を保存した。"
+      ]
+    }
+  ]
+}

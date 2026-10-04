@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint279_average_speed",
+  "title_ja": "平均時速",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03500",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "90分で12マイル走るとき平均速度を時速で求める。",
+  "answer_ja": "時速8マイル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.average_speed",
+  "graph": "work/gsm8k-sprint279-average-speed-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "average_speed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A17P2.average_speed",
+      "title_ja": "平均速度は時速8マイル。",
+      "claim_ja": "平均速度は時速8マイル。",
+      "method_ja": "12マイル×60分を90分で割る比例式を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "距離12マイル、時間90分、1時間60分。",
+      "conclusion_ja": "時速8マイル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3501,
+    "checked_model_hash": "6e41a0ed36eeb9b3aa0fffd7706a9ff094f06d623990ae90bc3ac67c91eea1d0",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

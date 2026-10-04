@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1040",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "3fe47e3810c27e222620f5e581e0a1ee48da0796c5f0b5e3c94c86ff9405b7bc",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1004A03P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04101",
+      "source_line_1based": 4102,
+      "source_record_sha256": "358d516e57fd543ec0aefa771789579f1628a8de46151c560a5082d5f350b58b",
+      "raw_question_sha256": "49611d1dfca477c5daaad9fcc7e0d02fa7f9059aa53ce2de4e4403ab31545dc5",
+      "normalized_question_sha256": "49611d1dfca477c5daaad9fcc7e0d02fa7f9059aa53ce2de4e4403ab31545dc5",
+      "source_question": "Buffy has a sailboat with a planing hull that she sails in the Gulf of Mexico.  Under optimal wind conditions, the use of two sails brings the ship to the speed of 50 knots, whereas under the same conditions, the use of one sail brings her ship to the speed of 25 knots.  A knot is a nautical term for speed equal to 1 nautical mile per hour, and one nautical mile equals 1.15 land miles.  If she travels in her sailboat under optimal wind conditions for 4 hours with one sail and then for another 4 hours with two sails, what is the total distance, in land miles, that she will travel?",
+      "recipe_id": "gsm8k_sprint392_sailboat_land_miles",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "速度×時間で各区間を求め、最後に海里から陸上マイルへ換算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04102",
+      "source_line_1based": 4103,
+      "source_record_sha256": "073f4337ea3000acb457be3ec0325a34cbadc85f32bdea140d8dfbfe6000955d",
+      "raw_question_sha256": "7c4a1eb9004181f4e3c510e7d7c025560a66750486c3452cc6736928e12e9b42",
+      "normalized_question_sha256": "7c4a1eb9004181f4e3c510e7d7c025560a66750486c3452cc6736928e12e9b42",
+      "source_question": "You can lower the price by 20% if you buy more than fifteen units of iPhone cases. If you pay $500 to buy 18 units, what is the original price?",
+      "recipe_id": "gsm8k_sprint392_iphone_case_original_prices",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "original priceを注文全体と読む場合と単価と読む場合を分離した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04103",
+      "source_line_1based": 4104,
+      "source_record_sha256": "e18d0dd88176c1f2e5f248d4187e2bbabb682c97780b71548c120c29748708c6",
+      "raw_question_sha256": "d46fe1a12cc493fa14da0e8035208bbb6b578d2f8c1e63a2ebe63196e1b4dfef",
+      "normalized_question_sha256": "d46fe1a12cc493fa14da0e8035208bbb6b578d2f8c1e63a2ebe63196e1b4dfef",
+      "source_question": "Abraham is buying some toiletries and creates a budget of $60 for his shopping. He buys 4 shower gels for $4 each, a tube of toothpaste for $3, and a box of laundry detergent. If he has $30 remaining in his budget, how much money, in dollars, did Abraham spend on the box of laundry detergent?",
+      "recipe_id": "gsm8k_sprint392_detergent_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "残額から総支出を出し、既知商品の代金を差し引く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04104",
+      "source_line_1based": 4105,
+      "source_record_sha256": "a45daa995a863d3d1b06790e97f739fa3e992be2148b8754d4ec5ed2ad02d122",
+      "raw_question_sha256": "84319ee2d7ae922954e40f86439056bf4ac99d316403aae814faf5f2578e25f5",
+      "normalized_question_sha256": "84319ee2d7ae922954e40f86439056bf4ac99d316403aae814faf5f2578e25f5",
+      "source_question": "Annie goes to school. Today is her birthday, so Annie decided to buy some sweets for her colleagues. Every classmate got 2 candies. In the end, Annie got left with 12 candies. If there are 35 people in Annie's class in total, how much did Annie spend on candies, if one candy costs $0.1?",
+      "recipe_id": "gsm8k_sprint392_annie_candy_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "クラス35人にAnnie本人を含むという原文の通常解釈を明示した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04105",
+      "source_line_1based": 4106,
+      "source_record_sha256": "5106522358f371b3ed54a2faca231229eb9b42e0d7554cb96083aae87a39a1ca",
+      "raw_question_sha256": "b9a871d944df3529f20c9398793710b2b4d6d63d0aea1eec6c82a137184ae670",
+      "normalized_question_sha256": "b9a871d944df3529f20c9398793710b2b4d6d63d0aea1eec6c82a137184ae670",
+      "source_question": "Andrew eats 14 donuts on Monday, and half as many on Tuesday. On Wednesday Andrew eats 4 times as many as he did on Monday.  How many donuts did Andrew eat total in the three days?",
+      "recipe_id": "gsm8k_sprint392_andrew_donuts_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Wednesdayの比較対象は原文どおりMondayの14個である。"
+      ],
+      "blockers": []
+    }
+  ]
+}

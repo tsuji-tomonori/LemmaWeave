@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "is_template": false,
+  "problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01",
+  "revision": 1,
+  "origin": "exam",
+  "canonical_problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01",
+  "parent_id": "DNC-CT-2026-MAIN-M2BC-Q03-S01",
+  "occurrences": [],
+  "paper_id": "DNC-CT-2026-MAIN-M2BC",
+  "title_ja": "3次関数の導関数",
+  "domain_candidate": "calculus",
+  "collection_status": "candidate",
+  "source_locator": {
+    "provider": "大学入試センター",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017550.pdf&n=2026_ol_18_sugaku2BC.pdf",
+    "answer_document_url": "https://www.dnc.ac.jp/albums/abm.php?d=797&f=abm00006056.pdf&n=R8_%E3%80%90%E6%95%B0%E5%AD%A6%E2%85%A1%EF%BC%8C%E6%95%B0%E5%AD%A6B%EF%BC%8C%E6%95%B0%E5%AD%A6C%E3%80%91%E7%99%BA%E8%A1%A8%E7%94%A8%E6%AD%A3%E8%A7%A3.pdf",
+    "pdf_page_1_based": [13],
+    "printed_page_label": ["14"],
+    "major_question": "3",
+    "subquestion": "(1) ア",
+    "answer_slots": ["ア"],
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554",
+    "normalized_question_sha256": "07ffdd03b5a2a07ca8c028090664cf5ae261f1483c238569996c84f13df810a2"
+  },
+  "source_page_visual_review": {
+    "confirmed": true,
+    "reviewer": "author",
+    "method": "公式PDF第13ページ（冊子14頁）を再取得し、kの定義域、3次関数の係数、導関数を問う解答欄アを確認。公式正解PDFでアが選択肢2であることも照合。",
+    "pages_requested": [13],
+    "reviewed_at": "2026-09-24T09:08:00+09:00",
+    "independence": "self_review_only"
+  },
+  "mathematical_spec": {
+    "statement_ja": "kを実数とし、3次関数f(x)=(1/3)x^3-2x^2+3x+kとするとき、f′(x)を求める。",
+    "variables": [
+      {"name": "k", "type": "ℝ", "domain": "arbitrary real parameter"},
+      {"name": "x", "type": "ℝ", "domain": "arbitrary real input"}
+    ],
+    "assumptions": ["f(x)=(1/3)x^3-2x^2+3x+k"],
+    "goals": [{"id": "derivative", "lean_goal": "LemmaWeave.Problems.DNC2026M2BC.CubicDerivative.DerivativeGoal"}],
+    "answer_kind": "exact_polynomial",
+    "allowed_approximation": "none"
+  },
+  "lean": {
+    "model_files": ["LemmaWeave/Problems/DNC2026M2BC/CubicDerivativeModel.lean"],
+    "goal_declarations": ["LemmaWeave.Problems.DNC2026M2BC.CubicDerivative.DerivativeGoal"],
+    "proof_files": ["tests/lean/DNC2026CubicDerivativeIndividual.lean"]
+  },
+  "status": {
+    "transcription": "checked",
+    "semantic": "self_review_only",
+    "proof": "not_run",
+    "axiom_audit": "not_run",
+    "dependency": "not_run",
+    "inventory": "partial",
+    "educational_expansion": "complete_for_subproblem",
+    "release": "restricted"
+  },
+  "blockers": [
+    {"kind": "ci_pending", "detail": "固定Lean 4.33.1のexact-head実行は未完了。", "next_action": "CI成功後に公理・依存証拠を取り込む。"},
+    {"kind": "rights_uncertain", "detail": "公式公開資料だが原文の再配布条件は未確定。原文画像は保存しない。", "next_action": "権利確認を独立ゲートで行う。"}
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint139_calories",
+  "title_ja": "1時間あたりのカロリー差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02370",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1時間にリス6匹またはウサギ2匹。各300カロリーと800カロリー。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.calories_solution",
+  "graph": "work/gsm8k-sprint139-calories-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "calories_squirrels",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.calories_squirrels",
+      "title_ja": "リスは1800カロリー",
+      "claim_ja": "リスは1800カロリー",
+      "method_ja": "6に300を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "リスは1800カロリー",
+      "baseline_ja": "リスは1800カロリー"
+    },
+    {
+      "id": "calories_rabbits",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.calories_rabbits",
+      "title_ja": "ウサギは1600カロリー",
+      "claim_ja": "ウサギは1600カロリー",
+      "method_ja": "2に800を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ウサギは1600カロリー",
+      "baseline_ja": "ウサギは1600カロリー"
+    },
+    {
+      "id": "calories_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.calories_solution",
+      "title_ja": "リスの方が200カロリー多い",
+      "claim_ja": "リスの方が200カロリー多い",
+      "method_ja": "1800から1600を引く",
+      "requires_steps": [
+        "calories_squirrels",
+        "calories_rabbits"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "リスの方が200カロリー多い",
+      "baseline_ja": "リスの方が200カロリー多い"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2371,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_apples_remaining_kg",
+  "title_ja": "売却後に残るりんごの質量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04111",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ali has a store that sells fruits and vegetables. He puts 23 kg of kidney apples, 37 kg of golden apples and 14 kg of Canada apples on the shelves. By noon, 36 kg of apples were sold. What is the mass of apples that he has left?",
+  "answer_ja": "棚のりんごは23+37+14=74 kg。そこから36 kg売れたので、残りは74-36=38 kgである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.apples_remaining_kg",
+  "graph": "work/gsm8k-sprint393-apples-remaining-kg-graph.json",
+  "model_notes_ja": [
+    "3種類の質量を合計し、売れた質量を差し引く。"
+  ],
+  "steps": [
+    {
+      "id": "apples_remaining_kg",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.apples_remaining_kg",
+      "title_ja": "売却後に残るりんごの質量",
+      "claim_ja": "棚のりんごは23+37+14=74 kg。そこから36 kg売れたので、残りは74-36=38 kgである。",
+      "method_ja": "質量保存により初期総量から売却量を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "売却した36 kgは棚に置いたりんごに含まれる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "棚のりんごは23+37+14=74 kg。そこから36 kg売れたので、残りは74-36=38 kgである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4112,
+    "checked_model_hash": "b8e272094fd45bc669d71e114ad1b7bdd7634db50185b019fc9c24ebfb5984b3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint395_remaining_bag_capacity",
+  "title_ja": "買い物袋の残り容量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04136",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mary uses plastic grocery bags that can hold a maximum of twenty pounds. She buys 4 pounds of green beans, 6 pounds milk, and twice the amount of carrots as green beans. How many more pounds of groceries can Mary fit in that bag?",
+  "answer_ja": "いんげん豆は4ポンド、牛乳は6ポンド、にんじんは4×2=8ポンド。合計は4+6+8=18ポンドなので、上限20ポンドまであと20-18=2ポンド入る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.remaining_bag_capacity",
+  "graph": "work/gsm8k-sprint395-remaining-bag-capacity-graph.json",
+  "model_notes_ja": [
+    "重量をポンドで統一し、最大容量との差を求める。"
+  ],
+  "steps": [
+    {
+      "id": "remaining_bag_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.remaining_bag_capacity",
+      "title_ja": "買い物袋の残り容量",
+      "claim_ja": "いんげん豆は4ポンド、牛乳は6ポンド、にんじんは4×2=8ポンド。合計は4+6+8=18ポンドなので、上限20ポンドまであと20-18=2ポンド入る。",
+      "method_ja": "にんじんの重量を倍数関係から求め、全重量を容量上限から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各品目の重量を合計し、袋の20ポンド上限以外の制約はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "いんげん豆は4ポンド、牛乳は6ポンド、にんじんは4×2=8ポンド。合計は4+6+8=18ポンドなので、上限20ポンドまであと20-18=2ポンド入る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4137,
+    "checked_model_hash": "e9e9f249f5ee58afeb313bde90c133dbf91e5df4cc98214b335a361da47b22bd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

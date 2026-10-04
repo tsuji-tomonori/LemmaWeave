@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint142_gre",
+  "title_ja": "GRE単語の1日学習数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02411",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "800語の20%は既知で、残りを40日で等分して学ぶ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.gre_solution",
+  "graph": "work/gsm8k-sprint142-gre-graph.json",
+  "model_notes_ja": [
+    "20%は5分の1という正確な比率で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "gre_known",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.gre_known",
+      "title_ja": "既知は160語",
+      "claim_ja": "既知は160語",
+      "method_ja": "800の20%を5分の1として求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "既知は160語",
+      "baseline_ja": "既知は160語"
+    },
+    {
+      "id": "gre_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.gre_remaining",
+      "title_ja": "未習は640語",
+      "claim_ja": "未習は640語",
+      "method_ja": "800から160を引く",
+      "requires_steps": [
+        "gre_known"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "未習は640語",
+      "baseline_ja": "未習は640語"
+    },
+    {
+      "id": "gre_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.gre_solution",
+      "title_ja": "1日16語",
+      "claim_ja": "1日16語",
+      "method_ja": "640を40日へ等分する",
+      "requires_steps": [
+        "gre_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1日16語",
+      "baseline_ja": "1日16語"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2412,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

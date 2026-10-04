@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint40_ages",
+  "title_ja": "Kyleの年齢の解釈差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00887",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "非標準表現2 times olderの2通りの読みを分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.ages_solution",
+  "graph": "work/gsm8k-sprint40-ages-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "参照解答25歳は2 times olderをtwice as oldと読む追加解釈に対応する。"
+  ],
+  "steps": [
+    {
+      "id": "ages_ratio_frederick",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.ages_ratio_frederick",
+      "title_ja": "倍率解釈のFrederick",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Tyson20歳の2倍。",
+      "conclusion_ja": "40歳。",
+      "baseline_ja": "2×20=40。"
+    },
+    {
+      "id": "ages_ratio_julian",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.ages_ratio_julian",
+      "title_ja": "倍率解釈のJulian",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Frederickより20歳若い。",
+      "conclusion_ja": "20歳。",
+      "baseline_ja": "20+20=40。"
+    },
+    {
+      "id": "ages_ratio_kyle",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.ages_ratio_kyle",
+      "title_ja": "倍率解釈のKyle",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Julianより5歳上。",
+      "conclusion_ja": "25歳。",
+      "baseline_ja": "20+5=25。"
+    },
+    {
+      "id": "ages_additive_frederick",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.ages_additive_frederick",
+      "title_ja": "字義的増加解釈のFrederick",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Tysonより200%年上、すなわち元の年齢に2倍分を加える。",
+      "conclusion_ja": "60歳。",
+      "baseline_ja": "20+2×20=60。"
+    },
+    {
+      "id": "ages_additive_julian",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.ages_additive_julian",
+      "title_ja": "字義的増加解釈のJulian",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Frederick60歳より20歳若い。",
+      "conclusion_ja": "40歳。",
+      "baseline_ja": "40+20=60。"
+    },
+    {
+      "id": "ages_additive_kyle",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.ages_additive_kyle",
+      "title_ja": "字義的増加解釈のKyle",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Julian40歳より5歳上。",
+      "conclusion_ja": "45歳。",
+      "baseline_ja": "40+5=45。"
+    },
+    {
+      "id": "ages_answers_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.ages_answers_differ",
+      "title_ja": "非一意性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2つの自然な解釈で答えが異なる。",
+      "conclusion_ja": "原文だけでは25歳か45歳かを一意に決められない。",
+      "baseline_ja": "25≠45。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 888,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

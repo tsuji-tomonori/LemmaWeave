@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint335_milkshake_cost",
+  "title_ja": "ミルクシェイク代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03797",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A20P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ivan had $10 and spent 1/5 of it on cupcakes. He then spent some money on a milkshake and had only $3 left. How much is the milkshake?",
+  "answer_ja": "カップケーキは10ドルの1/5で2ドル。最終残高3ドルなので支出総額は7ドル。そのうち2ドルを除くとミルクシェイクは5ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A20P2.milkshake_cost",
+  "graph": "work/gsm8k-sprint335-milkshake-cost-graph.json",
+  "model_notes_ja": [
+    "cupcakesへの支出は所持金10ドルの1/5で、他の支出はミルクシェイクだけ。"
+  ],
+  "steps": [
+    {
+      "id": "milkshake_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A20P2.milkshake_cost",
+      "title_ja": "ミルクシェイク代",
+      "claim_ja": "カップケーキは10ドルの1/5で2ドル。最終残高3ドルなので支出総額は7ドル。そのうち2ドルを除くとミルクシェイクは5ドル。",
+      "method_ja": "総支出から既知のカップケーキ代を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10は5で割り切れ、支出は所持金以下。",
+      "baseline_ja": "整数・分数・割合・速さ・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "5ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3798,
+    "checked_model_hash": "4563c571abd65d684802f308f6e097dc40143cfbfe8ce85fd57c51f3dbd1634e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint369_unwilted_roses",
+  "title_ja": "2日後に残るバラ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03967",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jordan gave Danielle two dozen roses and a box of chocolates as a birthday day gift.  Later that day, after Jordan left, Danielle traded the box of chocolates for another dozen roses.  Overnight, half of the roses wilted, and  Danielle decided to throw the wilted flowers away.  On the second day, another half of the remaining flowers wilted, and she threw the wilted ones away.  How many unwilted flowers remained?",
+  "answer_ja": "最初の2ダースは24本で、交換により1ダース増えて36本。1日目に半分残って18本、2日目も半分残って9本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P3.unwilted_roses",
+  "graph": "work/gsm8k-sprint369-unwilted-roses-graph.json",
+  "model_notes_ja": [
+    "各日、直前に残ったバラの正確に半分が枯れる。"
+  ],
+  "steps": [
+    {
+      "id": "unwilted_roses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P3.unwilted_roses",
+      "title_ja": "2日後に残るバラ",
+      "claim_ja": "最初の2ダースは24本で、交換により1ダース増えて36本。1日目に半分残って18本、2日目も半分残って9本。",
+      "method_ja": "ダースを本数へ直し、各夜に残数を2で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各日、直前に残ったバラの正確に半分が枯れる。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1日目に半分残って18本、2日目も半分残って9本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3968,
+    "checked_model_hash": "9cbf61cb3e3d93cf400d64347cf69a8afce49725553acf4e55cfc3e341427d26",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

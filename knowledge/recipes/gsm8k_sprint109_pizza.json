@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint109_pizza",
+  "title_ja": "残るピザの枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01920",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "朝食、昼食、間食、夕食を順に15枚から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.pizza_solution",
+  "graph": "work/gsm8k-sprint109-pizza-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pizza_breakfast",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pizza_breakfast",
+      "title_ja": "朝食後は11枚。",
+      "claim_ja": "朝食後は11枚。",
+      "method_ja": "15−4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pizza_lunch",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pizza_lunch",
+      "title_ja": "昼食後は9枚。",
+      "claim_ja": "昼食後は9枚。",
+      "method_ja": "11−2。",
+      "requires_steps": [
+        "pizza_breakfast"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pizza_snack",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pizza_snack",
+      "title_ja": "間食後は7枚。",
+      "claim_ja": "間食後は7枚。",
+      "method_ja": "9−2。",
+      "requires_steps": [
+        "pizza_lunch"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pizza_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pizza_solution",
+      "title_ja": "夕食後は2枚。",
+      "claim_ja": "夕食後は2枚。",
+      "method_ja": "7−5。",
+      "requires_steps": [
+        "pizza_snack"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1921,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

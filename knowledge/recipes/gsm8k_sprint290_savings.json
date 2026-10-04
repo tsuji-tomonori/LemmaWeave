@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint290_savings",
+  "title_ja": "貯金の残額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03556",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6〜8月に合計を貯め、125ドル超なら25ドルを受け取り、66ドルを使った後の残額。",
+  "answer_ja": "46ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.savings_remaining",
+  "graph": "work/gsm8k-sprint290-savings-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "savings_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.savings_total",
+      "title_ja": "貯金合計は112ドル。",
+      "claim_ja": "貯金合計は112ドル。",
+      "method_ja": "21+46+45を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "貯金合計は112ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "savings_threshold_not_met",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.savings_threshold_not_met",
+      "title_ja": "112ドルは125ドル以下。",
+      "claim_ja": "112ドルは125ドル以下。",
+      "method_ja": "ボーナス条件の厳密な不等号を確認する。",
+      "requires_steps": [
+        "savings_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "112ドルは125ドル以下。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "savings_bonus_zero",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.savings_bonus_zero",
+      "title_ja": "叔母からのボーナスは0ドル。",
+      "claim_ja": "叔母からのボーナスは0ドル。",
+      "method_ja": "125ドル超ではないので条件を満たさない。",
+      "requires_steps": [
+        "savings_threshold_not_met"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "叔母からのボーナスは0ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "savings_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.savings_spent",
+      "title_ja": "支出合計は66ドル。",
+      "claim_ja": "支出合計は66ドル。",
+      "method_ja": "12+54を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "支出合計は66ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "savings_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.savings_remaining",
+      "title_ja": "残額は46ドル。",
+      "claim_ja": "残額は46ドル。",
+      "method_ja": "112+0-66を計算する。",
+      "requires_steps": [
+        "savings_total",
+        "savings_bonus_zero",
+        "savings_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "残額は46ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3557,
+    "checked_model_hash": "020cdee1ea13411c1334c93df472b3456875a0c40bed236bd20f22fa8aa70863",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

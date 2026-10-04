@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint261_house",
+  "title_ja": "Nadaの家の面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03349",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Saraの家はNadaの家の2倍より100平方フィート広く、Saraは1000平方フィート。",
+  "answer_ja": "450平方フィート",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.house_nada",
+  "graph": "work/gsm8k-sprint261-house-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "house_relation",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.house_relation",
+      "title_ja": "面積関係は1000=2n+100。",
+      "claim_ja": "面積関係は1000=2n+100。",
+      "method_ja": "原文を一次方程式へ写す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "面積単位は平方フィートで統一する。",
+      "conclusion_ja": "1000=2n+100。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "house_nada",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P2.house_nada",
+      "title_ja": "Nadaの家は450平方フィート。",
+      "claim_ja": "Nadaの家は450平方フィート。",
+      "method_ja": "(1000-100)÷2。",
+      "requires_steps": [
+        "house_relation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "自然数面積で方程式を解く。",
+      "conclusion_ja": "450平方フィート。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3350,
+    "checked_model_hash": "a0f76cfdd10b82fdbb919ce5bb0b133a3278e03e095982680292d878ed2eab78",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

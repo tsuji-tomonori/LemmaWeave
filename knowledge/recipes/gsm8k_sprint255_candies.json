@@ -1,0 +1,114 @@
+{
+  "id": "gsm8k_sprint255_candies",
+  "title_ja": "分配後の友人の飴",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03316",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "残り50個と友人の持参分を等分し、友人が10個食べた後の個数を求める。",
+  "answer_ja": "sheがShellyを指す追加条件では85個。別の先行詞解釈では持参量が定まらず、原文だけでは一意でない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.candies_not_unique_without_antecedent",
+  "graph": "work/gsm8k-sprint255-candies-graph.json",
+  "model_notes_ja": [
+    "she originally hadのsheをShellyと読む条件では持参140個、答え85個。",
+    "友人の元の所持量を指すなら値が与えられず、一例として持参100個なら65個となる。"
+  ],
+  "steps": [
+    {
+      "id": "candies_shelly_original",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.candies_shelly_original",
+      "title_ja": "Shellyは元々70個持っていた。",
+      "claim_ja": "Shellyは元々70個持っていた。",
+      "method_ja": "50+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "食べた20個と残った50個を戻す。",
+      "conclusion_ja": "70個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "candies_brought_if_shelly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.candies_brought_if_shelly",
+      "title_ja": "she=Shellyなら友人の持参は140個。",
+      "claim_ja": "she=Shellyなら友人の持参は140個。",
+      "method_ja": "70×2。",
+      "requires_steps": [
+        "candies_shelly_original"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "twice as muchの先行詞をShellyとする。",
+      "conclusion_ja": "140個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "candies_each_if_shelly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.candies_each_if_shelly",
+      "title_ja": "等分直後は各95個。",
+      "claim_ja": "等分直後は各95個。",
+      "method_ja": "(50+140)÷2。",
+      "requires_steps": [
+        "candies_brought_if_shelly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "合計190個を2人で等分する。",
+      "conclusion_ja": "95個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "candies_after_if_shelly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.candies_after_if_shelly",
+      "title_ja": "友人が10個食べると85個。",
+      "claim_ja": "友人が10個食べると85個。",
+      "method_ja": "95-10。",
+      "requires_steps": [
+        "candies_each_if_shelly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "友人が自分の取り分から10個食べる。",
+      "conclusion_ja": "85個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "candies_other_antecedent_example",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.candies_other_antecedent_example",
+      "title_ja": "持参100個の別具体例では65個。",
+      "claim_ja": "持参100個の別具体例では65個。",
+      "method_ja": "(50+100)÷2-10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "友人の元の所持量が50個だった場合の具体例。",
+      "conclusion_ja": "65個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "candies_not_unique_without_antecedent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.candies_not_unique_without_antecedent",
+      "title_ja": "先行詞を固定しなければ答えは一意でない。",
+      "claim_ja": "先行詞を固定しなければ答えは一意でない。",
+      "method_ja": "85≠65。",
+      "requires_steps": [
+        "candies_after_if_shelly",
+        "candies_other_antecedent_example"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文が持参量を決める先行詞を明示しない。",
+      "conclusion_ja": "追加条件が必要。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3317,
+    "checked_model_hash": "7c3a1f7c8aca217cb6d65b876bb8a8b952692178eeaa68a3d9b1334e7d3c72bd",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint153_cupboards",
+  "title_ja": "棚破損後の展示数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02590",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "背高棚20個、幅広棚はその2倍。狭い棚は3段で15個を等分していたが1段破損した。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A10.cupboards_solution",
+  "graph": "work/gsm8k-sprint153-cupboards-graph.json",
+  "model_notes_ja": [
+    "all cupboards are full は、破損後に使用可能な棚段を満杯にする意味とする。"
+  ],
+  "steps": [
+    {
+      "id": "cupboards_wide",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.cupboards_wide",
+      "title_ja": "幅広棚は40個",
+      "claim_ja": "幅広棚は40個",
+      "method_ja": "20個を2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "all cupboards are full は、破損後に使用可能な棚段を満杯にする意味とする。",
+      "conclusion_ja": "幅広棚は40個",
+      "baseline_ja": "幅広棚は40個"
+    },
+    {
+      "id": "cupboards_per_shelf",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.cupboards_per_shelf",
+      "title_ja": "狭い棚は1段5個",
+      "claim_ja": "狭い棚は1段5個",
+      "method_ja": "15個を3段で等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "all cupboards are full は、破損後に使用可能な棚段を満杯にする意味とする。",
+      "conclusion_ja": "狭い棚は1段5個",
+      "baseline_ja": "狭い棚は1段5個"
+    },
+    {
+      "id": "cupboards_narrow",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.cupboards_narrow",
+      "title_ja": "破損後の狭い棚は10個",
+      "claim_ja": "破損後の狭い棚は10個",
+      "method_ja": "残る2段に各5個を置く",
+      "requires_steps": [
+        "cupboards_per_shelf"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "all cupboards are full は、破損後に使用可能な棚段を満杯にする意味とする。",
+      "conclusion_ja": "破損後の狭い棚は10個",
+      "baseline_ja": "破損後の狭い棚は10個"
+    },
+    {
+      "id": "cupboards_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.cupboards_solution",
+      "title_ja": "現在の展示は70個",
+      "claim_ja": "現在の展示は70個",
+      "method_ja": "20・40・10を足す",
+      "requires_steps": [
+        "cupboards_wide",
+        "cupboards_narrow"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "all cupboards are full は、破損後に使用可能な棚段を満杯にする意味とする。",
+      "conclusion_ja": "現在の展示は70個",
+      "baseline_ja": "現在の展示は70個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2591,
+    "checked_model_hash": "46e79fb8178be609e6fbfa0886df34cbbb62c16290d04ba3642b6415e85d7526",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

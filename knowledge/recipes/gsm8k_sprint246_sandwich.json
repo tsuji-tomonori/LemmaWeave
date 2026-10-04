@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint246_sandwich",
+  "title_ja": "サンドイッチの残数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03256",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A04P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日目と2日目の消費数を順に引く。",
+  "answer_ja": "2個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A04P2.sandwich_left",
+  "graph": "work/gsm8k-sprint246-sandwich-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sandwich_first_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P2.sandwich_first_day",
+      "title_ja": "1日目は6個食べる。",
+      "claim_ja": "1日目は6個食べる。",
+      "method_ja": "12÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "初めの半分。",
+      "conclusion_ja": "6個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "sandwich_second_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P2.sandwich_second_day",
+      "title_ja": "2日目は4個食べる。",
+      "claim_ja": "2日目は4個食べる。",
+      "method_ja": "6-2。",
+      "requires_steps": [
+        "sandwich_first_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1日目より2個少ない。",
+      "conclusion_ja": "4個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "sandwich_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P2.sandwich_left",
+      "title_ja": "残りは2個。",
+      "claim_ja": "残りは2個。",
+      "method_ja": "12-6-4。",
+      "requires_steps": [
+        "sandwich_first_day",
+        "sandwich_second_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2日分を初めの12個から引く。",
+      "conclusion_ja": "2個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3257,
+    "checked_model_hash": "ea57bd12ea78f67003be8106a0808a4724c28b64a2498d0937f1ae0af3f9efc4",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

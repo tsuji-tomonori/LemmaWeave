@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint361_paper_sheets_left",
+  "title_ja": "残った紙の枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03926",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Fred had 212 sheets of paper. He received another 307 sheets of paper from Jane and gave Charles 156 sheets of paper. How many sheets of paper does Fred have left?",
+  "answer_ja": "最初の212枚に307枚を受け取って519枚。156枚を渡したので519−156=363枚残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A11P1.paper_sheets_left",
+  "graph": "work/gsm8k-sprint361-paper-sheets-left-graph.json",
+  "model_notes_ja": [
+    "受取った紙と渡した紙は同じ紙の在庫を増減し、他の増減はない。"
+  ],
+  "steps": [
+    {
+      "id": "paper_sheets_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A11P1.paper_sheets_left",
+      "title_ja": "残った紙の枚数",
+      "claim_ja": "最初の212枚に307枚を受け取って519枚。156枚を渡したので519−156=363枚残る。",
+      "method_ja": "初期枚数に受取枚数を加え、渡した枚数を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "519枚は156枚以上。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "363枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3927,
+    "checked_model_hash": "e6d5c99d54d6516ab220b8c259dd2ec645c0a8d4275137919a653cd47ce82238",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

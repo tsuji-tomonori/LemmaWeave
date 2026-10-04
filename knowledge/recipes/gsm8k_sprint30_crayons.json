@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint30_crayons",
+  "title_ja": "クレヨン全パックの価値",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00737",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "購入後のパック数と1パックの価格から総価値を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A30.crayons_solution",
+  "graph": "work/gsm8k-sprint30-crayons-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A30.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "2.5ドルを250セントとして整数化する。"
+  ],
+  "steps": [
+    {
+      "id": "crayons_packs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.crayons_packs",
+      "title_ja": "購入後のパック数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4パック所有し2パック購入。",
+      "conclusion_ja": "6パック。",
+      "baseline_ja": "4+2=6。"
+    },
+    {
+      "id": "crayons_value",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A30.crayons_value",
+      "title_ja": "総価値",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1パック250セントを6パック。",
+      "conclusion_ja": "1500セント、すなわち15ドル。",
+      "baseline_ja": "6×250=1500。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 738,
+    "checked_model_hash": "b1930db9f40bc04dab8b704307df2bcce3f88e2b26bdc2602203e84d978d3b8c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

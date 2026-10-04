@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint98_detour",
+  "title_ja": "道に迷った帰宅時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01755",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "通常速度を求め、50マイル外れて同じ地点へ戻る往復100マイルの追加時間を加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.detour_solution",
+  "graph": "work/gsm8k-sprint98-detour-graph.json",
+  "model_notes_ja": [
+    "『50 miles out of the way and has to get back on track』を、50マイル外れた後に50マイル戻る合計100マイルの追加走行として明示した。"
+  ],
+  "steps": [
+    {
+      "id": "detour_speed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.detour_speed",
+      "title_ja": "速度は時速50マイル。",
+      "claim_ja": "速度は時速50マイル。",
+      "method_ja": "150÷3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "通常経路で速度一定。",
+      "conclusion_ja": "50×3=150。",
+      "baseline_ja": "50×3=150。"
+    },
+    {
+      "id": "detour_distance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.detour_distance",
+      "title_ja": "追加距離は100マイル。",
+      "claim_ja": "追加距離は100マイル。",
+      "method_ja": "50マイル外れる分と復帰する50マイルを加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参照解答どおり同じ経路で50マイル戻って軌道復帰する。",
+      "conclusion_ja": "2×50=100。",
+      "baseline_ja": "2×50=100。"
+    },
+    {
+      "id": "detour_extra_time",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.detour_extra_time",
+      "title_ja": "追加時間は2時間。",
+      "claim_ja": "追加時間は2時間。",
+      "method_ja": "100÷50。",
+      "requires_steps": [
+        "detour_speed",
+        "detour_distance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "迂回中も同じ速度。",
+      "conclusion_ja": "2×50=100。",
+      "baseline_ja": "2×50=100。"
+    },
+    {
+      "id": "detour_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.detour_solution",
+      "title_ja": "旅行時間は5時間。",
+      "claim_ja": "旅行時間は5時間。",
+      "method_ja": "通常3時間+追加2時間。",
+      "requires_steps": [
+        "detour_extra_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "通常経路時間へ迂回時間を加える。",
+      "conclusion_ja": "3+2=5。",
+      "baseline_ja": "3+2=5。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1756,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "gsm8k_sprint100_easter_eggs",
+  "title_ja": "5個のキャンディを得る確率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01786",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全体を100百分率点として、青と紫の有利部分を条件付き割合から求めて加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.eggs_solution",
+  "graph": "work/gsm8k-sprint100-easter-eggs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "eggs_blue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.eggs_blue",
+      "title_ja": "青は80%。",
+      "claim_ja": "青は80%。",
+      "method_ja": "4/5を百分率へ換算。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4/5=80/100。",
+      "conclusion_ja": "80。",
+      "baseline_ja": "80。"
+    },
+    {
+      "id": "eggs_purple",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.eggs_purple",
+      "title_ja": "紫は20%。",
+      "claim_ja": "紫は20%。",
+      "method_ja": "1/5を百分率へ換算。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1/5=20/100。",
+      "conclusion_ja": "20。",
+      "baseline_ja": "20。"
+    },
+    {
+      "id": "eggs_partition",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.eggs_partition",
+      "title_ja": "青と紫で100%。",
+      "claim_ja": "青と紫で100%。",
+      "method_ja": "80+20。",
+      "requires_steps": [
+        "eggs_blue",
+        "eggs_purple"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "色は青または紫で排他的。",
+      "conclusion_ja": "100。",
+      "baseline_ja": "100。"
+    },
+    {
+      "id": "eggs_blue_five",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.eggs_blue_five",
+      "title_ja": "青かつ5個入りは20%。",
+      "claim_ja": "青かつ5個入りは20%。",
+      "method_ja": "青80%の4分の1。",
+      "requires_steps": [
+        "eggs_blue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "青のうち1/4。",
+      "conclusion_ja": "20×4=80。",
+      "baseline_ja": "20×4=80。"
+    },
+    {
+      "id": "eggs_purple_five",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.eggs_purple_five",
+      "title_ja": "紫かつ5個入りは10%。",
+      "claim_ja": "紫かつ5個入りは10%。",
+      "method_ja": "紫20%の半分。",
+      "requires_steps": [
+        "eggs_purple"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "紫のうち1/2。",
+      "conclusion_ja": "10×2=20。",
+      "baseline_ja": "10×2=20。"
+    },
+    {
+      "id": "eggs_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.eggs_solution",
+      "title_ja": "5個入りを引く確率は30%。",
+      "claim_ja": "5個入りを引く確率は30%。",
+      "method_ja": "排他的な20%と10%を加える。",
+      "requires_steps": [
+        "eggs_blue_five",
+        "eggs_purple_five"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "青と紫は排他的。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1787,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

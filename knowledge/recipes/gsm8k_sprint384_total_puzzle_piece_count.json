@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint384_total_puzzle_piece_count",
+  "title_ja": "3つのパズルの総ピース数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04043",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A20P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "John buys 3 puzzles.  The first puzzle has 1000 pieces.  The second and third puzzles have the same number of pieces and each has 50% more pieces.  How many total pieces are all the puzzles?",
+  "answer_ja": "第2・第3パズルはそれぞれ第1の1000ピースより50%多いので、増分は500、各1500ピース。合計は1000+1500+1500=4000ピースである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A20P3.total_puzzle_piece_count",
+  "graph": "work/gsm8k-sprint384-total-puzzle-piece-count-graph.json",
+  "model_notes_ja": [
+    "each has 50% more piecesは第2・第3がそれぞれ第1の1000ピースより50%多いことを意味する。"
+  ],
+  "steps": [
+    {
+      "id": "total_puzzle_piece_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A20P3.total_puzzle_piece_count",
+      "title_ja": "3つのパズルの総ピース数",
+      "claim_ja": "第2・第3パズルはそれぞれ第1の1000ピースより50%多いので、増分は500、各1500ピース。合計は1000+1500+1500=4000ピースである。",
+      "method_ja": "基準1000の50%を増分として各同数パズルへ加え、3個分を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "each has 50% more piecesは第2・第3がそれぞれ第1の1000ピースより50%多いことを意味する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "第2・第3パズルはそれぞれ第1の1000ピースより50%多いので、増分は500、各1500ピース。合計は1000+1500+1500=4000ピースである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4044,
+    "checked_model_hash": "a62610e00fc6e2cddeef8c53f2883da770873df347c29a2363815214b1959885",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

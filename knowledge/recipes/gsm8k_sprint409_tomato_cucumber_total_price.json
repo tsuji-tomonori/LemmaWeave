@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint409_tomato_cucumber_total_price",
+  "title_ja": "トマト2kgとキュウリ3kgの合計価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04164",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "One kilogram of tomatoes is 20% cheaper than one kilogram of cucumbers. One kilogram of cucumbers costs $5. What is the price of two kilograms of tomatoes and three kilograms of cucumbers?",
+  "answer_ja": "キュウリ1kgは5ドル。トマトは20%安いので5-1=4ドル/kg。トマト2kgは8ドル、キュウリ3kgは15ドル、合計23ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.tomato_cucumber_total_price",
+  "graph": "work/gsm8k-sprint409-tomato-cucumber-total-price-graph.json",
+  "model_notes_ja": [
+    "『20% cheaper than』を基準価格の80%として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "tomato_cucumber_total_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.tomato_cucumber_total_price",
+      "title_ja": "トマト2kgとキュウリ3kgの合計価格",
+      "claim_ja": "キュウリ1kgは5ドル。トマトは20%安いので5-1=4ドル/kg。トマト2kgは8ドル、キュウリ3kgは15ドル、合計23ドル。",
+      "method_ja": "基準価格5ドルの20%を値引きし、各重量分の価格を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20%はキュウリの1kg価格5ドルを基準とし、価格は重量に比例する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "キュウリ1kgは5ドル。トマトは20%安いので5-1=4ドル/kg。トマト2kgは8ドル、キュウリ3kgは15ドル、合計23ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4165,
+    "checked_model_hash": "ebc911943a29150f12ec60bb6d4dc487b2dbc51ad4ce3124d6f442fe7601806e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

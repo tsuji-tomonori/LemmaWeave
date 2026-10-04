@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint411_dimes_nickels_pennies",
+  "title_ja": "10枚のダイムと10枚のニッケルの価値",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04166",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A dime has the same value as 10 pennies and a nickel has the same value as 5 pennies. How many pennies will Grace have by exchanging her 10 dimes and 10 nickels?",
+  "answer_ja": "ダイム10枚は10×10=100ペニー、ニッケル10枚は10×5=50ペニー。合計は100+50=150ペニー。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P1.dimes_nickels_pennies",
+  "graph": "work/gsm8k-sprint411-dimes-nickels-pennies-graph.json",
+  "model_notes_ja": [
+    "通貨単位をペニーに統一する。"
+  ],
+  "steps": [
+    {
+      "id": "dimes_nickels_pennies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P1.dimes_nickels_pennies",
+      "title_ja": "10枚のダイムと10枚のニッケルの価値",
+      "claim_ja": "ダイム10枚は10×10=100ペニー、ニッケル10枚は10×5=50ペニー。合計は100+50=150ペニー。",
+      "method_ja": "硬貨の枚数に1枚当たりのペニー価値を掛け、2種類を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ダイム=10ペニー、1ニッケル=5ペニーで、全硬貨を交換する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "ダイム10枚は10×10=100ペニー、ニッケル10枚は10×5=50ペニー。合計は100+50=150ペニー。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4167,
+    "checked_model_hash": "3c32e187637ccbd46a88237a9571baa51f29659c3285ecc656e312e8eb1b2b18",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

@@ -1,0 +1,111 @@
+{
+  "date": "2026-09-30",
+  "run_id": "20260930T190000+0900-solve-19",
+  "scheduled_slot": "2026-09-30T19:00:00+09:00",
+  "slot_role": "solve_15_individual_gsm8k",
+  "base_sha": "f712d45f5ca1b9a46da5e46f57ef067ba6802f71",
+  "started_at": "2026-09-30T10:02:39Z",
+  "finished_at": "2026-09-30T10:35:10Z",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03431",
+    "external-gsm8k-main-3101c7d50724:train:03432",
+    "external-gsm8k-main-3101c7d50724:train:03433",
+    "external-gsm8k-main-3101c7d50724:train:03434",
+    "external-gsm8k-main-3101c7d50724:train:03435",
+    "external-gsm8k-main-3101c7d50724:train:03436",
+    "external-gsm8k-main-3101c7d50724:train:03437",
+    "external-gsm8k-main-3101c7d50724:train:03438",
+    "external-gsm8k-main-3101c7d50724:train:03439",
+    "external-gsm8k-main-3101c7d50724:train:03440",
+    "external-gsm8k-main-3101c7d50724:train:03441",
+    "external-gsm8k-main-3101c7d50724:train:03442",
+    "external-gsm8k-main-3101c7d50724:train:03443",
+    "external-gsm8k-main-3101c7d50724:train:03444",
+    "external-gsm8k-main-3101c7d50724:train:03445"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03431",
+    "external-gsm8k-main-3101c7d50724:train:03432",
+    "external-gsm8k-main-3101c7d50724:train:03433",
+    "external-gsm8k-main-3101c7d50724:train:03434",
+    "external-gsm8k-main-3101c7d50724:train:03435",
+    "external-gsm8k-main-3101c7d50724:train:03436",
+    "external-gsm8k-main-3101c7d50724:train:03437",
+    "external-gsm8k-main-3101c7d50724:train:03438",
+    "external-gsm8k-main-3101c7d50724:train:03439",
+    "external-gsm8k-main-3101c7d50724:train:03440",
+    "external-gsm8k-main-3101c7d50724:train:03441",
+    "external-gsm8k-main-3101c7d50724:train:03442",
+    "external-gsm8k-main-3101c7d50724:train:03443",
+    "external-gsm8k-main-3101c7d50724:train:03444",
+    "external-gsm8k-main-3101c7d50724:train:03445"
+  ],
+  "deferred": [],
+  "missed_slots_note_ja": "01時、03〜14時および17時は未実行のまま。19時割当だけを処理し、未実行枠を上乗せしていない。",
+  "answers": {
+    "train:03431": "7ドル/分",
+    "train:03432": "8個",
+    "train:03433": "8分",
+    "train:03434": "370g",
+    "train:03435": "50cal/ドル",
+    "train:03436": "9個",
+    "train:03437": "35ドル",
+    "train:03438": "90ドル",
+    "train:03439": "20個",
+    "train:03440": "15ドル（1kg単価読み）/13.50ドル（2kg全体価格読み）",
+    "train:03441": "205ドル",
+    "train:03442": "30ドル",
+    "train:03443": "525ドル",
+    "train:03444": "4ドル",
+    "train:03445": "10ドル"
+  },
+  "self_review": {
+    "level": "self_review_only",
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "explanation_lines": 58,
+    "named_lean_theorems": 58,
+    "forbidden_tokens": 0,
+    "ambiguity_notes": [
+      "train:03440の『2 kilograms of pasta that costs $1.5』を、1kgあたり1.5ドルと、2kg全体で1.5ドルの2通りに分離した。"
+    ]
+  },
+  "model_sha256": {
+    "Sprint0930A19P1Models.lean": "4b752d48057a5e10978714dbbb4052c3e6883a1b1781877e34c600b936baefa0",
+    "Sprint0930A19P2Models.lean": "d5acf92b307ec3d7ed43b4d378592d8647ade414daa809efcf43159ea2a3869e",
+    "Sprint0930A19P3Models.lean": "5247719a1113d2979bca9d40ed8e9b1439c133474e63b6760ce4f0079b7430cb"
+  },
+  "checkpoints": [
+    "42445ec1b99fa0573c0bbe1e61a2360081739516",
+    "ec934cadfe3c0608f0c25c51b23e75f0096ffbd5",
+    "138071a05c803d51c01407d50ba0d25c267f557d"
+  ],
+  "queue": {
+    "commit": "9f8b4d0a87cb361729593f4af1cd1b65ef026269",
+    "sha256": "4b4367e96dd321e48ee25c58f53761be03f6744ffcd40cca86d8e1d62f7d43c9",
+    "total": 8792,
+    "unique_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "status_overlap": 0,
+    "solution_ready": 518,
+    "awaiting_verification": 2734,
+    "pending": 5540
+  },
+  "verification": {
+    "lean_version_target": "4.33.1",
+    "kernel_build": "not_run",
+    "axiom_audit": "not_run",
+    "dependency_audit": "not_run",
+    "static_forbidden_token_scan": "passed",
+    "reason_ja": "3モデル・15レシピ・3バッチのハッシュ、58説明行と58名前付きLean宣言、禁止トークン0件を静的照合した。実行環境にlake/leanがなく、exact-head CI証拠も未取得。"
+  },
+  "pr": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merged": false
+  },
+  "assurance": "INCONCLUSIVE"
+}

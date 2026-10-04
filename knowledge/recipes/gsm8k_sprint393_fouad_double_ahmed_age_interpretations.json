@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_fouad_double_ahmed_age_interpretations",
+  "title_ja": "Fouadの年齢が2倍になる時点の解釈",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04117",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ahmed is 11 years old and Fouad is 26 years old. In how many years will Fouad's age be double Ahmed's current age?",
+  "answer_ja": "原文の「Ahmedの現在の年齢」の2倍は22歳だが、Fouadは既に26歳なので、将来の非負整数年tについて26+t=22となる時点はない。もし意図が「その時点のAhmedの年齢の2倍」なら26+t=2(11+t)となり、t=4年である。参照解答4年は後者の読みだけに対応する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P3.fouad_double_ahmed_age_interpretations",
+  "graph": "work/gsm8k-sprint393-fouad-double-ahmed-age-interpretations-graph.json",
+  "model_notes_ja": [
+    "current age を厳密に固定した原文解釈と、参照解答が用いた同時加齢解釈を分離する。"
+  ],
+  "steps": [
+    {
+      "id": "fouad_double_ahmed_age_interpretations",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P3.fouad_double_ahmed_age_interpretations",
+      "title_ja": "Fouadの年齢が2倍になる時点の解釈",
+      "claim_ja": "原文の「Ahmedの現在の年齢」の2倍は22歳だが、Fouadは既に26歳なので、将来の非負整数年tについて26+t=22となる時点はない。もし意図が「その時点のAhmedの年齢の2倍」なら26+t=2(11+t)となり、t=4年である。参照解答4年は後者の読みだけに対応する。",
+      "method_ja": "原文解釈では下限26>22を示し、別解釈では両者に同じ年数を加えた方程式を確認する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4年という答えには current を無視し、将来のAhmedの年齢と比較する追加解釈が必要。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "原文の「Ahmedの現在の年齢」の2倍は22歳だが、Fouadは既に26歳なので、将来の非負整数年tについて26+t=22となる時点はない。もし意図が「その時点のAhmedの年齢の2倍」なら26+t=2(11+t)となり、t=4年である。参照解答4年は後者の読みだけに対応する。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4118,
+    "checked_model_hash": "5e660ee0bcfcf32972e24199c4a50d234de3f9b79be669e8467f38d499f17013",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

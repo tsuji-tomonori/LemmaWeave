@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint96_socks",
+  "title_ja": "靴下の総利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01727",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A03Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4足は原価2ドルの25%、残り5足は各0.2ドル利益。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.socks_solution",
+  "graph": "work/gsm8k-sprint96-socks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "socks_first_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.socks_first_each",
+      "title_ja": "最初の各利益50セント。",
+      "claim_ja": "最初の各利益50セント。",
+      "method_ja": "200セントの25%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "小数をセントで保持。",
+      "conclusion_ja": "50×100=200×25。",
+      "baseline_ja": "50×100=200×25。"
+    },
+    {
+      "id": "socks_first_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.socks_first_total",
+      "title_ja": "4足分200セント。",
+      "claim_ja": "4足分200セント。",
+      "method_ja": "4×50。",
+      "requires_steps": [
+        "socks_first_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "最初の4足に同率。",
+      "conclusion_ja": "4×50=200。",
+      "baseline_ja": "4×50=200。"
+    },
+    {
+      "id": "socks_other_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.socks_other_total",
+      "title_ja": "残り5足分100セント。",
+      "claim_ja": "残り5足分100セント。",
+      "method_ja": "5×20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "0.2ドル=20セント。",
+      "conclusion_ja": "5×20=100。",
+      "baseline_ja": "5×20=100。"
+    },
+    {
+      "id": "socks_total_cents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.socks_total_cents",
+      "title_ja": "総利益300セント。",
+      "claim_ja": "総利益300セント。",
+      "method_ja": "200+100。",
+      "requires_steps": [
+        "socks_first_total",
+        "socks_other_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二群を加える。",
+      "conclusion_ja": "200+100=300。",
+      "baseline_ja": "200+100=300。"
+    },
+    {
+      "id": "socks_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.socks_solution",
+      "title_ja": "総利益3ドル。",
+      "claim_ja": "総利益3ドル。",
+      "method_ja": "300セントをドル換算。",
+      "requires_steps": [
+        "socks_total_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "100セント=1ドル。",
+      "conclusion_ja": "3×100=300。",
+      "baseline_ja": "3×100=300。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1728,
+    "checked_model_hash": "c7ae9e73613030285ef5ac0f94bc1cc2c890986bccfb58f5ed826d20e789cb8c",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

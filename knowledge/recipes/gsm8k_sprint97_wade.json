@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint97_wade",
+  "title_ja": "5試合後のチーム得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01734",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Wadeとチームメイトの1試合平均を、それぞれ5試合分にして合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.basketball_solution",
+  "graph": "work/gsm8k-sprint97-wade-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "basketball_wade",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.basketball_wade",
+      "title_ja": "Wadeの5試合分は100点。",
+      "claim_ja": "Wadeの5試合分は100点。",
+      "method_ja": "20点/試合に5試合を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全5試合で平均20点/試合として扱う。",
+      "conclusion_ja": "5×20=100。",
+      "baseline_ja": "5×20=100。"
+    },
+    {
+      "id": "basketball_teammates",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.basketball_teammates",
+      "title_ja": "チームメイトの5試合分は200点。",
+      "claim_ja": "チームメイトの5試合分は200点。",
+      "method_ja": "40点/試合に5試合を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題のteammates' averageをチームメイト全体の1試合平均40点と読む。",
+      "conclusion_ja": "5×40=200。",
+      "baseline_ja": "5×40=200。"
+    },
+    {
+      "id": "basketball_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.basketball_solution",
+      "title_ja": "チーム合計は300点。",
+      "claim_ja": "チーム合計は300点。",
+      "method_ja": "二つの5試合得点を加える。",
+      "requires_steps": [
+        "basketball_wade",
+        "basketball_teammates"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Wade分と残りのチーム分を重複なく加える。",
+      "conclusion_ja": "100+200=300。",
+      "baseline_ja": "100+200=300。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1735,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_book_collection_interpretations",
+  "title_ja": "Susanの本の冊数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04094",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lidia has a collection of books. Her collection is four times bigger than the collection which her friend Susan has. In total Susan and Lidia, both have 3000 books. How many books does Susan have in her collection?",
+  "answer_ja": "「4 times bigger」を4倍と読む通常解釈では、Susanをx冊として4x+x=3000よりx=600冊。文字どおり「4倍多い」を元より4x増、つまりLidiaが5x冊と読むなら6x=3000より500冊となるため、表現単独では曖昧である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P1.book_collection_interpretations",
+  "graph": "work/gsm8k-sprint392-book-collection-interpretations-graph.json",
+  "model_notes_ja": [
+    "通常の4倍解釈と文字どおりの5倍解釈を双方保存した。"
+  ],
+  "steps": [
+    {
+      "id": "book_collection_interpretations",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P1.book_collection_interpretations",
+      "title_ja": "Susanの本の冊数",
+      "claim_ja": "「4 times bigger」を4倍と読む通常解釈では、Susanをx冊として4x+x=3000よりx=600冊。文字どおり「4倍多い」を元より4x増、つまりLidiaが5x冊と読むなら6x=3000より500冊となるため、表現単独では曖昧である。",
+      "method_ja": "通常の4倍解釈と文字どおりの5倍解釈を双方保存した。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "通常の4倍解釈と文字どおりの5倍解釈を双方保存した。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "「4 times bigger」を4倍と読む通常解釈では、Susanをx冊として4x+x=3000よりx=600冊。文字どおり「4倍多い」を元より4x増、つまりLidiaが5x冊と読むなら6x=3000より500冊となるため、表現単独では曖昧である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4095,
+    "checked_model_hash": "d64ba1c4460640f58f0763d002197af12db34ded23abec5bfbbe0c21e078a551",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

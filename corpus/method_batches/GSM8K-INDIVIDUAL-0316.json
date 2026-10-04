@@ -1,0 +1,93 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0316",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "ae8d6c1bd843e5207eb8b0e3cf53e96cab61f563515f94869b25936ff3826447",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1001A11P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03351",
+      "source_line_1based": 3352,
+      "source_record_sha256": "e0c9e52f646d3c159241036e14db92deb374621bcc3eac5e26af30f8f234cc9b",
+      "raw_question_sha256": "7e90249294bf7aa962a6f25e1cd5d68c1eab8427326be4608feba519e291699f",
+      "normalized_question_sha256": "84232ef0c7abd4877b44153be71190f55633b504a9e643614e9ff6784f376d2d",
+      "source_question": "Jefferson hires a carriage to go to the church.  It is 20 miles away.  The horse can go 10 miles per hour.  It cost $30 per hour plus a flat fee of $20.  How much did he pay for the carriage?",
+      "recipe_id": "gsm8k_sprint262_carriage",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "片道20マイルの移動としてモデル化した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03352",
+      "source_line_1based": 3353,
+      "source_record_sha256": "407ef3469fcc2e7d5d528ecd5946cf0917a794870200db99c9db8f4024c22361",
+      "raw_question_sha256": "4b8f6ed96542ff497283bd0d6e0a77ac6c73387d6daac9712f848ab2a6c3fbe2",
+      "normalized_question_sha256": "4b8f6ed96542ff497283bd0d6e0a77ac6c73387d6daac9712f848ab2a6c3fbe2",
+      "source_question": "In Sam's collection, there are ten more black pens than blue pens and twice as many blue pens as pencils. There are also eight pencils and two fewer red pens than pencils. How many pens in all are there in Sam's collection?",
+      "recipe_id": "gsm8k_sprint262_pens",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "問いはpensなのでpencils 8本を総数へ含めない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03353",
+      "source_line_1based": 3354,
+      "source_record_sha256": "b1b59839dda052909ae44d57805d67f40f367c826743f3189b1e27eb5609674d",
+      "raw_question_sha256": "1ee7f1cf951ca604ac442b8fd0af1e8e9f138eb458ebcabfad61de2cda8730e4",
+      "normalized_question_sha256": "1ee7f1cf951ca604ac442b8fd0af1e8e9f138eb458ebcabfad61de2cda8730e4",
+      "source_question": "Joseph gave 23 cards to each of his 15 students and had 12 cards left. How many cards did Joseph have at first?",
+      "recipe_id": "gsm8k_sprint262_cards",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03354",
+      "source_line_1based": 3355,
+      "source_record_sha256": "8b72c0810d2d3d402145141944b25e44c345255e02b6a081b85ef9fe2897eb30",
+      "raw_question_sha256": "1431732204052fa73882f702ec6febe8fcd297114be46826075e6c8b79934516",
+      "normalized_question_sha256": "1431732204052fa73882f702ec6febe8fcd297114be46826075e6c8b79934516",
+      "source_question": "Mr. Lalande inherited 20,000 euros from his old aunt Adeline. He is very happy because he will be able to afford the car of his dreams, a superb car worth 18000 €. He goes to the dealership and tries the car. He decides to take it, but instead of paying for everything right away, he chooses to pay in several installments. He pays 3,000 euros to be able to leave with the car and the seller offers to let him pay the rest in 6 monthly installments. How much does Mr. Lalande have to pay every month?",
+      "recipe_id": "gsm8k_sprint262_installments",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照解答本文の通貨記号£は原文のユーロと不一致なので、全額をユーロで扱う。相続額20,000ユーロは支払額計算の条件だが残額式には入らない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03355",
+      "source_line_1based": 3356,
+      "source_record_sha256": "e864041efa81a55dee0ac8e5ce19aca6e24386a3a952c9a55614fe41afc00daa",
+      "raw_question_sha256": "9251f67563258acd83844378163b4a7300e4f35cd65d5b65990b24dcdef766b1",
+      "normalized_question_sha256": "9251f67563258acd83844378163b4a7300e4f35cd65d5b65990b24dcdef766b1",
+      "source_question": "A tank with a capacity of 8000 gallons is 3/4 full. Daxton empty's the tank by 40% of the total volume of water in the tank to water his vegetable farm. He then fills the tank with 30% of the volume of water remaining in the tank. Calculate the final volume of water in the tank.",
+      "recipe_id": "gsm8k_sprint262_tank",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "40%の基準は排水前6000ガロン、30%の基準は排水後3600ガロンとして原文どおり分離した。"
+      ],
+      "blockers": []
+    }
+  ]
+}

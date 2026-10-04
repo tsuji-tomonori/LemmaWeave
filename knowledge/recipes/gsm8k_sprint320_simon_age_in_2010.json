@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint320_simon_age_in_2010",
+  "title_ja": "2010年のSimonの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03722",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jorge is 24 years younger than Simon. In 2005, Jorge is 16 years old. In 2010, how old would Simon be?",
+  "answer_ja": "2005年にJorgeは16歳で、Simonは24歳年上なので40歳。2010年は5年後だから40+5=45歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A15P2.simon_age_in_2010",
+  "graph": "work/gsm8k-sprint320-simon-age-in-2010-graph.json",
+  "model_notes_ja": [
+    "2人の年齢差24年は変わらず、誕生日の時点差を無視する年単位問題として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "simon_age_in_2010",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A15P2.simon_age_in_2010",
+      "title_ja": "2010年のSimonの年齢",
+      "claim_ja": "2005年にJorgeは16歳で、Simonは24歳年上なので40歳。2010年は5年後だから40+5=45歳。",
+      "method_ja": "年齢差を加え、経過年数5年をさらに加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2005年から2010年まで5年経過する。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "Simonは45歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3723,
+    "checked_model_hash": "4edbbfe0668c3d448458046a77bed00a48418826eda9cde81179caacdc0dac8a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

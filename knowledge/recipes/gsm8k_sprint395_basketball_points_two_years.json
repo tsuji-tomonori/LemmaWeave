@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint395_basketball_points_two_years",
+  "title_ja": "2年間の得点合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04140",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Michael scored 260 points during his junior year on the school basketball team. He scored 20% more points during his senior year. How many points did he score during both years?",
+  "answer_ja": "3年時は260点。4年時は20%多いので260×1.2=312点。2年間では260+312=572点。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.basketball_points_two_years",
+  "graph": "work/gsm8k-sprint395-basketball-points-two-years-graph.json",
+  "model_notes_ja": [
+    "割合の基準を3年時得点に固定する。"
+  ],
+  "steps": [
+    {
+      "id": "basketball_points_two_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.basketball_points_two_years",
+      "title_ja": "2年間の得点合計",
+      "claim_ja": "3年時は260点。4年時は20%多いので260×1.2=312点。2年間では260+312=572点。",
+      "method_ja": "20%増を6/5倍として4年時得点を求め、3年時と合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20%増は3年時260点を基準とする。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3年時は260点。4年時は20%多いので260×1.2=312点。2年間では260+312=572点。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4141,
+    "checked_model_hash": "e9e9f249f5ee58afeb313bde90c133dbf91e5df4cc98214b335a361da47b22bd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "gsm8k_sprint95_waterpark",
+  "title_ja": "ウォーターパーク料金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01711",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "大人30ドル、子供半額、飲料持参で入場料20%引き、10人中子供4人、飲料5ドルの総支払額を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.waterpark_solution",
+  "graph": "work/gsm8k-sprint95-waterpark-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "waterpark_counts",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.waterpark_counts",
+      "title_ja": "人数と子供単価",
+      "claim_ja": "大人6人、子供15ドル。",
+      "method_ja": "10−4と30÷2を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "子供4人は10人に含まれる。",
+      "conclusion_ja": "6+4=10、15×2=30。",
+      "baseline_ja": "6+4=10、15×2=30。"
+    },
+    {
+      "id": "waterpark_adult_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.waterpark_adult_cost",
+      "title_ja": "大人料金",
+      "claim_ja": "180ドル。",
+      "method_ja": "6人×30ドル。",
+      "requires_steps": [
+        "waterpark_counts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "大人6人全員に通常料金。",
+      "conclusion_ja": "6×30=180。",
+      "baseline_ja": "6×30=180。"
+    },
+    {
+      "id": "waterpark_child_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.waterpark_child_cost",
+      "title_ja": "子供料金",
+      "claim_ja": "60ドル。",
+      "method_ja": "4人×15ドル。",
+      "requires_steps": [
+        "waterpark_counts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "子供4人全員に半額。",
+      "conclusion_ja": "4×15=60。",
+      "baseline_ja": "4×15=60。"
+    },
+    {
+      "id": "waterpark_ticket_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.waterpark_ticket_total",
+      "title_ja": "割引前入場料",
+      "claim_ja": "240ドル。",
+      "method_ja": "大人料金と子供料金を加える。",
+      "requires_steps": [
+        "waterpark_adult_cost",
+        "waterpark_child_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "飲料代は入場料割引の対象外。",
+      "conclusion_ja": "180+60=240。",
+      "baseline_ja": "180+60=240。"
+    },
+    {
+      "id": "waterpark_discounted",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.waterpark_discounted",
+      "title_ja": "割引後入場料",
+      "claim_ja": "192ドル。",
+      "method_ja": "240の20%=48を引く。",
+      "requires_steps": [
+        "waterpark_ticket_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "飲料を持参したため20%引きを適用。",
+      "conclusion_ja": "240−48=192。",
+      "baseline_ja": "240−48=192。"
+    },
+    {
+      "id": "waterpark_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.waterpark_solution",
+      "title_ja": "総支払額",
+      "claim_ja": "197ドル。",
+      "method_ja": "割引後入場料に飲料5ドルを加える。",
+      "requires_steps": [
+        "waterpark_discounted"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "飲料代は別途支払う。",
+      "conclusion_ja": "192+5=197。",
+      "baseline_ja": "192+5=197。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1712,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

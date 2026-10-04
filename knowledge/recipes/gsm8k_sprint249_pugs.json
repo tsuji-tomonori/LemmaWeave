@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint249_pugs",
+  "title_ja": "15匹での掃除時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03290",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A06P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "仕事量をpug・分で固定し15匹で割る。",
+  "answer_ja": "12分",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A06P2.pugs_minutes",
+  "graph": "work/gsm8k-sprint249-pugs-graph.json",
+  "model_notes_ja": [
+    "各pugの速度が等しく一定で仕事量が加法的という反比例モデルを明示。"
+  ],
+  "steps": [
+    {
+      "id": "pugs_work",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P2.pugs_work",
+      "title_ja": "掃除仕事量は180 pug・分。",
+      "claim_ja": "掃除仕事量は180 pug・分。",
+      "method_ja": "4×45。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全pugが同じ一定速度で同時に働き、仕事量が加法的。",
+      "conclusion_ja": "180 pug・分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pugs_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P2.pugs_minutes",
+      "title_ja": "15匹なら12分。",
+      "claim_ja": "15匹なら12分。",
+      "method_ja": "180÷15。",
+      "requires_steps": [
+        "pugs_work"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ家・同じ仕事量、速度加法モデル。",
+      "conclusion_ja": "12分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3291,
+    "checked_model_hash": "387ed7e0aa055bbe776ef4a6a8b3d6e9cd86721a865a7c3eaa53917d329337e1",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

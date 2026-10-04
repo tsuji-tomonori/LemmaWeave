@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint406_flowers_remaining_after_cut",
+  "title_ja": "刈り取り後に残る花の本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04161",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mr. Wells has a garden of flowers with 50 rows. If each row has 400 flowers and Mr. Wells cuts 60% of the flowers, how many flowers are remaining in the garden?",
+  "answer_ja": "花は50×400=20,000本。60%に当たる12,000本を切るので、残りは20,000-12,000=8,000本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.flowers_remaining_after_cut",
+  "graph": "work/gsm8k-sprint406-flowers-remaining-after-cut-graph.json",
+  "model_notes_ja": [
+    "残る割合40%による計算とも一致する。"
+  ],
+  "steps": [
+    {
+      "id": "flowers_remaining_after_cut",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.flowers_remaining_after_cut",
+      "title_ja": "刈り取り後に残る花の本数",
+      "claim_ja": "花は50×400=20,000本。60%に当たる12,000本を切るので、残りは20,000-12,000=8,000本。",
+      "method_ja": "行数と1行当たり本数から総数を求め、切った60%を差し引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各行は400本で、60%は全20,000本を基準とする。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "花は50×400=20,000本。60%に当たる12,000本を切るので、残りは20,000-12,000=8,000本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4162,
+    "checked_model_hash": "ebc911943a29150f12ec60bb6d4dc487b2dbc51ad4ce3124d6f442fe7601806e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

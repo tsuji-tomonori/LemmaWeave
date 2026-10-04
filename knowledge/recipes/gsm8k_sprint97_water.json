@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint97_water",
+  "title_ja": "3台のトラックの総水量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01741",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1台の3タンク分を求め、3台分にする。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.water_solution",
+  "graph": "work/gsm8k-sprint97-water-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "water_per_truck",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.water_per_truck",
+      "title_ja": "1台は450リットル。",
+      "claim_ja": "1台は450リットル。",
+      "method_ja": "3×150。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各タンク容量150リットルで各車3個。",
+      "conclusion_ja": "3×150=450。",
+      "baseline_ja": "3×150=450。"
+    },
+    {
+      "id": "water_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.water_solution",
+      "title_ja": "合計1350リットル。",
+      "claim_ja": "合計1350リットル。",
+      "method_ja": "3×450。",
+      "requires_steps": [
+        "water_per_truck"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3台とも同じ積載構成。",
+      "conclusion_ja": "3×450=1350。",
+      "baseline_ja": "3×450=1350。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1742,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

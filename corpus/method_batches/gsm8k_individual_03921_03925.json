@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1006",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "67e6322e717a307289e614372f5678c6dc4f2d29ac0cd6b401bf841054fd07bb",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A12P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03921",
+      "source_line_1based": 3922,
+      "source_record_sha256": "051196ce310b5ab00912b0e264c13cc844677029ebf2767d87b3ef366e7baf87",
+      "raw_question_sha256": "05eeba6b7f00a1727f4919a0958f526e99c107518e03b24caf055259f61bf93c",
+      "normalized_question_sha256": "05eeba6b7f00a1727f4919a0958f526e99c107518e03b24caf055259f61bf93c",
+      "source_question": "Daisy is climbing trees all around her neighborhood and starts to notice the number of branches and the height. The first tree she climbs is 50 feet tall and has 200 branches. The second tree she climbs is 40 feet tall and has 180 branches. The third tree she climbs is 60 feet tall and has 180 branches. The final tree she climbs is 34 feet tall and has 153 branches. On average, how many branches do these trees have per foot?",
+      "recipe_id": "gsm8k_sprint360_branches_per_foot_readings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "『平均』の母集団を木ごとの比率とするか、全枝・全高さの集約比とするかを分離する。"
+      ],
+      "blockers": [
+        "average branches per footは平均の取り方が曖昧なため2解釈を保存した。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03922",
+      "source_line_1based": 3923,
+      "source_record_sha256": "21736d73eb7958cff05e6bb969d3ccb9d6ab3d860a82b4bb6b7f3f9633b07d30",
+      "raw_question_sha256": "d2299eeccd99286d6dd910a1788ef49658f5f2c186a53722b88bd2da3b1d08c3",
+      "normalized_question_sha256": "d2299eeccd99286d6dd910a1788ef49658f5f2c186a53722b88bd2da3b1d08c3",
+      "source_question": "A car manufacturing company that produces 100 cars per month wants to increase its production to reach 1800 cars per year. How many cars should the company add to the monthly production rate to reach that target?",
+      "recipe_id": "gsm8k_sprint360_added_monthly_cars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "12か月すべて同じ生産率で、端数や在庫調整はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03923",
+      "source_line_1based": 3924,
+      "source_record_sha256": "966e572c71b0e40996a2a1d8a20bb9e8a3ea0867f9c3396c4cc12c66210ca79a",
+      "raw_question_sha256": "fe2db86539feeb3a885d2034480cab3edea3d4c9d23021ad7ee83e8adfc29dae",
+      "normalized_question_sha256": "fe2db86539feeb3a885d2034480cab3edea3d4c9d23021ad7ee83e8adfc29dae",
+      "source_question": "Reginald is selling apples. He sells each apple for $1.25. He plans to use his profits to help repair his bike. His bike cost $80 and the repairs cost 25% of what his bike cost. After the repairs are paid for, 1/5 of the money he'd earned remains. How many apples did he sell?",
+      "recipe_id": "gsm8k_sprint360_apples_sold",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "利益という語を、原文の後続関係どおりリンゴ販売から得た金額とし、仕入れ費・税はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03924",
+      "source_line_1based": 3925,
+      "source_record_sha256": "e57cc4447a55dc8feecfe35143f7098358cebe5b891fa3b9d112714ceec2b349",
+      "raw_question_sha256": "a4c489898ec91728fb7c56049676443d2804b3917c0775dc11202367ef3db153",
+      "normalized_question_sha256": "a4c489898ec91728fb7c56049676443d2804b3917c0775dc11202367ef3db153",
+      "source_question": "Luisa drives 10 miles to the grocery store, 6 miles to the mall, 5 miles to the pet store, then 9 miles back home. One gallon of gas can be used to drive 15 miles. If one gallon of gas costs $3.50, what is the total cost of the gas for Luisa’s entire trip?",
+      "recipe_id": "gsm8k_sprint360_trip_gas_cost_cents",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "列挙された距離は連続区間で全行程を構成し、燃費と単価は一定。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03925",
+      "source_line_1based": 3926,
+      "source_record_sha256": "87c0f21ed75256f5e9a5f7444d76257b1b78b9b5c5704ae5f30492ee7d58c535",
+      "raw_question_sha256": "7c6b3f466cbfe049e82b87369158c033b60b11714bcba5fc4cc4ab7e1fb322be",
+      "normalized_question_sha256": "7c6b3f466cbfe049e82b87369158c033b60b11714bcba5fc4cc4ab7e1fb322be",
+      "source_question": "Jenny is working on a school project. She spends 10 hours doing research for the project and 2 hours writing a proposal. If she has 20 hours total to work on the project, how many hours does she have left to write her report?",
+      "recipe_id": "gsm8k_sprint360_report_hours_left",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "研究・提案書・報告書の時間は同じ20時間枠から重複なく使う。"
+      ],
+      "blockers": []
+    }
+  ]
+}

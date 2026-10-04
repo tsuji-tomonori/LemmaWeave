@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint318_remaining_trip_savings",
+  "title_ja": "旅行までに不足する金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03714",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A13P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jacoby wants to save money for a trip to Brickville. He needs to have $5000 total to go on his trip. He works a job earning $20 per hour and works 10 hours. He then finds he can sell cookies for $4 each, and he sells 24 pieces of cookies. With the money he has so far, he buys a lottery ticket for $10 and wins $500. Finally, he gets $500 from both of his sisters as a gift. How much more, in dollars, does Jacob need to go to Brickville?",
+  "answer_ja": "仕事で20×10=200ドル、クッキーで4×24=96ドル。宝くじ代10ドルを引いて当選500ドルを加え、姉妹2人から2×500ドルを受け取ると1786ドル。5000−1786=3214ドル不足。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A13P3.remaining_trip_savings",
+  "graph": "work/gsm8k-sprint318-remaining-trip-savings-graph.json",
+  "model_notes_ja": [
+    "姉妹は2人で各500ドルを渡し、宝くじの当選500ドルは購入費10ドルとは別に加える。"
+  ],
+  "steps": [
+    {
+      "id": "remaining_trip_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A13P3.remaining_trip_savings",
+      "title_ja": "旅行までに不足する金額",
+      "claim_ja": "仕事で20×10=200ドル、クッキーで4×24=96ドル。宝くじ代10ドルを引いて当選500ドルを加え、姉妹2人から2×500ドルを受け取ると1786ドル。5000−1786=3214ドル不足。",
+      "method_ja": "すべての収入と支出を順に合計し、目標額との差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "所持額1786ドルは目標5000ドル以下。",
+      "baseline_ja": "四則演算、比・平均・百分率のうち問題で明示したもの。",
+      "conclusion_ja": "あと3214ドル必要。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3715,
+    "checked_model_hash": "5153e11515d05988e6140dbdd661462827ce1690e18c04f79559dd2866778072",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

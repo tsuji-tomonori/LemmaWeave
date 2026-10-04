@@ -1,0 +1,12 @@
+{
+  "id": "gsm8k_sprint171_game", "title_ja": "ゲームと菓子購入後の残金", "problem_id": "external-gsm8k-main-3101c7d50724:train:02846", "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A12.lean", "semantic_review_status": "self_review_only", "model_scope": "self_reviewed_model", "counting_note_ja": "固定GSM8Kの1問。", "solution_format": "individual_lines_v1", "authorship": "llm_individual",
+  "problem_ja": "時給8ドルで9時間働き、60ドルのゲームと5ドルの菓子を買った後の残金を求める。", "root": "LemmaWeave.Problems.GSM8K.Sprint0928A12.game_solution", "graph": "work/gsm8k-sprint171-game-graph.json", "model_notes_ja": [],
+  "steps": [
+    {"id":"game_earnings","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.game_earnings","title_ja":"収入は72ドル","claim_ja":"8×9=72ドル。","method_ja":"時給と時間の積","requires_steps":[],"uses_nodes":[],"condition_ja":"9時間すべて同じ時給8ドル。","conclusion_ja":"収入は72ドル。","baseline_ja":"8×9=72。"},
+    {"id":"game_spending","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.game_spending","title_ja":"支出は65ドル","claim_ja":"60+5=65ドル。","method_ja":"価格の和","requires_steps":[],"uses_nodes":[],"condition_ja":"ゲームと菓子をともに購入する。","conclusion_ja":"支出は65ドル。","baseline_ja":"60+5=65。"},
+    {"id":"game_left","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.game_left","title_ja":"残金は7ドル","claim_ja":"72−65=7ドル。","method_ja":"収入から支出を引く","requires_steps":["game_earnings","game_spending"],"uses_nodes":[],"condition_ja":"収入72ドルは支出65ドル以上。","conclusion_ja":"残金は7ドル。","baseline_ja":"72−65=7。"},
+    {"id":"game_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.game_solution","title_ja":"答えは7ドル","claim_ja":"購入後には7ドル残る。","method_ja":"直前の結論","requires_steps":["game_left"],"uses_nodes":[],"condition_ja":"全購入後の残金を問う。","conclusion_ja":"答えは7ドル。","baseline_ja":"残金7ドル。"}
+  ],
+  "author_review": {"reviewer":"author","status":"checked","source_line_1based":2847,"checked_model_hash":"11afa6f876a633904526c1a9b47ceb060067cfbf23b68f118a54a7b15973254e","checks_ja":["固定原本の金額・時間・問いを再読した。","説明行と名前付きLean定理を照合した。","独立レビューではなく作成者自己照合である。"]}
+}

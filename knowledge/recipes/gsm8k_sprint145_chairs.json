@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint145_chairs",
+  "title_ja": "6時間後の椅子数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02459",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3人が各時速4脚を作り、グループで6時間ごとに追加1脚を作る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.chairs_solution",
+  "graph": "work/gsm8k-sprint145-chairs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "chairs_hourly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.chairs_hourly",
+      "title_ja": "通常生産は毎時12脚",
+      "claim_ja": "通常生産は毎時12脚",
+      "method_ja": "3人に4脚を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "通常生産は毎時12脚",
+      "baseline_ja": "通常生産は毎時12脚"
+    },
+    {
+      "id": "chairs_regular",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.chairs_regular",
+      "title_ja": "6時間の通常生産は72脚",
+      "claim_ja": "6時間の通常生産は72脚",
+      "method_ja": "12に6を掛ける",
+      "requires_steps": [
+        "chairs_hourly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "6時間の通常生産は72脚",
+      "baseline_ja": "6時間の通常生産は72脚"
+    },
+    {
+      "id": "chairs_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.chairs_solution",
+      "title_ja": "追加1脚を含め73脚",
+      "claim_ja": "追加1脚を含め73脚",
+      "method_ja": "72に1を足す",
+      "requires_steps": [
+        "chairs_regular"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "追加1脚を含め73脚",
+      "baseline_ja": "追加1脚を含め73脚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2460,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

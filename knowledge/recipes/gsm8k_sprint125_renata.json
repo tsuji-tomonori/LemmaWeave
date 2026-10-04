@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint125_renata",
+  "title_ja": "Renataの最終所持金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02161",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "寄付・賞金・スロット損失・買物・即席くじ賞金を順に反映する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.renata_solution",
+  "graph": "work/gsm8k-sprint125-renata-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "renata_after_charity",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.renata_after_charity",
+      "title_ja": "寄付後は6ドル。",
+      "claim_ja": "寄付後は6ドル。",
+      "method_ja": "10−4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "寄付後は6ドル。",
+      "baseline_ja": "寄付後は6ドル。"
+    },
+    {
+      "id": "renata_after_prize",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.renata_after_prize",
+      "title_ja": "抽選賞金後は96ドル。",
+      "claim_ja": "抽選賞金後は96ドル。",
+      "method_ja": "6+90。",
+      "requires_steps": [
+        "renata_after_charity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "抽選賞金後は96ドル。",
+      "baseline_ja": "抽選賞金後は96ドル。"
+    },
+    {
+      "id": "renata_after_slots",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.renata_after_slots",
+      "title_ja": "スロット後は31ドル。",
+      "claim_ja": "スロット後は31ドル。",
+      "method_ja": "96−(50+10+5)。",
+      "requires_steps": [
+        "renata_after_prize"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "スロット後は31ドル。",
+      "baseline_ja": "スロット後は31ドル。"
+    },
+    {
+      "id": "renata_after_purchase",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.renata_after_purchase",
+      "title_ja": "水とくじ券の購入後は29ドル。",
+      "claim_ja": "水とくじ券の購入後は29ドル。",
+      "method_ja": "31−1−1。",
+      "requires_steps": [
+        "renata_after_slots"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "水とくじ券の購入後は29ドル。",
+      "baseline_ja": "水とくじ券の購入後は29ドル。"
+    },
+    {
+      "id": "renata_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.renata_solution",
+      "title_ja": "最終所持金は94ドル。",
+      "claim_ja": "最終所持金は94ドル。",
+      "method_ja": "29+65。",
+      "requires_steps": [
+        "renata_after_purchase"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "最終所持金は94ドル。",
+      "baseline_ja": "最終所持金は94ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2162,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

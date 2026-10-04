@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint171_exercise","title_ja":"2人の運動時間合計","problem_id":"external-gsm8k-main-3101c7d50724:train:02854","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0928A12.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"Javierは7日間毎日50分、Sandaは3日間各90分運動した合計を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint0928A12.exercise_solution","graph":"work/gsm8k-sprint171-exercise-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"exercise_parts","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.exercise_parts","title_ja":"350分と270分","claim_ja":"50×7=350分、90×3=270分。","method_ja":"日数と1日あたり時間の積","requires_steps":[],"uses_nodes":[],"condition_ja":"1週間を7日とし、各人の指定日すべて同じ時間。","conclusion_ja":"Javier350分、Sanda270分。","baseline_ja":"50×7=350、90×3=270。"},
+    {"id":"exercise_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.exercise_total","title_ja":"合計620分","claim_ja":"350+270=620分。","method_ja":"和","requires_steps":["exercise_parts"],"uses_nodes":[],"condition_ja":"2人分を合計する。","conclusion_ja":"620分。","baseline_ja":"350+270=620。"},
+    {"id":"exercise_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A12.exercise_solution","title_ja":"答えは620分","claim_ja":"2人の合計運動時間は620分。","method_ja":"直前の結論","requires_steps":["exercise_total"],"uses_nodes":[],"condition_ja":"単位は分。","conclusion_ja":"答えは620分。","baseline_ja":"620分。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":2855,"checked_model_hash":"11afa6f876a633904526c1a9b47ceb060067cfbf23b68f118a54a7b15973254e","checks_ja":["各人の日数と1日あたり分数を再読した。","1週間=7日を明示した。","独立レビューではない。"]}
+}

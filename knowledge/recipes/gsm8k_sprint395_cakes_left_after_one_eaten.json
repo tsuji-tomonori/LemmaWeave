@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint395_cakes_left_after_one_eaten",
+  "title_ja": "1個食べた後に残るケーキ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04137",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Diego baked 12 cakes for his sister's birthday. Donald also baked 4 cakes, but ate 1 while waiting for the party to start. How many cakes are left?",
+  "answer_ja": "Diegoが12個、Donaldが4個焼いたので合計16個。Donaldが1個食べた後は16-1=15個残る。参照解答本文は食べた人をDiegoと誤記しているが、誰が食べても総数は1個減るため答えは15個で変わらない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.cakes_left_after_one_eaten",
+  "graph": "work/gsm8k-sprint395-cakes-left-after-one-eaten-graph.json",
+  "model_notes_ja": [
+    "原文のDonaldと参照説明のDiegoの不一致を記録し、総数への影響が同じことを確認する。"
+  ],
+  "steps": [
+    {
+      "id": "cakes_left_after_one_eaten",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.cakes_left_after_one_eaten",
+      "title_ja": "1個食べた後に残るケーキ",
+      "claim_ja": "Diegoが12個、Donaldが4個焼いたので合計16個。Donaldが1個食べた後は16-1=15個残る。参照解答本文は食べた人をDiegoと誤記しているが、誰が食べても総数は1個減るため答えは15個で変わらない。",
+      "method_ja": "焼いた総数を足し、食べた1個を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "焼いた16個以外の増減は、Donaldが食べた1個だけである。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Diegoが12個、Donaldが4個焼いたので合計16個。Donaldが1個食べた後は16-1=15個残る。参照解答本文は食べた人をDiegoと誤記しているが、誰が食べても総数は1個減るため答えは15個で変わらない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4138,
+    "checked_model_hash": "e9e9f249f5ee58afeb313bde90c133dbf91e5df4cc98214b335a361da47b22bd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

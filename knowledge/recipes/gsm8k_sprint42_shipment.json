@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint42_shipment",
+  "title_ja": "仕入目標の超過額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00913",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "960ドルの利益の半分と310ドルの寄付を610ドルの目標と比較する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.shipment_solution",
+  "graph": "work/gsm8k-sprint42-shipment-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shipment_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.shipment_half",
+      "title_ja": "利益の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "960ドルを2等分する。",
+      "conclusion_ja": "480ドル。",
+      "baseline_ja": "480×2=960。"
+    },
+    {
+      "id": "shipment_available",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.shipment_available",
+      "title_ja": "集めた金額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "利益の半分と寄付を加える。",
+      "conclusion_ja": "790ドル。",
+      "baseline_ja": "480+310=790。"
+    },
+    {
+      "id": "shipment_surplus",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.shipment_surplus",
+      "title_ja": "目標超過額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "790ドルを610ドルの目標と比較する。",
+      "conclusion_ja": "180ドル上回る。",
+      "baseline_ja": "790=610+180。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 914,
+    "checked_model_hash": "99537224468d741c14fe17721e9d78f3b542f2946fd1e4df9a251fde49f95551",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

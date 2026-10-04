@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint414_fruits_remaining_after_pick",
+  "title_ja": "収穫後に残るリンゴとプラム",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04169",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "An apple tree has three times as many apples as the number of plums on a plum tree. If Damien picks 3/5 of the fruits from the trees, calculate the total number of plums and apples remaining on the tree if there were 180 apples on the apple tree before Damien picked any of the fruits.",
+  "answer_ja": "リンゴ180個はプラムの3倍なので、プラムは180÷3=60個。各木から3/5を採るため2/5が残り、リンゴ72個、プラム24個、合計96個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P1.fruits_remaining_after_pick",
+  "graph": "work/gsm8k-sprint414-fruits-remaining-after-pick-graph.json",
+  "model_notes_ja": [
+    "採取割合は2本の木の果物に共通。"
+  ],
+  "steps": [
+    {
+      "id": "fruits_remaining_after_pick",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P1.fruits_remaining_after_pick",
+      "title_ja": "収穫後に残るリンゴとプラム",
+      "claim_ja": "リンゴ180個はプラムの3倍なので、プラムは180÷3=60個。各木から3/5を採るため2/5が残り、リンゴ72個、プラム24個、合計96個。",
+      "method_ja": "初期のプラム数を比で求め、両方の果物に残存割合2/5を適用して合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "「3/5 of the fruits from the trees」はリンゴとプラムの双方から全体の3/5を採る意味とする。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "リンゴ180個はプラムの3倍なので、プラムは180÷3=60個。各木から3/5を採るため2/5が残り、リンゴ72個、プラム24個、合計96個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4170,
+    "checked_model_hash": "3c32e187637ccbd46a88237a9571baa51f29659c3285ecc656e312e8eb1b2b18",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

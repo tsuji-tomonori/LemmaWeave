@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint328_remaining_apple_pies",
+  "title_ja": "残ったアップルパイ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03763",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A18P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Cooper makes 7 apple pies a day. He does this for 12 days. Ashley then eats 50 of his pies. How many apple pies remain with Cooper?",
+  "answer_ja": "7個/日を12日作るので84個。Ashleyが50個食べた後は84−50=34個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A18P1.remaining_apple_pies",
+  "graph": "work/gsm8k-sprint328-remaining-apple-pies-graph.json",
+  "model_notes_ja": [
+    "12日間は毎日7個作り、食べる前に廃棄や販売はない。"
+  ],
+  "steps": [
+    {
+      "id": "remaining_apple_pies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A18P1.remaining_apple_pies",
+      "title_ja": "残ったアップルパイ",
+      "claim_ja": "7個/日を12日作るので84個。Ashleyが50個食べた後は84−50=34個。",
+      "method_ja": "生産数を求めて消費数を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "50は84以下。",
+      "baseline_ja": "整数・分数・割合・一次方程式・面積・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "34個残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3764,
+    "checked_model_hash": "4718e28cbd5102f6e67d6c3f719e56a6e886b362a9e0cb1123cd524138f61098",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

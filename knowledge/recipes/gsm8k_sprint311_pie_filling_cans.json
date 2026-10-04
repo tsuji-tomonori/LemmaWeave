@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint311_pie_filling_cans",
+  "title_ja": "パイ詰め缶の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03677",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "83個のカボチャを育て、1個3ドルで96ドル分販売した。残りを3個につき1缶にする。缶数を求める。",
+  "answer_ja": "販売したのは96÷3=32個。残りは83-32=51個で、51÷3=17缶作れる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A11P2.pie_filling_cans",
+  "graph": "work/gsm8k-sprint311-pie-filling-cans-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pie_filling_cans",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A11P2.pie_filling_cans",
+      "title_ja": "販売したのは96÷3=32個。残りは83-32=51個で、51÷3=17缶作れる。",
+      "claim_ja": "販売したのは96÷3=32個。残りは83-32=51個で、51÷3=17缶作れる。",
+      "method_ja": "販売したのは96÷3=32個。残りは83-32=51個で、51÷3=17缶作れる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "販売したのは96÷3=32個。残りは83-32=51個で、51÷3=17缶作れる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3678,
+    "checked_model_hash": "7afa676e85668826bfdbf46a8b15ba22726e0c6dc964dda77a4d577df9e89dc7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

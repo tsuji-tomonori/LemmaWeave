@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint134_oranges",
+  "title_ja": "3つのバケツのオレンジ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02294",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1つ目22個、2つ目は17個多く、3つ目は2つ目より11個少ない",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.oranges_solution",
+  "graph": "work/gsm8k-sprint134-oranges-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "oranges_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.oranges_second",
+      "title_ja": "2つ目は39個",
+      "claim_ja": "2つ目は39個",
+      "method_ja": "22個に17個足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2つ目は39個",
+      "baseline_ja": "2つ目は39個"
+    },
+    {
+      "id": "oranges_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.oranges_third",
+      "title_ja": "3つ目は28個",
+      "claim_ja": "3つ目は28個",
+      "method_ja": "39個から11個引く",
+      "requires_steps": [
+        "oranges_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3つ目は28個",
+      "baseline_ja": "3つ目は28個"
+    },
+    {
+      "id": "oranges_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.oranges_solution",
+      "title_ja": "合計89個",
+      "claim_ja": "合計89個",
+      "method_ja": "22、39、28を足す",
+      "requires_steps": [
+        "oranges_second",
+        "oranges_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計89個",
+      "baseline_ja": "合計89個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2295,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-03",
+  "run_id": "20261003T020000+0900-recovered-at-205611",
+  "scheduled_slot": "2026-10-03T02:00:00+09:00",
+  "started_at": "2026-10-03T20:56:11+09:00",
+  "finished_at": "2026-10-03T21:10:08+09:00",
+  "started_late_by_seconds": 68171,
+  "recovered_missing_slot": true,
+  "base_sha": "fe05ea0451c7684d6e4b8742b9189e1da0f971ec",
+  "main_sha_observed": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "main_ref_comparison": "identical",
+  "role": "gsm8k_individual_solve",
+  "execution_mode": "serial_single_writer",
+  "missing_prior_slots_after_recovery": [
+    "2026-10-03T04:00:00+09:00",
+    "2026-10-03T06:00:00+09:00",
+    "2026-10-03T16:00:00+09:00"
+  ],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04046",
+    "external-gsm8k-main-3101c7d50724:train:04047",
+    "external-gsm8k-main-3101c7d50724:train:04048",
+    "external-gsm8k-main-3101c7d50724:train:04049",
+    "external-gsm8k-main-3101c7d50724:train:04050",
+    "external-gsm8k-main-3101c7d50724:train:04051",
+    "external-gsm8k-main-3101c7d50724:train:04052",
+    "external-gsm8k-main-3101c7d50724:train:04053",
+    "external-gsm8k-main-3101c7d50724:train:04054",
+    "external-gsm8k-main-3101c7d50724:train:04055",
+    "external-gsm8k-main-3101c7d50724:train:04056",
+    "external-gsm8k-main-3101c7d50724:train:04057",
+    "external-gsm8k-main-3101c7d50724:train:04058",
+    "external-gsm8k-main-3101c7d50724:train:04059",
+    "external-gsm8k-main-3101c7d50724:train:04060"
+  ],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04046",
+    "external-gsm8k-main-3101c7d50724:train:04047",
+    "external-gsm8k-main-3101c7d50724:train:04048",
+    "external-gsm8k-main-3101c7d50724:train:04049",
+    "external-gsm8k-main-3101c7d50724:train:04050",
+    "external-gsm8k-main-3101c7d50724:train:04051",
+    "external-gsm8k-main-3101c7d50724:train:04052",
+    "external-gsm8k-main-3101c7d50724:train:04053",
+    "external-gsm8k-main-3101c7d50724:train:04054",
+    "external-gsm8k-main-3101c7d50724:train:04055",
+    "external-gsm8k-main-3101c7d50724:train:04056",
+    "external-gsm8k-main-3101c7d50724:train:04057",
+    "external-gsm8k-main-3101c7d50724:train:04058",
+    "external-gsm8k-main-3101c7d50724:train:04059",
+    "external-gsm8k-main-3101c7d50724:train:04060"
+  ],
+  "outcomes": [
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04046", "answer": "55 hours"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04047", "answer": "180 dollars"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04048", "answer": "39 months"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04049", "answer": "210 pages"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04050", "answer": "8 fish"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04051", "answer": "11 dollars per person"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04052", "answer": "16800 dollars"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04053", "answer": "314 ounces"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04054", "answer": "8000 dollars"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04055", "answer": "20 candies"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04056", "answer": "42 dollars"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04057", "answer": "39 nails"},
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04058", "answer": "12 years"},
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04059",
+      "answer": "not uniquely determined; at most 35 hours, and 35 hours only if he trained the daily maximum",
+      "modeling_note_ja": "maximumは実績時間を与えない。毎日1時間なら14時間、毎日上限なら35時間となる。"
+    },
+    {"problem_id": "external-gsm8k-main-3101c7d50724:train:04060", "answer": "104 square metres"}
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04059",
+      "retry_on": "independent semantic review and fixed Lean verification",
+      "reason_ja": "原文は1日2時間・3時間を実績ではなくmaximumと述べるため、参照値35は追加条件なしには一意解ではない。",
+      "next_action_ja": "非一意性の反例と追加条件付き35時間の意味対応を独立確認し、固定Lean 4.33.1の成功証拠を取り込む。"
+    }
+  ],
+  "claim": {
+    "status": "released",
+    "claimed_at": "2026-10-03T20:56:11+09:00",
+    "expires_at": "2026-10-03T22:30:00+09:00",
+    "released_at": "2026-10-03T21:10:08+09:00",
+    "owner": "codex-automation",
+    "base_sha": "fe05ea0451c7684d6e4b8742b9189e1da0f971ec"
+  },
+  "checkpoints": [
+    {"problem_range": "train:04046-train:04050", "commit": "5c935b7f13637a346e4b1a38ee16ed859f122852"},
+    {"problem_range": "train:04051-train:04055", "commit": "c8b888d8df5da298539644ad5c1e0dbf75ff93e4"},
+    {"problem_range": "train:04056-train:04060", "commit": "c30e5eb6e5fea6c1f379b3d62d23fa1654147f1f"}
+  ],
+  "verification": {
+    "semantic_review_status": "self_review_only",
+    "assurance": "INCONCLUSIVE",
+    "assurance_reason_ja": "原題照合と静的検査は合格したが、この環境にlakeがなく固定Leanビルドを実行できず、正確なHEADのCIも未登録のため。",
+    "source_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "source_hash_matches_manifest": true,
+    "source_position_and_record_hash_checks": "15/15",
+    "model_hashes": [
+      "17904e8bb30fa482ed0620fd2f95f284f95995454b76bf40b6509a50bc086c15",
+      "bb75e4b7777b2b059f0545cff766ffed0cd057230cdd60c110d19ce1dff0fa06",
+      "8770782010f0164311c1f63d0b6348e1ec488cdb29da8bb5bc062b3b898c98e7"
+    ],
+    "lean_test_hashes": [
+      "fc032b90d4495967a2ca8ec1744d1a4fe160417838243ffe96be9441215835ee",
+      "96601bdeeb61ff9a276b0dc5d2f2af4c9b2d7198b12837f9bbedef2437fc4b3f",
+      "8bd788773f41fa2e1985eb2a29067b0629b4ae21dd973b17286f15bdaf7ee237"
+    ],
+    "named_theorems": 15,
+    "dependency_macros": 15,
+    "axiom_prints": 15,
+    "forbidden_tokens": [],
+    "local_lean_binary": null,
+    "local_lean_attempt": "lake env lean failed before execution: lake not found (exit 127) for all 3 targets",
+    "static_validation": "15 recipes, 3 batches, 15 theorem links, 15 dependency macros, 15 axiom prints; source hashes, model hashes, condition disclosure, queue identity and partition checks passed",
+    "solve_queue_write": "python3 scripts/solve_queue.py --write --as-of 2026-10-03 exited 0",
+    "method_recipe_render": "blocked_by_preexisting_missing reports/dependencies/methods/dnc2026_cubic_derivative_individual.json.gz",
+    "exact_head_ci_required": true
+  },
+  "queue": {
+    "before": {"solution_ready": 518, "awaiting_verification": 3529, "pending": 4745},
+    "after": {"solution_ready": 518, "awaiting_verification": 3544, "pending": 4730},
+    "total": 8792,
+    "unique_ids": 8792,
+    "sequence_exact": true,
+    "missing_ids": 0,
+    "unexpected_ids": 0,
+    "state_overlap": 0,
+    "next_pending": "external-gsm8k-main-3101c7d50724:train:04061",
+    "solve_queue_sha256": "5fee175a593bba231f8df871cf50cd11697254fdaf518d1ba2ba8426b1930dba",
+    "work_queue_sha256": "5fee175a593bba231f8df871cf50cd11697254fdaf518d1ba2ba8426b1930dba"
+  },
+  "ci": [
+    {
+      "head_sha": "fe05ea0451c7684d6e4b8742b9189e1da0f971ec",
+      "workflow_runs": 0,
+      "commit_statuses": 0,
+      "note": "開始時HEADにexact-head CIは登録されていなかった。"
+    },
+    {
+      "head_sha": "dd4dfdca869c40871333033e1fc3c7f112d831cb",
+      "workflow_runs": 0,
+      "commit_statuses": 0,
+      "note": "キュー保存HEADにもexact-head CIは登録されていない。最終台帳HEADを別途確認する。"
+    }
+  ],
+  "pr": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "mergeable_observed": true,
+    "merge_decision": "not_merged_exact_head_ci_missing_and_items_awaiting_verification",
+    "review_summary": "latest reviews approved; zero unresolved review threads"
+  },
+  "related_pr": {
+    "number": 6,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/6",
+    "state": "open",
+    "draft": true,
+    "mergeable_observed": false,
+    "head_sha": "41e663f9ecd2a6c66f3554a45ddfb7bd17e2a702",
+    "review_summary": "no reviews; zero unresolved review threads",
+    "comparison_to_current_sprint_head": "diverged: ahead 1, behind 29",
+    "merge_decision": "not_merged_draft_nonmergeable_and_exact_head_ci_missing"
+  },
+  "commits": [
+    "eb96835b0faa2e7890a896de19b683f597cda865",
+    "5c935b7f13637a346e4b1a38ee16ed859f122852",
+    "c8b888d8df5da298539644ad5c1e0dbf75ff93e4",
+    "c30e5eb6e5fea6c1f379b3d62d23fa1654147f1f",
+    "dd4dfdca869c40871333033e1fc3c7f112d831cb",
+    "final_ledger_commit_pending"
+  ]
+}

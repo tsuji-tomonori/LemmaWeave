@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint438_ironing_minutes_four_weeks",
+  "title_ja": "4週間のアイロン時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04193",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Before work, Hayden spends 5 minutes ironing his button-up shirt and 3 minutes ironing his pants.  He does this 5 days a week.  How many minutes does he iron over 4 weeks?",
+  "answer_ja": "1日は5+3=8分、1週間は8×5=40分、4週間は40×4=160分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.ironing_minutes_four_weeks",
+  "graph": "work/gsm8k-sprint438-ironing-minutes-four-weeks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.ironing_minutes_per_day",
+      "title_ja": "1日の時間",
+      "claim_ja": "5+3=8分。",
+      "method_ja": "シャツとズボンの時間を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "両方を毎作業日に行う。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5+3=8分。"
+    },
+    {
+      "id": "week",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.ironing_minutes_per_week",
+      "title_ja": "1週間の時間",
+      "claim_ja": "8×5=40分。",
+      "method_ja": "1日分を5日分にする。",
+      "requires_steps": [
+        "day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "週5日。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8×5=40分。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.ironing_minutes_four_weeks",
+      "title_ja": "4週間の時間",
+      "claim_ja": "40×4=160分。",
+      "method_ja": "週時間を4倍する。",
+      "requires_steps": [
+        "week"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4週間。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40×4=160分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4194,
+    "checked_model_hash": "d07ed89bb53634a8184aa39f8bc6e7a5b77bea33009ebeffa250d0b03cc268c1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

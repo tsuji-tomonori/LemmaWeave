@@ -1,0 +1,21 @@
+{
+  "id": "gsm8k_sprint236_sibling_ages",
+  "title_ja": "きょうだいの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03221",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A02P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。きょうだい14人という情報は年齢計算には不要だが、原題から削除していない。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kayは32歳。最年少はその半分より5歳若く、最年長は最年少の4倍。最年長の年齢を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A02P1.sibling_oldest",
+  "graph": "work/gsm8k-sprint236-sibling-ages-graph.json",
+  "model_notes_ja": ["年齢は非負整数とし、『半分より5歳若い』を2×(最年少+5)=32と表した。"],
+  "steps": [
+    {"id":"sibling_youngest","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.sibling_youngest","title_ja":"最年少は11歳。","claim_ja":"32の半分16から5を引くので最年少は11歳。","method_ja":"2×(最年少+5)=32を解く。","requires_steps":[],"uses_nodes":[],"condition_ja":"年齢を自然数とし、32は偶数。","conclusion_ja":"最年少は11歳。","baseline_ja":"半分と一次方程式。"},
+    {"id":"sibling_oldest","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P1.sibling_oldest","title_ja":"最年長は44歳。","claim_ja":"11歳の4倍は44歳。","method_ja":"最年長=4×最年少へ11を代入する。","requires_steps":["sibling_youngest"],"uses_nodes":[],"condition_ja":"原題の4倍関係を用いる。","conclusion_ja":"最年長は44歳。","baseline_ja":"自然数の乗法。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3222,"checked_model_hash":"94f28d28420d1048c78b6087a7da7206daf5b9ddc10222e76b2456e35b3c7a24","checks_ja":["固定commitの原題を再読し、年齢関係と求める結論を照合した。","各説明行を名前付きLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

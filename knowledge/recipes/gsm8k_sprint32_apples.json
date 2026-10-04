@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint32_apples",
+  "title_ja": "3時間のりんご収穫",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00772",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1時間目66個、2時間目は2倍、3時間目は1時間目の3分の1として合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.apples_solution",
+  "graph": "work/gsm8k-sprint32-apples-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "3時間目の基準は2時間目でなく明記された1時間目66個。"
+  ],
+  "steps": [
+    {
+      "id": "apples_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.apples_second",
+      "title_ja": "2時間目",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1時間目66個の2倍。",
+      "conclusion_ja": "132個。",
+      "baseline_ja": "66×2=132。"
+    },
+    {
+      "id": "apples_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.apples_third",
+      "title_ja": "3時間目",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1時間目66個の3分の1。",
+      "conclusion_ja": "22個。",
+      "baseline_ja": "22×3=66。"
+    },
+    {
+      "id": "apples_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.apples_total",
+      "title_ja": "総収穫量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "66個、132個、22個を合計する。",
+      "conclusion_ja": "220個。",
+      "baseline_ja": "66+132+22=220。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 773,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

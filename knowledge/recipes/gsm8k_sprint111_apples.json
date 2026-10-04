@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint111_apples",
+  "title_ja": "運べるリンゴの重さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01945",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の全数量関係を順に式へ移し、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.apples_solution",
+  "graph": "work/gsm8k-sprint111-apples-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "apples_other",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.apples_other",
+      "title_ja": "ほかの果物は3ポンド。",
+      "claim_ja": "ほかの果物は3ポンド。",
+      "method_ja": "1+1+1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "ほかの果物は3ポンド。",
+      "baseline_ja": "ほかの果物は3ポンド。"
+    },
+    {
+      "id": "apples_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.apples_solution",
+      "title_ja": "リンゴは17ポンドまで運べる。",
+      "claim_ja": "リンゴは17ポンドまで運べる。",
+      "method_ja": "20−3。",
+      "requires_steps": [
+        "apples_other"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "リンゴは17ポンドまで運べる。",
+      "baseline_ja": "リンゴは17ポンドまで運べる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1946,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

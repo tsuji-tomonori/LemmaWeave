@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T02:00+09:00-gsm8k-15-a02",
+  "scheduled_local_hour": 2,
+  "scheduled_at": "2026-09-24T02:00:00+09:00",
+  "started_at": "2026-09-24T02:03:38+09:00",
+  "finished_at": "2026-09-24T02:20:00+09:00",
+  "start_delay_seconds": 218,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "eee4b6ce876a5c2c7034d77dd5b7725ce5344cec",
+  "artifact_commit": "d0047cfe10fa4e56e76ea63b18aff21c4d6a27cc",
+  "selected_problem_ids": [
+    "train:01959", "train:01960", "train:01961", "train:01962", "train:01963",
+    "train:01964", "train:01965", "train:01966", "train:01967", "train:01968",
+    "train:01969", "train:01970", "train:01971", "train:01972", "train:01973"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01959", "train:01960", "train:01961", "train:01962", "train:01963",
+    "train:01964", "train:01965", "train:01966", "train:01967", "train:01968",
+    "train:01969", "train:01970", "train:01971", "train:01972", "train:01973"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:01963", "commit": "860f021ccd6bc16325b81cd43f3bae1705519651"},
+    {"through": "train:01968", "commit": "ae4706df95f9fdfd768a1a8996559ede1601f2cb"},
+    {"through": "train:01973", "commit": "d0047cfe10fa4e56e76ea63b18aff21c4d6a27cc"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0166.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A02Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A02.lean",
+    "recipes": 15,
+    "explanation_lines": 46,
+    "named_lean_theorems": 46,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:01966は参照説明の短パン計算表記を訂正し、原題の5枚×3ドルを用いた。",
+    "train:01971は税、広告費、運営費、賃金を各段階の残額へ順次適用した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1459,
+    "pending": 6815,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:01974",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持し、1時枠と2時枠を重複なく実行した。"
+  },
+  "ci": {
+    "last_checked_head": "eee4b6ce876a5c2c7034d77dd5b7725ce5344cec",
+    "workflow_run_id": 35888063268,
+    "status": "failure",
+    "reason": "replay_timeout_and_existing_lean_errors",
+    "accepted_as_success_evidence": false,
+    "recovery_record": "operations/ci-recovery/2026-09-24-0200.json",
+    "new_head_status": "pending_after_ledger_commit"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T02:00+09:00",
+    "scope": "train:01959-train:01973",
+    "claimed_at": "2026-09-24T02:03:38+09:00",
+    "expires_at": "2026-09-24T03:03:38+09:00",
+    "released": true
+  }
+}

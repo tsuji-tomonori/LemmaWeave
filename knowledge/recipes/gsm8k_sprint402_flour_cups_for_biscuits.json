@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint402_flour_cups_for_biscuits",
+  "title_ja": "36個のビスケットに必要な小麦粉",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04157",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lady Bird uses 1 1/4 cup flour to make 9 biscuits.  She’s hosting this month's Junior League club which has 18 members and wants to make sure she allows 2 biscuits per guest.  How many cups of flour will Lady Bird need?",
+  "answer_ja": "18人に2個ずつなので36個。1回のレシピは9個だから4回分必要。1回分の1 1/4カップは5/4カップなので、4回分は5カップ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.flour_cups_for_biscuits",
+  "graph": "work/gsm8k-sprint402-flour-cups-for-biscuits-graph.json",
+  "model_notes_ja": [
+    "分数1 1/4を5/4として扱い、カップ単位を保つ。"
+  ],
+  "steps": [
+    {
+      "id": "flour_cups_for_biscuits",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.flour_cups_for_biscuits",
+      "title_ja": "36個のビスケットに必要な小麦粉",
+      "claim_ja": "18人に2個ずつなので36個。1回のレシピは9個だから4回分必要。1回分の1 1/4カップは5/4カップなので、4回分は5カップ。",
+      "method_ja": "必要個数を収量で割ってバッチ数を出し、1バッチ当たり5/4カップを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各客は18人の会員を指し、全員に2個ずつ用意する。レシピは比例拡大できる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "18人に2個ずつなので36個。1回のレシピは9個だから4回分必要。1回分の1 1/4カップは5/4カップなので、4回分は5カップ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4158,
+    "checked_model_hash": "92dabab23308bc83266c91e418f16c052e4f57ad71e370e80166885fde24b7bd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

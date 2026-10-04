@@ -1,0 +1,311 @@
+{
+  "date": "2026-10-02",
+  "run_id": "20261002T030000+0900-solve-03",
+  "scheduled_slot": "2026-10-02T03:00:00+09:00",
+  "started_at": "2026-10-01T18:04:13Z",
+  "started_late_by_seconds": 253,
+  "finished_at": "2026-10-01T18:13:13Z",
+  "base_sha": "46ba150f72db81ca527bc3b4716cda36561cae10",
+  "branch": "codex/sprint-20260919-0000",
+  "role": "individual_gsm8k_solve",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03581",
+    "external-gsm8k-main-3101c7d50724:train:03582",
+    "external-gsm8k-main-3101c7d50724:train:03583",
+    "external-gsm8k-main-3101c7d50724:train:03584",
+    "external-gsm8k-main-3101c7d50724:train:03585",
+    "external-gsm8k-main-3101c7d50724:train:03586",
+    "external-gsm8k-main-3101c7d50724:train:03587",
+    "external-gsm8k-main-3101c7d50724:train:03588",
+    "external-gsm8k-main-3101c7d50724:train:03589",
+    "external-gsm8k-main-3101c7d50724:train:03590",
+    "external-gsm8k-main-3101c7d50724:train:03591",
+    "external-gsm8k-main-3101c7d50724:train:03592",
+    "external-gsm8k-main-3101c7d50724:train:03593",
+    "external-gsm8k-main-3101c7d50724:train:03594",
+    "external-gsm8k-main-3101c7d50724:train:03595"
+  ],
+  "authored_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03581",
+    "external-gsm8k-main-3101c7d50724:train:03582",
+    "external-gsm8k-main-3101c7d50724:train:03583",
+    "external-gsm8k-main-3101c7d50724:train:03584",
+    "external-gsm8k-main-3101c7d50724:train:03585",
+    "external-gsm8k-main-3101c7d50724:train:03586",
+    "external-gsm8k-main-3101c7d50724:train:03587",
+    "external-gsm8k-main-3101c7d50724:train:03588",
+    "external-gsm8k-main-3101c7d50724:train:03589",
+    "external-gsm8k-main-3101c7d50724:train:03590",
+    "external-gsm8k-main-3101c7d50724:train:03591",
+    "external-gsm8k-main-3101c7d50724:train:03592",
+    "external-gsm8k-main-3101c7d50724:train:03593",
+    "external-gsm8k-main-3101c7d50724:train:03594",
+    "external-gsm8k-main-3101c7d50724:train:03595"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03581",
+    "external-gsm8k-main-3101c7d50724:train:03582",
+    "external-gsm8k-main-3101c7d50724:train:03583",
+    "external-gsm8k-main-3101c7d50724:train:03584",
+    "external-gsm8k-main-3101c7d50724:train:03585",
+    "external-gsm8k-main-3101c7d50724:train:03586",
+    "external-gsm8k-main-3101c7d50724:train:03587",
+    "external-gsm8k-main-3101c7d50724:train:03588",
+    "external-gsm8k-main-3101c7d50724:train:03589",
+    "external-gsm8k-main-3101c7d50724:train:03590",
+    "external-gsm8k-main-3101c7d50724:train:03591",
+    "external-gsm8k-main-3101c7d50724:train:03592",
+    "external-gsm8k-main-3101c7d50724:train:03593",
+    "external-gsm8k-main-3101c7d50724:train:03594",
+    "external-gsm8k-main-3101c7d50724:train:03595"
+  ],
+  "answers": {
+    "train:03581": "45台",
+    "train:03582": "5,400ドル",
+    "train:03583": "45ガロン",
+    "train:03584": "5か月",
+    "train:03585": "78食",
+    "train:03586": "20m",
+    "train:03587": "10人",
+    "train:03588": "30匹（初日を開始数とする読解）",
+    "train:03589": "6時間",
+    "train:03590": "29ページ",
+    "train:03591": "750ドル",
+    "train:03592": "6年",
+    "train:03593": "20ドル",
+    "train:03594": "500ドル",
+    "train:03595": "90,000ドル"
+  },
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "positions_and_hashes_verified": "15/15"
+  },
+  "semantic_notes": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03588",
+      "note_ja": "原資料の参照解答に合わせ、初日を開始数、4日目を810匹として3回の増加をモデル化した。開始前を0日目として4回増加すると読む追加条件なら10匹になるため、採用読解を明示した。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03591",
+      "note_ja": "第2週の50%は初期額400ドルではなく、第1週後の500ドルを基準にした。"
+    }
+  ],
+  "artifacts": {
+    "model_files": 3,
+    "audit_files": 3,
+    "method_batches": 3,
+    "recipes": 15,
+    "explanation_lines": 39,
+    "named_lean_theorems": 39,
+    "dependency_audit_commands": 39,
+    "axiom_audit_commands": 15,
+    "forbidden_tokens": 0,
+    "model_sha256": {
+      "LemmaWeave/Problems/GSM8K/Sprint1002A03P1Models.lean": "de05f56d2abca41a07786da3e75d3b4a33dc8d9c863d26a5abfa63e94ebbb856",
+      "LemmaWeave/Problems/GSM8K/Sprint1002A03P2Models.lean": "4312e11b8af21e839b0e01cc3951d10e095dedca9858b37cabe0b15cdde7b32f",
+      "LemmaWeave/Problems/GSM8K/Sprint1002A03P3Models.lean": "f346213f1f35347f77db92a2e5e680b083447408e3adfc5878905babdf1b4000"
+    },
+    "checkpoints": [
+      "defdf8c45326fcac987db47c9d4824d7d9125bd7",
+      "31e477c70dc40faad7be538050dde72aea9a062f",
+      "5491c09fa8c057bef27340a25aa2b462bed91e49"
+    ],
+    "metadata_repair": "b6e0492896591fcc4f19162adfff47c85d132903"
+  },
+  "verification": {
+    "semantic_self_review": "15/15",
+    "current_content_ref": "b6e0492896591fcc4f19162adfff47c85d132903",
+    "input_hashes_current": true,
+    "recipe_model_hashes_current": true,
+    "declarations_present": true,
+    "explanation_dependency_edges_present": true,
+    "static_audit": {
+      "files_checked": 24,
+      "exact_remote_matches": 24,
+      "missing_roots": 0,
+      "missing_declarations": 0,
+      "missing_dependency_commands": 0,
+      "forbidden_tokens": 0
+    },
+    "local_lean_4_33_1_available": false,
+    "lean_build": "not_run",
+    "axiom_output": "not_run",
+    "assurance": "INCONCLUSIVE",
+    "reason_ja": "固定Lean 4.33.1と固定mathlibの実行環境がなく、exact-head CIも未生成のためsolution_readyへ昇格しない。"
+  },
+  "queue": {
+    "total": 8792,
+    "unique_ids": 8792,
+    "sequence_exact": true,
+    "missing": 0,
+    "unexpected": 0,
+    "state_overlap": 0,
+    "before": {
+      "solution_ready": 518,
+      "awaiting_verification": 3064,
+      "pending": 5210
+    },
+    "after": {
+      "solution_ready": 518,
+      "awaiting_verification": 3079,
+      "pending": 5195
+    },
+    "main_reflected_solution_ready": 518,
+    "next_pending": "external-gsm8k-main-3101c7d50724:train:03596",
+    "update_commit": "167937ae305235d9fa45cff7b395e2f292942317",
+    "queue_blob_sha": "9940a0c0c23bd60555a10e8d7cddb2c1cb878d83"
+  },
+  "claim": {
+    "status": "released",
+    "claimed_at": "2026-10-02T03:04:13+09:00",
+    "expires_at": "2026-10-02T04:30:00+09:00",
+    "released_at": "2026-10-02T03:13:13+09:00",
+    "scope": "serial_single_writer",
+    "problem_ids": [
+      "external-gsm8k-main-3101c7d50724:train:03581",
+      "external-gsm8k-main-3101c7d50724:train:03582",
+      "external-gsm8k-main-3101c7d50724:train:03583",
+      "external-gsm8k-main-3101c7d50724:train:03584",
+      "external-gsm8k-main-3101c7d50724:train:03585",
+      "external-gsm8k-main-3101c7d50724:train:03586",
+      "external-gsm8k-main-3101c7d50724:train:03587",
+      "external-gsm8k-main-3101c7d50724:train:03588",
+      "external-gsm8k-main-3101c7d50724:train:03589",
+      "external-gsm8k-main-3101c7d50724:train:03590",
+      "external-gsm8k-main-3101c7d50724:train:03591",
+      "external-gsm8k-main-3101c7d50724:train:03592",
+      "external-gsm8k-main-3101c7d50724:train:03593",
+      "external-gsm8k-main-3101c7d50724:train:03594",
+      "external-gsm8k-main-3101c7d50724:train:03595"
+    ]
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03581",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03582",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03583",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03584",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03585",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03586",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03587",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03588",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03589",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03590",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03591",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03592",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03593",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03594",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03595",
+      "retry_on": "2026-10-02T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1のビルド・公理出力・exact-head成功証拠が未取得。",
+      "next_action_ja": "22時枠でexact-head CIを回収し、入力・依存・公理証拠を取り込む。"
+    }
+  ],
+  "ci": {
+    "record_scope": "content_head_before_ledger_finalization",
+    "checked_head": "b6e0492896591fcc4f19162adfff47c85d132903",
+    "workflow_runs": 0,
+    "check_runs": 0,
+    "commit_statuses": 0,
+    "required_success": false
+  },
+  "pr": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "mergeable": true,
+    "mergeable_state": "clean",
+    "merged": false,
+    "head_sha": "b6e0492896591fcc4f19162adfff47c85d132903",
+    "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "latest_effective_review": "APPROVED",
+    "unresolved_review_threads": 0,
+    "merge_action": "not_merged",
+    "merge_blocker_ja": "正確なHEADの必須CI成功証拠がない。"
+  },
+  "commits": {
+    "claim": "327f7338d664816d943397ac7167461188b53cf0",
+    "problem_checkpoints": [
+      "defdf8c45326fcac987db47c9d4824d7d9125bd7",
+      "31e477c70dc40faad7be538050dde72aea9a062f",
+      "5491c09fa8c057bef27340a25aa2b462bed91e49"
+    ],
+    "queue": "167937ae305235d9fa45cff7b395e2f292942317",
+    "metadata_repair": "b6e0492896591fcc4f19162adfff47c85d132903"
+  }
+}

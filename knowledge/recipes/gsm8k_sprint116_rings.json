@@ -1,0 +1,112 @@
+{
+  "id": "gsm8k_sprint116_rings",
+  "title_ja": "残った装飾リング",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02028",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A06.rings_solution",
+  "graph": "work/gsm8k-sprint116-rings-graph.json",
+  "model_notes_ja": [
+    "twice the number of the remaining stockの係り先は曖昧である。参照解と同じく、購入した200個が購入前の残正在庫の2倍という追加条件を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "rings_old",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.rings_old",
+      "title_ja": "追加200個が残正在庫の2倍なら旧在庫は100個。",
+      "claim_ja": "追加200個が残正在庫の2倍なら旧在庫は100個。",
+      "method_ja": "200÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "購入した200個が購入前の残正在庫の2倍という追加条件を明示する。",
+      "conclusion_ja": "追加200個が残正在庫の2倍なら旧在庫は100個。",
+      "baseline_ja": "追加200個が残正在庫の2倍なら旧在庫は100個。"
+    },
+    {
+      "id": "rings_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.rings_total",
+      "title_ja": "販売前は300個。",
+      "claim_ja": "販売前は300個。",
+      "method_ja": "100+200。",
+      "requires_steps": [
+        "rings_old"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "購入した200個が購入前の残正在庫の2倍という追加条件を明示する。",
+      "conclusion_ja": "販売前は300個。",
+      "baseline_ja": "販売前は300個。"
+    },
+    {
+      "id": "rings_sold",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.rings_sold",
+      "title_ja": "4分の3は225個。",
+      "claim_ja": "4分の3は225個。",
+      "method_ja": "300×3/4。",
+      "requires_steps": [
+        "rings_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "購入した200個が購入前の残正在庫の2倍という追加条件を明示する。",
+      "conclusion_ja": "4分の3は225個。",
+      "baseline_ja": "4分の3は225個。"
+    },
+    {
+      "id": "rings_after_sale",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.rings_after_sale",
+      "title_ja": "最初の販売後は75個。",
+      "claim_ja": "最初の販売後は75個。",
+      "method_ja": "300−225。",
+      "requires_steps": [
+        "rings_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "購入した200個が購入前の残正在庫の2倍という追加条件を明示する。",
+      "conclusion_ja": "最初の販売後は75個。",
+      "baseline_ja": "最初の販売後は75個。"
+    },
+    {
+      "id": "rings_after_buy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.rings_after_buy",
+      "title_ja": "追加後は375個。",
+      "claim_ja": "追加後は375個。",
+      "method_ja": "75+300。",
+      "requires_steps": [
+        "rings_after_sale"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "購入した200個が購入前の残正在庫の2倍という追加条件を明示する。",
+      "conclusion_ja": "追加後は375個。",
+      "baseline_ja": "追加後は375個。"
+    },
+    {
+      "id": "rings_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.rings_solution",
+      "title_ja": "最後に225個残る。",
+      "claim_ja": "最後に225個残る。",
+      "method_ja": "375−150。",
+      "requires_steps": [
+        "rings_after_buy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "購入した200個が購入前の残正在庫の2倍という追加条件を明示する。",
+      "conclusion_ja": "最後に225個残る。",
+      "baseline_ja": "最後に225個残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2029,
+    "checked_model_hash": "6afaf5008eaf93c5adba4476ece9af8dac1560619045c291b7824f595ef3a6d4",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足を黙って補わず明示した。"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint162_bread",
+  "title_ja": "4個のパンを順番に作る時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02719",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A00.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各生地を3時間ずつ順番に発酵させ、その後2時間ずつ順番に焼く。4個分の所要時間を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A00.bread_solution",
+  "graph": "work/gsm8k-sprint162-bread-graph.json",
+  "model_notes_ja": [
+    "“one after another”を発酵12時間と焼成8時間が重ならない直列工程として読む。"
+  ],
+  "steps": [
+    {
+      "id": "bread_rise",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.bread_rise",
+      "title_ja": "発酵は12時間",
+      "claim_ja": "3時間を4個分直列に行う",
+      "method_ja": "工程が重ならない条件で4倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "“one after another”を発酵12時間と焼成8時間が重ならない直列工程として読む。",
+      "conclusion_ja": "3時間を4個分直列に行う",
+      "baseline_ja": "3時間を4個分直列に行う"
+    },
+    {
+      "id": "bread_bake",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.bread_bake",
+      "title_ja": "焼成は8時間",
+      "claim_ja": "2時間を4個分直列に行う",
+      "method_ja": "工程が重ならない条件で4倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "“one after another”を発酵12時間と焼成8時間が重ならない直列工程として読む。",
+      "conclusion_ja": "2時間を4個分直列に行う",
+      "baseline_ja": "2時間を4個分直列に行う"
+    },
+    {
+      "id": "bread_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A00.bread_solution",
+      "title_ja": "合計20時間",
+      "claim_ja": "12時間と8時間を加える",
+      "method_ja": "二つの直列工程を加える",
+      "requires_steps": [
+        "bread_rise",
+        "bread_bake"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "“one after another”を発酵12時間と焼成8時間が重ならない直列工程として読む。",
+      "conclusion_ja": "12時間と8時間を加える",
+      "baseline_ja": "12時間と8時間を加える"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2720,
+    "checked_model_hash": "23893a4f431136c313e893a3841a1baf9e6be6bce5cc503d790a82f655706262",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

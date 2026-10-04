@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint105_pets",
+  "title_ja": "町の人口",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01855",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "犬猫だけという参照条件と、他のペットを許す反例を分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.pets_population_not_unique",
+  "graph": "work/gsm8k-sprint105-pets-graph.json",
+  "model_notes_ja": [
+    "原文はペット所有者が犬か猫だけとは明記しない。参照解答の100人には排他的な二分類という追加条件が必要で、他種を許せば200人の反例がある。"
+  ],
+  "steps": [
+    {
+      "id": "pets_reference_owners",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.pets_reference_owners",
+      "title_ja": "参照条件ではペット所有者60人。",
+      "claim_ja": "参照条件ではペット所有者60人。",
+      "method_ja": "犬所有者と猫所有者30人が同数。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.pets_reference_solution",
+      "title_ja": "参照条件では町は100人。",
+      "claim_ja": "参照条件では町は100人。",
+      "method_ja": "60÷60%。",
+      "requires_steps": [
+        "pets_reference_owners"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_other_type_countermodel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.pets_other_type_countermodel",
+      "title_ja": "他種ペットを許す200人モデルも条件を満たす。",
+      "claim_ja": "他種ペットを許す200人モデルも条件を満たす。",
+      "method_ja": "120人の60人が犬、30人が猫、残り30人が他種。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pets_population_not_unique",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.pets_population_not_unique",
+      "title_ja": "人口100人と200人は異なる。",
+      "claim_ja": "人口100人と200人は異なる。",
+      "method_ja": "二つのモデルを比較。",
+      "requires_steps": [
+        "pets_reference_solution",
+        "pets_other_type_countermodel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1856,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

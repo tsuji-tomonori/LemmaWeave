@@ -1,0 +1,111 @@
+{
+  "id": "gsm8k_sprint123_tomatoes",
+  "title_ja": "留守中に増えたトマト",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02137",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "『100 times more』の2通りの読解を分離し、増加数が一意か検討する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A14.tomatoes_not_unique",
+  "graph": "work/gsm8k-sprint123-tomatoes-graph.json",
+  "model_notes_ja": [
+    "『100 times more』は、総数が100倍と増加量が100倍の両方に読める。参照答3564は前者に限定して保持し、後者の3600も反例として形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "tomatoes_conventional_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.tomatoes_conventional_total",
+      "title_ja": "総数を元の100倍と読むと3600個。",
+      "claim_ja": "総数を元の100倍と読むと3600個。",
+      "method_ja": "36×100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『100 times more』の採用する読解を明示し、別読解を排除しない。",
+      "conclusion_ja": "総数を元の100倍と読むと3600個。",
+      "baseline_ja": "総数を元の100倍と読むと3600個。"
+    },
+    {
+      "id": "tomatoes_conventional_growth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.tomatoes_conventional_growth",
+      "title_ja": "その読解で増えた数は3564個。",
+      "claim_ja": "その読解で増えた数は3564個。",
+      "method_ja": "3600−36。",
+      "requires_steps": [
+        "tomatoes_conventional_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『100 times more』の採用する読解を明示し、別読解を排除しない。",
+      "conclusion_ja": "その読解で増えた数は3564個。",
+      "baseline_ja": "その読解で増えた数は3564個。"
+    },
+    {
+      "id": "tomatoes_literal_growth",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.tomatoes_literal_growth",
+      "title_ja": "増加量が元の100倍と読むと3600個増える。",
+      "claim_ja": "増加量が元の100倍と読むと3600個増える。",
+      "method_ja": "36×100を増加量とする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『100 times more』の採用する読解を明示し、別読解を排除しない。",
+      "conclusion_ja": "増加量が元の100倍と読むと3600個増える。",
+      "baseline_ja": "増加量が元の100倍と読むと3600個増える。"
+    },
+    {
+      "id": "tomatoes_literal_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.tomatoes_literal_total",
+      "title_ja": "その読解で総数は3636個。",
+      "claim_ja": "その読解で総数は3636個。",
+      "method_ja": "36+3600。",
+      "requires_steps": [
+        "tomatoes_literal_growth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『100 times more』の採用する読解を明示し、別読解を排除しない。",
+      "conclusion_ja": "その読解で総数は3636個。",
+      "baseline_ja": "その読解で総数は3636個。"
+    },
+    {
+      "id": "tomatoes_not_unique",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.tomatoes_not_unique",
+      "title_ja": "3564個と3600個は異なるので原文だけでは一意でない。",
+      "claim_ja": "3564個と3600個は異なるので原文だけでは一意でない。",
+      "method_ja": "2読解の結論を比較する。",
+      "requires_steps": [
+        "tomatoes_conventional_growth",
+        "tomatoes_literal_growth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『100 times more』の採用する読解を明示し、別読解を排除しない。",
+      "conclusion_ja": "3564個と3600個は異なるので原文だけでは一意でない。",
+      "baseline_ja": "3564個と3600個は異なるので原文だけでは一意でない。"
+    },
+    {
+      "id": "tomatoes_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.tomatoes_reference_solution",
+      "title_ja": "参照答3564個は総数100倍という追加読解の下で成り立つ。",
+      "claim_ja": "参照答3564個は総数100倍という追加読解の下で成り立つ。",
+      "method_ja": "その読解を明示して結論を採る。",
+      "requires_steps": [
+        "tomatoes_conventional_growth"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『100 times more』の採用する読解を明示し、別読解を排除しない。",
+      "conclusion_ja": "参照答3564個は総数100倍という追加読解の下で成り立つ。",
+      "baseline_ja": "参照答3564個は総数100倍という追加読解の下で成り立つ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2138,
+    "checked_model_hash": "61d9d50f01023680e1b5a790b2cbb8b5dc80e11c2c055803236bd99c6da83155",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な表現は読解条件と別読解を明示した。"
+    ]
+  }
+}

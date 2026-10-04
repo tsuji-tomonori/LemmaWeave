@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint116_salads",
+  "title_ja": "果物サラダ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02021",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A06.salads_solution",
+  "graph": "work/gsm8k-sprint116-salads-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "salads_angel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.salads_angel",
+      "title_ja": "Angelは400個。",
+      "claim_ja": "Angelは400個。",
+      "method_ja": "200×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "Angelは400個。",
+      "baseline_ja": "Angelは400個。"
+    },
+    {
+      "id": "salads_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A06.salads_solution",
+      "title_ja": "合計600個。",
+      "claim_ja": "合計600個。",
+      "method_ja": "400+200。",
+      "requires_steps": [
+        "salads_angel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "合計600個。",
+      "baseline_ja": "合計600個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2022,
+    "checked_model_hash": "6afaf5008eaf93c5adba4476ece9af8dac1560619045c291b7824f595ef3a6d4",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足を黙って補わず明示した。"
+    ]
+  }
+}

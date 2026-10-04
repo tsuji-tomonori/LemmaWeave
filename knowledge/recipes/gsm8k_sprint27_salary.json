@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint27_salary",
+  "title_ja": "月給から時給への換算",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00692",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "月給576ドルと週6日・1日8時間から時給を考える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A27.salary_solution",
+  "graph": "work/gsm8k-sprint27-salary-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A27.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "月を4週間と追加仮定すれば時給3ドル。",
+    "暦月の勤務日数が未指定なので原文だけでは一意でない。26日勤務なら36/13ドル。"
+  ],
+  "steps": [
+    {
+      "id": "salary_weekly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.salary_weekly",
+      "title_ja": "週給",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4週間の月と追加仮定する。",
+      "conclusion_ja": "週144ドル。",
+      "baseline_ja": "576÷4=144。"
+    },
+    {
+      "id": "salary_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.salary_daily",
+      "title_ja": "日給",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "週144ドルを6日で割る。",
+      "conclusion_ja": "日24ドル。",
+      "baseline_ja": "144÷6=24。"
+    },
+    {
+      "id": "salary_hourly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.salary_hourly",
+      "title_ja": "時給",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "日24ドルを8時間で割る。",
+      "conclusion_ja": "時給3ドル。",
+      "baseline_ja": "24÷8=3。"
+    },
+    {
+      "id": "salary_calendar_counterexample",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.salary_calendar_counterexample",
+      "title_ja": "非一意性の反例",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "月26日勤務なら総労働時間は208時間。",
+      "conclusion_ja": "時給36/13ドルで3ドルではない。",
+      "baseline_ja": "576÷208=36/13。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 693,
+    "checked_model_hash": "bae0c782540d1aa92fadf4c4853475678247b5247c8e57098d3a584e0c34b521",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

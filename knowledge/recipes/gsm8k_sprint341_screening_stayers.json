@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint341_screening_stayers",
+  "title_ja": "上映に残った人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03828",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "There were a total of 50 guests in a movie screening of which half of the guests are women, 15 are men, and the rest are children. In the middle of the movie, 1/5 of the men and 4 children left. How many people stayed?",
+  "answer_ja": "女性は50÷2=25人、男性15人なので子どもは10人。男性の5分の1である3人と子ども4人、計7人が退出し、50−7=43人が残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A01P2.screening_stayers",
+  "graph": "work/gsm8k-sprint341-screening-stayers-graph.json",
+  "model_notes_ja": [
+    "女性・男性・子どもは重複せず全50人を分割する。"
+  ],
+  "steps": [
+    {
+      "id": "screening_stayers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A01P2.screening_stayers",
+      "title_ja": "上映に残った人数",
+      "claim_ja": "女性は50÷2=25人、男性15人なので子どもは10人。男性の5分の1である3人と子ども4人、計7人が退出し、50−7=43人が残る。",
+      "method_ja": "各属性人数と退出人数を求め全体から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15は5で割り切れ、子ども10人は4人以上。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "43人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3829,
+    "checked_model_hash": "3e95ef9500685ba134265487fc829b0bf39fea63a369c859c1545bd2672779a5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

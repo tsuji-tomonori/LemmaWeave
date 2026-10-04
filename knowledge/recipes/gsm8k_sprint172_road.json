@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint172_road","title_ja":"Kenの往復経路の総距離","problem_id":"external-gsm8k-main-3101c7d50724:train:02875","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0928A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"Ken–Dawnが4マイルで、それがMary–Dawnの2倍。Ken→Dawn→Mary→Dawn→Kenの総距離。","root":"LemmaWeave.Problems.GSM8K.Sprint0928A14.road_solution","graph":"work/gsm8k-sprint172-road-graph.json","model_notes_ja":["Maryの道路上の左右位置を仮定せず、指定経路で実際に使うKen–DawnとDawn–Maryだけを合計する。"],
+  "steps":[
+    {"id":"road_mary_dawn","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.road_mary_dawn","title_ja":"Dawn–Maryは2マイル","claim_ja":"Ken–Dawnの4マイルがDawn–Maryの2倍なので、Dawn–Maryは2マイル。","method_ja":"2倍関係の逆算","requires_steps":[],"uses_nodes":[],"condition_ja":"twice as far from DawnをDawnからの距離比較と読む。","conclusion_ja":"Dawn–Maryは2マイル。","baseline_ja":"4÷2=2。"},
+    {"id":"road_route","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.road_route","title_ja":"経路は12マイル","claim_ja":"4+2+2+4=12マイル。","method_ja":"各区間距離の和","requires_steps":["road_mary_dawn"],"uses_nodes":[],"condition_ja":"経路はKen→Dawn→Mary→Dawn→Ken。","conclusion_ja":"総距離は12マイル。","baseline_ja":"4+2+2+4=12。"},
+    {"id":"road_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.road_solution","title_ja":"答えは12マイル","claim_ja":"Kenが進む総距離は12マイル。","method_ja":"直前の結論","requires_steps":["road_route"],"uses_nodes":[],"condition_ja":"MaryがDawnのどちら側かはこの経路長に影響しない。","conclusion_ja":"答えは12マイル。","baseline_ja":"12マイル。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":2876,"checked_model_hash":"6bdc2b2b890105008f1bf78a7b1e5d0217af5f9c9e12871fb77358be639e4961","checks_ja":["twice as farの基準をDawnからの距離として読んだ。","指定経路の4区間をすべて含めた。","Maryの左右位置という不要な追加条件を置かなかった。","独立レビューではない。"]}
+}

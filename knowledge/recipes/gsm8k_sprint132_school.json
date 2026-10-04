@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint132_school",
+  "title_ja": "特別学校の盲学生数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02260",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "聴覚障害学生は盲学生の3倍、全180人。盲学生数を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A04.school_solution",
+  "graph": "work/gsm8k-sprint132-school-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "school_deaf",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.school_deaf",
+      "title_ja": "聴覚障害学生は135人",
+      "claim_ja": "聴覚障害学生は135人",
+      "method_ja": "3倍関係と合計180人を連立する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "聴覚障害学生は135人",
+      "baseline_ja": "聴覚障害学生は135人"
+    },
+    {
+      "id": "school_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.school_solution",
+      "title_ja": "盲学生は45人",
+      "claim_ja": "盲学生は45人",
+      "method_ja": "4等分の1を求める",
+      "requires_steps": [
+        "school_deaf"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "盲学生は45人",
+      "baseline_ja": "盲学生は45人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2261,
+    "checked_model_hash": "1b9f70468554e9981c06f87268115033a93ac640809512751f109819832445b3",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

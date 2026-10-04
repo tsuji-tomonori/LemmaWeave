@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint281_monthly_savings",
+  "title_ja": "毎月の貯金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03510",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A18P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1000ドル目標に前年残金100ドルを充て、残りを12か月で均等に貯める。",
+  "answer_ja": "毎月75ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.monthly_savings",
+  "graph": "work/gsm8k-sprint281-monthly-savings-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "remaining_savings_goal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.remaining_savings_goal",
+      "title_ja": "新たに必要な額は900ドル。",
+      "claim_ja": "新たに必要な額は900ドル。",
+      "method_ja": "1000ドルから100ドルを引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "前年残金を全額充当する。",
+      "conclusion_ja": "900ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "monthly_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.monthly_savings",
+      "title_ja": "毎月75ドル。",
+      "claim_ja": "毎月75ドル。",
+      "method_ja": "900ドルを12か月で等分する。",
+      "requires_steps": [
+        "remaining_savings_goal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "12か月均等に貯める。",
+      "conclusion_ja": "75ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3511,
+    "checked_model_hash": "83fb4aa172b2768949361874e5f964d0b9c5aa8bf37958ae57fb3ad85541e97f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

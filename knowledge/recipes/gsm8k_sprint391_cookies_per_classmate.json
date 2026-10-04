@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint391_cookies_per_classmate",
+  "title_ja": "クラスメート一人あたりのクッキー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04080",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Karen bakes 50 chocolate chip cookies. She keeps 10 for herself, and she gives 8 to her grandparents. If Karen wants to give everyone in her class cookies, and there are 16 people in her class, how many cookies will each person receive?",
+  "answer_ja": "50個から自分用10個と祖父母用8個を除くと32個。クラス16人へ等分すると32÷16=2個ずつである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P1.cookies_per_classmate",
+  "graph": "work/gsm8k-sprint391-cookies-per-classmate-graph.json",
+  "model_notes_ja": [
+    "everyone in her classをKarenを含む16人とし、32個は16で割り切れる。"
+  ],
+  "steps": [
+    {
+      "id": "cookies_per_classmate",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P1.cookies_per_classmate",
+      "title_ja": "クラスメート一人あたりのクッキー",
+      "claim_ja": "50個から自分用10個と祖父母用8個を除くと32個。クラス16人へ等分すると32÷16=2個ずつである。",
+      "method_ja": "everyone in her classをKarenを含む16人とし、32個は16で割り切れる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "everyone in her classをKarenを含む16人とし、32個は16で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "50個から自分用10個と祖父母用8個を除くと32個。クラス16人へ等分すると32÷16=2個ずつである。 答えは2個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4081,
+    "checked_model_hash": "20068854e3f9e5c5b0a0da30398592d5dc5b0f6c7ea23bc1536450b4074bdf23",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

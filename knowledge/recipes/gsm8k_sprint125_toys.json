@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint125_toys",
+  "title_ja": "箱にある人形の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02164",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "24個の4分の1をアクションフィギュアとし、残りを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.toys_solution",
+  "graph": "work/gsm8k-sprint125-toys-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "toys_figures",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.toys_figures",
+      "title_ja": "アクションフィギュアは6個。",
+      "claim_ja": "アクションフィギュアは6個。",
+      "method_ja": "24×1/4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "アクションフィギュアは6個。",
+      "baseline_ja": "アクションフィギュアは6個。"
+    },
+    {
+      "id": "toys_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.toys_solution",
+      "title_ja": "人形は18個。",
+      "claim_ja": "人形は18個。",
+      "method_ja": "24−6。",
+      "requires_steps": [
+        "toys_figures"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "人形は18個。",
+      "baseline_ja": "人形は18個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2165,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

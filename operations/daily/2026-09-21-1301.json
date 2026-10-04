@@ -1,0 +1,138 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-1300-gsm8k-64",
+  "planned_slot_local_hour": 13,
+  "planned_at": "2026-09-21T13:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "4eb93f0f6dcd99a2be1ddda231b748a9c7de531e",
+  "started_at": "2026-09-21T13:01:09+09:00",
+  "finished_at": "2026-09-21T13:10:35+09:00",
+  "schedule_offset_seconds": 69,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01239",
+    "external-gsm8k-main-3101c7d50724:train:01240",
+    "external-gsm8k-main-3101c7d50724:train:01241",
+    "external-gsm8k-main-3101c7d50724:train:01242",
+    "external-gsm8k-main-3101c7d50724:train:01243",
+    "external-gsm8k-main-3101c7d50724:train:01244",
+    "external-gsm8k-main-3101c7d50724:train:01245",
+    "external-gsm8k-main-3101c7d50724:train:01246",
+    "external-gsm8k-main-3101c7d50724:train:01247",
+    "external-gsm8k-main-3101c7d50724:train:01248",
+    "external-gsm8k-main-3101c7d50724:train:01249",
+    "external-gsm8k-main-3101c7d50724:train:01250",
+    "external-gsm8k-main-3101c7d50724:train:01251",
+    "external-gsm8k-main-3101c7d50724:train:01252",
+    "external-gsm8k-main-3101c7d50724:train:01253"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01239",
+    "external-gsm8k-main-3101c7d50724:train:01240",
+    "external-gsm8k-main-3101c7d50724:train:01241",
+    "external-gsm8k-main-3101c7d50724:train:01242",
+    "external-gsm8k-main-3101c7d50724:train:01243",
+    "external-gsm8k-main-3101c7d50724:train:01244",
+    "external-gsm8k-main-3101c7d50724:train:01245",
+    "external-gsm8k-main-3101c7d50724:train:01246",
+    "external-gsm8k-main-3101c7d50724:train:01247",
+    "external-gsm8k-main-3101c7d50724:train:01248",
+    "external-gsm8k-main-3101c7d50724:train:01249",
+    "external-gsm8k-main-3101c7d50724:train:01250",
+    "external-gsm8k-main-3101c7d50724:train:01251",
+    "external-gsm8k-main-3101c7d50724:train:01252",
+    "external-gsm8k-main-3101c7d50724:train:01253"
+  ],
+  "verification_pending_cumulative": {
+    "count": 740,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01253"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01239-01253",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを完走し、入力SHA・許容公理・62説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:01239-01243",
+      "commit": "9666761bac3c92e246e2cc26bccb16a5453684a6"
+    },
+    {
+      "problem_ids": "train:01244-01248",
+      "commit": "f4c7965c21c297cfeb033cf0bc3f3a8270a156a9"
+    },
+    {
+      "problem_ids": "train:01249-01253 and registration",
+      "commit": "bf740f9b8770e38735d15bd51d5278f42456bd37"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 62,
+    "recipe_declaration_mappings_checked": 62,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_hash": "8c0b9e45e584436be0cca3cdc6fe5910e48cf5cb7fe51f126a60052676d62deb",
+    "semantic_blockers": [
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01249",
+        "reason_ja": "45分で25%という一点だけでは充電速度の推移が分からない。一定速度なら残り135分だが、総時間150分・残り105分の別解も形式化した。"
+      },
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01253",
+        "reason_ja": "20個分の予算があることは購入・設置の確約ではない。全て買って飾る83個と、買わず未設置10個だけを飾る63個を形式化した。"
+      }
+    ]
+  },
+  "measurements": {
+    "elapsed_seconds": 566,
+    "artifact_bytes": 63421,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0,
+    "local_execution_success_rate": 1,
+    "ci_seconds": null
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records, 15 raw questions, 15 normalized questions, and 62 declarations checked",
+    "solve_queue_write": "passed on exact PR head checkout",
+    "queue_partition": "solution_ready 518, awaiting_verification 740, pending 7534; total 8792",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_until_fixed_ci_graphs",
+    "method_recipe_render_detail": "依存グラフが未生成のためdnc2026_geometry_area_individual.json.gz読込でFileNotFoundError。検査規則は緩和していない。",
+    "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "4eb93f0f6dcd99a2be1ddda231b748a9c7de531e",
+    "previous_run_id": null,
+    "previous_status": "not_triggered",
+    "accepted_as_success_evidence": false,
+    "solution_commit_sha": "bf740f9b8770e38735d15bd51d5278f42456bd37",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "bf740f9b8770e38735d15bd51d5278f42456bd37",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 725
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 740
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01254",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・62個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01249は充電速度一定が未指定、train:01253は20個を実際に購入・設置するか未指定であるため、それぞれ条件付き解と別解を形式化した。"
+}

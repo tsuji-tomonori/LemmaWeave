@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint98_sugar",
+  "title_ja": "90日分の甘味料費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01753",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日使用数、総パケット数、箱数、費用を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.sugar_solution",
+  "graph": "work/gsm8k-sprint98-sugar-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sugar_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.sugar_daily",
+      "title_ja": "1日2パケット使う。",
+      "claim_ja": "1日2パケット使う。",
+      "method_ja": "1パケット/杯×2杯。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎日コーヒー2杯。",
+      "conclusion_ja": "1×2=2。",
+      "baseline_ja": "1×2=2。"
+    },
+    {
+      "id": "sugar_packets",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.sugar_packets",
+      "title_ja": "90日で180パケット。",
+      "claim_ja": "90日で180パケット。",
+      "method_ja": "90×2。",
+      "requires_steps": [
+        "sugar_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "毎日同じ使用量。",
+      "conclusion_ja": "90×2=180。",
+      "baseline_ja": "90×2=180。"
+    },
+    {
+      "id": "sugar_boxes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.sugar_boxes",
+      "title_ja": "6箱必要。",
+      "claim_ja": "6箱必要。",
+      "method_ja": "180÷30。",
+      "requires_steps": [
+        "sugar_packets"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1箱30パケットで端数なし。",
+      "conclusion_ja": "6×30=180。",
+      "baseline_ja": "6×30=180。"
+    },
+    {
+      "id": "sugar_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.sugar_solution",
+      "title_ja": "費用は24ドル。",
+      "claim_ja": "費用は24ドル。",
+      "method_ja": "6×4。",
+      "requires_steps": [
+        "sugar_boxes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1箱4ドル。",
+      "conclusion_ja": "6×4=24。",
+      "baseline_ja": "6×4=24。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1754,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

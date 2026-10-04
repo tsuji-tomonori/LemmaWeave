@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint272_card_spend",
+  "title_ja": "カード代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03463",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A15P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "クリスマス用20枚と誕生日用15枚のカードを1枚2ドルで買う総額を求める。",
+  "answer_ja": "70ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A15P1.card_spend",
+  "graph": "work/gsm8k-sprint272-card-spend-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "total_cards",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P1.total_cards",
+      "title_ja": "カードは合計35枚。",
+      "claim_ja": "カードは合計35枚。",
+      "method_ja": "20枚と15枚を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2種類の宛先は別々に数える。",
+      "conclusion_ja": "35枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "card_spend",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P1.card_spend",
+      "title_ja": "支払額は70ドル。",
+      "claim_ja": "支払額は70ドル。",
+      "method_ja": "35枚に1枚2ドルを掛ける。",
+      "requires_steps": [
+        "total_cards"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全カードの単価が2ドル。",
+      "conclusion_ja": "70ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3464,
+    "checked_model_hash": "0660a378ea5add82045cf2dbb644d0a4c7374b3c8cc5a45f8cad5f920a669143",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-0300-gsm8k-36",
+  "planned_slot_local_hour": 3,
+  "planned_at": "2026-09-20T03:00:00+09:00",
+  "role": "gsm8k_individual_15",
+  "base_sha": "7f13af6badd0ccb05b965d2f95fb73a2dc7748ed",
+  "started_at": "2026-09-20T03:56:24+09:00",
+  "finished_at": "2026-09-20T04:05:50+09:00",
+  "schedule_offset_seconds": 3384,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00819",
+    "external-gsm8k-main-3101c7d50724:train:00820",
+    "external-gsm8k-main-3101c7d50724:train:00821",
+    "external-gsm8k-main-3101c7d50724:train:00822",
+    "external-gsm8k-main-3101c7d50724:train:00823",
+    "external-gsm8k-main-3101c7d50724:train:00824",
+    "external-gsm8k-main-3101c7d50724:train:00825",
+    "external-gsm8k-main-3101c7d50724:train:00826",
+    "external-gsm8k-main-3101c7d50724:train:00827",
+    "external-gsm8k-main-3101c7d50724:train:00828",
+    "external-gsm8k-main-3101c7d50724:train:00829",
+    "external-gsm8k-main-3101c7d50724:train:00830",
+    "external-gsm8k-main-3101c7d50724:train:00831",
+    "external-gsm8k-main-3101c7d50724:train:00832",
+    "external-gsm8k-main-3101c7d50724:train:00833"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00819",
+    "external-gsm8k-main-3101c7d50724:train:00820",
+    "external-gsm8k-main-3101c7d50724:train:00821",
+    "external-gsm8k-main-3101c7d50724:train:00822",
+    "external-gsm8k-main-3101c7d50724:train:00823",
+    "external-gsm8k-main-3101c7d50724:train:00824",
+    "external-gsm8k-main-3101c7d50724:train:00825",
+    "external-gsm8k-main-3101c7d50724:train:00826",
+    "external-gsm8k-main-3101c7d50724:train:00827",
+    "external-gsm8k-main-3101c7d50724:train:00828",
+    "external-gsm8k-main-3101c7d50724:train:00829",
+    "external-gsm8k-main-3101c7d50724:train:00830",
+    "external-gsm8k-main-3101c7d50724:train:00831",
+    "external-gsm8k-main-3101c7d50724:train:00832",
+    "external-gsm8k-main-3101c7d50724:train:00833"
+  ],
+  "deferred": [],
+  "verification_pending_reason_ja": "原文・質問ハッシュ、45説明行、Leanモデル、名前付き行定理、自己照合を保存し、ローカル固定環境で全15問をビルド・公理・実依存監査した。直前HEADのexact-head CIが全体replayで失敗し、現HEADの成功証拠も未取込のため昇格しない。",
+  "next_action_ja": "失敗CI 35460384131の保存成果物を診断し、現HEADのCIでA36を含む全体replayを確認する。成功時だけ証拠を取り込み、各問題を個別にsolution_readyへ昇格する。",
+  "checkpoint_commits": [
+    {"range":"train:00819..00823","status":"saved","commit_sha":"d789bf2350d937fc791b7cf84317bda7d0008faa"},
+    {"range":"train:00824..00828","status":"saved","commit_sha":"ffd0f1ea2eedc4384493a75548db5111f3752be3"},
+    {"range":"train:00829..00833","status":"saved","commit_sha":"dcd98116346f89cde7f295ff5e916e192d7192d4"}
+  ],
+  "source_verification": {
+    "upstream_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_lines_1based": [820, 834],
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "record_hashes_checked": 15,
+    "question_hashes_checked": 15
+  },
+  "artifacts": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0090.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0920A04Models.lean",
+    "proof": "tests/lean/GSM8KSprint0920A04.lean",
+    "recipes": 15,
+    "written_lines": 45,
+    "semantic_review_status": "self_review_only",
+    "sorry_admit_custom_axiom_count": 0
+  },
+  "modeling_notes_ja": [
+    "train:00820はJamesが食事代30ドルの半分15ドルと、全体の20%のチップ6ドルを払うと読み、計21ドルを形式化した。",
+    "train:00825は20%割引をベッドとフレームの合計825ドルに適用し、支払額660ドルを証明した。",
+    "train:00827の1脚5人という不自然な条件は、原題の明示条件として保持して600人を形式化した。",
+    "train:00830は在宅40%を除いた60%を2群に等分し、登校割合30%とした。"
+  ],
+  "local_validation": {
+    "full_lake_build": "success_3020_jobs",
+    "model_build": "success",
+    "proof_replay": "success",
+    "axiom_audit": "success_allowed_only_propext_classical_choice_quot_sound",
+    "new_recipe_dependency_validation": "15_recipes_45_lines_success",
+    "python_regression_tests": 52,
+    "python_regression_status": "success",
+    "syntax_check": "success",
+    "source_hash_check": "15_records_15_questions_success",
+    "diff_check": "success"
+  },
+  "progress_before": {"solution_ready":518,"remaining":8274,"verification_pending":305},
+  "progress_after": {"solution_ready":518,"remaining":8274,"verification_pending":320},
+  "ci": {
+    "previous_exact_head_run_id": 35460384131,
+    "previous_exact_head_sha": "7f13af6badd0ccb05b965d2f95fb73a2dc7748ed",
+    "previous_exact_head_status": "failure_in_complete_replay",
+    "previous_artifact_id": 10590290299,
+    "previous_artifact_sha256": "a02a8735c9fe5e2bbe9164a3f541886fb987a864f6dd562f2d99c04a78b038c9",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": {"base_sha":"7f13af6badd0ccb05b965d2f95fb73a2dc7748ed","solution_commit_sha":"dcd98116346f89cde7f295ff5e916e192d7192d4"},
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00834",
+  "execution_control": {"serialized":true,"shared_lock_implementation":false,"claim_status":"released_after_serial_write","note_ja":"同一ブランチHEADを読み直し、非force更新で5問以内のチェックポイントを保存した。"}
+}

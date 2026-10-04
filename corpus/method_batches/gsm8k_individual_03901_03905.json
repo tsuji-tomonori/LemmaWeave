@@ -1,0 +1,83 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1002",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "881b9e0b07d2ba59de3dc6d686c22211371d9b33f7907075e3f748a7f544b572",
+  "model_files": ["LemmaWeave/Problems/GSM8K/Sprint1003A10P2Models.lean"],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03901",
+      "source_line_1based": 3902,
+      "source_record_sha256": "c7721c5bbf0d80f47b8c3a4e2f4df2e80557094ee19029039a6c0dcfec30d90c",
+      "raw_question_sha256": "a7b44dbd459fcf5cbb2370dc78e214f7de320840cf06cbf56a09ded539f72e68",
+      "normalized_question_sha256": "a7b44dbd459fcf5cbb2370dc78e214f7de320840cf06cbf56a09ded539f72e68",
+      "source_question": "Steven's teacher sends the class an assignment to collect 60 different fruit seeds. Apples average 6 seeds, pears average 2 seeds, and grapes average 3 seeds. Steven has set aside 4 apples, 3 pears, and 9 grapes to extract their seeds. How many more seeds does he need to fulfill his assignment?",
+      "recipe_id": "gsm8k_sprint356_seeds_needed",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["各果物の平均種子数を用い、期待される合計と目標との差を求める。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03902",
+      "source_line_1based": 3903,
+      "source_record_sha256": "55273c271ef941880ad867b886904c22a4446f9c8f221d6cfeb4dabb5ed2b34a",
+      "raw_question_sha256": "e440f14d57c9fc9ca3e60ead78df8424575336bef041aac080e502990a05b239",
+      "normalized_question_sha256": "a78cc79d1492b828a49e9c838a799e2e8e90d98bb790401f04f4de5952002afa",
+      "source_question": "A pastry chef is making brownies but is running out of butter.  The recipe he is following calls for 2 ounces of butter for every 1 cup of baking mix; however, it allows 2 ounces of coconut oil to be substituted for the 2 ounces of butter if necessary.  The chef would like to use as much butter as possible before switching over and substituting coconut oil.  If the chef had 4 ounces of butter remaining, and he plans on using 6 cups of baking mix, how many ounces of coconut oil will he end up using?",
+      "recipe_id": "gsm8k_sprint356_coconut_oil_needed",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["4オンスのバターを先に全量使い、残る4カップだけを同量比の油で置換する。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03903",
+      "source_line_1based": 3904,
+      "source_record_sha256": "3204ce2aab0067df3c11aaa47a551ce6855ed3eb1815bb5aaa2f4921fa67da01",
+      "raw_question_sha256": "98db9ccce6bdaf59a0a7adc80aa49355920db76621185839b4ea7abca37a8d5d",
+      "normalized_question_sha256": "98db9ccce6bdaf59a0a7adc80aa49355920db76621185839b4ea7abca37a8d5d",
+      "source_question": "For the first hour of work, Manolo can make face-masks at the rate of one every four minutes. Thereafter, he can make face-masks at the rate of one every six minutes. How many face-masks does Manola make in a four-hour shift?",
+      "recipe_id": "gsm8k_sprint356_face_masks",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["Manolo/Manolaは同一人物の綴り揺れと読み、最初の1時間と残り3時間を分ける。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03904",
+      "source_line_1based": 3905,
+      "source_record_sha256": "ddc5eb0a36193c1d783cf180bc291a3563bdb65c2d8d6ec5fbedc33f7b7fcad6",
+      "raw_question_sha256": "4fd72df2cab70bb34b09dea0d47103a426cfd441afc3c5d853a828c8f2fbd240",
+      "normalized_question_sha256": "1ace18165a3d9ee9e9c18b94cda17f42b7afbce4337dbca63e3d9d65cf2e89ad",
+      "source_question": "Mary needs school supplies. She has 6 classes and needs 1 folder for each class. She also needs 3 pencils for each class. She decides that for every 6 pencils she should have 1 eraser. She also needs a set of paints for an art class.  Folders cost $6, pencils cost $2, and erasers cost $1. If she spends $80, how much did the set of paints cost in dollars?",
+      "recipe_id": "gsm8k_sprint356_paint_set_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["数量を求めて既知用品の費用を合計し、総支出との差を絵の具代とする。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03905",
+      "source_line_1based": 3906,
+      "source_record_sha256": "1c83dea971b0c60d2bbedde2f5d082cb068f7077e7ab364ff0ac62cfabe8d87b",
+      "raw_question_sha256": "85a589eeb376e7ca0fc928e8b4e7b1345d06b8e512a1659fb04de4e1b33a704f",
+      "normalized_question_sha256": "85a589eeb376e7ca0fc928e8b4e7b1345d06b8e512a1659fb04de4e1b33a704f",
+      "source_question": "Jasmine swims 12 laps every afternoon, Monday through Friday. How many laps does she swim in five weeks?",
+      "recipe_id": "gsm8k_sprint356_swimming_laps",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["月曜から金曜までを週5日として、週当たりと5週間分を順に求める。"],
+      "blockers": []
+    }
+  ]
+}

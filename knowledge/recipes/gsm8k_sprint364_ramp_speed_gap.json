@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint364_ramp_speed_gap",
+  "title_ja": "目標速度までの不足分",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03941",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Timmy plans to ride a skateboard ramp that is 50 feet high. He knows he needs to go 40 mph at the start to make it all the way to the top. He measures his speed on three trial runs and goes 36, 34, and 38 mph. How much faster does he have to go than his average speed to make it up the ramp?",
+  "answer_ja": "3回の速度合計は36+34+38=108 mph、平均は108÷3=36 mph。必要な40 mphとの差は4 mph。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A13P1.ramp_speed_gap",
+  "graph": "work/gsm8k-sprint364-ramp-speed-gap-graph.json",
+  "model_notes_ja": [
+    "高さ50フィートは必要速度40 mphを与える背景情報で、差の計算には追加使用しない。"
+  ],
+  "steps": [
+    {
+      "id": "ramp_speed_gap",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A13P1.ramp_speed_gap",
+      "title_ja": "目標速度までの不足分",
+      "claim_ja": "3回の速度合計は36+34+38=108 mph、平均は108÷3=36 mph。必要な40 mphとの差は4 mph。",
+      "method_ja": "3回の測定値の算術平均を求め、必要速度との差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3回を同じ重みで平均する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "4 mph。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3942,
+    "checked_model_hash": "b6ac7933ea202b8c9114ce8cded36df8e7a8a1c47dc3f1cdee33c216ec427a4f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

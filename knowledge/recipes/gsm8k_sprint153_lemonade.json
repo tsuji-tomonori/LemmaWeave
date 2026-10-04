@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint153_lemonade",
+  "title_ja": "レモネード店の純利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02576",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2ガロンから作った32杯のうち5杯を飲み、6杯が売れ残った。原価は1ガロン350セント、販売価格は1杯100セント。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A10.lemonade_solution",
+  "graph": "work/gsm8k-sprint153-lemonade-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lemonade_produced",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.lemonade_produced",
+      "title_ja": "レモネードは32杯",
+      "claim_ja": "レモネードは32杯",
+      "method_ja": "2ガロンに1ガロン当たり16杯を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "レモネードは32杯",
+      "baseline_ja": "レモネードは32杯"
+    },
+    {
+      "id": "lemonade_sold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.lemonade_sold",
+      "title_ja": "販売したのは21杯",
+      "claim_ja": "販売したのは21杯",
+      "method_ja": "32杯を販売21杯・飲用5杯・売れ残り6杯に分ける",
+      "requires_steps": [
+        "lemonade_produced"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "販売したのは21杯",
+      "baseline_ja": "販売したのは21杯"
+    },
+    {
+      "id": "lemonade_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.lemonade_revenue",
+      "title_ja": "売上は2100セント",
+      "claim_ja": "売上は2100セント",
+      "method_ja": "21杯に1杯100セントを掛ける",
+      "requires_steps": [
+        "lemonade_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "売上は2100セント",
+      "baseline_ja": "売上は2100セント"
+    },
+    {
+      "id": "lemonade_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.lemonade_solution",
+      "title_ja": "純利益は1400セント、すなわち14ドル",
+      "claim_ja": "純利益は1400セント、すなわち14ドル",
+      "method_ja": "売上2100セントから2ガロン分の原価700セントを引く",
+      "requires_steps": [
+        "lemonade_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "純利益は1400セント、すなわち14ドル",
+      "baseline_ja": "純利益は1400セント、すなわち14ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2577,
+    "checked_model_hash": "46e79fb8178be609e6fbfa0886df34cbbb62c16290d04ba3642b6415e85d7526",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

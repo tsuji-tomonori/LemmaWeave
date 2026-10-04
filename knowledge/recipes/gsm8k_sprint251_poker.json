@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint251_poker",
+  "title_ja": "新しい勝率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03298",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "旧勝数と追加100戦の勝数を求め、全300戦で割る。",
+  "answer_ja": "61%",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.poker_percentage",
+  "graph": "work/gsm8k-sprint251-poker-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "poker_old_wins",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.poker_old_wins",
+      "title_ja": "旧200戦の勝数は126。",
+      "claim_ja": "旧200戦の勝数は126。",
+      "method_ja": "200×63%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "63%が整数勝数になる。",
+      "conclusion_ja": "126勝。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "poker_new_wins",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.poker_new_wins",
+      "title_ja": "追加100戦では57勝。",
+      "claim_ja": "追加100戦では57勝。",
+      "method_ja": "100-43。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "勝敗のみで43敗。",
+      "conclusion_ja": "57勝。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "poker_totals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.poker_totals",
+      "title_ja": "合計300戦183勝。",
+      "claim_ja": "合計300戦183勝。",
+      "method_ja": "200+100、126+57。",
+      "requires_steps": [
+        "poker_old_wins",
+        "poker_new_wins"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "旧戦績と追加戦績を合算。",
+      "conclusion_ja": "300戦183勝。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "poker_percentage",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.poker_percentage",
+      "title_ja": "新勝率は61%。",
+      "claim_ja": "新勝率は61%。",
+      "method_ja": "183÷300×100。",
+      "requires_steps": [
+        "poker_totals"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "百分率で表す。",
+      "conclusion_ja": "61%。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3299,
+    "checked_model_hash": "e5fd1fde14c7301000be28759ba40fc9390a450dbf7afa55542e0dcd86d59a81",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

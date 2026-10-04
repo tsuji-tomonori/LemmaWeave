@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint40_family",
+  "title_ja": "Laviniaの子どもの年齢差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00891",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "娘と息子の年齢を求めて差を取る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.family_solution",
+  "graph": "work/gsm8k-sprint40-family-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "family_daughter",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.family_daughter",
+      "title_ja": "Laviniaの娘",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Katieの娘12歳より10歳若い。",
+      "conclusion_ja": "2歳。",
+      "baseline_ja": "2+10=12。"
+    },
+    {
+      "id": "family_son",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.family_son",
+      "title_ja": "Laviniaの息子",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Katieの娘12歳の2倍。",
+      "conclusion_ja": "24歳。",
+      "baseline_ja": "2×12=24。"
+    },
+    {
+      "id": "family_gap",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.family_gap",
+      "title_ja": "年齢差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "24歳と2歳の差。",
+      "conclusion_ja": "22歳差。",
+      "baseline_ja": "24=2+22。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 892,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

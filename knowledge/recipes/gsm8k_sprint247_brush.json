@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint247_brush",
+  "title_ja": "ブラシの長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03265",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A04P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "50%長い長さをインチで求め、2.5cm/インチで換算する。",
+  "answer_ja": "45センチメートル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.brush_centimeters",
+  "graph": "work/gsm8k-sprint247-brush-graph.json",
+  "model_notes_ja": [
+    "2.5cmを半センチメートル5単位として厳密に換算した。"
+  ],
+  "steps": [
+    {
+      "id": "brush_carmen_inches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.brush_carmen_inches",
+      "title_ja": "Carmenのブラシは18インチ。",
+      "claim_ja": "Carmenのブラシは18インチ。",
+      "method_ja": "12×1.5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Carlaより50%長い。",
+      "conclusion_ja": "18インチ。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "brush_half_centimeters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.brush_half_centimeters",
+      "title_ja": "長さは90半センチ。",
+      "claim_ja": "長さは90半センチ。",
+      "method_ja": "18×5半cm。",
+      "requires_steps": [
+        "brush_carmen_inches"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1インチ=2.5cm=5半cm。",
+      "conclusion_ja": "90半cm。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "brush_centimeters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A04P3.brush_centimeters",
+      "title_ja": "長さは45cm。",
+      "claim_ja": "長さは45cm。",
+      "method_ja": "90半cm÷2。",
+      "requires_steps": [
+        "brush_half_centimeters"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2半cm=1cm。",
+      "conclusion_ja": "45cm。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3266,
+    "checked_model_hash": "af42e0440a119587f6cf7db2d94fa9f5aca6984bdaeb6a9f3dc5d074c2cf80c3",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

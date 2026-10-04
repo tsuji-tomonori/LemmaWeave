@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint336_gift_card_remaining_cents",
+  "title_ja": "ギフトカード残高",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03802",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A20P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Claire won a $100 gift card to her favorite coffee shop. She wants to treat herself to a latte that cost $3.75 and a croissant for $3.50 every morning for a week.  She also plans to buy 5 cookies that cost $1.25 each. How much money will be left on her card after a week of coffee and pastry?",
+  "answer_ja": "毎朝のラテ375セントとクロワッサン350セントは725セント、7日で5075セント。クッキー5個は625セント。10000−5075−625=4300セント、つまり43ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A20P3.gift_card_remaining_cents",
+  "graph": "work/gsm8k-sprint336-gift-card-remaining-cents-graph.json",
+  "model_notes_ja": [
+    "weekは7日で、毎朝両方を買い、クッキー5個も同じカードで買う。"
+  ],
+  "steps": [
+    {
+      "id": "gift_card_remaining_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A20P3.gift_card_remaining_cents",
+      "title_ja": "ギフトカード残高",
+      "claim_ja": "毎朝のラテ375セントとクロワッサン350セントは725セント、7日で5075セント。クッキー5個は625セント。10000−5075−625=4300セント、つまり43ドル。",
+      "method_ja": "端数誤差を避けセント単位で各支出を合計し残高から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全支出5700セントは10000セント以下。",
+      "baseline_ja": "整数・分数・割合・速さ・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "43ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3803,
+    "checked_model_hash": "6acad11868e5dd27d4899d6a66f8e2626380bfefb4b6b17c42c2de6be7336eef",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

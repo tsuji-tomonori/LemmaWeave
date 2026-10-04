@@ -1,0 +1,43 @@
+{
+  "id": "gsm8k_sprint134_running",
+  "title_ja": "走る速さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02293",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1.5kmを45分で走る速さをkm/hで求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.running_solution",
+  "graph": "work/gsm8k-sprint134-running-graph.json",
+  "model_notes_ja": [
+    "距離は0.1km単位の15として整数式45×10×速度=15×60に変換する。"
+  ],
+  "steps": [
+    {
+      "id": "running_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.running_solution",
+      "title_ja": "速さは時速2km",
+      "claim_ja": "速さは時速2km",
+      "method_ja": "1.5×60÷45を計算する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "速さは時速2km",
+      "baseline_ja": "速さは時速2km"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2294,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

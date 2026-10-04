@@ -1,0 +1,108 @@
+{
+  "id": "gsm8k_sprint138_tape",
+  "title_ja": "使用した梱包テープ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02355",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "大2箱・中8箱・小5箱の封緘と各箱1フィートのラベル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A12.tape_solution",
+  "graph": "work/gsm8k-sprint138-tape-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "tape_large",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.tape_large",
+      "title_ja": "大箱は8フィート",
+      "claim_ja": "大箱は8フィート",
+      "method_ja": "2箱に4フィートずつ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "大箱は8フィート",
+      "baseline_ja": "大箱は8フィート"
+    },
+    {
+      "id": "tape_medium",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.tape_medium",
+      "title_ja": "中箱は16フィート",
+      "claim_ja": "中箱は16フィート",
+      "method_ja": "8箱に2フィートずつ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "中箱は16フィート",
+      "baseline_ja": "中箱は16フィート"
+    },
+    {
+      "id": "tape_small",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.tape_small",
+      "title_ja": "小箱は5フィート",
+      "claim_ja": "小箱は5フィート",
+      "method_ja": "5箱に1フィートずつ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "小箱は5フィート",
+      "baseline_ja": "小箱は5フィート"
+    },
+    {
+      "id": "tape_boxes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.tape_boxes",
+      "title_ja": "箱は15個",
+      "claim_ja": "箱は15個",
+      "method_ja": "2、8、5を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "箱は15個",
+      "baseline_ja": "箱は15個"
+    },
+    {
+      "id": "tape_labels",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.tape_labels",
+      "title_ja": "ラベルは15フィート",
+      "claim_ja": "ラベルは15フィート",
+      "method_ja": "15箱に1フィートずつ",
+      "requires_steps": [
+        "tape_boxes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ラベルは15フィート",
+      "baseline_ja": "ラベルは15フィート"
+    },
+    {
+      "id": "tape_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.tape_solution",
+      "title_ja": "合計44フィート",
+      "claim_ja": "合計44フィート",
+      "method_ja": "封緘分とラベル分を足す",
+      "requires_steps": [
+        "tape_large",
+        "tape_medium",
+        "tape_small",
+        "tape_labels"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計44フィート",
+      "baseline_ja": "合計44フィート"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2356,
+    "checked_model_hash": "e89e0a8fed68bf87ef0de72e11cd924e42bf43e793c002049a2ea2520267d828",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

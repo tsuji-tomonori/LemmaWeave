@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint396_recycling_center_earnings",
+  "title_ja": "リサイクルで得る金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04151",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jenny collects cans and bottles to take down to the recycling center. Each bottle weighs 6 ounces and each can weighs 2 ounces. Jenny can carry a total of 100 ounces. She collects 20 cans and as many bottles as she can carry. If she gets paid 10 cents per bottle and 3 cents per can, how much money does she make (in cents)?",
+  "answer_ja": "20缶の重さは20×2=40オンスなので、瓶に使える重さは100-40=60オンス。6オンスの瓶を10本運べる。瓶で10×10=100セント、缶で20×3=60セント、合計160セント。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_center_earnings",
+  "graph": "work/gsm8k-sprint396-recycling-center-earnings-graph.json",
+  "model_notes_ja": [
+    "60オンスは6で割り切れるため端数処理は不要。"
+  ],
+  "steps": [
+    {
+      "id": "recycling_center_earnings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_center_earnings",
+      "title_ja": "リサイクルで得る金額",
+      "claim_ja": "20缶の重さは20×2=40オンスなので、瓶に使える重さは100-40=60オンス。6オンスの瓶を10本運べる。瓶で10×10=100セント、缶で20×3=60セント、合計160セント。",
+      "method_ja": "缶の重量を先に引き、残容量から瓶数を整数除算し、種類別の収入を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "瓶は6オンス、缶は2オンスで、100オンスを超えずに運べる最大本数を選ぶ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20缶の重さは20×2=40オンスなので、瓶に使える重さは100-40=60オンス。6オンスの瓶を10本運べる。瓶で10×10=100セント、缶で20×3=60セント、合計160セント。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4152,
+    "checked_model_hash": "0ce23b525790f66cf6c451589c4d739fd6e9f85eb4e50c882fbe4d719ec4e1ea",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

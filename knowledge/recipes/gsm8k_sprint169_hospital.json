@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint169_hospital",
+  "title_ja": "病院の現在の築年数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02827",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5年後のGrantの年齢と2対3の比から病院の5年後の年齢を求め、5年を引く。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A07.hospital_solution",
+  "graph": "work/gsm8k-sprint169-hospital-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "hospital_future",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A07.hospital_future",
+      "title_ja": "5年後45年",
+      "claim_ja": "Grantは5年後30歳で病院年齢の2/3なので、病院は45年。",
+      "method_ja": "割合の逆算",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "Grantは5年後30歳で病院年齢の2/3なので、病院は45年。",
+      "baseline_ja": "Grantは5年後30歳で病院年齢の2/3なので、病院は45年。"
+    },
+    {
+      "id": "hospital_now",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A07.hospital_now",
+      "title_ja": "現在40年",
+      "claim_ja": "45-5=40年。",
+      "method_ja": "時間差",
+      "requires_steps": [
+        "hospital_future"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "45-5=40年。",
+      "baseline_ja": "45-5=40年。"
+    },
+    {
+      "id": "hospital_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A07.hospital_solution",
+      "title_ja": "答えは40年",
+      "claim_ja": "病院は現在40年。",
+      "method_ja": "直前の結論",
+      "requires_steps": [
+        "hospital_now"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "病院は現在40年。",
+      "baseline_ja": "病院は現在40年。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2828,
+    "checked_model_hash": "a06b6d773c4754973ac5f71f8216bcb35998fa933999e5b42a4696644de7415f",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

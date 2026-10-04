@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint40_hardware",
+  "title_ja": "使用したボルトとナット",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00883",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "購入数から残数を種類別に引き、使用総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A08.hardware_solution",
+  "graph": "work/gsm8k-sprint40-hardware-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "6日早いという情報は個数計算に影響しない。"
+  ],
+  "steps": [
+    {
+      "id": "hardware_bolts_bought",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.hardware_bolts_bought",
+      "title_ja": "購入ボルト",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "11本入り7箱。",
+      "conclusion_ja": "77本。",
+      "baseline_ja": "7×11=77。"
+    },
+    {
+      "id": "hardware_bolts_used",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.hardware_bolts_used",
+      "title_ja": "使用ボルト",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "77本のうち3本残る。",
+      "conclusion_ja": "74本。",
+      "baseline_ja": "77=74+3。"
+    },
+    {
+      "id": "hardware_nuts_bought",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.hardware_nuts_bought",
+      "title_ja": "購入ナット",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15個入り3箱。",
+      "conclusion_ja": "45個。",
+      "baseline_ja": "3×15=45。"
+    },
+    {
+      "id": "hardware_nuts_used",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.hardware_nuts_used",
+      "title_ja": "使用ナット",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "45個のうち6個残る。",
+      "conclusion_ja": "39個。",
+      "baseline_ja": "45=39+6。"
+    },
+    {
+      "id": "hardware_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A08.hardware_total",
+      "title_ja": "使用総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ボルト74本とナット39個。",
+      "conclusion_ja": "113個。",
+      "baseline_ja": "74+39=113。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 884,
+    "checked_model_hash": "c209a576eaa2fb75ea8cfd9c0cd0caaab530355874f97186846230cafb52c707",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

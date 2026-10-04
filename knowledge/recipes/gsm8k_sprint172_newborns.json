@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint172_newborns","title_ja":"児童施設の新生児数","problem_id":"external-gsm8k-main-3101c7d50724:train:02873","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0928A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"子ども40人、幼児6人、10代は幼児の5倍で、残りの新生児数を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint0928A14.newborn_solution","graph":"work/gsm8k-sprint172-newborns-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"newborn_teenagers","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.newborn_teenagers","title_ja":"10代は30人","claim_ja":"6×5=30人。","method_ja":"倍率","requires_steps":[],"uses_nodes":[],"condition_ja":"10代は幼児の5倍。","conclusion_ja":"10代は30人。","baseline_ja":"6×5=30。"},
+    {"id":"newborn_count","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.newborn_count","title_ja":"新生児4人","claim_ja":"40−30−6=4人。","method_ja":"全体から既知の区分を引く","requires_steps":["newborn_teenagers"],"uses_nodes":[],"condition_ja":"40人は10代・幼児・新生児に分かれる。","conclusion_ja":"新生児は4人。","baseline_ja":"40−30−6=4。"},
+    {"id":"newborn_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.newborn_solution","title_ja":"答えは4人","claim_ja":"Dianaが新生児用に買う人数は4人。","method_ja":"直前の結論","requires_steps":["newborn_count"],"uses_nodes":[],"condition_ja":"各子どもを重複なく1区分に数える。","conclusion_ja":"答えは4人。","baseline_ja":"4人。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":2874,"checked_model_hash":"6bdc2b2b890105008f1bf78a7b1e5d0217af5f9c9e12871fb77358be639e4961","checks_ja":["総数40・幼児6・10代5倍を再読した。","区分の和が40になることを確認した。","独立レビューではない。"]}
+}

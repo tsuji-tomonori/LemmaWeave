@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint146_corn_chips",
+  "title_ja": "買えるコーンチップ袋数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02479",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "予算45ドル。2ドルのチップを15袋買い、残額で1.50ドルのコーンチップを買う。金額はセントで表す。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.corn_chips_solution",
+  "graph": "work/gsm8k-sprint146-corn_chips-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "corn_chips_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.corn_chips_cost",
+      "title_ja": "通常チップは3000セント",
+      "claim_ja": "通常チップは3000セント",
+      "method_ja": "15に200セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "通常チップは3000セント",
+      "baseline_ja": "通常チップは3000セント"
+    },
+    {
+      "id": "corn_chips_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.corn_chips_remaining",
+      "title_ja": "残額は1500セント",
+      "claim_ja": "残額は1500セント",
+      "method_ja": "4500から3000を引く",
+      "requires_steps": [
+        "corn_chips_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "残額は1500セント",
+      "baseline_ja": "残額は1500セント"
+    },
+    {
+      "id": "corn_chips_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.corn_chips_solution",
+      "title_ja": "コーンチップは10袋",
+      "claim_ja": "コーンチップは10袋",
+      "method_ja": "1500を150で割る",
+      "requires_steps": [
+        "corn_chips_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "コーンチップは10袋",
+      "baseline_ja": "コーンチップは10袋"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2480,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

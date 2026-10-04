@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint332_third_test_minimum",
+  "title_ja": "3回目のテストで必要な最低得点率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03785",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A19P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kat gets a 95% on her first math test and an 80% on her second math test. If she wants an average grade of at least 90% in her math class, what does she need to get on her third final math test?",
+  "answer_ja": "3回を同じ重みとし、3回目をx%とすると(95+80+x)/3≥90。両辺を3倍して整理するとx≥95。したがって最低95%。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A19P2.third_test_minimum",
+  "graph": "work/gsm8k-sprint332-third-test-minimum-graph.json",
+  "model_notes_ja": [
+    "3回のテストは同じ重みで、得点率は有理数として扱う。通常の上限100%内で95%は達成可能。"
+  ],
+  "steps": [
+    {
+      "id": "third_test_minimum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A19P2.third_test_minimum",
+      "title_ja": "3回目のテストで必要な最低得点率",
+      "claim_ja": "3回を同じ重みとし、3回目をx%とすると(95+80+x)/3≥90。両辺を3倍して整理するとx≥95。したがって最低95%。",
+      "method_ja": "平均の不等式を一次不等式として同値変形する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3は正なので不等号の向きは変わらない。",
+      "baseline_ja": "整数・分数・割合・一次方程式・面積・平均のうち問題で明示したもの。",
+      "conclusion_ja": "最低95%。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3786,
+    "checked_model_hash": "1a10cfcf949cd34d5be0d4e64b9ef94e59daa0d8dcd8298d994a2b7ac1b9273e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

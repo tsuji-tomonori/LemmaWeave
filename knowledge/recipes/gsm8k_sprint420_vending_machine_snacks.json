@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint420_vending_machine_snacks",
+  "title_ja": "30回利用時に落ちたスナック数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04175",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A10P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "The vending machine fails to drop a snack when it’s purchased one in six times. One in ten times, it will accidentally drop two snacks. The rest of the time, it drops the purchased snack. If thirty people have used the vending machine once each to purchase a snack, how many snacks has the vending machine dropped?",
+  "answer_ja": "30回のうち失敗は30÷6=5回、2個落下は30÷10=3回、通常は30-5-3=22回。落下数は22+3×2=28個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P2.vending_machine_snacks",
+  "graph": "work/gsm8k-sprint420-vending-machine-snacks-graph.json",
+  "model_notes_ja": [
+    "比率を期待値ではなく30回中の正確な頻度として読む。"
+  ],
+  "steps": [
+    {
+      "id": "vending_machine_snacks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P2.vending_machine_snacks",
+      "title_ja": "30回利用時に落ちたスナック数",
+      "claim_ja": "30回のうち失敗は30÷6=5回、2個落下は30÷10=3回、通常は30-5-3=22回。落下数は22+3×2=28個。",
+      "method_ja": "失敗・二重落下・通常の排他的な回数を求め、各回の落下個数を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "「the rest」は失敗回と二重落下回が重ならず、残りが通常回であることを表す。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "30回のうち失敗は30÷6=5回、2個落下は30÷10=3回、通常は30-5-3=22回。落下数は22+3×2=28個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4176,
+    "checked_model_hash": "9eb33fa5f60cac3e758cdfc11582f1317b15a477355f05adcee8138242260b9e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

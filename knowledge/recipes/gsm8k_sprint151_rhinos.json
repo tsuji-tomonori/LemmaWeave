@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint151_rhinos",
+  "title_ja": "15頭のサイの総重量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02556",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "白サイ1頭5100ポンドを7頭、黒サイ1頭1トンを8頭合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.rhinos_solution",
+  "graph": "work/gsm8k-sprint151-rhinos-graph.json",
+  "model_notes_ja": [
+    "原題のtonは米国短トンとして1トン=2000ポンドを明示する。"
+  ],
+  "steps": [
+    {
+      "id": "rhinos_white",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.rhinos_white",
+      "title_ja": "白サイ7頭は35700ポンド",
+      "claim_ja": "白サイ7頭は35700ポンド",
+      "method_ja": "5100に7を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "白サイ7頭は35700ポンド",
+      "baseline_ja": "白サイ7頭は35700ポンド"
+    },
+    {
+      "id": "rhinos_black",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.rhinos_black",
+      "title_ja": "黒サイ8頭は16000ポンド",
+      "claim_ja": "黒サイ8頭は16000ポンド",
+      "method_ja": "2000に8を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "黒サイ8頭は16000ポンド",
+      "baseline_ja": "黒サイ8頭は16000ポンド"
+    },
+    {
+      "id": "rhinos_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.rhinos_solution",
+      "title_ja": "合計51700ポンド",
+      "claim_ja": "合計51700ポンド",
+      "method_ja": "35700と16000を足す",
+      "requires_steps": [
+        "rhinos_white",
+        "rhinos_black"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "合計51700ポンド",
+      "baseline_ja": "合計51700ポンド"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2557,
+    "checked_model_hash": "d2ba0eb5fd55009570291284735b025b7fd39756a17f14df9e6018a2e9eeed92",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

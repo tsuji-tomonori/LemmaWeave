@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint349_jogger_difference",
+  "title_ja": "ChristopherとAlexanderのジョガー数の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03870",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Alexander Bought 22 more joggers than Tyson. Christopher bought twenty times as many joggers as Tyson. If Christopher bought 80 joggers, how many more joggers does Christopher buy than Alexander?",
+  "answer_ja": "Christopherの80着はTysonの20倍なので、Tysonは80÷20=4着。Alexanderは4+22=26着。差は80−26=54着。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A07P1.jogger_difference",
+  "graph": "work/gsm8k-sprint349-jogger-difference-graph.json",
+  "model_notes_ja": [
+    "最後の参照説明は式80−26を示しており、ChristopherがAlexanderより多い数を求める。"
+  ],
+  "steps": [
+    {
+      "id": "jogger_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A07P1.jogger_difference",
+      "title_ja": "ChristopherとAlexanderのジョガー数の差",
+      "claim_ja": "Christopherの80着はTysonの20倍なので、Tysonは80÷20=4着。Alexanderは4+22=26着。差は80−26=54着。",
+      "method_ja": "20倍関係からTysonの数を逆算し、Alexanderの数とChristopherとの差を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『twenty times as many』をTysonの正確に20倍とし、すべて同じ単位で数える。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "54着。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3871,
+    "checked_model_hash": "e71f624d8600b04a2f830891a2af7d630837a670ca0e9fb29f7aeaca1dc63c2c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

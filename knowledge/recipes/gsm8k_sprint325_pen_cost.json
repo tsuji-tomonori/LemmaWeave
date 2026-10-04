@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint325_pen_cost",
+  "title_ja": "ペンの価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03746",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A pen and pencil have a total cost of $6. If the pen costs twice as much as the pencil, what is the cost of the pen?",
+  "answer_ja": "鉛筆をxドルとするとペンは2xドルで、合計は3x=6。したがってx=2、ペンは2×2=4ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P1.pen_cost",
+  "graph": "work/gsm8k-sprint325-pen-cost-graph.json",
+  "model_notes_ja": [
+    "価格は負でなく、ペンの価格は鉛筆の価格のちょうど2倍。"
+  ],
+  "steps": [
+    {
+      "id": "pen_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P1.pen_cost",
+      "title_ja": "ペンの価格",
+      "claim_ja": "鉛筆をxドルとするとペンは2xドルで、合計は3x=6。したがってx=2、ペンは2×2=4ドル。",
+      "method_ja": "合計を倍率の総数3で割って鉛筆価格を求め、2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6ドルは3等分できる。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "ペンは4ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3747,
+    "checked_model_hash": "20d5c669e70a31e33bf79186cb04e455f254bfaf90022e613b4bbc23ccea4993",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint34_dogs",
+  "title_ja": "3匹分のドッグフード",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00797",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "半カップ単位で3匹の必要量を合計し、10カップと求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.dogs_solution",
+  "graph": "work/gsm8k-sprint34-dogs-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "Leanでは0.5カップを1単位とする半カップ単位で表す。"
+  ],
+  "steps": [
+    {
+      "id": "dogs_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.dogs_second",
+      "title_ja": "2匹目",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1匹目1.5カップの2倍。",
+      "conclusion_ja": "3カップ（半カップ6単位）。",
+      "baseline_ja": "2×3半カップ=6半カップ。"
+    },
+    {
+      "id": "dogs_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.dogs_third",
+      "title_ja": "3匹目",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2匹目より2.5カップ多い。",
+      "conclusion_ja": "5.5カップ（11単位）。",
+      "baseline_ja": "6+5=11半カップ。"
+    },
+    {
+      "id": "dogs_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.dogs_total",
+      "title_ja": "合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3、6、11半カップを合計する。",
+      "conclusion_ja": "20半カップ=10カップ。",
+      "baseline_ja": "3+6+11=20。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 798,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

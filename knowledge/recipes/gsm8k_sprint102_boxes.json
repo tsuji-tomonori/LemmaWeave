@@ -1,0 +1,112 @@
+{
+  "id": "gsm8k_sprint102_boxes",
+  "title_ja": "追加で必要なチョコレート箱",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01820",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全箱が同容量という参照条件下の2箱と、容量が不均一なら3箱も可能な反例を分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.boxes_two_capacity_readings_differ",
+  "graph": "work/gsm8k-sprint102-boxes-graph.json",
+  "model_notes_ja": [
+    "参照解答は既存3箱と追加箱がすべて15個容量と仮定する。原文は同容量を明記しないため、10・15・20個の満杯箱と容量10の追加箱なら3箱必要となる反例も記録した。"
+  ],
+  "steps": [
+    {
+      "id": "boxes_boxed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.boxes_boxed",
+      "title_ja": "既存箱内は45個。",
+      "claim_ja": "既存箱内は45個。",
+      "method_ja": "50−5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5個は箱外。",
+      "conclusion_ja": "45。",
+      "baseline_ja": "45。"
+    },
+    {
+      "id": "boxes_capacity",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.boxes_capacity",
+      "title_ja": "同容量なら1箱15個。",
+      "claim_ja": "同容量なら1箱15個。",
+      "method_ja": "45÷3。",
+      "requires_steps": [
+        "boxes_boxed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加条件として3箱は同容量で満杯。",
+      "conclusion_ja": "15。",
+      "baseline_ja": "15。"
+    },
+    {
+      "id": "boxes_to_box",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.boxes_to_box",
+      "title_ja": "新たに箱へ入れるのは30個。",
+      "claim_ja": "新たに箱へ入れるのは30個。",
+      "method_ja": "5+25。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "元の箱外5個と友人の25個。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "boxes_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.boxes_reference_solution",
+      "title_ja": "同じ15個箱なら2箱必要。",
+      "claim_ja": "同じ15個箱なら2箱必要。",
+      "method_ja": "30÷15。",
+      "requires_steps": [
+        "boxes_capacity",
+        "boxes_to_box"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "新しい箱も容量15。",
+      "conclusion_ja": "2。",
+      "baseline_ja": "2。"
+    },
+    {
+      "id": "boxes_nonuniform_countermodel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.boxes_nonuniform_countermodel",
+      "title_ja": "不均一な既存箱10・15・20個でも合計45個。",
+      "claim_ja": "不均一な既存箱10・15・20個でも合計45個。",
+      "method_ja": "10+15+20=45を確認する。",
+      "requires_steps": [
+        "boxes_boxed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "箱が同容量とは原文に明記されない。",
+      "conclusion_ja": "容量10の新箱なら30個に3箱。",
+      "baseline_ja": "容量10の新箱なら30個に3箱。"
+    },
+    {
+      "id": "boxes_two_capacity_readings_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.boxes_two_capacity_readings_differ",
+      "title_ja": "箱容量によって2箱と3箱に分かれる。",
+      "claim_ja": "箱容量によって2箱と3箱に分かれる。",
+      "method_ja": "2と3を比較する。",
+      "requires_steps": [
+        "boxes_reference_solution",
+        "boxes_nonuniform_countermodel"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "箱の容量条件が不足。",
+      "conclusion_ja": "2≠3。",
+      "baseline_ja": "2≠3。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1821,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

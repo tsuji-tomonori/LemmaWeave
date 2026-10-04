@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint148_savings",
+  "title_ja": "購入後の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02510",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3か月の貯金が75ドルを超えたため25ドルを受け取り、87ドルを使う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.savings_solution",
+  "graph": "work/gsm8k-sprint148-savings-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "savings_saved",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.savings_saved",
+      "title_ja": "貯金は98ドル",
+      "claim_ja": "貯金は98ドル",
+      "method_ja": "50、37、11を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "貯金は98ドル",
+      "baseline_ja": "貯金は98ドル"
+    },
+    {
+      "id": "savings_qualifies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.savings_qualifies",
+      "title_ja": "98は75より大きく特典条件を満たす",
+      "claim_ja": "98は75より大きく特典条件を満たす",
+      "method_ja": "厳密不等式75<98を確認する",
+      "requires_steps": [
+        "savings_saved"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "98は75より大きく特典条件を満たす",
+      "baseline_ja": "98は75より大きく特典条件を満たす"
+    },
+    {
+      "id": "savings_before_purchase",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.savings_before_purchase",
+      "title_ja": "購入前は123ドル",
+      "claim_ja": "購入前は123ドル",
+      "method_ja": "98に25を足す",
+      "requires_steps": [
+        "savings_qualifies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "購入前は123ドル",
+      "baseline_ja": "購入前は123ドル"
+    },
+    {
+      "id": "savings_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.savings_solution",
+      "title_ja": "残金は36ドル",
+      "claim_ja": "残金は36ドル",
+      "method_ja": "123から87を引く",
+      "requires_steps": [
+        "savings_before_purchase"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残金は36ドル",
+      "baseline_ja": "残金は36ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2511,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

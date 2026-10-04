@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint99_shelter",
+  "title_ja": "保護施設に現在いる猫の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01768",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "発見した猫を加え、引き取られた猫を引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.shelter_solution",
+  "graph": "work/gsm8k-sprint99-shelter-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shelter_before_adoption",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.shelter_before_adoption",
+      "title_ja": "引き取り前は23匹。",
+      "claim_ja": "引き取り前は23匹。",
+      "method_ja": "20+2+1。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜と火曜に見つけた猫を元の20匹へ加える。",
+      "conclusion_ja": "20+2+1=23。",
+      "baseline_ja": "20+2+1=23。"
+    },
+    {
+      "id": "shelter_adopted",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.shelter_adopted",
+      "title_ja": "引き取られたのは6匹。",
+      "claim_ja": "引き取られたのは6匹。",
+      "method_ja": "3人×各2匹。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各人が2匹ずつ引き取る。",
+      "conclusion_ja": "3×2=6。",
+      "baseline_ja": "3×2=6。"
+    },
+    {
+      "id": "shelter_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.shelter_solution",
+      "title_ja": "現在は17匹。",
+      "claim_ja": "現在は17匹。",
+      "method_ja": "23−6。",
+      "requires_steps": [
+        "shelter_before_adoption",
+        "shelter_adopted"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "引き取られた6匹は施設からいなくなる。",
+      "conclusion_ja": "17+6=23。",
+      "baseline_ja": "17+6=23。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1769,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

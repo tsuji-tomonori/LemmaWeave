@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint369_report_card_recess",
+  "title_ja": "成績による休み時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03969",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "The teacher decided to rewards his students with extra recess on report card day if they got good grades. Students normally get 20 minutes for recess. He told the students that every A got them 2 extra minutes of recess. Every B got them one extra minute. Every C got them zero extra minutes, but every D got them 1 less minute. When report cards came out there were 10 As, 12 Bs, 14Cs, and 5Ds. In total, how much recess would the students get that day?",
+  "answer_ja": "通常20分に、Aの10×2=20分とBの12×1=12分を足す。Cは変化0分、Dの5×1=5分を引くので20+20+12−5=47分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P3.report_card_recess",
+  "graph": "work/gsm8k-sprint369-report-card-recess-graph.json",
+  "model_notes_ja": [
+    "記載された個数はその日に適用する評価数で、Dは1件につき1分減らす。"
+  ],
+  "steps": [
+    {
+      "id": "report_card_recess",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P3.report_card_recess",
+      "title_ja": "成績による休み時間",
+      "claim_ja": "通常20分に、Aの10×2=20分とBの12×1=12分を足す。Cは変化0分、Dの5×1=5分を引くので20+20+12−5=47分。",
+      "method_ja": "評価ごとの増減を計算し、基準の20分へ符号付きで合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "記載された個数はその日に適用する評価数で、Dは1件につき1分減らす。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "Cは変化0分、Dの5×1=5分を引くので20+20+12−5=47分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3970,
+    "checked_model_hash": "9cbf61cb3e3d93cf400d64347cf69a8afce49725553acf4e55cfc3e341427d26",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint164_inventory",
+  "title_ja": "閉店セール後の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02743",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2000品を80%引きで90%販売し、債権者へ15000ドル払った後の残金を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A02.inventory_solution",
+  "graph": "work/gsm8k-sprint164-inventory-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "inventory_sold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.inventory_sold",
+      "title_ja": "販売数は1800品",
+      "claim_ja": "2000の90%は1800品",
+      "method_ja": "2000の90%は1800品",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "2000の90%は1800品",
+      "baseline_ja": "2000の90%は1800品"
+    },
+    {
+      "id": "inventory_sale_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.inventory_sale_price",
+      "title_ja": "販売単価は10ドル",
+      "claim_ja": "50ドルの80%引きは10ドル",
+      "method_ja": "50ドルの80%引きは10ドル",
+      "requires_steps": [
+        "inventory_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "50ドルの80%引きは10ドル",
+      "baseline_ja": "50ドルの80%引きは10ドル"
+    },
+    {
+      "id": "inventory_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.inventory_revenue",
+      "title_ja": "売上は18000ドル",
+      "claim_ja": "1800×10=18000ドル",
+      "method_ja": "1800×10=18000ドル",
+      "requires_steps": [
+        "inventory_sale_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "1800×10=18000ドル",
+      "baseline_ja": "1800×10=18000ドル"
+    },
+    {
+      "id": "inventory_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.inventory_solution",
+      "title_ja": "残金は3000ドル",
+      "claim_ja": "18000-15000=3000ドル",
+      "method_ja": "18000-15000=3000ドル",
+      "requires_steps": [
+        "inventory_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "18000-15000=3000ドル",
+      "baseline_ja": "18000-15000=3000ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2744,
+    "checked_model_hash": "f32b73b732f7b98644e11bb0aa6f12c4d921d8e6a4e614c3cb8b770ccedb4f48",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

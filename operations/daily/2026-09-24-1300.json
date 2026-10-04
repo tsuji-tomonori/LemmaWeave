@@ -1,0 +1,137 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T13:00+09:00-gsm8k-15-a13",
+  "scheduled_local_hour": 13,
+  "scheduled_at": "2026-09-24T13:00:00+09:00",
+  "started_at": "2026-09-24T13:02:33+09:00",
+  "finished_at": "2026-09-24T13:12:10+09:00",
+  "start_offset_seconds": 153,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "d5bce94e63c3d93047ca2e37e5de7bd19c9be414",
+  "artifact_commit": "49c6d2d397c853dc1609e2b6dfaac74191f38e38",
+  "selected_problem_ids": [
+    "train:02110",
+    "train:02111",
+    "train:02112",
+    "train:02113",
+    "train:02114",
+    "train:02115",
+    "train:02116",
+    "train:02117",
+    "train:02118",
+    "train:02119",
+    "train:02120",
+    "train:02121",
+    "train:02122",
+    "train:02123",
+    "train:02124"
+  ],
+  "skipped_already_solution_ready": [],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02110",
+    "train:02111",
+    "train:02112",
+    "train:02113",
+    "train:02114",
+    "train:02115",
+    "train:02116",
+    "train:02117",
+    "train:02118",
+    "train:02119",
+    "train:02120",
+    "train:02121",
+    "train:02122",
+    "train:02123",
+    "train:02124"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {
+      "through": "train:02114",
+      "commit": "2a6a929948390131f5d08422f4a17814b8d32aa5"
+    },
+    {
+      "through": "train:02119",
+      "commit": "e7f1ce51976986d9de7302daaa23855e023a9701"
+    },
+    {
+      "through": "train:02124",
+      "commit": "49c6d2d397c853dc1609e2b6dfaac74191f38e38"
+    }
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0176.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A13Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A13.lean",
+    "recipes": 15,
+    "explanation_lines": 62,
+    "named_lean_theorems": 62,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02110は金額をセント単位へ統一し、1.5ドルを150セントとしてお釣り8ドルを導いた。",
+    "train:02115は招待した友人4人にAku本人を加え、75個を5人で等分して15個とした。",
+    "train:02118は解雇集合と辞職集合の重なりが未指定なので、応募可能数12+重複数、範囲12〜36を形式化した。参照答12は重複0という追加条件付きであり、重複24なら36となる反例も保持した。",
+    "直前のexact-head CIは固定Lean環境と依存取得を通過したが、9月21日分の旧監査ファイル群でNo goals to be solved、rewrite失敗、sorryAx依存を検出して失敗した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1609,
+    "pending": 6665,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02125",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [
+      0
+    ],
+    "note_ja": "0時枠は未実行のまま保持した。13時枠は予定時刻の153秒後に開始し、既実行枠と重複していない。"
+  },
+  "ci": {
+    "last_completed_exact_head": "d5bce94e63c3d93047ca2e37e5de7bd19c9be414",
+    "last_completed_run_id": 35949669909,
+    "last_completed_status": "failure_legacy_lean_and_axiom_audit",
+    "last_completed_failure_step": "Replay the complete fixed-environment pipeline",
+    "last_completed_details_ja": "GSM8KSprint0921A06/A07のNo goals to be solved、A08のrewrite失敗、A07/A08のsorryAx依存を再検出した。",
+    "current_artifact_head": "49c6d2d397c853dc1609e2b6dfaac74191f38e38",
+    "current_status": "not_started_before_ledger_commit",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T13:00+09:00",
+    "scope": "train:02110-train:02124",
+    "claimed_at": "2026-09-24T13:02:33+09:00",
+    "expires_at": "2026-09-24T14:02:33+09:00",
+    "released": true
+  }
+}
+

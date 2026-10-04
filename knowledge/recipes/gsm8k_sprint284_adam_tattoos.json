@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint284_adam_tattoos",
+  "title_ja": "Adamのタトゥー数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03525",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A19P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jasonの両腕各2個・両脚各3個を合計し、その2倍より3個多いAdamの個数。",
+  "answer_ja": "23個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A19P1.adam_tattoos",
+  "graph": "work/gsm8k-sprint284-adam-tattoos-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "arm_tattoos",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P1.arm_tattoos",
+      "title_ja": "腕の合計は4個。",
+      "claim_ja": "腕の合計は4個。",
+      "method_ja": "2本×2個。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "腕の合計は4個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "leg_tattoos",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P1.leg_tattoos",
+      "title_ja": "脚の合計は6個。",
+      "claim_ja": "脚の合計は6個。",
+      "method_ja": "2本×3個。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "脚の合計は6個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "jason_tattoos",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P1.jason_tattoos",
+      "title_ja": "Jasonは10個。",
+      "claim_ja": "Jasonは10個。",
+      "method_ja": "腕と脚を加える。",
+      "requires_steps": [
+        "arm_tattoos",
+        "leg_tattoos"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Jasonは10個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "adam_tattoos",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A19P1.adam_tattoos",
+      "title_ja": "Adamは23個。",
+      "claim_ja": "Adamは23個。",
+      "method_ja": "Jasonの2倍に3を足す。",
+      "requires_steps": [
+        "jason_tattoos"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Adamは23個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3526,
+    "checked_model_hash": "b9b380ba13bac36a11b34fe591d53f2589cb834522676dc0586af1acef57ec4d",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

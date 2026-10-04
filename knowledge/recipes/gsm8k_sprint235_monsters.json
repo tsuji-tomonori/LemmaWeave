@@ -1,0 +1,100 @@
+{
+  "id": "gsm8k_sprint235_monsters",
+  "title_ja": "5日間の怪物数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03186",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A00P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各日2,4,8,16,32匹なので合計62匹。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.monsters_total",
+  "graph": "work/gsm8k-sprint235-monsters-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "monsters_day2",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.monsters_day2",
+      "title_ja": "2日目は4匹。",
+      "claim_ja": "2日目は4匹。",
+      "method_ja": "前日の2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "2日目は4匹。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "monsters_day3",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.monsters_day3",
+      "title_ja": "3日目は8匹。",
+      "claim_ja": "3日目は8匹。",
+      "method_ja": "2日目の2倍。",
+      "requires_steps": [
+        "monsters_day2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "3日目は8匹。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "monsters_day4",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.monsters_day4",
+      "title_ja": "4日目は16匹。",
+      "claim_ja": "4日目は16匹。",
+      "method_ja": "3日目の2倍。",
+      "requires_steps": [
+        "monsters_day3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "4日目は16匹。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "monsters_day5",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.monsters_day5",
+      "title_ja": "5日目は32匹。",
+      "claim_ja": "5日目は32匹。",
+      "method_ja": "4日目の2倍。",
+      "requires_steps": [
+        "monsters_day4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "5日目は32匹。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "monsters_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P3.monsters_total",
+      "title_ja": "合計62匹。",
+      "claim_ja": "合計62匹。",
+      "method_ja": "5日分を足す。",
+      "requires_steps": [
+        "monsters_day2",
+        "monsters_day3",
+        "monsters_day4",
+        "monsters_day5"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "合計62匹。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3187,
+    "checked_model_hash": "a5b648eb31a38c4742a02fd9e647e595efe31e93d325d88ff6084580ed562cd9",
+    "checks_ja": [
+      "固定commitの原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

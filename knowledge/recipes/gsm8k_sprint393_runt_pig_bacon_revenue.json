@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_runt_pig_bacon_revenue",
+  "title_ja": "小さい豚のベーコン売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04112",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A farmer gets 20 pounds of bacon on average from a pig. He sells each pound for $6 at the monthly farmer’s market. This month’s pig is a runt that grew to only half the size of the average pig. How many dollars will the farmer make from the pig’s bacon?",
+  "answer_ja": "ベーコン量が体格に比例するという追加条件を明示すると、20÷2=10ポンドで、売上は10×6=60ドルである。ただし原文は比例関係を直接は述べないため、この条件なしには60ドルは一意に決まらない（例えば9ポンドなら54ドル）。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.runt_pig_bacon_revenue",
+  "graph": "work/gsm8k-sprint393-runt-pig-bacon-revenue-graph.json",
+  "model_notes_ja": [
+    "体格半分から産出量半分を導く比例仮定を明示し、反例候補も保存する。"
+  ],
+  "steps": [
+    {
+      "id": "runt_pig_bacon_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.runt_pig_bacon_revenue",
+      "title_ja": "小さい豚のベーコン売上",
+      "claim_ja": "ベーコン量が体格に比例するという追加条件を明示すると、20÷2=10ポンドで、売上は10×6=60ドルである。ただし原文は比例関係を直接は述べないため、この条件なしには60ドルは一意に決まらない（例えば9ポンドなら54ドル）。",
+      "method_ja": "比例仮定の下で量を半分にし単価を掛け、仮定なしの非一意性を具体例で示す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "豚の体格と得られるベーコン量が正比例する場合に限り60ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "ベーコン量が体格に比例するという追加条件を明示すると、20÷2=10ポンドで、売上は10×6=60ドルである。ただし原文は比例関係を直接は述べないため、この条件なしには60ドルは一意に決まらない（例えば9ポンドなら54ドル）。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4113,
+    "checked_model_hash": "b8e272094fd45bc669d71e114ad1b7bdd7634db50185b019fc9c24ebfb5984b3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

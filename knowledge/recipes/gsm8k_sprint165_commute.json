@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint165_commute",
+  "title_ja": "通勤時間の週間合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02759",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "自転車1回、バス3回、友人の車1回の片道通勤時間を合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A03.commute_solution",
+  "graph": "work/gsm8k-sprint165-commute-graph.json",
+  "model_notes_ja": [
+    "原文の各回数は「to work」の片道通勤として合計する。往復時間は明記されていない。"
+  ],
+  "steps": [
+    {
+      "id": "commute_bus",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.commute_bus",
+      "title_ja": "バスは40分",
+      "claim_ja": "30+10=40",
+      "method_ja": "30+10=40",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の“to work”を片道通勤として数え、往復を暗黙に追加しない。",
+      "conclusion_ja": "30+10=40",
+      "baseline_ja": "30+10=40"
+    },
+    {
+      "id": "commute_friend",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.commute_friend",
+      "title_ja": "友人の車は10分",
+      "claim_ja": "30分から3分の2を短縮すると10分",
+      "method_ja": "30分から3分の2を短縮すると10分",
+      "requires_steps": [
+        "commute_bus"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の“to work”を片道通勤として数え、往復を暗黙に追加しない。",
+      "conclusion_ja": "30分から3分の2を短縮すると10分",
+      "baseline_ja": "30分から3分の2を短縮すると10分"
+    },
+    {
+      "id": "commute_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A03.commute_solution",
+      "title_ja": "週間160分",
+      "claim_ja": "30+3×40+10=160",
+      "method_ja": "30+3×40+10=160",
+      "requires_steps": [
+        "commute_friend"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の“to work”を片道通勤として数え、往復を暗黙に追加しない。",
+      "conclusion_ja": "30+3×40+10=160",
+      "baseline_ja": "30+3×40+10=160"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2760,
+    "checked_model_hash": "7c0798e652fe575277ce62a4cd367a46b44fbf59cf2652cfec02eb90be46a808",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

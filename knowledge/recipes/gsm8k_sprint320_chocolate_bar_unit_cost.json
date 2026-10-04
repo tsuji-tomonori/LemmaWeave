@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint320_chocolate_bar_unit_cost",
+  "title_ja": "チョコバー1本の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03721",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jessica is having a sweet tooth and bought 10 chocolate bars, 10 packs of gummy bears, and 20 bags of chocolate chips. Her total rang up to $150. If the cost of a pack of gummy bears is $2 and a bag of chocolate chips costs $5, how much does 1 chocolate bar cost?",
+  "answer_ja": "グミは10×2=20ドル、チョコチップは20×5=100ドルで合計120ドル。チョコバー10本分は150−120=30ドルなので、1本30÷10=3ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A15P2.chocolate_bar_unit_cost",
+  "graph": "work/gsm8k-sprint320-chocolate-bar-unit-cost-graph.json",
+  "model_notes_ja": [
+    "同じ種類の各商品は記載の単価で、税や割引はない。"
+  ],
+  "steps": [
+    {
+      "id": "chocolate_bar_unit_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A15P2.chocolate_bar_unit_cost",
+      "title_ja": "チョコバー1本の価格",
+      "claim_ja": "グミは10×2=20ドル、チョコチップは20×5=100ドルで合計120ドル。チョコバー10本分は150−120=30ドルなので、1本30÷10=3ドル。",
+      "method_ja": "既知商品の総額を全額から引き、バー本数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10本は正で、30ドルは10で割り切れる。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "1本3ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3722,
+    "checked_model_hash": "4edbbfe0668c3d448458046a77bed00a48418826eda9cde81179caacdc0dac8a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

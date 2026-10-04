@@ -1,0 +1,113 @@
+{
+  "id": "gsm8k_sprint244_medication",
+  "title_ja": "年間医療費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03220",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "診察費と自己負担薬代を合計する。",
+  "answer_ja": "1530ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.medication_total",
+  "graph": "work/gsm8k-sprint244-medication-graph.json",
+  "model_notes_ja": [
+    "1年365日として毎日服用する算数モデル。保険80%負担から自己負担20%を用いた。"
+  ],
+  "steps": [
+    {
+      "id": "medication_visits",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.medication_visits",
+      "title_ja": "年2回受診。",
+      "claim_ja": "年2回受診。",
+      "method_ja": "12÷6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6か月ごと。",
+      "conclusion_ja": "2回。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "medication_doctor_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.medication_doctor_cost",
+      "title_ja": "診察費800ドル。",
+      "claim_ja": "診察費800ドル。",
+      "method_ja": "2×400。",
+      "requires_steps": [
+        "medication_visits"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1回400ドル。",
+      "conclusion_ja": "800ドル。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "medication_daily_retail",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.medication_daily_retail",
+      "title_ja": "薬の定価は1日10ドル。",
+      "claim_ja": "薬の定価は1日10ドル。",
+      "method_ja": "2×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日2錠、1錠5ドル。",
+      "conclusion_ja": "10ドル。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "medication_daily_patient",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.medication_daily_patient",
+      "title_ja": "自己負担は1日2ドル。",
+      "claim_ja": "自己負担は1日2ドル。",
+      "method_ja": "10の20%。",
+      "requires_steps": [
+        "medication_daily_retail"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "保険が80%負担。",
+      "conclusion_ja": "2ドル。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "medication_yearly_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.medication_yearly_cost",
+      "title_ja": "年間薬代730ドル。",
+      "claim_ja": "年間薬代730ドル。",
+      "method_ja": "2×365。",
+      "requires_steps": [
+        "medication_daily_patient"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "毎日服用する平年365日モデル。",
+      "conclusion_ja": "730ドル。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "medication_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.medication_total",
+      "title_ja": "合計1530ドル。",
+      "claim_ja": "合計1530ドル。",
+      "method_ja": "800+730。",
+      "requires_steps": [
+        "medication_doctor_cost",
+        "medication_yearly_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "診察費と薬代を合計。",
+      "conclusion_ja": "1530ドル。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3221,
+    "checked_model_hash": "1794420c233867d3314da4c5188326642b8315e7c512478f366a4140c0f0afe2",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。下書きの算術答えを原文から再計算した。"
+    ]
+  }
+}

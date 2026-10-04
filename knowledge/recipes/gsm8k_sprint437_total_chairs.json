@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint437_total_chairs",
+  "title_ja": "家にある椅子の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04192",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Susan loves chairs. In her house there are red chairs, yellow chairs, and blue chairs. There are 5 red chairs. There are 4 times as many yellow chairs as red chairs, and there are 2 fewer blue chairs than yellow chairs. How many chairs are there in Susan's house?",
+  "answer_ja": "黄色は4×5=20脚、青は20-2=18脚。合計は5+20+18=43脚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.total_chairs",
+  "graph": "work/gsm8k-sprint437-total-chairs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "yellow",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.yellow_chair_count",
+      "title_ja": "黄色の椅子",
+      "claim_ja": "4×5=20脚。",
+      "method_ja": "赤の4倍を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤5脚。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4×5=20脚。"
+    },
+    {
+      "id": "blue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.blue_chair_count",
+      "title_ja": "青の椅子",
+      "claim_ja": "20-2=18脚。",
+      "method_ja": "黄色から2を引く。",
+      "requires_steps": [
+        "yellow"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "青は黄色より2脚少ない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20-2=18脚。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.total_chairs",
+      "title_ja": "椅子の総数",
+      "claim_ja": "5+20+18=43脚。",
+      "method_ja": "赤・黄・青を加える。",
+      "requires_steps": [
+        "yellow",
+        "blue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3色は問題中の全分類。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5+20+18=43脚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4193,
+    "checked_model_hash": "d07ed89bb53634a8184aa39f8bc6e7a5b77bea33009ebeffa250d0b03cc268c1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_third_anthill_ants",
+  "title_ja": "3番目の蟻塚の蟻数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04085",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "In a forest, there are three anthills. In the first anthill, there are 100 ants, and in each next anthill, there are 20% fewer ants than in the previous one. How many ants are in the third anthill?",
+  "answer_ja": "2番目は100匹より20%少なく80匹。3番目は80匹より20%少ないので80−16=64匹である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P2.third_anthill_ants",
+  "graph": "work/gsm8k-sprint392-third-anthill-ants-graph.json",
+  "model_notes_ja": [
+    "各next anthillの20%減は直前の蟻塚の個体数を基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "third_anthill_ants",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P2.third_anthill_ants",
+      "title_ja": "3番目の蟻塚の蟻数",
+      "claim_ja": "2番目は100匹より20%少なく80匹。3番目は80匹より20%少ないので80−16=64匹である。",
+      "method_ja": "各next anthillの20%減は直前の蟻塚の個体数を基準にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各next anthillの20%減は直前の蟻塚の個体数を基準にする。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2番目は100匹より20%少なく80匹。3番目は80匹より20%少ないので80−16=64匹である。 答えは64匹。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4086,
+    "checked_model_hash": "e3c7715b4531e66eacee4db259cb91e35cb3282131f362bc8f38c96045535df7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

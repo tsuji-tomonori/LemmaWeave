@@ -1,0 +1,35 @@
+import sys
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+
+from run_method_targets import build_target_plan, run_lean_target
+
+
+class MethodTargetIsolation(unittest.TestCase):
+    @patch('run_method_targets.subprocess.run')
+    def test_dependency_failure_is_returned_without_running_lean(self, run):
+        run.return_value.returncode = 1
+        outcome = build_target_plan({
+            'target': 'tests/lean/Broken.lean',
+            'project_imports': ['LemmaWeave.Problems.Broken'],
+        })
+        self.assertEqual(outcome['dependency_build_exit_code'], 1)
+        self.assertIsNone(outcome['lean_exit_code'])
+        run.assert_called_once()
+
+    @patch('run_method_targets.subprocess.run')
+    def test_lean_check_uses_evidence_wrapper(self, run):
+        run.return_value.returncode = 0
+        self.assertEqual(run_lean_target('tests/lean/Healthy.lean'), 0)
+        argv = run.call_args.args[0]
+        self.assertEqual(argv[:4], [
+            sys.executable, 'scripts/run.py', '--timeout', '900'])
+        self.assertEqual(argv[-3:], [
+            'lake', 'env', 'lean', 'tests/lean/Healthy.lean'][-3:])
+
+
+if __name__ == '__main__':
+    unittest.main()

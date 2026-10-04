@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint43_apples",
+  "title_ja": "5人が買ったりんごの総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00930",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "男性2人が各30個、女性3人が各男性より20個多く買った総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A11.apples_solution",
+  "graph": "work/gsm8k-sprint43-apples-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "apples_men",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.apples_men",
+      "title_ja": "男性分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "男性2人が各30個買う。",
+      "conclusion_ja": "60個。",
+      "baseline_ja": "2×30=60。"
+    },
+    {
+      "id": "apples_woman_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.apples_woman_each",
+      "title_ja": "女性1人分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "女性は男性1人より20個多い。",
+      "conclusion_ja": "各50個。",
+      "baseline_ja": "30+20=50。"
+    },
+    {
+      "id": "apples_women",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.apples_women",
+      "title_ja": "女性分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "女性3人が各50個買う。",
+      "conclusion_ja": "150個。",
+      "baseline_ja": "3×50=150。"
+    },
+    {
+      "id": "apples_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.apples_total",
+      "title_ja": "総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "男性分と女性分を加える。",
+      "conclusion_ja": "210個。",
+      "baseline_ja": "60+150=210。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 931,
+    "checked_model_hash": "881a98f47252976fe9a699be8850a410dba97738f0a04e0f969fcced6462a82f",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

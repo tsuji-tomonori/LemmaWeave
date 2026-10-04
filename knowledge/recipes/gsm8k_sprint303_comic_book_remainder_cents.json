@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint303_comic_book_remainder_cents",
+  "title_ja": "漫画購入後の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03640",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "カード2000枚を1枚5セントで売り、1冊6ドルの漫画を最大限買う。",
+  "answer_ja": "売上は2000×5=10000セント（100ドル）。16冊は9600セントで買え、17冊は10200セントで買えない。残りは10000-9600=400セント、すなわち4ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.comic_book_remainder_cents",
+  "graph": "work/gsm8k-sprint303-comic-book-remainder-cents-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "comic_book_remainder_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A07P3.comic_book_remainder_cents",
+      "title_ja": "売上は2000×5=10000セント（100ドル）。16冊は9600セントで買え、17冊は10200セントで買えない。残りは10000-9600=400セント、すなわち4ドル。",
+      "claim_ja": "売上は2000×5=10000セント（100ドル）。16冊は9600セントで買え、17冊は10200セントで買えない。残りは10000-9600=400セント、すなわち4ドル。",
+      "method_ja": "売上は2000×5=10000セント（100ドル）。16冊は9600セントで買え、17冊は10200セントで買えない。残りは10000-9600=400セント、すなわち4ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "売上は2000×5=10000セント（100ドル）。16冊は9600セントで買え、17冊は10200セントで買えない。残りは10000-9600=400セント、すなわち4ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3641,
+    "checked_model_hash": "949c7a9ebe4c696a7f82456d9aa6f917dae0b1344ae5d14b4001f4725a799c1c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

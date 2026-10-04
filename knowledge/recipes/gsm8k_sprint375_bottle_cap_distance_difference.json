@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint375_bottle_cap_distance_difference",
+  "title_ja": "Markのキャップが余計に進んだ距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04000",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A17P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jenny and Mark are throwing bottle caps. Jenny's bottlecap flies 18 feet straight, then bounces off a street light and flies another 1/3 of the distance it already went. Mark's bottle cap flies 15 feet forward, then bounces off a window and flies twice as far as it already did. How much further did Mark's bottle cap go than Jenny's?",
+  "answer_ja": "Jennyは18フィートの後にその1/3の6フィート進み、計24フィート。Markは15フィートの後にその2倍の30フィート進み、計45フィート。差は45−24=21フィート。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A17P3.bottle_cap_distance_difference",
+  "graph": "work/gsm8k-sprint375-bottle-cap-distance-difference-graph.json",
+  "model_notes_ja": [
+    "『distance it already went』は各人が跳ね返る前に進んだ18フィートまたは15フィートを指す。"
+  ],
+  "steps": [
+    {
+      "id": "bottle_cap_distance_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A17P3.bottle_cap_distance_difference",
+      "title_ja": "Markのキャップが余計に進んだ距離",
+      "claim_ja": "Jennyは18フィートの後にその1/3の6フィート進み、計24フィート。Markは15フィートの後にその2倍の30フィート進み、計45フィート。差は45−24=21フィート。",
+      "method_ja": "各人について跳ね返る前後の道のりを加え、総距離の差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『distance it already went』は各人が跳ね返る前に進んだ18フィートまたは15フィートを指す。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "Jennyは18フィートの後にその1/3の6フィート進み、計24フィート。Markは15フィートの後にその2倍の30フィート進み、計45フィート。差は45−24=21フィート。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4001,
+    "checked_model_hash": "a59c99315beb2c61cb5fb9b87db210ff472537b985f914da926f6af72c243bf1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

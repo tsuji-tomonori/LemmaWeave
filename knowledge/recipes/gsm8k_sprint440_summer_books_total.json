@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint440_summer_books_total",
+  "title_ja": "夏に読んだ本の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04195",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Katy participated in a summer reading program at her local library. She read 8 books in June, twice as many in July and three fewer in August than she did in July. How many books did Katy read during the summer?",
+  "answer_ja": "7月は2×8=16冊、8月は16-3=13冊。合計は8+16+13=37冊。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.summer_books_total",
+  "graph": "work/gsm8k-sprint440-summer-books-total-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "july",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.july_books",
+      "title_ja": "7月の冊数",
+      "claim_ja": "2×8=16冊。",
+      "method_ja": "6月の2倍を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6月8冊。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2×8=16冊。"
+    },
+    {
+      "id": "august",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.august_books",
+      "title_ja": "8月の冊数",
+      "claim_ja": "16-3=13冊。",
+      "method_ja": "7月から3を引く。",
+      "requires_steps": [
+        "july"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8月は7月より3冊少ない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "16-3=13冊。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.summer_books_total",
+      "title_ja": "夏の総数",
+      "claim_ja": "8+16+13=37冊。",
+      "method_ja": "6・7・8月を加える。",
+      "requires_steps": [
+        "july",
+        "august"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "summerは問題文中の3か月。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8+16+13=37冊。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4196,
+    "checked_model_hash": "d07ed89bb53634a8184aa39f8bc6e7a5b77bea33009ebeffa250d0b03cc268c1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

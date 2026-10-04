@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1049",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "540680714277d3da82ea4462acd264b5db899cf605096260f51505b825f5a56a",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1004A07P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04146",
+      "source_line_1based": 4147,
+      "source_record_sha256": "b673a221d44a8a1d942a0b4a2adfc1f4df817cb85545f1d72470574c1796e3d7",
+      "raw_question_sha256": "e5d935166590ac13d34d245184e2a7d22c90cb4d68d96d7eab813deff8ddc783",
+      "normalized_question_sha256": "e5d935166590ac13d34d245184e2a7d22c90cb4d68d96d7eab813deff8ddc783",
+      "source_question": "At Roosevelt high school there are 600 students in the senior class. A fifth of the students are in the marching band. Of the students in the marching band, half of them play a brass instrument. Of the students that play a brass instrument, a fifth of them play the saxophone. Of the students that play the saxophone, a third of them play the alto saxophone. How many students play the alto saxophone?",
+      "recipe_id": "gsm8k_sprint395_alto_saxophone_students",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "楽器分類の一般知識ではなく、問題文が明示する入れ子構造をモデル化する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04147",
+      "source_line_1based": 4148,
+      "source_record_sha256": "0ed5aee47039e80456dce3db39508d56d89070fcbb9ccabd3603f0598cf7cda6",
+      "raw_question_sha256": "aae11339323f267424812812943117aab0e3a7f991662ea6c0ba87885b90009f",
+      "normalized_question_sha256": "aae11339323f267424812812943117aab0e3a7f991662ea6c0ba87885b90009f",
+      "source_question": "Tom, an avid stamp collector, has 3,000 stamps in his collection. He is very sad because he lost his job last Friday. His brother, Mike, and best friend, Harry, try to cheer him up with more stamps. Harry’s gift to Tom is 10 more stamps than twice Mike’s gift. If Mike has given Tom 17 stamps, how many stamps does Tom’s collection now have?",
+      "recipe_id": "gsm8k_sprint395_stamp_collection_after_gifts",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "『10 more than twice』を2×17+10と読む。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04148",
+      "source_line_1based": 4149,
+      "source_record_sha256": "4a8faf2b5906ee426009724389f4c53b344c2bd474a93791677ae6f3940eb4af",
+      "raw_question_sha256": "2e3911db719fa14f555eb21a427abcf866a5ff6ba662df17da7dcc50ccafc54d",
+      "normalized_question_sha256": "2e3911db719fa14f555eb21a427abcf866a5ff6ba662df17da7dcc50ccafc54d",
+      "source_question": "Diana is twice as old as Grace is today. If Grace turned 3 a year ago, how old is Diana today?",
+      "recipe_id": "gsm8k_sprint395_diana_age_today",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "比較時点を今日にそろえる。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04149",
+      "source_line_1based": 4150,
+      "source_record_sha256": "111879e8037437a0c65c3c7d7f3bec07a0827ef2e80bc1ba843c0fcbf85b6758",
+      "raw_question_sha256": "5af9e24b16f639b5be48e1ae63c134b9e316bee8199fdf245cf0a49498397a19",
+      "normalized_question_sha256": "5af9e24b16f639b5be48e1ae63c134b9e316bee8199fdf245cf0a49498397a19",
+      "source_question": "A parking garage of a mall is four stories tall. On the first level, there are 90 parking spaces. The second level has 8 more parking spaces than on the first level, and there are 12 more available parking spaces on the third level than on the second level. The fourth level has 9 fewer parking spaces than the third level. If 100 cars are already parked, how many cars can be accommodated by the parking garage?",
+      "recipe_id": "gsm8k_sprint395_parking_spaces_remaining",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "総容量399台と残容量299台を区別する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04150",
+      "source_line_1based": 4151,
+      "source_record_sha256": "00240aefa1d66c39d17cbfabc78c87b453244f50d3a4b62a61e41f2cd9770e76",
+      "raw_question_sha256": "808ba581a01676b263dc4e5e56056226247d0c72e836352d534e63e545b42715",
+      "normalized_question_sha256": "808ba581a01676b263dc4e5e56056226247d0c72e836352d534e63e545b42715",
+      "source_question": "Mrs. Thomson received an incentive worth $240. She spent 1/3 of the money on food and 1/5 of it on clothes. Then, she put in her savings account 3/4 of the remaining money. How much money did Mrs. Thomson save?",
+      "recipe_id": "gsm8k_sprint395_incentive_savings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各割合の基準額を明示して順番を固定する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

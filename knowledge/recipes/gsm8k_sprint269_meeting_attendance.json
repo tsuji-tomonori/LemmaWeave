@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint269_meeting_attendance",
+  "title_ja": "学校会議の出席者数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03404",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A14P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "着席学生300人、着席教師30人、立っている学生25人の総出席者数を求める。",
+  "answer_ja": "355人",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.meeting_attendance",
+  "graph": "work/gsm8k-sprint269-meeting-attendance-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "seated_attendance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.seated_attendance",
+      "title_ja": "着席者は330人。",
+      "claim_ja": "着席者は330人。",
+      "method_ja": "学生300人と教師30人を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "着席2区分は重複しない。",
+      "conclusion_ja": "330人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "meeting_attendance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.meeting_attendance",
+      "title_ja": "総出席者は355人。",
+      "claim_ja": "総出席者は355人。",
+      "method_ja": "着席330人に立っている25人を加える。",
+      "requires_steps": [
+        "seated_attendance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "着席者と立っている学生は重複しない。",
+      "conclusion_ja": "355人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3405,
+    "checked_model_hash": "eb73855587bd0696d3db67c1cfd2be06c7ea346160f2879b73f91cf456490ce6",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

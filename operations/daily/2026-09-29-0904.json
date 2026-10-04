@@ -1,0 +1,122 @@
+{
+  "date": "2026-09-29",
+  "run_id": "2026-09-29T09:00+09:00-entrance-exam-geometry-vectors-trigonometry",
+  "scheduled_slot": "2026-09-29T09:00:00+09:00",
+  "slot_role": "japanese_entrance_exam_individual_solution",
+  "domain": "geometry_vectors_trigonometry",
+  "base_sha": "49baf560f208c2c34af519607d8ded7538d48001",
+  "started_at": "2026-09-29T09:04:50+09:00",
+  "finished_at": "2026-09-29T09:12:28+09:00",
+  "start_offset_seconds": 290,
+  "schedule_note_ja": "09時専用枠へ割り当てた。直前の台帳で2026-09-28は関数・方程式・不等式だったため、循環上の次分野である図形・ベクトル・三角比を選択した。GSM8Kとは別集計。",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q02-S02-02i"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q02-S02-02i"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q02-S02-02i"
+  ],
+  "deferred": [],
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "answer_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honsiken_seikai.html",
+    "pdf_page_1_based": [9, 10, 11],
+    "printed_page_label": [38, 39, 40],
+    "subquestion": "第2問〔2〕(2)(i)",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "source_review_basis": "2026-09-29に大学入試センター公式掲載ページから公式PDFを開き、対象3ページの図、接線長、半径、交点Rの側、すべての解答要求を目視確認した。原文、選択肢表、図、PDF画像はGitへ保存せず、独自要約と数学コードだけを保存した。",
+    "rights_status": "candidate_restricted_unchanged",
+    "processing_note_ja": "既存の権利レビューでは外部処理可否がunknownであるため、今回の公式Web閲覧を新しい許諾根拠にせず、収集済み状態へ昇格しない。"
+  },
+  "written_solution_ja": [
+    "同一点から円に引いた接線は等しいのでPM=PK=12、QM=QL=5である。また各接点では半径と接線が垂直である。",
+    "四角形PMOKは脚12と6の直角三角形二つに分かれるため面積は72。一方、前小問の公式では面積は(1/2)(12·12+6·6)sin P=90sin Pだから、sin P=4/5である。",
+    "同様に四角形QLOMの面積は30であり、30=(1/2)(5·5+6·6)sin Q=(61/2)sin Qだから、sin Q=60/61である。",
+    "P,Qは鋭角なので、sin²θ+cos²θ=1からcos P=3/5、cos Q=11/61である。",
+    "三角形PQRの内角はP、180°-Q、Q-Pである。よってsin∠PRQ=sin(Q-P)=(60/61)(3/5)-(11/61)(4/5)=136/305である。",
+    "MはPとQの間にあるのでPQ=PM+MQ=12+5=17である。",
+    "正弦定理PR/sin Q=PQ/sin(Q-P)、QR/sin P=PQ/sin(Q-P)より、PR=75/2、QR=61/2である。",
+    "三辺を2倍するとPR:RQ:PQ=75:61:34である。またPR=75/2>34=2PQなのでPR>2PQである。"
+  ],
+  "outputs": {
+    "recipe": "knowledge/recipes/dnc2026_tangent_triangle_ratio_individual.json",
+    "model_file": "LemmaWeave/Problems/DNC2026M1/TangentTriangleRatioModel.lean",
+    "lean_file": "tests/lean/DNC2026TangentTriangleRatioIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "explanation_lines": 8,
+    "named_lean_theorems": 9,
+    "self_review_status": "self_review_only",
+    "model_sha256": "e72c8809b43eabf8489cc12983b3ea85ecd510676180cd7860981eb3f240a366",
+    "lean_sha256": "e4bc80be066b1f27f63790cace22479496b49464ee3fef7e75c18448afb5b4d4",
+    "recipe_sha256": "a4aa677cbf819846ef8730df2fc59e6c000eed4c5272e1e9d5f0507ec2e35205"
+  },
+  "validation": {
+    "official_source_and_all_requirements_visually_checked": true,
+    "recipe_json_parse": "pass",
+    "recipe_steps": 8,
+    "recipe_step_to_named_theorem_missing": 0,
+    "model_witness_included": true,
+    "exact_rational_recalculation": "pass_sinR_136_over_305_PR_75_over_2_QR_61_over_2_ratio_75_61_34",
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "trust_sensitive_token_scan": "pass",
+    "fixed_lean_build": "not_run_local_launcher_failed_to_locate_application",
+    "direct_lean_exit_code": 1,
+    "lake_env_exit_code": 127,
+    "axiom_audit": "pending_kernel_run",
+    "dependency_audit": "pending_kernel_run",
+    "recipe_render_exit_code": 1,
+    "recipe_render_blocker": "既存のreports/dependencies/methods/dnc2026_cubic_derivative_individual.json.gzがなく、今回レシピへ到達する前に停止",
+    "semantic_review_status": "self_review_only",
+    "assurance_level": "INCONCLUSIVE"
+  },
+  "entrance_exam_ledger_after": {
+    "registered_count": 15,
+    "collected_kernel_checked_count": 5,
+    "candidate_not_started_count": 10,
+    "weekly_domain_counts": [3, 2, 2, 1, 1, 1],
+    "all_six_domains_at_least_one": true,
+    "unconfirmed_scope_preserved": true
+  },
+  "gsm8k_counts_unchanged": {
+    "solution_ready": 518,
+    "awaiting_verification": 2524,
+    "pending": 5750,
+    "total": 8792,
+    "duplicates": 0,
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "ci": {
+    "prior_exact_head_sha": "49baf560f208c2c34af519607d8ded7538d48001",
+    "prior_combined_statuses_visible": 0,
+    "prior_pr_triggered_workflow_runs_visible": 0,
+    "solution_commit_sha": "74d1d955e44ee278fe3bb1980b5bc706389b810e",
+    "current_status": "pending_exact_head_ci",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "state": "open",
+    "merged": false,
+    "reviews": 0,
+    "unresolved_review_threads": 0,
+    "merge_status": "held_for_missing_exact_head_success_evidence"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-29T09:00+09:00",
+    "scope": "JP-DNC-CT-2026-MAIN-M1-Q02-S02-02i",
+    "claimed_at": "2026-09-29T09:04:50+09:00",
+    "expires_at": "2026-09-29T10:04:50+09:00",
+    "released": true
+  },
+  "commit": "74d1d955e44ee278fe3bb1980b5bc706389b810e",
+  "assurance": "INCONCLUSIVE",
+  "status_note_ja": "原題を目視で再読し、8行の独自記述解答、代数化したLeanモデル、各行定理、具体的モデル証人、自己照合を保存した。ローカル固定Leanが起動不能で、公理・依存のカーネル証拠とexact-head CIがないため正式完了にはせずverification_pendingに置く。"
+}

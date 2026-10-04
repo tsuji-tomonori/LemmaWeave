@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint252_plugs",
+  "title_ja": "プラグの個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03302",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "手袋より20多い初期ペア数に30ペアを加え、個数へ直す。",
+  "answer_ja": "400個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.plugs_count",
+  "graph": "work/gsm8k-sprint252-plugs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "plugs_initial_pairs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.plugs_initial_pairs",
+      "title_ja": "初めのプラグは170ペア。",
+      "claim_ja": "初めのプラグは170ペア。",
+      "method_ja": "150+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "手袋箱より20ペア多い。",
+      "conclusion_ja": "170ペア。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "plugs_final_pairs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.plugs_final_pairs",
+      "title_ja": "追加後は200ペア。",
+      "claim_ja": "追加後は200ペア。",
+      "method_ja": "170+30。",
+      "requires_steps": [
+        "plugs_initial_pairs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "30ペア追加。",
+      "conclusion_ja": "200ペア。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "plugs_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.plugs_count",
+      "title_ja": "プラグは400個。",
+      "claim_ja": "プラグは400個。",
+      "method_ja": "200×2。",
+      "requires_steps": [
+        "plugs_final_pairs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1ペアは2個。",
+      "conclusion_ja": "400個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3303,
+    "checked_model_hash": "5b0f5e04984a6201f121580db7520ef1dbe340a720fdfc949fc7e2f86decd806",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

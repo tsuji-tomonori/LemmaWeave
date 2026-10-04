@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint126_barrettes",
+  "title_ja": "髪留めセットとくしの購入合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02170",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kristineは3ドルの髪留めセット1つと1ドルのくし1つ、Crystalは同じセット3つとくし1つを買う。2人の支払合計は何ドルか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.barrettes_solution",
+  "graph": "work/gsm8k-sprint126-barrettes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "barrettes_kristine",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.barrettes_kristine",
+      "title_ja": "Kristineは4ドル支払う",
+      "claim_ja": "Kristineは4ドル支払う",
+      "method_ja": "1セット3ドルとくし1ドルを足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Kristineは4ドル支払う",
+      "baseline_ja": "Kristineは4ドル支払う"
+    },
+    {
+      "id": "barrettes_crystal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.barrettes_crystal",
+      "title_ja": "Crystalは10ドル支払う",
+      "claim_ja": "Crystalは10ドル支払う",
+      "method_ja": "3セット各3ドルとくし1ドルを足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Crystalは10ドル支払う",
+      "baseline_ja": "Crystalは10ドル支払う"
+    },
+    {
+      "id": "barrettes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.barrettes_solution",
+      "title_ja": "2人の合計は14ドル",
+      "claim_ja": "2人の合計は14ドル",
+      "method_ja": "4ドルと10ドルを足す。",
+      "requires_steps": [
+        "barrettes_kristine",
+        "barrettes_crystal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2人の合計は14ドル",
+      "baseline_ja": "2人の合計は14ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2171,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

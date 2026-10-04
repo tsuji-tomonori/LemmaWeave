@@ -1,0 +1,168 @@
+{
+  "date": "2026-09-25",
+  "run_id": "gsm8k-20260925-0800-jst",
+  "scheduled_slot": {
+    "timezone": "Asia/Tokyo",
+    "hour": 8,
+    "role": "gsm8k_individual_solve",
+    "target_count": 15
+  },
+  "started_at": "2026-09-25T07:55:35+09:00",
+  "finished_at": "2026-09-25T08:52:00+09:00",
+  "schedule_variance_ja": "08時枠を07:55 JSTに開始。07時枠は完了済みのため重複させない。05時枠は未実行のまま保持。",
+  "base_sha": "cd6c041892390703106f272e586bbc2dfeecdc65",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:02305",
+    "external-gsm8k-main-3101c7d50724:train:02306",
+    "external-gsm8k-main-3101c7d50724:train:02307",
+    "external-gsm8k-main-3101c7d50724:train:02308",
+    "external-gsm8k-main-3101c7d50724:train:02309",
+    "external-gsm8k-main-3101c7d50724:train:02310",
+    "external-gsm8k-main-3101c7d50724:train:02311",
+    "external-gsm8k-main-3101c7d50724:train:02312",
+    "external-gsm8k-main-3101c7d50724:train:02313",
+    "external-gsm8k-main-3101c7d50724:train:02314",
+    "external-gsm8k-main-3101c7d50724:train:02315",
+    "external-gsm8k-main-3101c7d50724:train:02316",
+    "external-gsm8k-main-3101c7d50724:train:02317",
+    "external-gsm8k-main-3101c7d50724:train:02318",
+    "external-gsm8k-main-3101c7d50724:train:02319"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:02305",
+    "external-gsm8k-main-3101c7d50724:train:02306",
+    "external-gsm8k-main-3101c7d50724:train:02307",
+    "external-gsm8k-main-3101c7d50724:train:02308",
+    "external-gsm8k-main-3101c7d50724:train:02309",
+    "external-gsm8k-main-3101c7d50724:train:02310",
+    "external-gsm8k-main-3101c7d50724:train:02311",
+    "external-gsm8k-main-3101c7d50724:train:02312",
+    "external-gsm8k-main-3101c7d50724:train:02313",
+    "external-gsm8k-main-3101c7d50724:train:02314",
+    "external-gsm8k-main-3101c7d50724:train:02315",
+    "external-gsm8k-main-3101c7d50724:train:02316",
+    "external-gsm8k-main-3101c7d50724:train:02317",
+    "external-gsm8k-main-3101c7d50724:train:02318",
+    "external-gsm8k-main-3101c7d50724:train:02319"
+  ],
+  "deferred": [],
+  "checkpoints": [
+    {
+      "index": 1,
+      "problem_ids": [
+        "external-gsm8k-main-3101c7d50724:train:02305",
+        "external-gsm8k-main-3101c7d50724:train:02306",
+        "external-gsm8k-main-3101c7d50724:train:02307",
+        "external-gsm8k-main-3101c7d50724:train:02308",
+        "external-gsm8k-main-3101c7d50724:train:02309"
+      ]
+    },
+    {
+      "index": 2,
+      "problem_ids": [
+        "external-gsm8k-main-3101c7d50724:train:02310",
+        "external-gsm8k-main-3101c7d50724:train:02311",
+        "external-gsm8k-main-3101c7d50724:train:02312",
+        "external-gsm8k-main-3101c7d50724:train:02313",
+        "external-gsm8k-main-3101c7d50724:train:02314"
+      ]
+    },
+    {
+      "index": 3,
+      "problem_ids": [
+        "external-gsm8k-main-3101c7d50724:train:02315",
+        "external-gsm8k-main-3101c7d50724:train:02316",
+        "external-gsm8k-main-3101c7d50724:train:02317",
+        "external-gsm8k-main-3101c7d50724:train:02318",
+        "external-gsm8k-main-3101c7d50724:train:02319"
+      ]
+    }
+  ],
+  "artifacts": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0189.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0925A08Models.lean",
+    "test": "tests/lean/GSM8KSprint0925A08.lean",
+    "recipes": [
+      "knowledge/recipes/gsm8k_sprint135_rope.json",
+      "knowledge/recipes/gsm8k_sprint135_movies.json",
+      "knowledge/recipes/gsm8k_sprint135_sandbox.json",
+      "knowledge/recipes/gsm8k_sprint135_bandages.json",
+      "knowledge/recipes/gsm8k_sprint135_factory.json",
+      "knowledge/recipes/gsm8k_sprint135_book.json",
+      "knowledge/recipes/gsm8k_sprint135_dog_food.json",
+      "knowledge/recipes/gsm8k_sprint135_gift.json",
+      "knowledge/recipes/gsm8k_sprint135_christian_age.json",
+      "knowledge/recipes/gsm8k_sprint135_weights.json",
+      "knowledge/recipes/gsm8k_sprint135_samir_age.json",
+      "knowledge/recipes/gsm8k_sprint135_stickers_class.json",
+      "knowledge/recipes/gsm8k_sprint135_restaurant_bill.json",
+      "knowledge/recipes/gsm8k_sprint135_groomer.json",
+      "knowledge/recipes/gsm8k_sprint135_corgi.json"
+    ],
+    "queue": "operations/solve-queue.jsonl.gz"
+  },
+  "source_verification": {
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "records_checked": 15,
+    "positions_checked": 15,
+    "question_hashes_checked": 15
+  },
+  "semantic_review": {
+    "status": "self_review_only",
+    "problems_checked": 15,
+    "independent_review": false,
+    "model_hash": "09727ea8b83923dcba25a51809b427129da247433051572eb21111290845717f"
+  },
+  "lean_verification": {
+    "required_version": "4.33.1",
+    "status": "not_run_exact_head",
+    "static_forbidden_tokens": {
+      "sorry": 0,
+      "admit": 0,
+      "custom_axiom": 0
+    },
+    "next_action_ja": "exact-head CIで固定Lean・公理・依存・説明行対応を再生し、成功証拠を取り込む。"
+  },
+  "queue": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1804,
+    "pending": 6470,
+    "deferred": 0,
+    "in_progress": 0,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0,
+    "remaining": 8274,
+    "next_problem_id": "external-gsm8k-main-3101c7d50724:train:02320",
+    "updated_problem_ids": 15,
+    "compression": "gzip_stored_blocks"
+  },
+  "ci": {
+    "before": {
+      "head_sha": "cd6c041892390703106f272e586bbc2dfeecdc65",
+      "workflow_runs": [],
+      "status": "exact_head_run_absent"
+    },
+    "after": {
+      "status": "pending_exact_head_registration"
+    }
+  },
+  "pull_request": {
+    "number": 5,
+    "status": "open",
+    "merge_status": "blocked_until_exact_head_success_and_evidence_import"
+  },
+  "commit": {
+    "artifact_commit_sha": "06f63841dccf13472d2ac4c092ccdeed25f94003",
+    "status": "saved_to_pr_5"
+  },
+  "claim": {
+    "status": "serialized_single_writer",
+    "lock_implementation": false,
+    "base_sha": "cd6c041892390703106f272e586bbc2dfeecdc65",
+    "expires_at": "2026-09-25T09:15:00+09:00"
+  }
+}

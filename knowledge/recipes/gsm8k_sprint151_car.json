@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint151_car",
+  "title_ja": "古い車の購入価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02559",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "新車は古い車の2倍の価格で、古い車の売却額1800ドルを充当しても2000ドル残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.car_solution",
+  "graph": "work/gsm8k-sprint151-car-graph.json",
+  "model_notes_ja": [
+    "古い車の売却額1800ドルと、問われる元の価格1900ドルを区別する。"
+  ],
+  "steps": [
+    {
+      "id": "car_new_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.car_new_cost",
+      "title_ja": "新車価格は3800ドル",
+      "claim_ja": "新車価格は3800ドル",
+      "method_ja": "充当した1800と残債2000を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "新車価格は3800ドル",
+      "baseline_ja": "新車価格は3800ドル"
+    },
+    {
+      "id": "car_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.car_solution",
+      "title_ja": "古い車の価格は1900ドル",
+      "claim_ja": "古い車の価格は1900ドル",
+      "method_ja": "新車価格3800の半分を求める",
+      "requires_steps": [
+        "car_new_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "古い車の価格は1900ドル",
+      "baseline_ja": "古い車の価格は1900ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2560,
+    "checked_model_hash": "d2ba0eb5fd55009570291284735b025b7fd39756a17f14df9e6018a2e9eeed92",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

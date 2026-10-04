@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_circus_back_legs_minutes",
+  "title_ja": "後ろ脚で立つ合計時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04095",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Pulsar, the shuffle-dancing bear, Polly, the pink prancing poodle, and Petra, the proud portly pachyderm, are entertainers at the Big Top Circus.  In one show, Pulsar stands on his two back legs for a total of 10 minutes.  Then, Polly stands on her back legs for three times as long as Pulsar.  And then, finally, Petra stands of his back legs for one-sixth as long as Polly.  What is the combined length of time, in minutes, that the three entertainers stand on their back legs?",
+  "answer_ja": "Pulsarは10分、Pollyはその3倍で30分、PetraはPollyの6分の1で5分。合計は10+30+5=45分である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P1.circus_back_legs_minutes",
+  "graph": "work/gsm8k-sprint392-circus-back-legs-minutes-graph.json",
+  "model_notes_ja": [
+    "各動物の時間を順に導出して合計する。"
+  ],
+  "steps": [
+    {
+      "id": "circus_back_legs_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P1.circus_back_legs_minutes",
+      "title_ja": "後ろ脚で立つ合計時間",
+      "claim_ja": "Pulsarは10分、Pollyはその3倍で30分、PetraはPollyの6分の1で5分。合計は10+30+5=45分である。",
+      "method_ja": "各動物の時間を順に導出して合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各動物の時間を順に導出して合計する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Pulsarは10分、Pollyはその3倍で30分、PetraはPollyの6分の1で5分。合計は10+30+5=45分である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4096,
+    "checked_model_hash": "d64ba1c4460640f58f0763d002197af12db34ded23abec5bfbbe0c21e078a551",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

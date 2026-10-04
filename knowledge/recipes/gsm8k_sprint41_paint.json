@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint41_paint",
+  "title_ja": "家の塗装量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00895",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "居間と3寝室の壁面積から必要な塗料を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A09.paint_solution",
+  "graph": "work/gsm8k-sprint41-paint-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A09.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "paint_bedrooms",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.paint_bedrooms",
+      "title_ja": "寝室の面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "寝室3室、各400平方フィート。",
+      "conclusion_ja": "1200平方フィート。",
+      "baseline_ja": "3×400=1200。"
+    },
+    {
+      "id": "paint_total_area",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.paint_total_area",
+      "title_ja": "全壁面積",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "居間600と寝室1200。",
+      "conclusion_ja": "1800平方フィート。",
+      "baseline_ja": "600+1200=1800。"
+    },
+    {
+      "id": "paint_gallons",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.paint_gallons",
+      "title_ja": "必要量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1ガロンで600平方フィート。",
+      "conclusion_ja": "3ガロン。",
+      "baseline_ja": "1800=3×600。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 896,
+    "checked_model_hash": "89dd3a16cd8df99f34c31f37d1627e251cf211069adff173f7367caa5578cd5c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

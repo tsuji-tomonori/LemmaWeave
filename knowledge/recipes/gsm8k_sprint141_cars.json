@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint141_cars",
+  "title_ja": "3人のおもちゃの車の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02404",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "TommyとJessieは各3台、Jessieの兄は2人の合計より5台多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cars_solution",
+  "graph": "work/gsm8k-sprint141-cars-graph.json",
+  "model_notes_ja": [
+    "原文の '5 more cars than Tommy and Jessie' は、参考解答に従いTommyとJessieの合計より5台多いと読む。個々より5台多い解釈なら答えは異なる。"
+  ],
+  "steps": [
+    {
+      "id": "cars_pair",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cars_pair",
+      "title_ja": "TommyとJessieで6台",
+      "claim_ja": "TommyとJessieで6台",
+      "method_ja": "3と3を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "TommyとJessieで6台",
+      "baseline_ja": "TommyとJessieで6台"
+    },
+    {
+      "id": "cars_brother",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cars_brother",
+      "title_ja": "兄は11台",
+      "claim_ja": "兄は11台",
+      "method_ja": "2人の6台に5を足す",
+      "requires_steps": [
+        "cars_pair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "兄は11台",
+      "baseline_ja": "兄は11台"
+    },
+    {
+      "id": "cars_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cars_solution",
+      "title_ja": "3人で17台",
+      "claim_ja": "3人で17台",
+      "method_ja": "6と11を足す",
+      "requires_steps": [
+        "cars_pair",
+        "cars_brother"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "3人で17台",
+      "baseline_ja": "3人で17台"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2405,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint166_pastry",
+  "title_ja": "値下げした菓子の売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02780",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "金額をセントで整数化し、半額の単価と売上を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A04.pastry_solution",
+  "graph": "work/gsm8k-sprint166-pastry-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pastry_prices",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.pastry_prices",
+      "title_ja": "半額は150セントと100セント",
+      "claim_ja": "300÷2=150、200÷2=100。",
+      "method_ja": "半額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "300÷2=150、200÷2=100。",
+      "baseline_ja": "300÷2=150、200÷2=100。"
+    },
+    {
+      "id": "pastry_revenues",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.pastry_revenues",
+      "title_ja": "小計2400セントと800セント",
+      "claim_ja": "16×150=2400、8×100=800。",
+      "method_ja": "単価×個数",
+      "requires_steps": [
+        "pastry_prices"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "16×150=2400、8×100=800。",
+      "baseline_ja": "16×150=2400、8×100=800。"
+    },
+    {
+      "id": "pastry_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.pastry_total",
+      "title_ja": "合計3200セント",
+      "claim_ja": "2400+800=3200セント。",
+      "method_ja": "加法",
+      "requires_steps": [
+        "pastry_revenues"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "2400+800=3200セント。",
+      "baseline_ja": "2400+800=3200セント。"
+    },
+    {
+      "id": "pastry_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.pastry_solution",
+      "title_ja": "答えは32ドル",
+      "claim_ja": "3200セント、すなわち32ドル。",
+      "method_ja": "100セント=1ドル",
+      "requires_steps": [
+        "pastry_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "3200セント、すなわち32ドル。",
+      "baseline_ja": "3200セント、すなわち32ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2781,
+    "checked_model_hash": "0a72e44473da6012f2c3e13597de2c7523a2b4aca208e4fca162240ccab79f3e",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

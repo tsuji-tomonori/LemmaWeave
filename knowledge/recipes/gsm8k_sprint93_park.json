@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint93_park",
+  "title_ja": "公園の木の本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01679",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "縦1000フィート、横2000フィートの公園に20平方フィート当たり1本の木がある。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.park_solution",
+  "graph": "work/gsm8k-sprint93-park-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "park_area",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.park_area",
+      "title_ja": "公園面積",
+      "claim_ja": "2000000平方フィート。",
+      "method_ja": "長方形の面積=縦×横。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "公園を長方形とする。",
+      "conclusion_ja": "1000×2000=2000000。",
+      "baseline_ja": "1000×2000=2000000。"
+    },
+    {
+      "id": "park_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.park_solution",
+      "title_ja": "木の本数",
+      "claim_ja": "100000本。",
+      "method_ja": "面積を1本当たり20平方フィートで割る。",
+      "requires_steps": [
+        "park_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "密度が全域で一定。",
+      "conclusion_ja": "100000×20=2000000。",
+      "baseline_ja": "100000×20=2000000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1680,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

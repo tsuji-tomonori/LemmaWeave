@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint251_riddles",
+  "title_ja": "Tasoのなぞなぞ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03300",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Joshに4を足してIvoryを求め、その2倍を取る。",
+  "answer_ja": "24問",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.riddles_taso",
+  "graph": "work/gsm8k-sprint251-riddles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "riddles_ivory",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.riddles_ivory",
+      "title_ja": "Ivoryは12問。",
+      "claim_ja": "Ivoryは12問。",
+      "method_ja": "8+4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Joshより4問多い。",
+      "conclusion_ja": "12問。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "riddles_taso",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.riddles_taso",
+      "title_ja": "Tasoは24問。",
+      "claim_ja": "Tasoは24問。",
+      "method_ja": "12×2。",
+      "requires_steps": [
+        "riddles_ivory"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Ivoryの2倍。",
+      "conclusion_ja": "24問。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3301,
+    "checked_model_hash": "e5fd1fde14c7301000be28759ba40fc9390a450dbf7afa55542e0dcd86d59a81",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

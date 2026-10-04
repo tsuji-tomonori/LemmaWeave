@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1008",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "bf386837913d8e6ebf18d221a2522f93842f6cfdf1a6821ffac27018a183f8d6",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A11P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03931",
+      "source_line_1based": 3932,
+      "source_record_sha256": "b3158c02d054e59f61e108c9c429345e1e3f973c06ca9f786c701afdd564f995",
+      "raw_question_sha256": "f152d31b35d5a9566755da2f579d1229ccc3cb1500518fd700445b209043f73b",
+      "normalized_question_sha256": "f152d31b35d5a9566755da2f579d1229ccc3cb1500518fd700445b209043f73b",
+      "source_question": "Gina and Tom were playing football. On the first day, Gina scored two goals, which was three less than Tom. On the second day, Gina scored two goals less than Tom who scored six goals. How many goals did Gina and Tom score during these two days?",
+      "recipe_id": "gsm8k_sprint362_two_day_goal_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各日の2人の得点をすべて加え、同じ得点の重複はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03932",
+      "source_line_1based": 3933,
+      "source_record_sha256": "d8e0979a73874d9ceeaf87f236bcdabcc23be54861ba3825ef25fb805b4d09a7",
+      "raw_question_sha256": "515a4ea75a2a03cbb8c2fde1a84b385ac92aff27cf2a6d03287ce96f0a1f127d",
+      "normalized_question_sha256": "515a4ea75a2a03cbb8c2fde1a84b385ac92aff27cf2a6d03287ce96f0a1f127d",
+      "source_question": "There is a lot of dust in Susie's house. It takes her 2 hours to vacuum the whole house. She can vacuum each room in 20 minutes. How many rooms does she have in her house?",
+      "recipe_id": "gsm8k_sprint362_room_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各部屋に同じ20分かかり、廊下など別作業時間はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03933",
+      "source_line_1based": 3934,
+      "source_record_sha256": "e7f1f0c5b4f3ac659df50efcd2bd75b9310b2e690a216c9f1fbb912cbc251599",
+      "raw_question_sha256": "bd47f05290b9a2ebbcd88135f488ec637a4928897a91a5e8c5253cc64d2990b5",
+      "normalized_question_sha256": "52816b7d43370a0d43f5f54a138b271fd613d9cafc749f088969d4a4b9ab26b0",
+      "source_question": "Burt spent $2.00 on a packet of basil seeds and $8.00 on potting soil.  The packet of seeds yielded 20 basil plants.  He sells each basil plant for $5.00 at the local farmer's market.  What is the net profit from his basil plants?",
+      "recipe_id": "gsm8k_sprint362_basil_net_profit",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "20株すべて売れ、追加費用・税・手数料はない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03934",
+      "source_line_1based": 3935,
+      "source_record_sha256": "cff59b9a3f1b485a09a224f7db9e4f36e4339e3ee5b1af8d203f6e42faa1fff4",
+      "raw_question_sha256": "96c4701c4a59f7f1d606c52637ba7a08c99097b97933b6152d12cdc500204737",
+      "normalized_question_sha256": "a0dd067c3a434cbe866bf6c8095446e9d5b1b0e667a80570d94d1a4a37ba1fbf",
+      "source_question": "Janet goes to the gym for 5 hours a week.  She goes Monday, Tuesday, Wednesday, and Friday.  She spends an hour and a half each day on Monday and Wednesday.  If she spends the same amount of time at the gym on Tuesday and Friday how many hours is she at the gym on Friday?",
+      "recipe_id": "gsm8k_sprint362_friday_gym_hours",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "火曜と金曜の時間は等しく、4日以外には行かない。"
+      ],
+      "blockers": [
+        "参照説明の『Tuesday and Wednesday』は原文上『Tuesday and Friday』の誤記。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03935",
+      "source_line_1based": 3936,
+      "source_record_sha256": "4fcfff4991c6ff717b0505753d4eac23fc2e84d4c39d9b5c34e8457ae1def745",
+      "raw_question_sha256": "efbb160bd5978827454749092fb563008d83561873b586c9ac9f4ffa9a3ca08d",
+      "normalized_question_sha256": "efbb160bd5978827454749092fb563008d83561873b586c9ac9f4ffa9a3ca08d",
+      "source_question": "Karen works at an animal shelter with 30 dogs, 28 cats, and 20 lizards. Every month, 50% of the dogs are adopted, 25% of the cats are adopted, and 20% of lizards are adopted. If the shelter takes in 13 new pets a month, how many pets are there after one month?",
+      "recipe_id": "gsm8k_sprint362_pets_after_month",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各譲渡率は当初の各動物数に1回だけ適用し、新規13匹は譲渡計算後に加わる。"
+      ],
+      "blockers": []
+    }
+  ]
+}

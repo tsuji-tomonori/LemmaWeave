@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint277_future_books",
+  "title_ja": "5年後の本の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03488",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A16P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2年前200冊、現在は40冊少なく、5年後は現在の5倍より60冊多いとき冊数を求める。",
+  "answer_ja": "860冊",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.future_books",
+  "graph": "work/gsm8k-sprint277-future-books-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "current_books",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.current_books",
+      "title_ja": "現在は160冊。",
+      "claim_ja": "現在は160冊。",
+      "method_ja": "200冊から40冊を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "現在は2年前より40冊少ない。",
+      "conclusion_ja": "160冊。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "future_books",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.future_books",
+      "title_ja": "5年後は860冊。",
+      "claim_ja": "5年後は860冊。",
+      "method_ja": "現在160冊の5倍に60冊を足す。",
+      "requires_steps": [
+        "current_books"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5年後は現在数の5倍より60冊多い。",
+      "conclusion_ja": "860冊。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3489,
+    "checked_model_hash": "34942b96f42e18add642a70a6b9e8b30264048ec55ca609c2851037925d4393d",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

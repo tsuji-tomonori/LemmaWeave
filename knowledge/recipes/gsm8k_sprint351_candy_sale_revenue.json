@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint351_candy_sale_revenue",
+  "title_ja": "キャンディーバーの売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03878",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "During a fundraiser, each of the 20 members of a group sold candy bars which costs $0.50 each. If each member sold an average of 8 candy bars, how much money did they earn from their candy bars sales, in dollars?",
+  "answer_ja": "売れた本数は20×8=160本。1本50セントなので8000セント、すなわち8000÷100=80ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A07P3.candy_sale_revenue",
+  "graph": "work/gsm8k-sprint351-candy-sale-revenue-graph.json",
+  "model_notes_ja": [
+    "金額をセント単位で整数化し、最後に100で割ってドルへ戻す。"
+  ],
+  "steps": [
+    {
+      "id": "candy_sale_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A07P3.candy_sale_revenue",
+      "title_ja": "キャンディーバーの売上",
+      "claim_ja": "売れた本数は20×8=160本。1本50セントなので8000セント、すなわち8000÷100=80ドル。",
+      "method_ja": "平均本数から総本数を求め、単価を掛けてセントからドルへ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20人の平均販売数が正確に8本で、全バーの単価が50セント。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "80ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3879,
+    "checked_model_hash": "3b9d41fb16b8e2f7392e15c8fe0c03910a4ecd5e0a583b327de376ee14394aaf",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

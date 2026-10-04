@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_sailboat_land_miles",
+  "title_ja": "帆船の陸上マイル換算距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04101",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Buffy has a sailboat with a planing hull that she sails in the Gulf of Mexico.  Under optimal wind conditions, the use of two sails brings the ship to the speed of 50 knots, whereas under the same conditions, the use of one sail brings her ship to the speed of 25 knots.  A knot is a nautical term for speed equal to 1 nautical mile per hour, and one nautical mile equals 1.15 land miles.  If she travels in her sailboat under optimal wind conditions for 4 hours with one sail and then for another 4 hours with two sails, what is the total distance, in land miles, that she will travel?",
+  "answer_ja": "1枚帆では4×25=100海里、2枚帆では4×50=200海里、合計300海里。1海里=1.15陸上マイルなので300×1.15=345陸上マイルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.sailboat_land_miles",
+  "graph": "work/gsm8k-sprint392-sailboat-land-miles-graph.json",
+  "model_notes_ja": [
+    "速度×時間で各区間を求め、最後に海里から陸上マイルへ換算する。"
+  ],
+  "steps": [
+    {
+      "id": "sailboat_land_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.sailboat_land_miles",
+      "title_ja": "帆船の陸上マイル換算距離",
+      "claim_ja": "1枚帆では4×25=100海里、2枚帆では4×50=200海里、合計300海里。1海里=1.15陸上マイルなので300×1.15=345陸上マイルである。",
+      "method_ja": "速度×時間で各区間を求め、最後に海里から陸上マイルへ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "速度×時間で各区間を求め、最後に海里から陸上マイルへ換算する。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1枚帆では4×25=100海里、2枚帆では4×50=200海里、合計300海里。1海里=1.15陸上マイルなので300×1.15=345陸上マイルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4102,
+    "checked_model_hash": "3fe47e3810c27e222620f5e581e0a1ee48da0796c5f0b5e3c94c86ff9405b7bc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

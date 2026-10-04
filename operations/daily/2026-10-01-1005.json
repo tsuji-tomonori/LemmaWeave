@@ -1,0 +1,183 @@
+{
+  "date": "2026-10-01",
+  "run_id": "20261001T100000+0900-solve-10",
+  "scheduled_slot": "2026-10-01T10:00:00+09:00",
+  "role": "gsm8k_individual_solve",
+  "target_problem_count": 15,
+  "started_at": "2026-10-01T01:05:21Z",
+  "finished_at": "2026-10-01T01:17:00Z",
+  "base_sha": "3b409255547c850fcf233544b614e35fdbcd8159",
+  "claim_commit": "917c6c5a589be5872811e33e9447201a8d8b8b0a",
+  "checkpoint_commits": [
+    "281d3141d5d9143685079c1f3ee0f3584585f9ae",
+    "62683e2a1a0724e72207321fa40204903fd5f477",
+    "305a807c1a65bd635e934492bc68d173e6b12835"
+  ],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03326",
+    "external-gsm8k-main-3101c7d50724:train:03327",
+    "external-gsm8k-main-3101c7d50724:train:03328",
+    "external-gsm8k-main-3101c7d50724:train:03329",
+    "external-gsm8k-main-3101c7d50724:train:03330",
+    "external-gsm8k-main-3101c7d50724:train:03331",
+    "external-gsm8k-main-3101c7d50724:train:03332",
+    "external-gsm8k-main-3101c7d50724:train:03333",
+    "external-gsm8k-main-3101c7d50724:train:03334",
+    "external-gsm8k-main-3101c7d50724:train:03335",
+    "external-gsm8k-main-3101c7d50724:train:03336",
+    "external-gsm8k-main-3101c7d50724:train:03337",
+    "external-gsm8k-main-3101c7d50724:train:03338",
+    "external-gsm8k-main-3101c7d50724:train:03339",
+    "external-gsm8k-main-3101c7d50724:train:03340"
+  ],
+  "authored_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03326",
+    "external-gsm8k-main-3101c7d50724:train:03327",
+    "external-gsm8k-main-3101c7d50724:train:03328",
+    "external-gsm8k-main-3101c7d50724:train:03329",
+    "external-gsm8k-main-3101c7d50724:train:03330",
+    "external-gsm8k-main-3101c7d50724:train:03331",
+    "external-gsm8k-main-3101c7d50724:train:03332",
+    "external-gsm8k-main-3101c7d50724:train:03333",
+    "external-gsm8k-main-3101c7d50724:train:03334",
+    "external-gsm8k-main-3101c7d50724:train:03335",
+    "external-gsm8k-main-3101c7d50724:train:03336",
+    "external-gsm8k-main-3101c7d50724:train:03337",
+    "external-gsm8k-main-3101c7d50724:train:03338",
+    "external-gsm8k-main-3101c7d50724:train:03339",
+    "external-gsm8k-main-3101c7d50724:train:03340"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:03326",
+    "external-gsm8k-main-3101c7d50724:train:03327",
+    "external-gsm8k-main-3101c7d50724:train:03328",
+    "external-gsm8k-main-3101c7d50724:train:03329",
+    "external-gsm8k-main-3101c7d50724:train:03330",
+    "external-gsm8k-main-3101c7d50724:train:03331",
+    "external-gsm8k-main-3101c7d50724:train:03332",
+    "external-gsm8k-main-3101c7d50724:train:03333",
+    "external-gsm8k-main-3101c7d50724:train:03334",
+    "external-gsm8k-main-3101c7d50724:train:03335",
+    "external-gsm8k-main-3101c7d50724:train:03336",
+    "external-gsm8k-main-3101c7d50724:train:03337",
+    "external-gsm8k-main-3101c7d50724:train:03338",
+    "external-gsm8k-main-3101c7d50724:train:03339",
+    "external-gsm8k-main-3101c7d50724:train:03340"
+  ],
+  "deferred": [],
+  "answers": {
+    "train:03326": "3トン",
+    "train:03327": "30,000個",
+    "train:03328": "6ポンド",
+    "train:03329": "85片",
+    "train:03330": "79本",
+    "train:03331": "6枚",
+    "train:03332": "8回",
+    "train:03333": "100日",
+    "train:03334": "7,200ドル",
+    "train:03335": "86点",
+    "train:03336": "57輪",
+    "train:03337": "緑に白斑がない追加条件なら17個。原文だけでは17〜31個で一意でない。",
+    "train:03338": "114分",
+    "train:03339": "800人",
+    "train:03340": "55点"
+  },
+  "semantic_notes": {
+    "train:03331": "現在が上限以下で1枚戻すと超過する最小除去条件を入れ、単なる等号仮定を避けた。",
+    "train:03334": "参照解答本文の8600は3000+4200と矛盾する誤記。原題から7200を導き、7200≠8600も保存した。",
+    "train:03337": "緑14個の白斑数が未指定。緑0個と1個の両具体例、17〜31の範囲、追加条件付き17を分離した。"
+  },
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "record_hash_matches": 15,
+    "question_hash_matches": 15,
+    "normalized_question_hash_matches": 15,
+    "selected_count": 15
+  },
+  "artifacts": {
+    "model_files": 3,
+    "audit_files": 3,
+    "method_batches": 3,
+    "recipes": 15,
+    "explanation_steps": 43,
+    "named_lean_theorems": 43,
+    "semantic_review_status": "self_review_only"
+  },
+  "verification": {
+    "json_and_hash_checks": "pass",
+    "source_hash_checks": "pass_15_of_15",
+    "forbidden_token_scan": "pass_0_matches_in_model_files",
+    "check_method_recipes": "not_run_workspace_materialization_unavailable",
+    "lean_build": "not_run_lake_and_lean_unavailable",
+    "axiom_audit": "not_run_without_lean",
+    "dependency_graph_render": "not_run_without_checker",
+    "assurance": "INCONCLUSIVE",
+    "reason_ja": "固定Lean 4.33.1・固定mathlibでのビルド成功、公理出力、依存グラフの実行証拠がまだ無い。",
+    "solve_queue_write": "not_run; current queue was read and updated directly through non-force Git data commits"
+  },
+  "queue": {
+    "path": "corpus/work_queue/gsm8k.jsonl.gz",
+    "sha256": "17fe13fea0d25081717a70c83c095b26f950a9371ed295fee65beafb94934504",
+    "total": 8792,
+    "unique_ids": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 2884,
+    "pending": 5390,
+    "missing_ids": 0,
+    "unexpected_ids": 0,
+    "state_overlap": 0,
+    "selected_awaiting_verification": 15
+  },
+  "ci": {
+    "observed_pre_finalization_head": "048e75794e98a8f4fed118904b3149299c97126f",
+    "result": "pending_final_head_check",
+    "checked_at": "2026-10-01T01:17:00Z"
+  },
+  "pull_request": {
+    "number": 5,
+    "state": "open",
+    "mergeable": true,
+    "reviews": {
+      "latest_effective_state": "APPROVED",
+      "unresolved_threads": 0
+    },
+    "merge": "not_attempted_without_exact_head_ci"
+  },
+  "known_unexecuted_slots": [
+    {
+      "scheduled_slot": "2026-10-01T05:00:00+09:00",
+      "problem_ids": [
+        "external-gsm8k-main-3101c7d50724:train:03266",
+        "external-gsm8k-main-3101c7d50724:train:03267",
+        "external-gsm8k-main-3101c7d50724:train:03268",
+        "external-gsm8k-main-3101c7d50724:train:03269",
+        "external-gsm8k-main-3101c7d50724:train:03270",
+        "external-gsm8k-main-3101c7d50724:train:03271",
+        "external-gsm8k-main-3101c7d50724:train:03272",
+        "external-gsm8k-main-3101c7d50724:train:03273",
+        "external-gsm8k-main-3101c7d50724:train:03274",
+        "external-gsm8k-main-3101c7d50724:train:03275",
+        "external-gsm8k-main-3101c7d50724:train:03276",
+        "external-gsm8k-main-3101c7d50724:train:03277",
+        "external-gsm8k-main-3101c7d50724:train:03278",
+        "external-gsm8k-main-3101c7d50724:train:03279",
+        "external-gsm8k-main-3101c7d50724:train:03280"
+      ]
+    }
+  ],
+  "allocation_note_ja": "10時枠を実行。08時枠は完了済み。09時枠は高校数学専用でGSM8Kへ混ぜない。05時枠は未実行として保持した。",
+  "commits": {
+    "checkpoint_1": "281d3141d5d9143685079c1f3ee0f3584585f9ae",
+    "checkpoint_2": "62683e2a1a0724e72207321fa40204903fd5f477",
+    "checkpoint_3": "305a807c1a65bd635e934492bc68d173e6b12835",
+    "queue_attempt": "185a4692f4515add1f643f2fb3dc6310f0b69d6b",
+    "queue_fix": "067018cd3a92b74a5a9b4e816b43825d4bab01d1",
+    "claim_release": "048e75794e98a8f4fed118904b3149299c97126f",
+    "final_record": "self"
+  }
+}

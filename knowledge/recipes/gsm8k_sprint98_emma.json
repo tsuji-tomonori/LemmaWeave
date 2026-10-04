@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint98_emma",
+  "title_ja": "Emmaに残る金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01754",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "家具購入後の残金、その4分の3の贈与額、残額を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.emma_solution",
+  "graph": "work/gsm8k-sprint98-emma-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "emma_after_furniture",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.emma_after_furniture",
+      "title_ja": "家具購入後は1,600ドル。",
+      "claim_ja": "家具購入後は1,600ドル。",
+      "method_ja": "2000−400。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "家具代400ドルを銀行から得た2000ドルから払う。",
+      "conclusion_ja": "1600+400=2000。",
+      "baseline_ja": "1600+400=2000。"
+    },
+    {
+      "id": "emma_given",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.emma_given",
+      "title_ja": "Annaへ1,200ドル渡す。",
+      "claim_ja": "Annaへ1,200ドル渡す。",
+      "method_ja": "1600の4分の3。",
+      "requires_steps": [
+        "emma_after_furniture"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "家具購入後の残金に分数を適用する。",
+      "conclusion_ja": "1200×4=1600×3。",
+      "baseline_ja": "1200×4=1600×3。"
+    },
+    {
+      "id": "emma_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.emma_solution",
+      "title_ja": "Emmaには400ドル残る。",
+      "claim_ja": "Emmaには400ドル残る。",
+      "method_ja": "1600−1200。",
+      "requires_steps": [
+        "emma_after_furniture",
+        "emma_given"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "贈与額を残金から引く。",
+      "conclusion_ja": "400+1200=1600。",
+      "baseline_ja": "400+1200=1600。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1755,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

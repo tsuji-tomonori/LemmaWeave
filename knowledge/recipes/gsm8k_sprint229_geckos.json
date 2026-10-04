@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint229_geckos",
+  "title_ja": "ペット店の利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03441",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A19P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "店の仕入額は100ドル。販売額は3×100+5=305ドルなので、利益は305−100=205ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A19P3.geckos_profit",
+  "graph": "work/gsm8k-sprint229-geckos-graph.json",
+  "model_notes_ja": [
+    "『5 more than 3 times that』を3倍した額に5ドル加える意味で表した。"
+  ],
+  "steps": [
+    {
+      "id": "geckos_sale_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P3.geckos_sale_price",
+      "title_ja": "販売額",
+      "claim_ja": "販売額は305ドル。",
+      "method_ja": "100ドルの3倍に5ドルを足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "販売額は305ドル。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "geckos_profit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P3.geckos_profit",
+      "title_ja": "利益",
+      "claim_ja": "利益は205ドル。",
+      "method_ja": "販売額305ドルから仕入額100ドルを引く。",
+      "requires_steps": [
+        "geckos_sale_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "利益は205ドル。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3442,
+    "checked_model_hash": "5247719a1113d2979bca9d40ed8e9b1439c133474e63b6760ce4f0079b7430cb",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

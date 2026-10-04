@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint374_three_harbors_lobster",
+  "title_ja": "3港のロブスター総重量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03992",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Hooper Bay has twice as many pounds of lobster than the two other harbors combined. If the other two harbors have 80 pounds of lobster each, how many pounds of lobster are the three harbors holding?",
+  "answer_ja": "ほかの2港は80+80=160ポンド。Hooper Bayはその2倍で320ポンド。3港合計は160+320=480ポンド。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A17P2.three_harbors_lobster",
+  "graph": "work/gsm8k-sprint374-three-harbors-lobster-graph.json",
+  "model_notes_ja": [
+    "『twice as many pounds as the two other harbors combined』を、Hooper Bayが2港合計の2倍と読む。"
+  ],
+  "steps": [
+    {
+      "id": "three_harbors_lobster",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A17P2.three_harbors_lobster",
+      "title_ja": "3港のロブスター総重量",
+      "claim_ja": "ほかの2港は80+80=160ポンド。Hooper Bayはその2倍で320ポンド。3港合計は160+320=480ポンド。",
+      "method_ja": "比較対象である2港の合計を先に求め、その2倍と合わせる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『twice as many pounds as the two other harbors combined』を、Hooper Bayが2港合計の2倍と読む。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "ほかの2港は80+80=160ポンド。Hooper Bayはその2倍で320ポンド。3港合計は160+320=480ポンド。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3993,
+    "checked_model_hash": "2a46dd8c2c1e92af4abf780d39ca0a035d95e46079b7329b236402f035d998f2",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

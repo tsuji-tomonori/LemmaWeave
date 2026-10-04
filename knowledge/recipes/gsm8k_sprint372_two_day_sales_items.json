@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint372_two_day_sales_items",
+  "title_ja": "2日間に売った商品の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03981",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A15P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "James visits 20 houses to try and make a sale.  He manages to sell something in every house.  The next day he visits twice as many houses but only sold to 80% of houses.  If he sold two things at each house in each of the two days, how many items did he sell?",
+  "answer_ja": "2日目は20×2=40軒を訪ね、その80%の32軒で販売した。販売先は初日20軒と合わせて52軒で、各軒2個だから52×2=104個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A15P3.two_day_sales_items",
+  "graph": "work/gsm8k-sprint372-two-day-sales-items-graph.json",
+  "model_notes_ja": [
+    "80%は40軒を基準とし、販売できた各家で2個ずつ売る。"
+  ],
+  "steps": [
+    {
+      "id": "two_day_sales_items",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A15P3.two_day_sales_items",
+      "title_ja": "2日間に売った商品の数",
+      "claim_ja": "2日目は20×2=40軒を訪ね、その80%の32軒で販売した。販売先は初日20軒と合わせて52軒で、各軒2個だから52×2=104個。",
+      "method_ja": "2日目の訪問数と成約数を割合から求め、両日の成約先へ2個ずつ掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "80%は40軒を基準とし、販売できた各家で2個ずつ売る。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "2日目は20×2=40軒を訪ね、その80%の32軒で販売した。販売先は初日20軒と合わせて52軒で、各軒2個だから52×2=104個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3982,
+    "checked_model_hash": "69eb19080eaf337abe0e4f83d9342ea536de68dd3d66b5ead03218d1617f0e31",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

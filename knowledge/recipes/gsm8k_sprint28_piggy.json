@@ -1,0 +1,50 @@
+{
+  "id": "gsm8k_sprint28_piggy",
+  "title_ja": "貯金箱の初期額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00705",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "半分を2回使った後に51ドル残る条件を逆算する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A28.piggy_solution",
+  "graph": "work/gsm8k-sprint28-piggy-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A28.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "各回のhalfはその時点の残額に適用する。"
+  ],
+  "steps": [
+    {
+      "id": "piggy_after_toy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.piggy_after_toy",
+      "title_ja": "本購入前",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残り51ドルは本購入前の半分。",
+      "conclusion_ja": "102ドル。",
+      "baseline_ja": "51×2=102。"
+    },
+    {
+      "id": "piggy_initial",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.piggy_initial",
+      "title_ja": "初期額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "玩具購入後102ドルは初期額の半分。",
+      "conclusion_ja": "204ドル。",
+      "baseline_ja": "102×2=204。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 706,
+    "checked_model_hash": "1810c2eb82e2b1ef127b9a48786d662c837755e9604891a5d1862e999a8bb1ec",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

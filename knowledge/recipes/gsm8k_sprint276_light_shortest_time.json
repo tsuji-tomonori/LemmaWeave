@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint276_light_shortest_time",
+  "title_ja": "3灯が再び同時点灯する最短時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03484",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A16P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2秒、3秒、4秒ごとに点灯する3灯が、同時開始後に再び同時点灯する最短の正の時間を求める。",
+  "answer_ja": "12秒",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.light_shortest_time",
+  "graph": "work/gsm8k-sprint276-light-shortest-time-graph.json",
+  "model_notes_ja": [
+    "点灯時刻を正の自然数秒とし、2・3・4のすべてで割り切れる最小値を求める。参照解答中の色名の取り違えはモデルへ持ち込まない。"
+  ],
+  "steps": [
+    {
+      "id": "twelve_is_common",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.twelve_is_common",
+      "title_ja": "12秒は3周期すべての共通時刻。",
+      "claim_ja": "12秒は3周期すべての共通時刻。",
+      "method_ja": "12が2、3、4で割り切れることを確認する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "周期はそれぞれ2秒、3秒、4秒。",
+      "conclusion_ja": "12秒は共通倍数。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "light_shortest_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.light_shortest_time",
+      "title_ja": "最短の同時点灯時刻は12秒。",
+      "claim_ja": "最短の同時点灯時刻は12秒。",
+      "method_ja": "最小性仮定と12以下の正の共通倍数条件から一意に定める。",
+      "requires_steps": [
+        "twelve_is_common"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "時刻は正の自然数秒で、最短条件を含む。",
+      "conclusion_ja": "12秒。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3485,
+    "checked_model_hash": "61b155e4e783fb3c4bf2765a6d54d8fd726e738dc77b4f940c632b6c52126c28",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

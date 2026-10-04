@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint238_will","title_ja":"遺産の十等分","problem_id":"external-gsm8k-main-3101c7d50724:train:03234","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A02P3.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"124600ドルの半分をShelbyへ渡し、残りを他の孫10人で均等に分ける。1人分を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.will_each_other","graph":"work/gsm8k-sprint238-will-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"will_shelby","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.will_shelby","title_ja":"Shelbyは62300ドル。","claim_ja":"124600の半分は62300。","method_ja":"2×Shelby分=遺産総額を解く。","requires_steps":[],"uses_nodes":[],"condition_ja":"遺産総額は2で割り切れる。","conclusion_ja":"62300ドル。","baseline_ja":"半分。"},
+    {"id":"will_remainder","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.will_remainder","title_ja":"残りも62300ドル。","claim_ja":"124600-62300=62300。","method_ja":"総額からShelby分を引く。","requires_steps":["will_shelby"],"uses_nodes":[],"condition_ja":"Shelbyへ半分を渡す。","conclusion_ja":"残額62300ドル。","baseline_ja":"金額の減法。"},
+    {"id":"will_each_other","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A02P3.will_each_other","title_ja":"他の孫1人は6230ドル。","claim_ja":"62300÷10=6230。","method_ja":"10×1人分=残額を解く。","requires_steps":["will_remainder"],"uses_nodes":[],"condition_ja":"残り10人で均等分配する。","conclusion_ja":"1人6230ドル。","baseline_ja":"整数の等分。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3235,"checked_model_hash":"236e642c4f44a4a2cd8833c099d7c65479d3912de153e4a66abda7d671010e88","checks_ja":["総額・Shelbyの半分・残り10人を照合した。","全説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

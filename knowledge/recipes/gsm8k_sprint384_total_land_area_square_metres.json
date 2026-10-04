@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint384_total_land_area_square_metres",
+  "title_ja": "購入後の土地面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04042",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A20P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Carlson bought land that cost $8000 and additional land that cost $4000. He initially owned 300 square meters of land. If the land he bought costs $20 per square meter, how big is his land after buying the new land?",
+  "answer_ja": "8000ドル分は8000÷20=400平方メートル、4000ドル分は4000÷20=200平方メートル。元の300平方メートルと合わせて300+400+200=900平方メートルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A20P3.total_land_area_square_metres",
+  "graph": "work/gsm8k-sprint384-total-land-area-square-metres-graph.json",
+  "model_notes_ja": [
+    "2つの購入地はいずれも1平方メートル20ドルで、面積は重ならない。"
+  ],
+  "steps": [
+    {
+      "id": "total_land_area_square_metres",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A20P3.total_land_area_square_metres",
+      "title_ja": "購入後の土地面積",
+      "claim_ja": "8000ドル分は8000÷20=400平方メートル、4000ドル分は4000÷20=200平方メートル。元の300平方メートルと合わせて300+400+200=900平方メートルである。",
+      "method_ja": "各購入価格を1平方メートル当たり価格で割り、既有面積へ加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2つの購入地はいずれも1平方メートル20ドルで、面積は重ならない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "8000ドル分は8000÷20=400平方メートル、4000ドル分は4000÷20=200平方メートル。元の300平方メートルと合わせて300+400+200=900平方メートルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4043,
+    "checked_model_hash": "a62610e00fc6e2cddeef8c53f2883da770873df347c29a2363815214b1959885",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

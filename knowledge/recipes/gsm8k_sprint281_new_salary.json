@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint281_new_salary",
+  "title_ja": "昇給後の収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03507",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A18P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "前年は収入の40%に当たる100ドルを使い、今年10%昇給した新収入を求める。",
+  "answer_ja": "275ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.new_salary",
+  "graph": "work/gsm8k-sprint281-new-salary-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "last_year_salary",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.last_year_salary",
+      "title_ja": "前年の収入は250ドル。",
+      "claim_ja": "前年の収入は250ドル。",
+      "method_ja": "100ドルを40%で割る比例式を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "100ドルが前年収入の40%。",
+      "conclusion_ja": "250ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "raise_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.raise_amount",
+      "title_ja": "10%の昇給額は25ドル。",
+      "claim_ja": "10%の昇給額は25ドル。",
+      "method_ja": "250ドルの10%を計算する。",
+      "requires_steps": [
+        "last_year_salary"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "前年収入250ドル。",
+      "conclusion_ja": "25ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "new_salary",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.new_salary",
+      "title_ja": "新収入は275ドル。",
+      "claim_ja": "新収入は275ドル。",
+      "method_ja": "前年収入と昇給額を加える。",
+      "requires_steps": [
+        "last_year_salary",
+        "raise_amount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "昇給率10%。",
+      "conclusion_ja": "275ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3508,
+    "checked_model_hash": "83fb4aa172b2768949361874e5f964d0b9c5aa8bf37958ae57fb3ad85541e97f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1056",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "7a7d51b8cc7c4ebc53c5529c25cc2c31f175483460effa650b5fe9f8b7721b95",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1004A11P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04181",
+      "source_line_1based": 4182,
+      "source_record_sha256": "79719a86a5c510dd87bf58615f36e4307d6dd7cbd0dd327d18148f4d273c9f71",
+      "raw_question_sha256": "c97e89eb7dbf1b6f48a072eef45e12f0dcf8880cfd4c37538a3cb616d340768a",
+      "normalized_question_sha256": "c97e89eb7dbf1b6f48a072eef45e12f0dcf8880cfd4c37538a3cb616d340768a",
+      "source_question": "Hannah wants to save $80 for five weeks. In the first week, she saved $4 and she plans to save twice as much as her savings as the previous week. How much will she save in the fifth week to reach her goal?",
+      "recipe_id": "gsm8k_sprint426_fifth_week_savings_conditions_conflict",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文の倍増規則を第5週にも適用すると64ドルで、5週合計は124ドルになる。",
+        "参照解答の20ドルは第5週に倍増規則を適用しない追加条件付き。"
+      ],
+      "blockers": [
+        "source_conditions_inconsistent"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04182",
+      "source_line_1based": 4183,
+      "source_record_sha256": "06ae31bc3636063fe9c5bbcf6ff1a68afce3edee75d94daee8a792d1bf16dcb2",
+      "raw_question_sha256": "e1fb00e1c85e1e9b06602e1a7a8659504632a17fdd397fba5b3216cf4ffa83e0",
+      "normalized_question_sha256": "e1fb00e1c85e1e9b06602e1a7a8659504632a17fdd397fba5b3216cf4ffa83e0",
+      "source_question": "Darryl sells melons on the side of the road. He sells cantaloupes for $2 each and honeydews for $3. He started the day with 30 cantaloupes and 27 honeydews. He accidentally dropped a couple of cantaloupes and three of the honeydews turned out to be rotten. At the end of the day he had 8 cantaloupes and 9 honeydews left. How much money did he make?",
+      "recipe_id": "gsm8k_sprint427_melon_sales_revenue",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "couple of cantaloupesを2個として扱う。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04183",
+      "source_line_1based": 4184,
+      "source_record_sha256": "b4a13ec6d2c6614d1eae1b710116608b742555ba0740a7d2a30f6d98c7443a7e",
+      "raw_question_sha256": "37c0d063d79a7d6c7c6f67498b6f6da599f7a2051bcd5af0e8c0363d9ce16e70",
+      "normalized_question_sha256": "701724358d80138006c8df23a26c5c3a1618023f22cd928ca70c1a218152812c",
+      "source_question": "A country used to have a tax rate of 20%.  They raised it to 30%.  In that same time frame, John went from making 1,000,000 a year to 1,500,000 a year.  How much more does he pay in taxes now compared to then?",
+      "recipe_id": "gsm8k_sprint428_tax_payment_increase",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各時点の所得にその時点の税率を適用する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04184",
+      "source_line_1based": 4185,
+      "source_record_sha256": "da3e6b327f809fe4e1c1f701a837fef08505c0b55873d6e6ff7140217479cd00",
+      "raw_question_sha256": "2138fb8ab8746ec483021c4c4efff09b18ed9e4ed45d2fb47492441eddb6173b",
+      "normalized_question_sha256": "2138fb8ab8746ec483021c4c4efff09b18ed9e4ed45d2fb47492441eddb6173b",
+      "source_question": "There are 28 garden gnomes in a yard. Three-fourths of them have red hats, and the rest have blue hats. Half the garden gnomes have big noses instead of small noses. If six gnomes with blue hats have big noses, how many gnomes with red hats have small noses?",
+      "recipe_id": "gsm8k_sprint429_red_hat_small_nose_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "帽子色と鼻の大小の2属性を排反に分ける。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04185",
+      "source_line_1based": 4186,
+      "source_record_sha256": "01fc340ba3594b2c40e5c8709d767150de0f505a1580f2a654c13f9b4faf14df",
+      "raw_question_sha256": "d542bc561207b2736de3120d6b2cf0b6b04ff6977a4f2547005a7675f8661849",
+      "normalized_question_sha256": "d542bc561207b2736de3120d6b2cf0b6b04ff6977a4f2547005a7675f8661849",
+      "source_question": "Emily bought 9 packs of candy necklaces to give her classmates at school for Valentine’s Day. Each pack had 8 candy necklaces in it. Emily opened one pack at a time. After her classmates took as many as they wanted, there were 40 candy necklaces left. How many packs did Emily open for her classmates?",
+      "recipe_id": "gsm8k_sprint430_candy_necklace_packs_under_determined",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "「40個残った」は開封済み袋の残りを禁止していない。",
+        "4袋開封と5袋開封の二つの具体例で非一意性を示す。"
+      ],
+      "blockers": [
+        "source_underdetermined_opened_pack_leftovers"
+      ]
+    }
+  ]
+}

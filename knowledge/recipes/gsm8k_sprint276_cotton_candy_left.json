@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint276_cotton_candy_left",
+  "title_ja": "残る綿あめ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03482",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A16P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "50個から兄妹へ各5個、残りの4分の1をいとこへ、さらに12個食べた後の残数を求める。",
+  "answer_ja": "18個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.cotton_candy_left",
+  "graph": "work/gsm8k-sprint276-cotton-candy-left-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sibling_gift",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.sibling_gift",
+      "title_ja": "兄妹へ合計10個渡す。",
+      "claim_ja": "兄妹へ合計10個渡す。",
+      "method_ja": "5個×2人を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "兄と姉に各5個。",
+      "conclusion_ja": "10個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "candy_after_siblings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.candy_after_siblings",
+      "title_ja": "兄妹へ渡した後は40個。",
+      "claim_ja": "兄妹へ渡した後は40個。",
+      "method_ja": "50個から10個を引く。",
+      "requires_steps": [
+        "sibling_gift"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "最初は50個。",
+      "conclusion_ja": "40個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cousin_gift",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.cousin_gift",
+      "title_ja": "いとこへ10個渡す。",
+      "claim_ja": "いとこへ10個渡す。",
+      "method_ja": "残り40個の4分の1を求める。",
+      "requires_steps": [
+        "candy_after_siblings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "割合の基準は兄妹へ渡した後の40個。",
+      "conclusion_ja": "10個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cotton_candy_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.cotton_candy_left",
+      "title_ja": "最後に18個残る。",
+      "claim_ja": "最後に18個残る。",
+      "method_ja": "40個から10個と12個を引く。",
+      "requires_steps": [
+        "candy_after_siblings",
+        "cousin_gift"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "いとこへ渡した後に12個食べる。",
+      "conclusion_ja": "18個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3483,
+    "checked_model_hash": "61b155e4e783fb3c4bf2765a6d54d8fd726e738dc77b4f940c632b6c52126c28",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

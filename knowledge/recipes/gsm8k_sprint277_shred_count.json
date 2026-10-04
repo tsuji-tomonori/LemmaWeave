@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint277_shred_count",
+  "title_ja": "シュレッダーの投入回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03489",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A16P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "132ページの契約書2冊を1回6ページずつ裁断するとき投入回数を求める。",
+  "answer_ja": "44回",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.shred_count",
+  "graph": "work/gsm8k-sprint277-shred-count-graph.json",
+  "model_notes_ja": [
+    "原文の「2 132 contracts」は文法的に欠落があるため、「132ページの契約書2冊（2 contracts of 132 pages each）」という参照解答の補完を明示した条件付き解答である。"
+  ],
+  "steps": [
+    {
+      "id": "contract_pages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.contract_pages",
+      "title_ja": "総ページ数は264ページ。",
+      "claim_ja": "総ページ数は264ページ。",
+      "method_ja": "契約書2冊×132ページを計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "追加条件として各契約書が132ページ。",
+      "conclusion_ja": "264ページ。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "shred_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.shred_count",
+      "title_ja": "投入は44回。",
+      "claim_ja": "投入は44回。",
+      "method_ja": "264ページを1回6ページで割る。",
+      "requires_steps": [
+        "contract_pages"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "264は6で割り切れ、毎回6ページ裁断する。",
+      "conclusion_ja": "44回。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3490,
+    "checked_model_hash": "34942b96f42e18add642a70a6b9e8b30264048ec55ca609c2851037925d4393d",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint104_trades",
+  "title_ja": "25セント硬貨交換の損失",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01841",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "全金額をセントに統一し、交換1回ごとの超過額を20回ずつ数える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.trades_solution",
+  "graph": "work/gsm8k-sprint104-trades-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "trades_dime_paid",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trades_dime_paid",
+      "title_ja": "ダイム交換は1回30セント支払う。",
+      "claim_ja": "ダイム交換は1回30セント支払う。",
+      "method_ja": "3×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ダイム1枚10セント。",
+      "conclusion_ja": "30。",
+      "baseline_ja": "30。"
+    },
+    {
+      "id": "trades_nickel_paid",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trades_nickel_paid",
+      "title_ja": "ニッケル交換は1回35セント支払う。",
+      "claim_ja": "ニッケル交換は1回35セント支払う。",
+      "method_ja": "7×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ニッケル1枚5セント。",
+      "conclusion_ja": "35。",
+      "baseline_ja": "35。"
+    },
+    {
+      "id": "trades_dime_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trades_dime_loss",
+      "title_ja": "ダイム交換の損失は100セント。",
+      "claim_ja": "ダイム交換の損失は100セント。",
+      "method_ja": "20×(30−25)。",
+      "requires_steps": [
+        "trades_dime_paid"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20回交換。",
+      "conclusion_ja": "100。",
+      "baseline_ja": "100。"
+    },
+    {
+      "id": "trades_nickel_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trades_nickel_loss",
+      "title_ja": "ニッケル交換の損失は200セント。",
+      "claim_ja": "ニッケル交換の損失は200セント。",
+      "method_ja": "20×(35−25)。",
+      "requires_steps": [
+        "trades_nickel_paid"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20回交換。",
+      "conclusion_ja": "200。",
+      "baseline_ja": "200。"
+    },
+    {
+      "id": "trades_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.trades_solution",
+      "title_ja": "総損失は300セント=3ドル。",
+      "claim_ja": "総損失は300セント=3ドル。",
+      "method_ja": "100+200。",
+      "requires_steps": [
+        "trades_dime_loss",
+        "trades_nickel_loss"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2種類の損失を加える。",
+      "conclusion_ja": "300。",
+      "baseline_ja": "300。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1842,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

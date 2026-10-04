@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1",
+  "is_template": false,
+  "problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i",
+  "revision": 1,
+  "origin": "exam",
+  "canonical_problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i",
+  "parent_id": "DNC-CT-2026-MAIN-M2BC-Q04-S01",
+  "occurrences": ["JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i-O1"],
+  "paper_id": "DNC-CT-2026-MAIN-M2BC",
+  "title_ja": "階差数列から第3項までを求める",
+  "domain_candidate": "sequences",
+  "collection_status": "candidate",
+  "source_locator": {
+    "provider": "大学入試センター",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017550.pdf&n=2026_ol_18_sugaku2BC.pdf",
+    "pdf_page_1_based": [19],
+    "printed_page_label": ["22"],
+    "major_question": "4",
+    "subquestion": "(1)(i)",
+    "answer_slots": ["ア", "イ", "ウ", "エオ"],
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554"
+  },
+  "source_page_visual_review": {
+    "confirmed": true,
+    "reviewer": "author",
+    "method": "公式PDF第19ページを画像化し、階差の定義、a1=1、bn=4n-1、四つの解答欄を目視確認",
+    "pages_requested": [19],
+    "reviewed_at": "2026-09-23T10:02:00+09:00",
+    "independence": "self_review_only"
+  },
+  "mathematical_spec": {
+    "statement_ja": "整数値数列でa1=1、bn=a(n+1)-an、bn=4n-1とするとき、b1、a2、b2、a3を求める。",
+    "variables": [
+      {"name": "a1,a2,a3", "type": "ℤ", "domain": "first three sequence terms"},
+      {"name": "b1,b2", "type": "ℤ", "domain": "first two forward differences"}
+    ],
+    "assumptions": ["a1=1", "b1=a2-a1", "b2=a3-a2", "b1=4*1-1", "b2=4*2-1"],
+    "goals": [{"id": "first_terms", "lean_goal": "LemmaWeave.Problems.DNC2026M2BC.SequenceDifference.FirstTermsGoal"}],
+    "answer_kind": "four_exact_integer_blanks",
+    "allowed_approximation": "none"
+  },
+  "lean": {
+    "model_files": ["LemmaWeave/Problems/DNC2026M2BC/SequenceDifferenceModel.lean"],
+    "goal_declarations": ["LemmaWeave.Problems.DNC2026M2BC.SequenceDifference.FirstTermsGoal"],
+    "proof_files": ["tests/lean/DNC2026SequenceDifferenceIndividual.lean"]
+  },
+  "status": {
+    "transcription": "checked",
+    "semantic": "self_review_only",
+    "proof": "not_run",
+    "axiom_audit": "not_run",
+    "dependency": "not_run",
+    "inventory": "partial",
+    "educational_expansion": "partial",
+    "release": "restricted"
+  },
+  "blockers": [
+    {"kind": "rights_uncertain", "detail": "公式公開資料だが再配布条件を未確定。原文画像は保存しない。", "next_action": "権利確認を独立ゲートで行う。"},
+    {"kind": "review_unavailable", "detail": "新規登録と解答は作成者の自己照合のみ。", "next_action": "固定Lean実行後に独立意味レビューを行う。"}
+  ]
+}

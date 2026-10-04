@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint395_parking_spaces_remaining",
+  "title_ja": "駐車場に追加収容できる車数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04149",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A parking garage of a mall is four stories tall. On the first level, there are 90 parking spaces. The second level has 8 more parking spaces than on the first level, and there are 12 more available parking spaces on the third level than on the second level. The fourth level has 9 fewer parking spaces than the third level. If 100 cars are already parked, how many cars can be accommodated by the parking garage?",
+  "answer_ja": "各階は順に90、98、110、101台分で、総容量は399台。すでに100台あるので、追加で収容できるのは399-100=299台。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_spaces_remaining",
+  "graph": "work/gsm8k-sprint395-parking-spaces-remaining-graph.json",
+  "model_notes_ja": [
+    "総容量399台と残容量299台を区別する。"
+  ],
+  "steps": [
+    {
+      "id": "parking_spaces_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_spaces_remaining",
+      "title_ja": "駐車場に追加収容できる車数",
+      "claim_ja": "各階は順に90、98、110、101台分で、総容量は399台。すでに100台あるので、追加で収容できるのは399-100=299台。",
+      "method_ja": "階ごとの増減から容量を求め、総容量から駐車済み台数を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『how many cars can be accommodated』を、既駐車100台に加えて今後収容できる台数と読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "各階は順に90、98、110、101台分で、総容量は399台。すでに100台あるので、追加で収容できるのは399-100=299台。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4150,
+    "checked_model_hash": "540680714277d3da82ea4462acd264b5db899cf605096260f51505b825f5a56a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

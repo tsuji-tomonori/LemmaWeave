@@ -1,0 +1,127 @@
+{
+  "id": "gsm8k_sprint100_dreams",
+  "title_ja": "2年間の夢の回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01779",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1年の日数を明示し、今年、前年、2年間の合計を求める。365日年と366日年を分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_two_calendar_readings_differ",
+  "graph": "work/gsm8k-sprint100-dreams-graph.json",
+  "model_notes_ja": [
+    "参照解答は1年=365日を採るが、原文だけではうるう年を排除しない。365日の4380回と366日の4392回を別モデルにした。"
+  ],
+  "steps": [
+    {
+      "id": "dreams_365_this_year",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_365_this_year",
+      "title_ja": "365日年なら今年は1,460回。",
+      "claim_ja": "365日年なら今年は1,460回。",
+      "method_ja": "4回/日×365日。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1年を365日とする追加条件。",
+      "conclusion_ja": "4×365=1460。",
+      "baseline_ja": "4×365=1460。"
+    },
+    {
+      "id": "dreams_365_last_year",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_365_last_year",
+      "title_ja": "365日年の前年は2,920回。",
+      "claim_ja": "365日年の前年は2,920回。",
+      "method_ja": "今年1460回の2倍。",
+      "requires_steps": [
+        "dreams_365_this_year"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "前年は今年の2倍。",
+      "conclusion_ja": "2×1460=2920。",
+      "baseline_ja": "2×1460=2920。"
+    },
+    {
+      "id": "dreams_365_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_365_solution",
+      "title_ja": "365日年なら2年間で4,380回。",
+      "claim_ja": "365日年なら2年間で4,380回。",
+      "method_ja": "1460+2920。",
+      "requires_steps": [
+        "dreams_365_this_year",
+        "dreams_365_last_year"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2年間は今年と前年。",
+      "conclusion_ja": "4380。",
+      "baseline_ja": "4380。"
+    },
+    {
+      "id": "dreams_366_this_year",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_366_this_year",
+      "title_ja": "366日年なら今年は1,464回。",
+      "claim_ja": "366日年なら今年は1,464回。",
+      "method_ja": "4回/日×366日。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1年を366日とする代替条件。",
+      "conclusion_ja": "4×366=1464。",
+      "baseline_ja": "4×366=1464。"
+    },
+    {
+      "id": "dreams_366_last_year",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_366_last_year",
+      "title_ja": "366日年の前年は2,928回。",
+      "claim_ja": "366日年の前年は2,928回。",
+      "method_ja": "今年1464回の2倍。",
+      "requires_steps": [
+        "dreams_366_this_year"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "前年は今年の2倍。",
+      "conclusion_ja": "2928。",
+      "baseline_ja": "2928。"
+    },
+    {
+      "id": "dreams_366_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_366_solution",
+      "title_ja": "366日年なら2年間で4,392回。",
+      "claim_ja": "366日年なら2年間で4,392回。",
+      "method_ja": "1464+2928。",
+      "requires_steps": [
+        "dreams_366_this_year",
+        "dreams_366_last_year"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2年間は今年と前年。",
+      "conclusion_ja": "4392。",
+      "baseline_ja": "4392。"
+    },
+    {
+      "id": "dreams_two_calendar_readings_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.dreams_two_calendar_readings_differ",
+      "title_ja": "365日年と366日年の答えは異なる。",
+      "claim_ja": "365日年と366日年の答えは異なる。",
+      "method_ja": "4380と4392を比較する。",
+      "requires_steps": [
+        "dreams_365_solution",
+        "dreams_366_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文は対象年が平年かうるう年かを明示しない。",
+      "conclusion_ja": "4380≠4392。",
+      "baseline_ja": "4380≠4392。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1780,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

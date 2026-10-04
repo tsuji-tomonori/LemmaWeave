@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_sprint240_radio","title_ja":"ラジオ番組の楽曲時間","problem_id":"external-gsm8k-main-3101c7d50724:train:03244","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P2.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"3時間の番組から10分のトーク3回と5分の広告5回を除いた楽曲時間を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.radio_songs","graph":"work/gsm8k-sprint240-radio-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"radio_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.radio_total","title_ja":"全体は180分。","claim_ja":"3×60=180。","method_ja":"時間を分へ換算する。","requires_steps":[],"uses_nodes":[],"condition_ja":"1時間=60分。","conclusion_ja":"180分。","baseline_ja":"単位換算。"},
+    {"id":"radio_talk","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.radio_talk","title_ja":"トークは30分。","claim_ja":"3×10=30。","method_ja":"回数と各時間を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"10分を3回。","conclusion_ja":"30分。","baseline_ja":"乗法。"},
+    {"id":"radio_ads","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.radio_ads","title_ja":"広告は25分。","claim_ja":"5×5=25。","method_ja":"回数と各時間を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"5分を5回。","conclusion_ja":"25分。","baseline_ja":"乗法。"},
+    {"id":"radio_songs","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P2.radio_songs","title_ja":"楽曲は125分。","claim_ja":"180-30-25=125。","method_ja":"全体からトークと広告を引く。","requires_steps":["radio_total","radio_talk","radio_ads"],"uses_nodes":[],"condition_ja":"残り時間はすべて楽曲。","conclusion_ja":"125分。","baseline_ja":"時間の分割。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3245,"checked_model_hash":"ea56d70ee18231b7afd91320bd4531efb76060b6fe1bbf18e31a3e357a81d6ad","checks_ja":["全体時間・各区間・回数を照合した。","全説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint288_mall_customers",
+  "title_ja": "各車の客数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03541",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A20P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "スポーツ店20件と音楽店30件の購入を、同人数の客が乗る10台の車へ対応させる。",
+  "answer_ja": "各車5人",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.mall_customers_per_car",
+  "graph": "work/gsm8k-sprint288-mall-customers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "mall_customers_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.mall_customers_total",
+      "title_ja": "客は合計50人。",
+      "claim_ja": "客は合計50人。",
+      "method_ja": "1人1購入なので20件と30件を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "客は合計50人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "mall_customers_per_car",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.mall_customers_per_car",
+      "title_ja": "各車5人。",
+      "claim_ja": "各車5人。",
+      "method_ja": "50人を10台へ等分する。",
+      "requires_steps": [
+        "mall_customers_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "各車5人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3542,
+    "checked_model_hash": "db71c0ae4f867bdffb9f12c60f973fac9e17e6182a7818ceedec5198e9bcf27b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

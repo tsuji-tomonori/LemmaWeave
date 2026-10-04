@@ -1,0 +1,93 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0310",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "d985d069ea93cb3f8482ff071b0797e6ab9615479e891964c9c4988386d6cd9b",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1001A08P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03321",
+      "source_line_1based": 3322,
+      "source_record_sha256": "255e68845d8f196a8cd31d8aef28f1e4ec44ad8814224a489c7ccaca3c07bf9c",
+      "raw_question_sha256": "2a687224ee9ac0913ac8abfa7b32a1324bcfcdf8f0319a7e8a87e01d3a0a928d",
+      "normalized_question_sha256": "b11ce8d3b86700ea815b27257009d94a587fc3634c8962fc1bb89ab782395e79",
+      "source_question": "John took a test with 80 questions.  For the first 40 questions, she got 90% right.  For the next 40 questions, she gets 95% right.  How many total questions does she get right?",
+      "recipe_id": "gsm8k_sprint256_test",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Johnに対する代名詞she/heの揺れはあるが、対象となる受験者と80問の算術は一意。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03322",
+      "source_line_1based": 3323,
+      "source_record_sha256": "3ced6a155d20d71fedaa35f87bf53fdb0200d75438ecb5e1cbd2e8186c8e11e3",
+      "raw_question_sha256": "990474c74396a2b565f3570549ef57a376e8224fdc80de4b0ecc6187b7a6e67f",
+      "normalized_question_sha256": "990474c74396a2b565f3570549ef57a376e8224fdc80de4b0ecc6187b7a6e67f",
+      "source_question": "Tony goes on 5 rollercoasters while he is at the park. The first went 50 miles per hour. The second went 62 miles per hour. The third when 73 miles per hour. The fourth when 70 miles per hour. His average speed during the day was 59 miles per hour. How fast was the fifth coaster?",
+      "recipe_id": "gsm8k_sprint256_coaster",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "問題文のwhenはwentの誤記と読む。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03323",
+      "source_line_1based": 3324,
+      "source_record_sha256": "e390a171a747e74b8efcaf3af090838d8639eeaa7ae6c7cafcf99cdc440b6a15",
+      "raw_question_sha256": "744d2cf7a1eca52412d09aafa9448dcdd94d49bc9a71e23bcf88c17871c58c47",
+      "normalized_question_sha256": "f9b76e35fa3c5b8ee70816d302e0b24782aa6ad3d47422a3c8985d9275191cd0",
+      "source_question": "Brad's car broke down on an isolated road.  At the time, Brad was traveling with Jim and Marcus.  So, the three decided to push the car back into town, which was 10 miles away.  For the first three miles, Brad steered as Jim and Marcus pushed at a speed of 6 miles per hour.  Then, for the next 3 miles, Jim steered, as Brad and Marcus pushed at a speed of 3 miles per hour.  For the last four miles, Marcus steered as Brad and Jim pushed at a speed of 8 miles per hour.  How long did it take, in hours, to push the car back to town?",
+      "recipe_id": "gsm8k_sprint256_car_push",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "時間を30分単位で整数化し、各区間の距離÷速度を表した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03324",
+      "source_line_1based": 3325,
+      "source_record_sha256": "6dbbfb543ac961c6a5b2472b1a6adc9eea67e607620902a16bd25bded6d0b174",
+      "raw_question_sha256": "fbd11aef8d466370acc4da215743872c478f66c5188f939b46f91b093a98d746",
+      "normalized_question_sha256": "fbd11aef8d466370acc4da215743872c478f66c5188f939b46f91b093a98d746",
+      "source_question": "Monica and Sheila are twins. Their mother gave them $50 and told them to buy some toilet paper and spend the remainder on groceries. The toilet paper cost $12. They bought apples, butter, eggs, and a large ham for twice the cost of the toilet paper. Since they still had some leftover money, they called their mother and she gave them permission to buy whatever they wanted for themselves as long as they shared the money evenly. They saw some boots they really liked, but a pair of boots costs 3 times the amount they had left. How much more would Monica and Sheila each have to add of their own money to buy two pairs of boots?",
+      "recipe_id": "gsm8k_sprint256_boots",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03325",
+      "source_line_1based": 3326,
+      "source_record_sha256": "1c5d8f89ca28a4344ed20260475b1168679f99a10cc00517f7c14bfee466260f",
+      "raw_question_sha256": "4d4f296cfb3f00155898826d14d94ea3dcd3eb55be41583bc57b9e93ed45e041",
+      "normalized_question_sha256": "305cba3a14e7308c3da806ac164d0c9a188312d1c6214edaa3e34a1602e801f6",
+      "source_question": "Billy's family likes to keep their bicycles stored in the garage when they're not being used.  They own a total of 4 bicycles.  Each bicycle wheel has 10 spokes.  How many spokes are inside the garage?",
+      "recipe_id": "gsm8k_sprint256_spokes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "通常の自転車は各2輪という明示的モデル条件を置く。"
+      ],
+      "blockers": []
+    }
+  ]
+}

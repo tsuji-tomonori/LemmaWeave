@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint381_graham_boxes_left_after_max_cheesecakes",
+  "title_ja": "最大数作成後のクラッカー残数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04027",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A19P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lionel went to the grocery store and bought 14 boxes of Graham crackers and 15 packets of Oreos. To make an Oreo cheesecake, Lionel needs 2 boxes of Graham crackers and 3 packets of Oreos. After making the maximum number of Oreo cheesecakes he can with the ingredients he bought, how many boxes of Graham crackers would he have left over?",
+  "answer_ja": "クラッカーだけなら14÷2=7個、Oreosだけなら15÷3=5個作れるので、両方そろう最大数は5個。クラッカーは2×5=10箱使い、14−10=4箱残る。参照解答の「10箱で4個」は「5個」の誤記である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A19P3.graham_boxes_left_after_max_cheesecakes",
+  "graph": "work/gsm8k-sprint381-graham-boxes-left-after-max-cheesecakes-graph.json",
+  "model_notes_ja": [
+    "参照説明の4 cheesecakesは直前の最大5個および2×5=10と不一致なので5個へ訂正する。"
+  ],
+  "steps": [
+    {
+      "id": "graham_boxes_left_after_max_cheesecakes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A19P3.graham_boxes_left_after_max_cheesecakes",
+      "title_ja": "最大数作成後のクラッカー残数",
+      "claim_ja": "クラッカーだけなら14÷2=7個、Oreosだけなら15÷3=5個作れるので、両方そろう最大数は5個。クラッカーは2×5=10箱使い、14−10=4箱残る。参照解答の「10箱で4個」は「5個」の誤記である。",
+      "method_ja": "2資源それぞれの上限の最小を取り、その作成数で使うクラッカーを引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各チーズケーキにクラッカー2箱とOreos3袋を必ず使用する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "クラッカーだけなら14÷2=7個、Oreosだけなら15÷3=5個作れるので、両方そろう最大数は5個。クラッカーは2×5=10箱使い、14−10=4箱残る。参照解答の「10箱で4個」は「5個」の誤記である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4028,
+    "checked_model_hash": "f38929e9e1e2e5c4cceef14a3001ca67ebee033d818a93c38971578d79936b81",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

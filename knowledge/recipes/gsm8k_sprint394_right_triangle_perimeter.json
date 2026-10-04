@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint394_right_triangle_perimeter",
+  "title_ja": "直角三角形の周長",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04134",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Elliott drew a right-angle triangle on his book. It had a base of 4 inches, a height of 3 inches and a certain length of the hypotenuse. What was the length of the perimeter of the triangle that he drew?",
+  "answer_ja": "直角を挟む2辺が3インチと4インチなので、三平方の定理より斜辺cはc²=3²+4²=25を満たし、長さは正だからc=5インチ。周長は3+4+5=12インチである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P3.right_triangle_perimeter",
+  "graph": "work/gsm8k-sprint394-right-triangle-perimeter-graph.json",
+  "model_notes_ja": [
+    "3-4-5の直角三角形として平方関係と周長を形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "right_triangle_perimeter",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P3.right_triangle_perimeter",
+      "title_ja": "直角三角形の周長",
+      "claim_ja": "直角を挟む2辺が3インチと4インチなので、三平方の定理より斜辺cはc²=3²+4²=25を満たし、長さは正だからc=5インチ。周長は3+4+5=12インチである。",
+      "method_ja": "三平方の定理で正の斜辺を求め、3辺を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "底辺4インチと高さ3インチが直角を挟む辺で、長さは非負。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "直角を挟む2辺が3インチと4インチなので、三平方の定理より斜辺cはc²=3²+4²=25を満たし、長さは正だからc=5インチ。周長は3+4+5=12インチである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4135,
+    "checked_model_hash": "627ce023408d9b79cd0f5ee382af3e71ea0aa5a43e399e7a43e4372be28fab80",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

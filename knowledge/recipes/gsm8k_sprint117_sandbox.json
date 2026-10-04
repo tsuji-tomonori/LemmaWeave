@@ -1,0 +1,138 @@
+{
+  "id": "gsm8k_sprint117_sandbox",
+  "title_ja": "お釣り4ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02041",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・順序を保って数量関係を式にし、全要求を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_solution",
+  "graph": "work/gsm8k-sprint117-sandbox-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sandbox_volume",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_volume",
+      "title_ja": "体積40立方フィート。",
+      "claim_ja": "体積40立方フィート。",
+      "method_ja": "2×4×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "体積40立方フィート。",
+      "baseline_ja": "体積40立方フィート。"
+    },
+    {
+      "id": "sandbox_weight",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_weight",
+      "title_ja": "砂120ポンド。",
+      "claim_ja": "砂120ポンド。",
+      "method_ja": "40×3。",
+      "requires_steps": [
+        "sandbox_volume"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "砂120ポンド。",
+      "baseline_ja": "砂120ポンド。"
+    },
+    {
+      "id": "sandbox_trips",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_trips",
+      "title_ja": "60往復。",
+      "claim_ja": "60往復。",
+      "method_ja": "120÷2。",
+      "requires_steps": [
+        "sandbox_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "60往復。",
+      "baseline_ja": "60往復。"
+    },
+    {
+      "id": "sandbox_drinks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_drinks",
+      "title_ja": "15回飲む。",
+      "claim_ja": "15回飲む。",
+      "method_ja": "60÷4。",
+      "requires_steps": [
+        "sandbox_trips"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "15回飲む。",
+      "baseline_ja": "15回飲む。"
+    },
+    {
+      "id": "sandbox_ounces",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_ounces",
+      "title_ja": "45オンス。",
+      "claim_ja": "45オンス。",
+      "method_ja": "15×3。",
+      "requires_steps": [
+        "sandbox_drinks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "45オンス。",
+      "baseline_ja": "45オンス。"
+    },
+    {
+      "id": "sandbox_bottles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_bottles",
+      "title_ja": "3本必要。",
+      "claim_ja": "3本必要。",
+      "method_ja": "45÷15。",
+      "requires_steps": [
+        "sandbox_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "3本必要。",
+      "baseline_ja": "3本必要。"
+    },
+    {
+      "id": "sandbox_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_cost",
+      "title_ja": "6ドル。",
+      "claim_ja": "6ドル。",
+      "method_ja": "3×2。",
+      "requires_steps": [
+        "sandbox_bottles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "6ドル。",
+      "baseline_ja": "6ドル。"
+    },
+    {
+      "id": "sandbox_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A07.sandbox_solution",
+      "title_ja": "お釣り4ドル。",
+      "claim_ja": "お釣り4ドル。",
+      "method_ja": "10−6。",
+      "requires_steps": [
+        "sandbox_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "お釣り4ドル。",
+      "baseline_ja": "お釣り4ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2042,
+    "checked_model_hash": "369701eb61882cc97fb85d1975a67fc86d2f208a3e0877119867fe1712e7ae3b",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足や曖昧さを黙って補わず明示した。"
+    ]
+  }
+}

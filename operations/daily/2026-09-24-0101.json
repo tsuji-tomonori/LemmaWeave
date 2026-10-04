@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-24",
+  "run_id": "gsm8k-20260924-0100-jst",
+  "scheduled_slot": "2026-09-24T01:00:00+09:00",
+  "actual_start_slot": "2026-09-24T01:01:07+09:00",
+  "slot_resolution": "予定より1分7秒遅く起動した今回を01:00枠として直列実行した。00:00枠は実行記録がないため未実行として保持する。",
+  "unexecuted_slots": ["2026-09-24T00:00:00+09:00"],
+  "role": "gsm8k_individual_solution",
+  "base_sha": "879c40e26941c0add4e8cb2f88ee82bcb241adbc",
+  "started_at": "2026-09-24T01:01:07+09:00",
+  "finished_at": "2026-09-24T01:29:00+09:00",
+  "selected_problem_ids": [
+    "train:01944", "train:01945", "train:01946", "train:01947", "train:01948",
+    "train:01949", "train:01950", "train:01951", "train:01952", "train:01953",
+    "train:01954", "train:01955", "train:01956", "train:01957", "train:01958"
+  ],
+  "outputs_saved_problem_ids": [
+    "train:01944", "train:01945", "train:01946", "train:01947", "train:01948",
+    "train:01949", "train:01950", "train:01951", "train:01952", "train:01953",
+    "train:01954", "train:01955", "train:01956", "train:01957", "train:01958"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01944", "train:01945", "train:01946", "train:01947", "train:01948",
+    "train:01949", "train:01950", "train:01951", "train:01952", "train:01953",
+    "train:01954", "train:01955", "train:01956", "train:01957", "train:01958"
+  ],
+  "deferred": [{
+    "problem_id": "train:01944-train:01958",
+    "retry_on": "exact-head fixed Lean 4.33.1 success and current evidence import",
+    "reason_ja": "記述式解答・Lean形式化・自己照合は保存したが、現在HEADの固定Lean kernel成功証拠がないためsolution_readyへ昇格しない。",
+    "next_action_ja": "対象別replayでSprint0924A01を検証し、許容公理・入力SHA・依存グラフを照合して問題単位の成功証拠を取り込む。"
+  }],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "lines_1based": [1945, 1959],
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0165.json",
+    "record_hash_method": "SHA-256 of exact UTF-8 JSONL record bytes after the repository's current newline-to-space source normalization, excluding line terminator"
+  },
+  "semantic_review": {
+    "status": "self_review_only",
+    "reviewer": "author",
+    "notes_ja": [
+      "train:01944は重複表現twice as many times as manyをLaDonnaの2倍と読み、Prikya 50缶、Yoki 10缶を導いた。",
+      "train:01949は小数ドルをセント単位150・435・1265・650へ変換し、丸めなしで不足1200セント=12ドルを導いた。",
+      "train:01953は模型合計6個が割引条件の5個超を満たすことを結論と同時に形式化した。",
+      "train:01958は同距離で時間比が速度比の逆になることを用い、Prejean 40分・Rickey 30分を導いた。参照解40分は逆比条件と両立しないことを別定理で示した。"
+    ]
+  },
+  "checks": {
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "recipe_to_lean_declarations": "56/56",
+    "queue_total_and_unique_ids": "8792/8792",
+    "forbidden_tokens": 0,
+    "fixed_lean_kernel": "not_run",
+    "artifact_bytes": 138744,
+    "model_sha256": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681"
+  },
+  "checkpoints": [
+    {"problem_ids": ["train:01944", "train:01945", "train:01946", "train:01947", "train:01948"], "commit": "07e7def2a8284b8ced99b606eaa70484ff3d0074"},
+    {"problem_ids": ["train:01949", "train:01950", "train:01951", "train:01952", "train:01953"], "commit": "a9cd8944cc79358aa89f4b6c2d323c95b9a7ac54"},
+    {"problem_ids": ["train:01954", "train:01955", "train:01956", "train:01957", "train:01958"], "commit": "6649e80c23166d331c4f70bf4d5d64c6e4f0929e"}
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1444,
+    "pending": 6830,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 1429},
+    "after": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 1444},
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01959",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": ["train:01944", "train:01958"],
+    "base_sha": "879c40e26941c0add4e8cb2f88ee82bcb241adbc",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "pending_at_adb8db6d30e0f5b79d3e03d0a9cfebd0fad54c53",
+    "local_fixed_lean_status": "unavailable_lake_not_installed",
+    "accepted_as_success_evidence": false,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "mergeable": true
+  },
+  "ci_repair": {
+    "commit": "adb8db6d30e0f5b79d3e03d0a9cfebd0fad54c53",
+    "file": "tests/lean/GSM8KSprint0921A20.lean",
+    "changes": [
+      "51個のラッパー定理へ不足していたモデル引数mを渡した。",
+      "#lw_dependenciesを解釈するためLemmaWeave.Audit.Extractをimportした。"
+    ],
+    "scope": "旧監査ラッパーのみ。原題・モデル・結論は変更していない。"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "adb8db6d30e0f5b79d3e03d0a9cfebd0fad54c53"
+  }
+}

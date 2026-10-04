@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint34_cooking",
+  "title_ja": "ワッフルとステーキの調理時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00796",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "直列調理28分と完全並行調理18分を分けて示す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.cooking_solution",
+  "graph": "work/gsm8k-sprint34-cooking-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "同時調理できるか原文にないため二つの時間を保持する。"
+  ],
+  "steps": [
+    {
+      "id": "cooking_steaks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.cooking_steaks",
+      "title_ja": "ステーキ3枚",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚6分を3枚。",
+      "conclusion_ja": "18分。",
+      "baseline_ja": "3×6=18。"
+    },
+    {
+      "id": "cooking_sequential",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.cooking_sequential",
+      "title_ja": "直列調理",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ステーキの後にワッフル10分。",
+      "conclusion_ja": "28分。",
+      "baseline_ja": "18+10=28。"
+    },
+    {
+      "id": "cooking_parallel",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.cooking_parallel",
+      "title_ja": "完全並行調理",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ワッフル10分をステーキ18分と同時に調理する。",
+      "conclusion_ja": "18分。",
+      "baseline_ja": "最大の18分で完了。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 797,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

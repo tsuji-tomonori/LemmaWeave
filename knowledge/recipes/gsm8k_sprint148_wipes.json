@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint148_wipes",
+  "title_ja": "朝のウェットティッシュ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02504",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日に20枚使った後10枚を1回補充し、夜60枚残ったときの朝の枚数。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.wipes_solution",
+  "graph": "work/gsm8k-sprint148-wipes-graph.json",
+  "model_notes_ja": [
+    "原文を『20枚を1回使用し、その後10枚を1回追加した』と明示して解く。回数が複数なら朝の枚数は変わるため、この一回条件が必要である。"
+  ],
+  "steps": [
+    {
+      "id": "wipes_after_use",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.wipes_after_use",
+      "title_ja": "使用後は50枚",
+      "claim_ja": "使用後は50枚",
+      "method_ja": "夜60枚から補充10枚を戻す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "使用後は50枚",
+      "baseline_ja": "使用後は50枚"
+    },
+    {
+      "id": "wipes_net_change",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.wipes_net_change",
+      "title_ja": "朝は夜より10枚多い",
+      "claim_ja": "朝は夜より10枚多い",
+      "method_ja": "20枚減って10枚増えるので純減10枚",
+      "requires_steps": [
+        "wipes_after_use"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "朝は夜より10枚多い",
+      "baseline_ja": "朝は夜より10枚多い"
+    },
+    {
+      "id": "wipes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.wipes_solution",
+      "title_ja": "朝は70枚",
+      "claim_ja": "朝は70枚",
+      "method_ja": "夜60枚に純減10枚を戻す",
+      "requires_steps": [
+        "wipes_net_change"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "朝は70枚",
+      "baseline_ja": "朝は70枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2505,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint119_restaurant",
+  "title_ja": "店の寄付額は24ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02066",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.restaurant_solution",
+  "graph": "work/gsm8k-sprint119-restaurant-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "restaurant_customer_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.restaurant_customer_total",
+      "title_ja": "40人の寄付総額は120ドル。",
+      "claim_ja": "40人の寄付総額は120ドル。",
+      "method_ja": "平均3ドル×40人。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "40人の寄付総額は120ドル。",
+      "baseline_ja": "40人の寄付総額は120ドル。"
+    },
+    {
+      "id": "restaurant_blocks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.restaurant_blocks",
+      "title_ja": "10ドル分の組は12組。",
+      "claim_ja": "10ドル分の組は12組。",
+      "method_ja": "120÷10。",
+      "requires_steps": [
+        "restaurant_customer_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "10ドル分の組は12組。",
+      "baseline_ja": "10ドル分の組は12組。"
+    },
+    {
+      "id": "restaurant_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.restaurant_solution",
+      "title_ja": "店の寄付額は24ドル。",
+      "claim_ja": "店の寄付額は24ドル。",
+      "method_ja": "1組につき2ドルなので12×2。",
+      "requires_steps": [
+        "restaurant_blocks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "店の寄付額は24ドル。",
+      "baseline_ja": "店の寄付額は24ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2067,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

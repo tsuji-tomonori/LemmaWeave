@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint148_mountains",
+  "title_ja": "Borisが登る回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02514",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Hugo山10000フィート、Boris山は2500フィート低く、Hugo3回分と同じ標高差を登る回数。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.mountains_solution",
+  "graph": "work/gsm8k-sprint148-mountains-graph.json",
+  "model_notes_ja": [
+    "原題の簡略モデルに従い、1回の登攀距離を各山の標高とする。"
+  ],
+  "steps": [
+    {
+      "id": "mountains_boris",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.mountains_boris",
+      "title_ja": "Boris山は7500フィート",
+      "claim_ja": "Boris山は7500フィート",
+      "method_ja": "10000から2500を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Boris山は7500フィート",
+      "baseline_ja": "Boris山は7500フィート"
+    },
+    {
+      "id": "mountains_hugo_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.mountains_hugo_total",
+      "title_ja": "Hugoの3回合計は30000フィート",
+      "claim_ja": "Hugoの3回合計は30000フィート",
+      "method_ja": "10000に3を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Hugoの3回合計は30000フィート",
+      "baseline_ja": "Hugoの3回合計は30000フィート"
+    },
+    {
+      "id": "mountains_boris_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.mountains_boris_total",
+      "title_ja": "Borisも30000フィート登る必要がある",
+      "claim_ja": "Borisも30000フィート登る必要がある",
+      "method_ja": "等距離条件を適用する",
+      "requires_steps": [
+        "mountains_hugo_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Borisも30000フィート登る必要がある",
+      "baseline_ja": "Borisも30000フィート登る必要がある"
+    },
+    {
+      "id": "mountains_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.mountains_solution",
+      "title_ja": "Borisは4回登る",
+      "claim_ja": "Borisは4回登る",
+      "method_ja": "30000を7500で割る",
+      "requires_steps": [
+        "mountains_boris",
+        "mountains_boris_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Borisは4回登る",
+      "baseline_ja": "Borisは4回登る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2515,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

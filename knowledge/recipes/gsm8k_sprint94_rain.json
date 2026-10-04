@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint94_rain",
+  "title_ja": "曜日別降水量の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01690",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "月曜日7回は各1.5cm、火曜日9回は各2.5cm降った。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.rain_solution",
+  "graph": "work/gsm8k-sprint94-rain-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rain_monday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.rain_monday",
+      "title_ja": "月曜日合計",
+      "claim_ja": "10.5cm。",
+      "method_ja": "半cm単位で7×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各月曜日の量が一定。",
+      "conclusion_ja": "半cm21個。",
+      "baseline_ja": "半cm21個。"
+    },
+    {
+      "id": "rain_tuesday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.rain_tuesday",
+      "title_ja": "火曜日合計",
+      "claim_ja": "22.5cm。",
+      "method_ja": "半cm単位で9×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各火曜日の量が一定。",
+      "conclusion_ja": "半cm45個。",
+      "baseline_ja": "半cm45個。"
+    },
+    {
+      "id": "rain_difference_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.rain_difference_half",
+      "title_ja": "差",
+      "claim_ja": "半cm24個。",
+      "method_ja": "45-21。",
+      "requires_steps": [
+        "rain_monday",
+        "rain_tuesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "火曜日から月曜日を引く。",
+      "conclusion_ja": "24+21=45。",
+      "baseline_ja": "24+21=45。"
+    },
+    {
+      "id": "rain_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.rain_solution",
+      "title_ja": "cmへの換算",
+      "claim_ja": "12cm多い。",
+      "method_ja": "半cm24個を2で割る。",
+      "requires_steps": [
+        "rain_difference_half"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "半cm2個=1cm。",
+      "conclusion_ja": "12×2=24。",
+      "baseline_ja": "12×2=24。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1691,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

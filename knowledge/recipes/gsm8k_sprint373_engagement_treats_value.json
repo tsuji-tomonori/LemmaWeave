@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint373_engagement_treats_value",
+  "title_ja": "婚約祝いの総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03988",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A17P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "DJ Snake's friends decided to give him treats to celebrate his engagement. Moksi took him and his fiancee to a luxurious hotel for two nights at $4000 per night. Lil Jon bought them a car worth $30000, and Wynter presented them with a house worth four times the value of the car Lil Jon bought them. What was the total value of all the treats DJ Snake received on his engagement day?",
+  "answer_ja": "ホテルは2×4000=8000ドル。家は車30000ドルの4倍で120000ドル。ホテル、車、家を合わせて8000+30000+120000=158000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A17P1.engagement_treats_value",
+  "graph": "work/gsm8k-sprint373-engagement-treats-value-graph.json",
+  "model_notes_ja": [
+    "2泊とも1泊4000ドルで、家の4倍の基準は車の価格30000ドルである。"
+  ],
+  "steps": [
+    {
+      "id": "engagement_treats_value",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A17P1.engagement_treats_value",
+      "title_ja": "婚約祝いの総額",
+      "claim_ja": "ホテルは2×4000=8000ドル。家は車30000ドルの4倍で120000ドル。ホテル、車、家を合わせて8000+30000+120000=158000ドル。",
+      "method_ja": "各贈り物の金額を求めて加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2泊とも1泊4000ドルで、家の4倍の基準は車の価格30000ドルである。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "ホテルは2×4000=8000ドル。家は車30000ドルの4倍で120000ドル。ホテル、車、家を合わせて8000+30000+120000=158000ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3989,
+    "checked_model_hash": "a2e772de3440208a2a3e9dde5bb20856ae64116367d3eb8be2a57884ac8edbc0",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint104_weight",
+  "title_ja": "ロバとゾウの合計重量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01839",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ゾウをポンドへ換算し、90%軽いロバはゾウの10%とする。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.weight_solution",
+  "graph": "work/gsm8k-sprint104-weight-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "weight_elephant",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.weight_elephant",
+      "title_ja": "ゾウは6000ポンド。",
+      "claim_ja": "ゾウは6000ポンド。",
+      "method_ja": "3×2000。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1トン=2000ポンド。",
+      "conclusion_ja": "6000。",
+      "baseline_ja": "6000。"
+    },
+    {
+      "id": "weight_donkey",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.weight_donkey",
+      "title_ja": "ロバは600ポンド。",
+      "claim_ja": "ロバは600ポンド。",
+      "method_ja": "6000×10%。",
+      "requires_steps": [
+        "weight_elephant"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "90%軽いので残るのは10%。",
+      "conclusion_ja": "600。",
+      "baseline_ja": "600。"
+    },
+    {
+      "id": "weight_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.weight_solution",
+      "title_ja": "合計6600ポンド。",
+      "claim_ja": "合計6600ポンド。",
+      "method_ja": "6000+600。",
+      "requires_steps": [
+        "weight_elephant",
+        "weight_donkey"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2頭を加える。",
+      "conclusion_ja": "6600。",
+      "baseline_ja": "6600。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1840,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

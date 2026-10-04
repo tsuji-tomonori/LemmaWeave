@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_iphone_case_original_prices",
+  "title_ja": "iPhoneケースの値引前価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04102",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "You can lower the price by 20% if you buy more than fifteen units of iPhone cases. If you pay $500 to buy 18 units, what is the original price?",
+  "answer_ja": "18個は15個超なので20%引きが適用され、支払額500ドルは値引前合計の80%。したがって値引前合計は500÷0.8=625ドル。1個当たりを問う解釈なら625/18ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.iphone_case_original_prices",
+  "graph": "work/gsm8k-sprint392-iphone-case-original-prices-graph.json",
+  "model_notes_ja": [
+    "original priceを注文全体と読む場合と単価と読む場合を分離した。"
+  ],
+  "steps": [
+    {
+      "id": "iphone_case_original_prices",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.iphone_case_original_prices",
+      "title_ja": "iPhoneケースの値引前価格",
+      "claim_ja": "18個は15個超なので20%引きが適用され、支払額500ドルは値引前合計の80%。したがって値引前合計は500÷0.8=625ドル。1個当たりを問う解釈なら625/18ドルである。",
+      "method_ja": "original priceを注文全体と読む場合と単価と読む場合を分離した。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "original priceを注文全体と読む場合と単価と読む場合を分離した。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "18個は15個超なので20%引きが適用され、支払額500ドルは値引前合計の80%。したがって値引前合計は500÷0.8=625ドル。1個当たりを問う解釈なら625/18ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4103,
+    "checked_model_hash": "3fe47e3810c27e222620f5e581e0a1ee48da0796c5f0b5e3c94c86ff9405b7bc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

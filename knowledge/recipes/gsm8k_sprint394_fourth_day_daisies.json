@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint394_fourth_day_daisies",
+  "title_ja": "4日目に売れたデイジー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04127",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Daisy's Flower Shop sold 45 daisies on its first day. On their second day, they sold 20 more flowers than they did on their first day. On the third day, they sold 10 less than twice the flowers that were sold than on the second day. If the flower shop sold a total of 350 daisies for 4 days, how many daisies were sold on the 4th day?",
+  "answer_ja": "2日目は45+20=65本。3日目は65の2倍より10本少ないので2×65-10=120本。最初の3日間は45+65+120=230本だから、4日目は350-230=120本である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P2.fourth_day_daisies",
+  "graph": "work/gsm8k-sprint394-fourth-day-daisies-graph.json",
+  "model_notes_ja": [
+    "各日の販売数と4日合計を自然数本で扱う。"
+  ],
+  "steps": [
+    {
+      "id": "fourth_day_daisies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P2.fourth_day_daisies",
+      "title_ja": "4日目に売れたデイジー",
+      "claim_ja": "2日目は45+20=65本。3日目は65の2倍より10本少ないので2×65-10=120本。最初の3日間は45+65+120=230本だから、4日目は350-230=120本である。",
+      "method_ja": "各日の本数を順に求め、4日合計から最初の3日分を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3日目の「10 less than twice」は2日目の2倍から10を引く。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2日目は45+20=65本。3日目は65の2倍より10本少ないので2×65-10=120本。最初の3日間は45+65+120=230本だから、4日目は350-230=120本である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4128,
+    "checked_model_hash": "bc795f1e8fff7c0a300383f88251a2edb7f27481041ca5d9c3422c08564c5843",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

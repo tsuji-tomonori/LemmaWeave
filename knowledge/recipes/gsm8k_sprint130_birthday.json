@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint130_birthday",
+  "title_ja": "誕生日にもらったお金の残り",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02237",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100ドルの1/4をゲームに使い、その残りの1/5をゴーグルに使う。残金を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.birthday_solution",
+  "graph": "work/gsm8k-sprint130-birthday-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "birthday_game",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.birthday_game",
+      "title_ja": "ゲーム代は25ドル",
+      "claim_ja": "ゲーム代は25ドル",
+      "method_ja": "100ドルの1/4",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ゲーム代は25ドル",
+      "baseline_ja": "ゲーム代は25ドル"
+    },
+    {
+      "id": "birthday_after_game",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.birthday_after_game",
+      "title_ja": "ゲーム購入後は75ドル",
+      "claim_ja": "ゲーム購入後は75ドル",
+      "method_ja": "100ドルから25ドルを引く",
+      "requires_steps": [
+        "birthday_game"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ゲーム購入後は75ドル",
+      "baseline_ja": "ゲーム購入後は75ドル"
+    },
+    {
+      "id": "birthday_goggles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.birthday_goggles",
+      "title_ja": "ゴーグル代は15ドル",
+      "claim_ja": "ゴーグル代は15ドル",
+      "method_ja": "残る75ドルの1/5",
+      "requires_steps": [
+        "birthday_after_game"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ゴーグル代は15ドル",
+      "baseline_ja": "ゴーグル代は15ドル"
+    },
+    {
+      "id": "birthday_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.birthday_solution",
+      "title_ja": "残金は60ドル",
+      "claim_ja": "残金は60ドル",
+      "method_ja": "75ドルから15ドルを引く",
+      "requires_steps": [
+        "birthday_goggles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残金は60ドル",
+      "baseline_ja": "残金は60ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2238,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

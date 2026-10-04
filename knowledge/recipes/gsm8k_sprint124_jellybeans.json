@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint124_jellybeans",
+  "title_ja": "1人分のジェリービーンズ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02152",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "甥3人と姪2人へ70個を等分した1人分を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A16.jellybeans_solution",
+  "graph": "work/gsm8k-sprint124-jellybeans-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jellybeans_children",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.jellybeans_children",
+      "title_ja": "受け取る子どもは5人。",
+      "claim_ja": "受け取る子どもは5人。",
+      "method_ja": "3+2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "受け取る子どもは5人。",
+      "baseline_ja": "受け取る子どもは5人。"
+    },
+    {
+      "id": "jellybeans_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A16.jellybeans_solution",
+      "title_ja": "1人14個。",
+      "claim_ja": "1人14個。",
+      "method_ja": "70÷5。",
+      "requires_steps": [
+        "jellybeans_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "1人14個。",
+      "baseline_ja": "1人14個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2153,
+    "checked_model_hash": "1ef653f2f5493b131faeaf7e8e4695e102a0b2223657f79e1a4a788f945d875f",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、矛盾や複数読解は訂正条件・反例と分離した。"
+    ]
+  }
+}

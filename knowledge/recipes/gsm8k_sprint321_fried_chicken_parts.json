@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint321_fried_chicken_parts",
+  "title_ja": "揚げる鶏肉部位の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03727",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A15P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Steph needs to cook fried chicken for the kid's party. She bought 24 pieces of drumstick and 4 fewer breast parts. How many fried chickens can Steph make?",
+  "answer_ja": "胸肉は24−4=20個なので、鶏肉の部位は合計24+20=44個。したがってfried chickensを揚げ鶏肉のピース数と読む参照解答では44個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A15P3.fried_chicken_parts",
+  "graph": "work/gsm8k-sprint321-fried-chicken-parts-graph.json",
+  "model_notes_ja": [
+    "原文のdrumstickとbreast partsは部位であり、丸鶏の頭数ではない。1羽（または1組）に各1部位が必要と追加仮定するなら作れる組はmin(24,20)=20で、丸鶏数は原文だけでは決まらない。"
+  ],
+  "steps": [
+    {
+      "id": "fried_chicken_parts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A15P3.fried_chicken_parts",
+      "title_ja": "揚げる鶏肉部位の数",
+      "claim_ja": "胸肉は24−4=20個なので、鶏肉の部位は合計24+20=44個。したがってfried chickensを揚げ鶏肉のピース数と読む参照解答では44個。",
+      "method_ja": "胸肉数を差から求め、部位総数を加える。代替の組数は小さい方を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "44は部位数であることを明示し、丸鶏数と混同しない。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "揚げ鶏肉の部位は44個。1対1の組なら20組。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3728,
+    "checked_model_hash": "03866a871da00c9e34a187b9da96f1045f855968e8da29397b81b04da35487e4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

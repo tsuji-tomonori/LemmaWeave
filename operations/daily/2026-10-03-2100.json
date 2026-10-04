@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-03",
+  "run_id": "20261003T210000+0900-retry-21",
+  "scheduled_slot": "2026-10-03T21:00:00+09:00",
+  "slot_role": "retry_oldest_deferred_and_failed_proofs",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "ac4df65bd70ef98163b810b03227c6cccca6bf7e",
+  "started_at": "2026-10-03T21:55:43+09:00",
+  "finished_at": "2026-10-03T22:23:12+09:00",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523"
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514-train:00523",
+      "retry_on": "targeted_GSM8KDaily0918C_exact_input_CI_success",
+      "reason_ja": "固定Leanで共有モデルは成功したが、全体replayが無関係な96モデルの証明失敗で中断し、個別証明・公理・依存証拠を生成できなかった。",
+      "next_action_ja": "GSM8KDaily0918C.leanを全体ビルド失敗から分離して単独実行し、成功artifactを現行import closureへ照合する。"
+    }
+  ],
+  "evidence": {
+    "retry_record": "operations/evidence-retry/GSM8K-INDIVIDUAL-0054-20261003.json",
+    "model_build": "succeeded",
+    "proof_target": "not_run",
+    "dependency_graphs": "not_generated",
+    "semantic_review": "self_review_only"
+  },
+  "ci": {
+    "workflow_run_id": "36570745565",
+    "workflow_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36570745565",
+    "rerun_job_id": "111208065166",
+    "head_sha": "669f03f410378d9b4b24fe017b8733fbd2aee0a4",
+    "conclusion": "failure",
+    "artifact_id": "11274991814",
+    "artifact_sha256": "d292d4c4031b116822ad3bc01b8e2dd64dd94a2b3e45454269a8ead8eecacd7b"
+  },
+  "pr": {
+    "number": 5,
+    "head_before_run": "ac4df65bd70ef98163b810b03227c6cccca6bf7e",
+    "merged": false
+  },
+  "queue_after_run": {
+    "total": 8792,
+    "solution_ready": 518,
+    "remaining": 8274,
+    "measured_completed_per_day_7d": 0.0,
+    "forecast_status": "stalled"
+  },
+  "commit": {
+    "claim_commit": "73d75e4e21c26aa2f7a4f105bf0a0215bd59a869",
+    "result_commit": "82cf6768e9d08c652342835da840a366ed42a656"
+  },
+  "notes_ja": [
+    "10問の原文を固定train.jsonlから再読し、レコードSHAと問題文SHAを全件照合した。",
+    "意図・モデル・Lean proof target・CI全体成功を別々に判定し、モデルビルド成功だけではsolution_readyへ昇格していない。"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint306_farm_animal_total",
+  "title_ja": "農場の動物総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03654",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "牛20頭、アヒルは牛より50%多く、豚は牛とアヒルの合計の5分の1。",
+  "answer_ja": "アヒルは20の50%増しで30羽。牛とアヒルは50頭羽、豚は50÷5=10頭。合計60頭羽。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A08P3.farm_animal_total",
+  "graph": "work/gsm8k-sprint306-farm-animal-total-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "farm_animal_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A08P3.farm_animal_total",
+      "title_ja": "アヒルは20の50%増しで30羽。牛とアヒルは50頭羽、豚は50÷5=10頭。合計60頭羽。",
+      "claim_ja": "アヒルは20の50%増しで30羽。牛とアヒルは50頭羽、豚は50÷5=10頭。合計60頭羽。",
+      "method_ja": "アヒルは20の50%増しで30羽。牛とアヒルは50頭羽、豚は50÷5=10頭。合計60頭羽。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "アヒルは20の50%増しで30羽。牛とアヒルは50頭羽、豚は50÷5=10頭。合計60頭羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3655,
+    "checked_model_hash": "1410486c984fbaada19f00f71a9b21c8b2a390d284985447342c10eae88d6f27",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

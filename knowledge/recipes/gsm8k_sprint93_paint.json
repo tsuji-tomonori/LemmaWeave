@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint93_paint",
+  "title_ja": "浴室塗料の残数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01676",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "同じ大きさの壁4面用に塗料16個を買ったが、1面をタイルにし、天井の花に1個使う。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.paint_solution",
+  "graph": "work/gsm8k-sprint93-paint-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "paint_per_wall",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.paint_per_wall",
+      "title_ja": "壁1面分",
+      "claim_ja": "壁1面には4個必要。",
+      "method_ja": "16個を等しい4面に分ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4面は同じ大きさ。",
+      "conclusion_ja": "4×4=16。",
+      "baseline_ja": "4×4=16。"
+    },
+    {
+      "id": "paint_used",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.paint_used",
+      "title_ja": "使用数",
+      "claim_ja": "壁3面と天井で13個使う。",
+      "method_ja": "3×4+1。",
+      "requires_steps": [
+        "paint_per_wall"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "タイルの1面には塗料を使わない。",
+      "conclusion_ja": "3×4+1=13。",
+      "baseline_ja": "3×4+1=13。"
+    },
+    {
+      "id": "paint_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.paint_solution",
+      "title_ja": "残数",
+      "claim_ja": "3個残る。",
+      "method_ja": "16個から使用13個を引く。",
+      "requires_steps": [
+        "paint_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "購入数は16個。",
+      "conclusion_ja": "3+13=16。",
+      "baseline_ja": "3+13=16。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1677,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

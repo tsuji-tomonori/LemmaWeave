@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint41_contest",
+  "title_ja": "数学コンテスト得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00896",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "難易度別の正答数と配点から総得点を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A09.contest_solution",
+  "graph": "work/gsm8k-sprint41-contest-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A09.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "contest_easy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.contest_easy",
+      "title_ja": "易しい問題",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6問、各2点。",
+      "conclusion_ja": "12点。",
+      "baseline_ja": "6×2=12。"
+    },
+    {
+      "id": "contest_average",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.contest_average",
+      "title_ja": "平均問題",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2問、各3点。",
+      "conclusion_ja": "6点。",
+      "baseline_ja": "2×3=6。"
+    },
+    {
+      "id": "contest_hard",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.contest_hard",
+      "title_ja": "難しい問題",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4問、各5点。",
+      "conclusion_ja": "20点。",
+      "baseline_ja": "4×5=20。"
+    },
+    {
+      "id": "contest_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.contest_total",
+      "title_ja": "総得点",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3区分を合計する。",
+      "conclusion_ja": "38点。",
+      "baseline_ja": "12+6+20=38。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 897,
+    "checked_model_hash": "89dd3a16cd8df99f34c31f37d1627e251cf211069adff173f7367caa5578cd5c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

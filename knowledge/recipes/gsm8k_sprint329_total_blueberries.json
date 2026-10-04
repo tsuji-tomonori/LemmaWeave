@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint329_total_blueberries",
+  "title_ja": "ブルーベリー総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03766",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A18P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Miss Darlington has a basket of 20 blueberries. She picked 9 more baskets with the same amount of berries. How many blueberries did Miss Darlington have in all?",
+  "answer_ja": "最初の1籠に加えて同数入りを9籠摘んだので計10籠。10×20=200粒。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A18P2.total_blueberries",
+  "graph": "work/gsm8k-sprint329-total-blueberries-graph.json",
+  "model_notes_ja": [
+    "picked 9 more basketsは元の1籠に追加する意味で、全籠に20粒ずつ入る。"
+  ],
+  "steps": [
+    {
+      "id": "total_blueberries",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A18P2.total_blueberries",
+      "title_ja": "ブルーベリー総数",
+      "claim_ja": "最初の1籠に加えて同数入りを9籠摘んだので計10籠。10×20=200粒。",
+      "method_ja": "籠数を合計して1籠あたり個数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全籠の粒数は同一。",
+      "baseline_ja": "整数・分数・割合・一次方程式・面積・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "200粒。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3767,
+    "checked_model_hash": "2224fabff2d857803971c96cb779e90b3a87a1e0276a201c196e8f8bc664a7e4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

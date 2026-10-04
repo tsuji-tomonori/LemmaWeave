@@ -1,0 +1,198 @@
+{
+  "schema_version": "evidence_retry_v1",
+  "date": "2026-09-23",
+  "run_id": "gsm8k-retry-20260923-2100-jst",
+  "target": {
+    "operational_label": "batch 52 / train:00514-train:00523",
+    "method_batch_file": "corpus/method_batches/GSM8K-INDIVIDUAL-0054.json",
+    "numbering_note_ja": "運用上のdaily52は実ファイル番号0054に対応する。0052はtrain:00494-train:00503であり、番号差を解消せず明示して扱う。"
+  },
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "line_range_1based": [
+      515,
+      524
+    ],
+    "retrieval_note_ja": "GitHub上流の固定commitとblob SHAを再確認した。大容量JSONLの範囲本文はconnectorから返らなかったため、今回の個別SHA監査は現行batchに保存済みのレコード・原文SHAを対象とした。"
+  },
+  "inputs": {
+    "branch_head": "5d316af616fc01df32ad4beee726819ca71d58df",
+    "method_batch_blob_sha": "6bc5217535c347a9605883158cd59c3a03ec0173",
+    "semantic_model_file": "LemmaWeave/Problems/GSM8K/Daily0918CModels.lean",
+    "semantic_model_blob_sha": "faf1e7327cd8787b163e89d38bae1b548ae1b692",
+    "semantic_model_sha256": "0ca71faf5302828ffe412b5f11b983fdee15ede247e47c629dee1a66a907fe0e",
+    "lean_test_file": "tests/lean/GSM8KDaily0918C.lean",
+    "lean_test_blob_sha": "cfd0298e617eb246dd4b8c90360b2a3c6568ab07"
+  },
+  "problems": [
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "source_line": 515,
+      "record_sha256": "c91acf070cb027a399c65a1ef308e8519a55f5aae2449c082cda8ea08700d3d6",
+      "raw_question_sha256": "b198a764bf04513263259cd8dfbb6be50a1c03d04702f380bb1daf5b4910520b",
+      "normalized_question_sha256": "b198a764bf04513263259cd8dfbb6be50a1c03d04702f380bb1daf5b4910520b",
+      "recipe": "gsm8k_daily52_stickers",
+      "recipe_blob_sha": "6521828bad02fc8e08922922c256f1d9bd33976c",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.stickers_solution",
+      "lines": 3
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00515",
+      "source_line": 516,
+      "record_sha256": "05a984b6a45351f09a932235b7a439b30584f40ed7c481746527ea2622890df0",
+      "raw_question_sha256": "00afb9d4acb6ad5b12f6fb335f4c89ff37f3a15452fd4176adab016a51590d77",
+      "normalized_question_sha256": "00afb9d4acb6ad5b12f6fb335f4c89ff37f3a15452fd4176adab016a51590d77",
+      "recipe": "gsm8k_daily52_ice",
+      "recipe_blob_sha": "189759e8fc5fb2002f4f23f4c890653ddced8ccc",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.ice_solution",
+      "lines": 6
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00516",
+      "source_line": 517,
+      "record_sha256": "2562e3df8a44659dc630d1c00a81710ae2af4b50107b422e2475d03da12a4058",
+      "raw_question_sha256": "eef5cfd0efcd06fb378e64f828fd0f153fad14eb0ad502c851818ed83f8fdcb8",
+      "normalized_question_sha256": "eef5cfd0efcd06fb378e64f828fd0f153fad14eb0ad502c851818ed83f8fdcb8",
+      "recipe": "gsm8k_daily52_homework",
+      "recipe_blob_sha": "9273b22712829b0f6abd2365bfe344e8f5c69f79",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.homework_solution",
+      "lines": 7
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00517",
+      "source_line": 518,
+      "record_sha256": "1a79f6997c85b87c4d8a7a309d0139fc4e9fbb01e22c87befedda918b3575117",
+      "raw_question_sha256": "afb747c0c9d01eda791cc668124bcd6f4fbc24ac0bc8478b3137d259e85e0a99",
+      "normalized_question_sha256": "09694bf06cbd93e0ac926493561e7f5f266b6eae3a968320241b9c4efb0fb794",
+      "recipe": "gsm8k_daily52_bike",
+      "recipe_blob_sha": "a8cf25f636ce7c78b4645632405b135ad7b01d43",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.bike_solution",
+      "lines": 2
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00518",
+      "source_line": 519,
+      "record_sha256": "31ceab5b406bc5038bb2f08086daa31a548aa29b1c35de19085d64eae53e7b95",
+      "raw_question_sha256": "d077c1ae6ac52e49d07704f43d18c62fd944e3047b35d50233f26e10abb41f21",
+      "normalized_question_sha256": "d077c1ae6ac52e49d07704f43d18c62fd944e3047b35d50233f26e10abb41f21",
+      "recipe": "gsm8k_daily52_marble",
+      "recipe_blob_sha": "b6c0e92cbd887fd1e1c4de4e456df6da13794a1b",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.marble_solution",
+      "lines": 3
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00519",
+      "source_line": 520,
+      "record_sha256": "90e8383dec9c2a91275228372bc5d74b1ba326dbcf8d66fabb0fdf74769a2381",
+      "raw_question_sha256": "ef27c15b50986b39c758e8952a3ed853dbb2e849a512f77a3f88523c34322b61",
+      "normalized_question_sha256": "3f366a04b8bd19cb0994dad8ffac33099c44415f6071c47d57bdc9d69f4f42ca",
+      "recipe": "gsm8k_daily52_croissant",
+      "recipe_blob_sha": "a19308e7235f61bb3aaaa4828c0fda9a7d5d6b6d",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.croissant_solution",
+      "lines": 3
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00520",
+      "source_line": 521,
+      "record_sha256": "4eb6c277375a6db4359dee065dcf3a8542890f82a58c8249372b27cfd129536a",
+      "raw_question_sha256": "da7a062fee3a2f421370f288aabf40a2cd7286abafd267d23086f3e33b4ce628",
+      "normalized_question_sha256": "da7a062fee3a2f421370f288aabf40a2cd7286abafd267d23086f3e33b4ce628",
+      "recipe": "gsm8k_daily52_rock",
+      "recipe_blob_sha": "e23be0d8bba275642a74aa32395e29155b28f4ca",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.rock_solution",
+      "lines": 6
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00521",
+      "source_line": 522,
+      "record_sha256": "40df41435df6a207fb1115d2322475ccd5cb20b86afe12fd7f7136c492e791f4",
+      "raw_question_sha256": "22e5fcd5d3a784c407b9bba27027143fc628096974db0d8c4535ff18fe1e44e6",
+      "normalized_question_sha256": "2e43a69daa4eb6bc8988da2342734cf123efe53ad195a948c702732b68d9f29e",
+      "recipe": "gsm8k_daily52_strawberry",
+      "recipe_blob_sha": "b757b6acd78e897451cd61889be57677568c885a",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.strawberry_solution",
+      "lines": 2
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00522",
+      "source_line": 523,
+      "record_sha256": "2f93dbcfd0c1929c5c09dbc56d84a7231b65daad1a86b640fc23b9f97c052ac2",
+      "raw_question_sha256": "e27d77b617db860a1b8ab3037b8c5826da598f6785f570ff9e4ee29ddeb1fe99",
+      "normalized_question_sha256": "dcbaa00b3305c42c4d4b033baf9f70ee56c8c868dbf77e6e2ea4ca1f0442ae51",
+      "recipe": "gsm8k_daily52_owl",
+      "recipe_blob_sha": "08f9629e53d4fe5fdc44ee415bff752cf6cc0de0",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.owl_solution",
+      "lines": 2
+    },
+    {
+      "id": "external-gsm8k-main-3101c7d50724:train:00523",
+      "source_line": 524,
+      "record_sha256": "03eef95a6ca7b261f3e0c35a79aca8448d2e90e486818478d15e29ef9f2fbf23",
+      "raw_question_sha256": "093da06f13c7ffd18cd4403df29436f586ac412321c69b708ba43fc908e1e33f",
+      "normalized_question_sha256": "a685f5da2350b694f55ec8fbf6d5ec37c26c55bde3aa24c3cac3b5f522412c7c",
+      "recipe": "gsm8k_daily52_laundry",
+      "recipe_blob_sha": "b1f88453c0eed0f22cc9205ecf1ce5a2c332c627",
+      "root": "LemmaWeave.Tests.GSM8KDaily0918C.laundry_solution",
+      "lines": 2
+    }
+  ],
+  "static_retry_checks": {
+    "problem_entries": "10/10",
+    "recipes": "10/10",
+    "author_model_hash_match": "10/10",
+    "explanation_lines": "36/36",
+    "root_and_line_declarations_present_in_test": "46/46",
+    "forbidden_tokens": {
+      "sorry": 0,
+      "admit": 0,
+      "sorryAx": 0,
+      "custom_axiom": 0
+    },
+    "print_axioms_commands": 10,
+    "dependency_audit_commands": 10,
+    "semantic_review_status": "self_review_only"
+  },
+  "execution_evidence_search": {
+    "current_pr": {
+      "number": 5,
+      "head": "5d316af616fc01df32ad4beee726819ca71d58df",
+      "combined_statuses": 0,
+      "pull_request_workflow_runs": 0,
+      "reviews": 0,
+      "unresolved_threads": 0,
+      "mergeable": true
+    },
+    "merged_pr3": {
+      "merge_commit": "056077193d09e2fcf73ada1d22a708a9eb1af110",
+      "merge_commit_workflow_runs": 0,
+      "head_before_merge": "0d6ca3011970b5ceca955b168999ecd1cf401880",
+      "note_ja": "PR #3本文の成功CIはtrain:00504-train:00513までの証拠であり、次回対象と明記されたこの10問の現行入力証拠には流用しない。"
+    },
+    "local_toolchain": {
+      "lake": "unavailable",
+      "lean": "unavailable"
+    }
+  },
+  "decision": {
+    "promoted_problem_ids": [],
+    "verification_pending_problem_ids": [
+      "train:00514",
+      "train:00515",
+      "train:00516",
+      "train:00517",
+      "train:00518",
+      "train:00519",
+      "train:00520",
+      "train:00521",
+      "train:00522",
+      "train:00523"
+    ],
+    "accepted_as_fixed_lean_evidence": false,
+    "reason_ja": "現行model・recipe・testの静的整合性は再確認できたが、固定Lean 4.33.1 / 固定mathlibによる現行入力のkernel成功成果物が存在しない。CI緑や古い別入力証拠を代用せず、solution_readyは518のまま維持する。",
+    "next_action_ja": "22時の証拠回収枠で、PR #5のexact-head workflow起動経路を修復または既存workflowを正しいHEADで再実行し、成果物をscripts/import_evidence.pyで現在SHAへ照合して取り込む。"
+  }
+}

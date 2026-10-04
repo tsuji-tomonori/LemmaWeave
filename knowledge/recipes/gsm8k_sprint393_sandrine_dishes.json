@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_sandrine_dishes",
+  "title_ja": "Sandrineが洗った皿数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04086",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "The number of dishes Sandrine washed was 10 more than the number of bananas Charles cooked. Also, the number of bananas Charles cooked was 3 times the number of pears he picked. If Charles picked 50 pears, how many dishes did Sandrine wash?",
+  "answer_ja": "Charlesが調理したバナナは、拾った梨50個の3倍で150個。Sandrineが洗った皿はそれより10枚多いので160枚である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P3.sandrine_dishes",
+  "graph": "work/gsm8k-sprint393-sandrine-dishes-graph.json",
+  "model_notes_ja": [
+    "10 more thanはバナナ数に10を加える。"
+  ],
+  "steps": [
+    {
+      "id": "sandrine_dishes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P3.sandrine_dishes",
+      "title_ja": "Sandrineが洗った皿数",
+      "claim_ja": "Charlesが調理したバナナは、拾った梨50個の3倍で150個。Sandrineが洗った皿はそれより10枚多いので160枚である。",
+      "method_ja": "10 more thanはバナナ数に10を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10 more thanはバナナ数に10を加える。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Charlesが調理したバナナは、拾った梨50個の3倍で150個。Sandrineが洗った皿はそれより10枚多いので160枚である。 答えは160枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4087,
+    "checked_model_hash": "c3079a3890a77c75aa2b2b02549be37b5bf8164dcc2c63f3108fb0d79d784c1a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

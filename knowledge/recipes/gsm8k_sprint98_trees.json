@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint98_trees",
+  "title_ja": "木材から作る机の利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01749",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "30本の木から得る板、作れる机、売上、労賃控除後の利益を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.trees_solution",
+  "graph": "work/gsm8k-sprint98-trees-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "trees_planks",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.trees_planks",
+      "title_ja": "板は750枚。",
+      "claim_ja": "板は750枚。",
+      "method_ja": "30×25。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各木から25枚、木は30本。",
+      "conclusion_ja": "30×25=750。",
+      "baseline_ja": "30×25=750。"
+    },
+    {
+      "id": "trees_tables",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.trees_tables",
+      "title_ja": "机は50台。",
+      "claim_ja": "机は50台。",
+      "method_ja": "750÷15。",
+      "requires_steps": [
+        "trees_planks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "机1台に15枚、余りなく使える。",
+      "conclusion_ja": "50×15=750。",
+      "baseline_ja": "50×15=750。"
+    },
+    {
+      "id": "trees_revenue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.trees_revenue",
+      "title_ja": "売上は15,000ドル。",
+      "claim_ja": "売上は15,000ドル。",
+      "method_ja": "50×300。",
+      "requires_steps": [
+        "trees_tables"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "机1台300ドルで全50台を販売する。",
+      "conclusion_ja": "50×300=15000。",
+      "baseline_ja": "50×300=15000。"
+    },
+    {
+      "id": "trees_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.trees_solution",
+      "title_ja": "利益は12,000ドル。",
+      "claim_ja": "利益は12,000ドル。",
+      "method_ja": "売上15,000から労賃3,000を引く。",
+      "requires_steps": [
+        "trees_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "問題で示された費用は全労賃3,000ドル。",
+      "conclusion_ja": "12000+3000=15000。",
+      "baseline_ja": "12000+3000=15000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1750,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

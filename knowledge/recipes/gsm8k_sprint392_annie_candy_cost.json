@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_annie_candy_cost",
+  "title_ja": "Annieのキャンディ代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04104",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Annie goes to school. Today is her birthday, so Annie decided to buy some sweets for her colleagues. Every classmate got 2 candies. In the end, Annie got left with 12 candies. If there are 35 people in Annie's class in total, how much did Annie spend on candies, if one candy costs $0.1?",
+  "answer_ja": "35人にAnnie本人を含むと同級生は34人。配ったのは34×2=68個で、12個残ったから購入数は80個。1個10セントなので800セント、すなわち8ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.annie_candy_cost",
+  "graph": "work/gsm8k-sprint392-annie-candy-cost-graph.json",
+  "model_notes_ja": [
+    "クラス35人にAnnie本人を含むという原文の通常解釈を明示した。"
+  ],
+  "steps": [
+    {
+      "id": "annie_candy_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P3.annie_candy_cost",
+      "title_ja": "Annieのキャンディ代",
+      "claim_ja": "35人にAnnie本人を含むと同級生は34人。配ったのは34×2=68個で、12個残ったから購入数は80個。1個10セントなので800セント、すなわち8ドルである。",
+      "method_ja": "クラス35人にAnnie本人を含むという原文の通常解釈を明示した。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "クラス35人にAnnie本人を含むという原文の通常解釈を明示した。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "35人にAnnie本人を含むと同級生は34人。配ったのは34×2=68個で、12個残ったから購入数は80個。1個10セントなので800セント、すなわち8ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4105,
+    "checked_model_hash": "3fe47e3810c27e222620f5e581e0a1ee48da0796c5f0b5e3c94c86ff9405b7bc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

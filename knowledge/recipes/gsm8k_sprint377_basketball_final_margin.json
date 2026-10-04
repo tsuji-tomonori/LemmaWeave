@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint377_basketball_final_margin",
+  "title_ja": "試合終了時の敗差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04007",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A18P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Liz's basketball team is down by 20 points in the final quarter of their game.  Liz goes on a shooting spree, sinking 5 free throw shots, 3 three-pointers, and 4 other jump shots.  The other team only scores 10 points that quarter, and none of Liz's teammates manage to score any points.  How much does Liz's team lose by at the end of the game?",
+  "answer_ja": "Lizはフリースロー5点、3点シュート9点、その他のジャンプシュート8点で計22点。相手のリードは20+10=30点に増えるため、30−22=8点差で敗れる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A18P2.basketball_final_margin",
+  "graph": "work/gsm8k-sprint377-basketball-final-margin-graph.json",
+  "model_notes_ja": [
+    "フリースローは1点、three-pointerは3点、other jump shotは2点で、味方の他選手は得点しない。"
+  ],
+  "steps": [
+    {
+      "id": "basketball_final_margin",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A18P2.basketball_final_margin",
+      "title_ja": "試合終了時の敗差",
+      "claim_ja": "Lizはフリースロー5点、3点シュート9点、その他のジャンプシュート8点で計22点。相手のリードは20+10=30点に増えるため、30−22=8点差で敗れる。",
+      "method_ja": "シュート種別ごとの得点を合計し、相手の当初リードと追加得点から差し引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "フリースローは1点、three-pointerは3点、other jump shotは2点で、味方の他選手は得点しない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "Lizはフリースロー5点、3点シュート9点、その他のジャンプシュート8点で計22点。相手のリードは20+10=30点に増えるため、30−22=8点差で敗れる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4008,
+    "checked_model_hash": "2592e3e809200dabe58fc3cd86884cd5e5c868771c90ba03d6a5f281550dd6e9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

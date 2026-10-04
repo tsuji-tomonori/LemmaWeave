@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint340_votes_needed",
+  "title_ja": "目標までに必要な追加票",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03822",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A01P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Alec is running for Class President. He thinks that if he can get three-quarters of the class to vote for him then there is no chance anyone else can beat him. Half of the class have already said they will vote for him but out of the remaining students, only 5 have said they are thinking about voting for him. He surveys the students who are thinking about voting for someone else, and changes his flyers to reflect the issues these students are concerned about. This results in a fifth of these students saying they'll vote for him. If Alec's class has 60 students and everyone who said they will vote for him does so, how many more votes does Alec need to reach his goal number of votes?",
+  "answer_ja": "目標は60人の4分の3で45票。確定票は半数30票と検討中5票。残る25人の5分の1である5人も支持へ変わるので40票となり、45−40=5票不足する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A01P1.votes_needed",
+  "graph": "work/gsm8k-sprint340-votes-needed-graph.json",
+  "model_notes_ja": [
+    "60人全員が投票し、既に支持する30人、支持を検討する5人、他候補を検討する25人は重複しない。"
+  ],
+  "steps": [
+    {
+      "id": "votes_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A01P1.votes_needed",
+      "title_ja": "目標までに必要な追加票",
+      "claim_ja": "目標は60人の4分の3で45票。確定票は半数30票と検討中5票。残る25人の5分の1である5人も支持へ変わるので40票となり、45−40=5票不足する。",
+      "method_ja": "目標票、現在票、説得で増える票を順に計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "60は2と4で、25は5で割り切れる。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "5票。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3823,
+    "checked_model_hash": "ded4be989680689e29c8e33679f9e963bd03177aa1fe334dfd8f265ae986910e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

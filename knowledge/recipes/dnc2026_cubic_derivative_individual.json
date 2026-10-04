@@ -1,0 +1,104 @@
+{
+  "id": "dnc2026_cubic_derivative_individual",
+  "title_ja": "3次関数を項別に微分する",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "kを実数とし、f(x)=(1/3)x^3-2x^2+3x+kの導関数を求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学II・数学B・数学C",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017550.pdf&n=2026_ol_18_sugaku2BC.pdf",
+    "answer_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honsiken_seikai.html",
+    "pdf_page_1_based": [13],
+    "printed_page_label": ["14"],
+    "subquestion": "第3問(1) 解答欄ア",
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554",
+    "normalized_question_sha256": "07ffdd03b5a2a07ca8c028090664cf5ae261f1483c238569996c84f13df810a2",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01.json",
+    "visual_review_status": "official_pdf_refetched_and_page_checked_2026-09-24",
+    "rights_note_ja": "原文画像は転載せず、出題位置、独自の要約、数学的定義と証明のみを保存する。"
+  },
+  "variables": [
+    {"name": "k", "type": "ℝ", "domain_ja": "任意の実数パラメータ"},
+    {"name": "x", "type": "ℝ", "domain_ja": "任意の実数"}
+  ],
+  "assumptions_ja": ["f(x)=(1/3)x^3-2x^2+3x+kである。"],
+  "required_conclusions_ja": ["すべての実数k,xについてf′(x)=x^2-4x+3を示す。"],
+  "root": "LemmaWeave.Tests.DNC2026CubicDerivativeIndividual.individual_solution",
+  "graph": "work/dnc2026-cubic-derivative-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026CubicDerivativeIndividual.lean",
+  "model_file": "LemmaWeave/Problems/DNC2026M2BC/CubicDerivativeModel.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "source_backed_model_author_review_only",
+  "counting_note_ja": "日本入試専用台帳へ新規登録した1小問であり、GSM8K固定8,792問へ加えない。固定Lean未実行のため正式収集済みに数えない。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "differentiate_cubic",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicDerivativeIndividual.cubic_term_derivative",
+      "title_ja": "3次項を微分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "(1/3)x^3を微分する。",
+      "method_ja": "定数倍の微分法とべき乗則(d/dx)x^n=nx^(n-1)を使う。",
+      "condition_ja": "実数上の多項式なので全実数で微分可能である。",
+      "premise_ja": "3次項は(1/3)x^3である。",
+      "conclusion_ja": "導関数はx^2である。",
+      "baseline_ja": "べき乗則と定数倍の微分法。"
+    },
+    {
+      "id": "differentiate_quadratic",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicDerivativeIndividual.quadratic_term_derivative",
+      "title_ja": "2次項を微分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "2x^2を微分する。",
+      "method_ja": "定数倍の微分法とべき乗則を使う。",
+      "condition_ja": "実数上の多項式なので全実数で微分可能である。",
+      "premise_ja": "元の項は-2x^2なので、まず2x^2の導関数を得て後で差を取る。",
+      "conclusion_ja": "2x^2の導関数は4xである。",
+      "baseline_ja": "べき乗則と定数倍の微分法。"
+    },
+    {
+      "id": "differentiate_linear_constant",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicDerivativeIndividual.linear_and_constant_derivative",
+      "title_ja": "1次項と定数項を微分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "3x+kを微分する。",
+      "method_ja": "一次関数の微分と定数関数の微分を使う。",
+      "condition_ja": "kはxに依存しない実定数である。",
+      "premise_ja": "kは実数パラメータとして固定される。",
+      "conclusion_ja": "導関数は3である。",
+      "baseline_ja": "d(3x)/dx=3、d(k)/dx=0。"
+    },
+    {
+      "id": "combine",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicDerivativeIndividual.combine_derivatives",
+      "title_ja": "各項の導関数を合わせる",
+      "requires_steps": ["differentiate_cubic", "differentiate_quadratic", "differentiate_linear_constant"],
+      "uses_nodes": [],
+      "claim_ja": "和・差の微分法で三つの結果を結合する。",
+      "method_ja": "導関数の線形性と多項式の整理を使う。",
+      "condition_ja": "各項がxで微分可能である。",
+      "premise_ja": "x^2、4x、3がそれぞれ対応する項の導関数である。",
+      "conclusion_ja": "f′(x)=x^2-4x+3であり、kには依存しない。",
+      "baseline_ja": "和・差の微分法と同類項の整理。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-24T09:15:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-01",
+    "checks_ja": [
+      "公式PDF第13ページ（冊子14頁）のkの定義域、3次関数の四項、導関数の解答欄アを再読した。",
+      "公式正解表で第3問アが選択肢2であることを照合した。",
+      "kをxに依存しない実定数として保持し、結論を仮定へ移していない。",
+      "四つの説明行を四つの名前付きLean定理へ対応させ、最終定理が各行を呼び出す構成にした。",
+      "自己照合のみであり、固定Lean実行、依存抽出、公理監査、独立レビューは未完と表示した。"
+    ]
+  }
+}

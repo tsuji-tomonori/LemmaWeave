@@ -1,0 +1,96 @@
+{
+  "id": "gsm8k_sprint127_zinc",
+  "title_ja": "制酸剤に含まれる亜鉛量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02188",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2gで亜鉛5%の錠剤2個と、1gで亜鉛15%の錠剤3個を飲む。亜鉛は何mgか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.zinc_solution",
+  "graph": "work/gsm8k-sprint127-zinc-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "zinc_big_mass",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.zinc_big_mass",
+      "title_ja": "大きい錠剤の総質量は4000mg",
+      "claim_ja": "大きい錠剤の総質量は4000mg",
+      "method_ja": "2個×2gを1000倍してmgへ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "大きい錠剤の総質量は4000mg",
+      "baseline_ja": "大きい錠剤の総質量は4000mg"
+    },
+    {
+      "id": "zinc_small_mass",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.zinc_small_mass",
+      "title_ja": "小さい錠剤の総質量は3000mg",
+      "claim_ja": "小さい錠剤の総質量は3000mg",
+      "method_ja": "3個×1gを1000倍してmgへ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "小さい錠剤の総質量は3000mg",
+      "baseline_ja": "小さい錠剤の総質量は3000mg"
+    },
+    {
+      "id": "zinc_big_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.zinc_big_amount",
+      "title_ja": "大きい錠剤の亜鉛は200mg",
+      "claim_ja": "大きい錠剤の亜鉛は200mg",
+      "method_ja": "4000mgの5%を求める。",
+      "requires_steps": [
+        "zinc_big_mass"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "大きい錠剤の亜鉛は200mg",
+      "baseline_ja": "大きい錠剤の亜鉛は200mg"
+    },
+    {
+      "id": "zinc_small_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.zinc_small_amount",
+      "title_ja": "小さい錠剤の亜鉛は450mg",
+      "claim_ja": "小さい錠剤の亜鉛は450mg",
+      "method_ja": "3000mgの15%を求める。",
+      "requires_steps": [
+        "zinc_small_mass"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "小さい錠剤の亜鉛は450mg",
+      "baseline_ja": "小さい錠剤の亜鉛は450mg"
+    },
+    {
+      "id": "zinc_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.zinc_solution",
+      "title_ja": "亜鉛は合計650mg",
+      "claim_ja": "亜鉛は合計650mg",
+      "method_ja": "200mgと450mgを足す。",
+      "requires_steps": [
+        "zinc_big_amount",
+        "zinc_small_amount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "亜鉛は合計650mg",
+      "baseline_ja": "亜鉛は合計650mg"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2189,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

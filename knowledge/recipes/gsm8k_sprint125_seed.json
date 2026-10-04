@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint125_seed",
+  "title_ja": "Ryanの種飛ばし距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02156",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Billyの距離からMadisonの20%増を求め、その50%短いRyanの距離を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.seed_solution",
+  "graph": "work/gsm8k-sprint125-seed-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "seed_madison",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.seed_madison",
+      "title_ja": "Madisonは36インチ。",
+      "claim_ja": "Madisonは36インチ。",
+      "method_ja": "30インチの20%増、すなわち30×1.2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Madisonは36インチ。",
+      "baseline_ja": "Madisonは36インチ。"
+    },
+    {
+      "id": "seed_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.seed_solution",
+      "title_ja": "Ryanは18インチ。",
+      "claim_ja": "Ryanは18インチ。",
+      "method_ja": "36インチの50%短いので半分。",
+      "requires_steps": [
+        "seed_madison"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "Ryanは18インチ。",
+      "baseline_ja": "Ryanは18インチ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2157,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

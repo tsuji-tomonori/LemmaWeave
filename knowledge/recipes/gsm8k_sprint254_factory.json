@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint254_factory",
+  "title_ja": "生産する車のドア数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03315",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "200台から50台減らし、さらに50%減らした車のドア数を求める。",
+  "answer_ja": "375枚",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A08P1.factory_doors",
+  "graph": "work/gsm8k-sprint254-factory-graph.json",
+  "model_notes_ja": [
+    "50%削減は不足後150台を基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "factory_after_shortage",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P1.factory_after_shortage",
+      "title_ja": "金属不足後は150台。",
+      "claim_ja": "金属不足後は150台。",
+      "method_ja": "200-50。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "最初の計画から50台減らす。",
+      "conclusion_ja": "150台。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "factory_after_pandemic",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P1.factory_after_pandemic",
+      "title_ja": "さらに50%減で75台。",
+      "claim_ja": "さらに50%減で75台。",
+      "method_ja": "150×50%。",
+      "requires_steps": [
+        "factory_after_shortage"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2回目の削減率の基準は150台。",
+      "conclusion_ja": "75台。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "factory_doors",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P1.factory_doors",
+      "title_ja": "75台分は375枚のドア。",
+      "claim_ja": "75台分は375枚のドア。",
+      "method_ja": "75×5。",
+      "requires_steps": [
+        "factory_after_pandemic"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各車は5枚のドアを持つ。",
+      "conclusion_ja": "375枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3316,
+    "checked_model_hash": "2b11b934616ff73276ca7b92c0ccf299d9971333d203ac671c9a7b7b3fe08618",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

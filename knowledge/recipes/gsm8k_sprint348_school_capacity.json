@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint348_school_capacity",
+  "title_ja": "4校の合計収容人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03861",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A05P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "In a town, there are four primary schools. Two of them can teach 400 students at a time, and the other two 340 students at a time. How many students at a time in total, can these four primary schools teach?",
+  "answer_ja": "400人を教えられる学校が2校なので800人、340人を教えられる学校が2校なので680人。合計は800+680=1480人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A05P3.school_capacity",
+  "graph": "work/gsm8k-sprint348-school-capacity-graph.json",
+  "model_notes_ja": [
+    "『at a time』を各校の同時収容定員として合計する。"
+  ],
+  "steps": [
+    {
+      "id": "school_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A05P3.school_capacity",
+      "title_ja": "4校の合計収容人数",
+      "claim_ja": "400人を教えられる学校が2校なので800人、340人を教えられる学校が2校なので680人。合計は800+680=1480人。",
+      "method_ja": "2種類の学校について校数と定員を掛け、それらを足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各校の定員は同時に満たせ、4校の生徒は重複して数えない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1480人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3862,
+    "checked_model_hash": "9bd9ddc7a1df892d243284b990085d0730615f8aa7bb560e29760d75ad63edf1",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint329_removed_washing_machines",
+  "title_ja": "取り除いた洗濯機数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03768",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A18P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "In a shipping container, there are 10 crates. Each crate is filled with 6 boxes and each box is filled with 4 washing machines. A worker removes 1 washing machine from each box. There are no other changes. How many washing machines were removed from the shipping container?",
+  "answer_ja": "箱は10×6=60箱で、各箱から1台ずつ取り除くため60台。初期240台から残り180台を引いても60台と一致する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A18P2.removed_washing_machines",
+  "graph": "work/gsm8k-sprint329-removed-washing-machines-graph.json",
+  "model_notes_ja": [
+    "全10クレートに6箱ずつあり、作業者は例外なく各箱から1台取り除く。"
+  ],
+  "steps": [
+    {
+      "id": "removed_washing_machines",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A18P2.removed_washing_machines",
+      "title_ja": "取り除いた洗濯機数",
+      "claim_ja": "箱は10×6=60箱で、各箱から1台ずつ取り除くため60台。初期240台から残り180台を引いても60台と一致する。",
+      "method_ja": "箱の総数へ1台/箱を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各箱には元々4台あり1台を取り除ける。",
+      "baseline_ja": "整数・分数・割合・一次方程式・面積・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "60台。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3769,
+    "checked_model_hash": "2224fabff2d857803971c96cb779e90b3a87a1e0276a201c196e8f8bc664a7e4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint145_demerits",
+  "title_ja": "解雇前に残る減点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02462",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "遅刻6回は各2点、不適切な冗談は15点。月50点まで許容される。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.demerits_solution",
+  "graph": "work/gsm8k-sprint145-demerits-graph.json",
+  "model_notes_ja": [
+    "50点に達するまでを許容残量として23点とする。解雇が50点到達時に発生する制度なら、解雇されずに追加できる整数点は22点となるため閾値規則が必要。"
+  ],
+  "steps": [
+    {
+      "id": "demerits_late",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.demerits_late",
+      "title_ja": "遅刻分は12点",
+      "claim_ja": "遅刻分は12点",
+      "method_ja": "6に2を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "遅刻分は12点",
+      "baseline_ja": "遅刻分は12点"
+    },
+    {
+      "id": "demerits_current",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.demerits_current",
+      "title_ja": "現在27点",
+      "claim_ja": "現在27点",
+      "method_ja": "12に15を足す",
+      "requires_steps": [
+        "demerits_late"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "現在27点",
+      "baseline_ja": "現在27点"
+    },
+    {
+      "id": "demerits_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.demerits_solution",
+      "title_ja": "残り23点",
+      "claim_ja": "残り23点",
+      "method_ja": "50から27を引く",
+      "requires_steps": [
+        "demerits_current"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "残り23点",
+      "baseline_ja": "残り23点"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2463,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

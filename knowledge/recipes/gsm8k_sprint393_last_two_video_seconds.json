@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_last_two_video_seconds",
+  "title_ja": "最後の2本の動画の長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04107",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kimiko watches four YouTube videos. The first video is 2 minutes long, the second video is 4 minutes and 30 seconds, and the last two videos are equal in length. If she spends a total of 510 seconds watching YouTube, how many seconds long was each of the last two videos?",
+  "answer_ja": "最初の動画は2×60=120秒、2本目は4×60+30=270秒。残り2本の合計は510-120-270=120秒で、同じ長さなので1本は120÷2=60秒である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P1.last_two_video_seconds",
+  "graph": "work/gsm8k-sprint393-last-two-video-seconds-graph.json",
+  "model_notes_ja": [
+    "全時間を秒に統一し、等しい2本へ残時間を二等分する。"
+  ],
+  "steps": [
+    {
+      "id": "last_two_video_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P1.last_two_video_seconds",
+      "title_ja": "最後の2本の動画の長さ",
+      "claim_ja": "最初の動画は2×60=120秒、2本目は4×60+30=270秒。残り2本の合計は510-120-270=120秒で、同じ長さなので1本は120÷2=60秒である。",
+      "method_ja": "分を秒へ換算して既知2本を引き、残りを2で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "最後の2本は等しい長さで、合計視聴時間は510秒。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "最初の動画は2×60=120秒、2本目は4×60+30=270秒。残り2本の合計は510-120-270=120秒で、同じ長さなので1本は120÷2=60秒である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4108,
+    "checked_model_hash": "ee7a31a4d7cc9649279d2000b17fb97892809970835aed0806ad399470404ea3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

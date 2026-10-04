@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint42_climbing",
+  "title_ja": "登った高さの差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00917",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "毎分6フィートと12フィートで7分登った高さの差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A10.climbing_solution",
+  "graph": "work/gsm8k-sprint42-climbing-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "climbing_matt",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.climbing_matt",
+      "title_ja": "Mattの高さ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎分6フィートで7分。",
+      "conclusion_ja": "42フィート。",
+      "baseline_ja": "6×7=42。"
+    },
+    {
+      "id": "climbing_jason",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.climbing_jason",
+      "title_ja": "Jasonの高さ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "毎分12フィートで7分。",
+      "conclusion_ja": "84フィート。",
+      "baseline_ja": "12×7=84。"
+    },
+    {
+      "id": "climbing_difference",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A10.climbing_difference",
+      "title_ja": "高さの差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jason84からMatt42を引く。",
+      "conclusion_ja": "42フィート高い。",
+      "baseline_ja": "84=42+42。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 918,
+    "checked_model_hash": "99537224468d741c14fe17721e9d78f3b542f2946fd1e4df9a251fde49f95551",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

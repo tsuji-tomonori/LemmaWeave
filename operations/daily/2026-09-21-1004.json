@@ -1,0 +1,138 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-1000-gsm8k-61",
+  "planned_slot_local_hour": 10,
+  "planned_at": "2026-09-21T10:00:00+09:00",
+  "role": "gsm8k_individual_solution",
+  "base_sha": "fe334c45582b1776781ba68d24773078c2b29a73",
+  "started_at": "2026-09-21T10:04:18+09:00",
+  "finished_at": "2026-09-21T10:20:00+09:00",
+  "schedule_offset_seconds": 258,
+  "missed_slots_detected": [],
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01194",
+    "external-gsm8k-main-3101c7d50724:train:01195",
+    "external-gsm8k-main-3101c7d50724:train:01196",
+    "external-gsm8k-main-3101c7d50724:train:01197",
+    "external-gsm8k-main-3101c7d50724:train:01198",
+    "external-gsm8k-main-3101c7d50724:train:01199",
+    "external-gsm8k-main-3101c7d50724:train:01200",
+    "external-gsm8k-main-3101c7d50724:train:01201",
+    "external-gsm8k-main-3101c7d50724:train:01202",
+    "external-gsm8k-main-3101c7d50724:train:01203",
+    "external-gsm8k-main-3101c7d50724:train:01204",
+    "external-gsm8k-main-3101c7d50724:train:01205",
+    "external-gsm8k-main-3101c7d50724:train:01206",
+    "external-gsm8k-main-3101c7d50724:train:01207",
+    "external-gsm8k-main-3101c7d50724:train:01208"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:01194",
+    "external-gsm8k-main-3101c7d50724:train:01195",
+    "external-gsm8k-main-3101c7d50724:train:01196",
+    "external-gsm8k-main-3101c7d50724:train:01197",
+    "external-gsm8k-main-3101c7d50724:train:01198",
+    "external-gsm8k-main-3101c7d50724:train:01199",
+    "external-gsm8k-main-3101c7d50724:train:01200",
+    "external-gsm8k-main-3101c7d50724:train:01201",
+    "external-gsm8k-main-3101c7d50724:train:01202",
+    "external-gsm8k-main-3101c7d50724:train:01203",
+    "external-gsm8k-main-3101c7d50724:train:01204",
+    "external-gsm8k-main-3101c7d50724:train:01205",
+    "external-gsm8k-main-3101c7d50724:train:01206",
+    "external-gsm8k-main-3101c7d50724:train:01207",
+    "external-gsm8k-main-3101c7d50724:train:01208"
+  ],
+  "verification_pending_cumulative": {
+    "count": 695,
+    "first_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "last_problem_id": "external-gsm8k-main-3101c7d50724:train:01208"
+  },
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01194-01208",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。",
+      "next_action_ja": "現HEADの完全replayを完走し、入力SHA・許容公理・58説明行の実依存を照合して成功成果物だけを取り込む。"
+    }
+  ],
+  "checkpoints": [
+    {
+      "problem_ids": "train:01194-01198",
+      "commit": "045f580a0be0b3d584df05a87e9a0738492140bf"
+    },
+    {
+      "problem_ids": "train:01199-01203",
+      "commit": "5cfd076e3f5738818cd19ca932204d60b748a1f7"
+    },
+    {
+      "problem_ids": "train:01204-01208 and registration",
+      "commit": "b65cea0ba864b09dee7cdeb9f38adf31ec2e1178"
+    }
+  ],
+  "self_review": {
+    "status": "self_review_only",
+    "source_records_checked": 15,
+    "source_questions_checked": 15,
+    "written_solution_lines": 58,
+    "recipe_declaration_mappings_checked": 58,
+    "sorry_admit_custom_axiom_matches": 0,
+    "python_regression_tests_passed": 52,
+    "model_hash": "40bd64e408aa47483f8dc1fbb0993aa576eb6db3f468df4d1fdcf15ca831f01b",
+    "semantic_blockers": [
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01196",
+        "reason_ja": "four times olderは4倍と、4倍分年上（5倍）の両方に読める。合計170年と168年を形式化し、非一意性を示した。"
+      },
+      {
+        "problem_id": "external-gsm8k-main-3101c7d50724:train:01204",
+        "reason_ja": "8 more solar systems for every planetは各惑星につき9太陽系と、全体で惑星より8多いの両方に読める。合計200個と48個を形式化し、非一意性を示した。"
+      }
+    ]
+  },
+  "measurements": {
+    "elapsed_seconds": 942,
+    "artifact_bytes": 59944,
+    "selected": 15,
+    "written": 15,
+    "formal_completion_rate": 0,
+    "local_execution_success_rate": 1,
+    "ci_seconds": null
+  },
+  "local_checks": {
+    "ledger_validate": "passed_before_ledger",
+    "python_unittest": "52 passed",
+    "source_and_recipe_hash_check": "15 records, 15 raw questions, 15 normalized questions, and 58 declarations checked",
+    "solve_queue_write": "passed on exact PR head checkout",
+    "queue_partition": "solution_ready 518, awaiting_verification 695, pending 7579; total 8792",
+    "fixed_lean": "not_available_locally",
+    "method_recipe_render": "blocked_until_fixed_ci_graphs",
+    "method_recipe_render_detail": "新規および直前の依存グラフが未生成のためdnc2026_geometry_area_individual.json.gz読込でFileNotFoundError。検査規則は緩和していない。",
+    "next_action_ja": "GitHub上の現HEADを固定CIでcheckoutし、新規Lean対象と全依存グラフを生成して再照合する。"
+  },
+  "ci": {
+    "previous_head_sha": "fe334c45582b1776781ba68d24773078c2b29a73",
+    "previous_run_id": null,
+    "previous_status": "not_triggered",
+    "accepted_as_success_evidence": false,
+    "solution_commit_sha": "b65cea0ba864b09dee7cdeb9f38adf31ec2e1178",
+    "current_run_id": null,
+    "current_run_url": null,
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": "b65cea0ba864b09dee7cdeb9f38adf31ec2e1178",
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 680
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 695
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01209",
+  "note_ja": "15問を原題から個別に読解し、記述式解答・Leanモデル・58個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:01196とtrain:01204は原文の曖昧性を保持し、それぞれ二つの解釈と非一意性を形式化した。"
+}

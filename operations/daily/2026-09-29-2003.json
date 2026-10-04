@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-29",
+  "run_id": "20260929T200000+0900-solve-20",
+  "scheduled_slot": "2026-09-29T20:00:00+09:00",
+  "slot_role": "solve_15_individually",
+  "base_sha": "27f5d118a9844423e1ab8e4ce82c1797115aa890",
+  "started_at": "2026-09-29T11:03:03Z",
+  "finished_at": "2026-09-29T11:18:25Z",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03146", "external-gsm8k-main-3101c7d50724:train:03147", "external-gsm8k-main-3101c7d50724:train:03148", "external-gsm8k-main-3101c7d50724:train:03149", "external-gsm8k-main-3101c7d50724:train:03150",
+    "external-gsm8k-main-3101c7d50724:train:03151", "external-gsm8k-main-3101c7d50724:train:03152", "external-gsm8k-main-3101c7d50724:train:03153", "external-gsm8k-main-3101c7d50724:train:03154", "external-gsm8k-main-3101c7d50724:train:03155",
+    "external-gsm8k-main-3101c7d50724:train:03156", "external-gsm8k-main-3101c7d50724:train:03157", "external-gsm8k-main-3101c7d50724:train:03158", "external-gsm8k-main-3101c7d50724:train:03159", "external-gsm8k-main-3101c7d50724:train:03160"
+  ],
+  "authored_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03146", "external-gsm8k-main-3101c7d50724:train:03147", "external-gsm8k-main-3101c7d50724:train:03148", "external-gsm8k-main-3101c7d50724:train:03149", "external-gsm8k-main-3101c7d50724:train:03150",
+    "external-gsm8k-main-3101c7d50724:train:03151", "external-gsm8k-main-3101c7d50724:train:03152", "external-gsm8k-main-3101c7d50724:train:03153", "external-gsm8k-main-3101c7d50724:train:03154", "external-gsm8k-main-3101c7d50724:train:03155",
+    "external-gsm8k-main-3101c7d50724:train:03156", "external-gsm8k-main-3101c7d50724:train:03157", "external-gsm8k-main-3101c7d50724:train:03158", "external-gsm8k-main-3101c7d50724:train:03159", "external-gsm8k-main-3101c7d50724:train:03160"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03146", "external-gsm8k-main-3101c7d50724:train:03147", "external-gsm8k-main-3101c7d50724:train:03148", "external-gsm8k-main-3101c7d50724:train:03149", "external-gsm8k-main-3101c7d50724:train:03150",
+    "external-gsm8k-main-3101c7d50724:train:03151", "external-gsm8k-main-3101c7d50724:train:03152", "external-gsm8k-main-3101c7d50724:train:03153", "external-gsm8k-main-3101c7d50724:train:03154", "external-gsm8k-main-3101c7d50724:train:03155",
+    "external-gsm8k-main-3101c7d50724:train:03156", "external-gsm8k-main-3101c7d50724:train:03157", "external-gsm8k-main-3101c7d50724:train:03158", "external-gsm8k-main-3101c7d50724:train:03159", "external-gsm8k-main-3101c7d50724:train:03160"
+  ],
+  "deferred": [],
+  "answer_summary": {
+    "train:03146": "22周", "train:03147": "266グラム", "train:03148": "$180", "train:03149": "10メートル", "train:03150": "20試合",
+    "train:03151": "$320", "train:03152": "26枚", "train:03153": "60%", "train:03154": "58缶", "train:03155": "110本",
+    "train:03156": "1人18粒", "train:03157": "80GB", "train:03158": "4週間", "train:03159": "12ティースプーン", "train:03160": "60タブ"
+  },
+  "source_verification": {
+    "repository": "openai/grade-school-math", "commit": "3101c7d5072418e28b9008a6636bde82a006892c", "path": "grade_school_math/data/train.jsonl", "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1", "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465", "matched_records": 15, "matched_questions": 15, "matched_normalized_questions": 15
+  },
+  "checkpoints": [
+    {"range":"train:03146-train:03150","commit":"7e9bf5bca190503bab70add31cbbc0a468fb782a"},
+    {"range":"train:03151-train:03155","commit":"7f768e9ae42e82d37a3890d91a6f98d4d4dbb7bf"},
+    {"range":"train:03156-train:03160","commit":"3cf2e9bc157e8f391d00b7495fa52b654ce7c2f4"}
+  ],
+  "verification": {
+    "named_lean_theorems": 50,
+    "source_and_recipe_mapping": "passed_15_of_15",
+    "model_hashes": "passed_3_of_3",
+    "forbidden_tokens": "none_in_new_model_and_audit_files",
+    "lean_kernel": "not_run_local_lake_unavailable",
+    "axiom_output": "not_available",
+    "dependency_graphs": "not_available",
+    "recipe_render": "failed_missing_legacy_archive_reports/dependencies/methods/dnc2026_cubic_derivative_individual.json.gz",
+    "semantic_review_status": "self_review_only"
+  },
+  "id_reconciliation": {"total":8792,"unique":8792,"duplicates":0,"missing":0,"unexpected":0,"status_counts":{"solution_ready":518,"awaiting_verification":2644,"pending":5630},"selected_awaiting_verification":15},
+  "ci": {"current_head_sha":"3cf2e9bc157e8f391d00b7495fa52b654ce7c2f4","current_workflow_runs":[],"current_commit_statuses":[],"current_status_at_record":"not_started"},
+  "pr": {"number":5,"url":"https://github.com/tsuji-tomonori/LemmaWeave/pull/5","state":"open","draft":false,"merged":false,"mergeable_at_record":true,"reviews":0,"unresolved_review_threads":0},
+  "commit": null,
+  "main_reflected_solution_ready": 518,
+  "assurance": "INCONCLUSIVE",
+  "status_note_ja": "15問を原題から個別に解答し、記述解答・Leanモデル・説明行対応・自己照合を5問ごとの3チェックポイントへ保存した。固定入力・モデルハッシュ・レシピ対応は合格したが、固定Lean 4.33.1のカーネル、公理、依存、現行HEADのCI成功証拠がないため全15問を検証待ちとし、solution_ready昇格・PRマージは行わない。"
+}

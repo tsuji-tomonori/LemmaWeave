@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint356_swimming_laps",
+  "title_ja": "5週間の水泳周回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03905",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A10P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jasmine swims 12 laps every afternoon, Monday through Friday. How many laps does she swim in five weeks?",
+  "answer_ja": "週5日なので、1週間は12×5=60周。5週間では60×5=300周。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A10P2.swimming_laps",
+  "graph": "work/gsm8k-sprint356-swimming-laps-graph.json",
+  "model_notes_ja": [
+    "月曜から金曜までを週5日として、週当たりと5週間分を順に求める。"
+  ],
+  "steps": [
+    {
+      "id": "swimming_laps",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A10P2.swimming_laps",
+      "title_ja": "5週間の水泳周回数",
+      "claim_ja": "週5日なので、1週間は12×5=60周。5週間では60×5=300周。",
+      "method_ja": "1日当たりから週当たり、週当たりから5週間へ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜から金曜まで毎日12周泳ぐ。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "300周。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3906,
+    "checked_model_hash": "881b9e0b07d2ba59de3dc6d686c22211371d9b33f7907075e3f748a7f544b572",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

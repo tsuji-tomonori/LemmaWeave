@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint43_pharmacy",
+  "title_ja": "薬局で対応した顧客数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00925",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "AnnとBeckyが各8時間、Juliaが6時間、毎時7人に対応した総顧客数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A11.pharmacy_solution",
+  "graph": "work/gsm8k-sprint43-pharmacy-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pharmacy_person_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.pharmacy_person_hours",
+      "title_ja": "延べ勤務時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "AnnとBeckyは各8時間、Juliaは6時間。",
+      "conclusion_ja": "延べ22時間。",
+      "baseline_ja": "2×8+6=22。"
+    },
+    {
+      "id": "pharmacy_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A11.pharmacy_total",
+      "title_ja": "顧客総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1人1時間当たり7人に対応する。",
+      "conclusion_ja": "合計154人。",
+      "baseline_ja": "7×22=154。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 926,
+    "checked_model_hash": "881a98f47252976fe9a699be8850a410dba97738f0a04e0f969fcced6462a82f",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

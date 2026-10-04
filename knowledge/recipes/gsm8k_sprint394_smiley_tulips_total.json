@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint394_smiley_tulips_total",
+  "title_ja": "スマイリー花壇のチューリップ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04133",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Anna wants to plant red and yellow tulips in the shape of a smiley face. She needs 8 red tulips for each eye and 18 red tulips for the smile. If she needs 9 times the number of tulips in the smile to make the yellow background of the face, how many tulips does she need total?",
+  "answer_ja": "目は2つなので赤16本、笑顔は赤18本。背景は笑顔の9倍で18×9=162本。合計は16+18+162=196本である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P3.smiley_tulips_total",
+  "graph": "work/gsm8k-sprint394-smiley-tulips-total-graph.json",
+  "model_notes_ja": [
+    "部位ごとの本数が重複しないものとして合計する。"
+  ],
+  "steps": [
+    {
+      "id": "smiley_tulips_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P3.smiley_tulips_total",
+      "title_ja": "スマイリー花壇のチューリップ総数",
+      "claim_ja": "目は2つなので赤16本、笑顔は赤18本。背景は笑顔の9倍で18×9=162本。合計は16+18+162=196本である。",
+      "method_ja": "両目、笑顔、背景の本数を求めて合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "スマイリーには目が2つあり、背景の倍率は笑顔18本に対して適用する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "目は2つなので赤16本、笑顔は赤18本。背景は笑顔の9倍で18×9=162本。合計は16+18+162=196本である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4134,
+    "checked_model_hash": "627ce023408d9b79cd0f5ee382af3e71ea0aa5a43e399e7a43e4372be28fab80",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

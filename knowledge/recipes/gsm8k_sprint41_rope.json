@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint41_rope",
+  "title_ja": "結んだロープの長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00898",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "6本のロープを結ぶ5個の結び目による損失を引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A09.rope_solution",
+  "graph": "work/gsm8k-sprint41-rope-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A09.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "小数1.2ftは十分の一ft単位で整数化した。"
+  ],
+  "steps": [
+    {
+      "id": "rope_piece_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.rope_piece_count",
+      "title_ja": "本数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "8ft、20ft、2ftが3本、7ft。",
+      "conclusion_ja": "6本。",
+      "baseline_ja": "1+1+3+1=6。"
+    },
+    {
+      "id": "rope_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.rope_total",
+      "title_ja": "結ぶ前の長さ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全6本を合計する。",
+      "conclusion_ja": "41ft。",
+      "baseline_ja": "8+20+3×2+7=41。"
+    },
+    {
+      "id": "rope_knots",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.rope_knots",
+      "title_ja": "結び目数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6本を一直線に結ぶ。",
+      "conclusion_ja": "5個。",
+      "baseline_ja": "本数-1=5。"
+    },
+    {
+      "id": "rope_loss",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.rope_loss",
+      "title_ja": "損失",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1個につき1.2ft。十分の一ftで計算する。",
+      "conclusion_ja": "6ft。",
+      "baseline_ja": "5×12=60十分の一ft。"
+    },
+    {
+      "id": "rope_final",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.rope_final",
+      "title_ja": "完成長",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "41ftから6ftを引く。",
+      "conclusion_ja": "35ft。",
+      "baseline_ja": "350+60=410十分の一ft。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 899,
+    "checked_model_hash": "89dd3a16cd8df99f34c31f37d1627e251cf211069adff173f7367caa5578cd5c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

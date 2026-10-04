@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint139_buffet",
+  "title_ja": "家族全員のビュッフェ代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02372",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "大人30ドル、子ども15ドル、シニア10%引き。大人2人、シニア2人、子ども3人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.buffet_solution",
+  "graph": "work/gsm8k-sprint139-buffet-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "buffet_adults",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.buffet_adults",
+      "title_ja": "大人2人は60ドル",
+      "claim_ja": "大人2人は60ドル",
+      "method_ja": "2に30を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "大人2人は60ドル",
+      "baseline_ja": "大人2人は60ドル"
+    },
+    {
+      "id": "buffet_children",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.buffet_children",
+      "title_ja": "子ども3人は45ドル",
+      "claim_ja": "子ども3人は45ドル",
+      "method_ja": "3に15を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "子ども3人は45ドル",
+      "baseline_ja": "子ども3人は45ドル"
+    },
+    {
+      "id": "buffet_senior_one",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.buffet_senior_one",
+      "title_ja": "シニア1人は27ドル",
+      "claim_ja": "シニア1人は27ドル",
+      "method_ja": "30ドルの90%",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "シニア1人は27ドル",
+      "baseline_ja": "シニア1人は27ドル"
+    },
+    {
+      "id": "buffet_seniors",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.buffet_seniors",
+      "title_ja": "シニア2人は54ドル",
+      "claim_ja": "シニア2人は54ドル",
+      "method_ja": "27に2を掛ける",
+      "requires_steps": [
+        "buffet_senior_one"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "シニア2人は54ドル",
+      "baseline_ja": "シニア2人は54ドル"
+    },
+    {
+      "id": "buffet_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.buffet_solution",
+      "title_ja": "合計159ドル",
+      "claim_ja": "合計159ドル",
+      "method_ja": "60、45、54を足す",
+      "requires_steps": [
+        "buffet_adults",
+        "buffet_children",
+        "buffet_seniors"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計159ドル",
+      "baseline_ja": "合計159ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2373,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

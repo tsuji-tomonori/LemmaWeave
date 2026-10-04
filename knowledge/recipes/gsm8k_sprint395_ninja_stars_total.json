@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint395_ninja_stars_total",
+  "title_ja": "3人の手裏剣の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04139",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Eric has 4 ninja throwing stars. His friend Chad has twice as many. Then Jeff bought 2 ninja stars from Chad. Jeff now has 6 throwing stars. How many ninja throwing stars do they have altogether?",
+  "answer_ja": "Ericは4個、Chadはその2倍で最初8個。ChadがJeffへ2個売った後、Chadは6個になり、Jeffは6個持っている。したがって現在の合計は4+6+6=16個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.ninja_stars_total",
+  "graph": "work/gsm8k-sprint395-ninja-stars-total-graph.json",
+  "model_notes_ja": [
+    "2個の売買はChadからJeffへの移動であり、現在の各人の数を重複なく数える。"
+  ],
+  "steps": [
+    {
+      "id": "ninja_stars_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.ninja_stars_total",
+      "title_ja": "3人の手裏剣の合計",
+      "claim_ja": "Ericは4個、Chadはその2倍で最初8個。ChadがJeffへ2個売った後、Chadは6個になり、Jeffは6個持っている。したがって現在の合計は4+6+6=16個。",
+      "method_ja": "Chadの初期数を求め、譲渡後の各人の現在数を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jeffの6個は購入後の現在数であり、Ericの所持数は変化しない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Ericは4個、Chadはその2倍で最初8個。ChadがJeffへ2個売った後、Chadは6個になり、Jeffは6個持っている。したがって現在の合計は4+6+6=16個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4140,
+    "checked_model_hash": "e9e9f249f5ee58afeb313bde90c133dbf91e5df4cc98214b335a361da47b22bd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

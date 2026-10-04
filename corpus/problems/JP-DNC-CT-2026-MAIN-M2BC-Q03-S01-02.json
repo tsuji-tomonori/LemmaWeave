@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1",
+  "is_template": false,
+  "problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-02",
+  "revision": 1,
+  "origin": "exam",
+  "canonical_problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-02",
+  "parent_id": "DNC-CT-2026-MAIN-M2BC-Q03-S01",
+  "occurrences": [],
+  "paper_id": "DNC-CT-2026-MAIN-M2BC",
+  "title_ja": "3次関数の極大値・極小値",
+  "domain_candidate": "calculus",
+  "collection_status": "candidate",
+  "source_locator": {
+    "provider": "大学入試センター",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017550.pdf&n=2026_ol_18_sugaku2BC.pdf",
+    "answer_landing_url": "https://www.dnc.ac.jp/kyotsu/kako_shiken_jouhou/r8/r8_honsiken_seikai.html",
+    "answer_document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2137&f=abm00006056.pdf&n=R8_%E3%80%90%E6%95%B0%E5%AD%A6%E2%85%A1%EF%BC%8C%E6%95%B0%E5%AD%A6B%EF%BC%8C%E6%95%B0%E5%AD%A6C%E3%80%91%E7%99%BA%E8%A1%A8%E7%94%A8%E6%AD%A3%E8%A7%A3.pdf",
+    "pdf_page_1_based": [13],
+    "printed_page_label": ["14"],
+    "major_question": "3",
+    "subquestion": "(1) イ・ウ・エ・オ",
+    "answer_slots": ["イ", "ウ", "エ", "オ"],
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554",
+    "normalized_statement_sha256": "9441fbf8ad10ca94aee2ed336c11533e7ac7b76872cdf7e27510ee9f1b8cb4ce"
+  },
+  "source_page_visual_review": {
+    "confirmed": true,
+    "reviewer": "author",
+    "method": "2026-10-04に大学入試センター公式PDFのPDF第13ページ（冊子14頁）を直接表示し、kの定義域、3次関数、極大・極小の四解答欄を目視確認。公式正解PDFでイ=1、ウ=9、エ=3、オ=5を照合した。",
+    "pages_requested": [13],
+    "reviewed_at": "2026-10-04T09:08:00+09:00",
+    "independence": "self_review_only"
+  },
+  "mathematical_spec": {
+    "statement_ja": "kを実数とし、f(x)=(1/3)x^3-2x^2+3x+kとする。f(x)が極大値をとるxと極大値、および極小値をとるxと極小値を求める。",
+    "variables": [
+      {"name": "k", "type": "ℝ", "domain": "arbitrary real parameter"},
+      {"name": "x", "type": "ℝ", "domain": "arbitrary real input"}
+    ],
+    "assumptions": ["f(x)=(1/3)x^3-2x^2+3x+k"],
+    "goals": [
+      {"id": "stationary_points", "description_ja": "f'(x)=0の全解がx=1,3である"},
+      {"id": "local_maximum", "description_ja": "x=1で極大値k+4/3をとる"},
+      {"id": "local_minimum", "description_ja": "x=3で極小値kをとる"},
+      {"id": "lean_goal", "lean_goal": "LemmaWeave.Problems.DNC2026M2BC.CubicExtrema.LocalExtremaGoal"}
+    ],
+    "answer_kind": "two_exact_points_and_values",
+    "allowed_approximation": "none"
+  },
+  "lean": {
+    "model_files": ["LemmaWeave/Problems/DNC2026M2BC/CubicExtremaModel.lean"],
+    "goal_declarations": ["LemmaWeave.Problems.DNC2026M2BC.CubicExtrema.LocalExtremaGoal"],
+    "proof_files": ["tests/lean/DNC2026CubicExtremaIndividual.lean"]
+  },
+  "status": {
+    "transcription": "checked",
+    "semantic": "self_review_only",
+    "proof": "not_run",
+    "axiom_audit": "not_run",
+    "dependency": "not_run",
+    "inventory": "partial",
+    "educational_expansion": "complete_for_subproblem",
+    "release": "restricted"
+  },
+  "blockers": [
+    {"kind": "rights_uncertain", "detail": "公式公開資料だが再配布条件を未確定。原文画像は保存しない。", "next_action": "権利確認を独立ゲートで行う。"},
+    {"kind": "kernel_evidence_pending", "detail": "固定Lean 4.33.1のexact-head成功証拠が未回収。", "next_action": "個別テスト、#print axioms、依存抽出を固定環境で実行する。"}
+  ]
+}

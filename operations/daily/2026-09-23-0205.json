@@ -1,0 +1,171 @@
+{
+  "date": "2026-09-23",
+  "run_id": "lemmaweave-sprint-20260923-0200-gsm8k-93",
+  "scheduled_slot": {
+    "role": "gsm8k_individual_solution",
+    "hour_jst": 2,
+    "planned_at": "2026-09-23T02:00:00+09:00",
+    "started_at": "2026-09-23T02:05:00+09:00",
+    "slot_shift_ja": "予定枠の5分後に起動したため2時枠として直列実行した。1時枠は実行記録がないため未実行として明記し、重複補填は行っていない。",
+    "unexecuted_slots_jst": [
+      1
+    ]
+  },
+  "base_sha": "dc3b583fb68b272d0ce0b06a2c52be66c7eac657",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "started_at": "2026-09-23T02:05:00+09:00",
+  "finished_at": "2026-09-23T02:17:06+09:00",
+  "selected_problem_ids": [
+    "train:01674",
+    "train:01675",
+    "train:01676",
+    "train:01677",
+    "train:01678",
+    "train:01679",
+    "train:01680",
+    "train:01681",
+    "train:01682",
+    "train:01683",
+    "train:01684",
+    "train:01685",
+    "train:01686",
+    "train:01687",
+    "train:01688"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01674",
+    "train:01675",
+    "train:01676",
+    "train:01677",
+    "train:01678",
+    "train:01679",
+    "train:01680",
+    "train:01681",
+    "train:01682",
+    "train:01683",
+    "train:01684",
+    "train:01685",
+    "train:01686",
+    "train:01687",
+    "train:01688"
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:01674-train:01688",
+      "retry_on": "exact-head fixed Lean 4.33.1 success and current evidence import",
+      "reason_ja": "記述式解答・Lean形式化・自己照合は保存したが、現在HEADの固定Lean kernel成功証拠がないためsolution_readyへ昇格しない。",
+      "next_action_ja": "対象別replayでSprint0923A02を検証し、許容公理・入力SHA・依存グラフを照合して問題単位の成功証拠を取り込む。"
+    }
+  ],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "lines_1based": [
+      1675,
+      1689
+    ],
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0147.json",
+    "record_hash_method": "SHA-256 of exact UTF-8 JSONL record bytes, excluding line terminator"
+  },
+  "semantic_review": {
+    "status": "self_review_only",
+    "reviewer": "author",
+    "notes_ja": [
+      "train:01674は50 times more expensiveを金単価50倍と51倍の二解釈に分け、総額3030ドルと3090ドルを形式化した。",
+      "train:01686はmonthの週数が未指定で一意でないため、4週なら200時間、5週なら250時間となる別モデルを形式化した。",
+      "価格の小数はセント単位、0.5を含む量は半単位で正確に保持した。"
+    ]
+  },
+  "checks": {
+    "source_record_hashes": "15/15",
+    "raw_question_hashes": "15/15",
+    "normalized_question_hashes": "15/15",
+    "recipe_to_lean_declarations": "46/46",
+    "queue_total_and_unique_ids": "8792/8792",
+    "forbidden_tokens": 0,
+    "fixed_lean_kernel": "not_run"
+  },
+  "checkpoints": [
+    {
+      "problem_ids": [
+        "train:01674",
+        "train:01675",
+        "train:01676",
+        "train:01677",
+        "train:01678"
+      ],
+      "commit": "29a7f94a81694aaee783c96ecf5d31f9b1857e8d"
+    },
+    {
+      "problem_ids": [
+        "train:01679",
+        "train:01680",
+        "train:01681",
+        "train:01682",
+        "train:01683"
+      ],
+      "commit": "5804fa9590fe382ef5e0d88f6e9bc375a88cbc76"
+    },
+    {
+      "problem_ids": [
+        "train:01684",
+        "train:01685",
+        "train:01686",
+        "train:01687",
+        "train:01688"
+      ],
+      "commit": "b6b19a3a394e3a9bfaef85aa1af6fb1baf6e4b3e"
+    }
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1175,
+    "pending": 7099,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {
+      "solution_ready": 518,
+      "remaining": 8274,
+      "awaiting_verification": 1160
+    },
+    "after": {
+      "solution_ready": 518,
+      "remaining": 8274,
+      "awaiting_verification": 1175
+    },
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01689",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": [
+      "train:01674",
+      "train:01688"
+    ],
+    "base_sha": "dc3b583fb68b272d0ce0b06a2c52be66c7eac657",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "not_started_at_ledger_write",
+    "local_fixed_lean_status": "unavailable_lake_not_installed",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "b6b19a3a394e3a9bfaef85aa1af6fb1baf6e4b3e"
+  }
+}
+

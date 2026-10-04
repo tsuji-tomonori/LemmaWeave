@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint104_seed",
+  "title_ja": "余った芝種の被覆面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01850",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "長方形の芝生面積と4袋の被覆面積の差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.seed_solution",
+  "graph": "work/gsm8k-sprint104-seed-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "seed_lawn",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.seed_lawn",
+      "title_ja": "芝生は792平方フィート。",
+      "claim_ja": "芝生は792平方フィート。",
+      "method_ja": "22×36。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "長方形。",
+      "conclusion_ja": "792。",
+      "baseline_ja": "792。"
+    },
+    {
+      "id": "seed_capacity",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.seed_capacity",
+      "title_ja": "4袋は1000平方フィートを覆う。",
+      "claim_ja": "4袋は1000平方フィートを覆う。",
+      "method_ja": "4×250。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1袋250平方フィート。",
+      "conclusion_ja": "1000。",
+      "baseline_ja": "1000。"
+    },
+    {
+      "id": "seed_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.seed_solution",
+      "title_ja": "余りは208平方フィートを覆える。",
+      "claim_ja": "余りは208平方フィートを覆える。",
+      "method_ja": "1000−792。",
+      "requires_steps": [
+        "seed_lawn",
+        "seed_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全面を再播種した残り。",
+      "conclusion_ja": "208。",
+      "baseline_ja": "208。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1851,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

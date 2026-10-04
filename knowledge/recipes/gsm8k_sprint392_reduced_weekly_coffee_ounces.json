@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_reduced_weekly_coffee_ounces",
+  "title_ja": "減量後の週間コーヒー量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04098",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Colston knows that his teacher loves drinking coffee and one day wants to see how much she drinks each week. He sees that she has a 20-ounce thermos and when she makes her coffee she pours a 1/2 cup of milk in, and then fills the coffee to the top. She does this twice a day. After the five-day school week, he decides to tell her, and when she hears how much coffee she drinks, she decides to drink 1/4 of what she normally drinks. How many ounces of coffee does she now drink a week?",
+  "answer_ja": "米国慣用単位で1/2カップを4液量オンスとすると、20オンス容器のコーヒーは1回16オンス。1日2回、週5日で160オンス、その4分の1は40オンスである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P2.reduced_weekly_coffee_ounces",
+  "graph": "work/gsm8k-sprint392-reduced-weekly-coffee-ounces-graph.json",
+  "model_notes_ja": [
+    "1/2 US cup = 4 US fluid ouncesという単位換算を明示条件にした。"
+  ],
+  "steps": [
+    {
+      "id": "reduced_weekly_coffee_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P2.reduced_weekly_coffee_ounces",
+      "title_ja": "減量後の週間コーヒー量",
+      "claim_ja": "米国慣用単位で1/2カップを4液量オンスとすると、20オンス容器のコーヒーは1回16オンス。1日2回、週5日で160オンス、その4分の1は40オンスである。",
+      "method_ja": "1/2 US cup = 4 US fluid ouncesという単位換算を明示条件にした。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1/2 US cup = 4 US fluid ouncesという単位換算を明示条件にした。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "米国慣用単位で1/2カップを4液量オンスとすると、20オンス容器のコーヒーは1回16オンス。1日2回、週5日で160オンス、その4分の1は40オンスである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4099,
+    "checked_model_hash": "902d8e1800a5f49b192446abb23e5fe5b0250b68325994efac70a36029dae8a9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

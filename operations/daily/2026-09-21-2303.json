@@ -1,0 +1,228 @@
+{
+  "date": "2026-09-21",
+  "run_id": "lemmaweave-sprint-20260921-2300-daily-reconciliation",
+  "planned_slot_local_hour": 23,
+  "planned_at": "2026-09-21T23:00:00+09:00",
+  "role": "full_id_reconciliation_and_daily_report",
+  "base_sha": "71a13975e20bb63a936b8d7122dd3f747d8ca212",
+  "started_at": "2026-09-21T23:03:51+09:00",
+  "finished_at": "2026-09-21T23:09:50+09:00",
+  "schedule_offset_seconds": 231,
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "verification_pending": [],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "retry_on": "2026-09-22",
+      "reason_ja": "最古の証拠取込待ち。現HEADの固定Lean完全replayはSprint0921A20の非線形計算連鎖で失敗し、成功成果物がない。",
+      "next_action_ja": "Sprint0921A20の51定理を各hフィールドと先行する名前付き定理を明示した個別calc証明へ書き換え、完全replay成功後にtrain:00514-00523の現在入力ハッシュを照合してimport_evidence.pyで取り込む。"
+    }
+  ],
+  "claim": {
+    "status": "report_only_serial_write",
+    "acquired_at": "2026-09-21T23:03:51+09:00",
+    "expires_at": "2026-09-21T23:30:00+09:00",
+    "released_at": "2026-09-21T23:09:50+09:00"
+  },
+  "daily_execution": {
+    "gsm8k_target": 300,
+    "gsm8k_solve_slots_planned": 20,
+    "gsm8k_solve_slots_executed": 20,
+    "gsm8k_solve_slots_unexecuted": [],
+    "gsm8k_new_problems_authored": 300,
+    "gsm8k_formally_completed": 0,
+    "gsm8k_target_gap": 0,
+    "execution_success_rate_solve_slots": 1,
+    "authoring_target_attainment": 1,
+    "formal_completion_rate": 0,
+    "authored_first_problem_id": "external-gsm8k-main-3101c7d50724:train:01059",
+    "authored_last_problem_id": "external-gsm8k-main-3101c7d50724:train:01358",
+    "support_slots": {
+      "9": "executed_high_school",
+      "21": "executed_retry_overdue_and_ci_repair",
+      "22": "not_executed_as_independent_slot; CI work overlapped from the 21-hour retry but is not double-counted",
+      "23": "executed_daily_reconciliation"
+    },
+    "missed_support_slots": [
+      22
+    ]
+  },
+  "fixed_collection_reconciliation": {
+    "collection_id": "external-gsm8k-main-3101c7d50724",
+    "pinned_source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "manifest_total": 8792,
+    "split_counts": {
+      "train": 7473,
+      "test": 1319
+    },
+    "queue_blob_sha": "0ce7c98c3db8aec1bd9f0fe9ec76f2e06e36dfb1",
+    "queue_rows": 8792,
+    "queue_unique_problem_ids": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 845,
+    "pending_unstarted": 7429,
+    "working": 0,
+    "held": 0,
+    "state_sum": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "extra_ids": 0,
+    "state_overlap_ids": 0,
+    "main_reflected_solution_ready": 518,
+    "main_queue_blob_sha": "54cda1694442a57d6117f2393a2904f9b46b219e",
+    "remaining_including_verification_pending": 8274,
+    "oldest_overdue_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "oldest_overdue_original_date": "2026-09-18",
+    "next_unwritten_problem_id": "external-gsm8k-main-3101c7d50724:train:01359",
+    "status": "passed"
+  },
+  "high_school_track": {
+    "denominator_separate_from_gsm8k": true,
+    "registered": 13,
+    "candidate_not_started": 8,
+    "authored_this_week": 3,
+    "formally_completed_this_week": 0,
+    "six_fields_this_week": {
+      "集合・論理・整数": 1,
+      "関数・方程式・不等式": 1,
+      "図形・ベクトル・三角比": 1,
+      "場合の数・確率・統計": 0,
+      "数列": 0,
+      "微分・積分": 0
+    },
+    "next_field": "場合の数・確率・統計",
+    "unconfirmed_scope_ja": "旧51掲載経路・36大学と現行13 IDの完全対応、2024〜2026共通テストおよび東京・京都・名古屋大学の全小問、高校6分野の対象全集合は未列挙。"
+  },
+  "capacity_calibration": {
+    "new_configuration_period": "2026-09-19..2026-09-21",
+    "authored_by_day": {
+      "2026-09-19": 250,
+      "2026-09-20": 285,
+      "2026-09-21": 300
+    },
+    "formally_completed_by_day": {
+      "2026-09-19": 0,
+      "2026-09-20": 0,
+      "2026-09-21": 0
+    },
+    "solve_slots_executed_by_day": {
+      "2026-09-19": 18,
+      "2026-09-20": 19,
+      "2026-09-21": 20
+    },
+    "solve_slots_planned_total": 60,
+    "solve_slots_executed_total": 57,
+    "solve_slot_execution_rate_three_days": 0.95,
+    "new_configuration_average_authored_per_day": 278.3333333333333,
+    "new_configuration_average_formally_completed_per_day": 0,
+    "rolling_seven_calendar_days": "2026-09-15..2026-09-21",
+    "rolling_seven_authored_or_completed_by_day": {
+      "2026-09-15": 50,
+      "2026-09-16": 0,
+      "2026-09-17": 50,
+      "2026-09-18": 20,
+      "2026-09-19": 250,
+      "2026-09-20": 285,
+      "2026-09-21": 300
+    },
+    "rolling_seven_formally_completed_by_day": {
+      "2026-09-15": 50,
+      "2026-09-16": 0,
+      "2026-09-17": 50,
+      "2026-09-18": 20,
+      "2026-09-19": 0,
+      "2026-09-20": 0,
+      "2026-09-21": 0
+    },
+    "rolling_seven_average_authored_or_completed_per_day": 136.42857142857142,
+    "rolling_seven_average_formally_completed_per_day": 17.142857142857142,
+    "comparison_note_ja": "新構成3日平均278.3問/日は記述・形式化準備量であり、正式完了0問/日と分離する。7暦日平均は未実行日を0として計算し、旧構成を含むため新構成能力と混同しない。"
+  },
+  "measurements": {
+    "authoring_runs_today": 20,
+    "authoring_elapsed_seconds_sum": 21236,
+    "authoring_elapsed_seconds_average_per_run": 1061.8,
+    "authoring_elapsed_seconds_median_per_run": 631,
+    "authoring_elapsed_seconds_per_problem_including_outlier": 70.78666666666666,
+    "repository_artifact_bytes_today": 1937840,
+    "ci_runs_observed_today": 6,
+    "ci_successful_runs_today": 0,
+    "ci_execution_success_rate_today": 0,
+    "ci_elapsed_seconds_sum_today": 3836,
+    "failed_ci_artifact_count_today": 6,
+    "failed_ci_artifact_bytes_today": 1174855212,
+    "duplicate_evidence_note_ja": "失敗成果物は成功証拠へ採用しない。台帳だけの追加で同じ完全replayを再実行しないよう、次回は証明修復と台帳更新を同一コミットへまとめる。"
+  },
+  "forecast": {
+    "target_date": "2026-10-18",
+    "remaining_calendar_days_after_today": 27,
+    "remaining_production_days_if_2026_10_17_and_18_reserved": 25,
+    "remaining": 8274,
+    "required_ready_per_day": 307,
+    "required_ready_per_production_day_with_two_audit_days": 331,
+    "planning_target_per_day": 300,
+    "planning_target_shortfall_per_day": 7,
+    "new_configuration_authored_rate_forecast_date": "2026-10-21",
+    "new_configuration_formal_rate_forecast_date": null,
+    "rolling_seven_formal_rate_forecast_date": "2028-01-17",
+    "status": "target_not_achievable_at_current_formal_throughput",
+    "note_ja": "記述・形式化準備だけなら3日平均で10月21日頃だが、正式完了は新構成3日とも0で有限の実測完了日を出せない。10月18日達成には毎日307件の正式昇格が必要で、計画値300件も7件不足する。"
+  },
+  "exact_head_ci": {
+    "workflow_run_id": 35603864070,
+    "tested_head_sha": "71a13975e20bb63a936b8d7122dd3f747d8ca212",
+    "status": "failure",
+    "duration_seconds": 527,
+    "lean_version": "4.33.1",
+    "failure": "Sprint0921A20の構造体を展開しても、変数積を含む計算連鎖を汎用omegaだけでは証明できない。",
+    "artifact_id": 10640932510,
+    "artifact_size_bytes": 196016116,
+    "accepted_as_success_evidence": false,
+    "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35603864070"
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "head_before_report": "71a13975e20bb63a936b8d7122dd3f747d8ca212",
+    "mergeable": true,
+    "reviews": 0,
+    "unresolved_review_threads": 0,
+    "merged": false,
+    "merge_status": "blocked_exact_head_ci_failure"
+  },
+  "next_day_reallocation": {
+    "gsm8k_primary_range": "train:01359-01658",
+    "baseline_plan": "20 slots x 15 = 300 individually reviewed problems",
+    "required_pace_gap_plan": "必要307件との差7件は、品質を落とさず余力が確認できた7枠のみ各1件追加する。未達なら台帳へ明記し翌日に隠して繰り越さない。",
+    "hour_9": "場合の数・確率・統計の出典付き1小問",
+    "hour_21": "Sprint0921A20の暗黙omega再試行を打ち切り、hフィールドと先行定理を明示した個別calc証明へ変更",
+    "hour_22": "完全replayを1回に集約し、成功時だけtrain:00514-00523から問題単位で証拠取込。失敗成果物の重複保存を抑制",
+    "hour_23": "全8792 ID再照合、正式昇格数と必要ペースを再計算"
+  },
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 845,
+    "pending_unstarted": 7429
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 845,
+    "pending_unstarted": 7429
+  },
+  "commit": {
+    "audited_head_sha": "71a13975e20bb63a936b8d7122dd3f747d8ca212",
+    "report_commit_sha": "self"
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:01359",
+  "execution_control": {
+    "serialized": true,
+    "shared_lock_implementation": false,
+    "claim_status": "released_after_serial_write",
+    "report_commit_ci_policy": "report-only commit should not create another duplicate 196MB failure artifact; merge eligibility remains false until a later exact-head success."
+  },
+  "note_ja": "本日は20解答枠で300問を個別に読解・記述・Lean化して目標作成数へ到達した。一方、成功証拠がないため正式完了は0問である。22時専用枠は独立実行されず、21時のCI修復作業が時間帯をまたいだだけなので二重計上していない。"
+}

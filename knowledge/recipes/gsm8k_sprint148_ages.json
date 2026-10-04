@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint148_ages",
+  "title_ja": "10年後の年齢合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02501",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Annは6歳。Tomの年齢について二通りの倍率表現を分け、10年後の合計を比較する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ages_solution",
+  "graph": "work/gsm8k-sprint148-ages-graph.json",
+  "model_notes_ja": [
+    "“two times older”は、慣用的な『2倍の年齢』ならTomは12歳、字義的な『年齢より2倍分だけ年上』なら18歳となる。追加解釈なしには答えは一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "ages_conventional_tom",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ages_conventional_tom",
+      "title_ja": "慣用解釈ではTomは12歳",
+      "claim_ja": "慣用解釈ではTomは12歳",
+      "method_ja": "6歳の2倍と解釈する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "慣用解釈ではTomは12歳",
+      "baseline_ja": "慣用解釈ではTomは12歳"
+    },
+    {
+      "id": "ages_conventional_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ages_conventional_total",
+      "title_ja": "慣用解釈の10年後合計は38歳",
+      "claim_ja": "慣用解釈の10年後合計は38歳",
+      "method_ja": "Ann16歳とTom22歳を足す",
+      "requires_steps": [
+        "ages_conventional_tom"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "慣用解釈の10年後合計は38歳",
+      "baseline_ja": "慣用解釈の10年後合計は38歳"
+    },
+    {
+      "id": "ages_literal_tom",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ages_literal_tom",
+      "title_ja": "字義的解釈ではTomは18歳",
+      "claim_ja": "字義的解釈ではTomは18歳",
+      "method_ja": "6歳にその2倍の12歳を加える",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "字義的解釈ではTomは18歳",
+      "baseline_ja": "字義的解釈ではTomは18歳"
+    },
+    {
+      "id": "ages_literal_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ages_literal_total",
+      "title_ja": "字義的解釈の10年後合計は44歳",
+      "claim_ja": "字義的解釈の10年後合計は44歳",
+      "method_ja": "Ann16歳とTom28歳を足す",
+      "requires_steps": [
+        "ages_literal_tom"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "字義的解釈の10年後合計は44歳",
+      "baseline_ja": "字義的解釈の10年後合計は44歳"
+    },
+    {
+      "id": "ages_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.ages_solution",
+      "title_ja": "38歳と44歳が異なるため原文だけでは一意に決まらない",
+      "claim_ja": "38歳と44歳が異なるため原文だけでは一意に決まらない",
+      "method_ja": "二つの明示解釈を反例として比較する",
+      "requires_steps": [
+        "ages_conventional_total",
+        "ages_literal_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "38歳と44歳が異なるため原文だけでは一意に決まらない",
+      "baseline_ja": "38歳と44歳が異なるため原文だけでは一意に決まらない"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2502,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

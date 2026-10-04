@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint269_notebooks_left",
+  "title_ja": "Jackに残るノート",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03401",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A14P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Geraldより13冊多く持つJackが5冊と6冊を渡した後の残数を求める。",
+  "answer_ja": "10冊",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.notebooks_left",
+  "graph": "work/gsm8k-sprint269-notebooks-left-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jack_initial_notebooks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.jack_initial_notebooks",
+      "title_ja": "Jackは初め21冊持つ。",
+      "claim_ja": "Jackは初め21冊持つ。",
+      "method_ja": "Geraldの8冊に差13冊を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "JackはGeraldより13冊多い。",
+      "conclusion_ja": "21冊。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "after_paula_notebooks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.after_paula_notebooks",
+      "title_ja": "Paulaへ5冊渡した後は16冊。",
+      "claim_ja": "Paulaへ5冊渡した後は16冊。",
+      "method_ja": "21-5を計算する。",
+      "requires_steps": [
+        "jack_initial_notebooks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "渡した分だけ所持数が減る。",
+      "conclusion_ja": "16冊。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "notebooks_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A14P1.notebooks_left",
+      "title_ja": "Mikeへさらに6冊渡した後は10冊。",
+      "claim_ja": "Mikeへさらに6冊渡した後は10冊。",
+      "method_ja": "16-6を計算する。",
+      "requires_steps": [
+        "after_paula_notebooks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "負数にならない自然数の冊数。",
+      "conclusion_ja": "10冊。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3402,
+    "checked_model_hash": "eb73855587bd0696d3db67c1cfd2be06c7ea346160f2879b73f91cf456490ce6",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

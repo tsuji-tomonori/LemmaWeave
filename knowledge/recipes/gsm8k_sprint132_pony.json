@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint132_pony",
+  "title_ja": "ポニーの年間費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02273",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "牧草地月500ドル、餌1日10ドル、週2回のレッスン各60ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A04.pony_solution",
+  "graph": "work/gsm8k-sprint132-pony-graph.json",
+  "model_notes_ja": [
+    "原題の年換算を365日・52週・12か月として別々に保持する。"
+  ],
+  "steps": [
+    {
+      "id": "pony_food",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.pony_food",
+      "title_ja": "餌は年3650ドル",
+      "claim_ja": "餌は年3650ドル",
+      "method_ja": "10ドルを365日分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "餌は年3650ドル",
+      "baseline_ja": "餌は年3650ドル"
+    },
+    {
+      "id": "pony_lessons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.pony_lessons",
+      "title_ja": "レッスンは年6240ドル",
+      "claim_ja": "レッスンは年6240ドル",
+      "method_ja": "60ドル×週2回×52週",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "レッスンは年6240ドル",
+      "baseline_ja": "レッスンは年6240ドル"
+    },
+    {
+      "id": "pony_pasture",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.pony_pasture",
+      "title_ja": "牧草地は年6000ドル",
+      "claim_ja": "牧草地は年6000ドル",
+      "method_ja": "月500ドルを12か月",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "牧草地は年6000ドル",
+      "baseline_ja": "牧草地は年6000ドル"
+    },
+    {
+      "id": "pony_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A04.pony_solution",
+      "title_ja": "年間合計15890ドル",
+      "claim_ja": "年間合計15890ドル",
+      "method_ja": "3費目を足す",
+      "requires_steps": [
+        "pony_food",
+        "pony_lessons",
+        "pony_pasture"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "年間合計15890ドル",
+      "baseline_ja": "年間合計15890ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2274,
+    "checked_model_hash": "1b9f70468554e9981c06f87268115033a93ac640809512751f109819832445b3",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

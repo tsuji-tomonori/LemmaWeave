@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint97_pies",
+  "title_ja": "1週間のパイ個数差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01738",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "りんごを3日、さくらんぼを2日として週合計を比較する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pies_solution",
+  "graph": "work/gsm8k-sprint97-pies-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pies_apple",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pies_apple",
+      "title_ja": "りんごパイは36個。",
+      "claim_ja": "りんごパイは36個。",
+      "method_ja": "3日×12個/日。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月・水・金の3日。",
+      "conclusion_ja": "3×12=36。",
+      "baseline_ja": "3×12=36。"
+    },
+    {
+      "id": "pies_cherry",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pies_cherry",
+      "title_ja": "さくらんぼパイは24個。",
+      "claim_ja": "さくらんぼパイは24個。",
+      "method_ja": "2日×12個/日。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "火・木の2日。",
+      "conclusion_ja": "2×12=24。",
+      "baseline_ja": "2×12=24。"
+    },
+    {
+      "id": "pies_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.pies_solution",
+      "title_ja": "りんごパイが12個多い。",
+      "claim_ja": "りんごパイが12個多い。",
+      "method_ja": "36−24。",
+      "requires_steps": [
+        "pies_apple",
+        "pies_cherry"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "求めるのはりんごからさくらんぼを引いた差。",
+      "conclusion_ja": "12+24=36。",
+      "baseline_ja": "12+24=36。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1739,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

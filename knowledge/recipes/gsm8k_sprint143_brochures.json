@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint143_brochures",
+  "title_ja": "必要な箱数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02436",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5000部の5分の1である1000部を各箱へ入れる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brochures_solution",
+  "graph": "work/gsm8k-sprint143-brochures-graph.json",
+  "model_notes_ja": [
+    "各箱がちょうど上限1000部まで充填され、5000部を余りなく発送する。"
+  ],
+  "steps": [
+    {
+      "id": "brochures_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brochures_capacity",
+      "title_ja": "1箱は1000部",
+      "claim_ja": "1箱は1000部",
+      "method_ja": "5000を5等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "1箱は1000部",
+      "baseline_ja": "1箱は1000部"
+    },
+    {
+      "id": "brochures_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brochures_solution",
+      "title_ja": "5箱必要",
+      "claim_ja": "5箱必要",
+      "method_ja": "5000を1000部ずつに分ける",
+      "requires_steps": [
+        "brochures_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "5箱必要",
+      "baseline_ja": "5箱必要"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2437,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

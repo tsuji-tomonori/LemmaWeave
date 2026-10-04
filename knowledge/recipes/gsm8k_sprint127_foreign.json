@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint127_foreign",
+  "title_ja": "次学期の外国人学生数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02199",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "学生1800人の30%が外国人で、次学期に外国人200人が加わる。外国人学生は何人か。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.foreign_solution",
+  "graph": "work/gsm8k-sprint127-foreign-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "foreign_initial",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.foreign_initial",
+      "title_ja": "現在の外国人学生は540人",
+      "claim_ja": "現在の外国人学生は540人",
+      "method_ja": "1800人の30%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "現在の外国人学生は540人",
+      "baseline_ja": "現在の外国人学生は540人"
+    },
+    {
+      "id": "foreign_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.foreign_solution",
+      "title_ja": "次学期は740人",
+      "claim_ja": "次学期は740人",
+      "method_ja": "540人に200人を足す。",
+      "requires_steps": [
+        "foreign_initial"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "次学期は740人",
+      "baseline_ja": "次学期は740人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2200,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

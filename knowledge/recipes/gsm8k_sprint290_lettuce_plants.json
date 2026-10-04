@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint290_lettuce_plants",
+  "title_ja": "植えるレタス株数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03560",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "半分を失い、残った1株が3皿分になるとき、少なくとも12皿分を得る株数。",
+  "answer_ja": "8株",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.lettuce_plants_to_grow",
+  "graph": "work/gsm8k-sprint290-lettuce-plants-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lettuce_surviving_plants",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.lettuce_surviving_plants",
+      "title_ja": "必要な生存株は4株。",
+      "claim_ja": "必要な生存株は4株。",
+      "method_ja": "12皿を1株3皿で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "必要な生存株は4株。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "lettuce_plants_to_grow",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P2.lettuce_plants_to_grow",
+      "title_ja": "植える株は8株。",
+      "claim_ja": "植える株は8株。",
+      "method_ja": "半分が残るので必要生存株の2倍を植える。",
+      "requires_steps": [
+        "lettuce_surviving_plants"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "植える株は8株。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3561,
+    "checked_model_hash": "020cdee1ea13411c1334c93df472b3456875a0c40bed236bd20f22fa8aa70863",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

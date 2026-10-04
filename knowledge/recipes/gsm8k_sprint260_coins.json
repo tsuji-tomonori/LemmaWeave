@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint260_coins",
+  "title_ja": "瓶にあった25セント硬貨数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03344",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "支払額と残額から総額を出し、既知硬貨分を引いて25セント硬貨数を求める。",
+  "answer_ja": "26枚",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.coins_quarters",
+  "graph": "work/gsm8k-sprint260-coins-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "coins_spent_and_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.coins_spent_and_total",
+      "title_ja": "支払額は1500セント、元の総額は1548セント。",
+      "claim_ja": "支払額は1500セント、元の総額は1548セント。",
+      "method_ja": "5×300と1500+48。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ドルをセントへ統一する。",
+      "conclusion_ja": "1548セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "coins_nonquarter",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.coins_nonquarter",
+      "title_ja": "25セント硬貨以外は898セント。",
+      "claim_ja": "25セント硬貨以外は898セント。",
+      "method_ja": "123+85×5+35×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "硬貨額をすべてセントで合計する。",
+      "conclusion_ja": "898セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "coins_quarters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.coins_quarters",
+      "title_ja": "25セント硬貨は26枚。",
+      "claim_ja": "25セント硬貨は26枚。",
+      "method_ja": "(1548-898)÷25。",
+      "requires_steps": [
+        "coins_spent_and_total",
+        "coins_nonquarter"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "差額650セントは25セント硬貨だけから成る。",
+      "conclusion_ja": "26枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3345,
+    "checked_model_hash": "7215defe3b292431c0361d8db0ef226c162674f9bc6bfa62bbbb2648ba23765f",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint391_special_goldfish_food_cost",
+  "title_ja": "特別食が必要な金魚の餌代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04076",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "There are 50 goldfish in the pond. Each goldfish eats 1.5 ounces of food per day. 20% of the goldfish need to eat special food that costs $3 an ounce. How much does it cost to feed these fish?",
+  "answer_ja": "50匹の20%は10匹である。1匹あたり1.5オンスなので10匹では15オンス、1オンス3ドルだから15×3=45ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P1.special_goldfish_food_cost",
+  "graph": "work/gsm8k-sprint391-special-goldfish-food-cost-graph.json",
+  "model_notes_ja": [
+    "1.5オンスを3/2オンスとして扱い、対象魚数が整数10匹になることを確認する。"
+  ],
+  "steps": [
+    {
+      "id": "special_goldfish_food_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P1.special_goldfish_food_cost",
+      "title_ja": "特別食が必要な金魚の餌代",
+      "claim_ja": "50匹の20%は10匹である。1匹あたり1.5オンスなので10匹では15オンス、1オンス3ドルだから15×3=45ドルである。",
+      "method_ja": "1.5オンスを3/2オンスとして扱い、対象魚数が整数10匹になることを確認する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1.5オンスを3/2オンスとして扱い、対象魚数が整数10匹になることを確認する。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "50匹の20%は10匹である。1匹あたり1.5オンスなので10匹では15オンス、1オンス3ドルだから15×3=45ドルである。 答えは45ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4077,
+    "checked_model_hash": "20068854e3f9e5c5b0a0da30398592d5dc5b0f6c7ea23bc1536450b4074bdf23",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

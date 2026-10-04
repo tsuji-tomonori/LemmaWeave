@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint161_keychains",
+  "title_ja": "キーホルダー用の糸",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02697",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "授業で6人、放課後クラブでその半数の友人ができ、1人分は12インチ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A20.keychains_solution",
+  "graph": "work/gsm8k-sprint161-keychains-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "keychains_club",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.keychains_club",
+      "title_ja": "クラブの友人は3人",
+      "claim_ja": "クラブの友人は3人",
+      "method_ja": "6人の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "クラブの友人は3人",
+      "baseline_ja": "クラブの友人は3人"
+    },
+    {
+      "id": "keychains_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.keychains_total",
+      "title_ja": "友人は合計9人",
+      "claim_ja": "友人は合計9人",
+      "method_ja": "6人と3人を足す",
+      "requires_steps": [
+        "keychains_club"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "友人は合計9人",
+      "baseline_ja": "友人は合計9人"
+    },
+    {
+      "id": "keychains_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A20.keychains_solution",
+      "title_ja": "糸は108インチ必要",
+      "claim_ja": "糸は108インチ必要",
+      "method_ja": "9人に12インチずつ用意する",
+      "requires_steps": [
+        "keychains_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "糸は108インチ必要",
+      "baseline_ja": "糸は108インチ必要"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2698,
+    "checked_model_hash": "47a92d66753e615bdac10f267e9b76de1ad7810b4a09d9859c11e601529c35c2",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

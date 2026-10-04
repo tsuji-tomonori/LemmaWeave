@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint149_house",
+  "title_ja": "住宅の売却価格と受取総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02517",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "8万ドルで購入した住宅を20%の利益で売り、元値の5%の仲介手数料も受け取る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A04.house_solution",
+  "graph": "work/gsm8k-sprint149-house-graph.json",
+  "model_notes_ja": [
+    "『20%の利益で売った』が決める売却価格は96,000ドルである。別途受け取る元値の5%の手数料4,000ドルを加えた総受取額は100,000ドル。参考解答は総受取額を売却価格と呼んでおり、原文の問いと区別する。"
+  ],
+  "steps": [
+    {
+      "id": "house_profit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.house_profit",
+      "title_ja": "売却益は16,000ドル",
+      "claim_ja": "売却益は16,000ドル",
+      "method_ja": "80,000ドルの20%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "売却益は16,000ドル",
+      "baseline_ja": "売却益は16,000ドル"
+    },
+    {
+      "id": "house_sale_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.house_sale_price",
+      "title_ja": "住宅そのものの売却価格は96,000ドル",
+      "claim_ja": "住宅そのものの売却価格は96,000ドル",
+      "method_ja": "元値に20%の利益を足す",
+      "requires_steps": [
+        "house_profit"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "住宅そのものの売却価格は96,000ドル",
+      "baseline_ja": "住宅そのものの売却価格は96,000ドル"
+    },
+    {
+      "id": "house_commission",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.house_commission",
+      "title_ja": "手数料は4,000ドル",
+      "claim_ja": "手数料は4,000ドル",
+      "method_ja": "元値80,000ドルの5%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "手数料は4,000ドル",
+      "baseline_ja": "手数料は4,000ドル"
+    },
+    {
+      "id": "house_receipts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.house_receipts",
+      "title_ja": "手数料を含む総受取額は100,000ドル",
+      "claim_ja": "手数料を含む総受取額は100,000ドル",
+      "method_ja": "売却価格と手数料を足す",
+      "requires_steps": [
+        "house_sale_price",
+        "house_commission"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "手数料を含む総受取額は100,000ドル",
+      "baseline_ja": "手数料を含む総受取額は100,000ドル"
+    },
+    {
+      "id": "house_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.house_solution",
+      "title_ja": "売却価格96,000ドルと総受取額100,000ドルは異なる",
+      "claim_ja": "売却価格96,000ドルと総受取額100,000ドルは異なる",
+      "method_ja": "問いの対象と参考解答の対象を分離する",
+      "requires_steps": [
+        "house_sale_price",
+        "house_receipts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "売却価格96,000ドルと総受取額100,000ドルは異なる",
+      "baseline_ja": "売却価格96,000ドルと総受取額100,000ドルは異なる"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2518,
+    "checked_model_hash": "bf48471e5f50a20e1256bd8203ba528b20e3455a0bb5dad6c2632708aa2a99f1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

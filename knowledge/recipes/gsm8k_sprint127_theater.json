@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint127_theater",
+  "title_ja": "夕食劇場中止による損失",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02190",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "6人が各50ドルの券と10ドルの食事を買い、半数が30ドルの飲み放題を買う。90%返金なら損失はいくらか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.theater_solution",
+  "graph": "work/gsm8k-sprint127-theater-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "theater_base",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.theater_base",
+      "title_ja": "券と食事は6人で360ドル",
+      "claim_ja": "券と食事は6人で360ドル",
+      "method_ja": "1人60ドルを6倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "券と食事は6人で360ドル",
+      "baseline_ja": "券と食事は6人で360ドル"
+    },
+    {
+      "id": "theater_drinks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.theater_drinks",
+      "title_ja": "飲み放題は90ドル",
+      "claim_ja": "飲み放題は90ドル",
+      "method_ja": "半数3人が各30ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "飲み放題は90ドル",
+      "baseline_ja": "飲み放題は90ドル"
+    },
+    {
+      "id": "theater_gross",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.theater_gross",
+      "title_ja": "支払総額は450ドル",
+      "claim_ja": "支払総額は450ドル",
+      "method_ja": "360ドルと90ドルを足す。",
+      "requires_steps": [
+        "theater_base",
+        "theater_drinks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "支払総額は450ドル",
+      "baseline_ja": "支払総額は450ドル"
+    },
+    {
+      "id": "theater_refund",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.theater_refund",
+      "title_ja": "返金額は405ドル",
+      "claim_ja": "返金額は405ドル",
+      "method_ja": "450ドルの90%。",
+      "requires_steps": [
+        "theater_gross"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "返金額は405ドル",
+      "baseline_ja": "返金額は405ドル"
+    },
+    {
+      "id": "theater_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.theater_solution",
+      "title_ja": "損失は45ドル",
+      "claim_ja": "損失は45ドル",
+      "method_ja": "450ドルから405ドルを引く。",
+      "requires_steps": [
+        "theater_gross",
+        "theater_refund"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "損失は45ドル",
+      "baseline_ja": "損失は45ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2191,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

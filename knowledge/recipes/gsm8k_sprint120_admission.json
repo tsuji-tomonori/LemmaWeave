@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint120_admission",
+  "title_ja": "家族の入園料合計は58ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02094",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A11.admission_solution",
+  "graph": "work/gsm8k-sprint120-admission-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "admission_adults",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.admission_adults",
+      "title_ja": "大人2人の料金は44ドル。",
+      "claim_ja": "大人2人の料金は44ドル。",
+      "method_ja": "22×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "大人2人の料金は44ドル。",
+      "baseline_ja": "大人2人の料金は44ドル。"
+    },
+    {
+      "id": "admission_children",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.admission_children",
+      "title_ja": "子ども2人の料金は14ドル。",
+      "claim_ja": "子ども2人の料金は14ドル。",
+      "method_ja": "7×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "子ども2人の料金は14ドル。",
+      "baseline_ja": "子ども2人の料金は14ドル。"
+    },
+    {
+      "id": "admission_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.admission_solution",
+      "title_ja": "家族の入園料合計は58ドル。",
+      "claim_ja": "家族の入園料合計は58ドル。",
+      "method_ja": "44+14。",
+      "requires_steps": [
+        "admission_adults",
+        "admission_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "家族の入園料合計は58ドル。",
+      "baseline_ja": "家族の入園料合計は58ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2095,
+    "checked_model_hash": "4fbbba05067cfd5efc01e3ad45a6bbdfe8355bb6f13cb453952d1e22052f2cc5",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、解釈条件や参照解の誤記を黙って補わず明示した。"
+    ]
+  }
+}

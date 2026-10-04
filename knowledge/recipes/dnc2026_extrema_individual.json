@@ -1,0 +1,139 @@
+{
+  "id": "dnc2026_extrema_individual",
+  "title_ja": "閉区間上の二次関数の最大値・最小値を求める",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "0≤x≤3における二次関数f(x)=2x^2-8x+5の最大値・最小値と、それぞれをとるxを求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "answer_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honsiken_seikai.html",
+    "pdf_page_1_based": [
+      15
+    ],
+    "printed_page_label": [
+      "44"
+    ],
+    "subquestion": "第3問[2](1) 解答欄タ・チ・ツ・テト",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q03-S02-01.json",
+    "visual_review_status": "confirmed_2026-09-05_and_source_record_rechecked_2026-09-28",
+    "official_answer_checked": "タ=0、チ=5、ツ=2、テト=-3",
+    "rights_note_ja": "原文画像は転載せず、出題位置、独自の要約、数学的定義と証明のみを保存する。"
+  },
+  "variables": [
+    {
+      "name": "x",
+      "type": "ℝ",
+      "domain_ja": "0≤x≤3"
+    }
+  ],
+  "assumptions_ja": [
+    "f(x)=2x^2-8x+5である。",
+    "xは閉区間[0,3]を動く。"
+  ],
+  "required_conclusions_ja": [
+    "区間内のすべてのxで-3≤f(x)≤5を示す。",
+    "最大値5がx=0で、最小値-3がx=2で実際に達成されることを示す。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026ExtremaIndividual.individual_solution",
+  "graph": "work/dnc2026-extrema-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026ExtremaIndividual.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "existing_independently_reviewed_model_and_kernel_checked_shared_root_new_author_explanation",
+  "assurance_level": "MODEL_FORMALIZED",
+  "counting_note_ja": "既存台帳の1小問に個別記述解答を追加した。GSM8K固定8,792問へ加えず、新しい説明行とラッパー定理はexact-head成功証拠が得られるまで検証待ちとする。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "complete_square",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ExtremaIndividual.vertex_form",
+      "title_ja": "平方完成する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "f(x)を頂点形式へ変形する。",
+      "method_ja": "2x^2-8x+5=2(x-2)^2-3と平方完成する。Leanでは環の恒等式としてringで確認する。",
+      "condition_ja": "xは実数。",
+      "premise_ja": "f(x)=2x^2-8x+5。",
+      "conclusion_ja": "f(x)=2(x-2)^2-3。",
+      "baseline_ja": "平方完成、展開。"
+    },
+    {
+      "id": "prove_lower_bound",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ExtremaIndividual.lower_bound",
+      "title_ja": "下界を示す",
+      "requires_steps": [
+        "complete_square"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "区間内でf(x)≥-3である。",
+      "method_ja": "実数の平方は0以上なので2(x-2)^2≥0。頂点形式からf(x)≥-3を得る。",
+      "condition_ja": "xは実数（下界自体には区間条件を使わない）。",
+      "premise_ja": "f(x)=2(x-2)^2-3、(x-2)^2≥0。",
+      "conclusion_ja": "-3≤f(x)。",
+      "baseline_ja": "平方の非負性。"
+    },
+    {
+      "id": "prove_upper_bound",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ExtremaIndividual.upper_bound",
+      "title_ja": "上界を示す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "0≤x≤3ならf(x)≤5である。",
+      "method_ja": "f(x)-5=2x(x-4)。区間条件からx≥0かつ4-x≥1>0なのでx(x-4)≤0となり、f(x)≤5を得る。",
+      "condition_ja": "0≤x≤3。",
+      "premise_ja": "x≥0、4-x≥0。",
+      "conclusion_ja": "f(x)≤5。",
+      "baseline_ja": "積の符号、一次不等式。"
+    },
+    {
+      "id": "attain_maximum",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ExtremaIndividual.maximum_attained",
+      "title_ja": "最大値の達成を確認する",
+      "requires_steps": [
+        "prove_upper_bound"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "x=0は区間内で、f(0)=5である。",
+      "method_ja": "端点0を代入して計算する。上界5と合わせて最大値5を得る。",
+      "condition_ja": "0∈[0,3]。",
+      "premise_ja": "すべての区間内xでf(x)≤5。",
+      "conclusion_ja": "最大値は5、達成点はx=0。",
+      "baseline_ja": "端点代入と最大値の定義。"
+    },
+    {
+      "id": "attain_minimum_and_conclude",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026ExtremaIndividual.individual_solution",
+      "title_ja": "最小値を達成し全要求をまとめる",
+      "requires_steps": [
+        "prove_lower_bound",
+        "prove_upper_bound",
+        "attain_maximum"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "x=2でf(2)=-3となり、上下界と両達成点がすべてそろう。",
+      "method_ja": "2∈[0,3]を確認して頂点へ代入する。補助定理minimum_attainedで最小値の達成を確認し、全区間の上下界、最大値、最小値を一つの結論にまとめる。",
+      "condition_ja": "2∈[0,3]。",
+      "premise_ja": "すべての区間内xで-3≤f(x)≤5、f(0)=5。",
+      "conclusion_ja": "最大値5（x=0）、最小値-3（x=2）。",
+      "baseline_ja": "達成を伴う最大値・最小値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-28T09:12:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M1-Q03-S02-01",
+    "checked_model_hash": "8af41f90043f974febccefd85eac511209802f3ce3ce34a92c066d3459b7310f",
+    "checks_ja": [
+      "固定問題記録、公式PDFの文書SHA256、原ページ15（冊子44頁）、独立意味照合記録を再確認した。",
+      "実数変数、閉区間[0,3]、係数2,-8,5、最大・最小の値と達成するxの全要求を保持した。",
+      "下界は平方の非負性、上界は区間上の積の符号、達成はx=0とx=2への代入で示し、結論を仮定へ移していない。",
+      "五つの説明行を名前付きLean定理へ対応させ、最終定理は上下界と両達成点をすべて呼び出す。",
+      "新しい成果のレビュー表示はself_review_onlyであり、既存の独立レビューを新しいラッパーの独立レビューとして流用しない。"
+    ]
+  }
+}

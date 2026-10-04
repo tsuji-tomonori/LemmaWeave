@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint334_speed_limit",
+  "title_ja": "制限速度",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03795",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A20P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "If Natasha was going 10 mph over the speed limit and it took her an hour to arrive at her destination that was 60 miles away, what was the speed limit?",
+  "answer_ja": "60マイルを1時間で走ったので速度は60mph。これは制限より10mph速いため、制限は60−10=50mph。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A20P1.speed_limit",
+  "graph": "work/gsm8k-sprint334-speed-limit-graph.json",
+  "model_notes_ja": [
+    "全行程を一定の平均速度で1時間走り、going 10 mph overはその速度と制限との差。"
+  ],
+  "steps": [
+    {
+      "id": "speed_limit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A20P1.speed_limit",
+      "title_ja": "制限速度",
+      "claim_ja": "60マイルを1時間で走ったので速度は60mph。これは制限より10mph速いため、制限は60−10=50mph。",
+      "method_ja": "距離÷時間で速度を求めて超過分を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "時間1時間は正。",
+      "baseline_ja": "整数・分数・割合・速さ・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "50mph。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3796,
+    "checked_model_hash": "9845c8edcaf6de26725a4725fb92ddd1030b8d9daf842b8ee58672f8b241fc14",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

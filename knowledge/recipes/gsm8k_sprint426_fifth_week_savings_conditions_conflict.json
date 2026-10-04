@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint426_fifth_week_savings_conditions_conflict",
+  "title_ja": "第5週の貯金額に関する条件の不整合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04181",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Hannah wants to save $80 for five weeks. In the first week, she saved $4 and she plans to save twice as much as her savings as the previous week. How much will she save in the fifth week to reach her goal?",
+  "answer_ja": "第1〜4週の倍増額は4, 8, 16, 32ドルで合計60ドル。合計を80ドルにするだけなら第5週は20ドルだが、第4週の2倍は64ドルで、その場合の合計は124ドルになる。よって「毎週2倍」と「5週合計80ドル」は両立せず、20ドルは第5週だけ倍増規則を外す追加条件付きの答え。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.fifth_week_savings_conditions_conflict",
+  "graph": "work/gsm8k-sprint426-fifth-week-savings-conditions-conflict-graph.json",
+  "model_notes_ja": [
+    "原文の倍増規則を第5週にも適用すると64ドルで、5週合計は124ドルになる。",
+    "参照解答の20ドルは第5週に倍増規則を適用しない追加条件付き。"
+  ],
+  "steps": [
+    {
+      "id": "first_four",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.savings_first_four_total",
+      "title_ja": "第1〜4週の合計",
+      "claim_ja": "4+8+16+32=60ドル。",
+      "method_ja": "倍増列の最初の4項を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "第1週4ドルから第4週まで毎週2倍。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4+8+16+32=60ドル。"
+    },
+    {
+      "id": "exact_goal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.savings_exact_goal_fifth",
+      "title_ja": "目標額との差",
+      "claim_ja": "80-60=20ドル。",
+      "method_ja": "目標額から第4週までの合計を引く。",
+      "requires_steps": [
+        "first_four"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第5週だけ倍増規則を外して合計80ドルに合わせる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "80-60=20ドル。"
+    },
+    {
+      "id": "doubling",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.savings_doubling_fifth",
+      "title_ja": "倍増規則を続けた場合",
+      "claim_ja": "第5週は64ドル、5週合計は124ドル。",
+      "method_ja": "第4週32ドルを2倍し、先の合計に加える。",
+      "requires_steps": [
+        "first_four"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "倍増規則を第5週にも適用する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "第5週は64ドル、5週合計は124ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.fifth_week_savings_conditions_conflict",
+      "title_ja": "二条件の不整合",
+      "claim_ja": "20ドルと64ドルは等しくないため、原文の二条件は同時には満たせない。",
+      "method_ja": "二つの条件付き計算を比較して矛盾を示す。",
+      "requires_steps": [
+        "exact_goal",
+        "doubling"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20ドルは第5週のみ倍増規則を外す条件付き結論。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20ドルと64ドルは等しくないため、原文の二条件は同時には満たせない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4182,
+    "checked_model_hash": "7a7d51b8cc7c4ebc53c5529c25cc2c31f175483460effa650b5fe9f8b7721b95",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

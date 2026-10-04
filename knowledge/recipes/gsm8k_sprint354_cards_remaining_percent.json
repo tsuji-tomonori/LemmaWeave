@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint354_cards_remaining_percent",
+  "title_ja": "残った野球カードの割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03895",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Joseph had 16 baseball cards. He gave 3/8 of the cards to his brother and 2 cards to his brother. What percentage of the cards is left to Joseph?",
+  "answer_ja": "16枚の3/8は16×3÷8=6枚。さらに2枚渡したので合計8枚を渡し、16−8=8枚残る。8/16×100=50%である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A08P3.cards_remaining_percent",
+  "graph": "work/gsm8k-sprint354-cards-remaining-percent-graph.json",
+  "model_notes_ja": [
+    "参照説明の「brother and friend」は原文にないfriendの誤記だが、合計8枚という計算には影響しない。"
+  ],
+  "steps": [
+    {
+      "id": "cards_remaining_percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A08P3.cards_remaining_percent",
+      "title_ja": "残った野球カードの割合",
+      "claim_ja": "16枚の3/8は16×3÷8=6枚。さらに2枚渡したので合計8枚を渡し、16−8=8枚残る。8/16×100=50%である。",
+      "method_ja": "分数分を枚数へ換算し、追加2枚を足して残数と百分率を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2回とも同じ16枚から重複なくカードを渡す。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "50%。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3896,
+    "checked_model_hash": "9d1083ab8d77513b695b12ed12e42b1866c393d6229a4cf06ed99d2551ea7a3c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

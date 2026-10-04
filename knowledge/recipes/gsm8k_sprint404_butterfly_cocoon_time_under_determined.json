@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint404_butterfly_cocoon_time_under_determined",
+  "title_ja": "蝶がさなぎで過ごす期間の条件不足",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04159",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "It takes a butterfly egg 120 days to become a butterfly. If each butterfly spends 3 times as much time as a larva as in a cocoon, how long does each butterfly spend in a cocoon?",
+  "answer_ja": "卵から蝶までの120日には卵期・幼虫期・さなぎ期が含まれるが、卵期が与えられていない。卵期0日なら幼虫90日・さなぎ30日、卵期4日なら幼虫87日・さなぎ29日となるため一意に決まらない。卵期を0日と追加仮定すれば30日。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.butterfly_cocoon_time_under_determined",
+  "graph": "work/gsm8k-sprint404-butterfly-cocoon-time-under-determined-graph.json",
+  "model_notes_ja": [
+    "参照解答は卵期を暗黙に0日としているため、無条件の一意解としては採用しない。",
+    "e=0,c=30とe=4,c=29が反例対になる。"
+  ],
+  "steps": [
+    {
+      "id": "butterfly_cocoon_time_under_determined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.butterfly_cocoon_time_under_determined",
+      "title_ja": "蝶がさなぎで過ごす期間の条件不足",
+      "claim_ja": "卵から蝶までの120日には卵期・幼虫期・さなぎ期が含まれるが、卵期が与えられていない。卵期0日なら幼虫90日・さなぎ30日、卵期4日なら幼虫87日・さなぎ29日となるため一意に決まらない。卵期を0日と追加仮定すれば30日。",
+      "method_ja": "卵期e、さなぎ期c、幼虫期3cとしてe+3c+c=120を立て、異なる整数解を示す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文だけでは卵期eの値が未指定。30日はe=0、すなわち120日を幼虫期とさなぎ期だけに配分する追加条件の下での値。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "卵から蝶までの120日には卵期・幼虫期・さなぎ期が含まれるが、卵期が与えられていない。卵期0日なら幼虫90日・さなぎ30日、卵期4日なら幼虫87日・さなぎ29日となるため一意に決まらない。卵期を0日と追加仮定すれば30日。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4160,
+    "checked_model_hash": "92dabab23308bc83266c91e418f16c052e4f57ad71e370e80166885fde24b7bd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

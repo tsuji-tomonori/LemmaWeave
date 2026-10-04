@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint154_paintball",
+  "title_ja": "月間のペイントボール代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02594",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "月3回、毎回3箱を1箱25ドルで買う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A11.paintball_solution",
+  "graph": "work/gsm8k-sprint154-paintball-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "paintball_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.paintball_each",
+      "title_ja": "1回75ドル",
+      "claim_ja": "1回75ドル",
+      "method_ja": "3箱に25ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1回75ドル",
+      "baseline_ja": "1回75ドル"
+    },
+    {
+      "id": "paintball_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A11.paintball_solution",
+      "title_ja": "月225ドル",
+      "claim_ja": "月225ドル",
+      "method_ja": "1回75ドルに3回を掛ける",
+      "requires_steps": [
+        "paintball_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "月225ドル",
+      "baseline_ja": "月225ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2595,
+    "checked_model_hash": "a5ca474f57a1f13035ba04d8257a868a60afebd3a2cedf3c9e80612a3938436f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

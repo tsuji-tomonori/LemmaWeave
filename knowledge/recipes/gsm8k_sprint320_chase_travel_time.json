@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint320_chase_travel_time",
+  "title_ja": "Chaseの移動時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03723",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Cameron drives at twice the speed of his brother, Chase.  But Danielle drives at three times the speed of Cameron.  If it takes Danielle 30 minutes to travel from Granville to Salisbury, how long, in minutes, will it take Chase to travel from Granville to Salisbury?",
+  "answer_ja": "同じ距離では所要時間は速さに反比例する。DanielleはCameronの3倍速なのでCameronは30×3=90分、CameronはChaseの2倍速なのでChaseは90×2=180分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A15P2.chase_travel_time",
+  "graph": "work/gsm8k-sprint320-chase-travel-time-graph.json",
+  "model_notes_ja": [
+    "3人が同じ経路・同じ距離を、それぞれ一定の正の速さで走る。"
+  ],
+  "steps": [
+    {
+      "id": "chase_travel_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A15P2.chase_travel_time",
+      "title_ja": "Chaseの移動時間",
+      "claim_ja": "同じ距離では所要時間は速さに反比例する。DanielleはCameronの3倍速なのでCameronは30×3=90分、CameronはChaseの2倍速なのでChaseは90×2=180分。",
+      "method_ja": "速さの倍率を所要時間の逆倍率として順に適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "距離は共通で、停止時間は含めない。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "180分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3724,
+    "checked_model_hash": "4edbbfe0668c3d448458046a77bed00a48418826eda9cde81179caacdc0dac8a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

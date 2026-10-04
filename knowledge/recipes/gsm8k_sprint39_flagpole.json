@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint39_flagpole",
+  "title_ja": "旗竿の折れた高さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00868",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "折れた上下の長さと先端の地上高から高さを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.flagpole_solution",
+  "graph": "work/gsm8k-sprint39-flagpole-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "折れた上部の長さは全長から折点高を引いた長さであり、垂れた先端は地上2フィート。"
+  ],
+  "steps": [
+    {
+      "id": "flagpole_parts",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.flagpole_parts",
+      "title_ja": "上下の長さ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全長12フィートは下部7と上部5の和。",
+      "conclusion_ja": "7+5=12。",
+      "baseline_ja": "12=7+5。"
+    },
+    {
+      "id": "flagpole_tip",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.flagpole_tip",
+      "title_ja": "先端の高さ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "上部5フィートが下向きに垂れ、下部7フィートとの差が2。",
+      "conclusion_ja": "基部から7フィートで折れた。",
+      "baseline_ja": "7=5+2。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 869,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

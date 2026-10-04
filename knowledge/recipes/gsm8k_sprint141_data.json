@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint141_data",
+  "title_ja": "12月の通信料金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02408",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "海外データを10日間1日3.50ドル使い、通常プランは175ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.data_solution_dollars",
+  "graph": "work/gsm8k-sprint141-data-graph.json",
+  "model_notes_ja": [
+    "小数金額を丸めず、1ドル=100セントとして整数で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "data_international",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.data_international",
+      "title_ja": "海外データは3500セント",
+      "claim_ja": "海外データは3500セント",
+      "method_ja": "10日に350セントを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "海外データは3500セント",
+      "baseline_ja": "海外データは3500セント"
+    },
+    {
+      "id": "data_solution_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.data_solution_cents",
+      "title_ja": "合計21000セント",
+      "claim_ja": "合計21000セント",
+      "method_ja": "3500と17500を足す",
+      "requires_steps": [
+        "data_international"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計21000セント",
+      "baseline_ja": "合計21000セント"
+    },
+    {
+      "id": "data_solution_dollars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.data_solution_dollars",
+      "title_ja": "合計210ドル",
+      "claim_ja": "合計210ドル",
+      "method_ja": "100セント=1ドルで換算する",
+      "requires_steps": [
+        "data_solution_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計210ドル",
+      "baseline_ja": "合計210ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2409,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

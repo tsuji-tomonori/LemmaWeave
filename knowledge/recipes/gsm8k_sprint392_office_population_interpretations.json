@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_office_population_interpretations",
+  "title_ja": "オフィス人数の解釈",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04091",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ryan works in an office that has an even number of men and women working there.  Ryan participates in a meeting composed of 4 men and 6 women who are pulled from the office floor.   This reduces the number of women working on the office floor by 20%.  How many people work at Ryan's office?",
+  "answer_ja": "女性6人が20%なので女性は30人。男女同数という通常解釈なら男性も30人で計60人である。ただし「even」を各人数が偶数という意味に読むだけなら男性数は定まらず、例えば32人でも条件を満たすため総数は一意でない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P1.office_population_interpretations",
+  "graph": "work/gsm8k-sprint392-office-population-interpretations-graph.json",
+  "model_notes_ja": [
+    "男女同数という通常解釈と、各人数が偶数にすぎない文字どおりの解釈を分離した。"
+  ],
+  "steps": [
+    {
+      "id": "office_population_interpretations",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P1.office_population_interpretations",
+      "title_ja": "オフィス人数の解釈",
+      "claim_ja": "女性6人が20%なので女性は30人。男女同数という通常解釈なら男性も30人で計60人である。ただし「even」を各人数が偶数という意味に読むだけなら男性数は定まらず、例えば32人でも条件を満たすため総数は一意でない。",
+      "method_ja": "男女同数という通常解釈と、各人数が偶数にすぎない文字どおりの解釈を分離した。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "男女同数という通常解釈と、各人数が偶数にすぎない文字どおりの解釈を分離した。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "女性6人が20%なので女性は30人。男女同数という通常解釈なら男性も30人で計60人である。ただし「even」を各人数が偶数という意味に読むだけなら男性数は定まらず、例えば32人でも条件を満たすため総数は一意でない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4092,
+    "checked_model_hash": "d64ba1c4460640f58f0763d002197af12db34ded23abec5bfbbe0c21e078a551",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

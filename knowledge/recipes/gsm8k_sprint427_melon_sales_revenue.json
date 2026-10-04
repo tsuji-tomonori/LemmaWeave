@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint427_melon_sales_revenue",
+  "title_ja": "メロン販売の売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04182",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Darryl sells melons on the side of the road. He sells cantaloupes for $2 each and honeydews for $3. He started the day with 30 cantaloupes and 27 honeydews. He accidentally dropped a couple of cantaloupes and three of the honeydews turned out to be rotten. At the end of the day he had 8 cantaloupes and 9 honeydews left. How much money did he make?",
+  "answer_ja": "coupleを2個と読む。カンタロープは30-2-8=20個、ハネデューは27-3-9=15個売れた。売上は20×2+15×3=85ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.melon_sales_revenue",
+  "graph": "work/gsm8k-sprint427-melon-sales-revenue-graph.json",
+  "model_notes_ja": [
+    "couple of cantaloupesを2個として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "cant",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.cantaloupes_sold",
+      "title_ja": "カンタロープ販売数",
+      "claim_ja": "30-2-8=20個。",
+      "method_ja": "初期数から落下分と残数を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "coupleを2個とする。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "30-2-8=20個。"
+    },
+    {
+      "id": "honey",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.honeydews_sold",
+      "title_ja": "ハネデュー販売数",
+      "claim_ja": "27-3-9=15個。",
+      "method_ja": "初期数から腐敗分と残数を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "腐敗した3個は売らない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "27-3-9=15個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.melon_sales_revenue",
+      "title_ja": "合計売上",
+      "claim_ja": "20×2+15×3=85ドル。",
+      "method_ja": "各販売数に単価を掛けて加える。",
+      "requires_steps": [
+        "cant",
+        "honey"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "単価はカンタロープ2ドル、ハネデュー3ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20×2+15×3=85ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4183,
+    "checked_model_hash": "7a7d51b8cc7c4ebc53c5529c25cc2c31f175483460effa650b5fe9f8b7721b95",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

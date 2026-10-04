@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint370_monday_biking_miles",
+  "title_ja": "月曜日の自転車走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03971",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A15P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mona bikes 30 miles each week to stay fit. This week, she biked on Monday, Wednesday, and Saturday. On Wednesday, she biked 12 miles. On Saturday, she biked twice as far as on Monday. How many miles did she bike on Monday?",
+  "answer_ja": "月曜日をmマイルとすると土曜日は2mマイル。水曜日12マイルと合わせてm+12+2m=30だから、3m=18、m=6マイル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A15P1.monday_biking_miles",
+  "graph": "work/gsm8k-sprint370-monday-biking-miles-graph.json",
+  "model_notes_ja": [
+    "今週の30マイルは問題文に挙げられた月・水・土の走行の合計である。"
+  ],
+  "steps": [
+    {
+      "id": "monday_biking_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A15P1.monday_biking_miles",
+      "title_ja": "月曜日の自転車走行距離",
+      "claim_ja": "月曜日をmマイルとすると土曜日は2mマイル。水曜日12マイルと合わせてm+12+2m=30だから、3m=18、m=6マイル。",
+      "method_ja": "月曜日の距離を未知数にし、3日間の合計から一次方程式を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "今週の30マイルは問題文に挙げられた月・水・土の走行の合計である。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "月曜日をmマイルとすると土曜日は2mマイル。水曜日12マイルと合わせてm+12+2m=30だから、3m=18、m=6マイル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3972,
+    "checked_model_hash": "f045a557c1d1e97629883bc55e4da422aa470462892cfaeaf12c43fe265215b5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

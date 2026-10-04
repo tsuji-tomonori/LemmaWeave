@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint106_bananas",
+  "title_ja": "木に最初にあったバナナ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01882",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "食べた数、籠の残り、切った総数、木の残りを足す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.bananas_solution",
+  "graph": "work/gsm8k-sprint106-bananas-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bananas_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.bananas_remaining",
+      "title_ja": "籠の残りは140本。",
+      "claim_ja": "籠の残りは140本。",
+      "method_ja": "70×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bananas_cut",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.bananas_cut",
+      "title_ja": "切ったのは210本。",
+      "claim_ja": "切ったのは210本。",
+      "method_ja": "70+140。",
+      "requires_steps": [
+        "bananas_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "bananas_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.bananas_solution",
+      "title_ja": "最初は310本。",
+      "claim_ja": "最初は310本。",
+      "method_ja": "木に残る100本と切った210本を足す。",
+      "requires_steps": [
+        "bananas_cut"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1883,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

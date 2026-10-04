@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint103_eggs",
+  "title_ja": "年間に調理する卵の個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01827",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "平日1日分を求め、52週の平日260日を掛ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.eggs_solution",
+  "graph": "work/gsm8k-sprint103-eggs-graph.json",
+  "model_notes_ja": [
+    "原題はLisa自身の2個も明示しているため、参照解答どおり年間総数へ含めた。"
+  ],
+  "steps": [
+    {
+      "id": "eggs_children",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.eggs_children",
+      "title_ja": "子供分は8個。",
+      "claim_ja": "子供分は8個。",
+      "method_ja": "4×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4人に各2個。",
+      "conclusion_ja": "8。",
+      "baseline_ja": "8。"
+    },
+    {
+      "id": "eggs_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.eggs_daily",
+      "title_ja": "1日分は13個。",
+      "claim_ja": "1日分は13個。",
+      "method_ja": "8+3+2。",
+      "requires_steps": [
+        "eggs_children"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "夫3個とLisa本人2個も含む。",
+      "conclusion_ja": "13。",
+      "baseline_ja": "13。"
+    },
+    {
+      "id": "eggs_breakfasts",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.eggs_breakfasts",
+      "title_ja": "年間260回。",
+      "claim_ja": "年間260回。",
+      "method_ja": "5×52。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜〜金曜、52週。",
+      "conclusion_ja": "260。",
+      "baseline_ja": "260。"
+    },
+    {
+      "id": "eggs_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.eggs_solution",
+      "title_ja": "年間3380個。",
+      "claim_ja": "年間3380個。",
+      "method_ja": "13×260。",
+      "requires_steps": [
+        "eggs_daily",
+        "eggs_breakfasts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "毎回同数を調理する。",
+      "conclusion_ja": "3380。",
+      "baseline_ja": "3380。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1828,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

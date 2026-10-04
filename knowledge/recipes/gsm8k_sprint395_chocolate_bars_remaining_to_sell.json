@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint395_chocolate_bars_remaining_to_sell",
+  "title_ja": "残り販売すべきチョコレート",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04141",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "James has 18 chocolate bars to sell for the swim team. He sold 5 last week and 7 this week. How many more chocolate bars does he need to sell?",
+  "answer_ja": "先週5本、今週7本で、売れたのは5+7=12本。18本すべて売るには18-12=6本をさらに売る必要がある。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.chocolate_bars_remaining_to_sell",
+  "graph": "work/gsm8k-sprint395-chocolate-bars-remaining-to-sell-graph.json",
+  "model_notes_ja": [
+    "在庫ではなく、販売目標までの残数を求める。"
+  ],
+  "steps": [
+    {
+      "id": "chocolate_bars_remaining_to_sell",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.chocolate_bars_remaining_to_sell",
+      "title_ja": "残り販売すべきチョコレート",
+      "claim_ja": "先週5本、今週7本で、売れたのは5+7=12本。18本すべて売るには18-12=6本をさらに売る必要がある。",
+      "method_ja": "販売済み本数を合計し、目標18本から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "18本が販売対象の総数で、追加や紛失はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "先週5本、今週7本で、売れたのは5+7=12本。18本すべて売るには18-12=6本をさらに売る必要がある。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4142,
+    "checked_model_hash": "e3cecdfc4e674a7dd97b9452abd2054305e562a573cca490a1b2a4ab3c1ce84c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

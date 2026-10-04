@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint44_party",
+  "title_ja": "Michonneの誕生日会の人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00951",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "招待した18人が各2人を連れるとき、客数54人と主催者を含む55人を区別する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.party_solution",
+  "graph": "work/gsm8k-sprint44-party-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "設問のpeople goingに主催者Michonneを含めるかが明示されないため、参考解答の客54人と、主催者込み55人を分けた。"
+  ],
+  "steps": [
+    {
+      "id": "party_invited",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.party_invited",
+      "title_ja": "直接招待した友人",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "学校6人と近所12人。",
+      "conclusion_ja": "18人。",
+      "baseline_ja": "6+12=18。"
+    },
+    {
+      "id": "party_companions",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.party_companions",
+      "title_ja": "同伴者",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "18人が各2人を連れる。",
+      "conclusion_ja": "36人。",
+      "baseline_ja": "18×2=36。"
+    },
+    {
+      "id": "party_guests",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.party_guests",
+      "title_ja": "客の総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "直接招待18人と同伴者36人。",
+      "conclusion_ja": "客は54人。",
+      "baseline_ja": "18+36=54。"
+    },
+    {
+      "id": "party_including_host",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.party_including_host",
+      "title_ja": "主催者を含む人数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "客54人にMichonne本人を加える。",
+      "conclusion_ja": "55人。",
+      "baseline_ja": "54+1=55。"
+    },
+    {
+      "id": "party_nonunique",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.party_nonunique",
+      "title_ja": "数え方の差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "主催者を含めるかで結果が異なる。",
+      "conclusion_ja": "原文だけでは54人か55人か一意でない。",
+      "baseline_ja": "54≠55。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 952,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint141_baseball",
+  "title_ja": "2人の野球時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02397",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Nathanは2週間毎日3時間、Tobiasは1週間毎日5時間プレーする。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.baseball_solution",
+  "graph": "work/gsm8k-sprint141-baseball-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "baseball_nathan",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.baseball_nathan",
+      "title_ja": "Nathanは42時間",
+      "claim_ja": "Nathanは42時間",
+      "method_ja": "2週間を14日として3を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Nathanは42時間",
+      "baseline_ja": "Nathanは42時間"
+    },
+    {
+      "id": "baseball_tobias",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.baseball_tobias",
+      "title_ja": "Tobiasは35時間",
+      "claim_ja": "Tobiasは35時間",
+      "method_ja": "1週間を7日として5を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Tobiasは35時間",
+      "baseline_ja": "Tobiasは35時間"
+    },
+    {
+      "id": "baseball_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.baseball_solution",
+      "title_ja": "合計77時間",
+      "claim_ja": "合計77時間",
+      "method_ja": "42と35を足す",
+      "requires_steps": [
+        "baseball_nathan",
+        "baseball_tobias"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計77時間",
+      "baseline_ja": "合計77時間"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2398,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

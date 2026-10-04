@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint94_cookie",
+  "title_ja": "クッキー瓶の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01697",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "21ドルからDorisが6ドル、Marthaがその半額を使う。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.cookie_solution",
+  "graph": "work/gsm8k-sprint94-cookie-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cookie_martha",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.cookie_martha",
+      "title_ja": "Marthaの支出",
+      "claim_ja": "3ドル。",
+      "method_ja": "6÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Dorisの半額。",
+      "conclusion_ja": "3×2=6。",
+      "baseline_ja": "3×2=6。"
+    },
+    {
+      "id": "cookie_spent",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.cookie_spent",
+      "title_ja": "合計支出",
+      "claim_ja": "9ドル。",
+      "method_ja": "6+3。",
+      "requires_steps": [
+        "cookie_martha"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二人の支出を合計する。",
+      "conclusion_ja": "6+3=9。",
+      "baseline_ja": "6+3=9。"
+    },
+    {
+      "id": "cookie_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.cookie_solution",
+      "title_ja": "残金",
+      "claim_ja": "12ドル。",
+      "method_ja": "21-9。",
+      "requires_steps": [
+        "cookie_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "他の支出はない。",
+      "conclusion_ja": "12+9=21。",
+      "baseline_ja": "12+9=21。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1698,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

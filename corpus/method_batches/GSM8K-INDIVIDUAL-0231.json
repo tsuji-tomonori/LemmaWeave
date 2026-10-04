@@ -1,0 +1,233 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0231",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "5aa709c7a373e378f7862c073945ac113420ce64fba07be01b9ac8ede8ef19cf",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0928A20Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02936",
+      "source_line_1based": 2937,
+      "source_record_sha256": "0dea2d35fa911c521251452708e3216a5d7acf3372b8a677e6c2a25e260d8b52",
+      "raw_question_sha256": "a978d7878aa6ac7f1718cc947b6b08fc563f58b8f66436212185c32941c888f3",
+      "normalized_question_sha256": "a978d7878aa6ac7f1718cc947b6b08fc563f58b8f66436212185c32941c888f3",
+      "source_question": "There are 516 cars in a parking lot. One-third are blue, one-half are red, and the rest are black. How many black cars are on the lot?",
+      "recipe_id": "gsm8k_sprint177_cars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02937",
+      "source_line_1based": 2938,
+      "source_record_sha256": "a37e7dd91b0c79236bf68f95c24c3f8409463f9b3a741521b33d2c17ea85a9ca",
+      "raw_question_sha256": "cdf0c44eafa372e910bef285da0824c8982c1d880135764d2b45bc92d114c4e1",
+      "normalized_question_sha256": "cdf0c44eafa372e910bef285da0824c8982c1d880135764d2b45bc92d114c4e1",
+      "source_question": "The lunchroom is full of students: 40% are girls and the remainder are boys. There are 2 monitors for every 15 students. There are 8 monitors. Every boy drinks, on average, 1 carton of milk, and every girl drinks, on average, 2 cartons of milk. How many total cartons of milk are consumed by the students in the lunchroom?",
+      "recipe_id": "gsm8k_sprint177_lunchroom",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_or_conflict",
+      "modeling_notes_ja": [
+        "原題の2監視員/15生徒なら60人、牛乳84本。"
+      ],
+      "blockers": [
+        "参照解答は比率を1監視員/15生徒として168本を得ており原題と矛盾。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02938",
+      "source_line_1based": 2939,
+      "source_record_sha256": "897ccec4a4cae552628613391a374308b7e86e6ab1acc35cd5f4c1e721809f9e",
+      "raw_question_sha256": "691e0a56d89fe5b291fd234fca8ab7dc0e746efdbd5f5ffb076fe7d980b8b01a",
+      "normalized_question_sha256": "0fd304149cc54ae14b780853b8b78033b988839432a1957f573d401bcc8628e2",
+      "source_question": "Mike is saving up to buy a house.  He puts away 10% of his $150,000 a year salary.  He needs to save up 20% of the cost of a $450,000 house for a downpayment.  How long will it take?",
+      "recipe_id": "gsm8k_sprint177_downpayment",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02939",
+      "source_line_1based": 2940,
+      "source_record_sha256": "759deabb95befdc883ab4d358c142b22315582c689f7c21587e01d359664c40d",
+      "raw_question_sha256": "4f036959dc86d568cf61e01b65d9be0dc212f6d1d31dd6b3b630578b75e0c5bb",
+      "normalized_question_sha256": "6f9612fe101df8f723c65c355b8639c8247209e868011aea23ab1cb29febe2b0",
+      "source_question": "Candy throws 4 pebbles into the lake.  Lance throws in 3 times as many pebbles as Candy. How many more pebbles did Lance throw compared to Candy?",
+      "recipe_id": "gsm8k_sprint177_pebbles",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02940",
+      "source_line_1based": 2941,
+      "source_record_sha256": "c82bd9a0763b7fcd9ecf507febe5ef53d75665ed37035ab779f3fe573be46333",
+      "raw_question_sha256": "4f03336ead1a05a21bc077ed8042635dfeded90b55f1abaa50deb6682ec53b27",
+      "normalized_question_sha256": "4f03336ead1a05a21bc077ed8042635dfeded90b55f1abaa50deb6682ec53b27",
+      "source_question": "Chrystal’s vehicle speed is 30 miles per hour. Ascending the mountain decreases its speed by fifty percent, and descending the mountain increases its speed by twenty percent. If the distance going to the top of the mountain is 60 miles and the distance going down to the foot of the mountain is 72 miles, how many hours will Crystal have to pass the whole mountain?",
+      "recipe_id": "gsm8k_sprint177_mountain",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "20%増の基準は初速30mph。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02941",
+      "source_line_1based": 2942,
+      "source_record_sha256": "e3a86216cfef0dd586481e4da63811510e140cca3763d36096731771d7a5f701",
+      "raw_question_sha256": "1069b802b0e1d04e31c241999651341d757c9a2d72578f1ae29f24c78931f2d3",
+      "normalized_question_sha256": "1069b802b0e1d04e31c241999651341d757c9a2d72578f1ae29f24c78931f2d3",
+      "source_question": "Francine drives 140km to work each day. If she does not go to work 3 days every week, find the total distance she drives to work for 4 weeks in kilometers.",
+      "recipe_id": "gsm8k_sprint177_commute",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "to workの140kmだけを数え、往復に倍化しない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02942",
+      "source_line_1based": 2943,
+      "source_record_sha256": "789f2a5ba188dd20edf2afd4a5978df7c64cd435bab6ef2262026e301e8f6a1f",
+      "raw_question_sha256": "6ad3ae7c1afd7994ac8f3f4fe59e9765a3e63dbcb7455f86a0bb9ba6ca7dbf99",
+      "normalized_question_sha256": "05947a26bc7ab8f17b3578e78f37a8ce9500cd3709f0ff9108dccd7706b62486",
+      "source_question": "Gunther just financed a John Deere tractor through the dealership.  If his monthly payment is $150.00 a month, for 5 years, with no interest, how much did he finance the tractor for?",
+      "recipe_id": "gsm8k_sprint177_tractor",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02943",
+      "source_line_1based": 2944,
+      "source_record_sha256": "b2f81f93898ce947984a54c2121d90b2d75f062f1d7b80b61a610edf9beafdad",
+      "raw_question_sha256": "e0e3ec2cbd207f4a1c0b182a2ae868bb8b951289656b47a621d7f689337ed335",
+      "normalized_question_sha256": "e0e3ec2cbd207f4a1c0b182a2ae868bb8b951289656b47a621d7f689337ed335",
+      "source_question": "Jerry wakes up one morning and finds the thermostat set to 40 degrees. He set it to double the initial temperature. His dad notices, yells at Jerry, and reducing the temperature by 30 degrees. Later, Jerry's mother reduces the temperature by 30%, before his sister increases it by 24 degrees. What's the final temperature?",
+      "recipe_id": "gsm8k_sprint177_thermostat",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "母の30%減は父の変更後50度を基準にする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02944",
+      "source_line_1based": 2945,
+      "source_record_sha256": "750f4afffd2e863315f27c5d4e8895849c3ea88ba32bee0957af8ff41e12fbe9",
+      "raw_question_sha256": "fd6232ceffc62f6cb5ee42b02482af54bc7c792d47384f210614343cfd6d748b",
+      "normalized_question_sha256": "fd6232ceffc62f6cb5ee42b02482af54bc7c792d47384f210614343cfd6d748b",
+      "source_question": "Jane runs 3 kilometers in two hours. What is her speed in meters per minute?",
+      "recipe_id": "gsm8k_sprint177_running",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02945",
+      "source_line_1based": 2946,
+      "source_record_sha256": "d5151ab96980dd57a84fc552489bfc8ce209f38f5f5920707cc2915a55b48189",
+      "raw_question_sha256": "517301c12455d039b551bdd8eecd0a992c1d01e4c4f322ab23ac0eb06dbb2b5c",
+      "normalized_question_sha256": "517301c12455d039b551bdd8eecd0a992c1d01e4c4f322ab23ac0eb06dbb2b5c",
+      "source_question": "Polly and Peter play chess. Polly takes an average of 28 seconds per move, while Peter takes an average of 40 seconds per move. The match ends after 30 moves. How many minutes did the match last?",
+      "recipe_id": "gsm8k_sprint177_chess",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_or_conflict",
+      "modeling_notes_ja": [
+        "チェスの交互手番により30手を各15手とする。"
+      ],
+      "blockers": [
+        "30 movesの話者別内訳は原文に明記されないため交互手番規則を適用。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02946",
+      "source_line_1based": 2947,
+      "source_record_sha256": "7268552252d202c4b4fa7df924729df095c71abcc375195aff792f5333ff836b",
+      "raw_question_sha256": "3ce2555432e9d6aaeca997aa5546d95c1efdf5cb26980c3f3cc8e5ef5bbcf124",
+      "normalized_question_sha256": "8da2fdf2c2cdf7b12e6e4f6a6c9a30f36c8da3789a4346dc88ea26eba3d97d56",
+      "source_question": "Two sisters go to the movies.  Movie tickets are $8 per person.  If the sisters brought $25 with them, how much change will they receive after buying the tickets?",
+      "recipe_id": "gsm8k_sprint177_movies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02947",
+      "source_line_1based": 2948,
+      "source_record_sha256": "8b34f99d736613841e3b8a7fa81450964b29fccbe0cb8c2a1b56b31aed998540",
+      "raw_question_sha256": "5784b44a378f2205fe6fb53677ebcc60a1ae62855cb80ac5bf43afb672743688",
+      "normalized_question_sha256": "5784b44a378f2205fe6fb53677ebcc60a1ae62855cb80ac5bf43afb672743688",
+      "source_question": "The white rabbit can hop 15 meters in one minute. The brown rabbit hops 12 meters per minute. What is the total distance the two rabbits will hop in 5 minutes?",
+      "recipe_id": "gsm8k_sprint177_rabbits",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02948",
+      "source_line_1based": 2949,
+      "source_record_sha256": "6c089b37776bbee5d8080c43c860692ee5cefaa8876af79576fb1d6e38604b6e",
+      "raw_question_sha256": "488336499816c2003a5d5825e64d09e0325d88ce545d2264424b673523130068",
+      "normalized_question_sha256": "488336499816c2003a5d5825e64d09e0325d88ce545d2264424b673523130068",
+      "source_question": "Bob wants to build a pyramid out of legos with 3 levels where the bottom level has 7 legos per side and each level has one less lego per side than the level below it. How many legos total will he need?",
+      "recipe_id": "gsm8k_sprint177_lego_pyramid",
+      "semantic_status": "self_review_only",
+      "model_scope": "conditional_or_conflict",
+      "modeling_notes_ja": [
+        "各段を充填した正方形なら110個、輪郭だけなら60個。"
+      ],
+      "blockers": [
+        "per sideだけでは各段の内部を埋めるか一意でない。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02949",
+      "source_line_1based": 2950,
+      "source_record_sha256": "db3b5d5ce4afe72a25356854ade0a4b973863f98c1ee31b6a2750b7122532165",
+      "raw_question_sha256": "53a2ffe1772d6d02ccb6f512516513d90fe4daf285fe6fb7b931bb332a21c3f7",
+      "normalized_question_sha256": "53a2ffe1772d6d02ccb6f512516513d90fe4daf285fe6fb7b931bb332a21c3f7",
+      "source_question": "The Parker family needs to leave the house by 5 pm for a dinner party. Mrs. Parker was waiting to get into the bathroom at 2:30 pm. Her oldest daughter used the bathroom for 45 minutes and her youngest daughter used the bathroom for another 30 minutes. Then her husband used it for 20 minutes. How much time will Mrs. Parker have to use the bathroom to leave on time?",
+      "recipe_id": "gsm8k_sprint177_bathroom",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02950",
+      "source_line_1based": 2951,
+      "source_record_sha256": "ad2a0ae6740693760f9b013a40086525aa23ad4f90f698def6d54506ef49320f",
+      "raw_question_sha256": "be63a2b8cee9109b6317dbfe702d78c1bff151ee12d504d3d502edc5c7769288",
+      "normalized_question_sha256": "be63a2b8cee9109b6317dbfe702d78c1bff151ee12d504d3d502edc5c7769288",
+      "source_question": "A parking area near Peter's house is 4 stories tall. There are 4 open parking spots on the first level. There are 7 more open parking spots on the second level than on the first level, and there are 6 more open parking spots on the third level than on the second level. There are 14 open parking spots on the fourth level. How many open parking spots are there in all?",
+      "recipe_id": "gsm8k_sprint177_parking_levels",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    }
+  ]
+}

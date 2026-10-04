@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint94_coach",
+  "title_ja": "コーチ間の支出差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01703",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Aは29ドルのバスケットボール10個。Bは2.50ドルの野球ボール14個と18ドルのバット。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.coach_solution",
+  "graph": "work/gsm8k-sprint94-coach-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "coach_a",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.coach_a",
+      "title_ja": "Aの支出",
+      "claim_ja": "29000セント。",
+      "method_ja": "2900×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "セント単位で保持。",
+      "conclusion_ja": "2900×10=29000。",
+      "baseline_ja": "2900×10=29000。"
+    },
+    {
+      "id": "coach_baseballs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.coach_baseballs",
+      "title_ja": "Bの野球ボール代",
+      "claim_ja": "3500セント。",
+      "method_ja": "250×14。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各2.50ドル。",
+      "conclusion_ja": "250×14=3500。",
+      "baseline_ja": "250×14=3500。"
+    },
+    {
+      "id": "coach_b",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.coach_b",
+      "title_ja": "Bの総支出",
+      "claim_ja": "5300セント。",
+      "method_ja": "3500+1800。",
+      "requires_steps": [
+        "coach_baseballs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "バット代18ドルを加える。",
+      "conclusion_ja": "3500+1800=5300。",
+      "baseline_ja": "3500+1800=5300。"
+    },
+    {
+      "id": "coach_difference_cents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.coach_difference_cents",
+      "title_ja": "支出差",
+      "claim_ja": "23700セント。",
+      "method_ja": "29000-5300。",
+      "requires_steps": [
+        "coach_a",
+        "coach_b"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "AからBを引く。",
+      "conclusion_ja": "23700+5300=29000。",
+      "baseline_ja": "23700+5300=29000。"
+    },
+    {
+      "id": "coach_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.coach_solution",
+      "title_ja": "ドル換算",
+      "claim_ja": "237ドル。",
+      "method_ja": "23700÷100。",
+      "requires_steps": [
+        "coach_difference_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "100セント=1ドル。",
+      "conclusion_ja": "237×100=23700。",
+      "baseline_ja": "237×100=23700。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1704,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

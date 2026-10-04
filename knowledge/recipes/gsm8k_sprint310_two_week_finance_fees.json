@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint310_two_week_finance_fees",
+  "title_ja": "2週間の融資手数料",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03675",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100ドルを2週間借り、週ごとの手数料率が初週5%、翌週10%へ倍増する。手数料合計を求める。",
+  "answer_ja": "初週は100×5%=5ドル。2週目の率は10%なので10ドル。合計は5+10=15ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A11P1.two_week_finance_fees",
+  "graph": "work/gsm8k-sprint310-two-week-finance-fees-graph.json",
+  "model_notes_ja": [
+    "「毎週倍増」は週ごとの手数料率が5%、10%となり、各週に元金100ドルへ課されると解釈。"
+  ],
+  "steps": [
+    {
+      "id": "two_week_finance_fees",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A11P1.two_week_finance_fees",
+      "title_ja": "初週は100×5%=5ドル。2週目の率は10%なので10ドル。合計は5+10=15ドル。",
+      "claim_ja": "初週は100×5%=5ドル。2週目の率は10%なので10ドル。合計は5+10=15ドル。",
+      "method_ja": "初週は100×5%=5ドル。2週目の率は10%なので10ドル。合計は5+10=15ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "初週は100×5%=5ドル。2週目の率は10%なので10ドル。合計は5+10=15ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3676,
+    "checked_model_hash": "94189cc9975430c393a902d4de1f006b37dd82d6dd2442a2cecd5b73ad9ad453",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

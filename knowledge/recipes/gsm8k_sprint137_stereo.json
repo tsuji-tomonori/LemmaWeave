@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint137_stereo",
+  "title_ja": "ステレオ買替えの持ち出し",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02346",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "旧250ドルを80%で下取りし、新600ドルを25%引きで買う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.stereo_solution",
+  "graph": "work/gsm8k-sprint137-stereo-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "stereo_credit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.stereo_credit",
+      "title_ja": "下取りは200ドル",
+      "claim_ja": "下取りは200ドル",
+      "method_ja": "250ドルの80%",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "下取りは200ドル",
+      "baseline_ja": "下取りは200ドル"
+    },
+    {
+      "id": "stereo_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.stereo_discount",
+      "title_ja": "値引きは150ドル",
+      "claim_ja": "値引きは150ドル",
+      "method_ja": "600ドルの25%",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "値引きは150ドル",
+      "baseline_ja": "値引きは150ドル"
+    },
+    {
+      "id": "stereo_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.stereo_price",
+      "title_ja": "購入価格は450ドル",
+      "claim_ja": "購入価格は450ドル",
+      "method_ja": "600ドルから150ドル引く",
+      "requires_steps": [
+        "stereo_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "購入価格は450ドル",
+      "baseline_ja": "購入価格は450ドル"
+    },
+    {
+      "id": "stereo_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.stereo_solution",
+      "title_ja": "持ち出しは250ドル",
+      "claim_ja": "持ち出しは250ドル",
+      "method_ja": "450ドルから下取り200ドルを引く",
+      "requires_steps": [
+        "stereo_credit",
+        "stereo_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "持ち出しは250ドル",
+      "baseline_ja": "持ち出しは250ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2347,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

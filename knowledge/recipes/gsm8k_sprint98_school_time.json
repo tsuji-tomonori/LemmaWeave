@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint98_school_time",
+  "title_ja": "教室へ着くまでに残る時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01763",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "校門と校舎までの所要時間を合計し、締切30分から引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.school_time_solution",
+  "graph": "work/gsm8k-sprint98-school_time-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "school_time_used",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.school_time_used",
+      "title_ja": "校舎まで21分使う。",
+      "claim_ja": "校舎まで21分使う。",
+      "method_ja": "15+6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "校門までと校門から校舎までを連続移動する。",
+      "conclusion_ja": "15+6=21。",
+      "baseline_ja": "15+6=21。"
+    },
+    {
+      "id": "school_time_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.school_time_solution",
+      "title_ja": "教室まで使えるのは9分。",
+      "claim_ja": "教室まで使えるのは9分。",
+      "method_ja": "30−21。",
+      "requires_steps": [
+        "school_time_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "遅刻しないための全30分から経過時間を引く。",
+      "conclusion_ja": "9+21=30。",
+      "baseline_ja": "9+21=30。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1764,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

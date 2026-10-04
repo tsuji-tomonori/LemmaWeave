@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint139_bike",
+  "title_ja": "自転車で走れる面積の倍率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02371",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tommyは東西に3+2ブロック、南北に2+2ブロック。友人は80平方ブロック。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.bike_solution",
+  "graph": "work/gsm8k-sprint139-bike-graph.json",
+  "model_notes_ja": [
+    "各方向の到達範囲が作る長方形全体を走行可能領域とする原題の意図を明記する。"
+  ],
+  "steps": [
+    {
+      "id": "bike_width",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.bike_width",
+      "title_ja": "幅は5ブロック",
+      "claim_ja": "幅は5ブロック",
+      "method_ja": "東3と西2を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "幅は5ブロック",
+      "baseline_ja": "幅は5ブロック"
+    },
+    {
+      "id": "bike_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.bike_height",
+      "title_ja": "高さは4ブロック",
+      "claim_ja": "高さは4ブロック",
+      "method_ja": "北2と南2を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "高さは4ブロック",
+      "baseline_ja": "高さは4ブロック"
+    },
+    {
+      "id": "bike_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.bike_area",
+      "title_ja": "Tommyの範囲は20平方ブロック",
+      "claim_ja": "Tommyの範囲は20平方ブロック",
+      "method_ja": "5に4を掛ける",
+      "requires_steps": [
+        "bike_width",
+        "bike_height"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Tommyの範囲は20平方ブロック",
+      "baseline_ja": "Tommyの範囲は20平方ブロック"
+    },
+    {
+      "id": "bike_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.bike_solution",
+      "title_ja": "友人の範囲は4倍",
+      "claim_ja": "友人の範囲は4倍",
+      "method_ja": "80を20で割る",
+      "requires_steps": [
+        "bike_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "友人の範囲は4倍",
+      "baseline_ja": "友人の範囲は4倍"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2372,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

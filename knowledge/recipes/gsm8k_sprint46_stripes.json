@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint46_stripes","title_ja":"靴の縞の合計","problem_id":"external-gsm8k-main-3101c7d50724:train:00981","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"3人の片靴当たりの縞を求め、各2足分を合計する。","root":"LemmaWeave.Tests.GSM8KSprint0920A14.stripes_solution","graph":"work/gsm8k-sprint46-stripes-graph.json","lean_file":"tests/lean/GSM8KSprint0920A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":[],
+  "steps":[
+    {"id":"stripes_rick","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.stripes_rick","title_ja":"Rickの片靴","requires_steps":[],"uses_nodes":[],"condition_ja":"Olgaの3本より1本少ない。","conclusion_ja":"2本。","baseline_ja":"3=2+1。"},
+    {"id":"stripes_hortense","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.stripes_hortense","title_ja":"Hortenseの片靴","requires_steps":[],"uses_nodes":[],"condition_ja":"Olgaの3本の2倍。","conclusion_ja":"6本。","baseline_ja":"6=2×3。"},
+    {"id":"stripes_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.stripes_total","title_ja":"3人の両靴","requires_steps":[],"uses_nodes":[],"condition_ja":"各人2足で片靴の合計は3+2+6本。","conclusion_ja":"22本。","baseline_ja":"22=2×(3+2+6)。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":982,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["per shoeとpairの区別を確認した。"]}
+}

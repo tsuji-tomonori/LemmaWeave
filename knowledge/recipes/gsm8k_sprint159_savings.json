@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint159_savings",
+  "title_ja": "3か月後の貯金額の二解釈",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02673",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1か月目10ドル、『各月30ドル多く』を残高増加または月ごとの預金額増加として読む。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A18.savings_ambiguous",
+  "graph": "work/gsm8k-sprint159-savings-graph.json",
+  "model_notes_ja": [
+    "原文は『各月に30ドル多く貯めた』を残高の増加と月別預金額の増加のどちらにも読める。参考解答70ドルは前者。後者なら累計120ドルであり、追加条件なしには一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "savings_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.savings_second",
+      "title_ja": "2か月目の値は40ドル",
+      "claim_ja": "2か月目の値は40ドル",
+      "method_ja": "10ドルに30ドルを足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文は『各月に30ドル多く貯めた』を残高の増加と月別預金額の増加のどちらにも読める。参考解答70ドルは前者。後者なら累計120ドルであり、追加条件なしには一意でない。",
+      "conclusion_ja": "2か月目の値は40ドル",
+      "baseline_ja": "2か月目の値は40ドル"
+    },
+    {
+      "id": "savings_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.savings_third",
+      "title_ja": "3か月目の値は70ドル",
+      "claim_ja": "3か月目の値は70ドル",
+      "method_ja": "40ドルに30ドルを足す",
+      "requires_steps": [
+        "savings_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文は『各月に30ドル多く貯めた』を残高の増加と月別預金額の増加のどちらにも読める。参考解答70ドルは前者。後者なら累計120ドルであり、追加条件なしには一意でない。",
+      "conclusion_ja": "3か月目の値は70ドル",
+      "baseline_ja": "3か月目の値は70ドル"
+    },
+    {
+      "id": "savings_balance_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.savings_balance_solution",
+      "title_ja": "残高が毎月30ドル増える読みでは70ドル",
+      "claim_ja": "残高が毎月30ドル増える読みでは70ドル",
+      "method_ja": "10ドルの残高へ30ドルを2回足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文は『各月に30ドル多く貯めた』を残高の増加と月別預金額の増加のどちらにも読める。参考解答70ドルは前者。後者なら累計120ドルであり、追加条件なしには一意でない。",
+      "conclusion_ja": "残高が毎月30ドル増える読みでは70ドル",
+      "baseline_ja": "残高が毎月30ドル増える読みでは70ドル"
+    },
+    {
+      "id": "savings_deposit_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.savings_deposit_solution",
+      "title_ja": "月別預金額が10・40・70ドルの読みでは合計120ドル",
+      "claim_ja": "月別預金額が10・40・70ドルの読みでは合計120ドル",
+      "method_ja": "3か月の預金額を足す",
+      "requires_steps": [
+        "savings_second",
+        "savings_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文は『各月に30ドル多く貯めた』を残高の増加と月別預金額の増加のどちらにも読める。参考解答70ドルは前者。後者なら累計120ドルであり、追加条件なしには一意でない。",
+      "conclusion_ja": "月別預金額が10・40・70ドルの読みでは合計120ドル",
+      "baseline_ja": "月別預金額が10・40・70ドルの読みでは合計120ドル"
+    },
+    {
+      "id": "savings_ambiguous",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.savings_ambiguous",
+      "title_ja": "二つの読みは70ドルと120ドルで一致しない",
+      "claim_ja": "二つの読みは70ドルと120ドルで一致しない",
+      "method_ja": "両結論を比較する",
+      "requires_steps": [
+        "savings_balance_solution",
+        "savings_deposit_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文は『各月に30ドル多く貯めた』を残高の増加と月別預金額の増加のどちらにも読める。参考解答70ドルは前者。後者なら累計120ドルであり、追加条件なしには一意でない。",
+      "conclusion_ja": "二つの読みは70ドルと120ドルで一致しない",
+      "baseline_ja": "二つの読みは70ドルと120ドルで一致しない"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2674,
+    "checked_model_hash": "957c1c635eac2a0c173dc1944fceaa745bdaf8bf685ff842e67d47a9de8760f7",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

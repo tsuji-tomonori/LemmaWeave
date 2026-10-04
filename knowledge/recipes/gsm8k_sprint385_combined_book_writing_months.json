@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint385_combined_book_writing_months",
+  "title_ja": "2人の執筆月数の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04048",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A02R1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ivanka wrote a book that took her 3 more months than it took Woody to write a book. Woody spent 1.5 years writing his book. How many months in total did Ivanka and Woody need to write their books?",
+  "answer_ja": "1.5年は12×1.5=18か月である。IvankaはWoodyより3か月長いので18+3=21か月。2人分の合計は18+21=39か月である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A02R1.combined_book_writing_months",
+  "graph": "work/gsm8k-sprint385-combined-book-writing-months-graph.json",
+  "model_notes_ja": [
+    "1年を12か月とし、1.5年を18か月へ正確に換算する。"
+  ],
+  "steps": [
+    {
+      "id": "combined_book_writing_months",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A02R1.combined_book_writing_months",
+      "title_ja": "2人の執筆月数の合計",
+      "claim_ja": "1.5年は12×1.5=18か月である。IvankaはWoodyより3か月長いので18+3=21か月。2人分の合計は18+21=39か月である。",
+      "method_ja": "1年を12か月とし、1.5年を18か月へ正確に換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1年を12か月とし、1.5年を18か月へ正確に換算する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1.5年は12×1.5=18か月である。IvankaはWoodyより3か月長いので18+3=21か月。2人分の合計は18+21=39か月である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4049,
+    "checked_model_hash": "17904e8bb30fa482ed0620fd2f95f284f95995454b76bf40b6509a50bc086c15",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint149_running",
+  "title_ja": "走った総距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02526",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Nateはサッカー場4面分を走り、休憩後さらに500m走る。場の長さは168m。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A04.running_solution",
+  "graph": "work/gsm8k-sprint149-running-graph.json",
+  "model_notes_ja": [
+    "8秒という値は最初の区間の距離を求めるためには不要であり、速度を推測しない。"
+  ],
+  "steps": [
+    {
+      "id": "running_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.running_first",
+      "title_ja": "最初の区間は672m",
+      "claim_ja": "最初の区間は672m",
+      "method_ja": "168mを4面分掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "最初の区間は672m",
+      "baseline_ja": "最初の区間は672m"
+    },
+    {
+      "id": "running_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.running_solution",
+      "title_ja": "総距離は1172m",
+      "claim_ja": "総距離は1172m",
+      "method_ja": "672と500を足す",
+      "requires_steps": [
+        "running_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "総距離は1172m",
+      "baseline_ja": "総距離は1172m"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2527,
+    "checked_model_hash": "bf48471e5f50a20e1256bd8203ba528b20e3455a0bb5dad6c2632708aa2a99f1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

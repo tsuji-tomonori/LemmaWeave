@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint123_commodities",
+  "title_ja": "高い商品の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02133",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2商品の合計827ドル、価格差127ドルから高い方を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A14.commodities_solution",
+  "graph": "work/gsm8k-sprint123-commodities-graph.json",
+  "model_notes_ja": [
+    "参照説明の『137を引く』は式と954ドルに一致しない誤記である。正しくは差127ドルを用いる。"
+  ],
+  "steps": [
+    {
+      "id": "commodities_equation",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.commodities_equation",
+      "title_ja": "高い方は安い方より127ドル高い。",
+      "claim_ja": "高い方は安い方より127ドル高い。",
+      "method_ja": "原題の価格差を式にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "高い方は安い方より127ドル高い。",
+      "baseline_ja": "高い方は安い方より127ドル高い。"
+    },
+    {
+      "id": "commodities_double",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.commodities_double",
+      "title_ja": "高い方の2倍は954ドル。",
+      "claim_ja": "高い方の2倍は954ドル。",
+      "method_ja": "合計式と価格差から2x=827+127。",
+      "requires_steps": [
+        "commodities_equation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "高い方の2倍は954ドル。",
+      "baseline_ja": "高い方の2倍は954ドル。"
+    },
+    {
+      "id": "commodities_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.commodities_solution",
+      "title_ja": "高い方は477ドル。",
+      "claim_ja": "高い方は477ドル。",
+      "method_ja": "954÷2。",
+      "requires_steps": [
+        "commodities_double"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "高い方は477ドル。",
+      "baseline_ja": "高い方は477ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2134,
+    "checked_model_hash": "61d9d50f01023680e1b5a790b2cbb8b5dc80e11c2c055803236bd99c6da83155",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な表現は読解条件と別読解を明示した。"
+    ]
+  }
+}

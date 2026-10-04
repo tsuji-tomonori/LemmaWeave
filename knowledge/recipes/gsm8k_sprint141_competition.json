@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint141_competition",
+  "title_ja": "競技に参加しなかった人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02402",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "39人のクラスの3分の1が数学競技に参加する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.competition_solution",
+  "graph": "work/gsm8k-sprint141-competition-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "competition_participants",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.competition_participants",
+      "title_ja": "参加者は13人",
+      "claim_ja": "参加者は13人",
+      "method_ja": "39を3等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "参加者は13人",
+      "baseline_ja": "参加者は13人"
+    },
+    {
+      "id": "competition_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.competition_solution",
+      "title_ja": "不参加は26人",
+      "claim_ja": "不参加は26人",
+      "method_ja": "39から13を引く",
+      "requires_steps": [
+        "competition_participants"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "不参加は26人",
+      "baseline_ja": "不参加は26人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2403,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

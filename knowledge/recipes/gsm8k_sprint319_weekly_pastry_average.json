@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint319_weekly_pastry_average",
+  "title_ja": "1日平均の販売数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03720",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A15P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A baker sells pastries for $5 and works 7 days a week. On Monday he sold 2. Every day the number of sales increases by 1 compared to the previous day. On average, how many pastries does he sell on each day of the week?",
+  "answer_ja": "月曜から日曜の販売数は2,3,4,5,6,7,8個で、合計35個。7日で割ると1日平均は35÷7=5個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A15P1.weekly_pastry_average",
+  "graph": "work/gsm8k-sprint319-weekly-pastry-average-graph.json",
+  "model_notes_ja": [
+    "前日より1個増える規則が火曜から日曜まで毎日続く。販売価格5ドルは個数平均には不要。"
+  ],
+  "steps": [
+    {
+      "id": "weekly_pastry_average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A15P1.weekly_pastry_average",
+      "title_ja": "1日平均の販売数",
+      "claim_ja": "月曜から日曜の販売数は2,3,4,5,6,7,8個で、合計35個。7日で割ると1日平均は35÷7=5個。",
+      "method_ja": "7日分の等差数列を合計し、日数7で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7日すべてを一度ずつ数え、日数は正。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "平均5個/日。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3721,
+    "checked_model_hash": "bffce2899801a3a38a56b4c9c991bcf387ff450bcc56f23c88b113005eb00cfa",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

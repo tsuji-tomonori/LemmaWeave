@@ -1,0 +1,138 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-0600-gsm8k-39",
+  "planned_slot_local_hour": 6,
+  "planned_at": "2026-09-20T06:00:00+09:00",
+  "role": "gsm8k_individual_15",
+  "base_sha": "f14eba3e58238d23a4fe8f327f2ff5e089b82a62",
+  "started_at": "2026-09-20T06:56:28+09:00",
+  "finished_at": "2026-09-20T07:05:16+09:00",
+  "schedule_offset_seconds": 3388,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00864",
+    "external-gsm8k-main-3101c7d50724:train:00865",
+    "external-gsm8k-main-3101c7d50724:train:00866",
+    "external-gsm8k-main-3101c7d50724:train:00867",
+    "external-gsm8k-main-3101c7d50724:train:00868",
+    "external-gsm8k-main-3101c7d50724:train:00869",
+    "external-gsm8k-main-3101c7d50724:train:00870",
+    "external-gsm8k-main-3101c7d50724:train:00871",
+    "external-gsm8k-main-3101c7d50724:train:00872",
+    "external-gsm8k-main-3101c7d50724:train:00873",
+    "external-gsm8k-main-3101c7d50724:train:00874",
+    "external-gsm8k-main-3101c7d50724:train:00875",
+    "external-gsm8k-main-3101c7d50724:train:00876",
+    "external-gsm8k-main-3101c7d50724:train:00877",
+    "external-gsm8k-main-3101c7d50724:train:00878"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00864",
+    "external-gsm8k-main-3101c7d50724:train:00865",
+    "external-gsm8k-main-3101c7d50724:train:00866",
+    "external-gsm8k-main-3101c7d50724:train:00867",
+    "external-gsm8k-main-3101c7d50724:train:00868",
+    "external-gsm8k-main-3101c7d50724:train:00869",
+    "external-gsm8k-main-3101c7d50724:train:00870",
+    "external-gsm8k-main-3101c7d50724:train:00871",
+    "external-gsm8k-main-3101c7d50724:train:00872",
+    "external-gsm8k-main-3101c7d50724:train:00873",
+    "external-gsm8k-main-3101c7d50724:train:00874",
+    "external-gsm8k-main-3101c7d50724:train:00875",
+    "external-gsm8k-main-3101c7d50724:train:00876",
+    "external-gsm8k-main-3101c7d50724:train:00877",
+    "external-gsm8k-main-3101c7d50724:train:00878"
+  ],
+  "deferred": [],
+  "verification_pending_reason_ja": "原文・質問ハッシュ、47説明行、Leanモデル、名前付き行定理、自己照合を保存した。ローカル環境に固定Lean実行系がなく、exact-head GitHub CI実行・成功証拠もないためsolution_readyへ昇格しない。",
+  "next_action_ja": "現HEADの固定Lean 4.33.1 CI、公理監査、行別実依存監査を実行し、成功証拠を取り込む。train:00871は基準日不足による1978年・1979年の非一意性を保持する。次の数学問題はtrain:00879から再開する。",
+  "checkpoint_commits": [
+    {
+      "range": "train:00864..00868",
+      "status": "saved",
+      "commit_sha": "ba30a52c5938fd10d4ed9dede18c8521c19098e9"
+    },
+    {
+      "range": "train:00869..00873",
+      "status": "saved",
+      "commit_sha": "6207b6faacc81fe51b7ce456c5e3856b606141c2"
+    },
+    {
+      "range": "train:00874..00878",
+      "status": "saved",
+      "commit_sha": "e11d82682dd33c2443b2a69771db3574ce1042f0"
+    }
+  ],
+  "source_verification": {
+    "upstream_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_lines_1based": [
+      865,
+      879
+    ],
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "record_hashes_checked": 15,
+    "question_hashes_checked": 15
+  },
+  "artifacts": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0093.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0920A07Models.lean",
+    "proof": "tests/lean/GSM8KSprint0920A07.lean",
+    "recipes": 15,
+    "written_lines": 47,
+    "artifact_bytes": 58700,
+    "semantic_review_status": "self_review_only",
+    "sorry_admit_custom_axiom_count": 0
+  },
+  "modeling_notes_ja": [
+    "train:00867は時速を20分の走行距離へ変換し、Jimの3マイルが先行1マイルとBobの2マイルの和になることを示した。",
+    "train:00868は下部7フィート、折れた上部5フィート、先端地上高2フィートの幾何条件を保持した。",
+    "train:00871は2021年内の基準日がないため、誕生日後の1979年と誕生日前の1978年を両立例として形式化し、参照解答の追加条件を明示した。",
+    "train:00877はparents pickedを両親2人の合計267個と読み、家族4人への均等分配を形式化した。"
+  ],
+  "local_validation": {
+    "json_parse": "15_recipes_1_batch_success",
+    "source_hash_check": "15_records_15_questions_success",
+    "declaration_reference_check": "15_recipes_47_lines_success",
+    "forbidden_token_scan": "sorry_admit_axiom_0",
+    "fixed_lean_build": "not_run_toolchain_unavailable",
+    "python_regression_tests": "not_run_incomplete_local_snapshot"
+  },
+  "timing_seconds": {
+    "total_run": 528,
+    "source_and_modeling": 310,
+    "static_validation": 2
+  },
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 350
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 365
+  },
+  "ci": {
+    "exact_head_sha": "e11d82682dd33c2443b2a69771db3574ce1042f0",
+    "exact_head_workflow_runs": 0,
+    "exact_head_status_checks": 0,
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit": {
+    "base_sha": "f14eba3e58238d23a4fe8f327f2ff5e089b82a62",
+    "solution_commit_sha": "e11d82682dd33c2443b2a69771db3574ce1042f0"
+  },
+  "next_problem_id": "external-gsm8k-main-3101c7d50724:train:00879",
+  "execution_control": {
+    "serialized": true,
+    "shared_lock_implementation": false,
+    "claim": {
+      "problem_range": "train:00864..00878",
+      "claimed_at": "2026-09-20T06:56:28+09:00",
+      "expires_at": "2026-09-20T07:56:28+09:00",
+      "status": "released_after_serial_write"
+    },
+    "note_ja": "同一ブランチHEADを読み直し、非force更新で5問以内のチェックポイントを保存した。"
+  }
+}

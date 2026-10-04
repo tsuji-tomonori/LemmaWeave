@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint147_ingredients",
+  "title_ja": "材料の合計代金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02487",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "小麦粉3箱各3ドル、卵3トレー各10ドル、牛乳7リットル各5ドル、重曹2箱各3ドルの合計。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A02.ingredients_solution",
+  "graph": "work/gsm8k-sprint147-ingredients-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ingredients_flour",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.ingredients_flour",
+      "title_ja": "小麦粉は9ドル",
+      "claim_ja": "小麦粉は9ドル",
+      "method_ja": "3箱に3ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "小麦粉は9ドル",
+      "baseline_ja": "小麦粉は9ドル"
+    },
+    {
+      "id": "ingredients_eggs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.ingredients_eggs",
+      "title_ja": "卵は30ドル",
+      "claim_ja": "卵は30ドル",
+      "method_ja": "3トレーに10ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "卵は30ドル",
+      "baseline_ja": "卵は30ドル"
+    },
+    {
+      "id": "ingredients_milk",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.ingredients_milk",
+      "title_ja": "牛乳は35ドル",
+      "claim_ja": "牛乳は35ドル",
+      "method_ja": "7リットルに5ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "牛乳は35ドル",
+      "baseline_ja": "牛乳は35ドル"
+    },
+    {
+      "id": "ingredients_soda",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.ingredients_soda",
+      "title_ja": "重曹は6ドル",
+      "claim_ja": "重曹は6ドル",
+      "method_ja": "2箱に3ドルを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "重曹は6ドル",
+      "baseline_ja": "重曹は6ドル"
+    },
+    {
+      "id": "ingredients_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A02.ingredients_solution",
+      "title_ja": "合計は80ドル",
+      "claim_ja": "合計は80ドル",
+      "method_ja": "四つの小計を足す",
+      "requires_steps": [
+        "ingredients_flour",
+        "ingredients_eggs",
+        "ingredients_milk",
+        "ingredients_soda"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaに明示した数量・単位・解釈を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計は80ドル",
+      "baseline_ja": "合計は80ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2488,
+    "checked_model_hash": "9137e99ed24de5cca28582e0f4034a594e2353541cb4f5d41dcd0d980e259891",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint395_estimated_buildings_total_height",
+  "title_ja": "3棟の推定総高さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04142",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Quinten sees three buildings downtown and decides to estimate their heights. He knows from a book on local buildings that the one in the middle is 100 feet tall. The one on the left looks like it is 80% of the height of the middle one. The one on the right looks 20 feet shorter than if the building on the left and middle were stacked on top of each other. How tall does Quinten estimate their total height to be?",
+  "answer_ja": "中央は100フィート。左はその80%なので80フィート。左と中央を積むと180フィートで、右はそこから20フィート低い160フィート。3棟合計は80+100+160=340フィート。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.estimated_buildings_total_height",
+  "graph": "work/gsm8k-sprint395-estimated-buildings-total-height-graph.json",
+  "model_notes_ja": [
+    "各建物の推定高さを別々に計算してから合計する。"
+  ],
+  "steps": [
+    {
+      "id": "estimated_buildings_total_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.estimated_buildings_total_height",
+      "title_ja": "3棟の推定総高さ",
+      "claim_ja": "中央は100フィート。左はその80%なので80フィート。左と中央を積むと180フィートで、右はそこから20フィート低い160フィート。3棟合計は80+100+160=340フィート。",
+      "method_ja": "百分率、和、差を順に使って3棟の高さを求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "見た目による80%と20フィート差をQuintenの推定値としてそのまま用いる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "中央は100フィート。左はその80%なので80フィート。左と中央を積むと180フィートで、右はそこから20フィート低い160フィート。3棟合計は80+100+160=340フィート。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4143,
+    "checked_model_hash": "e3cecdfc4e674a7dd97b9452abd2054305e562a573cca490a1b2a4ab3c1ce84c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

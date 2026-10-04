@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint41_quarters",
+  "title_ja": "ペンシルベニア州25セント硬貨",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00894",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "35枚のうち2/5が州硬貨、その半分がペンシルベニア州であるとき枚数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A09.quarters_solution",
+  "graph": "work/gsm8k-sprint41-quarters-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A09.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "quarters_state",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.quarters_state",
+      "title_ja": "州硬貨",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "35枚の2/5。",
+      "conclusion_ja": "州硬貨は14枚。",
+      "baseline_ja": "14×5=35×2。"
+    },
+    {
+      "id": "quarters_pennsylvania",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.quarters_pennsylvania",
+      "title_ja": "対象州の硬貨",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "州硬貨14枚の50%。",
+      "conclusion_ja": "7枚。",
+      "baseline_ja": "7×2=14。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 895,
+    "checked_model_hash": "89dd3a16cd8df99f34c31f37d1627e251cf211069adff173f7367caa5578cd5c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "gsm8k_sprint109_babysitting",
+  "title_ja": "ベビーシッター収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01916",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3家庭ごとの時給と時間を掛け、合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.babysitting_solution",
+  "graph": "work/gsm8k-sprint109-babysitting-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "babysitting_donaldsons",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.babysitting_donaldsons",
+      "title_ja": "Donaldson家から105ドル。",
+      "claim_ja": "Donaldson家から105ドル。",
+      "method_ja": "15×7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "babysitting_merck",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.babysitting_merck",
+      "title_ja": "Merck家から108ドル。",
+      "claim_ja": "Merck家から108ドル。",
+      "method_ja": "18×6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "babysitting_hille",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.babysitting_hille",
+      "title_ja": "Hille家から60ドル。",
+      "claim_ja": "Hille家から60ドル。",
+      "method_ja": "20×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "babysitting_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.babysitting_solution",
+      "title_ja": "合計273ドル。",
+      "claim_ja": "合計273ドル。",
+      "method_ja": "105+108+60。",
+      "requires_steps": [
+        "babysitting_donaldsons",
+        "babysitting_merck",
+        "babysitting_hille"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1917,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

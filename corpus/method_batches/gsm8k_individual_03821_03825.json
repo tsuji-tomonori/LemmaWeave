@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0398",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "ded4be989680689e29c8e33679f9e963bd03177aa1fe334dfd8f265ae986910e",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A01P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03821",
+      "source_line_1based": 3822,
+      "source_record_sha256": "4e7e404dcfd5b437ee89e0fd3c3cc534e47c71f4e56f8accfa83a040a4332efa",
+      "raw_question_sha256": "22719917e019d5a48d0ceda2320bb5d97a82cfea3458dfe578ba18e9c4e6561c",
+      "normalized_question_sha256": "22719917e019d5a48d0ceda2320bb5d97a82cfea3458dfe578ba18e9c4e6561c",
+      "source_question": "Anna spent 1/4 of her money, and now she has $24 left. How much did she have originally?",
+      "recipe_id": "gsm8k_sprint340_initial_money",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "金額は非負の整数ドルで、使った額は元の所持金の正確に4分の1。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03822",
+      "source_line_1based": 3823,
+      "source_record_sha256": "fa64b628871985c826174ededa67557c6f13bd43de10693e09315e36656fb4f0",
+      "raw_question_sha256": "543001fd5abb3472e6904e9d3e7e04bd6cb6d08d4945a66ae887b24cdce69f9d",
+      "normalized_question_sha256": "543001fd5abb3472e6904e9d3e7e04bd6cb6d08d4945a66ae887b24cdce69f9d",
+      "source_question": "Alec is running for Class President. He thinks that if he can get three-quarters of the class to vote for him then there is no chance anyone else can beat him. Half of the class have already said they will vote for him but out of the remaining students, only 5 have said they are thinking about voting for him. He surveys the students who are thinking about voting for someone else, and changes his flyers to reflect the issues these students are concerned about. This results in a fifth of these students saying they'll vote for him. If Alec's class has 60 students and everyone who said they will vote for him does so, how many more votes does Alec need to reach his goal number of votes?",
+      "recipe_id": "gsm8k_sprint340_votes_needed",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "60人全員が投票し、既に支持する30人、支持を検討する5人、他候補を検討する25人は重複しない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03823",
+      "source_line_1based": 3824,
+      "source_record_sha256": "80b9bc84d3ef517d74350ec4c26a1d58b7cac8a882d05603a46124f2a11f61b8",
+      "raw_question_sha256": "50e07b384776caf286e62cedfba619ef89d3eaf3605c5c732cf49844b49e58b8",
+      "normalized_question_sha256": "50e07b384776caf286e62cedfba619ef89d3eaf3605c5c732cf49844b49e58b8",
+      "source_question": "The garbage truck passes through Daniel's neighborhood on Tuesdays, Thursdays, and Saturdays. In each garbage collection, an average of 200 kg is taken. Due to obstruction in the roads leading to Daniel's neighborhood, the garbage truck stops passing through for two weeks. During the first week, people in Daniel's neighborhood pile the extra garbage around the dumpster, during the second week they apply a policy of cutting their amount of garbage in half. How many kilograms of garbage have accumulated in Daniel's neighborhood during the 2 weeks?",
+      "recipe_id": "gsm8k_sprint340_garbage_accumulated",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "収集停止は2週間全体に及び、2週目の半減は通常週600kgを基準にする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03824",
+      "source_line_1based": 3825,
+      "source_record_sha256": "9fb2f2173fb721905ee76a2b689d4c66d258cc75895aed8298117568bd9e9bd5",
+      "raw_question_sha256": "1d7d53d0d237efece2ecdee90aeace6a6801b7d30ec9d4f9b7a933fefff40915",
+      "normalized_question_sha256": "1d7d53d0d237efece2ecdee90aeace6a6801b7d30ec9d4f9b7a933fefff40915",
+      "source_question": "Maria gave a third of her money to her friend Isha, half of what she gave to Florence. If Florence received three times as much money as Maria's cousin Rene, and Rene received $300, how much money did Maria give her three friends?",
+      "recipe_id": "gsm8k_sprint340_friends_gift_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照値1650ドルは3人の受取額の算術関係だけを合計した条件付きの答え。『Mariaの所持金』だけから全額を払うという通常条件とは矛盾する。"
+      ],
+      "blockers": [
+        "Ishaへの450ドルを元金の3分の1とすると元金1350ドルより贈与総額1650ドルが大きい。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03825",
+      "source_line_1based": 3826,
+      "source_record_sha256": "614fbe14fdd1718562eef30011c08fdcbe55cae63b3e866845fafed2ae30c0d3",
+      "raw_question_sha256": "224bfe86685cdfd06fe929526d0087d23d3c95f07ef9df6761feb0d651848aae",
+      "normalized_question_sha256": "224bfe86685cdfd06fe929526d0087d23d3c95f07ef9df6761feb0d651848aae",
+      "source_question": "There were 37 jellybeans in a jar. Pat removed 15 of them. Pat then added 5 of the removed jellybeans back in, and then removed 4 more. How many jellybeans are now in the jar?",
+      "recipe_id": "gsm8k_sprint340_jellybeans_remaining",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "戻した5個は最初に除いた15個の一部であり、最後の4個はその時点の瓶から除く。"
+      ],
+      "blockers": []
+    }
+  ]
+}

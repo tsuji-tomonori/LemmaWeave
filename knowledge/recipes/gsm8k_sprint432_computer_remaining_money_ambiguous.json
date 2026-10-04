@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint432_computer_remaining_money_ambiguous",
+  "title_ja": "two times moreの解釈による残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04187",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jeremy bought a computer for $3000, and some accessories for 10% of the price of the computer. How much money has Jeremy if, before the purchase, he had two times more money, than the cost of the computer itself?",
+  "answer_ja": "付属品は300ドル。「two times more」を2倍と読むと初期6000ドルで残金2700ドル。文字どおり「2倍多い」を元額+2倍と読むと初期9000ドルで残金5700ドル。原文だけでは一意に決まらず、参照解答2700ドルは前者の条件付き。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.computer_remaining_money_ambiguous",
+  "graph": "work/gsm8k-sprint432-computer-remaining-money-ambiguous-graph.json",
+  "model_notes_ja": [
+    "two times moreの慣用的2倍読みと文字どおり3倍読みを分離する。"
+  ],
+  "steps": [
+    {
+      "id": "accessory",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.computer_accessory_cost",
+      "title_ja": "付属品代",
+      "claim_ja": "3000×10%=300ドル。",
+      "method_ja": "コンピュータ価格に10%を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "付属品はコンピュータ価格の10%。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3000×10%=300ドル。"
+    },
+    {
+      "id": "conventional",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.computer_conventional_remaining",
+      "title_ja": "2倍読み",
+      "claim_ja": "初期6000ドルなら6000-3000-300=2700ドル。",
+      "method_ja": "two times moreを2倍と読む。",
+      "requires_steps": [
+        "accessory"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参照解答が採る慣用読み。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "初期6000ドルなら6000-3000-300=2700ドル。"
+    },
+    {
+      "id": "literal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.computer_literal_more_remaining",
+      "title_ja": "2倍多い読み",
+      "claim_ja": "初期9000ドルなら9000-3000-300=5700ドル。",
+      "method_ja": "元額にその2倍を加える文字どおりの読み。",
+      "requires_steps": [
+        "accessory"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "two times moreを「2倍分多い」と読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "初期9000ドルなら9000-3000-300=5700ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.computer_remaining_money_ambiguous",
+      "title_ja": "解釈による非一意性",
+      "claim_ja": "2700ドルと5700ドルが得られるため、解釈を固定しない原文では一意でない。",
+      "method_ja": "二つの整合する読みを比較する。",
+      "requires_steps": [
+        "conventional",
+        "literal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2700ドルは2倍読みの追加条件付き。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2700ドルと5700ドルが得られるため、解釈を固定しない原文では一意でない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4188,
+    "checked_model_hash": "36520a5493dfbeeee6398f2298aaa7f53f29221fd77d96b96c3e12b29d3acde8",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

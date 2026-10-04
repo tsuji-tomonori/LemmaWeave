@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint398_july_husband_age",
+  "title_ja": "Julyの夫の現在年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04153",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "When Hannah was 6 years old, her age was double the age of her sister July. Now, 20 years later, if July's husband is 2 years older than her, how old is he?",
+  "answer_ja": "Hannahが6歳のときJulyはその半分の3歳。20年後のJulyは23歳で、夫は2歳上なので25歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.july_husband_age",
+  "graph": "work/gsm8k-sprint398-july-husband-age-graph.json",
+  "model_notes_ja": [
+    "年齢差は時間経過で変わらない。"
+  ],
+  "steps": [
+    {
+      "id": "july_husband_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.july_husband_age",
+      "title_ja": "Julyの夫の現在年齢",
+      "claim_ja": "Hannahが6歳のときJulyはその半分の3歳。20年後のJulyは23歳で、夫は2歳上なので25歳。",
+      "method_ja": "過去の年齢比からJulyの年齢を求め、同じ20年を加えた後に年齢差2年を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『20 years later』はHannahが6歳だった時点から20年後を指し、夫婦の2歳差は現在の差である。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Hannahが6歳のときJulyはその半分の3歳。20年後のJulyは23歳で、夫は2歳上なので25歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4154,
+    "checked_model_hash": "0ce23b525790f66cf6c451589c4d739fd6e9f85eb4e50c882fbe4d719ec4e1ea",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

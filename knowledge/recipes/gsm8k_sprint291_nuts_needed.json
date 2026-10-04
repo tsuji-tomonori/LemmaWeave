@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint291_nuts_needed",
+  "title_ja": "クッキーに必要なナッツ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03574",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A02P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "60枚のうち1/4がナッツのみ、40%がチップのみ、残りが両方で、ナッツ入り1枚に2個使うときのナッツ数。",
+  "answer_ja": "72個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.nuts_needed",
+  "graph": "work/gsm8k-sprint291-nuts-needed-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "nut_only_cookies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.nut_only_cookies",
+      "title_ja": "ナッツのみは15枚。",
+      "claim_ja": "ナッツのみは15枚。",
+      "method_ja": "60枚の4分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "ナッツのみは15枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "chip_only_cookies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.chip_only_cookies",
+      "title_ja": "チップのみは24枚。",
+      "claim_ja": "チップのみは24枚。",
+      "method_ja": "60枚の40%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "チップのみは24枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "both_cookies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.both_cookies",
+      "title_ja": "両方入りは21枚。",
+      "claim_ja": "両方入りは21枚。",
+      "method_ja": "60枚から15枚と24枚を除く。",
+      "requires_steps": [
+        "nut_only_cookies",
+        "chip_only_cookies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "両方入りは21枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "cookies_with_nuts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.cookies_with_nuts",
+      "title_ja": "ナッツ入りは36枚。",
+      "claim_ja": "ナッツ入りは36枚。",
+      "method_ja": "ナッツのみ15枚と両方入り21枚を加える。",
+      "requires_steps": [
+        "nut_only_cookies",
+        "both_cookies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "ナッツ入りは36枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "nuts_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.nuts_needed",
+      "title_ja": "必要なナッツは72個。",
+      "claim_ja": "必要なナッツは72個。",
+      "method_ja": "ナッツ入り36枚に1枚2個を掛ける。",
+      "requires_steps": [
+        "cookies_with_nuts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "必要なナッツは72個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3575,
+    "checked_model_hash": "0e92a18a78efc2e5c06bbd51ce04cac80b4ff86a3da225d6c4c8305acd7d0f6e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

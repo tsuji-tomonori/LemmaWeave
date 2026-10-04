@@ -18,9 +18,9 @@ theorem known_fruit_total :
 theorem lemons_in_basket
     (kiwi lemons : ℕ)
     (hEqual : kiwi = lemons)
-    (hTotal : 40 + kiwi + lemons = 58) :
+    (hTotal : (18 + 10 + 12) + kiwi + lemons = 58) :
     lemons = 9 := by
-  have hKnown := known_fruit_total
+  rw [known_fruit_total] at hTotal
   omega
 
 theorem fruit_group_costs :

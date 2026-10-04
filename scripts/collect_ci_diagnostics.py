@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TAIL_BYTES = 64 * 1024
+TAIL_BYTES = 16 * 1024
 OPTIONAL_REPORTS = (
     'reports/method-target-checkpoint.json',
     'reports/method-targets.json',
@@ -16,6 +16,8 @@ OPTIONAL_REPORTS = (
 
 
 def tail_text(path):
+    if not path:
+        return None
     path = ROOT / path
     if not path.is_file():
         return None
@@ -27,7 +29,23 @@ def load_json(path):
     path = ROOT / path
     if not path.is_file():
         return None
-    return json.loads(path.read_text())
+    text = path.read_text()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as exc:
+        # Older checkpoints accidentally appended the two literal characters
+        # "\\n". Recover that one known format without hiding other corruption.
+        if text.endswith('\\n'):
+            try:
+                return json.loads(text[:-2])
+            except json.JSONDecodeError:
+                pass
+        return {
+            'diagnostic_status': 'invalid_json',
+            'path': str(path.relative_to(ROOT)),
+            'error': str(exc),
+            'text_tail': text[-TAIL_BYTES:],
+        }
 
 
 def main():

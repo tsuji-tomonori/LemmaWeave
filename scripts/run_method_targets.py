@@ -14,6 +14,11 @@ from check_method_recipes import proof_evidence
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def write_json(path, payload):
+    """Write valid JSON with one real trailing newline."""
+    path.write_text(json.dumps(payload, indent=2) + '\n')
+
+
 def evidence_is_current(root, recipe):
     """Use the same freshness gate that later promotes a recipe."""
     graph = root / recipe['graph']
@@ -86,6 +91,14 @@ def target_plan(root, target):
     return {'target': target, 'project_imports': project_imports}
 
 
+def run_dependency_build(imports):
+    """Run a dependency build through the evidence wrapper for bounded diagnostics."""
+    return subprocess.run(
+        [sys.executable, 'scripts/run.py', '--timeout', '900', '--',
+         'lake', 'build', *imports],
+        cwd=ROOT, check=False)
+
+
 def build_target_plan(plan):
     """Build one target's imports and return its isolated outcome.
 
@@ -94,8 +107,7 @@ def build_target_plan(plan):
     therefore write the same Lake outputs.
     """
     imports = plan['project_imports']
-    dependency = subprocess.run(['lake', 'build', *imports], cwd=ROOT, check=False) \
-        if imports else None
+    dependency = run_dependency_build(imports) if imports else None
     dependency_exit = dependency.returncode if dependency is not None else 0
     return {
         'target': plan['target'],
@@ -116,7 +128,7 @@ def build_target_plans(plans):
             }
             for plan in plans
         }
-    batch = subprocess.run(['lake', 'build', *imports], cwd=ROOT, check=False)
+    batch = run_dependency_build(imports)
     if batch.returncode == 0:
         return {
             plan['target']: {
@@ -177,8 +189,7 @@ def main():
                 'completed_outcomes': [outcomes[name]
                                        for name in sorted(lean_codes)],
             }
-            (ROOT / 'reports/method-target-checkpoint.json').write_text(
-                json.dumps(checkpoint, indent=2) + '\\n')
+            write_json(ROOT / 'reports/method-target-checkpoint.json', checkpoint)
     results = []
     for plan in plans:
         target = plan['target']
@@ -198,8 +209,7 @@ def main():
             'recipes': [r['id'] for r in members],
             'missing_graphs': missing_graphs,
         })
-    (ROOT / 'reports/method-targets.json').write_text(
-        json.dumps(results, indent=2) + '\n')
+    write_json(ROOT / 'reports/method-targets.json', results)
     selection = {
         'mode': 'all' if args.all else 'stale_evidence_only',
         'registered_target_count': len(all_targets),
@@ -212,8 +222,7 @@ def main():
         'safety_gate':
             'check_method_recipes.proof_evidence over Lean import closure and graph hash',
     }
-    (ROOT / 'reports/method-target-selection.json').write_text(
-        json.dumps(selection, indent=2) + '\n')
+    write_json(ROOT / 'reports/method-target-selection.json', selection)
     return int(any(r['exit_code'] for r in results))
 
 

@@ -10,6 +10,11 @@
   "base_sha": "64c9482d474d7d5f6cb6cfd88afd4d0d539bf69d",
   "role": "ci_repair_override_user_instruction",
   "problem_ids": [],
-  "status": "active",
-  "note_ja": "CI成功まで新規問題処理を停止する最新ユーザー指示に従い、旧固定環境CIで確定した22件のテストimport名と実モデル名の不一致を修復する。"
+  "status": "completed_ci_repair_awaiting_exact_head_verification",
+  "checkpoint_commits": [
+    "eb1a19da2951c84a2a4008c2c3ba998f6e26a916",
+    "1e6fe7b24f352819da947325c5b5b551b68ac4ca"
+  ],
+  "note_ja": "旧固定環境CIの失敗一覧22件を現在ツリーと照合し、監査ドライバのimportを実在するModelsモジュールへ修正した。新規問題処理は停止を継続する。",
+  "finished_at": "2026-10-04T21:15:00+09:00"
 }

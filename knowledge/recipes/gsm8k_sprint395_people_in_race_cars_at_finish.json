@@ -18,12 +18,57 @@
   ],
   "steps": [
     {
+      "id": "race_initial_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.race_initial_people",
+      "title_ja": "開始時人数",
+      "claim_ja": "各車3人、20台で60人。",
+      "method_ja": "乗客2人と運転手1人を数える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "運転手も人員に含む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "開始時60人。"
+    },
+    {
+      "id": "race_added_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.race_added_people",
+      "title_ja": "追加人数",
+      "claim_ja": "各車1人、20台で20人増える。",
+      "method_ja": "台数に1人を掛ける。",
+      "requires_steps": [
+        "race_initial_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全車が中間点で1人追加。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20人増える。"
+    },
+    {
+      "id": "race_finish_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.race_finish_people",
+      "title_ja": "終了時人数",
+      "claim_ja": "60+20=80人。",
+      "method_ja": "開始時と追加分を足す。",
+      "requires_steps": [
+        "race_initial_people",
+        "race_added_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全員が終了まで車内にいる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "終了時80人。"
+    },
+    {
       "id": "people_in_race_cars_at_finish",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.people_in_race_cars_at_finish",
-      "title_ja": "レース終了時の車内人数",
+      "title_ja": "問題全体の結論",
       "claim_ja": "各車は最初に乗客2人と運転手1人で3人、20台で60人。中間点で各車に1人ずつ増えるので20人増え、全員が降りない条件より終了時は60+20=80人。",
-      "method_ja": "開始時人数と中間点で増える人数を別に数えて足す。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "race_initial_people",
+        "race_added_people",
+        "race_finish_people"
+      ],
       "uses_nodes": [],
       "condition_ja": "20台すべてが中間点で1人を追加し、追加した人を含め全員が終了まで車内にいる。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +79,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4144,
-    "checked_model_hash": "e3cecdfc4e674a7dd97b9452abd2054305e562a573cca490a1b2a4ab3c1ce84c",
+    "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9"
 }

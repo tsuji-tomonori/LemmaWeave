@@ -95,7 +95,10 @@ structure CatchUp where
 
 theorem catchup_head_start (m : CatchUp) : m.headStartMiles = 5 := by cases m <;> simp_all <;> omega
 theorem catchup_speed_gap (m : CatchUp) : m.speedGap = 5 := by rw [m.hSpeedGap]
-theorem catchup_solution (m : CatchUp) : m.catchUpHours = 1 := by cases m <;> simp_all <;> omega
+theorem catchup_solution (m : CatchUp) : m.catchUpHours = 1 := by
+  have h := m.hCatchUp
+  rw [catchup_speed_gap m, catchup_head_start m] at h
+  omega
 
 structure GiftBags where
   visitors : ℕ

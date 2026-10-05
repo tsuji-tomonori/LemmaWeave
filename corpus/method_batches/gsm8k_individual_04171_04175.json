@@ -11,9 +11,9 @@
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "semantic_review_status": "self_review_only",
-  "semantic_model_hash": "9eb33fa5f60cac3e758cdfc11582f1317b15a477355f05adcee8138242260b9e",
+  "semantic_model_hash": "9fb26bfffae931c4ad2fdf802b49866457484545f381e8a2db290b79dc622f10",
   "model_files": [
-    "LemmaWeave/Problems/GSM8K/Sprint1004A10P2Models.lean"
+    "LemmaWeave/Problems/GSM8K/Sprint1006A04P2Models.lean"
   ],
   "items": [
     {
@@ -27,7 +27,7 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "SUVの各工程ではなく合計時間を2倍する。"
+        "SUVの『twice as long』を普通車1台の全工程時間の2倍とする。"
       ],
       "blockers": []
     },
@@ -42,7 +42,7 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "比較は1枚の単価差ではなく各区分の総額差。"
+        "券種ごとの人数と単価を対応させる。"
       ],
       "blockers": []
     },
@@ -53,11 +53,11 @@
       "raw_question_sha256": "f64028a32d172d13db192c6ec941d4188ba13891051e5fa954df380c89ad8c72",
       "normalized_question_sha256": "f64028a32d172d13db192c6ec941d4188ba13891051e5fa954df380c89ad8c72",
       "source_question": "Jack is making barbecue sauce. He uses 3 cups of ketchup, 1 cup of vinegar and 1 cup of honey. If each burger takes 1/4 cup of sauce and each pulled pork sandwich takes 1/6 cup, how many burgers can Jack make if he makes 18 pulled pork sandwiches?",
-      "recipe_id": "gsm8k_sprint418_barbecue_sauce_burgers",
+      "recipe_id": "gsm8k_sprint418_barbecue_burgers",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "分数除算2÷(1/4)を2×4として形式化する。"
+        "各サンドイッチへ同量を使い、残量は1/4カップ単位で割り切れる。"
       ],
       "blockers": []
     },
@@ -68,11 +68,11 @@
       "raw_question_sha256": "ab2e89a6b4e56b2cd10e960891deeac9913324b3e4977b241b5b456b9d5f096e",
       "normalized_question_sha256": "e4013bc7f8c77189fdcf763337c3cdf8da79277d1cb25bce15c2f7f57a6e14ed",
       "source_question": "Ronnie is a train engineer.  His train pulls 3 red boxcars, 4 blue boxcars, and 7 black boxcars.  If the black boxcars can each hold 4000 pounds of coal, which is half as much as what the blue boxcars can hold, and the red boxcars can hold 3 times as much as the blue boxcars, how many pounds of coal can all of the train's boxcars combined hold?",
-      "recipe_id": "gsm8k_sprint419_boxcar_coal_capacity",
+      "recipe_id": "gsm8k_sprint419_boxcar_capacity",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "「half as much」は黒容量=青容量/2を表す。"
+        "『half as much as what the blue boxcars can hold』は各黒貨車と各青貨車の容量比較。"
       ],
       "blockers": []
     },
@@ -83,14 +83,16 @@
       "raw_question_sha256": "06defbec79725525d5407e2331320393c8ccad10793da465c69dd13d4e67fd49",
       "normalized_question_sha256": "06defbec79725525d5407e2331320393c8ccad10793da465c69dd13d4e67fd49",
       "source_question": "The vending machine fails to drop a snack when it’s purchased one in six times. One in ten times, it will accidentally drop two snacks. The rest of the time, it drops the purchased snack. If thirty people have used the vending machine once each to purchase a snack, how many snacks has the vending machine dropped?",
-      "recipe_id": "gsm8k_sprint420_vending_machine_snacks",
+      "recipe_id": "gsm8k_sprint420_vending_machine_snacks_underdetermined",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "比率を期待値ではなく30回中の正確な頻度として読む。"
+        "『one in six/ten times』は確率・長期頻度であり、30回の実現回数を必ず固定しない。",
+        "失敗と二重排出は『rest of the time』により排反と読む。"
       ],
-      "blockers": []
+      "blockers": [
+        "source_underdetermined_realized_random_sample"
+      ]
     }
   ]
 }
-

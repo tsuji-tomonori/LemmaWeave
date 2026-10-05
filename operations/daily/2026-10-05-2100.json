@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T210000+0900-train-01921-proof-retry",
+  "scheduled_slot": "2026-10-05T21:00:00+09:00",
+  "started_at": "2026-10-05T21:03:55+09:00",
+  "finished_at": "2026-10-05T21:06:39+09:00",
+  "schedule_deviation_minutes": 3,
+  "schedule_deviation_reason_ja": "予定された失敗証明の再試行枠で、直近CI artifactに残る次の個別失敗を修復した。",
+  "role": "overdue_and_failed_proof_retry",
+  "scheduled_role": "overdue_and_failed_proof_retry",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "41c635567c88a6a0da2249c8edd68fff7e8e38da",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01921"
+  ],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01921"
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01921",
+      "retry_on": "after_exact_head_ci_and_evidence_import",
+      "reason_ja": "週間消費量と週数の記述解答、Lean証明修復は完了したが、修復後HEADでの固定Lean成功証拠は未取得。",
+      "next_action_ja": "同一コミットのexact-head CI、公理監査、依存抽出、入力ハッシュ照合に合格後だけsolution_readyへ昇格する。"
+    }
+  ],
+  "source_verification": {
+    "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_line_1based": 1922,
+    "source_record_sha256": "7c1789581527e54c37be309a6bfffdd424a93e0b09c88b5043d9ea6bc286fbe5",
+    "raw_question_sha256": "64f622100e97f832a0bd7db65fe2b69e015c0445b0106aa60584e08be6cba354",
+    "normalized_question_sha256": "64f622100e97f832a0bd7db65fe2b69e015c0445b0106aa60584e08be6cba354",
+    "source_question": "Lisa has 36 candies. On Mondays and Wednesdays, she eats 2 candies for each day and on the other days of the week she eats 1 candy for each day. How many weeks does it take for Lisa to eat all of the candies?",
+    "source_hashes_match_manifest": true,
+    "interpretation_note_ja": "参照説明の曜日誤記は採用せず、原題どおり月曜と水曜を2個の日とした。"
+  },
+  "written_solution_ja": [
+    "月曜と水曜の2日には各2個食べるので、合計2×2=4個。",
+    "残り5日には各1個食べるので、合計5×1=5個。",
+    "1週間の消費量は4+5=9個で、36÷9=4より4週間で食べ終える。"
+  ],
+  "lean_repair": {
+    "file": "LemmaWeave/Problems/GSM8K/Sprint0923A19Models.lean",
+    "theorem": "weekly_candy_solution",
+    "proposition": "m.weeks = 4",
+    "previous_failure": "変数積 weeks * weekly = 36 を構造体全体へのomegaで直接処理し、weeks=0..3の反例候補が残った",
+    "change": "既証明weekly_candy_amount mでweekly=9をhWeeksへ代入し、weeks * 9 = 36をomegaで解く",
+    "proof_dependencies": [
+      "weekly_candy_amount",
+      "WeeklyCandy.hWeeks"
+    ],
+    "theorem_statement_changed": false,
+    "model_changed": false,
+    "assumptions_changed": false,
+    "conclusion_changed": false,
+    "sorry_added": 0,
+    "admit_added": 0,
+    "axiom_added": 0,
+    "repair_commit": "ed2fe19cde1de69d936c2dcf98b1861de0300b89"
+  },
+  "failed_ci_evidence": {
+    "workflow_run_id": 37262551222,
+    "head_sha": "4c0c8c44456d8a3ad500098466ce5d8b343c9603",
+    "conclusion": "failure",
+    "compact_artifact_id": 11327226073,
+    "compact_artifact_sha256": "2d8113276b92cb567dafb84ad26f97aac1e4284b85dff2dd4fb0acdd0224d96d",
+    "compact_artifact_local_digest_match": true,
+    "target_module": "LemmaWeave.Problems.GSM8K.Sprint0923A19Models",
+    "target_exit_code": 1,
+    "target_error": "Sprint0923A19Models.lean:109:93 omega could not prove; weeks=0..3 remained possible"
+  },
+  "local_verification": {
+    "status": "static_review_only",
+    "checks": [
+      "固定問題ID・原題・行番号・レコードSHA・問題文SHAを方法バッチから再照合",
+      "月曜・水曜の4個と残り5日の5個から週9個、36÷9=4週間を独立再計算",
+      "既証明weekly_candy_amountを実際の証明依存に使い、変数積を定数係数へ変換",
+      "定理文・モデル・仮定・結論の変更なし",
+      "sorry・admit・独自axiomの追加なし"
+    ],
+    "not_run": [
+      "Lean 4.33.1 build",
+      "check_method_recipes.py --render",
+      "dependency graph generation"
+    ],
+    "reason_ja": "ローカル作業領域に固定Lean/mathlib環境がなく、実行検証はpush後のexact-head CIへ委ねる。"
+  },
+  "exact_head_ci": {
+    "workflow_trigger": "push",
+    "status_at_recording": "pending_after_ledger_commit",
+    "retrieval_note_ja": "commit workflow検索はPRイベントだけを返すため、push実行結果は次回のActions結果・artifactで確定する。"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "remaining": 8274,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_exact_head_ci_unverified",
+    "unresolved_review_threads": 0
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "修復後HEADのLeanビルド、公理・依存監査、現行証拠取込が未完了。"
+  }
+}

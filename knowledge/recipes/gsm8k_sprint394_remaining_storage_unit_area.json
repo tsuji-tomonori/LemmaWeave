@@ -18,26 +18,99 @@
   ],
   "steps": [
     {
-      "id": "remaining_storage_unit_area",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.remaining_storage_unit_area",
-      "title_ja": "残りの倉庫1区画の面積",
-      "claim_ja": "既知の1区画は8×4=32平方フィートで、20区画は640平方フィート。残りの総面積は5,040-640=4,400平方フィート、区画数は42-20=22なので、1区画は4,400÷22=200平方フィートである。",
-      "method_ja": "長方形の面積、差、等分を順に使う。",
+      "id": "storage_known_unit_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.storage_known_unit_area",
+      "title_ja": "既知1区画の面積",
+      "claim_ja": "8×4=32平方フィート。",
+      "method_ja": "長方形の面積を求める。",
       "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "寸法が8フィート×4フィート。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1区画は32平方フィート。"
+    },
+    {
+      "id": "storage_known_total_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.storage_known_total_area",
+      "title_ja": "既知20区画の面積",
+      "claim_ja": "20×32=640平方フィート。",
+      "method_ja": "同面積20区画を合計する。",
+      "requires_steps": [
+        "storage_known_unit_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "既知区画は20個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "既知部分は640平方フィート。"
+    },
+    {
+      "id": "storage_remaining_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.storage_remaining_area",
+      "title_ja": "残りの総面積",
+      "claim_ja": "5,040-640=4,400平方フィート。",
+      "method_ja": "総面積から既知部分を引く。",
+      "requires_steps": [
+        "storage_known_total_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総面積は5,040平方フィート。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "残りは4,400平方フィート。"
+    },
+    {
+      "id": "storage_remaining_units",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.storage_remaining_units",
+      "title_ja": "残りの区画数",
+      "claim_ja": "42-20=22区画。",
+      "method_ja": "総区画数から既知区画数を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全42区画中20区画が既知。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "残りは22区画。"
+    },
+    {
+      "id": "storage_equal_unit_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.storage_equal_unit_area",
+      "title_ja": "残り1区画の面積",
+      "claim_ja": "残りは同面積なので4,400÷22=200平方フィート。",
+      "method_ja": "等分する。",
+      "requires_steps": [
+        "storage_remaining_area",
+        "storage_remaining_units"
+      ],
       "uses_nodes": [],
       "condition_ja": "残り22区画はすべて同じ面積。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "既知の1区画は8×4=32平方フィートで、20区画は640平方フィート。残りの総面積は5,040-640=4,400平方フィート、区画数は42-20=22なので、1区画は4,400÷22=200平方フィートである。"
+      "conclusion_ja": "1区画は200平方フィート。"
+    },
+    {
+      "id": "remaining_storage_unit_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.remaining_storage_unit_area",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "既知面積と残数を順に求めると、残り1区画は200平方フィート。",
+      "method_ja": "全段階を結合する。",
+      "requires_steps": [
+        "storage_known_unit_area",
+        "storage_known_total_area",
+        "storage_remaining_area",
+        "storage_remaining_units",
+        "storage_equal_unit_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り区画はすべて同面積。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "200平方フィート。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4124,
-    "checked_model_hash": "a9f36a6c0272b72029af612047184e8743af2c4b1fe539d4e9e90a7a3205a51a",
+    "checked_model_hash": "9fce4397af3a600a615fa57f0e22919869b5bf5f9700c74d911d79cc785d6693",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
-      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "記述解答の各主張を名前付きLean定理へ分割し、最終定理の実依存として接続した。",
       "独立レビューではなく作成者自己照合である。"
     ]
   }

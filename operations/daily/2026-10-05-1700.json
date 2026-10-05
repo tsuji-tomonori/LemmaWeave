@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T170000+0900-train-01756-proof-repair",
+  "scheduled_slot": "2026-10-05T17:00:00+09:00",
+  "started_at": "2026-10-05T17:32:30+09:00",
+  "finished_at": "2026-10-05T17:38:04+09:00",
+  "schedule_deviation_minutes": 32,
+  "schedule_deviation_reason_ja": "exact-head CIの残存失敗をartifactから個別に回収し、次の既存問題のLean証明不足を修復した。",
+  "role": "proof_repair_override",
+  "scheduled_role": "gsm8k_15_individual_solve",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "7fa39aa823a2114e91950e4e4edb88478c002c51",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01756"
+  ],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01756"
+  ],
+  "deferred": [
+    {
+      "problem_id": "scheduled-slot:2026-10-05-17",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "exact-head CIが未成功のため、予定15問の新規処理を開始せず既存の証明失敗を修復した。",
+      "next_action_ja": "CI・公理・依存・証拠ゲート成功後に未実行枠として再配分する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01756",
+      "retry_on": "after_exact_head_ci_and_evidence_import",
+      "reason_ja": "不足していた数値不等式の証明は追加したが、現行HEADでのLean 4.33.1成功証拠は未取得。",
+      "next_action_ja": "同一コミットのexact-head CI、公理監査、依存グラフ、入力ハッシュ照合に合格後だけsolution_readyへ昇格する。"
+    }
+  ],
+  "source_verification": {
+    "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_line_1based": 1757,
+    "source_record_sha256": "1dfe10b63a1072bf644f14aee1c13f1a5cb2421c160f2ff3aa58b68b2f77f400",
+    "raw_question_sha256": "3780564b31b779b51284836126ea07461bfa8330150c5e1f4dbaa7003de29646",
+    "normalized_question_sha256": "3780564b31b779b51284836126ea07461bfa8330150c5e1f4dbaa7003de29646",
+    "source_question": "Madeline needs $1200 to pay rent, $400 for groceries, $200 for medical expenses, and $60 for utilities. She also wants to save $200 in case of an emergency. She makes $15 per hour at her job. How many hours will Madeline need to work this month?",
+    "source_hashes_match_manifest": true
+  },
+  "written_solution_ja": [
+    "必要額は1200+400+200+60+200=2060ドル。",
+    "1時間15ドルなので、必要時間は2060/15=137と1/3時間であり、自然数時間では切り上げて138時間。",
+    "138時間なら15×138=2070ドルで必要額2060ドル以上。137時間では15×137=2055ドルで5ドル不足するため、最小は138時間。"
+  ],
+  "lean_repair": {
+    "file": "LemmaWeave/Problems/GSM8K/Sprint0923A07Models.lean",
+    "theorem": "hours_138_enough",
+    "proposition": "m.totalNeed ≤ 138 * 15",
+    "previous_failure": "rw後に残った 2060 ≤ 138 * 15 が未証明",
+    "change": "rw [hours_total_need m] の後に norm_num を追加",
+    "theorem_statement_changed": false,
+    "model_changed": false,
+    "assumptions_changed": false,
+    "conclusion_changed": false,
+    "sorry_added": 0,
+    "admit_added": 0,
+    "axiom_added": 0,
+    "repair_commit": "b18816d543cd28060caadb0d1257a5549a1d1f2a"
+  },
+  "failed_ci_evidence": {
+    "workflow_run_id": 37262551222,
+    "head_sha": "4c0c8c44456d8a3ad500098466ce5d8b343c9603",
+    "conclusion": "failure",
+    "run_count": 646,
+    "failed_or_timed_out_count": 123,
+    "compact_artifact_id": 11327226073,
+    "compact_artifact_size_bytes": 221303,
+    "compact_artifact_sha256": "2d8113276b92cb567dafb84ad26f97aac1e4284b85dff2dd4fb0acdd0224d96d",
+    "compact_artifact_local_digest_match": true,
+    "target_run_id": "20261005T044143-595d0894",
+    "target_exit_code": 1,
+    "target_error": "Sprint0923A07Models.lean:147:72 unsolved goal 2060 ≤ 138 * 15"
+  },
+  "local_verification": {
+    "status": "static_review_only",
+    "checks": [
+      "固定問題ID・原題・行番号・レコードSHA・問題文SHAを方法バッチから再照合",
+      "必要額2060、137時間の収入2055、138時間の収入2070を独立再計算",
+      "定理文・モデル・仮定・結論を変更せず、未閉鎖の数値不等式だけをnorm_numで閉じる修正",
+      "sorry・admit・独自axiomの追加なし"
+    ],
+    "not_run": [
+      "Lean 4.33.1 build",
+      "check_method_recipes.py --render",
+      "dependency graph generation"
+    ],
+    "reason_ja": "ローカル作業領域に固定Lean/mathlib環境がなく、実行検証はpush後のexact-head CIへ委ねる。"
+  },
+  "exact_head_ci": {
+    "workflow_trigger": "push",
+    "status_at_recording": "pending_after_ledger_commit",
+    "retrieval_note_ja": "利用中のcommit workflow検索はPRイベントのみを返すため、push実行は次回GitHub Actions結果・artifactで確定する。"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "remaining": 8274,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_exact_head_ci_unverified",
+    "unresolved_review_threads": 0
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "修復後HEADのLeanビルド、公理・依存監査、現行証拠取込が未完了。"
+  }
+}

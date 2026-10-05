@@ -90,7 +90,10 @@ structure Tomatoes where
   hPercent : plantTotal*percent=tomatoTotal*100
 theorem tomatoes_first (m:Tomatoes) : m.first=2 := by cases m <;> simp_all <;> omega
 theorem tomatoes_second (m:Tomatoes) : m.second=5 := by cases m <;> simp_all <;> omega
-theorem tomatoes_totals (m:Tomatoes) : m.tomatoTotal=7 ∧ m.plantTotal=35 := by constructor <;> rw [m.hTomatoes, m.hPlants, tomatoes_first m, tomatoes_second m] <;> norm_num
+theorem tomatoes_totals (m:Tomatoes) : m.tomatoTotal=7 ∧ m.plantTotal=35 := by
+  constructor
+  · rw [m.hTomatoes, tomatoes_first m, tomatoes_second m]
+  · rw [m.hPlants]
 theorem tomatoes_solution (m:Tomatoes) : m.percent=20 := by rcases tomatoes_totals m with ⟨ht,hp⟩; have h:=m.hPercent; rw [ht,hp] at h; omega
 
 structure Fishing where

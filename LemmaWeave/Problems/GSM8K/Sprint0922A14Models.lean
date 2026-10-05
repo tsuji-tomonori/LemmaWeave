@@ -186,11 +186,11 @@ theorem maddie_friday_exact (m : Maddie) (hExact : m.episodeMinutes = 44) : m.fr
 theorem maddie_known_exact (m : Maddie) (hExact : m.episodeMinutes = 44) : m.known = 247 := by
   rw [m.hKnown, maddie_friday_exact m hExact] <;> norm_num
 theorem maddie_counterexample : ∃ m : Maddie, m.episodeMinutes = 43 ∧ m.weekend = 99 := by
-  refine ⟨{ episodeMinutes := 43, total := 344, friday := 86, known := 245, weekend := 99,
-    hTotal := by norm_num, hFriday := by norm_num, hKnown := by norm_num, hWeekend := by norm_num }, rfl, rfl⟩
+  refine ⟨⟨43, 344, 86, 245, 99, ?_, ?_, ?_, ?_⟩, rfl, rfl⟩ <;> norm_num
 theorem maddie_solution (m : Maddie) (hExact : m.episodeMinutes = 44) : m.weekend = 105 := by
   have ht := maddie_total_exact m hExact
   have hk := maddie_known_exact m hExact
+  have hw := m.hWeekend
   omega
 
 structure NailsDry where

@@ -54,7 +54,7 @@ structure RaceAverage where
   hAverage : average * totalTime = 6 * 3600
 
 theorem race_speeds (m : RaceAverage) : m.speed2 = 200 ∧ m.speed3 = 300 := by
-  constructor <;> omega
+  cases m <;> simp_all <;> omega
 theorem race_time1 (m : RaceAverage) : m.time1 = 72 := by cases m <;> simp_all <;> omega
 theorem race_time2 (m : RaceAverage) : m.time2 = 36 := by
   have h := m.hTime2

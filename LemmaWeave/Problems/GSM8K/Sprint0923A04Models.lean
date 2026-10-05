@@ -227,6 +227,7 @@ theorem juggling_toby (m : JugglingContest) : m.toby = 400 := by rw [m.hToby]
 theorem juggling_friend (m : JugglingContest) : m.friend = 404 := by rw [m.hFriend]
 theorem juggling_solution (m : JugglingContest) : m.winner = 404 := by
   rw [m.hWinner, juggling_toby m, juggling_friend m]
+  norm_num
 
 structure JeansSale where
   pairCost : ℕ

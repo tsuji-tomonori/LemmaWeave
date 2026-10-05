@@ -34,7 +34,10 @@ structure CarSales where
   hAll : months * perMonth = 500
 
 theorem cars_per_month (m : CarSales) : m.perMonth = 100 := by rw [m.hMonthly]
-theorem cars_solution (m : CarSales) : m.months = 5 := by cases m <;> simp_all <;> omega
+theorem cars_solution (m : CarSales) : m.months = 5 := by
+  have h := m.hAll
+  rw [cars_per_month m] at h
+  omega
 
 structure CalculatorAnswers where
   second : ℕ

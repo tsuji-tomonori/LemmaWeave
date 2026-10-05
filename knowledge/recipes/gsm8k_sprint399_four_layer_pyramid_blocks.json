@@ -18,12 +18,74 @@
   ],
   "steps": [
     {
+      "id": "pyramid_second_layer",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.pyramid_second_layer",
+      "title_ja": "第2層",
+      "claim_ja": "1×3=3個。",
+      "method_ja": "直上層の3倍にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "最上層は1個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3個。"
+    },
+    {
+      "id": "pyramid_third_layer",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.pyramid_third_layer",
+      "title_ja": "第3層",
+      "claim_ja": "3×3=9個。",
+      "method_ja": "直上層の3倍にする。",
+      "requires_steps": [
+        "pyramid_second_layer"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第2層は3個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "9個。"
+    },
+    {
+      "id": "pyramid_fourth_layer",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.pyramid_fourth_layer",
+      "title_ja": "第4層",
+      "claim_ja": "9×3=27個。",
+      "method_ja": "直上層の3倍にする。",
+      "requires_steps": [
+        "pyramid_second_layer",
+        "pyramid_third_layer"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第3層は9個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "27個。"
+    },
+    {
+      "id": "pyramid_total_blocks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.pyramid_total_blocks",
+      "title_ja": "総ブロック数",
+      "claim_ja": "1+3+9+27=40個。",
+      "method_ja": "4層を合計する。",
+      "requires_steps": [
+        "pyramid_second_layer",
+        "pyramid_third_layer",
+        "pyramid_fourth_layer"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "層は全部で4層。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40個。"
+    },
+    {
       "id": "four_layer_pyramid_blocks",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.four_layer_pyramid_blocks",
-      "title_ja": "4層ピラミッドのブロック総数",
+      "title_ja": "問題全体の結論",
       "claim_ja": "上から1、3、9、27個。したがって総数は1+3+9+27=40個。",
-      "method_ja": "各層が直上の3倍という漸化関係を3回適用し、4層分を合計する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "pyramid_second_layer",
+        "pyramid_third_layer",
+        "pyramid_fourth_layer",
+        "pyramid_total_blocks"
+      ],
       "uses_nodes": [],
       "condition_ja": "最上層を第1層とし、層は全部で4層である。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +96,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4155,
-    "checked_model_hash": "0ce23b525790f66cf6c451589c4d739fd6e9f85eb4e50c882fbe4d719ec4e1ea",
+    "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280"
 }

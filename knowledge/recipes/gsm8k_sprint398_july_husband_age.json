@@ -18,12 +18,57 @@
   ],
   "steps": [
     {
+      "id": "july_age_then",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.july_age_then",
+      "title_ja": "当時のJulyの年齢",
+      "claim_ja": "6÷2=3歳。",
+      "method_ja": "Hannahの年齢を2倍関係から半分にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Hannah6歳がJulyの2倍。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3歳。"
+    },
+    {
+      "id": "july_age_now",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.july_age_now",
+      "title_ja": "現在のJulyの年齢",
+      "claim_ja": "3+20=23歳。",
+      "method_ja": "同じ20年を加える。",
+      "requires_steps": [
+        "july_age_then"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "当時から20年後。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "23歳。"
+    },
+    {
+      "id": "july_husband_age_now",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.july_husband_age_now",
+      "title_ja": "夫の現在年齢",
+      "claim_ja": "23+2=25歳。",
+      "method_ja": "現在の年齢差2年を加える。",
+      "requires_steps": [
+        "july_age_then",
+        "july_age_now"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "夫はJulyより2歳上。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "25歳。"
+    },
+    {
       "id": "july_husband_age",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.july_husband_age",
-      "title_ja": "Julyの夫の現在年齢",
+      "title_ja": "問題全体の結論",
       "claim_ja": "Hannahが6歳のときJulyはその半分の3歳。20年後のJulyは23歳で、夫は2歳上なので25歳。",
-      "method_ja": "過去の年齢比からJulyの年齢を求め、同じ20年を加えた後に年齢差2年を加える。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "july_age_then",
+        "july_age_now",
+        "july_husband_age_now"
+      ],
       "uses_nodes": [],
       "condition_ja": "『20 years later』はHannahが6歳だった時点から20年後を指し、夫婦の2歳差は現在の差である。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +79,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4154,
-    "checked_model_hash": "0ce23b525790f66cf6c451589c4d739fd6e9f85eb4e50c882fbe4d719ec4e1ea",
+    "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280"
 }

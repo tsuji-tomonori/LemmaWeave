@@ -18,12 +18,57 @@
   ],
   "steps": [
     {
+      "id": "emmy_remaining_ipods",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.emmy_remaining_ipods",
+      "title_ja": "Emmyの残り",
+      "claim_ja": "14-6=8台。",
+      "method_ja": "紛失数を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "初め14台、6台紛失。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8台。"
+    },
+    {
+      "id": "rosa_ipods",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.rosa_ipods",
+      "title_ja": "Rosaの台数",
+      "claim_ja": "8÷2=4台。",
+      "method_ja": "EmmyがRosaの2倍なので逆算する。",
+      "requires_steps": [
+        "emmy_remaining_ipods"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "比較時点は紛失後。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4台。"
+    },
+    {
+      "id": "emmy_rosa_total_ipods",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.emmy_rosa_total_ipods",
+      "title_ja": "2人の合計",
+      "claim_ja": "8+4=12台。",
+      "method_ja": "現在の2人分を合計する。",
+      "requires_steps": [
+        "emmy_remaining_ipods",
+        "rosa_ipods"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ時点の台数。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "12台。"
+    },
+    {
       "id": "emmy_rosa_ipods_total",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.emmy_rosa_ipods_total",
-      "title_ja": "EmmyとRosaのiPod合計",
+      "title_ja": "問題全体の結論",
       "claim_ja": "Emmyは14-6=8台残る。これはRosaの2倍なのでRosaは4台。合計は8+4=12台。",
-      "method_ja": "紛失後のEmmyの台数を求め、2倍関係を逆算して合計する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "emmy_remaining_ipods",
+        "rosa_ipods",
+        "emmy_rosa_total_ipods"
+      ],
       "uses_nodes": [],
       "condition_ja": "『still has twice as many as Rosa』は紛失後の8台がRosaの台数の2倍を表す。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +79,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4156,
-    "checked_model_hash": "0ce23b525790f66cf6c451589c4d739fd6e9f85eb4e50c882fbe4d719ec4e1ea",
+    "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280"
 }

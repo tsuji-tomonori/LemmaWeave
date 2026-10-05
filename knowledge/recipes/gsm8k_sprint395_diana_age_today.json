@@ -18,12 +18,41 @@
   ],
   "steps": [
     {
+      "id": "grace_age_today",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.grace_age_today",
+      "title_ja": "Graceの現在年齢",
+      "claim_ja": "1年前3歳なので現在4歳。",
+      "method_ja": "1年を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "比較時点は今日。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Graceは4歳。"
+    },
+    {
+      "id": "diana_twice_grace",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.diana_twice_grace",
+      "title_ja": "Dianaの現在年齢",
+      "claim_ja": "4×2=8歳。",
+      "method_ja": "現在のGraceを2倍する。",
+      "requires_steps": [
+        "grace_age_today"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Dianaは今日のGraceの2倍。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Dianaは8歳。"
+    },
+    {
       "id": "diana_age_today",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.diana_age_today",
-      "title_ja": "Dianaの現在年齢",
+      "title_ja": "問題全体の結論",
       "claim_ja": "Graceは1年前に3歳になったので現在4歳。Dianaは現在のGraceの2倍なので4×2=8歳。",
-      "method_ja": "Graceの現在年齢を1年進め、2倍する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "grace_age_today",
+        "diana_twice_grace"
+      ],
       "uses_nodes": [],
       "condition_ja": "『today』の年齢は整数年で、誕生日からちょうど1年経過した状況として扱う。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +63,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4149,
-    "checked_model_hash": "540680714277d3da82ea4462acd264b5db899cf605096260f51505b825f5a56a",
+    "checked_model_hash": "c4d2ff5ae03d4b9f2cb4eb47a264f8091e8cae093b0b5c8287aba0bfa7d34ffa",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "c4d2ff5ae03d4b9f2cb4eb47a264f8091e8cae093b0b5c8287aba0bfa7d34ffa"
 }

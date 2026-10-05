@@ -18,12 +18,41 @@
   ],
   "steps": [
     {
+      "id": "bars_sold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.bars_sold",
+      "title_ja": "販売済み",
+      "claim_ja": "5+7=12本。",
+      "method_ja": "週別販売数を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2週間分を集計する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "12本販売済み。"
+    },
+    {
+      "id": "bars_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.bars_remaining",
+      "title_ja": "販売目標までの残数",
+      "claim_ja": "18-12=6本。",
+      "method_ja": "総数から販売済みを引く。",
+      "requires_steps": [
+        "bars_sold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "18本すべてを販売する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "あと6本。"
+    },
+    {
       "id": "chocolate_bars_remaining_to_sell",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.chocolate_bars_remaining_to_sell",
-      "title_ja": "残り販売すべきチョコレート",
+      "title_ja": "問題全体の結論",
       "claim_ja": "先週5本、今週7本で、売れたのは5+7=12本。18本すべて売るには18-12=6本をさらに売る必要がある。",
-      "method_ja": "販売済み本数を合計し、目標18本から引く。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "bars_sold",
+        "bars_remaining"
+      ],
       "uses_nodes": [],
       "condition_ja": "18本が販売対象の総数で、追加や紛失はない。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +63,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4142,
-    "checked_model_hash": "e3cecdfc4e674a7dd97b9452abd2054305e562a573cca490a1b2a4ab3c1ce84c",
+    "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9"
 }

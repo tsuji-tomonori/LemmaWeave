@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint464_weekly_beats",
+  "title_ja": "1週間に聞く拍数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04219",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "James listens to super-fast music.  It is 200 beats per minute.  He listens to 2 hours of music a day.  How many beats does he hear per week?",
+  "answer_ja": "1日2時間は120分。1分200拍なので1日24000拍、7日で168000拍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.weekly_beats",
+  "graph": "work/gsm8k-sprint464-weekly-beats-graph.json",
+  "model_notes_ja": [
+    "毎日2時間、1週間を7日として拍数を積み上げる。"
+  ],
+  "steps": [
+    {
+      "id": "daily_music_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.daily_music_minutes",
+      "title_ja": "1日の聴取分数",
+      "claim_ja": "2×60=120分。",
+      "method_ja": "時間を分に換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2時間、1時間60分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "120分。"
+    },
+    {
+      "id": "beats_per_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.beats_per_day",
+      "title_ja": "1日の拍数",
+      "claim_ja": "200×120=24000拍。",
+      "method_ja": "毎分拍数×分数。",
+      "requires_steps": [
+        "daily_music_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "毎分200拍、120分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "24000拍。"
+    },
+    {
+      "id": "beats_per_week",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.beats_per_week",
+      "title_ja": "1週間の拍数",
+      "claim_ja": "24000×7=168000拍。",
+      "method_ja": "1日の拍数を7倍する。",
+      "requires_steps": [
+        "daily_music_minutes",
+        "beats_per_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "毎日24000拍、7日。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "168000拍。"
+    },
+    {
+      "id": "weekly_beats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.weekly_beats",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "1日2時間は120分。1分200拍なので1日24000拍、7日で168000拍。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "daily_music_minutes",
+        "beats_per_day",
+        "beats_per_week"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "毎日2時間、1週間を7日として拍数を積み上げる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1日2時間は120分。1分200拍なので1日24000拍、7日で168000拍。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4220,
+    "checked_model_hash": "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a"
+}

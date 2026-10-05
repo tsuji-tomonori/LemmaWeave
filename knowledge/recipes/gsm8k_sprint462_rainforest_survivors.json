@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint462_rainforest_survivors",
+  "title_ja": "熱帯雨林ツアーの生存者",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04217",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A group of 30 tourists sets out on a walking tour of the rainforest. Two tourists are eaten by anacondas, then half the remaining tourists try to pet poisonous dart frogs and get poisoned. If only 1/7 of the poisoned tourists recovered, how many tourists are left at the end of the tour?",
+  "answer_ja": "アナコンダの後は28人。その半分14人が毒に当たり、毒に当たらなかった14人と、毒から回復した14÷7=2人が残るので16人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.rainforest_survivors",
+  "graph": "work/gsm8k-sprint462-rainforest-survivors-graph.json",
+  "model_notes_ja": [
+    "毒に当たらなかった14人は生存し、毒に当たった14人のうち7分の1だけが回復すると読む。"
+  ],
+  "steps": [
+    {
+      "id": "after_anaconda",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.after_anaconda",
+      "title_ja": "アナコンダ後",
+      "claim_ja": "30−2=28人。",
+      "method_ja": "初期人数から2人を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "初期30人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "28人。"
+    },
+    {
+      "id": "poisoned_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.poisoned_count",
+      "title_ja": "毒に当たった人数",
+      "claim_ja": "28÷2=14人。",
+      "method_ja": "残った人数の半分。",
+      "requires_steps": [
+        "after_anaconda"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り28人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "14人。"
+    },
+    {
+      "id": "unpoisoned_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.unpoisoned_count",
+      "title_ja": "毒に当たらない人数",
+      "claim_ja": "28−14=14人。",
+      "method_ja": "残りから毒に当たった人を引く。",
+      "requires_steps": [
+        "after_anaconda",
+        "poisoned_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "28人中14人が中毒。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "14人。"
+    },
+    {
+      "id": "recovered_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.recovered_count",
+      "title_ja": "回復者",
+      "claim_ja": "14÷7=2人。",
+      "method_ja": "中毒者の7分の1。",
+      "requires_steps": [
+        "after_anaconda",
+        "poisoned_count",
+        "unpoisoned_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "中毒者14人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2人。"
+    },
+    {
+      "id": "survivor_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.survivor_count",
+      "title_ja": "最終生存者",
+      "claim_ja": "14+2=16人。",
+      "method_ja": "非中毒者と回復者を足す。",
+      "requires_steps": [
+        "after_anaconda",
+        "poisoned_count",
+        "unpoisoned_count",
+        "recovered_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "非中毒14人、回復2人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "16人。"
+    },
+    {
+      "id": "rainforest_survivors",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.rainforest_survivors",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "アナコンダの後は28人。その半分14人が毒に当たり、毒に当たらなかった14人と、毒から回復した14÷7=2人が残るので16人。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "after_anaconda",
+        "poisoned_count",
+        "unpoisoned_count",
+        "recovered_count",
+        "survivor_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "毒に当たらなかった14人は生存し、毒に当たった14人のうち7分の1だけが回復すると読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "アナコンダの後は28人。その半分14人が毒に当たり、毒に当たらなかった14人と、毒から回復した14÷7=2人が残るので16人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4218,
+    "checked_model_hash": "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a"
+}

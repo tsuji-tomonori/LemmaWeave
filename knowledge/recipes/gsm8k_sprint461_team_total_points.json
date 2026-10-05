@@ -3,83 +3,105 @@
   "title_ja": "チームの総得点",
   "problem_id": "external-gsm8k-main-3101c7d50724:train:04216",
   "collection_id": "external-gsm8k-main-3101c7d50724",
-  "lean_file": "tests/lean/GSM8KSprint1004A13P2.lean",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P2.lean",
   "semantic_review_status": "self_review_only",
   "model_scope": "self_reviewed_model",
   "counting_note_ja": "固定GSM8Kの1問。",
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
-  "problem_ja": "Draymond 12点、Curryはその2倍、Kelly 9点、DurantはKellyの2倍、KlayはDraymondの半分。総得点はいくらか。",
-  "answer_ja": "Curry24点、Durant18点、Klay6点。12+24+9+18+6=69点。",
-  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.team_total_points",
+  "problem_ja": "In the Golden State Team, each player earned points. Draymond earned 12 points, Curry earned twice the points as Draymond, Kelly earned 9, Durant earned twice the points as Kelly, Klay earned half the points as Draymond. How many points did the Golden States have in total?",
+  "answer_ja": "Curryは12×2=24点、Durantは9×2=18点、Klayは12÷2=6点。全員を足すと12+24+9+18+6=69点。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.team_total_points",
   "graph": "work/gsm8k-sprint461-team-total-points-graph.json",
   "model_notes_ja": [
-    "列挙された5選手の得点合計をチーム得点とする。"
+    "各選手の比較対象を原文どおりDraymondまたはKellyに固定する。"
   ],
   "steps": [
     {
-      "id": "curry",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.curry_points",
+      "id": "curry_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.curry_points",
       "title_ja": "Curryの得点",
-      "claim_ja": "2×12=24点。",
+      "claim_ja": "12×2=24点。",
       "method_ja": "Draymondの2倍。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "基準12点。",
-      "baseline_ja": "整数の乗法。",
+      "condition_ja": "Draymond 12点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
       "conclusion_ja": "24点。"
     },
     {
-      "id": "durant",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.durant_points",
+      "id": "durant_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.durant_points",
       "title_ja": "Durantの得点",
-      "claim_ja": "2×9=18点。",
+      "claim_ja": "9×2=18点。",
       "method_ja": "Kellyの2倍。",
-      "requires_steps": [],
+      "requires_steps": [
+        "curry_points"
+      ],
       "uses_nodes": [],
-      "condition_ja": "基準9点。",
-      "baseline_ja": "整数の乗法。",
+      "condition_ja": "Kelly 9点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
       "conclusion_ja": "18点。"
     },
     {
-      "id": "klay",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.klay_points",
+      "id": "klay_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.klay_points",
       "title_ja": "Klayの得点",
       "claim_ja": "12÷2=6点。",
       "method_ja": "Draymondの半分。",
-      "requires_steps": [],
+      "requires_steps": [
+        "curry_points",
+        "durant_points"
+      ],
       "uses_nodes": [],
-      "condition_ja": "12は2で割り切れる。",
-      "baseline_ja": "整数の除法。",
+      "condition_ja": "Draymond 12点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
       "conclusion_ja": "6点。"
     },
     {
-      "id": "root",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P2.team_total_points",
+      "id": "team_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.team_points",
       "title_ja": "総得点",
       "claim_ja": "12+24+9+18+6=69点。",
-      "method_ja": "5選手を合計する。",
+      "method_ja": "5人の得点を足す。",
       "requires_steps": [
-        "curry",
-        "durant",
-        "klay"
+        "curry_points",
+        "durant_points",
+        "klay_points"
       ],
       "uses_nodes": [],
-      "condition_ja": "列挙された選手を全員含む。",
-      "baseline_ja": "整数の加法。",
+      "condition_ja": "各選手の得点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
       "conclusion_ja": "69点。"
+    },
+    {
+      "id": "team_total_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.team_total_points",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "Curryは12×2=24点、Durantは9×2=18点、Klayは12÷2=6点。全員を足すと12+24+9+18+6=69点。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "curry_points",
+        "durant_points",
+        "klay_points",
+        "team_points"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各選手の比較対象を原文どおりDraymondまたはKellyに固定する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Curryは12×2=24点、Durantは9×2=18点、Klayは12÷2=6点。全員を足すと12+24+9+18+6=69点。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4217,
-    "checked_model_hash": "eb3f0ee9f374bbd28fa9500507e9a64de177c155db3d00a6d32c4be2cd0c9d08",
+    "checked_model_hash": "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a",
     "checks_ja": [
-      "原題の数量・単位・求める結論を再読してモデルと照合した。",
-      "各説明行を名前付きLean定理へ対応させた。",
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a"
 }
-

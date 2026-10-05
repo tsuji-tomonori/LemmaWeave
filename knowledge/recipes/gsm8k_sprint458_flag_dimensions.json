@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint458_flag_dimensions",
+  "title_ja": "旗の高さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04213",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bobby has three squares of fabric that he will turn into a flag. The first square is 8 feet by 5 feet. The second one is 10 feet by 7 feet. The third one is 5 feet by 5 feet. If he wants his flag to be 15 feet long, how tall will it be?",
+  "answer_ja": "布の面積は40、70、25平方フィートで合計135平方フィート。長さ15フィートの長方形に無駄なくつなぐと、高さは135÷15=9フィート。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.flag_dimensions",
+  "graph": "work/gsm8k-sprint458-flag-dimensions-graph.json",
+  "model_notes_ja": [
+    "3枚の布を重なり・切り捨てなく面積保存で長方形の旗にするという通常の読みを明示する。"
+  ],
+  "steps": [
+    {
+      "id": "fabric_area_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.fabric_area_first",
+      "title_ja": "1枚目の面積",
+      "claim_ja": "8×5=40平方フィート。",
+      "method_ja": "長方形の面積を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "縦横8フィートと5フィート。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40平方フィート。"
+    },
+    {
+      "id": "fabric_area_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.fabric_area_second",
+      "title_ja": "2枚目の面積",
+      "claim_ja": "10×7=70平方フィート。",
+      "method_ja": "長方形の面積を求める。",
+      "requires_steps": [
+        "fabric_area_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "縦横10フィートと7フィート。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "70平方フィート。"
+    },
+    {
+      "id": "fabric_area_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.fabric_area_third",
+      "title_ja": "3枚目の面積",
+      "claim_ja": "5×5=25平方フィート。",
+      "method_ja": "長方形の面積を求める。",
+      "requires_steps": [
+        "fabric_area_first",
+        "fabric_area_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "縦横5フィートと5フィート。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "25平方フィート。"
+    },
+    {
+      "id": "fabric_area_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.fabric_area_total",
+      "title_ja": "布の総面積",
+      "claim_ja": "40+70+25=135平方フィート。",
+      "method_ja": "3枚の面積を足す。",
+      "requires_steps": [
+        "fabric_area_first",
+        "fabric_area_second",
+        "fabric_area_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "重なり・廃棄なし。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "135平方フィート。"
+    },
+    {
+      "id": "flag_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.flag_height",
+      "title_ja": "旗の高さ",
+      "claim_ja": "135÷15=9フィート。",
+      "method_ja": "長方形の面積を長さで割る。",
+      "requires_steps": [
+        "fabric_area_first",
+        "fabric_area_second",
+        "fabric_area_third",
+        "fabric_area_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "面積135平方フィート、長さ15フィート。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "9フィート。"
+    },
+    {
+      "id": "flag_dimensions",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.flag_dimensions",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "布の面積は40、70、25平方フィートで合計135平方フィート。長さ15フィートの長方形に無駄なくつなぐと、高さは135÷15=9フィート。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "fabric_area_first",
+        "fabric_area_second",
+        "fabric_area_third",
+        "fabric_area_total",
+        "flag_height"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3枚の布を重なり・切り捨てなく面積保存で長方形の旗にするという通常の読みを明示する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "布の面積は40、70、25平方フィートで合計135平方フィート。長さ15フィートの長方形に無駄なくつなぐと、高さは135÷15=9フィート。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4214,
+    "checked_model_hash": "241d3498694e2f650fbcdbde53461f70864c83a86f27036a679d153d5bfc6813",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "241d3498694e2f650fbcdbde53461f70864c83a86f27036a679d153d5bfc6813"
+}

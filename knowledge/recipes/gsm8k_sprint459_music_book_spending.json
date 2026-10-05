@@ -1,85 +1,164 @@
 {
   "id": "gsm8k_sprint459_music_book_spending",
-  "title_ja": "音楽本への支出",
+  "title_ja": "音楽の本への支出",
   "problem_id": "external-gsm8k-main-3101c7d50724:train:04214",
   "collection_id": "external-gsm8k-main-3101c7d50724",
-  "lean_file": "tests/lean/GSM8KSprint1004A13P1.lean",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P1.lean",
   "semantic_review_status": "self_review_only",
   "model_scope": "self_reviewed_model",
   "counting_note_ja": "固定GSM8Kの1問。",
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
-  "problem_ja": "500ドルから数学本4冊各20ドル、数学本より6冊多い科学本各10ドル、数学本の2倍の美術本各20ドルを買った。残りを音楽本に使った額はいくらか。",
-  "answer_ja": "数学80ドル、科学(4+6)×10=100ドル、美術(2×4)×20=160ドル。既知支出340ドルなので音楽本は500-340=160ドル。",
-  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.music_book_spending",
+  "problem_ja": "June has $500 for buying school supplies for the new school year. She buys four maths books at $20 each, six more science books than maths books at $10 each, and twice as many art books as maths books at $20 each. If she also bought music books, how much money did she spend on music books?",
+  "answer_ja": "数学は4×20=80ドル。科学は4+6=10冊で100ドル。美術は2×4=8冊で160ドル。合計340ドルなので、音楽の本には500−340=160ドル使った。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.music_book_spending",
   "graph": "work/gsm8k-sprint459-music-book-spending-graph.json",
   "model_notes_ja": [
-    "問題は500ドルのうち列挙された本以外を音楽本に使ったと読む。"
+    "500ドルを全額、列挙された4種類の本に使ったという問いの前提で残額を音楽本代とする。"
   ],
   "steps": [
     {
-      "id": "math",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.math_book_cost",
-      "title_ja": "数学本代",
+      "id": "math_book_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.math_book_cost",
+      "title_ja": "数学の本代",
       "claim_ja": "4×20=80ドル。",
-      "method_ja": "冊数に単価を掛ける。",
+      "method_ja": "冊数×単価。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "4冊、各20ドル。",
-      "baseline_ja": "整数の乗法。",
+      "condition_ja": "4冊、1冊20ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
       "conclusion_ja": "80ドル。"
     },
     {
-      "id": "science",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.science_book_cost",
-      "title_ja": "科学本代",
-      "claim_ja": "(4+6)×10=100ドル。",
-      "method_ja": "冊数を求め単価を掛ける。",
-      "requires_steps": [],
+      "id": "science_book_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.science_book_count",
+      "title_ja": "科学の本の冊数",
+      "claim_ja": "4+6=10冊。",
+      "method_ja": "数学より6冊多い。",
+      "requires_steps": [
+        "math_book_cost"
+      ],
       "uses_nodes": [],
-      "condition_ja": "数学本より6冊多く各10ドル。",
-      "baseline_ja": "加法・乗法。",
+      "condition_ja": "数学4冊。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10冊。"
+    },
+    {
+      "id": "science_book_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.science_book_cost",
+      "title_ja": "科学の本代",
+      "claim_ja": "10×10=100ドル。",
+      "method_ja": "冊数×単価。",
+      "requires_steps": [
+        "math_book_cost",
+        "science_book_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10冊、1冊10ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
       "conclusion_ja": "100ドル。"
     },
     {
-      "id": "art",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.art_book_cost",
-      "title_ja": "美術本代",
-      "claim_ja": "(2×4)×20=160ドル。",
-      "method_ja": "冊数を2倍し単価を掛ける。",
-      "requires_steps": [],
+      "id": "art_book_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.art_book_count",
+      "title_ja": "美術の本の冊数",
+      "claim_ja": "2×4=8冊。",
+      "method_ja": "数学の2倍。",
+      "requires_steps": [
+        "math_book_cost",
+        "science_book_count",
+        "science_book_cost"
+      ],
       "uses_nodes": [],
-      "condition_ja": "数学本の2倍の冊数、各20ドル。",
-      "baseline_ja": "乗法。",
+      "condition_ja": "数学4冊。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8冊。"
+    },
+    {
+      "id": "art_book_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.art_book_cost",
+      "title_ja": "美術の本代",
+      "claim_ja": "8×20=160ドル。",
+      "method_ja": "冊数×単価。",
+      "requires_steps": [
+        "math_book_cost",
+        "science_book_count",
+        "science_book_cost",
+        "art_book_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8冊、1冊20ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
       "conclusion_ja": "160ドル。"
     },
     {
-      "id": "root",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.music_book_spending",
-      "title_ja": "音楽本代",
-      "claim_ja": "500-(80+100+160)=160ドル。",
-      "method_ja": "予算から既知支出を引く。",
+      "id": "known_book_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.known_book_cost",
+      "title_ja": "3科目の本代",
+      "claim_ja": "80+100+160=340ドル。",
+      "method_ja": "既知の支出を足す。",
       "requires_steps": [
-        "math",
-        "science",
-        "art"
+        "math_book_cost",
+        "science_book_count",
+        "science_book_cost",
+        "art_book_count",
+        "art_book_cost"
       ],
       "uses_nodes": [],
-      "condition_ja": "500ドルを全てこれらの本に使う。",
-      "baseline_ja": "加法・減法。",
+      "condition_ja": "数学80、科学100、美術160ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "340ドル。"
+    },
+    {
+      "id": "music_book_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.music_book_cost",
+      "title_ja": "音楽の本代",
+      "claim_ja": "500−340=160ドル。",
+      "method_ja": "予算から既知支出を引く。",
+      "requires_steps": [
+        "math_book_cost",
+        "science_book_count",
+        "science_book_cost",
+        "art_book_count",
+        "art_book_cost",
+        "known_book_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "予算500ドル、既知支出340ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
       "conclusion_ja": "160ドル。"
+    },
+    {
+      "id": "music_book_spending",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.music_book_spending",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "数学は4×20=80ドル。科学は4+6=10冊で100ドル。美術は2×4=8冊で160ドル。合計340ドルなので、音楽の本には500−340=160ドル使った。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "math_book_cost",
+        "science_book_count",
+        "science_book_cost",
+        "art_book_count",
+        "art_book_cost",
+        "known_book_cost",
+        "music_book_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "500ドルを全額、列挙された4種類の本に使ったという問いの前提で残額を音楽本代とする。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "数学は4×20=80ドル。科学は4+6=10冊で100ドル。美術は2×4=8冊で160ドル。合計340ドルなので、音楽の本には500−340=160ドル使った。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4215,
-    "checked_model_hash": "be83fb7b408d3a971c49a3828e75ee7b0b50efaf996100a29dbcb2a11323f1f5",
+    "checked_model_hash": "241d3498694e2f650fbcdbde53461f70864c83a86f27036a679d153d5bfc6813",
     "checks_ja": [
-      "原題の数量・単位・求める結論を再読してモデルと照合した。",
-      "各説明行を名前付きLean定理へ対応させた。",
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "241d3498694e2f650fbcdbde53461f70864c83a86f27036a679d153d5bfc6813"
 }
-

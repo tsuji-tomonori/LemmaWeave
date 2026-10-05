@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T180000+0900-train-01843-proof-repair",
+  "scheduled_slot": "2026-10-05T18:00:00+09:00",
+  "started_at": "2026-10-05T18:04:13+09:00",
+  "finished_at": "2026-10-05T18:05:59+09:00",
+  "schedule_deviation_minutes": 4,
+  "schedule_deviation_reason_ja": "予定枠内で、直近CI artifactに残る次の個別Lean失敗を回収した。",
+  "role": "proof_repair_override",
+  "scheduled_role": "gsm8k_15_individual_solve",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "20267c866ea185c714584448930a4ee541ff60d1",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01843"
+  ],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01843"
+  ],
+  "deferred": [
+    {
+      "problem_id": "scheduled-slot:2026-10-05-18",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "exact-head CI成功前のため、予定15問の新規処理ではなく既存の個別証明失敗を修復した。",
+      "next_action_ja": "CI・公理・依存・証拠ゲート成功後に未実行14問を再配分する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01843",
+      "retry_on": "after_exact_head_ci_and_evidence_import",
+      "reason_ja": "燃費計算の記述解答とLean証明修復は完了したが、修復後HEADでの固定Lean成功証拠は未取得。",
+      "next_action_ja": "同一コミットのexact-head CI、公理監査、依存抽出、入力ハッシュ照合に合格後だけsolution_readyへ昇格する。"
+    }
+  ],
+  "source_verification": {
+    "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_line_1based": 1844,
+    "source_record_sha256": "15af6b5ad037554aad80f6de7395a9df6730031ae9eb40a6f3392f36496630c7",
+    "raw_question_sha256": "d359963725c3455bc8c4bbeacd2cf9b02b69920afdb9d109f85074fa25f6a7d4",
+    "normalized_question_sha256": "d359963725c3455bc8c4bbeacd2cf9b02b69920afdb9d109f85074fa25f6a7d4",
+    "source_question": "Darlene's car gets 20 miles/gallon. Martha's car gets half as many miles per gallon as Darlene’s car. How many gallons does Martha’s car require to make a 300-mile trip?",
+    "source_hashes_match_manifest": true
+  },
+  "written_solution_ja": [
+    "Darleneの燃費は1ガロン当たり20マイルで、Marthaはその半分なので20÷2=10マイル/ガロン。",
+    "300マイルを10マイル/ガロンで走るために必要な燃料は300÷10=30ガロン。",
+    "したがってMarthaの車に必要な燃料は30ガロン。"
+  ],
+  "lean_repair": {
+    "file": "LemmaWeave/Problems/GSM8K/Sprint0923A14Models.lean",
+    "theorem": "fuel_solution",
+    "proposition": "m.gallons = 30",
+    "previous_failure": "変数積 gallons * mpg = 300 を構造体全体へのomegaで直接処理し、非線形項が残った",
+    "change": "既証明fuel_mpg mでmpg=10をhTripへ代入し、定数係数の線形式をomegaで解く",
+    "theorem_statement_changed": false,
+    "model_changed": false,
+    "assumptions_changed": false,
+    "conclusion_changed": false,
+    "sorry_added": 0,
+    "admit_added": 0,
+    "axiom_added": 0,
+    "repair_commit": "62f454e41f9bd75e444328869f4231f1d307250a"
+  },
+  "failed_ci_evidence": {
+    "workflow_run_id": 37262551222,
+    "head_sha": "4c0c8c44456d8a3ad500098466ce5d8b343c9603",
+    "conclusion": "failure",
+    "compact_artifact_id": 11327226073,
+    "compact_artifact_sha256": "2d8113276b92cb567dafb84ad26f97aac1e4284b85dff2dd4fb0acdd0224d96d",
+    "compact_artifact_local_digest_match": true,
+    "target_module": "LemmaWeave.Problems.GSM8K.Sprint0923A14Models",
+    "target_exit_code": 1,
+    "target_error": "Sprint0923A14Models.lean:87:85 omega could not prove; gallons remained in 0..29"
+  },
+  "local_verification": {
+    "status": "static_review_only",
+    "checks": [
+      "固定問題ID・原題・行番号・レコードSHA・問題文SHAを方法バッチから再照合",
+      "Marthaの燃費10マイル/ガロン、300÷10=30ガロンを独立再計算",
+      "既証明fuel_mpgを実際の証明依存に使い、変数積を定数係数へ変換",
+      "定理文・モデル・仮定・結論の変更なし",
+      "sorry・admit・独自axiomの追加なし"
+    ],
+    "not_run": [
+      "Lean 4.33.1 build",
+      "check_method_recipes.py --render",
+      "dependency graph generation"
+    ],
+    "reason_ja": "ローカル作業領域に固定Lean/mathlib環境がなく、実行検証はpush後のexact-head CIへ委ねる。"
+  },
+  "exact_head_ci": {
+    "workflow_trigger": "push",
+    "status_at_recording": "pending_after_ledger_commit",
+    "retrieval_note_ja": "commit workflow検索はPRイベントだけを返すため、push実行結果は次回のActions結果・artifactで確定する。"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "remaining": 8274,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_exact_head_ci_unverified",
+    "unresolved_review_threads": 0
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "修復後HEADのLeanビルド、公理・依存監査、現行証拠取込が未完了。"
+  }
+}

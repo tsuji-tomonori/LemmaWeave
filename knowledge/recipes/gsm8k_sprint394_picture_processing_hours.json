@@ -18,26 +18,55 @@
   ],
   "steps": [
     {
-      "id": "picture_processing_hours",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.picture_processing_hours",
-      "title_ja": "写真処理にかかる時間",
-      "claim_ja": "960枚を1枚2分で処理するので、合計は960×2=1,920分。1時間60分だから1,920÷60=32時間である。",
-      "method_ja": "総分数を求め、60で割って時間へ換算する。",
+      "id": "picture_total_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.picture_total_minutes",
+      "title_ja": "総処理時間（分）",
+      "claim_ja": "960枚を1枚2分で処理するので、960×2=1,920分。",
+      "method_ja": "単位当たり時間に枚数を掛ける。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "写真を並列処理せず、各写真に2分ずつかかる。",
+      "condition_ja": "各写真を逐次処理し、各1枚に2分かかる。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "960枚を1枚2分で処理するので、合計は960×2=1,920分。1時間60分だから1,920÷60=32時間である。"
+      "conclusion_ja": "総処理時間は1,920分。"
+    },
+    {
+      "id": "picture_minutes_to_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.picture_minutes_to_hours",
+      "title_ja": "分から時間への換算",
+      "claim_ja": "1時間は60分なので、1,920÷60=32時間。",
+      "method_ja": "分数を60で割る。",
+      "requires_steps": [
+        "picture_total_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1時間=60分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "32時間。"
+    },
+    {
+      "id": "picture_processing_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.picture_processing_hours",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "総処理時間1,920分は32時間である。",
+      "method_ja": "前二段階を結合する。",
+      "requires_steps": [
+        "picture_total_minutes",
+        "picture_minutes_to_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "逐次処理で各写真に2分かかる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "処理には32時間かかる。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4123,
-    "checked_model_hash": "a9f36a6c0272b72029af612047184e8743af2c4b1fe539d4e9e90a7a3205a51a",
+    "checked_model_hash": "9fce4397af3a600a615fa57f0e22919869b5bf5f9700c74d911d79cc785d6693",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
-      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "記述解答の各主張を名前付きLean定理へ分割し、最終定理の実依存として接続した。",
       "独立レビューではなく作成者自己照合である。"
     ]
   }

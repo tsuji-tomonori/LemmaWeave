@@ -15,11 +15,11 @@ structure DogFoodModel where
   hDays : days * daily = bag
 
 theorem dog_food_daily (m : DogFoodModel) : m.daily = 2 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem dog_food_days (m : DogFoodModel) : m.days = 16 := by
   have h := dog_food_daily m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure AgesModel where
   currentYear : ℕ
@@ -34,15 +34,15 @@ structure AgesModel where
   hJanice : 2 * janiceAge = grahamAge
 
 theorem ages_mark (m : AgesModel) : m.markAge = 45 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem ages_graham (m : AgesModel) : m.grahamAge = 42 := by
   have h := ages_mark m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem ages_janice (m : AgesModel) : m.janiceAge = 21 := by
   have h := ages_graham m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure HouseModel where
   common : ℕ
@@ -57,16 +57,16 @@ structure HouseModel where
   hSplit : bedroomArea = guest + master
 
 theorem house_bedroom_area (m : HouseModel) : m.bedroomArea = 1300 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem house_guest (m : HouseModel) : m.guest = 260 := by
   have h := house_bedroom_area m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem house_master (m : HouseModel) : m.master = 1040 := by
   have h1 := house_bedroom_area m
   have h2 := house_guest m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CoinsModel where
   coins : ℕ
@@ -83,11 +83,11 @@ structure CoinsModel where
   hValue : initialValue = loonies + 2 * toonies
 
 theorem coins_initial_value (m : CoinsModel) : m.initialValue = 14 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem coins_toonies (m : CoinsModel) : m.toonies = 4 := by
   have h := coins_initial_value m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ToysModel where
   leilaBags : ℕ
@@ -106,14 +106,14 @@ structure ToysModel where
   hDifference : leilaToys + difference = mohamedToys
 
 theorem toys_leila (m : ToysModel) : m.leilaToys = 50 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem toys_mohamed (m : ToysModel) : m.mohamedToys = 57 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem toys_difference (m : ToysModel) : m.difference = 7 := by
   have h1 := toys_leila m
   have h2 := toys_mohamed m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A06P1

@@ -17,19 +17,19 @@ structure SodaSalesModel where
   hDifference : 2 * eveningDollars = morningHalfDollars + 2 * differenceDollars
 
 theorem soda_sales_nick (m : SodaSalesModel) : m.nickBottles = 49 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem soda_sales_morning_bottles (m : SodaSalesModel) : m.morningBottles = 104 := by
   have h := soda_sales_nick m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem soda_sales_morning_dollars (m : SodaSalesModel) : m.morningHalfDollars = 104 := by
   have h := soda_sales_morning_bottles m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem soda_sales_difference (m : SodaSalesModel) : m.differenceDollars = 3 := by
   have h := soda_sales_morning_dollars m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure DebtsModel where
   total : ℕ
@@ -46,19 +46,19 @@ structure DebtsModel where
   hSettlement : leoInitial + ryanOwesLeo = leoFinal + leoOwesRyan
 
 theorem debts_ryan_initial (m : DebtsModel) : m.ryanInitial = 32 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem debts_leo_initial (m : DebtsModel) : m.leoInitial = 16 := by
   have h := debts_ryan_initial m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem debts_leo_after_receipt (m : DebtsModel) : m.leoInitial + m.ryanOwesLeo = 26 := by
   have h := debts_leo_initial m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem debts_leo_final (m : DebtsModel) : m.leoFinal = 19 := by
   have h := debts_leo_after_receipt m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure BallsModel where
   yellow : ℕ
@@ -71,11 +71,11 @@ structure BallsModel where
   hPercent : total * yellowPercent = 100 * yellow
 
 theorem balls_total (m : BallsModel) : m.total = 60 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem balls_yellow_percent (m : BallsModel) : m.yellowPercent = 45 := by
   have h := balls_total m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure FlagsModel where
   stripesPerFlag : ℕ
@@ -94,19 +94,19 @@ structure FlagsModel where
   hTotal : totalRed = flags * redPerFlag
 
 theorem flags_remaining (m : FlagsModel) : m.remaining = 12 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem flags_half_remaining_red (m : FlagsModel) : m.halfRemainingRed = 6 := by
   have h := flags_remaining m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem flags_red_per_flag (m : FlagsModel) : m.redPerFlag = 7 := by
   have h := flags_half_remaining_red m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem flags_total_red (m : FlagsModel) : m.totalRed = 70 := by
   have h := flags_red_per_flag m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure LiftingModel where
   ron : ℕ
@@ -119,14 +119,14 @@ structure LiftingModel where
   hPartition : total = rodney + roger + ron
 
 theorem lifting_ron (m : LiftingModel) : m.ron = 20 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem lifting_roger (m : LiftingModel) : m.roger = 73 := by
   have h := lifting_ron m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem lifting_rodney (m : LiftingModel) : m.rodney = 146 := by
   have h := lifting_roger m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0930A16P3

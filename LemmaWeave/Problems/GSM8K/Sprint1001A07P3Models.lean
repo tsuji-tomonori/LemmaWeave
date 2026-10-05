@@ -19,15 +19,15 @@ structure JogModel where
   hHours : totalMinutes = totalHours * minutesPerHour
 
 theorem jog_days (m : JogModel) : m.totalDays = 8 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem jog_minutes (m : JogModel) : m.totalMinutes = 240 := by
   have h := jog_days m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem jog_hours (m : JogModel) : m.totalHours = 4 := by
   have h := jog_minutes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ProfitModel where
   natasha : ℕ
@@ -44,25 +44,25 @@ structure ProfitModel where
   hProfit : capital + profit = sale
 
 theorem profit_carla (m : ProfitModel) : m.carla = 20 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem profit_cosima (m : ProfitModel) : m.cosima = 10 := by
   have h := profit_carla m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem profit_capital (m : ProfitModel) : m.capital = 90 := by
   have h1 := profit_carla m
   have h2 := profit_cosima m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem profit_sale (m : ProfitModel) : m.sale = 126 := by
   have h := profit_capital m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem profit_amount (m : ProfitModel) : m.profit = 36 := by
   have h1 := profit_capital m
   have h2 := profit_sale m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ExperienceModel where
   bartenderYears : ℕ
@@ -81,15 +81,15 @@ structure ExperienceModel where
   hTotal : totalMonths = bartenderMonths + managerMonths
 
 theorem experience_bartender (m : ExperienceModel) : m.bartenderMonths = 108 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem experience_manager (m : ExperienceModel) : m.managerMonths = 42 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem experience_total (m : ExperienceModel) : m.totalMonths = 150 := by
   have h1 := experience_bartender m
   have h2 := experience_manager m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure BirdhouseModel where
   pieces : ℕ
@@ -108,15 +108,15 @@ structure BirdhouseModel where
   hTotal : total = count * price
 
 theorem birdhouse_cost (m : BirdhouseModel) : m.cost = 1050 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem birdhouse_price (m : BirdhouseModel) : m.price = 1600 := by
   have h := birdhouse_cost m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem birdhouse_total (m : BirdhouseModel) : m.total = 3200 := by
   have h := birdhouse_price m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure TankModel where
   capacity : ℕ
@@ -135,14 +135,14 @@ structure TankModel where
   hRemaining : poured + remaining = capacity
 
 theorem tank_seconds (m : TankModel) : m.seconds = 360 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem tank_poured (m : TankModel) : m.poured = 18 := by
   have h := tank_seconds m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem tank_remaining (m : TankModel) : m.remaining = 32 := by
   have h := tank_poured m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A07P3

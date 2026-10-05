@@ -19,19 +19,19 @@ structure CandiesModel where
   hAfterEating : friendAfterEating + 10 = eachShare
 
 theorem candies_shelly_original (m : CandiesModel) : m.shellyOriginal = 70 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem candies_brought_if_shelly (m : CandiesModel) : m.friendBrought = 140 := by
   have h := candies_shelly_original m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem candies_each_if_shelly (m : CandiesModel) : m.eachShare = 95 := by
   have h := candies_brought_if_shelly m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem candies_after_if_shelly (m : CandiesModel) : m.friendAfterEating = 85 := by
   have h := candies_each_if_shelly m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem candies_other_antecedent_example : (50 + 100) / 2 - 10 = 65 := by
   norm_num
@@ -54,11 +54,11 @@ structure SchoolModel where
   hMore : missed + more = allowed
 
 theorem school_allowed (m : SchoolModel) : m.allowed = 9 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem school_more (m : SchoolModel) : m.more = 3 := by
   have h := school_allowed m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure FruitsModel where
   oldApples : ℕ
@@ -81,20 +81,20 @@ structure FruitsModel where
   hTotal : total = oldTotal + newTotal
 
 theorem fruits_old_total (m : FruitsModel) : m.oldTotal = 8 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem fruits_new_counts (m : FruitsModel) :
     m.newApples = 7 ∧ m.newBananas = 10 ∧ m.newOranges = 14 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem fruits_new_total (m : FruitsModel) : m.newTotal = 31 := by
   have h := fruits_new_counts m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem fruits_total (m : FruitsModel) : m.total = 39 := by
   have h1 := fruits_old_total m
   have h2 := fruits_new_total m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure YarnModel where
   totalMeters : ℕ
@@ -109,11 +109,11 @@ structure YarnModel where
   hUsed : usedMeters = usedParts * partMeters
 
 theorem yarn_part (m : YarnModel) : m.partMeters = 2 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem yarn_used (m : YarnModel) : m.usedMeters = 6 := by
   have h := yarn_part m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure GardenModel where
   tomatoKinds : ℕ
@@ -142,18 +142,18 @@ structure GardenModel where
   hRemaining : planted + remaining = capacity
 
 theorem garden_counts (m : GardenModel) : m.tomatoes = 15 ∧ m.cucumbers = 20 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem garden_planted (m : GardenModel) : m.planted = 65 := by
   have h := garden_counts m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem garden_capacity (m : GardenModel) : m.capacity = 150 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem garden_remaining (m : GardenModel) : m.remaining = 85 := by
   have h1 := garden_planted m
   have h2 := garden_capacity m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A08P2

@@ -15,11 +15,11 @@ structure ChaseModel where
   hCatch : seconds * relativeSpeed = initialLead
 
 theorem chase_relative_speed (m : ChaseModel) : m.relativeSpeed = 8 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem chase_seconds (m : ChaseModel) : m.seconds = 20 := by
   have h := chase_relative_speed m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure DiscountModel where
   shirtReduced : ℕ
@@ -34,23 +34,23 @@ structure DiscountModel where
   hTotal : totalCost = shirtsCost + jacketsCost
 
 theorem discount_shirt_price (m : DiscountModel) : m.shirtReduced = 48 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem discount_jacket_price (m : DiscountModel) : m.jacketReduced = 72 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem discount_shirts_cost (m : DiscountModel) : m.shirtsCost = 240 := by
   have h := discount_shirt_price m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem discount_jackets_cost (m : DiscountModel) : m.jacketsCost = 720 := by
   have h := discount_jacket_price m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem discount_total (m : DiscountModel) : m.totalCost = 960 := by
   have h1 := discount_shirts_cost m
   have h2 := discount_jackets_cost m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ElectivesModel where
   total : ℕ
@@ -65,11 +65,11 @@ structure ElectivesModel where
   hPercent : music * 100 = musicPercent * total
 
 theorem electives_music_students (m : ElectivesModel) : m.music = 80 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem electives_music_percent (m : ElectivesModel) : m.musicPercent = 20 := by
   have h := electives_music_students m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure VacationAnimalsModel where
   guppies : ℕ
@@ -82,16 +82,16 @@ structure VacationAnimalsModel where
   hTotal : total = tetras + clowns + guppies
 
 theorem vacation_clowns (m : VacationAnimalsModel) : m.clowns = 60 := by
-  cases m <;> simp_all at * <;> norm_num at *
+  cases m <;> simp_all <;> norm_num at *
 
 theorem vacation_tetras (m : VacationAnimalsModel) : m.tetras = 240 := by
   have h := vacation_clowns m
-  cases m <;> simp_all at * <;> norm_num at *
+  cases m <;> simp_all <;> norm_num at *
 
 theorem vacation_total (m : VacationAnimalsModel) : m.total = 330 := by
   have h1 := vacation_clowns m
   have h2 := vacation_tetras m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure RestaurantsModel where
   firstDaily : ℕ
@@ -106,10 +106,10 @@ structure RestaurantsModel where
   hWeekly : weeklyTotal = 7 * dailyTotal
 
 theorem restaurants_daily (m : RestaurantsModel) : m.dailyTotal = 110 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem restaurants_weekly (m : RestaurantsModel) : m.weeklyTotal = 770 := by
   have h := restaurants_daily m
-  cases m <;> simp_all at * <;> norm_num at *
+  cases m <;> simp_all <;> norm_num at *
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A00P2

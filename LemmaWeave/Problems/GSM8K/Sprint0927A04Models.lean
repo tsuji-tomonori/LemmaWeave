@@ -15,9 +15,9 @@ structure Balloons where
   hRed : red = oldRed + newRed
   hTotal : total = oldRed + oldBlue + newRed + newBlue
   hPercent : red * 100 = percent * total
-theorem balloons_red (m : Balloons) : m.red = 4 := by cases m <;> simp_all at * <;> omega
-theorem balloons_total (m : Balloons) : m.total = 10 := by cases m <;> simp_all at * <;> omega
-theorem balloons_solution (m : Balloons) : m.percent = 40 := by cases m <;> simp_all at * <;> omega
+theorem balloons_red (m : Balloons) : m.red = 4 := by cases m <;> simp_all <;> omega
+theorem balloons_total (m : Balloons) : m.total = 10 := by cases m <;> simp_all <;> omega
+theorem balloons_solution (m : Balloons) : m.percent = 40 := by cases m <;> simp_all <;> omega
 structure HouseSale where
   original : ℕ
   profit : ℕ
@@ -29,10 +29,10 @@ structure HouseSale where
   hSale : salePrice = original + profit
   hCommission : 20 * commission = original
   hReceipts : receipts = salePrice + commission
-theorem house_profit (m : HouseSale) : m.profit = 16000 := by cases m <;> simp_all at * <;> omega
-theorem house_sale_price (m : HouseSale) : m.salePrice = 96000 := by cases m <;> simp_all at * <;> omega
-theorem house_commission (m : HouseSale) : m.commission = 4000 := by cases m <;> simp_all at * <;> omega
-theorem house_receipts (m : HouseSale) : m.receipts = 100000 := by cases m <;> simp_all at * <;> omega
+theorem house_profit (m : HouseSale) : m.profit = 16000 := by cases m <;> simp_all <;> omega
+theorem house_sale_price (m : HouseSale) : m.salePrice = 96000 := by cases m <;> simp_all <;> omega
+theorem house_commission (m : HouseSale) : m.commission = 4000 := by cases m <;> simp_all <;> omega
+theorem house_receipts (m : HouseSale) : m.receipts = 100000 := by cases m <;> simp_all <;> omega
 theorem house_solution (m : HouseSale) :
     m.salePrice = 96000 ∧ m.receipts = 100000 ∧ m.salePrice ≠ m.receipts := by
   cases m
@@ -46,9 +46,9 @@ structure MobileData where
   hAfterVideo : afterVideo + 300 = initial
   hFacebook : 5 * facebook = 2 * afterVideo
   hRemaining : remaining + facebook = afterVideo
-theorem mobile_after_video (m : MobileData) : m.afterVideo = 200 := by cases m <;> simp_all at * <;> omega
-theorem mobile_facebook (m : MobileData) : m.facebook = 80 := by cases m <;> simp_all at * <;> omega
-theorem mobile_solution (m : MobileData) : m.remaining = 120 := by cases m <;> simp_all at * <;> omega
+theorem mobile_after_video (m : MobileData) : m.afterVideo = 200 := by cases m <;> simp_all <;> omega
+theorem mobile_facebook (m : MobileData) : m.facebook = 80 := by cases m <;> simp_all <;> omega
+theorem mobile_solution (m : MobileData) : m.remaining = 120 := by cases m <;> simp_all <;> omega
 structure Figures where
   saved : ℕ
   shoeCost : ℕ
@@ -64,9 +64,9 @@ structure Figures where
   hRevenue : salesRevenue + saved = neededBefore
   hFigures : figures = 10
   hEach : salesRevenue = figures * priceEach
-theorem figures_needed (m : Figures) : m.neededBefore = 115 := by cases m <;> simp_all at * <;> omega
-theorem figures_revenue (m : Figures) : m.salesRevenue = 100 := by cases m <;> simp_all at * <;> omega
-theorem figures_solution (m : Figures) : m.priceEach = 10 := by cases m <;> simp_all at * <;> omega
+theorem figures_needed (m : Figures) : m.neededBefore = 115 := by cases m <;> simp_all <;> omega
+theorem figures_revenue (m : Figures) : m.salesRevenue = 100 := by cases m <;> simp_all <;> omega
+theorem figures_solution (m : Figures) : m.priceEach = 10 := by cases m <;> simp_all <;> omega
 structure Supplies where
   grenadaTotal : ℕ
   kinds : ℕ
@@ -82,11 +82,11 @@ structure Supplies where
   hTractors : tractors + 400 = 3 * each
   hUniforms : uniforms = 30 * each
   hTotal : total = guns + tractors + uniforms
-theorem supplies_each (m : Supplies) : m.each = 2000 := by cases m <;> simp_all at * <;> omega
-theorem supplies_guns (m : Supplies) : m.guns = 7000 := by cases m <;> simp_all at * <;> omega
-theorem supplies_tractors (m : Supplies) : m.tractors = 5600 := by cases m <;> simp_all at * <;> omega
-theorem supplies_uniforms (m : Supplies) : m.uniforms = 60000 := by cases m <;> simp_all at * <;> omega
-theorem supplies_solution (m : Supplies) : m.total = 72600 := by cases m <;> simp_all at * <;> omega
+theorem supplies_each (m : Supplies) : m.each = 2000 := by cases m <;> simp_all <;> omega
+theorem supplies_guns (m : Supplies) : m.guns = 7000 := by cases m <;> simp_all <;> omega
+theorem supplies_tractors (m : Supplies) : m.tractors = 5600 := by cases m <;> simp_all <;> omega
+theorem supplies_uniforms (m : Supplies) : m.uniforms = 60000 := by cases m <;> simp_all <;> omega
+theorem supplies_solution (m : Supplies) : m.total = 72600 := by cases m <;> simp_all <;> omega
 structure Cards where
   mara : ℕ
   janet : ℕ
@@ -96,10 +96,10 @@ structure Cards where
   hTwice : mara = 2 * janet
   hMore : janet = brenda + 9
   hTotal : total = mara + janet + brenda
-theorem cards_mara (m : Cards) : m.mara = 110 := by cases m <;> simp_all at * <;> omega
-theorem cards_janet (m : Cards) : m.janet = 55 := by cases m <;> simp_all at * <;> omega
-theorem cards_brenda (m : Cards) : m.brenda = 46 := by cases m <;> simp_all at * <;> omega
-theorem cards_solution (m : Cards) : m.total = 211 := by cases m <;> simp_all at * <;> omega
+theorem cards_mara (m : Cards) : m.mara = 110 := by cases m <;> simp_all <;> omega
+theorem cards_janet (m : Cards) : m.janet = 55 := by cases m <;> simp_all <;> omega
+theorem cards_brenda (m : Cards) : m.brenda = 46 := by cases m <;> simp_all <;> omega
+theorem cards_solution (m : Cards) : m.total = 211 := by cases m <;> simp_all <;> omega
 structure Puzzles where
   large : ℕ
   small : ℕ
@@ -109,8 +109,8 @@ structure Puzzles where
   hBundle : bundle = 23
   hTogether : small + large = bundle
   hTotal : total = large + 3 * small
-theorem puzzles_small (m : Puzzles) : m.small = 8 := by cases m <;> simp_all at * <;> omega
-theorem puzzles_solution (m : Puzzles) : m.total = 39 := by cases m <;> simp_all at * <;> omega
+theorem puzzles_small (m : Puzzles) : m.small = 8 := by cases m <;> simp_all <;> omega
+theorem puzzles_solution (m : Puzzles) : m.total = 39 := by cases m <;> simp_all <;> omega
 structure Rings where
   firstCost : ℕ
   secondCost : ℕ
@@ -120,9 +120,9 @@ structure Rings where
   hSecond : secondCost = 2 * firstCost
   hResale : 2 * resale = firstCost
   hOut : outOfPocket + resale = firstCost + secondCost
-theorem rings_second (m : Rings) : m.secondCost = 20000 := by cases m <;> simp_all at * <;> omega
-theorem rings_resale (m : Rings) : m.resale = 5000 := by cases m <;> simp_all at * <;> omega
-theorem rings_solution (m : Rings) : m.outOfPocket = 25000 := by cases m <;> simp_all at * <;> omega
+theorem rings_second (m : Rings) : m.secondCost = 20000 := by cases m <;> simp_all <;> omega
+theorem rings_resale (m : Rings) : m.resale = 5000 := by cases m <;> simp_all <;> omega
+theorem rings_solution (m : Rings) : m.outOfPocket = 25000 := by cases m <;> simp_all <;> omega
 structure Helium where
   balloons : ℕ
   helium : ℕ
@@ -136,9 +136,9 @@ structure Helium where
   hFloating : helium = perBalloon * floating
   hAir : balloons = floating + air
   hDifference : floating = air + difference
-theorem helium_floating (m : Helium) : m.floating = 36 := by cases m <;> simp_all at * <;> omega
-theorem helium_air (m : Helium) : m.air = 14 := by cases m <;> simp_all at * <;> omega
-theorem helium_solution (m : Helium) : m.difference = 22 := by cases m <;> simp_all at * <;> omega
+theorem helium_floating (m : Helium) : m.floating = 36 := by cases m <;> simp_all <;> omega
+theorem helium_air (m : Helium) : m.air = 14 := by cases m <;> simp_all <;> omega
+theorem helium_solution (m : Helium) : m.difference = 22 := by cases m <;> simp_all <;> omega
 structure Crayons where
   red : ℕ
   blue : ℕ
@@ -146,8 +146,8 @@ structure Crayons where
   hRed : red = 14
   hBlue : blue = red + 5
   hYellow : yellow + 6 = 2 * blue
-theorem crayons_blue (m : Crayons) : m.blue = 19 := by cases m <;> simp_all at * <;> omega
-theorem crayons_solution (m : Crayons) : m.yellow = 32 := by cases m <;> simp_all at * <;> omega
+theorem crayons_blue (m : Crayons) : m.blue = 19 := by cases m <;> simp_all <;> omega
+theorem crayons_solution (m : Crayons) : m.yellow = 32 := by cases m <;> simp_all <;> omega
 structure Running where
   fieldLength : ℕ
   fields : ℕ
@@ -159,8 +159,8 @@ structure Running where
   hFirst : firstLeg = fields * fieldLength
   hSecond : secondLeg = 500
   hTotal : total = firstLeg + secondLeg
-theorem running_first (m : Running) : m.firstLeg = 672 := by cases m <;> simp_all at * <;> omega
-theorem running_solution (m : Running) : m.total = 1172 := by cases m <;> simp_all at * <;> omega
+theorem running_first (m : Running) : m.firstLeg = 672 := by cases m <;> simp_all <;> omega
+theorem running_solution (m : Running) : m.total = 1172 := by cases m <;> simp_all <;> omega
 structure Chairs where
   indoorTables : ℕ
   outdoorTables : ℕ
@@ -172,9 +172,9 @@ structure Chairs where
   hIndoor : indoorChairs = indoorTables * 10
   hOutdoor : outdoorChairs = outdoorTables * 3
   hTotal : total = indoorChairs + outdoorChairs
-theorem chairs_indoor (m : Chairs) : m.indoorChairs = 90 := by cases m <;> simp_all at * <;> omega
-theorem chairs_outdoor (m : Chairs) : m.outdoorChairs = 33 := by cases m <;> simp_all at * <;> omega
-theorem chairs_solution (m : Chairs) : m.total = 123 := by cases m <;> simp_all at * <;> omega
+theorem chairs_indoor (m : Chairs) : m.indoorChairs = 90 := by cases m <;> simp_all <;> omega
+theorem chairs_outdoor (m : Chairs) : m.outdoorChairs = 33 := by cases m <;> simp_all <;> omega
+theorem chairs_solution (m : Chairs) : m.total = 123 := by cases m <;> simp_all <;> omega
 structure Areas where
   rectangle : ℕ
   square : ℕ
@@ -182,9 +182,9 @@ structure Areas where
   hRectangle : rectangle = 3 * 6
   hSquare : square = 5 * 5
   hDifference : square = rectangle + difference
-theorem areas_rectangle (m : Areas) : m.rectangle = 18 := by cases m <;> simp_all at * <;> omega
-theorem areas_square (m : Areas) : m.square = 25 := by cases m <;> simp_all at * <;> omega
-theorem areas_solution (m : Areas) : m.difference = 7 := by cases m <;> simp_all at * <;> omega
+theorem areas_rectangle (m : Areas) : m.rectangle = 18 := by cases m <;> simp_all <;> omega
+theorem areas_square (m : Areas) : m.square = 25 := by cases m <;> simp_all <;> omega
+theorem areas_solution (m : Areas) : m.difference = 7 := by cases m <;> simp_all <;> omega
 structure HotdogsConventional where
   firstRate : ℕ
   secondRate : ℕ
@@ -196,8 +196,8 @@ structure HotdogsConventional where
   hThird : thirdRate = 2 * secondRate
   hMinutes : minutes = 5
   hTotal : total = thirdRate * minutes
-theorem hotdogs_conventional_second (m : HotdogsConventional) : m.secondRate = 30 := by cases m <;> simp_all at * <;> omega
-theorem hotdogs_conventional_solution (m : HotdogsConventional) : m.total = 300 := by cases m <;> simp_all at * <;> omega
+theorem hotdogs_conventional_second (m : HotdogsConventional) : m.secondRate = 30 := by cases m <;> simp_all <;> omega
+theorem hotdogs_conventional_solution (m : HotdogsConventional) : m.total = 300 := by cases m <;> simp_all <;> omega
 
 structure HotdogsLiteral where
   firstRate : ℕ
@@ -210,8 +210,8 @@ structure HotdogsLiteral where
   hThird : thirdRate = 2 * secondRate
   hMinutes : minutes = 5
   hTotal : total = thirdRate * minutes
-theorem hotdogs_literal_second (m : HotdogsLiteral) : m.secondRate = 40 := by cases m <;> simp_all at * <;> omega
-theorem hotdogs_literal_solution (m : HotdogsLiteral) : m.total = 400 := by cases m <;> simp_all at * <;> omega
+theorem hotdogs_literal_second (m : HotdogsLiteral) : m.secondRate = 40 := by cases m <;> simp_all <;> omega
+theorem hotdogs_literal_solution (m : HotdogsLiteral) : m.total = 400 := by cases m <;> simp_all <;> omega
 theorem hotdogs_solution (c : HotdogsConventional) (l : HotdogsLiteral) :
     c.total = 300 ∧ l.total = 400 ∧ c.total ≠ l.total := by
   cases c
@@ -234,8 +234,8 @@ structure Coffee where
   hPots : ounces = pots * ouncesPerPot
   hCostPerPot : costPerPot = 3
   hCost : cost = pots * costPerPot
-theorem coffee_donuts (m : Coffee) : m.donuts = 36 := by cases m <;> simp_all at * <;> omega
-theorem coffee_ounces (m : Coffee) : m.ounces = 72 := by cases m <;> simp_all at * <;> omega
-theorem coffee_pots (m : Coffee) : m.pots = 6 := by cases m <;> simp_all at * <;> omega
-theorem coffee_solution (m : Coffee) : m.cost = 18 := by cases m <;> simp_all at * <;> omega
+theorem coffee_donuts (m : Coffee) : m.donuts = 36 := by cases m <;> simp_all <;> omega
+theorem coffee_ounces (m : Coffee) : m.ounces = 72 := by cases m <;> simp_all <;> omega
+theorem coffee_pots (m : Coffee) : m.pots = 6 := by cases m <;> simp_all <;> omega
+theorem coffee_solution (m : Coffee) : m.cost = 18 := by cases m <;> simp_all <;> omega
 end LemmaWeave.Problems.GSM8K.Sprint0927A04

@@ -7,8 +7,8 @@ structure BreadShares where
   each : ℕ
   hTotal : total = 15 * 4
   hEach : total = 10 * each
-theorem bread_total (m : BreadShares) : m.total = 60 := by cases m <;> simp_all at * <;> omega
-theorem bread_solution (m : BreadShares) : m.each = 6 := by cases m <;> simp_all at * <;> omega
+theorem bread_total (m : BreadShares) : m.total = 60 := by cases m <;> simp_all <;> omega
+theorem bread_solution (m : BreadShares) : m.each = 6 := by cases m <;> simp_all <;> omega
 
 structure LatiaFourWeek where
   weekly : ℕ
@@ -19,10 +19,10 @@ structure LatiaFourWeek where
   hMonthly : monthly = 4 * weekly
   hShortfall : monthly + shortfall = 1700
   hHours : shortfall = 10 * hours
-theorem latia_weekly (m : LatiaFourWeek) : m.weekly = 300 := by cases m <;> simp_all at * <;> omega
-theorem latia_monthly (m : LatiaFourWeek) : m.monthly = 1200 := by cases m <;> simp_all at * <;> omega
-theorem latia_shortfall (m : LatiaFourWeek) : m.shortfall = 500 := by cases m <;> simp_all at * <;> omega
-theorem latia_four_week_solution (m : LatiaFourWeek) : m.hours = 50 := by cases m <;> simp_all at * <;> omega
+theorem latia_weekly (m : LatiaFourWeek) : m.weekly = 300 := by cases m <;> simp_all <;> omega
+theorem latia_monthly (m : LatiaFourWeek) : m.monthly = 1200 := by cases m <;> simp_all <;> omega
+theorem latia_shortfall (m : LatiaFourWeek) : m.shortfall = 500 := by cases m <;> simp_all <;> omega
+theorem latia_four_week_solution (m : LatiaFourWeek) : m.hours = 50 := by cases m <;> simp_all <;> omega
 theorem latia_five_week_counterexample : 5 * 30 * 10 + 20 * 10 = 1700 := by norm_num
 theorem latia_scope (m : LatiaFourWeek) : m.hours = 50 ∧ 20 ≠ 50 := by
   constructor
@@ -40,11 +40,11 @@ structure ShirtCosts where
   hS : second = 107 * 560
   hT : third = 108 * 525
   hTotal : total = kindergarten + first + second + third
-theorem shirts_kindergarten (m : ShirtCosts) : m.kindergarten = 58580 := by cases m <;> simp_all at * <;> omega
-theorem shirts_first (m : ShirtCosts) : m.first = 56500 := by cases m <;> simp_all at * <;> omega
-theorem shirts_second (m : ShirtCosts) : m.second = 59920 := by cases m <;> simp_all at * <;> omega
-theorem shirts_third (m : ShirtCosts) : m.third = 56700 := by cases m <;> simp_all at * <;> omega
-theorem shirts_solution (m : ShirtCosts) : m.total = 231700 := by cases m <;> simp_all at * <;> omega
+theorem shirts_kindergarten (m : ShirtCosts) : m.kindergarten = 58580 := by cases m <;> simp_all <;> omega
+theorem shirts_first (m : ShirtCosts) : m.first = 56500 := by cases m <;> simp_all <;> omega
+theorem shirts_second (m : ShirtCosts) : m.second = 59920 := by cases m <;> simp_all <;> omega
+theorem shirts_third (m : ShirtCosts) : m.third = 56700 := by cases m <;> simp_all <;> omega
+theorem shirts_solution (m : ShirtCosts) : m.total = 231700 := by cases m <;> simp_all <;> omega
 
 structure BottleCups where
   whole : ℕ
@@ -53,18 +53,18 @@ structure BottleCups where
   hWhole : whole = 10 * 2
   hHalf : half = 5 * 1
   hTotal : total = whole + half
-theorem bottles_whole (m : BottleCups) : m.whole = 20 := by cases m <;> simp_all at * <;> omega
-theorem bottles_half (m : BottleCups) : m.half = 5 := by cases m <;> simp_all at * <;> omega
-theorem bottles_solution (m : BottleCups) : m.total = 25 := by cases m <;> simp_all at * <;> omega
-theorem bottles_reference_error (m : BottleCups) : m.total ≠ 30 := by cases m <;> simp_all at * <;> omega
+theorem bottles_whole (m : BottleCups) : m.whole = 20 := by cases m <;> simp_all <;> omega
+theorem bottles_half (m : BottleCups) : m.half = 5 := by cases m <;> simp_all <;> omega
+theorem bottles_solution (m : BottleCups) : m.total = 25 := by cases m <;> simp_all <;> omega
+theorem bottles_reference_error (m : BottleCups) : m.total ≠ 30 := by cases m <;> simp_all <;> omega
 
 structure TwinShirts where
   razel : ℕ
   total : ℕ
   hRazel : razel = 2 * 6
   hTotal : total = 6 + razel
-theorem twins_razel (m : TwinShirts) : m.razel = 12 := by cases m <;> simp_all at * <;> omega
-theorem twins_solution (m : TwinShirts) : m.total = 18 := by cases m <;> simp_all at * <;> omega
+theorem twins_razel (m : TwinShirts) : m.razel = 12 := by cases m <;> simp_all <;> omega
+theorem twins_solution (m : TwinShirts) : m.total = 18 := by cases m <;> simp_all <;> omega
 
 structure LibraryCart where
   shelved : ℕ
@@ -77,10 +77,10 @@ structure LibraryCart where
   hNet : net + misplaced = shelved
   hRemaining : remaining = 16
   hStart : start = net + remaining
-theorem library_shelved (m : LibraryCart) : m.shelved = 39 := by cases m <;> simp_all at * <;> omega
-theorem library_net (m : LibraryCart) : m.net = 35 := by cases m <;> simp_all at * <;> omega
-theorem library_remaining (m : LibraryCart) : m.remaining = 16 := by cases m <;> simp_all at * <;> omega
-theorem library_solution (m : LibraryCart) : m.start = 51 := by cases m <;> simp_all at * <;> omega
+theorem library_shelved (m : LibraryCart) : m.shelved = 39 := by cases m <;> simp_all <;> omega
+theorem library_net (m : LibraryCart) : m.net = 35 := by cases m <;> simp_all <;> omega
+theorem library_remaining (m : LibraryCart) : m.remaining = 16 := by cases m <;> simp_all <;> omega
+theorem library_solution (m : LibraryCart) : m.start = 51 := by cases m <;> simp_all <;> omega
 
 structure RiverObjects where
   sticks : ℕ
@@ -89,9 +89,9 @@ structure RiverObjects where
   hSticks : sticks = 10 + 6
   hRocks : 2 * rocks = 10
   hTotal : total = sticks + rocks
-theorem river_sticks (m : RiverObjects) : m.sticks = 16 := by cases m <;> simp_all at * <;> omega
-theorem river_rocks (m : RiverObjects) : m.rocks = 5 := by cases m <;> simp_all at * <;> omega
-theorem river_solution (m : RiverObjects) : m.total = 21 := by cases m <;> simp_all at * <;> omega
+theorem river_sticks (m : RiverObjects) : m.sticks = 16 := by cases m <;> simp_all <;> omega
+theorem river_rocks (m : RiverObjects) : m.rocks = 5 := by cases m <;> simp_all <;> omega
+theorem river_solution (m : RiverObjects) : m.total = 21 := by cases m <;> simp_all <;> omega
 
 theorem internet_not_before : ¬ (25 : ℕ) < 25 := by omega
 theorem internet_nonstrict_total : 4 * (5000 - 250) = 19000 := by norm_num
@@ -105,9 +105,9 @@ structure ToyCars where
   hThis : thisMonth = 2 * 5
   hBought : bought = 5 + thisMonth
   hTotal : original + bought = 40
-theorem cars_this_month (m : ToyCars) : m.thisMonth = 10 := by cases m <;> simp_all at * <;> omega
-theorem cars_bought (m : ToyCars) : m.bought = 15 := by cases m <;> simp_all at * <;> omega
-theorem cars_solution (m : ToyCars) : m.original = 25 := by cases m <;> simp_all at * <;> omega
+theorem cars_this_month (m : ToyCars) : m.thisMonth = 10 := by cases m <;> simp_all <;> omega
+theorem cars_bought (m : ToyCars) : m.bought = 15 := by cases m <;> simp_all <;> omega
+theorem cars_solution (m : ToyCars) : m.original = 25 := by cases m <;> simp_all <;> omega
 
 structure Insurance where
   accident : ℕ
@@ -116,9 +116,9 @@ structure Insurance where
   hAccident : accident = 50 * 10 / 100
   hTickets : tickets = 3 * 5
   hTotal : total = 50 + accident + tickets
-theorem insurance_accident (m : Insurance) : m.accident = 5 := by cases m <;> simp_all at * <;> norm_num at *
-theorem insurance_tickets (m : Insurance) : m.tickets = 15 := by cases m <;> simp_all at * <;> norm_num at *
-theorem insurance_solution (m : Insurance) : m.total = 70 := by cases m <;> simp_all at * <;> norm_num at *
+theorem insurance_accident (m : Insurance) : m.accident = 5 := by cases m <;> simp_all <;> norm_num at *
+theorem insurance_tickets (m : Insurance) : m.tickets = 15 := by cases m <;> simp_all <;> norm_num at *
+theorem insurance_solution (m : Insurance) : m.total = 70 := by cases m <;> simp_all <;> norm_num at *
 
 structure Peppers where
   oldSpicy : ℕ
@@ -135,11 +135,11 @@ structure Peppers where
   hNewMild : newMild = 1 * 90
   hNewTotal : newTotal = newSpicy + newMild
   hFewer : newTotal + fewer = oldTotal
-theorem peppers_old_spicy (m : Peppers) : m.oldSpicy = 150 := by cases m <;> simp_all at * <;> omega
-theorem peppers_old_total (m : Peppers) : m.oldTotal = 160 := by cases m <;> simp_all at * <;> omega
-theorem peppers_new_spicy (m : Peppers) : m.newSpicy = 30 := by cases m <;> simp_all at * <;> omega
-theorem peppers_new_total (m : Peppers) : m.newTotal = 120 := by cases m <;> simp_all at * <;> omega
-theorem peppers_solution (m : Peppers) : m.fewer = 40 := by cases m <;> simp_all at * <;> omega
+theorem peppers_old_spicy (m : Peppers) : m.oldSpicy = 150 := by cases m <;> simp_all <;> omega
+theorem peppers_old_total (m : Peppers) : m.oldTotal = 160 := by cases m <;> simp_all <;> omega
+theorem peppers_new_spicy (m : Peppers) : m.newSpicy = 30 := by cases m <;> simp_all <;> omega
+theorem peppers_new_total (m : Peppers) : m.newTotal = 120 := by cases m <;> simp_all <;> omega
+theorem peppers_solution (m : Peppers) : m.fewer = 40 := by cases m <;> simp_all <;> omega
 
 structure StereoTrade where
   credit : ℕ
@@ -150,10 +150,10 @@ structure StereoTrade where
   hDiscount : 100 * discount = 25 * 600
   hPrice : price + discount = 600
   hPocket : pocket + credit = price
-theorem stereo_credit (m : StereoTrade) : m.credit = 200 := by cases m <;> simp_all at * <;> omega
-theorem stereo_discount (m : StereoTrade) : m.discount = 150 := by cases m <;> simp_all at * <;> omega
-theorem stereo_price (m : StereoTrade) : m.price = 450 := by cases m <;> simp_all at * <;> omega
-theorem stereo_solution (m : StereoTrade) : m.pocket = 250 := by cases m <;> simp_all at * <;> omega
+theorem stereo_credit (m : StereoTrade) : m.credit = 200 := by cases m <;> simp_all <;> omega
+theorem stereo_discount (m : StereoTrade) : m.discount = 150 := by cases m <;> simp_all <;> omega
+theorem stereo_price (m : StereoTrade) : m.price = 450 := by cases m <;> simp_all <;> omega
+theorem stereo_solution (m : StereoTrade) : m.pocket = 250 := by cases m <;> simp_all <;> omega
 
 structure CandyCounts where
   james : ℕ
@@ -162,17 +162,17 @@ structure CandyCounts where
   hJames : james = 3 * 6
   hRubert : rubert = 4 * james
   hTotal : total = 6 + james + rubert
-theorem candies_james (m : CandyCounts) : m.james = 18 := by cases m <;> simp_all at * <;> omega
-theorem candies_rubert (m : CandyCounts) : m.rubert = 72 := by cases m <;> simp_all at * <;> omega
-theorem candies_solution (m : CandyCounts) : m.total = 96 := by cases m <;> simp_all at * <;> omega
+theorem candies_james (m : CandyCounts) : m.james = 18 := by cases m <;> simp_all <;> omega
+theorem candies_rubert (m : CandyCounts) : m.rubert = 72 := by cases m <;> simp_all <;> omega
+theorem candies_solution (m : CandyCounts) : m.total = 96 := by cases m <;> simp_all <;> omega
 
 structure QuarterPlus where
   quarter : ℕ
   total : ℕ
   hQuarter : 4 * quarter = 48
   hTotal : total = quarter + 15
-theorem quarter_value (m : QuarterPlus) : m.quarter = 12 := by cases m <;> simp_all at * <;> omega
-theorem quarter_solution (m : QuarterPlus) : m.total = 27 := by cases m <;> simp_all at * <;> omega
+theorem quarter_value (m : QuarterPlus) : m.quarter = 12 := by cases m <;> simp_all <;> omega
+theorem quarter_solution (m : QuarterPlus) : m.total = 27 := by cases m <;> simp_all <;> omega
 
 structure BurgerOrder where
   soda : ℕ
@@ -185,9 +185,9 @@ structure BurgerOrder where
   hBurger : burgerCost = count * 6
   hSodaCost : sodaCost = count * soda
   hTotal : total = burgerCost + sodaCost
-theorem burger_soda (m : BurgerOrder) : m.soda = 2 := by cases m <;> simp_all at * <;> omega
-theorem burger_count (m : BurgerOrder) : m.count = 3 := by cases m <;> simp_all at * <;> omega
-theorem burger_subtotals (m : BurgerOrder) : m.burgerCost = 18 ∧ m.sodaCost = 6 := by cases m <;> simp_all at * <;> omega
-theorem burger_solution (m : BurgerOrder) : m.total = 24 := by cases m <;> simp_all at * <;> omega
+theorem burger_soda (m : BurgerOrder) : m.soda = 2 := by cases m <;> simp_all <;> omega
+theorem burger_count (m : BurgerOrder) : m.count = 3 := by cases m <;> simp_all <;> omega
+theorem burger_subtotals (m : BurgerOrder) : m.burgerCost = 18 ∧ m.sodaCost = 6 := by cases m <;> simp_all <;> omega
+theorem burger_solution (m : BurgerOrder) : m.total = 24 := by cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0925A11

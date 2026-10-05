@@ -15,11 +15,11 @@ structure TomatoModel where
   hPieces : pieces = plants * yieldPerPlant
 
 theorem tomato_plants (m : TomatoModel) : m.plants = 300 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem tomato_pieces (m : TomatoModel) : m.pieces = 6000 := by
   have h := tomato_plants m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ArenaSumModel where
   emma : ℕ
@@ -32,11 +32,11 @@ structure ArenaSumModel where
   hSummed : summed = emma + fernando
 
 theorem fernando_arena_time (m : ArenaSumModel) : m.fernando = 40 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem arena_summed_time (m : ArenaSumModel) : m.summed = 60 := by
   have h := fernando_arena_time m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ArenaSimultaneousModel where
   emma : ℕ
@@ -47,7 +47,7 @@ structure ArenaSimultaneousModel where
   hElapsed : elapsed = fernando
 
 theorem arena_simultaneous_time (m : ArenaSimultaneousModel) : m.elapsed = 40 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem arena_readings_differ (a : ArenaSumModel) (b : ArenaSimultaneousModel) :
     a.summed ≠ b.elapsed := by
@@ -70,15 +70,15 @@ structure PartyModel where
   hEach : friendsTotal = friendsCount * each
 
 theorem party_total (m : PartyModel) : m.total = 90 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem friends_contribution_total (m : PartyModel) : m.friendsTotal = 60 := by
   have h := party_total m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem friend_contribution (m : PartyModel) : m.each = 20 := by
   have h := friends_contribution_total m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure AgeModel where
   years : ℕ
@@ -97,15 +97,15 @@ structure AgeModel where
   hTwice : currentIsabella = multiplier * antonio
 
 theorem isabella_ten_months (m : AgeModel) : m.ageAtTen = 120 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem isabella_current_months (m : AgeModel) : m.currentIsabella = 102 := by
   have h := isabella_ten_months m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem antonio_months (m : AgeModel) : m.antonio = 51 := by
   have h := isabella_current_months m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure SpeedModel where
   miles : ℕ
@@ -118,6 +118,6 @@ structure SpeedModel where
   hSpeed : miles * minutesPerHour = minutes * speed
 
 theorem average_speed (m : SpeedModel) : m.speed = 8 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A17P2

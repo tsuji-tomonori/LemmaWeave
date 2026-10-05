@@ -19,15 +19,15 @@ structure TestModel where
   hTotal : totalCorrect = firstCorrect + secondCorrect
 
 theorem test_first_correct (m : TestModel) : m.firstCorrect = 36 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem test_second_correct (m : TestModel) : m.secondCorrect = 38 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem test_total_correct (m : TestModel) : m.totalCorrect = 74 := by
   have h1 := test_first_correct m
   have h2 := test_second_correct m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CoasterModel where
   count : ℕ
@@ -50,15 +50,15 @@ structure CoasterModel where
   hSplit : firstFour + fifth = total
 
 theorem coaster_total (m : CoasterModel) : m.total = 295 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem coaster_first_four (m : CoasterModel) : m.firstFour = 255 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem coaster_fifth (m : CoasterModel) : m.fifth = 40 := by
   have h1 := coaster_total m
   have h2 := coaster_first_four m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CarPushModel where
   firstMiles : ℕ
@@ -86,15 +86,15 @@ structure CarPushModel where
 
 theorem car_segment_times (m : CarPushModel) :
     m.firstHalfHours = 1 ∧ m.secondHalfHours = 2 ∧ m.thirdHalfHours = 1 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem car_total_half_hours (m : CarPushModel) : m.totalHalfHours = 4 := by
   have h := car_segment_times m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem car_total_hours (m : CarPushModel) : m.totalHours = 2 := by
   have h := car_total_half_hours m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure BootsModel where
   budget : ℕ
@@ -123,20 +123,20 @@ structure BootsModel where
   hEach : shortfall = people * eachAdds
 
 theorem boots_spent_and_left (m : BootsModel) : m.spent = 36 ∧ m.left = 14 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem boots_pair_costs (m : BootsModel) : m.onePair = 42 ∧ m.twoPairs = 84 := by
   have h := boots_spent_and_left m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem boots_shortfall (m : BootsModel) : m.shortfall = 70 := by
   have h1 := boots_spent_and_left m
   have h2 := boots_pair_costs m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem boots_each_adds (m : BootsModel) : m.eachAdds = 35 := by
   have h := boots_shortfall m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure SpokesModel where
   bicycles : ℕ
@@ -151,10 +151,10 @@ structure SpokesModel where
   hSpokes : spokes = wheels * spokesPerWheel
 
 theorem spokes_wheels (m : SpokesModel) : m.wheels = 8 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem spokes_total (m : SpokesModel) : m.spokes = 80 := by
   have h := spokes_wheels m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A08P3

@@ -15,11 +15,11 @@ structure FactoryModel where
   hRevenue : revenue = weekly * price
 
 theorem factory_weekly (m : FactoryModel) : m.weekly = 10500 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem factory_revenue (m : FactoryModel) : m.revenue = 1575000 := by
   have h := factory_weekly m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure MilkModel where
   twoLiterQuarters : ℕ
@@ -34,23 +34,23 @@ structure MilkModel where
   hLiters : totalQuarters = 4 * totalLiters
 
 theorem milk_two_liter_quarters (m : MilkModel) : m.twoLiterQuarters = 24 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem milk_three_quarter_quarters (m : MilkModel) : m.threeQuarterQuarters = 6 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem milk_half_liter_quarters (m : MilkModel) : m.halfLiterQuarters = 10 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem milk_total_quarters (m : MilkModel) : m.totalQuarters = 40 := by
   have h1 := milk_two_liter_quarters m
   have h2 := milk_three_quarter_quarters m
   have h3 := milk_half_liter_quarters m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem milk_total_liters (m : MilkModel) : m.totalLiters = 10 := by
   have h := milk_total_quarters m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure PencilsModel where
   monday : ℕ
@@ -63,11 +63,11 @@ structure PencilsModel where
   hTotal : total = monday + tuesday + wednesday
 
 theorem pencils_wednesday (m : PencilsModel) : m.wednesday = 54 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem pencils_total (m : PencilsModel) : m.total = 92 := by
   have h := pencils_wednesday m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure YardsModel where
   games : ℕ
@@ -88,19 +88,19 @@ structure YardsModel where
   hTotal : total = malik + josiah + darnell
 
 theorem yards_malik (m : YardsModel) : m.malik = 72 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem yards_josiah (m : YardsModel) : m.josiah = 88 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem yards_darnell (m : YardsModel) : m.darnell = 44 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem yards_total (m : YardsModel) : m.total = 204 := by
   have h1 := yards_malik m
   have h2 := yards_josiah m
   have h3 := yards_darnell m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ChargersModel where
   phone : ℕ
@@ -111,7 +111,7 @@ structure ChargersModel where
   hTwentyFour : total = 24
 
 theorem chargers_phone (m : ChargersModel) : m.phone = 4 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem chargers_literal_impossible :
     ¬ ∃ phone laptop : ℕ, laptop = phone + 5 * phone ∧ phone + laptop = 24 := by

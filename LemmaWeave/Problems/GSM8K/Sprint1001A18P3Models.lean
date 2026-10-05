@@ -15,11 +15,11 @@ structure ContributionModel where
   hEach : remaining = students * each
 
 theorem student_remaining_total (m : ContributionModel) : m.remaining = 76 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem student_contribution (m : ContributionModel) : m.each = 4 := by
   have h := student_remaining_total m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure NutsModel where
   priceCents : ℕ
@@ -38,15 +38,15 @@ structure NutsModel where
   hPerServing : discountedCents = servings * perServingCents
 
 theorem nuts_discounted_price (m : NutsModel) : m.discountedCents = 2000 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem nuts_serving_count (m : NutsModel) : m.servings = 40 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem nuts_cost_per_serving (m : NutsModel) : m.perServingCents = 50 := by
   have h1 := nuts_discounted_price m
   have h2 := nuts_serving_count m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure PaintModel where
   shortLength : ℕ
@@ -67,15 +67,15 @@ structure PaintModel where
   hHours : coatedArea = rate * hours
 
 theorem kitchen_wall_area (m : PaintModel) : m.wallArea = 560 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem kitchen_coated_area (m : PaintModel) : m.coatedArea = 1680 := by
   have h := kitchen_wall_area m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem kitchen_paint_hours (m : PaintModel) : m.hours = 42 := by
   have h := kitchen_coated_area m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure IceCreamModel where
   boxCostCents : ℕ
@@ -96,19 +96,19 @@ structure IceCreamModel where
   hPerPerson : totalCostCents = friends * perPersonCents
 
 theorem ice_cream_bars_needed (m : IceCreamModel) : m.barsNeeded = 12 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem ice_cream_boxes (m : IceCreamModel) : m.boxes = 4 := by
   have h := ice_cream_bars_needed m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem ice_cream_total_cost (m : IceCreamModel) : m.totalCostCents = 3000 := by
   have h := ice_cream_boxes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem ice_cream_per_person (m : IceCreamModel) : m.perPersonCents = 500 := by
   have h := ice_cream_total_cost m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CometModel where
   minutesPerHour : ℕ
@@ -132,18 +132,18 @@ structure CometModel where
   hRoundUpper : 200 * watching < 260 * (2 * roundedPercent + 1)
 
 theorem comet_shopping_minutes (m : CometModel) : m.shopping = 120 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem comet_snack_minutes (m : CometModel) : m.snacks = 90 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem comet_total_minutes (m : CometModel) : m.total = 260 := by
   have h1 := comet_shopping_minutes m
   have h2 := comet_snack_minutes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem comet_watching_nearest_percent (m : CometModel) : m.roundedPercent = 8 := by
   have h := comet_total_minutes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A18P3

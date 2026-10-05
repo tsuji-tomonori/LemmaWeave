@@ -14,10 +14,10 @@ structure MuseumModel where
   hMinutes : minutesPerStudent = 4
   hTotal : totalMinutes = perGroup * minutesPerStudent
 
-theorem museum_group_students (m : MuseumModel) : m.perGroup = 6 := by cases m <;> simp_all at * <;> omega
+theorem museum_group_students (m : MuseumModel) : m.perGroup = 6 := by cases m <;> simp_all <;> omega
 theorem museum_group_minutes (m : MuseumModel) : m.totalMinutes = 24 := by
   have h := museum_group_students m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure VinylModel where
   capacity : ℕ
@@ -27,13 +27,13 @@ structure VinylModel where
   hOccupied : 10 * occupied = 6 * capacity
   hRidges : ridges = 60 * occupied
 
-theorem vinyl_capacity (m : VinylModel) : m.capacity = 240 := by cases m <;> simp_all at * <;> omega
+theorem vinyl_capacity (m : VinylModel) : m.capacity = 240 := by cases m <;> simp_all <;> omega
 theorem vinyl_occupied_records (m : VinylModel) : m.occupied = 144 := by
   have h := vinyl_capacity m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem vinyl_total_ridges (m : VinylModel) : m.ridges = 8640 := by
   have h := vinyl_occupied_records m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure PoolWaterModel where
   drainRate : ℕ
@@ -47,18 +47,18 @@ structure PoolWaterModel where
   hAdded : added = 3 * hoseRate
   hRemaining : 120 + added = drained + remaining
 
-theorem pool_drain_rate (m : PoolWaterModel) : m.drainRate = 30 := by cases m <;> simp_all at * <;> omega
-theorem pool_hose_rate (m : PoolWaterModel) : m.hoseRate = 20 := by cases m <;> simp_all at * <;> omega
+theorem pool_drain_rate (m : PoolWaterModel) : m.drainRate = 30 := by cases m <;> simp_all <;> omega
+theorem pool_hose_rate (m : PoolWaterModel) : m.hoseRate = 20 := by cases m <;> simp_all <;> omega
 theorem pool_drained_three_hours (m : PoolWaterModel) : m.drained = 90 := by
   have h := pool_drain_rate m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem pool_added_three_hours (m : PoolWaterModel) : m.added = 60 := by
   have h := pool_hose_rate m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem pool_water_remaining (m : PoolWaterModel) : m.remaining = 90 := by
   have h1 := pool_drained_three_hours m
   have h2 := pool_added_three_hours m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure PufferfishModel where
   swordfish : ℕ
@@ -66,7 +66,7 @@ structure PufferfishModel where
   hRatio : swordfish = 5 * pufferfish
   hTotal : swordfish + pufferfish = 90
 
-theorem pufferfish_count (m : PufferfishModel) : m.pufferfish = 15 := by cases m <;> simp_all at * <;> omega
+theorem pufferfish_count (m : PufferfishModel) : m.pufferfish = 15 := by cases m <;> simp_all <;> omega
 
 structure PensModel where
   week1 : ℕ
@@ -82,15 +82,15 @@ structure PensModel where
   hJane : jane = 16
   hDifference : week4 = jane + difference
 
-theorem pens_week2 (m : PensModel) : m.week2 = 8 := by cases m <;> simp_all at * <;> omega
+theorem pens_week2 (m : PensModel) : m.week2 = 8 := by cases m <;> simp_all <;> omega
 theorem pens_week3 (m : PensModel) : m.week3 = 16 := by
   have h := pens_week2 m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem pens_week4 (m : PensModel) : m.week4 = 32 := by
   have h := pens_week3 m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem pens_difference (m : PensModel) : m.difference = 16 := by
   have h := pens_week4 m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1002A01P1

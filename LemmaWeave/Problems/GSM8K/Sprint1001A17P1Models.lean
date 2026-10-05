@@ -21,19 +21,19 @@ structure CoffeeEachModel where
   hTotal : total = weakAmount + strongAmount
 
 theorem strong_coffee_rate (m : CoffeeEachModel) : m.strongPerCup = 2 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem weak_coffee_amount (m : CoffeeEachModel) : m.weakAmount = 12 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem strong_coffee_amount (m : CoffeeEachModel) : m.strongAmount = 24 := by
   have h := strong_coffee_rate m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem coffee_each_total (m : CoffeeEachModel) : m.total = 36 := by
   have h1 := weak_coffee_amount m
   have h2 := strong_coffee_amount m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CoffeeSplitModel where
   totalCups : ℕ
@@ -50,7 +50,7 @@ structure CoffeeSplitModel where
   hTotal : total = weakCups * weakPerCup + strongCups * strongPerCup
 
 theorem coffee_split_total (m : CoffeeSplitModel) : m.total = 18 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem coffee_readings_differ (a : CoffeeEachModel) (b : CoffeeSplitModel) :
     a.total ≠ b.total := by
@@ -81,23 +81,23 @@ structure BillModel where
   hCount : billCount = fiveCount + tenCount + twentyCount
 
 theorem twenty_bill_amount (m : BillModel) : m.twentyAmount = 80 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem ten_bill_count (m : BillModel) : m.tenCount = 5 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem five_bill_amount (m : BillModel) : m.fiveValue * m.fiveCount = 20 := by
   have h := twenty_bill_amount m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem five_bill_count (m : BillModel) : m.fiveCount = 4 := by
   have h := five_bill_amount m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem bill_count (m : BillModel) : m.billCount = 13 := by
   have h1 := ten_bill_count m
   have h2 := five_bill_count m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure WhiskerModel where
   princess : ℕ
@@ -112,11 +112,11 @@ structure WhiskerModel where
   hCatman : doubled = catman + fewer
 
 theorem doubled_whiskers (m : WhiskerModel) : m.doubled = 28 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem catman_whiskers (m : WhiskerModel) : m.catman = 22 := by
   have h := doubled_whiskers m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure MopModel where
   bathroom : ℕ
@@ -131,11 +131,11 @@ structure MopModel where
   hMinutes : totalArea = rate * minutes
 
 theorem mop_total_area (m : MopModel) : m.totalArea = 104 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem mop_minutes (m : MopModel) : m.minutes = 13 := by
   have h := mop_total_area m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure HockeyModel where
   louieLast : ℕ
@@ -160,22 +160,22 @@ structure HockeyModel where
   hCombined : combined = brotherTotal + louieTotal
 
 theorem brother_goals_per_game (m : HockeyModel) : m.brotherPerGame = 8 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem brother_games (m : HockeyModel) : m.brotherGames = 150 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem brother_goal_total (m : HockeyModel) : m.brotherTotal = 1200 := by
   have h1 := brother_goals_per_game m
   have h2 := brother_games m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem louie_goal_total (m : HockeyModel) : m.louieTotal = 44 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem hockey_combined_goals (m : HockeyModel) : m.combined = 1244 := by
   have h1 := brother_goal_total m
   have h2 := louie_goal_total m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A17P1

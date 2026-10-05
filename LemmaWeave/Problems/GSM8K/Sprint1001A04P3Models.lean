@@ -23,19 +23,19 @@ structure PiePriceModel where
   hPrice : price * totalPies = revenue
 
 theorem pie_price_cost (m : PiePriceModel) : m.cost = 90 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem pie_price_revenue (m : PiePriceModel) : m.revenue = 110 := by
   have h := pie_price_cost m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem pie_price_total_pies (m : PiePriceModel) : m.totalPies = 22 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem pie_price_each (m : PiePriceModel) : m.price = 5 := by
   have h1 := pie_price_revenue m
   have h2 := pie_price_total_pies m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CurtainModel where
   feet : ℕ
@@ -50,11 +50,11 @@ structure CurtainModel where
   hTotal : totalInches = heightInches + extraInches
 
 theorem curtain_height_inches (m : CurtainModel) : m.heightInches = 96 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem curtain_total_inches (m : CurtainModel) : m.totalInches = 101 := by
   have h := curtain_height_inches m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CavitiesModel where
   parentCanes : ℕ
@@ -77,20 +77,20 @@ structure CavitiesModel where
   hCavities : cavities * canesPerCavity = totalCanes
 
 theorem cavities_given (m : CavitiesModel) : m.givenCanes = 14 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem cavities_bought (m : CavitiesModel) : m.boughtCanes = 2 := by
   have h := cavities_given m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem cavities_total_canes (m : CavitiesModel) : m.totalCanes = 16 := by
   have h1 := cavities_given m
   have h2 := cavities_bought m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem cavities_count (m : CavitiesModel) : m.cavities = 4 := by
   have h := cavities_total_canes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem cavities_source_terminal_inconsistent : (4 : ℕ) ≠ 16 := by
   norm_num
@@ -113,15 +113,15 @@ structure RibbonModel where
   hLeftMeters : leftHalfMeters = 2 * leftMeters
 
 theorem ribbon_used (m : RibbonModel) : m.usedHalfMeters = 24 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem ribbon_left_half_meters (m : RibbonModel) : m.leftHalfMeters = 6 := by
   have h := ribbon_used m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem ribbon_left_meters (m : RibbonModel) : m.leftMeters = 3 := by
   have h := ribbon_left_half_meters m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure BrushModel where
   carlaInches : ℕ
@@ -134,14 +134,14 @@ structure BrushModel where
   hCentimeters : halfCentimeters = 2 * centimeters
 
 theorem brush_carmen_inches (m : BrushModel) : m.carmenInches = 18 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem brush_half_centimeters (m : BrushModel) : m.halfCentimeters = 90 := by
   have h := brush_carmen_inches m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem brush_centimeters (m : BrushModel) : m.centimeters = 45 := by
   have h := brush_half_centimeters m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A04P3

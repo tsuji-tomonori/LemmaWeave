@@ -17,7 +17,7 @@ structure ChaptersModel where
   hPages : total = 95
 
 theorem chapters_progression_total (m : ChaptersModel) : 5 * m.first + 30 = 95 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem chapters_first (m : ChaptersModel) : m.first = 13 := by
   have h := chapters_progression_total m
@@ -38,15 +38,15 @@ structure BoxerModel where
   hDifference : finalWins = losses + difference
 
 theorem boxer_wins_before_loss (m : BoxerModel) : m.winsBeforeFirstLoss = 15 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem boxer_final_wins (m : BoxerModel) : m.finalWins = 30 := by
   have h := boxer_wins_before_loss m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem boxer_difference (m : BoxerModel) : m.difference = 28 := by
   have h := boxer_final_wins m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure EggHuntModel where
   baskets : ℕ
@@ -69,15 +69,15 @@ structure EggHuntModel where
   hEqual : eggs = people * perPerson
 
 theorem egg_hunt_total_eggs (m : EggHuntModel) : m.eggs = 180 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem egg_hunt_people (m : EggHuntModel) : m.people = 20 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem egg_hunt_per_person (m : EggHuntModel) : m.perPerson = 9 := by
   have h1 := egg_hunt_total_eggs m
   have h2 := egg_hunt_people m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure InsectsModel where
   boys : ℕ
@@ -92,11 +92,11 @@ structure InsectsModel where
   hEqual : total = groups * perGroup
 
 theorem insects_total (m : InsectsModel) : m.total = 500 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem insects_per_group (m : InsectsModel) : m.perGroup = 125 := by
   have h := insects_total m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure VarsityModel where
   students : ℕ
@@ -111,19 +111,19 @@ structure VarsityModel where
   hBoysPartition : boys = joined + notJoined
 
 theorem varsity_girls (m : VarsityModel) : m.girls = 90 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem varsity_boys (m : VarsityModel) : m.boys = 60 := by
   have h := varsity_girls m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem varsity_joined (m : VarsityModel) : m.joined = 20 := by
   have h := varsity_boys m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem varsity_not_joined (m : VarsityModel) : m.notJoined = 40 := by
   have h1 := varsity_boys m
   have h2 := varsity_joined m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0930A15P1

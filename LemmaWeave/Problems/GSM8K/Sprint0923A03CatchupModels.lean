@@ -10,7 +10,7 @@ structure CreditCard where
   hInterest : interest * 100 = afterPayment * 20
   hFinal : final = afterPayment + interest
 
-theorem credit_after_payment (m : CreditCard) : m.afterPayment = 100 := by cases m <;> simp_all at * <;> omega
+theorem credit_after_payment (m : CreditCard) : m.afterPayment = 100 := by cases m <;> simp_all <;> omega
 theorem credit_interest (m : CreditCard) : m.interest = 20 := by
   have h := m.hInterest
   rw [credit_after_payment m] at h
@@ -33,7 +33,7 @@ structure DogWeights where
   hIvan : ivan * 7 = 63
   hTotal : total = 63 + ivan
 
-theorem dogs_ivan (m : DogWeights) : m.ivan = 9 := by cases m <;> simp_all at * <;> omega
+theorem dogs_ivan (m : DogWeights) : m.ivan = 9 := by cases m <;> simp_all <;> omega
 theorem dogs_solution (m : DogWeights) : m.total = 72 := by
   rw [m.hTotal, dogs_ivan m]
 
@@ -55,7 +55,7 @@ structure RaceAverage where
 
 theorem race_speeds (m : RaceAverage) : m.speed2 = 200 ∧ m.speed3 = 300 := by
   constructor <;> omega
-theorem race_time1 (m : RaceAverage) : m.time1 = 72 := by cases m <;> simp_all at * <;> omega
+theorem race_time1 (m : RaceAverage) : m.time1 = 72 := by cases m <;> simp_all <;> omega
 theorem race_time2 (m : RaceAverage) : m.time2 = 36 := by
   have h := m.hTime2
   rw [(race_speeds m).1] at h
@@ -79,7 +79,7 @@ structure SharedMoney where
   hTotal : total = 150 + howard
   hEach : each * 2 = total
 
-theorem money_howard (m : SharedMoney) : m.howard = 120 := by cases m <;> simp_all at * <;> omega
+theorem money_howard (m : SharedMoney) : m.howard = 120 := by cases m <;> simp_all <;> omega
 theorem money_total (m : SharedMoney) : m.total = 270 := by rw [m.hTotal, money_howard m]
 theorem money_solution (m : SharedMoney) : m.each = 135 := by
   have h := m.hEach
@@ -92,7 +92,7 @@ structure Scrapbook where
   hAdded : added * 4 = 72
   hTotal : total = 18 + added
 
-theorem stamps_added (m : Scrapbook) : m.added = 18 := by cases m <;> simp_all at * <;> omega
+theorem stamps_added (m : Scrapbook) : m.added = 18 := by cases m <;> simp_all <;> omega
 theorem stamps_solution (m : Scrapbook) : m.total = 36 := by rw [m.hTotal, stamps_added m]
 
 structure MedicalCosts where
@@ -126,7 +126,7 @@ structure SchoolPopulation where
   hForeign : foreignMale * 10 = male
   hNonForeign : nonForeignMale + foreignMale = male
 
-theorem school_female (m : SchoolPopulation) : m.female = 200 := by cases m <;> simp_all at * <;> omega
+theorem school_female (m : SchoolPopulation) : m.female = 200 := by cases m <;> simp_all <;> omega
 theorem school_male (m : SchoolPopulation) : m.male = 100 := by
   have h := m.hMale
   rw [school_female m] at h
@@ -152,7 +152,7 @@ structure SockProfit where
   hTotalCents : totalCents = firstTotal + otherTotal
   hDollars : totalCents = totalDollars * 100
 
-theorem socks_first_each (m : SockProfit) : m.firstEach = 50 := by cases m <;> simp_all at * <;> omega
+theorem socks_first_each (m : SockProfit) : m.firstEach = 50 := by cases m <;> simp_all <;> omega
 theorem socks_first_total (m : SockProfit) : m.firstTotal = 200 := by
   rw [m.hFirstTotal, socks_first_each m]
 theorem socks_other_total (m : SockProfit) : m.otherTotal = 100 := by rw [m.hOtherTotal]
@@ -169,7 +169,7 @@ structure Heights where
   hKelly : kelly + 3 = 72
   hJana : jana = kelly + 5
 
-theorem height_kelly (m : Heights) : m.kelly = 69 := by cases m <;> simp_all at * <;> omega
+theorem height_kelly (m : Heights) : m.kelly = 69 := by cases m <;> simp_all <;> omega
 theorem height_solution (m : Heights) : m.jana = 74 := by rw [m.hJana, height_kelly m]
 
 structure BugCollection where
@@ -180,7 +180,7 @@ structure BugCollection where
   hCaterpillars : caterpillars = 2 * 3
   hTotal : total = 12 + 3 + crickets + caterpillars
 
-theorem bugs_crickets (m : BugCollection) : m.crickets = 6 := by cases m <;> simp_all at * <;> omega
+theorem bugs_crickets (m : BugCollection) : m.crickets = 6 := by cases m <;> simp_all <;> omega
 theorem bugs_caterpillars (m : BugCollection) : m.caterpillars = 6 := by rw [m.hCaterpillars]
 theorem bugs_solution (m : BugCollection) : m.total = 27 := by
   rw [m.hTotal, bugs_crickets m, bugs_caterpillars m]
@@ -208,7 +208,7 @@ structure LongJump where
   hTotal : margaritaTotal = 18 + margaritaJump
   hFarther : farther + 24 = margaritaTotal
 
-theorem longjump_jump (m : LongJump) : m.margaritaJump = 7 := by cases m <;> simp_all at * <;> omega
+theorem longjump_jump (m : LongJump) : m.margaritaJump = 7 := by cases m <;> simp_all <;> omega
 theorem longjump_total (m : LongJump) : m.margaritaTotal = 25 := by rw [m.hTotal, longjump_jump m]
 theorem longjump_solution (m : LongJump) : m.farther = 1 := by
   have h := m.hFarther

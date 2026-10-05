@@ -30,7 +30,7 @@ structure Stairs where
   hInches : totalInches=flightInches*netFlights
   hFeet : feet*12=totalInches
 theorem stairs_flight_inches (m:Stairs) : m.flightInches=96 := by rw [m.hFlight] <;> norm_num
-theorem stairs_net_flights (m:Stairs) : m.netFlights=3 := by cases m <;> simp_all at * <;> omega
+theorem stairs_net_flights (m:Stairs) : m.netFlights=3 := by cases m <;> simp_all <;> omega
 theorem stairs_total_inches (m:Stairs) : m.totalInches=288 := by rw [m.hInches, stairs_flight_inches m, stairs_net_flights m] <;> norm_num
 theorem stairs_solution (m:Stairs) : m.feet=24 := by have h:=m.hFeet; rw [stairs_total_inches m] at h; omega
 
@@ -69,7 +69,7 @@ structure MarbleBags where
   left : ℕ
   hPer : perBag*4=28
   hLeft : left+perBag=28
-theorem bags_per_bag (m:MarbleBags) : m.perBag=7 := by cases m <;> simp_all at * <;> omega
+theorem bags_per_bag (m:MarbleBags) : m.perBag=7 := by cases m <;> simp_all <;> omega
 theorem bags_solution (m:MarbleBags) : m.left=21 := by have h:=m.hLeft; rw [bags_per_bag m] at h; omega
 
 structure Jogging where
@@ -98,7 +98,7 @@ structure Bills where
   hAmount : total=120
 theorem bills_tens_relation (m:Bills) : m.tens=2*m.twenties := m.hTens
 theorem bills_value_equation (m:Bills) : 20*m.twenties+10*m.tens=120 := by rw [←m.hTotal, m.hAmount]
-theorem bills_solution (m:Bills) : m.twenties=3 := by cases m <;> simp_all at * <;> omega
+theorem bills_solution (m:Bills) : m.twenties=3 := by cases m <;> simp_all <;> omega
 
 structure Debt where
   returned : ℕ
@@ -146,8 +146,8 @@ structure MarbleTrade where
   hTraded : traded+1=red
   hNewBlue : newBlue=2*traded
   hFinal : final=blue+1+newBlue
-theorem trade_blue (m:MarbleTrade) : m.blue=4 := by cases m <;> simp_all at * <;> omega
-theorem trade_red_percent (m:MarbleTrade) : m.redPercent=60 := by cases m <;> simp_all at * <;> omega
+theorem trade_blue (m:MarbleTrade) : m.blue=4 := by cases m <;> simp_all <;> omega
+theorem trade_red_percent (m:MarbleTrade) : m.redPercent=60 := by cases m <;> simp_all <;> omega
 theorem trade_red (m:MarbleTrade) : m.red=6 := by have h:=m.hRed; rw [trade_blue m] at h; omega
 theorem trade_traded (m:MarbleTrade) : m.traded=5 := by have h:=m.hTraded; rw [trade_red m] at h; omega
 theorem trade_new_blue (m:MarbleTrade) : m.newBlue=10 := by rw [m.hNewBlue, trade_traded m] <;> norm_num
@@ -163,7 +163,7 @@ structure Bridge where
   hTotal : total=34+megan+mike
   hExcess : excess+100=total
 theorem bridge_percent : 100-15=85 := by norm_num
-theorem bridge_megan (m:Bridge) : m.megan=40 := by cases m <;> simp_all at * <;> omega
+theorem bridge_megan (m:Bridge) : m.megan=40 := by cases m <;> simp_all <;> omega
 theorem bridge_mike (m:Bridge) : m.mike=45 := by rw [m.hMike, bridge_megan m] <;> norm_num
 theorem bridge_total (m:Bridge) : m.total=119 := by rw [m.hTotal, bridge_megan m, bridge_mike m] <;> norm_num
 theorem bridge_solution (m:Bridge) : m.excess=19 := by have h:=m.hExcess; rw [bridge_total m] at h; omega
@@ -179,7 +179,7 @@ structure Hunting where
   hDeer : deer=trips*2
   hWeight : totalWeight=deer*600
   hKept : kept*2=totalWeight
-theorem hunting_months (m:Hunting) : m.months=3 := by cases m <;> simp_all at * <;> omega
+theorem hunting_months (m:Hunting) : m.months=3 := by cases m <;> simp_all <;> omega
 theorem hunting_trips (m:Hunting) : m.trips=18 := by rw [m.hTrips, hunting_months m] <;> norm_num
 theorem hunting_deer (m:Hunting) : m.deer=36 := by rw [m.hDeer, hunting_trips m] <;> norm_num
 theorem hunting_total_weight (m:Hunting) : m.totalWeight=21600 := by rw [m.hWeight, hunting_deer m] <;> norm_num

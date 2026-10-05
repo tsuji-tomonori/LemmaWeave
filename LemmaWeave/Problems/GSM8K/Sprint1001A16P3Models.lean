@@ -15,11 +15,11 @@ structure RandyModel where
   hDistribution : afterGift = gaveSally + left
 
 theorem randy_after_gift (m : RandyModel) : m.afterGift = 3200 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem randy_initial_money (m : RandyModel) : m.initial = 3000 := by
   have h := randy_after_gift m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CrabModel where
   dishesPerDay : ℕ
@@ -46,19 +46,19 @@ structure CrabModel where
   hWeekly : weeklyCost = dailyCost * openDays
 
 theorem crab_daily_half_pounds (m : CrabModel) : m.dailyHalfPounds = 120 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem crab_daily_pounds (m : CrabModel) : m.poundsPerDay = 60 := by
   have h := crab_daily_half_pounds m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem crab_open_days (m : CrabModel) : m.openDays = 4 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem weekly_crab_cost (m : CrabModel) : m.weeklyCost = 1920 := by
   have h1 := crab_daily_pounds m
   have h2 := crab_open_days m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure BookModel where
   past : ℕ
@@ -75,11 +75,11 @@ structure BookModel where
   hFuture : future = multiplier * current + extra
 
 theorem current_books (m : BookModel) : m.current = 160 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem future_books (m : BookModel) : m.future = 860 := by
   have h := current_books m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ShredModel where
   contracts : ℕ
@@ -94,11 +94,11 @@ structure ShredModel where
   hShreds : totalPages = pagesPerShred * shreds
 
 theorem contract_pages (m : ShredModel) : m.totalPages = 264 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem shred_count (m : ShredModel) : m.shreds = 44 := by
   have h := contract_pages m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure TestModel where
   totalQuestions : ℕ
@@ -117,14 +117,14 @@ structure TestModel where
   hUnanswered : totalQuestions = answered + unanswered
 
 theorem test_minutes (m : TestModel) : m.totalMinutes = 120 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem answered_questions (m : TestModel) : m.answered = 60 := by
   have h := test_minutes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem unanswered_questions (m : TestModel) : m.unanswered = 40 := by
   have h := answered_questions m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A16P3

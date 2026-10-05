@@ -19,15 +19,15 @@ structure DebtsModel where
   hSplit : owed = sally + carl + amy + derek
 
 theorem debts_total_owed (m : DebtsModel) : m.owed = 115 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem debts_derek (m : DebtsModel) : m.derek = 15 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem debts_each (m : DebtsModel) : m.sally = 35 ∧ m.carl = 35 := by
   have h1 := debts_total_owed m
   have h2 := debts_derek m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure StudentsModel where
   deaf : ℕ
@@ -38,11 +38,11 @@ structure StudentsModel where
   hTotal : total = deaf + blind
 
 theorem students_blind (m : StudentsModel) : m.blind = 60 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem students_total (m : StudentsModel) : m.total = 240 := by
   have h := students_blind m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure GradeModel where
   first : ℕ
@@ -61,10 +61,10 @@ structure GradeModel where
   hDesiredTotal : desiredTotal = desiredAverage * tests
 
 theorem grade_first_three (m : GradeModel) : m.firstThree = 245 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem grade_desired_total (m : GradeModel) : m.desiredTotal = 340 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem grade_minimum (m : GradeModel) :
     m.firstThree + 95 = m.desiredTotal ∧
@@ -86,11 +86,11 @@ structure CattleModel where
   hAfter2 : after2 = after1 + increase2
 
 theorem cattle_after_one (m : CattleModel) : m.after1 = 300 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem cattle_after_two (m : CattleModel) : m.after2 = 450 := by
   have h := cattle_after_one m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure PoolModel where
   family1 : ℕ
@@ -107,14 +107,14 @@ structure PoolModel where
   hNotInPool : notInPool + peopleInPool = totalPeople
 
 theorem pool_total_people (m : PoolModel) : m.totalPeople = 14 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem pool_people_in (m : PoolModel) : m.peopleInPool = 8 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem pool_people_not_in (m : PoolModel) : m.notInPool = 6 := by
   have h1 := pool_total_people m
   have h2 := pool_people_in m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A06P3

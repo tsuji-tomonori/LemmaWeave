@@ -21,23 +21,23 @@ structure StockModel where
   hTotal : totalRemaining = greenBeans + riceRemaining + sugarRemaining
 
 theorem stock_rice (m : StockModel) : m.rice = 30 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem stock_sugar (m : StockModel) : m.sugar = 50 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem stock_rice_remaining (m : StockModel) : m.riceRemaining = 20 := by
   have h := stock_rice m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem stock_sugar_remaining (m : StockModel) : m.sugarRemaining = 40 := by
   have h := stock_sugar m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem stock_total_remaining (m : StockModel) : m.totalRemaining = 120 := by
   have h1 := stock_rice_remaining m
   have h2 := stock_sugar_remaining m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure ScreenTimeModel where
   dailyHours : ℕ
@@ -50,11 +50,11 @@ structure ScreenTimeModel where
   hSplit : morningMinutes + eveningMinutes = totalMinutes
 
 theorem screen_total_minutes (m : ScreenTimeModel) : m.totalMinutes = 120 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem screen_evening_minutes (m : ScreenTimeModel) : m.eveningMinutes = 75 := by
   have h := screen_total_minutes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure TomatoesModel where
   yesterday : ℕ
@@ -67,11 +67,11 @@ structure TomatoesModel where
   hTotal : twoDayTotal = yesterday + today
 
 theorem tomatoes_today (m : TomatoesModel) : m.today = 170 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem tomatoes_two_day_total (m : TomatoesModel) : m.twoDayTotal = 290 := by
   have h := tomatoes_today m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem tomatoes_readings_differ (m : TomatoesModel) : m.today ≠ m.twoDayTotal := by
   have h1 := tomatoes_today m
@@ -105,27 +105,27 @@ structure GermanClassModel where
   hGraduatedHalf : afterHalfDrop = 2 * stillEnrolled
 
 theorem german_after_first_drops (m : GermanClassModel) : m.afterFirstDrops = 12 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem german_after_first_rally (m : GermanClassModel) : m.afterFirstRally = 72 := by
   have h := german_after_first_drops m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem german_after_scheduling_drop (m : GermanClassModel) : m.afterSchedulingDrop = 70 := by
   have h := german_after_first_rally m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem german_before_half_drop (m : GermanClassModel) : m.beforeHalfDrop = 76 := by
   have h := german_after_scheduling_drop m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem german_after_half_drop (m : GermanClassModel) : m.afterHalfDrop = 38 := by
   have h := german_before_half_drop m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem german_still_enrolled (m : GermanClassModel) : m.stillEnrolled = 19 := by
   have h := german_after_half_drop m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CandlesModel where
   bakedCakes : ℕ
@@ -140,10 +140,10 @@ structure CandlesModel where
   hTotal : totalCandles = 6 * remainingCakes
 
 theorem candles_remaining_cakes (m : CandlesModel) : m.remainingCakes = 6 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem candles_total (m : CandlesModel) : m.totalCandles = 36 := by
   have h := candles_remaining_cakes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint0930A20P2

@@ -15,11 +15,11 @@ structure HannahModel where
   hHannah : hannahAge = multiplier * ageSum
 
 theorem brothers_age_sum (m : HannahModel) : m.ageSum = 24 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem hannah_age (m : HannahModel) : m.hannahAge = 48 := by
   have h := brothers_age_sum m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure VolunteerModel where
   studentsPerClass : ℕ
@@ -38,15 +38,15 @@ structure VolunteerModel where
   hMissing : target = current + missing
 
 theorem student_volunteers (m : VolunteerModel) : m.studentVolunteers = 30 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem current_volunteers (m : VolunteerModel) : m.current = 43 := by
   have h := student_volunteers m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem volunteers_needed (m : VolunteerModel) : m.missing = 7 := by
   have h := current_volunteers m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure SmoreModel where
   people : ℕ
@@ -65,15 +65,15 @@ structure SmoreModel where
   hCost : cost = dollarsPerBatch * batches
 
 theorem total_smores (m : SmoreModel) : m.total = 24 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem supply_batches (m : SmoreModel) : m.batches = 6 := by
   have h := total_smores m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem smore_cost (m : SmoreModel) : m.cost = 18 := by
   have h := supply_batches m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure SharkModel where
   hours : ℕ
@@ -98,23 +98,23 @@ structure SharkModel where
   hProfit : revenue = fuelCost + profit
 
 theorem hunt_minutes (m : SharkModel) : m.totalMinutes = 300 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem photo_count (m : SharkModel) : m.photos = 30 := by
   have h := hunt_minutes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem photo_revenue (m : SharkModel) : m.revenue = 450 := by
   have h := photo_count m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem fuel_cost (m : SharkModel) : m.fuelCost = 250 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem shark_profit (m : SharkModel) : m.profit = 200 := by
   have h1 := photo_revenue m
   have h2 := fuel_cost m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure CupcakeModel where
   batches : ℕ
@@ -131,14 +131,14 @@ structure CupcakeModel where
   hTotal : totalMinutes = bakeTotal + iceTotal
 
 theorem bake_minutes (m : CupcakeModel) : m.bakeTotal = 80 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem icing_minutes (m : CupcakeModel) : m.iceTotal = 120 := by
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 theorem cupcake_minutes (m : CupcakeModel) : m.totalMinutes = 200 := by
   have h1 := bake_minutes m
   have h2 := icing_minutes m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A16P1

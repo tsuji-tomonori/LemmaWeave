@@ -10,8 +10,8 @@ structure FruitModel where
   hOrangeBundle : 5 * orangeUnit = 150
   hTotalCost : totalCost = 12 * appleUnit
 
-theorem apple_unit_price (m : FruitModel) : m.appleUnit = 20 := by cases m <;> simp_all at * <;> omega
-theorem orange_unit_price (m : FruitModel) : m.orangeUnit = 30 := by cases m <;> simp_all at * <;> omega
+theorem apple_unit_price (m : FruitModel) : m.appleUnit = 20 := by cases m <;> simp_all <;> omega
+theorem orange_unit_price (m : FruitModel) : m.orangeUnit = 30 := by cases m <;> simp_all <;> omega
 theorem apples_are_cheaper (m : FruitModel) : m.appleUnit < m.orangeUnit := by
   have h1 := apple_unit_price m
   have h2 := orange_unit_price m
@@ -19,7 +19,7 @@ theorem apples_are_cheaper (m : FruitModel) : m.appleUnit < m.orangeUnit := by
 theorem fruit_cost (m : FruitModel) : m.totalCost = 240 := by
   have h1 := apple_unit_price m
   have h2 := apples_are_cheaper m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure DeliveryModel where
   first : ℕ
@@ -35,10 +35,10 @@ structure DeliveryModel where
   hPay : pay = totalMiles * perMile
   hPayAmount : pay = 104
 
-theorem third_delivery_distance (m : DeliveryModel) : m.third = 14 := by cases m <;> simp_all at * <;> omega
+theorem third_delivery_distance (m : DeliveryModel) : m.third = 14 := by cases m <;> simp_all <;> omega
 theorem delivery_total_distance (m : DeliveryModel) : m.totalMiles = 52 := by
   have h := third_delivery_distance m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem delivery_pay_per_mile (m : DeliveryModel) : m.perMile = 2 := by
   have h := delivery_total_distance m
   have hp := m.hPay
@@ -57,15 +57,15 @@ structure WaterModel where
   hUsed : used = firstTaken + endTaken
   hRemaining : initial = used + remaining
 
-theorem initial_water_bottles (m : WaterModel) : m.initial = 48 := by cases m <;> simp_all at * <;> omega
-theorem first_break_bottles (m : WaterModel) : m.firstTaken = 22 := by cases m <;> simp_all at * <;> omega
+theorem initial_water_bottles (m : WaterModel) : m.initial = 48 := by cases m <;> simp_all <;> omega
+theorem first_break_bottles (m : WaterModel) : m.firstTaken = 22 := by cases m <;> simp_all <;> omega
 theorem used_water_bottles (m : WaterModel) : m.used = 33 := by
   have h1 := first_break_bottles m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem remaining_water_bottles (m : WaterModel) : m.remaining = 15 := by
   have h1 := initial_water_bottles m
   have h2 := used_water_bottles m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 structure AudienceModel where
   total : ℕ
@@ -82,12 +82,12 @@ structure AudienceModel where
   hUnion : union + overlap = first + second
   hPartition : total = union + neither
 
-theorem first_team_supporters (m : AudienceModel) : m.first = 20 := by cases m <;> simp_all at * <;> omega
-theorem second_team_supporters (m : AudienceModel) : m.second = 17 := by cases m <;> simp_all at * <;> omega
+theorem first_team_supporters (m : AudienceModel) : m.first = 20 := by cases m <;> simp_all <;> omega
+theorem second_team_supporters (m : AudienceModel) : m.second = 17 := by cases m <;> simp_all <;> omega
 theorem audience_neither_formula (m : AudienceModel) : m.neither = 13 + m.overlap := by
   have h1 := first_team_supporters m
   have h2 := second_team_supporters m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem audience_neither_range (m : AudienceModel) : 13 ≤ m.neither ∧ m.neither ≤ 30 := by
   have h1 := audience_neither_formula m
   have h2 := second_team_supporters m
@@ -115,12 +115,12 @@ structure SchoolModel where
   hWeekly : weekly = 5 * daily
   hAllocated : 4 * allocated = 3 * weekly
 
-theorem daily_earnings (m : SchoolModel) : m.daily = 20 := by cases m <;> simp_all at * <;> omega
+theorem daily_earnings (m : SchoolModel) : m.daily = 20 := by cases m <;> simp_all <;> omega
 theorem weekly_earnings (m : SchoolModel) : m.weekly = 100 := by
   have h := daily_earnings m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 theorem school_allocation (m : SchoolModel) : m.allocated = 75 := by
   have h := weekly_earnings m
-  cases m <;> simp_all at * <;> omega
+  cases m <;> simp_all <;> omega
 
 end LemmaWeave.Problems.GSM8K.Sprint1001A19P2

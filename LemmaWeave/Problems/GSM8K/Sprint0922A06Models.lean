@@ -25,7 +25,7 @@ structure Socks where
   hDonate : 3*donated=2*afterLoss
   hRemaining : remaining+donated=afterLoss
   hFinal : final=remaining+10+3
-theorem socks_after_loss (m:Socks) : m.afterLoss=36 := by cases m <;> simp_all at * <;> omega
+theorem socks_after_loss (m:Socks) : m.afterLoss=36 := by cases m <;> simp_all <;> omega
 theorem socks_donated (m:Socks) : m.donated=24 := by have h:=m.hDonate; rw [socks_after_loss m] at h; omega
 theorem socks_remaining (m:Socks) : m.remaining=12 := by have h:=m.hRemaining; rw [socks_after_loss m, socks_donated m] at h; omega
 theorem socks_solution (m:Socks) : m.final=25 := by rw [m.hFinal, socks_remaining m] <;> norm_num
@@ -50,8 +50,8 @@ structure Arrival where
   hAlice : 40*aliceHours=1000
   hGap : gapHours+abelHours=1+aliceHours
   hMinutes : gapMinutes=gapHours*60
-theorem arrival_abel_hours (m:Arrival) : m.abelHours=20 := by cases m <;> simp_all at * <;> omega
-theorem arrival_alice_hours (m:Arrival) : m.aliceHours=25 := by cases m <;> simp_all at * <;> omega
+theorem arrival_abel_hours (m:Arrival) : m.abelHours=20 := by cases m <;> simp_all <;> omega
+theorem arrival_alice_hours (m:Arrival) : m.aliceHours=25 := by cases m <;> simp_all <;> omega
 theorem arrival_absolute_gap (m:Arrival) : m.gapHours=6 := by have h:=m.hGap; rw [arrival_abel_hours m, arrival_alice_hours m] at h; omega
 theorem arrival_solution (m:Arrival) : m.gapMinutes=360 := by rw [m.hMinutes, arrival_absolute_gap m] <;> norm_num
 
@@ -88,8 +88,8 @@ structure Tomatoes where
   hTomatoes : tomatoTotal=first+second
   hPlants : plantTotal=20+15
   hPercent : plantTotal*percent=tomatoTotal*100
-theorem tomatoes_first (m:Tomatoes) : m.first=2 := by cases m <;> simp_all at * <;> omega
-theorem tomatoes_second (m:Tomatoes) : m.second=5 := by cases m <;> simp_all at * <;> omega
+theorem tomatoes_first (m:Tomatoes) : m.first=2 := by cases m <;> simp_all <;> omega
+theorem tomatoes_second (m:Tomatoes) : m.second=5 := by cases m <;> simp_all <;> omega
 theorem tomatoes_totals (m:Tomatoes) : m.tomatoTotal=7 ∧ m.plantTotal=35 := by constructor <;> rw [m.hTomatoes, m.hPlants, tomatoes_first m, tomatoes_second m] <;> norm_num
 theorem tomatoes_solution (m:Tomatoes) : m.percent=20 := by rcases tomatoes_totals m with ⟨ht,hp⟩; have h:=m.hPercent; rw [ht,hp] at h; omega
 
@@ -114,7 +114,7 @@ structure Rice where
   hIncrease : 100*increase=20*20
   hSecond : second=20+increase
   hTotal : total=20+second
-theorem rice_increase (m:Rice) : m.increase=4 := by cases m <;> simp_all at * <;> omega
+theorem rice_increase (m:Rice) : m.increase=4 := by cases m <;> simp_all <;> omega
 theorem rice_second (m:Rice) : m.second=24 := by rw [m.hSecond, rice_increase m] <;> norm_num
 theorem rice_solution (m:Rice) : m.total=44 := by rw [m.hTotal, rice_second m] <;> norm_num
 
@@ -164,7 +164,7 @@ structure Journey where
   hSpeed : speed*remainingTime=remainingDistance
 theorem journey_first_distance (m:Journey) : m.firstDistance=16 := by rw [m.hFirst] <;> norm_num
 theorem journey_remaining_distance (m:Journey) : m.remainingDistance=8 := by have h:=m.hRemaining; rw [journey_first_distance m] at h; omega
-theorem journey_remaining_time (m:Journey) : m.remainingTime=4 := by cases m <;> simp_all at * <;> omega
+theorem journey_remaining_time (m:Journey) : m.remainingTime=4 := by cases m <;> simp_all <;> omega
 theorem journey_solution (m:Journey) : m.speed=2 := by have h:=m.hSpeed; rw [journey_remaining_time m, journey_remaining_distance m] at h; omega
 
 structure Chalkboard where
@@ -195,7 +195,7 @@ structure Bomb where
   hFlights : remainingFlights+climbed=20
   hClimbTime : climbTime=remainingFlights*11
   hDiffuse : diffuseTime+climbTime=72
-theorem bomb_climbed (m:Bomb) : m.climbed=15 := by cases m <;> simp_all at * <;> omega
+theorem bomb_climbed (m:Bomb) : m.climbed=15 := by cases m <;> simp_all <;> omega
 theorem bomb_remaining_flights (m:Bomb) : m.remainingFlights=5 := by have h:=m.hFlights; rw [bomb_climbed m] at h; omega
 theorem bomb_climb_time (m:Bomb) : m.climbTime=55 := by rw [m.hClimbTime, bomb_remaining_flights m] <;> norm_num
 theorem bomb_solution (m:Bomb) : m.diffuseTime=17 := by have h:=m.hDiffuse; rw [bomb_climb_time m] at h; omega

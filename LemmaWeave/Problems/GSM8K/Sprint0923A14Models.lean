@@ -11,7 +11,7 @@ structure AnimalWeight where
   hCombined : combined = elephant + donkey
 
 theorem weight_elephant (m : AnimalWeight) : m.elephant = 6000 := by rw [m.hElephant]
-theorem weight_donkey (m : AnimalWeight) : m.donkey = 600 := by cases m <;> simp_all at * <;> omega
+theorem weight_donkey (m : AnimalWeight) : m.donkey = 600 := by cases m <;> simp_all <;> omega
 theorem weight_solution (m : AnimalWeight) : m.combined = 6600 := by
   rw [m.hCombined, weight_elephant m, weight_donkey m]
 
@@ -24,8 +24,8 @@ structure NickelGift where
   hNickels : nickels * 5 = remainingCents
 
 theorem nickels_randi (m : NickelGift) : m.randiCents = 50 := by rw [m.hRandi]
-theorem nickels_remaining_cents (m : NickelGift) : m.remainingCents = 20 := by cases m <;> simp_all at * <;> omega
-theorem nickels_solution (m : NickelGift) : m.nickels = 4 := by cases m <;> simp_all at * <;> omega
+theorem nickels_remaining_cents (m : NickelGift) : m.remainingCents = 20 := by cases m <;> simp_all <;> omega
+theorem nickels_solution (m : NickelGift) : m.nickels = 4 := by cases m <;> simp_all <;> omega
 
 /-- All monetary values are represented in cents. -/
 structure QuarterTrades where
@@ -58,9 +58,9 @@ structure WhiteTruckVehicleSample where
   hBlack : black * 100 = 50 * 20
   hWhite : white + red + black = 50
 
-theorem trucks_red (m : WhiteTruckVehicleSample) : m.red = 25 := by cases m <;> simp_all at * <;> omega
-theorem trucks_black (m : WhiteTruckVehicleSample) : m.black = 10 := by cases m <;> simp_all at * <;> omega
-theorem trucks_white (m : WhiteTruckVehicleSample) : m.white = 15 := by cases m <;> simp_all at * <;> omega
+theorem trucks_red (m : WhiteTruckVehicleSample) : m.red = 25 := by cases m <;> simp_all <;> omega
+theorem trucks_black (m : WhiteTruckVehicleSample) : m.black = 10 := by cases m <;> simp_all <;> omega
+theorem trucks_white (m : WhiteTruckVehicleSample) : m.white = 15 := by cases m <;> simp_all <;> omega
 theorem trucks_fraction_bounds (m : WhiteTruckVehicleSample) :
     33 * 90 < 2 * (m.white * 100) ∧ m.white * 100 < 17 * 90 := by
   rw [trucks_white m] <;> norm_num
@@ -83,8 +83,8 @@ structure FuelTrip where
   hMpg : mpg * 2 = 20
   hTrip : gallons * mpg = 300
 
-theorem fuel_mpg (m : FuelTrip) : m.mpg = 10 := by cases m <;> simp_all at * <;> omega
-theorem fuel_solution (m : FuelTrip) : m.gallons = 30 := by cases m <;> simp_all at * <;> omega
+theorem fuel_mpg (m : FuelTrip) : m.mpg = 10 := by cases m <;> simp_all <;> omega
+theorem fuel_solution (m : FuelTrip) : m.gallons = 30 := by cases m <;> simp_all <;> omega
 
 structure BirthdayHats where
   total : ℕ
@@ -95,8 +95,8 @@ structure BirthdayHats where
   hUnused : unused + 25 = usable
 
 theorem hats_total (m : BirthdayHats) : m.total = 45 := by rw [m.hTotal]
-theorem hats_usable (m : BirthdayHats) : m.usable = 40 := by cases m <;> simp_all at * <;> omega
-theorem hats_solution (m : BirthdayHats) : m.unused = 15 := by cases m <;> simp_all at * <;> omega
+theorem hats_usable (m : BirthdayHats) : m.usable = 40 := by cases m <;> simp_all <;> omega
+theorem hats_solution (m : BirthdayHats) : m.unused = 15 := by cases m <;> simp_all <;> omega
 
 structure CdPurchase where
   unitSum : ℕ
@@ -108,7 +108,7 @@ structure CdPurchase where
 
 theorem cds_unit_sum (m : CdPurchase) : m.unitSum = 25 := by rw [m.hUnitSum]
 theorem cds_total (m : CdPurchase) : m.total = 100 := by rw [m.hTotal, cds_unit_sum m]
-theorem cds_solution (m : CdPurchase) : m.short = 25 := by cases m <;> simp_all at * <;> omega
+theorem cds_solution (m : CdPurchase) : m.short = 25 := by cases m <;> simp_all <;> omega
 
 /-- All monetary values are represented in cents. -/
 structure DinnerDiscount where
@@ -123,10 +123,10 @@ structure DinnerDiscount where
   hKatePay : katePay + kateDiscount = 2500
   hTotal : total = bobPay + katePay
 
-theorem dinner_bob_discount (m : DinnerDiscount) : m.bobDiscount = 150 := by cases m <;> simp_all at * <;> omega
-theorem dinner_bob_pay (m : DinnerDiscount) : m.bobPay = 2850 := by cases m <;> simp_all at * <;> omega
-theorem dinner_kate_discount (m : DinnerDiscount) : m.kateDiscount = 50 := by cases m <;> simp_all at * <;> omega
-theorem dinner_kate_pay (m : DinnerDiscount) : m.katePay = 2450 := by cases m <;> simp_all at * <;> omega
+theorem dinner_bob_discount (m : DinnerDiscount) : m.bobDiscount = 150 := by cases m <;> simp_all <;> omega
+theorem dinner_bob_pay (m : DinnerDiscount) : m.bobPay = 2850 := by cases m <;> simp_all <;> omega
+theorem dinner_kate_discount (m : DinnerDiscount) : m.kateDiscount = 50 := by cases m <;> simp_all <;> omega
+theorem dinner_kate_pay (m : DinnerDiscount) : m.katePay = 2450 := by cases m <;> simp_all <;> omega
 theorem dinner_solution (m : DinnerDiscount) : m.total = 5300 := by
   rw [m.hTotal, dinner_bob_pay m, dinner_kate_pay m]
 
@@ -141,7 +141,7 @@ structure JuiceBottles where
 theorem juice_initial (m : JuiceBottles) : m.initial = 8 := by rw [m.hInitial]
 theorem juice_after_buy (m : JuiceBottles) : m.afterBuy = 13 := by
   rw [m.hAfterBuy, juice_initial m]
-theorem juice_solution (m : JuiceBottles) : m.left = 10 := by cases m <;> simp_all at * <;> omega
+theorem juice_solution (m : JuiceBottles) : m.left = 10 := by cases m <;> simp_all <;> omega
 
 structure RoseSale where
   tuesday : ℕ
@@ -152,7 +152,7 @@ structure RoseSale where
   hTotal : total = 12 + tuesday + wednesday
 
 theorem roses_tuesday (m : RoseSale) : m.tuesday = 36 := by rw [m.hTuesday]
-theorem roses_wednesday (m : RoseSale) : m.wednesday = 12 := by cases m <;> simp_all at * <;> omega
+theorem roses_wednesday (m : RoseSale) : m.wednesday = 12 := by cases m <;> simp_all <;> omega
 theorem roses_solution (m : RoseSale) : m.total = 60 := by
   rw [m.hTotal, roses_tuesday m, roses_wednesday m]
 
@@ -179,7 +179,7 @@ structure GrassSeed where
 
 theorem seed_lawn (m : GrassSeed) : m.lawn = 792 := by rw [m.hLawn]
 theorem seed_capacity (m : GrassSeed) : m.capacity = 1000 := by rw [m.hCapacity]
-theorem seed_solution (m : GrassSeed) : m.leftover = 208 := by cases m <;> simp_all at * <;> omega
+theorem seed_solution (m : GrassSeed) : m.leftover = 208 := by cases m <;> simp_all <;> omega
 
 structure GardenRows where
   tomatoRows : ℕ
@@ -191,8 +191,8 @@ structure GardenRows where
   hPlants : tomatoPlants = tomatoRows * 8
   hTomatoes : tomatoes = tomatoPlants * 3
 
-theorem garden_tomato_rows (m : GardenRows) : m.tomatoRows = 5 := by cases m <;> simp_all at * <;> omega
-theorem garden_cucumber_rows (m : GardenRows) : m.cucumberRows = 10 := by cases m <;> simp_all at * <;> omega
+theorem garden_tomato_rows (m : GardenRows) : m.tomatoRows = 5 := by cases m <;> simp_all <;> omega
+theorem garden_cucumber_rows (m : GardenRows) : m.cucumberRows = 10 := by cases m <;> simp_all <;> omega
 theorem garden_plants (m : GardenRows) : m.tomatoPlants = 40 := by
   rw [m.hPlants, garden_tomato_rows m]
 theorem garden_solution (m : GardenRows) : m.tomatoes = 120 := by
@@ -204,8 +204,8 @@ structure KangarooGrowth where
   hGap : gap + 20 = 100
   hDays : days * 2 = gap
 
-theorem kangaroo_gap (m : KangarooGrowth) : m.gap = 80 := by cases m <;> simp_all at * <;> omega
-theorem kangaroo_solution (m : KangarooGrowth) : m.days = 40 := by cases m <;> simp_all at * <;> omega
+theorem kangaroo_gap (m : KangarooGrowth) : m.gap = 80 := by cases m <;> simp_all <;> omega
+theorem kangaroo_solution (m : KangarooGrowth) : m.days = 40 := by cases m <;> simp_all <;> omega
 
 structure VacationShirts where
   middleDays : ℕ
@@ -217,7 +217,7 @@ structure VacationShirts where
   hShared : sharedShirt = 1
   hTotal : total = middleShirts + sharedShirt
 
-theorem shirts_middle_days (m : VacationShirts) : m.middleDays = 5 := by cases m <;> simp_all at * <;> omega
+theorem shirts_middle_days (m : VacationShirts) : m.middleDays = 5 := by cases m <;> simp_all <;> omega
 theorem shirts_middle (m : VacationShirts) : m.middleShirts = 10 := by
   rw [m.hMiddleShirts, shirts_middle_days m]
 theorem shirts_solution (m : VacationShirts) : m.total = 11 := by

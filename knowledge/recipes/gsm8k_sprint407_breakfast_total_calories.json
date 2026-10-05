@@ -18,12 +18,57 @@
   ],
   "steps": [
     {
+      "id": "pancake_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.pancake_calories",
+      "title_ja": "パンケーキのカロリー",
+      "claim_ja": "6×120=720カロリー。",
+      "method_ja": "個数に単位カロリーを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6枚、各120カロリー。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "720カロリー。"
+    },
+    {
+      "id": "bacon_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.bacon_calories",
+      "title_ja": "ベーコンのカロリー",
+      "claim_ja": "2×100=200カロリー。",
+      "method_ja": "本数に単位カロリーを掛ける。",
+      "requires_steps": [
+        "pancake_calories"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2本、各100カロリー。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "200カロリー。"
+    },
+    {
+      "id": "breakfast_calories_sum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.breakfast_calories_sum",
+      "title_ja": "朝食の合計",
+      "claim_ja": "720+200+200=1,120カロリー。",
+      "method_ja": "パンケーキ・ベーコン・シリアルを合計する。",
+      "requires_steps": [
+        "pancake_calories",
+        "bacon_calories"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "シリアルは200カロリー。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1,120カロリー。"
+    },
+    {
       "id": "breakfast_total_calories",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.breakfast_total_calories",
-      "title_ja": "朝食の総カロリー",
+      "title_ja": "問題全体の結論",
       "claim_ja": "パンケーキは6×120=720カロリー、ベーコンは2×100=200カロリー、シリアルは200カロリー。合計1,120カロリー。",
-      "method_ja": "食品ごとの個数と単位カロリーを掛け、3種類を合計する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "pancake_calories",
+        "bacon_calories",
+        "breakfast_calories_sum"
+      ],
       "uses_nodes": [],
       "condition_ja": "シリアルは1杯で200カロリー、他の食品や端数はない。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +79,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4163,
-    "checked_model_hash": "ebc911943a29150f12ec60bb6d4dc487b2dbc51ad4ce3124d6f442fe7601806e",
+    "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c"
 }

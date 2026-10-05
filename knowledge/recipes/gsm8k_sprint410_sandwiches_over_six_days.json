@@ -18,12 +18,74 @@
   ],
   "steps": [
     {
+      "id": "sandwiches_day_two",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_day_two",
+      "title_ja": "2日目",
+      "claim_ja": "2×2=4個。",
+      "method_ja": "1日目を2倍にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日目は2個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4個。"
+    },
+    {
+      "id": "sandwiches_day_three",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_day_three",
+      "title_ja": "3日目",
+      "claim_ja": "4×2=8個。",
+      "method_ja": "2日目を2倍にする。",
+      "requires_steps": [
+        "sandwiches_day_two"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2日目は4個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8個。"
+    },
+    {
+      "id": "sandwiches_three_day_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_three_day_total",
+      "title_ja": "3日周期の合計",
+      "claim_ja": "2+4+8=14個。",
+      "method_ja": "3日分を合計する。",
+      "requires_steps": [
+        "sandwiches_day_two",
+        "sandwiches_day_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3日周期は2,4,8個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "14個。"
+    },
+    {
+      "id": "sandwiches_six_day_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_six_day_total",
+      "title_ja": "6日間の合計",
+      "claim_ja": "14×2=28個。",
+      "method_ja": "6日は3日周期2回なので2倍する。",
+      "requires_steps": [
+        "sandwiches_day_two",
+        "sandwiches_day_three",
+        "sandwiches_three_day_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "same rate every three daysを周期反復と読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "28個。"
+    },
+    {
       "id": "sandwiches_over_six_days",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_over_six_days",
-      "title_ja": "6日間に食べるサンドイッチ数",
+      "title_ja": "問題全体の結論",
       "claim_ja": "3日周期は1日目2個、2日目4個、3日目8個で計14個。『same rate every three days』によりこの周期を繰り返すので、6日間は2周期で14×2=28個。",
-      "method_ja": "最初の3日間の倍増列を求め、3日周期の反復回数2を掛ける。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "sandwiches_day_two",
+        "sandwiches_day_three",
+        "sandwiches_three_day_total",
+        "sandwiches_six_day_total"
+      ],
       "uses_nodes": [],
       "condition_ja": "『at the same rate every three days』は4日目に2個へ戻る3日周期を意味する。日ごとの倍増を6日間継続する解釈ではない。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +96,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4166,
-    "checked_model_hash": "ebc911943a29150f12ec60bb6d4dc487b2dbc51ad4ce3124d6f442fe7601806e",
+    "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c"
 }

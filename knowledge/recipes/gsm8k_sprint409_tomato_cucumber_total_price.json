@@ -18,12 +18,92 @@
   ],
   "steps": [
     {
+      "id": "tomato_discount_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.tomato_discount_amount",
+      "title_ja": "トマトの値引き額",
+      "claim_ja": "5×20÷100=1ドル。",
+      "method_ja": "基準価格の20%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "基準はキュウリ1kgの5ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1ドル。"
+    },
+    {
+      "id": "tomato_unit_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.tomato_unit_price",
+      "title_ja": "トマト1kg価格",
+      "claim_ja": "5-1=4ドル。",
+      "method_ja": "基準価格から値引き額を引く。",
+      "requires_steps": [
+        "tomato_discount_amount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20% cheaperを80%価格と読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4ドル。"
+    },
+    {
+      "id": "tomato_two_kilograms",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.tomato_two_kilograms",
+      "title_ja": "トマト2kg価格",
+      "claim_ja": "2×4=8ドル。",
+      "method_ja": "重量に1kg価格を掛ける。",
+      "requires_steps": [
+        "tomato_discount_amount",
+        "tomato_unit_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "価格は重量に比例する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8ドル。"
+    },
+    {
+      "id": "cucumber_three_kilograms",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.cucumber_three_kilograms",
+      "title_ja": "キュウリ3kg価格",
+      "claim_ja": "3×5=15ドル。",
+      "method_ja": "重量に1kg価格を掛ける。",
+      "requires_steps": [
+        "tomato_discount_amount",
+        "tomato_unit_price",
+        "tomato_two_kilograms"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1kg5ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "15ドル。"
+    },
+    {
+      "id": "produce_total_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.produce_total_price",
+      "title_ja": "合計価格",
+      "claim_ja": "8+15=23ドル。",
+      "method_ja": "2品目の価格を合計する。",
+      "requires_steps": [
+        "tomato_discount_amount",
+        "tomato_unit_price",
+        "tomato_two_kilograms",
+        "cucumber_three_kilograms"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "他の商品や税はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "23ドル。"
+    },
+    {
       "id": "tomato_cucumber_total_price",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.tomato_cucumber_total_price",
-      "title_ja": "トマト2kgとキュウリ3kgの合計価格",
+      "title_ja": "問題全体の結論",
       "claim_ja": "キュウリ1kgは5ドル。トマトは20%安いので5-1=4ドル/kg。トマト2kgは8ドル、キュウリ3kgは15ドル、合計23ドル。",
-      "method_ja": "基準価格5ドルの20%を値引きし、各重量分の価格を合計する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "tomato_discount_amount",
+        "tomato_unit_price",
+        "tomato_two_kilograms",
+        "cucumber_three_kilograms",
+        "produce_total_price"
+      ],
       "uses_nodes": [],
       "condition_ja": "20%はキュウリの1kg価格5ドルを基準とし、価格は重量に比例する。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +114,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4165,
-    "checked_model_hash": "ebc911943a29150f12ec60bb6d4dc487b2dbc51ad4ce3124d6f442fe7601806e",
+    "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c"
 }

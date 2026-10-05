@@ -18,12 +18,111 @@
   ],
   "steps": [
     {
+      "id": "stock_purchase_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.stock_purchase_cost",
+      "title_ja": "購入費",
+      "claim_ja": "20×3=60ドル。",
+      "method_ja": "株数に購入単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20株、各3ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60ドル。"
+    },
+    {
+      "id": "stock_first_sale",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.stock_first_sale",
+      "title_ja": "最初の売却収入",
+      "claim_ja": "10×4=40ドル。",
+      "method_ja": "売却株数に単価を掛ける。",
+      "requires_steps": [
+        "stock_purchase_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10株を各4ドルで売る。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40ドル。"
+    },
+    {
+      "id": "stock_remaining_shares",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.stock_remaining_shares",
+      "title_ja": "残り株数",
+      "claim_ja": "20-10=10株。",
+      "method_ja": "購入株数から先に売った株数を引く。",
+      "requires_steps": [
+        "stock_purchase_cost",
+        "stock_first_sale"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全株を重複なく分ける。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10株。"
+    },
+    {
+      "id": "stock_doubled_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.stock_doubled_price",
+      "title_ja": "倍増後の単価",
+      "claim_ja": "3×2=6ドル。",
+      "method_ja": "元の単価を2倍にする。",
+      "requires_steps": [
+        "stock_purchase_cost",
+        "stock_first_sale",
+        "stock_remaining_shares"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り株の価値が倍になる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "6ドル。"
+    },
+    {
+      "id": "stock_second_sale",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.stock_second_sale",
+      "title_ja": "残り株の売却収入",
+      "claim_ja": "10×6=60ドル。",
+      "method_ja": "残り株数に倍増後単価を掛ける。",
+      "requires_steps": [
+        "stock_purchase_cost",
+        "stock_first_sale",
+        "stock_remaining_shares",
+        "stock_doubled_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10株を各6ドルで売る。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60ドル。"
+    },
+    {
+      "id": "stock_profit_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.stock_profit_amount",
+      "title_ja": "利益",
+      "claim_ja": "40+60-60=40ドル。",
+      "method_ja": "売却総額から購入費を引く。",
+      "requires_steps": [
+        "stock_purchase_cost",
+        "stock_first_sale",
+        "stock_remaining_shares",
+        "stock_doubled_price",
+        "stock_second_sale"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "税・手数料はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40ドル。"
+    },
+    {
       "id": "stock_sale_profit",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.stock_sale_profit",
-      "title_ja": "株式売買の利益",
+      "title_ja": "問題全体の結論",
       "claim_ja": "購入費は20×3=60ドル。10株を1株4ドルで40ドル、残り10株は価格が6ドルに倍増して60ドルで売る。売却総額100ドルから購入費60ドルを引き、利益は40ドル。",
-      "method_ja": "取得原価、各売却群の収入、純利益を順に計算する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "stock_purchase_cost",
+        "stock_first_sale",
+        "stock_remaining_shares",
+        "stock_doubled_price",
+        "stock_second_sale",
+        "stock_profit_amount"
+      ],
       "uses_nodes": [],
       "condition_ja": "『rest ... doubling in value』は残り10株の1株価格が3ドルから6ドルになり、その価格で売却したことを表す。手数料・税はない。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +133,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4164,
-    "checked_model_hash": "ebc911943a29150f12ec60bb6d4dc487b2dbc51ad4ce3124d6f442fe7601806e",
+    "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c"
 }

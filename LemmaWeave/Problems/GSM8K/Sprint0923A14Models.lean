@@ -84,7 +84,10 @@ structure FuelTrip where
   hTrip : gallons * mpg = 300
 
 theorem fuel_mpg (m : FuelTrip) : m.mpg = 10 := by cases m <;> simp_all <;> omega
-theorem fuel_solution (m : FuelTrip) : m.gallons = 30 := by cases m <;> simp_all <;> omega
+theorem fuel_solution (m : FuelTrip) : m.gallons = 30 := by
+  have h := m.hTrip
+  rw [fuel_mpg m] at h
+  omega
 
 structure BirthdayHats where
   total : ℕ

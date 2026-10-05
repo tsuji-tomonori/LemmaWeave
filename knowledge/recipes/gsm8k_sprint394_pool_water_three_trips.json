@@ -18,26 +18,86 @@
   ],
   "steps": [
     {
-      "id": "pool_water_three_trips",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.pool_water_three_trips",
-      "title_ja": "3往復で運ぶ水量",
-      "claim_ja": "Tinaは4ガロン、Tommyは4+2=6ガロン、Timmyは6×2=12ガロン。1往復で3人合計22ガロン、3往復で22×3=66ガロンである。",
-      "method_ja": "容量関係を順に求め、1往復の合計を3倍する。",
+      "id": "tommy_pail_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.tommy_pail_capacity",
+      "title_ja": "Tommyのバケツ容量",
+      "claim_ja": "Tinaは4ガロンで、Tommyは2ガロン多いので4+2=6ガロン。",
+      "method_ja": "差を加える。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "3人とも3往復し、各往復でバケツを満杯にする。",
+      "condition_ja": "Tinaの容量4ガロン、Tommyは2ガロン多い。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "Tinaは4ガロン、Tommyは4+2=6ガロン、Timmyは6×2=12ガロン。1往復で3人合計22ガロン、3往復で22×3=66ガロンである。"
+      "conclusion_ja": "Tommyは6ガロン。"
+    },
+    {
+      "id": "timmy_pail_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.timmy_pail_capacity",
+      "title_ja": "Timmyのバケツ容量",
+      "claim_ja": "TimmyはTommyの2倍なので6×2=12ガロン。",
+      "method_ja": "倍率を掛ける。",
+      "requires_steps": [
+        "tommy_pail_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Timmyの容量はTommyの2倍。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Timmyは12ガロン。"
+    },
+    {
+      "id": "pool_one_trip",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.pool_one_trip",
+      "title_ja": "1往復の総水量",
+      "claim_ja": "4+6+12=22ガロン。",
+      "method_ja": "3人の容量を加える。",
+      "requires_steps": [
+        "tommy_pail_capacity",
+        "timmy_pail_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人とも満杯のバケツを1回運ぶ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1往復合計22ガロン。"
+    },
+    {
+      "id": "pool_three_trips",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.pool_three_trips",
+      "title_ja": "3往復の総水量",
+      "claim_ja": "1往復22ガロンなので22×3=66ガロン。",
+      "method_ja": "1往復量を3倍する。",
+      "requires_steps": [
+        "pool_one_trip"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人とも3往復し毎回満杯。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "66ガロン。"
+    },
+    {
+      "id": "pool_water_three_trips",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.pool_water_three_trips",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "各容量を求めて3往復分を合計すると66ガロン。",
+      "method_ja": "全段階を結合する。",
+      "requires_steps": [
+        "tommy_pail_capacity",
+        "timmy_pail_capacity",
+        "pool_one_trip",
+        "pool_three_trips"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人とも毎回満杯で3往復する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "66ガロン。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4125,
-    "checked_model_hash": "a9f36a6c0272b72029af612047184e8743af2c4b1fe539d4e9e90a7a3205a51a",
+    "checked_model_hash": "9fce4397af3a600a615fa57f0e22919869b5bf5f9700c74d911d79cc785d6693",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
-      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "記述解答の各主張を名前付きLean定理へ分割し、最終定理の実依存として接続した。",
       "独立レビューではなく作成者自己照合である。"
     ]
   }

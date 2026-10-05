@@ -14,10 +14,11 @@ structure BikeModel where
   hDays : days = 5
   hTotal : total = 5 * daily
 
-theorem bike_daily_miles (m : BikeModel) : m.daily = 13 := by omega
+theorem bike_daily_miles (m : BikeModel) : m.daily = 13 := by cases m <;> simp_all at * <;> omega
 theorem bike_week_miles (m : BikeModel) : m.total = 65 := by
   have h := bike_daily_miles m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure IronModel where
   blouseMinutes : ℕ
   dressMinutes : ℕ
@@ -30,18 +31,19 @@ structure IronModel where
   hDresses : dressMinutes = 20 * dresses
   hTotal : total = blouses + dresses
 
-theorem blouse_ironing_minutes (m : IronModel) : m.blouseMinutes = 120 := by omega
+theorem blouse_ironing_minutes (m : IronModel) : m.blouseMinutes = 120 := by cases m <;> simp_all at * <;> omega
 theorem blouses_ironed (m : IronModel) : m.blouses = 8 := by
   have h := blouse_ironing_minutes m
-  omega
-theorem dress_ironing_minutes (m : IronModel) : m.dressMinutes = 180 := by omega
+  cases m <;> simp_all at * <;> omega
+theorem dress_ironing_minutes (m : IronModel) : m.dressMinutes = 180 := by cases m <;> simp_all at * <;> omega
 theorem dresses_ironed (m : IronModel) : m.dresses = 9 := by
   have h := dress_ironing_minutes m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem clothes_ironed (m : IronModel) : m.total = 17 := by
   have h1 := blouses_ironed m
   have h2 := dresses_ironed m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CandyModel where
   emily : ℕ
   jennifer : ℕ
@@ -50,10 +52,11 @@ structure CandyModel where
   hJenniferEmily : jennifer = 2 * emily
   hJenniferBob : jennifer = 3 * bob
 
-theorem jennifer_candies (m : CandyModel) : m.jennifer = 12 := by omega
+theorem jennifer_candies (m : CandyModel) : m.jennifer = 12 := by cases m <;> simp_all at * <;> omega
 theorem bob_candies (m : CandyModel) : m.bob = 4 := by
   have h := jennifer_candies m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CookieModel where
   total : ℕ
   nutOnly : ℕ
@@ -68,19 +71,20 @@ structure CookieModel where
   hNutCookies : nutCookies = nutOnly + both
   hNuts : nuts = 2 * nutCookies
 
-theorem nut_only_cookies (m : CookieModel) : m.nutOnly = 15 := by omega
-theorem chip_only_cookies (m : CookieModel) : m.chipOnly = 24 := by omega
+theorem nut_only_cookies (m : CookieModel) : m.nutOnly = 15 := by cases m <;> simp_all at * <;> omega
+theorem chip_only_cookies (m : CookieModel) : m.chipOnly = 24 := by cases m <;> simp_all at * <;> omega
 theorem both_cookies (m : CookieModel) : m.both = 21 := by
   have h1 := nut_only_cookies m
   have h2 := chip_only_cookies m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem cookies_with_nuts (m : CookieModel) : m.nutCookies = 36 := by
   have h1 := nut_only_cookies m
   have h2 := both_cookies m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem nuts_needed (m : CookieModel) : m.nuts = 72 := by
   have h := cookies_with_nuts m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ApartmentModel where
   floors : ℕ
   fullFloors : ℕ
@@ -97,21 +101,22 @@ structure ApartmentModel where
   hFilled : filledApartments = fullApartments + partialApartments
   hPeople : people = 4 * filledApartments
 
-theorem full_floors (m : ApartmentModel) : m.fullFloors = 6 := by omega
+theorem full_floors (m : ApartmentModel) : m.fullFloors = 6 := by cases m <;> simp_all at * <;> omega
 theorem full_floor_apartments (m : ApartmentModel) : m.fullApartments = 60 := by
   have h := full_floors m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem half_capacity_floors (m : ApartmentModel) : m.partialFloors = 6 := by
   have h := full_floors m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem half_capacity_apartments (m : ApartmentModel) : m.partialApartments = 30 := by
   have h := half_capacity_floors m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem filled_apartments (m : ApartmentModel) : m.filledApartments = 90 := by
   have h1 := full_floor_apartments m
   have h2 := half_capacity_apartments m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem building_people (m : ApartmentModel) : m.people = 360 := by
   have h := filled_apartments m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1002A02P2

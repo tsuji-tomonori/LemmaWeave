@@ -11,10 +11,12 @@ structure FrogsModel where
   hBret : bret = 3 * quinn
 
 theorem frogs_quinn (m : FrogsModel) : m.quinn = 4 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem frogs_bret (m : FrogsModel) : m.bret = 12 := by
   have h := frogs_quinn m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PlugsModel where
   mittenPairs : ℕ
   initialPlugPairs : ℕ
@@ -28,13 +30,16 @@ structure PlugsModel where
   hPlugs : plugs = 2 * finalPlugPairs
 
 theorem plugs_initial_pairs (m : PlugsModel) : m.initialPlugPairs = 170 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem plugs_final_pairs (m : PlugsModel) : m.finalPlugPairs = 200 := by
   have h := plugs_initial_pairs m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem plugs_count (m : PlugsModel) : m.plugs = 400 := by
   have h := plugs_final_pairs m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PagesModel where
   total : ℕ
   writtenFirst : ℕ
@@ -52,13 +57,16 @@ structure PagesModel where
   hAvailable : damaged + available = remainingSecond
 
 theorem pages_after_first (m : PagesModel) : m.remainingFirst = 350 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pages_after_second (m : PagesModel) : m.remainingSecond = 245 := by
   have h := pages_after_first m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pages_available (m : PagesModel) : m.available = 196 := by
   have h := pages_after_second m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem fruit_literal_no_natural_solution :
     ¬ ∃ apples oranges : ℕ, apples = 15 ∧ apples = 4 * oranges := by
   omega
@@ -77,10 +85,12 @@ structure ReferenceFruitModel where
 
 theorem fruit_reference_components (m : ReferenceFruitModel) :
     m.oranges = 60 ∧ m.eatenApples = 10 ∧ m.eatenOranges = 40 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem fruit_reference_total (m : ReferenceFruitModel) : m.totalEaten = 50 := by
   have h := fruit_reference_components m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem fruit_resolution :
     (¬ ∃ apples oranges : ℕ, apples = 15 ∧ apples = 4 * oranges) ∧
     (∀ m : ReferenceFruitModel, m.totalEaten = 50) := by
@@ -99,12 +109,15 @@ structure PiesModel where
   hRemaining : ingredients + remaining = revenue
 
 theorem pies_revenue (m : PiesModel) : m.revenue = 4000 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pies_ingredients (m : PiesModel) : m.ingredients = 2400 := by
   have h := pies_revenue m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pies_remaining (m : PiesModel) : m.remaining = 1600 := by
   have h1 := pies_revenue m
   have h2 := pies_ingredients m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A07P2

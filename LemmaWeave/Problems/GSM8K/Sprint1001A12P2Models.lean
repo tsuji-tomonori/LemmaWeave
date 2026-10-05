@@ -15,7 +15,8 @@ theorem age_equation (m : AgeModel) : m.agnes + m.years = 2 * (m.jane + m.years)
 
 theorem age_years (m : AgeModel) : m.years = 13 := by
   have h := age_equation m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SwallowModel where
   total : ℕ
   european : ℕ
@@ -31,17 +32,21 @@ structure SwallowModel where
   hCombined : combined = 5 * american + 10 * european
 
 theorem swallow_european_count (m : SwallowModel) : m.european = 30 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem swallow_american_count (m : SwallowModel) : m.american = 60 := by
   have h := swallow_european_count m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem swallow_european_capacity (m : SwallowModel) : m.europeanCapacity = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem swallow_combined (m : SwallowModel) : m.combined = 600 := by
   have h1 := swallow_european_count m
   have h2 := swallow_american_count m
   have h3 := swallow_european_capacity m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SocksModel where
   red : ℕ
   blue : ℕ
@@ -63,7 +68,8 @@ structure SocksModel where
   hTotal : total = red + blue + black + white
 
 theorem socks_red_pairs (m : SocksModel) : m.redPairs = 3 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem socks_white (m : SocksModel) : m.whitePairs = 4 ∧ m.white = 8 := by
   have h := socks_red_pairs m
   cases m <;> constructor <;> omega
@@ -79,7 +85,8 @@ theorem socks_total (m : SocksModel) : m.total = 32 := by
   have h1 := socks_white m
   have h2 := socks_blue m
   have h3 := socks_black m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure DiscountShirtsModel where
   quantity : ℕ
   unitPrice : ℕ
@@ -93,13 +100,16 @@ structure DiscountShirtsModel where
   hPaid : paid + discount = regular
 
 theorem shirts_regular (m : DiscountShirtsModel) : m.regular = 100 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem shirts_discount (m : DiscountShirtsModel) : m.discount = 40 := by
   have h := shirts_regular m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem shirts_paid (m : DiscountShirtsModel) : m.paid = 60 := by
   have h := shirts_discount m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TaxShirtsModel where
   quantity : ℕ
   unitPrice : ℕ
@@ -113,11 +123,14 @@ structure TaxShirtsModel where
   hTotal : total = subtotal + tax
 
 theorem tax_subtotal (m : TaxShirtsModel) : m.subtotal = 60 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tax_amount (m : TaxShirtsModel) : m.tax = 6 := by
   have h := tax_subtotal m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tax_total (m : TaxShirtsModel) : m.total = 66 := by
   have h := tax_amount m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A12P2

@@ -11,10 +11,12 @@ structure BarkModel where
   hPoodle : poodle = 2 * terrier
 
 theorem bark_terrier (m : BarkModel) : m.terrier = 12 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bark_poodle (m : BarkModel) : m.poodle = 24 := by
   have h := bark_terrier m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure MilkModel where
   largeLiters : ℕ
   smallOneMl : ℕ
@@ -30,13 +32,16 @@ structure MilkModel where
   hTotal : totalLiters = largeLiters + smallLiters
 
 theorem milk_small_total (m : MilkModel) : m.smallTotalMl = 1000 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem milk_small_liters (m : MilkModel) : m.smallLiters = 1 := by
   have h := milk_small_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem milk_total_liters (m : MilkModel) : m.totalLiters = 3 := by
   have h := milk_small_liters m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SuitcaseModel where
   originalPounds : ℕ
   perfumeBottles : ℕ
@@ -68,22 +73,28 @@ structure SuitcaseModel where
   hTotal : totalPounds = originalPounds + chocolatePounds + otherPounds
 
 theorem suitcase_perfume_ounces (m : SuitcaseModel) : m.perfumeTenthsOz = 60 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem suitcase_soap_ounces (m : SuitcaseModel) : m.soapOz = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem suitcase_jam_ounces (m : SuitcaseModel) : m.jamOz = 16 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem suitcase_other_ounces (m : SuitcaseModel) : m.otherOz = 32 := by
   have h1 := suitcase_perfume_ounces m
   have h2 := suitcase_soap_ounces m
   have h3 := suitcase_jam_ounces m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem suitcase_other_pounds (m : SuitcaseModel) : m.otherPounds = 2 := by
   have h := suitcase_other_ounces m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem suitcase_total (m : SuitcaseModel) : m.totalPounds = 11 := by
   have h := suitcase_other_pounds m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure RamModel where
   original : ℕ
   increase : ℕ
@@ -97,17 +108,21 @@ structure RamModel where
   hCurrent : raised = current + decrease
 
 theorem ram_increase (m : RamModel) : m.increase = 15 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem ram_raised_price (m : RamModel) : m.raised = 65 := by
   have h := ram_increase m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem ram_decrease (m : RamModel) : m.decrease = 13 := by
   have h := ram_raised_price m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem ram_current_price (m : RamModel) : m.current = 52 := by
   have h1 := ram_raised_price m
   have h2 := ram_decrease m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PizzaModel where
   price : ℕ
   cheesePizzas : ℕ
@@ -127,17 +142,22 @@ structure PizzaModel where
   hTotal : totalCost = cheeseCost + meatCost
 
 theorem pizza_cheese_paid (m : PizzaModel) : m.cheesePaid = 5 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pizza_cheese_cost (m : PizzaModel) : m.cheeseCost = 25 := by
   have h := pizza_cheese_paid m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pizza_meat_paid (m : PizzaModel) : m.meatPaid = 6 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pizza_meat_cost (m : PizzaModel) : m.meatCost = 30 := by
   have h := pizza_meat_paid m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pizza_total_cost (m : PizzaModel) : m.totalCost = 55 := by
   have h1 := pizza_cheese_cost m
   have h2 := pizza_meat_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0930A16P1

@@ -23,16 +23,20 @@ structure ObstacleModel where
   hTotal : total = throughDoor + returnSeconds
 
 theorem first_course_seconds (m : ObstacleModel) : m.firstSeconds = 443 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem door_elapsed_seconds (m : ObstacleModel) : m.throughDoor = 516 := by
   have h := first_course_seconds m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem return_course_seconds (m : ObstacleModel) : m.returnSeconds = 358 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem obstacle_seconds (m : ObstacleModel) : m.total = 874 := by
   have h1 := door_elapsed_seconds m
   have h2 := return_course_seconds m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ChocolateMilkModel where
   milkHalfOunces : ℕ
   milkPerGlass : ℕ
@@ -55,16 +59,20 @@ structure ChocolateMilkModel where
   hTotal : totalOunces = glasses * ouncesPerGlass
 
 theorem milk_glasses (m : ChocolateMilkModel) : m.milkGlasses = 20 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem syrup_glasses (m : ChocolateMilkModel) : m.syrupGlasses = 40 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem limited_glasses (m : ChocolateMilkModel) : m.glasses = 20 := by
   have h1 := milk_glasses m
   have h2 := syrup_glasses m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem chocolate_milk (m : ChocolateMilkModel) : m.totalOunces = 160 := by
   have h := limited_glasses m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SeedModel where
   left : ℕ
   rightMultiplier : ℕ
@@ -82,13 +90,16 @@ structure SeedModel where
   hStart : start = firstGroups + newcomers + remaining
 
 theorem right_group_seeds (m : SeedModel) : m.right = 40 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem initial_groups_seeds (m : SeedModel) : m.firstGroups = 60 := by
   have h := right_group_seeds m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem starting_seeds (m : SeedModel) : m.start = 120 := by
   have h := initial_groups_seeds m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CrabModel where
   baskets : ℕ
   crabsPerBasket : ℕ
@@ -106,13 +117,16 @@ structure CrabModel where
   hRevenue : revenue = weekly * pricePerCrab
 
 theorem crabs_per_collection (m : CrabModel) : m.perCollection = 12 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem weekly_crabs (m : CrabModel) : m.weekly = 24 := by
   have h := crabs_per_collection m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem crab_revenue (m : CrabModel) : m.revenue = 72 := by
   have h := weekly_crabs m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PoolModel where
   kids : ℕ
   kidPrice : ℕ
@@ -136,17 +150,22 @@ structure PoolModel where
   hWeekly : weekly = daily * days
 
 theorem kids_daily_revenue (m : PoolModel) : m.kidsDaily = 24 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem adult_price (m : PoolModel) : m.adultPrice = 6 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem adults_daily_revenue (m : PoolModel) : m.adultsDaily = 60 := by
   have h := adult_price m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pool_daily_revenue (m : PoolModel) : m.daily = 84 := by
   have h1 := kids_daily_revenue m
   have h2 := adults_daily_revenue m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pool_revenue (m : PoolModel) : m.weekly = 588 := by
   have h := pool_daily_revenue m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A14P3

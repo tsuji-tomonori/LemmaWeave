@@ -25,16 +25,20 @@ structure GroceryModel where
   hBalance : initial = spent + balance
 
 theorem rice_cost (m : GroceryModel) : m.riceCost = 40 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem flour_cost (m : GroceryModel) : m.flourCost = 75 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem grocery_total_spent (m : GroceryModel) : m.spent = 265 := by
   have h1 := rice_cost m
   have h2 := flour_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem grocery_balance (m : GroceryModel) : m.balance = 235 := by
   have h := grocery_total_spent m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SportsModel where
   schoolDays : ℕ
   missed : ℕ
@@ -48,10 +52,12 @@ structure SportsModel where
   hTotal : totalHours = present * hoursPerDay
 
 theorem sports_present_days (m : SportsModel) : m.present = 3 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem sports_hours (m : SportsModel) : m.totalHours = 6 := by
   have h := sports_present_days m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure FuelModel where
   oldCost : ℕ
   increasePercent : ℕ
@@ -65,10 +71,12 @@ structure FuelModel where
   hTotal : totalCost = capacityMultiplier * newUnitCost
 
 theorem increased_tank_cost (m : FuelModel) : m.newUnitCost = 240 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem doubled_fuel_cost (m : FuelModel) : m.totalCost = 480 := by
   have h := increased_tank_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure NotebookModel where
   children : ℕ
   fatherEach : ℕ
@@ -84,13 +92,16 @@ structure NotebookModel where
   hTotal : total = fatherTotal + motherTotal
 
 theorem father_notebooks (m : NotebookModel) : m.fatherTotal = 6 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem mother_notebooks (m : NotebookModel) : m.motherTotal = 15 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem notebook_total (m : NotebookModel) : m.total = 21 := by
   have h1 := father_notebooks m
   have h2 := mother_notebooks m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure FoldSchedule where
   hugoSmall : ℕ
   hugoMedium : ℕ
@@ -125,7 +136,8 @@ theorem hugo_medium_box_time : 2 * 3 = 6 := by norm_num
 
 theorem folding_lower_bound (m : FoldSchedule) : 7200 ≤ m.elapsed := by
   have hMedium := hugo_medium_box_time
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem folding_candidate_time : candidateFoldSchedule.elapsed = 7200 := by
   rfl
 

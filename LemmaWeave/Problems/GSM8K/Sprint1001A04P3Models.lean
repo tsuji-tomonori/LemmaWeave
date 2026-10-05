@@ -23,16 +23,20 @@ structure PiePriceModel where
   hPrice : price * totalPies = revenue
 
 theorem pie_price_cost (m : PiePriceModel) : m.cost = 90 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pie_price_revenue (m : PiePriceModel) : m.revenue = 110 := by
   have h := pie_price_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pie_price_total_pies (m : PiePriceModel) : m.totalPies = 22 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pie_price_each (m : PiePriceModel) : m.price = 5 := by
   have h1 := pie_price_revenue m
   have h2 := pie_price_total_pies m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CurtainModel where
   feet : ℕ
   inchesPerFoot : ℕ
@@ -46,10 +50,12 @@ structure CurtainModel where
   hTotal : totalInches = heightInches + extraInches
 
 theorem curtain_height_inches (m : CurtainModel) : m.heightInches = 96 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem curtain_total_inches (m : CurtainModel) : m.totalInches = 101 := by
   have h := curtain_height_inches m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CavitiesModel where
   parentCanes : ℕ
   perTeacher : ℕ
@@ -71,17 +77,21 @@ structure CavitiesModel where
   hCavities : cavities * canesPerCavity = totalCanes
 
 theorem cavities_given (m : CavitiesModel) : m.givenCanes = 14 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cavities_bought (m : CavitiesModel) : m.boughtCanes = 2 := by
   have h := cavities_given m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cavities_total_canes (m : CavitiesModel) : m.totalCanes = 16 := by
   have h1 := cavities_given m
   have h2 := cavities_bought m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cavities_count (m : CavitiesModel) : m.cavities = 4 := by
   have h := cavities_total_canes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cavities_source_terminal_inconsistent : (4 : ℕ) ≠ 16 := by
   norm_num
 
@@ -103,13 +113,16 @@ structure RibbonModel where
   hLeftMeters : leftHalfMeters = 2 * leftMeters
 
 theorem ribbon_used (m : RibbonModel) : m.usedHalfMeters = 24 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem ribbon_left_half_meters (m : RibbonModel) : m.leftHalfMeters = 6 := by
   have h := ribbon_used m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem ribbon_left_meters (m : RibbonModel) : m.leftMeters = 3 := by
   have h := ribbon_left_half_meters m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure BrushModel where
   carlaInches : ℕ
   carmenInches : ℕ
@@ -121,11 +134,14 @@ structure BrushModel where
   hCentimeters : halfCentimeters = 2 * centimeters
 
 theorem brush_carmen_inches (m : BrushModel) : m.carmenInches = 18 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem brush_half_centimeters (m : BrushModel) : m.halfCentimeters = 90 := by
   have h := brush_carmen_inches m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem brush_centimeters (m : BrushModel) : m.centimeters = 45 := by
   have h := brush_half_centimeters m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A04P3

@@ -18,13 +18,16 @@ structure PlatesModel where
   hRemoved : remaining + removed = initial
 
 theorem plates_limit (m : PlatesModel) : m.limitOunces = 320 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem plates_remaining (m : PlatesModel) : m.remaining = 32 := by
   have h := plates_limit m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem plates_removed (m : PlatesModel) : m.removed = 6 := by
   have h := plates_remaining m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure DanceModel where
   nancy : ℕ
   jason : ℕ
@@ -37,7 +40,8 @@ theorem dance_relation (m : DanceModel) : m.nancy = 3 * m.jason := by
 
 theorem dance_jason (m : DanceModel) : m.jason = 8 := by
   have h := dance_relation m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure RecordsModel where
   initial : ℕ
   gifts : ℕ
@@ -53,10 +57,12 @@ structure RecordsModel where
   hDays : days = total * daysPerRecord
 
 theorem records_total (m : RecordsModel) : m.total = 50 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem records_days (m : RecordsModel) : m.days = 100 := by
   have h := records_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure AnimalsModel where
   goats : ℕ
   sheep : ℕ
@@ -75,16 +81,20 @@ structure AnimalsModel where
   hIncome : income = goatIncome + sheepIncome
 
 theorem animals_counts (m : AnimalsModel) : m.goats = 150 ∧ m.sheep = 210 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem animals_sold (m : AnimalsModel) : m.soldGoats = 75 ∧ m.soldSheep = 140 := by
   have h := animals_counts m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem animals_incomes (m : AnimalsModel) : m.goatIncome = 3000 ∧ m.sheepIncome = 4200 := by
   have h := animals_sold m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem animals_total_income (m : AnimalsModel) : m.income = 7200 := by
   have h := animals_incomes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem animals_reference_8600_is_wrong : (7200 : ℕ) ≠ 8600 := by
   norm_num
 
@@ -101,11 +111,14 @@ structure ScoresModel where
   hMargaret : margaret = marco + 5
 
 theorem scores_reduction (m : ScoresModel) : m.reduction = 9 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem scores_marco (m : ScoresModel) : m.marco = 81 := by
   have h := scores_reduction m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem scores_margaret (m : ScoresModel) : m.margaret = 86 := by
   have h := scores_marco m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A10P2

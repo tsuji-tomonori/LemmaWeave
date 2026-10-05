@@ -15,7 +15,7 @@ structure Biology where
   boys : ℕ
   hTotal : total*2=200
   hRatio : boys*4=total
-theorem biology_total (m:Biology) : m.total=100 := by omega
+theorem biology_total (m:Biology) : m.total=100 := by cases m <;> simp_all at * <;> omega
 theorem biology_solution (m:Biology) : m.boys=25 := by
   have h:=m.hRatio; rw [biology_total m] at h; omega
 
@@ -53,7 +53,7 @@ structure Glasses where
   wearing : ℕ
   hFemales : females+2000=5000
   hWearing : wearing*100=females*30
-theorem glasses_females (m:Glasses) : m.females=3000 := by omega
+theorem glasses_females (m:Glasses) : m.females=3000 := by cases m <;> simp_all at * <;> omega
 theorem glasses_solution (m:Glasses) : m.wearing=900 := by
   have h:=m.hWearing; rw [glasses_females m] at h; omega
 
@@ -111,7 +111,7 @@ structure Nails where
   hAfter : afterKitchen+kitchen=400
   hFence : fence*100=afterKitchen*70
   hRemaining : remaining+fence=afterKitchen
-theorem nails_kitchen (m:Nails) : m.kitchen=120 := by omega
+theorem nails_kitchen (m:Nails) : m.kitchen=120 := by cases m <;> simp_all at * <;> omega
 theorem nails_after_kitchen (m:Nails) : m.afterKitchen=280 := by
   have h:=m.hAfter; rw [nails_kitchen m] at h; omega
 theorem nails_fence (m:Nails) : m.fence=196 := by
@@ -132,7 +132,7 @@ structure Library where
   total : ℕ
   hAdultPercent : adultPercent+35=100
   hTotal : total*adultPercent=104*100
-theorem library_adult_percent (m:Library) : m.adultPercent=65 := by omega
+theorem library_adult_percent (m:Library) : m.adultPercent=65 := by cases m <;> simp_all at * <;> omega
 theorem library_solution (m:Library) : m.total=160 := by
   have h:=m.hTotal; rw [library_adult_percent m] at h; omega
 
@@ -160,7 +160,7 @@ structure Movie where
   hPopcornCost : popcornCost=popcornPrice*2
   hSodaCost : sodaCost=sodaPrice*4
   hTotal : total=ticketCost+popcornCost+sodaCost
-theorem movie_popcorn_price (m:Movie) : m.popcornPrice=4 := by omega
+theorem movie_popcorn_price (m:Movie) : m.popcornPrice=4 := by cases m <;> simp_all at * <;> omega
 theorem movie_soda_price (m:Movie) : m.sodaPrice=2 := by
   have h:=m.hSodaPrice; rw [movie_popcorn_price m] at h; omega
 theorem movie_ticket_cost (m:Movie) : m.ticketCost=20 := by rw [m.hTicketCost] <;> norm_num
@@ -174,7 +174,7 @@ structure WeightsPair where
   antoinette : ℕ
   hAntoinette : antoinette+7=2*rupert
   hTotal : rupert+antoinette=98
-theorem weights_pair_rupert (m:WeightsPair) : m.rupert=35 := by omega
+theorem weights_pair_rupert (m:WeightsPair) : m.rupert=35 := by cases m <;> simp_all at * <;> omega
 theorem weights_pair_solution (m:WeightsPair) : m.antoinette=63 := by
   have h:=m.hTotal; rw [weights_pair_rupert m] at h; omega
 

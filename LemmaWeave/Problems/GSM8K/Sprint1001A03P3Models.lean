@@ -21,13 +21,16 @@ structure IronModel where
   hBalls : ballVolume * balls = totalIron
 
 theorem iron_one_bar (m : IronModel) : m.oneBar = 576 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem iron_total (m : IronModel) : m.totalIron = 5760 := by
   have h := iron_one_bar m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem iron_balls (m : IronModel) : m.balls = 720 := by
   have h := iron_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure HealingModel where
   beforeGraft : ℕ
   graftRecovery : ℕ
@@ -37,10 +40,12 @@ structure HealingModel where
   hTotal : totalRecovery = beforeGraft + graftRecovery
 
 theorem healing_graft (m : HealingModel) : m.graftRecovery = 6 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem healing_total (m : HealingModel) : m.totalRecovery = 10 := by
   have h := healing_graft m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure FinalsModel where
   total : ℕ
   bombed : ℕ
@@ -56,17 +61,21 @@ structure FinalsModel where
   hPassed : bombed + absent + lowGrade + passed = total
 
 theorem finals_bombed (m : FinalsModel) : m.bombed = 45 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem finals_after_bombed (m : FinalsModel) : m.afterBombed = 135 := by
   have h := finals_bombed m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem finals_absent (m : FinalsModel) : m.absent = 45 := by
   have h := finals_after_bombed m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem finals_passed (m : FinalsModel) : m.passed = 70 := by
   have h1 := finals_bombed m
   have h2 := finals_absent m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure FruitModel where
   strawberryPerPound : ℕ
   cherryPerPound : ℕ
@@ -82,16 +91,20 @@ structure FruitModel where
   hTotal : totalCost = strawberriesCost + cherriesCost
 
 theorem fruit_cherry_price (m : FruitModel) : m.cherryPerPound = 1320 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem fruit_strawberries (m : FruitModel) : m.strawberriesCost = 1100 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem fruit_cherries (m : FruitModel) : m.cherriesCost = 6600 := by
   have h := fruit_cherry_price m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem fruit_total (m : FruitModel) : m.totalCost = 7700 := by
   have h1 := fruit_strawberries m
   have h2 := fruit_cherries m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure StickersModel where
   packs : ℕ
   perPack : ℕ
@@ -107,11 +120,14 @@ structure StickersModel where
   hHalf : 2 * jamesCents = totalCents
 
 theorem stickers_count (m : StickersModel) : m.stickers = 120 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem stickers_total (m : StickersModel) : m.totalCents = 1200 := by
   have h := stickers_count m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem stickers_james (m : StickersModel) : m.jamesCents = 600 := by
   have h := stickers_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A03P3

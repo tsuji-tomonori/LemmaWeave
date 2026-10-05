@@ -13,14 +13,17 @@ structure PagesModel where
   hTotal : total = night1 + night2 + night3
 
 theorem pages_night2 (m : PagesModel) : m.night2 = 58 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pages_night3 (m : PagesModel) : m.night3 = 91 := by
   have h := pages_night2 m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pages_total (m : PagesModel) : m.total = 179 := by
   have h1 := pages_night2 m
   have h2 := pages_night3 m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CondoModel where
   floors : ℕ
   penthouseFloors : ℕ
@@ -36,16 +39,20 @@ structure CondoModel where
   hTotal : totalUnits = regularUnits + penthouseUnits
 
 theorem condo_regular_floors (m : CondoModel) : m.regularFloors = 21 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem condo_regular_units (m : CondoModel) : m.regularUnits = 252 := by
   have h := condo_regular_floors m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem condo_penthouse_units (m : CondoModel) : m.penthouseUnits = 4 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem condo_total (m : CondoModel) : m.totalUnits = 256 := by
   have h1 := condo_regular_units m
   have h2 := condo_penthouse_units m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PiesModel where
   pumpkinPies : ℕ
   pumpkinSlicesPerPie : ℕ
@@ -67,19 +74,24 @@ structure PiesModel where
   hTotal : totalRevenue = pumpkinRevenue + custardRevenue
 
 theorem pies_pumpkin_slices (m : PiesModel) : m.pumpkinSlices = 32 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pies_custard_slices (m : PiesModel) : m.custardSlices = 30 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pies_pumpkin_revenue (m : PiesModel) : m.pumpkinRevenue = 160 := by
   have h := pies_pumpkin_slices m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pies_custard_revenue (m : PiesModel) : m.custardRevenue = 180 := by
   have h := pies_custard_slices m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pies_total (m : PiesModel) : m.totalRevenue = 340 := by
   have h1 := pies_pumpkin_revenue m
   have h2 := pies_custard_revenue m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ChickensModel where
   initial : ℕ
   dead : ℕ
@@ -93,17 +105,21 @@ structure ChickensModel where
   hTotal : total = remaining + bought
 
 theorem chickens_dead (m : ChickensModel) : m.dead = 160 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem chickens_remaining (m : ChickensModel) : m.remaining = 240 := by
   have h := chickens_dead m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem chickens_bought (m : ChickensModel) : m.bought = 1600 := by
   have h := chickens_dead m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem chickens_total (m : ChickensModel) : m.total = 1840 := by
   have h1 := chickens_remaining m
   have h2 := chickens_bought m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure BalloonModel where
   original : ℕ
   increase1 : ℕ
@@ -117,15 +133,19 @@ structure BalloonModel where
   hAfter2 : after2 = after1 + increase2
 
 theorem balloon_increase1 (m : BalloonModel) : m.increase1 = 200 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem balloon_after1 (m : BalloonModel) : m.after1 = 700 := by
   have h := balloon_increase1 m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem balloon_increase2 (m : BalloonModel) : m.increase2 = 280 := by
   have h := balloon_after1 m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem balloon_after2 (m : BalloonModel) : m.after2 = 980 := by
   have h1 := balloon_after1 m
   have h2 := balloon_increase2 m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A01P2

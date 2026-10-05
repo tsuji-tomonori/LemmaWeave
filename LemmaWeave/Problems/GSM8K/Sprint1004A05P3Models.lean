@@ -10,7 +10,7 @@ theorem gross_salary_interpretations :
 
 theorem papaya_height_five_years :
     ((2 : ℚ) * (3 / 2)) = 3 ∧
-      3 * (3 / 2) = 9 / 2 ∧
+      (3 : ℚ) * (3 / 2) = 9 / 2 ∧
       (9 / 2 : ℚ) * 2 = 9 ∧
       (9 : ℚ) / 2 = 9 / 2 ∧
       (2 : ℚ) + 3 + 9 / 2 + 9 + 9 / 2 = 23 := by

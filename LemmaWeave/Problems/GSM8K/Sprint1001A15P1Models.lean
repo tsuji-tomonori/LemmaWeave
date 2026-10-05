@@ -15,10 +15,12 @@ structure MeatModel where
   hLasts : supply = daily * days
 
 theorem daily_meat (m : MeatModel) : m.daily = 45 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem meat_days (m : MeatModel) : m.days = 2 := by
   have h := daily_meat m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CatModel where
   original : ℕ
   firstRelocated : ℕ
@@ -32,14 +34,17 @@ structure CatModel where
   hRemaining : afterFirst = secondRelocated + remaining
 
 theorem cats_after_first (m : CatModel) : m.afterFirst = 1200 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cats_second_relocation (m : CatModel) : m.secondRelocated = 600 := by
   have h := cats_after_first m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cats_remaining (m : CatModel) : m.remaining = 600 := by
   have h1 := cats_after_first m
   have h2 := cats_second_relocation m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CardModel where
   christmas : ℕ
   birthday : ℕ
@@ -53,10 +58,12 @@ structure CardModel where
   hSpent : spent = totalCards * pricePerCard
 
 theorem total_cards (m : CardModel) : m.totalCards = 35 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem card_spend (m : CardModel) : m.spent = 70 := by
   have h := total_cards m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure WalkModel where
   metersPerMinute : ℕ
   minutesPerHour : ℕ
@@ -74,13 +81,16 @@ structure WalkModel where
   hTotal : totalMeters = dailyMeters * days
 
 theorem walking_minutes_per_day (m : WalkModel) : m.minutesPerDay = 60 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem walking_meters_per_day (m : WalkModel) : m.dailyMeters = 600 := by
   have h := walking_minutes_per_day m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem two_day_walk (m : WalkModel) : m.totalMeters = 1200 := by
   have h := walking_meters_per_day m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure WyattModel where
   initial : ℕ
   loaves : ℕ
@@ -102,14 +112,18 @@ structure WyattModel where
   hRemaining : initial = totalCost + remaining
 
 theorem bread_cost (m : WyattModel) : m.breadCost = 25 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem juice_cost (m : WyattModel) : m.juiceCost = 8 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem total_purchase_cost (m : WyattModel) : m.totalCost = 33 := by
   have h1 := bread_cost m
   have h2 := juice_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem wyatt_money_left (m : WyattModel) : m.remaining = 41 := by
   have h := total_purchase_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A15P1

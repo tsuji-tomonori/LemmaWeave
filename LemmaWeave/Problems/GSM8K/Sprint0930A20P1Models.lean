@@ -17,20 +17,25 @@ structure WheelsModel where
   hTotal : totalWheels = bicycleWheels + tricycleWheels
 
 theorem wheels_bicycle_riders (m : WheelsModel) : m.bicycleRiders = 24 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem wheels_tricycle_riders (m : WheelsModel) : m.tricycleRiders = 16 := by
   have h := wheels_bicycle_riders m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem wheels_bicycle_count (m : WheelsModel) : m.bicycleWheels = 48 := by
   have h := wheels_bicycle_riders m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem wheels_tricycle_count (m : WheelsModel) : m.tricycleWheels = 48 := by
   have h := wheels_tricycle_riders m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem wheels_total (m : WheelsModel) : m.totalWheels = 96 := by
   have h1 := wheels_bicycle_count m
   have h2 := wheels_tricycle_count m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure MonthlyApplesModel where
   chandlerWeekly : ℕ
   lucyWeekly : ℕ
@@ -44,10 +49,12 @@ structure MonthlyApplesModel where
   hMonthly : monthlyOrder = 4 * combinedWeekly
 
 theorem apples_combined_weekly (m : MonthlyApplesModel) : m.combinedWeekly = 42 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem apples_monthly_order (m : MonthlyApplesModel) : m.monthlyOrder = 168 := by
   have h := apples_combined_weekly m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TowelsModel where
   owned : ℕ
   towelsPerDay : ℕ
@@ -63,16 +70,20 @@ structure TowelsModel where
   hNoCleanDays : shortage = towelsPerDay * noCleanDays
 
 theorem towels_weekly_use (m : TowelsModel) : m.weeklyUse = 14 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem towels_two_week_need (m : TowelsModel) : m.twoWeekNeed = 28 := by
   have h := towels_weekly_use m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem towels_shortage (m : TowelsModel) : m.shortage = 10 := by
   have h := towels_two_week_need m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem towels_no_clean_days (m : TowelsModel) : m.noCleanDays = 5 := by
   have h := towels_shortage m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TreeApplesModel where
   basketsPerTree : ℕ
   applesPerBasket : ℕ
@@ -86,10 +97,12 @@ structure TreeApplesModel where
   hTotal : totalApples = 10 * applesPerTree
 
 theorem tree_apples_per_tree (m : TreeApplesModel) : m.applesPerTree = 300 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tree_apples_total (m : TreeApplesModel) : m.totalApples = 3000 := by
   have h := tree_apples_per_tree m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure GardeningModel where
   mowLines : ℕ
   minutesPerLine : ℕ
@@ -109,14 +122,18 @@ structure GardeningModel where
   hTotal : totalMinutes = mowMinutes + plantingMinutes
 
 theorem gardening_mow_minutes (m : GardeningModel) : m.mowMinutes = 80 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem gardening_total_flowers (m : GardeningModel) : m.totalFlowers = 56 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem gardening_planting_minutes (m : GardeningModel) : m.plantingMinutes = 28 := by
   have h := gardening_total_flowers m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem gardening_total_minutes (m : GardeningModel) : m.totalMinutes = 108 := by
   have h1 := gardening_mow_minutes m
   have h2 := gardening_planting_minutes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0930A20P1

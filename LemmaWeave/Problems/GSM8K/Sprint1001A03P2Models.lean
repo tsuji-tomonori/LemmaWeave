@@ -15,13 +15,16 @@ structure FishModel where
   hRolls : perRoll * rolls = usable
 
 theorem fish_bad (m : FishModel) : m.bad = 80 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem fish_usable (m : FishModel) : m.usable = 320 := by
   have h := fish_bad m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem fish_rolls (m : FishModel) : m.rolls = 8 := by
   have h := fish_usable m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure DessertModel where
   cones : ℕ
   conePrice : ℕ
@@ -39,13 +42,16 @@ structure DessertModel where
   hDifference : puddingCost + difference = coneCost
 
 theorem dessert_cone_cost (m : DessertModel) : m.coneCost = 75 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem dessert_pudding_cost (m : DessertModel) : m.puddingCost = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem dessert_difference (m : DessertModel) : m.difference = 65 := by
   have h1 := dessert_cone_cost m
   have h2 := dessert_pudding_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ApplesModel where
   daily : ℕ
   daysPerWeek : ℕ
@@ -63,17 +69,21 @@ structure ApplesModel where
   hFinal : finalKept = graceKept * weeks
 
 theorem apples_bella_weekly (m : ApplesModel) : m.bellaWeekly = 42 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem apples_grace_picked (m : ApplesModel) : m.gracePicked = 126 := by
   have h := apples_bella_weekly m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem apples_grace_kept (m : ApplesModel) : m.graceKept = 84 := by
   have h1 := apples_bella_weekly m
   have h2 := apples_grace_picked m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem apples_final (m : ApplesModel) : m.finalKept = 504 := by
   have h := apples_grace_kept m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure RadioModel where
   hours : ℕ
   totalMinutes : ℕ
@@ -91,16 +101,20 @@ structure RadioModel where
   hPartition : talkMinutes + adMinutes + songMinutes = totalMinutes
 
 theorem radio_total (m : RadioModel) : m.totalMinutes = 180 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem radio_talk (m : RadioModel) : m.talkMinutes = 30 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem radio_ads (m : RadioModel) : m.adMinutes = 25 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem radio_songs (m : RadioModel) : m.songMinutes = 125 := by
   have h1 := radio_total m
   have h2 := radio_talk m
   have h3 := radio_ads m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TreeModel where
   branches : ℕ
   twigsPerBranch : ℕ
@@ -120,22 +134,28 @@ structure TreeModel where
   hTotalLeaves : totalLeaves = fourLeaves + fiveLeaves
 
 theorem tree_twigs (m : TreeModel) : m.twigs = 2700 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tree_four_twigs (m : TreeModel) : m.fourLeafTwigs = 810 := by
   have h := tree_twigs m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tree_five_twigs (m : TreeModel) : m.fiveLeafTwigs = 1890 := by
   have h1 := tree_twigs m
   have h2 := tree_four_twigs m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tree_four_leaves (m : TreeModel) : m.fourLeaves = 3240 := by
   have h := tree_four_twigs m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tree_five_leaves (m : TreeModel) : m.fiveLeaves = 9450 := by
   have h := tree_five_twigs m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tree_total_leaves (m : TreeModel) : m.totalLeaves = 12690 := by
   have h1 := tree_four_leaves m
   have h2 := tree_five_leaves m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A03P2

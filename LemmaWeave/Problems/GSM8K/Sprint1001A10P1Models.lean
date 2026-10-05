@@ -15,7 +15,8 @@ theorem whale_pounds (m : WhaleModel) : m.tonguePounds = 6000 := by
 
 theorem whale_tons (m : WhaleModel) : m.tons = 3 := by
   have h := whale_pounds m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure GemsModel where
   dollars : ℕ
   gemsPerDollar : ℕ
@@ -31,14 +32,17 @@ structure GemsModel where
   hTotal : totalGems = baseGems + bonusGems
 
 theorem gems_base (m : GemsModel) : m.baseGems = 25000 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem gems_bonus (m : GemsModel) : m.bonusGems = 5000 := by
   have h := gems_base m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem gems_total (m : GemsModel) : m.totalGems = 30000 := by
   have h1 := gems_base m
   have h2 := gems_bonus m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure DogsModel where
   count : ℕ
   average : ℕ
@@ -54,13 +58,16 @@ structure DogsModel where
   hSplit : first + second + third = total
 
 theorem dogs_total (m : DogsModel) : m.total = 45 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem dogs_second (m : DogsModel) : m.second = 26 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem dogs_third (m : DogsModel) : m.third = 6 := by
   have h1 := dogs_total m
   have h2 := dogs_second m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure GlassModel where
   amber : ℕ
   green : ℕ
@@ -74,10 +81,12 @@ structure GlassModel where
   hSplit : amber + green + clear = total
 
 theorem glass_total (m : GlassModel) : m.total = 140 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem glass_clear (m : GlassModel) : m.clear = 85 := by
   have h := glass_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PensModel where
   students : ℕ
   redEach : ℕ
@@ -99,11 +108,14 @@ structure PensModel where
   hSplit : remaining = students * eachFinal
 
 theorem pens_initial (m : PensModel) : m.perStudent = 105 ∧ m.pool = 315 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pens_remaining (m : PensModel) : m.remaining = 237 := by
   have h := pens_initial m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pens_each (m : PensModel) : m.eachFinal = 79 := by
   have h := pens_remaining m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A10P1

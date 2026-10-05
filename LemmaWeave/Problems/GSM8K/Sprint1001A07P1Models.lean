@@ -15,13 +15,16 @@ structure SnacksModel where
   hTotal : totalCost = pricePerPack * packs
 
 theorem snacks_round_trip (m : SnacksModel) : m.roundTripHours = 4 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem snacks_price (m : SnacksModel) : m.pricePerPack = 40 := by
   have h := snacks_round_trip m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem snacks_total (m : SnacksModel) : m.totalCost = 2000 := by
   have h := snacks_price m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure BikeModel where
   firstDays : ℕ
   firstDaily : ℕ
@@ -41,16 +44,20 @@ structure BikeModel where
   hTotal : totalMiles = firstMiles + restMiles
 
 theorem bike_rest_days (m : BikeModel) : m.restDays = 182 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bike_first_miles (m : BikeModel) : m.firstMiles = 5490 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bike_rest_miles (m : BikeModel) : m.restMiles = 6370 := by
   have h := bike_rest_days m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bike_total (m : BikeModel) : m.totalMiles = 11860 := by
   have h1 := bike_first_miles m
   have h2 := bike_rest_miles m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PokerModel where
   oldGames : ℕ
   oldWins : ℕ
@@ -70,21 +77,32 @@ structure PokerModel where
   hPercentage : percentage * totalGames = 100 * totalWins
 
 theorem poker_old_wins (m : PokerModel) : m.oldWins = 126 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem poker_new_wins (m : PokerModel) : m.newWins = 57 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem poker_totals (m : PokerModel) : m.totalGames = 300 ∧ m.totalWins = 183 := by
   have h1 := poker_old_wins m
   have h2 := poker_new_wins m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem poker_percentage (m : PokerModel) : m.percentage = 61 := by
   have h := poker_totals m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure HomeworkModel where
-  totalHours minutesPerHour totalMinutes essays essayMinutes paragraphs paragraphMinutes usedMinutes
-    shortMinutesPerQuestion : ℕ
-    shortMinutes : ℕ
-    questions : ℕ
+  totalHours : ℕ
+  minutesPerHour : ℕ
+  totalMinutes : ℕ
+  essays : ℕ
+  essayMinutes : ℕ
+  paragraphs : ℕ
+  paragraphMinutes : ℕ
+  usedMinutes : ℕ
+  shortMinutesPerQuestion : ℕ
+  shortMinutes : ℕ
+  questions : ℕ
   hTotalHours : totalHours = 4
   hMinutesPerHour : minutesPerHour = 60
   hTotalMinutes : totalMinutes = totalHours * minutesPerHour
@@ -98,16 +116,20 @@ structure HomeworkModel where
   hQuestions : shortMinutes = questions * shortMinutesPerQuestion
 
 theorem homework_total_minutes (m : HomeworkModel) : m.totalMinutes = 240 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem homework_used_minutes (m : HomeworkModel) : m.usedMinutes = 195 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem homework_short_minutes (m : HomeworkModel) : m.shortMinutes = 45 := by
   have h1 := homework_total_minutes m
   have h2 := homework_used_minutes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem homework_questions (m : HomeworkModel) : m.questions = 15 := by
   have h := homework_short_minutes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure RiddlesModel where
   josh : ℕ
   ivory : ℕ
@@ -117,8 +139,10 @@ structure RiddlesModel where
   hTaso : taso = 2 * ivory
 
 theorem riddles_ivory (m : RiddlesModel) : m.ivory = 12 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem riddles_taso (m : RiddlesModel) : m.taso = 24 := by
   have h := riddles_ivory m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A07P1

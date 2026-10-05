@@ -18,8 +18,8 @@ theorem fouad_double_ahmed_age_interpretations :
 
 theorem apples_per_guest :
     (3 * 8 : ℚ) = 24 ∧
-      24 * (3 / 2) = 36 ∧
-      36 / 12 = 3 := by
+      (24 : ℚ) * (3 / 2) = 36 ∧
+      (36 : ℚ) / 12 = 3 := by
   norm_num
 
 theorem freelance_income_total :

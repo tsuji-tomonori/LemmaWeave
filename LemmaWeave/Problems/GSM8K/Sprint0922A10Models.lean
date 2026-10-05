@@ -20,7 +20,7 @@ structure Books where
   hUnit : unitCents+50=500
   hTotal : totalCents=unitCents*10
   hDollars : totalDollars*100=totalCents
-theorem books_unit_cents (m:Books) : m.unitCents=450 := by omega
+theorem books_unit_cents (m:Books) : m.unitCents=450 := by cases m <;> simp_all at * <;> omega
 theorem books_solution (m:Books) : m.totalDollars=45 := by
   have ht:=m.hTotal; rw [books_unit_cents m] at ht
   have hd:=m.hDollars; rw [ht] at hd
@@ -41,7 +41,7 @@ structure Games where
   hHenry : henryAfter+5=33
   hRatio : 4*neilAfter=henryAfter
   hInitial : neilInitial+5=neilAfter
-theorem games_henry_after (m:Games) : m.henryAfter=28 := by omega
+theorem games_henry_after (m:Games) : m.henryAfter=28 := by cases m <;> simp_all at * <;> omega
 theorem games_neil_after (m:Games) : m.neilAfter=7 := by
   have h:=m.hRatio; rw [games_henry_after m] at h; omega
 theorem games_solution (m:Games) : m.neilInitial=2 := by
@@ -57,7 +57,7 @@ structure Insurance where
   hEarnings : earningsDollars*100=salaryCents+commissionDollars*100
   hInsurance : insuranceDollars*100=earningsDollars*5
 theorem insurance_salary (m:Insurance) : m.salaryCents=120000 := by rw [m.hSalary] <;> norm_num
-theorem insurance_commission (m:Insurance) : m.commissionDollars=4000 := by omega
+theorem insurance_commission (m:Insurance) : m.commissionDollars=4000 := by cases m <;> simp_all at * <;> omega
 theorem insurance_earnings (m:Insurance) : m.earningsDollars=5200 := by
   have h:=m.hEarnings
   rw [insurance_salary m, insurance_commission m] at h
@@ -108,7 +108,7 @@ structure Tractor where
   hFirst : afterFirst*100=50000*90
   hSecond : secondRemoved*100=afterFirst*20
   hRemaining : remaining+secondRemoved=afterFirst
-theorem tractor_after_first (m:Tractor) : m.afterFirst=45000 := by omega
+theorem tractor_after_first (m:Tractor) : m.afterFirst=45000 := by cases m <;> simp_all at * <;> omega
 theorem tractor_second_removed (m:Tractor) : m.secondRemoved=9000 := by
   have h:=m.hSecond; rw [tractor_after_first m] at h; omega
 theorem tractor_solution (m:Tractor) : m.remaining=36000 := by
@@ -123,8 +123,8 @@ structure Cupcakes where
   hTotal : total*2=5*12
   hPresent : present+3=27+1+1
   hRemaining : remaining+present=total
-theorem cupcakes_total (m:Cupcakes) : m.total=30 := by omega
-theorem cupcakes_present (m:Cupcakes) : m.present=26 := by omega
+theorem cupcakes_total (m:Cupcakes) : m.total=30 := by cases m <;> simp_all at * <;> omega
+theorem cupcakes_present (m:Cupcakes) : m.present=26 := by cases m <;> simp_all at * <;> omega
 theorem cupcakes_solution (m:Cupcakes) : m.remaining=4 := by
   have h:=m.hRemaining; rw [cupcakes_total m, cupcakes_present m] at h; omega
 
@@ -135,7 +135,7 @@ structure Contacts where
   hFriends : friends*2=20
   hFamily : family=2+1
   hTotal : total=20+friends+family
-theorem contacts_friends (m:Contacts) : m.friends=10 := by omega
+theorem contacts_friends (m:Contacts) : m.friends=10 := by cases m <;> simp_all at * <;> omega
 theorem contacts_family (m:Contacts) : m.family=3 := by rw [m.hFamily] <;> norm_num
 theorem contacts_solution (m:Contacts) : m.total=33 := by
   rw [m.hTotal, contacts_friends m, contacts_family m] <;> norm_num
@@ -149,7 +149,7 @@ structure Theater where
   hDaily : daily=tickets*30
   hDays : days=1+2
   hTotal : total=daily*days
-theorem theater_tickets (m:Theater) : m.tickets=320 := by omega
+theorem theater_tickets (m:Theater) : m.tickets=320 := by cases m <;> simp_all at * <;> omega
 theorem theater_daily (m:Theater) : m.daily=9600 := by rw [m.hDaily, theater_tickets m] <;> norm_num
 theorem theater_days (m:Theater) : m.days=3 := by rw [m.hDays] <;> norm_num
 theorem theater_solution (m:Theater) : m.total=28800 := by
@@ -205,8 +205,8 @@ structure Frames where
   hDorothyRevenue : dorothyRevenueCents=dorothyCount*dorothyPriceCents
   hTotal : totalDollars*100=jemmaRevenue*100+dorothyRevenueCents
 theorem frames_jemma_revenue (m:Frames) : m.jemmaRevenue=2000 := by rw [m.hJemma] <;> norm_num
-theorem frames_dorothy_count (m:Frames) : m.dorothyCount=200 := by omega
-theorem frames_dorothy_price (m:Frames) : m.dorothyPriceCents=250 := by omega
+theorem frames_dorothy_count (m:Frames) : m.dorothyCount=200 := by cases m <;> simp_all at * <;> omega
+theorem frames_dorothy_price (m:Frames) : m.dorothyPriceCents=250 := by cases m <;> simp_all at * <;> omega
 theorem frames_dorothy_revenue (m:Frames) : m.dorothyRevenueCents=50000 := by
   rw [m.hDorothyRevenue, frames_dorothy_count m, frames_dorothy_price m] <;> norm_num
 theorem frames_solution (m:Frames) : m.totalDollars=2500 := by

@@ -16,13 +16,14 @@ structure WireModel where
   hUsed : used = usedParts * partLength
   hRemaining : used + unused = total
 
-theorem wire_part_length (m : WireModel) : m.partLength = 10 := by omega
+theorem wire_part_length (m : WireModel) : m.partLength = 10 := by cases m <;> simp_all at * <;> omega
 theorem used_wire_meters (m : WireModel) : m.used = 30 := by
   have h := wire_part_length m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem unused_wire_meters (m : WireModel) : m.unused = 20 := by
   have h := used_wire_meters m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PromModel where
   total : ℕ
   dancers : ℕ
@@ -33,10 +34,11 @@ structure PromModel where
   hSlow : slow = 25
   hPartition : slow + notSlow = dancers
 
-theorem prom_dancers (m : PromModel) : m.dancers = 35 := by omega
+theorem prom_dancers (m : PromModel) : m.dancers = 35 := by cases m <;> simp_all at * <;> omega
 theorem dancers_not_slow (m : PromModel) : m.notSlow = 10 := by
   have h := prom_dancers m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure BedbugModel where
   startDayOne : ℕ
   dayTwo : ℕ
@@ -47,9 +49,9 @@ structure BedbugModel where
   hDayFour : dayFour = 3 * dayThree
   hFinal : dayFour = 810
 
-theorem bedbugs_day_two (m : BedbugModel) : m.dayTwo = 90 := by omega
-theorem bedbugs_day_three (m : BedbugModel) : m.dayThree = 270 := by omega
-theorem initial_bedbugs_day_one (m : BedbugModel) : m.startDayOne = 30 := by omega
+theorem bedbugs_day_two (m : BedbugModel) : m.dayTwo = 90 := by cases m <;> simp_all at * <;> omega
+theorem bedbugs_day_three (m : BedbugModel) : m.dayThree = 270 := by cases m <;> simp_all at * <;> omega
+theorem initial_bedbugs_day_one (m : BedbugModel) : m.startDayOne = 30 := by cases m <;> simp_all at * <;> omega
 
 structure SailModel where
   distance : ℕ
@@ -65,12 +67,13 @@ structure SailModel where
   hSmallTrip : smallSpeed * smallHours = distance
   hDifference : bigHours + fasterHours = smallHours
 
-theorem big_sail_hours (m : SailModel) : m.bigHours = 4 := by omega
-theorem small_sail_hours (m : SailModel) : m.smallHours = 10 := by omega
+theorem big_sail_hours (m : SailModel) : m.bigHours = 4 := by cases m <;> simp_all at * <;> omega
+theorem small_sail_hours (m : SailModel) : m.smallHours = 10 := by cases m <;> simp_all at * <;> omega
 theorem sail_hours_faster (m : SailModel) : m.fasterHours = 6 := by
   have h1 := big_sail_hours m
   have h2 := small_sail_hours m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ReadingModel where
   total : ℕ
   dayOne : ℕ
@@ -83,10 +86,11 @@ structure ReadingModel where
   hDayThree : dayThree = dayTwo + 10
   hPartition : dayOne + dayTwo + dayThree + dayFour = total
 
-theorem reading_day_two (m : ReadingModel) : m.dayTwo = 126 := by omega
-theorem reading_day_three (m : ReadingModel) : m.dayThree = 136 := by omega
+theorem reading_day_two (m : ReadingModel) : m.dayTwo = 126 := by cases m <;> simp_all at * <;> omega
+theorem reading_day_three (m : ReadingModel) : m.dayThree = 136 := by cases m <;> simp_all at * <;> omega
 theorem reading_day_four (m : ReadingModel) : m.dayFour = 29 := by
   have h1 := reading_day_two m
   have h2 := reading_day_three m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1002A03P2

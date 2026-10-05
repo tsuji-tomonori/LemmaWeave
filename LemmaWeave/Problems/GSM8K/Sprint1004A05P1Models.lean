@@ -29,8 +29,8 @@ theorem pool_water_three_trips :
 
 theorem joey_swimming_days :
     (7 + 2 : ℚ) = 9 ∧
-      9 * (4 / 3) = 12 ∧
-      12 / 2 = 6 := by
+      (9 : ℚ) * (4 / 3) = 12 ∧
+      (12 : ℚ) / 2 = 6 := by
   norm_num
 
 end LemmaWeave.Problems.GSM8K.Sprint1004A05P1

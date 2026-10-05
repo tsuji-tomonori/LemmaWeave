@@ -22,14 +22,16 @@ structure CoinModel where
   hCount : coinCount = quarters + dimes + nickels + pennies
 
 theorem coin_change_amount (m : CoinModel) : m.change = 56 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem coin_representation_at_least_four (q d n p : ℕ)
     (h : 25 * q + 10 * d + 5 * n + p = 56) : 4 ≤ q + d + n + p := by
   omega
 
 theorem coin_count_constructed (m : CoinModel) : m.coinCount = 4 := by
   have h := coin_change_amount m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem coin_minimum (m : CoinModel) :
     m.coinCount = 4 ∧
       ∀ q d n p : ℕ, 25 * q + 10 * d + 5 * n + p = 56 → 4 ≤ q + d + n + p := by
@@ -49,14 +51,17 @@ structure RaiseModel where
   hNew : newSalary = lastSalary + raise
 
 theorem last_year_salary (m : RaiseModel) : m.lastSalary = 250 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem raise_amount (m : RaiseModel) : m.raise = 25 := by
   have h := last_year_salary m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem new_salary (m : RaiseModel) : m.newSalary = 275 := by
   have h1 := last_year_salary m
   have h2 := raise_amount m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ReturnSpeedModel where
   morningHours : ℕ
   morningSpeed : ℕ
@@ -70,10 +75,12 @@ structure ReturnSpeedModel where
   hReturn : 2 * distance = returnHalfHours * returnSpeed
 
 theorem commute_distance (m : ReturnSpeedModel) : m.distance = 30 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem return_average_speed (m : ReturnSpeedModel) : m.returnSpeed = 20 := by
   have h := commute_distance m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure MonthlyRunModel where
   daily : ℕ
   weekDays : ℕ
@@ -93,16 +100,20 @@ structure MonthlyRunModel where
   hMonthly : monthly = weeks * weekly
 
 theorem monday_to_wednesday_miles (m : MonthlyRunModel) : m.monday = 9 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem thursday_friday_each (m : MonthlyRunModel) : m.thursday = 6 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem weekly_miles (m : MonthlyRunModel) : m.weekly = 21 := by
   have h1 := monday_to_wednesday_miles m
   have h2 := thursday_friday_each m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem monthly_miles (m : MonthlyRunModel) : m.monthly = 84 := by
   have h := weekly_miles m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SavingsModel where
   goal : ℕ
   existing : ℕ
@@ -116,8 +127,10 @@ structure SavingsModel where
   hMonthly : remaining = months * monthly
 
 theorem remaining_savings_goal (m : SavingsModel) : m.remaining = 900 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem monthly_savings (m : SavingsModel) : m.monthly = 75 := by
   have h := remaining_savings_goal m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A18P1

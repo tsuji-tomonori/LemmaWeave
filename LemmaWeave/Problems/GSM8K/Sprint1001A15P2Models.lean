@@ -19,16 +19,20 @@ structure ChampionshipModel where
   hOpponent : finalPoints = opponentPoints + margin
 
 theorem previous_game_average (m : ChampionshipModel) : m.average = 30 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem half_previous_average (m : ChampionshipModel) : m.halfAverage = 15 := by
   have h := previous_game_average m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem championship_team_score (m : ChampionshipModel) : m.finalPoints = 13 := by
   have h := half_previous_average m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem opponent_score (m : ChampionshipModel) : m.opponentPoints = 11 := by
   have h := championship_team_score m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ExchangeModel where
   currentAge : ℕ
   startAge : ℕ
@@ -48,17 +52,21 @@ structure ExchangeModel where
   hDollars : receivedHalfDollars = 2 * receivedDollars
 
 theorem special_bills (m : ExchangeModel) : m.bills = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bills_spent (m : ExchangeModel) : m.spent = 2 := by
   have h := special_bills m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem special_bills_left (m : ExchangeModel) : m.billsLeft = 8 := by
   have h1 := special_bills m
   have h2 := bills_spent m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem exchange_amount (m : ExchangeModel) : m.receivedDollars = 12 := by
   have h := special_bills_left m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure HeightModel where
   pepeInches : ℕ
   frankInches : ℕ
@@ -74,19 +82,24 @@ structure HeightModel where
   hFeet : joeInches = joeFeet * 12
 
 theorem pepe_height_inches (m : HeightModel) : m.pepeInches = 54 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem frank_height_inches (m : HeightModel) : m.frankInches = 60 := by
   have h := pepe_height_inches m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem larry_height_inches (m : HeightModel) : m.larryInches = 72 := by
   have h := frank_height_inches m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem ben_height_inches (m : HeightModel) : m.benInches = 84 := by
   have h := larry_height_inches m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem big_joe_height (m : HeightModel) : m.joeFeet = 8 := by
   have h := ben_height_inches m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure WorkoutModel where
   rayman : ℕ
   junior : ℕ
@@ -98,13 +111,16 @@ structure WorkoutModel where
   hWolverine : wolverine = 2 * combined
 
 theorem junior_workout_hours (m : WorkoutModel) : m.junior = 20 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem combined_workout_hours (m : WorkoutModel) : m.combined = 30 := by
   have h := junior_workout_hours m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem wolverine_hours (m : WorkoutModel) : m.wolverine = 60 := by
   have h := combined_workout_hours m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure RepairModel where
   laborHours : ℕ
   hourlyRate : ℕ
@@ -118,8 +134,10 @@ structure RepairModel where
   hTotal : totalCost = laborCost + partCost
 
 theorem repair_labor_cost (m : RepairModel) : m.laborCost = 1200 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem repair_cost (m : RepairModel) : m.totalCost = 2400 := by
   have h := repair_labor_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A15P2

@@ -15,10 +15,12 @@ structure TextsModel where
   hWeekly : unintendedWeekly = unintendedDaily * days
 
 theorem texts_unintended_daily (m : TextsModel) : m.unintendedDaily = 35 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem texts_unintended_weekly (m : TextsModel) : m.unintendedWeekly = 245 := by
   have h := texts_unintended_daily m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure LaborModel where
   workerRate : ℕ
   workers : ℕ
@@ -34,16 +36,20 @@ structure LaborModel where
   hTotal : total = construction + electrician + plumber
 
 theorem labor_construction (m : LaborModel) : m.construction = 200 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem labor_electrician (m : LaborModel) : m.electrician = 200 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem labor_plumber (m : LaborModel) : m.plumber = 250 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem labor_total (m : LaborModel) : m.total = 650 := by
   have h1 := labor_construction m
   have h2 := labor_electrician m
   have h3 := labor_plumber m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TelevisionModel where
   weekdayMinutes : ℕ
   weekdayDays : ℕ
@@ -63,13 +69,16 @@ structure TelevisionModel where
   hYearlyHours : yearlyMinutes = yearlyHours * minutesPerHour
 
 theorem television_weekly_minutes (m : TelevisionModel) : m.weeklyMinutes = 270 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem television_yearly_minutes (m : TelevisionModel) : m.yearlyMinutes = 14040 := by
   have h := television_weekly_minutes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem television_yearly_hours (m : TelevisionModel) : m.yearlyHours = 234 := by
   have h := television_yearly_minutes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure HotelModel where
   floors1 : ℕ
   halls1 : ℕ
@@ -91,13 +100,16 @@ structure HotelModel where
   hTotal : total = rooms1 + rooms2
 
 theorem hotel_first_wing (m : HotelModel) : m.rooms1 = 1728 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem hotel_second_wing (m : HotelModel) : m.rooms2 = 2520 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem hotel_total (m : HotelModel) : m.total = 4248 := by
   have h1 := hotel_first_wing m
   have h2 := hotel_second_wing m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PugsModel where
   firstPugs : ℕ
   firstMinutes : ℕ
@@ -111,8 +123,10 @@ structure PugsModel where
   hTarget : targetPugs * targetMinutes = work
 
 theorem pugs_work (m : PugsModel) : m.work = 180 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pugs_minutes (m : PugsModel) : m.targetMinutes = 12 := by
   have h := pugs_work m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A06P2

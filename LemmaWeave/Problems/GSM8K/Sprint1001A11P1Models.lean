@@ -13,10 +13,12 @@ structure WeeklyCasesModel where
   hTotal : total = first + second + third
 
 theorem weekly_cases_second (m : WeeklyCasesModel) : m.second = 2500 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem weekly_cases_total (m : WeeklyCasesModel) : m.total = 9500 := by
   have h := weekly_cases_second m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PizzaModel where
   don : ℕ
   daria : ℕ
@@ -26,10 +28,12 @@ structure PizzaModel where
   hTotal : total = don + daria
 
 theorem pizza_daria (m : PizzaModel) : m.daria = 200 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pizza_total (m : PizzaModel) : m.total = 280 := by
   have h := pizza_daria m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure JumpingJacksModel where
   monday : ℕ
   tuesday : ℕ
@@ -45,10 +49,12 @@ structure JumpingJacksModel where
   hBrooke : brooke = 3 * sidney
 
 theorem jumping_sidney (m : JumpingJacksModel) : m.sidney = 146 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem jumping_brooke (m : JumpingJacksModel) : m.brooke = 438 := by
   have h := jumping_sidney m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CoinJarModel where
   members : ℕ
   pricePerScoop : ℕ
@@ -73,13 +79,16 @@ structure CoinJarModel where
 
 theorem coins_spent_and_total (m : CoinJarModel) :
     m.spent = 1500 ∧ m.totalCents = 1548 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem coins_nonquarter (m : CoinJarModel) : m.nonQuarter = 898 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem coins_quarters (m : CoinJarModel) : m.quarters = 26 := by
   have h1 := coins_spent_and_total m
   have h2 := coins_nonquarter m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PrizeModel where
   total : ℕ
   rica : ℕ
@@ -93,8 +102,10 @@ theorem prize_kept_fraction (m : PrizeModel) : 5 * m.kept = 4 * m.rica := by
 
 theorem prize_rica (m : PrizeModel) : m.rica = 375 := by
   have h := prize_kept_fraction m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem prize_total (m : PrizeModel) : m.total = 1000 := by
   have h := prize_rica m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A11P1

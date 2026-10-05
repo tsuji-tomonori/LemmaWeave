@@ -15,10 +15,12 @@ structure RosesModel where
   hEqualShare : people * each = remaining
 
 theorem roses_remaining (m : RosesModel) : m.remaining = 36 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem roses_each (m : RosesModel) : m.each = 4 := by
   have h := roses_remaining m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PancakesModel where
   made : ℕ
   people : ℕ
@@ -32,10 +34,12 @@ structure PancakesModel where
   hAdditional : made + additional = needed
 
 theorem pancakes_needed (m : PancakesModel) : m.needed = 16 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pancakes_additional (m : PancakesModel) : m.additional = 4 := by
   have h := pancakes_needed m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure HillModel where
   distance : ℕ
   upSpeed : ℕ
@@ -51,13 +55,16 @@ structure HillModel where
   hTotal : totalTime = upTime + downTime
 
 theorem hill_up_time (m : HillModel) : m.upTime = 100 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem hill_down_time (m : HillModel) : m.downTime = 75 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem hill_total_time (m : HillModel) : m.totalTime = 175 := by
   have h1 := hill_up_time m
   have h2 := hill_down_time m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure InsuranceModel where
   property : ℕ
   medical : ℕ
@@ -69,10 +76,12 @@ structure InsuranceModel where
   hOwed : 5 * owed = total
 
 theorem insurance_total (m : InsuranceModel) : m.total = 110000 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem insurance_owed (m : InsuranceModel) : m.owed = 22000 := by
   have h := insurance_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure LeilaModel where
   sweater : ℕ
   total : ℕ
@@ -88,14 +97,18 @@ structure LeilaModel where
   hDifference : sweater + difference = jewelry
 
 theorem leila_total (m : LeilaModel) : m.total = 160 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem leila_after_sweater (m : LeilaModel) : m.afterSweater = 120 := by
   have h := leila_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem leila_jewelry (m : LeilaModel) : m.jewelry = 100 := by
   have h := leila_after_sweater m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem leila_difference (m : LeilaModel) : m.difference = 60 := by
   have h := leila_jewelry m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A03P1

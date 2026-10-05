@@ -199,13 +199,16 @@ theorem table_books_alternative_solution (m : TableBooksTotalReadingModel) :
     m.totalBooks = 200 := by omega
 
 structure MultiToolModel where
-  walmartScrewdrivers walmartKnives walmartOther walmartTotal
-    targetScrewdrivers : ℕ
-    targetKnives : ℕ
-    targetFiles : ℕ
-    targetScissors : ℕ
-    targetTotal : ℕ
-    difference : ℕ
+  walmartScrewdrivers : ℕ
+  walmartKnives : ℕ
+  walmartOther : ℕ
+  walmartTotal : ℕ
+  targetScrewdrivers : ℕ
+  targetKnives : ℕ
+  targetFiles : ℕ
+  targetScissors : ℕ
+  targetTotal : ℕ
+  difference : ℕ
   hwScrewdrivers : walmartScrewdrivers = 1
   hwKnives : walmartKnives = 3
   hwOther : walmartOther = 2

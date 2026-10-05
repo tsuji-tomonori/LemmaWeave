@@ -21,16 +21,20 @@ structure StampModel where
   hDollars : 100 * dollars = diff
 
 theorem stamp_red_revenue (m : StampModel) : m.redRevenue = 1500 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem stamp_white_revenue (m : StampModel) : m.whiteRevenue = 1600 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem stamp_difference_cents (m : StampModel) : m.diff = 100 := by
   have h1 := stamp_red_revenue m
   have h2 := stamp_white_revenue m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem stamp_difference_dollars (m : StampModel) : m.dollars = 1 := by
   have h := stamp_difference_cents m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TheatreModel where
   seats : ℕ
   children : ℕ
@@ -50,16 +54,20 @@ structure TheatreModel where
   hTotal : totalRevenue = adultRevenue + childRevenue
 
 theorem theatre_adults (m : TheatreModel) : m.adults = 62 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem theatre_adult_revenue (m : TheatreModel) : m.adultRevenue = 372 := by
   have h := theatre_adults m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem theatre_child_revenue (m : TheatreModel) : m.childRevenue = 752 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem theatre_total (m : TheatreModel) : m.totalRevenue = 1124 := by
   have h1 := theatre_adult_revenue m
   have h2 := theatre_child_revenue m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure StrawberryModel where
   baskets : ℕ
   perBasket : ℕ
@@ -75,13 +83,16 @@ structure StrawberryModel where
   hTotal : total = 300 * pickers
 
 theorem strawberry_individual (m : StrawberryModel) : m.individual = 300 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem strawberry_pickers (m : StrawberryModel) : m.pickers = 4 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem strawberry_total (m : StrawberryModel) : m.total = 1200 := by
   have h1 := strawberry_individual m
   have h2 := strawberry_pickers m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure BerryModel where
   blueberries : ℕ
   cranberries : ℕ
@@ -101,18 +112,21 @@ structure BerryModel where
   hSold : sold + kept = fresh
 
 theorem berry_total (m : BerryModel) : m.total = 60 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem berry_fresh (m : BerryModel) : m.rotten = 20 ∧ m.fresh = 40 := by
   have h := berry_total m
   cases m <;> constructor <;> omega
 
 theorem berry_kept (m : BerryModel) : m.kept = 20 := by
   have h := berry_fresh m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem berry_sold (m : BerryModel) : m.sold = 20 := by
   have h := berry_kept m
   have h2 := berry_fresh m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure WatermelonModel where
   total : ℕ
   oneCustomers : ℕ
@@ -135,8 +149,10 @@ theorem melon_one_and_three (m : WatermelonModel) :
 
 theorem melon_two_melons (m : WatermelonModel) : m.twoMelons = 20 := by
   have h := melon_one_and_three m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem melon_two_customers (m : WatermelonModel) : m.twoCustomers = 10 := by
   have h := melon_two_melons m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A12P3

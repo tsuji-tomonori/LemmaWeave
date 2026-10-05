@@ -19,13 +19,16 @@ structure MarbleModel where
   hInitial : initial = current + brother + sister + friend
 
 theorem sister_marbles (m : MarbleModel) : m.sister = 120 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem friend_marbles (m : MarbleModel) : m.friend = 90 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem initial_marbles (m : MarbleModel) : m.initial = 300 := by
   have h1 := sister_marbles m
   have h2 := friend_marbles m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CandyModel where
   total : ℕ
   siblingEach : ℕ
@@ -49,17 +52,21 @@ structure CandyModel where
   hLeft : afterCousin = ate + left
 
 theorem sibling_gift (m : CandyModel) : m.siblingGiven = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem candy_after_siblings (m : CandyModel) : m.afterSiblings = 40 := by
   have h := sibling_gift m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cousin_gift (m : CandyModel) : m.cousin = 10 := by
   have h := candy_after_siblings m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cotton_candy_left (m : CandyModel) : m.left = 18 := by
   have h1 := candy_after_siblings m
   have h2 := cousin_gift m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure DonationModel where
   days : ℕ
   householdsPerDay : ℕ
@@ -81,16 +88,20 @@ structure DonationModel where
   hTotal : total = donorHouseholds * dollarsPerDonor
 
 theorem visited_households (m : DonationModel) : m.totalHouseholds = 100 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem donor_households (m : DonationModel) : m.donorHouseholds = 50 := by
   have h := visited_households m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem donation_per_house (m : DonationModel) : m.dollarsPerDonor = 40 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem donation_total (m : DonationModel) : m.total = 2000 := by
   have h1 := donor_households m
   have h2 := donation_per_house m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure LightModel where
   time : ℕ
   hPositive : 0 < time
@@ -122,11 +133,14 @@ structure TripModel where
   hLeft : start = spent + left
 
 theorem hotel_cost (m : TripModel) : m.hotel = 150 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem trip_spent (m : TripModel) : m.spent = 450 := by
   have h := hotel_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem trip_money_left (m : TripModel) : m.left = 310 := by
   have h := trip_spent m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A16P2

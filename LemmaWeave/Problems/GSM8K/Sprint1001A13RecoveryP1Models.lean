@@ -15,10 +15,12 @@ structure FeatherModel where
   hPillows : poundsPerPillow * pillows = pounds
 
 theorem feather_pounds (m : FeatherModel) : m.pounds = 12 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem feather_pillows (m : FeatherModel) : m.pillows = 6 := by
   have h := feather_pounds m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CandleModel where
   total : ℕ
   yellow : ℕ
@@ -32,10 +34,12 @@ structure CandleModel where
   hPartition : colored + blue = total
 
 theorem colored_candles (m : CandleModel) : m.colored = 41 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem blue_candles (m : CandleModel) : m.blue = 38 := by
   have h := colored_candles m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ChocolateModel where
   bars : ℕ
   purchaseEach : ℕ
@@ -53,13 +57,16 @@ structure ChocolateModel where
   hProfit : profit + purchase + packaging = revenue
 
 theorem chocolate_purchase (m : ChocolateModel) : m.purchase = 25 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem chocolate_packaging (m : ChocolateModel) : m.packaging = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem chocolate_profit (m : ChocolateModel) : m.profit = 55 := by
   have h1 := chocolate_purchase m
   have h2 := chocolate_packaging m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure BucketModel where
   litersPerJug : ℕ
   jugsPerBucket : ℕ
@@ -73,10 +80,12 @@ structure BucketModel where
   hTotal : total = buckets * oneBucket
 
 theorem one_bucket_water (m : BucketModel) : m.oneBucket = 20 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bucket_water (m : BucketModel) : m.total = 40 := by
   have h := one_bucket_water m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure GroceryModel where
   spamCount : ℕ
   spamPrice : ℕ
@@ -100,14 +109,18 @@ structure GroceryModel where
   hTotal : total = spam + peanut + bread
 
 theorem spam_cost (m : GroceryModel) : m.spam = 36 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem peanut_cost (m : GroceryModel) : m.peanut = 15 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bread_cost (m : GroceryModel) : m.bread = 8 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem grocery_total (m : GroceryModel) : m.total = 59 := by
   have h1 := spam_cost m
   have h2 := peanut_cost m
   have h3 := bread_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP1

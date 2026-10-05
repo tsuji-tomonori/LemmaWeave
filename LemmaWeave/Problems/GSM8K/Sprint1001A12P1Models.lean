@@ -13,10 +13,12 @@ structure EnvelopeModel where
   hPacked : 2 * largeEnvelopes = largeLetters
 
 theorem envelope_large_letters (m : EnvelopeModel) : m.largeLetters = 60 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem envelope_count (m : EnvelopeModel) : m.largeEnvelopes = 30 := by
   have h := envelope_large_letters m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TennisModel where
   total : ℕ
   kept : ℕ
@@ -28,10 +30,12 @@ structure TennisModel where
   hPacked : 5 * each = kept
 
 theorem tennis_kept (m : TennisModel) : m.kept = 50 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tennis_each (m : TennisModel) : m.each = 10 := by
   have h := tennis_kept m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure BogoModel where
   bought : ℕ
   paidUnits : ℕ
@@ -43,10 +47,12 @@ structure BogoModel where
   hCost : totalCost = paidUnits * 3
 
 theorem bogo_paid_units (m : BogoModel) : m.paidUnits = 5 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bogo_cost (m : BogoModel) : m.totalCost = 15 := by
   have h := bogo_paid_units m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PizzaOrderModel where
   people : ℕ
   slicesEach : ℕ
@@ -64,13 +70,16 @@ structure PizzaOrderModel where
   hLarge : 14 * largeCount = remaining
 
 theorem pizza_needed (m : PizzaOrderModel) : m.needed = 36 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pizza_remaining (m : PizzaOrderModel) : m.remaining = 28 := by
   have h := pizza_needed m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pizza_large_count (m : PizzaOrderModel) : m.largeCount = 2 := by
   have h := pizza_remaining m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ZooModel where
   existing : ℕ
   imported : ℕ
@@ -84,8 +93,10 @@ structure ZooModel where
   hTotal : totalMinutes = 6 * totalTypes
 
 theorem zoo_types (m : ZooModel) : m.totalTypes = 9 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem zoo_time (m : ZooModel) : m.totalMinutes = 54 := by
   have h := zoo_types m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A12P1

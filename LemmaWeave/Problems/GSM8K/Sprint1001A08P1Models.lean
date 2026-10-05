@@ -13,13 +13,16 @@ structure PorterModel where
   hLiteral : comparison = 6 * literalPrevious
 
 theorem porter_comparison (m : PorterModel) : m.comparison = 45000 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem porter_conventional (m : PorterModel) : m.conventionalPrevious = 9000 := by
   have h := porter_comparison m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem porter_literal (m : PorterModel) : m.literalPrevious = 7500 := by
   have h := porter_comparison m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem porter_nonunique (m : PorterModel) : m.conventionalPrevious ≠ m.literalPrevious := by
   have h1 := porter_conventional m
   have h2 := porter_literal m
@@ -42,16 +45,20 @@ structure TvPayModel where
   hTotal : total = minorTotal + mainTotal
 
 theorem tv_minor_total (m : TvPayModel) : m.minorTotal = 60000 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tv_main_pay (m : TvPayModel) : m.mainPay = 45000 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tv_main_total (m : TvPayModel) : m.mainTotal = 225000 := by
   have h := tv_main_pay m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tv_total (m : TvPayModel) : m.total = 285000 := by
   have h1 := tv_minor_total m
   have h2 := tv_main_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TeaModel where
   boxOunces : ℕ
   fifthsPerOunce : ℕ
@@ -67,10 +74,12 @@ structure TeaModel where
   hWeeks : days = weeks * daysPerWeek
 
 theorem tea_days (m : TeaModel) : m.days = 140 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tea_weeks (m : TeaModel) : m.weeks = 20 := by
   have h := tea_days m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PaperModel where
   sheetsPerReam : ℕ
   pricePerReam : ℕ
@@ -84,10 +93,12 @@ structure PaperModel where
   hCost : cost = reams * pricePerReam
 
 theorem paper_reams (m : PaperModel) : m.reams = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem paper_cost (m : PaperModel) : m.cost = 270 := by
   have h := paper_reams m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure FactoryModel where
   planned : ℕ
   shortageCut : ℕ
@@ -105,11 +116,14 @@ structure FactoryModel where
   hDoors : doors = afterPandemic * doorsPerCar
 
 theorem factory_after_shortage (m : FactoryModel) : m.afterShortage = 150 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem factory_after_pandemic (m : FactoryModel) : m.afterPandemic = 75 := by
   have h := factory_after_shortage m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem factory_doors (m : FactoryModel) : m.doors = 375 := by
   have h := factory_after_pandemic m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A08P1

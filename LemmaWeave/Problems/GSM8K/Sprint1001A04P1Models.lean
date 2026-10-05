@@ -19,13 +19,16 @@ structure RubberBandModel where
   hLargeBalls : largeBalls * largeBands = remaining
 
 theorem rubber_used (m : RubberBandModel) : m.used = 1100 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem rubber_remaining (m : RubberBandModel) : m.remaining = 3900 := by
   have h := rubber_used m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem rubber_large_balls (m : RubberBandModel) : m.largeBalls = 13 := by
   have h := rubber_remaining m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure MusiciansModel where
   orchestraMale : ℕ
   orchestraFemale : ℕ
@@ -45,17 +48,21 @@ structure MusiciansModel where
   hTotal : total = orchestra + band + choir
 
 theorem musicians_orchestra (m : MusiciansModel) : m.orchestra = 23 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem musicians_band (m : MusiciansModel) : m.band = 46 := by
   have h := musicians_orchestra m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem musicians_choir (m : MusiciansModel) : m.choir = 29 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem musicians_total (m : MusiciansModel) : m.total = 98 := by
   have h1 := musicians_orchestra m
   have h2 := musicians_band m
   have h3 := musicians_choir m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CatsModel where
   lions : ℕ
   tigers : ℕ
@@ -69,14 +76,17 @@ structure CatsModel where
   hTotal : total = combined + cougars
 
 theorem cats_combined (m : CatsModel) : m.combined = 26 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cats_cougars (m : CatsModel) : m.cougars = 13 := by
   have h := cats_combined m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem cats_total (m : CatsModel) : m.total = 39 := by
   have h1 := cats_combined m
   have h2 := cats_cougars m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PostageModel where
   standardPerLetter : ℕ
   letters : ℕ
@@ -94,13 +104,16 @@ structure PostageModel where
   hExtra : internationalTotal = internationalLetters * extraPerInternational
 
 theorem postage_standard_total (m : PostageModel) : m.standardTotal = 432 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem postage_international_total (m : PostageModel) : m.internationalTotal = 28 := by
   have h := postage_standard_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem postage_extra_each (m : PostageModel) : m.extraPerInternational = 14 := by
   have h := postage_international_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure AudienceModel where
   total : ℕ
   secondBand : ℕ
@@ -114,11 +127,14 @@ structure AudienceModel where
   hMen : men = 20
 
 theorem audience_under_thirty (m : AudienceModel) : m.underThirty = 50 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem audience_second_band (m : AudienceModel) : m.secondBand = 100 := by
   have h := audience_under_thirty m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem audience_total (m : AudienceModel) : m.total = 150 := by
   have h := audience_second_band m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A04P1

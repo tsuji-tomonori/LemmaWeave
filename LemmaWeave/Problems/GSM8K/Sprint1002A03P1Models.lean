@@ -16,10 +16,11 @@ structure MachineModel where
   hRevenue : revenue = unitPrice * machines
   hBreakEven : revenue = totalCost
 
-theorem machine_total_cost (m : MachineModel) : m.totalCost = 8100 := by omega
+theorem machine_total_cost (m : MachineModel) : m.totalCost = 8100 := by cases m <;> simp_all at * <;> omega
 theorem break_even_machine_count (m : MachineModel) : m.machines = 45 := by
   have h := machine_total_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CameraModel where
   oldCamera : ℕ
   increase : ℕ
@@ -36,15 +37,16 @@ structure CameraModel where
   hLensPaid : lensPaid + discount = lensList
   hTotal : totalPaid = newCamera + lensPaid
 
-theorem camera_increase (m : CameraModel) : m.increase = 1200 := by omega
+theorem camera_increase (m : CameraModel) : m.increase = 1200 := by cases m <;> simp_all at * <;> omega
 theorem new_camera_price (m : CameraModel) : m.newCamera = 5200 := by
   have h := camera_increase m
-  omega
-theorem discounted_lens_price (m : CameraModel) : m.lensPaid = 200 := by omega
+  cases m <;> simp_all at * <;> omega
+theorem discounted_lens_price (m : CameraModel) : m.lensPaid = 200 := by cases m <;> simp_all at * <;> omega
 theorem camera_and_lens_total (m : CameraModel) : m.totalPaid = 5400 := by
   have h1 := new_camera_price m
   have h2 := discounted_lens_price m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SeedModel where
   seed : ℕ
   fertilizer : ℕ
@@ -53,10 +55,11 @@ structure SeedModel where
   hTotal : seed + fertilizer = total
   hCombined : total = 60
 
-theorem fertilizer_gallons (m : SeedModel) : m.fertilizer = 15 := by omega
+theorem fertilizer_gallons (m : SeedModel) : m.fertilizer = 15 := by cases m <;> simp_all at * <;> omega
 theorem seed_gallons (m : SeedModel) : m.seed = 45 := by
   have h := fertilizer_gallons m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SavingsModel where
   carIncome : ℕ
   dogIncome : ℕ
@@ -71,7 +74,7 @@ structure SavingsModel where
   hTarget : target = 150
   hAccumulation : target = monthlySaved * months
 
-theorem monthly_savings (m : SavingsModel) : m.monthlySaved = 30 := by omega
+theorem monthly_savings (m : SavingsModel) : m.monthlySaved = 30 := by cases m <;> simp_all at * <;> omega
 theorem months_to_save (m : SavingsModel) : m.months = 5 := by
   have hs := monthly_savings m
   have ha := m.hAccumulation
@@ -90,8 +93,9 @@ structure MealModel where
   hGiven : alreadyGiven = 85
   hRemaining : alreadyGiven + remaining = total
 
-theorem total_meals (m : MealModel) : m.total = 163 := by omega
+theorem total_meals (m : MealModel) : m.total = 163 := by cases m <;> simp_all at * <;> omega
 theorem remaining_meals (m : MealModel) : m.remaining = 78 := by
   have h := total_meals m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1002A03P1

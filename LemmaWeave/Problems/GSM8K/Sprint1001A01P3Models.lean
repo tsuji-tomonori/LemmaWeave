@@ -17,16 +17,20 @@ structure MothersRosesModel where
   hSpend : spend = needed * price
 
 theorem mothers_roses_this_year (m : MothersRosesModel) : m.thisYear = 6 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem mothers_roses_target (m : MothersRosesModel) : m.target = 24 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem mothers_roses_needed (m : MothersRosesModel) : m.needed = 18 := by
   have h1 := mothers_roses_this_year m
   have h2 := mothers_roses_target m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem mothers_roses_spend (m : MothersRosesModel) : m.spend = 54 := by
   have h := mothers_roses_needed m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PensModel where
   robert : ℕ
   julia : ℕ
@@ -42,17 +46,21 @@ structure PensModel where
   hTotalCost : totalCostCents = total * costPerPenCents
 
 theorem pens_julia (m : PensModel) : m.julia = 12 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pens_dorothy (m : PensModel) : m.dorothy = 6 := by
   have h := pens_julia m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pens_total (m : PensModel) : m.total = 22 := by
   have h1 := pens_julia m
   have h2 := pens_dorothy m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pens_total_cost (m : PensModel) : m.totalCostCents = 3300 := by
   have h := pens_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ShuffleboardModel where
   jerry : ℕ
   dave : ℕ
@@ -64,14 +72,17 @@ structure ShuffleboardModel where
   hNoDrawCount : totalGames = jerry + dave + ken
 
 theorem shuffleboard_dave (m : ShuffleboardModel) : m.dave = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem shuffleboard_ken (m : ShuffleboardModel) : m.ken = 15 := by
   have h := shuffleboard_dave m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem shuffleboard_total (m : ShuffleboardModel) : m.totalGames = 32 := by
   have h1 := shuffleboard_dave m
   have h2 := shuffleboard_ken m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PatioModel where
   total : ℕ
   table : ℕ
@@ -83,10 +94,12 @@ structure PatioModel where
   hSplit : table + chairs * chairCost = total
 
 theorem patio_chairs_total (m : PatioModel) : m.chairs * m.chairCost = 80 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem patio_each_chair (m : PatioModel) : m.chairCost = 20 := by
   have h := patio_chairs_total m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure MedicationModel where
   months : ℕ
   visits : ℕ
@@ -112,20 +125,26 @@ structure MedicationModel where
   hTotal : total = doctorCost + medicationCost
 
 theorem medication_visits (m : MedicationModel) : m.visits = 2 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem medication_doctor_cost (m : MedicationModel) : m.doctorCost = 800 := by
   have h := medication_visits m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem medication_daily_retail (m : MedicationModel) : m.dailyRetail = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem medication_daily_patient (m : MedicationModel) : m.dailyPatient = 2 := by
   have h := medication_daily_retail m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem medication_yearly_cost (m : MedicationModel) : m.medicationCost = 730 := by
   have h := medication_daily_patient m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem medication_total (m : MedicationModel) : m.total = 1530 := by
   have h1 := medication_doctor_cost m
   have h2 := medication_yearly_cost m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A01P3

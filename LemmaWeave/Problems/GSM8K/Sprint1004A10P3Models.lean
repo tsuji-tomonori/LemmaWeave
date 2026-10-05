@@ -16,7 +16,7 @@ theorem great_dane_weight (x : ℕ)
 theorem phd_total_years :
     (2 * (1 + 75 / 100) : ℚ) = 7 / 2 ∧
       (1 / 2 : ℚ) = 1 / 2 ∧
-      1 + 2 + 7 / 2 + 1 / 2 = 7 := by
+      (1 : ℚ) + 2 + 7 / 2 + 1 / 2 = 7 := by
   norm_num
 
 theorem new_drive_free_space :
@@ -31,4 +31,3 @@ theorem annual_soap_cost :
   norm_num
 
 end LemmaWeave.Problems.GSM8K.Sprint1004A10P3
-

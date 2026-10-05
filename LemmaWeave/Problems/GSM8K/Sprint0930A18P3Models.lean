@@ -13,16 +13,20 @@ structure BillsModel where
   hTotal : totalBills = fiftyBills + tenBills + fiveBills
 
 theorem bills_fifties (m : BillsModel) : m.fiftyBills = 2 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bills_tens (m : BillsModel) : m.tenBills = 5 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bills_fives (m : BillsModel) : m.fiveBills = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem bills_total (m : BillsModel) : m.totalBills = 17 := by
   have h1 := bills_fifties m
   have h2 := bills_tens m
   have h3 := bills_fives m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure AgesModel where
   hansNow : ℕ
   hansFuture : ℕ
@@ -36,13 +40,16 @@ structure AgesModel where
   hAnnikaNow : annikaFuture = annikaNow + years
 
 theorem ages_hans_future (m : AgesModel) : m.hansFuture = 12 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem ages_annika_future (m : AgesModel) : m.annikaFuture = 36 := by
   have h := ages_hans_future m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem ages_annika_now (m : AgesModel) : m.annikaNow = 32 := by
   have h := ages_annika_future m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure TicketsModel where
   ticketCount : ℕ
   priceEach : ℕ
@@ -56,10 +63,12 @@ structure TicketsModel where
   hSpent : 100 * spent = 50 * subtotal
 
 theorem tickets_subtotal (m : TicketsModel) : m.subtotal = 168 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tickets_spent (m : TicketsModel) : m.spent = 84 := by
   have h := tickets_subtotal m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure PianoModel where
   weekdayDays : ℕ
   weekdayMinutesEach : ℕ
@@ -75,16 +84,20 @@ structure PianoModel where
   hHours : weeklyMinutes = 60 * weeklyHours
 
 theorem piano_weekday_minutes (m : PianoModel) : m.weekdayMinutes = 150 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem piano_saturday_minutes (m : PianoModel) : m.saturdayMinutes = 90 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem piano_weekly_minutes (m : PianoModel) : m.weeklyMinutes = 240 := by
   have h1 := piano_weekday_minutes m
   have h2 := piano_saturday_minutes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem piano_weekly_hours (m : PianoModel) : m.weeklyHours = 4 := by
   have h := piano_weekly_minutes m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SleepModel where
   samanthaDailyHours : ℕ
   babyDailyHours : ℕ
@@ -98,11 +111,14 @@ structure SleepModel where
   hFatherWeekly : fatherWeeklyHours = daysPerWeek * fatherDailyHours
 
 theorem sleep_baby_daily (m : SleepModel) : m.babyDailyHours = 20 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem sleep_father_daily (m : SleepModel) : m.fatherDailyHours = 10 := by
   have h := sleep_baby_daily m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem sleep_father_weekly (m : SleepModel) : m.fatherWeeklyHours = 70 := by
   have h := sleep_father_daily m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint0930A18P3

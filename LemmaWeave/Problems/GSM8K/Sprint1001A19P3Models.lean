@@ -14,13 +14,14 @@ structure NigelModel where
   hBefore : before + mother = now
   hGiven : before + given = original
 
-theorem nigel_now (m : NigelModel) : m.now = 100 := by omega
+theorem nigel_now (m : NigelModel) : m.now = 100 := by cases m <;> simp_all at * <;> omega
 theorem nigel_before_mother (m : NigelModel) : m.before = 20 := by
   have h := nigel_now m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem nigel_given_away (m : NigelModel) : m.given = 25 := by
   have h := nigel_before_mother m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SandwichModel where
   sandwiches : ℕ
   afterFirst : ℕ
@@ -33,13 +34,14 @@ structure SandwichModel where
   hPerPerson : perPerson = 8
   hPeople : portions = people * perPerson
 
-theorem sandwich_first_cut (m : SandwichModel) : m.afterFirst = 40 := by omega
+theorem sandwich_first_cut (m : SandwichModel) : m.afterFirst = 40 := by cases m <;> simp_all at * <;> omega
 theorem sandwich_portions (m : SandwichModel) : m.portions = 80 := by
   have h := sandwich_first_cut m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem sandwich_people (m : SandwichModel) : m.people = 10 := by
   have h := sandwich_portions m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure SquareModel where
   sideA : ℕ
   sideB : ℕ
@@ -67,7 +69,7 @@ structure CoinModel where
   hTotal : total = quarters + dimes + nickels
   hTotalCount : total = 63
 
-theorem coin_balance (m : CoinModel) : 3 * m.quarters = 66 := by omega
+theorem coin_balance (m : CoinModel) : 3 * m.quarters = 66 := by cases m <;> simp_all at * <;> omega
 theorem coin_quarters (m : CoinModel) : m.quarters = 22 := by
   have h := coin_balance m
   omega
@@ -82,11 +84,12 @@ structure HairModel where
   hGrow : afterGrow = afterHalf + 4
   hFinal : final + 2 = afterGrow
 
-theorem hair_after_half (m : HairModel) : m.afterHalf = 12 := by omega
+theorem hair_after_half (m : HairModel) : m.afterHalf = 12 := by cases m <;> simp_all at * <;> omega
 theorem hair_after_growth (m : HairModel) : m.afterGrow = 16 := by
   have h := hair_after_half m
-  omega
+  cases m <;> simp_all at * <;> omega
 theorem hair_final_length (m : HairModel) : m.final = 14 := by
   have h := hair_after_growth m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A19P3

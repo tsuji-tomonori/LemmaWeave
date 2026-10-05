@@ -17,13 +17,16 @@ structure TextModel where
   hTotal : total = monday + tuesday
 
 theorem monday_texts (m : TextModel) : m.monday = 10 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem tuesday_texts (m : TextModel) : m.tuesday = 30 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem text_total (m : TextModel) : m.total = 40 := by
   have h1 := monday_texts m
   have h2 := tuesday_texts m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure ToiletModel where
   oldPerFlush : ℕ
   reductionPercent : ℕ
@@ -41,13 +44,16 @@ structure ToiletModel where
   hTotal : totalSaved = dailySaved * juneDays
 
 theorem saved_per_flush (m : ToiletModel) : m.savedPerFlush = 4 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem daily_savings (m : ToiletModel) : m.dailySaved = 60 := by
   have h := saved_per_flush m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem toilet_savings (m : ToiletModel) : m.totalSaved = 1800 := by
   have h := daily_savings m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CornModel where
   seedsPerBag : ℕ
   bagCost : ℕ
@@ -67,13 +73,16 @@ structure CornModel where
   hEars : profitPerEar * ears = totalProfit
 
 theorem corn_cost_per_ear (m : CornModel) : m.costPerEar = 2 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem corn_profit_per_ear (m : CornModel) : m.profitPerEar = 8 := by
   have h := corn_cost_per_ear m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem corn_ears (m : CornModel) : m.ears = 500 := by
   have h := corn_profit_per_ear m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure WormModel where
   weeksBefore : ℕ
   weeksAfter : ℕ
@@ -97,16 +106,20 @@ structure WormModel where
   hRemaining : remaining + eaten = available
 
 theorem worm_days (m : WormModel) : m.days = 21 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem worm_eaten (m : WormModel) : m.eaten = 42 := by
   have h := worm_days m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem worm_available (m : WormModel) : m.available = 68 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem worm_remaining (m : WormModel) : m.remaining = 26 := by
   have h1 := worm_eaten m
   have h2 := worm_available m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 structure CakeModel where
   grams : ℕ
   parts : ℕ
@@ -120,8 +133,10 @@ structure CakeModel where
   hPierre : pierre = pierreMultiplier * onePart
 
 theorem one_cake_part (m : CakeModel) : m.onePart = 50 := by
-  omega
+  cases m <;> simp_all at * <;> omega
+
 theorem pierre_cake (m : CakeModel) : m.pierre = 100 := by
   have h := one_cake_part m
-  omega
+  cases m <;> simp_all at * <;> omega
+
 end LemmaWeave.Problems.GSM8K.Sprint1001A13RecoveryP2

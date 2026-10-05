@@ -18,12 +18,57 @@
   ],
   "steps": [
     {
+      "id": "bag_carrot_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.bag_carrot_weight",
+      "title_ja": "にんじんの重量",
+      "claim_ja": "いんげん豆4ポンドの2倍で8ポンド。",
+      "method_ja": "倍数関係を適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "にんじんは豆の2倍。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "にんじんは8ポンド。"
+    },
+    {
+      "id": "bag_grocery_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.bag_grocery_weight",
+      "title_ja": "食品の総重量",
+      "claim_ja": "4+6+8=18ポンド。",
+      "method_ja": "品目別重量を合計する。",
+      "requires_steps": [
+        "bag_carrot_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各重量の単位はポンド。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "合計18ポンド。"
+    },
+    {
+      "id": "bag_remaining_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.bag_remaining_capacity",
+      "title_ja": "袋の残り容量",
+      "claim_ja": "20-18=2ポンド。",
+      "method_ja": "容量上限から総重量を引く。",
+      "requires_steps": [
+        "bag_carrot_weight",
+        "bag_grocery_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "袋の上限は20ポンド。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "あと2ポンド入る。"
+    },
+    {
       "id": "remaining_bag_capacity",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.remaining_bag_capacity",
-      "title_ja": "買い物袋の残り容量",
+      "title_ja": "問題全体の結論",
       "claim_ja": "いんげん豆は4ポンド、牛乳は6ポンド、にんじんは4×2=8ポンド。合計は4+6+8=18ポンドなので、上限20ポンドまであと20-18=2ポンド入る。",
-      "method_ja": "にんじんの重量を倍数関係から求め、全重量を容量上限から引く。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "bag_carrot_weight",
+        "bag_grocery_weight",
+        "bag_remaining_capacity"
+      ],
       "uses_nodes": [],
       "condition_ja": "各品目の重量を合計し、袋の20ポンド上限以外の制約はない。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +79,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4137,
-    "checked_model_hash": "e9e9f249f5ee58afeb313bde90c133dbf91e5df4cc98214b335a361da47b22bd",
+    "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254"
 }

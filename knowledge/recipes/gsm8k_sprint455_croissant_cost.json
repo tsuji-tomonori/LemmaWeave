@@ -1,6 +1,90 @@
 {
-  "id":"gsm8k_sprint455_croissant_cost","title_ja":"クロワッサン代","problem_id":"external-gsm8k-main-3101c7d50724:train:04210","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1004A12P3.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"24人に2個ずつサンドイッチを出す。ミニクロワッサン12個が8ドルなら費用はいくらか。","answer_ja":"必要数は24×2=48個。12個入り4組で、4×8=32ドル。","root":"LemmaWeave.Problems.GSM8K.Sprint1004A12P3.croissant_cost","graph":"work/gsm8k-sprint455-croissant-cost-graph.json","model_notes_ja":["サンドイッチ1個にクロワッサン1個を使う。"],"steps":[
-    {"id":"count","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1004A12P3.croissants_needed","title_ja":"必要個数","claim_ja":"24×2=48個。","method_ja":"人数に1人当たり個数を掛ける。","requires_steps":[],"uses_nodes":[],"condition_ja":"各人2個。","baseline_ja":"整数・単位。","conclusion_ja":"48個。"},
-    {"id":"packs","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1004A12P3.croissant_dozen_count","title_ja":"12個組の数","claim_ja":"48÷12=4組。","method_ja":"必要個数を販売単位で割る。","requires_steps":["count"],"uses_nodes":[],"condition_ja":"48は12で割り切れる。","baseline_ja":"整数の除法。","conclusion_ja":"4組。"},
-    {"id":"root","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1004A12P3.croissant_cost","title_ja":"費用","claim_ja":"4×8=32ドル。","method_ja":"組数に単価を掛ける。","requires_steps":["count","packs"],"uses_nodes":[],"condition_ja":"12個組は8ドル。","baseline_ja":"整数の乗法・通貨単位。","conclusion_ja":"32ドル。"}
-  ],"author_review":{"reviewer":"author","status":"checked","source_line_1based":4211,"checked_model_hash":"a4331a1d7d831e1d7842ef0b1789bd383dc4073332082374ee09b3c87d9020b8","checks_ja":["人数・個数・販売単位・費用を再照合した。","各行を名前付きLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}}
+  "id": "gsm8k_sprint455_croissant_cost",
+  "title_ja": "クロワッサン代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04210",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "For the gala luncheon planning committee, Margaret wants to serve chicken salad sandwiches using mini croissants.  She wants there to be enough food that each person on the committee can have 2 sandwiches each.  Her bakery offers 12 minis croissants for $8.00.  There are 24 people on the committee. How much will she spend on croissants?",
+  "answer_ja": "必要数は24×2=48個。12個入りを4組買い、1組8ドルなので32ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.croissant_cost",
+  "graph": "work/gsm8k-sprint455-croissant-cost-graph.json",
+  "model_notes_ja": [
+    "人数から必要個数を求め、12個単位の購入数と代金を計算する。"
+  ],
+  "steps": [
+    {
+      "id": "croissant_count_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.croissant_count_needed",
+      "title_ja": "必要個数",
+      "claim_ja": "24×2=48個。",
+      "method_ja": "人数に1人当たり個数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "24人、各2個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "48個。"
+    },
+    {
+      "id": "croissant_dozen_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.croissant_dozen_count",
+      "title_ja": "購入単位数",
+      "claim_ja": "48÷12=4組。",
+      "method_ja": "必要個数を12個で割る。",
+      "requires_steps": [
+        "croissant_count_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1組12個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4組。"
+    },
+    {
+      "id": "croissant_total_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.croissant_total_cost",
+      "title_ja": "代金",
+      "claim_ja": "4×8=32ドル。",
+      "method_ja": "組数に単価を掛ける。",
+      "requires_steps": [
+        "croissant_count_needed",
+        "croissant_dozen_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1組8ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "32ドル。"
+    },
+    {
+      "id": "croissant_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.croissant_cost",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "必要数は24×2=48個。12個入りを4組買い、1組8ドルなので32ドル。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "croissant_count_needed",
+        "croissant_dozen_count",
+        "croissant_total_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "人数から必要個数を求め、12個単位の購入数と代金を計算する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "必要数は24×2=48個。12個入りを4組買い、1組8ドルなので32ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4211,
+    "checked_model_hash": "44f055eaa3e7e8cb3169e99394a83b15172432d90a5a4f21adb498a959f48a99",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "44f055eaa3e7e8cb3169e99394a83b15172432d90a5a4f21adb498a959f48a99"
+}

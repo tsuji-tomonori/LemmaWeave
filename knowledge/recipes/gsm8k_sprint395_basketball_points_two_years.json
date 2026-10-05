@@ -18,12 +18,41 @@
   ],
   "steps": [
     {
+      "id": "senior_year_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.senior_year_points",
+      "title_ja": "4年時得点",
+      "claim_ja": "260×6/5=312点。",
+      "method_ja": "20%増を6/5倍とする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "基準は3年時260点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4年時312点。"
+    },
+    {
+      "id": "two_year_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.two_year_points",
+      "title_ja": "2年間合計",
+      "claim_ja": "260+312=572点。",
+      "method_ja": "両年を足す。",
+      "requires_steps": [
+        "senior_year_points"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2年分のみを集計する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "合計572点。"
+    },
+    {
       "id": "basketball_points_two_years",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.basketball_points_two_years",
-      "title_ja": "2年間の得点合計",
+      "title_ja": "問題全体の結論",
       "claim_ja": "3年時は260点。4年時は20%多いので260×1.2=312点。2年間では260+312=572点。",
-      "method_ja": "20%増を6/5倍として4年時得点を求め、3年時と合計する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "senior_year_points",
+        "two_year_points"
+      ],
       "uses_nodes": [],
       "condition_ja": "20%増は3年時260点を基準とする。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +63,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4141,
-    "checked_model_hash": "e9e9f249f5ee58afeb313bde90c133dbf91e5df4cc98214b335a361da47b22bd",
+    "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254"
 }

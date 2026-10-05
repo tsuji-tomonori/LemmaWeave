@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T190000+0900-train-01875-proof-repair",
+  "scheduled_slot": "2026-10-05T19:00:00+09:00",
+  "started_at": "2026-10-05T19:05:07+09:00",
+  "finished_at": "2026-10-05T19:10:43+09:00",
+  "schedule_deviation_minutes": 5,
+  "schedule_deviation_reason_ja": "予定枠内で、直近CI artifactに残る次の個別Lean失敗を回収した。",
+  "role": "proof_repair_override",
+  "scheduled_role": "gsm8k_15_individual_solve",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "56426caf86106f94a160de7e523e663db88a1034",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01875"
+  ],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01875"
+  ],
+  "deferred": [
+    {
+      "problem_id": "scheduled-slot:2026-10-05-19",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "exact-head CI成功前のため、予定15問の新規処理ではなく既存の個別証明失敗を修復した。",
+      "next_action_ja": "CI・公理・依存・証拠ゲート成功後に未実行14問を再配分する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01875",
+      "retry_on": "after_exact_head_ci_and_evidence_import",
+      "reason_ja": "追いつき計算の記述解答とLean証明修復は完了したが、修復後HEADでの固定Lean成功証拠は未取得。",
+      "next_action_ja": "同一コミットのexact-head CI、公理監査、依存抽出、入力ハッシュ照合に合格後だけsolution_readyへ昇格する。"
+    }
+  ],
+  "source_verification": {
+    "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_line_1based": 1876,
+    "source_record_sha256": "e0a6c8599e4df5dccc3524d3e12fd60261ba5a726bf8a8f68864f3ce5b5d94b3",
+    "raw_question_sha256": "c9523542c5f07f5f8b7cf7fdae487d902ac7bab5c7495e987c0b4e28ba845405",
+    "normalized_question_sha256": "8f7420c3487187591e2c2ce1ec12c8d18303f02c8ed90258023f4a2254cf6dcc",
+    "source_question": "Tom's rabbit can run at 25 miles per hour.  His cat can run 20 miles per hour.  The cat gets a 15-minute head start.  In hours, how long will it take for the rabbit to catch up?",
+    "source_hashes_match_manifest": true
+  },
+  "written_solution_ja": [
+    "猫の15分の先行は4分の1時間なので、先行距離は20×(1/4)=5マイル。",
+    "ウサギと猫の速度差は25−20=5マイル/時。",
+    "5マイルの差を毎時5マイルずつ縮めるので、追いつくまで5÷5=1時間。"
+  ],
+  "lean_repair": {
+    "file": "LemmaWeave/Problems/GSM8K/Sprint0923A16Models.lean",
+    "theorem": "catchup_solution",
+    "proposition": "m.catchUpHours = 1",
+    "previous_failure": "変数積 speedGap * catchUpHours = headStartMiles を構造体全体へのomegaで直接処理し、線形算術として利用できる制約が残らなかった",
+    "change": "既証明catchup_speed_gap mとcatchup_head_start mをhCatchUpへ代入して5 * catchUpHours = 5へ具体化し、omegaで解く",
+    "proof_dependencies": [
+      "catchup_speed_gap",
+      "catchup_head_start",
+      "CatchUp.hCatchUp"
+    ],
+    "theorem_statement_changed": false,
+    "model_changed": false,
+    "assumptions_changed": false,
+    "conclusion_changed": false,
+    "sorry_added": 0,
+    "admit_added": 0,
+    "axiom_added": 0,
+    "repair_commit": "3bfad950fa0eb2a4b1929c9dc3cbe4b828e8b8a0"
+  },
+  "failed_ci_evidence": {
+    "workflow_run_id": 37262551222,
+    "head_sha": "4c0c8c44456d8a3ad500098466ce5d8b343c9603",
+    "conclusion": "failure",
+    "compact_artifact_id": 11327226073,
+    "compact_artifact_sha256": "2d8113276b92cb567dafb84ad26f97aac1e4284b85dff2dd4fb0acdd0224d96d",
+    "compact_artifact_local_digest_match": true,
+    "target_module": "LemmaWeave.Problems.GSM8K.Sprint0923A16Models",
+    "target_exit_code": 1,
+    "target_error": "Sprint0923A16Models.lean:98:91 omega could not prove; no usable constraints found"
+  },
+  "local_verification": {
+    "status": "static_review_only",
+    "checks": [
+      "固定問題ID・原題・行番号・レコードSHA・問題文SHAを方法バッチから再照合",
+      "15分=1/4時間、先行距離5マイル、速度差5マイル/時、所要時間1時間を独立再計算",
+      "既証明catchup_speed_gapとcatchup_head_startを実際の証明依存に使い、変数積を定数係数へ変換",
+      "定理文・モデル・仮定・結論の変更なし",
+      "sorry・admit・独自axiomの追加なし"
+    ],
+    "not_run": [
+      "Lean 4.33.1 build",
+      "check_method_recipes.py --render",
+      "dependency graph generation"
+    ],
+    "reason_ja": "ローカル作業領域に固定Lean/mathlib環境がなく、実行検証はpush後のexact-head CIへ委ねる。"
+  },
+  "exact_head_ci": {
+    "workflow_trigger": "push",
+    "status_at_recording": "pending_after_ledger_commit",
+    "retrieval_note_ja": "commit workflow検索はPRイベントだけを返すため、push実行結果は次回のActions結果・artifactで確定する。"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "remaining": 8274,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_exact_head_ci_unverified",
+    "unresolved_review_threads": 0
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "修復後HEADのLeanビルド、公理・依存監査、現行証拠取込が未完了。"
+  }
+}

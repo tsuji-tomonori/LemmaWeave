@@ -10,34 +10,117 @@
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "problem_ja": "Jackson is making pancakes with three ingredients: flour, milk and eggs. 20% of the bottles of milk are spoiled and the rest are fresh. 60% of the eggs are rotten. 1/4 of the cannisters of flour have weevils in them. If Jackson picks a bottle of milk, an egg and a canister of flour at random, what are the odds all three ingredients will be good?",
-  "answer_ja": "牛乳が良品である確率は4/5、卵は2/5、小麦粉は3/4。3回の抽出が独立という追加条件の下では、積は(4/5)(2/5)(3/4)=6/25=24%である。独立性が原文から保証されない場合、周辺割合だけでは同時確率は一意に決まらない。",
+  "answer_ja": "牛乳が良品である確率は4/5、卵は2/5、小麦粉は3/4。3種類を独立に選ぶ条件では、すべて良品である確率は(4/5)(2/5)(3/4)=6/25=24%である。独立性を仮定しない場合は周辺割合だけでは同時確率は定まらず、同じ周辺割合を持ちながら全良品が24件と0件になる100件の具体例を示せる。",
   "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.good_ingredients_independent",
   "graph": "work/gsm8k-sprint394-good-ingredients-independent-graph.json",
   "model_notes_ja": [
-    "乗法公式の適用条件である独立性を明示し、無条件の24%とはしない。"
+    "独立抽出なら乗法公式を適用して24%を得る。",
+    "独立性を外した場合は、周辺割合が同じ二つの100件分割で同時確率の非一意性を示す。"
   ],
   "steps": [
     {
-      "id": "good_ingredients_independent",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.good_ingredients_independent",
-      "title_ja": "3材料がすべて良品である確率",
-      "claim_ja": "牛乳が良品である確率は4/5、卵は2/5、小麦粉は3/4。3回の抽出が独立という追加条件の下では、積は(4/5)(2/5)(3/4)=6/25=24%である。独立性が原文から保証されない場合、周辺割合だけでは同時確率は一意に決まらない。",
-      "method_ja": "各不良率の補集合を求め、独立条件の下で確率を乗算する。",
+      "id": "good_milk_rate",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.good_milk_rate",
+      "title_ja": "良品牛乳の割合",
+      "claim_ja": "20%が不良なので、良品割合は1-20/100=4/5。",
+      "method_ja": "補集合の確率を使う。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "牛乳・卵・小麦粉の選択が互いに独立である場合。",
+      "condition_ja": "不良割合が20%である。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "牛乳が良品である確率は4/5、卵は2/5、小麦粉は3/4。3回の抽出が独立という追加条件の下では、積は(4/5)(2/5)(3/4)=6/25=24%である。独立性が原文から保証されない場合、周辺割合だけでは同時確率は一意に決まらない。"
+      "conclusion_ja": "良品牛乳の割合は4/5。"
+    },
+    {
+      "id": "good_egg_rate",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.good_egg_rate",
+      "title_ja": "良品卵の割合",
+      "claim_ja": "60%が腐っているので、良品割合は1-60/100=2/5。",
+      "method_ja": "補集合の確率を使う。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "腐敗割合が60%である。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "良品卵の割合は2/5。"
+    },
+    {
+      "id": "good_flour_rate",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.good_flour_rate",
+      "title_ja": "良品小麦粉の割合",
+      "claim_ja": "1/4に虫がいるので、良品割合は1-1/4=3/4。",
+      "method_ja": "補集合の確率を使う。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "虫害割合が1/4である。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "良品小麦粉の割合は3/4。"
+    },
+    {
+      "id": "all_good_under_independence",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.all_good_under_independence",
+      "title_ja": "独立条件下の同時確率",
+      "claim_ja": "三つの選択が独立なら、同時確率は(4/5)(2/5)(3/4)=6/25。",
+      "method_ja": "独立事象の乗法公式を使う。",
+      "requires_steps": [
+        "good_milk_rate",
+        "good_egg_rate",
+        "good_flour_rate"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "牛乳・卵・小麦粉の良否が互いに独立である。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "すべて良品である確率は6/25。"
+    },
+    {
+      "id": "all_good_percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.all_good_percent",
+      "title_ja": "百分率への換算",
+      "claim_ja": "6/25に100を掛けると24である。",
+      "method_ja": "確率を百分率へ換算する。",
+      "requires_steps": [
+        "all_good_under_independence"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "確率6/25を百分率表示する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "24%。"
+    },
+    {
+      "id": "marginals_do_not_determine_all_good",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.marginals_do_not_determine_all_good",
+      "title_ja": "独立性がない場合の非一意性",
+      "claim_ja": "100件の二つの具体的分割は、牛乳80件・卵40件・小麦粉75件という同じ良品周辺数を持つが、全良品数は24件と0件で異なる。",
+      "method_ja": "具体的な反例二つで周辺割合だけでは同時確率が定まらないことを示す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "独立性を仮定しない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "周辺割合だけでは全良品確率は一意に決まらない。"
+    },
+    {
+      "id": "good_ingredients_independent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.good_ingredients_independent",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "独立条件下では24%。独立性を外すと同じ周辺割合でも全良品確率が異なり得る。",
+      "method_ja": "条件付きの答えと条件不足時の反例をまとめる。",
+      "requires_steps": [
+        "all_good_under_independence",
+        "all_good_percent",
+        "marginals_do_not_determine_all_good"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題のランダム抽出を独立抽出と読む場合と、独立性を仮定しない場合を区別する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "独立なら24%。独立性なしでは一意に定まらない。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4122,
-    "checked_model_hash": "a9f36a6c0272b72029af612047184e8743af2c4b1fe539d4e9e90a7a3205a51a",
+    "checked_model_hash": "9fce4397af3a600a615fa57f0e22919869b5bf5f9700c74d911d79cc785d6693",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
-      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "記述解答の各主張を名前付きLean定理へ分割し、最終定理の実依存として接続した。",
       "独立レビューではなく作成者自己照合である。"
     ]
   }

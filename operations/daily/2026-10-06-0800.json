@@ -1,0 +1,441 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-06",
+  "run_id": "2026-10-06-0800-gsm8k-solve",
+  "scheduled_slot": "08:00 JST",
+  "role": "gsm8k_individual_solve",
+  "base_sha": "5486e441b87a47ee2758595bf335d031e4e8f41a",
+  "started_at": "2026-10-06T08:04:33+09:00",
+  "finished_at": "2026-10-06T08:18:30+09:00",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04211",
+    "external-gsm8k-main-3101c7d50724:train:04212",
+    "external-gsm8k-main-3101c7d50724:train:04213",
+    "external-gsm8k-main-3101c7d50724:train:04214",
+    "external-gsm8k-main-3101c7d50724:train:04215",
+    "external-gsm8k-main-3101c7d50724:train:04216",
+    "external-gsm8k-main-3101c7d50724:train:04217",
+    "external-gsm8k-main-3101c7d50724:train:04218",
+    "external-gsm8k-main-3101c7d50724:train:04219",
+    "external-gsm8k-main-3101c7d50724:train:04220",
+    "external-gsm8k-main-3101c7d50724:train:04221",
+    "external-gsm8k-main-3101c7d50724:train:04222",
+    "external-gsm8k-main-3101c7d50724:train:04223",
+    "external-gsm8k-main-3101c7d50724:train:04224",
+    "external-gsm8k-main-3101c7d50724:train:04225"
+  ],
+  "completed_problem_ids": [],
+  "self_reviewed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04211",
+    "external-gsm8k-main-3101c7d50724:train:04212",
+    "external-gsm8k-main-3101c7d50724:train:04213",
+    "external-gsm8k-main-3101c7d50724:train:04214",
+    "external-gsm8k-main-3101c7d50724:train:04215",
+    "external-gsm8k-main-3101c7d50724:train:04216",
+    "external-gsm8k-main-3101c7d50724:train:04217",
+    "external-gsm8k-main-3101c7d50724:train:04218",
+    "external-gsm8k-main-3101c7d50724:train:04219",
+    "external-gsm8k-main-3101c7d50724:train:04220",
+    "external-gsm8k-main-3101c7d50724:train:04221",
+    "external-gsm8k-main-3101c7d50724:train:04222",
+    "external-gsm8k-main-3101c7d50724:train:04223",
+    "external-gsm8k-main-3101c7d50724:train:04224",
+    "external-gsm8k-main-3101c7d50724:train:04225"
+  ],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04211",
+    "external-gsm8k-main-3101c7d50724:train:04212",
+    "external-gsm8k-main-3101c7d50724:train:04213",
+    "external-gsm8k-main-3101c7d50724:train:04214",
+    "external-gsm8k-main-3101c7d50724:train:04215",
+    "external-gsm8k-main-3101c7d50724:train:04216",
+    "external-gsm8k-main-3101c7d50724:train:04217",
+    "external-gsm8k-main-3101c7d50724:train:04218",
+    "external-gsm8k-main-3101c7d50724:train:04219",
+    "external-gsm8k-main-3101c7d50724:train:04220",
+    "external-gsm8k-main-3101c7d50724:train:04221",
+    "external-gsm8k-main-3101c7d50724:train:04222",
+    "external-gsm8k-main-3101c7d50724:train:04223",
+    "external-gsm8k-main-3101c7d50724:train:04224",
+    "external-gsm8k-main-3101c7d50724:train:04225"
+  ],
+  "selected_results": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04211",
+      "source_line_1based": 4212,
+      "source_record_sha256": "a7d351392cbae5fa40257a96a4d0e7f13d2dfd1b991fc2c96f139ca9757a1671",
+      "raw_question_sha256": "eff209bf14eb329b2ed9435f5b89647ff7e5497900ed9d386b580e583385d67b",
+      "answer_ja": "5かごの総数は25×5=125個。A〜Dは15+30+20+25=90個なので、Eのバナナは125−90=35個。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.basket_e_bananas",
+      "review_note_ja": "平均25個と5かごから総数を求め、A〜Dの既知分を引く。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04212",
+      "source_line_1based": 4213,
+      "source_record_sha256": "28251945a918efd12b02a1713ffd76643e2f7883282f231977838de3278fa28b",
+      "raw_question_sha256": "ebab4e4d5aa34918896474647b66a807c64a5f90dd678d25422aef8a6627cc18",
+      "answer_ja": "勝者への賞金は所持金400ドルの2倍で800ドル。元の400ドルに加えると1200ドル。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.braden_money_after_bet",
+      "review_note_ja": "「twice as much money as Braden had」を元の所持金400ドルの2倍の賞金と読む。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04213",
+      "source_line_1based": 4214,
+      "source_record_sha256": "bdb3730b56c9008ed83ccc668b569df0a9ad5ff637388a9dc17ac34bc6f37835",
+      "raw_question_sha256": "c980b7c245475f89c8b47fe2aa95324ffb99188aa271ce2773d421a067981a33",
+      "answer_ja": "布の面積は40、70、25平方フィートで合計135平方フィート。長さ15フィートの長方形に無駄なくつなぐと、高さは135÷15=9フィート。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.flag_dimensions",
+      "review_note_ja": "3枚の布を重なり・切り捨てなく面積保存で長方形の旗にするという通常の読みを明示する。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04214",
+      "source_line_1based": 4215,
+      "source_record_sha256": "66cf6dad815930740e88b4fedc99e11c43c0f939dab98fd532e3e550a77ea533",
+      "raw_question_sha256": "f18972ac862a01a506a2965c034bc77d9f5098fcbf48c4cc3d3edaf66cb8a8a7",
+      "answer_ja": "数学は4×20=80ドル。科学は4+6=10冊で100ドル。美術は2×4=8冊で160ドル。合計340ドルなので、音楽の本には500−340=160ドル使った。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.music_book_spending",
+      "review_note_ja": "500ドルを全額、列挙された4種類の本に使ったという問いの前提で残額を音楽本代とする。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04215",
+      "source_line_1based": 4216,
+      "source_record_sha256": "2217e2a265222c870511d34f64353d63d94e8128fafdce8c0e814e146b266e03",
+      "raw_question_sha256": "fa93c6a7162a67344591f18abfc79e8f1fbaab503fe3af8fdf1841e729a0166d",
+      "answer_ja": "描画2時間は120分。彩色は30%短いので36分短く84分。1枚204分、10枚で2040分、すなわち34時間。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P1.illustration_time",
+      "review_note_ja": "小数誤差を避け、時間を分に統一して30%減を正確に扱う。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04216",
+      "source_line_1based": 4217,
+      "source_record_sha256": "3ae90cccbe6fae5849cab602cbf903d9898dece5c549a859c94874178b006432",
+      "raw_question_sha256": "9cbac9731999ab896b3d43de0110ea53ed5cc8a72ba6ad8a3a9fdb5eee6512d5",
+      "answer_ja": "Curryは12×2=24点、Durantは9×2=18点、Klayは12÷2=6点。全員を足すと12+24+9+18+6=69点。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.team_total_points",
+      "review_note_ja": "各選手の比較対象を原文どおりDraymondまたはKellyに固定する。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04217",
+      "source_line_1based": 4218,
+      "source_record_sha256": "661a3d64b4e422e34a5848aa2f9354d0f6805826a6e868dfe6784ea844003e69",
+      "raw_question_sha256": "8abf3b77c7c9bc207f7d4d45ed4d67c531eb231f00754377417404b6ed5b2ad3",
+      "answer_ja": "アナコンダの後は28人。その半分14人が毒に当たり、毒に当たらなかった14人と、毒から回復した14÷7=2人が残るので16人。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.rainforest_survivors",
+      "review_note_ja": "毒に当たらなかった14人は生存し、毒に当たった14人のうち7分の1だけが回復すると読む。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04218",
+      "source_line_1based": 4219,
+      "source_record_sha256": "851bda45da5985f865d0e2a456f9e2c486e1d711df32e54f4cdf6175316ad61e",
+      "raw_question_sha256": "0906da3af2d03afbf2df5c76a5d250964926d92243074f1a7048aaf95cf3bf95",
+      "answer_ja": "Kirillをk、兄をbセンチとすると、k=b−14、k+b=112。代入して2b−14=112、よって2b=126、b=63、k=49センチ。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.kirill_height_solution",
+      "review_note_ja": "身長を整数として量化し、差と合計の2条件から一意に49を導く。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04219",
+      "source_line_1based": 4220,
+      "source_record_sha256": "4fb9798c37dd1d78c6297ae43b45a851e794a48f491270c6969a1200c737e886",
+      "raw_question_sha256": "331f868cbc1453df8eb9196cd103742c1b720fd5b49159a16cade4047681cd5c",
+      "answer_ja": "1日2時間は120分。1分200拍なので1日24000拍、7日で168000拍。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.weekly_beats",
+      "review_note_ja": "毎日2時間、1週間を7日として拍数を積み上げる。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04220",
+      "source_line_1based": 4221,
+      "source_record_sha256": "d3da521ca74d7439e51b86937c5612ee64fbc5160f42c45f4f08a39454ef2799",
+      "raw_question_sha256": "24201fa48e111f12624455799e27e57eea016324aa99046e819d1a2b18c832b9",
+      "answer_ja": "1カートンは5×3=15本。8箱には8×4=32カートンあるので、32×15=480本。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.gum_sticks_total",
+      "review_note_ja": "箱・カートン・パック・棒の包含単位を順に掛ける。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04221",
+      "source_line_1based": 4222,
+      "source_record_sha256": "5a0c2da170caf6664453b39714b1d00fbd77d0f306c28b2a66a59ffc9ebe4cc9",
+      "raw_question_sha256": "e134e15aad853bed9814d219e3c8e366192a806f8cb00f80531bd48436ca7a7c",
+      "answer_ja": "ロースト肉と野菜の支出は17+11=28ユーロ。100−28=72ユーロ残る。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.market_money_left",
+      "review_note_ja": "2つの購入額だけを100ユーロから引く。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04222",
+      "source_line_1based": 4223,
+      "source_record_sha256": "418861803de060995f91062884119a2e757932efdc7a251fb29bb21602ed223f",
+      "raw_question_sha256": "51b5bf8b8bef2cec505db048dfa454fe713f1b07b1ab05e29401e3650d47f97d",
+      "answer_ja": "マンゴー・梨・パパイヤは18+10+12=40個。残り2かごは58−40=18個で、キウイとかごのレモンが同数だから各9個。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.lemons_in_basket",
+      "review_note_ja": "最後の2かごの個数が等しいという原文条件を使い、18個を二等分する。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04223",
+      "source_line_1based": 4224,
+      "source_record_sha256": "3a553ea9a9a48501efbc3a8670a4380bfd6fd66b32317630afe2cd7cf6156201",
+      "raw_question_sha256": "bdcfb459cc7992f69a6150b83adb1d89fdf33e0d10f8aa6aa7233934d69a14e3",
+      "answer_ja": "リンゴは12×2=24ドル、バナナは4×1=4ドル、オレンジは4×3=12ドル。合計40ドル、個数は20個なので、平均は40÷20=2ドル。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.average_fruit_cost",
+      "review_note_ja": "原題のオレンジ4個・単価3ドルを使用する。参照解答途中式の「3 oranges × $4」は転記誤りだが、正しい積も12ドルで最終値は変わらない。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04224",
+      "source_line_1based": 4225,
+      "source_record_sha256": "ad0996e6d22d4a57d2825a12c719d587047006f7b8a7ad83b33805eae0bc8302",
+      "raw_question_sha256": "af7261d88886c1fc078254f2bbc93e796ff25afdda7e94aa8849bd390d6cd43d",
+      "answer_ja": "黒とピンクは15+10=25ドル。緑2冊の合計は45−25=20ドルなので、1冊10ドル。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.green_notebook_cost",
+      "review_note_ja": "緑の2冊は同額であるという問いの含意に従い、残額を2等分する。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04225",
+      "source_line_1based": 4226,
+      "source_record_sha256": "49bb49901fc3c0bab5fc4315e05dac68a865766343a60fd6153dfa1409923f35",
+      "raw_question_sha256": "e4a8c6668449fe4601d089ab2edd709e7fa52e6af3e3698e9c3d76480239abf2",
+      "answer_ja": "60秒÷15秒=1分に4回発射する。1回5秒なので4×5=20秒、炎を出している。",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.flame_seconds_per_minute",
+      "review_note_ja": "発射間隔15秒が1分内で4回を与え、各5秒の炎は次の発射までに終わるため重複しない。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    }
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04211",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04212",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04213",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04214",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04215",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04216",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04217",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04218",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04219",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04220",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04221",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04222",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04223",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題に即した解答と形式化は自己照合済みで、参照解答途中式の転記誤りも記録したが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04224",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04225",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    }
+  ],
+  "artifacts": {
+    "model_files": [
+      "LemmaWeave/Problems/GSM8K/Sprint1006A08P1Models.lean",
+      "LemmaWeave/Problems/GSM8K/Sprint1006A08P2Models.lean",
+      "LemmaWeave/Problems/GSM8K/Sprint1006A08P3Models.lean"
+    ],
+    "test_files": [
+      "tests/lean/GSM8KSprint1006A08P1.lean",
+      "tests/lean/GSM8KSprint1006A08P2.lean",
+      "tests/lean/GSM8KSprint1006A08P3.lean"
+    ],
+    "method_batches": [
+      "corpus/method_batches/gsm8k_individual_04211_04215.json",
+      "corpus/method_batches/gsm8k_individual_04216_04220.json",
+      "corpus/method_batches/gsm8k_individual_04221_04225.json"
+    ],
+    "model_sha256": [
+      "241d3498694e2f650fbcdbde53461f70864c83a86f27036a679d153d5bfc6813",
+      "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a",
+      "381f7e013ac48094545e959790cc5c6a2c240c5819a5232c0ae98a6a7052e845"
+    ],
+    "checkpoint_commits": [
+      "d95f749c0363a1fffe96daec79ab923418c41f4b",
+      "104478685bee094463f360ff904b09aef5e7a3ad",
+      "75bcd840e68c65f4a46780e6c9618cd955879681"
+    ],
+    "theorem_declarations": 72,
+    "line_theorems": 57,
+    "root_theorems": 15,
+    "recipe_count": 15,
+    "method_batch_count": 3
+  },
+  "canonical_queue_update": {
+    "applied": false,
+    "statuses_before": {
+      "solution_ready": 518,
+      "awaiting_verification": 3604,
+      "pending": 4670,
+      "total": 8792
+    },
+    "selected_status_after": "pending",
+    "reason_ja": "固定Lean成功証拠がないためbinary queueを手編集しない。"
+  },
+  "verification": {
+    "assurance_level": "INCONCLUSIVE",
+    "exact_head_ci_success": false,
+    "local_lean_available": false,
+    "fixed_lean_version": "4.33.1",
+    "verification_target_head": "75bcd840e68c65f4a46780e6c9618cd955879681",
+    "source_pin": {
+      "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+      "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+      "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+    },
+    "source_hash_matches": 15,
+    "source_scan": {
+      "sorry": false,
+      "admit": false,
+      "custom_axiom": false
+    },
+    "axiom_policy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "readback_files": 24,
+    "json_parse_success": 18,
+    "model_hash_matches": 18,
+    "declaration_mapping_missing": 0,
+    "root_dependency_mapping_missing": 0,
+    "current_head_workflow_runs": 0,
+    "current_head_commit_statuses": 0,
+    "current_head_unresolved_review_threads": 0,
+    "note_ja": "保存後の3モデル・3監査ファイル・15レシピ・3方法台帳をGitHubから再読した。固定原文blobのSHA256、原文位置・レコード・質問ハッシュ15/15、モデルハッシュ18/18、根定理から全行定理へのソース依存、禁止構文不在、各監査ファイルの依存抽出5件と公理表示5件を確認。ローカルにLeanプロジェクトがなく、kernel build、#print axioms実行結果、実依存抽出、証拠取込は未完。"
+  },
+  "claim": {
+    "path": "operations/claims/2026-10-06-0800.json",
+    "expires_at": "2026-10-06T10:30:00+09:00",
+    "final_status": "released",
+    "released_at": "2026-10-06T08:18:30+09:00"
+  },
+  "missed_slots_observed": [
+    "2026-10-06-0300",
+    "2026-10-06-0600"
+  ],
+  "pull_request": {
+    "number": 5,
+    "merge_performed": false,
+    "reason_ja": "正確なHEADの必須CI成功証拠がないためマージ条件未達。",
+    "review_history": [
+      "CHANGES_REQUESTED",
+      "APPROVED",
+      "APPROVED"
+    ],
+    "unresolved_review_threads": 0
+  },
+  "commit": {
+    "claim_commit": "5280ee99dd9056305886f3bd6be3823123154ecb",
+    "checkpoint_commits": [
+      "d95f749c0363a1fffe96daec79ab923418c41f4b",
+      "104478685bee094463f360ff904b09aef5e7a3ad",
+      "75bcd840e68c65f4a46780e6c9618cd955879681"
+    ],
+    "head_observed_before_ledger": "75bcd840e68c65f4a46780e6c9618cd955879681"
+  }
+}

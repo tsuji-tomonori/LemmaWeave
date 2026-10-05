@@ -18,12 +18,41 @@
   ],
   "steps": [
     {
+      "id": "agatha_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.agatha_spent",
+      "title_ja": "支出合計",
+      "claim_ja": "15+25=40ドル使った。",
+      "method_ja": "2支出を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "記載された支出を合計する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "支出は40ドル。"
+    },
+    {
+      "id": "agatha_initial_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.agatha_initial_total",
+      "title_ja": "初期所持金",
+      "claim_ja": "支出40ドルと残金20ドルから40+20=60ドル。",
+      "method_ja": "支出と残金を足す。",
+      "requires_steps": [
+        "agatha_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "他の増減はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "最初は60ドル。"
+    },
+    {
       "id": "agatha_initial_money",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.agatha_initial_money",
-      "title_ja": "Agathaの最初の所持金",
+      "title_ja": "問題全体の結論",
       "claim_ja": "自転車のフレームと前輪に15+25=40ドル使った。さらに20ドル残っているので、最初は40+20=60ドル持っていた。",
-      "method_ja": "支出額を合計し、残金を足して初期額を復元する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "agatha_spent",
+        "agatha_initial_total"
+      ],
       "uses_nodes": [],
       "condition_ja": "記載された支出以外に所持金の増減はない。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +63,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4139,
-    "checked_model_hash": "e9e9f249f5ee58afeb313bde90c133dbf91e5df4cc98214b335a361da47b22bd",
+    "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254"
 }

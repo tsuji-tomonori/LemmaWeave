@@ -19,12 +19,57 @@
   ],
   "steps": [
     {
+      "id": "butterfly_model_egg_zero",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.butterfly_model_egg_zero",
+      "title_ja": "卵期0日のモデル",
+      "claim_ja": "0+3×30+30=120日。",
+      "method_ja": "卵期e、さなぎ期c、幼虫期3cへe=0,c=30を代入する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "卵期0日は追加条件の例。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "条件を満たす。"
+    },
+    {
+      "id": "butterfly_model_egg_four",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.butterfly_model_egg_four",
+      "title_ja": "卵期4日のモデル",
+      "claim_ja": "4+3×29+29=120日。",
+      "method_ja": "同じ式へe=4,c=29を代入する。",
+      "requires_steps": [
+        "butterfly_model_egg_zero"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "卵期4日も原文と矛盾しない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "条件を満たす。"
+    },
+    {
+      "id": "butterfly_cocoon_values_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.butterfly_cocoon_values_differ",
+      "title_ja": "一意性の否定",
+      "claim_ja": "30≠29。",
+      "method_ja": "2つの許容モデルのさなぎ期を比較する。",
+      "requires_steps": [
+        "butterfly_model_egg_zero",
+        "butterfly_model_egg_four"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "卵期が原文で未指定。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "さなぎ期は一意に決まらない。"
+    },
+    {
       "id": "butterfly_cocoon_time_under_determined",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.butterfly_cocoon_time_under_determined",
-      "title_ja": "蝶がさなぎで過ごす期間の条件不足",
+      "title_ja": "問題全体の結論",
       "claim_ja": "卵から蝶までの120日には卵期・幼虫期・さなぎ期が含まれるが、卵期が与えられていない。卵期0日なら幼虫90日・さなぎ30日、卵期4日なら幼虫87日・さなぎ29日となるため一意に決まらない。卵期を0日と追加仮定すれば30日。",
-      "method_ja": "卵期e、さなぎ期c、幼虫期3cとしてe+3c+c=120を立て、異なる整数解を示す。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "butterfly_model_egg_zero",
+        "butterfly_model_egg_four",
+        "butterfly_cocoon_values_differ"
+      ],
       "uses_nodes": [],
       "condition_ja": "原文だけでは卵期eの値が未指定。30日はe=0、すなわち120日を幼虫期とさなぎ期だけに配分する追加条件の下での値。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -35,11 +80,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4160,
-    "checked_model_hash": "92dabab23308bc83266c91e418f16c052e4f57ad71e370e80166885fde24b7bd",
+    "checked_model_hash": "939d73575cd1861183bc7ef57600e09b9c8d5076d6a6410091b72d30528e3f61",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "939d73575cd1861183bc7ef57600e09b9c8d5076d6a6410091b72d30528e3f61"
 }

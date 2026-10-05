@@ -18,12 +18,74 @@
   ],
   "steps": [
     {
+      "id": "total_light_bulbs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.total_light_bulbs",
+      "title_ja": "全電球数",
+      "claim_ja": "20×7=140個。",
+      "method_ja": "ランプ数に各電球数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20台、各7個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "140個。"
+    },
+    {
+      "id": "lamps_with_burnt_bulbs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.lamps_with_burnt_bulbs",
+      "title_ja": "故障電球を含むランプ数",
+      "claim_ja": "20÷4=5台。",
+      "method_ja": "20台の1/4を求める。",
+      "requires_steps": [
+        "total_light_bulbs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "themはランプを指す。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5台。"
+    },
+    {
+      "id": "burnt_light_bulbs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.burnt_light_bulbs",
+      "title_ja": "切れた電球数",
+      "claim_ja": "5×2=10個。",
+      "method_ja": "対象ランプ数に各2個を掛ける。",
+      "requires_steps": [
+        "total_light_bulbs",
+        "lamps_with_burnt_bulbs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5台それぞれ2個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10個。"
+    },
+    {
+      "id": "working_light_bulbs_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.working_light_bulbs_count",
+      "title_ja": "動作中の電球数",
+      "claim_ja": "140-10=130個。",
+      "method_ja": "全数から故障数を引く。",
+      "requires_steps": [
+        "total_light_bulbs",
+        "lamps_with_burnt_bulbs",
+        "burnt_light_bulbs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "他の電球は動作する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "130個。"
+    },
+    {
       "id": "working_light_bulbs",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.working_light_bulbs",
-      "title_ja": "点灯している電球数",
+      "title_ja": "問題全体の結論",
       "claim_ja": "電球は20×7=140個。20台の1/4に当たる5台で各2個、計10個が切れているので、動作中は140-10=130個。",
-      "method_ja": "全電球数と、故障対象のランプ数から故障電球数を求めて差し引く。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "total_light_bulbs",
+        "lamps_with_burnt_bulbs",
+        "burnt_light_bulbs",
+        "working_light_bulbs_count"
+      ],
       "uses_nodes": [],
       "condition_ja": "『1/4 of them』は20台のランプを指し、それ以外の電球は全て動作する。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +96,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4159,
-    "checked_model_hash": "92dabab23308bc83266c91e418f16c052e4f57ad71e370e80166885fde24b7bd",
+    "checked_model_hash": "939d73575cd1861183bc7ef57600e09b9c8d5076d6a6410091b72d30528e3f61",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "939d73575cd1861183bc7ef57600e09b9c8d5076d6a6410091b72d30528e3f61"
 }

@@ -18,12 +18,92 @@
   ],
   "steps": [
     {
+      "id": "truck_current_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.truck_current_gallons",
+      "title_ja": "トラックの現在量",
+      "claim_ja": "20÷2=10ガロン。",
+      "method_ja": "満タン容量の半分を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "容量20ガロンで半分入っている。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10ガロン。"
+    },
+    {
+      "id": "car_current_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.car_current_gallons",
+      "title_ja": "車の現在量",
+      "claim_ja": "12÷3=4ガロン。",
+      "method_ja": "満タン容量の1/3を求める。",
+      "requires_steps": [
+        "truck_current_gallons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "容量12ガロンで1/3入っている。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4ガロン。"
+    },
+    {
+      "id": "truck_refill_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.truck_refill_gallons",
+      "title_ja": "トラックの補給量",
+      "claim_ja": "20-10=10ガロン。",
+      "method_ja": "容量と現在量の差を取る。",
+      "requires_steps": [
+        "truck_current_gallons",
+        "car_current_gallons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20ガロンまで満たす。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10ガロン。"
+    },
+    {
+      "id": "car_refill_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.car_refill_gallons",
+      "title_ja": "車の補給量",
+      "claim_ja": "12-4=8ガロン。",
+      "method_ja": "容量と現在量の差を取る。",
+      "requires_steps": [
+        "truck_current_gallons",
+        "car_current_gallons",
+        "truck_refill_gallons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "12ガロンまで満たす。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8ガロン。"
+    },
+    {
+      "id": "total_refill_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.total_refill_gallons",
+      "title_ja": "合計補給量",
+      "claim_ja": "10+8=18ガロン。",
+      "method_ja": "2台の補給量を合計する。",
+      "requires_steps": [
+        "truck_current_gallons",
+        "car_current_gallons",
+        "truck_refill_gallons",
+        "car_refill_gallons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "漏れや移送はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "18ガロン。"
+    },
+    {
       "id": "truck_car_refill_gallons",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.truck_car_refill_gallons",
-      "title_ja": "トラックと車に補給するガソリン量",
+      "title_ja": "問題全体の結論",
       "claim_ja": "トラックは20ガロンの半分で10ガロン入っているため10ガロン補給する。車は12ガロンの1/3で4ガロン入っているため8ガロン補給する。合計18ガロン。",
-      "method_ja": "各タンクの現在量を容量と充填割合から求め、満タンとの差を合計する。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "truck_current_gallons",
+        "car_current_gallons",
+        "truck_refill_gallons",
+        "car_refill_gallons",
+        "total_refill_gallons"
+      ],
       "uses_nodes": [],
       "condition_ja": "両方とも漏れや移送なしで、それぞれ公称容量まで満たす。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +114,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4157,
-    "checked_model_hash": "92dabab23308bc83266c91e418f16c052e4f57ad71e370e80166885fde24b7bd",
+    "checked_model_hash": "939d73575cd1861183bc7ef57600e09b9c8d5076d6a6410091b72d30528e3f61",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "939d73575cd1861183bc7ef57600e09b9c8d5076d6a6410091b72d30528e3f61"
 }

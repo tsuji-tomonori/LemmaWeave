@@ -217,16 +217,22 @@ theorem exam_previous_count (m : ExamScore) : m.previousCount = 29 := by cases m
 theorem exam_previous_sum (m : ExamScore) : m.previousSum = 2146 := by
   rw [m.hPrevious, exam_previous_count m]
 theorem exam_target_total (m : ExamScore) : m.targetTotal = 2250 := by rw [m.hTarget]
-theorem exam_94_enough (m : ExamScore) : m.targetTotal ≤ m.previousSum + 94 := by
+theorem exam_104_enough (m : ExamScore) : m.targetTotal ≤ m.previousSum + 104 := by
   rw [exam_target_total m, exam_previous_sum m]
-theorem exam_lower_bound (m : ExamScore) : 94 ≤ m.william := by
+theorem exam_lower_bound (m : ExamScore) : 104 ≤ m.william := by
   have h := m.hEnough
   rw [exam_target_total m, exam_previous_sum m] at h
   omega
-theorem exam_solution (m : ExamScore) : m.william = 94 := by
+theorem exam_impossible_if_at_most_100 (m : ExamScore) (hMax : m.william ≤ 100) : False := by
+  have hMin := exam_lower_bound m
+  omega
+theorem exam_solution (m : ExamScore) : m.william = 104 := by
   apply Nat.le_antisymm
-  · exact m.hMinimal 94 (exam_94_enough m)
+  · exact m.hMinimal 104 (exam_104_enough m)
   · exact exam_lower_bound m
+theorem exam_complete (m : ExamScore) :
+    m.william = 104 ∧ (m.william ≤ 100 → False) := by
+  exact ⟨exam_solution m, exam_impossible_if_at_most_100 m⟩
 
 /-- Reading A: 300 is the post-discard count that the class must organize. -/
 structure DonationsToOrganize where

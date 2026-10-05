@@ -47,9 +47,13 @@ theorem squirrels_solution (m : P.SquirrelCounts) : m.total = 28 := P.squirrels_
 theorem exam_previous_count (m : P.ExamScore) : m.previousCount = 29 := P.exam_previous_count m
 theorem exam_previous_sum (m : P.ExamScore) : m.previousSum = 2146 := P.exam_previous_sum m
 theorem exam_target_total (m : P.ExamScore) : m.targetTotal = 2250 := P.exam_target_total m
-theorem exam_94_enough (m : P.ExamScore) : m.targetTotal ≤ m.previousSum + 94 := P.exam_94_enough m
-theorem exam_lower_bound (m : P.ExamScore) : 94 ≤ m.william := P.exam_lower_bound m
-theorem exam_solution (m : P.ExamScore) : m.william = 94 := P.exam_solution m
+theorem exam_104_enough (m : P.ExamScore) : m.targetTotal ≤ m.previousSum + 104 := P.exam_104_enough m
+theorem exam_lower_bound (m : P.ExamScore) : 104 ≤ m.william := P.exam_lower_bound m
+theorem exam_impossible_if_at_most_100 (m : P.ExamScore) (hMax : m.william ≤ 100) : False :=
+  P.exam_impossible_if_at_most_100 m hMax
+theorem exam_solution (m : P.ExamScore) : m.william = 104 := P.exam_solution m
+theorem exam_complete (m : P.ExamScore) :
+    m.william = 104 ∧ (m.william ≤ 100 → False) := P.exam_complete m
 theorem donations_organize_damaged (m : P.DonationsToOrganize) : m.damaged = 30 :=
   P.donations_organize_damaged m
 theorem donations_organize_usable (m : P.DonationsToOrganize) : m.usableFloats = 90 :=
@@ -89,6 +93,7 @@ end LemmaWeave.Tests.GSM8KSprint0923A06Catchup
 #print axioms LemmaWeave.Tests.GSM8KSprint0923A06Catchup.pie_samples_solution
 #print axioms LemmaWeave.Tests.GSM8KSprint0923A06Catchup.squirrels_solution
 #print axioms LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_solution
+#print axioms LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_complete
 #print axioms LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_organize_solution
 #print axioms LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_original_solution
 #print axioms LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_two_readings_differ
@@ -106,7 +111,7 @@ end LemmaWeave.Tests.GSM8KSprint0923A06Catchup
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.wrapping_solution to "work/gsm8k-sprint99-wrapping-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.pie_samples_solution to "work/gsm8k-sprint99-pie-samples-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.squirrels_solution to "work/gsm8k-sprint99-squirrels-graph.json"
-#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_solution to "work/gsm8k-sprint99-exam-graph.json"
+#lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_complete to "work/gsm8k-sprint99-exam-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.donations_organize_solution to "work/gsm8k-sprint99-donations-graph.json"
 #lw_dependencies LemmaWeave.Tests.GSM8KSprint0923A06Catchup.doughnuts_solution to "work/gsm8k-sprint99-doughnuts-graph.json"
 

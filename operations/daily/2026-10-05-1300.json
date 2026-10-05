@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T130000+0900-train-01776-semantic-repair",
+  "scheduled_slot": "2026-10-05T13:00:00+09:00",
+  "started_at": "2026-10-05T13:56:37+09:00",
+  "finished_at": "2026-10-05T14:24:09+09:00",
+  "schedule_deviation_minutes": 56,
+  "schedule_deviation_reason_ja": "前枠から継続するexact-head CIの確定結果と診断artifactを回収し、そこで顕在化した既存問題の意味不一致を修復した。",
+  "role": "semantic_repair_override",
+  "scheduled_role": "gsm8k_15_individual_solve",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "4c0c8c44456d8a3ad500098466ce5d8b343c9603",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01776"
+  ],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01776"
+  ],
+  "deferred": [
+    {
+      "problem_id": "scheduled-slot:2026-10-05-13",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "exact-head CIが赤であり、予定15問の新規処理を開始せず既存の意味不一致を修復した。",
+      "next_action_ja": "CI・公理・依存・証拠ゲート成功後に未実行枠として再配分する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04256",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "固定Lean CI失敗中のため次の新規GSM8K問題を開始しなかった。",
+      "next_action_ja": "成功証拠を取得後、固定原題とハッシュの確認から再開する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01776",
+      "retry_on": "after_exact_head_ci_and_evidence_import",
+      "reason_ja": "原題・記述解答・Lean・台帳の意味修正は完了したが、現行HEADでのLean実行証拠と依存グラフは未取得。",
+      "next_action_ja": "同一コミットのexact-head CI、公理監査、依存グラフ生成、現行入力ハッシュ照合に合格後だけsolution_readyへ昇格する。"
+    }
+  ],
+  "source_verification": {
+    "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "source_line_1based": 1777,
+    "source_record_sha256": "d33cd19615fa973888d79fd1d35bc78d5a27fd390d603f6bd6f90baae5194011",
+    "raw_question_sha256": "0953bab0d62fef5490f18df2bdbd4b8f70b504727a733cd66828674e65dfbbdd",
+    "normalized_question_sha256": "0953bab0d62fef5490f18df2bdbd4b8f70b504727a733cd66828674e65dfbbdd",
+    "source_hashes_match_manifest": true
+  },
+  "semantic_repair": {
+    "previous_claim": "2250 - 2146 = 94",
+    "correct_claim": "2250 - 2146 = 104",
+    "written_solution_ja": "William以外の29人の合計は29×74=2146点。30人で平均75点に必要な合計は30×75=2250点なので、Williamに必要な最小得点は2250−2146=104点。原題に得点上限はないため答えは104点であり、100点満点を追加条件にすると達成不能である。",
+    "model_domain": "natural_number_score_without_unstated_upper_bound",
+    "additional_condition_result_ja": "score≤100を追加条件にした場合、104≤scoreと両立せず達成不能。",
+    "assumptions_added_to_original_model": 0,
+    "conclusions_weakened": false,
+    "reference_answer_error_recorded": true,
+    "model_sha256": "090b5c44e9c8f9e68748e8c09df08b95c26536a22d94db3f97f49cf0fb3334b7"
+  },
+  "lean_changes": {
+    "renamed_theorem": "exam_94_enough -> exam_104_enough",
+    "new_theorems": [
+      "exam_impossible_if_at_most_100",
+      "exam_complete"
+    ],
+    "recipe_root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.exam_complete",
+    "sorry_added": 0,
+    "admit_added": 0,
+    "axiom_added": 0
+  },
+  "failed_ci_evidence": {
+    "workflow_run_id": 37262551222,
+    "job_id": 111612634691,
+    "head_sha": "4c0c8c44456d8a3ad500098466ce5d8b343c9603",
+    "conclusion": "failure",
+    "run_count": 646,
+    "failed_or_timed_out_count": 123,
+    "previous_failed_or_timed_out_count": 127,
+    "failure_count_reduction": 4,
+    "compact_artifact_id": 11327226073,
+    "compact_artifact_size_bytes": 221303,
+    "compact_artifact_sha256": "2d8113276b92cb567dafb84ad26f97aac1e4284b85dff2dd4fb0acdd0224d96d",
+    "compact_artifact_local_digest_match": true
+  },
+  "local_verification": {
+    "status": "static_review_only",
+    "checks": [
+      "固定原題・行番号・レコードSHA・問題文SHAを照合",
+      "29×74=2146、30×75=2250、2250−2146=104を独立再計算",
+      "記述解答・Lean定理・レシピ行対応・方法バッチの値とモデルハッシュを同期",
+      "原題にない100点上限を条件文へ分離",
+      "sorry・admit・独自axiomの追加なし"
+    ],
+    "not_run": [
+      "Lean 4.33.1 build",
+      "check_method_recipes.py --render",
+      "dependency graph generation"
+    ],
+    "reason_ja": "ローカル部分取得環境にLean/lakeとレシピ検査スクリプトがなく、実行検証は新exact-head CIへ委ねる。"
+  },
+  "exact_head_ci": {
+    "status_at_recording": "pending_after_same_commit",
+    "repair_recorded_in_same_commit": true
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "remaining": 8274,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_ci_failure",
+    "unresolved_review_threads": 0
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "意味修正後HEADのLeanビルド、公理・依存監査、現行証拠取込が未完了。"
+  }
+}

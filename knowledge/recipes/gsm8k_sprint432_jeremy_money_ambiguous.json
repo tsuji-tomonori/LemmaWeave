@@ -1,0 +1,144 @@
+{
+  "id": "gsm8k_sprint432_jeremy_money_ambiguous",
+  "title_ja": "two times more の解釈差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04187",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A05P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jeremy bought a computer for $3000, and some accessories for 10% of the price of the computer. How much money has Jeremy if, before the purchase, he had two times more money, than the cost of the computer itself?",
+  "answer_ja": "“two times more”を通常のデータセット解釈で「2倍」と読めば初期6000ドル、残り2700ドル。文字どおり「元より2倍多い」=3倍と読めば初期9000ドル、残り5700ドル。原文だけでは一意でない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.jeremy_money_ambiguous",
+  "graph": "work/gsm8k-sprint432-jeremy-money-ambiguous-graph.json",
+  "model_notes_ja": [
+    "曖昧な “two times more” を、2倍と3倍の二解釈に分けて示す。"
+  ],
+  "steps": [
+    {
+      "id": "jeremy_common_initial_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.jeremy_common_initial_money",
+      "title_ja": "通常解釈の初期額",
+      "claim_ja": "3000×2=6000ドル。",
+      "method_ja": "“two times”を2倍と読む。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "通常の倍数表現。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "6000ドル。"
+    },
+    {
+      "id": "jeremy_accessory_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.jeremy_accessory_cost",
+      "title_ja": "付属品代",
+      "claim_ja": "3000×10÷100=300ドル。",
+      "method_ja": "コンピューター価格の10%。",
+      "requires_steps": [
+        "jeremy_common_initial_money"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "基準額3000ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "300ドル。"
+    },
+    {
+      "id": "jeremy_common_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.jeremy_common_remaining",
+      "title_ja": "通常解釈の残額",
+      "claim_ja": "6000−3000−300=2700ドル。",
+      "method_ja": "購入代金を引く。",
+      "requires_steps": [
+        "jeremy_common_initial_money",
+        "jeremy_accessory_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "初期6000ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2700ドル。"
+    },
+    {
+      "id": "jeremy_literal_initial_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.jeremy_literal_initial_money",
+      "title_ja": "文字どおりの初期額",
+      "claim_ja": "3000×3=9000ドル。",
+      "method_ja": "「3000より2倍多い」を元額+2元額と読む。",
+      "requires_steps": [
+        "jeremy_common_initial_money",
+        "jeremy_accessory_cost",
+        "jeremy_common_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "文字どおりの比較表現。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "9000ドル。"
+    },
+    {
+      "id": "jeremy_literal_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.jeremy_literal_remaining",
+      "title_ja": "文字どおりの残額",
+      "claim_ja": "9000−3000−300=5700ドル。",
+      "method_ja": "購入代金を引く。",
+      "requires_steps": [
+        "jeremy_common_initial_money",
+        "jeremy_accessory_cost",
+        "jeremy_common_remaining",
+        "jeremy_literal_initial_money"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "初期9000ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5700ドル。"
+    },
+    {
+      "id": "jeremy_readings_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.jeremy_readings_differ",
+      "title_ja": "解釈差",
+      "claim_ja": "2700ドルと5700ドルは異なる。",
+      "method_ja": "二つの整合解を比較する。",
+      "requires_steps": [
+        "jeremy_common_initial_money",
+        "jeremy_accessory_cost",
+        "jeremy_common_remaining",
+        "jeremy_literal_initial_money",
+        "jeremy_literal_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文が解釈を固定しない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "答えは一意でない。"
+    },
+    {
+      "id": "jeremy_money_ambiguous",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.jeremy_money_ambiguous",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "“two times more”を通常のデータセット解釈で「2倍」と読めば初期6000ドル、残り2700ドル。文字どおり「元より2倍多い」=3倍と読めば初期9000ドル、残り5700ドル。原文だけでは一意でない。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "jeremy_common_initial_money",
+        "jeremy_accessory_cost",
+        "jeremy_common_remaining",
+        "jeremy_literal_initial_money",
+        "jeremy_literal_remaining",
+        "jeremy_readings_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "曖昧な “two times more” を、2倍と3倍の二解釈に分けて示す。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "“two times more”を通常のデータセット解釈で「2倍」と読めば初期6000ドル、残り2700ドル。文字どおり「元より2倍多い」=3倍と読めば初期9000ドル、残り5700ドル。原文だけでは一意でない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4188,
+    "checked_model_hash": "817c13a09bbf6b08fcd74837e1b98dd7a04bbfcd7b8959860972b27afb0bc1e3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "817c13a09bbf6b08fcd74837e1b98dd7a04bbfcd7b8959860972b27afb0bc1e3"
+}

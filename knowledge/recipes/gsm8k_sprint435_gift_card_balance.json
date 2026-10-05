@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint435_gift_card_balance",
+  "title_ja": "ギフトカード残高",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04190",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A05P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Marlon has a gift card for $200. He spent half of it on Monday and one-fourth of the remainder on Tuesday. How much was left on his gift card?",
+  "answer_ja": "月曜後の残りは200÷2=100ドル。火曜にその4分の1の25ドルを使うので、残りは75ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.gift_card_balance",
+  "graph": "work/gsm8k-sprint435-gift-card-balance-graph.json",
+  "model_notes_ja": [
+    "火曜の4分の1の基準は月曜後の残額。"
+  ],
+  "steps": [
+    {
+      "id": "gift_after_monday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.gift_after_monday",
+      "title_ja": "月曜後の残高",
+      "claim_ja": "200÷2=100ドル。",
+      "method_ja": "半分を使えば半分が残る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "初期200ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "100ドル。"
+    },
+    {
+      "id": "gift_tuesday_spending",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.gift_tuesday_spending",
+      "title_ja": "火曜の支出",
+      "claim_ja": "100÷4=25ドル。",
+      "method_ja": "残額の4分の1。",
+      "requires_steps": [
+        "gift_after_monday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "月曜後100ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "25ドル。"
+    },
+    {
+      "id": "gift_card_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.gift_card_remaining",
+      "title_ja": "最終残高",
+      "claim_ja": "100−25=75ドル。",
+      "method_ja": "残高から火曜支出を引く。",
+      "requires_steps": [
+        "gift_after_monday",
+        "gift_tuesday_spending"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "100ドルから25ドルを支出。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "75ドル。"
+    },
+    {
+      "id": "gift_card_balance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.gift_card_balance",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "月曜後の残りは200÷2=100ドル。火曜にその4分の1の25ドルを使うので、残りは75ドル。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "gift_after_monday",
+        "gift_tuesday_spending",
+        "gift_card_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "火曜の4分の1の基準は月曜後の残額。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "月曜後の残りは200÷2=100ドル。火曜にその4分の1の25ドルを使うので、残りは75ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4191,
+    "checked_model_hash": "817c13a09bbf6b08fcd74837e1b98dd7a04bbfcd7b8959860972b27afb0bc1e3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "817c13a09bbf6b08fcd74837e1b98dd7a04bbfcd7b8959860972b27afb0bc1e3"
+}

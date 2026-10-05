@@ -11,9 +11,9 @@
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "semantic_review_status": "self_review_only",
-  "semantic_model_hash": "36520a5493dfbeeee6398f2298aaa7f53f29221fd77d96b96c3e12b29d3acde8",
+  "semantic_model_hash": "817c13a09bbf6b08fcd74837e1b98dd7a04bbfcd7b8959860972b27afb0bc1e3",
   "model_files": [
-    "LemmaWeave/Problems/GSM8K/Sprint1004A11P2Models.lean"
+    "LemmaWeave/Problems/GSM8K/Sprint1006A05P2Models.lean"
   ],
   "items": [
     {
@@ -21,13 +21,13 @@
       "source_line_1based": 4187,
       "source_record_sha256": "930d945056c396748faf5d5fd3be77a5a56785b5372f43009c55a3c4e4e4acce",
       "raw_question_sha256": "89164c4f4bf24baea61d2c9ccd446f4cce692e9bf68aa5e87573218f28764725",
-      "normalized_question_sha256": "96931f0e8e7990f522eb8f76ec6920c208d7dacc9240b0dc0dd01b938fe8af5c",
+      "normalized_question_sha256": "89164c4f4bf24baea61d2c9ccd446f4cce692e9bf68aa5e87573218f28764725",
       "source_question": "John buys game loot boxes for $5 each.  The average value of items inside is $3.5.   He spends $40 on loot boxes.  What is the average amount he lost?",
-      "recipe_id": "gsm8k_sprint431_loot_box_average_loss",
+      "recipe_id": "gsm8k_sprint431_loot_box_expected_loss",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "平均値の線形性を、箱ごとの同じ平均損失の合計として用いる。"
+        "金額をセントで整数化し、平均値を期待値として合計する。"
       ],
       "blockers": []
     },
@@ -38,15 +38,13 @@
       "raw_question_sha256": "8613a1d7472b8fafbf90900db21b93671359a6151ecd98f4de9a76b1d076a87a",
       "normalized_question_sha256": "8613a1d7472b8fafbf90900db21b93671359a6151ecd98f4de9a76b1d076a87a",
       "source_question": "Jeremy bought a computer for $3000, and some accessories for 10% of the price of the computer. How much money has Jeremy if, before the purchase, he had two times more money, than the cost of the computer itself?",
-      "recipe_id": "gsm8k_sprint432_computer_remaining_money_ambiguous",
+      "recipe_id": "gsm8k_sprint432_jeremy_money_ambiguous",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "two times moreの慣用的2倍読みと文字どおり3倍読みを分離する。"
+        "曖昧な “two times more” を、2倍と3倍の二解釈に分けて示す。"
       ],
-      "blockers": [
-        "source_ambiguous_times_more"
-      ]
+      "blockers": []
     },
     {
       "problem_id": "external-gsm8k-main-3101c7d50724:train:04188",
@@ -55,10 +53,12 @@
       "raw_question_sha256": "b3be1335673f6209dd2020b0b9351902e904860149cb06c79f54bf27cbac8ec0",
       "normalized_question_sha256": "b3be1335673f6209dd2020b0b9351902e904860149cb06c79f54bf27cbac8ec0",
       "source_question": "Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?",
-      "recipe_id": "gsm8k_sprint433_discounted_shirt_price",
+      "recipe_id": "gsm8k_sprint433_birthday_shirt_price",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
-      "modeling_notes_ja": [],
+      "modeling_notes_ja": [
+        "15%割引を表示価格80ドルに適用する。"
+      ],
       "blockers": []
     },
     {
@@ -68,11 +68,11 @@
       "raw_question_sha256": "6f37496bfbddd612c67802b3eac30af12d191557c0e384af305996100890f886",
       "normalized_question_sha256": "6f37496bfbddd612c67802b3eac30af12d191557c0e384af305996100890f886",
       "source_question": "In eight years, Mr. Bernard will be 3 times as old as Luke is now. If Luke is 20, what is 10 years less than their average age?",
-      "recipe_id": "gsm8k_sprint434_bernard_luke_average_minus_ten",
+      "recipe_id": "gsm8k_sprint434_ten_less_average_age",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "平均年齢は現在の二人の年齢について取る。"
+        "平均は二人の現在年齢の平均として読む。"
       ],
       "blockers": []
     },
@@ -83,11 +83,11 @@
       "raw_question_sha256": "bae51fd33229551f76609ebe5d23f0613327f220822934431b46a4a6a01f046d",
       "normalized_question_sha256": "bae51fd33229551f76609ebe5d23f0613327f220822934431b46a4a6a01f046d",
       "source_question": "Marlon has a gift card for $200. He spent half of it on Monday and one-fourth of the remainder on Tuesday. How much was left on his gift card?",
-      "recipe_id": "gsm8k_sprint435_gift_card_remaining",
+      "recipe_id": "gsm8k_sprint435_gift_card_balance",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "火曜の4分の1は元額でなく月曜後の残額に対する割合。"
+        "火曜の4分の1の基準は月曜後の残額。"
       ],
       "blockers": []
     }

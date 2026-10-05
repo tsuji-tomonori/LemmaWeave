@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint434_ten_less_average_age",
+  "title_ja": "平均年齢より10歳若い値",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04189",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A05P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "In eight years, Mr. Bernard will be 3 times as old as Luke is now. If Luke is 20, what is 10 years less than their average age?",
+  "answer_ja": "8年後のBernardは3×20=60歳なので現在52歳。Lukeの現在20歳と平均すると36歳で、その10歳下は26歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.ten_less_average_age",
+  "graph": "work/gsm8k-sprint434-ten-less-average-age-graph.json",
+  "model_notes_ja": [
+    "平均は二人の現在年齢の平均として読む。"
+  ],
+  "steps": [
+    {
+      "id": "bernard_age_in_eight_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.bernard_age_in_eight_years",
+      "title_ja": "8年後のBernard",
+      "claim_ja": "3×20=60歳。",
+      "method_ja": "Lukeの現在年齢の3倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Lukeは現在20歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60歳。"
+    },
+    {
+      "id": "bernard_current_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.bernard_current_age",
+      "title_ja": "Bernardの現在年齢",
+      "claim_ja": "60−8=52歳。",
+      "method_ja": "8年分を戻す。",
+      "requires_steps": [
+        "bernard_age_in_eight_years"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8年後60歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "52歳。"
+    },
+    {
+      "id": "current_age_sum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.current_age_sum",
+      "title_ja": "現在年齢の合計",
+      "claim_ja": "52+20=72歳。",
+      "method_ja": "二人の現在年齢を足す。",
+      "requires_steps": [
+        "bernard_age_in_eight_years",
+        "bernard_current_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Bernard52歳、Luke20歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "72歳。"
+    },
+    {
+      "id": "current_age_average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.current_age_average",
+      "title_ja": "現在年齢の平均",
+      "claim_ja": "72÷2=36歳。",
+      "method_ja": "2人で等分する。",
+      "requires_steps": [
+        "bernard_age_in_eight_years",
+        "bernard_current_age",
+        "current_age_sum"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2人の合計72歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "36歳。"
+    },
+    {
+      "id": "ten_less_than_average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.ten_less_than_average",
+      "title_ja": "平均より10歳下",
+      "claim_ja": "36−10=26歳。",
+      "method_ja": "平均から10を引く。",
+      "requires_steps": [
+        "bernard_age_in_eight_years",
+        "bernard_current_age",
+        "current_age_sum",
+        "current_age_average"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "平均36歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "26歳。"
+    },
+    {
+      "id": "ten_less_average_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P2.ten_less_average_age",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "8年後のBernardは3×20=60歳なので現在52歳。Lukeの現在20歳と平均すると36歳で、その10歳下は26歳。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "bernard_age_in_eight_years",
+        "bernard_current_age",
+        "current_age_sum",
+        "current_age_average",
+        "ten_less_than_average"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "平均は二人の現在年齢の平均として読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8年後のBernardは3×20=60歳なので現在52歳。Lukeの現在20歳と平均すると36歳で、その10歳下は26歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4190,
+    "checked_model_hash": "817c13a09bbf6b08fcd74837e1b98dd7a04bbfcd7b8959860972b27afb0bc1e3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "817c13a09bbf6b08fcd74837e1b98dd7a04bbfcd7b8959860972b27afb0bc1e3"
+}

@@ -18,12 +18,41 @@
   ],
   "steps": [
     {
+      "id": "cakes_baked_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.cakes_baked_total",
+      "title_ja": "焼いた総数",
+      "claim_ja": "12+4=16個を焼いた。",
+      "method_ja": "2人の個数を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "他に焼いたケーキはない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "合計16個。"
+    },
+    {
+      "id": "cakes_after_one_eaten",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.cakes_after_one_eaten",
+      "title_ja": "食べた後の残数",
+      "claim_ja": "16-1=15個。",
+      "method_ja": "食べた1個を引く。",
+      "requires_steps": [
+        "cakes_baked_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Donaldが1個食べた。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "15個残る。"
+    },
+    {
       "id": "cakes_left_after_one_eaten",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.cakes_left_after_one_eaten",
-      "title_ja": "1個食べた後に残るケーキ",
+      "title_ja": "問題全体の結論",
       "claim_ja": "Diegoが12個、Donaldが4個焼いたので合計16個。Donaldが1個食べた後は16-1=15個残る。参照解答本文は食べた人をDiegoと誤記しているが、誰が食べても総数は1個減るため答えは15個で変わらない。",
-      "method_ja": "焼いた総数を足し、食べた1個を引く。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "cakes_baked_total",
+        "cakes_after_one_eaten"
+      ],
       "uses_nodes": [],
       "condition_ja": "焼いた16個以外の増減は、Donaldが食べた1個だけである。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +63,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4138,
-    "checked_model_hash": "e9e9f249f5ee58afeb313bde90c133dbf91e5df4cc98214b335a361da47b22bd",
+    "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254"
 }

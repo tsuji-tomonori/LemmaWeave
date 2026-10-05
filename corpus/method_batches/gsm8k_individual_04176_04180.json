@@ -11,9 +11,9 @@
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "semantic_review_status": "self_review_only",
-  "semantic_model_hash": "5b0988cb3f6315379122f53bd4556fef01851ff68e21620d2e91c1da36f28540",
+  "semantic_model_hash": "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4",
   "model_files": [
-    "LemmaWeave/Problems/GSM8K/Sprint1004A10P3Models.lean"
+    "LemmaWeave/Problems/GSM8K/Sprint1006A04P3Models.lean"
   ],
   "items": [
     {
@@ -23,11 +23,11 @@
       "raw_question_sha256": "127662a0fe7a742727e30bf8d1ac378f6dddfd147325d48addec93170c5a617b",
       "normalized_question_sha256": "d667ac17f9a5c19e95fce88319d53c3a75d2a124362a9ab936ae107e7979a357",
       "source_question": "Daisy and Rose were enjoying their backyard pool with their dogs.  If there are 24 legs/paws in the pool, how many dogs do Daisy and Rose have?",
-      "recipe_id": "gsm8k_sprint421_pool_dog_count",
+      "recipe_id": "gsm8k_sprint421_pool_dogs",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "legs/pawsの24本は人2人と犬の合計。"
+        "全員と全犬がプール内にいて、通常の脚数を持つとする。"
       ],
       "blockers": []
     },
@@ -42,7 +42,7 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "「triple the pitbull」にさらに10ポンドを足す。"
+        "体重はポンド単位の自然数として、三倍関係をそのまま一次方程式にする。"
       ],
       "blockers": []
     },
@@ -57,7 +57,7 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "年数は有理数で形式化する。"
+        "75% moreは元の175%と解釈し、半年単位で小数を避ける。"
       ],
       "blockers": []
     },
@@ -68,11 +68,12 @@
       "raw_question_sha256": "d814e32ee73958a5e0e59dc8591e64976f6488b2c26ebad8994563608c254fa8",
       "normalized_question_sha256": "d814e32ee73958a5e0e59dc8591e64976f6488b2c26ebad8994563608c254fa8",
       "source_question": "Sarah's external drive showed 2.4 gigabytes free and 12.6 gigabytes used. She decided to delete a folder of size 4.6 gigabytes and store new files of 2 gigabytes. If she will transfer all her files to a new external drive of size 20 gigabytes, how many free gigabytes will the new external drive have?",
-      "recipe_id": "gsm8k_sprint424_new_drive_free_space",
+      "recipe_id": "gsm8k_sprint424_external_drive_free_space",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "元ドライブの空き2.4GBは現在の使用量更新には不要。"
+        "小数を0.1GB単位の自然数へ正確に換算する。",
+        "初期空き2.4GBと使用12.6GBの和15GBも整合確認する。"
       ],
       "blockers": []
     },
@@ -87,10 +88,9 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "端数がないため切り上げは不要。"
+        "1年を12か月とし、使用期間はちょうど2か月で割り切れる。"
       ],
       "blockers": []
     }
   ]
 }
-

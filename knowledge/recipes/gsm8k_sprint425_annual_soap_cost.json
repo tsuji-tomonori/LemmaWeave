@@ -3,43 +3,72 @@
   "title_ja": "1年分の石けん代",
   "problem_id": "external-gsm8k-main-3101c7d50724:train:04180",
   "collection_id": "external-gsm8k-main-3101c7d50724",
-  "lean_file": "tests/lean/GSM8KSprint1004A10P3.lean",
+  "lean_file": "tests/lean/GSM8KSprint1006A04P3.lean",
   "semantic_review_status": "self_review_only",
   "model_scope": "self_reviewed_model",
   "counting_note_ja": "固定GSM8Kの1問。",
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "problem_ja": "Maria buys a large bar of French soap that lasts her for 2 months.  She spends $8.00 per bar of soap.  If she wants to stock up for the entire year, how much will she spend on soap?",
-  "answer_ja": "1個で2か月持つので、12か月には12÷2=6個必要。1個8ドルだから6×8=48ドル。",
-  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.annual_soap_cost",
+  "answer_ja": "1本が2か月もつので12÷2=6本必要。1本8ドルだから6×8=48ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.annual_soap_cost",
   "graph": "work/gsm8k-sprint425-annual-soap-cost-graph.json",
   "model_notes_ja": [
-    "端数がないため切り上げは不要。"
+    "1年を12か月とし、使用期間はちょうど2か月で割り切れる。"
   ],
   "steps": [
     {
-      "id": "annual_soap_cost",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.annual_soap_cost",
-      "title_ja": "1年分の石けん代",
-      "claim_ja": "1個で2か月持つので、12か月には12÷2=6個必要。1個8ドルだから6×8=48ドル。",
-      "method_ja": "年間月数を1個が持つ月数で割り、必要個数に単価を掛ける。",
+      "id": "soap_bars_per_year",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.soap_bars_per_year",
+      "title_ja": "必要本数",
+      "claim_ja": "12÷2=6本。",
+      "method_ja": "年の月数を1本の持続月数で割る。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "1年を12か月とし、石けんは一定の割合で使い切る。",
+      "condition_ja": "12か月、1本2か月。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "1個で2か月持つので、12か月には12÷2=6個必要。1個8ドルだから6×8=48ドル。"
+      "conclusion_ja": "6本。"
+    },
+    {
+      "id": "soap_annual_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.soap_annual_cost",
+      "title_ja": "年間費用",
+      "claim_ja": "6×8=48ドル。",
+      "method_ja": "本数に単価を掛ける。",
+      "requires_steps": [
+        "soap_bars_per_year"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1本8ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "48ドル。"
+    },
+    {
+      "id": "annual_soap_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.annual_soap_cost",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "1本が2か月もつので12÷2=6本必要。1本8ドルだから6×8=48ドル。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "soap_bars_per_year",
+        "soap_annual_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1年を12か月とし、使用期間はちょうど2か月で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1本が2か月もつので12÷2=6本必要。1本8ドルだから6×8=48ドル。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4181,
-    "checked_model_hash": "5b0988cb3f6315379122f53bd4556fef01851ff68e21620d2e91c1da36f28540",
+    "checked_model_hash": "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4"
 }
-

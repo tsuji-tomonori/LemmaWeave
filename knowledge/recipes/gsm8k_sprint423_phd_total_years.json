@@ -1,45 +1,90 @@
 {
   "id": "gsm8k_sprint423_phd_total_years",
-  "title_ja": "博士課程関連の全所要年数",
+  "title_ja": "博士号取得までの総期間",
   "problem_id": "external-gsm8k-main-3101c7d50724:train:04178",
   "collection_id": "external-gsm8k-main-3101c7d50724",
-  "lean_file": "tests/lean/GSM8KSprint1004A10P3.lean",
+  "lean_file": "tests/lean/GSM8KSprint1006A04P3.lean",
   "semantic_review_status": "self_review_only",
   "model_scope": "self_reviewed_model",
   "counting_note_ja": "固定GSM8Kの1問。",
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "problem_ja": "John decides to go back to school to get his PhD.  He first takes 1 year of courses to get acclimated back to school life before starting his PhD.  After that, he spends 2 years learning the basics of his field.  He then starts research, and he spends 75% more time on research than he did learning the basics.  He then spends half as long on writing his dissertation as his acclimation period.  How long did it take him to do everything?",
-  "answer_ja": "基礎学習は2年。研究は75%長いので2×1.75=3.5年。論文執筆は準備1年の半分で0.5年。合計1+2+3.5+0.5=7年。",
-  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.phd_total_years",
+  "answer_ja": "半年を1単位にすると、準備1年=2単位、基礎2年=4単位。研究は基礎より75%長いので7単位、執筆は半年で1単位。合計14単位=7年。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.phd_total_years",
   "graph": "work/gsm8k-sprint423-phd-total-years-graph.json",
   "model_notes_ja": [
-    "年数は有理数で形式化する。"
+    "75% moreは元の175%と解釈し、半年単位で小数を避ける。"
   ],
   "steps": [
     {
-      "id": "phd_total_years",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.phd_total_years",
-      "title_ja": "博士課程関連の全所要年数",
-      "claim_ja": "基礎学習は2年。研究は75%長いので2×1.75=3.5年。論文執筆は準備1年の半分で0.5年。合計1+2+3.5+0.5=7年。",
-      "method_ja": "各段階の期間を基準期間への割合から求め、すべて合計する。",
+      "id": "phd_research_half_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.phd_research_half_years",
+      "title_ja": "研究期間",
+      "claim_ja": "4×175÷100=7半年。",
+      "method_ja": "基礎期間4半年の175%を求める。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "各期間は連続して重複せず、「75% more」は基礎期間の175%を意味する。",
+      "condition_ja": "75%多いは1.75倍。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "基礎学習は2年。研究は75%長いので2×1.75=3.5年。論文執筆は準備1年の半分で0.5年。合計1+2+3.5+0.5=7年。"
+      "conclusion_ja": "7半年。"
+    },
+    {
+      "id": "phd_total_half_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.phd_total_half_years",
+      "title_ja": "全期間",
+      "claim_ja": "2+4+7+1=14半年。",
+      "method_ja": "準備・基礎・研究・執筆を合計する。",
+      "requires_steps": [
+        "phd_research_half_years"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各期間は重複しない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "14半年。"
+    },
+    {
+      "id": "phd_total_year_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.phd_total_year_count",
+      "title_ja": "年へ換算",
+      "claim_ja": "14÷2=7年。",
+      "method_ja": "半年2単位を1年へ換算する。",
+      "requires_steps": [
+        "phd_research_half_years",
+        "phd_total_half_years"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "14は2で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "7年。"
+    },
+    {
+      "id": "phd_total_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.phd_total_years",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "半年を1単位にすると、準備1年=2単位、基礎2年=4単位。研究は基礎より75%長いので7単位、執筆は半年で1単位。合計14単位=7年。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "phd_research_half_years",
+        "phd_total_half_years",
+        "phd_total_year_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "75% moreは元の175%と解釈し、半年単位で小数を避ける。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "半年を1単位にすると、準備1年=2単位、基礎2年=4単位。研究は基礎より75%長いので7単位、執筆は半年で1単位。合計14単位=7年。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4179,
-    "checked_model_hash": "5b0988cb3f6315379122f53bd4556fef01851ff68e21620d2e91c1da36f28540",
+    "checked_model_hash": "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4"
 }
-

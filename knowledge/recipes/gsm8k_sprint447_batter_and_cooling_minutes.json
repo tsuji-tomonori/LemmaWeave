@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint447_batter_and_cooling_minutes",
+  "title_ja": "生地作りと冷却の時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04202",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "For every black & white cookie that Elsa makes, she has to make the batter, bake the cookies for 15 minutes and then allow to cool.  She then has to dip the cookies in white icing and allow the icing to harden for 30 minutes. Then she has to re-dip them in chocolate icing and allowed to harden for an additional 30 minutes.  If it takes her 2 hours to make the cookies from start to finish, how long does it take to make the dough and cool the cookies before she can start dipping them?",
+  "answer_ja": "焼成15分と2回の硬化各30分は合計75分。全体2時間は120分なので、生地作りと冷却は120−75=45分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.batter_and_cooling_minutes",
+  "graph": "work/gsm8k-sprint447-batter-and-cooling-minutes-graph.json",
+  "model_notes_ja": [
+    "生地作りと冷却を、全時間から明示された焼成・硬化時間を除いた残りとして求める。"
+  ],
+  "steps": [
+    {
+      "id": "cookie_known_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.cookie_known_minutes",
+      "title_ja": "既知の工程",
+      "claim_ja": "15+30+30=75分。",
+      "method_ja": "焼成と2回の硬化時間を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "焼成15分、硬化各30分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "75分。"
+    },
+    {
+      "id": "cookie_total_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.cookie_total_minutes",
+      "title_ja": "全時間",
+      "claim_ja": "2×60=120分。",
+      "method_ja": "時間を分に直す。",
+      "requires_steps": [
+        "cookie_known_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1時間60分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "120分。"
+    },
+    {
+      "id": "cookie_batter_cooling_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.cookie_batter_cooling_minutes",
+      "title_ja": "残り時間",
+      "claim_ja": "120−75=45分。",
+      "method_ja": "全時間から既知工程を引く。",
+      "requires_steps": [
+        "cookie_known_minutes",
+        "cookie_total_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全120分、既知75分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "45分。"
+    },
+    {
+      "id": "batter_and_cooling_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.batter_and_cooling_minutes",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "焼成15分と2回の硬化各30分は合計75分。全体2時間は120分なので、生地作りと冷却は120−75=45分。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "cookie_known_minutes",
+        "cookie_total_minutes",
+        "cookie_batter_cooling_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "生地作りと冷却を、全時間から明示された焼成・硬化時間を除いた残りとして求める。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "焼成15分と2回の硬化各30分は合計75分。全体2時間は120分なので、生地作りと冷却は120−75=45分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4203,
+    "checked_model_hash": "9b08f6bbf43868ba999681d5afb42e5bee2ecf88216499f4d1e00cef45c77be8",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "9b08f6bbf43868ba999681d5afb42e5bee2ecf88216499f4d1e00cef45c77be8"
+}

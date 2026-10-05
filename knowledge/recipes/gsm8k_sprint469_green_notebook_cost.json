@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint469_green_notebook_cost",
+  "title_ja": "緑のノート1冊の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04224",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Peter bought 4 new notebooks for school. 2 of them are green, one is black and the other one is pink. The total cost was $45. If the black notebook cost $15, and the pink one cost $10, how much did the green notebooks cost each?",
+  "answer_ja": "黒とピンクは15+10=25ドル。緑2冊の合計は45−25=20ドルなので、1冊10ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.green_notebook_cost",
+  "graph": "work/gsm8k-sprint469-green-notebook-cost-graph.json",
+  "model_notes_ja": [
+    "緑の2冊は同額であるという問いの含意に従い、残額を2等分する。"
+  ],
+  "steps": [
+    {
+      "id": "nongreen_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.nongreen_cost",
+      "title_ja": "黒とピンクの合計",
+      "claim_ja": "15+10=25ドル。",
+      "method_ja": "2冊の価格を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "黒15ドル、ピンク10ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "25ドル。"
+    },
+    {
+      "id": "green_total_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.green_total_cost",
+      "title_ja": "緑2冊の合計",
+      "claim_ja": "45−25=20ドル。",
+      "method_ja": "総額から他2冊分を引く。",
+      "requires_steps": [
+        "nongreen_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総額45ドル、他2冊25ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20ドル。"
+    },
+    {
+      "id": "green_each_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.green_each_cost",
+      "title_ja": "緑1冊",
+      "claim_ja": "20÷2=10ドル。",
+      "method_ja": "緑2冊の合計を2等分する。",
+      "requires_steps": [
+        "nongreen_cost",
+        "green_total_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "緑2冊合計20ドル、同額。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10ドル。"
+    },
+    {
+      "id": "green_notebook_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.green_notebook_cost",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "黒とピンクは15+10=25ドル。緑2冊の合計は45−25=20ドルなので、1冊10ドル。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "nongreen_cost",
+        "green_total_cost",
+        "green_each_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "緑の2冊は同額であるという問いの含意に従い、残額を2等分する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "黒とピンクは15+10=25ドル。緑2冊の合計は45−25=20ドルなので、1冊10ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4225,
+    "checked_model_hash": "381f7e013ac48094545e959790cc5c6a2c240c5819a5232c0ae98a6a7052e845",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "381f7e013ac48094545e959790cc5c6a2c240c5819a5232c0ae98a6a7052e845"
+}

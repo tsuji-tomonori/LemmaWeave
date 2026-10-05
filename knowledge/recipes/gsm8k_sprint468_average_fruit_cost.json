@@ -1,0 +1,144 @@
+{
+  "id": "gsm8k_sprint468_average_fruit_cost",
+  "title_ja": "果物1個の平均価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04223",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Marcia wants to buy some fruit. Apples cost $2, bananas cost $1, and oranges cost $3. If Marcia buys 12 apples, 4 bananas and 4 oranges, what is the average cost of each piece of fruit in dollars?",
+  "answer_ja": "リンゴは12×2=24ドル、バナナは4×1=4ドル、オレンジは4×3=12ドル。合計40ドル、個数は20個なので、平均は40÷20=2ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.average_fruit_cost",
+  "graph": "work/gsm8k-sprint468-average-fruit-cost-graph.json",
+  "model_notes_ja": [
+    "原題のオレンジ4個・単価3ドルを使用する。参照解答途中式の「3 oranges × $4」は転記誤りだが、正しい積も12ドルで最終値は変わらない。"
+  ],
+  "steps": [
+    {
+      "id": "apple_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.apple_cost",
+      "title_ja": "リンゴ代",
+      "claim_ja": "12×2=24ドル。",
+      "method_ja": "個数×単価。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12個、各2ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "24ドル。"
+    },
+    {
+      "id": "banana_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.banana_cost",
+      "title_ja": "バナナ代",
+      "claim_ja": "4×1=4ドル。",
+      "method_ja": "個数×単価。",
+      "requires_steps": [
+        "apple_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4個、各1ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4ドル。"
+    },
+    {
+      "id": "orange_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.orange_cost",
+      "title_ja": "オレンジ代",
+      "claim_ja": "4×3=12ドル。",
+      "method_ja": "個数×単価。",
+      "requires_steps": [
+        "apple_cost",
+        "banana_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4個、各3ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "12ドル。"
+    },
+    {
+      "id": "fruit_total_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.fruit_total_cost",
+      "title_ja": "総費用",
+      "claim_ja": "24+4+12=40ドル。",
+      "method_ja": "3種類の費用を足す。",
+      "requires_steps": [
+        "apple_cost",
+        "banana_cost",
+        "orange_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各費用24、4、12ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40ドル。"
+    },
+    {
+      "id": "fruit_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.fruit_count",
+      "title_ja": "果物総数",
+      "claim_ja": "12+4+4=20個。",
+      "method_ja": "3種類の個数を足す。",
+      "requires_steps": [
+        "apple_cost",
+        "banana_cost",
+        "orange_cost",
+        "fruit_total_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "12、4、4個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20個。"
+    },
+    {
+      "id": "average_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.average_cost",
+      "title_ja": "平均価格",
+      "claim_ja": "40÷20=2ドル。",
+      "method_ja": "総費用を総個数で割る。",
+      "requires_steps": [
+        "apple_cost",
+        "banana_cost",
+        "orange_cost",
+        "fruit_total_cost",
+        "fruit_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総費用40ドル、20個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2ドル。"
+    },
+    {
+      "id": "average_fruit_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.average_fruit_cost",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "リンゴは12×2=24ドル、バナナは4×1=4ドル、オレンジは4×3=12ドル。合計40ドル、個数は20個なので、平均は40÷20=2ドル。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "apple_cost",
+        "banana_cost",
+        "orange_cost",
+        "fruit_total_cost",
+        "fruit_count",
+        "average_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題のオレンジ4個・単価3ドルを使用する。参照解答途中式の「3 oranges × $4」は転記誤りだが、正しい積も12ドルで最終値は変わらない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "リンゴは12×2=24ドル、バナナは4×1=4ドル、オレンジは4×3=12ドル。合計40ドル、個数は20個なので、平均は40÷20=2ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4224,
+    "checked_model_hash": "381f7e013ac48094545e959790cc5c6a2c240c5819a5232c0ae98a6a7052e845",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "381f7e013ac48094545e959790cc5c6a2c240c5819a5232c0ae98a6a7052e845"
+}

@@ -18,12 +18,57 @@
   ],
   "steps": [
     {
+      "id": "groceries_after_fixed_costs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.groceries_after_fixed_costs",
+      "title_ja": "固定費後残金",
+      "claim_ja": "32-3-2=27ドル。",
+      "method_ja": "パン代と菓子代を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "初期額32ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "27ドル残る。"
+    },
+    {
+      "id": "turkey_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.turkey_cost",
+      "title_ja": "七面鳥代",
+      "claim_ja": "27の1/3で9ドル。",
+      "method_ja": "残金を3で割る。",
+      "requires_steps": [
+        "groceries_after_fixed_costs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "割合の基準は27ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "七面鳥代9ドル。"
+    },
+    {
+      "id": "groceries_final_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.groceries_final_money",
+      "title_ja": "最終残金",
+      "claim_ja": "27-9=18ドル。",
+      "method_ja": "七面鳥代を引く。",
+      "requires_steps": [
+        "groceries_after_fixed_costs",
+        "turkey_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加支出はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "18ドル残る。"
+    },
+    {
       "id": "grocery_money_left",
       "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.grocery_money_left",
-      "title_ja": "買い物後の残金",
+      "title_ja": "問題全体の結論",
       "claim_ja": "32ドルからパン3ドルと菓子2ドルを払うと27ドル残る。七面鳥にその1/3の9ドルを使うので、27-9=18ドル残る。",
-      "method_ja": "固定費を引き、その時点の残額の1/3を計算してさらに引く。",
-      "requires_steps": [],
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "groceries_after_fixed_costs",
+        "turkey_cost",
+        "groceries_final_money"
+      ],
       "uses_nodes": [],
       "condition_ja": "七面鳥代の1/3は、パンと菓子を買った後の27ドルを基準とする。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
@@ -34,11 +79,12 @@
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4145,
-    "checked_model_hash": "e3cecdfc4e674a7dd97b9452abd2054305e562a573cca490a1b2a4ab3c1ce84c",
+    "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
       "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9"
 }

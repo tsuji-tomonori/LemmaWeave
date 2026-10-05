@@ -146,6 +146,7 @@ structure MonthlyHours where
 theorem hours_total_need (m : MonthlyHours) : m.totalNeed = 2060 := by rw [m.hTotalNeed]
 theorem hours_138_enough (m : MonthlyHours) : m.totalNeed ≤ 138 * 15 := by
   rw [hours_total_need m]
+  norm_num
 theorem hours_lower_bound (m : MonthlyHours) : 138 ≤ m.hours := by
   have h := m.hEnough
   rw [hours_total_need m] at h

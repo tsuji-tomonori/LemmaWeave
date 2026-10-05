@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-06",
+  "run_id": "20261006T000000+0900-gsm8k-solve",
+  "scheduled_slot": "2026-10-06T00:00:00+09:00",
+  "role": "gsm8k_individual_solve",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "79a06cd88428098fb38c9cc97f68927c97042018",
+  "started_at": "2026-10-06T00:03:52+09:00",
+  "finished_at": "2026-10-06T00:29:00+09:00",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04121",
+    "external-gsm8k-main-3101c7d50724:train:04122",
+    "external-gsm8k-main-3101c7d50724:train:04123",
+    "external-gsm8k-main-3101c7d50724:train:04124",
+    "external-gsm8k-main-3101c7d50724:train:04125",
+    "external-gsm8k-main-3101c7d50724:train:04126",
+    "external-gsm8k-main-3101c7d50724:train:04127",
+    "external-gsm8k-main-3101c7d50724:train:04128",
+    "external-gsm8k-main-3101c7d50724:train:04129",
+    "external-gsm8k-main-3101c7d50724:train:04130",
+    "external-gsm8k-main-3101c7d50724:train:04131",
+    "external-gsm8k-main-3101c7d50724:train:04132",
+    "external-gsm8k-main-3101c7d50724:train:04133",
+    "external-gsm8k-main-3101c7d50724:train:04134",
+    "external-gsm8k-main-3101c7d50724:train:04135"
+  ],
+  "completed_problem_ids": [],
+  "self_reviewed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04121",
+    "external-gsm8k-main-3101c7d50724:train:04122",
+    "external-gsm8k-main-3101c7d50724:train:04123",
+    "external-gsm8k-main-3101c7d50724:train:04124",
+    "external-gsm8k-main-3101c7d50724:train:04125",
+    "external-gsm8k-main-3101c7d50724:train:04126",
+    "external-gsm8k-main-3101c7d50724:train:04127",
+    "external-gsm8k-main-3101c7d50724:train:04128",
+    "external-gsm8k-main-3101c7d50724:train:04129",
+    "external-gsm8k-main-3101c7d50724:train:04130",
+    "external-gsm8k-main-3101c7d50724:train:04131",
+    "external-gsm8k-main-3101c7d50724:train:04132",
+    "external-gsm8k-main-3101c7d50724:train:04133",
+    "external-gsm8k-main-3101c7d50724:train:04134",
+    "external-gsm8k-main-3101c7d50724:train:04135"
+  ],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04121",
+    "external-gsm8k-main-3101c7d50724:train:04122",
+    "external-gsm8k-main-3101c7d50724:train:04123",
+    "external-gsm8k-main-3101c7d50724:train:04124",
+    "external-gsm8k-main-3101c7d50724:train:04125",
+    "external-gsm8k-main-3101c7d50724:train:04126",
+    "external-gsm8k-main-3101c7d50724:train:04127",
+    "external-gsm8k-main-3101c7d50724:train:04128",
+    "external-gsm8k-main-3101c7d50724:train:04129",
+    "external-gsm8k-main-3101c7d50724:train:04130",
+    "external-gsm8k-main-3101c7d50724:train:04131",
+    "external-gsm8k-main-3101c7d50724:train:04132",
+    "external-gsm8k-main-3101c7d50724:train:04133",
+    "external-gsm8k-main-3101c7d50724:train:04134",
+    "external-gsm8k-main-3101c7d50724:train:04135"
+  ],
+  "canonical_queue_update": {
+    "applied": false,
+    "statuses_before": {
+      "solution_ready": 518,
+      "awaiting_verification": 3604,
+      "pending": 4670,
+      "total": 8792
+    },
+    "selected_status_after": "pending",
+    "reason_ja": "ローカル作業領域はprunedでsolve_queue.pyと固定Lean環境がなく、binary queueを手編集しない。正確なHEADの成功証拠取込後に公式スクリプトで遷移する。"
+  },
+  "problem_results": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04121",
+      "source_line_1based": 4122,
+      "source_record_sha256": "075990d22387c4b80a54b234d32db71227cb7ad287910ad9c10ae259d0c54818",
+      "raw_question_sha256": "38be8bbe53f68467c70111d57bfc55b4b9e34548778a1fe05a9dd5f1b99745f1",
+      "answer_ja": "24%（独立抽出の場合）",
+      "lean_root": "good_ingredients_independent",
+      "review_note_ja": "独立性なしでは周辺割合だけから一意に定まらない。Leanに同一周辺分布で全良品数24と0の反例を追加。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04122",
+      "source_line_1based": 4123,
+      "source_record_sha256": "0eccc1584c339f128644167c74a16f0148e94865b7b5ec525aac16c604cfb304",
+      "raw_question_sha256": "598645f753c0517ca10b49e3c0a766f4187ac596c0c7ca64e490481e42576f98",
+      "answer_ja": "32時間",
+      "lean_root": "picture_processing_hours",
+      "review_note_ja": "960枚×2分=1920分、60分/時で除す。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04123",
+      "source_line_1based": 4124,
+      "source_record_sha256": "79ecc6c9cbe2b270a57921d5155066c869a27fd8ff71a7d631523c3c8d29a2e5",
+      "raw_question_sha256": "0444d6774be1ea1d5227ef71d44f2b81096fbdbf1a6db14008af104a5f481f98",
+      "answer_ja": "200平方フィート",
+      "lean_root": "remaining_storage_unit_area",
+      "review_note_ja": "既知20区画は640平方フィート。残り4400を22区画で等分。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04124",
+      "source_line_1based": 4125,
+      "source_record_sha256": "e5c21349612828043f7d6fe47bfa9a190e92b6b721f716e5833cd802ea76eb3f",
+      "raw_question_sha256": "00dd1142c2d5096ddd3df650c949e11cb6767fc9a596cfe386d1b6c61a0f4ba6",
+      "answer_ja": "66ガロン",
+      "lean_root": "pool_water_three_trips",
+      "review_note_ja": "各回は4+6+12=22ガロン、3回で66。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04125",
+      "source_line_1based": 4126,
+      "source_record_sha256": "c441bf1a03e85ec6d3c6c91a0e44b247d06c2c282b60926455b81f7183551eb6",
+      "raw_question_sha256": "ccf8e6dff11c5a4591120cfa23d0ddce3784a03f39d83eae105603d58c95e22e",
+      "answer_ja": "6日",
+      "lean_root": "joey_swimming_days",
+      "review_note_ja": "Alexa 9日がEthanの3/4なのでEthan 12日、その半分。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04126",
+      "source_line_1based": 4127,
+      "source_record_sha256": "49de0c52587734b46e649adce71e9530906085bf56e7609257be7146d6f8ba22",
+      "raw_question_sha256": "8aa07c24849ecc3b9c1d120e700f99cd07cfc88bf7dbe11eb71148e6dd3ab38d",
+      "answer_ja": "6ドル",
+      "lean_root": "shirt_discount",
+      "review_note_ja": "22−16。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04127",
+      "source_line_1based": 4128,
+      "source_record_sha256": "6a05586d69d6a073c638d7f8ac379f89adc1ed0830051c572a6523d6eeeb9477",
+      "raw_question_sha256": "0fa3293ed56dabb2f3da573097c132a6e2595dbd5525308c488ec1f9e18b9b34",
+      "answer_ja": "120本",
+      "lean_root": "fourth_day_daisies",
+      "review_note_ja": "2日目65、3日目120、最初の3日230、350−230。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04128",
+      "source_line_1based": 4129,
+      "source_record_sha256": "e999276ec63094dd6a6456e8209f32d038d81573794316be4c9b6e18a1fcf565",
+      "raw_question_sha256": "19372d006bee34302a0a6f008e8ebd6b0b80436f3ea26a75f81456bd05b3bad0",
+      "answer_ja": "7時間（復路も各30分とする追加条件下）",
+      "lean_root": "moving_hours",
+      "review_note_ja": "原文は復路時間を明示しない。記載された積込み+往路だけなら270分=4.5時間。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04129",
+      "source_line_1based": 4130,
+      "source_record_sha256": "4e036cb316fc71fd34eaadfb193e114e709ff9e9ff363285074f78b5c90f5f7f",
+      "raw_question_sha256": "3f339bc90e1653cfc6f4fd76050f86a731e5eac54a3de0f4224e37d705cdc452",
+      "answer_ja": "92ドル",
+      "lean_root": "amusement_park_cost",
+      "review_note_ja": "4人×(18+5)。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04130",
+      "source_line_1based": 4131,
+      "source_record_sha256": "3f9ab17ecb49081b8c7c8211f9a26bf32625a661ff5727d005950d746a608039",
+      "raw_question_sha256": "b9a8f5c843685d6ed3fd3d0de569eab21fcf4f2696670e18b1dd6e97cda2182d",
+      "answer_ja": "通常解釈90ポンド／増加量が前年の3倍という別解釈80ポンド",
+      "lean_root": "lifting_capacity_interpretations",
+      "review_note_ja": "照応が曖昧なため両解釈を保持。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04131",
+      "source_line_1based": 4132,
+      "source_record_sha256": "8b8a1e9d4600e5fc1559609142152abf6174877f015bc931a14022e02fd58319",
+      "raw_question_sha256": "20dc60b109980c98fb8a842d563d733f4474179ee4a544cea7aefa9e4cce537a",
+      "answer_ja": "50000ドル（手取りが全税控除後）／400000/9ドル（手取りが所得税控除後のみ）",
+      "lean_root": "gross_salary_interpretations",
+      "review_note_ja": "会計語義が曖昧なため両解釈を保持。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04132",
+      "source_line_1based": 4133,
+      "source_record_sha256": "41fd1d1ed748cd1e034bad4796afdc5b70f8474a1a0dbc6cf506304dc3cc8841",
+      "raw_question_sha256": "eb4fafd06c693daa3925980ebf641d61b885aebd15510a111e0c784acbf12479",
+      "answer_ja": "23フィート",
+      "lean_root": "papaya_height_five_years",
+      "review_note_ja": "年間成長2,3,9/2,9,9/2の合計。初期高さ0を前提。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04133",
+      "source_line_1based": 4134,
+      "source_record_sha256": "2a7a3906db96477a1cbedd18f9a2da55335527327b638a282357f3ecb1cc9af4",
+      "raw_question_sha256": "405b037489be8ff9ce7650e7a6a94cd208d86da604e0651e17a88fb77e854618",
+      "answer_ja": "196本",
+      "lean_root": "smiley_tulips_total",
+      "review_note_ja": "赤34本、黄162本。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04134",
+      "source_line_1based": 4135,
+      "source_record_sha256": "98b4ca94c9351340efa54566eb8a29e81aa774106a19cb96202644e236a1bad2",
+      "raw_question_sha256": "8840cd6e2fe4578eeaeffb61ae3a7fd983749d9b9c4627d5b914936e1164b524",
+      "answer_ja": "12インチ",
+      "lean_root": "right_triangle_perimeter",
+      "review_note_ja": "3-4-5直角三角形。現Leanは数値平方関係のみで、正値下の斜辺一意性は未形式化。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04135",
+      "source_line_1based": 4136,
+      "source_record_sha256": "4f41f4694c608c23133117a8d27326feb393392c087860e4024b4345a50e9747",
+      "raw_question_sha256": "93fe9f2785b75e8b889364a306576870b39dcc064dcb14a04ca0d63e916d8472",
+      "answer_ja": "40本（各成人が32本の歯を持つ追加条件下）",
+      "lean_root": "teeth_removed_each_adult_32",
+      "review_note_ja": "“four adults with 32 teeth”を合計32本と読む場合は個別本数不足で決定不能。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    }
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04121",
+      "retry_on": "PR #5の現在HEADでLean 4.33.1固定CI・公理監査・依存監査を実行できた時",
+      "reason_ja": "行別Lean定理と記述解答は自己照合済みだが、正確なHEADの固定Lean 4.33.1成功証拠がまだないためsolution_readyへ昇格しない。",
+      "next_action_ja": "workflow_dispatchまたはpushで現在HEADを検証し、成功runのartifactをimport_evidence.pyで取り込んで入力ハッシュ・公理・依存を照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04122",
+      "retry_on": "PR #5の現在HEADでLean 4.33.1固定CI・公理監査・依存監査を実行できた時",
+      "reason_ja": "行別Lean定理と記述解答は自己照合済みだが、正確なHEADの固定Lean 4.33.1成功証拠がまだないためsolution_readyへ昇格しない。",
+      "next_action_ja": "workflow_dispatchまたはpushで現在HEADを検証し、成功runのartifactをimport_evidence.pyで取り込んで入力ハッシュ・公理・依存を照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04123",
+      "retry_on": "PR #5の現在HEADでLean 4.33.1固定CI・公理監査・依存監査を実行できた時",
+      "reason_ja": "行別Lean定理と記述解答は自己照合済みだが、正確なHEADの固定Lean 4.33.1成功証拠がまだないためsolution_readyへ昇格しない。",
+      "next_action_ja": "workflow_dispatchまたはpushで現在HEADを検証し、成功runのartifactをimport_evidence.pyで取り込んで入力ハッシュ・公理・依存を照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04124",
+      "retry_on": "PR #5の現在HEADでLean 4.33.1固定CI・公理監査・依存監査を実行できた時",
+      "reason_ja": "行別Lean定理と記述解答は自己照合済みだが、正確なHEADの固定Lean 4.33.1成功証拠がまだないためsolution_readyへ昇格しない。",
+      "next_action_ja": "workflow_dispatchまたはpushで現在HEADを検証し、成功runのartifactをimport_evidence.pyで取り込んで入力ハッシュ・公理・依存を照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04125",
+      "retry_on": "PR #5の現在HEADでLean 4.33.1固定CI・公理監査・依存監査を実行できた時",
+      "reason_ja": "行別Lean定理と記述解答は自己照合済みだが、正確なHEADの固定Lean 4.33.1成功証拠がまだないためsolution_readyへ昇格しない。",
+      "next_action_ja": "workflow_dispatchまたはpushで現在HEADを検証し、成功runのartifactをimport_evidence.pyで取り込んで入力ハッシュ・公理・依存を照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04126",
+      "retry_on": "説明行とLean依存を個別定理へ分解し、現在HEADの固定CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04127",
+      "retry_on": "説明行とLean依存を個別定理へ分解し、現在HEADの固定CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04128",
+      "retry_on": "復路時間の条件付きモデルと片道のみモデルをLean上で明示し、現在HEAD CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04129",
+      "retry_on": "説明行とLean依存を個別定理へ分解し、現在HEADの固定CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04130",
+      "retry_on": "説明行とLean依存を個別定理へ分解し、現在HEADの固定CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04131",
+      "retry_on": "説明行とLean依存を個別定理へ分解し、現在HEADの固定CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04132",
+      "retry_on": "説明行とLean依存を個別定理へ分解し、現在HEADの固定CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04133",
+      "retry_on": "説明行とLean依存を個別定理へ分解し、現在HEADの固定CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04134",
+      "retry_on": "正値仮定から斜辺5の一意性までLeanで形式化し、現在HEAD CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04135",
+      "retry_on": "各成人32本という条件付き結論と原文だけでの非一意性反例をLeanで形式化し、現在HEAD CIを通せた時",
+      "reason_ja": "原題・解答・既存Lean下書きを自己照合したが、説明行と実証明依存の粒度または条件不足の形式化が未完で、正確なHEADの成功証拠もない。",
+      "next_action_ja": "個別行定理と必要な反例・追加条件をモデルへ追加し、固定Lean 4.33.1でビルド、公理・依存・入力ハッシュ監査後に証拠を取り込む。"
+    }
+  ],
+  "claim": {
+    "path": "operations/claims/2026-10-06-0000.json",
+    "expires_at": "2026-10-06T01:30:00+09:00",
+    "final_status": "released"
+  },
+  "changes": [
+    {
+      "commit": "1b226374064b1b0003d01d5ea3b01e3e72fd9de4",
+      "path": "LemmaWeave/Problems/GSM8K/Sprint1004A05P1Models.lean"
+    },
+    {
+      "commit": "6613168aedbaf97f7210c529722542b2649e1967",
+      "path": "knowledge/recipes/gsm8k_sprint394_good_ingredients_independent.json"
+    },
+    {
+      "commit": "6c806e875bd501dccc6085051205b8e7ddee9bf1",
+      "path": "knowledge/recipes/gsm8k_sprint394_picture_processing_hours.json"
+    },
+    {
+      "commit": "29ed4379c809c8cd14a3ad9223944c64f57165fc",
+      "path": "knowledge/recipes/gsm8k_sprint394_remaining_storage_unit_area.json"
+    },
+    {
+      "commit": "df1a0980c91adc6a675a86e8b817b4c7e326018a",
+      "path": "knowledge/recipes/gsm8k_sprint394_pool_water_three_trips.json"
+    },
+    {
+      "commit": "527e473451a989361da816ce6fe334b5d632cc4e",
+      "path": "knowledge/recipes/gsm8k_sprint394_joey_swimming_days.json"
+    },
+    {
+      "commit": "45fe18913e24f5b62625dab1df3ee9d1aa0abe22",
+      "path": "corpus/method_batches/gsm8k_individual_04121_04125.json"
+    },
+    {
+      "commit": "d8780ea569230ebe4027423cb7757c48b0d00e97",
+      "path": "operations/claims/2026-10-06-0000.json"
+    }
+  ],
+  "verification": {
+    "assurance_level": "INCONCLUSIVE",
+    "exact_head_ci_success": false,
+    "local_lean_available": false,
+    "fixed_lean_version": "4.33.1",
+    "axiom_policy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "last_known_failed_run_id": 37262551222,
+    "last_known_artifact_id": 11327226073,
+    "last_known_artifact_digest": "2d8113276b92cb567dafb84ad26f97aac1e4284b85dff2dd4fb0acdd0224d96d",
+    "note_ja": "自己照合は独立レビューではない。sorry/sorryAx/独自axiomを追加していないが、現在HEADでのビルド・#print axioms・依存監査・証拠取込は未完。"
+  },
+  "pull_request": {
+    "number": 5,
+    "merge_performed": false,
+    "reason_ja": "正確なHEADの必須CI成功証拠がないためマージ条件未達。"
+  }
+}

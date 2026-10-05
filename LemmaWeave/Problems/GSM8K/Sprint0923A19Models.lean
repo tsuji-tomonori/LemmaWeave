@@ -106,7 +106,10 @@ structure WeeklyCandy where
   hWeeks : weeks * weekly = 36
 
 theorem weekly_candy_amount (m : WeeklyCandy) : m.weekly = 9 := by cases m <;> simp_all <;> omega
-theorem weekly_candy_solution (m : WeeklyCandy) : m.weeks = 4 := by cases m <;> simp_all <;> omega
+theorem weekly_candy_solution (m : WeeklyCandy) : m.weeks = 4 := by
+  have h := m.hWeeks
+  rw [weekly_candy_amount m] at h
+  omega
 
 structure BicycleSavings where
   carMoney : ℕ

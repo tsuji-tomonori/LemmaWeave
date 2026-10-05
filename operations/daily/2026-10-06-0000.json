@@ -7,7 +7,7 @@
   "branch": "codex/sprint-20260919-0000",
   "base_sha": "79a06cd88428098fb38c9cc97f68927c97042018",
   "started_at": "2026-10-06T00:03:52+09:00",
-  "finished_at": "2026-10-06T00:29:00+09:00",
+  "finished_at": "2026-10-06T00:36:00+09:00",
   "source": {
     "repository": "openai/grade-school-math",
     "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
@@ -388,6 +388,14 @@
     {
       "commit": "d8780ea569230ebe4027423cb7757c48b0d00e97",
       "path": "operations/claims/2026-10-06-0000.json"
+    },
+    {
+      "commit": "88cf176ee4fef2ea94b763413d63cf953f6f2547",
+      "path": "operations/daily/2026-10-06-0000.json"
+    },
+    {
+      "commit": "644f3a33de4a33ea828052e49056c964307c744d",
+      "path": "operations/claims/2026-10-06-0000.json"
     }
   ],
   "verification": {
@@ -403,11 +411,38 @@
     "last_known_failed_run_id": 37262551222,
     "last_known_artifact_id": 11327226073,
     "last_known_artifact_digest": "2d8113276b92cb567dafb84ad26f97aac1e4284b85dff2dd4fb0acdd0224d96d",
-    "note_ja": "自己照合は独立レビューではない。sorry/sorryAx/独自axiomを追加していないが、現在HEADでのビルド・#print axioms・依存監査・証拠取込は未完。"
+    "note_ja": "自己照合は独立レビューではない。sorry/sorryAx/独自axiomを追加していないが、現在HEADでのビルド・#print axioms・依存監査・証拠取込は未完。",
+    "current_head_workflow_runs": 0,
+    "current_head_commit_statuses": 0,
+    "current_head_review_threads_unresolved": 0
   },
   "pull_request": {
     "number": 5,
     "merge_performed": false,
-    "reason_ja": "正確なHEADの必須CI成功証拠がないためマージ条件未達。"
-  }
+    "reason_ja": "正確なHEADの必須CI成功証拠がないためマージ条件未達。",
+    "current_branch": {
+      "number": 5,
+      "head": "644f3a33de4a33ea828052e49056c964307c744d",
+      "exact_head_ci": "missing",
+      "unresolved_review_threads": 0,
+      "review_history": [
+        "CHANGES_REQUESTED",
+        "APPROVED",
+        "APPROVED"
+      ]
+    },
+    "stacked_ci_repair": {
+      "number": 6,
+      "draft": true,
+      "mergeable": false,
+      "base_sha": "c71537966ef0fa0d5789169d0436782ae99e32ed",
+      "head_sha": "41e663f9ecd2a6c66f3554a45ddfb7bd17e2a702",
+      "exact_head_ci": "missing",
+      "reviews": 0,
+      "unresolved_review_threads": 0,
+      "note_ja": "現在のPR #5 HEADよりbaseが古く、draftかつmergeable=falseのため統合しない。"
+    },
+    "pr_comment_id": 5997658963
+  },
+  "head_observed_before_ledger_finalization": "644f3a33de4a33ea828052e49056c964307c744d"
 }

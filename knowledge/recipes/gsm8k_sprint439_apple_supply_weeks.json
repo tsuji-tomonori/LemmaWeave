@@ -1,72 +1,107 @@
 {
   "id": "gsm8k_sprint439_apple_supply_weeks",
-  "title_ja": "リンゴがもつ週数",
+  "title_ja": "3箱のリンゴがもつ週数",
   "problem_id": "external-gsm8k-main-3101c7d50724:train:04194",
   "collection_id": "external-gsm8k-main-3101c7d50724",
-  "lean_file": "tests/lean/GSM8KSprint1004A11P3.lean",
+  "lean_file": "tests/lean/GSM8KSprint1006A05P3.lean",
   "semantic_review_status": "self_review_only",
   "model_scope": "self_reviewed_model",
   "counting_note_ja": "固定GSM8Kの1問。",
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "problem_ja": "Henry believes in the famous phrase, \"An apple a day, keeps the doctor away.\" If a box contains 14 apples, how many weeks can Henry and his brother spend eating 3 boxes of apples if they each eat 1 apple a day?",
-  "answer_ja": "3箱で14×3=42個。2人で1日2個食べるので42÷2=21日、21÷7=3週間。",
-  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.apple_supply_weeks",
+  "answer_ja": "3箱には14×3=42個。2人で1日2個食べるので21日、すなわち3週間。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.apple_supply_weeks",
   "graph": "work/gsm8k-sprint439-apple-supply-weeks-graph.json",
   "model_notes_ja": [
-    "Henryと兄弟がそれぞれ1日1個なので全体で1日2個。"
+    "Henryと兄弟の2人が毎日それぞれ1個ずつ食べる。"
   ],
   "steps": [
     {
-      "id": "total",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.apple_total",
+      "id": "apple_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.apple_total",
       "title_ja": "リンゴ総数",
       "claim_ja": "14×3=42個。",
-      "method_ja": "箱数に1箱の個数を掛ける。",
+      "method_ja": "1箱の個数に箱数を掛ける。",
       "requires_steps": [],
       "uses_nodes": [],
-      "condition_ja": "3箱、各14個。",
+      "condition_ja": "各14個、3箱。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "14×3=42個。"
+      "conclusion_ja": "42個。"
     },
     {
-      "id": "days",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.apple_supply_days",
-      "title_ja": "もつ日数",
+      "id": "apples_eaten_per_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.apples_eaten_per_day",
+      "title_ja": "1日の消費",
+      "claim_ja": "1+1=2個。",
+      "method_ja": "2人分を足す。",
+      "requires_steps": [
+        "apple_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各人1日1個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2個。"
+    },
+    {
+      "id": "apple_eating_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.apple_eating_days",
+      "title_ja": "食べられる日数",
       "claim_ja": "42÷2=21日。",
-      "method_ja": "総数を1日の消費2個で割る。",
+      "method_ja": "総数を1日消費で割る。",
       "requires_steps": [
-        "total"
+        "apple_total",
+        "apples_eaten_per_day"
       ],
       "uses_nodes": [],
-      "condition_ja": "2人が各1個食べる。",
+      "condition_ja": "毎日2個。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "42÷2=21日。"
+      "conclusion_ja": "21日。"
     },
     {
-      "id": "root",
-      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P3.apple_supply_weeks",
-      "title_ja": "もつ週数",
+      "id": "apple_eating_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.apple_eating_weeks",
+      "title_ja": "週数",
       "claim_ja": "21÷7=3週間。",
-      "method_ja": "日数を7で割る。",
+      "method_ja": "7日を1週として換算。",
       "requires_steps": [
-        "days"
+        "apple_total",
+        "apples_eaten_per_day",
+        "apple_eating_days"
       ],
       "uses_nodes": [],
-      "condition_ja": "1週間は7日。",
+      "condition_ja": "21日。",
       "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
-      "conclusion_ja": "21÷7=3週間。"
+      "conclusion_ja": "3週間。"
+    },
+    {
+      "id": "apple_supply_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.apple_supply_weeks",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "3箱には14×3=42個。2人で1日2個食べるので21日、すなわち3週間。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "apple_total",
+        "apples_eaten_per_day",
+        "apple_eating_days",
+        "apple_eating_weeks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Henryと兄弟の2人が毎日それぞれ1個ずつ食べる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3箱には14×3=42個。2人で1日2個食べるので21日、すなわち3週間。"
     }
   ],
   "author_review": {
     "reviewer": "author",
     "status": "checked",
     "source_line_1based": 4195,
-    "checked_model_hash": "d07ed89bb53634a8184aa39f8bc6e7a5b77bea33009ebeffa250d0b03cc268c1",
+    "checked_model_hash": "a429b9d0c1d24f9a8153d11dbe064ef5d81339bd1772edaf919f13c730e748de",
     "checks_ja": [
       "原文の数量・型・単位・仮定・求める全結論を再照合した。",
-      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
       "独立レビューではなく作成者自己照合である。"
     ]
-  }
+  },
+  "checked_model_hash": "a429b9d0c1d24f9a8153d11dbe064ef5d81339bd1772edaf919f13c730e748de"
 }

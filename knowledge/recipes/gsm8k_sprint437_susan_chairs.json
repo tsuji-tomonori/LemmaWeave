@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint437_susan_chairs",
+  "title_ja": "Susanの椅子の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04192",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A05P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Susan loves chairs. In her house there are red chairs, yellow chairs, and blue chairs. There are 5 red chairs. There are 4 times as many yellow chairs as red chairs, and there are 2 fewer blue chairs than yellow chairs. How many chairs are there in Susan's house?",
+  "answer_ja": "黄色は5×4=20脚、青は20−2=18脚。赤5脚と合わせて43脚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.susan_chairs",
+  "graph": "work/gsm8k-sprint437-susan-chairs-graph.json",
+  "model_notes_ja": [
+    "赤・黄・青の3色が家にある椅子の全分類。"
+  ],
+  "steps": [
+    {
+      "id": "yellow_chair_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.yellow_chair_count",
+      "title_ja": "黄色の椅子",
+      "claim_ja": "5×4=20脚。",
+      "method_ja": "赤の4倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤5脚。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20脚。"
+    },
+    {
+      "id": "blue_chair_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.blue_chair_count",
+      "title_ja": "青の椅子",
+      "claim_ja": "20−2=18脚。",
+      "method_ja": "黄色より2脚少ない。",
+      "requires_steps": [
+        "yellow_chair_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "黄色20脚。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "18脚。"
+    },
+    {
+      "id": "total_chair_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.total_chair_count",
+      "title_ja": "総数",
+      "claim_ja": "5+20+18=43脚。",
+      "method_ja": "3色を合計する。",
+      "requires_steps": [
+        "yellow_chair_count",
+        "blue_chair_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "赤5、黄20、青18。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "43脚。"
+    },
+    {
+      "id": "susan_chairs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.susan_chairs",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "黄色は5×4=20脚、青は20−2=18脚。赤5脚と合わせて43脚。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "yellow_chair_count",
+        "blue_chair_count",
+        "total_chair_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "赤・黄・青の3色が家にある椅子の全分類。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "黄色は5×4=20脚、青は20−2=18脚。赤5脚と合わせて43脚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4193,
+    "checked_model_hash": "a429b9d0c1d24f9a8153d11dbe064ef5d81339bd1772edaf919f13c730e748de",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "a429b9d0c1d24f9a8153d11dbe064ef5d81339bd1772edaf919f13c730e748de"
+}

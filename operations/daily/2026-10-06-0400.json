@@ -1,0 +1,438 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-06",
+  "run_id": "20261006T040000+0900-gsm8k-solve",
+  "scheduled_slot": "2026-10-06T04:00:00+09:00",
+  "role": "gsm8k_individual_solve",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "947e41b272462a9e1d0a55f53079ef887d1f2a95",
+  "started_at": "2026-10-06T04:04:33+09:00",
+  "finished_at": "2026-10-06T04:23:00+09:00",
+  "schedule_deviation_minutes": 4,
+  "schedule_note_ja": "4時枠として実行。03時台帳が存在しないため03時枠は未実行として記録し、重複回収せず04時枠の04166〜04180を選択。",
+  "missed_slots_observed": [
+    "2026-10-06-0300"
+  ],
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04166",
+    "external-gsm8k-main-3101c7d50724:train:04167",
+    "external-gsm8k-main-3101c7d50724:train:04168",
+    "external-gsm8k-main-3101c7d50724:train:04169",
+    "external-gsm8k-main-3101c7d50724:train:04170",
+    "external-gsm8k-main-3101c7d50724:train:04171",
+    "external-gsm8k-main-3101c7d50724:train:04172",
+    "external-gsm8k-main-3101c7d50724:train:04173",
+    "external-gsm8k-main-3101c7d50724:train:04174",
+    "external-gsm8k-main-3101c7d50724:train:04175",
+    "external-gsm8k-main-3101c7d50724:train:04176",
+    "external-gsm8k-main-3101c7d50724:train:04177",
+    "external-gsm8k-main-3101c7d50724:train:04178",
+    "external-gsm8k-main-3101c7d50724:train:04179",
+    "external-gsm8k-main-3101c7d50724:train:04180"
+  ],
+  "completed_problem_ids": [],
+  "self_reviewed_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04166",
+    "external-gsm8k-main-3101c7d50724:train:04167",
+    "external-gsm8k-main-3101c7d50724:train:04168",
+    "external-gsm8k-main-3101c7d50724:train:04169",
+    "external-gsm8k-main-3101c7d50724:train:04170",
+    "external-gsm8k-main-3101c7d50724:train:04171",
+    "external-gsm8k-main-3101c7d50724:train:04172",
+    "external-gsm8k-main-3101c7d50724:train:04173",
+    "external-gsm8k-main-3101c7d50724:train:04174",
+    "external-gsm8k-main-3101c7d50724:train:04175",
+    "external-gsm8k-main-3101c7d50724:train:04176",
+    "external-gsm8k-main-3101c7d50724:train:04177",
+    "external-gsm8k-main-3101c7d50724:train:04178",
+    "external-gsm8k-main-3101c7d50724:train:04179",
+    "external-gsm8k-main-3101c7d50724:train:04180"
+  ],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:04166",
+    "external-gsm8k-main-3101c7d50724:train:04167",
+    "external-gsm8k-main-3101c7d50724:train:04168",
+    "external-gsm8k-main-3101c7d50724:train:04169",
+    "external-gsm8k-main-3101c7d50724:train:04170",
+    "external-gsm8k-main-3101c7d50724:train:04171",
+    "external-gsm8k-main-3101c7d50724:train:04172",
+    "external-gsm8k-main-3101c7d50724:train:04173",
+    "external-gsm8k-main-3101c7d50724:train:04174",
+    "external-gsm8k-main-3101c7d50724:train:04175",
+    "external-gsm8k-main-3101c7d50724:train:04176",
+    "external-gsm8k-main-3101c7d50724:train:04177",
+    "external-gsm8k-main-3101c7d50724:train:04178",
+    "external-gsm8k-main-3101c7d50724:train:04179",
+    "external-gsm8k-main-3101c7d50724:train:04180"
+  ],
+  "problem_results": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04166",
+      "source_line_1based": 4167,
+      "source_record_sha256": "5821d89a147a8c408ed5d6d3a246cbef7fbfe09b217a09bf1f5855a4d663d31b",
+      "raw_question_sha256": "1e6697c83a02ebe66b7b06fa71f3a9ed3bf0165c354d7fcc48c9480bd7cd8cb5",
+      "answer_ja": "150ペニー",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.grace_pennies",
+      "review_note_ja": "ダイム100ペニーとニッケル50ペニーを合計。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04167",
+      "source_line_1based": 4168,
+      "source_record_sha256": "eca0c6e0700473c4487dfeb670cc746a92703a53fe2bda173f5fab34557a3242",
+      "raw_question_sha256": "75ec94aeec5203153362463cc2b5119f4d0d85dd9e7018f580d66748011042ca",
+      "answer_ja": "20個",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.sleepover_donuts",
+      "review_note_ja": "友人4人とAndrewの計5人へ各4個。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04168",
+      "source_line_1based": 4169,
+      "source_record_sha256": "8fe13519ece971c16da561ea2bfc56375776116a493b3e5a80370dbef2755b3f",
+      "raw_question_sha256": "acd15f3cb39f816d9846ff82d878326132be57e81ecf5280e3e78cec2a4f85c0",
+      "answer_ja": "72ポンド",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.average_weight",
+      "review_note_ja": "Jimmy81、Adam60、Rachel75の平均。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04169",
+      "source_line_1based": 4170,
+      "source_record_sha256": "6f7e565180422683128d3d7d5cbb553b1fb7b685287bae77c187006263d7f877",
+      "raw_question_sha256": "26ed3e711203c7b3a82069a4fce3adf7113f36bee5b9e5d3dfff80ca6ab8f561",
+      "answer_ja": "96個",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.fruits_remaining",
+      "review_note_ja": "リンゴ180とプラム60の全240個から3/5を除く。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04170",
+      "source_line_1based": 4171,
+      "source_record_sha256": "b364a9a664cca6d70113288389cd7b7f915787b31cd6e6ce91fa3158e5a884c3",
+      "raw_question_sha256": "f85633f2817efa3f71739479c2e78c554368740fee878f037f32a448d35e39c5",
+      "answer_ja": "80個",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.rhonda_marbles",
+      "review_note_ja": "差55を除いて2等分しRhonda80個。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04171",
+      "source_line_1based": 4172,
+      "source_record_sha256": "b1172d13d2b9f13c934fa714f3ca0e01258db683cd36f68be0bd4b1427526409",
+      "raw_question_sha256": "08bfb1b61a98ee56cd7e0c47573c0636ae5fee18e728e1ecf387bf4067bfc3a3",
+      "answer_ja": "96分",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vehicle_washing_minutes",
+      "review_note_ja": "普通車24分を基準に普通車2台と2倍のSUVを合計。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04172",
+      "source_line_1based": 4173,
+      "source_record_sha256": "bb342529ab45e523bc7f359e2d99c7996e6aba73fa88fa7c0c855005fd3cdb35",
+      "raw_question_sha256": "3764bef72466849b1ff62d0c4a1677b9e984c0e291d4d9198704d467bf6663c8",
+      "answer_ja": "50ドル",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.ticket_cost_difference",
+      "review_note_ja": "大人券99ドルと子供券49ドルの差。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04173",
+      "source_line_1based": 4174,
+      "source_record_sha256": "370ed0db1e9a9c0c1ae32e721cc30389be127be030b1e7e8259f4a73fe72af57",
+      "raw_question_sha256": "f64028a32d172d13db192c6ec941d4188ba13891051e5fa954df380c89ad8c72",
+      "answer_ja": "8個",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.barbecue_burgers",
+      "review_note_ja": "5カップからプルドポーク用3カップを除き1/4カップ単位で割る。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04174",
+      "source_line_1based": 4175,
+      "source_record_sha256": "1ea5ba9c927b52a3ad6ff812c98b9972ede8c489ca4006d94ba52952bf917c5f",
+      "raw_question_sha256": "ab2e89a6b4e56b2cd10e960891deeac9913324b3e4977b241b5b456b9d5f096e",
+      "answer_ja": "132000ポンド",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.boxcar_capacity",
+      "review_note_ja": "色別の1両容量と両数を対応させて合計。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04175",
+      "source_line_1based": 4176,
+      "source_record_sha256": "5d05b80c5ecd5725d03d6918e7721672683d72944a63b5d1d519e505ef4a523e",
+      "raw_question_sha256": "06defbec79725525d5407e2331320393c8ccad10793da465c69dd13d4e67fd49",
+      "answer_ja": "一意に決まらない（期待値または正確頻度仮定なら28個）",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_machine_snacks_underdetermined",
+      "review_note_ja": "確率的な実現回数は未指定。30回で比率どおりなら28個、別実現では異なる。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04176",
+      "source_line_1based": 4177,
+      "source_record_sha256": "9a18610b57e506787e98bfa2ebf5a5a63a1df2050d06869ee727f61483fd6af6",
+      "raw_question_sha256": "127662a0fe7a742727e30bf8d1ac378f6dddfd147325d48addec93170c5a617b",
+      "answer_ja": "5匹",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.pool_dogs",
+      "review_note_ja": "24本から2人分4本を除き犬1匹4本で割る。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04177",
+      "source_line_1based": 4178,
+      "source_record_sha256": "749ab948042000a6bd91315da8c8ea412d6165ea695190bd1ed50b6a59d33e40",
+      "raw_question_sha256": "9386bdcffdb322dd0a18a9fca60bcfa9df844c690ce8e779f23864d3eddd40c8",
+      "answer_ja": "307ポンド",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.great_dane_weight",
+      "review_note_ja": "13x+10=439を解きグレートデーン307ポンド。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04178",
+      "source_line_1based": 4179,
+      "source_record_sha256": "97513871be6c02e62d39e1b8b0cad87aeee6ba0479e22eac9403d4768f92095a",
+      "raw_question_sha256": "ee767dc4c38d56aad873d9d9477effcd19a05e18a59504846afe3e1d73ae3fad",
+      "answer_ja": "7年",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.phd_total_years",
+      "review_note_ja": "半年単位で1年・2年・3.5年・0.5年を合計。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04179",
+      "source_line_1based": 4180,
+      "source_record_sha256": "24bee9c8304205b6be37babb5c6226e4aaad6392bed745a34db7a41dea4c4dd8",
+      "raw_question_sha256": "d814e32ee73958a5e0e59dc8591e64976f6488b2c26ebad8994563608c254fa8",
+      "answer_ja": "10ギガバイト",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.external_drive_free_space",
+      "review_note_ja": "0.1GB単位で削除と追加後の使用量を新容量から引く。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04180",
+      "source_line_1based": 4181,
+      "source_record_sha256": "d4e0f7fce1bab7b479bd161bc5fd1e388f6c3c6743c0331f4be47d46fdb4dfee",
+      "raw_question_sha256": "ab331670c55863783059c9ade7623bc3e0a97e6ab6dccb2f2e24cfe8b62befbc",
+      "answer_ja": "48ドル",
+      "lean_root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.annual_soap_cost",
+      "review_note_ja": "12か月を2か月で割り6本、各8ドル。",
+      "semantic_review_status": "self_review_only",
+      "canonical_queue_status": "pending",
+      "evidence_status": "awaiting_exact_head_fixed_toolchain_ci"
+    }
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04166",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04167",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04168",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04169",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04170",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04171",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04172",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04173",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04174",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04175",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題は確率を示すが30回の実現回数を固定しない。条件付き28個と非一意性は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04176",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04177",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04178",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04179",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04180",
+      "retry_on": "PR #5の現在HEADで固定Lean 4.33.1ビルド・公理監査・説明行依存監査を実行できた時",
+      "reason_ja": "原題からの記述解答と行別Lean定理への分解は自己照合済みだが、正確なHEADの成功証拠がない。",
+      "next_action_ja": "現在HEADのCIを実行し、成功artifactをimport_evidence.pyで取り込み、入力ハッシュと依存を照合してから状態遷移する。"
+    }
+  ],
+  "artifacts": {
+    "model_files": [
+      "LemmaWeave/Problems/GSM8K/Sprint1006A04P1Models.lean",
+      "LemmaWeave/Problems/GSM8K/Sprint1006A04P2Models.lean",
+      "LemmaWeave/Problems/GSM8K/Sprint1006A04P3Models.lean"
+    ],
+    "test_files": [
+      "tests/lean/GSM8KSprint1006A04P1.lean",
+      "tests/lean/GSM8KSprint1006A04P2.lean",
+      "tests/lean/GSM8KSprint1006A04P3.lean"
+    ],
+    "model_sha256": [
+      "5b452ee90282e3209e17f9d2989c1fbeab014027d776ebb0c1c489de49347c67",
+      "9fb26bfffae931c4ad2fdf802b49866457484545f381e8a2db290b79dc622f10",
+      "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4"
+    ],
+    "checkpoint_commits": [
+      "07c1ede552c49c1292732fede8362b4ded23e698",
+      "b26b30e13ac62e55348df6ccd5cdb5ad56f5debb",
+      "188e7cdbe2a0f2da8b4663416e3c19b3d19b5d49"
+    ],
+    "theorem_declarations": 74,
+    "line_theorems": 59,
+    "root_theorems": 15,
+    "recipe_count": 15,
+    "method_batch_count": 3
+  },
+  "canonical_queue_update": {
+    "applied": false,
+    "statuses_before": {
+      "solution_ready": 518,
+      "awaiting_verification": 3604,
+      "pending": 4670,
+      "total": 8792
+    },
+    "selected_status_after": "pending",
+    "reason_ja": "固定Lean成功証拠がないためbinary queueを手編集しない。"
+  },
+  "verification": {
+    "assurance_level": "INCONCLUSIVE",
+    "exact_head_ci_success": false,
+    "local_lean_available": false,
+    "fixed_lean_version": "4.33.1",
+    "source_scan": {
+      "sorry": false,
+      "admit": false,
+      "custom_axiom": false
+    },
+    "axiom_policy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "readback_files": 24,
+    "json_parse_success": 18,
+    "recipe_hash_matches": 15,
+    "declaration_mapping_missing": 0,
+    "root_dependency_mapping_missing": 0,
+    "current_head_workflow_runs": 0,
+    "current_head_commit_statuses": 0,
+    "current_head_unresolved_review_threads": 0,
+    "note_ja": "保存後の3モデル・3監査ファイル・15レシピ・3方法台帳をGitHubから再読し、モデルハッシュ、定理名対応、根定理から行定理へのソース依存、禁止構文不在を確認した。kernel build、#print axiomsの実行結果、実依存抽出、証拠取込は未完。"
+  },
+  "claim": {
+    "path": "operations/claims/2026-10-06-0400.json",
+    "expires_at": "2026-10-06T06:30:00+09:00",
+    "final_status": "released",
+    "released_at": "2026-10-06T04:23:00+09:00"
+  },
+  "pull_request": {
+    "number": 5,
+    "merge_performed": false,
+    "reason_ja": "正確なHEADの必須CI成功証拠がないためマージ条件未達。",
+    "review_history": [
+      "CHANGES_REQUESTED",
+      "APPROVED",
+      "APPROVED"
+    ],
+    "unresolved_review_threads": 0
+  },
+  "commit": {
+    "claim_commit": "00118703a106abf2598f5b42a9d5ffe9b3aba78f",
+    "checkpoint_commits": [
+      "07c1ede552c49c1292732fede8362b4ded23e698",
+      "b26b30e13ac62e55348df6ccd5cdb5ad56f5debb",
+      "188e7cdbe2a0f2da8b4663416e3c19b3d19b5d49"
+    ],
+    "head_observed_before_ledger": "188e7cdbe2a0f2da8b4663416e3c19b3d19b5d49"
+  }
+}

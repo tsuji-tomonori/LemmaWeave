@@ -4,7 +4,7 @@
   "run_id": "20261005T090000+0900-ci-exact-head-repair",
   "scheduled_slot": "2026-10-05T09:00:00+09:00",
   "started_at": "2026-10-05T09:55:28+09:00",
-  "finished_at": "2026-10-05T10:13:00+09:00",
+  "finished_at": "2026-10-05T10:20:00+09:00",
   "schedule_deviation_minutes": 55,
   "schedule_deviation_reason_ja": "実行開始時刻が予定枠から55分遅れ、前枠から継続するexact-head CI失敗の証拠回収と修復を優先した。",
   "role": "ci_repair_override",
@@ -75,7 +75,8 @@
     "reason_ja": "実行環境にLean/lakeバイナリがないため、証明検証は新exact-head CIへ委ねる。"
   },
   "exact_head_ci": {
-    "status_at_recording": "pending_commit_and_new_head"
+    "status_at_recording": "pending_after_repair_commit",
+    "repair_commit_sha": "f0bd7b7137f716e4f34f4191333dfb34513c504e"
   },
   "queue_unchanged": {
     "total": 8792,

@@ -125,7 +125,10 @@ theorem grocery_vegetables (m : Groceries) : m.vegetables = 1800 := by cases m <
 theorem grocery_meat (m : Groceries) : m.meat = 900 := by cases m <;> simp_all <;> omega
 theorem grocery_total (m : Groceries) : m.total = 2700 := by cases m <;> simp_all <;> omega
 theorem grocery_fraction (m : Groceries) : 100 * m.meat = 33 * m.total + 900 := by cases m <;> simp_all <;> omega
-theorem grocery_solution (m : Groceries) : m.percent = 33 := by cases m <;> simp_all <;> omega
+theorem grocery_solution (m : Groceries) : m.percent = 33 := by
+  have hDivision := m.hDivision
+  rw [grocery_meat m, grocery_total m] at hDivision
+  omega
 
 structure Calories where
   total : ℕ
@@ -141,7 +144,10 @@ structure Basin where
   hRate : netRate + 4 = 24
   hFill : netRate * seconds = 260
 theorem basin_net_rate (m : Basin) : m.netRate = 20 := by cases m <;> simp_all <;> omega
-theorem basin_solution (m : Basin) : m.seconds = 13 := by cases m <;> simp_all <;> omega
+theorem basin_solution (m : Basin) : m.seconds = 13 := by
+  have hFill := m.hFill
+  rw [basin_net_rate m] at hFill
+  omega
 
 structure Samuel where
   share : ℕ

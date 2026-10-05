@@ -127,7 +127,9 @@ theorem grocery_total (m : Groceries) : m.total = 2700 := by cases m <;> simp_al
 theorem grocery_fraction (m : Groceries) : 100 * m.meat = 33 * m.total + 900 := by cases m <;> simp_all <;> omega
 theorem grocery_solution (m : Groceries) : m.percent = 33 := by
   have hDivision := m.hDivision
+  have hRemainder := m.hRemainder
   rw [grocery_meat m, grocery_total m] at hDivision
+  rw [grocery_total m] at hRemainder
   omega
 
 structure Calories where

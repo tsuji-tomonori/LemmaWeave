@@ -1,5 +1,5 @@
 {
-  "batch_id": "GSM8K-INDIVIDUAL-1156",
+  "batch_id": "GSM8K-INDIVIDUAL-1059",
   "collection_id": "external-gsm8k-main-3101c7d50724",
   "source": {
     "repository": "openai/grade-school-math",
@@ -11,20 +11,24 @@
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "semantic_review_status": "self_review_only",
-  "semantic_model_hash": "50b6c7e6449c6b134a699acac9983794324483bfb949473087f3fa888db497e5",
-  "model_files": ["LemmaWeave/Problems/GSM8K/Sprint1004A12P1Models.lean"],
+  "semantic_model_hash": "8bac0bd053d2c9c42f769f1835e3a69c857abf12d92e01c66fb9329ed7569d0b",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A07P1Models.lean"
+  ],
   "items": [
     {
       "problem_id": "external-gsm8k-main-3101c7d50724:train:04196",
       "source_line_1based": 4197,
       "source_record_sha256": "9653769e69b2563ed9172563eae922d563453d660ad326e17792e3010722dd68",
       "raw_question_sha256": "8d9c10da726b2e7cfcfd34b3342ac574709fdec80f739e868a015e06f90a6c31",
-      "normalized_question_sha256": "ba3d7856a159f484c48842aa170208f25105e1c587ea438affa8d2ec8dacc771",
+      "normalized_question_sha256": "8d9c10da726b2e7cfcfd34b3342ac574709fdec80f739e868a015e06f90a6c31",
       "source_question": "A gecko lays 30 eggs per year. 20 percent of them are infertile, and a third of the remaining eggs will not hatch due to calcification issues.  How many eggs actually hatch?",
       "recipe_id": "gsm8k_sprint441_gecko_eggs_hatched",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
-      "modeling_notes_ja": ["石灰化で孵化しない3分の1は、不妊卵を除いた24個を基準にする。"],
+      "modeling_notes_ja": [
+        "石灰化による3分の1は無精卵を除いた残り24個を基準にする。"
+      ],
       "blockers": []
     },
     {
@@ -37,7 +41,9 @@
       "recipe_id": "gsm8k_sprint442_sweater_total_profit",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
-      "modeling_notes_ja": ["gainは売上から毛糸費を引いた利益として扱う。"],
+      "modeling_notes_ja": [
+        "gainを売上から明示された毛糸代を引いた利益として読む。"
+      ],
       "blockers": []
     },
     {
@@ -47,10 +53,12 @@
       "raw_question_sha256": "9fef6217e4f46c7ba3521de3ac4f1d72d201a3e099873f9fc638bfe1b2e6617a",
       "normalized_question_sha256": "9fef6217e4f46c7ba3521de3ac4f1d72d201a3e099873f9fc638bfe1b2e6617a",
       "source_question": "A party store ordered 5 boxes of balloons. Each box contains 8 bags of balloons, and there are 12 balloons in each bag. How many balloons are there?",
-      "recipe_id": "gsm8k_sprint443_balloons_total",
+      "recipe_id": "gsm8k_sprint443_party_balloons",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
-      "modeling_notes_ja": ["箱数、箱当たり袋数、袋当たり風船数を順に掛ける。"],
+      "modeling_notes_ja": [
+        "箱・袋・個の包含単位を順に掛ける。"
+      ],
       "blockers": []
     },
     {
@@ -60,10 +68,12 @@
       "raw_question_sha256": "4363bcd7208d536ff0fd85dc3591367da5491ece9e40aaa2b515e2229505ec5d",
       "normalized_question_sha256": "4363bcd7208d536ff0fd85dc3591367da5491ece9e40aaa2b515e2229505ec5d",
       "source_question": "Jenn is saving up money to buy a bike. She has 5 jars full of quarters. Each jar can hold 160 quarters. If the bike costs 180 dollars, how much money will she have left over after buying it?",
-      "recipe_id": "gsm8k_sprint444_bicycle_money_left",
+      "recipe_id": "gsm8k_sprint444_bike_purchase_leftover",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
-      "modeling_notes_ja": ["quarterは25セント硬貨で、4枚を1ドルへ換算する。各jarは満杯と読む。"],
+      "modeling_notes_ja": [
+        "quarterを25セント硬貨として4枚=1ドルで換算する。"
+      ],
       "blockers": []
     },
     {
@@ -73,10 +83,12 @@
       "raw_question_sha256": "927a50f5261041e9a18b134f018f9a627bcdec0df399ae27dcef91268a87891d",
       "normalized_question_sha256": "927a50f5261041e9a18b134f018f9a627bcdec0df399ae27dcef91268a87891d",
       "source_question": "Alexis has four times as many mangoes as Dilan and Ashley combined. If Alexis has 60 mangoes, how many mangoes does all of them have combined?",
-      "recipe_id": "gsm8k_sprint445_mangoes_all_combined",
+      "recipe_id": "gsm8k_sprint445_mango_total",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
-      "modeling_notes_ja": ["60個はDilanとAshleyの合計の4倍である。"],
+      "modeling_notes_ja": [
+        "4倍の比較対象はDilanとAshleyを合わせた個数。"
+      ],
       "blockers": []
     }
   ]

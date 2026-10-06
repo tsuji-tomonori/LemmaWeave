@@ -1,0 +1,119 @@
+{
+  "id": "gsm8k_sprint525_monthly_savings_deposit",
+  "title_ja": "毎月の貯蓄額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04280",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P2.lean",
+  "problem_ja": "家賃は月収の7%で133ドル、その他の月間支出は月収の半分、残りを貯蓄する。貯蓄額は。",
+  "answer_ja": "1%は19ドル、月収1900ドル。その他支出950ドル、家賃と合わせ1083ドルなので、貯蓄は817ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.monthly_savings_deposit",
+  "graph": "work/gsm8k-sprint525-monthly-savings-deposit-graph.json",
+  "model_notes_ja": [
+    "“half of it”は直前の月収を指し、その他支出が月収の半分であるという参照解答の読みを明示する。"
+  ],
+  "steps": [
+    {
+      "id": "one_percent_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.one_percent_income",
+      "title_ja": "月収の1%",
+      "claim_ja": "133÷7=19ドル。",
+      "method_ja": "7%の金額を7で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "133÷7=19ドル。"
+    },
+    {
+      "id": "monthly_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.monthly_income",
+      "title_ja": "月収",
+      "claim_ja": "19×100=1900ドル。",
+      "method_ja": "1%分を100倍する。",
+      "requires_steps": [
+        "one_percent_income"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "19×100=1900ドル。"
+    },
+    {
+      "id": "other_expenses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.other_expenses",
+      "title_ja": "その他支出",
+      "claim_ja": "1900÷2=950ドル。",
+      "method_ja": "月収の半分を求める。",
+      "requires_steps": [
+        "monthly_income"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1900÷2=950ドル。"
+    },
+    {
+      "id": "monthly_spending",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.monthly_spending",
+      "title_ja": "支出合計",
+      "claim_ja": "133+950=1083ドル。",
+      "method_ja": "家賃とその他支出を足す。",
+      "requires_steps": [
+        "other_expenses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "133+950=1083ドル。"
+    },
+    {
+      "id": "savings_deposit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.savings_deposit",
+      "title_ja": "貯蓄額",
+      "claim_ja": "1900−1083=817ドル。",
+      "method_ja": "月収から支出を引く。",
+      "requires_steps": [
+        "monthly_income",
+        "monthly_spending"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1900−1083=817ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.monthly_savings_deposit",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1%は19ドル、月収1900ドル。その他支出950ドル、家賃と合わせ1083ドルなので、貯蓄は817ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "one_percent_income",
+        "monthly_income",
+        "other_expenses",
+        "monthly_spending",
+        "savings_deposit"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1%は19ドル、月収1900ドル。その他支出950ドル、家賃と合わせ1083ドルなので、貯蓄は817ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4281,
+    "checked_model_hash": "856f034a08fcb9718dbed19908fa3256e481e4abe9ccd62e438c44244ff5d2a8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

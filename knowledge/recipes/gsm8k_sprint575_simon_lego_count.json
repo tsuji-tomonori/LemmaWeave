@@ -1,0 +1,89 @@
+{
+  "id": "gsm8k_sprint575_simon_lego_count",
+  "title_ja": "Simonのレゴ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04330",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P3.lean",
+  "problem_ja": "Simon has 20% more legos than Bruce, who has 20 more than Kent.  If Kent has 40 legos, how many does Simon have?",
+  "answer_ja": "BruceはKentの40個より20個多く60個。60個の20%は12個なので、Simonは72個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.simon_lego_count",
+  "graph": "work/gsm8k-sprint575-simon-lego-count-graph.json",
+  "model_notes_ja": [
+    "「20% more」はBruceの60個を基準に20%を加える。"
+  ],
+  "steps": [
+    {
+      "id": "bruce_lego_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.bruce_lego_count",
+      "title_ja": "Bruce",
+      "claim_ja": "40+20=60個。",
+      "method_ja": "Kentの個数に20を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40+20=60個。"
+    },
+    {
+      "id": "simon_extra_legos",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.simon_extra_legos",
+      "title_ja": "増加分",
+      "claim_ja": "60×20÷100=12個。",
+      "method_ja": "Bruceの個数の20%を求める。",
+      "requires_steps": [
+        "bruce_lego_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "60×20÷100=12個。"
+    },
+    {
+      "id": "simon_legos",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.simon_legos",
+      "title_ja": "Simon",
+      "claim_ja": "60+12=72個。",
+      "method_ja": "Bruceの個数に増加分を加える。",
+      "requires_steps": [
+        "bruce_lego_count",
+        "simon_extra_legos"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "60+12=72個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.simon_lego_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "BruceはKentの40個より20個多く60個。60個の20%は12個なので、Simonは72個。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "bruce_lego_count",
+        "simon_extra_legos",
+        "simon_legos"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "BruceはKentの40個より20個多く60個。60個の20%は12個なので、Simonは72個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4331,
+    "checked_model_hash": "93b5b357df339ce78fc915e67d018b014c9dde8952e3d53254963162074cb365",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

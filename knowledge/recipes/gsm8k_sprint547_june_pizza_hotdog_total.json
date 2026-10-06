@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint547_june_pizza_hotdog_total",
+  "title_ja": "6月のピザとホットドッグ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04302",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P1.lean",
+  "problem_ja": "毎日ホットドッグ60個、ピザはそれより40個多い。6月の合計はいくつか。",
+  "answer_ja": "ピザは1日100個、両方で160個。6月30日では160×30=4800個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.june_pizza_hotdog_total",
+  "graph": "work/gsm8k-sprint547-june-pizza-hotdog-total-graph.json",
+  "model_notes_ja": [
+    "6月は30日で、各日同数を作る。"
+  ],
+  "steps": [
+    {
+      "id": "daily_pizzas",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.daily_pizzas",
+      "title_ja": "1日のピザ",
+      "claim_ja": "60+40=100個。",
+      "method_ja": "ホットドッグ数へ40を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "60+40=100個。"
+    },
+    {
+      "id": "daily_food_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.daily_food_total",
+      "title_ja": "1日の合計",
+      "claim_ja": "100+60=160個。",
+      "method_ja": "ピザとホットドッグを足す。",
+      "requires_steps": [
+        "daily_pizzas"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "100+60=160個。"
+    },
+    {
+      "id": "june_food_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.june_food_total",
+      "title_ja": "6月の合計",
+      "claim_ja": "160×30=4800個。",
+      "method_ja": "1日分に30日を掛ける。",
+      "requires_steps": [
+        "daily_food_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "160×30=4800個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.june_pizza_hotdog_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "ピザは1日100個、両方で160個。6月30日では160×30=4800個。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "daily_pizzas",
+        "daily_food_total",
+        "june_food_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "ピザは1日100個、両方で160個。6月30日では160×30=4800個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4303,
+    "checked_model_hash": "c75058a771e6d093ed7734adf989dee2a43487e47b38014dd0c58acacef110c8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

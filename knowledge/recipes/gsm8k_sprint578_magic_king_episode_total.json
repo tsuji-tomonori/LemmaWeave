@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint578_magic_king_episode_total",
+  "title_ja": "番組の総エピソード数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04333",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P1.lean",
+  "problem_ja": "The show Magic King was on the air for 10 seasons and 20 episodes per season for the first half of seasons and 25 for the second half of the show.  How many total episodes were there?",
+  "answer_ja": "10シーズンの半分は5。前半は5×20=100話、後半は5×25=125話で、合計225話。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.magic_king_episode_total",
+  "graph": "work/gsm8k-sprint578-magic-king-episode-total-graph.json",
+  "model_notes_ja": [
+    "前半・後半は各5シーズンで、各シーズン内の話数は指定どおり一定。"
+  ],
+  "steps": [
+    {
+      "id": "half_show_seasons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.half_show_seasons",
+      "title_ja": "半分のシーズン",
+      "claim_ja": "10÷2=5シーズン。",
+      "method_ja": "全シーズンを等分する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10÷2=5シーズン。"
+    },
+    {
+      "id": "first_half_episodes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.first_half_episodes",
+      "title_ja": "前半",
+      "claim_ja": "5×20=100話。",
+      "method_ja": "前半のシーズン数に20話を掛ける。",
+      "requires_steps": [
+        "half_show_seasons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×20=100話。"
+    },
+    {
+      "id": "second_half_episodes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.second_half_episodes",
+      "title_ja": "後半",
+      "claim_ja": "5×25=125話。",
+      "method_ja": "後半のシーズン数に25話を掛ける。",
+      "requires_steps": [
+        "half_show_seasons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×25=125話。"
+    },
+    {
+      "id": "all_show_episodes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.all_show_episodes",
+      "title_ja": "総数",
+      "claim_ja": "100+125=225話。",
+      "method_ja": "前半と後半を加える。",
+      "requires_steps": [
+        "first_half_episodes",
+        "second_half_episodes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "100+125=225話。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.magic_king_episode_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "10シーズンの半分は5。前半は5×20=100話、後半は5×25=125話で、合計225話。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "half_show_seasons",
+        "first_half_episodes",
+        "second_half_episodes",
+        "all_show_episodes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10シーズンの半分は5。前半は5×20=100話、後半は5×25=125話で、合計225話。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4334,
+    "checked_model_hash": "35b4a2ab13fee9e8db23b0b9b938cade8b53c6d39f129c4d817b03f1ed091e20",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint570_second_bus_ride_minutes",
+  "title_ja": "2本目のバス乗車時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04325",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P2.lean",
+  "problem_ja": "To get to the library, Jill spends 12 minutes waiting for her first bus, 30 minutes riding on her first bus, and half the combined wait and trip time on her second bus. How many minutes does her second bus ride take?",
+  "answer_ja": "最初の待ち時間と乗車時間は12+30=42分。その半分なので2本目の乗車時間は21分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.second_bus_ride_minutes",
+  "graph": "work/gsm8k-sprint570-second-bus-ride-minutes-graph.json",
+  "model_notes_ja": [
+    "“half the combined wait and trip time”は最初の待ち12分と最初の乗車30分の合計の半分を指す。"
+  ],
+  "steps": [
+    {
+      "id": "first_bus_combined_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.first_bus_combined_time",
+      "title_ja": "基準時間",
+      "claim_ja": "12+30=42分。",
+      "method_ja": "待ち時間と乗車時間を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12+30=42分。"
+    },
+    {
+      "id": "second_bus_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.second_bus_time",
+      "title_ja": "2本目",
+      "claim_ja": "42÷2=21分。",
+      "method_ja": "基準時間の半分を求める。",
+      "requires_steps": [
+        "first_bus_combined_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "42÷2=21分。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.second_bus_ride_minutes",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "最初の待ち時間と乗車時間は12+30=42分。その半分なので2本目の乗車時間は21分。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "first_bus_combined_time",
+        "second_bus_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "最初の待ち時間と乗車時間は12+30=42分。その半分なので2本目の乗車時間は21分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4326,
+    "checked_model_hash": "3ac8694ccc634607c840230ad416833fb8207f62fea9e28db32aca8271bc38ff",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

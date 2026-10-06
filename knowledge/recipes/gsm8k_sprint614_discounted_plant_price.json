@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint614_discounted_plant_price",
+  "title_ja": "割引後の植物価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04369",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P2.lean",
+  "problem_ja": "Rose bought a plant with a 10% discount. If the price is $10, how much did Rose pay after the discount?",
+  "answer_ja": "10ドルの10%は1ドル。10−1=9ドルを支払う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.discounted_plant_price",
+  "graph": "work/gsm8k-sprint614-discounted-plant-price-graph.json",
+  "model_notes_ja": [
+    "10%割引は元値10ドルを基準とし、税などはない。"
+  ],
+  "steps": [
+    {
+      "id": "plant_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.plant_discount",
+      "title_ja": "割引額",
+      "claim_ja": "10×10÷100=1ドル。",
+      "method_ja": "元値の10%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "10×10÷100=1ドル。"
+    },
+    {
+      "id": "plant_paid_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.plant_paid_price",
+      "title_ja": "支払額",
+      "claim_ja": "10−1=9ドル。",
+      "method_ja": "元値から割引額を引く。",
+      "requires_steps": [
+        "plant_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "10−1=9ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.discounted_plant_price",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "10ドルの10%は1ドル。10−1=9ドルを支払う。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "plant_discount",
+        "plant_paid_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "10ドルの10%は1ドル。10−1=9ドルを支払う。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4370,
+    "checked_model_hash": "ba08090ab15203723875619b975ccd4373ac0c80cec3a23314a67a14e9d6028a",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

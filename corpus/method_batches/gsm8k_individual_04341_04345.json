@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1718",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "5c16b115034e5f644a89e0097863acc174b46bb72a3615d9d606ded050094450",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A18P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04341",
+      "source_line_1based": 4342,
+      "source_record_sha256": "8196610dee60ce34c02e1f5d0c79d9f9e4092f4aeb382214e1e7bfc0a58c4415",
+      "raw_question_sha256": "5cbe271651a3dda1cd28367a109c328a7ba8d4d679a35c0e73e658c878e2be29",
+      "normalized_question_sha256": "2115a037775e86f8a9f58bc273a77dec39a834381189c55cb6949add1a60fcbc",
+      "source_question": "It starts raining at 7:00 and pours heavily until its stops at 17:00  on a particular day. On the second day, the rain takes 2 more hours than it took on the first day to stop. On the third day, the rain pours for twice the amount of time it took on the second day. Calculate the total time it was raining in the three days.",
+      "recipe_id": "gsm8k_sprint586_three_day_rain_hours",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各日の降雨時間を独立に合計し、3日目の24時間は丸1日降り続く場合として扱う。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04342",
+      "source_line_1based": 4343,
+      "source_record_sha256": "c88abe1cca4ea0d75bc8c45beeca678a9fa3933ef60d6525e258c6cf753eb156",
+      "raw_question_sha256": "e1526cc15e254abb7fbc8a1cd56fc6398d3840053a813feefd7aee0c7204418b",
+      "normalized_question_sha256": "e1526cc15e254abb7fbc8a1cd56fc6398d3840053a813feefd7aee0c7204418b",
+      "source_question": "There are 20 stickers on a page. If you have 12 pages of stickers but lose one of the pages, then how many stickers would you have?",
+      "recipe_id": "gsm8k_sprint587_remaining_sticker_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "全ページにそれぞれ20枚あり、失ったページも1ページ分全てを失う。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04343",
+      "source_line_1based": 4344,
+      "source_record_sha256": "1f09cdbaef7f68fda2c2e31e5d5bc5240bb63246d4f88423c2a4f7b39260c6c8",
+      "raw_question_sha256": "77d5d78680ac3880b5241174e38c21266551a81f4c6cea37c84f52c73d8c4247",
+      "normalized_question_sha256": "77d5d78680ac3880b5241174e38c21266551a81f4c6cea37c84f52c73d8c4247",
+      "source_question": "Janina spends $30 each day for rent and uses $12 worth of supplies daily to run her pancake stand. If she sells each pancake for $2, how many pancakes must Janina sell each day to cover her expenses?",
+      "recipe_id": "gsm8k_sprint588_break_even_pancakes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "他の費用や売上はなく、パンケーキは1枚2ドルで整数枚販売する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04344",
+      "source_line_1based": 4345,
+      "source_record_sha256": "9604a513b226395758c575e3349d2701b210acb8a882e47060c07882de10bddf",
+      "raw_question_sha256": "0cbaa8c5f15ab11835f138ea08945353bcbb294685e18364e2bf531e1d38656e",
+      "normalized_question_sha256": "0cbaa8c5f15ab11835f138ea08945353bcbb294685e18364e2bf531e1d38656e",
+      "source_question": "Allie has 9 toys, which are in total worth $52. If we know that one toy is worth $12, and all the other toys have the same value, how much does one of the other toys cost?",
+      "recipe_id": "gsm8k_sprint589_other_toy_unit_price",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "残り8個は全て同じ価値で、総価値52ドルは9個全ての合計。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04345",
+      "source_line_1based": 4346,
+      "source_record_sha256": "0dd5e39580b434b464f1ad0863aea92ecf7fe76c264e6bed2d6be95b2399dcac",
+      "raw_question_sha256": "0a1df34b8f6056e4b24b39d3541f9da8ca0ff44088cc3a11a335589c9e9867cc",
+      "normalized_question_sha256": "0a1df34b8f6056e4b24b39d3541f9da8ca0ff44088cc3a11a335589c9e9867cc",
+      "source_question": "A family went out to see a movie. The regular ticket costs $9 and the ticket for children is $2 less. They gave the cashier two $20 bills and they received a $1 change. How many children are there if there are 2 adults in the family?",
+      "recipe_id": "gsm8k_sprint590_movie_child_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "通常券を大人券とし、子ども券は9−2=7ドル。全員分を一括購入した。"
+      ],
+      "blockers": []
+    }
+  ]
+}

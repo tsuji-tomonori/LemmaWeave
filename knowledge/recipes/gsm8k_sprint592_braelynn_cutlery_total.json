@@ -1,0 +1,132 @@
+{
+  "id": "gsm8k_sprint592_braelynn_cutlery_total",
+  "title_ja": "追加購入後のカトラリー総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04347",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P1.lean",
+  "problem_ja": "Braelynn has 24 knives in her kitchen and twice as many teaspoons as knives. If she bought 1/3 as many additional knives and 2/3 as many additional teaspoons, what would be the total number of cutlery pieces she has in her kitchen?",
+  "answer_ja": "ナイフは24本に3分の1の8本を加えて32本。ティースプーンは48本に3分の2の32本を加えて80本。合計は112本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.braelynn_cutlery_total",
+  "graph": "work/gsm8k-sprint592-braelynn-cutlery-total-graph.json",
+  "model_notes_ja": [
+    "“1/3 as many additional”と“2/3 as many additional”を、それぞれ現有数の1/3・2/3を追加する意味で読む。"
+  ],
+  "steps": [
+    {
+      "id": "initial_teaspoon_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.initial_teaspoon_count",
+      "title_ja": "最初のティースプーン",
+      "claim_ja": "2×24=48本。",
+      "method_ja": "ナイフの2倍を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "2×24=48本。"
+    },
+    {
+      "id": "additional_knife_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.additional_knife_count",
+      "title_ja": "追加ナイフ",
+      "claim_ja": "24÷3=8本。",
+      "method_ja": "現有ナイフの3分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "24÷3=8本。"
+    },
+    {
+      "id": "final_knife_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.final_knife_count",
+      "title_ja": "購入後のナイフ",
+      "claim_ja": "24+8=32本。",
+      "method_ja": "元の本数に追加分を加える。",
+      "requires_steps": [
+        "additional_knife_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "24+8=32本。"
+    },
+    {
+      "id": "additional_teaspoon_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.additional_teaspoon_count",
+      "title_ja": "追加ティースプーン",
+      "claim_ja": "48×2÷3=32本。",
+      "method_ja": "現有ティースプーンの3分の2を求める。",
+      "requires_steps": [
+        "initial_teaspoon_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "48×2÷3=32本。"
+    },
+    {
+      "id": "final_teaspoon_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.final_teaspoon_count",
+      "title_ja": "購入後のティースプーン",
+      "claim_ja": "48+32=80本。",
+      "method_ja": "元の本数に追加分を加える。",
+      "requires_steps": [
+        "additional_teaspoon_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "48+32=80本。"
+    },
+    {
+      "id": "all_cutlery_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.all_cutlery_count",
+      "title_ja": "カトラリー総数",
+      "claim_ja": "32+80=112本。",
+      "method_ja": "購入後の2種類を合計する。",
+      "requires_steps": [
+        "final_knife_count",
+        "final_teaspoon_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "32+80=112本。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.braelynn_cutlery_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "ナイフは24本に3分の1の8本を加えて32本。ティースプーンは48本に3分の2の32本を加えて80本。合計は112本。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "initial_teaspoon_count",
+        "additional_knife_count",
+        "final_knife_count",
+        "additional_teaspoon_count",
+        "final_teaspoon_count",
+        "all_cutlery_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "ナイフは24本に3分の1の8本を加えて32本。ティースプーンは48本に3分の2の32本を加えて80本。合計は112本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4348,
+    "checked_model_hash": "f38046e697079cc8f67c46dc003037002a1c5e83bbee853a2dac4f268b82bcad",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

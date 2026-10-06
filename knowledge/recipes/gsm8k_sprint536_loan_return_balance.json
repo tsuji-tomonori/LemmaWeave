@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint536_loan_return_balance",
+  "title_ja": "利息返済後の所持金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04291",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P2.lean",
+  "problem_ja": "30ドルから15ドルを貸し、20%利息付きで返済された。所持金はいくらか。",
+  "answer_ja": "貸出後は15ドル。利息は15×20%=3ドル、返済18ドルを加えて33ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.loan_return_balance",
+  "graph": "work/gsm8k-sprint536-loan-return-balance-graph.json",
+  "model_notes_ja": [
+    "利息20%は貸付元本15ドルを基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "cash_after_loan",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.cash_after_loan",
+      "title_ja": "貸出後の現金",
+      "claim_ja": "30−15=15ドル。",
+      "method_ja": "所持金から貸付額を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30−15=15ドル。"
+    },
+    {
+      "id": "loan_interest",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.loan_interest",
+      "title_ja": "利息",
+      "claim_ja": "15×20÷100=3ドル。",
+      "method_ja": "元本に20%を掛ける。",
+      "requires_steps": [
+        "cash_after_loan"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "15×20÷100=3ドル。"
+    },
+    {
+      "id": "loan_repayment",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.loan_repayment",
+      "title_ja": "返済総額",
+      "claim_ja": "15+3=18ドル。",
+      "method_ja": "元本と利息を足す。",
+      "requires_steps": [
+        "loan_interest"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "15+3=18ドル。"
+    },
+    {
+      "id": "cash_after_repayment",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.cash_after_repayment",
+      "title_ja": "返済後の所持金",
+      "claim_ja": "15+18=33ドル。",
+      "method_ja": "手元残高へ返済額を足す。",
+      "requires_steps": [
+        "cash_after_loan",
+        "loan_repayment"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "15+18=33ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.loan_return_balance",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "貸出後は15ドル。利息は15×20%=3ドル、返済18ドルを加えて33ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "cash_after_loan",
+        "loan_interest",
+        "loan_repayment",
+        "cash_after_repayment"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "貸出後は15ドル。利息は15×20%=3ドル、返済18ドルを加えて33ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4292,
+    "checked_model_hash": "4ef0930a045de652bae45c32b78940a10f6b0e94a7d0764200116d071ac73e28",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

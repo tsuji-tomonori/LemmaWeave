@@ -1,19 +1,19 @@
 {
-  "batch_id": "GSM8K-INDIVIDUAL-1500",
+  "batch_id": "GSM8K-INDIVIDUAL-1067",
   "collection_id": "external-gsm8k-main-3101c7d50724",
   "source": {
     "repository": "openai/grade-school-math",
     "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
     "path": "grade_school_math/data/train.jsonl",
     "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
-    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+    "file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
   },
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "semantic_review_status": "self_review_only",
-  "semantic_model_hash": "746f87000a26b560eb8d5d423b7a9035191592ba9368520a2b74425ae9dc05f7",
+  "semantic_model_hash": "3ff80d078a091b485441515f01aaf59ca8e844233c298e4afb760effaf0771fe",
   "model_files": [
-    "LemmaWeave/Problems/GSM8K/Sprint1004A15P3Models.lean"
+    "LemmaWeave/Problems/GSM8K/Sprint1006A10P3Models.lean"
   ],
   "items": [
     {
@@ -21,13 +21,13 @@
       "source_line_1based": 4237,
       "source_record_sha256": "40aa55d0c4abbfffda2148d488f841961dce6399866503d5233eef483618bf32",
       "raw_question_sha256": "5800df390cadac055f375dc3c308d134902c7758bdc1c0ba59efb7de727ff2de",
-      "normalized_question_sha256": "0540ff8a0bf015f84aaeb7a34ca543893b3747493f52844ebbada7c1ef4591b8",
+      "normalized_question_sha256": "5800df390cadac055f375dc3c308d134902c7758bdc1c0ba59efb7de727ff2de",
       "source_question": "John plays at the arcade for 3 hours.  He uses $.50 for every 6 minutes.  How much money did he spend, in dollars?",
       "recipe_id": "gsm8k_sprint481_arcade_spending",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "3時間を180分、50セント30回として15ドルへ換算する。"
+        "3時間を180分へ換算し、6分ごとの50セントを数えてドルへ換算する。"
       ],
       "blockers": []
     },
@@ -42,7 +42,7 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "0.1km単位で全長745から既知585を引く。"
+        "小数を0.1km単位の整数へ換算し、既知3区間を総距離から引く。"
       ],
       "blockers": []
     },
@@ -53,11 +53,11 @@
       "raw_question_sha256": "36b1e11e5522e0904ff66d43f49efb791554ed7ec5ff441da6feeacf24257031",
       "normalized_question_sha256": "36b1e11e5522e0904ff66d43f49efb791554ed7ec5ff441da6feeacf24257031",
       "source_question": "Luca went to a sandwich shop for lunch. The sandwich he bought was normally $8, but he had a coupon for a quarter of the price off. He then upgraded it with sliced avocado for an extra dollar. After adding a drink and a $3 salad, his total lunch bill was $12. How many dollars did Luca pay for his drink?",
-      "recipe_id": "gsm8k_sprint483_drink_price",
+      "recipe_id": "gsm8k_sprint483_lunch_drink_dollars",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "4分の1値引きと1ドル追加、3ドルのサラダを順に反映する。"
+        "4分の1引きは8ドルの2ドル引き。アボカドとサラダを加えた既知額を総額から引く。"
       ],
       "blockers": []
     },
@@ -66,13 +66,13 @@
       "source_line_1based": 4240,
       "source_record_sha256": "290c10b8bf02dfa12a38d3f5ca8a82a10f9e97a9676e1db93ade7cf15d85a993",
       "raw_question_sha256": "c51dadd47338ef99a2f4393367574547dc5c898fac55adae63a71f89ce5e8cf2",
-      "normalized_question_sha256": "f14a07450a8d2821f1fc152615ad7cc6064a1db73b1b481ae9eba59731a78350",
+      "normalized_question_sha256": "c51dadd47338ef99a2f4393367574547dc5c898fac55adae63a71f89ce5e8cf2",
       "source_question": "Alex was having a cookout Friday night and planned to serve burgers to his guests.  He planned to cook 3 burgers for each guest and had invited 10 friends over.  1 of his friends didn't eat meat and said they would bring their own food.  Another one of his friends didn't eat bread and would not need the buns.  The burger buns came 8 to a pack.  How many packs of buns did Alex need to buy?",
-      "recipe_id": "gsm8k_sprint484_bun_packs",
+      "recipe_id": "gsm8k_sprint484_bun_pack_count",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "肉を食べない1人と別のパンを食べない1人を除き24個・3パックを得る。"
+        "肉を食べない1人を除き、パンを食べない別の1人の3個分だけバンズを除く。"
       ],
       "blockers": []
     },
@@ -83,14 +83,13 @@
       "raw_question_sha256": "edf0d232782c8d3e452a370e8888ce624597e0fb9aa92724e14ec536a1ef471f",
       "normalized_question_sha256": "edf0d232782c8d3e452a370e8888ce624597e0fb9aa92724e14ec536a1ef471f",
       "source_question": "When Diane turns 30, she will be half the age of Alex and twice as old as Allison. Diane is 16 years old now. What is the sum of the ages of Alex and Allison now?",
-      "recipe_id": "gsm8k_sprint485_current_age_sum",
+      "recipe_id": "gsm8k_sprint485_current_alex_allison_sum",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "14年後の年齢60歳・15歳から14年を引き現在年齢を合計する。"
+        "Dianeが30歳になる14年後の関係から、AlexとAllisonの現在年齢を同じ14年だけ戻す。"
       ],
       "blockers": []
     }
   ]
 }
-

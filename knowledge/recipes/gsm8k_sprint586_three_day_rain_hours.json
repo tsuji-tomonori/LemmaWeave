@@ -1,0 +1,105 @@
+{
+  "id": "gsm8k_sprint586_three_day_rain_hours",
+  "title_ja": "3日間の降雨時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04341",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P3.lean",
+  "problem_ja": "It starts raining at 7:00 and pours heavily until its stops at 17:00  on a particular day. On the second day, the rain takes 2 more hours than it took on the first day to stop. On the third day, the rain pours for twice the amount of time it took on the second day. Calculate the total time it was raining in the three days.",
+  "answer_ja": "1日目は17−7=10時間。2日目は12時間、3日目はその2倍の24時間。合計46時間。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.three_day_rain_hours",
+  "graph": "work/gsm8k-sprint586-three-day-rain-hours-graph.json",
+  "model_notes_ja": [
+    "各日の降雨時間を独立に合計し、3日目の24時間は丸1日降り続く場合として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "first_day_rain_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.first_day_rain_hours",
+      "title_ja": "1日目",
+      "claim_ja": "17−7=10時間。",
+      "method_ja": "終了時刻から開始時刻を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "17−7=10時間。"
+    },
+    {
+      "id": "second_day_rain_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.second_day_rain_hours",
+      "title_ja": "2日目",
+      "claim_ja": "10+2=12時間。",
+      "method_ja": "1日目より2時間長くする。",
+      "requires_steps": [
+        "first_day_rain_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10+2=12時間。"
+    },
+    {
+      "id": "third_day_rain_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.third_day_rain_hours",
+      "title_ja": "3日目",
+      "claim_ja": "12×2=24時間。",
+      "method_ja": "2日目の時間を2倍する。",
+      "requires_steps": [
+        "second_day_rain_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12×2=24時間。"
+    },
+    {
+      "id": "rain_hours_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.rain_hours_total",
+      "title_ja": "合計",
+      "claim_ja": "10+12+24=46時間。",
+      "method_ja": "3日分を加える。",
+      "requires_steps": [
+        "first_day_rain_hours",
+        "second_day_rain_hours",
+        "third_day_rain_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10+12+24=46時間。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.three_day_rain_hours",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1日目は17−7=10時間。2日目は12時間、3日目はその2倍の24時間。合計46時間。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "first_day_rain_hours",
+        "second_day_rain_hours",
+        "third_day_rain_hours",
+        "rain_hours_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1日目は17−7=10時間。2日目は12時間、3日目はその2倍の24時間。合計46時間。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4342,
+    "checked_model_hash": "5c16b115034e5f644a89e0097863acc174b46bb72a3615d9d606ded050094450",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "id": "gsm8k_sprint518_zoo_animal_count_ambiguity",
+  "title_ja": "動物数の曖昧さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04273",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P1.lean",
+  "problem_ja": "蛇100、北極狐80、ヒョウ20に加え、bee-eaterはヒョウよりten times more、チーターは蛇の半分、ワニは狐とヒョウ合計の2倍。総数を求める。",
+  "answer_ja": "チーター50、ワニ200。bee-eaterを「10倍」と読めば200で総数650、「10倍分多い」と字義どおり読めば220で総数670。原文だけでは一意でない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.zoo_animal_count_ambiguity",
+  "graph": "work/gsm8k-sprint518-zoo-animal-count-ambiguity-graph.json",
+  "model_notes_ja": [
+    "“ten times more”は「10倍」と「元の数に10倍分を加える」の二通りに読めるため、両方を形式化する。",
+    "参照解答は途中で200 moreと述べながら最終合計では220を使っている。"
+  ],
+  "steps": [
+    {
+      "id": "cheetah_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.cheetah_count",
+      "title_ja": "チーター数",
+      "claim_ja": "100÷2=50頭。",
+      "method_ja": "蛇の半数を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "100÷2=50頭。"
+    },
+    {
+      "id": "fox_leopard_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.fox_leopard_total",
+      "title_ja": "狐とヒョウの合計",
+      "claim_ja": "80+20=100頭。",
+      "method_ja": "2種類を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "80+20=100頭。"
+    },
+    {
+      "id": "alligator_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.alligator_count",
+      "title_ja": "ワニ数",
+      "claim_ja": "100×2=200頭。",
+      "method_ja": "狐とヒョウ合計を2倍する。",
+      "requires_steps": [
+        "fox_leopard_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "100×2=200頭。"
+    },
+    {
+      "id": "bee_eaters_ten_times",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.bee_eaters_ten_times",
+      "title_ja": "10倍解釈のbee-eater",
+      "claim_ja": "20×10=200羽。",
+      "method_ja": "ten timesを10倍と読む。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20×10=200羽。"
+    },
+    {
+      "id": "conventional_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.conventional_total",
+      "title_ja": "10倍解釈の総数",
+      "claim_ja": "合計650頭（羽）。",
+      "method_ja": "6種類を足す。",
+      "requires_steps": [
+        "cheetah_count",
+        "alligator_count",
+        "bee_eaters_ten_times"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "合計650頭（羽）。"
+    },
+    {
+      "id": "bee_eaters_ten_times_more",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.bee_eaters_ten_times_more",
+      "title_ja": "字義解釈のbee-eater",
+      "claim_ja": "20+20×10=220羽。",
+      "method_ja": "ten times moreを元の数に10倍分を加えると読む。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20+20×10=220羽。"
+    },
+    {
+      "id": "literal_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.literal_total",
+      "title_ja": "字義解釈の総数",
+      "claim_ja": "合計670頭（羽）。",
+      "method_ja": "6種類を足す。",
+      "requires_steps": [
+        "cheetah_count",
+        "alligator_count",
+        "bee_eaters_ten_times_more"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "合計670頭（羽）。"
+    },
+    {
+      "id": "animal_totals_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.animal_totals_differ",
+      "title_ja": "非一意性",
+      "claim_ja": "650と670は異なる。",
+      "method_ja": "二つの解釈が異なる答えを与えることを確認する。",
+      "requires_steps": [
+        "conventional_total",
+        "literal_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "650と670は異なる。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.zoo_animal_count_ambiguity",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "チーター50、ワニ200。bee-eaterを「10倍」と読めば200で総数650、「10倍分多い」と字義どおり読めば220で総数670。原文だけでは一意でない。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "cheetah_count",
+        "fox_leopard_total",
+        "alligator_count",
+        "bee_eaters_ten_times",
+        "conventional_total",
+        "bee_eaters_ten_times_more",
+        "literal_total",
+        "animal_totals_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "チーター50、ワニ200。bee-eaterを「10倍」と読めば200で総数650、「10倍分多い」と字義どおり読めば220で総数670。原文だけでは一意でない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4274,
+    "checked_model_hash": "9deac44327d4c25371eedd84b73adaf41869bf13e44dc6daefec7cae619d5d34",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

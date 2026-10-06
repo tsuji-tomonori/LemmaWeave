@@ -1,0 +1,101 @@
+{
+  "id": "gsm8k_sprint610_mlb_miss_hit_inconsistency",
+  "title_ja": "missesとhitsの条件矛盾",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04365",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P1.lean",
+  "problem_ja": "There are three times as many misses as hits in an MLB game. If the number of misses is 50, how many hits and misses are made in the game?",
+  "answer_ja": "missesがhitsの3倍なら50=3×hitsが必要だが、50÷3は割り切れず余り2なので自然数のhitsは存在しない。参照解答200は逆にhitsをmissesの3倍と読んだ場合の150+50であり、原文条件の答えではない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.mlb_miss_hit_inconsistency",
+  "graph": "work/gsm8k-sprint610-mlb-miss-hit-inconsistency-graph.json",
+  "model_notes_ja": [
+    "回数を自然数とすると原文条件は不整合。関係を逆転させる追加条件では合計200になる。"
+  ],
+  "steps": [
+    {
+      "id": "miss_count_remainder",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.miss_count_remainder",
+      "title_ja": "3で割った余り",
+      "claim_ja": "50を3で割ると余り2。",
+      "method_ja": "剰余で割り切れないことを確認する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "50を3で割ると余り2。"
+    },
+    {
+      "id": "no_natural_hit_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.no_natural_hit_count",
+      "title_ja": "自然数解の不存在",
+      "claim_ja": "50=3×hitsを満たす自然数hitsはない。",
+      "method_ja": "定数倍方程式を整数算術で否定する。",
+      "requires_steps": [
+        "miss_count_remainder"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "50=3×hitsを満たす自然数hitsはない。"
+    },
+    {
+      "id": "reversed_hit_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.reversed_hit_count",
+      "title_ja": "逆読みのhits",
+      "claim_ja": "関係を逆転すれば3×50=150。",
+      "method_ja": "missesを基準に3倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "関係を逆転すれば3×50=150。"
+    },
+    {
+      "id": "reversed_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.reversed_total",
+      "title_ja": "逆読みの合計",
+      "claim_ja": "150+50=200。",
+      "method_ja": "逆読みのhitsとmissesを加える。",
+      "requires_steps": [
+        "reversed_hit_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "150+50=200。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.mlb_miss_hit_inconsistency",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "missesがhitsの3倍なら50=3×hitsが必要だが、50÷3は割り切れず余り2なので自然数のhitsは存在しない。参照解答200は逆にhitsをmissesの3倍と読んだ場合の150+50であり、原文条件の答えではない。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "miss_count_remainder",
+        "no_natural_hit_count",
+        "reversed_hit_count",
+        "reversed_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "missesがhitsの3倍なら50=3×hitsが必要だが、50÷3は割り切れず余り2なので自然数のhitsは存在しない。参照解答200は逆にhitsをmissesの3倍と読んだ場合の150+50であり、原文条件の答えではない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4366,
+    "checked_model_hash": "796a414a376319989f559ce3267fe4c26234a534bce3cf7c3a2a8847d6acfbc4",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

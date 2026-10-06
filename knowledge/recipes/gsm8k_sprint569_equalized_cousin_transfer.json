@@ -1,0 +1,132 @@
+{
+  "id": "gsm8k_sprint569_equalized_cousin_transfer",
+  "title_ja": "均等化のための従兄弟1人当たり移転額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04324",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P2.lean",
+  "problem_ja": "Carmela has $7 and each of her four cousins has $2. How much will Carmela have to give to each of her cousins so that she and her cousins will have the same amount of money?",
+  "answer_ja": "4人の従兄弟は合計8ドル、全員の合計は15ドル。5人で均等にすると1人3ドル。Carmelaは4ドルを渡すので、従兄弟1人当たり1ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.equalized_cousin_transfer",
+  "graph": "work/gsm8k-sprint569-equalized-cousin-transfer-graph.json",
+  "model_notes_ja": [
+    "5人の間だけで整数ドルを移し、全員同額にする。"
+  ],
+  "steps": [
+    {
+      "id": "cousins_initial_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.cousins_initial_money",
+      "title_ja": "従兄弟の合計",
+      "claim_ja": "4×2=8ドル。",
+      "method_ja": "4人の所持金を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4×2=8ドル。"
+    },
+    {
+      "id": "family_total_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.family_total_money",
+      "title_ja": "全員の合計",
+      "claim_ja": "7+8=15ドル。",
+      "method_ja": "Carmelaと従兄弟の所持金を加える。",
+      "requires_steps": [
+        "cousins_initial_money"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "7+8=15ドル。"
+    },
+    {
+      "id": "family_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.family_people",
+      "title_ja": "人数",
+      "claim_ja": "1+4=5人。",
+      "method_ja": "Carmelaと従兄弟の人数を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1+4=5人。"
+    },
+    {
+      "id": "equal_money_share",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.equal_money_share",
+      "title_ja": "均等額",
+      "claim_ja": "15÷5=3ドル。",
+      "method_ja": "合計金額を人数で割る。",
+      "requires_steps": [
+        "family_total_money",
+        "family_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "15÷5=3ドル。"
+    },
+    {
+      "id": "carmela_total_gift",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.carmela_total_gift",
+      "title_ja": "渡す総額",
+      "claim_ja": "7−3=4ドル。",
+      "method_ja": "Carmelaが残す3ドルを引く。",
+      "requires_steps": [
+        "equal_money_share"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "7−3=4ドル。"
+    },
+    {
+      "id": "gift_per_cousin",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.gift_per_cousin",
+      "title_ja": "1人当たり",
+      "claim_ja": "4÷4=1ドル。",
+      "method_ja": "渡す総額を4人へ均等に分ける。",
+      "requires_steps": [
+        "carmela_total_gift"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4÷4=1ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.equalized_cousin_transfer",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "4人の従兄弟は合計8ドル、全員の合計は15ドル。5人で均等にすると1人3ドル。Carmelaは4ドルを渡すので、従兄弟1人当たり1ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "cousins_initial_money",
+        "family_total_money",
+        "family_people",
+        "equal_money_share",
+        "carmela_total_gift",
+        "gift_per_cousin"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4人の従兄弟は合計8ドル、全員の合計は15ドル。5人で均等にすると1人3ドル。Carmelaは4ドルを渡すので、従兄弟1人当たり1ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4325,
+    "checked_model_hash": "3ac8694ccc634607c840230ad416833fb8207f62fea9e28db32aca8271bc38ff",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

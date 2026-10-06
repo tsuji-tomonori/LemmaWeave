@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint595_marble_remaining_multiple",
+  "title_ja": "残ったビー玉の4倍",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04350",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P1.lean",
+  "problem_ja": "Out of the 500 marbles that Cindy had, she gave her four friends 80 marbles each. What's four times the number of marbles she has remaining?",
+  "answer_ja": "4人に80個ずつ渡したので320個減り、500−320=180個残る。その4倍は720個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.marble_remaining_multiple",
+  "graph": "work/gsm8k-sprint595-marble-remaining-multiple-graph.json",
+  "model_notes_ja": [
+    "4人全員へそれぞれ80個を渡し、残数は負にならない。"
+  ],
+  "steps": [
+    {
+      "id": "marbles_given",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.marbles_given",
+      "title_ja": "渡した総数",
+      "claim_ja": "4×80=320個。",
+      "method_ja": "人数と1人当たり個数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4×80=320個。"
+    },
+    {
+      "id": "marbles_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.marbles_remaining",
+      "title_ja": "残数",
+      "claim_ja": "500−320=180個。",
+      "method_ja": "元の個数から渡した個数を引く。",
+      "requires_steps": [
+        "marbles_given"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "500−320=180個。"
+    },
+    {
+      "id": "fourfold_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.fourfold_remaining",
+      "title_ja": "残数の4倍",
+      "claim_ja": "4×180=720個。",
+      "method_ja": "残数を4倍する。",
+      "requires_steps": [
+        "marbles_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4×180=720個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.marble_remaining_multiple",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "4人に80個ずつ渡したので320個減り、500−320=180個残る。その4倍は720個。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "marbles_given",
+        "marbles_remaining",
+        "fourfold_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4人に80個ずつ渡したので320個減り、500−320=180個残る。その4倍は720個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4351,
+    "checked_model_hash": "f38046e697079cc8f67c46dc003037002a1c5e83bbee853a2dac4f268b82bcad",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

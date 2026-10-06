@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint596_joe_money_left",
+  "title_ja": "Joeの残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04351",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P2.lean",
+  "problem_ja": "Joe’s mother gave him $56 to go to the store. Joe bought 7 notebooks and 2 books. Each notebook costs $4 and each book costs $7. How much money does Joe have left?",
+  "answer_ja": "ノート代は7×4=28ドル、本代は2×7=14ドル。支出は42ドルなので、56−42=14ドル残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.joe_money_left",
+  "graph": "work/gsm8k-sprint596-joe-money-left-graph.json",
+  "model_notes_ja": [
+    "価格は各品で一定で、税など追加費用はない。"
+  ],
+  "steps": [
+    {
+      "id": "notebook_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.notebook_cost",
+      "title_ja": "ノート代",
+      "claim_ja": "7×4=28ドル。",
+      "method_ja": "冊数に単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "7×4=28ドル。"
+    },
+    {
+      "id": "book_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.book_cost",
+      "title_ja": "本代",
+      "claim_ja": "2×7=14ドル。",
+      "method_ja": "冊数に単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "2×7=14ドル。"
+    },
+    {
+      "id": "joe_total_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.joe_total_spent",
+      "title_ja": "支出合計",
+      "claim_ja": "28+14=42ドル。",
+      "method_ja": "2種類の支出を加える。",
+      "requires_steps": [
+        "notebook_cost",
+        "book_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "28+14=42ドル。"
+    },
+    {
+      "id": "joe_remaining_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.joe_remaining_money",
+      "title_ja": "残金",
+      "claim_ja": "56−42=14ドル。",
+      "method_ja": "受取額から支出を引く。",
+      "requires_steps": [
+        "joe_total_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "56−42=14ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.joe_money_left",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "ノート代は7×4=28ドル、本代は2×7=14ドル。支出は42ドルなので、56−42=14ドル残る。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "notebook_cost",
+        "book_cost",
+        "joe_total_spent",
+        "joe_remaining_money"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "ノート代は7×4=28ドル、本代は2×7=14ドル。支出は42ドルなので、56−42=14ドル残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4352,
+    "checked_model_hash": "2c4895a78f2f0df7b2c26dde7d68bc9e87de1b20730d60f44401765935b34663",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -8,7 +8,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 
 from run_method_targets import (build_target_plan, build_target_plans,
-                                run_lean_target, write_json)
+                                checkpoint_payload, run_lean_target, write_json)
 
 
 class MethodTargetIsolation(unittest.TestCase):
@@ -47,6 +47,39 @@ class MethodTargetIsolation(unittest.TestCase):
             write_json(path, {'ok': True})
             self.assertTrue(path.read_text().endswith('\n'))
             self.assertEqual(json.loads(path.read_text()), {'ok': True})
+
+    def test_checkpoint_keeps_healthy_targets_runnable_after_other_dependency_failure(self):
+        outcomes = {
+            'tests/lean/Broken.lean': {
+                'target': 'tests/lean/Broken.lean',
+                'dependency_build_exit_code': 1,
+                'lean_exit_code': None,
+            },
+            'tests/lean/Healthy.lean': {
+                'target': 'tests/lean/Healthy.lean',
+                'dependency_build_exit_code': 0,
+                'lean_exit_code': None,
+            },
+        }
+        checkpoint = checkpoint_payload(
+            2, ['tests/lean/Healthy.lean'], ['tests/lean/Broken.lean'],
+            4, outcomes, {})
+        self.assertFalse(checkpoint['lean_stage_skipped'])
+        self.assertEqual(checkpoint['remaining_target_count'], 1)
+        self.assertEqual(checkpoint['dependency_failure_count'], 1)
+
+    def test_checkpoint_skips_lean_only_when_no_target_is_runnable(self):
+        outcomes = {
+            'tests/lean/Broken.lean': {
+                'target': 'tests/lean/Broken.lean',
+                'dependency_build_exit_code': 1,
+                'lean_exit_code': None,
+            },
+        }
+        checkpoint = checkpoint_payload(
+            1, [], ['tests/lean/Broken.lean'], 4, outcomes, {})
+        self.assertTrue(checkpoint['lean_stage_skipped'])
+        self.assertEqual(checkpoint['remaining_target_count'], 0)
 
     @patch('run_method_targets.subprocess.run')
     def test_lean_check_uses_evidence_wrapper(self, run):

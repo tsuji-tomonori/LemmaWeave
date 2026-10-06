@@ -149,6 +149,22 @@ def run_lean_target(target):
         cwd=ROOT, check=False).returncode
 
 
+def checkpoint_payload(target_count, runnable, dependency_failures, jobs,
+                       outcomes, lean_codes):
+    """Describe partial progress without blocking unrelated healthy targets."""
+    return {
+        'selected_target_count': target_count,
+        'completed_target_count': len(lean_codes),
+        'remaining_target_count': len(runnable) - len(lean_codes),
+        'jobs': jobs,
+        'dependency_failure_count': len(dependency_failures),
+        'dependency_failures': sorted(dependency_failures),
+        'lean_stage_skipped': not bool(runnable),
+        'completed_outcomes': [outcomes[name]
+                               for name in sorted(lean_codes)],
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--all', action='store_true',
@@ -177,19 +193,11 @@ def main():
         if outcome['dependency_build_exit_code'] != 0
     ]
     lean_codes = {}
-    if dependency_failures:
-        checkpoint = {
-            'selected_target_count': len(targets),
-            'completed_target_count': 0,
-            'remaining_target_count': len(runnable),
-            'jobs': args.jobs,
-            'dependency_failure_count': len(dependency_failures),
-            'dependency_failures': sorted(dependency_failures),
-            'lean_stage_skipped': True,
-            'completed_outcomes': [],
-        }
-        write_json(ROOT / 'reports/method-target-checkpoint.json', checkpoint)
-    else:
+    checkpoint = checkpoint_payload(
+        len(targets), runnable, dependency_failures, args.jobs,
+        outcomes, lean_codes)
+    write_json(ROOT / 'reports/method-target-checkpoint.json', checkpoint)
+    if runnable:
         with ThreadPoolExecutor(max_workers=args.jobs) as executor:
             futures = {executor.submit(run_lean_target, target): target
                        for target in runnable}
@@ -198,17 +206,9 @@ def main():
                 lean_exit = future.result()
                 lean_codes[target] = lean_exit
                 outcomes[target]['lean_exit_code'] = lean_exit
-                checkpoint = {
-                    'selected_target_count': len(targets),
-                    'completed_target_count': len(lean_codes),
-                    'remaining_target_count': len(runnable) - len(lean_codes),
-                    'jobs': args.jobs,
-                    'dependency_failure_count': 0,
-                    'dependency_failures': [],
-                    'lean_stage_skipped': False,
-                    'completed_outcomes': [outcomes[name]
-                                           for name in sorted(lean_codes)],
-                }
+                checkpoint = checkpoint_payload(
+                    len(targets), runnable, dependency_failures, args.jobs,
+                    outcomes, lean_codes)
                 write_json(ROOT / 'reports/method-target-checkpoint.json', checkpoint)
     results = []
     for plan in plans:
@@ -238,7 +238,7 @@ def main():
         'selected_targets': targets,
         'jobs': args.jobs,
         'dependency_build_strategy':
-            'single_batch_build_with_failure_isolation_and_fail_fast_before_parallel_checks',
+            'single_batch_build_with_failure_isolation_then_run_healthy_targets',
         'safety_gate':
             'check_method_recipes.proof_evidence over Lean import closure and graph hash',
     }

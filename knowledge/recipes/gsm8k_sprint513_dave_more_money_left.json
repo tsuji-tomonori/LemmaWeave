@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint513_dave_more_money_left",
+  "title_ja": "Daveの残金差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04268",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P3.lean",
+  "problem_ja": "Derekは40ドルから14、11、5ドルを使う。Daveは50ドルから7ドルを使う。DaveはDerekよりいくら多く残るか。",
+  "answer_ja": "Derekは10ドル、Daveは43ドル残るので、差は33ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.dave_more_money_left",
+  "graph": "work/gsm8k-sprint513-dave-more-money-left-graph.json",
+  "model_notes_ja": [
+    "各人の支出をそれぞれの所持金から引く。"
+  ],
+  "steps": [
+    {
+      "id": "derek_money_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.derek_money_left",
+      "title_ja": "Derekの残金",
+      "claim_ja": "40−14−11−5=10ドル。",
+      "method_ja": "3件の支出を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40−14−11−5=10ドル。"
+    },
+    {
+      "id": "dave_money_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.dave_money_left",
+      "title_ja": "Daveの残金",
+      "claim_ja": "50−7=43ドル。",
+      "method_ja": "支出を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "50−7=43ドル。"
+    },
+    {
+      "id": "dave_more_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.dave_more_money",
+      "title_ja": "残金の差",
+      "claim_ja": "43−10=33ドル。",
+      "method_ja": "DaveからDerekの残金を引く。",
+      "requires_steps": [
+        "derek_money_left",
+        "dave_money_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "43−10=33ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.dave_more_money_left",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Derekは10ドル、Daveは43ドル残るので、差は33ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "derek_money_left",
+        "dave_money_left",
+        "dave_more_money"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Derekは10ドル、Daveは43ドル残るので、差は33ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4269,
+    "checked_model_hash": "5e5065b43a0044861194598e07c25572a27c4d1cecdad3ad56739f7a0341534f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

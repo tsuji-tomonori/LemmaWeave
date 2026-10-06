@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint502_two_day_calories",
+  "title_ja": "2日分の摂取カロリー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04257",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P1.lean",
+  "problem_ja": "1日3個のバーガーを食べ、各20カロリーである。2日分は何カロリーか。",
+  "answer_ja": "1日は3×20=60カロリー、2日で60×2=120カロリー。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.two_day_calories",
+  "graph": "work/gsm8k-sprint502-two-day-calories-graph.json",
+  "model_notes_ja": [
+    "各バーガーのカロリーが20で一定とする。"
+  ],
+  "steps": [
+    {
+      "id": "daily_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.daily_calories",
+      "title_ja": "1日のカロリー",
+      "claim_ja": "3×20=60カロリー。",
+      "method_ja": "個数と1個分を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3×20=60カロリー。"
+    },
+    {
+      "id": "calories_after_two_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.calories_after_two_days",
+      "title_ja": "2日分",
+      "claim_ja": "60×2=120カロリー。",
+      "method_ja": "1日分を2倍する。",
+      "requires_steps": [
+        "daily_calories"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "60×2=120カロリー。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.two_day_calories",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1日は3×20=60カロリー、2日で60×2=120カロリー。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "daily_calories",
+        "calories_after_two_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1日は3×20=60カロリー、2日で60×2=120カロリー。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4258,
+    "checked_model_hash": "ce83dde56c15afd77b09bf36a123b3c1f49d6068459b2800116f42d29550d8bb",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

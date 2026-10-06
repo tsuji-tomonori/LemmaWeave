@@ -1,0 +1,119 @@
+{
+  "id": "gsm8k_sprint549_father_age_when_rachel_25",
+  "title_ja": "Rachelが25歳のときの父の年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04304",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P1.lean",
+  "problem_ja": "Rachelは12歳、祖父は7倍、母は祖父の半分、父は母より5歳上。Rachelが25歳のとき父は何歳か。",
+  "answer_ja": "祖父84歳、母42歳、父47歳。13年後にRachelが25歳となり、父は60歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.father_age_when_rachel_25",
+  "graph": "work/gsm8k-sprint549-father-age-when-rachel-25-graph.json",
+  "model_notes_ja": [
+    "全員が同じ13年間だけ年を取る。"
+  ],
+  "steps": [
+    {
+      "id": "grandfather_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.grandfather_age",
+      "title_ja": "祖父の年齢",
+      "claim_ja": "12×7=84歳。",
+      "method_ja": "Rachelの年齢を7倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12×7=84歳。"
+    },
+    {
+      "id": "mother_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.mother_age",
+      "title_ja": "母の年齢",
+      "claim_ja": "84÷2=42歳。",
+      "method_ja": "祖父の年齢を半分にする。",
+      "requires_steps": [
+        "grandfather_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "84÷2=42歳。"
+    },
+    {
+      "id": "father_current_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.father_current_age",
+      "title_ja": "父の現在年齢",
+      "claim_ja": "42+5=47歳。",
+      "method_ja": "母の年齢へ5歳足す。",
+      "requires_steps": [
+        "mother_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "42+5=47歳。"
+    },
+    {
+      "id": "years_until_25",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.years_until_25",
+      "title_ja": "経過年数",
+      "claim_ja": "25−12=13年。",
+      "method_ja": "目標年齢との差を求める。",
+      "requires_steps": [
+        "father_current_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "25−12=13年。"
+    },
+    {
+      "id": "father_future_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.father_future_age",
+      "title_ja": "父の将来年齢",
+      "claim_ja": "47+13=60歳。",
+      "method_ja": "父の現在年齢へ経過年数を足す。",
+      "requires_steps": [
+        "father_current_age",
+        "years_until_25"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "47+13=60歳。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.father_age_when_rachel_25",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "祖父84歳、母42歳、父47歳。13年後にRachelが25歳となり、父は60歳。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "grandfather_age",
+        "mother_age",
+        "father_current_age",
+        "years_until_25",
+        "father_future_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "祖父84歳、母42歳、父47歳。13年後にRachelが25歳となり、父は60歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4305,
+    "checked_model_hash": "c75058a771e6d093ed7734adf989dee2a43487e47b38014dd0c58acacef110c8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

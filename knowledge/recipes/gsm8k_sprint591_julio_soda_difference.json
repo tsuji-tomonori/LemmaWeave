@@ -1,0 +1,117 @@
+{
+  "id": "gsm8k_sprint591_julio_soda_difference",
+  "title_ja": "JulioとMateoのソーダ量の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04346",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P1.lean",
+  "problem_ja": "Julio has four bottles of orange soda and seven bottles of grape soda in his fridge. His friend Mateo has a bottle of orange soda and 3 bottles of grape soda in his fridge. If the amount of beverage in each bottle is 2 liters, how many more liters of soda does Julio have?",
+  "answer_ja": "Julioは(4+7)×2=22リットル、Mateoは(1+3)×2=8リットル持つ。したがってJulioの方が22−8=14リットル多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.julio_soda_difference",
+  "graph": "work/gsm8k-sprint591-julio-soda-difference-graph.json",
+  "model_notes_ja": [
+    "各瓶は同じ2リットルで、二人のオレンジ・グレープ両方を合計する。"
+  ],
+  "steps": [
+    {
+      "id": "julio_bottle_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.julio_bottle_count",
+      "title_ja": "Julioの瓶数",
+      "claim_ja": "4+7=11本。",
+      "method_ja": "2種類の瓶数を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4+7=11本。"
+    },
+    {
+      "id": "julio_liters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.julio_liters",
+      "title_ja": "Julioの総量",
+      "claim_ja": "11×2=22リットル。",
+      "method_ja": "瓶数に1瓶当たりの量を掛ける。",
+      "requires_steps": [
+        "julio_bottle_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "11×2=22リットル。"
+    },
+    {
+      "id": "mateo_bottle_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.mateo_bottle_count",
+      "title_ja": "Mateoの瓶数",
+      "claim_ja": "1+3=4本。",
+      "method_ja": "2種類の瓶数を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "1+3=4本。"
+    },
+    {
+      "id": "mateo_liters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.mateo_liters",
+      "title_ja": "Mateoの総量",
+      "claim_ja": "4×2=8リットル。",
+      "method_ja": "瓶数に1瓶当たりの量を掛ける。",
+      "requires_steps": [
+        "mateo_bottle_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4×2=8リットル。"
+    },
+    {
+      "id": "julio_extra_liters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.julio_extra_liters",
+      "title_ja": "量の差",
+      "claim_ja": "22−8=14リットル。",
+      "method_ja": "Julioの総量からMateoの総量を引く。",
+      "requires_steps": [
+        "julio_liters",
+        "mateo_liters"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "22−8=14リットル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.julio_soda_difference",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Julioは(4+7)×2=22リットル、Mateoは(1+3)×2=8リットル持つ。したがってJulioの方が22−8=14リットル多い。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "julio_bottle_count",
+        "julio_liters",
+        "mateo_bottle_count",
+        "mateo_liters",
+        "julio_extra_liters"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "Julioは(4+7)×2=22リットル、Mateoは(1+3)×2=8リットル持つ。したがってJulioの方が22−8=14リットル多い。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4347,
+    "checked_model_hash": "f38046e697079cc8f67c46dc003037002a1c5e83bbee853a2dac4f268b82bcad",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint612_board_game_spaces_remaining",
+  "title_ja": "ゲーム終了までの残りマス",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04367",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P2.lean",
+  "problem_ja": "Susan is playing a board game with 48 spaces from the starting space to the winning end space of the game. On the first turn, she moves forward eight spaces. On the second turn, she moves two spaces, but lands on a space that sends her back five spaces. On the third turn, she moves forward six more spaces. How many spaces does she have to move to reach the ending space and win the game?",
+  "answer_ja": "3手後の正味前進は8+2−5+6=11マス。全48マスなので残りは37マス。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.board_game_spaces_remaining",
+  "graph": "work/gsm8k-sprint612-board-game-spaces-remaining-graph.json",
+  "model_notes_ja": [
+    "開始位置を0とし、戻される5マスを第2手の移動後に差し引く。"
+  ],
+  "steps": [
+    {
+      "id": "net_spaces_moved",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.net_spaces_moved",
+      "title_ja": "正味前進",
+      "claim_ja": "8+2−5+6=11マス。",
+      "method_ja": "前進を加え、後退を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "8+2−5+6=11マス。"
+    },
+    {
+      "id": "spaces_to_finish",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.spaces_to_finish",
+      "title_ja": "残りマス",
+      "claim_ja": "48−11=37マス。",
+      "method_ja": "全距離から正味前進を引く。",
+      "requires_steps": [
+        "net_spaces_moved"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "48−11=37マス。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.board_game_spaces_remaining",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "3手後の正味前進は8+2−5+6=11マス。全48マスなので残りは37マス。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "net_spaces_moved",
+        "spaces_to_finish"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "3手後の正味前進は8+2−5+6=11マス。全48マスなので残りは37マス。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4368,
+    "checked_model_hash": "ba08090ab15203723875619b975ccd4373ac0c80cec3a23314a67a14e9d6028a",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

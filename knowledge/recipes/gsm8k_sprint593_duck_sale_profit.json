@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint593_duck_sale_profit",
+  "title_ja": "アヒル販売の利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04348",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P1.lean",
+  "problem_ja": "John buys 30 ducks for $10 each.  They weigh 4 pounds and he sells them for $5 per pound.  How much profit did he make?",
+  "answer_ja": "仕入れは30×10=300ドル。1羽の売上は4×5=20ドル、全体は600ドルなので、利益は600−300=300ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.duck_sale_profit",
+  "graph": "work/gsm8k-sprint593-duck-sale-profit-graph.json",
+  "model_notes_ja": [
+    "全30羽が各4ポンドで、全重量を1ポンド5ドルで販売できる。"
+  ],
+  "steps": [
+    {
+      "id": "duck_purchase_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.duck_purchase_cost",
+      "title_ja": "仕入総額",
+      "claim_ja": "30×10=300ドル。",
+      "method_ja": "羽数に1羽の価格を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "30×10=300ドル。"
+    },
+    {
+      "id": "duck_revenue_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.duck_revenue_each",
+      "title_ja": "1羽の売上",
+      "claim_ja": "4×5=20ドル。",
+      "method_ja": "重量に1ポンド当たり価格を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4×5=20ドル。"
+    },
+    {
+      "id": "duck_total_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.duck_total_revenue",
+      "title_ja": "総売上",
+      "claim_ja": "30×20=600ドル。",
+      "method_ja": "羽数に1羽の売上を掛ける。",
+      "requires_steps": [
+        "duck_revenue_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "30×20=600ドル。"
+    },
+    {
+      "id": "duck_profit_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.duck_profit_amount",
+      "title_ja": "利益",
+      "claim_ja": "600−300=300ドル。",
+      "method_ja": "売上から仕入額を引く。",
+      "requires_steps": [
+        "duck_purchase_cost",
+        "duck_total_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "600−300=300ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.duck_sale_profit",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "仕入れは30×10=300ドル。1羽の売上は4×5=20ドル、全体は600ドルなので、利益は600−300=300ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "duck_purchase_cost",
+        "duck_revenue_each",
+        "duck_total_revenue",
+        "duck_profit_amount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "仕入れは30×10=300ドル。1羽の売上は4×5=20ドル、全体は600ドルなので、利益は600−300=300ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4349,
+    "checked_model_hash": "f38046e697079cc8f67c46dc003037002a1c5e83bbee853a2dac4f268b82bcad",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

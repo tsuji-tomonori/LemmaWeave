@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint583_fish_tank_total",
+  "title_ja": "水槽の魚の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04338",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P2.lean",
+  "problem_ja": "There are many fish in the tank. One third of them are blue, and half of the blue fish have spots. If there are 10 blue, spotted fish, how many fish are there in the tank?",
+  "answer_ja": "斑点のある青い魚10匹は青い魚の半分なので、青い魚は20匹。青い魚が全体の3分の1なので、総数は60匹。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.fish_tank_total",
+  "graph": "work/gsm8k-sprint583-fish-tank-total-graph.json",
+  "model_notes_ja": [
+    "半分・3分の1はいずれも正確な比率で、個体数は割り切れる。"
+  ],
+  "steps": [
+    {
+      "id": "blue_fish_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.blue_fish_count",
+      "title_ja": "青い魚",
+      "claim_ja": "10×2=20匹。",
+      "method_ja": "半分の個数から全体を戻す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10×2=20匹。"
+    },
+    {
+      "id": "tank_fish_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.tank_fish_count",
+      "title_ja": "全魚",
+      "claim_ja": "20×3=60匹。",
+      "method_ja": "3分の1の個数から全体を戻す。",
+      "requires_steps": [
+        "blue_fish_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20×3=60匹。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.fish_tank_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "斑点のある青い魚10匹は青い魚の半分なので、青い魚は20匹。青い魚が全体の3分の1なので、総数は60匹。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "blue_fish_count",
+        "tank_fish_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "斑点のある青い魚10匹は青い魚の半分なので、青い魚は20匹。青い魚が全体の3分の1なので、総数は60匹。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4339,
+    "checked_model_hash": "fa68f53ffa1b963f9f3a1eef6670295dfd7c9c0baf48e34b4d26e5c3eaebd9d9",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

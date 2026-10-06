@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint558_additional_winning_weeks",
+  "title_ja": "追加で優勝が必要な週数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04313",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P3.lean",
+  "problem_ja": "毎週の優勝賞金100ドル。最初の2週で優勝し、1000ドルの子犬を買う。あと最低何週優勝が必要か。",
+  "answer_ja": "すでに200ドル。残り800ドルなので、100ドルずつ8週の優勝が必要。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.additional_winning_weeks",
+  "graph": "work/gsm8k-sprint558-additional-winning-weeks-graph.json",
+  "model_notes_ja": [
+    "賞金以外の収入や支出はなく、追加の優勝ごとに100ドルを全額貯める。"
+  ],
+  "steps": [
+    {
+      "id": "initial_prize_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.initial_prize_money",
+      "title_ja": "既得賞金",
+      "claim_ja": "2×100=200ドル。",
+      "method_ja": "2週分の賞金を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2×100=200ドル。"
+    },
+    {
+      "id": "money_still_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.money_still_needed",
+      "title_ja": "不足額",
+      "claim_ja": "1000−200=800ドル。",
+      "method_ja": "価格から既得賞金を引く。",
+      "requires_steps": [
+        "initial_prize_money"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1000−200=800ドル。"
+    },
+    {
+      "id": "extra_win_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.extra_win_weeks",
+      "title_ja": "追加週数",
+      "claim_ja": "800÷100=8週。",
+      "method_ja": "不足額を週当たり賞金で割る。",
+      "requires_steps": [
+        "money_still_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "800÷100=8週。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.additional_winning_weeks",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "すでに200ドル。残り800ドルなので、100ドルずつ8週の優勝が必要。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "initial_prize_money",
+        "money_still_needed",
+        "extra_win_weeks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "すでに200ドル。残り800ドルなので、100ドルずつ8週の優勝が必要。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4314,
+    "checked_model_hash": "1996423f62893da6f88cf97d68f47a413603677a123a88e9a22ef8c1685945ae",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

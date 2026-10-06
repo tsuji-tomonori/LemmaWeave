@@ -1,0 +1,144 @@
+{
+  "id": "gsm8k_sprint485_current_alex_allison_sum",
+  "title_ja": "AlexとAllisonの現在年齢合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04240",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A10P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "When Diane turns 30, she will be half the age of Alex and twice as old as Allison. Diane is 16 years old now. What is the sum of the ages of Alex and Allison now?",
+  "answer_ja": "Dianeが30歳のときAlexは60歳、Allisonは15歳。今から14年後なので、現在はAlex46歳、Allison1歳。合計47歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A10P3.current_alex_allison_sum",
+  "graph": "work/gsm8k-sprint485-current-alex-allison-sum-graph.json",
+  "model_notes_ja": [
+    "Dianeが30歳になる14年後の関係から、AlexとAllisonの現在年齢を同じ14年だけ戻す。"
+  ],
+  "steps": [
+    {
+      "id": "future_alex_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P3.future_alex_age",
+      "title_ja": "将来のAlex",
+      "claim_ja": "30×2=60歳。",
+      "method_ja": "DianeがAlexの半分なので2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Diane30歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Alex60歳。"
+    },
+    {
+      "id": "future_allison_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P3.future_allison_age",
+      "title_ja": "将来のAllison",
+      "claim_ja": "30÷2=15歳。",
+      "method_ja": "DianeがAllisonの2倍なので半分にする。",
+      "requires_steps": [
+        "future_alex_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Diane30歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Allison15歳。"
+    },
+    {
+      "id": "years_to_thirty",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P3.years_to_thirty",
+      "title_ja": "経過年数",
+      "claim_ja": "30−16=14年。",
+      "method_ja": "将来年齢から現在年齢を引く。",
+      "requires_steps": [
+        "future_alex_age",
+        "future_allison_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Dianeは現在16歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "14年後。"
+    },
+    {
+      "id": "current_alex_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P3.current_alex_age",
+      "title_ja": "現在のAlex",
+      "claim_ja": "60−14=46歳。",
+      "method_ja": "将来年齢を14年戻す。",
+      "requires_steps": [
+        "future_alex_age",
+        "future_allison_age",
+        "years_to_thirty"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "将来60歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "現在46歳。"
+    },
+    {
+      "id": "current_allison_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P3.current_allison_age",
+      "title_ja": "現在のAllison",
+      "claim_ja": "15−14=1歳。",
+      "method_ja": "将来年齢を14年戻す。",
+      "requires_steps": [
+        "future_alex_age",
+        "future_allison_age",
+        "years_to_thirty",
+        "current_alex_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "将来15歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "現在1歳。"
+    },
+    {
+      "id": "current_age_sum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P3.current_age_sum",
+      "title_ja": "現在年齢の合計",
+      "claim_ja": "46+1=47歳。",
+      "method_ja": "現在年齢を合計する。",
+      "requires_steps": [
+        "future_alex_age",
+        "future_allison_age",
+        "years_to_thirty",
+        "current_alex_age",
+        "current_allison_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "46歳と1歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "47歳。"
+    },
+    {
+      "id": "current_alex_allison_sum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P3.current_alex_allison_sum",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "Dianeが30歳のときAlexは60歳、Allisonは15歳。今から14年後なので、現在はAlex46歳、Allison1歳。合計47歳。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "future_alex_age",
+        "future_allison_age",
+        "years_to_thirty",
+        "current_alex_age",
+        "current_allison_age",
+        "current_age_sum"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Dianeが30歳になる14年後の関係から、AlexとAllisonの現在年齢を同じ14年だけ戻す。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Dianeが30歳のときAlexは60歳、Allisonは15歳。今から14年後なので、現在はAlex46歳、Allison1歳。合計47歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4241,
+    "checked_model_hash": "3ff80d078a091b485441515f01aaf59ca8e844233c298e4afb760effaf0771fe",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "3ff80d078a091b485441515f01aaf59ca8e844233c298e4afb760effaf0771fe"
+}

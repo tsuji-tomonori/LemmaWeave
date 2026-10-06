@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint325_iced_coffee_cost",
+  "title_ja": "2週間分のコーヒー代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03749",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tricia buys large bottles of iced coffee that have 6 servings per container.  She drinks half a container a day.  The coffee is currently on sale for $3.00 a bottle.  How much will it cost her to buy enough bottles to last for 2 weeks?",
+  "answer_ja": "1日半ボトルを14日飲むので必要量は7ボトル。1本3ドルだから7×3=21ドル。6食分表示でも、半分は3食分、14日で42食分=7本と一致する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P1.iced_coffee_cost",
+  "graph": "work/gsm8k-sprint325-iced-coffee-cost-graph.json",
+  "model_notes_ja": [
+    "1週間は7日、ボトルは1本単位で購入し、価格は2週間中3ドルのまま。"
+  ],
+  "steps": [
+    {
+      "id": "iced_coffee_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P1.iced_coffee_cost",
+      "title_ja": "2週間分のコーヒー代",
+      "claim_ja": "1日半ボトルを14日飲むので必要量は7ボトル。1本3ドルだから7×3=21ドル。6食分表示でも、半分は3食分、14日で42食分=7本と一致する。",
+      "method_ja": "日数と1日量から必要本数を求め単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "必要量はちょうど7本で端数がない。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "21ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3750,
+    "checked_model_hash": "20d5c669e70a31e33bf79186cb04e455f254bfaf90022e613b4bbc23ccea4993",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

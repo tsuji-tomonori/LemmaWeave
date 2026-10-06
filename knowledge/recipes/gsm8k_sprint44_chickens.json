@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint44_chickens",
+  "title_ja": "Wendiの最終的な鶏の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00953",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "4羽を倍にし、1羽失い、10より4少ない6羽を加えた最終数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.chickens_solution",
+  "graph": "work/gsm8k-sprint44-chickens-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "chickens_doubled",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.chickens_doubled",
+      "title_ja": "倍にした後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4羽を倍にする。",
+      "conclusion_ja": "8羽。",
+      "baseline_ja": "4×2=8。"
+    },
+    {
+      "id": "chickens_after_dog",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.chickens_after_dog",
+      "title_ja": "犬に食べられた後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "8羽から1羽失う。",
+      "conclusion_ja": "7羽。",
+      "baseline_ja": "8=7+1。"
+    },
+    {
+      "id": "chickens_added",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.chickens_added",
+      "title_ja": "追加した鶏",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10より4少ない数。",
+      "conclusion_ja": "6羽。",
+      "baseline_ja": "10=6+4。"
+    },
+    {
+      "id": "chickens_final",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.chickens_final",
+      "title_ja": "最終数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残った7羽に6羽を加える。",
+      "conclusion_ja": "13羽。",
+      "baseline_ja": "7+6=13。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 954,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

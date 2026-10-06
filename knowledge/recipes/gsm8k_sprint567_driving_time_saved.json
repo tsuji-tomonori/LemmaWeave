@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint567_driving_time_saved",
+  "title_ja": "速度変更で節約する時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04322",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P2.lean",
+  "problem_ja": "Melinda is taking a 1200-mile trip with her family to visit their cousins. How much time will they save if they drive 60 miles an hour instead of 50 miles an hour?",
+  "answer_ja": "時速60マイルでは1200÷60=20時間、時速50マイルでは24時間。差は4時間。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.driving_time_saved",
+  "graph": "work/gsm8k-sprint567-driving-time-saved-graph.json",
+  "model_notes_ja": [
+    "全行程で各速度を一定に保ち、休憩時間は比較に含めない。"
+  ],
+  "steps": [
+    {
+      "id": "fast_trip_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.fast_trip_hours",
+      "title_ja": "時速60",
+      "claim_ja": "1200÷60=20時間。",
+      "method_ja": "距離を速さで割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1200÷60=20時間。"
+    },
+    {
+      "id": "slow_trip_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.slow_trip_hours",
+      "title_ja": "時速50",
+      "claim_ja": "1200÷50=24時間。",
+      "method_ja": "距離を速さで割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1200÷50=24時間。"
+    },
+    {
+      "id": "saved_trip_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.saved_trip_hours",
+      "title_ja": "節約時間",
+      "claim_ja": "24−20=4時間。",
+      "method_ja": "遅い場合と速い場合の時間差を取る。",
+      "requires_steps": [
+        "fast_trip_hours",
+        "slow_trip_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "24−20=4時間。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.driving_time_saved",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "時速60マイルでは1200÷60=20時間、時速50マイルでは24時間。差は4時間。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "fast_trip_hours",
+        "slow_trip_hours",
+        "saved_trip_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "時速60マイルでは1200÷60=20時間、時速50マイルでは24時間。差は4時間。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4323,
+    "checked_model_hash": "3ac8694ccc634607c840230ad416833fb8207f62fea9e28db32aca8271bc38ff",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

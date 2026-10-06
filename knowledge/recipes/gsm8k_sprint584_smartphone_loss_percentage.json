@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint584_smartphone_loss_percentage",
+  "title_ja": "スマートフォンの損失率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04339",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P2.lean",
+  "problem_ja": "Matilda bought a smartphone for $300. Then she decided she wouldn't use it anyway and sold it for $255. What percentage of the initial cost did she lose?",
+  "answer_ja": "損失は300−255=45ドル。初期価格300ドルに対する割合は45×100÷300=15%。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.smartphone_loss_percentage",
+  "graph": "work/gsm8k-sprint584-smartphone-loss-percentage-graph.json",
+  "model_notes_ja": [
+    "損失率の基準は売却額ではなく初期購入額300ドル。"
+  ],
+  "steps": [
+    {
+      "id": "phone_loss_dollars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.phone_loss_dollars",
+      "title_ja": "損失額",
+      "claim_ja": "300−255=45ドル。",
+      "method_ja": "購入額から売却額を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "300−255=45ドル。"
+    },
+    {
+      "id": "phone_loss_percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.phone_loss_percent",
+      "title_ja": "損失率",
+      "claim_ja": "45×100÷300=15%。",
+      "method_ja": "損失額を初期価格で割り百分率へ換算する。",
+      "requires_steps": [
+        "phone_loss_dollars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "45×100÷300=15%。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.smartphone_loss_percentage",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "損失は300−255=45ドル。初期価格300ドルに対する割合は45×100÷300=15%。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "phone_loss_dollars",
+        "phone_loss_percent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "損失は300−255=45ドル。初期価格300ドルに対する割合は45×100÷300=15%。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4340,
+    "checked_model_hash": "fa68f53ffa1b963f9f3a1eef6670295dfd7c9c0baf48e34b4d26e5c3eaebd9d9",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

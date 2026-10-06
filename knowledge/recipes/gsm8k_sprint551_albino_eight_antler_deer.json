@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint551_albino_eight_antler_deer",
+  "title_ja": "白変種で8本角の鹿",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04306",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P2.lean",
+  "problem_ja": "鹿920頭の10%が8本角で、その4分の1が白変種。該当する鹿は何頭か。",
+  "answer_ja": "8本角は920×10%=92頭。その4分の1は92÷4=23頭。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.albino_eight_antler_deer",
+  "graph": "work/gsm8k-sprint551-albino-eight-antler-deer-graph.json",
+  "model_notes_ja": [
+    "4分の1は8本角の鹿92頭を母数とする。"
+  ],
+  "steps": [
+    {
+      "id": "eight_antler_deer",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.eight_antler_deer",
+      "title_ja": "8本角の鹿",
+      "claim_ja": "920×10÷100=92頭。",
+      "method_ja": "全体の10%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "920×10÷100=92頭。"
+    },
+    {
+      "id": "albino_eight_antler_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.albino_eight_antler_count",
+      "title_ja": "両条件を満たす鹿",
+      "claim_ja": "92÷4=23頭。",
+      "method_ja": "8本角の鹿の4分の1を求める。",
+      "requires_steps": [
+        "eight_antler_deer"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "92÷4=23頭。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.albino_eight_antler_deer",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "8本角は920×10%=92頭。その4分の1は92÷4=23頭。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "eight_antler_deer",
+        "albino_eight_antler_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "8本角は920×10%=92頭。その4分の1は92÷4=23頭。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4307,
+    "checked_model_hash": "4765595c3ac7c1f78e7205405d16c10effbd2a117bd5392d2cad5ebe151407a0",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

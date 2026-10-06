@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint121_sandbox",
+  "title_ja": "必要な砂は600ポンド。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02103",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.sandbox_solution",
+  "graph": "work/gsm8k-sprint121-sandbox-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sandbox_area",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.sandbox_area",
+      "title_ja": "砂場の面積は1600平方インチ。",
+      "claim_ja": "砂場の面積は1600平方インチ。",
+      "method_ja": "一辺40インチの正方形なので40×40。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "砂場の面積は1600平方インチ。",
+      "baseline_ja": "砂場の面積は1600平方インチ。"
+    },
+    {
+      "id": "sandbox_bags",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.sandbox_bags",
+      "title_ja": "必要な30ポンド袋は20袋。",
+      "claim_ja": "必要な30ポンド袋は20袋。",
+      "method_ja": "1袋で80平方インチなので1600÷80。",
+      "requires_steps": [
+        "sandbox_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "必要な30ポンド袋は20袋。",
+      "baseline_ja": "必要な30ポンド袋は20袋。"
+    },
+    {
+      "id": "sandbox_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.sandbox_solution",
+      "title_ja": "必要な砂は600ポンド。",
+      "claim_ja": "必要な砂は600ポンド。",
+      "method_ja": "20袋×30ポンド。",
+      "requires_steps": [
+        "sandbox_bags"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "必要な砂は600ポンド。",
+      "baseline_ja": "必要な砂は600ポンド。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2104,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

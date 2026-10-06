@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint331_total_birds",
+  "title_ja": "数えた鳥の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03780",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A19P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Janet counts 30 crows on the powerlines and 60% more hawks than crows. How many birds does she count total?",
+  "answer_ja": "タカはカラス30羽より60%多いので、増加分18羽を加え48羽。カラス30羽との合計は78羽。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A19P1.total_birds",
+  "graph": "work/gsm8k-sprint331-total-birds-graph.json",
+  "model_notes_ja": [
+    "60% moreは30羽を基準にした増加率で、カラスとタカは別個体。"
+  ],
+  "steps": [
+    {
+      "id": "total_birds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A19P1.total_birds",
+      "title_ja": "数えた鳥の総数",
+      "claim_ja": "タカはカラス30羽より60%多いので、増加分18羽を加え48羽。カラス30羽との合計は78羽。",
+      "method_ja": "基準数の60%を求め、タカ数と総数へ順に加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "30×60/100は整数。",
+      "baseline_ja": "整数・分数・割合・一次方程式・面積・平均のうち問題で明示したもの。",
+      "conclusion_ja": "78羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3781,
+    "checked_model_hash": "fcea5647a3ae770bccf5ce7a386ee21ee3e4c7d1e54691a899a84aab67b63e68",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

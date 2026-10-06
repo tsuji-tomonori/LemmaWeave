@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint248_ages",
+  "title_ja": "Janiceの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03282",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A06P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "誕生日経過を確認し、年齢差と半分を順に適用する。",
+  "answer_ja": "21歳",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A06P1.ages_janice",
+  "graph": "work/gsm8k-sprint248-ages-graph.json",
+  "model_notes_ja": [
+    "2021年2月時点で1月生まれのMarkは誕生日を経過済み。"
+  ],
+  "steps": [
+    {
+      "id": "ages_mark",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P1.ages_mark",
+      "title_ja": "Markは45歳。",
+      "claim_ja": "Markは45歳。",
+      "method_ja": "2021-1976。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2月時点で1月の誕生日を経過済み。",
+      "conclusion_ja": "45歳。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "ages_graham",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P1.ages_graham",
+      "title_ja": "Grahamは42歳。",
+      "claim_ja": "Grahamは42歳。",
+      "method_ja": "45-3。",
+      "requires_steps": [
+        "ages_mark"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Markより3歳若い。",
+      "conclusion_ja": "42歳。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "ages_janice",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P1.ages_janice",
+      "title_ja": "Janiceは21歳。",
+      "claim_ja": "Janiceは21歳。",
+      "method_ja": "42÷2。",
+      "requires_steps": [
+        "ages_graham"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Grahamの半分の年齢。",
+      "conclusion_ja": "21歳。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3283,
+    "checked_model_hash": "33dc55c429b4009cdaa0c22dc5291bab604edf08fb2f6d582162dd92997e4ea0",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

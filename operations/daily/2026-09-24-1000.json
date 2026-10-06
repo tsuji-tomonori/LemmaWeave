@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T10:00+09:00-gsm8k-15-a10",
+  "scheduled_local_hour": 10,
+  "scheduled_at": "2026-09-24T10:00:00+09:00",
+  "started_at": "2026-09-24T09:56:41+09:00",
+  "finished_at": "2026-09-24T10:03:59+09:00",
+  "start_offset_seconds": -199,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "add2eed437dc5e94caca8ffd9a8397eb3aa8dc86",
+  "artifact_commit": "b2efbab92fe3b18e23ddbcf5627db94b40f50233",
+  "selected_problem_ids": [
+    "train:02065", "train:02066", "train:02067", "train:02068", "train:02069",
+    "train:02070", "train:02071", "train:02072", "train:02073", "train:02074",
+    "train:02075", "train:02076", "train:02077", "train:02078", "train:02079"
+  ],
+  "skipped_already_solution_ready": [],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02065", "train:02066", "train:02067", "train:02068", "train:02069",
+    "train:02070", "train:02071", "train:02072", "train:02073", "train:02074",
+    "train:02075", "train:02076", "train:02077", "train:02078", "train:02079"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02069", "commit": "d11f448a47c5789b458613e594d0550c768e0829"},
+    {"through": "train:02074", "commit": "d8351c1888b28c5f1b09f3e2da86a62f9352d86b"},
+    {"through": "train:02079", "commit": "b2efbab92fe3b18e23ddbcf5627db94b40f50233"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0173.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A10Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A10.lean",
+    "recipes": 15,
+    "explanation_lines": 53,
+    "named_lean_theorems": 53,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02069は原題がpairsで数量を与えながら最後にshoesを尋ねるため、62足と個々の靴124個を単位別に形式化した。",
+    "train:02067は『次の4日間で最初の3日間の半分』を4日間全体の合計950ドルと明示して475ドルを導いた。",
+    "直前のexact-head CIは新規入試証明の失敗ではなく、全件再生が内部上限を超えてexit 124となった。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1564,
+    "pending": 6710,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02080",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持した。10時枠は予定時刻の199秒前に開始し、0〜8時および9時専用枠とは重複していない。"
+  },
+  "ci": {
+    "last_completed_exact_head": "add2eed437dc5e94caca8ffd9a8397eb3aa8dc86",
+    "last_completed_run_id": 35937071813,
+    "last_completed_status": "failure_timeout_exit_124",
+    "last_completed_artifact_id": 10784333489,
+    "last_completed_artifact_sha256": "a65bffaabb7fb9deb58c564337d22f9aa8dd765152046fa88595bc95ac18f562",
+    "current_artifact_head": "b2efbab92fe3b18e23ddbcf5627db94b40f50233",
+    "current_status": "not_started_before_ref_update",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T10:00+09:00",
+    "scope": "train:02065-train:02079",
+    "claimed_at": "2026-09-24T09:56:41+09:00",
+    "expires_at": "2026-09-24T10:56:41+09:00",
+    "released": true
+  }
+}

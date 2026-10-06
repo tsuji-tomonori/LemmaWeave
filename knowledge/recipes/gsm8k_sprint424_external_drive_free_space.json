@@ -1,0 +1,126 @@
+{
+  "id": "gsm8k_sprint424_external_drive_free_space",
+  "title_ja": "新しい外付けドライブの空き容量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04179",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A04P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Sarah's external drive showed 2.4 gigabytes free and 12.6 gigabytes used. She decided to delete a folder of size 4.6 gigabytes and store new files of 2 gigabytes. If she will transfer all her files to a new external drive of size 20 gigabytes, how many free gigabytes will the new external drive have?",
+  "answer_ja": "0.1GB単位で、使用済み126から削除46を引くと80、追加20で100。新ドライブ200から100を引くと空き100単位、すなわち10GB。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.external_drive_free_space",
+  "graph": "work/gsm8k-sprint424-external-drive-free-space-graph.json",
+  "model_notes_ja": [
+    "小数を0.1GB単位の自然数へ正確に換算する。",
+    "初期空き2.4GBと使用12.6GBの和15GBも整合確認する。"
+  ],
+  "steps": [
+    {
+      "id": "old_drive_capacity_tenths",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.old_drive_capacity_tenths",
+      "title_ja": "旧ドライブ整合",
+      "claim_ja": "24+126=150（0.1GB単位）。",
+      "method_ja": "初期空きと使用済みを足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "同じ0.1GB単位。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "15GB。"
+    },
+    {
+      "id": "used_after_deletion_tenths",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.used_after_deletion_tenths",
+      "title_ja": "削除後使用量",
+      "claim_ja": "126-46=80単位。",
+      "method_ja": "使用済みから削除フォルダを引く。",
+      "requires_steps": [
+        "old_drive_capacity_tenths"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "削除対象は使用済み領域内。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8GB。"
+    },
+    {
+      "id": "used_after_new_files_tenths",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.used_after_new_files_tenths",
+      "title_ja": "追加後使用量",
+      "claim_ja": "80+20=100単位。",
+      "method_ja": "新規ファイル2GBを加える。",
+      "requires_steps": [
+        "old_drive_capacity_tenths",
+        "used_after_deletion_tenths"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "転送対象は残存ファイルと新規ファイル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10GB。"
+    },
+    {
+      "id": "new_drive_free_tenths",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.new_drive_free_tenths",
+      "title_ja": "新ドライブ空き",
+      "claim_ja": "200-100=100単位。",
+      "method_ja": "容量20GBから使用10GBを引く。",
+      "requires_steps": [
+        "old_drive_capacity_tenths",
+        "used_after_deletion_tenths",
+        "used_after_new_files_tenths"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "新ドライブ容量200単位。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "100単位。"
+    },
+    {
+      "id": "new_drive_free_gigabytes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.new_drive_free_gigabytes",
+      "title_ja": "GB換算",
+      "claim_ja": "100÷10=10GB。",
+      "method_ja": "0.1GB単位をGBへ戻す。",
+      "requires_steps": [
+        "old_drive_capacity_tenths",
+        "used_after_deletion_tenths",
+        "used_after_new_files_tenths",
+        "new_drive_free_tenths"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10単位で1GB。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10GB。"
+    },
+    {
+      "id": "external_drive_free_space",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P3.external_drive_free_space",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "0.1GB単位で、使用済み126から削除46を引くと80、追加20で100。新ドライブ200から100を引くと空き100単位、すなわち10GB。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "old_drive_capacity_tenths",
+        "used_after_deletion_tenths",
+        "used_after_new_files_tenths",
+        "new_drive_free_tenths",
+        "new_drive_free_gigabytes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "小数を0.1GB単位の自然数へ正確に換算する。 初期空き2.4GBと使用12.6GBの和15GBも整合確認する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "0.1GB単位で、使用済み126から削除46を引くと80、追加20で100。新ドライブ200から100を引くと空き100単位、すなわち10GB。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4180,
+    "checked_model_hash": "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4"
+}

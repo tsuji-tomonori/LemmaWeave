@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint156_scores",
+  "title_ja": "2人の得点合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02629",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Hajar24点、Farahの方が21点高い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A13.scores_solution",
+  "graph": "work/gsm8k-sprint156-scores-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "scores_farah",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.scores_farah",
+      "title_ja": "Farahは45点",
+      "claim_ja": "Farahは45点",
+      "method_ja": "24点に差21点を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Farahは45点",
+      "baseline_ja": "Farahは45点"
+    },
+    {
+      "id": "scores_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.scores_solution",
+      "title_ja": "合計69点",
+      "claim_ja": "合計69点",
+      "method_ja": "24点と45点を足す",
+      "requires_steps": [
+        "scores_farah"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計69点",
+      "baseline_ja": "合計69点"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2630,
+    "checked_model_hash": "e51225f4b98dc13b8a03c785cc65a942c1c801353b83ac6b37239ea1b6a1f5af",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

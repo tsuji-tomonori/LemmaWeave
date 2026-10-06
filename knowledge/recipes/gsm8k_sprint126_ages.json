@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint126_ages",
+  "title_ja": "Maiyaの姉妹年齢の矛盾",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02176",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Maiyaには姉妹が2人いる。原文は第1姉妹がMaiyaの2倍の年齢で同時に1歳若いという。3人の平均は5歳。Maiyaの年齢は何歳か。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.ages_answer_scope",
+  "graph": "work/gsm8k-sprint126-ages-graph.json",
+  "model_notes_ja": [
+    "原文はfirst sisterが2倍かつ1歳若いと同一人物を指定。参照解はsecond sisterが若いという訂正に依存。"
+  ],
+  "steps": [
+    {
+      "id": "ages_original_inconsistent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.ages_original_inconsistent",
+      "title_ja": "原文どおりの年齢は存在しない",
+      "claim_ja": "原文どおりの年齢は存在しない",
+      "method_ja": "同じ第1姉妹がMaiyaの2倍かつ1歳年下なら非負整数年齢に矛盾。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "原文どおりの年齢は存在しない",
+      "baseline_ja": "原文どおりの年齢は存在しない"
+    },
+    {
+      "id": "ages_conditional_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.ages_conditional_solution",
+      "title_ja": "第2姉妹が1歳年下と訂正した場合はMaiyaが4歳",
+      "claim_ja": "第2姉妹が1歳年下と訂正した場合はMaiyaが4歳",
+      "method_ja": "3人の平均5歳より合計15歳、x+2x+(x−1)=15を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "第2姉妹が1歳年下と訂正した場合はMaiyaが4歳",
+      "baseline_ja": "第2姉妹が1歳年下と訂正した場合はMaiyaが4歳"
+    },
+    {
+      "id": "ages_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.ages_answer_scope",
+      "title_ja": "原文は解なし、4歳は訂正後に限る",
+      "claim_ja": "原文は解なし、4歳は訂正後に限る",
+      "method_ja": "原題に第2姉妹の条件を黙って追加しない。",
+      "requires_steps": [
+        "ages_original_inconsistent",
+        "ages_conditional_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "原文は解なし、4歳は訂正後に限る",
+      "baseline_ja": "原文は解なし、4歳は訂正後に限る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2177,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T090000+0900-ci-exact-head-repair",
+  "scheduled_slot": "2026-10-05T09:00:00+09:00",
+  "started_at": "2026-10-05T09:55:28+09:00",
+  "finished_at": "2026-10-05T10:20:00+09:00",
+  "schedule_deviation_minutes": 55,
+  "schedule_deviation_reason_ja": "実行開始時刻が予定枠から55分遅れ、前枠から継続するexact-head CI失敗の証拠回収と修復を優先した。",
+  "role": "ci_repair_override",
+  "scheduled_role": "high_school_japanese_exam_problem",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "1b998a821aca7a5c7aa88d793c7e00c2d4ddfed0",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [],
+  "deferred": [
+    {
+      "problem_id": "high-school-slot:2026-10-05-09",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "固定Lean CI失敗の修復を優先し、この専用枠では新規の高校数学小問を選定しなかった。",
+      "next_action_ja": "exact-head CI成功後の次回9時専用枠で、6分野ローテーションと既存台帳を確認して1小問を処理する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04256",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "固定Lean CIが失敗しているため、新規GSM8K処理を停止した。",
+      "next_action_ja": "依存モジュール修復のexact-head CI成功証拠を得てから再開する。"
+    }
+  ],
+  "failed_ci_evidence": {
+    "workflow_run_id": 37243280265,
+    "job_id": 111556084816,
+    "head_sha": "1b998a821aca7a5c7aa88d793c7e00c2d4ddfed0",
+    "conclusion": "failure",
+    "started_at": "2026-10-04T23:18:30Z",
+    "completed_at": "2026-10-05T00:15:14Z",
+    "isolated_dependency_failure_count": 186,
+    "lean_stage_skipped": true,
+    "compact_artifact_id": 11318778617,
+    "compact_artifact_size_bytes": 259943,
+    "compact_artifact_sha256": "865bfaf8bbd02276eb721cdea82a17c5f6e055b5da9a7b74f2b410e19111b0da",
+    "compact_artifact_local_digest_match": true,
+    "full_artifact_id": 11319053156,
+    "full_artifact_size_bytes": 385934806,
+    "full_artifact_sha256": "255d08e04d6c7d2b10426d915f7fb46fba7204338846a96401f367f7a4e66048",
+    "full_artifact_local_digest_match": true,
+    "full_artifact_zip_test": "passed"
+  },
+  "diagnosis": {
+    "failed_modules_examined": 186,
+    "omega_failure_modules": 166,
+    "root_cause_ja": "構造体の証明フィールドがomegaの局所仮定へ自動展開されず、旧移行でcasesを削除したため射影等式を利用できなかった。加えて一行・セミコロン・折返し形式の複数フィールド宣言が固定Lean 4.33.1で誤解析された。",
+    "prior_migration_assessment": "incorrect_and_incomplete"
+  },
+  "repair": {
+    "model_files_changed_against_failed_head": 148,
+    "individual_nat_field_lines_emitted": 3648,
+    "structure_arithmetic_proofs_normalized": 3426,
+    "rational_type_annotations_added": 4,
+    "theorem_conclusions_weakened": false,
+    "assumptions_added": 0,
+    "note_ja": "構造体を分解し、simp_allで射影を正規化してからomegaへ渡す。複数フィールド宣言は個別宣言へ展開した。4件は各連言が独立に自然数へ既定されていたため、意図した有理数型を明示した。"
+  },
+  "local_verification": {
+    "status": "static_transform_checks_only",
+    "checks": [
+      "失敗186モジュールの個別ログを全件分類",
+      "修正対象内の複数フィールド宣言残数0",
+      "旧cases m; omegaおよびcases m <;> omega残数0",
+      "sorry・admit・独自axiomを追加していない",
+      "定理の数値・仮定・結論を弱めていない"
+    ],
+    "reason_ja": "実行環境にLean/lakeバイナリがないため、証明検証は新exact-head CIへ委ねる。"
+  },
+  "exact_head_ci": {
+    "status_at_recording": "pending_after_repair_commit",
+    "repair_commit_sha": "f0bd7b7137f716e4f34f4191333dfb34513c504e"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "remaining": 8274,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_ci_failure"
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "新しいexact-head CI、公理・依存監査、現行入力の成功証拠が未取得。"
+  }
+}

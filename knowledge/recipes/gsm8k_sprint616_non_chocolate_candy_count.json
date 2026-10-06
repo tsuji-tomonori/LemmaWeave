@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint616_non_chocolate_candy_count",
+  "title_ja": "チョコレートでない菓子の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04371",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P3.lean",
+  "problem_ja": "Jerry had 63 pieces of candy.  He divided them up equally into 9 bags.  2 of the bags had chocolate hearts.  3 of the bags were chocolate kisses.  The rest of the bags were not chocolate.  How many pieces of candy were not chocolate?",
+  "answer_ja": "63個を9袋に等分すると1袋7個。チョコ入りは2+3=5袋で35個なので、非チョコは63−35=28個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.non_chocolate_candy_count",
+  "graph": "work/gsm8k-sprint616-non-chocolate-candy-count-graph.json",
+  "model_notes_ja": [
+    "各袋の7個は同じ種類で、チョコハート2袋とキス3袋は重ならない。"
+  ],
+  "steps": [
+    {
+      "id": "candies_per_bag",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.candies_per_bag",
+      "title_ja": "1袋の個数",
+      "claim_ja": "63÷9=7個。",
+      "method_ja": "全数を袋数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "63÷9=7個。"
+    },
+    {
+      "id": "chocolate_bag_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.chocolate_bag_count",
+      "title_ja": "チョコ袋数",
+      "claim_ja": "2+3=5袋。",
+      "method_ja": "2種類のチョコ袋を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "2+3=5袋。"
+    },
+    {
+      "id": "chocolate_candy_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.chocolate_candy_count",
+      "title_ja": "チョコ個数",
+      "claim_ja": "5×7=35個。",
+      "method_ja": "袋数に1袋の個数を掛ける。",
+      "requires_steps": [
+        "candies_per_bag",
+        "chocolate_bag_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "5×7=35個。"
+    },
+    {
+      "id": "non_chocolate_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.non_chocolate_count",
+      "title_ja": "非チョコ個数",
+      "claim_ja": "63−35=28個。",
+      "method_ja": "全数からチョコを引く。",
+      "requires_steps": [
+        "chocolate_candy_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "63−35=28個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.non_chocolate_candy_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "63個を9袋に等分すると1袋7個。チョコ入りは2+3=5袋で35個なので、非チョコは63−35=28個。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "candies_per_bag",
+        "chocolate_bag_count",
+        "chocolate_candy_count",
+        "non_chocolate_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "63個を9袋に等分すると1袋7個。チョコ入りは2+3=5袋で35個なので、非チョコは63−35=28個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4372,
+    "checked_model_hash": "6ac66d8d69059cd9ddcaf13a92c2b4b2d2c850cae6fb8d48c0bbc5c02afb122c",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

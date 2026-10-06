@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint102_quiz",
+  "title_ja": "3回のクイズ平均",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01809",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3得点の合計を人数3で割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A12.quiz_solution",
+  "graph": "work/gsm8k-sprint102-quiz-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "quiz_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.quiz_total",
+      "title_ja": "得点合計は273点。",
+      "claim_ja": "得点合計は273点。",
+      "method_ja": "91+90+92。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3回を各1回加える。",
+      "conclusion_ja": "273。",
+      "baseline_ja": "273。"
+    },
+    {
+      "id": "quiz_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A12.quiz_solution",
+      "title_ja": "平均は91点。",
+      "claim_ja": "平均は91点。",
+      "method_ja": "273÷3。",
+      "requires_steps": [
+        "quiz_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3回の算術平均。",
+      "conclusion_ja": "91。",
+      "baseline_ja": "91。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1810,
+    "checked_model_hash": "dc5208b1d7d7d3c905d2ab5fb1c9ec0cb70bafd3843a0908b23802e1bd8cf3f7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

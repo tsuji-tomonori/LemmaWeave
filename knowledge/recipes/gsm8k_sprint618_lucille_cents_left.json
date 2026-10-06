@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_sprint618_lucille_cents_left",
+  "title_ja": "Lucilleの残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04373",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P3.lean",
+  "problem_ja": "Lucille made an agreement with her mom that she would earn six cents for every weed she pulled in her mom's garden. There are eleven weeds in the flower bed, fourteen in the vegetable patch, and thirty-two in the grass around the fruit trees. Lucille weeded the flower bed, the vegetable patch, and half the grass before she took a break. She bought a soda for 99 cents on her break with some of her earnings. How many cents does Lucille have left?",
+  "answer_ja": "草地32本の半分は16本。花壇11本、野菜畑14本と合わせ41本抜き、246セント稼ぐ。ソーダ99セントを引いて147セント残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.lucille_cents_left",
+  "graph": "work/gsm8k-sprint618-lucille-cents-left-graph.json",
+  "model_notes_ja": [
+    "1本につき6セントを、休憩前に抜いた全41本について受け取る。"
+  ],
+  "steps": [
+    {
+      "id": "half_grass_weeds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.half_grass_weeds",
+      "title_ja": "草地で抜いた本数",
+      "claim_ja": "32÷2=16本。",
+      "method_ja": "草地の半分を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "32÷2=16本。"
+    },
+    {
+      "id": "weeds_pulled_before_break",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.weeds_pulled_before_break",
+      "title_ja": "休憩前の本数",
+      "claim_ja": "11+14+16=41本。",
+      "method_ja": "3区域の本数を加える。",
+      "requires_steps": [
+        "half_grass_weeds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "11+14+16=41本。"
+    },
+    {
+      "id": "weed_earnings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.weed_earnings",
+      "title_ja": "稼ぎ",
+      "claim_ja": "41×6=246セント。",
+      "method_ja": "本数に1本当たり報酬を掛ける。",
+      "requires_steps": [
+        "weeds_pulled_before_break"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "41×6=246セント。"
+    },
+    {
+      "id": "cents_after_soda",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.cents_after_soda",
+      "title_ja": "残金",
+      "claim_ja": "246−99=147セント。",
+      "method_ja": "稼ぎからソーダ代を引く。",
+      "requires_steps": [
+        "weed_earnings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "246−99=147セント。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.lucille_cents_left",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "草地32本の半分は16本。花壇11本、野菜畑14本と合わせ41本抜き、246セント稼ぐ。ソーダ99セントを引いて147セント残る。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "half_grass_weeds",
+        "weeds_pulled_before_break",
+        "weed_earnings",
+        "cents_after_soda"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "草地32本の半分は16本。花壇11本、野菜畑14本と合わせ41本抜き、246セント稼ぐ。ソーダ99セントを引いて147セント残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4374,
+    "checked_model_hash": "6ac66d8d69059cd9ddcaf13a92c2b4b2d2c850cae6fb8d48c0bbc5c02afb122c",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

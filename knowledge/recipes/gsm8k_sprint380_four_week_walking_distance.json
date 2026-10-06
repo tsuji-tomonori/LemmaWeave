@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint380_four_week_walking_distance",
+  "title_ja": "4週間の歩行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04024",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A19P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jodi starts off walking 1 mile a day for 6 days a week.  On the second week, she walks 2 miles a day, 6 days a week.  On the third week, she walks 3 miles a day, 6 days a week. Finally on the fourth week, she walks 4 miles a day, 6 days a week.  How many miles has she walked in 4 weeks?",
+  "answer_ja": "各週は6日歩くので、週ごとの距離は6、12、18、24マイル。合計6+12+18+24=60マイル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A19P2.four_week_walking_distance",
+  "graph": "work/gsm8k-sprint380-four-week-walking-distance-graph.json",
+  "model_notes_ja": [
+    "各週とも記載距離を6日間歩く。"
+  ],
+  "steps": [
+    {
+      "id": "four_week_walking_distance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A19P2.four_week_walking_distance",
+      "title_ja": "4週間の歩行距離",
+      "claim_ja": "各週は6日歩くので、週ごとの距離は6、12、18、24マイル。合計6+12+18+24=60マイル。",
+      "method_ja": "各週の1日距離に6日を掛け、4週分を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各週とも記載距離を6日間歩く。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "各週は6日歩くので、週ごとの距離は6、12、18、24マイル。合計6+12+18+24=60マイル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4025,
+    "checked_model_hash": "d6fba46527f70479bebf71690c8f4895c8d2f006e2a4c5b1b87d5f6a65e91466",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

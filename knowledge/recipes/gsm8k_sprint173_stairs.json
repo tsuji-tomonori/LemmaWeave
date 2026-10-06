@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint173_stairs",
+  "title_ja": "二人が上った階段数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02886",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Samir 318段、Veronicaはその半分より18段多いときの合計。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A15.stairs_solution",
+  "graph": "work/gsm8k-sprint173-stairs-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "stairs_veronica",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A15.stairs_veronica",
+      "title_ja": "Veronica 177段",
+      "claim_ja": "318÷2+18=159+18=177。",
+      "method_ja": "半分と加法",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "318は偶数。",
+      "conclusion_ja": "177段。",
+      "baseline_ja": "2×177=318+36。"
+    },
+    {
+      "id": "stairs_together",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A15.stairs_together",
+      "title_ja": "合計495段",
+      "claim_ja": "318+177=495。",
+      "method_ja": "加法",
+      "requires_steps": [
+        "stairs_veronica"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二人分を合計。",
+      "conclusion_ja": "495段。",
+      "baseline_ja": "318+177=495。"
+    },
+    {
+      "id": "stairs_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A15.stairs_solution",
+      "title_ja": "答え495段",
+      "claim_ja": "二人で495段。",
+      "method_ja": "直前結論",
+      "requires_steps": [
+        "stairs_together"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同上。",
+      "conclusion_ja": "答え495段。",
+      "baseline_ja": "495段。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2887,
+    "checked_model_hash": "428f98a8271cd0ff703b44f6441837f76b0f66ef0ac41d972f519e9a6cab3272",
+    "checks_ja": [
+      "原題の全数量・単位・求める結論を再読した。",
+      "独立レビューではない。"
+    ]
+  }
+}

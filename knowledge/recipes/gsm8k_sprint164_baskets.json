@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint164_baskets",
+  "title_ja": "フリースローの合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02749",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Alexの8本、Sandraの3倍、Hectorのさらに2倍を合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A02.baskets_solution",
+  "graph": "work/gsm8k-sprint164-baskets-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "baskets_sandra",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.baskets_sandra",
+      "title_ja": "Sandraは24本",
+      "claim_ja": "3×8=24",
+      "method_ja": "3×8=24",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "3×8=24",
+      "baseline_ja": "3×8=24"
+    },
+    {
+      "id": "baskets_hector",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.baskets_hector",
+      "title_ja": "Hectorは48本",
+      "claim_ja": "2×24=48",
+      "method_ja": "2×24=48",
+      "requires_steps": [
+        "baskets_sandra"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "2×24=48",
+      "baseline_ja": "2×24=48"
+    },
+    {
+      "id": "baskets_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.baskets_solution",
+      "title_ja": "合計80本",
+      "claim_ja": "8+24+48=80",
+      "method_ja": "8+24+48=80",
+      "requires_steps": [
+        "baskets_hector"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "8+24+48=80",
+      "baseline_ja": "8+24+48=80"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2750,
+    "checked_model_hash": "f32b73b732f7b98644e11bb0aa6f12c4d921d8e6a4e614c3cb8b770ccedb4f48",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint314_remaining_pelicans",
+  "title_ja": "移動後に残るペリカン数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03694",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Pelican Bayのサメ60匹がShark Bite Coveの移動前ペリカン数の2倍で、そのペリカンの3分の1が移動した。残数を求める。",
+  "answer_ja": "移動前のペリカンは60÷2=30羽。移動したのは30÷3=10羽なので、残りは30-10=20羽。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A12P2.remaining_pelicans",
+  "graph": "work/gsm8k-sprint314-remaining-pelicans-graph.json",
+  "model_notes_ja": [
+    "長年の2倍関係を、3分の1が移動する直前のペリカン数とサメ60匹の関係として解釈。"
+  ],
+  "steps": [
+    {
+      "id": "remaining_pelicans",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A12P2.remaining_pelicans",
+      "title_ja": "移動前のペリカンは60÷2=30羽。移動したのは30÷3=10羽なので、残りは30-10=20羽。",
+      "claim_ja": "移動前のペリカンは60÷2=30羽。移動したのは30÷3=10羽なので、残りは30-10=20羽。",
+      "method_ja": "移動前のペリカンは60÷2=30羽。移動したのは30÷3=10羽なので、残りは30-10=20羽。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "移動前のペリカンは60÷2=30羽。移動したのは30÷3=10羽なので、残りは30-10=20羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3695,
+    "checked_model_hash": "f1c33bddddfd820751b22889eed1bde45c50c477ec7071a66c77338b19ceacea",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

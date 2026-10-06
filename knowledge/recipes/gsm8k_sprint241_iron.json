@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint241_iron","title_ja":"鉄棒から作る鉄球","problem_id":"external-gsm8k-main-3101c7d50724:train:03246","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P3.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"12×8×6立方cmの鉄棒10本を、体積8立方cmの鉄球へ損失なく成形した個数を求める。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.iron_balls","graph":"work/gsm8k-sprint241-iron-graph.json","model_notes_ja":["成形時の体積保存を原題の算数モデルとして明示。"],
+  "steps":[
+    {"id":"iron_one_bar","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.iron_one_bar","title_ja":"1本は576立方cm。","claim_ja":"12×8×6=576。","method_ja":"直方体の体積を計算する。","requires_steps":[],"uses_nodes":[],"condition_ja":"辺長12cm、8cm、6cm。","conclusion_ja":"576立方cm。","baseline_ja":"直方体の体積。"},
+    {"id":"iron_total","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.iron_total","title_ja":"10本で5760立方cm。","claim_ja":"576×10=5760。","method_ja":"1本の体積を10倍する。","requires_steps":["iron_one_bar"],"uses_nodes":[],"condition_ja":"同じ鉄棒10本。","conclusion_ja":"5760立方cm。","baseline_ja":"乗法。"},
+    {"id":"iron_balls","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P3.iron_balls","title_ja":"鉄球は720個。","claim_ja":"5760÷8=720。","method_ja":"8×個数=全体積を解く。","requires_steps":["iron_total"],"uses_nodes":[],"condition_ja":"各球8立方cm、体積損失なし。","conclusion_ja":"720個。","baseline_ja":"体積の等分。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3247,"checked_model_hash":"6612ca53c045c8c13f14e546df5c04fca6510a697aeb42de38aaaeed1fb54173","checks_ja":["寸法・本数・球体積を照合した。","体積保存条件を明記した。","独立レビューではなく作成者自己照合である。"]}
+}

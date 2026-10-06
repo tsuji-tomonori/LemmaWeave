@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint288_library_fee",
+  "title_ja": "図書館の延滞料金合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03542",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A20P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日50セントで、1冊を20日、2冊を5月末まで31日借りる料金。",
+  "answer_ja": "41ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.library_total_fee",
+  "graph": "work/gsm8k-sprint288-library-fee-graph.json",
+  "model_notes_ja": [
+    "5月1日から月末までの貸出を31課金日として扱う。金額はセント整数で形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "returned_book_fee",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.returned_book_fee",
+      "title_ja": "20日借りた本は1000セント。",
+      "claim_ja": "20日借りた本は1000セント。",
+      "method_ja": "20日と1日50セントを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "20日借りた本は1000セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "month_book_fee",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.month_book_fee",
+      "title_ja": "月末までの本1冊は1550セント。",
+      "claim_ja": "月末までの本1冊は1550セント。",
+      "method_ja": "31日と1日50セントを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "月末までの本1冊は1550セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "two_month_book_fees",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.two_month_book_fees",
+      "title_ja": "2冊分は3100セント。",
+      "claim_ja": "2冊分は3100セント。",
+      "method_ja": "1550セントを2倍する。",
+      "requires_steps": [
+        "month_book_fee"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "2冊分は3100セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "library_total_fee",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P2.library_total_fee",
+      "title_ja": "合計は4100セント、すなわち41ドル。",
+      "claim_ja": "合計は4100セント、すなわち41ドル。",
+      "method_ja": "1000セントと3100セントを足す。",
+      "requires_steps": [
+        "returned_book_fee",
+        "two_month_book_fees"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "合計は4100セント、すなわち41ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3543,
+    "checked_model_hash": "db71c0ae4f867bdffb9f12c60f973fac9e17e6182a7818ceedec5198e9bcf27b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

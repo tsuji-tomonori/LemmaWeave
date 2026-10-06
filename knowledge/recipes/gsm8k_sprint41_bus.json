@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint41_bus",
+  "title_ja": "バスの乗客数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00906",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "各停留所の乗降を順に反映する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A09.bus_solution",
+  "graph": "work/gsm8k-sprint41-bus-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A09.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bus_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.bus_second",
+      "title_ja": "第2停留所後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7人から3人降り5人乗る。",
+      "conclusion_ja": "9人。",
+      "baseline_ja": "7+5=9+3。"
+    },
+    {
+      "id": "bus_third",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A09.bus_third",
+      "title_ja": "第3停留所後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "9人から2人降り4人乗る。",
+      "conclusion_ja": "11人。",
+      "baseline_ja": "9+4=11+2。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 907,
+    "checked_model_hash": "89dd3a16cd8df99f34c31f37d1627e251cf211069adff173f7367caa5578cd5c",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

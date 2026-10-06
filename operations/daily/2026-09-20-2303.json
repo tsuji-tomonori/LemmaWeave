@@ -1,0 +1,152 @@
+{
+  "date": "2026-09-20",
+  "run_id": "lemmaweave-sprint-20260920-2300-daily-reconciliation",
+  "planned_slot_local_hour": 23,
+  "planned_at": "2026-09-20T23:00:00+09:00",
+  "role": "full_id_reconciliation_and_daily_report",
+  "base_sha": "824da2bff889a3d5cb02f30aa3c8b643b533839c",
+  "started_at": "2026-09-20T23:03:44+09:00",
+  "finished_at": "2026-09-20T23:27:57+09:00",
+  "schedule_offset_seconds": 224,
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00707"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending": [
+    "external-gsm8k-main-3101c7d50724:train:00707"
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "retry_on": "2026-09-21",
+      "reason_ja": "固定Lean 4.33.1の現HEAD成功証拠がなく、最古の検証待ちのままである。",
+      "next_action_ja": "修復後exact-head CIを完走し、成功成果物の入力SHA・許容公理・依存グラフを照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00707",
+      "retry_on": "2026-09-21",
+      "reason_ja": "CI 35514549924でbread_first_tearが最終証明の実依存から消え、gsm8k_sprint28_breadの行依存監査が失敗した。失敗成果物は不採用。",
+      "next_action_ja": "simpによる証明消去を避け、bread_first_tearを連言成分へ直接渡す修復をexact-head CIで検証する。"
+    }
+  ],
+  "daily_execution": {
+    "gsm8k_target": 300,
+    "gsm8k_solve_slots_planned": 20,
+    "gsm8k_solve_slots_executed": 19,
+    "gsm8k_solve_slots_unexecuted": [10],
+    "gsm8k_new_problems_authored": 285,
+    "gsm8k_formally_completed": 0,
+    "gsm8k_target_gap": 15,
+    "gsm8k_unique_ids_selected_across_all_roles": 370,
+    "gsm8k_duplicate_selected_ids": 0,
+    "support_slots_executed": [9, 21, 22, 23],
+    "execution_success_rate_solve_slots": 0.95,
+    "authored_to_daily_target_rate": 0.95,
+    "formal_completion_rate": 0.0
+  },
+  "fixed_collection_reconciliation": {
+    "manifest_total": 8792,
+    "queue_rows": 8792,
+    "queue_unique_problem_ids": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 545,
+    "pending_unstarted": 7729,
+    "working": 0,
+    "deferred_queue_state": 0,
+    "state_sum": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap_ids": 0,
+    "main_reflected_solution_ready": 518,
+    "remaining_including_verification_pending": 8274,
+    "oldest_overdue_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+    "next_unwritten_problem_id": "external-gsm8k-main-3101c7d50724:train:01059"
+  },
+  "high_school_track": {
+    "registered": 13,
+    "candidate_not_started": 8,
+    "authored_this_week": 2,
+    "verification_pending_today": 1,
+    "six_fields_this_week": {
+      "sets_logic_integers": 1,
+      "functions_equations_inequalities": 1,
+      "geometry_vectors_trigonometry": 0,
+      "combinatorics_probability_statistics": 0,
+      "sequences": 0,
+      "calculus": 0
+    },
+    "next_field": "geometry_vectors_trigonometry",
+    "unconfirmed_scope_ja": "旧51掲載経路・36大学と現行13 IDの完全対応、2024〜2026共通テストおよび東京・京都・名古屋大学の全小問、高校6分野の対象全集合は未列挙。"
+  },
+  "capacity_calibration": {
+    "new_configuration_days_observed": 2,
+    "new_configuration_authored_by_day": {
+      "2026-09-19": 250,
+      "2026-09-20": 285
+    },
+    "new_configuration_partial_average_authored_per_day": 267.5,
+    "new_configuration_partial_average_formally_completed_per_day": 0.0,
+    "three_day_average_status": "pending_2026-09-21_observation",
+    "solve_run_wall_seconds_total_today": 15140,
+    "solve_run_wall_seconds_average_today": 796.8,
+    "solve_wall_seconds_per_authored_problem_today": 53.1,
+    "stage_measurement_scope_ja": "工程別計測がある5枠では、原題確認・モデル化が15問当たり222〜310秒、局所静的検査が1.2〜3.0秒。全19枠で同じ粒度の工程別計測は未取得。",
+    "repository_artifact_bytes_measured_today": 247302,
+    "failed_ci_artifact_bytes": 320868601,
+    "failed_ci_artifact_accepted": false,
+    "solve_queue_previous_7_calendar_day_average_completed": 28.571428571428573
+  },
+  "forecast": {
+    "target_date": "2026-10-18",
+    "remaining_future_calendar_days": 28,
+    "required_ready_per_day": 296,
+    "required_per_day_if_2026_10_17_and_18_reserved_for_audit": 319,
+    "planning_target_per_day": 300,
+    "planning_forecast_date": "2026-10-17",
+    "solve_queue_measured_forecast_date": "2027-07-06",
+    "prepared_throughput_only_forecast_date": "2026-10-21",
+    "forecast_status_ja": "新構成2日間の記述・形式化準備267.5問/日は必要296問/日を下回り、しかも正式完了は0問/日である。現構成のままでは2026-10-18達成見込みなし。CI依存監査の修復と証拠取込が必要。"
+  },
+  "exact_head_ci": {
+    "workflow_run_id": 35514549924,
+    "workflow_job_id": 106088195666,
+    "tested_head_sha": "824da2bff889a3d5cb02f30aa3c8b643b533839c",
+    "status": "failure",
+    "duration_seconds": 2191,
+    "lean_version": "4.33.1",
+    "failure": "recipe gsm8k_sprint28_bread: written line has no theorem in final proof",
+    "artifact_id": 10606329377,
+    "artifact_sha256": "f5792cedbb244f3f9385e36ef8176049315c30da8ea75a7b32e76da39c205db6",
+    "artifact_size_bytes": 320868601,
+    "accepted_as_success_evidence": false,
+    "run_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35514549924"
+  },
+  "repair": {
+    "file": "tests/lean/GSM8KSprint0919A28.lean",
+    "declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.bread_solution",
+    "change_ja": "by simpa using bread_first_tearをbread_first_tearの直接適用へ変更し、simpが証明定数を消す経路を除いた。検査規則は変更していない。",
+    "verification_status": "pending_next_exact_head_ci"
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "head_before_report": "824da2bff889a3d5cb02f30aa3c8b643b533839c",
+    "mergeable": true,
+    "reviews": 0,
+    "unresolved_review_threads": 0,
+    "merge_status": "blocked_exact_head_ci_failure"
+  },
+  "progress_before": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 545
+  },
+  "progress_after": {
+    "solution_ready": 518,
+    "remaining": 8274,
+    "verification_pending": 545
+  },
+  "commit": "fe0e80e8da1c07a003c9d9522ce312c58fa47daa",
+  "next_action_ja": "修復と本日報を同一非forceコミットでPR #5へ保存し、新HEADの固定Lean 4.33.1 CIを完走する。成功成果物だけを現行入力ハッシュと照合して取り込み、545問を問題単位で昇格判定する。"
+}

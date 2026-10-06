@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint528_family_weekly_pies",
+  "title_ja": "家族が7日で焼くパイ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04283",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P3.lean",
+  "problem_ja": "Eddieは1日3個、姉は6個、母は8個焼く。7日で合計何個か。",
+  "answer_ja": "1日の合計は3+6+8=17個。7日で17×7=119個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.family_weekly_pies",
+  "graph": "work/gsm8k-sprint528-family-weekly-pies-graph.json",
+  "model_notes_ja": [
+    "3人が各日同じ個数を7日間焼く。"
+  ],
+  "steps": [
+    {
+      "id": "daily_pies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.daily_pies",
+      "title_ja": "1日の合計",
+      "claim_ja": "3+6+8=17個。",
+      "method_ja": "3人の1日分を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3+6+8=17個。"
+    },
+    {
+      "id": "weekly_pies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.weekly_pies",
+      "title_ja": "7日分",
+      "claim_ja": "17×7=119個。",
+      "method_ja": "1日分を7倍する。",
+      "requires_steps": [
+        "daily_pies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "17×7=119個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.family_weekly_pies",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1日の合計は3+6+8=17個。7日で17×7=119個。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "daily_pies",
+        "weekly_pies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1日の合計は3+6+8=17個。7日で17×7=119個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4284,
+    "checked_model_hash": "a5813930c3e5d173cff5d2d1ba1bd0bf21fe514f1d872224445412bafdeac2f1",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

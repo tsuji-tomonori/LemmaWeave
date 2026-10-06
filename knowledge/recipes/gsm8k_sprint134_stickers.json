@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint134_stickers",
+  "title_ja": "Victorのステッカー総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02290",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "花8枚、動物は花より2枚少ない。合計を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A07.stickers_solution",
+  "graph": "work/gsm8k-sprint134-stickers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "stickers_animal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.stickers_animal",
+      "title_ja": "動物は6枚",
+      "claim_ja": "動物は6枚",
+      "method_ja": "8枚から2枚引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "動物は6枚",
+      "baseline_ja": "動物は6枚"
+    },
+    {
+      "id": "stickers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A07.stickers_solution",
+      "title_ja": "合計14枚",
+      "claim_ja": "合計14枚",
+      "method_ja": "花8枚と動物6枚を足す",
+      "requires_steps": [
+        "stickers_animal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計14枚",
+      "baseline_ja": "合計14枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2291,
+    "checked_model_hash": "09759fc67dd84b3913893e2f12e7ff1ccfb223b6c4bcda2fedeedfccaa4d3765",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint128_wood",
+  "title_ja": "ベンチ用木材の長さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02208",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4フィート材6本と2フィート材2本。合計何フィートか",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A20.wood_solution",
+  "graph": "work/gsm8k-sprint128-wood-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "wood_long",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.wood_long",
+      "title_ja": "長い材は24フィート",
+      "claim_ja": "長い材は24フィート",
+      "method_ja": "6本×4フィート",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "長い材は24フィート",
+      "baseline_ja": "長い材は24フィート"
+    },
+    {
+      "id": "wood_short",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.wood_short",
+      "title_ja": "短い材は4フィート",
+      "claim_ja": "短い材は4フィート",
+      "method_ja": "2本×2フィート",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "短い材は4フィート",
+      "baseline_ja": "短い材は4フィート"
+    },
+    {
+      "id": "wood_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.wood_solution",
+      "title_ja": "合計28フィート",
+      "claim_ja": "合計28フィート",
+      "method_ja": "24と4を足す",
+      "requires_steps": [
+        "wood_long",
+        "wood_short"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計28フィート",
+      "baseline_ja": "合計28フィート"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2209,
+    "checked_model_hash": "be9ab873a50df496e12f7ec640da6afee66c564105c78477bc6213cb94a7cbe0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint33_cds",
+  "title_ja": "CDを各3枚買う費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00781",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "三作品を各3枚買い、合計705ドルを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.cds_solution",
+  "graph": "work/gsm8k-sprint33-cds-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cds_life",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.cds_life",
+      "title_ja": "Life Journey",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "100ドルを3枚。",
+      "conclusion_ja": "300ドル。",
+      "baseline_ja": "3×100=300。"
+    },
+    {
+      "id": "cds_day",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.cds_day",
+      "title_ja": "A Day a Life",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "50ドルを3枚。",
+      "conclusion_ja": "150ドル。",
+      "baseline_ja": "3×50=150。"
+    },
+    {
+      "id": "cds_rescind",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.cds_rescind",
+      "title_ja": "When You Rescind",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "85ドルを3枚。",
+      "conclusion_ja": "255ドル。",
+      "baseline_ja": "3×85=255。"
+    },
+    {
+      "id": "cds_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.cds_total",
+      "title_ja": "総額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "三作品の費用を加える。",
+      "conclusion_ja": "705ドル。",
+      "baseline_ja": "300+150+255=705。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 782,
+    "checked_model_hash": "0db50b04882ba7d4939f3d10a94df7815c5640ba582c0270f8f26db59d5cb295",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

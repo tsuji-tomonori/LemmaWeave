@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint572_cinema_food_cost_analysis",
+  "title_ja": "Kevinの食費と予算解釈",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04327",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P3.lean",
+  "problem_ja": "Samuel is going to the cinema with his brother, Kevin. They both have a total budget of $20 for their outing. Samuel buys his $14 ticket, then spends $6 on drinks and food. Kevin buys his ticket, then spends $2 on drinks. They have both used their entire budget. How much did Kevin spend on food?",
+  "answer_ja": "Samuelは14+6=20ドルを使う。各人の予算が20ドルという条件なら、Kevinは券14ドルと飲み物2ドルのほかに20−16=4ドルを食費へ使う。一方、2人合計の予算が20ドルという文字どおりの読みでは、既知支出だけで36ドルとなり矛盾する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.cinema_food_cost_analysis",
+  "graph": "work/gsm8k-sprint572-cinema-food-cost-analysis-graph.json",
+  "model_notes_ja": [
+    "参照解答の4ドルは「各人が20ドルの予算」を追加条件とする。共同の総予算20ドルでは原文の支出条件が整合しない。"
+  ],
+  "steps": [
+    {
+      "id": "samuel_cinema_spend",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.samuel_cinema_spend",
+      "title_ja": "Samuelの支出",
+      "claim_ja": "14+6=20ドル。",
+      "method_ja": "券代と飲食代を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "14+6=20ドル。"
+    },
+    {
+      "id": "kevin_known_spend",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.kevin_known_spend",
+      "title_ja": "Kevinの既知支出",
+      "claim_ja": "14+2=16ドル。",
+      "method_ja": "Samuelと同額の券代14ドルと飲み物2ドルを加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "14+2=16ドル。"
+    },
+    {
+      "id": "kevin_food_if_each_budget",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.kevin_food_if_each_budget",
+      "title_ja": "各人20ドルなら食費",
+      "claim_ja": "20−16=4ドル。",
+      "method_ja": "Kevin自身の20ドル予算から既知支出を引く。",
+      "requires_steps": [
+        "kevin_known_spend"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20−16=4ドル。"
+    },
+    {
+      "id": "joint_budget_inconsistent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.joint_budget_inconsistent",
+      "title_ja": "共同予算解釈の矛盾",
+      "claim_ja": "既知支出36ドルは共同予算20ドル以下ではない。",
+      "method_ja": "両者の既知支出だけを合計して上限と比較する。",
+      "requires_steps": [
+        "samuel_cinema_spend",
+        "kevin_known_spend"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "既知支出36ドルは共同予算20ドル以下ではない。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.cinema_food_cost_analysis",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Samuelは14+6=20ドルを使う。各人の予算が20ドルという条件なら、Kevinは券14ドルと飲み物2ドルのほかに20−16=4ドルを食費へ使う。一方、2人合計の予算が20ドルという文字どおりの読みでは、既知支出だけで36ドルとなり矛盾する。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "samuel_cinema_spend",
+        "kevin_known_spend",
+        "kevin_food_if_each_budget",
+        "joint_budget_inconsistent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Samuelは14+6=20ドルを使う。各人の予算が20ドルという条件なら、Kevinは券14ドルと飲み物2ドルのほかに20−16=4ドルを食費へ使う。一方、2人合計の予算が20ドルという文字どおりの読みでは、既知支出だけで36ドルとなり矛盾する。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4328,
+    "checked_model_hash": "93b5b357df339ce78fc915e67d018b014c9dde8952e3d53254963162074cb365",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

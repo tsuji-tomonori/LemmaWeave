@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint149_balloons",
+  "title_ja": "赤い風船を引く確率",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02516",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "赤2個・青4個に赤2個・青2個を追加した後、無作為に1個選ぶときの赤の割合を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A04.balloons_solution",
+  "graph": "work/gsm8k-sprint149-balloons-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "balloons_red",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.balloons_red",
+      "title_ja": "赤い風船は4個",
+      "claim_ja": "赤い風船は4個",
+      "method_ja": "元の赤2個と追加の赤2個を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "赤い風船は4個",
+      "baseline_ja": "赤い風船は4個"
+    },
+    {
+      "id": "balloons_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.balloons_total",
+      "title_ja": "風船は全部で10個",
+      "claim_ja": "風船は全部で10個",
+      "method_ja": "元の6個と追加の4個を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "風船は全部で10個",
+      "baseline_ja": "風船は全部で10個"
+    },
+    {
+      "id": "balloons_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.balloons_solution",
+      "title_ja": "赤を選ぶ確率は40%",
+      "claim_ja": "赤を選ぶ確率は40%",
+      "method_ja": "4/10を百分率へ直す",
+      "requires_steps": [
+        "balloons_red",
+        "balloons_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "赤を選ぶ確率は40%",
+      "baseline_ja": "赤を選ぶ確率は40%"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2517,
+    "checked_model_hash": "bf48471e5f50a20e1256bd8203ba528b20e3455a0bb5dad6c2632708aa2a99f1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

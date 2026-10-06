@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint571_orange_gift_savings",
+  "title_ja": "母への贈り物の貯金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04326",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P3.lean",
+  "problem_ja": "Liam and Claire picked and sold oranges to save for their mother's birthday gift. Liam picked 40 oranges and sold them at $2.50 for 2 while Claire picked 30 oranges and sold them at $1.20 each. If all of their oranges were sold, how much are they going to save for their mother's birthday gift?",
+  "answer_ja": "Liamは40個を2個組20組として1組250セントで売り5000セント。Claireは30個を120セントで売り3600セント。合計8600セント、すなわち86ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.orange_gift_savings",
+  "graph": "work/gsm8k-sprint571-orange-gift-savings-graph.json",
+  "model_notes_ja": [
+    "小数の金額を避け、全てセントで正確に表す。"
+  ],
+  "steps": [
+    {
+      "id": "liam_orange_sets",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.liam_orange_sets",
+      "title_ja": "Liamの組数",
+      "claim_ja": "40÷2=20組。",
+      "method_ja": "40個を2個組にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40÷2=20組。"
+    },
+    {
+      "id": "liam_orange_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.liam_orange_cents",
+      "title_ja": "Liamの売上",
+      "claim_ja": "20×250=5000セント。",
+      "method_ja": "組数に2.50ドル=250セントを掛ける。",
+      "requires_steps": [
+        "liam_orange_sets"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20×250=5000セント。"
+    },
+    {
+      "id": "claire_orange_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.claire_orange_cents",
+      "title_ja": "Claireの売上",
+      "claim_ja": "30×120=3600セント。",
+      "method_ja": "個数に1.20ドル=120セントを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30×120=3600セント。"
+    },
+    {
+      "id": "orange_savings_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.orange_savings_cents",
+      "title_ja": "合計",
+      "claim_ja": "5000+3600=8600セント。",
+      "method_ja": "二人の売上を加える。",
+      "requires_steps": [
+        "liam_orange_cents",
+        "claire_orange_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5000+3600=8600セント。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P3.orange_gift_savings",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Liamは40個を2個組20組として1組250セントで売り5000セント。Claireは30個を120セントで売り3600セント。合計8600セント、すなわち86ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "liam_orange_sets",
+        "liam_orange_cents",
+        "claire_orange_cents",
+        "orange_savings_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Liamは40個を2個組20組として1組250セントで売り5000セント。Claireは30個を120セントで売り3600セント。合計8600セント、すなわち86ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4327,
+    "checked_model_hash": "93b5b357df339ce78fc915e67d018b014c9dde8952e3d53254963162074cb365",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

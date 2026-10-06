@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint149_cards",
+  "title_ja": "3人のカード総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02521",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Maraは150より40少なく、MaraはJanetの2倍、JanetはBrendaより9多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A04.cards_solution",
+  "graph": "work/gsm8k-sprint149-cards-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cards_mara",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.cards_mara",
+      "title_ja": "Maraは110枚",
+      "claim_ja": "Maraは110枚",
+      "method_ja": "150から40を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Maraは110枚",
+      "baseline_ja": "Maraは110枚"
+    },
+    {
+      "id": "cards_janet",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.cards_janet",
+      "title_ja": "Janetは55枚",
+      "claim_ja": "Janetは55枚",
+      "method_ja": "Maraの半分を求める",
+      "requires_steps": [
+        "cards_mara"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Janetは55枚",
+      "baseline_ja": "Janetは55枚"
+    },
+    {
+      "id": "cards_brenda",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.cards_brenda",
+      "title_ja": "Brendaは46枚",
+      "claim_ja": "Brendaは46枚",
+      "method_ja": "Janetから9を引く",
+      "requires_steps": [
+        "cards_janet"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Brendaは46枚",
+      "baseline_ja": "Brendaは46枚"
+    },
+    {
+      "id": "cards_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.cards_solution",
+      "title_ja": "3人で211枚",
+      "claim_ja": "3人で211枚",
+      "method_ja": "110、55、46を足す",
+      "requires_steps": [
+        "cards_mara",
+        "cards_janet",
+        "cards_brenda"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3人で211枚",
+      "baseline_ja": "3人で211枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2522,
+    "checked_model_hash": "bf48471e5f50a20e1256bd8203ba528b20e3455a0bb5dad6c2632708aa2a99f1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

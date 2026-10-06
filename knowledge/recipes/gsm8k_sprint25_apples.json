@@ -1,0 +1,62 @@
+{
+  "id": "gsm8k_sprint25_apples",
+  "title_ja": "使った後のリンゴ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00665",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "50個から、2人の子が各3個学校へ持つ分と、2個のパイに各10個使う分を引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A25.apples_solution",
+  "graph": "work/gsm8k-sprint25-apples-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A25.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "3 apples for their two favorite teachers は、教師1人当たりではなく子ども1人が持つ総数3個と読む。"
+  ],
+  "steps": [
+    {
+      "id": "apples_school",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.apples_school",
+      "title_ja": "学校へ持つリンゴ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2人の子どもが各3個持つ。",
+      "conclusion_ja": "学校分は6個。",
+      "baseline_ja": "2×3=6。"
+    },
+    {
+      "id": "apples_pies",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.apples_pies",
+      "title_ja": "パイに使うリンゴ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2個のパイに各10個使う。",
+      "conclusion_ja": "パイ分は20個。",
+      "baseline_ja": "2×10=20。"
+    },
+    {
+      "id": "apples_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A25.apples_left",
+      "title_ja": "残るリンゴ",
+      "requires_steps": [
+        "apples_school",
+        "apples_pies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "50個から6個と20個を引く。",
+      "conclusion_ja": "24個残る。",
+      "baseline_ja": "50-6-20=24。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 666,
+    "checked_model_hash": "581c7484f9bea721da385e231f57c0a17afd20596d25584599b46b8c242b9903",
+    "checks_ja": [
+      "子どもが2人であること、パイが2個であることを別々に反映した。"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "date": "2026-09-27",
+  "run_id": "2026-09-27T09:00+09:00-entrance-exam-sets-logic-integers",
+  "scheduled_local_hour": 9,
+  "scheduled_at": "2026-09-27T09:00:00+09:00",
+  "started_at": "2026-09-27T09:03:52+09:00",
+  "finished_at": "2026-09-27T09:09:00+09:00",
+  "start_offset_seconds": 232,
+  "schedule_note_ja": "09時専用枠へ割り当てた。07時枠は台帳済み、08時枠はGitHub台帳が存在せず未実行として扱い、二重実行しなかった。GSM8K解答枠とは分離して集計する。",
+  "role": "japanese_entrance_exam_individual_solution",
+  "domain": "sets_logic_integers",
+  "base_sha": "60b1765cb1030ba5e14f9e0927d65b6935079341",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II"
+  ],
+  "deferred": [],
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学I",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017542.pdf&n=2026_ol_17_sugaku1.pdf",
+    "answer_url": "https://www.dnc.ac.jp/kyotsu/kako_shiken_jouhou/r8/r8_honsiken_seikai.html",
+    "pdf_page_1_based": [
+      3,
+      4
+    ],
+    "printed_page_label": [
+      "32",
+      "33"
+    ],
+    "subquestion": "第1問[2](2)(ii) 解答欄タ・チ",
+    "document_sha256": "f008fbd83aa70eb044b473f7f3ce2dba43e54ce88456d8825721e0de115f8606",
+    "source_review_basis": "公式PDFを2026-09-27に再取得し、第3・4ページの集合定義・パラメータ範囲・相対補集合条件を目視確認。公式正解表でタ=5、チ=6を照合。原文画像は再配布しない。"
+  },
+  "outputs": {
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II.json",
+    "recipe": "knowledge/recipes/dnc2026_pair_individual.json",
+    "lean_test": "tests/lean/DNC2026PairIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "explanation_lines": 5,
+    "named_lean_theorems": 5,
+    "self_review_status": "self_review_only"
+  },
+  "written_solution_ja": [
+    "共通部分が{5}なので、5はAに属する。したがって5とaは1より大きい公約数をもち、その公約数は5しかない。2≤a≤9よりa=5である。",
+    "a=5のとき、U内でAに属するのは5、10、15、20である。AとBの補集合との共通部分が{5}だから、Bは10、15、20を含み、5を含まない。",
+    "2≤b≤9の各候補を公約数で確認すると、10、15、20すべてと1より大きい公約数をもち、5とはもたないのはb=6だけである。よって必要な組は(a,b)=(5,6)である。",
+    "逆にa=5、b=6とする。A={5,10,15,20}であり、Bには10、15、20が入るが5は入らないため、A∩(U\\B)={5}となる。",
+    "したがって集合条件と(a,b)=(5,6)は同値であり、解答欄タは5、チは6である。"
+  ],
+  "static_checks": {
+    "json_parse": "pass",
+    "recipe_step_to_named_theorem_missing": 0,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "fixed_lean_build": "not_run",
+    "axiom_audit": "not_run",
+    "dependency_audit": "not_run",
+    "source_record_hash_matched": true,
+    "official_answer_matched": true,
+    "explanation_covers_necessary_and_sufficient_directions": true,
+    "assurance_level": "MODEL_FORMALIZED"
+  },
+  "entrance_exam_ledger_after": {
+    "registered_count": 15,
+    "collected_kernel_checked_count": 5,
+    "candidate_not_started_count": 10,
+    "weekly_domain_counts": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "unconfirmed_scope_preserved": true
+  },
+  "gsm8k_counts_unchanged": {
+    "solution_ready": 518,
+    "awaiting_verification": 2059,
+    "pending": 6215,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02576",
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "ci": {
+    "prior_exact_head_sha": "60b1765cb1030ba5e14f9e0927d65b6935079341",
+    "prior_exact_head_workflow_runs": 0,
+    "prior_commit_statuses": 0,
+    "accepted_as_success_evidence": false,
+    "current_status": "pending_exact_head_ci"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_at_start": true,
+    "reviews_at_start": 0,
+    "unresolved_review_threads_at_start": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-27T09:00+09:00",
+    "scope": "JP-DNC-CT-2026-MAIN-M1-Q01-S02-02II",
+    "claimed_at": "2026-09-27T09:03:52+09:00",
+    "expires_at": "2026-09-27T10:00:00+09:00",
+    "released": true
+  },
+  "note_ja": "既存の独立意味照合・旧カーネル証拠がある未個別化小問を、原題から再読して5行の記述解答へ展開した。既存共有定理pair_solutionを再利用した新ラッパーはexact-head固定Leanで未実行のため、正式完了へ昇格しない。"
+}

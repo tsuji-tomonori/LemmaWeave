@@ -1,0 +1,111 @@
+{
+  "id": "gsm8k_sprint100_coronavirus",
+  "title_ja": "第2波2週間の感染数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01790",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "曖昧なfour times moreを、300に1200を加える読解と、総数が4倍の読解に分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.wave_two_readings_differ",
+  "graph": "work/gsm8k-sprint100-coronavirus-graph.json",
+  "model_notes_ja": [
+    "“increased by four times more”は、元の4倍を追加する参照解答では21,000件、総数が元の4倍なら16,800件となる。両方を形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "wave_additive_extra",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.wave_additive_extra",
+      "title_ja": "加算読解の増分は1,200件/日。",
+      "claim_ja": "加算読解の増分は1,200件/日。",
+      "method_ja": "4×300。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "four times moreを元の4倍分だけ増加と読む。",
+      "conclusion_ja": "1200。",
+      "baseline_ja": "1200。"
+    },
+    {
+      "id": "wave_additive_per_day",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.wave_additive_per_day",
+      "title_ja": "加算読解の第2波は1,500件/日。",
+      "claim_ja": "加算読解の第2波は1,500件/日。",
+      "method_ja": "300+1200。",
+      "requires_steps": [
+        "wave_additive_extra"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参照解答の読解。",
+      "conclusion_ja": "1500。",
+      "baseline_ja": "1500。"
+    },
+    {
+      "id": "wave_additive_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.wave_additive_solution",
+      "title_ja": "加算読解の2週間合計は21,000件。",
+      "claim_ja": "加算読解の2週間合計は21,000件。",
+      "method_ja": "14×1500。",
+      "requires_steps": [
+        "wave_additive_per_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2週間=14日、毎日一定。",
+      "conclusion_ja": "21000。",
+      "baseline_ja": "21000。"
+    },
+    {
+      "id": "wave_fourfold_per_day",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.wave_fourfold_per_day",
+      "title_ja": "4倍読解の第2波は1,200件/日。",
+      "claim_ja": "4倍読解の第2波は1,200件/日。",
+      "method_ja": "4×300。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "four timesを総数が4倍と読む。",
+      "conclusion_ja": "1200。",
+      "baseline_ja": "1200。"
+    },
+    {
+      "id": "wave_fourfold_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.wave_fourfold_solution",
+      "title_ja": "4倍読解の2週間合計は16,800件。",
+      "claim_ja": "4倍読解の2週間合計は16,800件。",
+      "method_ja": "14×1200。",
+      "requires_steps": [
+        "wave_fourfold_per_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2週間=14日、毎日一定。",
+      "conclusion_ja": "16800。",
+      "baseline_ja": "16800。"
+    },
+    {
+      "id": "wave_two_readings_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.wave_two_readings_differ",
+      "title_ja": "二つの読解の合計は異なる。",
+      "claim_ja": "二つの読解の合計は異なる。",
+      "method_ja": "21000と16800を比較。",
+      "requires_steps": [
+        "wave_additive_solution",
+        "wave_fourfold_solution"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の倍率表現が曖昧。",
+      "conclusion_ja": "21000≠16800。",
+      "baseline_ja": "21000≠16800。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1791,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

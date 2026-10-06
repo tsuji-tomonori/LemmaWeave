@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint106_allowance",
+  "title_ja": "小遣いの残額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01869",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "期間別の小遣いを合計し、衣服とゲーム代を順に引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.allowance_solution",
+  "graph": "work/gsm8k-sprint106-allowance-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "allowance_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.allowance_first",
+      "title_ja": "最初の8週間は40ドル。",
+      "claim_ja": "最初の8週間は40ドル。",
+      "method_ja": "5×8。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "allowance_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.allowance_second",
+      "title_ja": "次の6週間は36ドル。",
+      "claim_ja": "次の6週間は36ドル。",
+      "method_ja": "6×6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "allowance_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.allowance_total",
+      "title_ja": "小遣いは合計76ドル。",
+      "claim_ja": "小遣いは合計76ドル。",
+      "method_ja": "40+36。",
+      "requires_steps": [
+        "allowance_first",
+        "allowance_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "allowance_after_clothes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.allowance_after_clothes",
+      "title_ja": "衣服購入後は38ドル。",
+      "claim_ja": "衣服購入後は38ドル。",
+      "method_ja": "76の半分を使うので半分が残る。",
+      "requires_steps": [
+        "allowance_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "allowance_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.allowance_solution",
+      "title_ja": "ゲーム購入後は3ドル。",
+      "claim_ja": "ゲーム購入後は3ドル。",
+      "method_ja": "38−35。",
+      "requires_steps": [
+        "allowance_after_clothes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1870,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

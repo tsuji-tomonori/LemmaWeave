@@ -1,0 +1,110 @@
+{
+  "id": "gsm8k_sprint142_fish",
+  "title_ja": "姉へ半分渡した後の魚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02422",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ベタ10匹に5分の2、金魚15匹に3分の1を加え、全体の半分を渡す。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.fish_solution",
+  "graph": "work/gsm8k-sprint142-fish-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fish_new_betta",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.fish_new_betta",
+      "title_ja": "ベタを4匹追加",
+      "claim_ja": "ベタを4匹追加",
+      "method_ja": "10の5分の2",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ベタを4匹追加",
+      "baseline_ja": "ベタを4匹追加"
+    },
+    {
+      "id": "fish_total_betta",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.fish_total_betta",
+      "title_ja": "ベタは14匹",
+      "claim_ja": "ベタは14匹",
+      "method_ja": "10と4を足す",
+      "requires_steps": [
+        "fish_new_betta"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "ベタは14匹",
+      "baseline_ja": "ベタは14匹"
+    },
+    {
+      "id": "fish_new_gold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.fish_new_gold",
+      "title_ja": "金魚を5匹追加",
+      "claim_ja": "金魚を5匹追加",
+      "method_ja": "15の3分の1",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "金魚を5匹追加",
+      "baseline_ja": "金魚を5匹追加"
+    },
+    {
+      "id": "fish_total_gold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.fish_total_gold",
+      "title_ja": "金魚は20匹",
+      "claim_ja": "金魚は20匹",
+      "method_ja": "15と5を足す",
+      "requires_steps": [
+        "fish_new_gold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "金魚は20匹",
+      "baseline_ja": "金魚は20匹"
+    },
+    {
+      "id": "fish_all",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.fish_all",
+      "title_ja": "全体は34匹",
+      "claim_ja": "全体は34匹",
+      "method_ja": "14と20を足す",
+      "requires_steps": [
+        "fish_total_betta",
+        "fish_total_gold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "全体は34匹",
+      "baseline_ja": "全体は34匹"
+    },
+    {
+      "id": "fish_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.fish_solution",
+      "title_ja": "残り17匹",
+      "claim_ja": "残り17匹",
+      "method_ja": "34の半分",
+      "requires_steps": [
+        "fish_all"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残り17匹",
+      "baseline_ja": "残り17匹"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2423,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

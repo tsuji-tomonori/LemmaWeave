@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint133_cars",
+  "title_ja": "紫色の車の台数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02287",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "緑は赤の4倍、赤は紫より6台多く、合計312台",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A06.cars_solution",
+  "graph": "work/gsm8k-sprint133-cars-graph.json",
+  "model_notes_ja": [
+    "原題の合計312台を採用する。参照説明中の315は孤立した誤記で、後続の式と答え47は312に対応する。"
+  ],
+  "steps": [
+    {
+      "id": "cars_red",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.cars_red",
+      "title_ja": "赤は53台",
+      "claim_ja": "赤は53台",
+      "method_ja": "3色の連立式を解く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "赤は53台",
+      "baseline_ja": "赤は53台"
+    },
+    {
+      "id": "cars_green",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.cars_green",
+      "title_ja": "緑は212台",
+      "claim_ja": "緑は212台",
+      "method_ja": "赤53台の4倍",
+      "requires_steps": [
+        "cars_red"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "緑は212台",
+      "baseline_ja": "緑は212台"
+    },
+    {
+      "id": "cars_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.cars_solution",
+      "title_ja": "紫は47台",
+      "claim_ja": "紫は47台",
+      "method_ja": "赤より6台少ない",
+      "requires_steps": [
+        "cars_red"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "紫は47台",
+      "baseline_ja": "紫は47台"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2288,
+    "checked_model_hash": "f57c0c51ecac149c58ab9991cfaff90a4b06f84527cc15a56b74fbe4c5afc072",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

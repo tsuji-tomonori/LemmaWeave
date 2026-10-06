@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint149_supplies",
+  "title_ja": "Rockefeller基地の補給品総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02520",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Grenada基地の6000個が銃・軍用トラクター・軍服へ等分される条件から、Rockefeller基地の各数量を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A04.supplies_solution",
+  "graph": "work/gsm8k-sprint149-supplies-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "supplies_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.supplies_each",
+      "title_ja": "Grenadaの各品目は2000個",
+      "claim_ja": "Grenadaの各品目は2000個",
+      "method_ja": "6000を3品目へ等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Grenadaの各品目は2000個",
+      "baseline_ja": "Grenadaの各品目は2000個"
+    },
+    {
+      "id": "supplies_guns",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.supplies_guns",
+      "title_ja": "銃は7000丁",
+      "claim_ja": "銃は7000丁",
+      "method_ja": "2000の2倍に3000を足す",
+      "requires_steps": [
+        "supplies_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "銃は7000丁",
+      "baseline_ja": "銃は7000丁"
+    },
+    {
+      "id": "supplies_tractors",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.supplies_tractors",
+      "title_ja": "軍用トラクターは5600台",
+      "claim_ja": "軍用トラクターは5600台",
+      "method_ja": "2000の3倍から400を引く",
+      "requires_steps": [
+        "supplies_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "軍用トラクターは5600台",
+      "baseline_ja": "軍用トラクターは5600台"
+    },
+    {
+      "id": "supplies_uniforms",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.supplies_uniforms",
+      "title_ja": "軍服は60000着",
+      "claim_ja": "軍服は60000着",
+      "method_ja": "2000の30倍を求める",
+      "requires_steps": [
+        "supplies_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "軍服は60000着",
+      "baseline_ja": "軍服は60000着"
+    },
+    {
+      "id": "supplies_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.supplies_solution",
+      "title_ja": "補給品総数は72600",
+      "claim_ja": "補給品総数は72600",
+      "method_ja": "7000、5600、60000を足す",
+      "requires_steps": [
+        "supplies_guns",
+        "supplies_tractors",
+        "supplies_uniforms"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "補給品総数は72600",
+      "baseline_ja": "補給品総数は72600"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2521,
+    "checked_model_hash": "bf48471e5f50a20e1256bd8203ba528b20e3455a0bb5dad6c2632708aa2a99f1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

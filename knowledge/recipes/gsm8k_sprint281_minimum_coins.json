@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint281_minimum_coins",
+  "title_ja": "最少硬貨枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03506",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A18P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "44セントの菓子を1ドルで買った釣銭56セントを、米国硬貨で最少枚数にする。",
+  "answer_ja": "4枚",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.coin_minimum",
+  "graph": "work/gsm8k-sprint281-minimum-coins-graph.json",
+  "model_notes_ja": [
+    "硬貨額面を25・10・5・1セントと明示し、4枚の構成と3枚以下では不可能な下界を別々に証明した。"
+  ],
+  "steps": [
+    {
+      "id": "coin_change_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.coin_change_amount",
+      "title_ja": "釣銭は56セント。",
+      "claim_ja": "釣銭は56セント。",
+      "method_ja": "100セントから44セントを引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "支払額100セント、価格44セント。",
+      "conclusion_ja": "56セント。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "coin_representation_at_least_four",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.coin_representation_at_least_four",
+      "title_ja": "56セントを作る硬貨は少なくとも4枚。",
+      "claim_ja": "56セントを作る硬貨は少なくとも4枚。",
+      "method_ja": "25・10・5・1セント硬貨の非負整数個数についてPresburger算術で下界を示す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "米国硬貨の4額面だけを使う。",
+      "conclusion_ja": "3枚以下では56セントを作れない。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "coin_count_constructed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.coin_count_constructed",
+      "title_ja": "25セント2枚、5セント1枚、1セント1枚で4枚。",
+      "claim_ja": "25セント2枚、5セント1枚、1セント1枚で4枚。",
+      "method_ja": "具体的構成を計算する。",
+      "requires_steps": [
+        "coin_change_amount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "硬貨の内訳を明示する。",
+      "conclusion_ja": "4枚で56セントを作れる。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "coin_minimum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A18P1.coin_minimum",
+      "title_ja": "最少枚数は4枚。",
+      "claim_ja": "最少枚数は4枚。",
+      "method_ja": "実現可能な4枚と全表現の下界を合わせる。",
+      "requires_steps": [
+        "coin_count_constructed",
+        "coin_representation_at_least_four"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ硬貨額面契約。",
+      "conclusion_ja": "4枚が最小。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3507,
+    "checked_model_hash": "83fb4aa172b2768949361874e5f964d0b9c5aa8bf37958ae57fb3ad85541e97f",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

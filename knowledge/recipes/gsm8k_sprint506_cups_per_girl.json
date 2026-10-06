@@ -1,0 +1,117 @@
+{
+  "id": "gsm8k_sprint506_cups_per_girl",
+  "title_ja": "女子1人あたりのカップ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04261",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P2.lean",
+  "problem_ja": "30人のクラスに男子10人、女子は男子の2倍。男子は各5個、全体で90個のカップなら女子は各何個か。",
+  "answer_ja": "女子は20人で条件は30人とも整合する。男子は50個、女子全体は40個なので1人2個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.cups_per_girl",
+  "graph": "work/gsm8k-sprint506-cups-per-girl-graph.json",
+  "model_notes_ja": [
+    "女子全員が同数のカップを持参したという問いの前提を用いる。",
+    "女子20人は総人数と2倍条件の両方から確認する。"
+  ],
+  "steps": [
+    {
+      "id": "girls_from_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.girls_from_total",
+      "title_ja": "総人数から女子数",
+      "claim_ja": "30−10=20人。",
+      "method_ja": "総人数から男子を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30−10=20人。"
+    },
+    {
+      "id": "girls_from_ratio",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.girls_from_ratio",
+      "title_ja": "2倍条件から女子数",
+      "claim_ja": "10×2=20人。",
+      "method_ja": "男子の2倍を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10×2=20人。"
+    },
+    {
+      "id": "boys_cups",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.boys_cups",
+      "title_ja": "男子のカップ合計",
+      "claim_ja": "10×5=50個。",
+      "method_ja": "男子数と1人分を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10×5=50個。"
+    },
+    {
+      "id": "girls_cups_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.girls_cups_total",
+      "title_ja": "女子のカップ合計",
+      "claim_ja": "90−50=40個。",
+      "method_ja": "全体から男子分を引く。",
+      "requires_steps": [
+        "boys_cups"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "90−50=40個。"
+    },
+    {
+      "id": "each_girl_cups",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.each_girl_cups",
+      "title_ja": "女子1人分",
+      "claim_ja": "40÷20=2個。",
+      "method_ja": "女子全体を20人で等分する。",
+      "requires_steps": [
+        "girls_from_total",
+        "girls_from_ratio",
+        "girls_cups_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40÷20=2個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.cups_per_girl",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "女子は20人で条件は30人とも整合する。男子は50個、女子全体は40個なので1人2個。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "girls_from_total",
+        "girls_from_ratio",
+        "boys_cups",
+        "girls_cups_total",
+        "each_girl_cups"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "女子は20人で条件は30人とも整合する。男子は50個、女子全体は40個なので1人2個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4262,
+    "checked_model_hash": "046f077325373f030d564e7b3fdfbfaf1e6fd6e25cb6fb795a4fb62a35111d93",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

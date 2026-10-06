@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint325_factory_operation_seconds",
+  "title_ja": "工場の総稼働秒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03750",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Last month, a factory made 12000 dolls and their associated accessories.  The accessories for each doll included 2 shoes, 3 bags, 1 set of cosmetics, and 5 hats.  If each doll took 45 seconds to make and each accessory took 10 seconds to make, what was the total combined machine operation time, in seconds, required to manufacture all of the dolls and their accessories?",
+  "answer_ja": "人形1体につき付属品は2+3+1+5=11個。1組の加工時間は45+11×10=155秒で、12000組では12000×155=1860000秒。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P1.factory_operation_seconds",
+  "graph": "work/gsm8k-sprint325-factory-operation-seconds-graph.json",
+  "model_notes_ja": [
+    "各人形に指定数の付属品を作り、各加工時間を直列の機械稼働時間として合計する。"
+  ],
+  "steps": [
+    {
+      "id": "factory_operation_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P1.factory_operation_seconds",
+      "title_ja": "工場の総稼働秒数",
+      "claim_ja": "人形1体につき付属品は2+3+1+5=11個。1組の加工時間は45+11×10=155秒で、12000組では12000×155=1860000秒。",
+      "method_ja": "1体あたりの付属品数と加工時間をまとめて生産数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "人形と全付属品の加工時間は重複計上しない。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "総稼働時間1860000秒。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3751,
+    "checked_model_hash": "20d5c669e70a31e33bf79186cb04e455f254bfaf90022e613b4bbc23ccea4993",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

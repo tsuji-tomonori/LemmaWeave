@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T120000+0900-ci-proof-repair",
+  "scheduled_slot": "2026-10-05T12:00:00+09:00",
+  "started_at": "2026-10-05T12:56:08+09:00",
+  "finished_at": "2026-10-05T13:12:00+09:00",
+  "schedule_deviation_minutes": 56,
+  "schedule_deviation_reason_ja": "実行開始時刻が予定枠から56分遅れ、前枠から継続するexact-head CIの確定結果と診断artifact回収を優先した。",
+  "role": "ci_repair_override",
+  "scheduled_role": "gsm8k_15_individual_solve",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "b283d95a28ea9dba3c2baeff964a59c79e76d5fa",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [],
+  "deferred": [
+    {
+      "problem_id": "scheduled-slot:2026-10-05-12",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "固定Lean CIが失敗しているため、新規15問の処理を停止し既存証明の修復を優先した。",
+      "next_action_ja": "exact-head CI、公理、依存、証拠ゲート成功後の未実行枠再配分で15問を選定する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04256",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "固定Lean CI失敗中のため新規GSM8K処理を開始しなかった。",
+      "next_action_ja": "修復後CIの成功証拠を得てから原題・ハッシュ確認から再開する。"
+    },
+    {
+      "problem_id": "LemmaWeave.Problems.GSM8K.Sprint0923A06CatchupModels.exam_solution",
+      "retry_on": "after_source_semantics_review",
+      "reason_ja": "既存の `exam_94_enough` は 2250 ≤ 2146 + 94 を要求しており偽である。正しい候補104への変更は原題・記述解答・台帳との意味照合が必要なため、このrunでは結論を変更しなかった。",
+      "next_action_ja": "対応する固定問題IDと原文ハッシュを特定し、平均75点に必要な点数を原題から再計算して、記述解答・Lean定理・行対応・証拠を一体で修正する。"
+    }
+  ],
+  "failed_ci_evidence": {
+    "workflow_run_id": 37257753340,
+    "job_id": 111598364067,
+    "head_sha": "b283d95a28ea9dba3c2baeff964a59c79e76d5fa",
+    "conclusion": "failure",
+    "run_count": 646,
+    "failed_or_timed_out_count": 127,
+    "leaf_failed_module_count": 125,
+    "compact_artifact_id": 11325257269,
+    "compact_artifact_size_bytes": 223034,
+    "compact_artifact_sha256": "d20a1555d1a21fe0d6b320ede412d2b9903c05275ee5851305cb16dbc4cbf15a",
+    "compact_artifact_local_digest_match": true,
+    "full_artifact_id": 11324878380,
+    "full_artifact_size_bytes": 385959572,
+    "full_artifact_sha256": "4026864e54b3c280748086db76cbeb7fe2b92f761f06a6cc17a8c302f3f9fbfc",
+    "full_artifact_local_digest_match": null
+  },
+  "diagnosis": {
+    "prior_syntax_error_resolved": true,
+    "root_cause_ja": "`simp_all at *` 構文エラーは解消した。残存失敗は、構造体仮定を導入していないomega、分岐ごとに不適切な一括rw、閉じていない数値max、予約語との衝突、未証明ゴール、原題との意味不一致候補など複数類型である。",
+    "semantic_defect_example": "exam_94_enough: 2250 ≤ 2146 + 94 is false"
+  },
+  "repair": {
+    "modules_changed": [
+      "LemmaWeave.Problems.GSM8K.Sprint0922A06Models",
+      "LemmaWeave.Problems.GSM8K.Sprint0922A14Models",
+      "LemmaWeave.Problems.GSM8K.Sprint0923A03CatchupModels",
+      "LemmaWeave.Problems.GSM8K.Sprint0923A04Models"
+    ],
+    "theorem_statements_changed": false,
+    "mathematical_models_changed": false,
+    "assumptions_added": 0,
+    "conclusions_weakened": false,
+    "note_ja": "意味を変えずに、分岐別rw、構造体constructor、必要な等式仮定の導入、構造体分解、数値maxの正規化を局所修復した。"
+  },
+  "local_verification": {
+    "status": "static_review_only",
+    "checks": [
+      "修正対象は診断artifactの具体的失敗行に限定",
+      "定理文・構造体フィールド・数値条件を変更していない",
+      "sorry・admit・独自axiomを追加していない"
+    ],
+    "reason_ja": "実行環境にLean/lakeバイナリがないため、証明検証は新exact-head CIへ委ねる。"
+  },
+  "exact_head_ci": {
+    "status_at_recording": "pending_after_same_commit",
+    "repair_recorded_in_same_commit": true
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "remaining": 8274,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_ci_failure",
+    "unresolved_review_threads": 0
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "修復後exact-head CI、公理・依存監査、現行入力の成功証拠が未取得。"
+  }
+}

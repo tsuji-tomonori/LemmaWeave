@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_sprint564_three_week_orange_revenue",
+  "title_ja": "3週間のオレンジ売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04319",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P1.lean",
+  "problem_ja": "Tammy has 10 orange trees from which she can pick 12 oranges each day. Tammy sells 6-packs of oranges for $2. How much money will Tammy have earned after 3 weeks if she sells all her oranges?",
+  "answer_ja": "1日は10×12=120個、6個組20パック。3週間では20×7×3=420パックで、売上は420×2=840ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.three_week_orange_revenue",
+  "graph": "work/gsm8k-sprint564-three-week-orange-revenue-graph.json",
+  "model_notes_ja": [
+    "毎日収穫し、全てを6個組として端数なく販売する。"
+  ],
+  "steps": [
+    {
+      "id": "daily_oranges",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.daily_oranges",
+      "title_ja": "1日の収穫",
+      "claim_ja": "10×12=120個。",
+      "method_ja": "木の本数と1本当たり収穫数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10×12=120個。"
+    },
+    {
+      "id": "daily_orange_packs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.daily_orange_packs",
+      "title_ja": "1日のパック数",
+      "claim_ja": "120÷6=20パック。",
+      "method_ja": "収穫数を1パック6個で割る。",
+      "requires_steps": [
+        "daily_oranges"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "120÷6=20パック。"
+    },
+    {
+      "id": "three_week_packs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.three_week_packs",
+      "title_ja": "3週間のパック数",
+      "claim_ja": "20×7×3=420パック。",
+      "method_ja": "1日分に21日を掛ける。",
+      "requires_steps": [
+        "daily_orange_packs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20×7×3=420パック。"
+    },
+    {
+      "id": "orange_sales_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.orange_sales_revenue",
+      "title_ja": "売上",
+      "claim_ja": "420×2=840ドル。",
+      "method_ja": "パック数に単価を掛ける。",
+      "requires_steps": [
+        "three_week_packs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "420×2=840ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.three_week_orange_revenue",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1日は10×12=120個、6個組20パック。3週間では20×7×3=420パックで、売上は420×2=840ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "daily_oranges",
+        "daily_orange_packs",
+        "three_week_packs",
+        "orange_sales_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1日は10×12=120個、6個組20パック。3週間では20×7×3=420パックで、売上は420×2=840ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4320,
+    "checked_model_hash": "409c02908b476593fe04e43a00bbac5ac9aa6f5bd7955b5d95fea12f3b6ef58f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

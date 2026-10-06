@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0402",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "d63d8e49b614184b19fd69ed1a3f81e8c4d79fa7ebfe70747d6b409e52ad69f7",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A03P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03841",
+      "source_line_1based": 3842,
+      "source_record_sha256": "8616765f8a0e97bd77cbd6dd4e5113585b8a8caac5c59794300407740dbfad55",
+      "raw_question_sha256": "3a66cf4755c4e66627d85d5d52baaeae1abb109f95cde424563804c01cd06c66",
+      "normalized_question_sha256": "3a66cf4755c4e66627d85d5d52baaeae1abb109f95cde424563804c01cd06c66",
+      "source_question": "Laura bought 2 pairs of pants for $54 each and 4 shirts for $33 each. She gave $250 to the cashier. So how much change did she take?",
+      "recipe_id": "gsm8k_sprint344_clothing_change",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "税や他の商品はなく、各単価は同じ。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03842",
+      "source_line_1based": 3843,
+      "source_record_sha256": "b59f92bfd2bb97dd59c344cc2915480322ab4897b8adfe77801aa9548c66744b",
+      "raw_question_sha256": "6e77a3761a6933ac2edda1fd81dc40d9b501adb9bda631918cf7c881e67670a1",
+      "normalized_question_sha256": "6e77a3761a6933ac2edda1fd81dc40d9b501adb9bda631918cf7c881e67670a1",
+      "source_question": "Mark bought a shirt, pants, and shoes for $340. What is the price of the pants knowing that the price of a shirt is three-quarters of the price of the pants and that the price of a shoe is ten dollars more than the price of the pants?",
+      "recipe_id": "gsm8k_sprint344_pants_price",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "金額を有理数ドルで表し、a shoeは購入した靴一足の価格を指す。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03843",
+      "source_line_1based": 3844,
+      "source_record_sha256": "61156dd7e7f5e3e77281dc7ca9468bfadbf1c17d94360661d9fd9da3fd3b4d20",
+      "raw_question_sha256": "1737a1f61feb84a2fde25f42c87078e48b46cf1f9de3201ad814e51f17f8d19d",
+      "normalized_question_sha256": "1737a1f61feb84a2fde25f42c87078e48b46cf1f9de3201ad814e51f17f8d19d",
+      "source_question": "Nancy bought a pie sliced it into 8 pieces. She gave 1/2 to Joe and Darcy, and she gave 1/4 to Carl. How many slices were left?",
+      "recipe_id": "gsm8k_sprint344_pie_slices_left",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "『Joe and Darcyに1/2』は2人合わせてパイ全体の半分を渡した意味と読む。"
+      ],
+      "blockers": [
+        "JoeとDarcyが各1/2ずつ受け取る読みではCarlへの1/4と両立せず、参照解釈は2人合計で1/2。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03844",
+      "source_line_1based": 3845,
+      "source_record_sha256": "47e0854e422353cee5110bbc73632260df788f0809d80676ec2f35804c3009e5",
+      "raw_question_sha256": "f6f8a291c0d5fd48243e7f9582b019e740dc4b1cf2956470e020ddeb993e3183",
+      "normalized_question_sha256": "7153ed504bd6844e9d73c2807c4a2b8f2b54a3ad3ae09ddfe12508f3a36c541c",
+      "source_question": "Elizabeth wants to buy the steak knives from a bridal registry as a wedding gift.  The couple registered for 2 steak knife sets and each set contains 4 steak knives.  If Elizabeth buys both sets and they cost $80.00 per set, how much does each single steak knife cost?",
+      "recipe_id": "gsm8k_sprint344_steak_knife_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2セットはいずれも4本入り・80ドルで、セット内の各ナイフは等価。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03845",
+      "source_line_1based": 3846,
+      "source_record_sha256": "8da8859b8e00cd93ac4b7424daf6f5bfdaa4d9c3eeef2591b13cfc4d66e5e6db",
+      "raw_question_sha256": "20c679fef86977fff55bd79409a6865d1426b708eb160beaa935a39c4f8bab79",
+      "normalized_question_sha256": "20c679fef86977fff55bd79409a6865d1426b708eb160beaa935a39c4f8bab79",
+      "source_question": "During a recent three-day trip to Italy, Keziah and her mom went mushroom picking. They sold all the mushrooms they picked on the first day for a total of $58. The day after, they picked 12 mushrooms. On the last day, they picked double the mushrooms they had picked the previous day. If the price per mushroom was $2, what is the total number of mushrooms they picked?",
+      "recipe_id": "gsm8k_sprint344_mushroom_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "3日間とも1個2ドルで、1日目も全て同価格で売れた。"
+      ],
+      "blockers": []
+    }
+  ]
+}

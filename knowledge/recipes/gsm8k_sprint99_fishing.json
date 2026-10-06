@@ -1,0 +1,108 @@
+{
+  "id": "gsm8k_sprint99_fishing",
+  "title_ja": "漁期中の漁獲数の差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01764",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "二人の213日間の漁獲数を、期間ごとの一定漁獲率から別々に求めて比較する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_solution",
+  "graph": "work/gsm8k-sprint99-fishing-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fishing_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_first",
+      "title_ja": "第1漁師は639匹を捕る。",
+      "claim_ja": "第1漁師は639匹を捕る。",
+      "method_ja": "1日3匹を213日続けるので3×213。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "213日間、毎日の漁獲率が3匹で一定。",
+      "conclusion_ja": "3×213=639。",
+      "baseline_ja": "3×213=639。"
+    },
+    {
+      "id": "fishing_first_ninety",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_first_ninety",
+      "title_ja": "第2漁師の最初の90日間は150匹。",
+      "claim_ja": "第2漁師の最初の90日間は150匹。",
+      "method_ja": "最初の30日は1匹/日、次の60日は2匹/日として1×30+2×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二期間は重ならず合計90日。",
+      "conclusion_ja": "30+120=150。",
+      "baseline_ja": "30+120=150。"
+    },
+    {
+      "id": "fishing_remaining_days",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_remaining_days",
+      "title_ja": "残りは123日。",
+      "claim_ja": "残りは123日。",
+      "method_ja": "全213日から最初の90日を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "最初の二期間は30+60=90日。",
+      "conclusion_ja": "123+90=213。",
+      "baseline_ja": "123+90=213。"
+    },
+    {
+      "id": "fishing_remainder_catch",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_remainder_catch",
+      "title_ja": "残り期間は492匹。",
+      "claim_ja": "残り期間は492匹。",
+      "method_ja": "123日を1日4匹で4×123。",
+      "requires_steps": [
+        "fishing_remaining_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り期間中の漁獲率が4匹/日で一定。",
+      "conclusion_ja": "4×123=492。",
+      "baseline_ja": "4×123=492。"
+    },
+    {
+      "id": "fishing_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_second",
+      "title_ja": "第2漁師は合計642匹を捕る。",
+      "claim_ja": "第2漁師は合計642匹を捕る。",
+      "method_ja": "最初の150匹と残り492匹を加える。",
+      "requires_steps": [
+        "fishing_first_ninety",
+        "fishing_remainder_catch"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二期間が漁期全体を過不足なく分割する。",
+      "conclusion_ja": "150+492=642。",
+      "baseline_ja": "150+492=642。"
+    },
+    {
+      "id": "fishing_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.fishing_solution",
+      "title_ja": "多い方は3匹多い。",
+      "claim_ja": "多い方は3匹多い。",
+      "method_ja": "第2漁師642匹から第1漁師639匹を引く。",
+      "requires_steps": [
+        "fishing_first",
+        "fishing_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "642≥639。",
+      "conclusion_ja": "3+639=642。",
+      "baseline_ja": "3+639=642。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1765,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

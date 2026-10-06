@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint140_cats",
+  "title_ja": "現在の保護猫数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02386",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "新たに12匹、元からその半数、3匹譲渡、5匹誕生、迷い猫1匹返還。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cats_solution",
+  "graph": "work/gsm8k-sprint140-cats-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cats_initial",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cats_initial",
+      "title_ja": "元から6匹",
+      "claim_ja": "元から6匹",
+      "method_ja": "12の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "元から6匹",
+      "baseline_ja": "元から6匹"
+    },
+    {
+      "id": "cats_after_intake",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cats_after_intake",
+      "title_ja": "受入後18匹",
+      "claim_ja": "受入後18匹",
+      "method_ja": "6と12を足す",
+      "requires_steps": [
+        "cats_initial"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "受入後18匹",
+      "baseline_ja": "受入後18匹"
+    },
+    {
+      "id": "cats_after_adoption",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cats_after_adoption",
+      "title_ja": "譲渡後15匹",
+      "claim_ja": "譲渡後15匹",
+      "method_ja": "18から3を引く",
+      "requires_steps": [
+        "cats_after_intake"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "譲渡後15匹",
+      "baseline_ja": "譲渡後15匹"
+    },
+    {
+      "id": "cats_after_kittens",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cats_after_kittens",
+      "title_ja": "出産後20匹",
+      "claim_ja": "出産後20匹",
+      "method_ja": "15に5を足す",
+      "requires_steps": [
+        "cats_after_adoption"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "出産後20匹",
+      "baseline_ja": "出産後20匹"
+    },
+    {
+      "id": "cats_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.cats_solution",
+      "title_ja": "現在19匹",
+      "claim_ja": "現在19匹",
+      "method_ja": "20から返還1匹を引く",
+      "requires_steps": [
+        "cats_after_kittens"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "現在19匹",
+      "baseline_ja": "現在19匹"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2387,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

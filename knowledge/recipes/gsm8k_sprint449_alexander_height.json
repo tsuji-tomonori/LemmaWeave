@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint449_alexander_height",
+  "title_ja": "12歳の身長",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04204",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Alexander was 50 inches on his 8th birthday. If he grows 1/2 a foot a year, how many inches tall will he be on his 12th birthday?",
+  "answer_ja": "1年の伸びは半フィート=6インチ。8歳から12歳まで4年間で24インチ伸び、50+24=74インチ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.alexander_height",
+  "graph": "work/gsm8k-sprint449-alexander-height-graph.json",
+  "model_notes_ja": [
+    "1フィート=12インチで単位換算し、誕生日間の4年を数える。"
+  ],
+  "steps": [
+    {
+      "id": "alexander_half_foot_inches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.alexander_half_foot_inches",
+      "title_ja": "年当たりの伸び",
+      "claim_ja": "12÷2=6インチ。",
+      "method_ja": "半フィートをインチへ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1フィート12インチ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "6インチ。"
+    },
+    {
+      "id": "alexander_growth_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.alexander_growth_years",
+      "title_ja": "成長年数",
+      "claim_ja": "12−8=4年。",
+      "method_ja": "年齢差を求める。",
+      "requires_steps": [
+        "alexander_half_foot_inches"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8歳から12歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4年。"
+    },
+    {
+      "id": "alexander_growth_inches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.alexander_growth_inches",
+      "title_ja": "総成長",
+      "claim_ja": "4×6=24インチ。",
+      "method_ja": "年数に年当たりの伸びを掛ける。",
+      "requires_steps": [
+        "alexander_half_foot_inches",
+        "alexander_growth_years"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4年、毎年6インチ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "24インチ。"
+    },
+    {
+      "id": "alexander_final_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.alexander_final_height",
+      "title_ja": "最終身長",
+      "claim_ja": "50+24=74インチ。",
+      "method_ja": "元の身長に成長分を足す。",
+      "requires_steps": [
+        "alexander_half_foot_inches",
+        "alexander_growth_years",
+        "alexander_growth_inches"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8歳時50インチ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "74インチ。"
+    },
+    {
+      "id": "alexander_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.alexander_height",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "1年の伸びは半フィート=6インチ。8歳から12歳まで4年間で24インチ伸び、50+24=74インチ。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "alexander_half_foot_inches",
+        "alexander_growth_years",
+        "alexander_growth_inches",
+        "alexander_final_height"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1フィート=12インチで単位換算し、誕生日間の4年を数える。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1年の伸びは半フィート=6インチ。8歳から12歳まで4年間で24インチ伸び、50+24=74インチ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4205,
+    "checked_model_hash": "f8b7921a39d86667d37bb3a00e1284e8581ce9ee1fa7c66ade04f4c6c9ae5e59",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "f8b7921a39d86667d37bb3a00e1284e8581ce9ee1fa7c66ade04f4c6c9ae5e59"
+}

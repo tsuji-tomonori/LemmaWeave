@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint126_planks",
+  "title_ja": "床板の購入枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02183",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "寝室8枚、居間20枚、台所11枚、客室は寝室より2枚少なく、廊下2本は各4枚。寝室2部屋で各3枚を交換し6枚余った。購入枚数は。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.planks_solution",
+  "graph": "work/gsm8k-sprint126-planks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "planks_guest",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.planks_guest",
+      "title_ja": "客室は6枚",
+      "claim_ja": "客室は6枚",
+      "method_ja": "寝室8枚より2枚少ない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "客室は6枚",
+      "baseline_ja": "客室は6枚"
+    },
+    {
+      "id": "planks_halls",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.planks_halls",
+      "title_ja": "廊下2本は8枚",
+      "claim_ja": "廊下2本は8枚",
+      "method_ja": "各4枚×2本。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "廊下2本は8枚",
+      "baseline_ja": "廊下2本は8枚"
+    },
+    {
+      "id": "planks_replacements",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.planks_replacements",
+      "title_ja": "両寝室の交換は6枚",
+      "claim_ja": "両寝室の交換は6枚",
+      "method_ja": "各寝室3枚ずつ×2部屋。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "両寝室の交換は6枚",
+      "baseline_ja": "両寝室の交換は6枚"
+    },
+    {
+      "id": "planks_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.planks_used",
+      "title_ja": "使用したのは59枚",
+      "claim_ja": "使用したのは59枚",
+      "method_ja": "8+20+11+6+8+6。",
+      "requires_steps": [
+        "planks_guest",
+        "planks_halls",
+        "planks_replacements"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "使用したのは59枚",
+      "baseline_ja": "使用したのは59枚"
+    },
+    {
+      "id": "planks_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.planks_solution",
+      "title_ja": "購入したのは65枚",
+      "claim_ja": "購入したのは65枚",
+      "method_ja": "使用59枚に余り6枚を足す。",
+      "requires_steps": [
+        "planks_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "購入したのは65枚",
+      "baseline_ja": "購入したのは65枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2184,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

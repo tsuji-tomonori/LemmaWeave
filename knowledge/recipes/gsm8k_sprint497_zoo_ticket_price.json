@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_sprint497_zoo_ticket_price",
+  "title_ja": "動物園チケット支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04252",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Maria bought a ticket to a ZOO. The regular price stands at $15, but she was able to get a 40% discount. How much did Maria pay for the ticket?",
+  "answer_ja": "割引額は15×40÷100=6ドル。15−6=9ドルを支払う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.zoo_ticket_price",
+  "graph": "work/gsm8k-sprint497-zoo-ticket-price-graph.json",
+  "model_notes_ja": [
+    "40%割引の基準は通常価格15ドル。"
+  ],
+  "steps": [
+    {
+      "id": "zoo_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.zoo_discount",
+      "title_ja": "割引額",
+      "claim_ja": "15×40÷100=6ドル。",
+      "method_ja": "通常価格の40%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "通常価格15ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "6ドル。"
+    },
+    {
+      "id": "zoo_paid",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.zoo_paid",
+      "title_ja": "支払額",
+      "claim_ja": "15−6=9ドル。",
+      "method_ja": "通常価格から割引額を引く。",
+      "requires_steps": [
+        "zoo_discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "15ドルと6ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "9ドル。"
+    },
+    {
+      "id": "zoo_ticket_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.zoo_ticket_price",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "割引額は15×40÷100=6ドル。15−6=9ドルを支払う。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "zoo_discount",
+        "zoo_paid"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "40%割引の基準は通常価格15ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "割引額は15×40÷100=6ドル。15−6=9ドルを支払う。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4253,
+    "checked_model_hash": "196e31c97a4a6a21d1f393dbba0528bf0d34d496dde09bdaaf4546966ecd056b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "196e31c97a4a6a21d1f393dbba0528bf0d34d496dde09bdaaf4546966ecd056b"
+}

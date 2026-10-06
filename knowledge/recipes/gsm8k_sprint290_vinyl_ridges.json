@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint290_vinyl_ridges",
+  "title_ja": "レコードの溝の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03552",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A01P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4ケース×各3棚×各20枚の60%が埋まり、1枚60本の溝を持つときの総数。",
+  "answer_ja": "8640本",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.vinyl_total_ridges",
+  "graph": "work/gsm8k-sprint290-vinyl-ridges-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "vinyl_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.vinyl_capacity",
+      "title_ja": "棚の収容枚数は240枚。",
+      "claim_ja": "棚の収容枚数は240枚。",
+      "method_ja": "4×3×20を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "棚の収容枚数は240枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "vinyl_occupied_records",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.vinyl_occupied_records",
+      "title_ja": "実際のレコードは144枚。",
+      "claim_ja": "実際のレコードは144枚。",
+      "method_ja": "240枚の60%を10分の6として求める。",
+      "requires_steps": [
+        "vinyl_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "実際のレコードは144枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "vinyl_total_ridges",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A01P1.vinyl_total_ridges",
+      "title_ja": "溝は合計8640本。",
+      "claim_ja": "溝は合計8640本。",
+      "method_ja": "144枚に1枚60本を掛ける。",
+      "requires_steps": [
+        "vinyl_occupied_records"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "溝は合計8640本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3553,
+    "checked_model_hash": "294e5a62736ad99074285666a240aaf7b5f4e0eedfab1e325cc5fb9a8dd524ab",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

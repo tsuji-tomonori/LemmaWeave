@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint143_brownies",
+  "title_ja": "最後に残るブラウニー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02432",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "20個の半分を職員室へ、残りの半分をCarlへ、さらに2個をSimonへ渡す。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brownies_solution",
+  "graph": "work/gsm8k-sprint143-brownies-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "brownies_faculty",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brownies_faculty",
+      "title_ja": "職員室へ10個",
+      "claim_ja": "職員室へ10個",
+      "method_ja": "20の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "職員室へ10個",
+      "baseline_ja": "職員室へ10個"
+    },
+    {
+      "id": "brownies_after_faculty",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brownies_after_faculty",
+      "title_ja": "残り10個",
+      "claim_ja": "残り10個",
+      "method_ja": "20から10を引く",
+      "requires_steps": [
+        "brownies_faculty"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残り10個",
+      "baseline_ja": "残り10個"
+    },
+    {
+      "id": "brownies_carl",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brownies_carl",
+      "title_ja": "Carlへ5個",
+      "claim_ja": "Carlへ5個",
+      "method_ja": "残り10個の半分",
+      "requires_steps": [
+        "brownies_after_faculty"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Carlへ5個",
+      "baseline_ja": "Carlへ5個"
+    },
+    {
+      "id": "brownies_after_carl",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brownies_after_carl",
+      "title_ja": "残り5個",
+      "claim_ja": "残り5個",
+      "method_ja": "10から5を引く",
+      "requires_steps": [
+        "brownies_carl"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残り5個",
+      "baseline_ja": "残り5個"
+    },
+    {
+      "id": "brownies_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.brownies_solution",
+      "title_ja": "最後に3個残る",
+      "claim_ja": "最後に3個残る",
+      "method_ja": "5から2を引く",
+      "requires_steps": [
+        "brownies_after_carl"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最後に3個残る",
+      "baseline_ja": "最後に3個残る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2433,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

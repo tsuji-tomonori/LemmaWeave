@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint429_red_hat_small_nose_count",
+  "title_ja": "赤帽子で小さい鼻のノーム数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04184",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "There are 28 garden gnomes in a yard. Three-fourths of them have red hats, and the rest have blue hats. Half the garden gnomes have big noses instead of small noses. If six gnomes with blue hats have big noses, how many gnomes with red hats have small noses?",
+  "answer_ja": "赤帽子は28×3/4=21体。大きい鼻は28/2=14体で、そのうち青帽子が6体なので赤帽子・大きい鼻は8体。したがって赤帽子・小さい鼻は21-8=13体。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.red_hat_small_nose_count",
+  "graph": "work/gsm8k-sprint429-red-hat-small-nose-count-graph.json",
+  "model_notes_ja": [
+    "帽子色と鼻の大小の2属性を排反に分ける。"
+  ],
+  "steps": [
+    {
+      "id": "red",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.red_hat_count",
+      "title_ja": "赤帽子の総数",
+      "claim_ja": "28×3/4=21体。",
+      "method_ja": "全体に4分の3を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "総数28体。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "28×3/4=21体。"
+    },
+    {
+      "id": "big",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.big_nose_count",
+      "title_ja": "大きい鼻の総数",
+      "claim_ja": "28/2=14体。",
+      "method_ja": "全体の半分を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "鼻は大・小の排反2種。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "28/2=14体。"
+    },
+    {
+      "id": "redbig",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.red_big_nose_count",
+      "title_ja": "赤帽子で大きい鼻",
+      "claim_ja": "14-6=8体。",
+      "method_ja": "大きい鼻全体から青帽子・大きい鼻を引く。",
+      "requires_steps": [
+        "big"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "帽子は赤・青の排反2種。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "14-6=8体。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P1.red_hat_small_nose_count",
+      "title_ja": "赤帽子で小さい鼻",
+      "claim_ja": "21-8=13体。",
+      "method_ja": "赤帽子全体から赤帽子・大きい鼻を引く。",
+      "requires_steps": [
+        "red",
+        "redbig"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "赤帽子の鼻は大・小に排反分割される。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "21-8=13体。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4185,
+    "checked_model_hash": "7a7d51b8cc7c4ebc53c5529c25cc2c31f175483460effa650b5fe9f8b7721b95",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id":"gsm8k_sprint46_sales","title_ja":"現金売上","problem_id":"external-gsm8k-main-3101c7d50724:train:00973","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"80ドルの売上の5分の2が掛売りのとき現金売上を求める。","root":"LemmaWeave.Tests.GSM8KSprint0920A14.sales_solution","graph":"work/gsm8k-sprint46-sales-graph.json","lean_file":"tests/lean/GSM8KSprint0920A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":[],
+  "steps":[
+    {"id":"sales_credit","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.sales_credit","title_ja":"掛売り","requires_steps":[],"uses_nodes":[],"condition_ja":"80ドルの5分の2。","conclusion_ja":"32ドル。","baseline_ja":"32×5=80×2。"},
+    {"id":"sales_cash","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.sales_cash","title_ja":"現金売上","requires_steps":[],"uses_nodes":[],"condition_ja":"総額を掛売りと現金に分ける。","conclusion_ja":"48ドル。","baseline_ja":"80=32+48。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":974,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["割合の分母・分子と現金部分を照合した。"]}
+}

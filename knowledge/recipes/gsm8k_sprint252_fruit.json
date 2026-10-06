@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint252_fruit",
+  "title_ja": "果物条件の不整合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03304",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "conditional_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原文方向では自然数個数が成立しないことを示し、参照解答の逆向き条件は追加条件として分離する。",
+  "answer_ja": "原文は自然数解なし。逆向き追加条件なら50個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.fruit_resolution",
+  "graph": "work/gsm8k-sprint252-fruit-graph.json",
+  "model_notes_ja": [
+    "標準的な英語読み apples=4×oranges と apples=15 は自然数個数で両立しない。参照解答の oranges=4×apples は追加条件として別モデル化。"
+  ],
+  "steps": [
+    {
+      "id": "fruit_literal_no_natural_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.fruit_literal_no_natural_solution",
+      "title_ja": "原文どおりでは自然数解がない。",
+      "claim_ja": "原文どおりでは自然数解がない。",
+      "method_ja": "15=4×oranges を満たす自然数orangesはない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "apples=15かつapplesはorangesの4倍。",
+      "conclusion_ja": "自然数個数モデルは不整合。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "fruit_reference_components",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.fruit_reference_components",
+      "title_ja": "逆向き追加条件ではorange60個、摂取はapple10個・orange40個。",
+      "claim_ja": "逆向き追加条件ではorange60個、摂取はapple10個・orange40個。",
+      "method_ja": "60=4×15、各2/3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参照解答と同じくoranges=4×applesを追加する。",
+      "conclusion_ja": "各成分を確定。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "fruit_reference_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.fruit_reference_total",
+      "title_ja": "逆向き追加条件なら合計50個。",
+      "claim_ja": "逆向き追加条件なら合計50個。",
+      "method_ja": "10+40。",
+      "requires_steps": [
+        "fruit_reference_components"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文条件の置換ではなく明示的な追加モデル。",
+      "conclusion_ja": "50個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "fruit_resolution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P2.fruit_resolution",
+      "title_ja": "原文不整合と条件付き50個を同時に保持する。",
+      "claim_ja": "原文不整合と条件付き50個を同時に保持する。",
+      "method_ja": "二つの定理を論理積にする。",
+      "requires_steps": [
+        "fruit_literal_no_natural_solution",
+        "fruit_reference_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "追加条件を原題へ黙って足さない。",
+      "conclusion_ja": "無条件の数値答えには昇格しない。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3305,
+    "checked_model_hash": "5b0f5e04984a6201f121580db7520ef1dbe340a720fdfc949fc7e2f86decd806",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

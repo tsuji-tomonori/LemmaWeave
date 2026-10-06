@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1700",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+    "semantic_model_hash": "79edfe7d99856156d02012ede4e4fb34811ba92295bfeb00fc41c6fcc5eafaa7",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1004A17P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04241",
+      "source_line_1based": 4242,
+      "source_record_sha256": "ec3a50940f4bef9a03e21f516b2bc60fd62b25967c5529fbdd438d9b8b6c27c5",
+      "raw_question_sha256": "1f5685564dcef9be75d32eed193e6379b3b2032511eb2a55e53fa3aa4461f6c7",
+      "normalized_question_sha256": "1f5685564dcef9be75d32eed193e6379b3b2032511eb2a55e53fa3aa4461f6c7",
+      "source_question": "Three friends Wolfgang, Ludo, and Michael, went to Walmart and bought marbles. Wolfgang bought 16 marbles, Ludo bought 1/4 times more marbles than Wolfgang, and Michael bought 2/3 times as many marbles as the number of marbles both Wolfgang and Ludo bought. If they combined their marbles and decided to share them equally, how many marbles did each get?",
+      "recipe_id": "gsm8k_sprint486_shared_marbles_each",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "「1/4 times more」は離散個数と整合する「4分の1だけ多い」と読む。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04242",
+      "source_line_1based": 4243,
+      "source_record_sha256": "eca98479b54987d12ec785b46b1a4b8178f02595b95fdc929a9184cd3c5890de",
+      "raw_question_sha256": "477e65de3fe76b1a79c74af53e9bb342e97f4bde3efc4022e196ef41f46ae420",
+      "normalized_question_sha256": "477e65de3fe76b1a79c74af53e9bb342e97f4bde3efc4022e196ef41f46ae420",
+      "source_question": "Aston has accidentally torn apart his comics and needs to put all the pages back together. Each comic has 25 pages and Aston has found 150 pages on the floor. He puts his comics back together and adds them back into his box of comics. If there were already 5 untorn comics in the box, how many comics are now in the box of comics?",
+      "recipe_id": "gsm8k_sprint487_comics_in_box",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "150ページを25ページずつの完全な6冊へ復元する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04243",
+      "source_line_1based": 4244,
+      "source_record_sha256": "6df3a3ffc8fed93f2d061384014113ea18b85d999a9d890f6e5ff2f2c813d52d",
+      "raw_question_sha256": "2a1e92f0ec45fc6b7865fc9b07067df8f7a89cb61744497214ebd94fe8a9aae0",
+      "normalized_question_sha256": "94b35b0846947201e572506acdd0824be080e8508fcf87e45048cebbc89df40f",
+      "source_question": "A king gets a crown made that costs $20,000.  He tips the person 10%.  How much did the king pay after the tip?",
+      "recipe_id": "gsm8k_sprint488_crown_total_payment",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2万ドルの10%と総額をドル単位で計算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04244",
+      "source_line_1based": 4245,
+      "source_record_sha256": "eaebf56754188a2d1ec41d3972aa4cf7ed52ab780475e83aa5bfef7989ecb27d",
+      "raw_question_sha256": "2723932d11368487f418999b165bfcfb90b779dc86304d440f60ce58c385e167",
+      "normalized_question_sha256": "2723932d11368487f418999b165bfcfb90b779dc86304d440f60ce58c385e167",
+      "source_question": "The Grey's bought several chickens at a sale. John took 5 more of the chickens than Mary took. Ray took 6 chickens less than Mary. If Ray took 10 chickens, how many more chickens did John take than Ray?",
+      "recipe_id": "gsm8k_sprint489_john_more_than_ray",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Ray=10からMary=16、John=21を得る。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04245",
+      "source_line_1based": 4246,
+      "source_record_sha256": "083bb4ea98f8d2059cb3dc4fd3fb68687eb9e0ca247382fe6c9cdbae8632fecd",
+      "raw_question_sha256": "fc5f1d15207a54d580957eb6894e5f64780ca0aef4fb3bfecbd165bb766f0e74",
+      "normalized_question_sha256": "fc5f1d15207a54d580957eb6894e5f64780ca0aef4fb3bfecbd165bb766f0e74",
+      "source_question": "In a day, Sam hunts 6 animals. Rob hunts half as many animals as Sam. Mark hunts 1/3 of the total of what Rob and Sam hunt. If Peter hunts 3 times as many animals as Mark does, how many animals do they all hunt in a day?",
+      "recipe_id": "gsm8k_sprint490_hunted_animals_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "全数量を1日あたりの動物数として足す。"
+      ],
+      "blockers": []
+    }
+  ]
+}

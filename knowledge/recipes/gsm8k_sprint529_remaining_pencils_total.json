@@ -1,0 +1,132 @@
+{
+  "id": "gsm8k_sprint529_remaining_pencils_total",
+  "title_ja": "寄付後の鉛筆総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04284",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P3.lean",
+  "problem_ja": "Jeffは300本の30%を寄付。VickiはJeffの2倍を持ち、その4分の3を寄付。残りの合計は。",
+  "answer_ja": "Jeffは90本寄付して210本。Vickiは600本中450本寄付して150本。残りは合計360本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.remaining_pencils_total",
+  "graph": "work/gsm8k-sprint529-remaining-pencils-total-graph.json",
+  "model_notes_ja": [
+    "原文はVickiについて“his pencils”と代名詞が不整合だが、文脈どおりVicki自身の600本の4分の3を寄付すると読む。"
+  ],
+  "steps": [
+    {
+      "id": "jeff_donated",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.jeff_donated",
+      "title_ja": "Jeffの寄付",
+      "claim_ja": "300×30÷100=90本。",
+      "method_ja": "300本の30%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "300×30÷100=90本。"
+    },
+    {
+      "id": "jeff_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.jeff_remaining",
+      "title_ja": "Jeffの残り",
+      "claim_ja": "300−90=210本。",
+      "method_ja": "元の本数から寄付分を引く。",
+      "requires_steps": [
+        "jeff_donated"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "300−90=210本。"
+    },
+    {
+      "id": "vicki_initial",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.vicki_initial",
+      "title_ja": "Vickiの元の本数",
+      "claim_ja": "300×2=600本。",
+      "method_ja": "Jeffの元の本数の2倍を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "300×2=600本。"
+    },
+    {
+      "id": "vicki_donated",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.vicki_donated",
+      "title_ja": "Vickiの寄付",
+      "claim_ja": "600×3÷4=450本。",
+      "method_ja": "Vickiの600本の4分の3を求める。",
+      "requires_steps": [
+        "vicki_initial"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "600×3÷4=450本。"
+    },
+    {
+      "id": "vicki_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.vicki_remaining",
+      "title_ja": "Vickiの残り",
+      "claim_ja": "600−450=150本。",
+      "method_ja": "元の本数から寄付分を引く。",
+      "requires_steps": [
+        "vicki_donated"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "600−450=150本。"
+    },
+    {
+      "id": "pencils_remaining_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.pencils_remaining_total",
+      "title_ja": "残りの合計",
+      "claim_ja": "210+150=360本。",
+      "method_ja": "2人の残りを足す。",
+      "requires_steps": [
+        "jeff_remaining",
+        "vicki_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "210+150=360本。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.remaining_pencils_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Jeffは90本寄付して210本。Vickiは600本中450本寄付して150本。残りは合計360本。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "jeff_donated",
+        "jeff_remaining",
+        "vicki_initial",
+        "vicki_donated",
+        "vicki_remaining",
+        "pencils_remaining_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Jeffは90本寄付して210本。Vickiは600本中450本寄付して150本。残りは合計360本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4285,
+    "checked_model_hash": "a5813930c3e5d173cff5d2d1ba1bd0bf21fe514f1d872224445412bafdeac2f1",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

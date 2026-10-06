@@ -1,0 +1,99 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1709",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "b922122d10016bec624e3139706da983a8e177a44a2cf38f725a421081324277",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A15P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04296",
+      "source_line_1based": 4297,
+      "source_record_sha256": "288b0cdd5a78bab917c744ef24e339dceddb7b20e546cceefadcb949b4c835b6",
+      "raw_question_sha256": "d3e65de8d9835674b4449934d06c2b6e1559c959eb0bcb15f4a28f74c9c65cf1",
+      "normalized_question_sha256": "d3e65de8d9835674b4449934d06c2b6e1559c959eb0bcb15f4a28f74c9c65cf1",
+      "source_question": "James decides to make a bathtub full of jello.  For every pound of water, you need 1.5 tablespoons of jello mix.  The bathtub can hold 6 cubic feet of water.  Each cubic foot of water is 7.5 gallons.  A gallon of water weighs 8 pounds.  A tablespoon of jello mix costs $0.50.  How much did he spend to fill his tub?",
+      "recipe_id": "gsm8k_sprint541_jello_bathtub_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "小数は10倍量またはセントへ換算し、端数なしで計算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04297",
+      "source_line_1based": 4298,
+      "source_record_sha256": "02f86d863e622b46ff8de31b5e12681ddca3052898a542e9c667aea20df79bfd",
+      "raw_question_sha256": "5df30f58b8843eab0ad0de71f33650fd8176afbde99cdd5c00ca3519945af8ab",
+      "normalized_question_sha256": "5df30f58b8843eab0ad0de71f33650fd8176afbde99cdd5c00ca3519945af8ab",
+      "source_question": "Duke was at a garage sale when he spotted DVDs on sale.  They were separated by price into 2 different boxes.  In the first box, he found 10 movies that he wanted.  These were $2.00 apiece.  The second box was marked $5 each and he found 5 movies he wanted.  What was the average price of each of the DVDs he bought?",
+      "recipe_id": "gsm8k_sprint542_dvd_average_price",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "平均は総代金を総枚数で割る。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04298",
+      "source_line_1based": 4299,
+      "source_record_sha256": "d8708dc5183c3bd1e4550e62e0e751cd2f4f62ec2b7b1eea66471cf920e89e60",
+      "raw_question_sha256": "8dbd9280aac2a7ae533973f80dc870ba7fc4fe0753bfe2885ba806e79a26fa60",
+      "normalized_question_sha256": "8dbd9280aac2a7ae533973f80dc870ba7fc4fe0753bfe2885ba806e79a26fa60",
+      "source_question": "Peter carried $500 to the market.  He bought 6 kilos of potatoes for $2 per kilo, 9 kilos of tomato for $3 per kilo, 5 kilos of cucumbers for $4 per kilo, and 3 kilos of bananas for $5 per kilo.  How much is Peter’s remaining money?",
+      "recipe_id": "gsm8k_sprint543_market_remaining_money",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "全ての単価は1kg当たりで、数量との積を合計する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04299",
+      "source_line_1based": 4300,
+      "source_record_sha256": "e87c5d6dac6a87b3dab36d3d162f4a09a66438375f125f583daa3ed2caf6c555",
+      "raw_question_sha256": "a25c539ca810bde0958db9e8eaf5641b517fa7084eb58c1dd2cf5ac09e52baeb",
+      "normalized_question_sha256": "a25c539ca810bde0958db9e8eaf5641b517fa7084eb58c1dd2cf5ac09e52baeb",
+      "source_question": "Kelsey had 2/5 of a tray of eggs that she had brought to Willa's party. Stephanie had also brought half a tray of eggs to the party, while Alayah brought 40 more eggs than Kelsey and Stephanie combined. If Willa had two trays of eggs already, calculate the total number of eggs that were used at the party.",
+      "recipe_id": "gsm8k_sprint544_party_eggs_underdetermined",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照解答は原題にない「1トレイ30個」を追加している。",
+        "追加条件を黙って採用せず、30個と20個の二つの適合モデルで非一意性を示す。"
+      ],
+      "blockers": [
+        "missing_condition",
+        "semantic_underdetermination"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04300",
+      "source_line_1based": 4301,
+      "source_record_sha256": "5b671e47c9bb5ce19381f4248855a24114ef853a4b9f793cf4fd94b05597f8e4",
+      "raw_question_sha256": "e2ca6e2435bb1501658e07a906a06eefcba71c579f3188d4a5bde25b8a11cf44",
+      "normalized_question_sha256": "e2ca6e2435bb1501658e07a906a06eefcba71c579f3188d4a5bde25b8a11cf44",
+      "source_question": "To finish the task assigned to her by the work supervisor in the stipulated deadline, Anie needs 5 hours extra aside from the normal work schedule each day.  If each day her work schedule requires her to be productive for 10 hours, and the project is estimated to take 1500 hours, calculate the number of days it would take Anie to finish the job.",
+      "recipe_id": "gsm8k_sprint545_work_project_days",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "毎日、通常10時間に加えて5時間を全て当該作業へ充てる。"
+      ],
+      "blockers": []
+    }
+  ]
+}

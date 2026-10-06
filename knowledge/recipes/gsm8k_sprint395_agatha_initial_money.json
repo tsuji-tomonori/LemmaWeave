@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_sprint395_agatha_initial_money",
+  "title_ja": "Agathaの最初の所持金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04138",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Agatha has some money to spend on a new bike. She spends $15 on the frame, and $25 on the front wheel. If she has $20 left to spend on a seat and handlebar tape, how much money, in dollars, did she have at first?",
+  "answer_ja": "自転車のフレームと前輪に15+25=40ドル使った。さらに20ドル残っているので、最初は40+20=60ドル持っていた。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.agatha_initial_money",
+  "graph": "work/gsm8k-sprint395-agatha-initial-money-graph.json",
+  "model_notes_ja": [
+    "ドル単位の支出と残金を加える。"
+  ],
+  "steps": [
+    {
+      "id": "agatha_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.agatha_spent",
+      "title_ja": "支出合計",
+      "claim_ja": "15+25=40ドル使った。",
+      "method_ja": "2支出を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "記載された支出を合計する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "支出は40ドル。"
+    },
+    {
+      "id": "agatha_initial_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.agatha_initial_total",
+      "title_ja": "初期所持金",
+      "claim_ja": "支出40ドルと残金20ドルから40+20=60ドル。",
+      "method_ja": "支出と残金を足す。",
+      "requires_steps": [
+        "agatha_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "他の増減はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "最初は60ドル。"
+    },
+    {
+      "id": "agatha_initial_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P1.agatha_initial_money",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "自転車のフレームと前輪に15+25=40ドル使った。さらに20ドル残っているので、最初は40+20=60ドル持っていた。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "agatha_spent",
+        "agatha_initial_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "記載された支出以外に所持金の増減はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "自転車のフレームと前輪に15+25=40ドル使った。さらに20ドル残っているので、最初は40+20=60ドル持っていた。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4139,
+    "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "680d34fd1941d9e30e5d9b8479dd307f703ee13e3b9bee8a37b9090906a6a254"
+}

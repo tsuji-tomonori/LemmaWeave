@@ -1,0 +1,134 @@
+{
+  "id": "gsm8k_sprint511_father_chocolate_bars_left",
+  "title_ja": "父に残ったチョコバー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04266",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P3.lean",
+  "problem_ja": "20本をMatildaと4姉妹で均等に分け、各自が半分を父へ渡す。父は母へ3本渡し2本食べる。残りは。",
+  "answer_ja": "5人が各4本を受け取り、各2本を父へ渡すので父は10本。3本渡し2本食べて5本残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.father_chocolate_bars_left",
+  "graph": "work/gsm8k-sprint511-father-chocolate-bars-left-graph.json",
+  "model_notes_ja": [
+    "Matildaを含む5人で均等に分ける。"
+  ],
+  "steps": [
+    {
+      "id": "five_sisters_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.five_sisters_people",
+      "title_ja": "分ける人数",
+      "claim_ja": "Matildaと4姉妹で5人。",
+      "method_ja": "本人を含め人数を数える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Matildaと4姉妹で5人。"
+    },
+    {
+      "id": "bars_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.bars_each",
+      "title_ja": "1人の取り分",
+      "claim_ja": "20÷5=4本。",
+      "method_ja": "20本を5人で等分する。",
+      "requires_steps": [
+        "five_sisters_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20÷5=4本。"
+    },
+    {
+      "id": "bars_given_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.bars_given_each",
+      "title_ja": "各自が父へ渡す本数",
+      "claim_ja": "4÷2=2本。",
+      "method_ja": "各自の半分を求める。",
+      "requires_steps": [
+        "bars_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4÷2=2本。"
+    },
+    {
+      "id": "father_received",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.father_received",
+      "title_ja": "父が受け取った本数",
+      "claim_ja": "2×5=10本。",
+      "method_ja": "5人分を合計する。",
+      "requires_steps": [
+        "bars_given_each",
+        "five_sisters_people"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2×5=10本。"
+    },
+    {
+      "id": "after_mother",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.after_mother",
+      "title_ja": "母へ渡した後",
+      "claim_ja": "10−3=7本。",
+      "method_ja": "母への3本を引く。",
+      "requires_steps": [
+        "father_received"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10−3=7本。"
+    },
+    {
+      "id": "father_bars_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.father_bars_left",
+      "title_ja": "父の残り",
+      "claim_ja": "7−2=5本。",
+      "method_ja": "食べた2本を引く。",
+      "requires_steps": [
+        "after_mother"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "7−2=5本。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.father_chocolate_bars_left",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "5人が各4本を受け取り、各2本を父へ渡すので父は10本。3本渡し2本食べて5本残る。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "five_sisters_people",
+        "bars_each",
+        "bars_given_each",
+        "father_received",
+        "after_mother",
+        "father_bars_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5人が各4本を受け取り、各2本を父へ渡すので父は10本。3本渡し2本食べて5本残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4267,
+    "checked_model_hash": "5e5065b43a0044861194598e07c25572a27c4d1cecdad3ad56739f7a0341534f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint167_debt",
+  "title_ja": "借金を返す労働時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02799",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "支払後の残債を時給15ドルで割る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A05.debt_solution",
+  "graph": "work/gsm8k-sprint167-debt-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "debt_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.debt_remaining",
+      "title_ja": "残債60ドル",
+      "claim_ja": "100-40=60ドル。",
+      "method_ja": "差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "100-40=60ドル。",
+      "baseline_ja": "100-40=60ドル。"
+    },
+    {
+      "id": "debt_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.debt_hours",
+      "title_ja": "4時間必要",
+      "claim_ja": "60÷15=4時間。",
+      "method_ja": "金額÷時給",
+      "requires_steps": [
+        "debt_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "60÷15=4時間。",
+      "baseline_ja": "60÷15=4時間。"
+    },
+    {
+      "id": "debt_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A05.debt_solution",
+      "title_ja": "答えは4時間",
+      "claim_ja": "4時間働けば残債を返せる。",
+      "method_ja": "直前の結論",
+      "requires_steps": [
+        "debt_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "4時間働けば残債を返せる。",
+      "baseline_ja": "4時間働けば残債を返せる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2800,
+    "checked_model_hash": "f7a1e420295684b1a3ce1819164c097e1162dae701762324c7c1a8f14a0c27d6",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

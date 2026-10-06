@@ -1,0 +1,38 @@
+{
+  "id": "gsm8k_sprint315_factory_capped_bottles",
+  "title_ja": "3台が10分で蓋をする本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03700",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "機械Aは毎分12本、BはAより2本少なく、CはBより5本多く蓋をする。3台が10分で処理する総本数を求める。",
+  "answer_ja": "Bは毎分12-2=10本、Cは毎分10+5=15本。3台の毎分合計は12+10+15=37本なので、10分では37×10=370本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A12P3.factory_capped_bottles",
+  "graph": "work/gsm8k-sprint315-factory-capped-bottles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "factory_capped_bottles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A12P3.factory_capped_bottles",
+      "title_ja": "各機械の毎分本数を合計する",
+      "claim_ja": "3台の毎分合計37本を10分処理すると370本である。",
+      "method_ja": "差と和でB、Cの毎分本数を求め、3台の合計率に時間を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3台は10分間、記載された一定速度で同時に稼働する。",
+      "baseline_ja": "単位時間当たりの量と乗算。",
+      "conclusion_ja": "10分で370本に蓋をする。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3701,
+    "checked_model_hash": "65e6dc7d830630ef2e03fc19c9198d4f1187a601f3724ebe6176391c9873b7e0",
+    "checks_ja": ["原文の数量・型・単位・仮定・求める全結論を再照合した。", "記述解答を名前付きLean定理へ対応させた。", "独立レビューではなく作成者自己照合である。"]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint119_ducks",
+  "title_ja": "雌のMuscovy種は6羽。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02078",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.ducks_solution",
+  "graph": "work/gsm8k-sprint119-ducks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ducks_muscovy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.ducks_muscovy",
+      "title_ja": "Muscovy種は20羽。",
+      "claim_ja": "Muscovy種は20羽。",
+      "method_ja": "40羽の50%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "Muscovy種は20羽。",
+      "baseline_ja": "Muscovy種は20羽。"
+    },
+    {
+      "id": "ducks_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.ducks_solution",
+      "title_ja": "雌のMuscovy種は6羽。",
+      "claim_ja": "雌のMuscovy種は6羽。",
+      "method_ja": "20羽の30%。",
+      "requires_steps": [
+        "ducks_muscovy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "雌のMuscovy種は6羽。",
+      "baseline_ja": "雌のMuscovy種は6羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2079,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

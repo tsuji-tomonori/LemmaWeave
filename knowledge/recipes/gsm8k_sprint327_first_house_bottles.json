@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint327_first_house_bottles",
+  "title_ja": "最初の家が受け取る本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03759",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A van is delivering  180 bottles of drinks to a neighborhood, and each bottle contains either cider or beer or a mixture of two. Out of the  180 bottles, 40 contain only cider, 80 contain only beer, and the rest are a mixture of the two drinks. If the delivery man gives half the number of each bottle of drink to the first house, how many bottles does the first house get?",
+  "answer_ja": "混合は180−40−80=60本。各種類の半分は、シードル20本、ビール40本、混合30本なので合計90本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P3.first_house_bottles",
+  "graph": "work/gsm8k-sprint327-first-house-bottles-graph.json",
+  "model_notes_ja": [
+    "「each bottle of drinkの半分」を3種類それぞれの本数の半分と読み、各本数は偶数。"
+  ],
+  "steps": [
+    {
+      "id": "first_house_bottles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P3.first_house_bottles",
+      "title_ja": "最初の家が受け取る本数",
+      "claim_ja": "混合は180−40−80=60本。各種類の半分は、シードル20本、ビール40本、混合30本なので合計90本。",
+      "method_ja": "混合本数を求め、各分類を半分にして合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3分類は排反で全180本を尽くす。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "最初の家は90本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3760,
+    "checked_model_hash": "7c9156b897939d8389cb18eecea50c74066a80e0d4d940093bf9f6db3923dc4e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

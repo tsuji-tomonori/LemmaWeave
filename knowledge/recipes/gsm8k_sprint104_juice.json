@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint104_juice",
+  "title_ja": "残ったジュース瓶",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01847",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "初期8本に購入5本を加え、飲んだ3本を引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.juice_solution",
+  "graph": "work/gsm8k-sprint104-juice-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "juice_initial",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.juice_initial",
+      "title_ja": "初期は8本。",
+      "claim_ja": "初期は8本。",
+      "method_ja": "4+4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "冷蔵庫と食品庫。",
+      "conclusion_ja": "8。",
+      "baseline_ja": "8。"
+    },
+    {
+      "id": "juice_after_buy",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.juice_after_buy",
+      "title_ja": "購入後は13本。",
+      "claim_ja": "購入後は13本。",
+      "method_ja": "8+5。",
+      "requires_steps": [
+        "juice_initial"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5本追加。",
+      "conclusion_ja": "13。",
+      "baseline_ja": "13。"
+    },
+    {
+      "id": "juice_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.juice_solution",
+      "title_ja": "残り10本。",
+      "claim_ja": "残り10本。",
+      "method_ja": "13−3。",
+      "requires_steps": [
+        "juice_after_buy"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3本飲んだ。",
+      "conclusion_ja": "10。",
+      "baseline_ja": "10。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1848,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

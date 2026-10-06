@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint130_flowers",
+  "title_ja": "火曜に売れた花の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02243",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ライラック10本、バラはthree times more、クチナシはライラックの半数。総数を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.flowers_literal_alternative",
+  "graph": "work/gsm8k-sprint130-flowers-graph.json",
+  "model_notes_ja": [
+    "three times moreは『3倍』と『元より3倍多い=4倍』の二読解がある。参照解の45本と字義的な55本を別モデルで形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "flowers_roses_conventional",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.flowers_roses_conventional",
+      "title_ja": "データセット慣例の3倍読解ではバラ30本",
+      "claim_ja": "データセット慣例の3倍読解ではバラ30本",
+      "method_ja": "10本を3倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "データセット慣例の3倍読解ではバラ30本",
+      "baseline_ja": "データセット慣例の3倍読解ではバラ30本"
+    },
+    {
+      "id": "flowers_gardenias",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.flowers_gardenias",
+      "title_ja": "クチナシは5本",
+      "claim_ja": "クチナシは5本",
+      "method_ja": "10本の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "クチナシは5本",
+      "baseline_ja": "クチナシは5本"
+    },
+    {
+      "id": "flowers_solution_conventional",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.flowers_solution_conventional",
+      "title_ja": "慣例読解の合計は45本",
+      "claim_ja": "慣例読解の合計は45本",
+      "method_ja": "30、10、5本を足す",
+      "requires_steps": [
+        "flowers_roses_conventional",
+        "flowers_gardenias"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "慣例読解の合計は45本",
+      "baseline_ja": "慣例読解の合計は45本"
+    },
+    {
+      "id": "flowers_literal_alternative",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.flowers_literal_alternative",
+      "title_ja": "300%多いという字義的読解なら合計55本",
+      "claim_ja": "300%多いという字義的読解なら合計55本",
+      "method_ja": "バラ40本、ライラック10本、クチナシ5本を足す",
+      "requires_steps": [
+        "flowers_gardenias"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した読解条件を保持する。",
+      "conclusion_ja": "300%多いという字義的読解なら合計55本",
+      "baseline_ja": "300%多いという字義的読解なら合計55本"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2244,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -43,7 +43,7 @@ def validate_recipe(recipe, nodes, graph):
                 raise ValueError('different written lines must have distinct theorems')
             step_reachable = set(graph_audit({**graph, 'roots': [declaration]})['reachable_declarations'])
             if not {declarations[s] for s in step['requires_steps']} <= step_reachable:
-                raise ValueError('previous written line absent from this line proof')
+                raise ValueError(f"previous written line absent from this line proof: recipe={recipe['id']} step={step['id']} requires={step['requires_steps']}")
             declarations[step['id']] = declaration
             line_evidence.append({'id': step['id'], 'lean_declaration': declaration,
                                   'type_pretty': graph_nodes[declaration].get('type_pretty'),
@@ -95,9 +95,33 @@ def batch_metrics(root, recipes, results):
     output = []
     for path in sorted((root / 'corpus/method_batches').glob('*.json')):
         batch = read(path)
-        if model_hash(root, batch['model_files']) != batch['semantic_model_hash']:
-            raise ValueError('stale frozen batch model: ' + batch['id'])
-        problems = batch['problems']
+        # New individual-source ledgers retain the exact source occurrence under
+        # ``items``.  Their model binding remains frozen in each recipe's author
+        # review, so recover the imported model file and verify that hash here.
+        # Legacy formal batches continue to use explicit ``problems`` and
+        # ``model_files`` fields.
+        problems = batch.get('problems', batch.get('items'))
+        batch_id = batch.get('id', batch.get('batch_id'))
+        if problems is None or batch_id is None:
+            raise ValueError('unrecognized method batch schema: ' + str(path))
+        if 'model_files' in batch:
+            model_files = batch['model_files']
+            expected_hash = batch['semantic_model_hash']
+        else:
+            model_files = set()
+            expected_hashes = set()
+            for problem in problems:
+                recipe = by_id[problem['recipe_id']]
+                expected_hashes.add(recipe['author_review']['checked_model_hash'])
+                for line in (root / recipe['lean_file']).read_text().splitlines():
+                    if line.startswith('import LemmaWeave.Problems.') and line.endswith('Models'):
+                        model_files.add(line.removeprefix('import ').replace('.', '/') + '.lean')
+            if len(expected_hashes) != 1 or not model_files:
+                raise ValueError('source ledger does not identify one frozen model: ' + batch_id)
+            model_files = sorted(model_files)
+            expected_hash = expected_hashes.pop()
+        if model_hash(root, model_files) != expected_hash:
+            raise ValueError('stale frozen batch model: ' + batch_id)
         if len({p['problem_id'] for p in problems}) != len(problems):
             raise ValueError('duplicate batch problem')
         if len({p['recipe_id'] for p in problems}) != len(problems):
@@ -108,9 +132,9 @@ def batch_metrics(root, recipes, results):
                 raise ValueError('batch problem/recipe mismatch')
             if p['model_scope'] != r['model_scope'] or p['semantic_status'] != r['semantic_review_status']:
                 raise ValueError('batch semantic state differs from recipe')
-            if r.get('solution_format') == 'individual_lines_v1' and r['author_review'].get('checked_model_hash') != batch['semantic_model_hash']:
+            if r.get('solution_format') == 'individual_lines_v1' and r['author_review'].get('checked_model_hash') != expected_hash:
                 raise ValueError('author review is stale for batch model')
-        output.append({'batch': batch['id'], 'collection_id': batch['collection_id'],
+        output.append({'batch': batch_id, 'collection_id': batch['collection_id'],
                        'selected_existing_problems': len(problems),
                        'method_extracted': len(problems),
                        'kernel_checked_models': sum(p['recipe_id'] in verified for p in problems),
@@ -135,7 +159,10 @@ def main():
         archive_file = ROOT / 'reports/dependencies/methods' / (r['id'] + '.json.gz')
         raw = graph_file.read_bytes() if graph_file.exists() else gzip.decompress(archive_file.read_bytes())
         graph = json.loads(raw)
-        result = validate_recipe(r, nodes, graph)
+        try:
+            result = validate_recipe(r, nodes, graph)
+        except ValueError as exc:
+            raise ValueError(f"recipe {r['id']}: {exc}") from exc
         if graph['roots'] != [r['root']]:
             raise ValueError('recipe export must have exactly one root')
         if set(graph_audit(graph)['axioms']) != set(graph['lean_collected_axioms']):

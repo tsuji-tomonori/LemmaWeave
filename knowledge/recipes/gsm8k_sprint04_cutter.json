@@ -1,0 +1,9 @@
+{
+  "id":"gsm8k_sprint04_cutter","title_ja":"クッキー型の辺の総数","problem_id":"external-gsm8k-main-3101c7d50724:train:00540","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"三角形6個、正方形4個、六角形2個の辺をすべて数える。","root":"LemmaWeave.Tests.GSM8KSprint0919A04.cutter_solution","graph":"work/gsm8k-sprint04-cutter-graph.json","lean_file":"tests/lean/GSM8KSprint0919A04.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["各型を独立に数えて合計する。"],
+  "steps":[
+    {"id":"cutter_triangle_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A04.cutter_triangle_total","title_ja":"三角形の辺","requires_steps":[],"uses_nodes":[],"condition_ja":"三角形6個、各3辺。","conclusion_ja":"6×3=18辺。","baseline_ja":"同数のまとまりの乗法。"},
+    {"id":"cutter_square_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A04.cutter_square_total","title_ja":"正方形の辺","requires_steps":[],"uses_nodes":[],"condition_ja":"正方形4個、各4辺。","conclusion_ja":"4×4=16辺。","baseline_ja":"同数のまとまりの乗法。"},
+    {"id":"cutter_hexagon_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A04.cutter_hexagon_total","title_ja":"六角形の辺","requires_steps":[],"uses_nodes":[],"condition_ja":"六角形2個、各6辺。","conclusion_ja":"2×6=12辺。","baseline_ja":"同数のまとまりの乗法。"},
+    {"id":"cutter_total","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0919A04.cutter_total","title_ja":"全型の合計","requires_steps":["cutter_triangle_total","cutter_square_total","cutter_hexagon_total"],"uses_nodes":[],"condition_ja":"3種類の型を重複なく数える。","conclusion_ja":"18+16+12=46辺。","baseline_ja":"排他的な種類別個数の加法。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":541,"checked_model_hash":"175ee387c5a2efa32c1f53a8d9f0f04f93252d228bf289bf0676f361c7cac413","checks_ja":["三角・四角・六角の各個数と辺数を全て反映した。"]}
+}

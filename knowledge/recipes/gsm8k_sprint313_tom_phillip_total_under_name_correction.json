@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint313_tom_phillip_total_under_name_correction",
+  "title_ja": "TomとPhillipの条件付き合計点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03688",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A12P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Noaは30点、Phillipはその2倍だが、結論では未定義のTomとの合計を尋ねる。Tom=Noaという誤記修正の条件下で合計を求める。",
+  "answer_ja": "Phillipは2×30=60点。Tom=Noa、すなわちTomが30点という追加条件なら合計は30+60=90点。原文のままではTomの点数が未指定で一意に決まらない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A12P1.tom_phillip_total_under_name_correction",
+  "graph": "work/gsm8k-sprint313-tom-phillip-total-under-name-correction-graph.json",
+  "model_notes_ja": [
+    "原文はNoaを定義してTomを尋ねる。Tom=0なら合計60、Tom=30なら90なので無条件では非一意。Tom=Noaという追加条件下の90を形式化。"
+  ],
+  "steps": [
+    {
+      "id": "tom_phillip_total_under_name_correction",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A12P1.tom_phillip_total_under_name_correction",
+      "title_ja": "Phillipは2×30=60点。Tom=Noa、すなわちTomが30点という追加条件なら合計は30+60=90点。原文のままではTomの点数が未指定で一意に決まらない。",
+      "claim_ja": "Phillipは2×30=60点。Tom=Noa、すなわちTomが30点という追加条件なら合計は30+60=90点。原文のままではTomの点数が未指定で一意に決まらない。",
+      "method_ja": "Phillipは2×30=60点。Tom=Noa、すなわちTomが30点という追加条件なら合計は30+60=90点。原文のままではTomの点数が未指定で一意に決まらない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "Phillipは2×30=60点。Tom=Noa、すなわちTomが30点という追加条件なら合計は30+60=90点。原文のままではTomの点数が未指定で一意に決まらない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3689,
+    "checked_model_hash": "e14ffa94f3da20846fb03aad4d9b98e8448e6d6796691fe4654d2ccff66451fc",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

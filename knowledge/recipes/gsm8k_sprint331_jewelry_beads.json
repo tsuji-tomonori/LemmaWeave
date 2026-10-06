@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint331_jewelry_beads",
+  "title_ja": "ブレスレットとネックレスのビーズ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03779",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A19P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Susan is making jewelry with a repeating pattern that has 3 green beads, 5 purple beads, and twice as many red beads as green beads. If the pattern repeats three times per bracelet and 5 times per necklace, how many beads does she need to make 1 bracelets and 10 necklaces?",
+  "answer_ja": "1反復の赤は緑3個の2倍で6個。1反復は3+5+6=14個。ブレスレット1本は3反復で42個、ネックレス1本は5反復で70個なので、1本と10本の合計は42+700=742個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A19P1.jewelry_beads",
+  "graph": "work/gsm8k-sprint331-jewelry-beads-graph.json",
+  "model_notes_ja": [
+    "1 braceletsはブレスレット1本と読み、各反復は同じ構成。"
+  ],
+  "steps": [
+    {
+      "id": "jewelry_beads",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A19P1.jewelry_beads",
+      "title_ja": "ブレスレットとネックレスのビーズ総数",
+      "claim_ja": "1反復の赤は緑3個の2倍で6個。1反復は3+5+6=14個。ブレスレット1本は3反復で42個、ネックレス1本は5反復で70個なので、1本と10本の合計は42+700=742個。",
+      "method_ja": "反復1回の個数を求め、装身具ごとの反復回数と本数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "色分類は排他的で、反復回数と本数は自然数。",
+      "baseline_ja": "整数・分数・割合・一次方程式・面積・平均のうち問題で明示したもの。",
+      "conclusion_ja": "742個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3780,
+    "checked_model_hash": "fcea5647a3ae770bccf5ce7a386ee21ee3e4c7d1e54691a899a84aab67b63e68",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1038",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "d64ba1c4460640f58f0763d002197af12db34ded23abec5bfbbe0c21e078a551",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1004A03P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04091",
+      "source_line_1based": 4092,
+      "source_record_sha256": "75b2d9c8f1035658cd0351ee89df16fae11a07e154bb4ece9891c7927824eb87",
+      "raw_question_sha256": "b30ab754434a6219b67a78f79dc7629301f464a92656f877fd64a4fe4e18d183",
+      "normalized_question_sha256": "b30ab754434a6219b67a78f79dc7629301f464a92656f877fd64a4fe4e18d183",
+      "source_question": "Ryan works in an office that has an even number of men and women working there.  Ryan participates in a meeting composed of 4 men and 6 women who are pulled from the office floor.   This reduces the number of women working on the office floor by 20%.  How many people work at Ryan's office?",
+      "recipe_id": "gsm8k_sprint392_office_population_interpretations",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "男女同数という通常解釈と、各人数が偶数にすぎない文字どおりの解釈を分離した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04092",
+      "source_line_1based": 4093,
+      "source_record_sha256": "20c68dfb9aad6e6c9573754128b47dd3f431a95ed58f07eb06791e1d5a928de0",
+      "raw_question_sha256": "a04cfa3b7328a95685a1d462063a6d4abb53ac22399a8dc02d33b04f3b8c29db",
+      "normalized_question_sha256": "a04cfa3b7328a95685a1d462063a6d4abb53ac22399a8dc02d33b04f3b8c29db",
+      "source_question": "Melody needs to read 20 pages for her English class, 16 pages for her Science class, 8 pages for her Civics, and 12 pages for Chinese class. She decided to read one-fourth of the number of pages for each class tomorrow. How many pages will she read tomorrow?",
+      "recipe_id": "gsm8k_sprint392_melody_pages_tomorrow",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各科目ごとに4分の1を取り、その合計を求める。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04093",
+      "source_line_1based": 4094,
+      "source_record_sha256": "43046f5076767e1e3dfbfeaca16c9b37d7c27dd318550433e90d035db6174527",
+      "raw_question_sha256": "61b8cd92ce4090c5a17952f6e10dd59f200e3cd83ef962b2df454883269a50b3",
+      "normalized_question_sha256": "61b8cd92ce4090c5a17952f6e10dd59f200e3cd83ef962b2df454883269a50b3",
+      "source_question": "A judge oversaw seventeen court cases. Two were immediately dismissed from court. Two-thirds of the remaining cases were ruled innocent, one ruling was delayed until a later date, and the rest were judged guilty. On how many cases did the judge rule guilty?",
+      "recipe_id": "gsm8k_sprint392_guilty_cases",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "却下後の15件を基準に3分の2を計算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04094",
+      "source_line_1based": 4095,
+      "source_record_sha256": "9487bad18abee1b506b8873667e97be53ec121fb765b4f435e7bdb9b395a17e5",
+      "raw_question_sha256": "726c472a2ce8dca70dba3d9ea6ce8a3d8d3dad0fbe8009c58fc283a699dcff09",
+      "normalized_question_sha256": "726c472a2ce8dca70dba3d9ea6ce8a3d8d3dad0fbe8009c58fc283a699dcff09",
+      "source_question": "Lidia has a collection of books. Her collection is four times bigger than the collection which her friend Susan has. In total Susan and Lidia, both have 3000 books. How many books does Susan have in her collection?",
+      "recipe_id": "gsm8k_sprint392_book_collection_interpretations",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "通常の4倍解釈と文字どおりの5倍解釈を双方保存した。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04095",
+      "source_line_1based": 4096,
+      "source_record_sha256": "fb78457daa315a5d7f2f3f7fbf918454070d9db0958238ba019bc8f5b41ddff0",
+      "raw_question_sha256": "78f74505b39896b35572013a44f21a7fa712b86be56e90ff35eed6256d347cba",
+      "normalized_question_sha256": "78f74505b39896b35572013a44f21a7fa712b86be56e90ff35eed6256d347cba",
+      "source_question": "Pulsar, the shuffle-dancing bear, Polly, the pink prancing poodle, and Petra, the proud portly pachyderm, are entertainers at the Big Top Circus.  In one show, Pulsar stands on his two back legs for a total of 10 minutes.  Then, Polly stands on her back legs for three times as long as Pulsar.  And then, finally, Petra stands of his back legs for one-sixth as long as Polly.  What is the combined length of time, in minutes, that the three entertainers stand on their back legs?",
+      "recipe_id": "gsm8k_sprint392_circus_back_legs_minutes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各動物の時間を順に導出して合計する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

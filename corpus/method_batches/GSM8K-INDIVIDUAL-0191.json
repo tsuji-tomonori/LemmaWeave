@@ -1,0 +1,223 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0191",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint0925A11Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02335",
+      "source_line_1based": 2336,
+      "source_record_sha256": "5720437bceff867acec3eff8adbf778ca54e09c250dd938c5b5e3726cc0b9fab",
+      "raw_question_sha256": "4afe02698e3a7a91657c28073df1a74c00ee88d6b0502d130c079eb9b518c4a4",
+      "normalized_question_sha256": "4afe02698e3a7a91657c28073df1a74c00ee88d6b0502d130c079eb9b518c4a4",
+      "source_question": "A loaf of bread was sliced into 15. Ten friends bought 4 loaves of bread. If they all eat all 4 loaves equally, how many slices of bread did each of them eat?",
+      "recipe_id": "gsm8k_sprint137_bread",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02336",
+      "source_line_1based": 2337,
+      "source_record_sha256": "928d08f415ada4f8ed400735ba0028b28d4c161194b370399dc6ea2d98f85753",
+      "raw_question_sha256": "e67e11a2f4867dc2b766c57b4ef6f72d1b989bd425c4ee2d5bfb6590578b65aa",
+      "normalized_question_sha256": "e67e11a2f4867dc2b766c57b4ef6f72d1b989bd425c4ee2d5bfb6590578b65aa",
+      "source_question": "Latia wants to buy a Samsung TV worth $1700. She works for a delivery service company for a month earning $10 per hour for a 30-hour workweek. How many more hours does she have to work to buy the TV?",
+      "recipe_id": "gsm8k_sprint137_latia",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題は1か月に含む労働週数を指定しない。50時間は1か月=4週という追加条件付きであり、5週なら20時間になるため一意解ではない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02337",
+      "source_line_1based": 2338,
+      "source_record_sha256": "91007964582df07f6157397ccf5574c33025e6efe3e1cdac7883f0f089a71ce4",
+      "raw_question_sha256": "5ac8d9ba263d4ac6020c30d6b440dd24b6c126a2217daa0497d0566b4c9b6fdc",
+      "normalized_question_sha256": "5ac8d9ba263d4ac6020c30d6b440dd24b6c126a2217daa0497d0566b4c9b6fdc",
+      "source_question": "The P.T.O. decided to provide shirts for the elementary students for track and field day. Each grade was given a different color. 101 Kindergartners wore orange shirts that cost $5.80 each. 113 first graders wore yellow shirts that cost $5 each. 107 second graders wore blue shirts that cost $5.60 each. 108 third graders wore green shirts that cost $5.25 each. How much did the P.T.O. spend on shirts for field day?",
+      "recipe_id": "gsm8k_sprint137_shirts",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "端数を正確に扱うため金額はセントで形式化する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02338",
+      "source_line_1based": 2339,
+      "source_record_sha256": "0d9ae5836d6e3e96f5069bf3feabe074468571ea6aad8c5db15ad3bde619ccff",
+      "raw_question_sha256": "8ca656f6af36885895ac97554f641d26489adfa415d0faae9bb9c6a2277273a7",
+      "normalized_question_sha256": "8ca656f6af36885895ac97554f641d26489adfa415d0faae9bb9c6a2277273a7",
+      "source_question": "A bottle can hold 2 cups of water. How many cups of water are needed to fill up 10 whole bottles and 5 half-capacity bottles?",
+      "recipe_id": "gsm8k_sprint137_bottles",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参考解答は最終行で20を25と取り違え、25+5=30としている。原題からは25カップが正しい。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02339",
+      "source_line_1based": 2340,
+      "source_record_sha256": "d9ac34d95769098f03092bf873d1f3fe7a8a254fd20ee1326026ec86edc70a8e",
+      "raw_question_sha256": "67ca5e3b35330c2fd006929c2df39a6997f20e9ad7177d2378403280beb8cdcf",
+      "normalized_question_sha256": "67ca5e3b35330c2fd006929c2df39a6997f20e9ad7177d2378403280beb8cdcf",
+      "source_question": "Hazel and Razel are twins who share everything they receive. If Hazel received 6 shirts, while Razel received twice the number of shirts as Hazel. How many shirts do they have in total?",
+      "recipe_id": "gsm8k_sprint137_twins",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02340",
+      "source_line_1based": 2341,
+      "source_record_sha256": "6015f456a429ef04c3abc6241a1f8c2a9317075b241ea369eb4a513e62093959",
+      "raw_question_sha256": "0ed5404ee96c55e2b317f1c1936491ee90e0dc5045c42fdd15525ff41ff2d2f4",
+      "normalized_question_sha256": "0ed5404ee96c55e2b317f1c1936491ee90e0dc5045c42fdd15525ff41ff2d2f4",
+      "source_question": "Jamal works at a library shelving books. He has a cart full of books to put away in different sections. In the history section, he shelves 12 books. In the fiction section, he shelves 19 books. In the children’s section, he shelves 8 books but finds 4 that were left in the wrong place that he adds to his cart to shelve elsewhere. He still has 16 books to shelve. How many books did he start with in the cart?",
+      "recipe_id": "gsm8k_sprint137_library",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02341",
+      "source_line_1based": 2342,
+      "source_record_sha256": "24a906d60290dda0b8714d892eebe0c8d38b4943383d915affb5aa76e2cdf7a9",
+      "raw_question_sha256": "be4c6e63656405f76325cff2391f5a69e5d75b2f9763b0c01258b99c9fa02dea",
+      "normalized_question_sha256": "be4c6e63656405f76325cff2391f5a69e5d75b2f9763b0c01258b99c9fa02dea",
+      "source_question": "Bill and Ted head to the river to throw stuff into the water. Bill throws 6 more sticks into the river than Ted does, but Ted tosses twice as many rocks into the river as Bill. If Ted tosses 10 sticks and 10 rocks into the river, how many objects did Bill toss into the river?",
+      "recipe_id": "gsm8k_sprint137_river",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02342",
+      "source_line_1based": 2343,
+      "source_record_sha256": "4493ded7619c1174259a53ce4103bd094894efeb39c1f805f0f323fb9ab45454",
+      "raw_question_sha256": "86e9291be8346b0f10ab6043fb19caabb245fb64369d9e30086a5ab43ac9079f",
+      "normalized_question_sha256": "86e9291be8346b0f10ab6043fb19caabb245fb64369d9e30086a5ab43ac9079f",
+      "source_question": "An internet provider gives a 5% discount if the customer pays before the 25th day of the month. If the monthly internet rate is $50, how much did the customer pay in all for 4 months if he paid every 25th of the month?",
+      "recipe_id": "gsm8k_sprint137_internet",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "before the 25thは25日当日を含まない。参考解答190ドルは『25日以前』という別条件の値で、原文どおりなら200ドル。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02343",
+      "source_line_1based": 2344,
+      "source_record_sha256": "2962265027607ad9dd14e933abb1218a59d90fb92c9a1b6c464ffb51884a4117",
+      "raw_question_sha256": "ad48a0234bd63ba04213af89a5cd458c1a4b1e6bb388024dade632d6c78210a7",
+      "normalized_question_sha256": "ad48a0234bd63ba04213af89a5cd458c1a4b1e6bb388024dade632d6c78210a7",
+      "source_question": "Jerome bought 5 new toy cars last month. This month he bought twice as many so that he has 40 toy cars now. How many toy cars did Jerome have originally?",
+      "recipe_id": "gsm8k_sprint137_cars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02344",
+      "source_line_1based": 2345,
+      "source_record_sha256": "83c5875c823a6f883a5f0aa46299dc40dcae6b0038202c8519d94aff831d6774",
+      "raw_question_sha256": "5639b980dc5ab23d5c1d82ed71233395564ecde9c62bde85551edef937d86faf",
+      "normalized_question_sha256": "5639b980dc5ab23d5c1d82ed71233395564ecde9c62bde85551edef937d86faf",
+      "source_question": "Olivia's insurance premium starts out at $50/month. It goes up 10% for every accident and $5/month for every ticket. If she gets in one accident and gets 3 tickets, what's her new insurance premium?",
+      "recipe_id": "gsm8k_sprint137_insurance",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02345",
+      "source_line_1based": 2346,
+      "source_record_sha256": "d80700adc19aff3a46a5cd578707ce5c19af1b5489bb0dbdcb19e7a5d19f553c",
+      "raw_question_sha256": "4c67e42078047c74e4575c77a76970a25813c34fc9f924995d7bf2f43fbd531d",
+      "normalized_question_sha256": "4c67e42078047c74e4575c77a76970a25813c34fc9f924995d7bf2f43fbd531d",
+      "source_question": "A curry house sells curries that have varying levels of spice. Recently, a lot of the customers have been ordering very mild curries and the chefs have been having to throw away some wasted ingredients. To reduce cost and food wastage, the curry house starts monitoring how many ingredients are actually being used and changes their spending accordingly. The curry house needs 3 peppers for very spicy curries, 2 peppers for spicy curries, and only 1 pepper for mild curries. After adjusting their purchasing, the curry house now buys the exact amount of peppers they need. Previously, the curry house was buying enough peppers for 30 very spicy curries, 30 spicy curries, and 10 mild curries. They now buy enough peppers for 15 spicy curries and 90 mild curries. They no longer sell very spicy curries. How many fewer peppers does the curry house now buy?",
+      "recipe_id": "gsm8k_sprint137_peppers",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02346",
+      "source_line_1based": 2347,
+      "source_record_sha256": "7e13f64b940a0d3d6848ae07842e892a611f467b020d1a87ad73e96142a4f60c",
+      "raw_question_sha256": "2ab6dc27a9539417c994404009b097a065fb58f99bbadc83ac35fd6ac994814f",
+      "normalized_question_sha256": "4487ec790a46cc179d48e1ac0eca1ca446725e3bbdba563e66e3e4047ffcaca2",
+      "source_question": "John decides to trade in his stereo system.  His old system cost 250 dollars and he got 80% of the value for it.  He then buys a system that costs $600 that he gets a 25% discount on.  How much money came out of his pocket?",
+      "recipe_id": "gsm8k_sprint137_stereo",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02347",
+      "source_line_1based": 2348,
+      "source_record_sha256": "abe6b5830cdb38f918b31e378348ab70d15c6ef0b18897a5f4557c7c2f5275a2",
+      "raw_question_sha256": "30450b63a78fa5f50b7b59d882ad7bdc7cfadbbf4fc78fd0e936bceaa0b34175",
+      "normalized_question_sha256": "30450b63a78fa5f50b7b59d882ad7bdc7cfadbbf4fc78fd0e936bceaa0b34175",
+      "source_question": "Rubert has 4 times the number of candies James has. James has 3 times the number of candies Adam has. If Adam has 6 candies, how many candies do the three of them have in total?",
+      "recipe_id": "gsm8k_sprint137_candies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02348",
+      "source_line_1based": 2349,
+      "source_record_sha256": "86402027c7b9d7af7ae1b87a9b54f04f4e4fe2c719dfff3070497c48490c62fb",
+      "raw_question_sha256": "2d6717c1743e3ec94be57f27a72dbf7346cd75b0cf63286362329e69a60e69a5",
+      "normalized_question_sha256": "2d6717c1743e3ec94be57f27a72dbf7346cd75b0cf63286362329e69a60e69a5",
+      "source_question": "What is fifteen more than a quarter of 48?",
+      "recipe_id": "gsm8k_sprint137_quarter",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:02349",
+      "source_line_1based": 2350,
+      "source_record_sha256": "1861ddfa16ddb499b871e34fcdaf2434292d000e06f777121a69f3244caec06d",
+      "raw_question_sha256": "9fcfd87a9ec2996939093724a68543d64f11a560437c55d17da53ba2b74be1ce",
+      "normalized_question_sha256": "9fcfd87a9ec2996939093724a68543d64f11a560437c55d17da53ba2b74be1ce",
+      "source_question": "Paulo wants to get a burger meal that costs $6. Aside from that, he also wants to get a soda which costs 1/3 as much as the burger meal. While on the counter, Jeremy asked Paulo to get him 2 of each item Paulo is going to get. How much will they be charged for their orders combined?",
+      "recipe_id": "gsm8k_sprint137_burger",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint27_taxi",
+  "title_ja": "タクシー料金とチップ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00689",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Uber22ドルから差額を逆算し、タクシー代へ20%のチップを加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A27.taxi_solution",
+  "graph": "work/gsm8k-sprint27-taxi-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A27.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "チップはタクシーの元料金15ドルへ適用する。"
+  ],
+  "steps": [
+    {
+      "id": "taxi_lyft",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.taxi_lyft",
+      "title_ja": "Lyft料金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Uberより3ドル安い。",
+      "conclusion_ja": "19ドル。",
+      "baseline_ja": "22-3=19。"
+    },
+    {
+      "id": "taxi_base",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.taxi_base",
+      "title_ja": "タクシー元料金",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "Lyftより4ドル安い。",
+      "conclusion_ja": "15ドル。",
+      "baseline_ja": "19-4=15。"
+    },
+    {
+      "id": "taxi_tip",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.taxi_tip",
+      "title_ja": "チップ",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "元料金15ドルの20%。",
+      "conclusion_ja": "3ドル。",
+      "baseline_ja": "15×20/100=3。"
+    },
+    {
+      "id": "taxi_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A27.taxi_total",
+      "title_ja": "支払総額",
+      "requires_steps":[],
+      "uses_nodes": [],
+      "condition_ja": "元料金とチップを足す。",
+      "conclusion_ja": "18ドル。",
+      "baseline_ja": "15+3=18。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 690,
+    "checked_model_hash": "bae0c782540d1aa92fadf4c4853475678247b5247c8e57098d3a584e0c34b521",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

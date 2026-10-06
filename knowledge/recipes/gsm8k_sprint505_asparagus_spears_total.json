@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_sprint505_asparagus_spears_total",
+  "title_ja": "必要なアスパラガス本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04260",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P1.lean",
+  "problem_ja": "Bridgetteは84人、Alexはその3分の2を招待する。予備10皿を含め、1皿8本のアスパラガスは合計何本か。",
+  "answer_ja": "Alexは56人、招待客140人。予備を含め150皿なので、150×8=1,200本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.asparagus_spears_total",
+  "graph": "work/gsm8k-sprint505-asparagus-spears-total-graph.json",
+  "model_notes_ja": [
+    "1人につき1皿、さらに予備10皿を作る。"
+  ],
+  "steps": [
+    {
+      "id": "alex_guests",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.alex_guests",
+      "title_ja": "Alexの招待客",
+      "claim_ja": "84×2÷3=56人。",
+      "method_ja": "84の3分の2を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "84×2÷3=56人。"
+    },
+    {
+      "id": "all_guests",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.all_guests",
+      "title_ja": "招待客合計",
+      "claim_ja": "84+56=140人。",
+      "method_ja": "2人の招待数を足す。",
+      "requires_steps": [
+        "alex_guests"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "84+56=140人。"
+    },
+    {
+      "id": "all_plates",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.all_plates",
+      "title_ja": "予備込みの皿数",
+      "claim_ja": "140+10=150皿。",
+      "method_ja": "予備10皿を足す。",
+      "requires_steps": [
+        "all_guests"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "140+10=150皿。"
+    },
+    {
+      "id": "all_asparagus_spears",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.all_asparagus_spears",
+      "title_ja": "アスパラガス合計",
+      "claim_ja": "150×8=1,200本。",
+      "method_ja": "皿数と1皿8本を掛ける。",
+      "requires_steps": [
+        "all_plates"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "150×8=1,200本。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.asparagus_spears_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Alexは56人、招待客140人。予備を含め150皿なので、150×8=1,200本。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "alex_guests",
+        "all_guests",
+        "all_plates",
+        "all_asparagus_spears"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Alexは56人、招待客140人。予備を含め150皿なので、150×8=1,200本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4261,
+    "checked_model_hash": "ce83dde56c15afd77b09bf36a123b3c1f49d6068459b2800116f42d29550d8bb",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

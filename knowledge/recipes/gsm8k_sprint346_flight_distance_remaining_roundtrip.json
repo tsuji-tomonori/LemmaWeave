@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint346_flight_distance_remaining_roundtrip",
+  "title_ja": "ロシア到着後スペインへ戻るまでの飛行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03851",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A05P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Peter knows that the distance an airplane travels between Spain and Russia is 7019 km, while the distance between Spain and Germany is 1615 km. Peter took a flight from Spain, which made a stopover in Germany, while being there, he receives a call from his brother asking him how many kilometers he has to fly to get to Russia and then return to Spain.  What will Peter answer?",
+  "answer_ja": "ドイツからロシアまでは、スペイン―ロシア間7019 kmからスペイン―ドイツ間1615 kmを引いて5404 kmである。ロシアからスペインへ戻る7019 kmを加えると、5404+7019=12423 km。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A05P1.flight_distance_remaining_roundtrip",
+  "graph": "work/gsm8k-sprint346-flight-distance-remaining-roundtrip-graph.json",
+  "model_notes_ja": [
+    "ドイツがスペイン―ロシア間の経路上にあるという本文の意図を距離の差としてモデル化する。"
+  ],
+  "steps": [
+    {
+      "id": "flight_distance_remaining_roundtrip",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A05P1.flight_distance_remaining_roundtrip",
+      "title_ja": "ロシア到着後スペインへ戻るまでの飛行距離",
+      "claim_ja": "ドイツからロシアまでは、スペイン―ロシア間7019 kmからスペイン―ドイツ間1615 kmを引いて5404 kmである。ロシアからスペインへ戻る7019 kmを加えると、5404+7019=12423 km。",
+      "method_ja": "経路上の差でドイツ―ロシア間を求め、復路を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ドイツがスペインからロシアへの同一直線経路上にあり、距離が加法的である。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "12423 km。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3852,
+    "checked_model_hash": "60ed85987b3be1f1b82d6959683b818127ffef507e57a6e5100e31a8326d98ff",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

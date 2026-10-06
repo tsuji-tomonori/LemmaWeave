@@ -1,0 +1,126 @@
+{
+  "id": "gsm8k_sprint136_touchdowns",
+  "title_ja": "記録更新に必要な平均",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02322",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "16試合の記録89本を、最初の14試合で平均6本のRichardが残り2試合で上回るために必要な1試合平均を求める。",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "source_line_1based": 2323,
+    "source_record_sha256": "5fc72c347b81835e91f560bb1458bbdfe83ef9817dcc0bceb937a89ccf847a41",
+    "raw_question_sha256": "5dc02e59d784815bf39821aff2a3678f0d60b01d703316ba423c4d29d6dda368",
+    "normalized_question_sha256": "5dc02e59d784815bf39821aff2a3678f0d60b01d703316ba423c4d29d6dda368"
+  },
+  "variables": [
+    {
+      "name": "model",
+      "type": "記録更新に必要な平均",
+      "domain_ja": "原題の数量・単位・関係を保持する自然数モデル"
+    }
+  ],
+  "assumptions_ja": [
+    "原題に明記された数量関係をモデルの各フィールドとして保持する。"
+  ],
+  "required_conclusions_ja": [
+    "1試合3本。"
+  ],
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A10.touchdowns_solution",
+  "graph": "work/gsm8k-sprint136-touchdowns-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0925A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "modeling_notes_ja": [
+    "タッチダウン数を自然数とし、89を上回る最小の総数90を目標にする。"
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "current",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.touchdowns_current",
+      "title_ja": "現在の本数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "14試合で平均6本なので積を取る。",
+      "method_ja": "平均×試合数。",
+      "condition_ja": "各試合平均6本。",
+      "premise_ja": "14×6。",
+      "conclusion_ja": "84本。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "target",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.touchdowns_target",
+      "title_ja": "更新に必要な総数",
+      "requires_steps": [
+        "current"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "89本を厳密に上回る最小の自然数を取る。",
+      "method_ja": "整数の後続。",
+      "condition_ja": "記録は89本。",
+      "premise_ja": "89+1。",
+      "conclusion_ja": "90本。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.touchdowns_needed",
+      "title_ja": "残りで必要な本数",
+      "requires_steps": [
+        "target"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "目標90本から現在84本を引く。",
+      "method_ja": "差。",
+      "condition_ja": "前二行。",
+      "premise_ja": "90-84。",
+      "conclusion_ja": "6本。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "games",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.touchdowns_games",
+      "title_ja": "残り試合数",
+      "requires_steps": [
+        "needed"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "全16試合から14試合を引く。",
+      "method_ja": "差。",
+      "condition_ja": "16試合中14試合終了。",
+      "premise_ja": "16-14。",
+      "conclusion_ja": "2試合。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.touchdowns_solution",
+      "title_ja": "必要平均",
+      "requires_steps": [
+        "games"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "必要6本を残り2試合で均等に平均する。",
+      "method_ja": "平均=合計÷個数。",
+      "condition_ja": "6本、2試合。",
+      "premise_ja": "6÷2。",
+      "conclusion_ja": "1試合3本。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-25T10:42:00+09:00",
+    "source_problem_id": "external-gsm8k-main-3101c7d50724:train:02322",
+    "checks_ja": [
+      "固定原文を再読し、数量・単位・求める結論を照合した。",
+      "各説明行と名前付きLean定理の型を対応させた。",
+      "結論を仮定へ移さず、途中量から順に導出した。",
+      "自己照合のみであり、固定Leanの成功証拠と独立レビューは未取得である。"
+    ]
+  }
+}

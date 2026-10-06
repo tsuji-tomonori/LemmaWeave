@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint255_school",
+  "title_ja": "追加で欠席できる日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03317",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "180日の5%以下という上限から、既に6日欠席した後の余裕を求める。",
+  "answer_ja": "3日",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.school_more",
+  "graph": "work/gsm8k-sprint255-school-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "school_allowed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.school_allowed",
+      "title_ja": "欠席上限は9日。",
+      "claim_ja": "欠席上限は9日。",
+      "method_ja": "180×5÷100。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5%以下なら試験を免除される。",
+      "conclusion_ja": "9日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "school_more",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.school_more",
+      "title_ja": "さらに欠席できるのは3日。",
+      "claim_ja": "さらに欠席できるのは3日。",
+      "method_ja": "9-6。",
+      "requires_steps": [
+        "school_allowed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "既に6日欠席している。",
+      "conclusion_ja": "3日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3318,
+    "checked_model_hash": "7c3a1f7c8aca217cb6d65b876bb8a8b952692178eeaa68a3d9b1334e7d3c72bd",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

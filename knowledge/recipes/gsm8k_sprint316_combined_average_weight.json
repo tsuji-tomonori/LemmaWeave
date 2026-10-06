@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint316_combined_average_weight",
+  "title_ja": "10人の平均体重",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03705",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "One of the activities in Grade 6 PE class is to get the average weight of the students from each group. In one of the groups, the average weight of five girls is 45 kg while the average weight of five boys is 55 kg. What is the average weight of the ten students from that group?",
+  "answer_ja": "女子5人の合計は5×45=225kg、男子5人の合計は5×55=275kg。全体は500kgなので、10人の平均は500÷10=50kg。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A13P1.combined_average_weight",
+  "graph": "work/gsm8k-sprint316-combined-average-weight-graph.json",
+  "model_notes_ja": [
+    "各群は5人で、示された平均は算術平均。"
+  ],
+  "steps": [
+    {
+      "id": "combined_average_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A13P1.combined_average_weight",
+      "title_ja": "10人の平均体重",
+      "claim_ja": "女子5人の合計は5×45=225kg、男子5人の合計は5×55=275kg。全体は500kgなので、10人の平均は500÷10=50kg。",
+      "method_ja": "群ごとの合計を平均×人数で戻し、全合計を10で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "人数は正で、体重の単位はkg。",
+      "baseline_ja": "四則演算、比・平均・百分率のうち問題で明示したもの。",
+      "conclusion_ja": "平均体重は50kg。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3706,
+    "checked_model_hash": "4125c939b2add89e287a4ae004418c8ab1d660fe42938beffc645d104d5b534c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

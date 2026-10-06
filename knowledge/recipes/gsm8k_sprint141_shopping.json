@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint141_shopping",
+  "title_ja": "買物の総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02400",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1ドルのりんご5個と2ドルのオレンジ2個を買う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.shopping_solution",
+  "graph": "work/gsm8k-sprint141-shopping-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shopping_apples",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.shopping_apples",
+      "title_ja": "りんご代は5ドル",
+      "claim_ja": "りんご代は5ドル",
+      "method_ja": "5に1を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "りんご代は5ドル",
+      "baseline_ja": "りんご代は5ドル"
+    },
+    {
+      "id": "shopping_oranges",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.shopping_oranges",
+      "title_ja": "オレンジ代は4ドル",
+      "claim_ja": "オレンジ代は4ドル",
+      "method_ja": "2に2を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "オレンジ代は4ドル",
+      "baseline_ja": "オレンジ代は4ドル"
+    },
+    {
+      "id": "shopping_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.shopping_solution",
+      "title_ja": "合計9ドル",
+      "claim_ja": "合計9ドル",
+      "method_ja": "5と4を足す",
+      "requires_steps": [
+        "shopping_apples",
+        "shopping_oranges"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計9ドル",
+      "baseline_ja": "合計9ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2401,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

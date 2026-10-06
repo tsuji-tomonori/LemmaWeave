@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint151_nancy",
+  "title_ja": "70ドルを得る労働時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02550",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4時間で28ドルを得る一定時給で70ドルを得る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A06.nancy_solution",
+  "graph": "work/gsm8k-sprint151-nancy-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "nancy_hourly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.nancy_hourly",
+      "title_ja": "時給は7ドル",
+      "claim_ja": "時給は7ドル",
+      "method_ja": "28を4時間で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "時給は7ドル",
+      "baseline_ja": "時給は7ドル"
+    },
+    {
+      "id": "nancy_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A06.nancy_solution",
+      "title_ja": "10時間働く",
+      "claim_ja": "10時間働く",
+      "method_ja": "70を時給7ドルで割る",
+      "requires_steps": [
+        "nancy_hourly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "10時間働く",
+      "baseline_ja": "10時間働く"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2551,
+    "checked_model_hash": "d2ba0eb5fd55009570291284735b025b7fd39756a17f14df9e6018a2e9eeed92",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

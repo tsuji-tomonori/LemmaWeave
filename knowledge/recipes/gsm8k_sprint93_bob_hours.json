@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint93_bob_hours",
+  "title_ja": "Bobの月間勤務時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01686",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日10時間、週5日働く。月の週数は原題で定義されていないため、4週仮定と反例を分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.bob_four_week_solution",
+  "graph": "work/gsm8k-sprint93-bob-hours-graph.json",
+  "model_notes_ja": [
+    "month の週数が指定されないため答えは一意でない。4週と明示すれば200時間、5週とすれば250時間になることを形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "bob_weekly_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.bob_weekly_hours",
+      "title_ja": "週間時間",
+      "claim_ja": "週50時間。",
+      "method_ja": "10×5。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5日とも10時間。",
+      "conclusion_ja": "10×5=50。",
+      "baseline_ja": "10×5=50。"
+    },
+    {
+      "id": "bob_four_week_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.bob_four_week_solution",
+      "title_ja": "4週仮定",
+      "claim_ja": "4週間なら200時間。",
+      "method_ja": "50×4。",
+      "requires_steps": [
+        "bob_weekly_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1か月を4週と追加仮定する。",
+      "conclusion_ja": "10×5×4=200。",
+      "baseline_ja": "10×5×4=200。"
+    },
+    {
+      "id": "bob_five_week_example",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.bob_five_week_example",
+      "title_ja": "一意性の反例",
+      "claim_ja": "5週間なら250時間。",
+      "method_ja": "50×5。",
+      "requires_steps": [
+        "bob_weekly_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "月の週数を指定しない場合の別モデル。",
+      "conclusion_ja": "10×5×5=250。",
+      "baseline_ja": "10×5×5=250。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1687,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

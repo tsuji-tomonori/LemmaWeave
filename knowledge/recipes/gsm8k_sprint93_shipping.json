@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint93_shipping",
+  "title_ja": "送料無料までの不足額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01678",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "50ドル以上で送料無料。10ドルの商品2本と6ドルのローション3本を注文する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.shipping_solution",
+  "graph": "work/gsm8k-sprint93-shipping-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shipping_bottles",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.shipping_bottles",
+      "title_ja": "最初の2本",
+      "claim_ja": "2000セント。",
+      "method_ja": "1000×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各10ドル。",
+      "conclusion_ja": "1000×2=2000。",
+      "baseline_ja": "1000×2=2000。"
+    },
+    {
+      "id": "shipping_lotion",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.shipping_lotion",
+      "title_ja": "ローション3本",
+      "claim_ja": "1800セント。",
+      "method_ja": "600×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各6ドル。",
+      "conclusion_ja": "600×3=1800。",
+      "baseline_ja": "600×3=1800。"
+    },
+    {
+      "id": "shipping_current",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.shipping_current",
+      "title_ja": "現在額",
+      "claim_ja": "3800セント。",
+      "method_ja": "2000+1800。",
+      "requires_steps": [
+        "shipping_bottles",
+        "shipping_lotion"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "税などはない。",
+      "conclusion_ja": "2000+1800=3800。",
+      "baseline_ja": "2000+1800=3800。"
+    },
+    {
+      "id": "shipping_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.shipping_solution",
+      "title_ja": "不足額",
+      "claim_ja": "1200セント、つまり12ドル。",
+      "method_ja": "5000から3800を引く。",
+      "requires_steps": [
+        "shipping_current"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "50ドルちょうどで条件を満たす。",
+      "conclusion_ja": "1200+3800=5000。",
+      "baseline_ja": "1200+3800=5000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1679,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

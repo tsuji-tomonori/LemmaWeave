@@ -1,0 +1,83 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1001",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "dbd8f6081ef438fa357cae28ec7e239a7f2745c3ea0656800b18029595710175",
+  "model_files": ["LemmaWeave/Problems/GSM8K/Sprint1003A10P1Models.lean"],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03896",
+      "source_line_1based": 3897,
+      "source_record_sha256": "8d6532561d070eeb872f9d2adf0d18e49c3f03c15125e09c061661b996ad66e3",
+      "raw_question_sha256": "8f8c4239afc4615e3b0fd86c17ca78734e3711aa5726912cbf324d8decc57341",
+      "normalized_question_sha256": "8f8c4239afc4615e3b0fd86c17ca78734e3711aa5726912cbf324d8decc57341",
+      "source_question": "Edith is a receptionist at a local office and is organizing files into cabinets. She had 60 files and finished organizing half of them this morning. She has another 15 files to organize in the afternoon and the rest of the files are missing. How many files are missing?",
+      "recipe_id": "gsm8k_sprint355_files_missing",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["60件を朝に整理済み・午後に整理予定・紛失の3区分へ分ける。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03897",
+      "source_line_1based": 3898,
+      "source_record_sha256": "5efa7cf59ada5a4137b094d9e3b1dbdc4cd782a08adc1baae27bfc37f9e0f371",
+      "raw_question_sha256": "f0ff5aabcbdff657e4a291a81e902853dd01bc0dd6da718d08e394bbd301d0c1",
+      "normalized_question_sha256": "f0ff5aabcbdff657e4a291a81e902853dd01bc0dd6da718d08e394bbd301d0c1",
+      "source_question": "Six more than twice as many ducks go to North Pond as go to Lake Michigan. If Lake Michigan has 100 ducks, how many ducks can you safely estimate there will be at North Pond?",
+      "recipe_id": "gsm8k_sprint355_north_pond_ducks",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["twiceを100羽へ適用してから6羽を加える。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03898",
+      "source_line_1based": 3899,
+      "source_record_sha256": "a17c9d246af1837b03afcd449aaa7c431c8fa84bcd6c9b5bee21473e21a97dc5",
+      "raw_question_sha256": "cf0ceb943d462437222e04d383b01418ff589dd326bff2a350e148c8b59318e3",
+      "normalized_question_sha256": "cf0ceb943d462437222e04d383b01418ff589dd326bff2a350e148c8b59318e3",
+      "source_question": "Susie opens a pizza store. She charges $3 per slice and $15 for a whole pizza. If she was able to sell 24 slices of pizza and 3 whole pizzas, how much money did she earn?",
+      "recipe_id": "gsm8k_sprint355_pizza_revenue",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["スライス売上とホール売上を別々に計算して合計する。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03899",
+      "source_line_1based": 3900,
+      "source_record_sha256": "8271ae616945e82624d15d282b6c4ba1aec2a43e5102f583e9b521c8218efafe",
+      "raw_question_sha256": "62ccec5443888fee9b16abc18fbb548c00310fac91656b5d41d9d7aad49a2a2d",
+      "normalized_question_sha256": "62ccec5443888fee9b16abc18fbb548c00310fac91656b5d41d9d7aad49a2a2d",
+      "source_question": "There are 56 pieces of fruit in a box. One-fourth of the box contains oranges. There are half as many peaches as oranges and five times as many apples as peaches. How many apples are in the box?",
+      "recipe_id": "gsm8k_sprint355_apple_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["オレンジ、桃、リンゴの順で依存する個数を求め、合計56個とも照合する。"],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03900",
+      "source_line_1based": 3901,
+      "source_record_sha256": "e7b68761035ac259552900af012c990c8b10504552aa94e020ab3685fe5408ef",
+      "raw_question_sha256": "eb0c6dc7e6a52ee1ffe474910956fcae9701e6ef6dbb69f8767ace5b54bca492",
+      "normalized_question_sha256": "eb0c6dc7e6a52ee1ffe474910956fcae9701e6ef6dbb69f8767ace5b54bca492",
+      "source_question": "If the wages of 15 workers for 6 days is $9450. What would be the wages for 19 workers for 5 days?",
+      "recipe_id": "gsm8k_sprint355_worker_wages",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": ["一人一日当たり賃金が一定という比例条件を明示する。"],
+      "blockers": []
+    }
+  ]
+}

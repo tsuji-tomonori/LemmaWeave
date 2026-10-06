@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint251_homework",
+  "title_ja": "短答問題数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03299",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4時間を分へ直し、作文と段落の時間を引いて3分で割る。",
+  "answer_ja": "15問",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.homework_questions",
+  "graph": "work/gsm8k-sprint251-homework-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "homework_total_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.homework_total_minutes",
+      "title_ja": "総時間は240分。",
+      "claim_ja": "総時間は240分。",
+      "method_ja": "4×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1時間60分。",
+      "conclusion_ja": "240分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "homework_used_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.homework_used_minutes",
+      "title_ja": "作文と段落で195分。",
+      "claim_ja": "作文と段落で195分。",
+      "method_ja": "2×60+5×15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "作文2本、段落5本。",
+      "conclusion_ja": "195分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "homework_short_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.homework_short_minutes",
+      "title_ja": "短答に45分残る。",
+      "claim_ja": "短答に45分残る。",
+      "method_ja": "240-195。",
+      "requires_steps": [
+        "homework_total_minutes",
+        "homework_used_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "宿題時間をちょうど4時間にする。",
+      "conclusion_ja": "45分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "homework_questions",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A07P1.homework_questions",
+      "title_ja": "短答は15問。",
+      "claim_ja": "短答は15問。",
+      "method_ja": "45÷3。",
+      "requires_steps": [
+        "homework_short_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1問3分。",
+      "conclusion_ja": "15問。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3300,
+    "checked_model_hash": "e5fd1fde14c7301000be28759ba40fc9390a450dbf7afa55542e0dcd86d59a81",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

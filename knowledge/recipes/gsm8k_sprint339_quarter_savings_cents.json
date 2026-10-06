@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint339_quarter_savings_cents",
+  "title_ja": "7歳までの貯金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03817",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A00P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Every year, Mabel gets as many quarters as she is years old. She always puts these and nothing else in a piggy bank. When she turns 7, how much money is in the bank?",
+  "answer_ja": "1歳から7歳までの各誕生日に年齢と同数の25セント硬貨を貯めるので、硬貨は1+2+3+4+5+6+7=28枚。28×25=700セント、つまり7ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A00P3.quarter_savings_cents",
+  "graph": "work/gsm8k-sprint339-quarter-savings-cents-graph.json",
+  "model_notes_ja": [
+    "『7歳の誕生日まで毎年』を1歳から7歳の誕生日をすべて含むと解釈する。参照説明の3歳時$.35は誤記で、3枚は$.75だが、総計28枚・7ドルとは整合する。"
+  ],
+  "steps": [
+    {
+      "id": "quarter_savings_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A00P3.quarter_savings_cents",
+      "title_ja": "7歳までの貯金額",
+      "claim_ja": "1歳から7歳までの各誕生日に年齢と同数の25セント硬貨を貯めるので、硬貨は1+2+3+4+5+6+7=28枚。28×25=700セント、つまり7ドル。",
+      "method_ja": "各年齢の硬貨枚数を合計し、1枚25セントを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "誕生日は1歳から7歳まで各1回。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "7ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3818,
+    "checked_model_hash": "0fc2e9ac7c21a73e5bb7aaa1112a028ad3f2c0aee48d45b0113ff87ea6f724b5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

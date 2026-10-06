@@ -1,0 +1,99 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0397",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "0fc2e9ac7c21a73e5bb7aaa1112a028ad3f2c0aee48d45b0113ff87ea6f724b5",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A00P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03816",
+      "source_line_1based": 3817,
+      "source_record_sha256": "df3bbce086acd89a4fe8505b6d8bf5e1cb0101f6a2a1f7af7b6906d8f5e354a6",
+      "raw_question_sha256": "a0014fb05b5c77ebcae8603ba6ba30ab878f865f5115b87e07755cbd90d2951e",
+      "normalized_question_sha256": "a0014fb05b5c77ebcae8603ba6ba30ab878f865f5115b87e07755cbd90d2951e",
+      "source_question": "Goldie makes $5 an hour for pet-sitting. Last week, she worked for 20 hours while this week, she worked for 30 hours. How much did Goldie earn in two weeks for pet-sitting?",
+      "recipe_id": "gsm8k_sprint339_pet_sitting_earnings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "5日間毎日、犬1匹と猫1匹の両方を世話する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03817",
+      "source_line_1based": 3818,
+      "source_record_sha256": "b6070ec75c5cd103a9d1b12c5891f7f99ad4a04db0d1c9758ee3c01ebf275731",
+      "raw_question_sha256": "f41691c9e433e7c3da14ae849340a2fdea866f96d5a6fab1797eb2bc1007e20a",
+      "normalized_question_sha256": "f41691c9e433e7c3da14ae849340a2fdea866f96d5a6fab1797eb2bc1007e20a",
+      "source_question": "Every year, Mabel gets as many quarters as she is years old. She always puts these and nothing else in a piggy bank. When she turns 7, how much money is in the bank?",
+      "recipe_id": "gsm8k_sprint339_quarter_savings_cents",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "『7歳の誕生日まで毎年』を1歳から7歳の誕生日をすべて含むと解釈する。参照説明の3歳時$.35は誤記で、3枚は$.75だが、総計28枚・7ドルとは整合する。"
+      ],
+      "blockers": [
+        "参照説明の3歳時の金額表記$.35は$.75の誤記。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03818",
+      "source_line_1based": 3819,
+      "source_record_sha256": "b7319128e6071ff13cf91315b59cbc50a624a0b7eae5ccf17515c53c7ccc1161",
+      "raw_question_sha256": "b7512c0bce24060f88bbce361d903405051cae3ee7d5eb6014e7470be81f89e5",
+      "normalized_question_sha256": "b7512c0bce24060f88bbce361d903405051cae3ee7d5eb6014e7470be81f89e5",
+      "source_question": "There were 672 balloons that were either green, blue, yellow, or red. They were divided into equal groups and then Anya took half of the yellow ones home. How many balloons did Anya take home?",
+      "recipe_id": "gsm8k_sprint339_yellow_balloons_taken",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "equally dividedを4色すべて同数と読み、女性は黄色だけの半分を持ち去る。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03819",
+      "source_line_1based": 3820,
+      "source_record_sha256": "3e8063580843e3c29b381dd65a24143b8e2db0f6e2eeb4aee74049bc9450b883",
+      "raw_question_sha256": "3d414a1a5c69d9a32b1ff53a5aaa73b39dc42b9b2b021d5ddc3a9345e7d7565c",
+      "normalized_question_sha256": "3d414a1a5c69d9a32b1ff53a5aaa73b39dc42b9b2b021d5ddc3a9345e7d7565c",
+      "source_question": "Becky has 50 necklaces in her jewelry collection. 3 of the necklaces have broken beads so she collects the unbroken beads for crafting and throws the other parts of the 3 the necklaces out. Becky buys 5 new necklaces that week. She decides to give 15 of her old necklaces to her friends as gifts. How many necklaces does she own now?",
+      "recipe_id": "gsm8k_sprint339_necklaces_owned",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文のgives away 15を使用する。参照説明中の『gives 17』は誤記だが、式は15を引いており答え37本と整合する。"
+      ],
+      "blockers": [
+        "参照説明の譲渡数17は原文15の誤記。"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03820",
+      "source_line_1based": 3821,
+      "source_record_sha256": "eb86b066f702afca79cf6ab027425fd546ce30243442ff66cd040bd63dc4b129",
+      "raw_question_sha256": "263ec5236fbc2a8c06207da2ef03861162dc739a254fca16f4a49b3e9dcf8306",
+      "normalized_question_sha256": "263ec5236fbc2a8c06207da2ef03861162dc739a254fca16f4a49b3e9dcf8306",
+      "source_question": "Jack needs to put his shoes on, then help both his toddlers tie their shoes. If it takes Jack 4 minutes to put his shoes on, and three minutes longer to help each toddler with their shoes, how long does it take them to get ready?",
+      "recipe_id": "gsm8k_sprint339_shoe_ready_minutes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Jackは自分の靴を履いた後、2人の幼児を同時ではなく順に手伝う。"
+      ],
+      "blockers": []
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint159_artifacts",
+  "title_ja": "2個の遺物発見までの年数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02680",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初は調査6か月と探検2年、2個目はその3倍の期間。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A18.artifacts_solution",
+  "graph": "work/gsm8k-sprint159-artifacts-graph.json",
+  "model_notes_ja": [
+    "『2個目は3倍』を最初の調査と発見に要した総期間30か月の3倍として形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "artifacts_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.artifacts_first",
+      "title_ja": "最初は30か月",
+      "claim_ja": "最初は30か月",
+      "method_ja": "6か月と24か月を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『2個目は3倍』を最初の調査と発見に要した総期間30か月の3倍として形式化する。",
+      "conclusion_ja": "最初は30か月",
+      "baseline_ja": "最初は30か月"
+    },
+    {
+      "id": "artifacts_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.artifacts_second",
+      "title_ja": "2個目は90か月",
+      "claim_ja": "2個目は90か月",
+      "method_ja": "30か月を3倍する",
+      "requires_steps": [
+        "artifacts_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『2個目は3倍』を最初の調査と発見に要した総期間30か月の3倍として形式化する。",
+      "conclusion_ja": "2個目は90か月",
+      "baseline_ja": "2個目は90か月"
+    },
+    {
+      "id": "artifacts_months",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.artifacts_months",
+      "title_ja": "合計120か月",
+      "claim_ja": "合計120か月",
+      "method_ja": "30か月と90か月を足す",
+      "requires_steps": [
+        "artifacts_first",
+        "artifacts_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『2個目は3倍』を最初の調査と発見に要した総期間30か月の3倍として形式化する。",
+      "conclusion_ja": "合計120か月",
+      "baseline_ja": "合計120か月"
+    },
+    {
+      "id": "artifacts_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A18.artifacts_solution",
+      "title_ja": "合計10年",
+      "claim_ja": "合計10年",
+      "method_ja": "120か月を12か月単位で換算する",
+      "requires_steps": [
+        "artifacts_months"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『2個目は3倍』を最初の調査と発見に要した総期間30か月の3倍として形式化する。",
+      "conclusion_ja": "合計10年",
+      "baseline_ja": "合計10年"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2681,
+    "checked_model_hash": "957c1c635eac2a0c173dc1944fceaa745bdaf8bf685ff842e67d47a9de8760f7",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

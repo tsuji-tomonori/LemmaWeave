@@ -1,0 +1,131 @@
+{
+  "id": "gsm8k_sprint608_fabian_grocery_cost",
+  "title_ja": "Fabianの買物代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04363",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P1.lean",
+  "problem_ja": "Fabian is shopping at a nearby supermarket. He wants to buy 5 kilograms of apples, 3 packs of sugar, and 500 grams of walnuts. One kilogram of apples costs $2, and one kilogram of walnuts costs $6. One pack of sugar is $1 cheaper than one kilogram of apples. How much Fabian needs to pay for the items he wants to buy?",
+  "answer_ja": "りんごは5×2=10ドル。くるみ500gは0.5kgなので3ドル。砂糖は1袋1ドルで3袋3ドル。合計16ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.fabian_grocery_cost",
+  "graph": "work/gsm8k-sprint608-fabian-grocery-cost-graph.json",
+  "model_notes_ja": [
+    "500g=0.5kgを用い、砂糖1袋はりんご1kgの価格2ドルより1ドル安い。"
+  ],
+  "steps": [
+    {
+      "id": "apple_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.apple_cost",
+      "title_ja": "りんご代",
+      "claim_ja": "5×2=10ドル。",
+      "method_ja": "重量に単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "5×2=10ドル。"
+    },
+    {
+      "id": "walnut_half_kilogram",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.walnut_half_kilogram",
+      "title_ja": "くるみの重量換算",
+      "claim_ja": "500gの2倍は1000g。",
+      "method_ja": "500gが0.5kgであることを確認する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "500gの2倍は1000g。"
+    },
+    {
+      "id": "walnut_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.walnut_cost",
+      "title_ja": "くるみ代",
+      "claim_ja": "6÷2=3ドル。",
+      "method_ja": "1kg価格の半分を求める。",
+      "requires_steps": [
+        "walnut_half_kilogram"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "6÷2=3ドル。"
+    },
+    {
+      "id": "sugar_pack_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.sugar_pack_price",
+      "title_ja": "砂糖1袋の価格",
+      "claim_ja": "2−1=1ドル。",
+      "method_ja": "りんご1kg価格から1ドル引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "2−1=1ドル。"
+    },
+    {
+      "id": "sugar_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.sugar_cost",
+      "title_ja": "砂糖代",
+      "claim_ja": "3×1=3ドル。",
+      "method_ja": "袋数に単価を掛ける。",
+      "requires_steps": [
+        "sugar_pack_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "3×1=3ドル。"
+    },
+    {
+      "id": "grocery_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.grocery_total",
+      "title_ja": "合計",
+      "claim_ja": "10+3+3=16ドル。",
+      "method_ja": "3品の代金を加える。",
+      "requires_steps": [
+        "apple_cost",
+        "walnut_cost",
+        "sugar_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "10+3+3=16ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.fabian_grocery_cost",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "りんごは5×2=10ドル。くるみ500gは0.5kgなので3ドル。砂糖は1袋1ドルで3袋3ドル。合計16ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "apple_cost",
+        "walnut_half_kilogram",
+        "walnut_cost",
+        "sugar_pack_price",
+        "sugar_cost",
+        "grocery_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "りんごは5×2=10ドル。くるみ500gは0.5kgなので3ドル。砂糖は1袋1ドルで3袋3ドル。合計16ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4364,
+    "checked_model_hash": "796a414a376319989f559ce3267fe4c26234a534bce3cf7c3a2a8847d6acfbc4",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "date": "2026-09-23",
+  "run_id": "gsm8k-retry-20260923-2100-jst",
+  "scheduled_slot": "2026-09-23T21:00:00+09:00",
+  "actual_start_slot": "2026-09-23T20:55:54+09:00",
+  "slot_resolution": "20:00枠まで完了済みのため、予定より4分06秒早く起動した今回を21:00再試行枠として直列実行した。10:00枠は未実行のまま保持する。",
+  "unexecuted_slots": [
+    "2026-09-23T10:00:00+09:00"
+  ],
+  "role": "retry_oldest_overdue_evidence",
+  "base_sha": "5d316af616fc01df32ad4beee726819ca71d58df",
+  "started_at": "2026-09-23T20:55:54+09:00",
+  "finished_at": "2026-09-23T21:03:12+09:00",
+  "selected_problem_ids": [
+    "train:00514",
+    "train:00515",
+    "train:00516",
+    "train:00517",
+    "train:00518",
+    "train:00519",
+    "train:00520",
+    "train:00521",
+    "train:00522",
+    "train:00523"
+  ],
+  "outputs_saved_problem_ids": [
+    "train:00514",
+    "train:00515",
+    "train:00516",
+    "train:00517",
+    "train:00518",
+    "train:00519",
+    "train:00520",
+    "train:00521",
+    "train:00522",
+    "train:00523"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:00514",
+    "train:00515",
+    "train:00516",
+    "train:00517",
+    "train:00518",
+    "train:00519",
+    "train:00520",
+    "train:00521",
+    "train:00522",
+    "train:00523"
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:00514-train:00523",
+      "retry_on": "2026-09-23T22:00:00+09:00 exact-head CI evidence recovery",
+      "reason_ja": "36説明行・10最終根・36行定理、現行モデルSHA、sorry/admit/独自axiom不使用を再照合したが、固定Lean 4.33.1の現行入力成功成果物がない。",
+      "next_action_ja": "PR #5 exact-headのworkflow起動経路を修復または正しいHEADで再実行し、成果物をimport_evidence.pyで取り込む。"
+    }
+  ],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "lines_1based": [
+      515,
+      524
+    ],
+    "method_batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0054.json",
+    "operational_label": "batch 52"
+  },
+  "semantic_review": {
+    "status": "self_review_only",
+    "reviewer": "author",
+    "notes_ja": [
+      "train:00515は氷上事故の基準確率不足を保持し、基準0%と10%の反例を証明対象に含める。",
+      "train:00516はtimes moreの180件/320件の二読解を両方保持する。",
+      "train:00519は年間を52週とする追加条件を明記する。",
+      "train:00520は岩石種の重複を除くsingleton条件を明示する。"
+    ]
+  },
+  "checks": {
+    "source_entries": "10/10",
+    "recipes": "10/10",
+    "recipe_to_lean_declarations": "46/46",
+    "explanation_lines": "36/36",
+    "author_model_hashes": "10/10",
+    "forbidden_tokens": 0,
+    "print_axioms_commands": 10,
+    "dependency_audit_commands": 10,
+    "fixed_lean_kernel": "not_run",
+    "retry_report": "operations/evidence-retry/GSM8K-INDIVIDUAL-0054-20260923.json"
+  },
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1430,
+    "pending": 6844,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {
+      "solution_ready": 518,
+      "remaining": 8274,
+      "awaiting_verification": 1430
+    },
+    "after": {
+      "solution_ready": 518,
+      "remaining": 8274,
+      "awaiting_verification": 1430
+    },
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01944",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": [
+      "train:00514",
+      "train:00523"
+    ],
+    "base_sha": "5d316af616fc01df32ad4beee726819ca71d58df",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "zero_runs_and_zero_statuses_at_5d316af616fc01df32ad4beee726819ca71d58df",
+    "local_fixed_lean_status": "unavailable_lake_and_lean_not_installed",
+    "accepted_as_success_evidence": false,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "mergeable": true
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "5d316af616fc01df32ad4beee726819ca71d58df"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint335_mary_age_now",
+  "title_ja": "Maryの現在年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03799",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A20P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "In four years, Suzy will be twice Mary's age then. If Suzy is 20 now, how old is Mary?",
+  "answer_ja": "4年後のSuzyは24歳。そのときMaryは半分の12歳なので、現在は12−4=8歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A20P2.mary_age_now",
+  "graph": "work/gsm8k-sprint335-mary-age-now-graph.json",
+  "model_notes_ja": [
+    "twice Mary’s age thenは4年後同士の年齢比較。"
+  ],
+  "steps": [
+    {
+      "id": "mary_age_now",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A20P2.mary_age_now",
+      "title_ja": "Maryの現在年齢",
+      "claim_ja": "4年後のSuzyは24歳。そのときMaryは半分の12歳なので、現在は12−4=8歳。",
+      "method_ja": "Suzyの4年後、Maryの4年後、Maryの現在の順に逆算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12≥4。",
+      "baseline_ja": "整数・分数・割合・速さ・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "8歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3800,
+    "checked_model_hash": "4563c571abd65d684802f308f6e097dc40143cfbfe8ce85fd57c51f3dbd1634e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

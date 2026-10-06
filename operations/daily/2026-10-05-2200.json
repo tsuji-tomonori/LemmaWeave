@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T220000+0900-ci-evidence-a03-proof-repair",
+  "scheduled_slot": "2026-10-05T22:00:00+09:00",
+  "started_at": "2026-10-05T22:16:58+09:00",
+  "finished_at": "2026-10-05T22:20:24+09:00",
+  "schedule_deviation_minutes": 16,
+  "schedule_deviation_reason_ja": "予定されたCI証拠回収・統合枠として開始し、push起動Actionsの列挙制約を記録したうえで、直近の検証済み失敗artifactから次の2件の個別証明失敗を順次修復した。",
+  "role": "ci_evidence_and_integration",
+  "scheduled_role": "ci_evidence_and_integration",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "e26f67a68bb5f2258e72daababec644ae99b2cfb",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01983",
+    "external-gsm8k-main-3101c7d50724:train:01985"
+  ],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01983",
+    "external-gsm8k-main-3101c7d50724:train:01985"
+  ],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01983",
+      "retry_on": "after_exact_head_ci_and_evidence_import",
+      "reason_ja": "食費割合の意味対応とLean証明修復は完了したが、修復後HEADの固定Lean成功証拠を取得できていない。",
+      "next_action_ja": "同一コミットのexact-head CI、公理監査、依存抽出、入力ハッシュ照合に合格後だけsolution_readyへ昇格する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01985",
+      "retry_on": "after_exact_head_ci_and_evidence_import",
+      "reason_ja": "流入・漏出の正味流量と所要時間のLean証明修復は完了したが、修復後HEADの固定Lean成功証拠を取得できていない。",
+      "next_action_ja": "同一コミットのexact-head CI、公理監査、依存抽出、入力ハッシュ照合に合格後だけsolution_readyへ昇格する。"
+    }
+  ],
+  "claim": {
+    "scope": "proof_repair_only",
+    "problem_ids": [
+      "external-gsm8k-main-3101c7d50724:train:01983",
+      "external-gsm8k-main-3101c7d50724:train:01985"
+    ],
+    "claimed_at": "2026-10-05T22:16:58+09:00",
+    "released_at": "2026-10-05T22:20:24+09:00",
+    "persistence_note_ja": "排他サービスは使用せず、同一ファイルを直列にSHA照合付きで更新した。"
+  },
+  "source_verification": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01983",
+      "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+      "source_line_1based": 1984,
+      "source_record_sha256": "9ed5a11a9954887a1ce6abf6aa0209f41008333cf6ad12b6b10377cee66a8872",
+      "raw_question_sha256": "6228af899ccb38cc09dfc33eaa04bb5d0cd1705357692177fc439a9c9a89367d",
+      "normalized_question_sha256": "6228af899ccb38cc09dfc33eaa04bb5d0cd1705357692177fc439a9c9a89367d",
+      "source_question": "Janet buys 3 pounds of broccoli for $4 a pound, 3 oranges for $0.75 each, a cabbage for $3.75, a pound of bacon for $3, and two pounds of chicken for $3 a pound. What percentage of her grocery budget did she spend on meat, rounded to the nearest percent?",
+      "source_hashes_match_manifest": true
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01985",
+      "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+      "source_line_1based": 1986,
+      "source_record_sha256": "6617f0150378224b1dfcc11f8c9323ffab4a6ca62ade3efd9926144931712461",
+      "raw_question_sha256": "90045d2d049c506b21b9acef19ef18746f9310278bc8699e520516368b8f6ae5",
+      "normalized_question_sha256": "90045d2d049c506b21b9acef19ef18746f9310278bc8699e520516368b8f6ae5",
+      "source_question": "24 gallons per second of water flows down a waterfall. If you have an empty basin that can hold 260 gallons of water. The basin leaks water at 4 gallons per second. how long would it take to fill the basin with water from the waterfall in seconds?",
+      "source_hashes_match_manifest": true
+    }
+  ],
+  "written_solutions_ja": {
+    "external-gsm8k-main-3101c7d50724:train:01983": [
+      "野菜等は、ブロッコリー12ドル、オレンジ2.25ドル、キャベツ3.75ドルなので合計18ドル。",
+      "肉は、ベーコン3ドルと鶏肉6ドルなので合計9ドル。全支出は18+9=27ドル。",
+      "肉の割合は9/27×100=33と1/3%であり、最も近い整数は33%である。"
+    ],
+    "external-gsm8k-main-3101c7d50724:train:01985": [
+      "毎秒24ガロン流入し、毎秒4ガロン漏れるので、正味流量は24-4=20ガロン毎秒。",
+      "容量260ガロンを正味流量20ガロン毎秒で満たす時間は260÷20=13秒。"
+    ]
+  },
+  "lean_repairs": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01983",
+      "file": "LemmaWeave/Problems/GSM8K/Sprint0924A03Models.lean",
+      "theorem": "grocery_solution",
+      "proposition": "m.percent = 33",
+      "previous_failure": "構造体全体へのomegaではpercent * totalの変数積が残り、percent=0..32の反例候補を排除できなかった。",
+      "change": "既証明grocery_meatとgrocery_totalで積のtotalを2700へ固定し、hRemainderの0≤remainder<2700を明示して商33をomegaで一意化した。",
+      "proof_dependencies": [
+        "grocery_meat",
+        "grocery_total",
+        "Groceries.hDivision",
+        "Groceries.hRemainder"
+      ],
+      "theorem_statement_changed": false,
+      "model_changed": false,
+      "assumptions_changed": false,
+      "conclusion_changed": false,
+      "sorry_added": 0,
+      "admit_added": 0,
+      "axiom_added": 0,
+      "repair_commits": [
+        "5403b4c2210ea8670d1e50e69ddbda878fae98b4",
+        "297a2a50d80b15763945910034ca04ba401be718"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:01985",
+      "file": "LemmaWeave/Problems/GSM8K/Sprint0924A03Models.lean",
+      "theorem": "basin_solution",
+      "proposition": "m.seconds = 13",
+      "previous_failure": "構造体全体へのomegaではnetRate * secondsの変数積が残り、seconds=0..12の反例候補を排除できなかった。",
+      "change": "既証明basin_net_rateでnetRateを20へ固定してhFillを20 * seconds = 260へ書き換え、omegaで13秒を導いた。",
+      "proof_dependencies": [
+        "basin_net_rate",
+        "Basin.hFill"
+      ],
+      "theorem_statement_changed": false,
+      "model_changed": false,
+      "assumptions_changed": false,
+      "conclusion_changed": false,
+      "sorry_added": 0,
+      "admit_added": 0,
+      "axiom_added": 0,
+      "repair_commits": [
+        "5403b4c2210ea8670d1e50e69ddbda878fae98b4"
+      ]
+    }
+  ],
+  "failed_ci_evidence": {
+    "workflow_run_id": 37262551222,
+    "head_sha": "4c0c8c44456d8a3ad500098466ce5d8b343c9603",
+    "conclusion": "failure",
+    "compact_artifact_id": 11327226073,
+    "compact_artifact_sha256": "2d8113276b92cb567dafb84ad26f97aac1e4284b85dff2dd4fb0acdd0224d96d",
+    "compact_artifact_local_digest_match": true,
+    "target_module": "LemmaWeave.Problems.GSM8K.Sprint0924A03Models",
+    "target_exit_code": 1,
+    "target_errors": [
+      "Sprint0924A03Models.lean:128:89 omega could not prove grocery_solution; percent=0..32 remained possible",
+      "Sprint0924A03Models.lean:144:83 omega could not prove basin_solution; seconds=0..12 remained possible"
+    ]
+  },
+  "local_verification": {
+    "status": "static_review_only",
+    "checks": [
+      "固定問題ID・原題・行番号・レコードSHA・問題文SHAを方法バッチから再照合",
+      "各問の日本語計算を原題から再実行し、単位・丸め・全要求を確認",
+      "変数積を既証明の定数値で書き換え、説明で用いた量を実際の証明依存へ接続",
+      "定理文・モデル・仮定・結論の変更なし",
+      "sorry・admit・独自axiomの追加なし"
+    ],
+    "not_run": [
+      "Lean 4.33.1 build",
+      "check_method_recipes.py --render",
+      "dependency graph generation"
+    ],
+    "reason_ja": "ローカル作業領域に固定Lean/mathlib実行環境がなく、実行検証はpush後のexact-head CIへ委ねる。"
+  },
+  "exact_head_ci": {
+    "workflow_trigger": "push",
+    "status_at_recording": "unretrievable_pending_or_running",
+    "repair_head_before_ledger": "297a2a50d80b15763945910034ca04ba401be718",
+    "retrieval_note_ja": "commit workflow検索はpull_request起動の先頭ページだけを返し、combined statusも空だった。空結果を未実行とは解釈せず、次回Actions実行ID・artifactで確定する。"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "remaining": 8274,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "mergeable": true,
+    "unresolved_review_threads": 0,
+    "latest_review_states": [
+      "APPROVED",
+      "APPROVED"
+    ],
+    "merge_status": "not_merged_exact_head_ci_unverified"
+  },
+  "assurance": {
+    "intent": "self_review_only",
+    "model": "unchanged_from_existing_self_reviewed_models",
+    "proof": "static_repair_complete_runtime_unverified",
+    "implementation": "exact_head_ci_unverified",
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "修復後HEADのLeanビルド、公理・依存監査、現行証拠取込が未完了。"
+  }
+}

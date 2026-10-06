@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint107_goals",
+  "title_ja": "BruceとMichaelの得点合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01896",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "“3 times more than” の2通りの読みを分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A17.goals_total_not_unique",
+  "graph": "work/gsm8k-sprint107-goals-graph.json",
+  "model_notes_ja": [
+    "“3 times more than” を three times as many と読めば合計16点、元の4点に3倍分を加える文字どおりの読みなら合計20点であり、表現単独では一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "goals_reference_michael",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.goals_reference_michael",
+      "title_ja": "3倍読解ではMichaelは12点。",
+      "claim_ja": "3倍読解ではMichaelは12点。",
+      "method_ja": "3×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "goals_reference_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.goals_reference_total",
+      "title_ja": "3倍読解の合計は16点。",
+      "claim_ja": "3倍読解の合計は16点。",
+      "method_ja": "4+12。",
+      "requires_steps": [
+        "goals_reference_michael"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "goals_additive_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.goals_additive_total",
+      "title_ja": "3倍分を上乗せする読解の合計は20点。",
+      "claim_ja": "3倍分を上乗せする読解の合計は20点。",
+      "method_ja": "Michaelを4+3×4=16としBruceの4を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "goals_total_not_unique",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.goals_total_not_unique",
+      "title_ja": "16点と20点は異なる。",
+      "claim_ja": "16点と20点は異なる。",
+      "method_ja": "両読解が同じ答えでないことを確認。",
+      "requires_steps": [
+        "goals_reference_total",
+        "goals_additive_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1897,
+    "checked_model_hash": "5d08e45fe0eaf9fabcdeab34c324f312a3c8fcd3e7dbea981241a4b614ad46cc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

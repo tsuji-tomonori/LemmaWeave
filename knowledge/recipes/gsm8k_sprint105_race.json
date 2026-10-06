@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint105_race",
+  "title_ja": "レースで残った距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01868",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "数値を区間長と読む参照解答と、リード差と読む反例を分離する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.race_remaining_not_unique",
+  "graph": "work/gsm8k-sprint105-race-graph.json",
+  "model_notes_ja": [
+    "gets ahead byを走った区間長と読む参照解答は3890。リード差と読むなら絶対位置が与えられず、残距離は一意でない。"
+  ],
+  "steps": [
+    {
+      "id": "race_covered",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.race_covered",
+      "title_ja": "区間長読解では1110フィート進んだ。",
+      "claim_ja": "区間長読解では1110フィート進んだ。",
+      "method_ja": "200+300+170+440。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "race_reference_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.race_reference_solution",
+      "title_ja": "区間長読解では残り3890フィート。",
+      "claim_ja": "区間長読解では残り3890フィート。",
+      "method_ja": "5000−1110。",
+      "requires_steps": [
+        "race_covered"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "race_lead_countermodels",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.race_lead_countermodels",
+      "title_ja": "最終440フィート差でも絶対位置は複数可能。",
+      "claim_ja": "最終440フィート差でも絶対位置は複数可能。",
+      "method_ja": "1000対560と2000対1560を示す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "race_remaining_not_unique",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.race_remaining_not_unique",
+      "title_ja": "Maxの残距離4440と3440は異なる。",
+      "claim_ja": "Maxの残距離4440と3440は異なる。",
+      "method_ja": "反例の残距離を比較。",
+      "requires_steps": [
+        "race_lead_countermodels"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1869,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

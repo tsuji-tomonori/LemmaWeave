@@ -1,0 +1,230 @@
+{
+  "id": "gsm8k_sprint451_puppy_special_food_bags",
+  "title_ja": "子犬用フードの袋数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04206",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A family just bought a newborn puppy that must eat a special type of dog food until it is 1 year old.  The puppy needs to eat 2 ounces of this special dog food per day during the first 60 days of its life.  After that, it needs to eat 4 ounces per day of the special food until it is old enough to eat regular dog food.  If the special dog food is only sold in 5-pound bags, and there are 16 ounces in a pound, how many bags will the family need to buy to feed the puppy until it is old enough to eat regular dog food?",
+  "answer_ja": "最初の60日は120オンス。平年なら残り305日で1220オンス、合計1340オンス。1袋80オンスなので16袋では不足し17袋必要。閏年366日でも合計1344オンスで必要袋数は同じ17袋。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_special_food_bags",
+  "graph": "work/gsm8k-sprint451-puppy-special-food-bags-graph.json",
+  "model_notes_ja": [
+    "1年を365日とする通常解を示し、366日の場合にも結論17袋が不変であることを確認する。"
+  ],
+  "steps": [
+    {
+      "id": "puppy_first_sixty_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_first_sixty_ounces",
+      "title_ja": "最初の60日",
+      "claim_ja": "60×2=120オンス。",
+      "method_ja": "日数に1日量を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "60日、毎日2オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "120オンス。"
+    },
+    {
+      "id": "puppy_common_remaining_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_common_remaining_days",
+      "title_ja": "平年の残日数",
+      "claim_ja": "365−60=305日。",
+      "method_ja": "1年から最初の60日を引く。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "平年365日。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "305日。"
+    },
+    {
+      "id": "puppy_common_later_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_common_later_ounces",
+      "title_ja": "平年の後半量",
+      "claim_ja": "305×4=1220オンス。",
+      "method_ja": "残日数に1日量を掛ける。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "305日、毎日4オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1220オンス。"
+    },
+    {
+      "id": "puppy_common_total_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_common_total_ounces",
+      "title_ja": "平年の総量",
+      "claim_ja": "120+1220=1340オンス。",
+      "method_ja": "前半と後半を足す。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days",
+        "puppy_common_later_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "120と1220オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1340オンス。"
+    },
+    {
+      "id": "puppy_bag_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_bag_ounces",
+      "title_ja": "1袋の量",
+      "claim_ja": "5×16=80オンス。",
+      "method_ja": "ポンドをオンスへ換算する。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days",
+        "puppy_common_later_ounces",
+        "puppy_common_total_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5ポンド、1ポンド16オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "80オンス。"
+    },
+    {
+      "id": "puppy_common_minimum_bags",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_common_minimum_bags",
+      "title_ja": "平年の最小袋数",
+      "claim_ja": "16袋は1280オンスで不足し、17袋は1360オンスで足りる。",
+      "method_ja": "下限と上限を比較する。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days",
+        "puppy_common_later_ounces",
+        "puppy_common_total_ounces",
+        "puppy_bag_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "必要量1340オンス、1袋80オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "17袋。"
+    },
+    {
+      "id": "puppy_leap_remaining_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_leap_remaining_days",
+      "title_ja": "閏年の残日数",
+      "claim_ja": "366−60=306日。",
+      "method_ja": "閏年から最初の60日を引く。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days",
+        "puppy_common_later_ounces",
+        "puppy_common_total_ounces",
+        "puppy_bag_ounces",
+        "puppy_common_minimum_bags"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "閏年366日。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "306日。"
+    },
+    {
+      "id": "puppy_leap_later_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_leap_later_ounces",
+      "title_ja": "閏年の後半量",
+      "claim_ja": "306×4=1224オンス。",
+      "method_ja": "残日数に1日量を掛ける。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days",
+        "puppy_common_later_ounces",
+        "puppy_common_total_ounces",
+        "puppy_bag_ounces",
+        "puppy_common_minimum_bags",
+        "puppy_leap_remaining_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "306日、毎日4オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1224オンス。"
+    },
+    {
+      "id": "puppy_leap_total_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_leap_total_ounces",
+      "title_ja": "閏年の総量",
+      "claim_ja": "120+1224=1344オンス。",
+      "method_ja": "前半と後半を足す。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days",
+        "puppy_common_later_ounces",
+        "puppy_common_total_ounces",
+        "puppy_bag_ounces",
+        "puppy_common_minimum_bags",
+        "puppy_leap_remaining_days",
+        "puppy_leap_later_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "120と1224オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1344オンス。"
+    },
+    {
+      "id": "puppy_leap_minimum_bags",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_leap_minimum_bags",
+      "title_ja": "閏年の最小袋数",
+      "claim_ja": "16袋は不足し17袋で足りる。",
+      "method_ja": "下限と上限を比較する。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days",
+        "puppy_common_later_ounces",
+        "puppy_common_total_ounces",
+        "puppy_bag_ounces",
+        "puppy_common_minimum_bags",
+        "puppy_leap_remaining_days",
+        "puppy_leap_later_ounces",
+        "puppy_leap_total_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "必要量1344オンス、1袋80オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "17袋。"
+    },
+    {
+      "id": "puppy_special_food_bags",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.puppy_special_food_bags",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "最初の60日は120オンス。平年なら残り305日で1220オンス、合計1340オンス。1袋80オンスなので16袋では不足し17袋必要。閏年366日でも合計1344オンスで必要袋数は同じ17袋。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "puppy_first_sixty_ounces",
+        "puppy_common_remaining_days",
+        "puppy_common_later_ounces",
+        "puppy_common_total_ounces",
+        "puppy_bag_ounces",
+        "puppy_common_minimum_bags",
+        "puppy_leap_remaining_days",
+        "puppy_leap_later_ounces",
+        "puppy_leap_total_ounces",
+        "puppy_leap_minimum_bags"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1年を365日とする通常解を示し、366日の場合にも結論17袋が不変であることを確認する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "最初の60日は120オンス。平年なら残り305日で1220オンス、合計1340オンス。1袋80オンスなので16袋では不足し17袋必要。閏年366日でも合計1344オンスで必要袋数は同じ17袋。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4207,
+    "checked_model_hash": "6e81c4ae7b41df6372ac849f5ecdb83d4be2e6a97e66d0a67e8ba946ab3d232e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "6e81c4ae7b41df6372ac849f5ecdb83d4be2e6a97e66d0a67e8ba946ab3d232e"
+}

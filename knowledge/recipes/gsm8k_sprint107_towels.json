@@ -1,0 +1,80 @@
+{
+  "id": "gsm8k_sprint107_towels",
+  "title_ja": "3人が1時間に畳むタオル数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01890",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各人の所要時間から1時間当たりを求めて足す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A17.towels_solution",
+  "graph": "work/gsm8k-sprint107-towels-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "towels_jane",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.towels_jane",
+      "title_ja": "Janeは36枚。",
+      "claim_ja": "Janeは36枚。",
+      "method_ja": "60÷5×3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "towels_kyla",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.towels_kyla",
+      "title_ja": "Kylaは30枚。",
+      "claim_ja": "Kylaは30枚。",
+      "method_ja": "60÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "towels_anthony",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.towels_anthony",
+      "title_ja": "Anthonyは21枚。",
+      "claim_ja": "Anthonyは21枚。",
+      "method_ja": "60÷20×7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "towels_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A17.towels_solution",
+      "title_ja": "合計87枚。",
+      "claim_ja": "合計87枚。",
+      "method_ja": "36+30+21。",
+      "requires_steps": [
+        "towels_jane",
+        "towels_kyla",
+        "towels_anthony"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1891,
+    "checked_model_hash": "5d08e45fe0eaf9fabcdeab34c324f312a3c8fcd3e7dbea981241a4b614ad46cc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

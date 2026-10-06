@@ -1,0 +1,57 @@
+{
+  "id": "gsm8k_sprint39_coffee",
+  "title_ja": "1週間のコーヒー杯数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00864",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "平日と週末のコーヒー杯数を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.coffee_solution",
+  "graph": "work/gsm8k-sprint39-coffee-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "coffee_weekday_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.coffee_weekday_daily",
+      "title_ja": "平日1日分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "平日は毎時10杯を5時間淹れる。",
+      "conclusion_ja": "50杯。",
+      "baseline_ja": "10×5=50。"
+    },
+    {
+      "id": "coffee_weekday_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.coffee_weekday_total",
+      "title_ja": "平日5日分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "平日1日50杯が5日ある。",
+      "conclusion_ja": "250杯。",
+      "baseline_ja": "50×5=250。"
+    },
+    {
+      "id": "coffee_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.coffee_total",
+      "title_ja": "週間合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "平日250杯と週末合計120杯を足す。",
+      "conclusion_ja": "370杯。",
+      "baseline_ja": "250+120=370。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 865,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

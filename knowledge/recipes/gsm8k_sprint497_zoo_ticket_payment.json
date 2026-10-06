@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint497_zoo_ticket_payment",
+  "title_ja": "動物園チケット支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04252",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P3.lean",
+  "problem_ja": "定価15ドルを40%引きで買った。支払額は。",
+  "answer_ja": "割引6ドル、支払額9ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.zoo_ticket_payment",
+  "graph": "work/gsm8k-sprint497-zoo-ticket-payment-graph.json",
+  "model_notes_ja": [
+    "ドル単位の自然数で正確に割り切れる。"
+  ],
+  "steps": [
+    {
+      "id": "discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.zoo_ticket_discount",
+      "title_ja": "割引額",
+      "claim_ja": "15×40÷100=6ドル。",
+      "method_ja": "定価の40%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "15×40÷100=6ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.zoo_ticket_payment",
+      "title_ja": "支払額",
+      "claim_ja": "15−6=9ドル。",
+      "method_ja": "定価から割引を引く。",
+      "requires_steps": [
+        "discount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "15−6=9ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4253,
+    "checked_model_hash": "df66b110b7885c09196b7e22ed802d9237a40dafb6e8d40eb2be093ac98fef7d",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

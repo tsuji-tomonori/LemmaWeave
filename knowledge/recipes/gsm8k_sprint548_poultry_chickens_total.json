@@ -1,0 +1,89 @@
+{
+  "id": "gsm8k_sprint548_poultry_chickens_total",
+  "title_ja": "養鶏場の鶏総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04303",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P1.lean",
+  "problem_ja": "雌鶏12羽、雌鶏3羽ごとに雄鶏1羽、各雌鶏にひよこ5羽。全部で何羽か。",
+  "answer_ja": "雄鶏は12÷3=4羽、ひよこは12×5=60羽。合計12+4+60=76羽。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.poultry_chickens_total",
+  "graph": "work/gsm8k-sprint548-poultry-chickens-total-graph.json",
+  "model_notes_ja": [
+    "chickensには雌鶏・雄鶏・ひよこを全て含める。"
+  ],
+  "steps": [
+    {
+      "id": "rooster_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.rooster_count",
+      "title_ja": "雄鶏数",
+      "claim_ja": "12÷3=4羽。",
+      "method_ja": "雌鶏数を3羽ごとの組に分ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12÷3=4羽。"
+    },
+    {
+      "id": "chick_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.chick_count",
+      "title_ja": "ひよこ数",
+      "claim_ja": "12×5=60羽。",
+      "method_ja": "雌鶏数と1羽当たりのひよこ数を掛ける。",
+      "requires_steps": [
+        "rooster_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12×5=60羽。"
+    },
+    {
+      "id": "all_chickens",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.all_chickens",
+      "title_ja": "鶏の総数",
+      "claim_ja": "12+4+60=76羽。",
+      "method_ja": "三群を足す。",
+      "requires_steps": [
+        "rooster_count",
+        "chick_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12+4+60=76羽。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.poultry_chickens_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "雄鶏は12÷3=4羽、ひよこは12×5=60羽。合計12+4+60=76羽。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "rooster_count",
+        "chick_count",
+        "all_chickens"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "雄鶏は12÷3=4羽、ひよこは12×5=60羽。合計12+4+60=76羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4304,
+    "checked_model_hash": "c75058a771e6d093ed7734adf989dee2a43487e47b38014dd0c58acacef110c8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

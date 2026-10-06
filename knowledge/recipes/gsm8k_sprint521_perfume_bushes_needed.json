@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_sprint521_perfume_bushes_needed",
+  "title_ja": "香水用のバラの茂み数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04276",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P2.lean",
+  "problem_ja": "香水1オンスに花びら320枚、1輪8枚、1株12輪。12オンス瓶20本に必要な株数を求める。",
+  "answer_ja": "1オンスに40輪、1瓶に480輪、20瓶に9600輪。1株12輪なので800株。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.perfume_bushes_needed",
+  "graph": "work/gsm8k-sprint521-perfume-bushes-needed-graph.json",
+  "model_notes_ja": [
+    "全量を収穫でき、各バラと各株の花びら・花数が一定とする。"
+  ],
+  "steps": [
+    {
+      "id": "roses_per_ounce",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.roses_per_ounce",
+      "title_ja": "1オンスに必要なバラ",
+      "claim_ja": "320÷8=40輪。",
+      "method_ja": "花びら枚数を1輪8枚で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "320÷8=40輪。"
+    },
+    {
+      "id": "roses_per_bottle",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.roses_per_bottle",
+      "title_ja": "1瓶に必要なバラ",
+      "claim_ja": "40×12=480輪。",
+      "method_ja": "1オンス分を12オンスにする。",
+      "requires_steps": [
+        "roses_per_ounce"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40×12=480輪。"
+    },
+    {
+      "id": "roses_for_bottles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.roses_for_bottles",
+      "title_ja": "20瓶に必要なバラ",
+      "claim_ja": "480×20=9600輪。",
+      "method_ja": "1瓶分を20倍する。",
+      "requires_steps": [
+        "roses_per_bottle"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "480×20=9600輪。"
+    },
+    {
+      "id": "bushes_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.bushes_needed",
+      "title_ja": "必要な株数",
+      "claim_ja": "9600÷12=800株。",
+      "method_ja": "必要なバラ数を1株12輪で割る。",
+      "requires_steps": [
+        "roses_for_bottles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "9600÷12=800株。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.perfume_bushes_needed",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1オンスに40輪、1瓶に480輪、20瓶に9600輪。1株12輪なので800株。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "roses_per_ounce",
+        "roses_per_bottle",
+        "roses_for_bottles",
+        "bushes_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1オンスに40輪、1瓶に480輪、20瓶に9600輪。1株12輪なので800株。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4277,
+    "checked_model_hash": "856f034a08fcb9718dbed19908fa3256e481e4abe9ccd62e438c44244ff5d2a8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

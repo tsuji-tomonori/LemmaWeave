@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint395_estimated_buildings_total_height",
+  "title_ja": "3棟の推定総高さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04142",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Quinten sees three buildings downtown and decides to estimate their heights. He knows from a book on local buildings that the one in the middle is 100 feet tall. The one on the left looks like it is 80% of the height of the middle one. The one on the right looks 20 feet shorter than if the building on the left and middle were stacked on top of each other. How tall does Quinten estimate their total height to be?",
+  "answer_ja": "中央は100フィート。左はその80%なので80フィート。左と中央を積むと180フィートで、右はそこから20フィート低い160フィート。3棟合計は80+100+160=340フィート。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.estimated_buildings_total_height",
+  "graph": "work/gsm8k-sprint395-estimated-buildings-total-height-graph.json",
+  "model_notes_ja": [
+    "各建物の推定高さを別々に計算してから合計する。"
+  ],
+  "steps": [
+    {
+      "id": "left_building_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.left_building_height",
+      "title_ja": "左棟",
+      "claim_ja": "100の80%で80フィート。",
+      "method_ja": "百分率を適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "中央棟100フィートが基準。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "左棟80フィート。"
+    },
+    {
+      "id": "stacked_left_middle_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.stacked_left_middle_height",
+      "title_ja": "左棟と中央棟",
+      "claim_ja": "80+100=180フィート。",
+      "method_ja": "2棟を足す。",
+      "requires_steps": [
+        "left_building_height"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "積み重ねた高さ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "180フィート。"
+    },
+    {
+      "id": "right_building_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.right_building_height",
+      "title_ja": "右棟",
+      "claim_ja": "180-20=160フィート。",
+      "method_ja": "20フィート差を引く。",
+      "requires_steps": [
+        "left_building_height",
+        "stacked_left_middle_height"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "右棟は積み重ねより20フィート低い。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "右棟160フィート。"
+    },
+    {
+      "id": "buildings_total_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.buildings_total_height",
+      "title_ja": "3棟合計",
+      "claim_ja": "80+100+160=340フィート。",
+      "method_ja": "3棟を合計する。",
+      "requires_steps": [
+        "left_building_height",
+        "stacked_left_middle_height",
+        "right_building_height"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各推定高さを用いる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "合計340フィート。"
+    },
+    {
+      "id": "estimated_buildings_total_height",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.estimated_buildings_total_height",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "中央は100フィート。左はその80%なので80フィート。左と中央を積むと180フィートで、右はそこから20フィート低い160フィート。3棟合計は80+100+160=340フィート。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "left_building_height",
+        "stacked_left_middle_height",
+        "right_building_height",
+        "buildings_total_height"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "見た目による80%と20フィート差をQuintenの推定値としてそのまま用いる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "中央は100フィート。左はその80%なので80フィート。左と中央を積むと180フィートで、右はそこから20フィート低い160フィート。3棟合計は80+100+160=340フィート。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4143,
+    "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9"
+}

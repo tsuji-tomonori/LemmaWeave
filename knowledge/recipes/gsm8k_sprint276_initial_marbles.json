@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint276_initial_marbles",
+  "title_ja": "最初のビー玉数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03481",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A16P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "現在30個で、兄に60個、姉にその2倍、友人に現在数の3倍を渡したとき最初の個数を求める。",
+  "answer_ja": "300個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.initial_marbles",
+  "graph": "work/gsm8k-sprint276-initial-marbles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sister_marbles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.sister_marbles",
+      "title_ja": "姉に120個渡した。",
+      "claim_ja": "姉に120個渡した。",
+      "method_ja": "兄の60個の2倍を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "「twice that amount」の基準は兄への60個。",
+      "conclusion_ja": "120個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "friend_marbles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.friend_marbles",
+      "title_ja": "友人に90個渡した。",
+      "claim_ja": "友人に90個渡した。",
+      "method_ja": "現在30個の3倍を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "基準は現在持つ30個。",
+      "conclusion_ja": "90個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "initial_marbles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P2.initial_marbles",
+      "title_ja": "最初は300個。",
+      "claim_ja": "最初は300個。",
+      "method_ja": "現在30個と渡した60個、120個、90個を足す。",
+      "requires_steps": [
+        "sister_marbles",
+        "friend_marbles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "渡した相手間に重複はない。",
+      "conclusion_ja": "300個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3482,
+    "checked_model_hash": "61b155e4e783fb3c4bf2765a6d54d8fd726e738dc77b4f940c632b6c52126c28",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

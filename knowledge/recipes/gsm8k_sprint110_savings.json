@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint110_savings",
+  "title_ja": "失業前の貯金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01935",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2月と3月の割合がともに元の貯金額に対する割合という読解を明示し、残る40%から元金を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.savings_solution",
+  "graph": "work/gsm8k-sprint110-savings-graph.json",
+  "model_notes_ja": [
+    "『40% of it』を元金基準と読むと11000ドル。2月後残高基準と読む場合は残率48%となり、厳密値は27500/3ドルで整数ドルにならないため、両読解を分離した。"
+  ],
+  "steps": [
+    {
+      "id": "savings_spent_percent",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.savings_spent_percent",
+      "title_ja": "2月と3月に元金の60%を使う。",
+      "claim_ja": "2月と3月に元金の60%を使う。",
+      "method_ja": "20%+40%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "両割合が元の貯金額を基準とする読解。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "savings_april_and_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.savings_april_and_left",
+      "title_ja": "4月支出前の残額は4400ドル。",
+      "claim_ja": "4月支出前の残額は4400ドル。",
+      "method_ja": "1500+2900。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "savings_sequential_whole_dollars_impossible",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.savings_sequential_whole_dollars_impossible",
+      "title_ja": "3月を2月後残高の40%と読むと、整数ドル単位の厳密解はない。",
+      "claim_ja": "3月を2月後残高の40%と読むと、整数ドル単位の厳密解はない。",
+      "method_ja": "残率48%として48x=440000を満たす自然数xがない。",
+      "requires_steps": [
+        "savings_april_and_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各金額を整数ドルで厳密に扱う。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "savings_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.savings_solution",
+      "title_ja": "元の貯金額は11000ドル。",
+      "claim_ja": "元の貯金額は11000ドル。",
+      "method_ja": "4400÷40×100。",
+      "requires_steps": [
+        "savings_spent_percent",
+        "savings_april_and_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両割合が元の貯金額を基準とする。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1936,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint94_car",
+  "title_ja": "自動車と借入利息の総負担",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01700",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "車35000ドルのうち20000ドルを年率15%として借りる問題文の単純利息を加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.car_solution",
+  "graph": "work/gsm8k-sprint94-car-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "car_interest",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.car_interest",
+      "title_ja": "利息",
+      "claim_ja": "3000ドル。",
+      "method_ja": "20000×15%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "期間・複利の指定がないため原解答どおり一回の単純利息。",
+      "conclusion_ja": "3000×100=20000×15。",
+      "baseline_ja": "3000×100=20000×15。"
+    },
+    {
+      "id": "car_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.car_solution",
+      "title_ja": "総負担",
+      "claim_ja": "38000ドル。",
+      "method_ja": "車価格35000+利息3000。",
+      "requires_steps": [
+        "car_interest"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "元金は車価格の一部なので二重加算しない。",
+      "conclusion_ja": "35000+3000=38000。",
+      "baseline_ja": "35000+3000=38000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1701,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

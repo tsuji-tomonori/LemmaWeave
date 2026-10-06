@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint265_theatre_revenue",
+  "title_ja": "映画館の総入場収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03367",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "250席満席で子ども188人、残りが大人。大人6ドル・子ども4ドルの総収入を求める。",
+  "answer_ja": "1,124ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.theatre_total",
+  "graph": "work/gsm8k-sprint265-theatre-revenue-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "theatre_adults",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.theatre_adults",
+      "title_ja": "大人は62人。",
+      "claim_ja": "大人は62人。",
+      "method_ja": "250-188。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "満席なので人数は250人。",
+      "conclusion_ja": "62人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "theatre_adult_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.theatre_adult_revenue",
+      "title_ja": "大人収入は372ドル。",
+      "claim_ja": "大人収入は372ドル。",
+      "method_ja": "62×6。",
+      "requires_steps": [
+        "theatre_adults"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "大人1人6ドル。",
+      "conclusion_ja": "372ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "theatre_child_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.theatre_child_revenue",
+      "title_ja": "子ども収入は752ドル。",
+      "claim_ja": "子ども収入は752ドル。",
+      "method_ja": "188×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "子ども1人4ドル。",
+      "conclusion_ja": "752ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "theatre_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.theatre_total",
+      "title_ja": "総収入は1124ドル。",
+      "claim_ja": "総収入は1124ドル。",
+      "method_ja": "372+752。",
+      "requires_steps": [
+        "theatre_adult_revenue",
+        "theatre_child_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両区分を重複なく合計する。",
+      "conclusion_ja": "1,124ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3368,
+    "checked_model_hash": "b6cea9d1a666702b5012c56dc0cbd3c2d0155c54b55f5c910555bdf9c5288613",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

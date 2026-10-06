@@ -1,0 +1,77 @@
+{
+  "id": "gsm8k_sprint33_zoo",
+  "title_ja": "シマウマと猿の頭数差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00783",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "記載の倍率を順に適用し、猿48頭とシマウマ13頭の差35頭を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.zoo_solution",
+  "graph": "work/gsm8k-sprint33-zoo-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "zoo_snakes",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.zoo_snakes",
+      "title_ja": "ヘビ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "オウム8羽の3倍。",
+      "conclusion_ja": "24匹。",
+      "baseline_ja": "3×8=24。"
+    },
+    {
+      "id": "zoo_monkeys",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.zoo_monkeys",
+      "title_ja": "猿",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ヘビの2倍。",
+      "conclusion_ja": "48頭。",
+      "baseline_ja": "2×24=48。"
+    },
+    {
+      "id": "zoo_elephants",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.zoo_elephants",
+      "title_ja": "象",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "オウムとヘビの合計の半分。",
+      "conclusion_ja": "16頭。",
+      "baseline_ja": "16×2=8+24。"
+    },
+    {
+      "id": "zoo_zebras",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.zoo_zebras",
+      "title_ja": "シマウマ",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "象より3頭少ない。",
+      "conclusion_ja": "13頭。",
+      "baseline_ja": "13+3=16。"
+    },
+    {
+      "id": "zoo_difference",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.zoo_difference",
+      "title_ja": "頭数差",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "猿からシマウマを引く。",
+      "conclusion_ja": "35頭。",
+      "baseline_ja": "35+13=48。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 784,
+    "checked_model_hash": "45d614962ba62614e52a93d4187ed36dc63b103443e783fcba8cf11ee09b52ad",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

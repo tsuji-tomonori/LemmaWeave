@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint581_extra_running_calories",
+  "title_ja": "5時間走った場合の追加消費カロリー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04336",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P2.lean",
+  "problem_ja": "Running for 2 hours, Jonah burnt 30 calories every hour. How many more calories would he have lost if he would have run for five hours?",
+  "answer_ja": "2時間では2×30=60カロリー、5時間では150カロリー。差は90カロリー。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.extra_running_calories",
+  "graph": "work/gsm8k-sprint581-extra-running-calories-graph.json",
+  "model_notes_ja": [
+    "毎時30カロリーの消費率を全時間にわたり一定とする。"
+  ],
+  "steps": [
+    {
+      "id": "two_hour_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.two_hour_calories",
+      "title_ja": "2時間",
+      "claim_ja": "2×30=60カロリー。",
+      "method_ja": "時間に毎時消費量を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2×30=60カロリー。"
+    },
+    {
+      "id": "five_hour_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.five_hour_calories",
+      "title_ja": "5時間",
+      "claim_ja": "5×30=150カロリー。",
+      "method_ja": "時間に毎時消費量を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×30=150カロリー。"
+    },
+    {
+      "id": "running_calorie_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.running_calorie_difference",
+      "title_ja": "差",
+      "claim_ja": "150−60=90カロリー。",
+      "method_ja": "5時間と2時間の消費量の差を取る。",
+      "requires_steps": [
+        "two_hour_calories",
+        "five_hour_calories"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "150−60=90カロリー。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P2.extra_running_calories",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "2時間では2×30=60カロリー、5時間では150カロリー。差は90カロリー。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "two_hour_calories",
+        "five_hour_calories",
+        "running_calorie_difference"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2時間では2×30=60カロリー、5時間では150カロリー。差は90カロリー。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4337,
+    "checked_model_hash": "fa68f53ffa1b963f9f3a1eef6670295dfd7c9c0baf48e34b4d26e5c3eaebd9d9",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

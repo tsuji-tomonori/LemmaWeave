@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint368_avocado_change",
+  "title_ja": "アボカド購入後のお釣り",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03962",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lucas went to the store with $20 and needed to buy 3 avocados that cost $2 each. How much change does he bring home?",
+  "answer_ja": "アボカド3個の代金は3×2=6ドル。20ドルから払うので、お釣りは20−6=14ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P2.avocado_change",
+  "graph": "work/gsm8k-sprint368-avocado-change-graph.json",
+  "model_notes_ja": [
+    "参照説明の「4ドル」は誤記で、その直後の式20−6=14と最終解答14が正しい。"
+  ],
+  "steps": [
+    {
+      "id": "avocado_change",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P2.avocado_change",
+      "title_ja": "アボカド購入後のお釣り",
+      "claim_ja": "アボカド3個の代金は3×2=6ドル。20ドルから払うので、お釣りは20−6=14ドル。",
+      "method_ja": "個数と単価から代金を求め、所持金から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "追加購入や税はない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "20ドルから払うので、お釣りは20−6=14ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3963,
+    "checked_model_hash": "6ee2020ec3883e324fc362d1e0f24bb6ce1e9bdc192499bc0ce7d908c4c029d9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint566_tino_jellybean_count",
+  "title_ja": "Tinoのジェリービーンズ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04321",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P2.lean",
+  "problem_ja": "Tino has 24 more jellybeans than Lee. Arnold has half as many jellybeans as Lee. If Arnold has 5 jellybeans, how many jellybeans does Tino have?",
+  "answer_ja": "Arnoldの5個がLeeの半分なので、Leeは10個。TinoはLeeより24個多く、34個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.tino_jellybean_count",
+  "graph": "work/gsm8k-sprint566-tino-jellybean-count-graph.json",
+  "model_notes_ja": [
+    "Arnoldの個数はLeeの正確な半分である。"
+  ],
+  "steps": [
+    {
+      "id": "lee_jellybeans",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.lee_jellybeans",
+      "title_ja": "Leeの個数",
+      "claim_ja": "5×2=10個。",
+      "method_ja": "半分から元の個数へ戻す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×2=10個。"
+    },
+    {
+      "id": "tino_jellybeans",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.tino_jellybeans",
+      "title_ja": "Tinoの個数",
+      "claim_ja": "10+24=34個。",
+      "method_ja": "Leeの個数へ24を加える。",
+      "requires_steps": [
+        "lee_jellybeans"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10+24=34個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.tino_jellybean_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Arnoldの5個がLeeの半分なので、Leeは10個。TinoはLeeより24個多く、34個。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "lee_jellybeans",
+        "tino_jellybeans"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Arnoldの5個がLeeの半分なので、Leeは10個。TinoはLeeより24個多く、34個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4322,
+    "checked_model_hash": "3ac8694ccc634607c840230ad416833fb8207f62fea9e28db32aca8271bc38ff",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

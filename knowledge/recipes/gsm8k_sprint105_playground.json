@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint105_playground",
+  "title_ja": "校庭にいる女子人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01867",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "教室残留、校庭、男子、女子を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A15.playground_solution",
+  "graph": "work/gsm8k-sprint105-playground-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "playground_stayed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.playground_stayed",
+      "title_ja": "教室には5人。",
+      "claim_ja": "教室には5人。",
+      "method_ja": "20÷4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "playground_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.playground_total",
+      "title_ja": "校庭には15人。",
+      "claim_ja": "校庭には15人。",
+      "method_ja": "20−5。",
+      "requires_steps": [
+        "playground_stayed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "playground_boys",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.playground_boys",
+      "title_ja": "男子は5人。",
+      "claim_ja": "男子は5人。",
+      "method_ja": "15÷3。",
+      "requires_steps": [
+        "playground_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "playground_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A15.playground_solution",
+      "title_ja": "女子は10人。",
+      "claim_ja": "女子は10人。",
+      "method_ja": "15−5。",
+      "requires_steps": [
+        "playground_total",
+        "playground_boys"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1868,
+    "checked_model_hash": "43a59a3e92bd61e0cbad5084ea5b509ff62d1c724d0b754bea14f9778702d333",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

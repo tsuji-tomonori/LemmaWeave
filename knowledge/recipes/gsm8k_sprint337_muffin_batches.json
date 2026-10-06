@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint337_muffin_batches",
+  "title_ja": "マフィンを焼く回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03807",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A00P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "As a special treat, Georgia makes muffins and brings them to her students on the first day of every month.  Her muffin recipe only makes 6 muffins and she has 24 students.  How many batches of muffins does Georgia make in 9 months?",
+  "answer_ja": "24人に1人1個ずつ配り、1回に6個焼けるので、毎月24÷6=4回。9か月では9×4=36回。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A00P1.muffin_batches",
+  "graph": "work/gsm8k-sprint337-muffin-batches-graph.json",
+  "model_notes_ja": [
+    "毎月24人全員に1個ずつ配り、各回ちょうど6個を焼く。"
+  ],
+  "steps": [
+    {
+      "id": "muffin_batches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A00P1.muffin_batches",
+      "title_ja": "マフィンを焼く回数",
+      "claim_ja": "24人に1人1個ずつ配り、1回に6個焼けるので、毎月24÷6=4回。9か月では9×4=36回。",
+      "method_ja": "月ごとの必要個数を1回の個数で割り、月数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "24は6で割り切れる。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "36回。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3808,
+    "checked_model_hash": "9b6dbd122aec618fa76ab4fc2775acba7b85fb51bed51e56c4ffbed824ad1851",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

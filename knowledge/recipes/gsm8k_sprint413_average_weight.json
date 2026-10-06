@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint413_average_weight",
+  "title_ja": "3人の平均体重",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04168",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A04P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Rachel weighs 75 pounds, 6 pounds less than Jimmy and 15 pounds more than Adam. What is the average weight of the three people, in pounds?",
+  "answer_ja": "Jimmyは75+6=81ポンド、Adamは75-15=60ポンド。合計216ポンドを3人で割り、平均72ポンド。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.average_weight",
+  "graph": "work/gsm8k-sprint413-average-weight-graph.json",
+  "model_notes_ja": [
+    "Rachelとの差を同じポンド単位で加減する。"
+  ],
+  "steps": [
+    {
+      "id": "jimmy_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.jimmy_weight",
+      "title_ja": "Jimmyの体重",
+      "claim_ja": "75+6=81ポンド。",
+      "method_ja": "Rachelより6ポンド重い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Rachelは75ポンド。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "81ポンド。"
+    },
+    {
+      "id": "adam_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.adam_weight",
+      "title_ja": "Adamの体重",
+      "claim_ja": "75-15=60ポンド。",
+      "method_ja": "Rachelより15ポンド軽い。",
+      "requires_steps": [
+        "jimmy_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Rachelは75ポンド。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60ポンド。"
+    },
+    {
+      "id": "three_people_total_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.three_people_total_weight",
+      "title_ja": "合計体重",
+      "claim_ja": "75+81+60=216ポンド。",
+      "method_ja": "3人分を合計する。",
+      "requires_steps": [
+        "jimmy_weight",
+        "adam_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3人を一度ずつ数える。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "216ポンド。"
+    },
+    {
+      "id": "three_people_average_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.three_people_average_weight",
+      "title_ja": "平均",
+      "claim_ja": "216÷3=72ポンド。",
+      "method_ja": "合計を人数で割る。",
+      "requires_steps": [
+        "jimmy_weight",
+        "adam_weight",
+        "three_people_total_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "人数は3人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "72ポンド。"
+    },
+    {
+      "id": "average_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P1.average_weight",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "Jimmyは75+6=81ポンド、Adamは75-15=60ポンド。合計216ポンドを3人で割り、平均72ポンド。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "jimmy_weight",
+        "adam_weight",
+        "three_people_total_weight",
+        "three_people_average_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Rachelとの差を同じポンド単位で加減する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Jimmyは75+6=81ポンド、Adamは75-15=60ポンド。合計216ポンドを3人で割り、平均72ポンド。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4169,
+    "checked_model_hash": "5b452ee90282e3209e17f9d2989c1fbeab014027d776ebb0c1c489de49347c67",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "5b452ee90282e3209e17f9d2989c1fbeab014027d776ebb0c1c489de49347c67"
+}

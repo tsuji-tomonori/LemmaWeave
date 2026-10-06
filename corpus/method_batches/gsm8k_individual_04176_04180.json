@@ -1,0 +1,96 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1055",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "7f6b1ad95e63cb2b284f0ae64eea8f9e7da17d19bbaf9ca09effbd251aa70ae4",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A04P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04176",
+      "source_line_1based": 4177,
+      "source_record_sha256": "9a18610b57e506787e98bfa2ebf5a5a63a1df2050d06869ee727f61483fd6af6",
+      "raw_question_sha256": "127662a0fe7a742727e30bf8d1ac378f6dddfd147325d48addec93170c5a617b",
+      "normalized_question_sha256": "d667ac17f9a5c19e95fce88319d53c3a75d2a124362a9ab936ae107e7979a357",
+      "source_question": "Daisy and Rose were enjoying their backyard pool with their dogs.  If there are 24 legs/paws in the pool, how many dogs do Daisy and Rose have?",
+      "recipe_id": "gsm8k_sprint421_pool_dogs",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "全員と全犬がプール内にいて、通常の脚数を持つとする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04177",
+      "source_line_1based": 4178,
+      "source_record_sha256": "749ab948042000a6bd91315da8c8ea412d6165ea695190bd1ed50b6a59d33e40",
+      "raw_question_sha256": "9386bdcffdb322dd0a18a9fca60bcfa9df844c690ce8e779f23864d3eddd40c8",
+      "normalized_question_sha256": "ab33cedb7abd8e640c4a702fb5265a1e2379cc1e277aaf6ba511d4d91375a354",
+      "source_question": "A chihuahua, pitbull, and great dane weigh a combined weight of 439 pounds. The pitbull weighs 3 times as much as the chihuahua.  The great dane weighs 10 more pounds than triple the pitbull.  How much does the great dane weigh?",
+      "recipe_id": "gsm8k_sprint422_great_dane_weight",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "体重はポンド単位の自然数として、三倍関係をそのまま一次方程式にする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04178",
+      "source_line_1based": 4179,
+      "source_record_sha256": "97513871be6c02e62d39e1b8b0cad87aeee6ba0479e22eac9403d4768f92095a",
+      "raw_question_sha256": "ee767dc4c38d56aad873d9d9477effcd19a05e18a59504846afe3e1d73ae3fad",
+      "normalized_question_sha256": "58fb4f6ff9adfd2047c4bfe3ce31f6db5a48dea726bcf97b7bcf3149b8460abb",
+      "source_question": "John decides to go back to school to get his PhD.  He first takes 1 year of courses to get acclimated back to school life before starting his PhD.  After that, he spends 2 years learning the basics of his field.  He then starts research, and he spends 75% more time on research than he did learning the basics.  He then spends half as long on writing his dissertation as his acclimation period.  How long did it take him to do everything?",
+      "recipe_id": "gsm8k_sprint423_phd_total_years",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "75% moreは元の175%と解釈し、半年単位で小数を避ける。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04179",
+      "source_line_1based": 4180,
+      "source_record_sha256": "24bee9c8304205b6be37babb5c6226e4aaad6392bed745a34db7a41dea4c4dd8",
+      "raw_question_sha256": "d814e32ee73958a5e0e59dc8591e64976f6488b2c26ebad8994563608c254fa8",
+      "normalized_question_sha256": "d814e32ee73958a5e0e59dc8591e64976f6488b2c26ebad8994563608c254fa8",
+      "source_question": "Sarah's external drive showed 2.4 gigabytes free and 12.6 gigabytes used. She decided to delete a folder of size 4.6 gigabytes and store new files of 2 gigabytes. If she will transfer all her files to a new external drive of size 20 gigabytes, how many free gigabytes will the new external drive have?",
+      "recipe_id": "gsm8k_sprint424_external_drive_free_space",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "小数を0.1GB単位の自然数へ正確に換算する。",
+        "初期空き2.4GBと使用12.6GBの和15GBも整合確認する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04180",
+      "source_line_1based": 4181,
+      "source_record_sha256": "d4e0f7fce1bab7b479bd161bc5fd1e388f6c3c6743c0331f4be47d46fdb4dfee",
+      "raw_question_sha256": "ab331670c55863783059c9ade7623bc3e0a97e6ab6dccb2f2e24cfe8b62befbc",
+      "normalized_question_sha256": "e88fbd490b69a7f343e8c93cfd18df82e87a248e0f190b4154feeef6407ba9fe",
+      "source_question": "Maria buys a large bar of French soap that lasts her for 2 months.  She spends $8.00 per bar of soap.  If she wants to stock up for the entire year, how much will she spend on soap?",
+      "recipe_id": "gsm8k_sprint425_annual_soap_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "1年を12か月とし、使用期間はちょうど2か月で割り切れる。"
+      ],
+      "blockers": []
+    }
+  ]
+}

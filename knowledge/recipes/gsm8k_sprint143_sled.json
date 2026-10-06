@@ -1,0 +1,97 @@
+{
+  "id": "gsm8k_sprint143_sled",
+  "title_ja": "丘を滑った回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02428",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "高い丘2つを各4回、小さい丘3つを各2回滑るという参考解答の読みを採用する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.sled_solution",
+  "graph": "work/gsm8k-sprint143-sled-graph.json",
+  "model_notes_ja": [
+    "「half as often」が各小さい丘の回数を指すという追加解釈なら14回。高い丘全体の8回を基準に小さい丘全体を4回と読むと12回であり、原文だけでは一意に定まらない。"
+  ],
+  "steps": [
+    {
+      "id": "sled_tall",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.sled_tall",
+      "title_ja": "高い丘では計8回",
+      "claim_ja": "高い丘では計8回",
+      "method_ja": "2つに各4回",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "高い丘では計8回",
+      "baseline_ja": "高い丘では計8回"
+    },
+    {
+      "id": "sled_small_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.sled_small_each",
+      "title_ja": "小さい丘1つにつき2回",
+      "claim_ja": "小さい丘1つにつき2回",
+      "method_ja": "4回の半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "小さい丘1つにつき2回",
+      "baseline_ja": "小さい丘1つにつき2回"
+    },
+    {
+      "id": "sled_small_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.sled_small_total",
+      "title_ja": "小さい丘では計6回",
+      "claim_ja": "小さい丘では計6回",
+      "method_ja": "3つに各2回",
+      "requires_steps": [
+        "sled_small_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "小さい丘では計6回",
+      "baseline_ja": "小さい丘では計6回"
+    },
+    {
+      "id": "sled_ambiguity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.sled_ambiguity",
+      "title_ja": "別の自然な読みでは12回となり、原文だけでは一意でない",
+      "claim_ja": "別の自然な読みでは12回となり、原文だけでは一意でない",
+      "method_ja": "高い丘での総8回の半分を小さい丘全体の回数と読む反例と比較する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "別の自然な読みでは12回となり、原文だけでは一意でない",
+      "baseline_ja": "別の自然な読みでは12回となり、原文だけでは一意でない"
+    },
+    {
+      "id": "sled_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.sled_solution",
+      "title_ja": "追加解釈の下では合計14回",
+      "claim_ja": "追加解釈の下では合計14回",
+      "method_ja": "8と6を足す",
+      "requires_steps": [
+        "sled_tall",
+        "sled_small_total",
+        "sled_ambiguity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "追加解釈の下では合計14回",
+      "baseline_ja": "追加解釈の下では合計14回"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2429,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

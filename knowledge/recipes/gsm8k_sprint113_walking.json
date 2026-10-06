@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint113_walking",
+  "title_ja": "通学で歩く週間距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01978",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A03.walking_solution",
+  "graph": "work/gsm8k-sprint113-walking-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "walking_daily",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A03.walking_daily",
+      "title_ja": "往復は1日22マイル。",
+      "claim_ja": "往復は1日22マイル。",
+      "method_ja": "10+12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "往復は1日22マイル。",
+      "baseline_ja": "往復は1日22マイル。"
+    },
+    {
+      "id": "walking_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A03.walking_solution",
+      "title_ja": "平日5日で110マイル。",
+      "claim_ja": "平日5日で110マイル。",
+      "method_ja": "22×5。",
+      "requires_steps": [
+        "walking_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の個数・金額を用いる。",
+      "conclusion_ja": "平日5日で110マイル。",
+      "baseline_ja": "平日5日で110マイル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1979,
+    "checked_model_hash": "8c1f18cb7a0d8ac443f78b40ca2b8d16bc527730adadb6a34590de86eedca8a8",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足は反例と追加条件を分離した。"
+    ]
+  }
+}

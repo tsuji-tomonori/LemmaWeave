@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint32_pens",
+  "title_ja": "配った後のペン",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00762",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "100本の40%を友人へ、残りの4分の1を同級生へ渡した後の本数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.pens_solution",
+  "graph": "work/gsm8k-sprint32-pens-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "参照解説の「Half of 60」は誤記であり、原題どおりone-fourth（4分の1）を使う。"
+  ],
+  "steps": [
+    {
+      "id": "pens_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.pens_total",
+      "title_ja": "初めの本数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20箱に各5本入っている。",
+      "conclusion_ja": "100本。",
+      "baseline_ja": "20×5=100。"
+    },
+    {
+      "id": "pens_friends",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.pens_friends",
+      "title_ja": "友人へ渡した後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "100本の40%である40本を渡す。",
+      "conclusion_ja": "60本残る。",
+      "baseline_ja": "40×100=100×40、100=60+40。"
+    },
+    {
+      "id": "pens_classmates",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.pens_classmates",
+      "title_ja": "同級生へ渡す本数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残る60本の4分の1を渡す。",
+      "conclusion_ja": "15本。",
+      "baseline_ja": "15×4=60。"
+    },
+    {
+      "id": "pens_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.pens_remaining",
+      "title_ja": "本人に残る本数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "60本から15本を渡す。",
+      "conclusion_ja": "45本。",
+      "baseline_ja": "60=45+15。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 763,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

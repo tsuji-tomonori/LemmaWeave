@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint123_water",
+  "title_ja": "必要な水差し数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02128",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "200人が各10杯飲む日に、40杯入りの水差しが何個必要か求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A14.water_solution",
+  "graph": "work/gsm8k-sprint123-water-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "water_cups",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.water_cups",
+      "title_ja": "必要な水は2000杯。",
+      "claim_ja": "必要な水は2000杯。",
+      "method_ja": "200×10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "必要な水は2000杯。",
+      "baseline_ja": "必要な水は2000杯。"
+    },
+    {
+      "id": "water_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A14.water_solution",
+      "title_ja": "必要な水差しは50個。",
+      "claim_ja": "必要な水差しは50個。",
+      "method_ja": "2000÷40。",
+      "requires_steps": [
+        "water_cups"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "必要な水差しは50個。",
+      "baseline_ja": "必要な水差しは50個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2129,
+    "checked_model_hash": "61d9d50f01023680e1b5a790b2cbb8b5dc80e11c2c055803236bd99c6da83155",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、曖昧な表現は読解条件と別読解を明示した。"
+    ]
+  }
+}

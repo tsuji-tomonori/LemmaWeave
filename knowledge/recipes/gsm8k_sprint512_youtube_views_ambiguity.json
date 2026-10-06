@@ -1,0 +1,147 @@
+{
+  "id": "gsm8k_sprint512_youtube_views_ambiguity",
+  "title_ja": "YouTube再生数の曖昧性",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04267",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P3.lean",
+  "problem_ja": "初日4,000回。4日後の増加数が初日より “ten times more” で、さらに2日後50,000回増えた。最終再生数を求める。",
+  "answer_ja": "“ten times more” を「10倍」と読む参照解答では94,000回。「元の10倍だけ多い」と文字どおり読むと98,000回であり、原文だけでは一意に決まらない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.youtube_views_ambiguity",
+  "graph": "work/gsm8k-sprint512-youtube-views-ambiguity-graph.json",
+  "model_notes_ja": [
+    "曖昧な “ten times more” に追加条件を黙って足さず、2つの整合する読みを分離する。"
+  ],
+  "steps": [
+    {
+      "id": "reference_increment",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.reference_increment",
+      "title_ja": "参照解答の増加数",
+      "claim_ja": "10倍と読むと40,000回増える。",
+      "method_ja": "初日の再生数を10倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10倍と読むと40,000回増える。"
+    },
+    {
+      "id": "reference_four_day_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.reference_four_day_total",
+      "title_ja": "参照解答の4日後",
+      "claim_ja": "4,000+40,000=44,000回。",
+      "method_ja": "初日分と増加分を足す。",
+      "requires_steps": [
+        "reference_increment"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4,000+40,000=44,000回。"
+    },
+    {
+      "id": "reference_final_views",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.reference_final_views",
+      "title_ja": "参照読みの最終値",
+      "claim_ja": "44,000+50,000=94,000回。",
+      "method_ja": "追加の50,000回を足す。",
+      "requires_steps": [
+        "reference_four_day_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "44,000+50,000=94,000回。"
+    },
+    {
+      "id": "literal_increment",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.literal_increment",
+      "title_ja": "文字どおりの増加数",
+      "claim_ja": "元の数より10倍多い増加数は44,000回。",
+      "method_ja": "元の数へその10倍を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "元の数より10倍多い増加数は44,000回。"
+    },
+    {
+      "id": "literal_four_day_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.literal_four_day_total",
+      "title_ja": "文字どおりの4日後",
+      "claim_ja": "4,000+44,000=48,000回。",
+      "method_ja": "初日分と増加分を足す。",
+      "requires_steps": [
+        "literal_increment"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4,000+44,000=48,000回。"
+    },
+    {
+      "id": "literal_final_views",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.literal_final_views",
+      "title_ja": "文字どおりの最終値",
+      "claim_ja": "48,000+50,000=98,000回。",
+      "method_ja": "追加の50,000回を足す。",
+      "requires_steps": [
+        "literal_four_day_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "48,000+50,000=98,000回。"
+    },
+    {
+      "id": "final_views_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.final_views_differ",
+      "title_ja": "一意性の否定",
+      "claim_ja": "94,000回と98,000回は異なる。",
+      "method_ja": "2つの読みの結果を比較する。",
+      "requires_steps": [
+        "reference_final_views",
+        "literal_final_views"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "94,000回と98,000回は異なる。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.youtube_views_ambiguity",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "“ten times more” を「10倍」と読む参照解答では94,000回。「元の10倍だけ多い」と文字どおり読むと98,000回であり、原文だけでは一意に決まらない。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "reference_increment",
+        "reference_four_day_total",
+        "reference_final_views",
+        "literal_increment",
+        "literal_four_day_total",
+        "literal_final_views",
+        "final_views_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "“ten times more” を「10倍」と読む参照解答では94,000回。「元の10倍だけ多い」と文字どおり読むと98,000回であり、原文だけでは一意に決まらない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4268,
+    "checked_model_hash": "5e5065b43a0044861194598e07c25572a27c4d1cecdad3ad56739f7a0341534f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

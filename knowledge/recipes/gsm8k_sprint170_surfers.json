@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint170_surfers",
+  "title_ja": "3日間のサーファー平均",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02835",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日目1500人、2日目2100人、3日目600人を合計して3で割る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A10.surfers_solution",
+  "graph": "work/gsm8k-sprint170-surfers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "surfer_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A10.surfer_days",
+      "title_ja": "2日目2100人、3日目600人",
+      "claim_ja": "1500+600=2100、1500×2/5=600。",
+      "method_ja": "加算と分数倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "1500+600=2100、1500×2/5=600。",
+      "baseline_ja": "1500+600=2100、1500×2/5=600。"
+    },
+    {
+      "id": "surfer_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A10.surfer_total",
+      "title_ja": "3日で4200人",
+      "claim_ja": "1500+2100+600=4200人。",
+      "method_ja": "和",
+      "requires_steps": [
+        "surfer_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "1500+2100+600=4200人。",
+      "baseline_ja": "1500+2100+600=4200人。"
+    },
+    {
+      "id": "surfer_average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A10.surfer_average",
+      "title_ja": "平均1400人",
+      "claim_ja": "4200÷3=1400人/日。",
+      "method_ja": "算術平均",
+      "requires_steps": [
+        "surfer_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "4200÷3=1400人/日。",
+      "baseline_ja": "4200÷3=1400人/日。"
+    },
+    {
+      "id": "surfers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A10.surfers_solution",
+      "title_ja": "答えは1400人",
+      "claim_ja": "3日間の平均は1400人。",
+      "method_ja": "直前の結論",
+      "requires_steps": [
+        "surfer_average"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "3日間の平均は1400人。",
+      "baseline_ja": "3日間の平均は1400人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2836,
+  "checked_model_hash": "383952d36f81162cd42d0335cbe410f235499c6e1c0d2d0dcff9bfb7e9705cf0",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

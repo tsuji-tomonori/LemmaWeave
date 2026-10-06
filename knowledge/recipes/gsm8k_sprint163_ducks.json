@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint163_ducks",
+  "title_ja": "5年後に合流したアヒル数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02733",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100羽の群れで毎年20羽死亡・30羽誕生。5年後に150羽の群れと合流した総数を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A01.ducks_solution",
+  "graph": "work/gsm8k-sprint163-ducks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ducks_annual",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.ducks_annual",
+      "title_ja": "年10羽増える",
+      "claim_ja": "年純増10羽",
+      "method_ja": "30-20",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "年純増10羽",
+      "baseline_ja": "年純増10羽"
+    },
+    {
+      "id": "ducks_after_five",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.ducks_after_five",
+      "title_ja": "元の群れは150羽",
+      "claim_ja": "5年後150羽",
+      "method_ja": "100+10×5",
+      "requires_steps": [
+        "ducks_annual"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "5年後150羽",
+      "baseline_ja": "5年後150羽"
+    },
+    {
+      "id": "ducks_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A01.ducks_solution",
+      "title_ja": "合流後300羽",
+      "claim_ja": "総数300羽",
+      "method_ja": "150+150",
+      "requires_steps": [
+        "ducks_after_five"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "総数300羽",
+      "baseline_ja": "総数300羽"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2734,
+    "checked_model_hash": "82bd64d2ad7b9d2e0d7e0640dca9a4d3c12a9e15e2684f002e94f20163c657ad",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

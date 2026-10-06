@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint133_bank",
+  "title_ja": "送金前の口座残高",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02285",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "母へ60ドル、姉妹へその半額を送金し、残高100ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A06.bank_solution",
+  "graph": "work/gsm8k-sprint133-bank-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bank_sister",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.bank_sister",
+      "title_ja": "姉妹への送金は30ドル",
+      "claim_ja": "姉妹への送金は30ドル",
+      "method_ja": "60ドルの半分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "姉妹への送金は30ドル",
+      "baseline_ja": "姉妹への送金は30ドル"
+    },
+    {
+      "id": "bank_transferred",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.bank_transferred",
+      "title_ja": "送金合計は90ドル",
+      "claim_ja": "送金合計は90ドル",
+      "method_ja": "60ドルと30ドルを足す",
+      "requires_steps": [
+        "bank_sister"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "送金合計は90ドル",
+      "baseline_ja": "送金合計は90ドル"
+    },
+    {
+      "id": "bank_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A06.bank_solution",
+      "title_ja": "送金前は190ドル",
+      "claim_ja": "送金前は190ドル",
+      "method_ja": "残高100ドルに送金90ドルを戻す",
+      "requires_steps": [
+        "bank_transferred"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "送金前は190ドル",
+      "baseline_ja": "送金前は190ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2286,
+    "checked_model_hash": "f57c0c51ecac149c58ab9991cfaff90a4b06f84527cc15a56b74fbe4c5afc072",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

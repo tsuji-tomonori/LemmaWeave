@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint106_gifts",
+  "title_ja": "追加のギフトバッグ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01876",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "来店見込みと作成済みの差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.gifts_solution",
+  "graph": "work/gsm8k-sprint106-gifts-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "gifts_visitors",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.gifts_visitors",
+      "title_ja": "来店見込みは90人。",
+      "claim_ja": "来店見込みは90人。",
+      "method_ja": "50+40。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "gifts_made",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.gifts_made",
+      "title_ja": "作成済みは30袋。",
+      "claim_ja": "作成済みは30袋。",
+      "method_ja": "10+20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "gifts_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.gifts_solution",
+      "title_ja": "追加で60袋必要。",
+      "claim_ja": "追加で60袋必要。",
+      "method_ja": "90−30。",
+      "requires_steps": [
+        "gifts_visitors",
+        "gifts_made"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1877,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

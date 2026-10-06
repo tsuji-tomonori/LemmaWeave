@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint599_roasted_marshmallow_total",
+  "title_ja": "焼いたマシュマロ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04354",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P2.lean",
+  "problem_ja": "Joe goes camping with his dad on a Friday. Joe's dad has 21 marshmallows, and Joe has four times as much marshmallows as his dad. If Joe’s dad roasts a third of his marshmallows, and Joe roasts half of his marshmallows, how many marshmallows did they roast in total?",
+  "answer_ja": "父は21個の3分の1で7個を焼く。Joeは4×21=84個持ち、その半分42個を焼く。合計49個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.roasted_marshmallow_total",
+  "graph": "work/gsm8k-sprint599-roasted-marshmallow-total-graph.json",
+  "model_notes_ja": [
+    "“four times as much”をJoeの所持数が父の4倍と読む。"
+  ],
+  "steps": [
+    {
+      "id": "dad_roasted_marshmallows",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.dad_roasted_marshmallows",
+      "title_ja": "父が焼いた数",
+      "claim_ja": "21÷3=7個。",
+      "method_ja": "所持数の3分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "21÷3=7個。"
+    },
+    {
+      "id": "joe_marshmallow_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.joe_marshmallow_count",
+      "title_ja": "Joeの所持数",
+      "claim_ja": "4×21=84個。",
+      "method_ja": "父の所持数を4倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4×21=84個。"
+    },
+    {
+      "id": "joe_roasted_marshmallows",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.joe_roasted_marshmallows",
+      "title_ja": "Joeが焼いた数",
+      "claim_ja": "84÷2=42個。",
+      "method_ja": "Joeの所持数の半分を求める。",
+      "requires_steps": [
+        "joe_marshmallow_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "84÷2=42個。"
+    },
+    {
+      "id": "all_roasted_marshmallows",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.all_roasted_marshmallows",
+      "title_ja": "焼いた総数",
+      "claim_ja": "7+42=49個。",
+      "method_ja": "二人が焼いた数を加える。",
+      "requires_steps": [
+        "dad_roasted_marshmallows",
+        "joe_roasted_marshmallows"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "7+42=49個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.roasted_marshmallow_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "父は21個の3分の1で7個を焼く。Joeは4×21=84個持ち、その半分42個を焼く。合計49個。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "dad_roasted_marshmallows",
+        "joe_marshmallow_count",
+        "joe_roasted_marshmallows",
+        "all_roasted_marshmallows"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "父は21個の3分の1で7個を焼く。Joeは4×21=84個持ち、その半分42個を焼く。合計49個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4355,
+    "checked_model_hash": "2c4895a78f2f0df7b2c26dde7d68bc9e87de1b20730d60f44401765935b34663",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

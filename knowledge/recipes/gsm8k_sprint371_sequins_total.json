@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint371_sequins_total",
+  "title_ja": "衣装へ縫い付けるスパンコール総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03977",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jane is sewing sequins onto her trapeze artist costume. She sews 6 rows of 8 blue sequins each, 5 rows of 12 purple sequins each, and 9 rows of 6 green sequins each. How many sequins does she add total?",
+  "answer_ja": "青は6×8=48個、紫は5×12=60個、緑は9×6=54個。合計48+60+54=162個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A15P2.sequins_total",
+  "graph": "work/gsm8k-sprint371-sequins-total-graph.json",
+  "model_notes_ja": [
+    "各色の行は重複しない。"
+  ],
+  "steps": [
+    {
+      "id": "sequins_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A15P2.sequins_total",
+      "title_ja": "衣装へ縫い付けるスパンコール総数",
+      "claim_ja": "青は6×8=48個、紫は5×12=60個、緑は9×6=54個。合計48+60+54=162個。",
+      "method_ja": "色ごとに行数×1行当たり個数を求め、3色を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各色の行は重複しない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "青は6×8=48個、紫は5×12=60個、緑は9×6=54個。合計48+60+54=162個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3978,
+    "checked_model_hash": "c36008af9a9c293ad282864cce7b541ce2db52d073fe13afbe6420ec2310989c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

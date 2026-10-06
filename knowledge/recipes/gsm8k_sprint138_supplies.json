@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint138_supplies",
+  "title_ja": "事務用品の総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02358",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "鉛筆2ダースを各50セント、フォルダ20個を各90セントで買う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A12.supplies_solution",
+  "graph": "work/gsm8k-sprint138-supplies-graph.json",
+  "model_notes_ja": [
+    "小数を避けるため金額はセントで形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "supplies_pencils",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.supplies_pencils",
+      "title_ja": "鉛筆24本",
+      "claim_ja": "鉛筆24本",
+      "method_ja": "2ダースを12倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "鉛筆24本",
+      "baseline_ja": "鉛筆24本"
+    },
+    {
+      "id": "supplies_pencil_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.supplies_pencil_cost",
+      "title_ja": "鉛筆1200セント",
+      "claim_ja": "鉛筆1200セント",
+      "method_ja": "24本に50セント",
+      "requires_steps": [
+        "supplies_pencils"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "鉛筆1200セント",
+      "baseline_ja": "鉛筆1200セント"
+    },
+    {
+      "id": "supplies_folder_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.supplies_folder_cost",
+      "title_ja": "フォルダ1800セント",
+      "claim_ja": "フォルダ1800セント",
+      "method_ja": "20個に90セント",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "フォルダ1800セント",
+      "baseline_ja": "フォルダ1800セント"
+    },
+    {
+      "id": "supplies_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A12.supplies_solution",
+      "title_ja": "合計3000セント=30ドル",
+      "claim_ja": "合計3000セント=30ドル",
+      "method_ja": "1200と1800を足す",
+      "requires_steps": [
+        "supplies_pencil_cost",
+        "supplies_folder_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と、model_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計3000セント=30ドル",
+      "baseline_ja": "合計3000セント=30ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2359,
+    "checked_model_hash": "e89e0a8fed68bf87ef0de72e11cd924e42bf43e793c002049a2ea2520267d828",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

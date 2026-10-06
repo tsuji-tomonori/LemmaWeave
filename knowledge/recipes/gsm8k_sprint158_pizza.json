@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint158_pizza",
+  "title_ja": "残ったピザの切れ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02664",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "12切れのピザ4枚から39切れ食べた。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A17.pizza_solution",
+  "graph": "work/gsm8k-sprint158-pizza-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pizza_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A17.pizza_total",
+      "title_ja": "全部で48切れ",
+      "claim_ja": "全部で48切れ",
+      "method_ja": "12切れを4枚分掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "全部で48切れ",
+      "baseline_ja": "全部で48切れ"
+    },
+    {
+      "id": "pizza_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A17.pizza_solution",
+      "title_ja": "9切れ残る",
+      "claim_ja": "9切れ残る",
+      "method_ja": "48切れから39切れを引く",
+      "requires_steps": [
+        "pizza_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "9切れ残る",
+      "baseline_ja": "9切れ残る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2665,
+    "checked_model_hash": "3296d837841df4bb33074144c271f802ecc8c5683d53fd92b76cf0b8b19b885f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

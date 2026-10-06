@@ -1,0 +1,42 @@
+{
+  "date":"2026-09-20",
+  "run_id":"lemmaweave-sprint-20260920-1500-gsm8k-46",
+  "planned_slot_local_hour":15,
+  "planned_at":"2026-09-20T15:00:00+09:00",
+  "role":"gsm8k_individual_solution",
+  "base_sha":"658eabde59bdcc81e3346316baf7338c4d10a1fe",
+  "started_at":"2026-09-20T14:59:18+09:00",
+  "finished_at":"2026-09-20T15:09:00+09:00",
+  "schedule_offset_seconds":-42,
+  "missed_slots_detected":[10],
+  "selected_problem_ids":[
+    "external-gsm8k-main-3101c7d50724:train:00969","external-gsm8k-main-3101c7d50724:train:00970","external-gsm8k-main-3101c7d50724:train:00971","external-gsm8k-main-3101c7d50724:train:00972","external-gsm8k-main-3101c7d50724:train:00973",
+    "external-gsm8k-main-3101c7d50724:train:00974","external-gsm8k-main-3101c7d50724:train:00975","external-gsm8k-main-3101c7d50724:train:00976","external-gsm8k-main-3101c7d50724:train:00977","external-gsm8k-main-3101c7d50724:train:00978",
+    "external-gsm8k-main-3101c7d50724:train:00979","external-gsm8k-main-3101c7d50724:train:00980","external-gsm8k-main-3101c7d50724:train:00981","external-gsm8k-main-3101c7d50724:train:00982","external-gsm8k-main-3101c7d50724:train:00983"
+  ],
+  "completed_problem_ids":[],
+  "verification_pending":[
+    "external-gsm8k-main-3101c7d50724:train:00969","external-gsm8k-main-3101c7d50724:train:00970","external-gsm8k-main-3101c7d50724:train:00971","external-gsm8k-main-3101c7d50724:train:00972","external-gsm8k-main-3101c7d50724:train:00973",
+    "external-gsm8k-main-3101c7d50724:train:00974","external-gsm8k-main-3101c7d50724:train:00975","external-gsm8k-main-3101c7d50724:train:00976","external-gsm8k-main-3101c7d50724:train:00977","external-gsm8k-main-3101c7d50724:train:00978",
+    "external-gsm8k-main-3101c7d50724:train:00979","external-gsm8k-main-3101c7d50724:train:00980","external-gsm8k-main-3101c7d50724:train:00981","external-gsm8k-main-3101c7d50724:train:00982","external-gsm8k-main-3101c7d50724:train:00983"
+  ],
+  "verification_pending_cumulative":{"count":470,"first_problem_id":"external-gsm8k-main-3101c7d50724:train:00514","last_problem_id":"external-gsm8k-main-3101c7d50724:train:00983"},
+  "deferred":[
+    {"problem_id":"external-gsm8k-main-3101c7d50724:train:00969-00983","retry_on":"2026-09-20","reason_ja":"固定Lean 4.33.1のexact-head CI成功証拠と依存グラフが未取得のためsolution_readyへ昇格できない。","next_action_ja":"現HEADの全体replayを完走し、入力SHA・許容公理・45説明行の実依存を照合して成功成果物だけを取り込む。"}
+  ],
+  "checkpoints":[
+    {"problem_ids":"train:00969-00973","commit":"7e7604bee2fc4f4c3a568ab6140d1852994fd9f8"},
+    {"problem_ids":"train:00974-00978","commit":"14e0186ec0f4ba96f3ffb855663048d67359bd8b"},
+    {"problem_ids":"train:00979-00983","commit":"2309a3e7e10d0a491579a502713afbcc5926fda8"},
+    {"problem_ids":"train:00969-00983 registration","commit":"537d5d6b4892e583be71be6c3274cc748ca7a4a6"}
+  ],
+  "self_review":{"status":"self_review_only","source_records_checked":15,"source_questions_checked":15,"written_solution_lines":45,"recipe_declaration_mappings_checked":45,"sorry_admit_custom_axiom_matches":0,"python_regression_tests_passed":52,"model_sha256":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55"},
+  "local_checks":{"ledger_validate":"passed_before_ledger_then_repeated","python_unittest":"52 passed","source_and_recipe_hash_check":"15 records and 45 declarations passed","fixed_lean":"not_available_locally","method_recipe_render":"blocked_missing_existing_artifact","method_recipe_render_missing_path":"reports/dependencies/methods/dnc2026_inequalities_individual.json.gz","next_action_ja":"固定CIで新規Lean対象と全依存グラフを生成して再照合する。"},
+  "ci":{"previous_head_sha":"0c2e6acead0201200d6220827cb96b9081ac6630","previous_run_id":35490914686,"previous_run_url":"https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/35490914686","previous_status":"failure","previous_failure":"recipe gsm8k_sprint27_camp: written line has no theorem in final proof","accepted_as_success_evidence":false,"current_head_sha":"537d5d6b4892e583be71be6c3274cc748ca7a4a6","current_run_id":null,"current_run_url":null,"current_status":"trigger_pending"},
+  "pull_request":"https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+  "commit":"537d5d6b4892e583be71be6c3274cc748ca7a4a6",
+  "progress_before":{"solution_ready":518,"remaining":8274,"verification_pending":455},
+  "progress_after":{"solution_ready":518,"remaining":8274,"verification_pending":470},
+  "next_problem_id":"external-gsm8k-main-3101c7d50724:train:00984",
+  "note_ja":"15問を原題から個別に読解し、記述式解答・Leanモデル・45個の名前付き行定理・原文ハッシュ・自己照合を保存した。train:00975は試投160本と成功112本を分離した。train:00979はtwice as farなら差24ヤード、200% fartherなら差44ヤードとなる曖昧性を反例付きで形式化した。10時枠は未実行のまま保持する。"
+}

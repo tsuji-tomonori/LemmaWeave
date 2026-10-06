@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-06",
+  "run_id": "20261006T230000+0900-full-id-reconciliation-daily-report",
+  "scheduled_slot": "2026-10-06T23:00:00+09:00",
+  "role": "full_id_reconciliation_and_daily_report",
+  "started_at": "2026-10-06T23:03:04+09:00",
+  "finished_at": "2026-10-06T23:11:22+09:00",
+  "schedule_deviation_minutes": 3,
+  "repository": "tsuji-tomonori/LemmaWeave",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "fbd906bedd19b7a2c8081b2d4b9df86f3db7b5b6",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "最古のevidence_import_pending。修復後exact-head CI #37469132053は日次締め時点で実行中であり、現行入力ハッシュに対応する成功証拠がない。",
+      "next_action_ja": "CI完了後にbatch 54のLean実行結果と依存グラフを個別照合し、成功成果物だけをSHA-256検証して取り込む。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00515",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00516",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00517",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00518",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00519",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00520",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00521",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00522",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00523",
+      "retry_on": "2026-10-07T21:00:00+09:00",
+      "reason_ja": "batch 54の現行入力に対する成功証拠待ち。",
+      "next_action_ja": "exact-head成果物から型・公理・依存・説明行対応を再照合する。"
+    }
+  ],
+  "daily_gsm8k_result": {
+    "operational_target": 300,
+    "new_individual_solutions_written": 255,
+    "unique_problem_ids_written": 255,
+    "formally_promoted_to_solution_ready": 0,
+    "output_target_deficit": 45,
+    "formal_completion_target_deficit": 300,
+    "note_ja": "17枠で各15問、計255問の個別記述解答・Lean成果を保存した。現行HEAD成功証拠がないため正式完了には数えない。"
+  },
+  "scheduled_execution": {
+    "gsm8k_solve_slots_target": 20,
+    "gsm8k_solve_slots_recorded": 17,
+    "gsm8k_solve_slots_recorded_hours_jst": [0, 1, 2, 4, 5, 7, 8, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "gsm8k_solve_slots_unrecorded": 3,
+    "gsm8k_solve_slots_unrecorded_hours_jst": [3, 6, 11],
+    "high_school_09h": "unrecorded",
+    "oldest_deferred_retry_21h": "executed_without_promotion",
+    "ci_integration_22h": "executed_infrastructure_repair_exact_head_ci_still_running",
+    "daily_reconciliation_23h": "completed"
+  },
+  "fixed_corpus": {
+    "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "expected_total": 8792,
+    "expected_train": 7473,
+    "expected_test": 1319,
+    "queue_sha256": "f8d57cc1515a10aa48a6d1b32bd6100ee70e5a72766f328bf21c5402b2c64254",
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_problem_ids": 0,
+    "extra_problem_ids": 0,
+    "duplicate_problem_ids": 0,
+    "pr_head_primary_state_partition": {
+      "pending_unstarted": 4415,
+      "in_progress": 0,
+      "awaiting_verification": 4377,
+      "held_primary_status": 0,
+      "solution_ready": 0,
+      "sum": 8792,
+      "pairwise_overlap": 0
+    },
+    "main_primary_state_partition": {
+      "pending_unstarted": 8264,
+      "in_progress": 0,
+      "awaiting_verification": 10,
+      "held_primary_status": 0,
+      "solution_ready": 518,
+      "sum": 8792,
+      "pairwise_overlap": 0
+    },
+    "secondary_deferred_axis_pr_head": {
+      "valid_fixed_problem_id_count": 474,
+      "overlap_with_awaiting_verification": 474,
+      "missing_from_queue": 0,
+      "oldest_problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "excluded_malformed_historical_range_ids": 1,
+      "note_ja": "deferredは一次状態と重なる再試行管理の副軸であり、8792件の一次状態合計へ加算しない。"
+    },
+    "main_reflected_solution_ready": 518,
+    "main_remaining_not_solution_ready": 8274,
+    "pr_head_current_evidence_solution_ready": 0,
+    "pr_head_remaining_not_solution_ready": 8792,
+    "evidence_invalidation_ja": "PR HEADではLemmaWeave/Audit/Extract.leanがmainから変更され、既存518件のrun.jsonに記録された入力ハッシュと不一致になった。scripts/solve_queue.pyの現行照合はstale/missing input hashとして518件を昇格対象から除外した。"
+  },
+  "high_school_entrance_exam_separate_ledger": {
+    "ledger_as_of": "2026-10-04T09:15:00+09:00",
+    "registered_count": 17,
+    "collected_kernel_checked_count": 5,
+    "candidate_not_started_count": 4,
+    "registered_domain_counts": {
+      "sets_logic_integers": 3,
+      "functions_equations_inequalities": 3,
+      "geometry_vectors_trigonometry": 4,
+      "combinatorics_probability_statistics": 3,
+      "sequences": 2,
+      "calculus": 2
+    },
+    "current_week_2026_10_05_results": {
+      "sets_logic_integers": 0,
+      "functions_equations_inequalities": 0,
+      "geometry_vectors_trigonometry": 0,
+      "combinatorics_probability_statistics": 0,
+      "sequences": 0,
+      "calculus": 0
+    },
+    "note_ja": "10月6日の9時専用枠は未記録。GSM8K固定8792問とは別集計。"
+  },
+  "forecast": {
+    "fixed_target_date": "2026-10-18",
+    "remaining_calendar_days_after_2026_10_06": 12,
+    "main_remaining_problems": 8274,
+    "required_main_solution_ready_per_day": 690,
+    "pr_head_remaining_problems": 8792,
+    "required_pr_head_solution_ready_per_day": 733,
+    "measured_formal_completion_per_day_7d": 0.0,
+    "measured_completion_forecast_date": null,
+    "status": "stalled",
+    "assessment_ja": "正式昇格の実測が0問/日のため2026-10-18完了見込みは立たない。まず現行監査入力に対する証拠を再生成・取込し、mainの518件をPR HEADでも再確立する必要がある。"
+  },
+  "verification": {
+    "toolchain": "Lean 4.33.1 with pinned mathlib",
+    "required_axiom_allowlist": ["propext", "Classical.choice", "Quot.sound"],
+    "current_head_sha": "fbd906bedd19b7a2c8081b2d4b9df86f3db7b5b6",
+    "current_head_exact_success_evidence": false,
+    "exact_head_ci": {
+      "run_id": 37469132053,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/37469132053",
+      "status_at_daily_close": "in_progress",
+      "active_step": "Replay the complete fixed-environment pipeline",
+      "artifacts_available_at_daily_close": 0
+    },
+    "method_recipe_render": {
+      "command": "python3 scripts/check_method_recipes.py --render",
+      "result": "failure",
+      "missing_archive": "reports/dependencies/methods/dnc2026_cubic_derivative_individual.json.gz",
+      "handling_ja": "部分生成物は権威ある台帳へ採用せず、別のクリーンチェックアウトでsolve_queueを再計算した。"
+    },
+    "promotion_decision": "blocked",
+    "assurance_verdict": "INCONCLUSIVE"
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "mergeable": true,
+    "unresolved_review_threads": 0,
+    "head_sha_before_report": "fbd906bedd19b7a2c8081b2d4b9df86f3db7b5b6",
+    "merged": false,
+    "reason_ja": "exact-head CI実行中かつPR HEADで既存518件の証拠が入力ハッシュ不一致となるためマージしない。"
+  },
+  "next_day_redistribution": {
+    "date": "2026-10-07",
+    "gsm8k_solve_slots": {
+      "planned_slots": 20,
+      "operational_target": 300,
+      "carried_unexecuted_hours_from_2026_10_06": [3, 6, 11],
+      "carried_unexecuted_problem_equivalent": 45,
+      "priority_ja": "新規作成を続けつつ、exact-head CI成果物の取込と既存518件の現行入力証拠再確立を最優先する。未実行45問を隠さず、翌日目標へ機械的に上乗せしない。"
+    },
+    "09h_high_school": {
+      "domain": "sets_logic_integers",
+      "action_ja": "10月6日未実行分を含め、出典付き1小問を別台帳で再開する。"
+    },
+    "21h_retry": {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:00514",
+      "action_ja": "最古のbatch 54について現行入力ハッシュとexact-head成果物を照合する。"
+    },
+    "22h_ci": {
+      "action_ja": "CI #37469132053の成果物を回収し、成功対象だけを取込後、solve_queueと全ID集合を再生成する。"
+    }
+  },
+  "artifacts": {
+    "queue_path": "corpus/work_queue/gsm8k.jsonl.gz",
+    "progress_report_path": "reports/solve-progress.json",
+    "entrance_exam_ledger_path": "operations/entrance-exam-ledger.json",
+    "today_ledgers_glob": "operations/daily/2026-10-06-*.json",
+    "pull_request_url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "exact_head_ci_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/37469132053"
+  }
+}

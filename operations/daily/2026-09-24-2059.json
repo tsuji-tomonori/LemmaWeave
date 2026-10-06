@@ -1,0 +1,108 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T21:00+09:00-overdue-evidence-retry",
+  "scheduled_local_hour": 21,
+  "scheduled_at": "2026-09-24T21:00:00+09:00",
+  "started_at": "2026-09-24T20:59:17+09:00",
+  "finished_at": "2026-09-24T21:36:38+09:00",
+  "start_offset_seconds": -43,
+  "role": "overdue_failed_proof_retry",
+  "base_sha": "618e4f9628a875996cde7bbbc491642730b58f71",
+  "artifact_commit": "037799c6f71b2ee70d0bbd179bcdb6de9fe9afc5",
+  "selected_problem_ids": [
+    "train:00514", "train:00515", "train:00516", "train:00517", "train:00518",
+    "train:00519", "train:00520", "train:00521", "train:00522", "train:00523"
+  ],
+  "non_gsm8k_selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:00514", "train:00515", "train:00516", "train:00517", "train:00518",
+    "train:00519", "train:00520", "train:00521", "train:00522", "train:00523"
+  ],
+  "verified_inside_failed_replay_problem_ids": [
+    "train:00514", "train:00515", "train:00516", "train:00517", "train:00518",
+    "train:00519", "train:00520", "train:00521", "train:00522", "train:00523"
+  ],
+  "deferred": [
+    {"problem_id":"train:00514","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00515","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00516","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00517","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00518","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00519","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00520","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00521","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00522","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"},
+    {"problem_id":"train:00523","retry_on":"next_successful_exact_head_evidence_import","reason_ja":"対象Leanは成功したが全体再生が後続の対象走査で時間切れとなり、証拠取込条件を満たさない。","next_action_ja":"高速化後のexact-head成果物を取り込み、現入力ハッシュとの一致を再確認する。"}
+  ],
+  "retry_results": {
+    "gsm8k_batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0054.json",
+    "lean_target": "tests/lean/GSM8KDaily0918C.lean",
+    "lean_run": "runs/20260924T112532-30344b39/run.json",
+    "lean_exit_code": 0,
+    "solutions_checked": 10,
+    "disallowed_axioms": 0,
+    "allowed_axioms_observed": ["propext", "Classical.choice", "Quot.sound"],
+    "formal_promotion": false
+  },
+  "failed_proof_repair": {
+    "problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i",
+    "file": "tests/lean/DNC2026SequenceDifferenceIndividual.lean",
+    "prior_errors": 5,
+    "repair_ja": "構造体仮定を明示的に分解して式を取り出し、各説明行が前行の名前付き定理を実際に利用する証明へ修正した。依存グラフ用importも追加した。",
+    "status": "pending_exact_head_ci"
+  },
+  "verification_infrastructure_repair": {
+    "file": "scripts/run_method_targets.py",
+    "prior_failure": "4200秒で対象走査が時間切れ",
+    "prior_progress_at_timeout": "4414/4446 dependency build jobs in final observed build",
+    "changes": [
+      "対象ごとに繰り返していたlake buildを、全project importの和集合に対する1回のbuildへ統合した。",
+      "出力先が異なるLean対象だけを既定2並列で検証する。",
+      "並列数を1〜4へ制限し、既定2でメモリ圧迫を抑える。"
+    ]
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1699,
+    "pending": 6575,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "id_partition": {
+    "total": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "ci": {
+    "run_id": 35991274321,
+    "head_sha": "618e4f9628a875996cde7bbbc491642730b58f71",
+    "status": "completed",
+    "conclusion": "failure",
+    "outer_replay_exit_code": 124,
+    "failed_command": ["python3", "scripts/run_method_targets.py"],
+    "artifact_id": 10807940990,
+    "artifact_sha256": "6a4a2b9e793fceb2477fd662292574126a25e5864985092b2c9425b1d062bfc2",
+    "accepted_as_success_evidence": false,
+    "next_exact_head": "pending_after_ledger_commit"
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "base_main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "merge_status": "held_for_exact_head_ci_and_evidence_import"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T21:00+09:00",
+    "scope": "train:00514-train:00523 and JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01i",
+    "claimed_at": "2026-09-24T20:59:17+09:00",
+    "expires_at": "2026-09-24T21:59:17+09:00",
+    "released": true
+  }
+}

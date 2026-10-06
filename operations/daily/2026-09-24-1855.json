@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T19:00+09:00-gsm8k-15-a19",
+  "scheduled_local_hour": 19,
+  "scheduled_at": "2026-09-24T19:00:00+09:00",
+  "started_at": "2026-09-24T18:55:31+09:00",
+  "finished_at": "2026-09-24T19:04:00+09:00",
+  "start_offset_seconds": -269,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "971f0dfaee6095d187dcfd1ef7dd7a2d2422363d",
+  "artifact_commit": "40adeaadbb9c6f17242145b8b1d427053f44725d",
+  "selected_problem_ids": ["train:02185", "train:02186", "train:02187", "train:02188", "train:02189", "train:02190", "train:02191", "train:02192", "train:02193", "train:02194", "train:02195", "train:02196", "train:02197", "train:02198", "train:02199"],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": ["train:02185", "train:02186", "train:02187", "train:02188", "train:02189", "train:02190", "train:02191", "train:02192", "train:02193", "train:02194", "train:02195", "train:02196", "train:02197", "train:02198", "train:02199"],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02189", "commit": "538c262da71f4f26a1cef45b86943e8f78c0d245"},
+    {"through": "train:02194", "commit": "58d3a0947cffca04f8d029a9e5262b6b4b0b2ecf"},
+    {"through": "train:02199", "commit": "40adeaadbb9c6f17242145b8b1d427053f44725d"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0181.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A19Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A19.lean",
+    "recipes": 15,
+    "explanation_lines": 61,
+    "named_lean_theorems": 61,
+    "source_records_read": 15,
+    "source_positions_checked": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02186は最初の走行時間がabout 6 hoursで誤差幅がない。正確に6時間なら800マイル、5時間30分なら760マイルとなるため、800は追加条件付き。",
+    "train:02189は外部負荷だけなら525kg、Tom自身の体重を含むなら675kgとなる。moving withの範囲を分離した。",
+    "train:02195はtotal 10 milesを片道と読む参照解1600マイルと、1日の往復合計と読む800マイルを分離した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "question_hash_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0,
+    "pinned_lean_build": "pending_ci",
+    "axiom_dependency_audit": "pending_ci"
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1684,
+    "pending": 6590,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02200",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0, 15],
+    "note_ja": "0時枠と15時枠は未実行。19時枠は予定より269秒早く開始したが、18時枠のtrain:02170〜02184と重複せず、予定時刻をまたいで完了した。"
+  },
+  "ci": {
+    "prior_head": "971f0dfaee6095d187dcfd1ef7dd7a2d2422363d",
+    "prior_run_id": 35980122667,
+    "prior_status_at_start": "in_progress",
+    "current_artifact_head": "40adeaadbb9c6f17242145b8b1d427053f44725d",
+    "current_run_id": null,
+    "current_status": "workflow_not_yet_listed_before_ledger_commit",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "base_main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "reviews": 0,
+    "unresolved_review_threads": 0,
+    "merge_status": "held_for_current_ci_and_evidence"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T19:00+09:00",
+    "scope": "train:02185-train:02199",
+    "claimed_at": "2026-09-24T18:55:31+09:00",
+    "expires_at": "2026-09-24T19:55:31+09:00",
+    "released": true
+  }
+}

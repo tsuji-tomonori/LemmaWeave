@@ -1,0 +1,112 @@
+{
+  "id": "gsm8k_sprint142_coins",
+  "title_ja": "硬貨の合計価値",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02413",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "元の20枚のニッケルにその2倍を加え、元のニッケルの3倍のダイムを持つ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.coins_solution",
+  "graph": "work/gsm8k-sprint142-coins-graph.json",
+  "model_notes_ja": [
+    "ダイム数は新しいニッケルを見つける前の20枚を基準に3倍と読む。見つけた後の総ニッケルを基準にする解釈なら合計は異なる。"
+  ],
+  "steps": [
+    {
+      "id": "coins_found",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.coins_found",
+      "title_ja": "新たなニッケルは40枚",
+      "claim_ja": "新たなニッケルは40枚",
+      "method_ja": "20の2倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "新たなニッケルは40枚",
+      "baseline_ja": "新たなニッケルは40枚"
+    },
+    {
+      "id": "coins_nickels",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.coins_nickels",
+      "title_ja": "ニッケルは計60枚",
+      "claim_ja": "ニッケルは計60枚",
+      "method_ja": "20と40を足す",
+      "requires_steps": [
+        "coins_found"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "ニッケルは計60枚",
+      "baseline_ja": "ニッケルは計60枚"
+    },
+    {
+      "id": "coins_dimes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.coins_dimes",
+      "title_ja": "ダイムは60枚",
+      "claim_ja": "ダイムは60枚",
+      "method_ja": "元の20枚の3倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "ダイムは60枚",
+      "baseline_ja": "ダイムは60枚"
+    },
+    {
+      "id": "coins_nickel_value",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.coins_nickel_value",
+      "title_ja": "ニッケルは300セント",
+      "claim_ja": "ニッケルは300セント",
+      "method_ja": "60枚に5セントを掛ける",
+      "requires_steps": [
+        "coins_nickels"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "ニッケルは300セント",
+      "baseline_ja": "ニッケルは300セント"
+    },
+    {
+      "id": "coins_dime_value",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.coins_dime_value",
+      "title_ja": "ダイムは600セント",
+      "claim_ja": "ダイムは600セント",
+      "method_ja": "60枚に10セントを掛ける",
+      "requires_steps": [
+        "coins_dimes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "ダイムは600セント",
+      "baseline_ja": "ダイムは600セント"
+    },
+    {
+      "id": "coins_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.coins_solution",
+      "title_ja": "合計900セント、すなわち9ドル",
+      "claim_ja": "合計900セント、すなわち9ドル",
+      "method_ja": "300と600を足す",
+      "requires_steps": [
+        "coins_nickel_value",
+        "coins_dime_value"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計900セント、すなわち9ドル",
+      "baseline_ja": "合計900セント、すなわち9ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2414,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

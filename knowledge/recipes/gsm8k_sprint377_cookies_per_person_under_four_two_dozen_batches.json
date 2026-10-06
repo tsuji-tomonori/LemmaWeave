@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint377_cookies_per_person_under_four_two_dozen_batches",
+  "title_ja": "1人当たりのクッキー数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04010",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A18P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Beth bakes 4, 2 dozen batches of cookies in a week.  If these cookies are shared amongst 16 people equally, how many cookies does each person consume?",
+  "answer_ja": "「4, 2 dozen batches」を4つの各2ダース入りバッチと読むと、4×2=8ダース、8×12=96枚。16人で等分すると96÷16=6枚ずつ。句読点のため表現は不自然だが、この解釈が参照解答に対応する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A18P2.cookies_per_person_under_four_two_dozen_batches",
+  "graph": "work/gsm8k-sprint377-cookies-per-person-under-four-two-dozen-batches-graph.json",
+  "model_notes_ja": [
+    "原文のコンマは不自然で、4個と2ダースのバッチという別読みを排除できない。"
+  ],
+  "steps": [
+    {
+      "id": "cookies_per_person_under_four_two_dozen_batches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A18P2.cookies_per_person_under_four_two_dozen_batches",
+      "title_ja": "1人当たりのクッキー数",
+      "claim_ja": "「4, 2 dozen batches」を4つの各2ダース入りバッチと読むと、4×2=8ダース、8×12=96枚。16人で等分すると96÷16=6枚ずつ。句読点のため表現は不自然だが、この解釈が参照解答に対応する。",
+      "method_ja": "バッチ数と1バッチ当たりダース数を掛け、枚数へ換算して人数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4バッチを焼き、各バッチが2ダースであると解釈する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "「4, 2 dozen batches」を4つの各2ダース入りバッチと読むと、4×2=8ダース、8×12=96枚。16人で等分すると96÷16=6枚ずつ。句読点のため表現は不自然だが、この解釈が参照解答に対応する。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4011,
+    "checked_model_hash": "2592e3e809200dabe58fc3cd86884cd5e5c868771c90ba03d6a5f281550dd6e9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

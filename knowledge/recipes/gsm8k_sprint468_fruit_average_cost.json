@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint468_fruit_average_cost",
+  "title_ja": "果物1個の平均価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04223",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A13P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "りんご2ドルを12個、バナナ1ドルを4個、オレンジ3ドルを4個買う。1個当たり平均はいくらか。",
+  "answer_ja": "費用は24+4+12=40ドル、個数は12+4+4=20個。40÷20=2ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.fruit_average_cost",
+  "graph": "work/gsm8k-sprint468-fruit-average-cost-graph.json",
+  "model_notes_ja": [
+    "原題のオレンジは4個×3ドルであり、参照解答の文中にある3×4は表記順の誤りだが積は同じ12。"
+  ],
+  "steps": [
+    {
+      "id": "groups",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.fruit_group_costs",
+      "title_ja": "各果物の費用",
+      "claim_ja": "りんご24、バナナ4、オレンジ12ドル。",
+      "method_ja": "個数に単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12×2、4×1、4×3。",
+      "baseline_ja": "整数の乗法。",
+      "conclusion_ja": "24、4、12ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P3.fruit_average_cost",
+      "title_ja": "平均価格",
+      "claim_ja": "合計40ドル÷20個=2ドル。",
+      "method_ja": "総費用を総個数で割る。",
+      "requires_steps": [
+        "groups"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20個は0でなく、全費用を含む。",
+      "baseline_ja": "算術平均・除法。",
+      "conclusion_ja": "2ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4224,
+    "checked_model_hash": "598558a9bcda008f8b0d3108d2b3e675a10db5c130ab09b10f551a5a604f1a4a",
+    "checks_ja": [
+      "原題の数量・単位・求める結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

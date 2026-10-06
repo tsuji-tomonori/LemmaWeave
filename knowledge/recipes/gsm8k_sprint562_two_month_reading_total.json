@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint562_two_month_reading_total",
+  "title_ja": "2か月の読書冊数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04317",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P1.lean",
+  "problem_ja": "For this month, Lily wants to finish reading twice as many books as she finished last month. If she finished reading 4 books last month, what will be the total number of books that she will finish for two months?",
+  "answer_ja": "今月は先月4冊の2倍なので8冊。2か月の合計は4+8=12冊。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.two_month_reading_total",
+  "graph": "work/gsm8k-sprint562-two-month-reading-total-graph.json",
+  "model_notes_ja": [
+    "「twice as many」を今月が先月の2倍と読む。"
+  ],
+  "steps": [
+    {
+      "id": "current_month_books",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.current_month_books",
+      "title_ja": "今月",
+      "claim_ja": "4×2=8冊。",
+      "method_ja": "先月の冊数を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4×2=8冊。"
+    },
+    {
+      "id": "two_month_books",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.two_month_books",
+      "title_ja": "2か月合計",
+      "claim_ja": "4+8=12冊。",
+      "method_ja": "先月と今月を加える。",
+      "requires_steps": [
+        "current_month_books"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4+8=12冊。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.two_month_reading_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "今月は先月4冊の2倍なので8冊。2か月の合計は4+8=12冊。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "current_month_books",
+        "two_month_books"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "今月は先月4冊の2倍なので8冊。2か月の合計は4+8=12冊。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4318,
+    "checked_model_hash": "409c02908b476593fe04e43a00bbac5ac9aa6f5bd7955b5d95fea12f3b6ef58f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

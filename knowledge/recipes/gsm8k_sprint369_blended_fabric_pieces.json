@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint369_blended_fabric_pieces",
+  "title_ja": "silkとcashmereの混紡服",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03966",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A14P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Luther designs clothes for a high fashion company. His latest line of clothing uses both silk and cashmere fabrics. There are ten pieces made with silk and half that number made with cashmere. If his latest line has thirteen pieces, how many pieces use a blend of cashmere and silk?",
+  "answer_ja": "silk使用は10着、cashmere使用はその半分で5着。全13着が少なくともどちらかを使うなら、包除原理より両方を使う服は10+5−13=2着。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A14P3.blended_fabric_pieces",
+  "graph": "work/gsm8k-sprint369-blended-fabric-pieces-graph.json",
+  "model_notes_ja": [
+    "全13着が二素材の和集合に属するという適用条件がなければ、混紡数は一意に決まらない。"
+  ],
+  "steps": [
+    {
+      "id": "blended_fabric_pieces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A14P3.blended_fabric_pieces",
+      "title_ja": "silkとcashmereの混紡服",
+      "claim_ja": "silk使用は10着、cashmere使用はその半分で5着。全13着が少なくともどちらかを使うなら、包除原理より両方を使う服は10+5−13=2着。",
+      "method_ja": "silk使用集合とcashmere使用集合へ包除原理を適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全13着がsilkまたはcashmereの少なくとも一方を使い、混紡服は両集合に数える。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "全13着が少なくともどちらかを使うなら、包除原理より両方を使う服は10+5−13=2着。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3967,
+    "checked_model_hash": "9cbf61cb3e3d93cf400d64347cf69a8afce49725553acf4e55cfc3e341427d26",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

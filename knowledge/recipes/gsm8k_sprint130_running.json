@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint130_running",
+  "title_ja": "Coleの走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02242",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "XavierはKatieの3倍、KatieはColeの4倍走り、Xavierが84マイル。Coleの距離を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.running_solution",
+  "graph": "work/gsm8k-sprint130-running-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "running_katie",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.running_katie",
+      "title_ja": "Katieは28マイル",
+      "claim_ja": "Katieは28マイル",
+      "method_ja": "84マイルを3で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Katieは28マイル",
+      "baseline_ja": "Katieは28マイル"
+    },
+    {
+      "id": "running_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.running_solution",
+      "title_ja": "Coleは7マイル",
+      "claim_ja": "Coleは7マイル",
+      "method_ja": "28マイルを4で割る",
+      "requires_steps": [
+        "running_katie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Coleは7マイル",
+      "baseline_ja": "Coleは7マイル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2243,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

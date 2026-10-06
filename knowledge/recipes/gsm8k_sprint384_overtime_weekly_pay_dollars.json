@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint384_overtime_weekly_pay_dollars",
+  "title_ja": "残業を含む週給",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04044",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A20P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Janice gets paid $10 an hour for the first 40 hours she works each week, and $15 each hour of overtime after that. If Janice works 60 hours one week, how much money does she make?",
+  "answer_ja": "最初の40時間は40×10=400ドル。残業は60−40=20時間で20×15=300ドル。週給は400+300=700ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A20P3.overtime_weekly_pay_dollars",
+  "graph": "work/gsm8k-sprint384-overtime-weekly-pay-dollars-graph.json",
+  "model_notes_ja": [
+    "40時間を超える20時間すべてに残業時給15ドルが適用される。"
+  ],
+  "steps": [
+    {
+      "id": "overtime_weekly_pay_dollars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A20P3.overtime_weekly_pay_dollars",
+      "title_ja": "残業を含む週給",
+      "claim_ja": "最初の40時間は40×10=400ドル。残業は60−40=20時間で20×15=300ドル。週給は400+300=700ドルである。",
+      "method_ja": "通常時間と残業時間を分け、それぞれの時給を掛けて合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "40時間を超える20時間すべてに残業時給15ドルが適用される。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "最初の40時間は40×10=400ドル。残業は60−40=20時間で20×15=300ドル。週給は400+300=700ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4045,
+    "checked_model_hash": "a62610e00fc6e2cddeef8c53f2883da770873df347c29a2363815214b1959885",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

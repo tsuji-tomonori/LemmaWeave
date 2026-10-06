@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint557_light_bulb_pack_count",
+  "title_ja": "必要な電球パック数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04312",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P3.lean",
+  "problem_ja": "寝室2個、浴室1個、台所1個、地下室4個を交換し、その合計の半分を車庫でも交換する。2個入りパックはいくつ必要か。",
+  "answer_ja": "4か所で8個、車庫で4個、計12個。2個入りなので6パック。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.light_bulb_pack_count",
+  "graph": "work/gsm8k-sprint557-light-bulb-pack-count-graph.json",
+  "model_notes_ja": [
+    "“1 in both the bathroom and the kitchen”は浴室と台所に各1個と読む。"
+  ],
+  "steps": [
+    {
+      "id": "house_bulbs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.house_bulbs",
+      "title_ja": "家の4か所",
+      "claim_ja": "2+1+1+4=8個。",
+      "method_ja": "寝室・浴室・台所・地下室を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2+1+1+4=8個。"
+    },
+    {
+      "id": "garage_bulbs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.garage_bulbs",
+      "title_ja": "車庫",
+      "claim_ja": "8÷2=4個。",
+      "method_ja": "4か所分の半分を求める。",
+      "requires_steps": [
+        "house_bulbs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "8÷2=4個。"
+    },
+    {
+      "id": "all_bulbs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.all_bulbs",
+      "title_ja": "総電球数",
+      "claim_ja": "8+4=12個。",
+      "method_ja": "家と車庫の分を足す。",
+      "requires_steps": [
+        "house_bulbs",
+        "garage_bulbs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "8+4=12個。"
+    },
+    {
+      "id": "bulb_packs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.bulb_packs",
+      "title_ja": "必要パック数",
+      "claim_ja": "12÷2=6パック。",
+      "method_ja": "総数を1パック2個で割る。",
+      "requires_steps": [
+        "all_bulbs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12÷2=6パック。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.light_bulb_pack_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "4か所で8個、車庫で4個、計12個。2個入りなので6パック。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "house_bulbs",
+        "garage_bulbs",
+        "all_bulbs",
+        "bulb_packs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4か所で8個、車庫で4個、計12個。2個入りなので6パック。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4313,
+    "checked_model_hash": "1996423f62893da6f88cf97d68f47a413603677a123a88e9a22ef8c1685945ae",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

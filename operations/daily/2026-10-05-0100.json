@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-05",
+  "run_id": "20261005T010000+0900-ci-observability-repair",
+  "scheduled_slot": "2026-10-05T01:00:00+09:00",
+  "started_at": "2026-10-05T01:56:23+09:00",
+  "finished_at": "2026-10-05T02:02:15+09:00",
+  "schedule_deviation_minutes": 56,
+  "schedule_deviation_reason_ja": "前回exact-head CIの完了待ち後に起動し、CI成功まで新規問題処理を停止する最新指示を優先した。",
+  "role": "ci_repair_override_user_instruction",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "8c9235e0014bd7b762369e93950214cad661adaf",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [],
+  "deferred": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04256",
+      "retry_on": "after_exact_head_ci_success",
+      "reason_ja": "固定Lean CIが失敗しているため、新規問題処理を停止した。",
+      "next_action_ja": "compact diagnosticsで残存失敗を特定・修復し、exact-head CIと証拠ゲート合格後に再開する。"
+    }
+  ],
+  "failed_ci_evidence": {
+    "workflow_run_id": 37212149682,
+    "job_id": 111465429788,
+    "head_sha": "8c9235e0014bd7b762369e93950214cad661adaf",
+    "conclusion": "failure",
+    "started_at": "2026-10-05T00:12:43+09:00",
+    "finished_at": "2026-10-05T01:26:21+09:00",
+    "duration_seconds": 4418,
+    "failing_step": "Replay the complete fixed-environment pipeline",
+    "artifact_id": 11308986598,
+    "artifact_size_bytes": 742973928,
+    "artifact_sha256": "06be7d30e7ec4d533d7ae483efad7306b78d8b07b1e70078ca17b6d018501039",
+    "artifact_downloaded": false,
+    "artifact_download_blocker": "GitHub connector single-artifact limit 536870912 bytes",
+    "inference_ja": "総所要時間と4200秒の内側制限が整合するためmethod-target sweep timeoutが有力だが、巨大artifactから個別失敗ログを回収できず未確定。"
+  },
+  "repair": {
+    "commit": "1e2b170667eb8e00680cda2a8f093c88fc5ecf11",
+    "changes": [
+      "失敗・timeoutコマンドだけのログ末尾を64KiBずつ集約するscripts/collect_ci_diagnostics.pyを追加",
+      "compact diagnostics artifactへcheckpointとtarget結果を保存",
+      "method-target制限を4200秒から6000秒、外側replayを6000秒から7200秒、jobを110分から130分へ拡張",
+      "全実行ログのActions画面出力をbounded summaryへ置換"
+    ],
+    "theorem_statements_changed": false,
+    "model_definitions_changed": false,
+    "assumptions_added": 0,
+    "conclusion_weakened": false
+  },
+  "exact_head_ci": {
+    "workflow_run_id": 37218943984,
+    "head_sha": "1e2b170667eb8e00680cda2a8f093c88fc5ecf11",
+    "status_at_recording": "in_progress",
+    "note_ja": "この台帳コミットでHEADが更新されるため、最終exact-head CIは新HEADで再起動する。"
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_ci_failure"
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "exact-head CI、公理・依存監査、現行入力の成功証拠が未取得である。"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint95_messages",
+  "title_ja": "4日間のメッセージ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01709",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "月300、火200、水は火より300多く、木は水の2倍として4日合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.messages_solution",
+  "graph": "work/gsm8k-sprint95-messages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "messages_wednesday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.messages_wednesday",
+      "title_ja": "水曜日",
+      "claim_ja": "500件。",
+      "method_ja": "火曜200に300を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "previous dayは直前の火曜日を指す。",
+      "conclusion_ja": "200+300=500。",
+      "baseline_ja": "200+300=500。"
+    },
+    {
+      "id": "messages_thursday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.messages_thursday",
+      "title_ja": "木曜日",
+      "claim_ja": "1000件。",
+      "method_ja": "水曜500の2倍。",
+      "requires_steps": [
+        "messages_wednesday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "木曜の倍率対象は水曜。",
+      "conclusion_ja": "2×500=1000。",
+      "baseline_ja": "2×500=1000。"
+    },
+    {
+      "id": "messages_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.messages_solution",
+      "title_ja": "4日合計",
+      "claim_ja": "2000件。",
+      "method_ja": "月火水木を加える。",
+      "requires_steps": [
+        "messages_wednesday",
+        "messages_thursday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4日を各1回ずつ数える。",
+      "conclusion_ja": "300+200+500+1000=2000。",
+      "baseline_ja": "300+200+500+1000=2000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1710,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

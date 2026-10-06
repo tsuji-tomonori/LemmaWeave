@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint428_tax_payment_increase",
+  "title_ja": "税支払額の増加",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04183",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A05P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A country used to have a tax rate of 20%.  They raised it to 30%.  In that same time frame, John went from making 1,000,000 a year to 1,500,000 a year.  How much more does he pay in taxes now compared to then?",
+  "answer_ja": "以前は1,000,000×20%=200,000、現在は1,500,000×30%=450,000。差は250,000。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.tax_payment_increase",
+  "graph": "work/gsm8k-sprint428-tax-payment-increase-graph.json",
+  "model_notes_ja": [
+    "税額を所得×税率として同じ通貨単位で比較する。"
+  ],
+  "steps": [
+    {
+      "id": "old_tax_paid",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.old_tax_paid",
+      "title_ja": "以前の税額",
+      "claim_ja": "1,000,000×20÷100=200,000。",
+      "method_ja": "所得に20%を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "旧所得と旧税率。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "200,000。"
+    },
+    {
+      "id": "new_tax_paid",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.new_tax_paid",
+      "title_ja": "現在の税額",
+      "claim_ja": "1,500,000×30÷100=450,000。",
+      "method_ja": "所得に30%を掛ける。",
+      "requires_steps": [
+        "old_tax_paid"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "新所得と新税率。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "450,000。"
+    },
+    {
+      "id": "tax_increase",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.tax_increase",
+      "title_ja": "増加額",
+      "claim_ja": "450,000−200,000=250,000。",
+      "method_ja": "新旧税額の差。",
+      "requires_steps": [
+        "old_tax_paid",
+        "new_tax_paid"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同じ通貨単位。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "250,000。"
+    },
+    {
+      "id": "tax_payment_increase",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.tax_payment_increase",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "以前は1,000,000×20%=200,000、現在は1,500,000×30%=450,000。差は250,000。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "old_tax_paid",
+        "new_tax_paid",
+        "tax_increase"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "税額を所得×税率として同じ通貨単位で比較する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "以前は1,000,000×20%=200,000、現在は1,500,000×30%=450,000。差は250,000。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4184,
+    "checked_model_hash": "e97cb45904ce3ae93cc12129658a37d4d3b1c193af6c96a258967ce8bf7118f8",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "e97cb45904ce3ae93cc12129658a37d4d3b1c193af6c96a258967ce8bf7118f8"
+}

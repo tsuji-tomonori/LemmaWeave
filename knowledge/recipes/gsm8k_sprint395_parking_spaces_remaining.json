@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint395_parking_spaces_remaining",
+  "title_ja": "駐車場に追加収容できる車数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04149",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A parking garage of a mall is four stories tall. On the first level, there are 90 parking spaces. The second level has 8 more parking spaces than on the first level, and there are 12 more available parking spaces on the third level than on the second level. The fourth level has 9 fewer parking spaces than the third level. If 100 cars are already parked, how many cars can be accommodated by the parking garage?",
+  "answer_ja": "各階は順に90、98、110、101台分で、総容量は399台。すでに100台あるので、追加で収容できるのは399-100=299台。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_spaces_remaining",
+  "graph": "work/gsm8k-sprint395-parking-spaces-remaining-graph.json",
+  "model_notes_ja": [
+    "総容量399台と残容量299台を区別する。"
+  ],
+  "steps": [
+    {
+      "id": "parking_second_level",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_second_level",
+      "title_ja": "2階容量",
+      "claim_ja": "90+8=98台。",
+      "method_ja": "1階との差を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1階90台。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2階98台。"
+    },
+    {
+      "id": "parking_third_level",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_third_level",
+      "title_ja": "3階容量",
+      "claim_ja": "98+12=110台。",
+      "method_ja": "2階との差を足す。",
+      "requires_steps": [
+        "parking_second_level"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2階98台。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3階110台。"
+    },
+    {
+      "id": "parking_fourth_level",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_fourth_level",
+      "title_ja": "4階容量",
+      "claim_ja": "110-9=101台。",
+      "method_ja": "3階との差を引く。",
+      "requires_steps": [
+        "parking_second_level",
+        "parking_third_level"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3階110台。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4階101台。"
+    },
+    {
+      "id": "parking_total_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_total_capacity",
+      "title_ja": "総容量",
+      "claim_ja": "90+98+110+101=399台。",
+      "method_ja": "4階分を合計する。",
+      "requires_steps": [
+        "parking_second_level",
+        "parking_third_level",
+        "parking_fourth_level"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各階容量を用いる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "総容量399台。"
+    },
+    {
+      "id": "parking_available_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_available_capacity",
+      "title_ja": "追加収容数",
+      "claim_ja": "399-100=299台。",
+      "method_ja": "駐車済みを引く。",
+      "requires_steps": [
+        "parking_second_level",
+        "parking_third_level",
+        "parking_fourth_level",
+        "parking_total_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "すでに100台駐車。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "あと299台。"
+    },
+    {
+      "id": "parking_spaces_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.parking_spaces_remaining",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "各階は順に90、98、110、101台分で、総容量は399台。すでに100台あるので、追加で収容できるのは399-100=299台。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "parking_second_level",
+        "parking_third_level",
+        "parking_fourth_level",
+        "parking_total_capacity",
+        "parking_available_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『how many cars can be accommodated』を、既駐車100台に加えて今後収容できる台数と読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "各階は順に90、98、110、101台分で、総容量は399台。すでに100台あるので、追加で収容できるのは399-100=299台。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4150,
+    "checked_model_hash": "c4d2ff5ae03d4b9f2cb4eb47a264f8091e8cae093b0b5c8287aba0bfa7d34ffa",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "c4d2ff5ae03d4b9f2cb4eb47a264f8091e8cae093b0b5c8287aba0bfa7d34ffa"
+}

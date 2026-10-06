@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "audit_id": "gsm8k-batch54-retry-2026-10-06-2100",
+  "observed_at": "2026-10-06T21:05:31+09:00",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "f811af5d1f4f020ff493a8f8e47e5183a3b7469a",
+  "batch_id": "GSM8K-INDIVIDUAL-0054",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:00514",
+    "external-gsm8k-main-3101c7d50724:train:00515",
+    "external-gsm8k-main-3101c7d50724:train:00516",
+    "external-gsm8k-main-3101c7d50724:train:00517",
+    "external-gsm8k-main-3101c7d50724:train:00518",
+    "external-gsm8k-main-3101c7d50724:train:00519",
+    "external-gsm8k-main-3101c7d50724:train:00520",
+    "external-gsm8k-main-3101c7d50724:train:00521",
+    "external-gsm8k-main-3101c7d50724:train:00522",
+    "external-gsm8k-main-3101c7d50724:train:00523"
+  ],
+  "source": {
+    "upstream_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "upstream_blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "source_file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "source_lines_1based": [
+      515,
+      516,
+      517,
+      518,
+      519,
+      520,
+      521,
+      522,
+      523,
+      524
+    ],
+    "manifest_blob_sha": "8122451005de1e190afd7006feb18fb6932cab1d",
+    "batch_blob_sha": "feafecee01ef7854b8d5936828e5e58009027dbb",
+    "problem_count": 10,
+    "unique_problem_id_count": 10
+  },
+  "formalization": {
+    "model_file": "LemmaWeave/Problems/GSM8K/Daily0918CModels.lean",
+    "model_blob_sha": "faf1e7327cd8787b163e89d38bae1b548ae1b692",
+    "semantic_model_hash": "26f15cd8f0eeaaaafbb84424d9d48a0995e1e423335b73f9d95ecb8ae31f6c04",
+    "test_file": "tests/lean/GSM8KDaily0918C.lean",
+    "test_blob_sha": "cfd0298e617eb246dd4b8c90360b2a3c6568ab07",
+    "recipe_count": 10,
+    "explanation_step_count": 36,
+    "named_theorem_count": 46,
+    "root_count": 10,
+    "print_axioms_directive_count": 10,
+    "dependency_directive_count": 10,
+    "sorry_or_sorryAx_or_custom_axiom_token_count": 0,
+    "semantic_review_status": "self_review_only"
+  },
+  "evidence": {
+    "previous_failure_run": {
+      "id": 35294212869,
+      "commit": "6aa6911a68aa8856b5692c98b652a9b1fd8c6ae3",
+      "conclusion": "failure"
+    },
+    "previous_success_run": {
+      "id": 35295382209,
+      "commit": "f87ee8413b6f25cad2d46e81e90f4bf167b2fa40",
+      "conclusion": "success",
+      "job_id": 105446751072
+    },
+    "previous_artifact": {
+      "id": 10527917412,
+      "name": "lean-evidence-f87ee8413b6f25cad2d46e81e90f4bf167b2fa40",
+      "size_in_bytes": 189798393,
+      "sha256": "c525ea8758ebcc6c3da5eebe25a751d8ace9a0ad669592c90c3b750c21caa80c",
+      "available_now": false,
+      "artifact_list_count": 0
+    },
+    "previous_success_is_current": false,
+    "current_exact_head_run": {
+      "id": 37454527682,
+      "head_sha": "f811af5d1f4f020ff493a8f8e47e5183a3b7469a",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/37454527682",
+      "observed_at": "2026-10-06T21:05:31+09:00"
+    },
+    "method_recipes_report_contains_batch54": false,
+    "method_batches_report_contains_batch54": false,
+    "verdict": "INCONCLUSIVE",
+    "promotion_allowed": false,
+    "reason_ja": "旧成功証拠は現行入力に対してstaleで、成果物も保持期限後に取得不能。現行exact-head CIは再生中で、取込済み成功証拠がまだない。"
+  },
+  "state_after": {
+    "solution_ready_delta": 0,
+    "cumulative_solution_ready": 518,
+    "fixed_set_remaining": 8274,
+    "selected_status": "evidence_import_pending"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint394_joey_swimming_days",
+  "title_ja": "Joeyが水泳を習得した日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04125",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Alexa was on vacation for 3/4ths of the time it took Ethan to learn 12 fencing tricks. Joey spent half as much this time (that Ethan spent learning the tricks) learning to swim. If Alexa spent a week and 2 days on vacation, how many days did it take Joey to learn swimming?",
+  "answer_ja": "Alexaの休暇は7+2=9日で、これはEthanの時間の3/4。したがってEthanは9×4/3=12日。Joeyはその半分なので12÷2=6日である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.joey_swimming_days",
+  "graph": "work/gsm8k-sprint394-joey-swimming-days-graph.json",
+  "model_notes_ja": [
+    "日数を有理比で逆算し、最後に半分を取る。"
+  ],
+  "steps": [
+    {
+      "id": "alexa_vacation_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.alexa_vacation_days",
+      "title_ja": "Alexaの休暇日数",
+      "claim_ja": "1週間と2日は7+2=9日。",
+      "method_ja": "週を日に換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1週間=7日。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Alexaの休暇は9日。"
+    },
+    {
+      "id": "ethan_learning_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.ethan_learning_days",
+      "title_ja": "Ethanの学習日数",
+      "claim_ja": "9日はEthanの3/4なので、Ethanは9×4/3=12日。",
+      "method_ja": "3/4の関係を逆算する。",
+      "requires_steps": [
+        "alexa_vacation_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Alexaの9日がEthanの時間の正確に3/4。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Ethanは12日。"
+    },
+    {
+      "id": "joey_half_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.joey_half_time",
+      "title_ja": "Joeyの学習日数",
+      "claim_ja": "JoeyはEthanの半分なので12÷2=6日。",
+      "method_ja": "半分を取る。",
+      "requires_steps": [
+        "ethan_learning_days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Joeyの時間はEthanの正確に半分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Joeyは6日。"
+    },
+    {
+      "id": "joey_swimming_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P1.joey_swimming_days",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "9日からEthanの12日を逆算し、その半分としてJoeyは6日。",
+      "method_ja": "全段階を結合する。",
+      "requires_steps": [
+        "alexa_vacation_days",
+        "ethan_learning_days",
+        "joey_half_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "問題文の比が正確である。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "6日。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4126,
+    "checked_model_hash": "9fce4397af3a600a615fa57f0e22919869b5bf5f9700c74d911d79cc785d6693",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各主張を名前付きLean定理へ分割し、最終定理の実依存として接続した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

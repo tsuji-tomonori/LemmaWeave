@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint100_badges",
+  "title_ja": "名札を着けていない代表者",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01791",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "印刷済み名札がない人数、その半分の手書き名札、残りを順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A08.badges_solution",
+  "graph": "work/gsm8k-sprint100-badges-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "badges_no_preprinted",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.badges_no_preprinted",
+      "title_ja": "印刷済み名札がないのは20人。",
+      "claim_ja": "印刷済み名札がないのは20人。",
+      "method_ja": "36−16。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全36人。",
+      "conclusion_ja": "20+16=36。",
+      "baseline_ja": "20+16=36。"
+    },
+    {
+      "id": "badges_handwritten",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.badges_handwritten",
+      "title_ja": "手書き名札を作ったのは10人。",
+      "claim_ja": "手書き名札を作ったのは10人。",
+      "method_ja": "20の半分。",
+      "requires_steps": [
+        "badges_no_preprinted"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り20人のちょうど半分。",
+      "conclusion_ja": "10×2=20。",
+      "baseline_ja": "10×2=20。"
+    },
+    {
+      "id": "badges_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A08.badges_solution",
+      "title_ja": "名札なしは10人。",
+      "claim_ja": "名札なしは10人。",
+      "method_ja": "20−10。",
+      "requires_steps": [
+        "badges_no_preprinted",
+        "badges_handwritten"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残り20人を手書き有無に分ける。",
+      "conclusion_ja": "10+10=20。",
+      "baseline_ja": "10+10=20。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1792,
+    "checked_model_hash": "5976ea6351490b956cd14be3a5ab12c6d87cc42c3e822bd4ec52629dff53c54f",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

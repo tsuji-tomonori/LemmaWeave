@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_singers_at_party",
+  "title_ja": "パーティーの歌手数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04097",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A03P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "At a party, there are 400 students, a combination of poets, singers and tree huggers. There are 50 more poets than treehuggers at the party. If the number of tree huggers is 120, how many singers are at the party?",
+  "answer_ja": "tree huggerは120人、詩人は50人多いので170人。両者は290人だから、歌手は400-290=110人である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A03P2.singers_at_party",
+  "graph": "work/gsm8k-sprint392-singers-at-party-graph.json",
+  "model_notes_ja": [
+    "三分類が全参加者を重複なく構成すると読む。"
+  ],
+  "steps": [
+    {
+      "id": "singers_at_party",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A03P2.singers_at_party",
+      "title_ja": "パーティーの歌手数",
+      "claim_ja": "tree huggerは120人、詩人は50人多いので170人。両者は290人だから、歌手は400-290=110人である。",
+      "method_ja": "三分類が全参加者を重複なく構成すると読む。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "三分類が全参加者を重複なく構成すると読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "tree huggerは120人、詩人は50人多いので170人。両者は290人だから、歌手は400-290=110人である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4098,
+    "checked_model_hash": "902d8e1800a5f49b192446abb23e5fe5b0250b68325994efac70a36029dae8a9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

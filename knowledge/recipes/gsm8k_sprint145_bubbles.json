@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint145_bubbles",
+  "title_ja": "加える石けん量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02464",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "容器40オンスを水で満たし、8オンスを1カップ、1カップ当たり石けん3大さじとする。石けん自体は容量に数えない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.bubbles_solution",
+  "graph": "work/gsm8k-sprint145-bubbles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bubbles_cups",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.bubbles_cups",
+      "title_ja": "水は5カップ",
+      "claim_ja": "水は5カップ",
+      "method_ja": "40を8で割る",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "水は5カップ",
+      "baseline_ja": "水は5カップ"
+    },
+    {
+      "id": "bubbles_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.bubbles_solution",
+      "title_ja": "石けんは15大さじ",
+      "claim_ja": "石けんは15大さじ",
+      "method_ja": "5に3を掛ける",
+      "requires_steps": [
+        "bubbles_cups"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "石けんは15大さじ",
+      "baseline_ja": "石けんは15大さじ"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2465,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

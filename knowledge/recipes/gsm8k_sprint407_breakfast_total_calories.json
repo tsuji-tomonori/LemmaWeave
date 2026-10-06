@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint407_breakfast_total_calories",
+  "title_ja": "朝食の総カロリー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04162",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jerry's breakfast includes 6 pancakes with 120 calories each, two strips of bacon with 100 calories each, and a bowl of cereal with 200 calories. How many calories is his breakfast total?",
+  "answer_ja": "パンケーキは6×120=720カロリー、ベーコンは2×100=200カロリー、シリアルは200カロリー。合計1,120カロリー。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.breakfast_total_calories",
+  "graph": "work/gsm8k-sprint407-breakfast-total-calories-graph.json",
+  "model_notes_ja": [
+    "ベーコンとシリアルはいずれも200カロリーだが別項として数える。"
+  ],
+  "steps": [
+    {
+      "id": "pancake_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.pancake_calories",
+      "title_ja": "パンケーキのカロリー",
+      "claim_ja": "6×120=720カロリー。",
+      "method_ja": "個数に単位カロリーを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6枚、各120カロリー。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "720カロリー。"
+    },
+    {
+      "id": "bacon_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.bacon_calories",
+      "title_ja": "ベーコンのカロリー",
+      "claim_ja": "2×100=200カロリー。",
+      "method_ja": "本数に単位カロリーを掛ける。",
+      "requires_steps": [
+        "pancake_calories"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2本、各100カロリー。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "200カロリー。"
+    },
+    {
+      "id": "breakfast_calories_sum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.breakfast_calories_sum",
+      "title_ja": "朝食の合計",
+      "claim_ja": "720+200+200=1,120カロリー。",
+      "method_ja": "パンケーキ・ベーコン・シリアルを合計する。",
+      "requires_steps": [
+        "pancake_calories",
+        "bacon_calories"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "シリアルは200カロリー。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1,120カロリー。"
+    },
+    {
+      "id": "breakfast_total_calories",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.breakfast_total_calories",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "パンケーキは6×120=720カロリー、ベーコンは2×100=200カロリー、シリアルは200カロリー。合計1,120カロリー。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "pancake_calories",
+        "bacon_calories",
+        "breakfast_calories_sum"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "シリアルは1杯で200カロリー、他の食品や端数はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "パンケーキは6×120=720カロリー、ベーコンは2×100=200カロリー、シリアルは200カロリー。合計1,120カロリー。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4163,
+    "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c"
+}

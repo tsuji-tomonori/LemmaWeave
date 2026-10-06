@@ -1,0 +1,115 @@
+{
+  "id": "gsm8k_sprint522_new_city_buildings",
+  "title_ja": "新都市の建物総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04277",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P2.lean",
+  "problem_ja": "基準都市の店舗2000、病院500、学校200、警察署20に対し、店舗半数、病院2倍、学校50少なく、警察署5多くする。総建物数は。",
+  "answer_ja": "店舗1000、病院1000、学校150、警察署25で、合計2175棟。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.new_city_buildings",
+  "graph": "work/gsm8k-sprint522-new-city-buildings-graph.json",
+  "model_notes_ja": [
+    "各建物種別の条件を独立に適用してから合計する。"
+  ],
+  "steps": [
+    {
+      "id": "new_stores",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.new_stores",
+      "title_ja": "店舗数",
+      "claim_ja": "2000÷2=1000店。",
+      "method_ja": "基準の半数を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2000÷2=1000店。"
+    },
+    {
+      "id": "new_hospitals",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.new_hospitals",
+      "title_ja": "病院数",
+      "claim_ja": "500×2=1000棟。",
+      "method_ja": "基準の2倍を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "500×2=1000棟。"
+    },
+    {
+      "id": "new_schools",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.new_schools",
+      "title_ja": "学校数",
+      "claim_ja": "200−50=150校。",
+      "method_ja": "基準から50を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "200−50=150校。"
+    },
+    {
+      "id": "new_police_stations",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.new_police_stations",
+      "title_ja": "警察署数",
+      "claim_ja": "20+5=25署。",
+      "method_ja": "基準へ5を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20+5=25署。"
+    },
+    {
+      "id": "new_city_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.new_city_total",
+      "title_ja": "総建物数",
+      "claim_ja": "1000+1000+150+25=2175棟。",
+      "method_ja": "4種を足す。",
+      "requires_steps": [
+        "new_stores",
+        "new_hospitals",
+        "new_schools",
+        "new_police_stations"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1000+1000+150+25=2175棟。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.new_city_buildings",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "店舗1000、病院1000、学校150、警察署25で、合計2175棟。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "new_stores",
+        "new_hospitals",
+        "new_schools",
+        "new_police_stations",
+        "new_city_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "店舗1000、病院1000、学校150、警察署25で、合計2175棟。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4278,
+    "checked_model_hash": "856f034a08fcb9718dbed19908fa3256e481e4abe9ccd62e438c44244ff5d2a8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

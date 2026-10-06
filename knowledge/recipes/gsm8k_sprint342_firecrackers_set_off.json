@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint342_firecrackers_set_off",
+  "title_ja": "点火した爆竹数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03831",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jerry bought 48 firecrackers for the 4th of July. A police officer discovered and confiscated 12 of them. 1/6 of the remaining ones were defective. If Jerry set off half the good firecrackers, how many firecrackers did he set off?",
+  "answer_ja": "48個から没収12個を引いて36個。その6分の1の6個が不良なので良品は30個。半分を点火し15個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A01P3.firecrackers_set_off",
+  "graph": "work/gsm8k-sprint342-firecrackers-set-off-graph.json",
+  "model_notes_ja": [
+    "不良率は没収後の36個に適用し、点火対象は良品だけ。"
+  ],
+  "steps": [
+    {
+      "id": "firecrackers_set_off",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A01P3.firecrackers_set_off",
+      "title_ja": "点火した爆竹数",
+      "claim_ja": "48個から没収12個を引いて36個。その6分の1の6個が不良なので良品は30個。半分を点火し15個。",
+      "method_ja": "没収、不良品、良品の半分の順に計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "36は6で、30は2で割り切れる。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "15個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3832,
+    "checked_model_hash": "dca39a0beff1e6e27075948cdc18703de56fd79449f63dd5c3f5c9cb1f133f06",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

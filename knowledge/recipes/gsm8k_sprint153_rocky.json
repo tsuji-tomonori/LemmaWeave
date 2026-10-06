@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint153_rocky",
+  "title_ja": "3日間の走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02587",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1日目4マイル、2日目は1日目の2倍、3日目は2日目の3倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A10.rocky_solution",
+  "graph": "work/gsm8k-sprint153-rocky-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rocky_day2",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.rocky_day2",
+      "title_ja": "2日目は8マイル",
+      "claim_ja": "2日目は8マイル",
+      "method_ja": "4マイルを2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2日目は8マイル",
+      "baseline_ja": "2日目は8マイル"
+    },
+    {
+      "id": "rocky_day3",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.rocky_day3",
+      "title_ja": "3日目は24マイル",
+      "claim_ja": "3日目は24マイル",
+      "method_ja": "8マイルを3倍する",
+      "requires_steps": [
+        "rocky_day2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "3日目は24マイル",
+      "baseline_ja": "3日目は24マイル"
+    },
+    {
+      "id": "rocky_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.rocky_solution",
+      "title_ja": "合計は36マイル",
+      "claim_ja": "合計は36マイル",
+      "method_ja": "4・8・24を足す",
+      "requires_steps": [
+        "rocky_day3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計は36マイル",
+      "baseline_ja": "合計は36マイル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2588,
+    "checked_model_hash": "46e79fb8178be609e6fbfa0886df34cbbb62c16290d04ba3642b6415e85d7526",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

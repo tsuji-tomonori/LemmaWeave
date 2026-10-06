@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint145_psychiatrist",
+  "title_ja": "残り2人のセッション合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02468",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4人で25回。1人目6回、2人目はそれより5回多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.psychiatrist_solution",
+  "graph": "work/gsm8k-sprint145-psychiatrist-graph.json",
+  "model_notes_ja": [
+    "問えるのは残り2人の合計8回だけであり、個々の回数は条件不足。3回と5回、4回と4回などが可能。"
+  ],
+  "steps": [
+    {
+      "id": "psychiatrist_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.psychiatrist_second",
+      "title_ja": "2人目は11回",
+      "claim_ja": "2人目は11回",
+      "method_ja": "6に5を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "2人目は11回",
+      "baseline_ja": "2人目は11回"
+    },
+    {
+      "id": "psychiatrist_first_two",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.psychiatrist_first_two",
+      "title_ja": "最初の2人は17回",
+      "claim_ja": "最初の2人は17回",
+      "method_ja": "6と11を足す",
+      "requires_steps": [
+        "psychiatrist_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "最初の2人は17回",
+      "baseline_ja": "最初の2人は17回"
+    },
+    {
+      "id": "psychiatrist_distribution_underdetermined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.psychiatrist_distribution_underdetermined",
+      "title_ja": "残り2人の個別配分は一意でない",
+      "claim_ja": "残り2人の個別配分は一意でない",
+      "method_ja": "3+5と4+4という異なる配分を示す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "残り2人の個別配分は一意でない",
+      "baseline_ja": "残り2人の個別配分は一意でない"
+    },
+    {
+      "id": "psychiatrist_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.psychiatrist_solution",
+      "title_ja": "残り2人の合計は8回",
+      "claim_ja": "残り2人の合計は8回",
+      "method_ja": "25から17を引く",
+      "requires_steps": [
+        "psychiatrist_first_two",
+        "psychiatrist_distribution_underdetermined"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "残り2人の合計は8回",
+      "baseline_ja": "残り2人の合計は8回"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2469,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-04",
+  "run_id": "20261004T220000+0900-ci-evidence-repair",
+  "scheduled_slot": "2026-10-04T22:00:00+09:00",
+  "started_at": "2026-10-04T22:04:43+09:00",
+  "finished_at": "2026-10-04T22:36:59+09:00",
+  "schedule_deviation_minutes": 5,
+  "schedule_deviation_reason_ja": "22時枠を実起動時刻から約5分遅れで開始した。",
+  "role": "ci_evidence_repair_override_user_instruction",
+  "branch": "codex/sprint-20260919-0000",
+  "base_sha": "6f4b31fc7419ab0d1f0bf73b006c71df6148cbdb",
+  "main_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [],
+  "deferred": [],
+  "problem_processing": {
+    "status": "paused_by_latest_user_instruction_until_ci_success",
+    "next_pending": "external-gsm8k-main-3101c7d50724:train:04256"
+  },
+  "failed_ci_evidence": {
+    "workflow_run_id": 37201077003,
+    "job_id": 111432833380,
+    "head_sha": "6f4b31fc7419ab0d1f0bf73b006c71df6148cbdb",
+    "workflow_conclusion": "failure",
+    "replay_run": "runs/20261004T121052-e6e27568/run.json",
+    "replay_exit_code": 124,
+    "timed_out_command": [
+      "python3",
+      "scripts/run_method_targets.py"
+    ],
+    "timed_out_run": "runs/20261004T121810-976fa17d/run.json",
+    "timed_out_after_seconds": 4200,
+    "artifact_id": 11304607996,
+    "artifact_name": "lean-evidence-6f4b31fc7419ab0d1f0bf73b006c71df6148cbdb",
+    "artifact_size_bytes": 440433472,
+    "artifact_sha256": "6e119dfd3a66588e5c3ebcb47dced4612ff2182f97b6c71814f016d1072cd582",
+    "artifact_expires_at": "2026-10-18T13:28:23Z"
+  },
+  "repair": {
+    "classification": "proof_maintenance_and_ci_performance",
+    "cause_ja": "監査ドライバ12件に、未導入の微分補題import、欠落した監査コマンドimport、固定mathlibに存在しないタクティクモジュール、総和構文、rewrite後に残目標がないのに続けるタクティク、数値式に一致しないrewriteが残っていた。さらにrun_method_targets.pyが各対象のimportを個別に逐次buildして57分を費やし、全対象検査が4200秒で打ち切られた。",
+    "targets": [
+      "tests/lean/DNC2026CubicDerivativeIndividual.lean",
+      "tests/lean/DNC2026ParameterIndividual.lean",
+      "tests/lean/DNC2026SequenceClosedFormIndividual.lean",
+      "tests/lean/DNC2026TangentTriangleRatioIndividual.lean",
+      "tests/lean/GSM8KSprint0921A01.lean",
+      "tests/lean/GSM8KSprint0921A02.lean",
+      "tests/lean/GSM8KSprint0921A03.lean",
+      "tests/lean/GSM8KSprint0921A04.lean",
+      "tests/lean/GSM8KSprint0921A05.lean",
+      "tests/lean/GSM8KSprint0921A06.lean",
+      "tests/lean/GSM8KSprint0921A07.lean",
+      "tests/lean/GSM8KSprint0921A08.lean",
+      "scripts/run_method_targets.py",
+      "tests/test_run_method_targets.py"
+    ],
+    "change_ja": "12監査ドライバを現在の固定Lean/mathlibへ整合させ、依存importは一括buildし、失敗時だけ対象別buildへフォールバックするよう変更した。回帰単体テストを追加した。",
+    "theorem_statements_changed": false,
+    "model_definitions_changed": false,
+    "assumptions_added": 0,
+    "conclusion_weakened": false,
+    "repair_commit": "62a6e7e1cf8745ea1a2e813667bc77e03c28f974"
+  },
+  "validation": {
+    "artifact_digest_matches_github": true,
+    "current_run_records_inspected": 3735,
+    "python_syntax_check": "passed",
+    "local_lean_build": "not_run_tool_unavailable",
+    "exact_head_ci": "pending",
+    "axiom_audit": "pending_exact_head_ci",
+    "failed_artifact_not_imported": true
+  },
+  "queue_unchanged": {
+    "total": 8792,
+    "unique": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 3739,
+    "pending": 4535,
+    "duplicates": 0,
+    "missing": 0,
+    "state_overlap": 0
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "merge_status": "not_merged_pending_exact_head_ci"
+  },
+  "assurance": {
+    "overall": "INCONCLUSIVE",
+    "reason_ja": "修正後の正確なHEADで固定Lean 4.33.1・固定mathlibのCI、公理監査、成功証拠取込が完了するまで検証済みとはしない。"
+  }
+}

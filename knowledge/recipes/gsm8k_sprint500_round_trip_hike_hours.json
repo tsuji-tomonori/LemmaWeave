@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint500_round_trip_hike_hours",
+  "title_ja": "往復ハイキング時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04255",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jeannie hikes the 12 miles to Mount Overlook at a pace of 4 miles per hour, and then returns at a pace of 6 miles per hour. How long did her hike take, in hours?",
+  "answer_ja": "往路は12÷4=3時間、復路は12÷6=2時間。合計5時間。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.round_trip_hike_hours",
+  "graph": "work/gsm8k-sprint500-round-trip-hike-hours-graph.json",
+  "model_notes_ja": [
+    "往路と復路は同じ12マイルだが速度が異なるため、別々に時間を求めて加える。"
+  ],
+  "steps": [
+    {
+      "id": "uphill_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.uphill_hours",
+      "title_ja": "往路",
+      "claim_ja": "12÷4=3時間。",
+      "method_ja": "距離を往路速度で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12マイル、時速4マイル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3時間。"
+    },
+    {
+      "id": "downhill_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.downhill_hours",
+      "title_ja": "復路",
+      "claim_ja": "12÷6=2時間。",
+      "method_ja": "距離を復路速度で割る。",
+      "requires_steps": [
+        "uphill_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "12マイル、時速6マイル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2時間。"
+    },
+    {
+      "id": "hike_total_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.hike_total_hours",
+      "title_ja": "合計",
+      "claim_ja": "3+2=5時間。",
+      "method_ja": "往路と復路を加える。",
+      "requires_steps": [
+        "uphill_hours",
+        "downhill_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3時間と2時間。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5時間。"
+    },
+    {
+      "id": "round_trip_hike_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.round_trip_hike_hours",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "往路は12÷4=3時間、復路は12÷6=2時間。合計5時間。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "uphill_hours",
+        "downhill_hours",
+        "hike_total_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "往路と復路は同じ12マイルだが速度が異なるため、別々に時間を求めて加える。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "往路は12÷4=3時間、復路は12÷6=2時間。合計5時間。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4256,
+    "checked_model_hash": "196e31c97a4a6a21d1f393dbba0528bf0d34d496dde09bdaaf4546966ecd056b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "196e31c97a4a6a21d1f393dbba0528bf0d34d496dde09bdaaf4546966ecd056b"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint299_task_earnings",
+  "title_ja": "30タスクの報酬",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03618",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A06P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1タスク2ドル、10タスクごとに6ドルのボーナス。30タスクを完了。",
+  "answer_ja": "基本報酬は30×2=60ドル。ボーナスは3回で18ドル、合計78ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A06P2.task_earnings",
+  "graph": "work/gsm8k-sprint299-task-earnings-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "task_earnings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A06P2.task_earnings",
+      "title_ja": "基本報酬は30×2=60ドル。ボーナスは3回で18ドル、合計78ドル。",
+      "claim_ja": "基本報酬は30×2=60ドル。ボーナスは3回で18ドル、合計78ドル。",
+      "method_ja": "基本報酬は30×2=60ドル。ボーナスは3回で18ドル、合計78ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "基本報酬は30×2=60ドル。ボーナスは3回で18ドル、合計78ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3619,
+    "checked_model_hash": "39dfe8403f4dc88db38d5521840f2017c5f79e7aa5e658b2be15d3ae3d11674e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

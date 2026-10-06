@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_sprint458_flag_height",
+  "title_ja": "旗の高さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04213",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A13P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "8×5、10×7、5×5フィートの布3枚を、長さ15フィートの長方形の旗にすると高さはいくらか。",
+  "answer_ja": "各面積は40、70、25平方フィート、合計135平方フィート。135÷15=9より高さ9フィート。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.flag_height",
+  "graph": "work/gsm8k-sprint458-flag-height-graph.json",
+  "model_notes_ja": [
+    "布を重ねず切り捨てず長方形の旗全体に使う。"
+  ],
+  "steps": [
+    {
+      "id": "pieces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.fabric_piece_areas",
+      "title_ja": "3枚の面積",
+      "claim_ja": "8×5=40、10×7=70、5×5=25平方フィート。",
+      "method_ja": "長方形の面積を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各布は長方形。",
+      "baseline_ja": "長方形の面積。",
+      "conclusion_ja": "40、70、25平方フィート。"
+    },
+    {
+      "id": "total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.fabric_total_area",
+      "title_ja": "総面積",
+      "claim_ja": "40+70+25=135平方フィート。",
+      "method_ja": "3枚の面積を加える。",
+      "requires_steps": [
+        "pieces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "布は重ならず全て使う。",
+      "baseline_ja": "面積の加法。",
+      "conclusion_ja": "135平方フィート。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A13P1.flag_height",
+      "title_ja": "旗の高さ",
+      "claim_ja": "135÷15=9フィート。",
+      "method_ja": "面積を長さで割る。",
+      "requires_steps": [
+        "pieces",
+        "total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "完成形は長さ15フィートの長方形。",
+      "baseline_ja": "長方形の面積・除法。",
+      "conclusion_ja": "9フィート。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4214,
+    "checked_model_hash": "be83fb7b408d3a971c49a3828e75ee7b0b50efaf996100a29dbcb2a11323f1f5",
+    "checks_ja": [
+      "原題の数量・単位・求める結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

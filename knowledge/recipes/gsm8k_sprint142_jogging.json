@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint142_jogging",
+  "title_ja": "6マイル走る所要時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02421",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "音楽中40分は時速6マイル、その後は時速4マイルで計6マイル走る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.jogging_solution",
+  "graph": "work/gsm8k-sprint142-jogging-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jogging_music",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.jogging_music",
+      "title_ja": "音楽中に4マイル",
+      "claim_ja": "音楽中に4マイル",
+      "method_ja": "40分を60分の40時間として距離を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "音楽中に4マイル",
+      "baseline_ja": "音楽中に4マイル"
+    },
+    {
+      "id": "jogging_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.jogging_remaining",
+      "title_ja": "残り2マイル",
+      "claim_ja": "残り2マイル",
+      "method_ja": "6から4を引く",
+      "requires_steps": [
+        "jogging_music"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残り2マイル",
+      "baseline_ja": "残り2マイル"
+    },
+    {
+      "id": "jogging_slow",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.jogging_slow",
+      "title_ja": "残りは30分",
+      "claim_ja": "残りは30分",
+      "method_ja": "時速4マイルで2マイルを走る",
+      "requires_steps": [
+        "jogging_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残りは30分",
+      "baseline_ja": "残りは30分"
+    },
+    {
+      "id": "jogging_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.jogging_solution",
+      "title_ja": "合計70分",
+      "claim_ja": "合計70分",
+      "method_ja": "40と30を足す",
+      "requires_steps": [
+        "jogging_slow"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計70分",
+      "baseline_ja": "合計70分"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2422,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

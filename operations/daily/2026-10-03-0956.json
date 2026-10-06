@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-03",
+  "run_id": "2026-10-03T09:00+09:00-entrance-exam-sequences",
+  "scheduled_slot": "2026-10-03T09:00:00+09:00",
+  "slot_role": "japanese_entrance_exam_individual_solution",
+  "domain": "sequences",
+  "base_sha": "39f2622a93c16ac5d3a39b77c79f691bbfc3f654",
+  "main_sha_observed": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+  "started_at": "2026-10-03T09:56:49+09:00",
+  "finished_at": "2026-10-03T10:15:00+09:00",
+  "start_offset_seconds": 3409,
+  "schedule_note_ja": "09時専用枠へ割り当てた。直近の専用枠は場合の数・確率・統計だったため、循環上の次分野である数列を選択した。登録済み唯一の数列小問(1)(i)は処理済みなので二重実行せず、同じ公式冊子の直後の未登録小問(1)(ii)を原資料から新規登録した。GSM8Kとは別集計。",
+  "selected_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01ii"
+  ],
+  "authored_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01ii"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01ii"
+  ],
+  "deferred": [
+    {
+      "problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01ii",
+      "retry_on": "2026-10-03T22:00:00+09:00",
+      "reason_ja": "固定Lean 4.33.1/mathlibのexact-head kernel成功証拠、公理監査、依存抽出、rights確認が未完。",
+      "next_action_ja": "個別テストを固定環境で実行し、4宣言の#print axiomsと依存グラフを保存後、権利状態とともに再判定する。"
+    }
+  ],
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学II・数学B・数学C",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017550.pdf&n=2026_ol_18_sugaku2BC.pdf",
+    "answer_landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honsiken_seikai.html",
+    "answer_document_url": "https://www.dnc.ac.jp/albums/abm.php?d=797&f=abm00006056.pdf&n=R8_%E3%80%90%E6%95%B0%E5%AD%A6%E2%85%A1%EF%BC%8C%E6%95%B0%E5%AD%A6B%EF%BC%8C%E6%95%B0%E5%AD%A6C%E3%80%91%E7%99%BA%E8%A1%A8%E7%94%A8%E6%AD%A3%E8%A7%A3.pdf",
+    "pdf_page_1_based": [20],
+    "printed_page_label": ["22"],
+    "subquestion": "第4問(1)(ii)",
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554",
+    "normalized_statement_sha256": "9f2eab6aedd59be2206e115a843d52abc1fa7243f20ca02e7313619bb96691bf",
+    "source_review_basis": "2026-10-03に大学入試センター公式PDFの対象ページを直接表示し、初項、階差、和の上端、一般項の全要求を目視確認した。公式正解PDFでカ=0、キ・ク・ケ=2・3・2を照合した。原文・図・PDF画像はGitへ保存していない。",
+    "rights_status": "candidate_restricted_unchanged"
+  },
+  "written_solution_ja": [
+    "bn=a(n+1)-anなので、b1+...+b(n-1)=(a2-a1)+...+(an-a(n-1))=an-a1である。したがってan=a1+Σ(k=1からn-1)bkで、和の上端はn-1（解答群0）である。",
+    "bk=4k-1より、Σ(k=1からn-1)bk=4Σ(k=1からn-1)k-(n-1)=4・n(n-1)/2-(n-1)=2(n-1)^2+(n-1)である。",
+    "a1=1を加えるとan=1+2(n-1)^2+(n-1)=2n^2-3n+2である。よってキ=2、ク=3、ケ=2である。"
+  ],
+  "outputs": {
+    "problem_record": "corpus/problems/JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01ii.json",
+    "recipe": "knowledge/recipes/dnc2026_sequence_closed_form_individual.json",
+    "model_file": "LemmaWeave/Problems/DNC2026M2BC/SequenceClosedFormModel.lean",
+    "lean_file": "tests/lean/DNC2026SequenceClosedFormIndividual.lean",
+    "ledger": "operations/entrance-exam-ledger.json",
+    "claim": "operations/claims/2026-10-03-0900.json",
+    "explanation_lines": 3,
+    "named_lean_theorems": 4,
+    "self_review_status": "self_review_only",
+    "model_sha256": "5bba33e94a5141fea1cf18f250ef5a2959168ebf140a9c4c455848637b4b0aea",
+    "lean_sha256": "cd1d265c19d23b07b734677cdb00b986ac70a3bf01b86a31713992b0c3a6a5d9",
+    "recipe_sha256": "6fd6d7ecd44c782e7a33c6b7748a3d1e3c4881f49871e20b5f0c1f2baa56193d"
+  },
+  "validation": {
+    "official_source_and_all_requirements_visually_checked": true,
+    "official_answer_checked": true,
+    "official_answer": {
+      "カ": 0,
+      "キ": 2,
+      "ク": 3,
+      "ケ": 2
+    },
+    "recipe_json_parse": "pass",
+    "recipe_steps": 3,
+    "recipe_step_to_named_theorem_missing": 0,
+    "general_finite_sum_proved_by_induction": true,
+    "conclusion_not_assumed": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "trust_sensitive_token_scan": "pass",
+    "local_lake": "not_available",
+    "local_lean": "not_available",
+    "fixed_lean_build": "not_run",
+    "axiom_audit": "declared_4_prints_pending_kernel_run",
+    "dependency_audit": "macro_declared_pending_kernel_run",
+    "semantic_review_status": "self_review_only",
+    "independent_review_claimed": false,
+    "assurance_level": "INCONCLUSIVE"
+  },
+  "entrance_exam_ledger_after": {
+    "registered_count": 16,
+    "collected_kernel_checked_count": 5,
+    "candidate_not_started_count": 4,
+    "registered_domain_counts": {
+      "sets_integers": 3,
+      "expressions_functions": 3,
+      "geometry": 4,
+      "probability_statistics": 3,
+      "sequences": 2,
+      "calculus": 1
+    },
+    "weekly_domain_counts": [3, 2, 2, 2, 2, 1],
+    "unconfirmed_scope_preserved": true,
+    "stale_candidate_not_started_membership_repaired": true
+  },
+  "gsm8k_counts_unchanged": {
+    "solution_ready": 518,
+    "awaiting_verification": 3379,
+    "pending": 4895,
+    "total": 8792,
+    "note_ja": "本問はGSM8K固定8,792問の分母へ混ぜない。"
+  },
+  "ci": {
+    "checked_head": "solution_commit_pending",
+    "workflow_runs": 0,
+    "commit_statuses": 0,
+    "exact_head_success": false,
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
+    "latest_review": "APPROVED",
+    "unresolved_review_threads": 0,
+    "merged": false,
+    "merge_status": "held_for_missing_exact_head_success_evidence"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-10-03T09:00+09:00",
+    "scope": "JP-DNC-CT-2026-MAIN-M2BC-Q04-S01-01ii",
+    "claimed_at": "2026-10-03T09:56:49+09:00",
+    "expires_at": "2026-10-03T11:30:00+09:00",
+    "released": true,
+    "released_at": "2026-10-03T10:15:00+09:00"
+  },
+  "commits": {
+    "claim": "fe807358b36279f5f94e5bae61f2f6195272e28a",
+    "solution_and_record": "this_commit"
+  },
+  "assurance": "INCONCLUSIVE",
+  "status_note_ja": "既処理小問を二重実行せず、原題と公式正解を再読して新しい小問を登録し、独自記述解答、一般nを扱う有限和のLeanモデル、説明行対応定理、自己照合を保存した。固定Lean kernel証拠がないため正式完了にはせずverification_pendingに置く。"
+}

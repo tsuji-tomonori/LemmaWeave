@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint224_kittens",
+  "title_ja": "青い目の子猫の割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03417",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A18P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "青い目は3+4=7匹、茶色い目は7+6=13匹で、全体は20匹。したがって青い目の割合は7/20×100=35%。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A18P1.kittens_blue_percent",
+  "graph": "work/gsm8k-sprint224-kittens-graph.json",
+  "model_notes_ja": [
+    "百分率を100×青い目の匹数=割合×総数の積等式で表した。"
+  ],
+  "steps": [
+    {
+      "id": "kittens_blue_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P1.kittens_blue_total",
+      "title_ja": "青い目の合計",
+      "claim_ja": "7匹。",
+      "method_ja": "2腹の青い目の匹数を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3匹と4匹。",
+      "conclusion_ja": "7匹。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "kittens_brown_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P1.kittens_brown_total",
+      "title_ja": "茶色い目の合計",
+      "claim_ja": "13匹。",
+      "method_ja": "2腹の茶色い目の匹数を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7匹と6匹。",
+      "conclusion_ja": "13匹。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "kittens_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P1.kittens_total",
+      "title_ja": "全子猫数",
+      "claim_ja": "20匹。",
+      "method_ja": "目の色別の匹数を加える。",
+      "requires_steps": [
+        "kittens_blue_total",
+        "kittens_brown_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "7匹と13匹。",
+      "conclusion_ja": "20匹。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "kittens_blue_percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P1.kittens_blue_percent",
+      "title_ja": "百分率",
+      "claim_ja": "35%。",
+      "method_ja": "7/20を百分率へ換算する。",
+      "requires_steps": [
+        "kittens_blue_total",
+        "kittens_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総数20は0でなく、100×7=35×20。",
+      "conclusion_ja": "35%。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3418,
+    "checked_model_hash": "3dab5e548f50aba94acfd45168ccdb51b8e105eb2d6a48d2405bc2bd1b3ec5fd",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

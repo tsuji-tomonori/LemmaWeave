@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint46_elevator","title_ja":"エレベーターの最上階","problem_id":"external-gsm8k-main-3101c7d50724:train:00972","collection_id":"external-gsm8k-main-3101c7d50724","problem_ja":"9階から7階下降、3階上昇、8階上昇した最上階を求める。","root":"LemmaWeave.Tests.GSM8KSprint0920A14.elevator_solution","graph":"work/gsm8k-sprint46-elevator-graph.json","lean_file":"tests/lean/GSM8KSprint0920A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","model_notes_ja":["階番号を自然数として、各移動後の階を逐次表した。"],
+  "steps":[
+    {"id":"elevator_down","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.elevator_down","title_ja":"下降後","requires_steps":[],"uses_nodes":[],"condition_ja":"9階から7階下る。","conclusion_ja":"2階。","baseline_ja":"9=2+7。"},
+    {"id":"elevator_first_up","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.elevator_first_up","title_ja":"3階上昇後","requires_steps":[],"uses_nodes":[],"condition_ja":"2階から3階上る。","conclusion_ja":"5階。","baseline_ja":"5=2+3。"},
+    {"id":"elevator_top","lean_declaration":"LemmaWeave.Tests.GSM8KSprint0920A14.elevator_top","title_ja":"最上階","requires_steps":[],"uses_nodes":[],"condition_ja":"5階から8階上り、そこが最上階。","conclusion_ja":"13階建て。","baseline_ja":"13=5+8。"}
+  ],"solution_format":"individual_lines_v1","authorship":"llm_individual","author_review":{"reviewer":"author","status":"checked","source_line_1based":973,"checked_model_hash":"b0bf692a33946e86b37c9c051d182738036b3c1cc4414c0fc9fe358cf93c2b55","checks_ja":["移動順と最上階という結論を照合した。"]}
+}

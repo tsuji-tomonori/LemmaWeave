@@ -1,0 +1,94 @@
+{
+  "id": "gsm8k_sprint136_fish_tanks",
+  "title_ja": "第三水槽の魚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02334",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "第一水槽に金魚7匹とベタ8匹、第二は第一の2倍、第三は第二の1/3であるとき第三水槽の魚数を求める。",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "source_line_1based": 2335,
+    "source_record_sha256": "300eb2a80d9a01d8bf6e2742d4728e657d045eeb35382ff61aeb2974ed17b9e5",
+    "raw_question_sha256": "7cb360c81e9881b8c80e8d3dac009886c564b29c3558d019535dd46c7cc572e0",
+    "normalized_question_sha256": "7cb360c81e9881b8c80e8d3dac009886c564b29c3558d019535dd46c7cc572e0"
+  },
+  "variables": [
+    {
+      "name": "model",
+      "type": "第三水槽の魚数",
+      "domain_ja": "原題の数量・単位・関係を保持する自然数モデル"
+    }
+  ],
+  "assumptions_ja": [
+    "原題に明記された数量関係をモデルの各フィールドとして保持する。"
+  ],
+  "required_conclusions_ja": [
+    "10匹。"
+  ],
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A10.tanks_solution",
+  "graph": "work/gsm8k-sprint136-fish-tanks-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0925A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "modeling_notes_ja": [],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.tanks_first",
+      "title_ja": "第一水槽",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "2種類の魚を加える。",
+      "method_ja": "加法。",
+      "condition_ja": "7匹と8匹。",
+      "premise_ja": "7+8。",
+      "conclusion_ja": "15匹。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.tanks_second",
+      "title_ja": "第二水槽",
+      "requires_steps": [
+        "first"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "第一の15匹を2倍する。",
+      "method_ja": "倍数。",
+      "condition_ja": "第二は第一の2倍。",
+      "premise_ja": "2×15。",
+      "conclusion_ja": "30匹。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    },
+    {
+      "id": "third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A10.tanks_solution",
+      "title_ja": "第三水槽",
+      "requires_steps": [
+        "second"
+      ],
+      "uses_nodes": [],
+      "claim_ja": "第二の30匹の3分の1を求める。",
+      "method_ja": "等分。",
+      "condition_ja": "第三は第二の1/3。",
+      "premise_ja": "30÷3。",
+      "conclusion_ja": "10匹。",
+      "baseline_ja": "小中学校の算術として明示した加減乗除・割合・単位換算を用いる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-09-25T10:42:00+09:00",
+    "source_problem_id": "external-gsm8k-main-3101c7d50724:train:02334",
+    "checks_ja": [
+      "固定原文を再読し、数量・単位・求める結論を照合した。",
+      "各説明行と名前付きLean定理の型を対応させた。",
+      "結論を仮定へ移さず、途中量から順に導出した。",
+      "自己照合のみであり、固定Leanの成功証拠と独立レビューは未取得である。"
+    ]
+  }
+}

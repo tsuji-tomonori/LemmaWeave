@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint299_asian_countries",
+  "title_ja": "訪問したアジア諸国数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03616",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A06P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "42か国のうち欧州20、南米10。残りの半分がアジア。",
+  "answer_ja": "残りは42-20-10=12か国。その半分なのでアジアは6か国。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A06P2.asian_countries",
+  "graph": "work/gsm8k-sprint299-asian-countries-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "asian_countries",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A06P2.asian_countries",
+      "title_ja": "残りは42-20-10=12か国。その半分なのでアジアは6か国。",
+      "claim_ja": "残りは42-20-10=12か国。その半分なのでアジアは6か国。",
+      "method_ja": "残りは42-20-10=12か国。その半分なのでアジアは6か国。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "残りは42-20-10=12か国。その半分なのでアジアは6か国。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3617,
+    "checked_model_hash": "39dfe8403f4dc88db38d5521840f2017c5f79e7aa5e658b2be15d3ae3d11674e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

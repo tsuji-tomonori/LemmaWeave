@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_freelance_income_total",
+  "title_ja": "3か月の収入合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04119",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Grant has worked as a freelance math worker for the last three months.  The first month he made 350$.  The second month he made 50$ more than double he made the first month.  The third month he quadrupled the sum of the first two months.  How much did Grant make in his first three months total?",
+  "answer_ja": "1か月目は350ドル。2か月目は2×350+50=750ドル。3か月目は4×(350+750)=4,400ドル。合計は350+750+4,400=5,500ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P3.freelance_income_total",
+  "graph": "work/gsm8k-sprint393-freelance-income-total-graph.json",
+  "model_notes_ja": [
+    "各月の基準額を問題文の順序で更新する。"
+  ],
+  "steps": [
+    {
+      "id": "freelance_income_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P3.freelance_income_total",
+      "title_ja": "3か月の収入合計",
+      "claim_ja": "1か月目は350ドル。2か月目は2×350+50=750ドル。3か月目は4×(350+750)=4,400ドル。合計は350+750+4,400=5,500ドルである。",
+      "method_ja": "2か月目、3か月目を順に計算して3か月分を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3か月目は第1・第2月の合計の4倍。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1か月目は350ドル。2か月目は2×350+50=750ドル。3か月目は4×(350+750)=4,400ドル。合計は350+750+4,400=5,500ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4120,
+    "checked_model_hash": "5e660ee0bcfcf32972e24199c4a50d234de3f9b79be669e8467f38d499f17013",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

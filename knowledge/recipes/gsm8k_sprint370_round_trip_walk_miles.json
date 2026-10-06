@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint370_round_trip_walk_miles",
+  "title_ja": "家出して戻った総歩行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03975",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A15P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Cheryl got angry with her sister and decided to run away from home. She walked 2 miles every hour for 3 hours. Then she got homesick and walked back home. How many miles did Cheryl walk in total?",
+  "answer_ja": "行きは毎時2マイルを3時間なので6マイル。家へ同じ道のりを戻るのでさらに6マイル、合計12マイル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A15P1.round_trip_walk_miles",
+  "graph": "work/gsm8k-sprint370-round-trip-walk-miles-graph.json",
+  "model_notes_ja": [
+    "帰宅時の道のりは行きと同じ6マイルである。"
+  ],
+  "steps": [
+    {
+      "id": "round_trip_walk_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A15P1.round_trip_walk_miles",
+      "title_ja": "家出して戻った総歩行距離",
+      "claim_ja": "行きは毎時2マイルを3時間なので6マイル。家へ同じ道のりを戻るのでさらに6マイル、合計12マイル。",
+      "method_ja": "速さ×時間で家からの距離を求め、往復なので2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "帰宅時の道のりは行きと同じ6マイルである。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "行きは毎時2マイルを3時間なので6マイル。家へ同じ道のりを戻るのでさらに6マイル、合計12マイル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3976,
+    "checked_model_hash": "f045a557c1d1e97629883bc55e4da422aa470462892cfaeaf12c43fe265215b5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

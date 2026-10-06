@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint39_quarters",
+  "title_ja": "25セント硬貨の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00874",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "14枚の総額から50セントを引く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.quarters_solution",
+  "graph": "work/gsm8k-sprint39-quarters-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "金額をセント単位に統一する。"
+  ],
+  "steps": [
+    {
+      "id": "quarters_initial",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.quarters_initial",
+      "title_ja": "最初の金額",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "25セント硬貨14枚。",
+      "conclusion_ja": "350セント。",
+      "baseline_ja": "14×25=350。"
+    },
+    {
+      "id": "quarters_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.quarters_remaining",
+      "title_ja": "残金",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "350セントから半ドル=50セントを使う。",
+      "conclusion_ja": "300セント。",
+      "baseline_ja": "350=50+300。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 875,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

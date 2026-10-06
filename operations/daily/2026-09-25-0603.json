@@ -1,0 +1,127 @@
+{
+  "date": "2026-09-25",
+  "run_id": "lemmaweave-sprint-20260925-0600-gsm8k-individual-0187",
+  "scheduled_slot_jst": "2026-09-25T06:00:00+09:00",
+  "started_at": "2026-09-25T06:03:05+09:00",
+  "finished_at": "2026-09-25T06:34:00+09:00",
+  "base_sha": "9dbf4a005ab64233213952b4c2a0143cf5cb2f2b",
+  "selected_problem_ids": [
+    "train:02275",
+    "train:02276",
+    "train:02277",
+    "train:02278",
+    "train:02279",
+    "train:02280",
+    "train:02281",
+    "train:02282",
+    "train:02283",
+    "train:02284",
+    "train:02285",
+    "train:02286",
+    "train:02287",
+    "train:02288",
+    "train:02289"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02275",
+    "train:02276",
+    "train:02277",
+    "train:02278",
+    "train:02279",
+    "train:02280",
+    "train:02281",
+    "train:02282",
+    "train:02283",
+    "train:02284",
+    "train:02285",
+    "train:02286",
+    "train:02287",
+    "train:02288",
+    "train:02289"
+  ],
+  "deferred": [],
+  "unexecuted_slots_jst": [
+    "2026-09-25T05:00:00+09:00"
+  ],
+  "schedule_variance_ja": "05時枠は未実行。06時枠を06:03 JSTに開始し、05時枠の成果として二重計上しない。",
+  "checkpoints": [
+    {
+      "problems": [
+        "train:02275",
+        "train:02276",
+        "train:02277",
+        "train:02278",
+        "train:02279"
+      ],
+      "status": "saved_in_run_commit"
+    },
+    {
+      "problems": [
+        "train:02280",
+        "train:02281",
+        "train:02282",
+        "train:02283",
+        "train:02284"
+      ],
+      "status": "saved_in_run_commit"
+    },
+    {
+      "problems": [
+        "train:02285",
+        "train:02286",
+        "train:02287",
+        "train:02288",
+        "train:02289"
+      ],
+      "status": "saved_in_run_commit"
+    }
+  ],
+  "source_verification": {
+    "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+    "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "matched_records": 15,
+    "matched_questions": 15
+  },
+  "lean": {
+    "version_required": "4.33.1",
+    "named_theorems": 51,
+    "sorry_admit_custom_axiom_static_count": 0,
+    "local_build_status": "not_available_in_transient_workspace",
+    "exact_head_status": "pending_after_commit",
+    "evidence_accepted": false
+  },
+  "ci_before_run": {
+    "head_sha": "9dbf4a005ab64233213952b4c2a0143cf5cb2f2b",
+    "workflow_runs_registered": 0,
+    "last_failed_run_id": 36039267833,
+    "last_failure_summary": "legacy Sprint0922A06 type errors, CubicDerivativeModel noncomputable requirement, and replay timeout"
+  },
+  "queue_after": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 1774,
+    "pending": 6500,
+    "working": 0,
+    "held": 0,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap_ids": 0,
+    "remaining": 8274,
+    "next_unwritten_problem_id": "train:02290"
+  },
+  "pull_request": {
+    "number": 5,
+    "merged": false,
+    "merge_status": "blocked_until_exact_head_success_and_evidence_import"
+  },
+  "commit": {
+    "artifact_commit_sha": "11a704dc98e561b3c7a23ec8d0bbb9687ceca9f3",
+    "status": "saved_to_pr_5"
+  },
+  "claim": {
+    "status": "serialized_single_writer",
+    "shared_lock_implementation": false
+  },
+  "note_ja": "15問を原題から個別に読解し、記述解答・Lean定理・自己照合を保存した。train:02275は原題の条件不足を反例と追加条件付き結論に分離した。成功証拠が未取得のため正式完了へは昇格させない。"
+}

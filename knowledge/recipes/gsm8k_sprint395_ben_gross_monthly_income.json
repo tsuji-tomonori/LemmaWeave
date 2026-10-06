@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint395_ben_gross_monthly_income",
+  "title_ja": "Benの税引前月収",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04145",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ben spends 20% of his after-tax income on his car. If his car payment is $400 and he pays 1/3 of his gross income in taxes, how much does he make per month before taxes?",
+  "answer_ja": "車代400ドルは税引後収入の20%なので、税引後収入は400÷0.2=2,000ドル。税金は総収入の1/3だから手取りは総収入の2/3。よって総収入は2,000÷(2/3)=3,000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.ben_gross_monthly_income",
+  "graph": "work/gsm8k-sprint395-ben-gross-monthly-income-graph.json",
+  "model_notes_ja": [
+    "異なる割合の基準を混同せず、税引後収入を中間量にする。"
+  ],
+  "steps": [
+    {
+      "id": "ben_after_tax_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.ben_after_tax_income",
+      "title_ja": "税引後収入",
+      "claim_ja": "400÷1/5=2000ドル。",
+      "method_ja": "20%から全体を逆算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "車代は税引後収入の20%。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "税引後2000ドル。"
+    },
+    {
+      "id": "ben_after_tax_fraction",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.ben_after_tax_fraction",
+      "title_ja": "税引後比率",
+      "claim_ja": "1-1/3=2/3。",
+      "method_ja": "税率を1から引く。",
+      "requires_steps": [
+        "ben_after_tax_income"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "税金は総収入の1/3。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "手取りは総収入の2/3。"
+    },
+    {
+      "id": "ben_gross_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.ben_gross_income",
+      "title_ja": "税引前収入",
+      "claim_ja": "2000÷2/3=3000ドル。",
+      "method_ja": "税引後額を比率で割る。",
+      "requires_steps": [
+        "ben_after_tax_income",
+        "ben_after_tax_fraction"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "税引後額2000ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "税引前3000ドル。"
+    },
+    {
+      "id": "ben_gross_monthly_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P2.ben_gross_monthly_income",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "車代400ドルは税引後収入の20%なので、税引後収入は400÷0.2=2,000ドル。税金は総収入の1/3だから手取りは総収入の2/3。よって総収入は2,000÷(2/3)=3,000ドル。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "ben_after_tax_income",
+        "ben_after_tax_fraction",
+        "ben_gross_income"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "税率1/3は総収入にかかり、車代比率20%は税引後収入にかかる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "車代400ドルは税引後収入の20%なので、税引後収入は400÷0.2=2,000ドル。税金は総収入の1/3だから手取りは総収入の2/3。よって総収入は2,000÷(2/3)=3,000ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4146,
+    "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "50e25ebebc7603b72dc6249c8a8118846e494d53e4d54f12f6afaca0786e34a9"
+}

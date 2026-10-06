@@ -1,0 +1,112 @@
+{
+  "id": "gsm8k_sprint95_basketball",
+  "title_ja": "両チームの総得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01708",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mark側の2点・3点・フリースロー本数と、相手側の本数倍率から両チーム総得点を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.basketball_solution",
+  "graph": "work/gsm8k-sprint95-basketball-graph.json",
+  "model_notes_ja": [
+    "参照説明の『6 3 pointers』は直後の8×3および原題と不整合なので採用せず、原題の8本を形式化した。"
+  ],
+  "steps": [
+    {
+      "id": "basketball_mark_two",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.basketball_mark_two",
+      "title_ja": "Mark側2点得点",
+      "claim_ja": "50点。",
+      "method_ja": "25本に2点を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2 pointersは成功本数25本。",
+      "conclusion_ja": "25×2=50。",
+      "baseline_ja": "25×2=50。"
+    },
+    {
+      "id": "basketball_mark_three",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.basketball_mark_three",
+      "title_ja": "Mark側3点得点",
+      "claim_ja": "24点。",
+      "method_ja": "原題の8本に3点を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "参照説明の6本という語は誤記で、原題の8本を使う。",
+      "conclusion_ja": "8×3=24。",
+      "baseline_ja": "8×3=24。"
+    },
+    {
+      "id": "basketball_mark_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.basketball_mark_total",
+      "title_ja": "Mark側合計",
+      "claim_ja": "84点。",
+      "method_ja": "50点、24点、10点を加える。",
+      "requires_steps": [
+        "basketball_mark_two",
+        "basketball_mark_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "フリースローは1本1点。",
+      "conclusion_ja": "50+24+10=84。",
+      "baseline_ja": "50+24+10=84。"
+    },
+    {
+      "id": "basketball_opponent_parts",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.basketball_opponent_parts",
+      "title_ja": "相手側内訳",
+      "claim_ja": "100点、12点、5点。",
+      "method_ja": "Mark側の2点得点を2倍、3点得点とフリースロー得点を半分にする。",
+      "requires_steps": [
+        "basketball_mark_two",
+        "basketball_mark_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の倍・半分は各種類の成功数に掛かり、得点でも同じ比例になる。",
+      "conclusion_ja": "2×50=100、12×2=24、5×2=10。",
+      "baseline_ja": "2×50=100、12×2=24、5×2=10。"
+    },
+    {
+      "id": "basketball_opponent_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.basketball_opponent_total",
+      "title_ja": "相手側合計",
+      "claim_ja": "117点。",
+      "method_ja": "相手側内訳を加える。",
+      "requires_steps": [
+        "basketball_opponent_parts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "三種類の得点を重複なく合計する。",
+      "conclusion_ja": "100+12+5=117。",
+      "baseline_ja": "100+12+5=117。"
+    },
+    {
+      "id": "basketball_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.basketball_solution",
+      "title_ja": "試合総得点",
+      "claim_ja": "201点。",
+      "method_ja": "両チームの得点を加える。",
+      "requires_steps": [
+        "basketball_mark_total",
+        "basketball_opponent_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "求めるのは点差でなく両者合計。",
+      "conclusion_ja": "84+117=201。",
+      "baseline_ja": "84+117=201。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1709,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

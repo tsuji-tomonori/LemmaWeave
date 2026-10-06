@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint140_money",
+  "title_ja": "3人の所持金合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02383",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Raquelは40ドル、Natalyはその3倍、TomはNatalyの4分の1。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.money_solution",
+  "graph": "work/gsm8k-sprint140-money-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "money_nataly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.money_nataly",
+      "title_ja": "Natalyは120ドル",
+      "claim_ja": "Natalyは120ドル",
+      "method_ja": "40の3倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Natalyは120ドル",
+      "baseline_ja": "Natalyは120ドル"
+    },
+    {
+      "id": "money_tom",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.money_tom",
+      "title_ja": "Tomは30ドル",
+      "claim_ja": "Tomは30ドル",
+      "method_ja": "120の4分の1",
+      "requires_steps": [
+        "money_nataly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Tomは30ドル",
+      "baseline_ja": "Tomは30ドル"
+    },
+    {
+      "id": "money_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.money_solution",
+      "title_ja": "合計190ドル",
+      "claim_ja": "合計190ドル",
+      "method_ja": "30、40、120を足す",
+      "requires_steps": [
+        "money_nataly",
+        "money_tom"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計190ドル",
+      "baseline_ja": "合計190ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2384,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

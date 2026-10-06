@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint438_hayden_ironing_minutes",
+  "title_ja": "4週間のアイロン時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04193",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A05P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Before work, Hayden spends 5 minutes ironing his button-up shirt and 3 minutes ironing his pants.  He does this 5 days a week.  How many minutes does he iron over 4 weeks?",
+  "answer_ja": "1日は5+3=8分、1週間は8×5=40分、4週間では40×4=160分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.hayden_ironing_minutes",
+  "graph": "work/gsm8k-sprint438-hayden-ironing-minutes-graph.json",
+  "model_notes_ja": [
+    "各出勤日にシャツとズボンを1回ずつアイロンすると読む。"
+  ],
+  "steps": [
+    {
+      "id": "daily_ironing_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.daily_ironing_minutes",
+      "title_ja": "1日の時間",
+      "claim_ja": "5+3=8分。",
+      "method_ja": "衣類別時間を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "シャツ5分、ズボン3分。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8分。"
+    },
+    {
+      "id": "weekly_ironing_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.weekly_ironing_minutes",
+      "title_ja": "1週間の時間",
+      "claim_ja": "8×5=40分。",
+      "method_ja": "1日分を5日繰り返す。",
+      "requires_steps": [
+        "daily_ironing_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "週5日。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40分。"
+    },
+    {
+      "id": "four_week_ironing_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.four_week_ironing_minutes",
+      "title_ja": "4週間の時間",
+      "claim_ja": "40×4=160分。",
+      "method_ja": "週分を4週間繰り返す。",
+      "requires_steps": [
+        "daily_ironing_minutes",
+        "weekly_ironing_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4週間。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "160分。"
+    },
+    {
+      "id": "hayden_ironing_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P3.hayden_ironing_minutes",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "1日は5+3=8分、1週間は8×5=40分、4週間では40×4=160分。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "daily_ironing_minutes",
+        "weekly_ironing_minutes",
+        "four_week_ironing_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各出勤日にシャツとズボンを1回ずつアイロンすると読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1日は5+3=8分、1週間は8×5=40分、4週間では40×4=160分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4194,
+    "checked_model_hash": "a429b9d0c1d24f9a8153d11dbe064ef5d81339bd1772edaf919f13c730e748de",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "a429b9d0c1d24f9a8153d11dbe064ef5d81339bd1772edaf919f13c730e748de"
+}

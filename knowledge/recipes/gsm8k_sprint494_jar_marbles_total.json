@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint494_jar_marbles_total",
+  "title_ja": "3瓶のビー玉合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04249",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P2.lean",
+  "problem_ja": "1瓶目80個、2瓶目はその2倍、3瓶目は1瓶目の4分の1。合計は。",
+  "answer_ja": "2瓶目160個、3瓶目20個、合計260個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.jar_marbles_total",
+  "graph": "work/gsm8k-sprint494-jar-marbles-total-graph.json",
+  "model_notes_ja": [
+    "3瓶目の比の基準は明示どおり1瓶目。"
+  ],
+  "steps": [
+    {
+      "id": "second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.second_jar_marbles",
+      "title_ja": "2瓶目",
+      "claim_ja": "80×2=160個。",
+      "method_ja": "1瓶目の2倍を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "80×2=160個。"
+    },
+    {
+      "id": "third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.third_jar_marbles",
+      "title_ja": "3瓶目",
+      "claim_ja": "80÷4=20個。",
+      "method_ja": "1瓶目の4分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "80÷4=20個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.jar_marbles_total",
+      "title_ja": "3瓶合計",
+      "claim_ja": "80+160+20=260個。",
+      "method_ja": "3瓶分を足す。",
+      "requires_steps": [
+        "second",
+        "third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "80+160+20=260個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4250,
+    "checked_model_hash": "82bc743cb471e251b58cf954013286ed243094487c69a2371b3f9b171c11db56",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint378_pet_sitting_cost_per_night",
+  "title_ja": "ペット見守り費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04012",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A18P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Michael has 2 cats and 3 dogs. He needs to pay a friend to watch them, who charges $13 a night per animal. How much does Michael have to pay?",
+  "answer_ja": "動物は2+3=5匹なので、1泊当たり5×13=65ドル。宿泊数をn泊とすれば総額は65nドルである。原題は泊数を示していないため総額は一意に決まらず、1泊なら65ドル、2泊なら130ドルとなる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A18P3.pet_sitting_cost_per_night",
+  "graph": "work/gsm8k-sprint378-pet-sitting-cost-per-night-graph.json",
+  "model_notes_ja": [
+    "原題には宿泊数がなく、総額の一意解はない。"
+  ],
+  "steps": [
+    {
+      "id": "pet_sitting_cost_per_night",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A18P3.pet_sitting_cost_per_night",
+      "title_ja": "ペット見守り費用",
+      "claim_ja": "動物は2+3=5匹なので、1泊当たり5×13=65ドル。宿泊数をn泊とすれば総額は65nドルである。原題は泊数を示していないため総額は一意に決まらず、1泊なら65ドル、2泊なら130ドルとなる。",
+      "method_ja": "動物数と1匹1泊当たり料金を掛け、未指定の泊数を変数として残す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "総額には泊数nが必要である。参照値65ドルはn=1を追加条件とした場合だけ成立する。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "動物は2+3=5匹なので、1泊当たり5×13=65ドル。宿泊数をn泊とすれば総額は65nドルである。原題は泊数を示していないため総額は一意に決まらず、1泊なら65ドル、2泊なら130ドルとなる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4013,
+    "checked_model_hash": "4e2f1f6be083972882f39e68173485b7a7d13a17e213622bd7cb3a0e0f60a145",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

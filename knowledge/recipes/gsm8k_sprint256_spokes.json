@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint256_spokes",
+  "title_ja": "車庫内のスポーク総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03325",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "4台の自転車の全車輪にあるスポーク数を求める。",
+  "answer_ja": "80本",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A08P3.spokes_total",
+  "graph": "work/gsm8k-sprint256-spokes-graph.json",
+  "model_notes_ja": [
+    "通常の自転車は各2輪という明示的モデル条件を置く。"
+  ],
+  "steps": [
+    {
+      "id": "spokes_wheels",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P3.spokes_wheels",
+      "title_ja": "4台には8輪ある。",
+      "claim_ja": "4台には8輪ある。",
+      "method_ja": "4×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各自転車は2輪。",
+      "conclusion_ja": "8輪。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "spokes_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P3.spokes_total",
+      "title_ja": "スポークは80本。",
+      "claim_ja": "スポークは80本。",
+      "method_ja": "8×10。",
+      "requires_steps": [
+        "spokes_wheels"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各車輪に10本。",
+      "conclusion_ja": "80本。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3326,
+    "checked_model_hash": "d985d069ea93cb3f8482ff071b0797e6ab9615479e891964c9c4988386d6cd9b",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint166_caps",
+  "title_ja": "Billの頭囲",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02775",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jackの半分に9インチ足したCharlieの頭囲から3分の2を取る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A04.caps_solution",
+  "graph": "work/gsm8k-sprint166-caps-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "caps_charlie",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.caps_charlie",
+      "title_ja": "Charlieは15インチ",
+      "claim_ja": "12÷2+9=15インチ。",
+      "method_ja": "半分と加法",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "12÷2+9=15インチ。",
+      "baseline_ja": "12÷2+9=15インチ。"
+    },
+    {
+      "id": "caps_bill",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.caps_bill",
+      "title_ja": "Billは10インチ",
+      "claim_ja": "15×2/3=10インチ。",
+      "method_ja": "分数倍",
+      "requires_steps": [
+        "caps_charlie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "15×2/3=10インチ。",
+      "baseline_ja": "15×2/3=10インチ。"
+    },
+    {
+      "id": "caps_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A04.caps_solution",
+      "title_ja": "答えは10インチ",
+      "claim_ja": "Billの頭囲は10インチ。",
+      "method_ja": "直前の結論",
+      "requires_steps": [
+        "caps_bill"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "Billの頭囲は10インチ。",
+      "baseline_ja": "Billの頭囲は10インチ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2776,
+    "checked_model_hash": "0a72e44473da6012f2c3e13597de2c7523a2b4aca208e4fca162240ccab79f3e",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

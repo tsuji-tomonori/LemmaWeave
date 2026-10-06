@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint110_beanie",
+  "title_ja": "2人が持つビーニーベイビーの合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01929",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Loriの個数を15で割ってSydneyの個数を求め、Loriの個数へ足す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A20.beanie_solution",
+  "graph": "work/gsm8k-sprint110-beanie-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "beanie_sydney",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.beanie_sydney",
+      "title_ja": "Sydneyは20個持つ。",
+      "claim_ja": "Sydneyは20個持つ。",
+      "method_ja": "300÷15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "beanie_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A20.beanie_solution",
+      "title_ja": "2人の合計は320個。",
+      "claim_ja": "2人の合計は320個。",
+      "method_ja": "300+20。",
+      "requires_steps": [
+        "beanie_sydney"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1930,
+    "checked_model_hash": "0da4375cf512175a531ccefe7df06451832297cf8fc187fd50f430df18b2cb1c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "gsm8k_sprint554_asphalt_total_with_tax",
+  "title_ja": "舗装用アスファルトの税込費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04309",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P2.lean",
+  "problem_ja": "2000フィート×20フィートの道路を、1台800平方フィート、1台75ドル、税率20%で舗装する。総額はいくらか。",
+  "answer_ja": "面積40000平方フィート、50台分。税前3750ドル、税750ドルで合計4500ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.asphalt_total_with_tax",
+  "graph": "work/gsm8k-sprint554-asphalt-total-with-tax-graph.json",
+  "model_notes_ja": [
+    "40000は800で割り切れるため、端数のトラックを切り上げる必要はない。"
+  ],
+  "steps": [
+    {
+      "id": "road_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.road_area",
+      "title_ja": "道路面積",
+      "claim_ja": "2000×20=40000平方フィート。",
+      "method_ja": "長さと幅を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2000×20=40000平方フィート。"
+    },
+    {
+      "id": "truckload_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.truckload_count",
+      "title_ja": "必要台数",
+      "claim_ja": "40000÷800=50台分。",
+      "method_ja": "面積を1台の被覆面積で割る。",
+      "requires_steps": [
+        "road_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40000÷800=50台分。"
+    },
+    {
+      "id": "asphalt_pre_tax",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.asphalt_pre_tax",
+      "title_ja": "税前費用",
+      "claim_ja": "50×75=3750ドル。",
+      "method_ja": "台数と単価を掛ける。",
+      "requires_steps": [
+        "truckload_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "50×75=3750ドル。"
+    },
+    {
+      "id": "sales_tax",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.sales_tax",
+      "title_ja": "売上税",
+      "claim_ja": "3750×20÷100=750ドル。",
+      "method_ja": "税前費用の20%を求める。",
+      "requires_steps": [
+        "asphalt_pre_tax"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3750×20÷100=750ドル。"
+    },
+    {
+      "id": "asphalt_total_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.asphalt_total_cost",
+      "title_ja": "税込総額",
+      "claim_ja": "3750+750=4500ドル。",
+      "method_ja": "税前費用と税を足す。",
+      "requires_steps": [
+        "asphalt_pre_tax",
+        "sales_tax"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3750+750=4500ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.asphalt_total_with_tax",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "面積40000平方フィート、50台分。税前3750ドル、税750ドルで合計4500ドル。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "road_area",
+        "truckload_count",
+        "asphalt_pre_tax",
+        "sales_tax",
+        "asphalt_total_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "面積40000平方フィート、50台分。税前3750ドル、税750ドルで合計4500ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4310,
+    "checked_model_hash": "4765595c3ac7c1f78e7205405d16c10effbd2a117bd5392d2cad5ebe151407a0",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

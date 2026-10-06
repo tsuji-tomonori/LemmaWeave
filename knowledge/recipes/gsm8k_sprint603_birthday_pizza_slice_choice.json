@@ -1,0 +1,144 @@
+{
+  "id": "gsm8k_sprint603_birthday_pizza_slice_choice",
+  "title_ja": "均等配分できるピザの切り方",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04358",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P3.lean",
+  "problem_ja": "A mother is serving pizza at her son's birthday party.  After buying 5 pizzas, she must decide how many slices to divide each pizza into so that everyone at the party ends up with an equal number of slices.  There are a total of 20 children at the party, and she can choose to divide each pizza into either 6, 8, or 10 slices.  Assuming she does not want to throw away any pizza, how should many slices should she choose to divide the pizzas into to make sure everyone receives an equal amount?",
+  "answer_ja": "5枚を6切れなら30切れ、8切れなら40切れ、10切れなら50切れ。20人で余りなく分けられるのは40だけで、1人2切れになる。よって各ピザを8切れにする。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.birthday_pizza_slice_choice",
+  "graph": "work/gsm8k-sprint603-birthday-pizza-slice-choice-graph.json",
+  "model_notes_ja": [
+    "選択肢は各ピザ6・8・10切れの3通りに限定され、全5枚を同じ切数にする。"
+  ],
+  "steps": [
+    {
+      "id": "six_slice_option_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.six_slice_option_total",
+      "title_ja": "6切れ案",
+      "claim_ja": "5×6=30切れ。",
+      "method_ja": "ピザ枚数に切数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "5×6=30切れ。"
+    },
+    {
+      "id": "eight_slice_option_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.eight_slice_option_total",
+      "title_ja": "8切れ案",
+      "claim_ja": "5×8=40切れ。",
+      "method_ja": "ピザ枚数に切数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "5×8=40切れ。"
+    },
+    {
+      "id": "ten_slice_option_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.ten_slice_option_total",
+      "title_ja": "10切れ案",
+      "claim_ja": "5×10=50切れ。",
+      "method_ja": "ピザ枚数に切数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "5×10=50切れ。"
+    },
+    {
+      "id": "six_option_remainder",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.six_option_remainder",
+      "title_ja": "6切れ案の余り",
+      "claim_ja": "30を20人で分けると余り10。",
+      "method_ja": "剰余で均等配分不能を確認する。",
+      "requires_steps": [
+        "six_slice_option_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "30を20人で分けると余り10。"
+    },
+    {
+      "id": "eight_option_remainder",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.eight_option_remainder",
+      "title_ja": "8切れ案の余り",
+      "claim_ja": "40を20人で分けると余り0。",
+      "method_ja": "剰余で均等配分可能を確認する。",
+      "requires_steps": [
+        "eight_slice_option_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "40を20人で分けると余り0。"
+    },
+    {
+      "id": "ten_option_remainder",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.ten_option_remainder",
+      "title_ja": "10切れ案の余り",
+      "claim_ja": "50を20人で分けると余り10。",
+      "method_ja": "剰余で均等配分不能を確認する。",
+      "requires_steps": [
+        "ten_slice_option_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "50を20人で分けると余り10。"
+    },
+    {
+      "id": "slices_per_child",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.slices_per_child",
+      "title_ja": "1人当たり",
+      "claim_ja": "40÷20=2切れ。",
+      "method_ja": "均等に割る。",
+      "requires_steps": [
+        "eight_option_remainder"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "40÷20=2切れ。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.birthday_pizza_slice_choice",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "5枚を6切れなら30切れ、8切れなら40切れ、10切れなら50切れ。20人で余りなく分けられるのは40だけで、1人2切れになる。よって各ピザを8切れにする。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "six_slice_option_total",
+        "eight_slice_option_total",
+        "ten_slice_option_total",
+        "six_option_remainder",
+        "eight_option_remainder",
+        "ten_option_remainder",
+        "slices_per_child"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "5枚を6切れなら30切れ、8切れなら40切れ、10切れなら50切れ。20人で余りなく分けられるのは40だけで、1人2切れになる。よって各ピザを8切れにする。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4359,
+    "checked_model_hash": "5a7e7d65ff8944256f8ac0ef2c5351d4d11babfe8e9708538e85dce984b47e28",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

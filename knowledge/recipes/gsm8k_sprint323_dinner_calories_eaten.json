@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint323_dinner_calories_eaten",
+  "title_ja": "食べたカロリー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03736",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A16P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jackson is making dinner. He makes a salad out of lettuce (50 calories), carrots (twice the calories of the lettuce) and dressing (210 calories). He also makes a pizza with 600 calories for the crust, 1/3 the crust's calories for the pepperoni, and 400 calories for the cheese. If Jackson eats 1/4 of the salad and 1/5 of the pizza, how many calories does he eat?",
+  "answer_ja": "ニンジン100、サラダ全体360カロリー。ペパロニ200、ピザ全体1200カロリー。各割合は360÷4=90、1200÷5=240なので合計330カロリー。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A16P2.dinner_calories_eaten",
+  "graph": "work/gsm8k-sprint323-dinner-calories-eaten-graph.json",
+  "model_notes_ja": [
+    "材料のカロリーは加算でき、指定割合は完成したサラダ・ピザ全体へ適用する。"
+  ],
+  "steps": [
+    {
+      "id": "dinner_calories_eaten",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A16P2.dinner_calories_eaten",
+      "title_ja": "食べたカロリー",
+      "claim_ja": "ニンジン100、サラダ全体360カロリー。ペパロニ200、ピザ全体1200カロリー。各割合は360÷4=90、1200÷5=240なので合計330カロリー。",
+      "method_ja": "料理別総量を求め、食べた割合を掛けて合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "360は4で、1200は5で割り切れる。",
+      "baseline_ja": "四則演算、割合、平均、速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "330カロリー。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3737,
+    "checked_model_hash": "bf8188df65085c3931481c38656e9de89a0791a510cfc6d1be1ba7c3a8de11ac",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1706",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "a5813930c3e5d173cff5d2d1ba1bd0bf21fe514f1d872224445412bafdeac2f1",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A14P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04281",
+      "source_line_1based": 4282,
+      "source_record_sha256": "95f7216eb0a28970924a86da2edc4d9c26052e0dc3cd03a9e9b698fd0f96ca41",
+      "raw_question_sha256": "26232ec7774544d72caf26d427f8a197c261384c41e1a866dbc2f4078242b405",
+      "normalized_question_sha256": "26232ec7774544d72caf26d427f8a197c261384c41e1a866dbc2f4078242b405",
+      "source_question": "Jerry is refilling the duck pond in his backyard during a drought. The pond can hold 200 gallons of water. Jerry's hose can normally pump 6 gallons/minute, but due to drought restrictions, it can only pump 2/3rds as fast right now. How many minutes will it take Jerry to fill his pond?",
+      "recipe_id": "gsm8k_sprint526_duck_pond_fill_minutes",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "池は空から満水まで200ガロン入れるものとする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04282",
+      "source_line_1based": 4283,
+      "source_record_sha256": "2c6eb7ca24ef2c95555e97cb770d0841fe3e65a11c0e79311b33357f878302fa",
+      "raw_question_sha256": "a752198296ff4c593f142c03737f9bfd7ac42aae3f5506d129286ce477f6d328",
+      "normalized_question_sha256": "a752198296ff4c593f142c03737f9bfd7ac42aae3f5506d129286ce477f6d328",
+      "source_question": "Rohan owns a 20-square meter coconut farm. Each square meter has 2 coconut trees and each tree has 6 coconuts. If the coconuts can be harvested every 3 months and each coconut costs $0.50, how much will he earn after 6 months?",
+      "recipe_id": "gsm8k_sprint527_coconut_six_month_earnings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各収穫で各木に6個あり、3か月ごとに同量を収穫できるとする。",
+        "小数価格は50セントへ換算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04283",
+      "source_line_1based": 4284,
+      "source_record_sha256": "5fc7dae959448b251e798a0c6d9c7cd023c38940462119e62885ebb4a4aff707",
+      "raw_question_sha256": "46c85e0d5b522b66dab48b6294c19fe07f8fa13cd6c3ed49444e5e04658c78c9",
+      "normalized_question_sha256": "46c85e0d5b522b66dab48b6294c19fe07f8fa13cd6c3ed49444e5e04658c78c9",
+      "source_question": "Eddie can bake 3 pies a day. His sister can bake 6 pies while his mother can bake 8 pies a day. How many pies will they be able to bake in 7 days?",
+      "recipe_id": "gsm8k_sprint528_family_weekly_pies",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "3人が各日同じ個数を7日間焼く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04284",
+      "source_line_1based": 4285,
+      "source_record_sha256": "81b97f29fd12b164e976b8ca21fe2f90287dbf0fb6a11a5a88a00088b4c7f0e4",
+      "raw_question_sha256": "0e426bc0b12eb72ceaa8126aa5135390e313b4b0c8e22652aedcb79424722fc7",
+      "normalized_question_sha256": "0e426bc0b12eb72ceaa8126aa5135390e313b4b0c8e22652aedcb79424722fc7",
+      "source_question": "Jeff had 300 pencils and donated 30% of them. Vicki had twice as many pencils as Jeff and donated 3/4 of his pencils. How many pencils are there remaining altogether?",
+      "recipe_id": "gsm8k_sprint529_remaining_pencils_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文はVickiについて“his pencils”と代名詞が不整合だが、文脈どおりVicki自身の600本の4分の3を寄付すると読む。"
+      ],
+      "blockers": [
+        "source_pronoun_inconsistency"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04285",
+      "source_line_1based": 4286,
+      "source_record_sha256": "29ce464f1073c515dfa0cf3b09eebdd816ff8627eb662e9d0121481054ce54bd",
+      "raw_question_sha256": "8883dfc795b275d2e4955207492eadcd5ea754f85f31063deef90ae55976967b",
+      "normalized_question_sha256": "8883dfc795b275d2e4955207492eadcd5ea754f85f31063deef90ae55976967b",
+      "source_question": "Robie bought 3 bags of chocolates. She gave the 2 bags to her brothers and sisters then bought another 3 bags. How many bags of chocolates were left?",
+      "recipe_id": "gsm8k_sprint530_chocolate_bags_left",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "渡した2袋は最初の3袋から差し引く。"
+      ],
+      "blockers": []
+    }
+  ]
+}

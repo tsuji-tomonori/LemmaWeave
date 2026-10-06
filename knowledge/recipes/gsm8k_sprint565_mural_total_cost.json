@@ -1,0 +1,119 @@
+{
+  "id": "gsm8k_sprint565_mural_total_cost",
+  "title_ja": "壁画の総費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04320",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P1.lean",
+  "problem_ja": "John paints a giant mural that is 6m by 3m. The paint costs $4 per square meter. The artist can paint 1.5 square meters per hour and charges $10 per hour. How much does the mural cost?",
+  "answer_ja": "面積は6×3=18平方メートル、塗料代は72ドル。毎時1.5平方メートルなら12時間かかり、人件費120ドル。総額は192ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.mural_total_cost",
+  "graph": "work/gsm8k-sprint565-mural-total-cost-graph.json",
+  "model_notes_ja": [
+    "1.5を正確な有理数3/2として扱い、塗装速度が作業中一定とする。"
+  ],
+  "steps": [
+    {
+      "id": "mural_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.mural_area",
+      "title_ja": "面積",
+      "claim_ja": "6×3=18平方メートル。",
+      "method_ja": "長方形の面積を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6×3=18平方メートル。"
+    },
+    {
+      "id": "mural_paint_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.mural_paint_cost",
+      "title_ja": "塗料代",
+      "claim_ja": "18×4=72ドル。",
+      "method_ja": "面積に平方メートル単価を掛ける。",
+      "requires_steps": [
+        "mural_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "18×4=72ドル。"
+    },
+    {
+      "id": "mural_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.mural_hours",
+      "title_ja": "作業時間",
+      "claim_ja": "18÷(3/2)=12時間。",
+      "method_ja": "面積を毎時の塗装面積で割る。",
+      "requires_steps": [
+        "mural_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "18÷(3/2)=12時間。"
+    },
+    {
+      "id": "mural_labor_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.mural_labor_cost",
+      "title_ja": "人件費",
+      "claim_ja": "12×10=120ドル。",
+      "method_ja": "作業時間に時間単価を掛ける。",
+      "requires_steps": [
+        "mural_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12×10=120ドル。"
+    },
+    {
+      "id": "mural_cost_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.mural_cost_total",
+      "title_ja": "総額",
+      "claim_ja": "72+120=192ドル。",
+      "method_ja": "塗料代と人件費を加える。",
+      "requires_steps": [
+        "mural_paint_cost",
+        "mural_labor_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "72+120=192ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.mural_total_cost",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "面積は6×3=18平方メートル、塗料代は72ドル。毎時1.5平方メートルなら12時間かかり、人件費120ドル。総額は192ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "mural_area",
+        "mural_paint_cost",
+        "mural_hours",
+        "mural_labor_cost",
+        "mural_cost_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "面積は6×3=18平方メートル、塗料代は72ドル。毎時1.5平方メートルなら12時間かかり、人件費120ドル。総額は192ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4321,
+    "checked_model_hash": "409c02908b476593fe04e43a00bbac5ac9aa6f5bd7955b5d95fea12f3b6ef58f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

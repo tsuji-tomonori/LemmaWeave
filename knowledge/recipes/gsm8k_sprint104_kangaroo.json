@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint104_kangaroo",
+  "title_ja": "同じ頭数になるまでの日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01852",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "現在の差を求め、Bertの1日2頭の増加率で割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A14.kangaroo_solution",
+  "graph": "work/gsm8k-sprint104-kangaroo-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "kangaroo_gap",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.kangaroo_gap",
+      "title_ja": "差は80頭。",
+      "claim_ja": "差は80頭。",
+      "method_ja": "100−20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Kameronの現在100頭を目標とする。",
+      "conclusion_ja": "80。",
+      "baseline_ja": "80。"
+    },
+    {
+      "id": "kangaroo_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A14.kangaroo_solution",
+      "title_ja": "40日かかる。",
+      "claim_ja": "40日かかる。",
+      "method_ja": "80÷2。",
+      "requires_steps": [
+        "kangaroo_gap"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Bertだけが毎日2頭購入する。",
+      "conclusion_ja": "40。",
+      "baseline_ja": "40。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1853,
+    "checked_model_hash": "f05987b97a20388e4308df08817a7018c84b1cfda1b0f66299e38fe4da1a57e3",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

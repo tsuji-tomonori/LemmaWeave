@@ -1,0 +1,164 @@
+{
+  "id": "gsm8k_sprint426_hannah_fifth_week_inconsistent",
+  "title_ja": "5週目の貯金条件の矛盾",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04181",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A05P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Hannah wants to save $80 for five weeks. In the first week, she saved $4 and she plans to save twice as much as her savings as the previous week. How much will she save in the fifth week to reach her goal?",
+  "answer_ja": "条件は同時には満たせない。2倍計画なら第2〜5週は8,16,32,64ドルで合計124ドル。80ドルに合わせるなら第5週は20ドルだが、前週32ドルの2倍ではない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_fifth_week_inconsistent",
+  "graph": "work/gsm8k-sprint426-hannah-fifth-week-inconsistent-graph.json",
+  "model_notes_ja": [
+    "「毎週前週の2倍」と「5週合計80ドル」をどちらも要求すると矛盾する。目標優先なら20ドル、倍増計画優先なら64ドルと分ける。"
+  ],
+  "steps": [
+    {
+      "id": "hannah_week2",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_week2",
+      "title_ja": "第2週",
+      "claim_ja": "4×2=8ドル。",
+      "method_ja": "前週の2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "第1週4ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8ドル。"
+    },
+    {
+      "id": "hannah_week3",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_week3",
+      "title_ja": "第3週",
+      "claim_ja": "8×2=16ドル。",
+      "method_ja": "前週の2倍。",
+      "requires_steps": [
+        "hannah_week2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第2週8ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "16ドル。"
+    },
+    {
+      "id": "hannah_week4",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_week4",
+      "title_ja": "第4週",
+      "claim_ja": "16×2=32ドル。",
+      "method_ja": "前週の2倍。",
+      "requires_steps": [
+        "hannah_week2",
+        "hannah_week3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第3週16ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "32ドル。"
+    },
+    {
+      "id": "hannah_first_four_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_first_four_total",
+      "title_ja": "最初の4週",
+      "claim_ja": "4+8+16+32=60ドル。",
+      "method_ja": "週ごとの貯金額を合計する。",
+      "requires_steps": [
+        "hannah_week2",
+        "hannah_week3",
+        "hannah_week4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第1〜4週の値。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60ドル。"
+    },
+    {
+      "id": "hannah_goal_remainder",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_goal_remainder",
+      "title_ja": "目標までの残額",
+      "claim_ja": "80−60=20ドル。",
+      "method_ja": "目標額から4週分を引く。",
+      "requires_steps": [
+        "hannah_week2",
+        "hannah_week3",
+        "hannah_week4",
+        "hannah_first_four_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "合計80ドルを優先する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20ドル。"
+    },
+    {
+      "id": "hannah_doubling_week5",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_doubling_week5",
+      "title_ja": "倍増計画の第5週",
+      "claim_ja": "32×2=64ドル。",
+      "method_ja": "前週の2倍。",
+      "requires_steps": [
+        "hannah_week2",
+        "hannah_week3",
+        "hannah_week4",
+        "hannah_first_four_total",
+        "hannah_goal_remainder"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第4週32ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "64ドル。"
+    },
+    {
+      "id": "hannah_requirements_inconsistent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_requirements_inconsistent",
+      "title_ja": "条件の両立不能",
+      "claim_ja": "第5週が64ドルかつ合計80ドルとなる自然数は存在しない。",
+      "method_ja": "背理的な算術確認。",
+      "requires_steps": [
+        "hannah_week2",
+        "hannah_week3",
+        "hannah_week4",
+        "hannah_first_four_total",
+        "hannah_goal_remainder",
+        "hannah_doubling_week5"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "最初の4週が60ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "原題の2条件は同時に満たせない。"
+    },
+    {
+      "id": "hannah_fifth_week_inconsistent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A05P1.hannah_fifth_week_inconsistent",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "条件は同時には満たせない。2倍計画なら第2〜5週は8,16,32,64ドルで合計124ドル。80ドルに合わせるなら第5週は20ドルだが、前週32ドルの2倍ではない。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "hannah_week2",
+        "hannah_week3",
+        "hannah_week4",
+        "hannah_first_four_total",
+        "hannah_goal_remainder",
+        "hannah_doubling_week5",
+        "hannah_requirements_inconsistent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "「毎週前週の2倍」と「5週合計80ドル」をどちらも要求すると矛盾する。目標優先なら20ドル、倍増計画優先なら64ドルと分ける。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "条件は同時には満たせない。2倍計画なら第2〜5週は8,16,32,64ドルで合計124ドル。80ドルに合わせるなら第5週は20ドルだが、前週32ドルの2倍ではない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4182,
+    "checked_model_hash": "e97cb45904ce3ae93cc12129658a37d4d3b1c193af6c96a258967ce8bf7118f8",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "e97cb45904ce3ae93cc12129658a37d4d3b1c193af6c96a258967ce8bf7118f8"
+}

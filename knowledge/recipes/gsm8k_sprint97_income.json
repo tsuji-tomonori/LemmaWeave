@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint97_income",
+  "title_ja": "二人の年間収入合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01740",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Dwayneの収入へ450ドルを足してBradyを求め、二人を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.income_solution",
+  "graph": "work/gsm8k-sprint97-income-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "income_brady",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.income_brady",
+      "title_ja": "Bradyは1950ドル。",
+      "claim_ja": "Bradyは1950ドル。",
+      "method_ja": "1500+450。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "BradyがDwayneより450ドル多い。",
+      "conclusion_ja": "1500+450=1950。",
+      "baseline_ja": "1500+450=1950。"
+    },
+    {
+      "id": "income_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.income_solution",
+      "title_ja": "二人の合計は3450ドル。",
+      "claim_ja": "二人の合計は3450ドル。",
+      "method_ja": "1500+1950。",
+      "requires_steps": [
+        "income_brady"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各人の年収を1回ずつ加える。",
+      "conclusion_ja": "1500+1950=3450。",
+      "baseline_ja": "1500+1950=3450。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1741,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

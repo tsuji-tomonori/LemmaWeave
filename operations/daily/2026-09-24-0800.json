@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-24",
+  "run_id": "2026-09-24T08:00+09:00-gsm8k-15-a08",
+  "scheduled_local_hour": 8,
+  "scheduled_at": "2026-09-24T08:00:00+09:00",
+  "started_at": "2026-09-24T08:00:17+09:00",
+  "finished_at": "2026-09-24T08:24:00+09:00",
+  "start_delay_seconds": 17,
+  "role": "gsm8k_individual_solution",
+  "base_sha": "b3a9ac6b36763a730f5c10b6f5ba499dd4295c6a",
+  "artifact_commit": "0dab62b42be58cf0b8fc6343df7311610ab3421a",
+  "selected_problem_ids": [
+    "train:02049", "train:02050", "train:02051", "train:02052", "train:02053",
+    "train:02054", "train:02055", "train:02056", "train:02057", "train:02058",
+    "train:02060", "train:02061", "train:02062", "train:02063", "train:02064"
+  ],
+  "skipped_already_solution_ready": ["train:02059"],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:02049", "train:02050", "train:02051", "train:02052", "train:02053",
+    "train:02054", "train:02055", "train:02056", "train:02057", "train:02058",
+    "train:02060", "train:02061", "train:02062", "train:02063", "train:02064"
+  ],
+  "deferred": [],
+  "checkpoint_commits": [
+    {"through": "train:02053", "commit": "8998dc8e30e4a4eb0d8c8ab1db579b9bd0de01e8"},
+    {"through": "train:02058", "commit": "18e2e6e4453492be335ab0137e8d8c54efb75b3e"},
+    {"through": "train:02064", "commit": "0dab62b42be58cf0b8fc6343df7311610ab3421a"}
+  ],
+  "outputs": {
+    "batch": "corpus/method_batches/GSM8K-INDIVIDUAL-0172.json",
+    "model": "LemmaWeave/Problems/GSM8K/Sprint0924A08Models.lean",
+    "lean_test": "tests/lean/GSM8KSprint0924A08.lean",
+    "recipes": 15,
+    "explanation_lines": 49,
+    "named_lean_theorems": 49,
+    "source_records_read": 16,
+    "source_positions_checked": 16,
+    "source_record_text_matches": 15,
+    "question_hashes_recorded": 15,
+    "self_review_status": "self_review_only"
+  },
+  "notable_reviews_ja": [
+    "train:02059は既にsolution_readyであったため再処理せず、未完了のtrain:02064を追加して15問を処理した。",
+    "train:02055は5 times moreを5倍の288ドルと6倍の345.60ドルに分離し、原文だけでは一意でないことを形式化した。",
+    "train:02057はJackが既に重いため、Jackが岩を持つ原題には自然数解がない。参照解5個はAnnaが持つ場合だけ成立することを分離した。"
+  ],
+  "static_checks": {
+    "recipe_count": 15,
+    "batch_item_count": 15,
+    "source_record_sha256_matches": 15,
+    "recipe_step_to_named_theorem_missing": 0,
+    "semantic_model_hash_match": true,
+    "sorry_admit_custom_axiom_occurrences": 0,
+    "queue_rows": 8792,
+    "unique_problem_ids": 8792,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "queue_after": {
+    "solution_ready": 518,
+    "awaiting_verification": 1549,
+    "pending": 6725,
+    "in_progress": 0,
+    "deferred": 0,
+    "remaining_not_solution_ready": 8274,
+    "next_problem_id": "train:02065",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "slot_reconciliation": {
+    "unexecuted_slots_today": [0],
+    "note_ja": "0時枠は未実行のまま保持し、1時から8時までを重複なく実行した。"
+  },
+  "ci": {
+    "last_completed_exact_head": "df2014b1fa6a546450771e3c097a014e06c62591",
+    "last_completed_run_id": 35926372609,
+    "last_completed_status": "failure",
+    "current_artifact_head": "0dab62b42be58cf0b8fc6343df7311610ab3421a",
+    "current_run_id": 35932235215,
+    "current_status": "pending",
+    "accepted_as_success_evidence": false
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "mergeable_before_write": true,
+    "reviews": 0,
+    "unresolved_threads": 0,
+    "merge_status": "held_for_exact_head_ci"
+  },
+  "claim": {
+    "owner": "scheduled-run-2026-09-24T08:00+09:00",
+    "scope": "train:02049-train:02064 excluding train:02059",
+    "claimed_at": "2026-09-24T08:00:17+09:00",
+    "expires_at": "2026-09-24T09:00:17+09:00",
+    "released": true
+  }
+}

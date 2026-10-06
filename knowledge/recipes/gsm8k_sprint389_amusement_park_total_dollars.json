@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint389_amusement_park_total_dollars",
+  "title_ja": "遊園地で使った総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04067",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A group of 5 children are taken to an amusement park. Only 3 of them were daring enough to get on the Ferris wheel which cost $5 per child. Everyone had a go at the merry-go-round (at $3 per child). On their way home, they bought 2 cones of ice cream each (each cone cost $8). How much did they spend altogether?",
+  "answer_ja": "観覧車は3×5=15ドル、メリーゴーラウンドは5×3=15ドル。アイスは5人が2個ずつ買うので5×2×8=80ドル。合計は15+15+80=110ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A01P2.amusement_park_total_dollars",
+  "graph": "work/gsm8k-sprint389-amusement-park-total-dollars-graph.json",
+  "model_notes_ja": [
+    "everyone と each は5人全員に適用する。"
+  ],
+  "steps": [
+    {
+      "id": "amusement_park_total_dollars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A01P2.amusement_park_total_dollars",
+      "title_ja": "遊園地で使った総額",
+      "claim_ja": "観覧車は3×5=15ドル、メリーゴーラウンドは5×3=15ドル。アイスは5人が2個ずつ買うので5×2×8=80ドル。合計は15+15+80=110ドルである。",
+      "method_ja": "everyone と each は5人全員に適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "everyone と each は5人全員に適用する。",
+      "baseline_ja": "整数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "観覧車は3×5=15ドル、メリーゴーラウンドは5×3=15ドル。アイスは5人が2個ずつ買うので5×2×8=80ドル。合計は15+15+80=110ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4068,
+    "checked_model_hash": "68cad773f21e07d094f0728acbf5d8a347949c62d72b59735e037a941dc252ee",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

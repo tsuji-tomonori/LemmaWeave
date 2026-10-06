@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint498_grilled_cheese_count",
+  "title_ja": "グリルドチーズサンド数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04253",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Joan is preparing sandwiches for a family potluck. She decides to make ham sandwiches and grilled cheese sandwiches. One ham sandwich requires 2 slices of cheese, and one grilled cheese sandwich requires 3 slices of cheese. She uses a total of 50 slices of cheese to make the sandwiches. If she makes 10 ham sandwiches, how many grilled cheese sandwiches does she make?",
+  "answer_ja": "ハム10個で20枚使用。残りは50−20=30枚で、3枚ずつ使うのでグリルドチーズは10個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.grilled_cheese_count",
+  "graph": "work/gsm8k-sprint498-grilled-cheese-count-graph.json",
+  "model_notes_ja": [
+    "ハムサンドが使うチーズを総数から除き、残りを1個3枚で割る。"
+  ],
+  "steps": [
+    {
+      "id": "ham_cheese_slices",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.ham_cheese_slices",
+      "title_ja": "ハム用",
+      "claim_ja": "10×2=20枚。",
+      "method_ja": "ハム1個2枚を10個分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10個、各2枚。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20枚。"
+    },
+    {
+      "id": "grilled_cheese_slices",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.grilled_cheese_slices",
+      "title_ja": "残りチーズ",
+      "claim_ja": "50−20=30枚。",
+      "method_ja": "総数からハム用を引く。",
+      "requires_steps": [
+        "ham_cheese_slices"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総50枚、ハム用20枚。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "30枚。"
+    },
+    {
+      "id": "grilled_sandwiches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.grilled_sandwiches",
+      "title_ja": "個数",
+      "claim_ja": "30÷3=10個。",
+      "method_ja": "1個3枚で割る。",
+      "requires_steps": [
+        "ham_cheese_slices",
+        "grilled_cheese_slices"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "30枚、各3枚。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10個。"
+    },
+    {
+      "id": "grilled_cheese_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.grilled_cheese_count",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "ハム10個で20枚使用。残りは50−20=30枚で、3枚ずつ使うのでグリルドチーズは10個。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "ham_cheese_slices",
+        "grilled_cheese_slices",
+        "grilled_sandwiches"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ハムサンドが使うチーズを総数から除き、残りを1個3枚で割る。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "ハム10個で20枚使用。残りは50−20=30枚で、3枚ずつ使うのでグリルドチーズは10個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4254,
+    "checked_model_hash": "196e31c97a4a6a21d1f393dbba0528bf0d34d496dde09bdaaf4546966ecd056b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "196e31c97a4a6a21d1f393dbba0528bf0d34d496dde09bdaaf4546966ecd056b"
+}

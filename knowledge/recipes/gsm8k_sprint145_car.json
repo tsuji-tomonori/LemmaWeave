@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint145_car",
+  "title_ja": "6年後の車の価値",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02461",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "購入額20000ドルから毎年1000ドルずつ6年間下落する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.car_solution",
+  "graph": "work/gsm8k-sprint145-car-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "car_lost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.car_lost",
+      "title_ja": "下落額は6000ドル",
+      "claim_ja": "下落額は6000ドル",
+      "method_ja": "1000に6を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "下落額は6000ドル",
+      "baseline_ja": "下落額は6000ドル"
+    },
+    {
+      "id": "car_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.car_solution",
+      "title_ja": "価値は14000ドル",
+      "claim_ja": "価値は14000ドル",
+      "method_ja": "20000から6000を引く",
+      "requires_steps": [
+        "car_lost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "価値は14000ドル",
+      "baseline_ja": "価値は14000ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2462,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

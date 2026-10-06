@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint233_running",
+  "title_ja": "1週間の走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03178",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A00P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "朝2555m、午後1095m、1日3650m。7日で25550m。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.running_weekly",
+  "graph": "work/gsm8k-sprint233-running-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "running_morning",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.running_morning",
+      "title_ja": "朝は2555m。",
+      "claim_ja": "朝は2555m。",
+      "method_ja": "365mを7周する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "朝は2555m。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "running_afternoon",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.running_afternoon",
+      "title_ja": "午後は1095m。",
+      "claim_ja": "午後は1095m。",
+      "method_ja": "365mを3周する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "午後は1095m。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "running_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.running_daily",
+      "title_ja": "1日は3650m。",
+      "claim_ja": "1日は3650m。",
+      "method_ja": "朝と午後を足す。",
+      "requires_steps": [
+        "running_morning",
+        "running_afternoon"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "1日は3650m。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "running_weekly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.running_weekly",
+      "title_ja": "1週間は25550m。",
+      "claim_ja": "1週間は25550m。",
+      "method_ja": "1日3650mを7日分にする。",
+      "requires_steps": [
+        "running_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "1週間は25550m。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3179,
+    "checked_model_hash": "a9cde661a684091d58485da0f8eec4e631b2c2e46e95bc1949800ff92636a667",
+    "checks_ja": [
+      "固定commitの原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

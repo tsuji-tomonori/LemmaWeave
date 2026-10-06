@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint255_garden",
+  "title_ja": "庭に追加できる野菜数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03320",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "植済み野菜数と全区画数の差を求める。",
+  "answer_ja": "85個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.garden_remaining",
+  "graph": "work/gsm8k-sprint255-garden-graph.json",
+  "model_notes_ja": [
+    "各spaceに野菜を1つ植えるものとして数える。"
+  ],
+  "steps": [
+    {
+      "id": "garden_counts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.garden_counts",
+      "title_ja": "トマト15、きゅうり20個。",
+      "claim_ja": "トマト15、きゅうり20個。",
+      "method_ja": "3×5、5×4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "種類ごとの株数を合計する。",
+      "conclusion_ja": "15個と20個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "garden_planted",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.garden_planted",
+      "title_ja": "植済みは65個。",
+      "claim_ja": "植済みは65個。",
+      "method_ja": "15+20+30。",
+      "requires_steps": [
+        "garden_counts"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "じゃがいも30個を加える。",
+      "conclusion_ja": "65個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "garden_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.garden_capacity",
+      "title_ja": "全区画は150個分。",
+      "claim_ja": "全区画は150個分。",
+      "method_ja": "10×15。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10列に各15区画。",
+      "conclusion_ja": "150個分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "garden_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A08P2.garden_remaining",
+      "title_ja": "追加できるのは85個。",
+      "claim_ja": "追加できるのは85個。",
+      "method_ja": "150-65。",
+      "requires_steps": [
+        "garden_planted",
+        "garden_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1区画に1つ植える。",
+      "conclusion_ja": "85個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3321,
+    "checked_model_hash": "7c3a1f7c8aca217cb6d65b876bb8a8b952692178eeaa68a3d9b1334e7d3c72bd",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

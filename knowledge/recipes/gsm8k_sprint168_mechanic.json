@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint168_mechanic",
+  "title_ja": "食料品と修理の総支出",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02813",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A06.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "修理費の関係式から食料品代を逆算して足す。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A06.mechanic_solution",
+  "graph": "work/gsm8k-sprint168-mechanic-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "mechanic_groceries",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A06.mechanic_groceries",
+      "title_ja": "食料品100ドル",
+      "claim_ja": "350-50=300ドルが食料品代の3倍なので100ドル。",
+      "method_ja": "一次方程式",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "350-50=300ドルが食料品代の3倍なので100ドル。",
+      "baseline_ja": "350-50=300ドルが食料品代の3倍なので100ドル。"
+    },
+    {
+      "id": "mechanic_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A06.mechanic_total",
+      "title_ja": "合計450ドル",
+      "claim_ja": "100+350=450ドル。",
+      "method_ja": "加法",
+      "requires_steps": [
+        "mechanic_groceries"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "100+350=450ドル。",
+      "baseline_ja": "100+350=450ドル。"
+    },
+    {
+      "id": "mechanic_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A06.mechanic_solution",
+      "title_ja": "答えは450ドル",
+      "claim_ja": "総支出は450ドル。",
+      "method_ja": "直前の結論",
+      "requires_steps": [
+        "mechanic_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位と明記した読解条件を自然数の等式として表す。",
+      "conclusion_ja": "総支出は450ドル。",
+      "baseline_ja": "総支出は450ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2814,
+    "checked_model_hash": "a9efd51e04082210dda9fc643304e8aeffb6a06a3debd4290c0541a40e9cda24",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

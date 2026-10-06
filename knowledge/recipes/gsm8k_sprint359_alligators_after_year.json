@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint359_alligators_after_year",
+  "title_ja": "1年後のワニの数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03920",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "There are 4 alligators living on a golf course in Florida. If the number of alligators doubles every six months, how many alligators will there be at the end of a year?",
+  "answer_ja": "1年12か月には6か月が2回ある。4匹は半年後8匹、さらに半年後16匹になる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A12P2.alligators_after_year",
+  "graph": "work/gsm8k-sprint359-alligators-after-year-graph.json",
+  "model_notes_ja": [
+    "各6か月の終わりに個体数全体が正確に2倍になり、他の増減はない。"
+  ],
+  "steps": [
+    {
+      "id": "alligators_after_year",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A12P2.alligators_after_year",
+      "title_ja": "1年後のワニの数",
+      "claim_ja": "1年12か月には6か月が2回ある。4匹は半年後8匹、さらに半年後16匹になる。",
+      "method_ja": "2回の倍加を順に適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12は6で割り切れる。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "16匹。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3921,
+    "checked_model_hash": "5d16339e4fc2def0dfd32e0d9c712df461e0c44f53d75c0bcdee7f3d655587db",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

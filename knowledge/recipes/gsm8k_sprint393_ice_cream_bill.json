@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_ice_cream_bill",
+  "title_ja": "アイスクリームの合計金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04116",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Pierre decides to bring his mother out for ice cream. His treat. Each scoop is $2. If he gets 3 scoops and his mom gets 4, what is the total bill?",
+  "answer_ja": "Pierreは3×2=6ドル、母親は4×2=8ドル。合計は6+8=14ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P3.ice_cream_bill",
+  "graph": "work/gsm8k-sprint393-ice-cream-bill-graph.json",
+  "model_notes_ja": [
+    "2人のスクープ数に共通単価2ドルを掛ける。"
+  ],
+  "steps": [
+    {
+      "id": "ice_cream_bill",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P3.ice_cream_bill",
+      "title_ja": "アイスクリームの合計金額",
+      "claim_ja": "Pierreは3×2=6ドル、母親は4×2=8ドル。合計は6+8=14ドルである。",
+      "method_ja": "各人の代金を求めて加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各スクープの価格は一律2ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Pierreは3×2=6ドル、母親は4×2=8ドル。合計は6+8=14ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4117,
+    "checked_model_hash": "5e660ee0bcfcf32972e24199c4a50d234de3f9b79be669e8467f38d499f17013",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

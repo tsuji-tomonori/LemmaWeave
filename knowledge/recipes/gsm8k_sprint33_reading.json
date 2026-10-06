@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint33_reading",
+  "title_ja": "3倍速で2時間読むページ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00780",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1時間当たり36ページへ増え、2時間で72ページと求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A01.reading_solution",
+  "graph": "work/gsm8k-sprint33-reading-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "reading_hourly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.reading_hourly",
+      "title_ja": "増加後の速度",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "12ページ毎時を3倍にする。",
+      "conclusion_ja": "36ページ毎時。",
+      "baseline_ja": "12×3=36。"
+    },
+    {
+      "id": "reading_pages",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A01.reading_pages",
+      "title_ja": "2時間のページ数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "36ページ毎時で2時間読む。",
+      "conclusion_ja": "72ページ。",
+      "baseline_ja": "36×2=72。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 781,
+    "checked_model_hash": "da8eb804ea3daf18318b59af3b44334342ddbdbc0749be0067c2eb5044b57293",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

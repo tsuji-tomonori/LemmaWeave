@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint453_book_text_pages",
+  "title_ja": "本文のページ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04208",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A book is 98 pages long. Half of the pages are filled with images, and 11  with an introduction. Of the remaining pages, half are blank and the other half are filled with text. How many pages with text are there?",
+  "answer_ja": "画像は98÷2=49ページ。序文11ページを除くと38ページ残り、その半分が本文なので19ページ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.book_text_pages",
+  "graph": "work/gsm8k-sprint453-book-text-pages-graph.json",
+  "model_notes_ja": [
+    "画像49ページと序文11ページを全98ページから除いた残りを二等分する。"
+  ],
+  "steps": [
+    {
+      "id": "book_image_pages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.book_image_pages",
+      "title_ja": "画像ページ",
+      "claim_ja": "98÷2=49ページ。",
+      "method_ja": "全体の半分を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全98ページ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "49ページ。"
+    },
+    {
+      "id": "book_remaining_pages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.book_remaining_pages",
+      "title_ja": "残りページ",
+      "claim_ja": "98−49−11=38ページ。",
+      "method_ja": "画像と序文を引く。",
+      "requires_steps": [
+        "book_image_pages"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "画像49、序文11ページ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "38ページ。"
+    },
+    {
+      "id": "book_text_page_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.book_text_page_count",
+      "title_ja": "本文ページ",
+      "claim_ja": "38÷2=19ページ。",
+      "method_ja": "残りの半分を求める。",
+      "requires_steps": [
+        "book_image_pages",
+        "book_remaining_pages"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残りは空白と本文で半分ずつ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "19ページ。"
+    },
+    {
+      "id": "book_text_pages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P3.book_text_pages",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "画像は98÷2=49ページ。序文11ページを除くと38ページ残り、その半分が本文なので19ページ。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "book_image_pages",
+        "book_remaining_pages",
+        "book_text_page_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "画像49ページと序文11ページを全98ページから除いた残りを二等分する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "画像は98÷2=49ページ。序文11ページを除くと38ページ残り、その半分が本文なので19ページ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4209,
+    "checked_model_hash": "6e81c4ae7b41df6372ac849f5ecdb83d4be2e6a97e66d0a67e8ba946ab3d232e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "6e81c4ae7b41df6372ac849f5ecdb83d4be2e6a97e66d0a67e8ba946ab3d232e"
+}

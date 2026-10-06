@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-02",
+  "run_id": "20261002T210000+0900-retry-ci-proof",
+  "scheduled_slot": "2026-10-02T21:00:00+09:00",
+  "started_at": "2026-10-02T21:55:36+09:00",
+  "finished_at": "2026-10-02T22:00:35+09:00",
+  "started_late_by_seconds": 3336,
+  "base_sha": "73ecf69efc34b4432f33b9f7004e26999c5097db",
+  "role": "retry_overdue_failed_proof",
+  "execution_mode": "serial_single_writer",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01794", "external-gsm8k-main-3101c7d50724:train:01795", "external-gsm8k-main-3101c7d50724:train:01796", "external-gsm8k-main-3101c7d50724:train:01797", "external-gsm8k-main-3101c7d50724:train:01798",
+    "external-gsm8k-main-3101c7d50724:train:01799", "external-gsm8k-main-3101c7d50724:train:01800", "external-gsm8k-main-3101c7d50724:train:01801", "external-gsm8k-main-3101c7d50724:train:01802", "external-gsm8k-main-3101c7d50724:train:01803",
+    "external-gsm8k-main-3101c7d50724:train:01804", "external-gsm8k-main-3101c7d50724:train:01805", "external-gsm8k-main-3101c7d50724:train:01806", "external-gsm8k-main-3101c7d50724:train:01807", "external-gsm8k-main-3101c7d50724:train:01808"
+  ],
+  "completed_problem_ids": [],
+  "awaiting_verification_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:01794", "external-gsm8k-main-3101c7d50724:train:01795", "external-gsm8k-main-3101c7d50724:train:01796", "external-gsm8k-main-3101c7d50724:train:01797", "external-gsm8k-main-3101c7d50724:train:01798",
+    "external-gsm8k-main-3101c7d50724:train:01799", "external-gsm8k-main-3101c7d50724:train:01800", "external-gsm8k-main-3101c7d50724:train:01801", "external-gsm8k-main-3101c7d50724:train:01802", "external-gsm8k-main-3101c7d50724:train:01803",
+    "external-gsm8k-main-3101c7d50724:train:01804", "external-gsm8k-main-3101c7d50724:train:01805", "external-gsm8k-main-3101c7d50724:train:01806", "external-gsm8k-main-3101c7d50724:train:01807", "external-gsm8k-main-3101c7d50724:train:01808"
+  ],
+  "deferred": [
+    {"problem_id":"external-gsm8k-main-3101c7d50724:train:01794","retry_on":"2026-10-02T22:00:00+09:00","reason_ja":"ラッパー構文は修正済みだが、正確なHEADの固定Lean CIが未完了で、リポジトリ全体には別ファイル由来の既知失敗も残る。","next_action_ja":"CI #37010141175のA11結果を回収し、成功なら15問の証拠へ関連付ける。失敗なら次の最初の実エラーを分離修復する。"}
+  ],
+  "claim": {"status":"released","claimed_at":"2026-10-02T21:55:36+09:00","released_at":"2026-10-02T22:00:35+09:00","owner":"scheduled-run-20261002T210000+0900","base_sha":"73ecf69efc34b4432f33b9f7004e26999c5097db"},
+  "failure_retried": {"ci_run_id":36999794413,"job_id":110814865730,"file":"tests/lean/GSM8KSprint0923A11.lean","root_cause":"Lean 4.33.1 rejects `namespace P := ...`; all wrapper declarations consequently resolve as recursive definitions with unknown types."},
+  "retry_result": {"status":"patched_verification_pending","commit":"43b21e8abc47024fc9e10df7100657aa0930547c","replacements":105,"wrapper_theorems":53,"dependency_macros":16,"axiom_prints":17,"forbidden_tokens":[],"remote_exact_content_check":{"unsupported_alias":false,"short_alias_references":0,"fully_qualified_references":105}},
+  "assurance": "INCONCLUSIVE",
+  "ci": [
+    {"run_id":36999794413,"head_sha":"73ecf69efc34b4432f33b9f7004e26999c5097db","status":"completed","conclusion":"failure","url":"https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36999794413"},
+    {"run_id":37010141175,"head_sha":"43b21e8abc47024fc9e10df7100657aa0930547c","status":"pending","conclusion":null,"url":"https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/37010141175"}
+  ],
+  "pr": {"number":5,"url":"https://github.com/tsuji-tomonori/LemmaWeave/pull/5","state":"open","mergeable":true,"merge_decision":"not_merged_exact_head_ci_pending"},
+  "commits": ["f210dafd06b1a5bef3dce0f29d4967b874c845c1","43b21e8abc47024fc9e10df7100657aa0930547c"]
+}

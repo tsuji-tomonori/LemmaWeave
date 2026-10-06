@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint137_cars",
+  "title_ja": "Jeromeが元から持っていた車",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02343",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "先月5台、今月はその2倍を買い、現在40台。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A11.cars_solution",
+  "graph": "work/gsm8k-sprint137-cars-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cars_this_month",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.cars_this_month",
+      "title_ja": "今月は10台買った",
+      "claim_ja": "今月は10台買った",
+      "method_ja": "先月5台の2倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "今月は10台買った",
+      "baseline_ja": "今月は10台買った"
+    },
+    {
+      "id": "cars_bought",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.cars_bought",
+      "title_ja": "新規購入は計15台",
+      "claim_ja": "新規購入は計15台",
+      "method_ja": "先月5台と今月10台を足す",
+      "requires_steps": [
+        "cars_this_month"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "新規購入は計15台",
+      "baseline_ja": "新規購入は計15台"
+    },
+    {
+      "id": "cars_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A11.cars_solution",
+      "title_ja": "元は25台",
+      "claim_ja": "元は25台",
+      "method_ja": "現在40台から購入15台を引く",
+      "requires_steps": [
+        "cars_bought"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "元は25台",
+      "baseline_ja": "元は25台"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2344,
+    "checked_model_hash": "94ea4a75da02e1f51bf9d0efd56cf41b10f41f4f3aa9c69d8e6bc60a4ec59381",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

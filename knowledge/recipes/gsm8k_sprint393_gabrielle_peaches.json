@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_gabrielle_peaches",
+  "title_ja": "Gabrielleの桃の個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04089",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Martine has 6 more than twice as many peaches as Benjy. Benjy has one-third as many peaches as Gabrielle. If Martine has 16 peaches, how many does Gabrielle have?",
+  "answer_ja": "Benjyをb個とするとMartineは6+2b個。6+2b=16からb=5。BenjyはGabrielleの3分の1なのでGabrielleは3×5=15個である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P3.gabrielle_peaches",
+  "graph": "work/gsm8k-sprint393-gabrielle-peaches-graph.json",
+  "model_notes_ja": [
+    "個数は自然数とし、one-third as manyをBenjy=Gabrielle/3、すなわちGabrielle=3×Benjyと読む。"
+  ],
+  "steps": [
+    {
+      "id": "gabrielle_peaches",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P3.gabrielle_peaches",
+      "title_ja": "Gabrielleの桃の個数",
+      "claim_ja": "Benjyをb個とするとMartineは6+2b個。6+2b=16からb=5。BenjyはGabrielleの3分の1なのでGabrielleは3×5=15個である。",
+      "method_ja": "個数は自然数とし、one-third as manyをBenjy=Gabrielle/3、すなわちGabrielle=3×Benjyと読む。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "個数は自然数とし、one-third as manyをBenjy=Gabrielle/3、すなわちGabrielle=3×Benjyと読む。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Benjyをb個とするとMartineは6+2b個。6+2b=16からb=5。BenjyはGabrielleの3分の1なのでGabrielleは3×5=15個である。 答えは15個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4090,
+    "checked_model_hash": "c3079a3890a77c75aa2b2b02549be37b5bf8164dcc2c63f3108fb0d79d784c1a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

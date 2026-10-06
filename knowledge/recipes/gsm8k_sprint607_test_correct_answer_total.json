@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint607_test_correct_answer_total",
+  "title_ja": "2試験の正答数合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04362",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P1.lean",
+  "problem_ja": "Phillip is taking a math test and an English test on Monday. The math test has 40 questions and he gets 75% of them right. The English test has 50 questions and he gets 98% of them right. How many total questions does he get right?",
+  "answer_ja": "数学は40問の75%で30問、英語は50問の98%で49問。合計79問。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.test_correct_answer_total",
+  "graph": "work/gsm8k-sprint607-test-correct-answer-total-graph.json",
+  "model_notes_ja": [
+    "各百分率は正確で、正答数は整数になる。"
+  ],
+  "steps": [
+    {
+      "id": "math_correct_answers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.math_correct_answers",
+      "title_ja": "数学の正答数",
+      "claim_ja": "40×75÷100=30問。",
+      "method_ja": "問題数に正答率を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "40×75÷100=30問。"
+    },
+    {
+      "id": "english_correct_answers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.english_correct_answers",
+      "title_ja": "英語の正答数",
+      "claim_ja": "50×98÷100=49問。",
+      "method_ja": "問題数に正答率を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "50×98÷100=49問。"
+    },
+    {
+      "id": "all_correct_answers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.all_correct_answers",
+      "title_ja": "正答数合計",
+      "claim_ja": "30+49=79問。",
+      "method_ja": "2試験の正答数を加える。",
+      "requires_steps": [
+        "math_correct_answers",
+        "english_correct_answers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "30+49=79問。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.test_correct_answer_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "数学は40問の75%で30問、英語は50問の98%で49問。合計79問。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "math_correct_answers",
+        "english_correct_answers",
+        "all_correct_answers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "数学は40問の75%で30問、英語は50問の98%で49問。合計79問。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4363,
+    "checked_model_hash": "796a414a376319989f559ce3267fe4c26234a534bce3cf7c3a2a8847d6acfbc4",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

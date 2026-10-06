@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint148_gameplay",
+  "title_ja": "楽しいゲーム時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02502",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100時間の80%が作業で、拡張が楽しい30時間を追加する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.gameplay_solution",
+  "graph": "work/gsm8k-sprint148-gameplay-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "gameplay_grinding",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.gameplay_grinding",
+      "title_ja": "作業時間は80時間",
+      "claim_ja": "作業時間は80時間",
+      "method_ja": "100時間の80%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "作業時間は80時間",
+      "baseline_ja": "作業時間は80時間"
+    },
+    {
+      "id": "gameplay_base",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.gameplay_base",
+      "title_ja": "本編の楽しい時間は20時間",
+      "claim_ja": "本編の楽しい時間は20時間",
+      "method_ja": "100から80を引く",
+      "requires_steps": [
+        "gameplay_grinding"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "本編の楽しい時間は20時間",
+      "baseline_ja": "本編の楽しい時間は20時間"
+    },
+    {
+      "id": "gameplay_expansion",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.gameplay_expansion",
+      "title_ja": "拡張の楽しい時間は30時間",
+      "claim_ja": "拡張の楽しい時間は30時間",
+      "method_ja": "原題の追加量を保持する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "拡張の楽しい時間は30時間",
+      "baseline_ja": "拡張の楽しい時間は30時間"
+    },
+    {
+      "id": "gameplay_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.gameplay_solution",
+      "title_ja": "楽しい時間は合計50時間",
+      "claim_ja": "楽しい時間は合計50時間",
+      "method_ja": "20と30を足す",
+      "requires_steps": [
+        "gameplay_base",
+        "gameplay_expansion"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "楽しい時間は合計50時間",
+      "baseline_ja": "楽しい時間は合計50時間"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2503,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

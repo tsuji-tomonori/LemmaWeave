@@ -1,0 +1,123 @@
+{
+  "id": "dnc2026_cubic_extrema_individual",
+  "title_ja": "3次関数の極大値・極小値を求める",
+  "problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-02",
+  "collection_id": "japanese-entrance-exam",
+  "problem_ja": "kを実数とし、f(x)=(1/3)x^3-2x^2+3x+kとするとき、極大・極小をとるxとその値を求める。",
+  "source": {
+    "provider": "大学入試センター",
+    "exam": "令和8年度大学入学共通テスト 本試験 数学II・数学B・数学C",
+    "landing_url": "https://www.dnc.ac.jp/kyotsu/kakomondai/r8/r8_honshiken_mondai.html",
+    "document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2144&f=abm00017550.pdf&n=2026_ol_18_sugaku2BC.pdf",
+    "answer_landing_url": "https://www.dnc.ac.jp/kyotsu/kako_shiken_jouhou/r8/r8_honsiken_seikai.html",
+    "answer_document_url": "https://www.dnc.ac.jp/albums/abm.php?d=2137&f=abm00006056.pdf&n=R8_%E3%80%90%E6%95%B0%E5%AD%A6%E2%85%A1%EF%BC%8C%E6%95%B0%E5%AD%A6B%EF%BC%8C%E6%95%B0%E5%AD%A6C%E3%80%91%E7%99%BA%E8%A1%A8%E7%94%A8%E6%AD%A3%E8%A7%A3.pdf",
+    "pdf_page_1_based": [13],
+    "printed_page_label": ["14"],
+    "subquestion": "第3問(1) 解答欄イ・ウ・エ・オ",
+    "document_sha256": "ab61acd26eca75c1d72a23e0ac9a0942ffc61934af37c46fcc7e7cc8254ef554",
+    "normalized_statement_sha256": "9441fbf8ad10ca94aee2ed336c11533e7ac7b76872cdf7e27510ee9f1b8cb4ce",
+    "problem_record_path": "corpus/problems/JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-02.json",
+    "visual_review_status": "official_pdf_and_official_answer_visually_checked_2026-10-04",
+    "rights_note_ja": "原文画像は転載せず、出題位置、独自要約、数学的定義と証明のみを保存する。"
+  },
+  "variables": [
+    {"name": "k", "type": "ℝ", "domain_ja": "任意の実数パラメータ"},
+    {"name": "x", "type": "ℝ", "domain_ja": "任意の実数"}
+  ],
+  "assumptions_ja": ["f(x)=(1/3)x^3-2x^2+3x+kである。"],
+  "required_conclusions_ja": [
+    "f'(x)=0の全解はx=1,3である。",
+    "x=1で極大値k+4/3をとる。",
+    "x=3で極小値kをとる。",
+    "公式解答欄はイ=1、ウ=9、エ=3、オ=5である。"
+  ],
+  "root": "LemmaWeave.Tests.DNC2026CubicExtremaIndividual.individual_solution",
+  "graph": "work/dnc2026-cubic-extrema-individual-graph.json",
+  "lean_file": "tests/lean/DNC2026CubicExtremaIndividual.lean",
+  "model_file": "LemmaWeave/Problems/DNC2026M2BC/CubicExtremaModel.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "source_backed_local_extrema_model_author_review_only",
+  "counting_note_ja": "日本入試専用台帳へ新規登録した1小問であり、GSM8K固定8,792問へ加えない。固定Lean未実行のため正式収集済みに数えない。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "steps": [
+    {
+      "id": "stationary_points",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicExtremaIndividual.stationary_points",
+      "title_ja": "停留点を漏れなく求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "claim_ja": "f'(x)=x^2-4x+3=(x-1)(x-3)なので、f'(x)=0の全解はx=1,3である。",
+      "method_ja": "前小問の導関数を因数分解し、零積の法則を双方向に用いる。",
+      "condition_ja": "xは実数であり、実数に零因子はない。",
+      "premise_ja": "f'(x)=x^2-4x+3。",
+      "conclusion_ja": "停留点はx=1とx=3だけである。",
+      "baseline_ja": "二次式の因数分解と零積の法則。"
+    },
+    {
+      "id": "maximum_neighborhood",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicExtremaIndividual.maximum_on_neighborhood",
+      "title_ja": "x=1で極大になることを示す",
+      "requires_steps": ["stationary_points"],
+      "uses_nodes": [],
+      "claim_ja": "0≤x≤2ではf(x)-f(1)=(x-1)^2(x-4)/3≤0である。",
+      "method_ja": "平方の非負性と積の符号を使う。",
+      "condition_ja": "0≤x≤2ならx-4<0であり、(x-1)^2≥0。",
+      "premise_ja": "fの定義と停留点x=1。",
+      "conclusion_ja": "x=1の近傍[0,2]でf(x)≤f(1)なので、x=1で極大をとる。",
+      "baseline_ja": "因数分解と実数の大小。"
+    },
+    {
+      "id": "maximum_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicExtremaIndividual.maximum_value",
+      "title_ja": "極大値を計算する",
+      "requires_steps": ["maximum_neighborhood"],
+      "uses_nodes": [],
+      "claim_ja": "f(1)=1/3-2+3+k=k+4/3。",
+      "method_ja": "x=1を代入して有理数を整理する。",
+      "condition_ja": "kは任意の実数。",
+      "premise_ja": "x=1で極大をとる。",
+      "conclusion_ja": "極大値はk+4/3である。",
+      "baseline_ja": "関数値の代入計算。"
+    },
+    {
+      "id": "minimum_neighborhood",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicExtremaIndividual.minimum_on_neighborhood",
+      "title_ja": "x=3で極小になることを示す",
+      "requires_steps": ["stationary_points"],
+      "uses_nodes": [],
+      "claim_ja": "2≤x≤4ではf(x)-f(3)=x(x-3)^2/3≥0である。",
+      "method_ja": "平方の非負性と積の符号を使う。",
+      "condition_ja": "2≤x≤4ならx≥0であり、(x-3)^2≥0。",
+      "premise_ja": "fの定義と停留点x=3。",
+      "conclusion_ja": "x=3の近傍[2,4]でf(3)≤f(x)なので、x=3で極小をとる。",
+      "baseline_ja": "因数分解と実数の大小。"
+    },
+    {
+      "id": "minimum_value",
+      "lean_declaration": "LemmaWeave.Tests.DNC2026CubicExtremaIndividual.minimum_value",
+      "title_ja": "極小値を計算する",
+      "requires_steps": ["minimum_neighborhood"],
+      "uses_nodes": [],
+      "claim_ja": "f(3)=9-18+9+k=k。",
+      "method_ja": "x=3を代入して整理する。",
+      "condition_ja": "kは任意の実数。",
+      "premise_ja": "x=3で極小をとる。",
+      "conclusion_ja": "極小値はkである。",
+      "baseline_ja": "関数値の代入計算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "checked_at": "2026-10-04T09:11:00+09:00",
+    "source_problem_id": "JP-DNC-CT-2026-MAIN-M2BC-Q03-S01-02",
+    "checks_ja": [
+      "公式PDF第13ページ（冊子14頁）のkの定義域、3次関数、極大・極小の四解答欄を再読した。",
+      "公式正解表でイ=1、ウ=9、エ=3、オ=5を照合した。値の選択肢9はk+4/3、選択肢5はkである。",
+      "停留点の全解を双方向で示し、極大・極小の成立と両関数値をすべて結論に含めた。",
+      "極値の成立は点の代入だけで済ませず、明示的な近傍上の不等式として形式化した。",
+      "自己照合のみであり、固定Lean実行、依存抽出、公理監査、独立レビューは未完と表示した。"
+    ]
+  }
+}

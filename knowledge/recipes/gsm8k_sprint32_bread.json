@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint32_bread",
+  "title_ja": "サンドイッチ用パンの袋数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00771",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "8個のサンドイッチに各2枚使い、4枚入りの袋数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.bread_solution",
+  "graph": "work/gsm8k-sprint32-bread-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "手持ちのパンは0枚で、16枚は4枚入り袋にちょうど分割できる。"
+  ],
+  "steps": [
+    {
+      "id": "bread_slices",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.bread_slices",
+      "title_ja": "必要な枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "8個に各2枚使う。",
+      "conclusion_ja": "16枚。",
+      "baseline_ja": "8×2=16。"
+    },
+    {
+      "id": "bread_packs",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.bread_packs",
+      "title_ja": "必要な袋数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "16枚を1袋4枚で用意する。",
+      "conclusion_ja": "4袋。",
+      "baseline_ja": "16=4×4。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 772,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

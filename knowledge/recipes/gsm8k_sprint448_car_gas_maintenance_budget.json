@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint448_car_gas_maintenance_budget",
+  "title_ja": "ガソリンと整備の予算",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04203",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kyle makes $3200.00 every month.  His monthly bills include $1250 for rent, $150 on utilities, $400 into retirement & savings accounts, $300.00 on groceries/eating out, $200 for insurance and $200 for miscellaneous expenses.  If he’s looking at buying a car with a monthly car payment of $350 how much does that leave for gas and maintenance?",
+  "answer_ja": "月々の既存支出は2500ドル。収入3200ドルから引くと700ドルで、車の支払350ドルを引くとガソリンと整備には350ドル残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.car_gas_maintenance_budget",
+  "graph": "work/gsm8k-sprint448-car-gas-maintenance-budget-graph.json",
+  "model_notes_ja": [
+    "収入から列挙された全支出と車の月額支払を順に引く。"
+  ],
+  "steps": [
+    {
+      "id": "kyle_monthly_bills",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.kyle_monthly_bills",
+      "title_ja": "既存支出",
+      "claim_ja": "1250+150+400+300+200+200=2500ドル。",
+      "method_ja": "列挙された月額を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "6項目をすべて含める。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2500ドル。"
+    },
+    {
+      "id": "kyle_after_bills",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.kyle_after_bills",
+      "title_ja": "既存支出後",
+      "claim_ja": "3200−2500=700ドル。",
+      "method_ja": "収入から既存支出を引く。",
+      "requires_steps": [
+        "kyle_monthly_bills"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "収入3200ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "700ドル。"
+    },
+    {
+      "id": "kyle_gas_maintenance",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.kyle_gas_maintenance",
+      "title_ja": "車代後",
+      "claim_ja": "700−350=350ドル。",
+      "method_ja": "残額から車の月額を引く。",
+      "requires_steps": [
+        "kyle_monthly_bills",
+        "kyle_after_bills"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "車代350ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "350ドル。"
+    },
+    {
+      "id": "car_gas_maintenance_budget",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.car_gas_maintenance_budget",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "月々の既存支出は2500ドル。収入3200ドルから引くと700ドルで、車の支払350ドルを引くとガソリンと整備には350ドル残る。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "kyle_monthly_bills",
+        "kyle_after_bills",
+        "kyle_gas_maintenance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "収入から列挙された全支出と車の月額支払を順に引く。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "月々の既存支出は2500ドル。収入3200ドルから引くと700ドルで、車の支払350ドルを引くとガソリンと整備には350ドル残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4204,
+    "checked_model_hash": "f8b7921a39d86667d37bb3a00e1284e8581ce9ee1fa7c66ade04f4c6c9ae5e59",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "f8b7921a39d86667d37bb3a00e1284e8581ce9ee1fa7c66ade04f4c6c9ae5e59"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint164_stamps",
+  "title_ja": "2人の切手の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02747",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kylieの34枚と、それより44枚多いNellyの枚数を合計する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A02.stamps_solution",
+  "graph": "work/gsm8k-sprint164-stamps-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "stamps_nelly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.stamps_nelly",
+      "title_ja": "Nellyは78枚",
+      "claim_ja": "34+44=78",
+      "method_ja": "34+44=78",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "34+44=78",
+      "baseline_ja": "34+44=78"
+    },
+    {
+      "id": "stamps_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.stamps_solution",
+      "title_ja": "合計112枚",
+      "claim_ja": "34+78=112",
+      "method_ja": "34+78=112",
+      "requires_steps": [
+        "stamps_nelly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "34+78=112",
+      "baseline_ja": "34+78=112"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2748,
+    "checked_model_hash": "f32b73b732f7b98644e11bb0aa6f12c4d921d8e6a4e614c3cb8b770ccedb4f48",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

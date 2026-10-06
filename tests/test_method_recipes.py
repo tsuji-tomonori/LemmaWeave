@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from check_method_recipes import validate_recipe, proof_evidence
+from run_method_targets import missing_graph_directives
 
 class MethodRecipes(unittest.TestCase):
     def setUp(self):
@@ -98,3 +99,40 @@ class MethodProofEvidence(unittest.TestCase):
             with self.assertRaises(ValueError):proof_evidence(root,recipe,b'tampered graph')
             (root/'proof.lean').write_text('changed proof')
             with self.assertRaises(ValueError):proof_evidence(root,recipe,b'graph')
+
+
+class MethodTargetRegistration(unittest.TestCase):
+    def test_missing_graph_directive_is_rejected_before_replay(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'proof.lean').write_text('theorem solution : True := by trivial\n')
+            recipe = {'id': 'recipe', 'lean_file': 'proof.lean',
+                      'root': 'Example.solution', 'graph': 'work/example-graph.json'}
+            self.assertEqual([item['id'] for item in missing_graph_directives(root, [recipe])],
+                             ['recipe'])
+            (root / 'proof.lean').write_text(
+                'theorem solution : True := by trivial\n'
+                '#lw_dependencies Example.solution to\n'
+                '  "work/example-graph.json"\n')
+            self.assertEqual(missing_graph_directives(root, [recipe]), [])
+
+    def test_open_namespace_allows_unqualified_root(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'proof.lean').write_text(
+                'open Example\n'
+                '#lw_dependencies solution to "work/example-graph.json"\n')
+            recipe = {'id': 'recipe', 'lean_file': 'proof.lean',
+                      'root': 'Example.solution', 'graph': 'work/example-graph.json'}
+            self.assertEqual(missing_graph_directives(root, [recipe]), [])
+
+    def test_unqualified_root_without_matching_open_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'proof.lean').write_text(
+                'open Other\n'
+                '#lw_dependencies solution to "work/example-graph.json"\n')
+            recipe = {'id': 'recipe', 'lean_file': 'proof.lean',
+                      'root': 'Example.solution', 'graph': 'work/example-graph.json'}
+            self.assertEqual([item['id'] for item in missing_graph_directives(root, [recipe])],
+                             ['recipe'])

@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint394_shirt_discount",
+  "title_ja": "シャツの値引き額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04126",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A05P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Megan pays $16 for a shirt that costs $22 before sales. What is the amount of the discount?",
+  "answer_ja": "定価22ドルから支払額16ドルを引くと、値引き額は22-16=6ドルである。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A05P2.shirt_discount",
+  "graph": "work/gsm8k-sprint394-shirt-discount-graph.json",
+  "model_notes_ja": [
+    "金額を自然数ドルとしてモデル化する。"
+  ],
+  "steps": [
+    {
+      "id": "shirt_discount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A05P2.shirt_discount",
+      "title_ja": "シャツの値引き額",
+      "claim_ja": "定価22ドルから支払額16ドルを引くと、値引き額は22-16=6ドルである。",
+      "method_ja": "定価と実際の支払額の差を取る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "22ドルが値引き前価格、16ドルが値引き後の支払額。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "定価22ドルから支払額16ドルを引くと、値引き額は22-16=6ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4127,
+    "checked_model_hash": "bc795f1e8fff7c0a300383f88251a2edb7f27481041ca5d9c3422c08564c5843",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

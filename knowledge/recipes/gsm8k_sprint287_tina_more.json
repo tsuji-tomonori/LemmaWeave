@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint287_tina_more",
+  "title_ja": "ティナがカティアより多く売った杯数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03536",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A20P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "カティア8杯、リッキー9杯。ティナは2人の合計の2倍を売ったとき、カティアとの差。",
+  "answer_ja": "26杯",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A20P1.tina_more_than_katya",
+  "graph": "work/gsm8k-sprint287-tina-more-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lemonade_combined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P1.lemonade_combined",
+      "title_ja": "カティアとリッキーの合計は17杯。",
+      "claim_ja": "カティアとリッキーの合計は17杯。",
+      "method_ja": "8杯と9杯を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "カティアとリッキーの合計は17杯。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "tina_lemonade",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P1.tina_lemonade",
+      "title_ja": "ティナは34杯売る。",
+      "claim_ja": "ティナは34杯売る。",
+      "method_ja": "合計17杯を2倍する。",
+      "requires_steps": [
+        "lemonade_combined"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "ティナは34杯売る。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "tina_more_than_katya",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P1.tina_more_than_katya",
+      "title_ja": "ティナはカティアより26杯多い。",
+      "claim_ja": "ティナはカティアより26杯多い。",
+      "method_ja": "34杯から8杯を引く。",
+      "requires_steps": [
+        "tina_lemonade"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "ティナはカティアより26杯多い。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3537,
+    "checked_model_hash": "c4a37704fc2145012d34e367f6b0f5dba157888f50c5b0e434b22dc90ec108be",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint111_race_speed",
+  "title_ja": "速度比から求めるRickeyの所要時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01958",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A01.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "同距離の速度比を逆の時間比へ変換し、2人の所要時間の和70分からRickeyの時間を求める。参照解の誤りも検証する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A01.race_solution",
+  "graph": "work/gsm8k-sprint111-race-speed-graph.json",
+  "model_notes_ja": [
+    "同一距離では所要時間は速度に反比例する。Prejeanの速度がRickeyの3/4なら時間比は4:3であり、Rickeyは30分。参照解の40分は速度比を時間比へ同方向に移した誤り。"
+  ],
+  "steps": [
+    {
+      "id": "race_inverse_ratio",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.race_inverse_ratio",
+      "title_ja": "同距離なので時間比は速度比の逆で、3×Prejean時間=4×Rickey時間。",
+      "claim_ja": "同距離なので時間比は速度比の逆で、3×Prejean時間=4×Rickey時間。",
+      "method_ja": "距離=速度×時間と速度比3:4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2人が同じ距離を走る。",
+      "conclusion_ja": "同距離なので時間比は速度比の逆で、3×Prejean時間=4×Rickey時間。",
+      "baseline_ja": "同距離なので時間比は速度比の逆で、3×Prejean時間=4×Rickey時間。"
+    },
+    {
+      "id": "race_prejean",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.race_prejean",
+      "title_ja": "Prejeanは40分。",
+      "claim_ja": "Prejeanは40分。",
+      "method_ja": "時間の和70と逆比4:3。",
+      "requires_steps": [
+        "race_inverse_ratio"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "Prejeanは40分。",
+      "baseline_ja": "Prejeanは40分。"
+    },
+    {
+      "id": "race_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.race_solution",
+      "title_ja": "Rickeyは30分。",
+      "claim_ja": "Rickeyは30分。",
+      "method_ja": "70−40。",
+      "requires_steps": [
+        "race_prejean"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "Rickeyは30分。",
+      "baseline_ja": "Rickeyは30分。"
+    },
+    {
+      "id": "race_reference_forty_impossible",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A01.race_reference_forty_impossible",
+      "title_ja": "Rickeyを40分とする参照解は速度比と両立しない。",
+      "claim_ja": "Rickeyを40分とする参照解は速度比と両立しない。",
+      "method_ja": "残り30分では3×30≠4×40。",
+      "requires_steps": [
+        "race_inverse_ratio"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Rickeyを40分と仮定し、時間和70分と速度比からの逆時間比を同時に課す。",
+      "conclusion_ja": "Rickeyを40分とする参照解は速度比と両立しない。",
+      "baseline_ja": "Rickeyを40分とする参照解は速度比と両立しない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1959,
+    "checked_model_hash": "e7236a391dfbb423c89fc1711207bed34a6f015faf9aa04bc7941c3cfa7dd681",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

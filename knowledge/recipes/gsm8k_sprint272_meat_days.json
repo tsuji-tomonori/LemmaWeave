@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint272_meat_days",
+  "title_ja": "肉がもつ日数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03461",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A15P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ライオンが1日25kg、トラが1日20kgの肉を食べる。90kgの肉が何日もつか。",
+  "answer_ja": "2日",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A15P1.meat_days",
+  "graph": "work/gsm8k-sprint272-meat-days-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "daily_meat",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P1.daily_meat",
+      "title_ja": "1日の合計消費量は45kg。",
+      "claim_ja": "1日の合計消費量は45kg。",
+      "method_ja": "25kgと20kgを足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "両方が毎日同量を食べる。",
+      "conclusion_ja": "45kg。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "meat_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P1.meat_days",
+      "title_ja": "90kgの肉は2日もつ。",
+      "claim_ja": "90kgの肉は2日もつ。",
+      "method_ja": "90kgを1日45kgで割る。",
+      "requires_steps": [
+        "daily_meat"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "供給90kgを使い切る整数日数を求める。",
+      "conclusion_ja": "2日。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3462,
+    "checked_model_hash": "0660a378ea5add82045cf2dbb644d0a4c7374b3c8cc5a45f8cad5f920a669143",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

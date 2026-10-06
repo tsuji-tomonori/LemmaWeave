@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint291_bob_candies",
+  "title_ja": "Bobのキャンディー数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03573",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A02P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Emilyは6個、JenniferはEmilyの2倍かつBobの3倍のときBobの個数。",
+  "answer_ja": "4個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.bob_candies",
+  "graph": "work/gsm8k-sprint291-bob-candies-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jennifer_candies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.jennifer_candies",
+      "title_ja": "Jenniferは12個。",
+      "claim_ja": "Jenniferは12個。",
+      "method_ja": "Emilyの6個を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Jenniferは12個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "bob_candies",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P2.bob_candies",
+      "title_ja": "Bobは4個。",
+      "claim_ja": "Bobは4個。",
+      "method_ja": "Jenniferの12個を3等分する。",
+      "requires_steps": [
+        "jennifer_candies"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Bobは4個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3574,
+    "checked_model_hash": "0e92a18a78efc2e5c06bbd51ce04cac80b4ff86a3da225d6c4c8305acd7d0f6e",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

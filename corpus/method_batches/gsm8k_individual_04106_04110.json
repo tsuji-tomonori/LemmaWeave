@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1041",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "ee7a31a4d7cc9649279d2000b17fb97892809970835aed0806ad399470404ea3",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1004A02P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04106",
+      "source_line_1based": 4107,
+      "source_record_sha256": "e8c05fec69090bade127100f1f7dcae8c8b4163e7a6b9b195cde28cb8bdccdab",
+      "raw_question_sha256": "9948dff2d3645a11ad593c31056efd35f78f40e1b2aa5d796d6d9d5e290eeafe",
+      "normalized_question_sha256": "9948dff2d3645a11ad593c31056efd35f78f40e1b2aa5d796d6d9d5e290eeafe",
+      "source_question": "Solomon collected three times as many cans as Juwan. Levi collected half of what Juwan collected. Solomon collected 66 cans. How many cans did the boys collect in all?",
+      "recipe_id": "gsm8k_sprint393_boys_cans_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "個数を自然数とし、3倍・半分の関係を順に適用する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04107",
+      "source_line_1based": 4108,
+      "source_record_sha256": "8600df9ff7e03a7e59664e0f8af6b6884ddbbdb4c1f831e56ffd6e431e98c0c3",
+      "raw_question_sha256": "e9a29630c0483dc6ebc95d4fb4a9212c95b8771afd1b6b0dec081cb7db241a9e",
+      "normalized_question_sha256": "e9a29630c0483dc6ebc95d4fb4a9212c95b8771afd1b6b0dec081cb7db241a9e",
+      "source_question": "Kimiko watches four YouTube videos. The first video is 2 minutes long, the second video is 4 minutes and 30 seconds, and the last two videos are equal in length. If she spends a total of 510 seconds watching YouTube, how many seconds long was each of the last two videos?",
+      "recipe_id": "gsm8k_sprint393_last_two_video_seconds",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "全時間を秒に統一し、等しい2本へ残時間を二等分する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04108",
+      "source_line_1based": 4109,
+      "source_record_sha256": "02956499df8c7ae29d5b448a1b9bd415175010148823b0889666a42d317adcc0",
+      "raw_question_sha256": "b8bf019af5754ac46137e964fbbeb21c469ece800e1a8caa94ae6c07863a1da2",
+      "normalized_question_sha256": "b8bf019af5754ac46137e964fbbeb21c469ece800e1a8caa94ae6c07863a1da2",
+      "source_question": "Justin wanted to watch a movie that came on at 8 pm that night.  His parents agreed as long as he finished his homework and chores before the movie started.  He wouldn't be home until 5 pm because of baseball practice.  He knew dinner would take 45 minutes, and he figured his homework would take 30 minutes to finish.  He needed to clean his room, which would take 30 minutes; then take out the trash, which would take about 5 minutes; and empty the dishwasher,  which would take another 10 minutes.  What was the latest time that Justin could start his chores and homework to be done by 8 pm to watch his movie?",
+      "recipe_id": "gsm8k_sprint393_latest_start_time",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "問題文が列挙した夕食も映画前に必要な時間として合算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04109",
+      "source_line_1based": 4110,
+      "source_record_sha256": "f759b6b61a5ca3b9cc8914eeda73ae5e170bbd37d766564bf4a07dadf59fa0f7",
+      "raw_question_sha256": "a4f74d29ec6a9740aa884428b4bce4dbb2e2a27db4390e33bd913294dd27b668",
+      "normalized_question_sha256": "a4f74d29ec6a9740aa884428b4bce4dbb2e2a27db4390e33bd913294dd27b668",
+      "source_question": "Kristine traveled to Paris in France to visit her friend. On the way, she has driven a train for 300 km and a bus for half that distance. After arriving in the city, she had to take a cab and drove three times fewer kilometers than she rode the bus. How many kilometers in total had Kristine traveled to reach her destination?",
+      "recipe_id": "gsm8k_sprint393_paris_trip_kilometers",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "曖昧な英語 three times fewer は参照解答どおり『3分の1』と明示して形式化する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04110",
+      "source_line_1based": 4111,
+      "source_record_sha256": "ee2940a5c895b2d1767b68c1c2eec3838f79727955db14f22e2b28b80e13b94b",
+      "raw_question_sha256": "bed2f998d367d5c1c5211689d3f0fef5d7a47b61557e4e5047fb21cec0cc8aa4",
+      "normalized_question_sha256": "bed2f998d367d5c1c5211689d3f0fef5d7a47b61557e4e5047fb21cec0cc8aa4",
+      "source_question": "Michael buys his suit for $430 and shoes for $190. So, if he gets a $100 discount, what was the amount that he paid to the seller?",
+      "recipe_id": "gsm8k_sprint393_suit_shoes_payment",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "割引はスーツと靴の合計額から1回差し引く。"
+      ],
+      "blockers": []
+    }
+  ]
+}

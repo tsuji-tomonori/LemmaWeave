@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint424_new_drive_free_space",
+  "title_ja": "新しい外付けドライブの空き容量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04179",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A10P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Sarah's external drive showed 2.4 gigabytes free and 12.6 gigabytes used. She decided to delete a folder of size 4.6 gigabytes and store new files of 2 gigabytes. If she will transfer all her files to a new external drive of size 20 gigabytes, how many free gigabytes will the new external drive have?",
+  "answer_ja": "使用中12.6GBから4.6GBを削除して8GB、2GBを追加して10GB使用。20GBの新ドライブへ移すと空きは20-10=10GB。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.new_drive_free_space",
+  "graph": "work/gsm8k-sprint424-new-drive-free-space-graph.json",
+  "model_notes_ja": [
+    "元ドライブの空き2.4GBは現在の使用量更新には不要。"
+  ],
+  "steps": [
+    {
+      "id": "new_drive_free_space",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.new_drive_free_space",
+      "title_ja": "新しい外付けドライブの空き容量",
+      "claim_ja": "使用中12.6GBから4.6GBを削除して8GB、2GBを追加して10GB使用。20GBの新ドライブへ移すと空きは20-10=10GB。",
+      "method_ja": "削除後と追加後の使用量を順に更新し、新容量から差し引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "新ドライブには更新後の全ファイル10GBだけを転送し、容量表記の差や予約領域はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "使用中12.6GBから4.6GBを削除して8GB、2GBを追加して10GB使用。20GBの新ドライブへ移すと空きは20-10=10GB。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4180,
+    "checked_model_hash": "5b0988cb3f6315379122f53bd4556fef01851ff68e21620d2e91c1da36f28540",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

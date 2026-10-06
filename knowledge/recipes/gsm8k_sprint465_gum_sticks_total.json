@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint465_gum_sticks_total",
+  "title_ja": "8箱のガム棒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04220",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A warehouse store sells cartons of gum. Each carton contains 5 packs of gum, and there are 3 sticks of gum in each pack. Each brown box contains 4 cartons of gum. How many sticks of gum are there in 8 brown boxes?",
+  "answer_ja": "1カートンは5×3=15本。8箱には8×4=32カートンあるので、32×15=480本。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.gum_sticks_total",
+  "graph": "work/gsm8k-sprint465-gum-sticks-total-graph.json",
+  "model_notes_ja": [
+    "箱・カートン・パック・棒の包含単位を順に掛ける。"
+  ],
+  "steps": [
+    {
+      "id": "sticks_per_carton",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.sticks_per_carton",
+      "title_ja": "1カートンの本数",
+      "claim_ja": "5×3=15本。",
+      "method_ja": "パック数×1パックの本数。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5パック、各3本。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "15本。"
+    },
+    {
+      "id": "cartons_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.cartons_total",
+      "title_ja": "カートン総数",
+      "claim_ja": "8×4=32カートン。",
+      "method_ja": "箱数×1箱のカートン数。",
+      "requires_steps": [
+        "sticks_per_carton"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8箱、各4カートン。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "32カートン。"
+    },
+    {
+      "id": "sticks_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.sticks_total",
+      "title_ja": "棒の総数",
+      "claim_ja": "32×15=480本。",
+      "method_ja": "カートン数×1カートンの本数。",
+      "requires_steps": [
+        "sticks_per_carton",
+        "cartons_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "32カートン、各15本。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "480本。"
+    },
+    {
+      "id": "gum_sticks_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P2.gum_sticks_total",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "1カートンは5×3=15本。8箱には8×4=32カートンあるので、32×15=480本。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "sticks_per_carton",
+        "cartons_total",
+        "sticks_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "箱・カートン・パック・棒の包含単位を順に掛ける。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1カートンは5×3=15本。8箱には8×4=32カートンあるので、32×15=480本。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4221,
+    "checked_model_hash": "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "14c9f09dd272dc71b26071a64797241b71a0913446308994e2d11d8decafd95a"
+}

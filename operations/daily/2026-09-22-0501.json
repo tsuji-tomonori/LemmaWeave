@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-22",
+  "run_id": "lemmaweave-sprint-20260922-0500-gsm8k-77",
+  "scheduled_slot": {
+    "role": "gsm8k_individual_solution",
+    "hour_jst": 5,
+    "planned_at": "2026-09-22T05:00:00+09:00",
+    "started_at": "2026-09-22T05:01:07+09:00",
+    "slot_shift_ja": "予定された5時枠を5時01分に開始した。重複枠は実行していない。"
+  },
+  "base_sha": "a7fe7d5b21e426204bcdd1138f7b0830549297ce",
+  "started_at": "2026-09-22T05:01:07+09:00",
+  "finished_at": "2026-09-22T05:15:08+09:00",
+  "selected_problem_ids": [
+    "train:01434", "train:01435", "train:01436", "train:01437", "train:01438",
+    "train:01439", "train:01440", "train:01441", "train:01442", "train:01443",
+    "train:01444", "train:01445", "train:01446", "train:01447", "train:01448"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "train:01434", "train:01435", "train:01436", "train:01437", "train:01438",
+    "train:01439", "train:01440", "train:01441", "train:01442", "train:01443",
+    "train:01444", "train:01445", "train:01446", "train:01447", "train:01448"
+  ],
+  "deferred": [
+    {
+      "problem_id": "train:01434-train:01448",
+      "retry_on": "exact-head fixed Lean 4.33.1 CI success and evidence import",
+      "reason_ja": "現在HEADに固定Lean成功証拠がない。直近の完全replayは既存Sprint0921A20Models.leanの非線形計算連鎖で失敗したため、今回15問もsolution_readyへ昇格しない。",
+      "next_action_ja": "A20の各条件と先行定理を明示したcalc証明へ修正後、完全replayを実行し、成功証拠を問題単位で取り込む。"
+    }
+  ],
+  "source_verification": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "lines_1based": [1435, 1449],
+    "record_hash_matches": 15,
+    "question_hash_matches": 15
+  },
+  "self_review": {
+    "status": "self_review_only",
+    "problems_checked": 15,
+    "individual_solution_steps": 60,
+    "lean_declaration_matches": 60,
+    "sorry_admit_custom_axiom_count": 0,
+    "notes_ja": [
+      "各原題を再読し、条件・単位・求める結論とLeanモデルを自己照合した。",
+      "train:01445は参照解答中の900 pagesおよびnext three weeksを採用せず、原題どおり900 wordsを10日で読む54分/日を形式化した。"
+    ]
+  },
+  "checkpoints": [
+    {
+      "problem_ids": ["train:01434", "train:01435", "train:01436", "train:01437", "train:01438"],
+      "commit": "c013a76a7d576160b7264a1e7f6181505b62a0ad"
+    },
+    {
+      "problem_ids": ["train:01439", "train:01440", "train:01441", "train:01442", "train:01443"],
+      "commit": "8ea58ed88c9e23a3d2a1ccc29d7e700ec580dc54"
+    },
+    {
+      "problem_ids": ["train:01444", "train:01445", "train:01446", "train:01447", "train:01448"],
+      "commit": "9b09a733b90b545c0944c4c174127f99c8c74f27"
+    }
+  ],
+  "queue_partition": {
+    "total": 8792,
+    "solution_ready": 518,
+    "awaiting_verification": 935,
+    "pending": 7339,
+    "in_progress": 0,
+    "deferred": 0,
+    "missing": 0,
+    "duplicate_ids": 0,
+    "state_overlap": 0
+  },
+  "progress": {
+    "before": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 920},
+    "after": {"solution_ready": 518, "remaining": 8274, "awaiting_verification": 935},
+    "main_reflected_solution_ready": 518,
+    "next_problem_id": "train:01449",
+    "oldest_overdue_problem_id": "train:00514"
+  },
+  "claim": {
+    "mode": "serialized_without_repository_lock_primitive",
+    "problem_ids": ["train:01434", "train:01448"],
+    "base_sha": "a7fe7d5b21e426204bcdd1138f7b0830549297ce",
+    "released": true
+  },
+  "ci": {
+    "exact_head_status": "not_started",
+    "last_full_replay_run_id": 35638746183,
+    "last_full_replay_conclusion": "failure",
+    "last_failure_ja": "既存Sprint0921A20Models.leanの非線形計算連鎖をomegaだけで処理して失敗。",
+    "artifact_id": 10657995173,
+    "artifact_size_bytes": 196512855
+  },
+  "pull_request": {
+    "number": 5,
+    "branch": "codex/sprint-20260919-0000",
+    "merge_status": "held_for_exact_head_ci",
+    "commit": "9b09a733b90b545c0944c4c174127f99c8c74f27"
+  }
+}

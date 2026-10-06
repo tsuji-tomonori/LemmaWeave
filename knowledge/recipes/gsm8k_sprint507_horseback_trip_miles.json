@@ -1,0 +1,130 @@
+{
+  "id": "gsm8k_sprint507_horseback_trip_miles",
+  "title_ja": "3日間の乗馬距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04262",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P2.lean",
+  "problem_ja": "1日目は時速5マイルで7時間、2日目は時速6マイルで6時間後、その半速で3時間、3日目は時速7マイルで5時間進む。総距離は。",
+  "answer_ja": "35+36+9+35=115マイル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.horseback_trip_miles",
+  "graph": "work/gsm8k-sprint507-horseback-trip-miles-graph.json",
+  "model_notes_ja": [
+    "各区間は距離=速さ×時間で求める。"
+  ],
+  "steps": [
+    {
+      "id": "day_one_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.day_one_miles",
+      "title_ja": "1日目",
+      "claim_ja": "5×7=35マイル。",
+      "method_ja": "速さと時間を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×7=35マイル。"
+    },
+    {
+      "id": "day_two_first_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.day_two_first_miles",
+      "title_ja": "2日目前半",
+      "claim_ja": "6×6=36マイル。",
+      "method_ja": "速さと時間を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6×6=36マイル。"
+    },
+    {
+      "id": "half_speed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.half_speed",
+      "title_ja": "半分の速さ",
+      "claim_ja": "6÷2=時速3マイル。",
+      "method_ja": "午前の速さを半分にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6÷2=時速3マイル。"
+    },
+    {
+      "id": "day_two_second_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.day_two_second_miles",
+      "title_ja": "2日目後半",
+      "claim_ja": "3×3=9マイル。",
+      "method_ja": "半速と3時間を掛ける。",
+      "requires_steps": [
+        "half_speed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3×3=9マイル。"
+    },
+    {
+      "id": "day_three_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.day_three_miles",
+      "title_ja": "3日目",
+      "claim_ja": "7×5=35マイル。",
+      "method_ja": "速さと時間を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "7×5=35マイル。"
+    },
+    {
+      "id": "trip_total_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.trip_total_miles",
+      "title_ja": "全行程",
+      "claim_ja": "35+36+9+35=115マイル。",
+      "method_ja": "4区間を足す。",
+      "requires_steps": [
+        "day_one_miles",
+        "day_two_first_miles",
+        "day_two_second_miles",
+        "day_three_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "35+36+9+35=115マイル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.horseback_trip_miles",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "35+36+9+35=115マイル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "day_one_miles",
+        "day_two_first_miles",
+        "half_speed",
+        "day_two_second_miles",
+        "day_three_miles",
+        "trip_total_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "35+36+9+35=115マイル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4263,
+    "checked_model_hash": "046f077325373f030d564e7b3fdfbfaf1e6fd6e25cb6fb795a4fb62a35111d93",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

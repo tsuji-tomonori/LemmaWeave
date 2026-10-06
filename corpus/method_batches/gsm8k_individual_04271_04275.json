@@ -1,0 +1,98 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1704",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "9deac44327d4c25371eedd84b73adaf41869bf13e44dc6daefec7cae619d5d34",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A14P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04271",
+      "source_line_1based": 4272,
+      "source_record_sha256": "08d2eacb308dafee23ff6d0cea8f5c664c642fd50594445987c6c937b3aba921",
+      "raw_question_sha256": "76ad7fef9a345d24622b32c4a3b8b3ffa5680052b7d6eeff5a96ca4e5e05e3ac",
+      "normalized_question_sha256": "76ad7fef9a345d24622b32c4a3b8b3ffa5680052b7d6eeff5a96ca4e5e05e3ac",
+      "source_question": "It takes 15 minutes for Dante to go to Hidden Lake. From Hidden Lake, he has to walk back to the Park Office and it takes him 7 minutes. When he arrives there, he will have been gone from the Park Office 32 minutes altogether. If he had walked to the Lake Park restaurant from the Park office before taking the 15 minute walk to Hidden Lake, how long is the walk from Park Office to the Lake Park restaurant?",
+      "recipe_id": "gsm8k_sprint516_park_to_restaurant_walk",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "15分はレストランからHidden Lakeまでの区間として、全行程から既知2区間を引く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04272",
+      "source_line_1based": 4273,
+      "source_record_sha256": "8c8699d2b62995cacef4c25e3f216c06efc0e714dd2f947ac88558bd1fa44632",
+      "raw_question_sha256": "1fd3bbca19278717395f0b022b910d02d49b649dae9c6af903179b401f1cc8e8",
+      "normalized_question_sha256": "1fd3bbca19278717395f0b022b910d02d49b649dae9c6af903179b401f1cc8e8",
+      "source_question": "For 12 servings of Chicken Surprise, you need 4.5 pounds of chicken and 24 ounces of stuffing. How many ounces would one serving of Chicken Surprise be?",
+      "recipe_id": "gsm8k_sprint517_chicken_surprise_serving_ounces",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "1ポンド=16オンスを用い、0.5ポンドを8オンスとして正確に換算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04273",
+      "source_line_1based": 4274,
+      "source_record_sha256": "452c31c02df07de3835f1e6b8c11b8b456d41dc04574302fcc519a1409632295",
+      "raw_question_sha256": "e2adac4a54070de0322cdddd2e3c4da7ca5c45d23fa58db5db095eac469e9c80",
+      "normalized_question_sha256": "e2adac4a54070de0322cdddd2e3c4da7ca5c45d23fa58db5db095eac469e9c80",
+      "source_question": "Brinley's teacher took the grade six students to the San Diego Zoo to watch and learn about animals. While at the zoo, Brinley counted 100 snakes, 80 arctic foxes, and 20 leopards. She also saw ten times more bee-eaters than leopards, half as many cheetahs as snakes, and twice as many alligators as the total number of Arctic foxes and leopards. What's the total number of animals Brinley counted at the zoo?",
+      "recipe_id": "gsm8k_sprint518_zoo_animal_count_ambiguity",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "“ten times more”は「10倍」と「元の数に10倍分を加える」の二通りに読めるため、両方を形式化する。",
+        "参照解答は途中で200 moreと述べながら最終合計では220を使っている。"
+      ],
+      "blockers": [
+        "semantic_ambiguity"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04274",
+      "source_line_1based": 4275,
+      "source_record_sha256": "05815f17f061a6f6c267290efdb74b48959fb6245a2873b7842e5efa3a985886",
+      "raw_question_sha256": "8282c947ebdb72c4b0c2fe0b63e1d9398aa40f0563d642fb195232547e1556a8",
+      "normalized_question_sha256": "8282c947ebdb72c4b0c2fe0b63e1d9398aa40f0563d642fb195232547e1556a8",
+      "source_question": "After receiving the $2000 stimulus check, Mr. Eithan decided to share the amount with his family. He gave 2/5 of the amount to his wife, 2/5 of the remaining amount to his first son, 40% of the remaining amount to his second son, and kept the remaining in their family savings account. Calculate the total amount he kept in the family's savings account.",
+      "recipe_id": "gsm8k_sprint519_family_savings_amount",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各割合は直前の残額を基準に順次適用する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04275",
+      "source_line_1based": 4276,
+      "source_record_sha256": "a91ada9bce7c0c5418bdff17663407df0a6be50a274173b18dbd263309583e7f",
+      "raw_question_sha256": "d01bf38d3104e83da06a7a6100b73a95ea725474a4c3ffa434ff18b3452c4e4c",
+      "normalized_question_sha256": "d01bf38d3104e83da06a7a6100b73a95ea725474a4c3ffa434ff18b3452c4e4c",
+      "source_question": "Scott, Mary, and Ken committed to raising $4,000 for their local children’s cancer hospital. Right now, Mary’s collection is five times what Ken has, but three times Scott’s funds. If Ken has $600, by how much have the three exceeded their goal?",
+      "recipe_id": "gsm8k_sprint520_fundraising_excess",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Mary=5×KenかつMary=3×Scottという二つの比較を用いる。"
+      ],
+      "blockers": []
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint98_weight",
+  "title_ja": "二人の減量合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01760",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "0.5ポンド単位で1.5と2.5を正確に保持し、週数を掛けて最後にポンドへ戻す。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A07.weight_solution",
+  "graph": "work/gsm8k-sprint98-weight-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "weight_aleesia",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.weight_aleesia",
+      "title_ja": "Aleesiaは30半ポンド、すなわち15ポンド減量。",
+      "claim_ja": "Aleesiaは30半ポンド、すなわち15ポンド減量。",
+      "method_ja": "3半ポンド/週×10週。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1.5ポンド=3半ポンド。",
+      "conclusion_ja": "3×10=30半ポンド。",
+      "baseline_ja": "3×10=30半ポンド。"
+    },
+    {
+      "id": "weight_alexei",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.weight_alexei",
+      "title_ja": "Alexeiは40半ポンド、すなわち20ポンド減量。",
+      "claim_ja": "Alexeiは40半ポンド、すなわち20ポンド減量。",
+      "method_ja": "5半ポンド/週×8週。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2.5ポンド=5半ポンド。",
+      "conclusion_ja": "5×8=40半ポンド。",
+      "baseline_ja": "5×8=40半ポンド。"
+    },
+    {
+      "id": "weight_total_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.weight_total_half",
+      "title_ja": "合計70半ポンド。",
+      "claim_ja": "合計70半ポンド。",
+      "method_ja": "30+40。",
+      "requires_steps": [
+        "weight_aleesia",
+        "weight_alexei"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "二人分を同じ単位で加える。",
+      "conclusion_ja": "30+40=70半ポンド。",
+      "baseline_ja": "30+40=70半ポンド。"
+    },
+    {
+      "id": "weight_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A07.weight_solution",
+      "title_ja": "合計35ポンド。",
+      "claim_ja": "合計35ポンド。",
+      "method_ja": "70半ポンド÷2。",
+      "requires_steps": [
+        "weight_total_half"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2半ポンド=1ポンド。",
+      "conclusion_ja": "35×2=70。",
+      "baseline_ja": "35×2=70。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1761,
+    "checked_model_hash": "12d82660c3d49a82de66441c1b2dc1d15cdfd7e55d4b07c7d5baedcfd7e8f9b7",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

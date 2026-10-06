@@ -1,0 +1,89 @@
+{
+  "id": "gsm8k_sprint602_cafeteria_taken_seats",
+  "title_ja": "通常使われる食堂の座席数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04357",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P3.lean",
+  "problem_ja": "There are 15 tables in the school's cafeteria. Each table can seat 10 people. Usually, only 1/10 of the seats are left unseated. How many seats are usually taken?",
+  "answer_ja": "座席は15×10=150席。空席はその10分の1の15席なので、使われるのは135席。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.cafeteria_taken_seats",
+  "graph": "work/gsm8k-sprint602-cafeteria-taken-seats-graph.json",
+  "model_notes_ja": [
+    "1/10は総座席数に対する空席の割合で、席数は割り切れる。"
+  ],
+  "steps": [
+    {
+      "id": "cafeteria_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.cafeteria_capacity",
+      "title_ja": "総座席数",
+      "claim_ja": "15×10=150席。",
+      "method_ja": "卓数に1卓の席数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "15×10=150席。"
+    },
+    {
+      "id": "usual_empty_seats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.usual_empty_seats",
+      "title_ja": "通常の空席",
+      "claim_ja": "150÷10=15席。",
+      "method_ja": "総席数の10分の1を求める。",
+      "requires_steps": [
+        "cafeteria_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "150÷10=15席。"
+    },
+    {
+      "id": "usual_taken_seats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.usual_taken_seats",
+      "title_ja": "通常の使用席",
+      "claim_ja": "150−15=135席。",
+      "method_ja": "総席数から空席を引く。",
+      "requires_steps": [
+        "cafeteria_capacity",
+        "usual_empty_seats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "150−15=135席。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.cafeteria_taken_seats",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "座席は15×10=150席。空席はその10分の1の15席なので、使われるのは135席。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "cafeteria_capacity",
+        "usual_empty_seats",
+        "usual_taken_seats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "座席は15×10=150席。空席はその10分の1の15席なので、使われるのは135席。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4358,
+    "checked_model_hash": "5a7e7d65ff8944256f8ac0ef2c5351d4d11babfe8e9708538e85dce984b47e28",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

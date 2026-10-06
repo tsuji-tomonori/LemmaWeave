@@ -1,0 +1,66 @@
+{
+  "id": "gsm8k_sprint95_juggling",
+  "title_ja": "ジャグリング勝者の回転数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01716",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tobyは5個×80回、友人は4個×101回として大きい回転数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.juggling_solution",
+  "graph": "work/gsm8k-sprint95-juggling-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "juggling_toby",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.juggling_toby",
+      "title_ja": "Toby",
+      "claim_ja": "400回。",
+      "method_ja": "5×80。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5個すべてが各80回。",
+      "conclusion_ja": "5×80=400。",
+      "baseline_ja": "5×80=400。"
+    },
+    {
+      "id": "juggling_friend",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.juggling_friend",
+      "title_ja": "友人",
+      "claim_ja": "404回。",
+      "method_ja": "4×101。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4個すべてが各101回。",
+      "conclusion_ja": "4×101=404。",
+      "baseline_ja": "4×101=404。"
+    },
+    {
+      "id": "juggling_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.juggling_solution",
+      "title_ja": "勝者",
+      "claim_ja": "404回。",
+      "method_ja": "400と404の最大値を取る。",
+      "requires_steps": [
+        "juggling_toby",
+        "juggling_friend"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "勝者は総回転数が多い側で、404>400。",
+      "conclusion_ja": "max 400 404=404。",
+      "baseline_ja": "max 400 404=404。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1717,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

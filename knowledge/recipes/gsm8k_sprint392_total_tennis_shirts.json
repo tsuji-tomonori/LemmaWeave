@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint392_total_tennis_shirts",
+  "title_ja": "購入したテニスシャツ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04081",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A00P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mandy bought 3 packs of black shirts and 3 packs of yellow shirts for her tennis team. The black shirts come in packs of 5, and the yellow shirts come in packs of 2. How many shirts did Mandy buy in all?",
+  "answer_ja": "黒シャツは3パック×5枚=15枚、黄シャツは3パック×2枚=6枚。合計は15+6=21枚である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A00P2.total_tennis_shirts",
+  "graph": "work/gsm8k-sprint392-total-tennis-shirts-graph.json",
+  "model_notes_ja": [
+    "各色3パックずつで、パック内枚数は色ごとに異なる。"
+  ],
+  "steps": [
+    {
+      "id": "total_tennis_shirts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A00P2.total_tennis_shirts",
+      "title_ja": "購入したテニスシャツ総数",
+      "claim_ja": "黒シャツは3パック×5枚=15枚、黄シャツは3パック×2枚=6枚。合計は15+6=21枚である。",
+      "method_ja": "各色3パックずつで、パック内枚数は色ごとに異なる。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各色3パックずつで、パック内枚数は色ごとに異なる。",
+      "baseline_ja": "整数・割合・分数・単位・金額・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "黒シャツは3パック×5枚=15枚、黄シャツは3パック×2枚=6枚。合計は15+6=21枚である。 答えは21枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4082,
+    "checked_model_hash": "e3c7715b4531e66eacee4db259cb91e35cb3282131f362bc8f38c96045535df7",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

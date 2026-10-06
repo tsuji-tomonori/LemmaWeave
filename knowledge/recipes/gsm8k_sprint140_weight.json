@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint140_weight",
+  "title_ja": "減量後の体重差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02393",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Robbieは100ポンド。Pattyは元々4.5倍で、235ポンド減量した。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.weight_solution",
+  "graph": "work/gsm8k-sprint140-weight-graph.json",
+  "model_notes_ja": [
+    "4.5倍は2分の9として正確に形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "weight_old",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.weight_old",
+      "title_ja": "Pattyの元体重450ポンド",
+      "claim_ja": "Pattyの元体重450ポンド",
+      "method_ja": "100の4.5倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Pattyの元体重450ポンド",
+      "baseline_ja": "Pattyの元体重450ポンド"
+    },
+    {
+      "id": "weight_current",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.weight_current",
+      "title_ja": "現在215ポンド",
+      "claim_ja": "現在215ポンド",
+      "method_ja": "450から235を引く",
+      "requires_steps": [
+        "weight_old"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "現在215ポンド",
+      "baseline_ja": "現在215ポンド"
+    },
+    {
+      "id": "weight_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.weight_solution",
+      "title_ja": "Robbieより115ポンド重い",
+      "claim_ja": "Robbieより115ポンド重い",
+      "method_ja": "215から100を引く",
+      "requires_steps": [
+        "weight_current"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "Robbieより115ポンド重い",
+      "baseline_ja": "Robbieより115ポンド重い"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2394,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

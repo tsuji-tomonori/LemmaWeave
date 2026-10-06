@@ -1,0 +1,144 @@
+{
+  "id": "gsm8k_sprint396_recycling_center_earnings",
+  "title_ja": "リサイクルで得る金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04151",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Jenny collects cans and bottles to take down to the recycling center. Each bottle weighs 6 ounces and each can weighs 2 ounces. Jenny can carry a total of 100 ounces. She collects 20 cans and as many bottles as she can carry. If she gets paid 10 cents per bottle and 3 cents per can, how much money does she make (in cents)?",
+  "answer_ja": "20缶の重さは20×2=40オンスなので、瓶に使える重さは100-40=60オンス。6オンスの瓶を10本運べる。瓶で10×10=100セント、缶で20×3=60セント、合計160セント。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_center_earnings",
+  "graph": "work/gsm8k-sprint396-recycling-center-earnings-graph.json",
+  "model_notes_ja": [
+    "60オンスは6で割り切れるため端数処理は不要。"
+  ],
+  "steps": [
+    {
+      "id": "recycling_can_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_can_weight",
+      "title_ja": "20缶の重さ",
+      "claim_ja": "20×2=40オンス。",
+      "method_ja": "缶数に1缶の重さを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "20缶、1缶2オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40オンス。"
+    },
+    {
+      "id": "recycling_bottle_capacity",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_bottle_capacity",
+      "title_ja": "瓶に使える容量",
+      "claim_ja": "100-40=60オンス。",
+      "method_ja": "総容量から缶の重さを引く。",
+      "requires_steps": [
+        "recycling_can_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総容量100オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60オンス。"
+    },
+    {
+      "id": "recycling_bottle_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_bottle_count",
+      "title_ja": "運べる瓶数",
+      "claim_ja": "60÷6=10本。",
+      "method_ja": "残容量を1本の重さで割る。",
+      "requires_steps": [
+        "recycling_can_weight",
+        "recycling_bottle_capacity"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "60は6で割り切れ、最大本数を求める。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10本。"
+    },
+    {
+      "id": "recycling_bottle_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_bottle_income",
+      "title_ja": "瓶の収入",
+      "claim_ja": "10×10=100セント。",
+      "method_ja": "瓶数に単価を掛ける。",
+      "requires_steps": [
+        "recycling_can_weight",
+        "recycling_bottle_capacity",
+        "recycling_bottle_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1本10セント。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "100セント。"
+    },
+    {
+      "id": "recycling_can_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_can_income",
+      "title_ja": "缶の収入",
+      "claim_ja": "20×3=60セント。",
+      "method_ja": "缶数に単価を掛ける。",
+      "requires_steps": [
+        "recycling_can_weight",
+        "recycling_bottle_capacity",
+        "recycling_bottle_count",
+        "recycling_bottle_income"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1缶3セント。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60セント。"
+    },
+    {
+      "id": "recycling_total_income",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_total_income",
+      "title_ja": "合計収入",
+      "claim_ja": "100+60=160セント。",
+      "method_ja": "種類別収入を合計する。",
+      "requires_steps": [
+        "recycling_can_weight",
+        "recycling_bottle_capacity",
+        "recycling_bottle_count",
+        "recycling_bottle_income",
+        "recycling_can_income"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "瓶と缶以外の収入はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "160セント。"
+    },
+    {
+      "id": "recycling_center_earnings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.recycling_center_earnings",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "20缶の重さは20×2=40オンスなので、瓶に使える重さは100-40=60オンス。6オンスの瓶を10本運べる。瓶で10×10=100セント、缶で20×3=60セント、合計160セント。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "recycling_can_weight",
+        "recycling_bottle_capacity",
+        "recycling_bottle_count",
+        "recycling_bottle_income",
+        "recycling_can_income",
+        "recycling_total_income"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "瓶は6オンス、缶は2オンスで、100オンスを超えずに運べる最大本数を選ぶ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20缶の重さは20×2=40オンスなので、瓶に使える重さは100-40=60オンス。6オンスの瓶を10本運べる。瓶で10×10=100セント、缶で20×3=60セント、合計160セント。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4152,
+    "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280"
+}

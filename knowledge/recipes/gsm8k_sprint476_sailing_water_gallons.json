@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint476_sailing_water_gallons",
+  "title_ja": "航海に必要な水",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04231",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P2.lean",
+  "problem_ja": "25人が1人1日2分の1ガロンを使い、1日200マイルで4000マイル航海する。必要な水は何ガロンか。",
+  "answer_ja": "航海日数は4000÷200=20日。半ガロン単位では1日25単位なので25×20=500単位、500÷2=250ガロン。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.sailing_water_gallons",
+  "graph": "work/gsm8k-sprint476-sailing-water-gallons-graph.json",
+  "model_notes_ja": [
+    "Olaf本人を含む人数が25人。端数を避けて半ガロンを1単位として数える。"
+  ],
+  "steps": [
+    {
+      "id": "days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.sailing_travel_days",
+      "title_ja": "航海日数",
+      "claim_ja": "4000÷200=20日。",
+      "method_ja": "距離を1日当たりの距離で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "速度は毎日一定で、4000は200で割り切れる。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "20日。"
+    },
+    {
+      "id": "half_units",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.sailing_total_half_gallons",
+      "title_ja": "半ガロン単位の総数",
+      "claim_ja": "25×20=500単位。",
+      "method_ja": "1人1日1半ガロン単位を人数と日数に掛ける。",
+      "requires_steps": [
+        "days"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "25人全員が20日同じ量を使う。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "500半ガロン単位。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.sailing_water_gallons",
+      "title_ja": "必要量",
+      "claim_ja": "500÷2=250ガロン。",
+      "method_ja": "半ガロン2単位を1ガロンに直す。",
+      "requires_steps": [
+        "half_units"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "500は2で割り切れる。",
+      "baseline_ja": "単位換算と自然数の除法。",
+      "conclusion_ja": "250ガロン。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4232,
+    "checked_model_hash": "55ae5d5498b686c7630e33d3267cfe9267ee8cfa64ca937376d60ba130c07c68",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

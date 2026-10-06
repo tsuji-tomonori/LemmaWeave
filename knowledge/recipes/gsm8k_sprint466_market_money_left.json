@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_sprint466_market_money_left",
+  "title_ja": "市場で残ったお金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04221",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "John goes to the market with €100. He buys a roast for €17 and vegetables for €11. How much money does he have left?",
+  "answer_ja": "ロースト肉と野菜の支出は17+11=28ユーロ。100−28=72ユーロ残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.market_money_left",
+  "graph": "work/gsm8k-sprint466-market-money-left-graph.json",
+  "model_notes_ja": [
+    "2つの購入額だけを100ユーロから引く。"
+  ],
+  "steps": [
+    {
+      "id": "market_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.market_spent",
+      "title_ja": "支出合計",
+      "claim_ja": "17+11=28ユーロ。",
+      "method_ja": "購入額を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "17ユーロと11ユーロ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "28ユーロ。"
+    },
+    {
+      "id": "market_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.market_left",
+      "title_ja": "残額",
+      "claim_ja": "100−28=72ユーロ。",
+      "method_ja": "所持金から支出を引く。",
+      "requires_steps": [
+        "market_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "所持金100ユーロ、支出28ユーロ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "72ユーロ。"
+    },
+    {
+      "id": "market_money_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A08P3.market_money_left",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "ロースト肉と野菜の支出は17+11=28ユーロ。100−28=72ユーロ残る。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "market_spent",
+        "market_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2つの購入額だけを100ユーロから引く。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "ロースト肉と野菜の支出は17+11=28ユーロ。100−28=72ユーロ残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4222,
+    "checked_model_hash": "381f7e013ac48094545e959790cc5c6a2c240c5819a5232c0ae98a6a7052e845",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "381f7e013ac48094545e959790cc5c6a2c240c5819a5232c0ae98a6a7052e845"
+}

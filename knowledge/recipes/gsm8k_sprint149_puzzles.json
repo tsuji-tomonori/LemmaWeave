@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint149_puzzles",
+  "title_ja": "パズル4個の代金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02522",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "大パズル15ドル、小と大の合計23ドルから、小3個と大1個の代金を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A04.puzzles_solution",
+  "graph": "work/gsm8k-sprint149-puzzles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "puzzles_small",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.puzzles_small",
+      "title_ja": "小パズルは8ドル",
+      "claim_ja": "小パズルは8ドル",
+      "method_ja": "23から大パズル15を引く",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "小パズルは8ドル",
+      "baseline_ja": "小パズルは8ドル"
+    },
+    {
+      "id": "puzzles_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A04.puzzles_solution",
+      "title_ja": "代金は39ドル",
+      "claim_ja": "代金は39ドル",
+      "method_ja": "大1個15と小3個24を足す",
+      "requires_steps": [
+        "puzzles_small"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "代金は39ドル",
+      "baseline_ja": "代金は39ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2523,
+    "checked_model_hash": "bf48471e5f50a20e1256bd8203ba528b20e3455a0bb5dad6c2632708aa2a99f1",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

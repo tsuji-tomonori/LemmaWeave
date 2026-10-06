@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint45_movies",
+  "title_ja": "5年間の映画製作数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00961",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "L&Jが年220本、Johnny TVが25%多いとき、両社の5年間の合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.movies_solution",
+  "graph": "work/gsm8k-sprint45-movies-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "movies_extra",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.movies_extra",
+      "title_ja": "Johnnyの増加分",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "220本の25%。",
+      "conclusion_ja": "55本。",
+      "baseline_ja": "55×100=220×25。"
+    },
+    {
+      "id": "movies_johnny",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.movies_johnny",
+      "title_ja": "Johnnyの年産",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "L&Jの220本に55本を加える。",
+      "conclusion_ja": "275本。",
+      "baseline_ja": "220+55=275。"
+    },
+    {
+      "id": "movies_yearly",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.movies_yearly",
+      "title_ja": "両社の年産",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "275本と220本を合計する。",
+      "conclusion_ja": "495本。",
+      "baseline_ja": "275+220=495。"
+    },
+    {
+      "id": "movies_five_years",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.movies_five_years",
+      "title_ja": "5年間の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "年495本を5年間。",
+      "conclusion_ja": "2475本。",
+      "baseline_ja": "5×495=2475。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 962,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

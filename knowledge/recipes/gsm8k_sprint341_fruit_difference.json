@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint341_fruit_difference",
+  "title_ja": "ミカンとオレンジの残数差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03829",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tina's bag contains nine apples, 5 oranges, and 17 tangerines. If she took away 2 oranges and 10 tangerines, how many more tangerines than oranges would she have left?",
+  "answer_ja": "オレンジは5−2=3個、ミカンは17−10=7個。差は7−3=4個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A01P2.fruit_difference",
+  "graph": "work/gsm8k-sprint341-fruit-difference-graph.json",
+  "model_notes_ja": [
+    "applesは質問対象外で、持ち去った果物は各種類の在庫から引く。"
+  ],
+  "steps": [
+    {
+      "id": "fruit_difference",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A01P2.fruit_difference",
+      "title_ja": "ミカンとオレンジの残数差",
+      "claim_ja": "オレンジは5−2=3個、ミカンは17−10=7個。差は7−3=4個。",
+      "method_ja": "2種類の残数を求め、大きい方から小さい方を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7は3以上。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "4個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3830,
+    "checked_model_hash": "3e95ef9500685ba134265487fc829b0bf39fea63a369c859c1545bd2672779a5",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

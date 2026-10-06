@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint109_swim",
+  "title_ja": "10レースの総競技時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01925",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "湖と海を5レースずつに分け、原題の各速度で時間を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.swim_solution",
+  "graph": "work/gsm8k-sprint109-swim-graph.json",
+  "model_notes_ja": [
+    "参照説明は湖と海の速度ラベルを逆に記しているが、原題どおり湖3mphで5時間、海2.5mphで6時間とした。"
+  ],
+  "steps": [
+    {
+      "id": "swim_races_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.swim_races_each",
+      "title_ja": "湖と海は各5レース。",
+      "claim_ja": "湖と海は各5レース。",
+      "method_ja": "10÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "swim_distance_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.swim_distance_each",
+      "title_ja": "各環境で15マイル。",
+      "claim_ja": "各環境で15マイル。",
+      "method_ja": "5×3。",
+      "requires_steps": [
+        "swim_races_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "swim_lake_time",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.swim_lake_time",
+      "title_ja": "湖は5時間。",
+      "claim_ja": "湖は5時間。",
+      "method_ja": "15÷3。",
+      "requires_steps": [
+        "swim_distance_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "swim_ocean_time",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.swim_ocean_time",
+      "title_ja": "海は6時間。",
+      "claim_ja": "海は6時間。",
+      "method_ja": "15÷2.5。",
+      "requires_steps": [
+        "swim_distance_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "swim_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.swim_solution",
+      "title_ja": "合計11時間。",
+      "claim_ja": "合計11時間。",
+      "method_ja": "5+6。",
+      "requires_steps": [
+        "swim_lake_time",
+        "swim_ocean_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1926,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

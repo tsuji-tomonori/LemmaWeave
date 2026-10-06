@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint598_norris_hugo_pronoun_analysis",
+  "title_ja": "NorrisとHugoの主語不一致の分析",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04353",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P2.lean",
+  "problem_ja": "Norris saved $29 in September. He saved $25 in October and $31 in November. Then Hugo spent $75 on an online game. How much money does Norris have left?",
+  "answer_ja": "Norrisの貯金合計は29+25+31=85ドル。HugoがNorrisの誤記、またはHugoがNorrisの金を75ドル使ったという追加条件なら残りは10ドル。一方、Hugoが別人でNorrisの金に影響しないならNorrisは85ドルのままなので、原文だけでは一意に定まらない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.norris_hugo_pronoun_analysis",
+  "graph": "work/gsm8k-sprint598-norris-hugo-pronoun-analysis-graph.json",
+  "model_notes_ja": [
+    "原文は貯金者Norrisと支出者Hugoを区別している。参照解答10ドルには同一人物またはNorris資金の支出という追加条件が必要。"
+  ],
+  "steps": [
+    {
+      "id": "norris_saved_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.norris_saved_total",
+      "title_ja": "Norrisの貯金合計",
+      "claim_ja": "29+25+31=85ドル。",
+      "method_ja": "3か月の貯金を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "29+25+31=85ドル。"
+    },
+    {
+      "id": "conditional_norris_remainder",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.conditional_norris_remainder",
+      "title_ja": "追加条件下の残金",
+      "claim_ja": "85−75=10ドル。",
+      "method_ja": "Hugoの支出がNorrisの資金から出た場合に差し引く。",
+      "requires_steps": [
+        "norris_saved_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "85−75=10ドル。"
+    },
+    {
+      "id": "distinct_person_remainder",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.distinct_person_remainder",
+      "title_ja": "別人なら残る額",
+      "claim_ja": "支出がNorrisに影響しなければ85ドル。",
+      "method_ja": "Norrisの貯金に変更がないモデルを示す。",
+      "requires_steps": [
+        "norris_saved_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "支出がNorrisに影響しなければ85ドル。"
+    },
+    {
+      "id": "pronoun_models_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.pronoun_models_differ",
+      "title_ja": "二つの結果の差",
+      "claim_ja": "10≠85。",
+      "method_ja": "追加条件の有無で答えが異なることを示す。",
+      "requires_steps": [
+        "conditional_norris_remainder",
+        "distinct_person_remainder"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "10≠85。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.norris_hugo_pronoun_analysis",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Norrisの貯金合計は29+25+31=85ドル。HugoがNorrisの誤記、またはHugoがNorrisの金を75ドル使ったという追加条件なら残りは10ドル。一方、Hugoが別人でNorrisの金に影響しないならNorrisは85ドルのままなので、原文だけでは一意に定まらない。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "norris_saved_total",
+        "conditional_norris_remainder",
+        "distinct_person_remainder",
+        "pronoun_models_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "Norrisの貯金合計は29+25+31=85ドル。HugoがNorrisの誤記、またはHugoがNorrisの金を75ドル使ったという追加条件なら残りは10ドル。一方、Hugoが別人でNorrisの金に影響しないならNorrisは85ドルのままなので、原文だけでは一意に定まらない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4354,
+    "checked_model_hash": "2c4895a78f2f0df7b2c26dde7d68bc9e87de1b20730d60f44401765935b34663",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

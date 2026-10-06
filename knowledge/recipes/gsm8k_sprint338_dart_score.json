@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint338_dart_score",
+  "title_ja": "ダーツの得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03812",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A00P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Don throws 3 darts.  One is a bullseye worth 50 points.  One completely missed the target, so received no points. The third was worth half the points of the bullseye.  What is the final score from these 3 throws?",
+  "answer_ja": "1投目は50点、2投目は0点、3投目は50点の半分で25点。合計は50+0+25=75点。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A00P2.dart_score",
+  "graph": "work/gsm8k-sprint338-dart-score-graph.json",
+  "model_notes_ja": [
+    "3投目のhalf as manyは1投目50点を基準とする。"
+  ],
+  "steps": [
+    {
+      "id": "dart_score",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A00P2.dart_score",
+      "title_ja": "ダーツの得点",
+      "claim_ja": "1投目は50点、2投目は0点、3投目は50点の半分で25点。合計は50+0+25=75点。",
+      "method_ja": "各投の得点を確定して加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "50は2で割り切れる。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "75点。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3813,
+    "checked_model_hash": "e9603d9d1e7c92173b1dcf6df55966de74d54993d55bc487db26c2eca4d61b3b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

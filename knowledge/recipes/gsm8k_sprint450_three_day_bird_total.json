@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint450_three_day_bird_total",
+  "title_ja": "3日間の鳥の観察数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04205",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "While at the lake, Cohen saw 300 fish-eater birds that had migrated into the area recently walking by the lake, eating the fish they had caught. The number of birds at the lake doubled on the second day and reduced by 200 on the third day. How many fish-eater birds did Cohen see in the three days?",
+  "answer_ja": "2日目は300×2=600羽。3日目は2日目より200羽減って400羽。3日間の合計は300+600+400=1300羽。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.three_day_bird_total",
+  "graph": "work/gsm8k-sprint450-three-day-bird-total-graph.json",
+  "model_notes_ja": [
+    "3日目の200羽減は直前の2日目600羽を基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "birds_second_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.birds_second_day",
+      "title_ja": "2日目",
+      "claim_ja": "300×2=600羽。",
+      "method_ja": "1日目の2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日目300羽。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "600羽。"
+    },
+    {
+      "id": "birds_third_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.birds_third_day",
+      "title_ja": "3日目",
+      "claim_ja": "600−200=400羽。",
+      "method_ja": "2日目から200羽引く。",
+      "requires_steps": [
+        "birds_second_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2日目600羽。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "400羽。"
+    },
+    {
+      "id": "birds_three_day_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.birds_three_day_total",
+      "title_ja": "3日合計",
+      "claim_ja": "300+600+400=1300羽。",
+      "method_ja": "3日分を足す。",
+      "requires_steps": [
+        "birds_second_day",
+        "birds_third_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各日300、600、400羽。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1300羽。"
+    },
+    {
+      "id": "three_day_bird_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.three_day_bird_total",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "2日目は300×2=600羽。3日目は2日目より200羽減って400羽。3日間の合計は300+600+400=1300羽。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "birds_second_day",
+        "birds_third_day",
+        "birds_three_day_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3日目の200羽減は直前の2日目600羽を基準にする。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2日目は300×2=600羽。3日目は2日目より200羽減って400羽。3日間の合計は300+600+400=1300羽。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4206,
+    "checked_model_hash": "f8b7921a39d86667d37bb3a00e1284e8581ce9ee1fa7c66ade04f4c6c9ae5e59",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "f8b7921a39d86667d37bb3a00e1284e8581ce9ee1fa7c66ade04f4c6c9ae5e59"
+}

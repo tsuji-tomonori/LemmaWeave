@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint393_cookie_batches_remaining",
+  "title_ja": "追加で焼くクッキーのバッチ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04115",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A02P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Linda was going to pass out homemade cookies to each of her 24 classmates on the last day of school.  She wanted to give each student 10 cookies and wanted to make chocolate chip cookies and oatmeal raisin cookies.  Each cookie recipe made exactly 4 dozen cookies.  She was able to make 2 batches of chocolate chip cookies before running out of chocolate chips.  She made 1 batch of oatmeal raisin cookies.  How many more batches of cookies does Linda need to bake?",
+  "answer_ja": "必要数は24×10=240個。1バッチは4×12=48個で、既に3バッチ、つまり3×48=144個を焼いた。残り96個は96÷48=2バッチなので、あと2バッチ必要である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.cookie_batches_remaining",
+  "graph": "work/gsm8k-sprint393-cookie-batches-remaining-graph.json",
+  "model_notes_ja": [
+    "dozenを12個として1バッチ48個に換算する。"
+  ],
+  "steps": [
+    {
+      "id": "cookie_batches_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A02P2.cookie_batches_remaining",
+      "title_ja": "追加で焼くクッキーのバッチ数",
+      "claim_ja": "必要数は24×10=240個。1バッチは4×12=48個で、既に3バッチ、つまり3×48=144個を焼いた。残り96個は96÷48=2バッチなので、あと2バッチ必要である。",
+      "method_ja": "必要総数と既製総数の差を1バッチの個数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各バッチはちょうど4 dozenで、全クッキーを配布に使える。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "必要数は24×10=240個。1バッチは4×12=48個で、既に3バッチ、つまり3×48=144個を焼いた。残り96個は96÷48=2バッチなので、あと2バッチ必要である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4116,
+    "checked_model_hash": "b8e272094fd45bc669d71e114ad1b7bdd7634db50185b019fc9c24ebfb5984b3",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

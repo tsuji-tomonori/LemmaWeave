@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint233_shopping",
+  "title_ja": "端末購入の釣銭",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03179",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A00P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ノートPCは1200ドル、スマートフォンは1600ドル、合計2800ドルなので釣銭200ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.shopping_change",
+  "graph": "work/gsm8k-sprint233-shopping-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "shopping_laptops",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.shopping_laptops",
+      "title_ja": "ノートPC代は1200ドル。",
+      "claim_ja": "ノートPC代は1200ドル。",
+      "method_ja": "600ドルを2台分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "ノートPC代は1200ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "shopping_smartphones",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.shopping_smartphones",
+      "title_ja": "スマートフォン代は1600ドル。",
+      "claim_ja": "スマートフォン代は1600ドル。",
+      "method_ja": "400ドルを4台分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "スマートフォン代は1600ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "shopping_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.shopping_total",
+      "title_ja": "購入額は2800ドル。",
+      "claim_ja": "購入額は2800ドル。",
+      "method_ja": "2種類の購入額を足す。",
+      "requires_steps": [
+        "shopping_laptops",
+        "shopping_smartphones"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "購入額は2800ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    },
+    {
+      "id": "shopping_change",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A00P1.shopping_change",
+      "title_ja": "釣銭は200ドル。",
+      "claim_ja": "釣銭は200ドル。",
+      "method_ja": "3000ドルから2800ドルを引く。",
+      "requires_steps": [
+        "shopping_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位と非負整数モデルを用いる。",
+      "conclusion_ja": "釣銭は200ドル。",
+      "baseline_ja": "自然数の四則演算と一次方程式。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3180,
+    "checked_model_hash": "a9cde661a684091d58485da0f8eec4e631b2c2e46e95bc1949800ff92636a667",
+    "checks_ja": [
+      "固定commitの原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

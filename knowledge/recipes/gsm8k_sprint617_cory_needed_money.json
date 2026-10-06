@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint617_cory_needed_money",
+  "title_ja": "Coryに不足する金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04372",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P3.lean",
+  "problem_ja": "Cory has $20.00 and she wants to buy two packs of candies that cost $49.00 each. How much money does Cory need so she will be able to buy the pack of candies?",
+  "answer_ja": "49ドルの菓子2袋は98ドル。所持金20ドルを引くと、あと78ドル必要。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.cory_needed_money",
+  "graph": "work/gsm8k-sprint617-cory-needed-money-graph.json",
+  "model_notes_ja": [
+    "2袋とも各49ドルで、税など追加費用はない。"
+  ],
+  "steps": [
+    {
+      "id": "two_candy_pack_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.two_candy_pack_cost",
+      "title_ja": "2袋の価格",
+      "claim_ja": "49×2=98ドル。",
+      "method_ja": "単価に袋数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "49×2=98ドル。"
+    },
+    {
+      "id": "money_still_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.money_still_needed",
+      "title_ja": "不足額",
+      "claim_ja": "98−20=78ドル。",
+      "method_ja": "代金から所持金を引く。",
+      "requires_steps": [
+        "two_candy_pack_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "98−20=78ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.cory_needed_money",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "49ドルの菓子2袋は98ドル。所持金20ドルを引くと、あと78ドル必要。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "two_candy_pack_cost",
+        "money_still_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "49ドルの菓子2袋は98ドル。所持金20ドルを引くと、あと78ドル必要。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4373,
+    "checked_model_hash": "6ac66d8d69059cd9ddcaf13a92c2b4b2d2c850cae6fb8d48c0bbc5c02afb122c",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

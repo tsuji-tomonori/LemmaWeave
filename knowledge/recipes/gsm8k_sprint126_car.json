@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint126_car",
+  "title_ja": "Brad脱退後の1人当たり追加負担",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02180",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "1700ドルの車を6人で均等負担する予定で洗車で500ドル得た。Bradが抜けて5人になると各人の負担は何ドル増えるか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A18.car_solution",
+  "graph": "work/gsm8k-sprint126-car-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "car_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.car_remaining",
+      "title_ja": "洗車収益を引いた残りは1200ドル",
+      "claim_ja": "洗車収益を引いた残りは1200ドル",
+      "method_ja": "1700ドルから500ドルを引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "洗車収益を引いた残りは1200ドル",
+      "baseline_ja": "洗車収益を引いた残りは1200ドル"
+    },
+    {
+      "id": "car_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.car_first",
+      "title_ja": "6人なら各200ドル",
+      "claim_ja": "6人なら各200ドル",
+      "method_ja": "1200÷6。",
+      "requires_steps": [
+        "car_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "6人なら各200ドル",
+      "baseline_ja": "6人なら各200ドル"
+    },
+    {
+      "id": "car_new",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.car_new",
+      "title_ja": "5人なら各240ドル",
+      "claim_ja": "5人なら各240ドル",
+      "method_ja": "1200÷5。",
+      "requires_steps": [
+        "car_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "5人なら各240ドル",
+      "baseline_ja": "5人なら各240ドル"
+    },
+    {
+      "id": "car_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A18.car_solution",
+      "title_ja": "追加負担は各40ドル",
+      "claim_ja": "追加負担は各40ドル",
+      "method_ja": "240−200。",
+      "requires_steps": [
+        "car_first",
+        "car_new"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "追加負担は各40ドル",
+      "baseline_ja": "追加負担は各40ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2181,
+    "checked_model_hash": "f726e6a492e2bf9cd699f8b5ff17c3d0851760ea29612f8cd772affe3af4471a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

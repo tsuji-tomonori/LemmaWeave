@@ -1,0 +1,123 @@
+{
+  "id": "gsm8k_sprint139_album",
+  "title_ja": "残りページ1枚あたりの写真数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02366",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100枚を30ページへ入れ、最初の10ページは各3枚、次の10ページは各4枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A13.album_solution",
+  "graph": "work/gsm8k-sprint139-album-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "album_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.album_first",
+      "title_ja": "最初の10ページは30枚",
+      "claim_ja": "最初の10ページは30枚",
+      "method_ja": "10に3を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "最初の10ページは30枚",
+      "baseline_ja": "最初の10ページは30枚"
+    },
+    {
+      "id": "album_next",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.album_next",
+      "title_ja": "次の10ページは40枚",
+      "claim_ja": "次の10ページは40枚",
+      "method_ja": "10に4を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "次の10ページは40枚",
+      "baseline_ja": "次の10ページは40枚"
+    },
+    {
+      "id": "album_used_pages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.album_used_pages",
+      "title_ja": "使用済み20ページ",
+      "claim_ja": "使用済み20ページ",
+      "method_ja": "10と10を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "使用済み20ページ",
+      "baseline_ja": "使用済み20ページ"
+    },
+    {
+      "id": "album_used_photos",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.album_used_photos",
+      "title_ja": "使用済み70枚",
+      "claim_ja": "使用済み70枚",
+      "method_ja": "30と40を足す",
+      "requires_steps": [
+        "album_first",
+        "album_next"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "使用済み70枚",
+      "baseline_ja": "使用済み70枚"
+    },
+    {
+      "id": "album_left_photos",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.album_left_photos",
+      "title_ja": "残り30枚",
+      "claim_ja": "残り30枚",
+      "method_ja": "100から70を引く",
+      "requires_steps": [
+        "album_used_photos"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残り30枚",
+      "baseline_ja": "残り30枚"
+    },
+    {
+      "id": "album_left_pages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.album_left_pages",
+      "title_ja": "残り10ページ",
+      "claim_ja": "残り10ページ",
+      "method_ja": "30から20を引く",
+      "requires_steps": [
+        "album_used_pages"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "残り10ページ",
+      "baseline_ja": "残り10ページ"
+    },
+    {
+      "id": "album_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A13.album_solution",
+      "title_ja": "各ページ3枚",
+      "claim_ja": "各ページ3枚",
+      "method_ja": "30枚を10ページに等分",
+      "requires_steps": [
+        "album_left_photos",
+        "album_left_pages"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "各ページ3枚",
+      "baseline_ja": "各ページ3枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2367,
+    "checked_model_hash": "f8384292bb9229b9adb8defcf026c9281343f3c8f1ca33d58ddd5013a3c8cd72",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

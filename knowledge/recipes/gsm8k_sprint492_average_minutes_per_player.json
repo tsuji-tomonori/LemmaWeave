@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint492_average_minutes_per_player",
+  "title_ja": "選手1人あたり平均映像時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04247",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P2.lean",
+  "problem_ja": "5選手の映像は130,145,85,60,180秒。平均で1人何分か。",
+  "answer_ja": "合計600秒=10分。5人で平均2分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.average_minutes_per_player",
+  "graph": "work/gsm8k-sprint492-average-minutes-per-player-graph.json",
+  "model_notes_ja": [
+    "算術平均を総時間÷人数として計算する。"
+  ],
+  "steps": [
+    {
+      "id": "seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.highlight_total_seconds",
+      "title_ja": "総秒数",
+      "claim_ja": "130+145+85+60+180=600秒。",
+      "method_ja": "5人分を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "130+145+85+60+180=600秒。"
+    },
+    {
+      "id": "minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.highlight_total_minutes",
+      "title_ja": "総分数",
+      "claim_ja": "600÷60=10分。",
+      "method_ja": "60秒を1分へ換算する。",
+      "requires_steps": [
+        "seconds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "600÷60=10分。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P2.average_minutes_per_player",
+      "title_ja": "平均",
+      "claim_ja": "10÷5=2分。",
+      "method_ja": "総分数を5人で割る。",
+      "requires_steps": [
+        "minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "10÷5=2分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4248,
+    "checked_model_hash": "82bc743cb471e251b58cf954013286ed243094487c69a2371b3f9b171c11db56",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

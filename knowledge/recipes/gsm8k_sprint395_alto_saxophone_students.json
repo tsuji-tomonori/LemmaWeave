@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint395_alto_saxophone_students",
+  "title_ja": "アルトサックスを演奏する生徒数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04146",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "At Roosevelt high school there are 600 students in the senior class. A fifth of the students are in the marching band. Of the students in the marching band, half of them play a brass instrument. Of the students that play a brass instrument, a fifth of them play the saxophone. Of the students that play the saxophone, a third of them play the alto saxophone. How many students play the alto saxophone?",
+  "answer_ja": "600人の1/5で吹奏楽部は120人。その半分で金管楽器は60人、その1/5でサックスは12人、その1/3でアルトサックスは4人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.alto_saxophone_students",
+  "graph": "work/gsm8k-sprint395-alto-saxophone-students-graph.json",
+  "model_notes_ja": [
+    "楽器分類の一般知識ではなく、問題文が明示する入れ子構造をモデル化する。"
+  ],
+  "steps": [
+    {
+      "id": "marching_band_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.marching_band_students",
+      "title_ja": "吹奏楽部員",
+      "claim_ja": "600÷5=120人。",
+      "method_ja": "全体の1/5を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全体600人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "120人。"
+    },
+    {
+      "id": "brass_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.brass_students",
+      "title_ja": "金管楽器",
+      "claim_ja": "120÷2=60人。",
+      "method_ja": "直前集団の半分を求める。",
+      "requires_steps": [
+        "marching_band_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "吹奏楽部120人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60人。"
+    },
+    {
+      "id": "saxophone_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.saxophone_students",
+      "title_ja": "サックス",
+      "claim_ja": "60÷5=12人。",
+      "method_ja": "直前集団の1/5を求める。",
+      "requires_steps": [
+        "marching_band_students",
+        "brass_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "問題文の入れ子を採用。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "12人。"
+    },
+    {
+      "id": "alto_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.alto_students",
+      "title_ja": "アルトサックス",
+      "claim_ja": "12÷3=4人。",
+      "method_ja": "直前集団の1/3を求める。",
+      "requires_steps": [
+        "marching_band_students",
+        "brass_students",
+        "saxophone_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "サックス12人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4人。"
+    },
+    {
+      "id": "alto_saxophone_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.alto_saxophone_students",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "600人の1/5で吹奏楽部は120人。その半分で金管楽器は60人、その1/5でサックスは12人、その1/3でアルトサックスは4人。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "marching_band_students",
+        "brass_students",
+        "saxophone_students",
+        "alto_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各『of』は直前に示された集団の部分集合を表す。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "600人の1/5で吹奏楽部は120人。その半分で金管楽器は60人、その1/5でサックスは12人、その1/3でアルトサックスは4人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4147,
+    "checked_model_hash": "c4d2ff5ae03d4b9f2cb4eb47a264f8091e8cae093b0b5c8287aba0bfa7d34ffa",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "c4d2ff5ae03d4b9f2cb4eb47a264f8091e8cae093b0b5c8287aba0bfa7d34ffa"
+}

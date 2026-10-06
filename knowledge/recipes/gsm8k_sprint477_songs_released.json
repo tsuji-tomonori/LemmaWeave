@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint477_songs_released",
+  "title_ja": "発表した曲数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04232",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P2.lean",
+  "problem_ja": "異なるシングル5曲、15曲入りアルバム2枚、20曲入りアルバム1枚を発表した。合計何曲か。",
+  "answer_ja": "15曲入り2枚で30曲、20曲入り1枚で20曲。シングル5曲を足して55曲。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.songs_released",
+  "graph": "work/gsm8k-sprint477-songs-released-graph.json",
+  "model_notes_ja": [
+    "各シングルは1曲で、アルバム収録曲との重複は数えないという問題文の通常の集計を採る。"
+  ],
+  "steps": [
+    {
+      "id": "fifteen",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.album_fifteen_songs",
+      "title_ja": "15曲入りアルバム",
+      "claim_ja": "2×15=30曲。",
+      "method_ja": "枚数に曲数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2枚とも15曲。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "30曲。"
+    },
+    {
+      "id": "twenty",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.album_twenty_songs",
+      "title_ja": "20曲入りアルバム",
+      "claim_ja": "1×20=20曲。",
+      "method_ja": "枚数に曲数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1枚が20曲。",
+      "baseline_ja": "自然数の乗法。",
+      "conclusion_ja": "20曲。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.songs_released",
+      "title_ja": "総曲数",
+      "claim_ja": "5+30+20=55曲。",
+      "method_ja": "シングルと各アルバム分を足す。",
+      "requires_steps": [
+        "fifteen",
+        "twenty"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各発表分を1回ずつ数える。",
+      "baseline_ja": "自然数の加法。",
+      "conclusion_ja": "55曲。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4233,
+    "checked_model_hash": "55ae5d5498b686c7630e33d3267cfe9267ee8cfa64ca937376d60ba130c07c68",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

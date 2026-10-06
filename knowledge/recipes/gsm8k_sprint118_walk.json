@@ -1,0 +1,95 @@
+{
+  "id": "gsm8k_sprint118_walk",
+  "title_ja": "Markは2時間長い。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02049",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A08.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、量・単位・割合・全要求を保って導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A08.walk_solution",
+  "graph": "work/gsm8k-sprint118-walk-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "walk_detour",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A08.walk_detour",
+      "title_ja": "昼食のための往復は6マイル。",
+      "claim_ja": "昼食のための往復は6マイル。",
+      "method_ja": "3×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "昼食のための往復は6マイル。",
+      "baseline_ja": "昼食のための往復は6マイル。"
+    },
+    {
+      "id": "walk_mark_distance",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A08.walk_mark_distance",
+      "title_ja": "Markは合計15マイル。",
+      "claim_ja": "Markは合計15マイル。",
+      "method_ja": "6+9。",
+      "requires_steps": [
+        "walk_detour"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "Markは合計15マイル。",
+      "baseline_ja": "Markは合計15マイル。"
+    },
+    {
+      "id": "walk_mark_time",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A08.walk_mark_time",
+      "title_ja": "Markは5時間。",
+      "claim_ja": "Markは5時間。",
+      "method_ja": "15÷3。",
+      "requires_steps": [
+        "walk_mark_distance"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "Markは5時間。",
+      "baseline_ja": "Markは5時間。"
+    },
+    {
+      "id": "walk_chris_time",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A08.walk_chris_time",
+      "title_ja": "Chrisは3時間。",
+      "claim_ja": "Chrisは3時間。",
+      "method_ja": "9÷3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "Chrisは3時間。",
+      "baseline_ja": "Chrisは3時間。"
+    },
+    {
+      "id": "walk_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A08.walk_solution",
+      "title_ja": "Markは2時間長い。",
+      "claim_ja": "Markは2時間長い。",
+      "method_ja": "5−3。",
+      "requires_steps": [
+        "walk_mark_time",
+        "walk_chris_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "Markは2時間長い。",
+      "baseline_ja": "Markは2時間長い。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2050,
+    "checked_model_hash": "31ed1e67bc4527c967011014458dba06a47c40c5c831bb1db619cabb4ec3b19e",
+    "checks_ja": [
+      "固定原本を再読し、全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、誤記・曖昧さ・不可能性を黙って補わず明示した。"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "gsm8k_sprint594_uranus_minutes_after_six",
+  "title_ja": "天王星が午前6時を過ぎて現れる分数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04349",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P1.lean",
+  "problem_ja": "This evening in the nighttime sky over Texas, Mars can be seen until 12:10 AM. Jupiter does not appear until 2 hours and 41 minutes later, and Uranus does not appear until 3 hours and 16 minutes after Jupiter makes its first appearance.  How many minutes after 6:00 AM does Uranus first appear in the evening sky over Texas this evening?",
+  "answer_ja": "午前0時10分を0時から10分後とする。木星は10+161=171分後、天王星はさらに196分後の367分後、すなわち午前6時7分。午前6時から7分後。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.uranus_minutes_after_six",
+  "graph": "work/gsm8k-sprint594-uranus-minutes-after-six-graph.json",
+  "model_notes_ja": [
+    "時刻は同じ夜から翌朝への連続した経過時間として、午前0時からの分数で表す。"
+  ],
+  "steps": [
+    {
+      "id": "mars_minute_after_midnight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.mars_minute_after_midnight",
+      "title_ja": "火星の基準時刻",
+      "claim_ja": "午前0時10分は午前0時から10分後。",
+      "method_ja": "時刻を午前0時からの分数へ変換する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "午前0時10分は午前0時から10分後。"
+    },
+    {
+      "id": "jupiter_delay_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.jupiter_delay_minutes",
+      "title_ja": "木星までの遅れ",
+      "claim_ja": "2時間41分は161分。",
+      "method_ja": "時間を分へ換算して加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "2時間41分は161分。"
+    },
+    {
+      "id": "jupiter_minute_after_midnight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.jupiter_minute_after_midnight",
+      "title_ja": "木星の時刻",
+      "claim_ja": "10+161=171分後。",
+      "method_ja": "基準時刻に遅れを加える。",
+      "requires_steps": [
+        "mars_minute_after_midnight",
+        "jupiter_delay_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "10+161=171分後。"
+    },
+    {
+      "id": "uranus_delay_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.uranus_delay_minutes",
+      "title_ja": "天王星までの遅れ",
+      "claim_ja": "3時間16分は196分。",
+      "method_ja": "時間を分へ換算して加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "3時間16分は196分。"
+    },
+    {
+      "id": "uranus_minute_after_midnight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.uranus_minute_after_midnight",
+      "title_ja": "天王星の時刻",
+      "claim_ja": "171+196=367分後。",
+      "method_ja": "木星の時刻に遅れを加える。",
+      "requires_steps": [
+        "jupiter_minute_after_midnight",
+        "uranus_delay_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "171+196=367分後。"
+    },
+    {
+      "id": "minutes_after_six",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.minutes_after_six",
+      "title_ja": "午前6時からの差",
+      "claim_ja": "367−360=7分。",
+      "method_ja": "午前6時の360分を引く。",
+      "requires_steps": [
+        "uranus_minute_after_midnight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "367−360=7分。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P1.uranus_minutes_after_six",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "午前0時10分を0時から10分後とする。木星は10+161=171分後、天王星はさらに196分後の367分後、すなわち午前6時7分。午前6時から7分後。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "mars_minute_after_midnight",
+        "jupiter_delay_minutes",
+        "jupiter_minute_after_midnight",
+        "uranus_delay_minutes",
+        "uranus_minute_after_midnight",
+        "minutes_after_six"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "午前0時10分を0時から10分後とする。木星は10+161=171分後、天王星はさらに196分後の367分後、すなわち午前6時7分。午前6時から7分後。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4350,
+    "checked_model_hash": "f38046e697079cc8f67c46dc003037002a1c5e83bbee853a2dac4f268b82bcad",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

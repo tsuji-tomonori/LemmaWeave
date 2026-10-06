@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint45_pam",
+  "title_ja": "Pamのリンゴ総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00954",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Geraldの1袋40個の3倍を1袋に入れたPamが10袋持つとき、総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A13.pam_solution",
+  "graph": "work/gsm8k-sprint45-pam-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pam_per_bag",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.pam_per_bag",
+      "title_ja": "Pamの1袋",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Geraldの1袋40個の3倍。",
+      "conclusion_ja": "120個。",
+      "baseline_ja": "40×3=120。"
+    },
+    {
+      "id": "pam_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A13.pam_total",
+      "title_ja": "Pamの総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1袋120個が10袋。",
+      "conclusion_ja": "1200個。",
+      "baseline_ja": "10×120=1200。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 955,
+    "checked_model_hash": "03a5fbad1c19459f7fa62855308787fb2a987abf8c6ff6b4a8468a19b9963dce",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint402_flour_cups_for_biscuits",
+  "title_ja": "36個のビスケットに必要な小麦粉",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04157",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Lady Bird uses 1 1/4 cup flour to make 9 biscuits.  She’s hosting this month's Junior League club which has 18 members and wants to make sure she allows 2 biscuits per guest.  How many cups of flour will Lady Bird need?",
+  "answer_ja": "18人に2個ずつなので36個。1回のレシピは9個だから4回分必要。1回分の1 1/4カップは5/4カップなので、4回分は5カップ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.flour_cups_for_biscuits",
+  "graph": "work/gsm8k-sprint402-flour-cups-for-biscuits-graph.json",
+  "model_notes_ja": [
+    "分数1 1/4を5/4として扱い、カップ単位を保つ。"
+  ],
+  "steps": [
+    {
+      "id": "biscuit_count_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.biscuit_count_needed",
+      "title_ja": "必要なビスケット数",
+      "claim_ja": "18×2=36個。",
+      "method_ja": "人数に1人当たり個数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "会員18人全員に2個ずつ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "36個。"
+    },
+    {
+      "id": "biscuit_batches_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.biscuit_batches_needed",
+      "title_ja": "必要な回数",
+      "claim_ja": "36÷9=4回分。",
+      "method_ja": "必要個数を1回の収量で割る。",
+      "requires_steps": [
+        "biscuit_count_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1回で9個できる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4回分。"
+    },
+    {
+      "id": "flour_quarter_cups",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.flour_quarter_cups",
+      "title_ja": "4分の1カップ単位の総量",
+      "claim_ja": "5×4=20 quarter-cups。",
+      "method_ja": "1 1/4カップを5 quarter-cupsとして4倍する。",
+      "requires_steps": [
+        "biscuit_count_needed",
+        "biscuit_batches_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "レシピを比例拡大できる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20 quarter-cups。"
+    },
+    {
+      "id": "flour_cups_needed",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.flour_cups_needed",
+      "title_ja": "必要な小麦粉",
+      "claim_ja": "20÷4=5カップ。",
+      "method_ja": "quarter-cupsをカップへ戻す。",
+      "requires_steps": [
+        "biscuit_count_needed",
+        "biscuit_batches_needed",
+        "flour_quarter_cups"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4 quarter-cupsで1カップ。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5カップ。"
+    },
+    {
+      "id": "flour_cups_for_biscuits",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P2.flour_cups_for_biscuits",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "18人に2個ずつなので36個。1回のレシピは9個だから4回分必要。1回分の1 1/4カップは5/4カップなので、4回分は5カップ。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "biscuit_count_needed",
+        "biscuit_batches_needed",
+        "flour_quarter_cups",
+        "flour_cups_needed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各客は18人の会員を指し、全員に2個ずつ用意する。レシピは比例拡大できる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "18人に2個ずつなので36個。1回のレシピは9個だから4回分必要。1回分の1 1/4カップは5/4カップなので、4回分は5カップ。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4158,
+    "checked_model_hash": "939d73575cd1861183bc7ef57600e09b9c8d5076d6a6410091b72d30528e3f61",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "939d73575cd1861183bc7ef57600e09b9c8d5076d6a6410091b72d30528e3f61"
+}

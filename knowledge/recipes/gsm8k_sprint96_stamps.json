@@ -1,0 +1,53 @@
+{
+  "id": "gsm8k_sprint96_stamps",
+  "title_ja": "スクラップブックの切手",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01724",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A03Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Addieの72枚の4分の1をParkerの18枚へ加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.stamps_solution",
+  "graph": "work/gsm8k-sprint96-stamps-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "stamps_added",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.stamps_added",
+      "title_ja": "追加は18枚。",
+      "claim_ja": "追加は18枚。",
+      "method_ja": "72÷4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4分の1。",
+      "conclusion_ja": "18×4=72。",
+      "baseline_ja": "18×4=72。"
+    },
+    {
+      "id": "stamps_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A03Catchup.stamps_solution",
+      "title_ja": "合計36枚。",
+      "claim_ja": "合計36枚。",
+      "method_ja": "18+18。",
+      "requires_steps": [
+        "stamps_added"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "元の18枚へ追加する。",
+      "conclusion_ja": "18+18=36。",
+      "baseline_ja": "18+18=36。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1725,
+    "checked_model_hash": "c7ae9e73613030285ef5ac0f94bc1cc2c890986bccfb58f5ed826d20e789cb8c",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

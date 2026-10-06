@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint498_grilled_cheese_sandwiches",
+  "title_ja": "グリルドチーズの個数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04253",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A17P3.lean",
+  "problem_ja": "ハム1個にチーズ2枚、グリルドチーズ1個に3枚。計50枚でハム10個ならグリルドチーズはいくつか。",
+  "answer_ja": "ハムに20枚、残り30枚。3枚ずつなので10個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.grilled_cheese_sandwiches",
+  "graph": "work/gsm8k-sprint498-grilled-cheese-sandwiches-graph.json",
+  "model_notes_ja": [
+    "50枚は両種類だけに使い切る。"
+  ],
+  "steps": [
+    {
+      "id": "ham",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.ham_cheese_slices",
+      "title_ja": "ハム用",
+      "claim_ja": "10×2=20枚。",
+      "method_ja": "個数と1個あたりを掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "10×2=20枚。"
+    },
+    {
+      "id": "remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.grilled_cheese_slices",
+      "title_ja": "残り枚数",
+      "claim_ja": "50−20=30枚。",
+      "method_ja": "総数からハム用を引く。",
+      "requires_steps": [
+        "ham"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "50−20=30枚。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A17P3.grilled_cheese_sandwiches",
+      "title_ja": "個数",
+      "claim_ja": "30÷3=10個。",
+      "method_ja": "残り枚数を1個あたり3枚で割る。",
+      "requires_steps": [
+        "remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量を同じ単位で扱う。",
+      "baseline_ja": "小中学校までの四則演算。",
+      "conclusion_ja": "30÷3=10個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4254,
+    "checked_model_hash": "df66b110b7885c09196b7e22ed802d9237a40dafb6e8d40eb2be093ac98fef7d",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint397_coat_savings_over_thirty_years",
+  "title_ja": "30年間のコート代の節約額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04152",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Karen is considering her winter coat options. One coast costs $300 and will last for 15 years. The other coat costs $120 and will last for five years. How much money would Karen save over 30 years by buying the more expensive cost?",
+  "answer_ja": "120ドルのコートは30÷5=6着必要で720ドル。300ドルのコートは30÷15=2着必要で600ドル。高価な方を買うと720-600=120ドル節約できる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_savings_over_thirty_years",
+  "graph": "work/gsm8k-sprint397-coat-savings-over-thirty-years-graph.json",
+  "model_notes_ja": [
+    "原文のcoast/costはcoat/costの綴り誤りとして数量関係を読む。"
+  ],
+  "steps": [
+    {
+      "id": "coat_cheap_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_cheap_count",
+      "title_ja": "安いコートの必要着数",
+      "claim_ja": "30÷5=6着。",
+      "method_ja": "期間を耐用年数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "30年は5年で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "6着。"
+    },
+    {
+      "id": "coat_cheap_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_cheap_cost",
+      "title_ja": "安い案の総費用",
+      "claim_ja": "6×120=720ドル。",
+      "method_ja": "着数に単価を掛ける。",
+      "requires_steps": [
+        "coat_cheap_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同価格で買い替える。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "720ドル。"
+    },
+    {
+      "id": "coat_expensive_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_expensive_count",
+      "title_ja": "高いコートの必要着数",
+      "claim_ja": "30÷15=2着。",
+      "method_ja": "期間を耐用年数で割る。",
+      "requires_steps": [
+        "coat_cheap_count",
+        "coat_cheap_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "30年は15年で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2着。"
+    },
+    {
+      "id": "coat_expensive_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_expensive_cost",
+      "title_ja": "高い案の総費用",
+      "claim_ja": "2×300=600ドル。",
+      "method_ja": "着数に単価を掛ける。",
+      "requires_steps": [
+        "coat_cheap_count",
+        "coat_cheap_cost",
+        "coat_expensive_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "同価格で買い替える。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "600ドル。"
+    },
+    {
+      "id": "coat_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_savings",
+      "title_ja": "節約額",
+      "claim_ja": "720-600=120ドル。",
+      "method_ja": "安い案から高い案を引く。",
+      "requires_steps": [
+        "coat_cheap_count",
+        "coat_cheap_cost",
+        "coat_expensive_count",
+        "coat_expensive_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両案は同じ30年間を覆う。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "120ドル節約。"
+    },
+    {
+      "id": "coat_savings_over_thirty_years",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P1.coat_savings_over_thirty_years",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "120ドルのコートは30÷5=6着必要で720ドル。300ドルのコートは30÷15=2着必要で600ドル。高価な方を買うと720-600=120ドル節約できる。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "coat_cheap_count",
+        "coat_cheap_cost",
+        "coat_expensive_count",
+        "coat_expensive_cost",
+        "coat_savings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "耐用年数の終了ごとに同じ価格の新品へ買い替え、30年は両耐用年数で割り切れる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "120ドルのコートは30÷5=6着必要で720ドル。300ドルのコートは30÷15=2着必要で600ドル。高価な方を買うと720-600=120ドル節約できる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4153,
+    "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "254e8e04e16331ee8e261d633fd75988a13b6876eb63d90ecca955b471ace280"
+}

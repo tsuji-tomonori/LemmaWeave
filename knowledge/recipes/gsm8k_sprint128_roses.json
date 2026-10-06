@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint128_roses",
+  "title_ja": "3日間に植えたバラ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02201",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "2日前50本、昨日は20本多く、今日は2日前の2倍を植えた。合計は",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A20.roses_solution",
+  "graph": "work/gsm8k-sprint128-roses-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "roses_yesterday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.roses_yesterday",
+      "title_ja": "昨日は70本",
+      "claim_ja": "昨日は70本",
+      "method_ja": "50本に20本を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "昨日は70本",
+      "baseline_ja": "昨日は70本"
+    },
+    {
+      "id": "roses_today",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.roses_today",
+      "title_ja": "今日は100本",
+      "claim_ja": "今日は100本",
+      "method_ja": "50本を2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "今日は100本",
+      "baseline_ja": "今日は100本"
+    },
+    {
+      "id": "roses_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A20.roses_solution",
+      "title_ja": "合計220本",
+      "claim_ja": "合計220本",
+      "method_ja": "50、70、100本を足す",
+      "requires_steps": [
+        "roses_yesterday",
+        "roses_today"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計220本",
+      "baseline_ja": "合計220本"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2202,
+    "checked_model_hash": "be9ab873a50df496e12f7ec640da6afee66c564105c78477bc6213cb94a7cbe0",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

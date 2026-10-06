@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint475_four_ounce_glasses",
+  "title_ja": "満杯にできる4オンス杯",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04230",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A10P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Claudia has 122 ounces of water and is filling up cups. She has 8-ounce glasses, 5-ounce glasses, and 4-ounce glasses. If she fills six 5 ounce glasses and four 8 ounce glasses, how many 4 ounce glasses can she fill with the remaining water?",
+  "answer_ja": "8オンス杯4個に32オンス、5オンス杯6個に30オンス使い、合計62オンス。122−62=60オンス残るので、4オンス杯は15個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A10P1.four_ounce_glasses",
+  "graph": "work/gsm8k-sprint475-four-ounce-glasses-graph.json",
+  "model_notes_ja": [
+    "既に満たした各杯の消費量を合計し、残量を4オンスで割る。"
+  ],
+  "steps": [
+    {
+      "id": "eight_ounce_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P1.eight_ounce_used",
+      "title_ja": "8オンス杯の使用量",
+      "claim_ja": "4×8=32オンス。",
+      "method_ja": "杯数×容量。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4杯、各8オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "32オンス。"
+    },
+    {
+      "id": "five_ounce_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P1.five_ounce_used",
+      "title_ja": "5オンス杯の使用量",
+      "claim_ja": "6×5=30オンス。",
+      "method_ja": "杯数×容量。",
+      "requires_steps": [
+        "eight_ounce_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "6杯、各5オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "30オンス。"
+    },
+    {
+      "id": "water_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P1.water_used",
+      "title_ja": "使用量合計",
+      "claim_ja": "32+30=62オンス。",
+      "method_ja": "2種類の使用量を足す。",
+      "requires_steps": [
+        "eight_ounce_used",
+        "five_ounce_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "32と30オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "62オンス。"
+    },
+    {
+      "id": "water_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P1.water_remaining",
+      "title_ja": "残量",
+      "claim_ja": "122−62=60オンス。",
+      "method_ja": "初期量から使用量を引く。",
+      "requires_steps": [
+        "eight_ounce_used",
+        "five_ounce_used",
+        "water_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "122オンス中62オンス使用。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60オンス。"
+    },
+    {
+      "id": "small_glass_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P1.small_glass_count",
+      "title_ja": "4オンス杯数",
+      "claim_ja": "60÷4=15杯。",
+      "method_ja": "残量を1杯の容量で割る。",
+      "requires_steps": [
+        "eight_ounce_used",
+        "five_ounce_used",
+        "water_used",
+        "water_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "60オンス、1杯4オンス。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "15杯。"
+    },
+    {
+      "id": "four_ounce_glasses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P1.four_ounce_glasses",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "8オンス杯4個に32オンス、5オンス杯6個に30オンス使い、合計62オンス。122−62=60オンス残るので、4オンス杯は15個。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "eight_ounce_used",
+        "five_ounce_used",
+        "water_used",
+        "water_remaining",
+        "small_glass_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "既に満たした各杯の消費量を合計し、残量を4オンスで割る。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8オンス杯4個に32オンス、5オンス杯6個に30オンス使い、合計62オンス。122−62=60オンス残るので、4オンス杯は15個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4231,
+    "checked_model_hash": "1ced79c958f74c45061f52bc37d0e94f6c8689535dfbc188a2d204ae69915b57",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "1ced79c958f74c45061f52bc37d0e94f6c8689535dfbc188a2d204ae69915b57"
+}

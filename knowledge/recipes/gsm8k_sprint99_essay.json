@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint99_essay",
+  "title_ja": "各本文節の語数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01770",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A06Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "導入から結論、本文合計、4等分した各節を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.essay_solution",
+  "graph": "work/gsm8k-sprint99-essay-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "essay_conclusion",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.essay_conclusion",
+      "title_ja": "結論は1,350語。",
+      "claim_ja": "結論は1,350語。",
+      "method_ja": "導入450語の3倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "triple=3倍。",
+      "conclusion_ja": "3×450=1350。",
+      "baseline_ja": "3×450=1350。"
+    },
+    {
+      "id": "essay_body_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.essay_body_total",
+      "title_ja": "本文4節の合計は3,200語。",
+      "claim_ja": "本文4節の合計は3,200語。",
+      "method_ja": "全5000語から導入450語と結論1350語を除く。",
+      "requires_steps": [
+        "essay_conclusion"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "導入・本文4節・結論で全体を構成する。",
+      "conclusion_ja": "3200+450+1350=5000。",
+      "baseline_ja": "3200+450+1350=5000。"
+    },
+    {
+      "id": "essay_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A06Catchup.essay_solution",
+      "title_ja": "本文1節は800語。",
+      "claim_ja": "本文1節は800語。",
+      "method_ja": "本文合計3200語を同じ長さの4節に分ける。",
+      "requires_steps": [
+        "essay_body_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4節は等しい長さ。",
+      "conclusion_ja": "800×4=3200。",
+      "baseline_ja": "800×4=3200。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1771,
+    "checked_model_hash": "85979965d0f68b70b826a511698b3ebe4294de5aafa9882737239a9c0d828b03",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

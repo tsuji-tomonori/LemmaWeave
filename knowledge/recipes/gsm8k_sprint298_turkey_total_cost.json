@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint298_turkey_total_cost",
+  "title_ja": "七面鳥3羽の総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03611",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A06P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "七面鳥は6kg、9kg、3羽目は2羽目の2倍。1kgあたり2ドル。",
+  "answer_ja": "3羽目は9×2=18kg。総重量は6+9+18=33kgなので、33×2=66ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A06P1.turkey_total_cost",
+  "graph": "work/gsm8k-sprint298-turkey-total-cost-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "turkey_total_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A06P1.turkey_total_cost",
+      "title_ja": "3羽目は9×2=18kg。総重量は6+9+18=33kgなので、33×2=66ドル。",
+      "claim_ja": "3羽目は9×2=18kg。総重量は6+9+18=33kgなので、33×2=66ドル。",
+      "method_ja": "3羽目は9×2=18kg。総重量は6+9+18=33kgなので、33×2=66ドル。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。追加解釈がある場合はmodel_notes_jaに明示。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "3羽目は9×2=18kg。総重量は6+9+18=33kgなので、33×2=66ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3612,
+    "checked_model_hash": "e4b3f46b1615bde64c5f7abaf06aa76870f885bf3eee4f8ae0a0eba6134e7a1d",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

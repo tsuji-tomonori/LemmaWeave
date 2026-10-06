@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint156_jelly",
+  "title_ja": "Mikeyのジェリービーンズ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02622",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Napoleon17個、Sedrichは4個多く、2人の合計の2倍がMikeyの4倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A13.jelly_solution",
+  "graph": "work/gsm8k-sprint156-jelly-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jelly_sedrich",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.jelly_sedrich",
+      "title_ja": "Sedrichは21個",
+      "claim_ja": "Sedrichは21個",
+      "method_ja": "17個に4個を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Sedrichは21個",
+      "baseline_ja": "Sedrichは21個"
+    },
+    {
+      "id": "jelly_pair",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.jelly_pair",
+      "title_ja": "2人で38個",
+      "claim_ja": "2人で38個",
+      "method_ja": "17個と21個を足す",
+      "requires_steps": [
+        "jelly_sedrich"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "2人で38個",
+      "baseline_ja": "2人で38個"
+    },
+    {
+      "id": "jelly_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A13.jelly_solution",
+      "title_ja": "Mikeyは19個",
+      "claim_ja": "Mikeyは19個",
+      "method_ja": "38個の2倍76個を4等分する",
+      "requires_steps": [
+        "jelly_pair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Mikeyは19個",
+      "baseline_ja": "Mikeyは19個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2623,
+    "checked_model_hash": "e51225f4b98dc13b8a03c785cc65a942c1c801353b83ac6b37239ea1b6a1f5af",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

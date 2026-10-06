@@ -1,0 +1,89 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-0312",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "3e19b10e263e07e479b31b5f82f96d6763aff2cc117bf13aa32bc4be308e1480",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1001A10P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03331",
+      "source_line_1based": 3332,
+      "source_record_sha256": "962de6fa166b218cb3cf9a311c8681c0226564aa7a97b6efee90ad4d10974835",
+      "raw_question_sha256": "2605a6bda318da86c3798e0f6f6342d8ae16a8e062d66e930a2a5f6aa8fd19c8",
+      "normalized_question_sha256": "dad3c07891b712c372778c79ce417a118ab15a371a791a27b93f78dd29237c10",
+      "source_question": "Hasan is packing up his apartment because he’s moving across the country for a new job. He needs to ship several boxes to his new home. The movers have asked that Hasan avoid putting more than a certain weight in pounds in any cardboard box. The moving company has helpfully provided Hasan with a digital scale that will alert him if a package is too heavy. Hasan is in the kitchen, and he fills a cardboard box with 38 dinner plates. When he checks the box, the scale reports his box is too heavy. Hasan knows each of his plates weighs 10 ounces. He removes a single plate from the box and checks the movers’ scale again. The scale reports his box is still too heavy. Hasan repeats the process again and again. When he has removed enough plates, the movers’ scale shows the box is now an acceptable weight for shipping. Hasan deduces that each shipping box can hold 20 pounds before the scale says the box is too heavy.  How many plates did Hasan need to remove from the shipping box?",
+      "recipe_id": "gsm8k_sprint258_plates",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "単に重量が上限以下であるだけでなく、1枚多い直前状態は上限超過という最小除去条件を入れた。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03332",
+      "source_line_1based": 3333,
+      "source_record_sha256": "74d766d5094967db8c1f123ebb43f3bc5899200cae0f0daa8853c1f69054eb04",
+      "raw_question_sha256": "f256e8ba04f7fff963e13b2e5d4b75832874b1c751048edd66cb33470fd0e597",
+      "normalized_question_sha256": "f256e8ba04f7fff963e13b2e5d4b75832874b1c751048edd66cb33470fd0e597",
+      "source_question": "Nancy and Jason are learning to dance for the first time. Nancy steps on her partner's feet 3 times as often as Jason. If together they step on each other's feet 32 times, how many times does Jason step on his partner's feet?",
+      "recipe_id": "gsm8k_sprint258_dance",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03333",
+      "source_line_1based": 3334,
+      "source_record_sha256": "8ee103fefc4946fb1c4fe1593307f1ca132027402e99495f4e5b0d2b4ae5f04d",
+      "raw_question_sha256": "0ab01a3f490a64f2539a088524e694c91bdb7660ac16bf86addfe597f6eb7c10",
+      "normalized_question_sha256": "800c766ba2b713e6b1dd1a4eacc4f1d3432b7d7fc7de5b7b31c563cfb51819d9",
+      "source_question": "Roberta started off with 8 vinyl records.  Her friends gave her 12 records for her birthday and she bought 30 more at a garage sale.  It takes her 2 days to listen to 1 record. How many days will it take her to listen to her record collection?",
+      "recipe_id": "gsm8k_sprint258_records",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03334",
+      "source_line_1based": 3335,
+      "source_record_sha256": "6b2bf0252059065a37ab2bd3d70dff4ae48d178a6ef66fbab842c3a91e60b174",
+      "raw_question_sha256": "b0c29b62bfa6f85f79f41bbd343e222ab3a5c3990b204f41f574d14deb1c40fd",
+      "normalized_question_sha256": "b0c29b62bfa6f85f79f41bbd343e222ab3a5c3990b204f41f574d14deb1c40fd",
+      "source_question": "On his farm, Mr. Mathews has goats and sheep in the ratio of 5:7. He decides to sell half of the goats at $40 each and 2/3 of the sheep at $30 each. How much money does he make from the sale of the animals if the total number of sheep and goats on the farm is 360?",
+      "recipe_id": "gsm8k_sprint258_animals",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照解答の途中計算3000+4200は7200であり、本文中の8600は誤記。末尾の数値7200と一致する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:03335",
+      "source_line_1based": 3336,
+      "source_record_sha256": "20dbd8f7c8e4f36b57ff55885bcb38a53efaee5bd9297c34280eecf9f685c7b1",
+      "raw_question_sha256": "eacc9b9eff4444823a6636ebb99c264cdcab54f7bc40ee39bd01227316f942f6",
+      "normalized_question_sha256": "cebd03e810b8e88f1970127f8fb3a41f7a0e37b9559b9f77e958cd550f2f843b",
+      "source_question": "The average score on last week's Spanish test was 90.  Marco scored 10% less than the average test score and Margaret received 5 more points than Marco.  What score did Margaret receive on her test?",
+      "recipe_id": "gsm8k_sprint258_scores",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [],
+      "blockers": []
+    }
+  ]
+}

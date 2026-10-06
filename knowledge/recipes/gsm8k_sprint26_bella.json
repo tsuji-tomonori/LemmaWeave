@@ -1,0 +1,91 @@
+{
+  "id": "gsm8k_sprint26_bella",
+  "title_ja": "ビー玉・フリスビー・カードの買い増し",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00669",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "ビー玉60個から他の品数を求め、各品を元の2/5だけ買い増した後の総数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A26.bella_solution",
+  "graph": "work/gsm8k-sprint26-bella-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A26.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "two times as many は2倍、2/5 times more は元の2/5を追加する参照解答の読みを採用する。",
+    "参照解答中のカード計算式20-10は30-20の誤記だが、結論10は正しい。"
+  ],
+  "steps": [
+    {
+      "id": "bella_frisbees",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.bella_frisbees",
+      "title_ja": "フリスビーの初期数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "ビー玉60個はフリスビーの2倍。",
+      "conclusion_ja": "フリスビーは30個。",
+      "baseline_ja": "60÷2=30。"
+    },
+    {
+      "id": "bella_cards",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.bella_cards",
+      "title_ja": "カードの初期数",
+      "requires_steps": [
+        "bella_frisbees"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "フリスビーはカードより20個多い。",
+      "conclusion_ja": "カードは10個。",
+      "baseline_ja": "30-20=10。"
+    },
+    {
+      "id": "bella_added",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.bella_added",
+      "title_ja": "3品の買増量",
+      "requires_steps": [
+        "bella_frisbees",
+        "bella_cards"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各品を初期数の2/5だけ買い増す。",
+      "conclusion_ja": "買増量はビー玉24、フリスビー12、カード4。",
+      "baseline_ja": "60×2/5=24、30×2/5=12、10×2/5=4。"
+    },
+    {
+      "id": "bella_final",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.bella_final",
+      "title_ja": "買増後の3品",
+      "requires_steps": [
+        "bella_frisbees",
+        "bella_cards",
+        "bella_added"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各初期数に買増量を足す。",
+      "conclusion_ja": "買増後は84、42、14個。",
+      "baseline_ja": "60+24=84、30+12=42、10+4=14。"
+    },
+    {
+      "id": "bella_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.bella_total",
+      "title_ja": "全品の合計",
+      "requires_steps": [
+        "bella_final"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "買増後の3品を合計する。",
+      "conclusion_ja": "合計140個。",
+      "baseline_ja": "84+42+14=140。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 670,
+    "checked_model_hash": "916d85cf91b2b878437a08560919c67499293ac4d5422b70e189384b4426aceb",
+    "checks_ja": [
+      "3品の初期数、各買増量、買増後の数、合計を順に照合した。"
+    ]
+  }
+}

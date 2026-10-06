@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint275_hannah_age",
+  "title_ja": "Hannahの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03476",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A16P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "3人の兄弟が全員8歳で、その年齢合計の2倍であるHannahの年齢を求める。",
+  "answer_ja": "48歳",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A16P1.hannah_age",
+  "graph": "work/gsm8k-sprint275-hannah-age-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "brothers_age_sum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P1.brothers_age_sum",
+      "title_ja": "兄弟3人の年齢合計は24歳。",
+      "claim_ja": "兄弟3人の年齢合計は24歳。",
+      "method_ja": "3人×8歳を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3人全員が8歳。",
+      "conclusion_ja": "24歳。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "hannah_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P1.hannah_age",
+      "title_ja": "Hannahは48歳。",
+      "claim_ja": "Hannahは48歳。",
+      "method_ja": "24歳の2倍を計算する。",
+      "requires_steps": [
+        "brothers_age_sum"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Hannahは兄弟の年齢合計の2倍。",
+      "conclusion_ja": "48歳。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3477,
+    "checked_model_hash": "6bfe869d2fca3411548ec2bf1c7fa295159fdd270e5a747a377b134c65795f03",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

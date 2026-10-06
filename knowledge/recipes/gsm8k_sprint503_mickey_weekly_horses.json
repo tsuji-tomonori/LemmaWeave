@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_sprint503_mickey_weekly_horses",
+  "title_ja": "Mickeyが1週間に乗る馬",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04258",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P1.lean",
+  "problem_ja": "Minnieは週の日数より3頭多く毎日乗り、MickeyはMinnieの2倍より6頭少なく毎日乗る。Mickeyの週合計は。",
+  "answer_ja": "週は7日なのでMinnieは1日10頭。Mickeyは20−6=14頭、7日で98頭。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.mickey_weekly_horses",
+  "graph": "work/gsm8k-sprint503-mickey-weekly-horses-graph.json",
+  "model_notes_ja": [
+    "週の日数は7日として問題文の比較を順に適用する。"
+  ],
+  "steps": [
+    {
+      "id": "minnie_daily_horses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.minnie_daily_horses",
+      "title_ja": "Minnieの1日分",
+      "claim_ja": "7+3=10頭。",
+      "method_ja": "週の日数へ3を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "7+3=10頭。"
+    },
+    {
+      "id": "twice_minnie_horses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.twice_minnie_horses",
+      "title_ja": "Minnieの2倍",
+      "claim_ja": "10×2=20頭。",
+      "method_ja": "2倍を求める。",
+      "requires_steps": [
+        "minnie_daily_horses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10×2=20頭。"
+    },
+    {
+      "id": "mickey_daily_horses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.mickey_daily_horses",
+      "title_ja": "Mickeyの1日分",
+      "claim_ja": "20−6=14頭。",
+      "method_ja": "2倍の数から6を引く。",
+      "requires_steps": [
+        "twice_minnie_horses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20−6=14頭。"
+    },
+    {
+      "id": "mickey_week_horses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.mickey_week_horses",
+      "title_ja": "Mickeyの週合計",
+      "claim_ja": "14×7=98頭。",
+      "method_ja": "1日分を7日分にする。",
+      "requires_steps": [
+        "mickey_daily_horses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "14×7=98頭。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.mickey_weekly_horses",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "週は7日なのでMinnieは1日10頭。Mickeyは20−6=14頭、7日で98頭。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "minnie_daily_horses",
+        "twice_minnie_horses",
+        "mickey_daily_horses",
+        "mickey_week_horses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "週は7日なのでMinnieは1日10頭。Mickeyは20−6=14頭、7日で98頭。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4259,
+    "checked_model_hash": "ce83dde56c15afd77b09bf36a123b3c1f49d6068459b2800116f42d29550d8bb",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

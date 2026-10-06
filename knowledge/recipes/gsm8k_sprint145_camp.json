@@ -1,0 +1,98 @@
+{
+  "id": "gsm8k_sprint145_camp",
+  "title_ja": "二晩の人数差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02463",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "最初の晩300人。28人/時で4時間退出後、15人/時で7時間入場する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.camp_solution",
+  "graph": "work/gsm8k-sprint145-camp-graph.json",
+  "model_notes_ja": [
+    "原題と参考説明の日付ラベルにずれがあるため、最初の晩→退出→入場→次の晩という順序のみを用いる。"
+  ],
+  "steps": [
+    {
+      "id": "camp_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.camp_left",
+      "title_ja": "退出は112人",
+      "claim_ja": "退出は112人",
+      "method_ja": "28に4を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "退出は112人",
+      "baseline_ja": "退出は112人"
+    },
+    {
+      "id": "camp_after",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.camp_after",
+      "title_ja": "退出後188人",
+      "claim_ja": "退出後188人",
+      "method_ja": "300から112を引く",
+      "requires_steps": [
+        "camp_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "退出後188人",
+      "baseline_ja": "退出後188人"
+    },
+    {
+      "id": "camp_incoming",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.camp_incoming",
+      "title_ja": "入場は105人",
+      "claim_ja": "入場は105人",
+      "method_ja": "15に7を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "入場は105人",
+      "baseline_ja": "入場は105人"
+    },
+    {
+      "id": "camp_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.camp_second",
+      "title_ja": "次の晩は293人",
+      "claim_ja": "次の晩は293人",
+      "method_ja": "188に105を足す",
+      "requires_steps": [
+        "camp_after",
+        "camp_incoming"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "次の晩は293人",
+      "baseline_ja": "次の晩は293人"
+    },
+    {
+      "id": "camp_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.camp_solution",
+      "title_ja": "二晩の差は7人",
+      "claim_ja": "二晩の差は7人",
+      "method_ja": "300から293を引く",
+      "requires_steps": [
+        "camp_second"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "二晩の差は7人",
+      "baseline_ja": "二晩の差は7人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2464,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

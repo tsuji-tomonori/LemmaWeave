@@ -1,0 +1,118 @@
+{
+  "id": "gsm8k_sprint541_jello_bathtub_cost",
+  "title_ja": "浴槽一杯のゼリー材料費",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04296",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P3.lean",
+  "problem_ja": "6立方フィートの水、1立方フィート7.5ガロン、1ガロン8ポンド、1ポンドにつき大さじ1.5、1大さじ0.50ドル。費用はいくらか。",
+  "answer_ja": "45ガロン=360ポンド。必要量は540大さじ、1大さじ50セントなので27000セント、270ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.jello_bathtub_cost",
+  "graph": "work/gsm8k-sprint541-jello-bathtub-cost-graph.json",
+  "model_notes_ja": [
+    "小数は10倍量またはセントへ換算し、端数なしで計算する。"
+  ],
+  "steps": [
+    {
+      "id": "bathtub_gallons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.bathtub_gallons",
+      "title_ja": "浴槽のガロン数",
+      "claim_ja": "6×7.5=45ガロン。",
+      "method_ja": "7.5を75/10として掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6×7.5=45ガロン。"
+    },
+    {
+      "id": "water_pounds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.water_pounds",
+      "title_ja": "水の重量",
+      "claim_ja": "45×8=360ポンド。",
+      "method_ja": "ガロン数と1ガロンの重量を掛ける。",
+      "requires_steps": [
+        "bathtub_gallons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "45×8=360ポンド。"
+    },
+    {
+      "id": "jello_tablespoons",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.jello_tablespoons",
+      "title_ja": "ゼリー粉量",
+      "claim_ja": "360×1.5=540大さじ。",
+      "method_ja": "1.5を15/10として掛ける。",
+      "requires_steps": [
+        "water_pounds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "360×1.5=540大さじ。"
+    },
+    {
+      "id": "jello_cost_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.jello_cost_cents",
+      "title_ja": "費用（セント）",
+      "claim_ja": "540×50=27000セント。",
+      "method_ja": "大さじ数と50セントを掛ける。",
+      "requires_steps": [
+        "jello_tablespoons"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "540×50=27000セント。"
+    },
+    {
+      "id": "jello_cost_dollars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.jello_cost_dollars",
+      "title_ja": "費用（ドル）",
+      "claim_ja": "27000÷100=270ドル。",
+      "method_ja": "セントをドルへ換算する。",
+      "requires_steps": [
+        "jello_cost_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "27000÷100=270ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.jello_bathtub_cost",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "45ガロン=360ポンド。必要量は540大さじ、1大さじ50セントなので27000セント、270ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "bathtub_gallons",
+        "water_pounds",
+        "jello_tablespoons",
+        "jello_cost_cents",
+        "jello_cost_dollars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "45ガロン=360ポンド。必要量は540大さじ、1大さじ50セントなので27000セント、270ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4297,
+    "checked_model_hash": "b922122d10016bec624e3139706da983a8e177a44a2cf38f725a421081324277",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

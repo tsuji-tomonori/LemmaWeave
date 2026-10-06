@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint326_failed_students",
+  "title_ja": "不合格者数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03753",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Out of 804 senior high school students, 75% passed their exams and so got their degree. The rest failed. How many didn't pass their exams?",
+  "answer_ja": "合格者は804×75%=603人。残りは804−603=201人なので不合格者は201人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A17P2.failed_students",
+  "graph": "work/gsm8k-sprint326-failed-students-graph.json",
+  "model_notes_ja": [
+    "全員が合格か不合格のどちらか一方で、75%は804人全体に対する正確な割合。"
+  ],
+  "steps": [
+    {
+      "id": "failed_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A17P2.failed_students",
+      "title_ja": "不合格者数",
+      "claim_ja": "合格者は804×75%=603人。残りは804−603=201人なので不合格者は201人。",
+      "method_ja": "合格者数を求めて総数から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "804×75は100で割り切れる。",
+      "baseline_ja": "整数・分数・割合・一次方程式・速さと時間の関係のうち問題で明示したもの。",
+      "conclusion_ja": "不合格者201人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3754,
+    "checked_model_hash": "fb81d0f303f5c164319e5af31232307ed4524450eb00f121c5305497da69a977",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と補足条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint289_porter_total",
+  "title_ja": "残業込み4週間の収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03550",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A20P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "日給8ドルで週5日、週1日の残業は日給の50%増し。4週間の総収入。",
+  "answer_ja": "208ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.porter_month_total",
+  "graph": "work/gsm8k-sprint289-porter-total-graph.json",
+  "model_notes_ja": [
+    "原題のmonthを4週間として計算する。"
+  ],
+  "steps": [
+    {
+      "id": "porter_regular_weekly",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.porter_regular_weekly",
+      "title_ja": "通常週給は40ドル。",
+      "claim_ja": "通常週給は40ドル。",
+      "method_ja": "日給8ドルを5日分にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "通常週給は40ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "porter_regular_month",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.porter_regular_month",
+      "title_ja": "通常4週間分は160ドル。",
+      "claim_ja": "通常4週間分は160ドル。",
+      "method_ja": "週給40ドルを4倍する。",
+      "requires_steps": [
+        "porter_regular_weekly"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "通常4週間分は160ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "porter_overtime_day",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.porter_overtime_day",
+      "title_ja": "残業日の賃金は12ドル。",
+      "claim_ja": "残業日の賃金は12ドル。",
+      "method_ja": "日給8ドルの150%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "残業日の賃金は12ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "porter_overtime_month",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.porter_overtime_month",
+      "title_ja": "4回の残業代は48ドル。",
+      "claim_ja": "4回の残業代は48ドル。",
+      "method_ja": "12ドルを4倍する。",
+      "requires_steps": [
+        "porter_overtime_day"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "4回の残業代は48ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "porter_month_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P3.porter_month_total",
+      "title_ja": "総収入は208ドル。",
+      "claim_ja": "総収入は208ドル。",
+      "method_ja": "通常160ドルと残業48ドルを足す。",
+      "requires_steps": [
+        "porter_regular_month",
+        "porter_overtime_month"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "総収入は208ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3551,
+    "checked_model_hash": "41cf00f22e5d310f4dcc6cc6c0b5176be5ec2cc241a452b35ee0f41fffab6755",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

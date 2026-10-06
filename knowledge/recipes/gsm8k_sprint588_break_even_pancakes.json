@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint588_break_even_pancakes",
+  "title_ja": "損益分岐点のパンケーキ枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04343",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P3.lean",
+  "problem_ja": "Janina spends $30 each day for rent and uses $12 worth of supplies daily to run her pancake stand. If she sells each pancake for $2, how many pancakes must Janina sell each day to cover her expenses?",
+  "answer_ja": "1日の費用は家賃30ドルと材料12ドルで42ドル。1枚2ドルなので42÷2=21枚売れば費用を賄える。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.break_even_pancakes",
+  "graph": "work/gsm8k-sprint588-break-even-pancakes-graph.json",
+  "model_notes_ja": [
+    "他の費用や売上はなく、パンケーキは1枚2ドルで整数枚販売する。"
+  ],
+  "steps": [
+    {
+      "id": "pancake_daily_expenses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.pancake_daily_expenses",
+      "title_ja": "1日費用",
+      "claim_ja": "30+12=42ドル。",
+      "method_ja": "家賃と材料費を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30+12=42ドル。"
+    },
+    {
+      "id": "pancakes_to_break_even",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.pancakes_to_break_even",
+      "title_ja": "必要枚数",
+      "claim_ja": "42÷2=21枚。",
+      "method_ja": "費用を1枚の販売価格で割る。",
+      "requires_steps": [
+        "pancake_daily_expenses"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "42÷2=21枚。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.break_even_pancakes",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1日の費用は家賃30ドルと材料12ドルで42ドル。1枚2ドルなので42÷2=21枚売れば費用を賄える。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "pancake_daily_expenses",
+        "pancakes_to_break_even"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1日の費用は家賃30ドルと材料12ドルで42ドル。1枚2ドルなので42÷2=21枚売れば費用を賄える。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4344,
+    "checked_model_hash": "e6b35405fa138a37e861678c81010e519a557b1c97fe92e598b4c18d16140b5a",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

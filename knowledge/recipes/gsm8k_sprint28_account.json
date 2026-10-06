@@ -1,0 +1,60 @@
+{
+  "id": "gsm8k_sprint28_account",
+  "title_ja": "買物後の口座残高",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00702",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "55ドルから7ドルとその3倍を支出した残りを求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A28.account_solution",
+  "graph": "work/gsm8k-sprint28-account-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A28.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "thrice as muchを3倍として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "account_after_shirt",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.account_after_shirt",
+      "title_ja": "シャツ購入後",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "55ドルから7ドルを引く。",
+      "conclusion_ja": "48ドル。",
+      "baseline_ja": "55-7=48。"
+    },
+    {
+      "id": "account_second_shop",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.account_second_shop",
+      "title_ja": "次店の支出",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "シャツ代7ドルの3倍。",
+      "conclusion_ja": "21ドル。",
+      "baseline_ja": "3×7=21。"
+    },
+    {
+      "id": "account_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A28.account_left",
+      "title_ja": "最終残高",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "48ドルから21ドルを引く。",
+      "conclusion_ja": "27ドル。",
+      "baseline_ja": "48-21=27。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 703,
+    "checked_model_hash": "1810c2eb82e2b1ef127b9a48786d662c837755e9604891a5d1862e999a8bb1ec",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}
+

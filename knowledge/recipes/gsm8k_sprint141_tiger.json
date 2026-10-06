@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint141_tiger",
+  "title_ja": "虎が捕まった地点までの距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02401",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "虎は最初の4時間を時速25マイル、次の1時間を時速10マイル、その後30分を時速50マイルで走る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.tiger_solution",
+  "graph": "work/gsm8k-sprint141-tiger-graph.json",
+  "model_notes_ja": [
+    "午前1時から4時までの3時間に、捜索開始後の最初の1時間を加えて時速25マイルの区間を4時間とする。捜索2時間目は減速後の時速10マイル、続く追跡は30分と読む。"
+  ],
+  "steps": [
+    {
+      "id": "tiger_fast",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.tiger_fast",
+      "title_ja": "最初の4時間で100マイル",
+      "claim_ja": "最初の4時間で100マイル",
+      "method_ja": "距離=速さ×時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "最初の4時間で100マイル",
+      "baseline_ja": "最初の4時間で100マイル"
+    },
+    {
+      "id": "tiger_slow",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.tiger_slow",
+      "title_ja": "次の1時間で10マイル",
+      "claim_ja": "次の1時間で10マイル",
+      "method_ja": "距離=速さ×時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "次の1時間で10マイル",
+      "baseline_ja": "次の1時間で10マイル"
+    },
+    {
+      "id": "tiger_chase",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.tiger_chase",
+      "title_ja": "30分の追跡で25マイル",
+      "claim_ja": "30分の追跡で25マイル",
+      "method_ja": "30分は2分の1時間",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "30分の追跡で25マイル",
+      "baseline_ja": "30分の追跡で25マイル"
+    },
+    {
+      "id": "tiger_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.tiger_solution",
+      "title_ja": "合計135マイル",
+      "claim_ja": "合計135マイル",
+      "method_ja": "100、10、25を足す",
+      "requires_steps": [
+        "tiger_fast",
+        "tiger_slow",
+        "tiger_chase"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した条件を保持する。",
+      "conclusion_ja": "合計135マイル",
+      "baseline_ja": "合計135マイル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2402,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

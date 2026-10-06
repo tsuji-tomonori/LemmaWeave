@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint39_strawberries",
+  "title_ja": "いちごの均等再分配",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00877",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "4人家族が収穫した合計を4等分する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.strawberries_solution",
+  "graph": "work/gsm8k-sprint39-strawberries-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "parents picked は両親2人の合計収穫として読み、分配人数は4人。"
+  ],
+  "steps": [
+    {
+      "id": "strawberries_brother",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.strawberries_brother",
+      "title_ja": "兄弟の収穫",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15個入りを3籠。",
+      "conclusion_ja": "45個。",
+      "baseline_ja": "3×15=45。"
+    },
+    {
+      "id": "strawberries_kim",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.strawberries_kim",
+      "title_ja": "Kimberlyの収穫",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "兄弟45個の8倍。",
+      "conclusion_ja": "360個。",
+      "baseline_ja": "8×45=360。"
+    },
+    {
+      "id": "strawberries_parents",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.strawberries_parents",
+      "title_ja": "両親の収穫合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Kimberlyより93個少ない。",
+      "conclusion_ja": "267個。",
+      "baseline_ja": "360=267+93。"
+    },
+    {
+      "id": "strawberries_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.strawberries_total",
+      "title_ja": "家族の総収穫",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "兄弟45、Kimberly360、両親合計267。",
+      "conclusion_ja": "672個。",
+      "baseline_ja": "45+360+267=672。"
+    },
+    {
+      "id": "strawberries_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.strawberries_each",
+      "title_ja": "4人へ均等分配",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Kimberly、兄弟、両親2人の計4人。",
+      "conclusion_ja": "各168個。",
+      "baseline_ja": "672=4×168。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 878,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

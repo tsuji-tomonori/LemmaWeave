@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-29",
+  "run_id": "20260929T010000+0900-solve-01",
+  "scheduled_slot": "2026-09-29T01:00:00+09:00",
+  "slot_role": "solve_15_gsm8k",
+  "base_sha": "9c829195009a1fd89d5904ec9e3b322d97b16bf8",
+  "started_at": "2026-09-28T16:05:01Z",
+  "finished_at": "2026-09-28T16:42:49Z",
+  "selected_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:02951",
+    "external-gsm8k-main-3101c7d50724:train:02952",
+    "external-gsm8k-main-3101c7d50724:train:02953",
+    "external-gsm8k-main-3101c7d50724:train:02954",
+    "external-gsm8k-main-3101c7d50724:train:02955",
+    "external-gsm8k-main-3101c7d50724:train:02956",
+    "external-gsm8k-main-3101c7d50724:train:02957",
+    "external-gsm8k-main-3101c7d50724:train:02958",
+    "external-gsm8k-main-3101c7d50724:train:02959",
+    "external-gsm8k-main-3101c7d50724:train:02960",
+    "external-gsm8k-main-3101c7d50724:train:02961",
+    "external-gsm8k-main-3101c7d50724:train:02962",
+    "external-gsm8k-main-3101c7d50724:train:02963",
+    "external-gsm8k-main-3101c7d50724:train:02964",
+    "external-gsm8k-main-3101c7d50724:train:02965"
+  ],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:02951",
+    "external-gsm8k-main-3101c7d50724:train:02952",
+    "external-gsm8k-main-3101c7d50724:train:02953",
+    "external-gsm8k-main-3101c7d50724:train:02954",
+    "external-gsm8k-main-3101c7d50724:train:02955",
+    "external-gsm8k-main-3101c7d50724:train:02956",
+    "external-gsm8k-main-3101c7d50724:train:02957",
+    "external-gsm8k-main-3101c7d50724:train:02958",
+    "external-gsm8k-main-3101c7d50724:train:02959",
+    "external-gsm8k-main-3101c7d50724:train:02960",
+    "external-gsm8k-main-3101c7d50724:train:02961",
+    "external-gsm8k-main-3101c7d50724:train:02962",
+    "external-gsm8k-main-3101c7d50724:train:02963",
+    "external-gsm8k-main-3101c7d50724:train:02964",
+    "external-gsm8k-main-3101c7d50724:train:02965"
+  ],
+  "deferred": [],
+  "checkpoints": [
+    {
+      "after_problem_id": "external-gsm8k-main-3101c7d50724:train:02955",
+      "commit": "0842e3e4eaf2bd3f0e034c4153afc529279b2646"
+    },
+    {
+      "after_problem_id": "external-gsm8k-main-3101c7d50724:train:02960",
+      "commit": "b8a434df7e9624e004c041dabf185bd1c6e2d50a"
+    },
+    {
+      "after_problem_id": "external-gsm8k-main-3101c7d50724:train:02965",
+      "commit": "78adb9110178b43cb067ea19d21226a407a63dff"
+    }
+  ],
+  "ci": {
+    "status": "failure_repaired_pending_rerun",
+    "run_id": 36450408922,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36450408922",
+    "artifact_id": 10983704169,
+    "artifact_sha256": "a02413996a0c619cea19d00847966f99777ff58d474b9cf8d529d20e2e4cf980",
+    "exact_head_sha": "9d5b98e06550172817e3f2fa839ee9f5aec8e0fb",
+    "note_ja": "固定Lean 4.33.1で新規モデルの複数フィールド宣言が意図どおり解釈されないことを確認。各フィールドを1行ずつ宣言する形へ修正し、同一命題の再実行待ち。"
+  },
+  "pr": {
+    "number": 5,
+    "head_before_run": "9c829195009a1fd89d5904ec9e3b322d97b16bf8"
+  },
+  "commit": "pending_repair_commit",
+  "repair": {
+    "base_sha": "9d5b98e06550172817e3f2fa839ee9f5aec8e0fb",
+    "model_sha256": "f3ee7b7abaef627680b6ed5f32e3281002933e39c72913e8d94642f479c79ece",
+    "change_ja": "全15構造体の自然数フィールドを個別宣言へ展開。原題、定義域、等式、結論は変更していない。"
+  },
+  "assurance_level": "INCONCLUSIVE",
+  "status_note_ja": "15問すべて記述解答・Lean形式化・作者自己照合を保存した。失敗証拠に基づく構文修正後のため、再CI成功証拠取得まではverification_pendingであり、solution_readyへの昇格はしていない。"
+}

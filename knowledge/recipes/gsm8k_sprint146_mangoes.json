@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint146_mangoes",
+  "title_ja": "近所1人あたりのマンゴー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02481",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "560個の半分を売り、残りを8人へ均等に配る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.mangoes_solution",
+  "graph": "work/gsm8k-sprint146-mangoes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "mangoes_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.mangoes_remaining",
+      "title_ja": "残りは280個",
+      "claim_ja": "残りは280個",
+      "method_ja": "560の半分を売った残りを求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "残りは280個",
+      "baseline_ja": "残りは280個"
+    },
+    {
+      "id": "mangoes_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.mangoes_solution",
+      "title_ja": "1人35個",
+      "claim_ja": "1人35個",
+      "method_ja": "280を8等分する",
+      "requires_steps": [
+        "mangoes_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "1人35個",
+      "baseline_ja": "1人35個"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2482,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

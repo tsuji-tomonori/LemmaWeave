@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint39_notes",
+  "title_ja": "掲示板の付箋総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00866",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "赤と青の付箋を漏れなく合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.notes_solution",
+  "graph": "work/gsm8k-sprint39-notes-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "notes_red",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.notes_red",
+      "title_ja": "赤い付箋",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "5行に各6枚。",
+      "conclusion_ja": "30枚。",
+      "baseline_ja": "5×6=30。"
+    },
+    {
+      "id": "notes_blue_under",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.notes_blue_under",
+      "title_ja": "赤の下の青",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤30枚の各々の下に青2枚。",
+      "conclusion_ja": "60枚。",
+      "baseline_ja": "2×30=60。"
+    },
+    {
+      "id": "notes_blue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.notes_blue",
+      "title_ja": "青い付箋全体",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "下の60枚と下部に散在する10枚。",
+      "conclusion_ja": "70枚。",
+      "baseline_ja": "60+10=70。"
+    },
+    {
+      "id": "notes_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.notes_total",
+      "title_ja": "両箱の総数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤30枚と青70枚を全て入れる。",
+      "conclusion_ja": "100枚。",
+      "baseline_ja": "30+70=100。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 867,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

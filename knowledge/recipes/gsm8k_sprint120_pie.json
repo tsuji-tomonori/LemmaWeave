@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint120_pie",
+  "title_ja": "Sophiaが食べたのは240グラム。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02089",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A11.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A11.pie_solution",
+  "graph": "work/gsm8k-sprint120-pie-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pie_remaining_fraction",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.pie_remaining_fraction",
+      "title_ja": "冷蔵庫に残る割合は全体の5/6。",
+      "claim_ja": "冷蔵庫に残る割合は全体の5/6。",
+      "method_ja": "1−1/6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "冷蔵庫に残る割合は全体の5/6。",
+      "baseline_ja": "冷蔵庫に残る割合は全体の5/6。"
+    },
+    {
+      "id": "pie_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.pie_total",
+      "title_ja": "元のパイは1440グラム。",
+      "claim_ja": "元のパイは1440グラム。",
+      "method_ja": "全体の5/6が1200グラムなので6×1200=5×全体。",
+      "requires_steps": [
+        "pie_remaining_fraction"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "元のパイは1440グラム。",
+      "baseline_ja": "元のパイは1440グラム。"
+    },
+    {
+      "id": "pie_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A11.pie_solution",
+      "title_ja": "Sophiaが食べたのは240グラム。",
+      "claim_ja": "Sophiaが食べたのは240グラム。",
+      "method_ja": "1440−1200。",
+      "requires_steps": [
+        "pie_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・重量・時間・長さは非負整数として扱う。",
+      "conclusion_ja": "Sophiaが食べたのは240グラム。",
+      "baseline_ja": "Sophiaが食べたのは240グラム。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2090,
+    "checked_model_hash": "4fbbba05067cfd5efc01e3ad45a6bbdfe8355bb6f13cb453952d1e22052f2cc5",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、解釈条件や参照解の誤記を黙って補わず明示した。"
+    ]
+  }
+}

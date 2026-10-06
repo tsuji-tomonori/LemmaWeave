@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint317_chocolate_pieces_average",
+  "title_ja": "クッキー1枚あたりのチョコ片",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03707",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A13P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Colleen is making a batch of 48 cookies. She's going to add 108 chocolate chips and one-third as many M&Ms to the whole batch. What are the average number of chocolate pieces in each cookie?",
+  "answer_ja": "M&Mは108の3分の1で36個。チョコ片は合計108+36=144個なので、48枚で割ると1枚平均3個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A13P2.chocolate_pieces_average",
+  "graph": "work/gsm8k-sprint317-chocolate-pieces-average-graph.json",
+  "model_notes_ja": [
+    "M&Mもチョコレート片として合計し、48枚全体へ均等平均を取る。"
+  ],
+  "steps": [
+    {
+      "id": "chocolate_pieces_average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A13P2.chocolate_pieces_average",
+      "title_ja": "クッキー1枚あたりのチョコ片",
+      "claim_ja": "M&Mは108の3分の1で36個。チョコ片は合計108+36=144個なので、48枚で割ると1枚平均3個。",
+      "method_ja": "3分の1を求め、総数をクッキー枚数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "クッキーは48枚で、総数144は48で割り切れる。",
+      "baseline_ja": "四則演算、比・平均・百分率のうち問題で明示したもの。",
+      "conclusion_ja": "平均は1枚3個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3708,
+    "checked_model_hash": "77504bbec0dd946011b7316c93cf7c1dfe2decba1a53f80e1b917472068ca961",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

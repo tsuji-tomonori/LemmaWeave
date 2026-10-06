@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint421_pool_dog_count",
+  "title_ja": "プールにいる犬の数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04176",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A10P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Daisy and Rose were enjoying their backyard pool with their dogs.  If there are 24 legs/paws in the pool, how many dogs do Daisy and Rose have?",
+  "answer_ja": "DaisyとRoseの脚は2×2=4本。24本から4本を引くと犬の脚は20本で、犬1匹4本だから20÷4=5匹。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.pool_dog_count",
+  "graph": "work/gsm8k-sprint421-pool-dog-count-graph.json",
+  "model_notes_ja": [
+    "legs/pawsの24本は人2人と犬の合計。"
+  ],
+  "steps": [
+    {
+      "id": "pool_dog_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A10P3.pool_dog_count",
+      "title_ja": "プールにいる犬の数",
+      "claim_ja": "DaisyとRoseの脚は2×2=4本。24本から4本を引くと犬の脚は20本で、犬1匹4本だから20÷4=5匹。",
+      "method_ja": "人の脚を総数から除き、残った脚数を犬1匹の脚数で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "DaisyとRoseは各2本、各犬は4本の脚・足をすべてプール内に入れている。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "DaisyとRoseの脚は2×2=4本。24本から4本を引くと犬の脚は20本で、犬1匹4本だから20÷4=5匹。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4177,
+    "checked_model_hash": "5b0988cb3f6315379122f53bd4556fef01851ff68e21620d2e91c1da36f28540",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

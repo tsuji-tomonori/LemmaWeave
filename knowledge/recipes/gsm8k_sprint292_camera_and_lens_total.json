@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint292_camera_and_lens_total",
+  "title_ja": "新型カメラとレンズの支払総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03582",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A03P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "旧型4000ドルより30%高い新型カメラと、400ドルから200ドル引きのレンズの合計額。",
+  "answer_ja": "5400ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.camera_and_lens_total",
+  "graph": "work/gsm8k-sprint292-camera-and-lens-total-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "camera_increase",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.camera_increase",
+      "title_ja": "新型の値上がり分は1200ドルである。",
+      "claim_ja": "新型の値上がり分は1200ドルである。",
+      "method_ja": "4000ドルの30%を、10×増加額=3×4000という整数等式で求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "新型の値上がり分は1200ドルである。"
+    },
+    {
+      "id": "new_camera_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.new_camera_price",
+      "title_ja": "新型カメラは5200ドルである。",
+      "claim_ja": "新型カメラは5200ドルである。",
+      "method_ja": "旧価格4000ドルに値上がり分1200ドルを加える。",
+      "requires_steps": [
+        "camera_increase"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "新型カメラは5200ドルである。"
+    },
+    {
+      "id": "discounted_lens_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.discounted_lens_price",
+      "title_ja": "レンズの支払額は200ドルである。",
+      "claim_ja": "レンズの支払額は200ドルである。",
+      "method_ja": "定価400ドルから200ドルを引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "レンズの支払額は200ドルである。"
+    },
+    {
+      "id": "camera_and_lens_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A03P1.camera_and_lens_total",
+      "title_ja": "支払総額は5400ドルである。",
+      "claim_ja": "支払総額は5400ドルである。",
+      "method_ja": "新型カメラ5200ドルとレンズ200ドルを加える。",
+      "requires_steps": [
+        "new_camera_price",
+        "discounted_lens_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。",
+      "conclusion_ja": "支払総額は5400ドルである。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3583,
+    "checked_model_hash": "de05f56d2abca41a07786da3e75d3b4a33dc8d9c863d26a5abfa63e94ebbb856",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

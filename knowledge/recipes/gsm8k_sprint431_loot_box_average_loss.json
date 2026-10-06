@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint431_loot_box_average_loss",
+  "title_ja": "ルートボックスの平均損失",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04186",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "John buys game loot boxes for $5 each.  The average value of items inside is $3.5.   He spends $40 on loot boxes.  What is the average amount he lost?",
+  "answer_ja": "40÷5=8箱。1箱当たりの平均損失は5-3.5=1.5ドルなので、平均総損失は8×1.5=12ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.loot_box_average_loss",
+  "graph": "work/gsm8k-sprint431-loot-box-average-loss-graph.json",
+  "model_notes_ja": [
+    "平均値の線形性を、箱ごとの同じ平均損失の合計として用いる。"
+  ],
+  "steps": [
+    {
+      "id": "boxes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.loot_boxes_bought",
+      "title_ja": "購入箱数",
+      "claim_ja": "40÷5=8箱。",
+      "method_ja": "総支出を1箱の価格で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "価格5ドル、支出40ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "40÷5=8箱。"
+    },
+    {
+      "id": "each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.loot_box_loss_each",
+      "title_ja": "1箱当たり平均損失",
+      "claim_ja": "5-3.5=1.5ドル。",
+      "method_ja": "価格から平均価値を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "平均価値3.5ドル。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5-3.5=1.5ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.loot_box_average_loss",
+      "title_ja": "平均総損失",
+      "claim_ja": "8×1.5=12ドル。",
+      "method_ja": "箱数に1箱当たり平均損失を掛ける。",
+      "requires_steps": [
+        "boxes",
+        "each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各箱の平均価値を合計する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8×1.5=12ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4187,
+    "checked_model_hash": "36520a5493dfbeeee6398f2298aaa7f53f29221fd77d96b96c3e12b29d3acde8",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint479_hog_cat_expression",
+  "title_ja": "猫の60%より5少ない数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04234",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1004A15P2.lean",
+  "problem_ja": "豚は猫の3倍で豚が75頭。猫の頭数の60%より5少ない数はいくつか。",
+  "answer_ja": "猫は75÷3=25頭。25の60%は25×60÷100=15。5少ない数は10。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.hog_cat_expression",
+  "graph": "work/gsm8k-sprint479-hog-cat-expression-graph.json",
+  "model_notes_ja": [
+    "割合は百分率として正確に計算し、25×60は100で割り切れる。"
+  ],
+  "steps": [
+    {
+      "id": "cats",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.cats_from_hogs",
+      "title_ja": "猫の頭数",
+      "claim_ja": "75÷3=25頭。",
+      "method_ja": "豚の頭数を倍率3で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "豚は猫のちょうど3倍。",
+      "baseline_ja": "自然数の除法。",
+      "conclusion_ja": "25頭。"
+    },
+    {
+      "id": "percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.sixty_percent_of_cats",
+      "title_ja": "猫の60%",
+      "claim_ja": "25×60÷100=15。",
+      "method_ja": "百分率を100分の60として掛ける。",
+      "requires_steps": [
+        "cats"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "積1500は100で割り切れる。",
+      "baseline_ja": "百分率と自然数の除法。",
+      "conclusion_ja": "15。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A15P2.hog_cat_expression",
+      "title_ja": "5少ない数",
+      "claim_ja": "15−5=10。",
+      "method_ja": "求めた60%から5を引く。",
+      "requires_steps": [
+        "percent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "15は5以上。",
+      "baseline_ja": "自然数の減法。",
+      "conclusion_ja": "10。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4235,
+    "checked_model_hash": "55ae5d5498b686c7630e33d3267cfe9267ee8cfa64ca937376d60ba130c07c68",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
+

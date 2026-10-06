@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint244_shuffleboard",
+  "title_ja": "shuffleboard試合数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03218",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A01P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "各人の勝数を合計する。",
+  "answer_ja": "32試合",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.shuffleboard_total",
+  "graph": "work/gsm8k-sprint244-shuffleboard-graph.json",
+  "model_notes_ja": [
+    "勝数の合計を試合数とするため、各試合に勝者が1人で引分けなしという条件を明示した。"
+  ],
+  "steps": [
+    {
+      "id": "shuffleboard_dave",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.shuffleboard_dave",
+      "title_ja": "Daveは10勝。",
+      "claim_ja": "Daveは10勝。",
+      "method_ja": "7+3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Jerry7勝より3多い。",
+      "conclusion_ja": "10勝。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "shuffleboard_ken",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.shuffleboard_ken",
+      "title_ja": "Kenは15勝。",
+      "claim_ja": "Kenは15勝。",
+      "method_ja": "10+5。",
+      "requires_steps": [
+        "shuffleboard_dave"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Daveより5多い。",
+      "conclusion_ja": "15勝。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    },
+    {
+      "id": "shuffleboard_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A01P3.shuffleboard_total",
+      "title_ja": "合計32試合。",
+      "claim_ja": "合計32試合。",
+      "method_ja": "7+10+15。",
+      "requires_steps": [
+        "shuffleboard_dave",
+        "shuffleboard_ken"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各試合に勝者1人で引分けなし。",
+      "conclusion_ja": "32試合。",
+      "baseline_ja": "小中算数の四則計算・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3219,
+    "checked_model_hash": "1794420c233867d3314da4c5188326642b8315e7c512478f366a4140c0f0afe2",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。下書きの算術答えを原文から再計算した。"
+    ]
+  }
+}

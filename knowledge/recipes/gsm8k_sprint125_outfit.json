@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint125_outfit",
+  "title_ja": "シャツとパンツの合計額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02160",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "50ドルのパンツより60%高いシャツの価格と合計を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A17.outfit_solution",
+  "graph": "work/gsm8k-sprint125-outfit-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "outfit_increase",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.outfit_increase",
+      "title_ja": "シャツの上乗せは30ドル。",
+      "claim_ja": "シャツの上乗せは30ドル。",
+      "method_ja": "50ドルの60%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "シャツの上乗せは30ドル。",
+      "baseline_ja": "シャツの上乗せは30ドル。"
+    },
+    {
+      "id": "outfit_shirt",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.outfit_shirt",
+      "title_ja": "シャツは80ドル。",
+      "claim_ja": "シャツは80ドル。",
+      "method_ja": "50+30。",
+      "requires_steps": [
+        "outfit_increase"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "シャツは80ドル。",
+      "baseline_ja": "シャツは80ドル。"
+    },
+    {
+      "id": "outfit_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A17.outfit_solution",
+      "title_ja": "服一式は130ドル。",
+      "claim_ja": "服一式は130ドル。",
+      "method_ja": "80+50。",
+      "requires_steps": [
+        "outfit_shirt"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係、単位、および非負整数の量を用いる。",
+      "conclusion_ja": "服一式は130ドル。",
+      "baseline_ja": "服一式は130ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2161,
+    "checked_model_hash": "99437ce122bf656b2212e837a03b6fc76de125516d570f1b633de04fb7d20f0c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、参照解の計算も原題から独立に再確認した。"
+    ]
+  }
+}

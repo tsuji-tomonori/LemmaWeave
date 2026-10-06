@@ -1,0 +1,81 @@
+{
+  "id": "gsm8k_sprint95_fish",
+  "title_ja": "漁師とペリカンの漁獲差",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01718",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A04.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ペリカン13匹、カワセミは7匹多く、漁師は両鳥合計の3倍のとき漁師がペリカンより多い数を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A04.fish_solution",
+  "graph": "work/gsm8k-sprint95-fish-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fish_kingfisher",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.fish_kingfisher",
+      "title_ja": "カワセミ",
+      "claim_ja": "20匹。",
+      "method_ja": "13+7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "7 moreは加算。",
+      "conclusion_ja": "13+7=20。",
+      "baseline_ja": "13+7=20。"
+    },
+    {
+      "id": "fish_birds",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.fish_birds",
+      "title_ja": "両鳥合計",
+      "claim_ja": "33匹。",
+      "method_ja": "13+20。",
+      "requires_steps": [
+        "fish_kingfisher"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "ペリカンとカワセミを各1回数える。",
+      "conclusion_ja": "13+20=33。",
+      "baseline_ja": "13+20=33。"
+    },
+    {
+      "id": "fish_fisherman",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.fish_fisherman",
+      "title_ja": "漁師",
+      "claim_ja": "99匹。",
+      "method_ja": "33の3倍。",
+      "requires_steps": [
+        "fish_birds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "倍率対象は両鳥の合計。",
+      "conclusion_ja": "3×33=99。",
+      "baseline_ja": "3×33=99。"
+    },
+    {
+      "id": "fish_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A04.fish_solution",
+      "title_ja": "ペリカンとの差",
+      "claim_ja": "86匹。",
+      "method_ja": "99−13。",
+      "requires_steps": [
+        "fish_fisherman"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "how many moreは漁師からペリカンを引く。",
+      "conclusion_ja": "86+13=99。",
+      "baseline_ja": "86+13=99。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1719,
+    "checked_model_hash": "99fad25bca4fce130b7504e9088d3cc65846d1dd9c11dfd54cea6f9979bc2d9b",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}

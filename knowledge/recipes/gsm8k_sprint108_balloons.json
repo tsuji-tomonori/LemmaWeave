@@ -1,0 +1,83 @@
+{
+  "id": "gsm8k_sprint108_balloons",
+  "title_ja": "風船の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01911",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "追加後の各人の個数を求め、Tracyの半分が割れた後を合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A18.balloons_solution",
+  "graph": "work/gsm8k-sprint108-balloons-graph.json",
+  "model_notes_ja": [
+    "参照説明の『Brooke gets twelve more』という文言は誤記であり、原題の8個追加と計算式12+8を採用した。"
+  ],
+  "steps": [
+    {
+      "id": "balloons_brooke",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.balloons_brooke",
+      "title_ja": "Brookeは20個。",
+      "claim_ja": "Brookeは20個。",
+      "method_ja": "12+8。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "balloons_tracy_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.balloons_tracy_before",
+      "title_ja": "Tracyは割れる前に30個。",
+      "claim_ja": "Tracyは割れる前に30個。",
+      "method_ja": "6+24。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "balloons_tracy_after",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.balloons_tracy_after",
+      "title_ja": "Tracyは15個残る。",
+      "claim_ja": "Tracyは15個残る。",
+      "method_ja": "30÷2。",
+      "requires_steps": [
+        "balloons_tracy_before"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "balloons_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.balloons_solution",
+      "title_ja": "合計35個。",
+      "claim_ja": "合計35個。",
+      "method_ja": "20+15。",
+      "requires_steps": [
+        "balloons_brooke",
+        "balloons_tracy_after"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1912,
+    "checked_model_hash": "8387abb9439c81fb607c222f1f1736998bf0c1f8b65dd181b6386c00663bd8bc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

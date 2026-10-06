@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint446_game_fourth_quarter_points",
+  "title_ja": "第4クォーターの得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04201",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "At the end of the first quarter, the winning team had double the points of the losing team. At the end of the second quarter, the winning team had 10 more points than it started with. At the end of the third quarter, the winning team had 20 more points than the number it had in the second quarter. If the total points the winning team scored in the game was 80, and the losing team had 10 points in the first quarter, calculate the total number of points the team scored in the fourth quarter.",
+  "answer_ja": "第1クォーター終了時は10×2=20点。第2終了時は30点、第3終了時は50点なので、全80点のうち第4クォーターは80−50=30点。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.game_fourth_quarter_points",
+  "graph": "work/gsm8k-sprint446-game-fourth-quarter-points-graph.json",
+  "model_notes_ja": [
+    "各クォーターの記述を累積得点として順に適用する。"
+  ],
+  "steps": [
+    {
+      "id": "game_first_quarter_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.game_first_quarter_points",
+      "title_ja": "第1終了時",
+      "claim_ja": "10×2=20点。",
+      "method_ja": "敗者の10点を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "敗者は第1クォーターに10点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20点。"
+    },
+    {
+      "id": "game_second_quarter_cumulative",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.game_second_quarter_cumulative",
+      "title_ja": "第2終了時",
+      "claim_ja": "20+10=30点。",
+      "method_ja": "第1終了時の得点に10点を足す。",
+      "requires_steps": [
+        "game_first_quarter_points"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第1終了時20点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "30点。"
+    },
+    {
+      "id": "game_third_quarter_cumulative",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.game_third_quarter_cumulative",
+      "title_ja": "第3終了時",
+      "claim_ja": "30+20=50点。",
+      "method_ja": "第2終了時の得点に20点を足す。",
+      "requires_steps": [
+        "game_first_quarter_points",
+        "game_second_quarter_cumulative"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第2終了時30点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "50点。"
+    },
+    {
+      "id": "game_fourth_quarter_points_line",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.game_fourth_quarter_points_line",
+      "title_ja": "第4クォーター",
+      "claim_ja": "80−50=30点。",
+      "method_ja": "総得点から第3終了時までを引く。",
+      "requires_steps": [
+        "game_first_quarter_points",
+        "game_second_quarter_cumulative",
+        "game_third_quarter_cumulative"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総得点80点。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "30点。"
+    },
+    {
+      "id": "game_fourth_quarter_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P2.game_fourth_quarter_points",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "第1クォーター終了時は10×2=20点。第2終了時は30点、第3終了時は50点なので、全80点のうち第4クォーターは80−50=30点。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "game_first_quarter_points",
+        "game_second_quarter_cumulative",
+        "game_third_quarter_cumulative",
+        "game_fourth_quarter_points_line"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各クォーターの記述を累積得点として順に適用する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "第1クォーター終了時は10×2=20点。第2終了時は30点、第3終了時は50点なので、全80点のうち第4クォーターは80−50=30点。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4202,
+    "checked_model_hash": "f8b7921a39d86667d37bb3a00e1284e8581ce9ee1fa7c66ade04f4c6c9ae5e59",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "f8b7921a39d86667d37bb3a00e1284e8581ce9ee1fa7c66ade04f4c6c9ae5e59"
+}

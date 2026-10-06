@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint39_cakes",
+  "title_ja": "コーヒーケーキの所要時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00870",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "故障日に倍になった焼成時間を含めて合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.cakes_solution",
+  "graph": "work/gsm8k-sprint39-cakes-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "小数を避け、1単位=0.5時間として形式化する。"
+  ],
+  "steps": [
+    {
+      "id": "cakes_failed_bake",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.cakes_failed_bake",
+      "title_ja": "故障日の焼成",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "通常1.5時間を2倍する。",
+      "conclusion_ja": "3時間。",
+      "baseline_ja": "半時間単位で6=2×3。"
+    },
+    {
+      "id": "cakes_total_half",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.cakes_total_half",
+      "title_ja": "全工程の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "組立1時間、焼成3時間、装飾1時間。",
+      "conclusion_ja": "半時間単位で10。",
+      "baseline_ja": "10=2+6+2。"
+    },
+    {
+      "id": "cakes_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.cakes_hours",
+      "title_ja": "時間へ換算",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "半時間10単位は5時間。",
+      "conclusion_ja": "5時間。",
+      "baseline_ja": "10=5×2。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 871,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

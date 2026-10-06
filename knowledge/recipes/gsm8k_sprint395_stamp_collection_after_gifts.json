@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint395_stamp_collection_after_gifts",
+  "title_ja": "贈り物後の切手総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04147",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A07P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Tom, an avid stamp collector, has 3,000 stamps in his collection. He is very sad because he lost his job last Friday. His brother, Mike, and best friend, Harry, try to cheer him up with more stamps. Harry’s gift to Tom is 10 more stamps than twice Mike’s gift. If Mike has given Tom 17 stamps, how many stamps does Tom’s collection now have?",
+  "answer_ja": "Mikeは17枚。Harryはその2倍より10枚多いので17×2+10=44枚。贈り物は計61枚で、元の3,000枚と合わせて3,061枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.stamp_collection_after_gifts",
+  "graph": "work/gsm8k-sprint395-stamp-collection-after-gifts-graph.json",
+  "model_notes_ja": [
+    "『10 more than twice』を2×17+10と読む。"
+  ],
+  "steps": [
+    {
+      "id": "harry_double_mike",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.harry_double_mike",
+      "title_ja": "Mikeの2倍",
+      "claim_ja": "17×2=34枚。",
+      "method_ja": "2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Mikeは17枚。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "34枚。"
+    },
+    {
+      "id": "harry_gift",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.harry_gift",
+      "title_ja": "Harryの贈り物",
+      "claim_ja": "34+10=44枚。",
+      "method_ja": "2倍より10枚多くする。",
+      "requires_steps": [
+        "harry_double_mike"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "“10 more than twice”を適用。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "44枚。"
+    },
+    {
+      "id": "stamp_gifts_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.stamp_gifts_total",
+      "title_ja": "贈り物合計",
+      "claim_ja": "44+17=61枚。",
+      "method_ja": "2人の贈り物を足す。",
+      "requires_steps": [
+        "harry_double_mike",
+        "harry_gift"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "両方を受け取る。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "61枚。"
+    },
+    {
+      "id": "stamp_collection_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.stamp_collection_total",
+      "title_ja": "所蔵総数",
+      "claim_ja": "3000+61=3061枚。",
+      "method_ja": "元の所蔵へ足す。",
+      "requires_steps": [
+        "harry_double_mike",
+        "harry_gift",
+        "stamp_gifts_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "紛失はない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3061枚。"
+    },
+    {
+      "id": "stamp_collection_after_gifts",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A07P3.stamp_collection_after_gifts",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "Mikeは17枚。Harryはその2倍より10枚多いので17×2+10=44枚。贈り物は計61枚で、元の3,000枚と合わせて3,061枚。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "harry_double_mike",
+        "harry_gift",
+        "stamp_gifts_total",
+        "stamp_collection_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "紛失や譲渡はなく、2人の贈り物を全て所蔵に加える。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Mikeは17枚。Harryはその2倍より10枚多いので17×2+10=44枚。贈り物は計61枚で、元の3,000枚と合わせて3,061枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4148,
+    "checked_model_hash": "c4d2ff5ae03d4b9f2cb4eb47a264f8091e8cae093b0b5c8287aba0bfa7d34ffa",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "c4d2ff5ae03d4b9f2cb4eb47a264f8091e8cae093b0b5c8287aba0bfa7d34ffa"
+}

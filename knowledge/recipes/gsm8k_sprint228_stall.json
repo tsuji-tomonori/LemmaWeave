@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_sprint228_stall",
+  "title_ja": "5日間の売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03438",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A19P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "売上は10,14,18,22,26ドル。合計は10+14+18+22+26=90ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.stall_total",
+  "graph": "work/gsm8k-sprint228-stall-graph.json",
+  "model_notes_ja": [
+    "『after 5 days』を5日間の累計売上とした。"
+  ],
+  "steps": [
+    {
+      "id": "stall_day2",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.stall_day2",
+      "title_ja": "2日目",
+      "claim_ja": "2日目は14ドル。",
+      "method_ja": "前日10ドルに4ドル足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "2日目は14ドル。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "stall_day3",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.stall_day3",
+      "title_ja": "3日目",
+      "claim_ja": "3日目は18ドル。",
+      "method_ja": "14ドルに4ドル足す。",
+      "requires_steps": [
+        "stall_day2"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "3日目は18ドル。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "stall_day4",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.stall_day4",
+      "title_ja": "4日目",
+      "claim_ja": "4日目は22ドル。",
+      "method_ja": "18ドルに4ドル足す。",
+      "requires_steps": [
+        "stall_day3"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "4日目は22ドル。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "stall_day5",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.stall_day5",
+      "title_ja": "5日目",
+      "claim_ja": "5日目は26ドル。",
+      "method_ja": "22ドルに4ドル足す。",
+      "requires_steps": [
+        "stall_day4"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "5日目は26ドル。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "stall_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A19P2.stall_total",
+      "title_ja": "累計",
+      "claim_ja": "5日間で90ドル。",
+      "method_ja": "5日分を合計する。",
+      "requires_steps": [
+        "stall_day2",
+        "stall_day3",
+        "stall_day4",
+        "stall_day5"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "与えられた数量と単位をそのまま用いる。",
+      "conclusion_ja": "5日間で90ドル。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3439,
+    "checked_model_hash": "d5acf92b307ec3d7ed43b4d378592d8647ade414daa809efcf43159ea2a3869e",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

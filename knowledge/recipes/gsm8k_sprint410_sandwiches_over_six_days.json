@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint410_sandwiches_over_six_days",
+  "title_ja": "6日間に食べるサンドイッチ数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04165",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A08P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Paul eats a lot when he studies. He loves sandwiches and eats them at the same rate every three days. He eats 2 sandwiches the first day, then doubles that number of sandwiches for the second day. On the third day, he doubles the number of sandwiches he ate on the second day. How many sandwiches would Paul eat if he studied 6 days in a row?",
+  "answer_ja": "3日周期は1日目2個、2日目4個、3日目8個で計14個。『same rate every three days』によりこの周期を繰り返すので、6日間は2周期で14×2=28個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_over_six_days",
+  "graph": "work/gsm8k-sprint410-sandwiches-over-six-days-graph.json",
+  "model_notes_ja": [
+    "周期反復という明示句を、単純な連続倍増より優先する。"
+  ],
+  "steps": [
+    {
+      "id": "sandwiches_day_two",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_day_two",
+      "title_ja": "2日目",
+      "claim_ja": "2×2=4個。",
+      "method_ja": "1日目を2倍にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日目は2個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4個。"
+    },
+    {
+      "id": "sandwiches_day_three",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_day_three",
+      "title_ja": "3日目",
+      "claim_ja": "4×2=8個。",
+      "method_ja": "2日目を2倍にする。",
+      "requires_steps": [
+        "sandwiches_day_two"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2日目は4個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8個。"
+    },
+    {
+      "id": "sandwiches_three_day_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_three_day_total",
+      "title_ja": "3日周期の合計",
+      "claim_ja": "2+4+8=14個。",
+      "method_ja": "3日分を合計する。",
+      "requires_steps": [
+        "sandwiches_day_two",
+        "sandwiches_day_three"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3日周期は2,4,8個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "14個。"
+    },
+    {
+      "id": "sandwiches_six_day_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_six_day_total",
+      "title_ja": "6日間の合計",
+      "claim_ja": "14×2=28個。",
+      "method_ja": "6日は3日周期2回なので2倍する。",
+      "requires_steps": [
+        "sandwiches_day_two",
+        "sandwiches_day_three",
+        "sandwiches_three_day_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "same rate every three daysを周期反復と読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "28個。"
+    },
+    {
+      "id": "sandwiches_over_six_days",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A08P3.sandwiches_over_six_days",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "3日周期は1日目2個、2日目4個、3日目8個で計14個。『same rate every three days』によりこの周期を繰り返すので、6日間は2周期で14×2=28個。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "sandwiches_day_two",
+        "sandwiches_day_three",
+        "sandwiches_three_day_total",
+        "sandwiches_six_day_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『at the same rate every three days』は4日目に2個へ戻る3日周期を意味する。日ごとの倍増を6日間継続する解釈ではない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3日周期は1日目2個、2日目4個、3日目8個で計14個。『same rate every three days』によりこの周期を繰り返すので、6日間は2周期で14×2=28個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4166,
+    "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "5a342fdea5f880dac87ac44f62d4dda8b7260fd42bf79e1328f6fd8541f7543c"
+}

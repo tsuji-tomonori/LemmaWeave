@@ -1,0 +1,121 @@
+{
+  "id": "gsm8k_sprint109_pamphlets",
+  "title_ja": "2人が印刷したパンフレット総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01927",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mikeの休憩前後とLeoの時間・速度・印刷数を個別に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A19.pamphlets_solution",
+  "graph": "work/gsm8k-sprint109-pamphlets-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pamphlets_mike_before",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pamphlets_mike_before",
+      "title_ja": "Mikeは休憩前に5400部。",
+      "claim_ja": "Mikeは休憩前に5400部。",
+      "method_ja": "600×9。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pamphlets_mike_after_speed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pamphlets_mike_after_speed",
+      "title_ja": "休憩後の速度は毎時200部。",
+      "claim_ja": "休憩後の速度は毎時200部。",
+      "method_ja": "600÷3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pamphlets_mike_after",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pamphlets_mike_after",
+      "title_ja": "休憩後は400部。",
+      "claim_ja": "休憩後は400部。",
+      "method_ja": "200×2。",
+      "requires_steps": [
+        "pamphlets_mike_after_speed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pamphlets_leo_hours",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pamphlets_leo_hours",
+      "title_ja": "Leoは3時間作業。",
+      "claim_ja": "Leoは3時間作業。",
+      "method_ja": "9÷3。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pamphlets_leo_speed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pamphlets_leo_speed",
+      "title_ja": "Leoは毎時1200部。",
+      "claim_ja": "Leoは毎時1200部。",
+      "method_ja": "600×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pamphlets_leo",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pamphlets_leo",
+      "title_ja": "Leoは3600部。",
+      "claim_ja": "Leoは3600部。",
+      "method_ja": "1200×3。",
+      "requires_steps": [
+        "pamphlets_leo_hours",
+        "pamphlets_leo_speed"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "pamphlets_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A19.pamphlets_solution",
+      "title_ja": "合計9400部。",
+      "claim_ja": "合計9400部。",
+      "method_ja": "5400+400+3600。",
+      "requires_steps": [
+        "pamphlets_mike_before",
+        "pamphlets_mike_after",
+        "pamphlets_leo"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1928,
+    "checked_model_hash": "7b1156d1da81782c87621a65f4415595a854b3c6694315ac673926042c85630c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

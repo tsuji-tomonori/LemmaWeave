@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1064",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "381f7e013ac48094545e959790cc5c6a2c240c5819a5232c0ae98a6a7052e845",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A08P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04221",
+      "source_line_1based": 4222,
+      "source_record_sha256": "5a0c2da170caf6664453b39714b1d00fbd77d0f306c28b2a66a59ffc9ebe4cc9",
+      "raw_question_sha256": "e134e15aad853bed9814d219e3c8e366192a806f8cb00f80531bd48436ca7a7c",
+      "normalized_question_sha256": "e134e15aad853bed9814d219e3c8e366192a806f8cb00f80531bd48436ca7a7c",
+      "source_question": "John goes to the market with €100. He buys a roast for €17 and vegetables for €11. How much money does he have left?",
+      "recipe_id": "gsm8k_sprint466_market_money_left",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2つの購入額だけを100ユーロから引く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04222",
+      "source_line_1based": 4223,
+      "source_record_sha256": "418861803de060995f91062884119a2e757932efdc7a251fb29bb21602ed223f",
+      "raw_question_sha256": "51b5bf8b8bef2cec505db048dfa454fe713f1b07b1ab05e29401e3650d47f97d",
+      "normalized_question_sha256": "51b5bf8b8bef2cec505db048dfa454fe713f1b07b1ab05e29401e3650d47f97d",
+      "source_question": "Tania has five baskets containing a total of 58 fruits. There are 18 mangoes in one basket, 10 pears in another, 12 pawpaws in another and the last 2 contain the same number of kiwi and lemon respectively, how many lemons are there?",
+      "recipe_id": "gsm8k_sprint467_lemons_in_basket",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "最後の2かごの個数が等しいという原文条件を使い、18個を二等分する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04223",
+      "source_line_1based": 4224,
+      "source_record_sha256": "3a553ea9a9a48501efbc3a8670a4380bfd6fd66b32317630afe2cd7cf6156201",
+      "raw_question_sha256": "bdcfb459cc7992f69a6150b83adb1d89fdf33e0d10f8aa6aa7233934d69a14e3",
+      "normalized_question_sha256": "bdcfb459cc7992f69a6150b83adb1d89fdf33e0d10f8aa6aa7233934d69a14e3",
+      "source_question": "Marcia wants to buy some fruit. Apples cost $2, bananas cost $1, and oranges cost $3. If Marcia buys 12 apples, 4 bananas and 4 oranges, what is the average cost of each piece of fruit in dollars?",
+      "recipe_id": "gsm8k_sprint468_average_fruit_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原題のオレンジ4個・単価3ドルを使用する。参照解答途中式の「3 oranges × $4」は転記誤りだが、正しい積も12ドルで最終値は変わらない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04224",
+      "source_line_1based": 4225,
+      "source_record_sha256": "ad0996e6d22d4a57d2825a12c719d587047006f7b8a7ad83b33805eae0bc8302",
+      "raw_question_sha256": "af7261d88886c1fc078254f2bbc93e796ff25afdda7e94aa8849bd390d6cd43d",
+      "normalized_question_sha256": "af7261d88886c1fc078254f2bbc93e796ff25afdda7e94aa8849bd390d6cd43d",
+      "source_question": "Peter bought 4 new notebooks for school. 2 of them are green, one is black and the other one is pink. The total cost was $45. If the black notebook cost $15, and the pink one cost $10, how much did the green notebooks cost each?",
+      "recipe_id": "gsm8k_sprint469_green_notebook_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "緑の2冊は同額であるという問いの含意に従い、残額を2等分する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04225",
+      "source_line_1based": 4226,
+      "source_record_sha256": "49bb49901fc3c0bab5fc4315e05dac68a865766343a60fd6153dfa1409923f35",
+      "raw_question_sha256": "e4a8c6668449fe4601d089ab2edd709e7fa52e6af3e3698e9c3d76480239abf2",
+      "normalized_question_sha256": "e4a8c6668449fe4601d089ab2edd709e7fa52e6af3e3698e9c3d76480239abf2",
+      "source_question": "When Jason plays the video game, Duty for Ashes, his mission to slay the dragon hoard requires that he fire his weapon on average every 15 seconds.   And each time he fires his weapon, his power-fire setting allows him to shoot a flame for 5 seconds.  On average, how many seconds per minute does Jason shoot flames at the dragon hoard?",
+      "recipe_id": "gsm8k_sprint470_flame_seconds_per_minute",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "発射間隔15秒が1分内で4回を与え、各5秒の炎は次の発射までに終わるため重複しない。"
+      ],
+      "blockers": []
+    }
+  ]
+}

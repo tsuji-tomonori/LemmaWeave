@@ -1,0 +1,97 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1033",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "8770782010f0164311c1f63d0b6348e1ec488cdb29da8bb5bc062b3b898c98e7",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1003A02R3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04056",
+      "source_line_1based": 4057,
+      "source_record_sha256": "e302a86e1fcda819bc11aaf07c8280e8bd047754ef93f5bebe22198c512bef31",
+      "raw_question_sha256": "65e15b6720a7c25df73b7163717f676cdd6aea1e0acb732d7dfafa5e1c533817",
+      "normalized_question_sha256": "65e15b6720a7c25df73b7163717f676cdd6aea1e0acb732d7dfafa5e1c533817",
+      "source_question": "Terry's daily income is $24, while Jordan's daily income is $30. Working 7 days a week, how much is the difference between their weekly incomes?",
+      "recipe_id": "gsm8k_sprint387_weekly_income_difference_dollars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "2人とも週7日働く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04057",
+      "source_line_1based": 4058,
+      "source_record_sha256": "95736561a7c33c14cd3e1cd04c345f87a19cf169f337ecc1e878966bb9238e1e",
+      "raw_question_sha256": "410a4ab1e964b7fcc2149569ca93e134a19098d94fb746a6f201e21184b79f46",
+      "normalized_question_sha256": "410a4ab1e964b7fcc2149569ca93e134a19098d94fb746a6f201e21184b79f46",
+      "source_question": "Violet has 3 more than twice as many nails as Tickletoe. If Violet has 27 nails, how many nails do they have together?",
+      "recipe_id": "gsm8k_sprint387_combined_nail_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "『3 more than twice』を Violet = 2×Tickletoe + 3 と読む。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04058",
+      "source_line_1based": 4059,
+      "source_record_sha256": "231d04f1bab31df86caadef67edce8878dcffa30152c98f8e6ddca9153de5815",
+      "raw_question_sha256": "6f072189ac76739ac90f2633e1dd6464df479d1f2ba4ae49b6fdfe26f2982064",
+      "normalized_question_sha256": "6f072189ac76739ac90f2633e1dd6464df479d1f2ba4ae49b6fdfe26f2982064",
+      "source_question": "Tom's brother is 4 times as old as Tom's dog. If in 6 years, Tom's brother will be 30 years, how old is Tom's dog going to be in six years?",
+      "recipe_id": "gsm8k_sprint387_dog_age_in_six_years",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "4倍という関係は現在について述べられており、6年後の年齢比ではない。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04059",
+      "source_line_1based": 4060,
+      "source_record_sha256": "ca89c008be0b44d277d669245af61aa1275e335fd12aec3544001a3f5058831e",
+      "raw_question_sha256": "54f38b9df0880d1d2c1bb8ea8de324b5afe06c40c4625c0dbcd3f9ad84192fd9",
+      "normalized_question_sha256": "54f38b9df0880d1d2c1bb8ea8de324b5afe06c40c4625c0dbcd3f9ad84192fd9",
+      "source_question": "Mike began to train to play basketball every day for a tournament. One day he plays a maximum of 2 hours. After a week of training, he increased the maximum time to 3 hours. How many hours did Mike train during the first two weeks?",
+      "recipe_id": "gsm8k_sprint387_basketball_training_maximum_conditional_and_nonunique",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "原文は各日の最大時間しか与えず、実時間が最大値に等しいとは述べない。週の練習時間を正の有理数として上限と反例を形式化する。"
+      ],
+      "blockers": [
+        "maximum_not_actual_duration"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04060",
+      "source_line_1based": 4061,
+      "source_record_sha256": "b0f426ba325d2f9c7432395656816faf723cd60b1ad185f36f02c837df84306a",
+      "raw_question_sha256": "be31e6c096078283ede311340ff4ba1733b2a96222cffbe80f1165ee6e5a4453",
+      "normalized_question_sha256": "be31e6c096078283ede311340ff4ba1733b2a96222cffbe80f1165ee6e5a4453",
+      "source_question": "There is a square playground that has a side length of 12 meters. There is a maintenance building on the playground that measures 8 meters by 5 meters. How many square meters of the playground is not covered by the maintenance building?",
+      "recipe_id": "gsm8k_sprint387_uncovered_playground_area_square_metres",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "maintenance building は遊び場内にあり、8m×5mの長方形部分を覆う。"
+      ],
+      "blockers": []
+    }
+  ]
+}

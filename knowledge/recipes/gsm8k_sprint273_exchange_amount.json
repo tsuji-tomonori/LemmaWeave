@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint273_exchange_amount",
+  "title_ja": "特別紙幣の交換額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03467",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A15P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "15歳から25歳直前まで毎年1枚ずつ受け取った特別な1ドル札の20%を使い、残りを1枚1.5ドルで交換する受取額を求める。",
+  "answer_ja": "12ドル",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.exchange_amount",
+  "graph": "work/gsm8k-sprint273-exchange-amount-graph.json",
+  "model_notes_ja": [
+    "15歳から25歳までの年齢差10年に対応する10枚として、参照解答と同じ読みを明示した。",
+    "1.5ドルは0.5ドル単位3個として自然数で表現した。"
+  ],
+  "steps": [
+    {
+      "id": "special_bills",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.special_bills",
+      "title_ja": "特別紙幣は10枚。",
+      "claim_ja": "特別紙幣は10枚。",
+      "method_ja": "25歳と15歳の差を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15歳から25歳直前まで年1枚という読み。",
+      "conclusion_ja": "10枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "bills_spent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.bills_spent",
+      "title_ja": "使った紙幣は2枚。",
+      "claim_ja": "使った紙幣は2枚。",
+      "method_ja": "10枚の20%=5分の1を求める。",
+      "requires_steps": [
+        "special_bills"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20%を正確に適用できる枚数。",
+      "conclusion_ja": "2枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "special_bills_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.special_bills_left",
+      "title_ja": "残る紙幣は8枚。",
+      "claim_ja": "残る紙幣は8枚。",
+      "method_ja": "10枚から2枚を引く。",
+      "requires_steps": [
+        "special_bills",
+        "bills_spent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "使用した2枚は交換できない。",
+      "conclusion_ja": "8枚。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "exchange_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A15P2.exchange_amount",
+      "title_ja": "交換受取額は12ドル。",
+      "claim_ja": "交換受取額は12ドル。",
+      "method_ja": "8枚×1.5ドルを計算する。",
+      "requires_steps": [
+        "special_bills_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "1枚あたり1.5ドル。",
+      "conclusion_ja": "12ドル。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3468,
+    "checked_model_hash": "ef15f25ba0f0bc2e4892a0b2810a992e78d5302ec3ede731968675ab6c0b7b7a",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

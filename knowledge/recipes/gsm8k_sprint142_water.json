@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint142_water",
+  "title_ja": "減った給水回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02417",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "64オンスを以前は8オンスずつ、現在は16オンスずつ飲む。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A16.water_solution",
+  "graph": "work/gsm8k-sprint142-water-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "water_old",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.water_old",
+      "title_ja": "以前は8回",
+      "claim_ja": "以前は8回",
+      "method_ja": "64を8で等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "以前は8回",
+      "baseline_ja": "以前は8回"
+    },
+    {
+      "id": "water_new",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.water_new",
+      "title_ja": "現在は4回",
+      "claim_ja": "現在は4回",
+      "method_ja": "64を16で等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "現在は4回",
+      "baseline_ja": "現在は4回"
+    },
+    {
+      "id": "water_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A16.water_solution",
+      "title_ja": "4回減った",
+      "claim_ja": "4回減った",
+      "method_ja": "8から4を引く",
+      "requires_steps": [
+        "water_old",
+        "water_new"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "4回減った",
+      "baseline_ja": "4回減った"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2418,
+    "checked_model_hash": "a39505dd8cd018aa733233988771193d27e77f1462963fba2b36689e6176a5f8",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

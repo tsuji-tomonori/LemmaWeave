@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint537_fish_remaining",
+  "title_ja": "転覆後に残った魚",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04292",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P2.lean",
+  "problem_ja": "Jordanが4匹、Perryがその2倍を釣り、合計の1/4を失った。何匹残るか。",
+  "answer_ja": "Perryは8匹、合計12匹。1/4の3匹を失うので9匹残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.fish_remaining",
+  "graph": "work/gsm8k-sprint537-fish-remaining-graph.json",
+  "model_notes_ja": [
+    "失う割合1/4は二人の合計漁獲量に掛ける。"
+  ],
+  "steps": [
+    {
+      "id": "perry_fish",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.perry_fish",
+      "title_ja": "Perryの魚",
+      "claim_ja": "4×2=8匹。",
+      "method_ja": "Jordanの2倍を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4×2=8匹。"
+    },
+    {
+      "id": "total_fish_caught",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.total_fish_caught",
+      "title_ja": "合計漁獲",
+      "claim_ja": "4+8=12匹。",
+      "method_ja": "二人の魚を足す。",
+      "requires_steps": [
+        "perry_fish"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4+8=12匹。"
+    },
+    {
+      "id": "fish_lost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.fish_lost",
+      "title_ja": "失った魚",
+      "claim_ja": "12÷4=3匹。",
+      "method_ja": "合計の4分の1を求める。",
+      "requires_steps": [
+        "total_fish_caught"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12÷4=3匹。"
+    },
+    {
+      "id": "fish_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.fish_left",
+      "title_ja": "残った魚",
+      "claim_ja": "12−3=9匹。",
+      "method_ja": "合計から失った魚を引く。",
+      "requires_steps": [
+        "total_fish_caught",
+        "fish_lost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12−3=9匹。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.fish_remaining",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Perryは8匹、合計12匹。1/4の3匹を失うので9匹残る。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "perry_fish",
+        "total_fish_caught",
+        "fish_lost",
+        "fish_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Perryは8匹、合計12匹。1/4の3匹を失うので9匹残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4293,
+    "checked_model_hash": "4ef0930a045de652bae45c32b78940a10f6b0e94a7d0764200116d071ac73e28",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint115_arcade",
+  "title_ja": "ゲーム代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02011",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A05.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題の量・単位・割合・順序を保って数量関係を式にし、求める量を導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A05.arcade_solution",
+  "graph": "work/gsm8k-sprint115-arcade-graph.json",
+  "model_notes_ja": [
+    "参照説明の『160』は計算480÷30=16および最終答16と矛盾する誤記。原題の料金から16ドルを採用する。"
+  ],
+  "steps": [
+    {
+      "id": "arcade_games",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A05.arcade_games",
+      "title_ja": "友人全員で240ゲーム。",
+      "claim_ja": "友人全員で240ゲーム。",
+      "method_ja": "4×60。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "友人全員で240ゲーム。",
+      "baseline_ja": "友人全員で240ゲーム。"
+    },
+    {
+      "id": "arcade_tokens",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A05.arcade_tokens",
+      "title_ja": "必要なトークンは480枚。",
+      "claim_ja": "必要なトークンは480枚。",
+      "method_ja": "240×2。",
+      "requires_steps": [
+        "arcade_games"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "必要なトークンは480枚。",
+      "baseline_ja": "必要なトークンは480枚。"
+    },
+    {
+      "id": "arcade_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A05.arcade_solution",
+      "title_ja": "費用は16ドル。",
+      "claim_ja": "費用は16ドル。",
+      "method_ja": "30枚で1ドルなので480÷30。",
+      "requires_steps": [
+        "arcade_tokens"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係と非負整数の量を用いる。",
+      "conclusion_ja": "費用は16ドル。",
+      "baseline_ja": "費用は16ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2012,
+    "checked_model_hash": "af1d3cd89ac762ed5939af0e5fdfa5019b21ca0af7211d2d8c73a0db3296595c",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合し、条件不足と参照説明の誤記を明示した。"
+    ]
+  }
+}

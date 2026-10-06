@@ -1,0 +1,45 @@
+{
+  "id": "gsm8k_sprint374_tile_area_literal_and_reference_mismatch",
+  "title_ja": "台所床に必要なタイル枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03995",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A17P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Kimiko is retiling her kitchen floor. Each tile is 6 square inches. If her kitchen is 48 inches by 72 inches, how many tiles does Kimiko need to buy?",
+  "answer_ja": "床面積は48×72=3456平方インチ。原題は各タイルの面積を6平方インチと明示するので、必要数は3456÷6=576枚。参照解答の96枚はタイルを一辺6インチの正方形と読み替えた48÷6×72÷6の値で、原題の条件とは一致しない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A17P2.tile_area_literal_and_reference_mismatch",
+  "graph": "work/gsm8k-sprint374-tile-area-literal-and-reference-mismatch-graph.json",
+  "model_notes_ja": [
+    "原題の『Each tile is 6 square inches』は面積6平方インチを意味する。",
+    "参照解答96は一辺6インチという未記載条件を追加しており、正答として採用しない。"
+  ],
+  "steps": [
+    {
+      "id": "tile_area_literal_and_reference_mismatch",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A17P2.tile_area_literal_and_reference_mismatch",
+      "title_ja": "台所床に必要なタイル枚数",
+      "claim_ja": "床面積は48×72=3456平方インチ。原題は各タイルの面積を6平方インチと明示するので、必要数は3456÷6=576枚。参照解答の96枚はタイルを一辺6インチの正方形と読み替えた48÷6×72÷6の値で、原題の条件とは一致しない。",
+      "method_ja": "面積の単位を保ち、床面積を1枚の面積で割る。別条件による参照値も計算し、不一致を示す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "タイル1枚の面積は原文どおり6平方インチで、切断・目地・損失はない。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "床面積は48×72=3456平方インチ。原題は各タイルの面積を6平方インチと明示するので、必要数は3456÷6=576枚。参照解答の96枚はタイルを一辺6インチの正方形と読み替えた48÷6×72÷6の値で、原題の条件とは一致しない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3996,
+    "checked_model_hash": "2a46dd8c2c1e92af4abf780d39ca0a035d95e46079b7329b236402f035d998f2",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

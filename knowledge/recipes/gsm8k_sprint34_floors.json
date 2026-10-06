@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint34_floors",
+  "title_ja": "Chrysler Buildingの階数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00792",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "差11階、合計35階の連立条件から23階を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A02.floors_solution",
+  "graph": "work/gsm8k-sprint34-floors-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "floors_leeward",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.floors_leeward",
+      "title_ja": "Leeward Center",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二棟の差と合計を同時に満たす。",
+      "conclusion_ja": "12階。",
+      "baseline_ja": "L+(L+11)=35からL=12。"
+    },
+    {
+      "id": "floors_chrysler",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A02.floors_chrysler",
+      "title_ja": "Chrysler Building",
+      "requires_steps": [
+        "floors_leeward"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "Leewardより11階多い。",
+      "conclusion_ja": "23階。",
+      "baseline_ja": "12+11=23。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 793,
+    "checked_model_hash": "c2fd3040a531d2528f31cbe0d72033c22862050649e2e75a494421d5b1c8a4f4",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

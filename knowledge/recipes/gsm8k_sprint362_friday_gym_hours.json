@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint362_friday_gym_hours",
+  "title_ja": "金曜の運動時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03934",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Janet goes to the gym for 5 hours a week.  She goes Monday, Tuesday, Wednesday, and Friday.  She spends an hour and a half each day on Monday and Wednesday.  If she spends the same amount of time at the gym on Tuesday and Friday how many hours is she at the gym on Friday?",
+  "answer_ja": "週5時間は10半時間。月曜と水曜は各3半時間で計6半時間。残り4半時間を火曜と金曜で等分するので、金曜は2半時間=1時間。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A11P2.friday_gym_hours",
+  "graph": "work/gsm8k-sprint362-friday-gym-hours-graph.json",
+  "model_notes_ja": [
+    "火曜と金曜の時間は等しく、4日以外には行かない。"
+  ],
+  "steps": [
+    {
+      "id": "friday_gym_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A11P2.friday_gym_hours",
+      "title_ja": "金曜の運動時間",
+      "claim_ja": "週5時間は10半時間。月曜と水曜は各3半時間で計6半時間。残り4半時間を火曜と金曜で等分するので、金曜は2半時間=1時間。",
+      "method_ja": "半時間単位で残りを求め、2日で等分する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残り4半時間は2で割り切れる。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "1時間。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3935,
+    "checked_model_hash": "bf386837913d8e6ebf18d221a2522f93842f6cfdf1a6821ffac27018a183f8d6",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

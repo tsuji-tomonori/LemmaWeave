@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint146_points",
+  "title_ja": "3人の合計得点",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02478",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Ericは6点、MarkはEricより50%多く、SamantaはMarkより8点多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.points_solution",
+  "graph": "work/gsm8k-sprint146-points-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "points_eric",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.points_eric",
+      "title_ja": "Ericは6点",
+      "claim_ja": "Ericは6点",
+      "method_ja": "原題の値を固定する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Ericは6点",
+      "baseline_ja": "Ericは6点"
+    },
+    {
+      "id": "points_mark",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.points_mark",
+      "title_ja": "Markは9点",
+      "claim_ja": "Markは9点",
+      "method_ja": "6の150%を求める",
+      "requires_steps": [
+        "points_eric"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Markは9点",
+      "baseline_ja": "Markは9点"
+    },
+    {
+      "id": "points_samanta",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.points_samanta",
+      "title_ja": "Samantaは17点",
+      "claim_ja": "Samantaは17点",
+      "method_ja": "9に8を足す",
+      "requires_steps": [
+        "points_mark"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "Samantaは17点",
+      "baseline_ja": "Samantaは17点"
+    },
+    {
+      "id": "points_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.points_solution",
+      "title_ja": "合計は32点",
+      "claim_ja": "合計は32点",
+      "method_ja": "6、9、17を足す",
+      "requires_steps": [
+        "points_eric",
+        "points_mark",
+        "points_samanta"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計は32点",
+      "baseline_ja": "合計は32点"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2479,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

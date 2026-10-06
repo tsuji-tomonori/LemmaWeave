@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint44_pokemon",
+  "title_ja": "目標までに必要なポケモンカード",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00940",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "Michael100枚、Markは10枚少なくLloydの3倍という条件から、3人合計300枚までの不足を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.pokemon_solution",
+  "graph": "work/gsm8k-sprint44-pokemon-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "pokemon_mark",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.pokemon_mark",
+      "title_ja": "Markの枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Michael100枚より10枚少ない。",
+      "conclusion_ja": "90枚。",
+      "baseline_ja": "100=90+10。"
+    },
+    {
+      "id": "pokemon_lloyd",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.pokemon_lloyd",
+      "title_ja": "Lloydの枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "MarkはLloydの3倍。",
+      "conclusion_ja": "30枚。",
+      "baseline_ja": "90=3×30。"
+    },
+    {
+      "id": "pokemon_current",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.pokemon_current",
+      "title_ja": "現在の合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3人のカードを合計する。",
+      "conclusion_ja": "220枚。",
+      "baseline_ja": "100+90+30=220。"
+    },
+    {
+      "id": "pokemon_needed",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.pokemon_needed",
+      "title_ja": "不足枚数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "目標300枚と現在220枚を比較する。",
+      "conclusion_ja": "あと80枚。",
+      "baseline_ja": "300=220+80。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 941,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint250_pool",
+  "title_ja": "プール外の人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03295",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A06P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "総人数と脚から得た入水人数との差を取る。",
+  "answer_ja": "6人",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A06P3.pool_people_not_in",
+  "graph": "work/gsm8k-sprint250-pool-graph.json",
+  "model_notes_ja": [
+    "16本の脚はプール内の人に属し、各人2本を数えるという読解を明示。"
+  ],
+  "steps": [
+    {
+      "id": "pool_total_people",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P3.pool_total_people",
+      "title_ja": "総人数は14人。",
+      "claim_ja": "総人数は14人。",
+      "method_ja": "(2+6)+(2+4)。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二家族全員を合計。",
+      "conclusion_ja": "14人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pool_people_in",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P3.pool_people_in",
+      "title_ja": "プール内は8人。",
+      "claim_ja": "プール内は8人。",
+      "method_ja": "16÷2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "数えた脚は各人2本で、プール内の人だけに属する。",
+      "conclusion_ja": "8人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "pool_people_not_in",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A06P3.pool_people_not_in",
+      "title_ja": "プール外は6人。",
+      "claim_ja": "プール外は6人。",
+      "method_ja": "14-8。",
+      "requires_steps": [
+        "pool_total_people",
+        "pool_people_in"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全員を内外に分ける。",
+      "conclusion_ja": "6人。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3296,
+    "checked_model_hash": "484a85f1cc4d45ce06123a28c0cedc0ae4e3bd823de0f0f40c80d38446fcc670",
+    "checks_ja": [
+      "原文の数量・単位・求める結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

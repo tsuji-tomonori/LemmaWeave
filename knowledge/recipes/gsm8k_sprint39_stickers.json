@@ -1,0 +1,59 @@
+{
+  "id": "gsm8k_sprint39_stickers",
+  "title_ja": "分配後のステッカー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00869",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "2種類をそれぞれ3人に等分した余りを合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.stickers_solution",
+  "graph": "work/gsm8k-sprint39-stickers-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "種類ごとに整数枚で等分し、余りを別々に保持する。"
+  ],
+  "steps": [
+    {
+      "id": "stickers_space",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.stickers_space",
+      "title_ja": "宇宙ステッカーの余り",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "100枚を3人に等分。",
+      "conclusion_ja": "各33枚、余り1枚。",
+      "baseline_ja": "100=3×33+1。"
+    },
+    {
+      "id": "stickers_cats",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.stickers_cats",
+      "title_ja": "猫ステッカーの余り",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "50枚を3人に等分。",
+      "conclusion_ja": "各16枚、余り2枚。",
+      "baseline_ja": "50=3×16+2。"
+    },
+    {
+      "id": "stickers_left",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.stickers_left",
+      "title_ja": "余りの合計",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "種類別の余り1枚と2枚を足す。",
+      "conclusion_ja": "3枚。",
+      "baseline_ja": "1+2=3。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 870,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

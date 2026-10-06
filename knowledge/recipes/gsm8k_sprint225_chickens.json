@@ -1,0 +1,58 @@
+{
+  "id": "gsm8k_sprint225_chickens",
+  "title_ja": "放し飼いの鶏",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03423",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0930A18P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "complete",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "runにはcoopの2倍で2×14=28羽いる。放し飼いはrunの2倍より4羽少ないので2×28-4=52羽。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0930A18P2.chickens_free_range",
+  "graph": "work/gsm8k-sprint225-chickens-graph.json",
+  "model_notes_ja": [
+    "“4 less than double”を freeRange + 4 = 2 × run とした。"
+  ],
+  "steps": [
+    {
+      "id": "chickens_run",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P2.chickens_run",
+      "title_ja": "runの鶏",
+      "claim_ja": "28羽。",
+      "method_ja": "14の2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "coopは14羽。",
+      "conclusion_ja": "28羽。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    },
+    {
+      "id": "chickens_free_range",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0930A18P2.chickens_free_range",
+      "title_ja": "放し飼い",
+      "claim_ja": "52羽。",
+      "method_ja": "runの2倍から4を引く。",
+      "requires_steps": [
+        "chickens_run"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "freeRange+4=2×28。",
+      "conclusion_ja": "52羽。",
+      "baseline_ja": "自然数・有理数の四則演算。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3424,
+    "checked_model_hash": "dd79c5dd0173e51c30a91f73b7c59bd6f5ff39fd1313031bdaf5eea16f135179",
+    "checks_ja": [
+      "固定原本の原題を再読した。",
+      "変数・型・単位・条件・求める全結論をLeanモデルと照合した。",
+      "各説明行と名前付きLean定理の対応を確認した。",
+      "独立レビューではない。"
+    ]
+  }
+}

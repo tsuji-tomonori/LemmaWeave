@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint148_nephews",
+  "title_ja": "甥の合計人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02503",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A03.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Aldenの10年前50人は現在の半分で、Vihaanは現在のAldenより60人多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A03.nephews_solution",
+  "graph": "work/gsm8k-sprint148-nephews-graph.json",
+  "model_notes_ja": [
+    "参照説明の『50年前』は原題の『10年前』に対する誤記だが、倍率計算には影響しない。"
+  ],
+  "steps": [
+    {
+      "id": "nephews_alden",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.nephews_alden",
+      "title_ja": "Aldenは現在100人",
+      "claim_ja": "Aldenは現在100人",
+      "method_ja": "50人が現在の半分なので2倍する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Aldenは現在100人",
+      "baseline_ja": "Aldenは現在100人"
+    },
+    {
+      "id": "nephews_vihaan",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.nephews_vihaan",
+      "title_ja": "Vihaanは160人",
+      "claim_ja": "Vihaanは160人",
+      "method_ja": "100に60を足す",
+      "requires_steps": [
+        "nephews_alden"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "Vihaanは160人",
+      "baseline_ja": "Vihaanは160人"
+    },
+    {
+      "id": "nephews_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A03.nephews_solution",
+      "title_ja": "二人の合計は260人",
+      "claim_ja": "二人の合計は260人",
+      "method_ja": "100と160を足す",
+      "requires_steps": [
+        "nephews_alden",
+        "nephews_vihaan"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位とmodel_notes_jaに明記した解釈・境界条件を保持する。",
+      "conclusion_ja": "二人の合計は260人",
+      "baseline_ja": "二人の合計は260人"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2504,
+    "checked_model_hash": "65ef5a21e3401807fe5fe8a9fdbdb6a830ada28c71585203af86b99509ce879a",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

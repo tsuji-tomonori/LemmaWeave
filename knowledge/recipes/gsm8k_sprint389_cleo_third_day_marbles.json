@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint389_cleo_third_day_marbles",
+  "title_ja": "3日目のCleoのビー玉数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04066",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A01P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Cleo and Ignacio placed 30 of their marbles in a jar on a Monday. They took 3/5 of the marbles from the jar the next day and divided them equally. On the third day, Cleo took 1/2 of the marbles remaining in the jars. How many marbles did Cleo have on the third day?",
+  "answer_ja": "2日目に取り出したのは30×3/5=18個で、2人で等分するとCleoは9個を得る。瓶には30−18=12個残る。3日目にCleoがその半分6個を取るので、Cleoの所持数は9+6=15個である。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A01P2.cleo_third_day_marbles",
+  "graph": "work/gsm8k-sprint389-cleo-third-day-marbles-graph.json",
+  "model_notes_ja": [
+    "3日目に取る『残りの半分』は瓶に残った12個の半分であり、2日目の9個へ加える。"
+  ],
+  "steps": [
+    {
+      "id": "cleo_third_day_marbles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A01P2.cleo_third_day_marbles",
+      "title_ja": "3日目のCleoのビー玉数",
+      "claim_ja": "2日目に取り出したのは30×3/5=18個で、2人で等分するとCleoは9個を得る。瓶には30−18=12個残る。3日目にCleoがその半分6個を取るので、Cleoの所持数は9+6=15個である。",
+      "method_ja": "3日目に取る『残りの半分』は瓶に残った12個の半分であり、2日目の9個へ加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3日目に取る『残りの半分』は瓶に残った12個の半分であり、2日目の9個へ加える。",
+      "baseline_ja": "整数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "2日目に取り出したのは30×3/5=18個で、2人で等分するとCleoは9個を得る。瓶には30−18=12個残る。3日目にCleoがその半分6個を取るので、Cleoの所持数は9+6=15個である。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4067,
+    "checked_model_hash": "68cad773f21e07d094f0728acbf5d8a347949c62d72b59735e037a941dc252ee",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

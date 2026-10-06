@@ -1,0 +1,56 @@
+{
+  "id": "gsm8k_sprint260_jumping",
+  "title_ja": "Brookeのジャンピングジャック数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03343",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A11P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Sidneyの4日分を合計し、その3倍を求める。",
+  "answer_ja": "438回",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.jumping_brooke",
+  "graph": "work/gsm8k-sprint260-jumping-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "jumping_sidney",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.jumping_sidney",
+      "title_ja": "Sidneyは合計146回。",
+      "claim_ja": "Sidneyは合計146回。",
+      "method_ja": "20+36+40+50。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4日分を合計する。",
+      "conclusion_ja": "146回。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "jumping_brooke",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A11P1.jumping_brooke",
+      "title_ja": "Brookeは438回。",
+      "claim_ja": "Brookeは438回。",
+      "method_ja": "146×3。",
+      "requires_steps": [
+        "jumping_sidney"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "BrookeはSidneyの3倍。",
+      "conclusion_ja": "438回。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3344,
+    "checked_model_hash": "7215defe3b292431c0361d8db0ef226c162674f9bc6bfa62bbbb2648ba23765f",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

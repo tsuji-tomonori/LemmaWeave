@@ -1,0 +1,42 @@
+{
+  "id": "gsm8k_sprint291_ana_dresses",
+  "title_ja": "Anaのドレス数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03578",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1002A02P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "LisaはAnaより18着多く、合計48着のときAnaの枚数。",
+  "answer_ja": "15着",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.ana_dresses",
+  "graph": "work/gsm8k-sprint291-ana-dresses-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ana_dresses",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1002A02P3.ana_dresses",
+      "title_ja": "Anaは15着。",
+      "claim_ja": "Anaは15着。",
+      "method_ja": "Lisa=Ana+18とLisa+Ana=48の連立一次関係を解く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "Anaは15着。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3579,
+    "checked_model_hash": "df34a661be2820c7d47328ef0bd47c1b48df754bf039c3cb24153620a5073318",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

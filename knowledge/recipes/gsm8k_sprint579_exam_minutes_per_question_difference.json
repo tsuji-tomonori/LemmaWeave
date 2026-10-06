@@ -1,0 +1,117 @@
+{
+  "id": "gsm8k_sprint579_exam_minutes_per_question_difference",
+  "title_ja": "数学1問当たりの追加時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04334",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P1.lean",
+  "problem_ja": "Joan is answering English and Math exams with 30 and 15 questions, respectively. The English exam is to be completed in 1 hour and the Math exam in 1.5 hours. If Joan wants to spend an equal amount of time on each question, how many more minutes does she have in answering each question on the Math exam than the English exam?",
+  "answer_ja": "英語は60分÷30問=1問2分。数学は90分÷15問=1問6分。数学では1問当たり4分多い。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.exam_minutes_per_question_difference",
+  "graph": "work/gsm8k-sprint579-exam-minutes-per-question-difference-graph.json",
+  "model_notes_ja": [
+    "1.5時間を90分として、各試験内で全問へ時間を均等配分する。"
+  ],
+  "steps": [
+    {
+      "id": "english_exam_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.english_exam_minutes",
+      "title_ja": "英語の試験時間",
+      "claim_ja": "1×60=60分。",
+      "method_ja": "時間を分へ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1×60=60分。"
+    },
+    {
+      "id": "english_minutes_per_question",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.english_minutes_per_question",
+      "title_ja": "英語1問",
+      "claim_ja": "60÷30=2分。",
+      "method_ja": "試験時間を問題数で割る。",
+      "requires_steps": [
+        "english_exam_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "60÷30=2分。"
+    },
+    {
+      "id": "math_exam_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.math_exam_minutes",
+      "title_ja": "数学の試験時間",
+      "claim_ja": "3×60÷2=90分。",
+      "method_ja": "1.5時間を3/2時間として分へ換算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3×60÷2=90分。"
+    },
+    {
+      "id": "math_minutes_per_question",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.math_minutes_per_question",
+      "title_ja": "数学1問",
+      "claim_ja": "90÷15=6分。",
+      "method_ja": "試験時間を問題数で割る。",
+      "requires_steps": [
+        "math_exam_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "90÷15=6分。"
+    },
+    {
+      "id": "extra_math_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.extra_math_minutes",
+      "title_ja": "差",
+      "claim_ja": "6−2=4分。",
+      "method_ja": "数学と英語の1問当たり時間差を取る。",
+      "requires_steps": [
+        "english_minutes_per_question",
+        "math_minutes_per_question"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6−2=4分。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.exam_minutes_per_question_difference",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "英語は60分÷30問=1問2分。数学は90分÷15問=1問6分。数学では1問当たり4分多い。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "english_exam_minutes",
+        "english_minutes_per_question",
+        "math_exam_minutes",
+        "math_minutes_per_question",
+        "extra_math_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "英語は60分÷30問=1問2分。数学は90分÷15問=1問6分。数学では1問当たり4分多い。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4335,
+    "checked_model_hash": "35b4a2ab13fee9e8db23b0b9b938cade8b53c6d39f129c4d817b03f1ed091e20",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

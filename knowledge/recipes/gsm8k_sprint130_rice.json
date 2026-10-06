@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint130_rice",
+  "title_ja": "1週間の脂肪摂取量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02235",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "毎日朝3杯、昼2杯、夜5杯の米を食べ、1杯に脂肪10g含む。週合計を求める",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A02.rice_solution",
+  "graph": "work/gsm8k-sprint130-rice-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "rice_daily",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.rice_daily",
+      "title_ja": "1日100g",
+      "claim_ja": "1日100g",
+      "method_ja": "合計10杯に各10g",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1日100g",
+      "baseline_ja": "1日100g"
+    },
+    {
+      "id": "rice_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A02.rice_solution",
+      "title_ja": "1週間で700g",
+      "claim_ja": "1週間で700g",
+      "method_ja": "100gを7日分",
+      "requires_steps": [
+        "rice_daily"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "1週間で700g",
+      "baseline_ja": "1週間で700g"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2236,
+    "checked_model_hash": "90bbc0178917da3905d83267579e977cad35d39fcfc4f9ce81688c980f1c7d9b",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

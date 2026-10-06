@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint508_grandparents_total_money",
+  "title_ja": "祖父母からの合計金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04263",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P2.lean",
+  "problem_ja": "祖父から30ドル、祖母からその3倍を受け取る。合計はいくらか。",
+  "answer_ja": "祖母は90ドル、合計120ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.grandparents_total_money",
+  "graph": "work/gsm8k-sprint508-grandparents-total-money-graph.json",
+  "model_notes_ja": [
+    "祖母の金額だけが祖父の3倍である。"
+  ],
+  "steps": [
+    {
+      "id": "grandma_money",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.grandma_money",
+      "title_ja": "祖母からの金額",
+      "claim_ja": "30×3=90ドル。",
+      "method_ja": "祖父の金額を3倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30×3=90ドル。"
+    },
+    {
+      "id": "grandparents_money_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.grandparents_money_total",
+      "title_ja": "祖父母の合計",
+      "claim_ja": "30+90=120ドル。",
+      "method_ja": "2人分を足す。",
+      "requires_steps": [
+        "grandma_money"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30+90=120ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.grandparents_total_money",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "祖母は90ドル、合計120ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "grandma_money",
+        "grandparents_money_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "祖母は90ドル、合計120ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4264,
+    "checked_model_hash": "046f077325373f030d564e7b3fdfbfaf1e6fd6e25cb6fb795a4fb62a35111d93",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint127_flowers",
+  "title_ja": "苗圃の花の総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02185",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "赤いバラ1491本、黄色いカーネーション3025本、白いバラ1768本の合計は何本か。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.flowers_solution",
+  "graph": "work/gsm8k-sprint127-flowers-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "flowers_first",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.flowers_first",
+      "title_ja": "赤いバラと黄色いカーネーションは4516本",
+      "claim_ja": "赤いバラと黄色いカーネーションは4516本",
+      "method_ja": "1491本と3025本を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "赤いバラと黄色いカーネーションは4516本",
+      "baseline_ja": "赤いバラと黄色いカーネーションは4516本"
+    },
+    {
+      "id": "flowers_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.flowers_solution",
+      "title_ja": "花は合計6284本",
+      "claim_ja": "花は合計6284本",
+      "method_ja": "4516本に白いバラ1768本を足す。",
+      "requires_steps": [
+        "flowers_first"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "花は合計6284本",
+      "baseline_ja": "花は合計6284本"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2186,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

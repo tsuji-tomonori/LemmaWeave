@@ -1,0 +1,99 @@
+{
+  "id": "gsm8k_sprint144_lizard",
+  "title_ja": "目より少ない数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02445",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "目3個。wrinklesを目の3倍、spotsをwrinklesの7倍とするデータセット解釈。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.lizard_solution",
+  "graph": "work/gsm8k-sprint144-lizard-graph.json",
+  "model_notes_ja": [
+    "3 times more と seven times more は曖昧。参考解答の3倍・7倍なら69。増加分が3倍・7倍という文字どおりの読みではしわ12、斑点96、差105。"
+  ],
+  "steps": [
+    {
+      "id": "lizard_wrinkles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.lizard_wrinkles",
+      "title_ja": "しわは9個",
+      "claim_ja": "しわは9個",
+      "method_ja": "3の3倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "しわは9個",
+      "baseline_ja": "しわは9個"
+    },
+    {
+      "id": "lizard_spots",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.lizard_spots",
+      "title_ja": "斑点は63個",
+      "claim_ja": "斑点は63個",
+      "method_ja": "9の7倍",
+      "requires_steps": [
+        "lizard_wrinkles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "斑点は63個",
+      "baseline_ja": "斑点は63個"
+    },
+    {
+      "id": "lizard_combined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.lizard_combined",
+      "title_ja": "しわと斑点は72個",
+      "claim_ja": "しわと斑点は72個",
+      "method_ja": "9と63を足す",
+      "requires_steps": [
+        "lizard_wrinkles",
+        "lizard_spots"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "しわと斑点は72個",
+      "baseline_ja": "しわと斑点は72個"
+    },
+    {
+      "id": "lizard_literal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.lizard_literal",
+      "title_ja": "文字どおり「3倍多い」「7倍多い」なら差は105となり69と異なる",
+      "claim_ja": "文字どおり「3倍多い」「7倍多い」なら差は105となり69と異なる",
+      "method_ja": "4倍・8倍の読みを反例にする",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "文字どおり「3倍多い」「7倍多い」なら差は105となり69と異なる",
+      "baseline_ja": "文字どおり「3倍多い」「7倍多い」なら差は105となり69と異なる"
+    },
+    {
+      "id": "lizard_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.lizard_solution",
+      "title_ja": "慣用的な倍率解釈では目が69個少ない",
+      "claim_ja": "慣用的な倍率解釈では目が69個少ない",
+      "method_ja": "72から3を引く",
+      "requires_steps": [
+        "lizard_combined",
+        "lizard_literal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題とmodel_notes_jaの条件を保持する。",
+      "conclusion_ja": "慣用的な倍率解釈では目が69個少ない",
+      "baseline_ja": "慣用的な倍率解釈では目が69個少ない"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2446,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

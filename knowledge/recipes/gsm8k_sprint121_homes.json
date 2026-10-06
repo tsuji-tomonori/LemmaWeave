@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint121_homes",
+  "title_ja": "Felipeは30か月。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02106",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A12.homes_solution",
+  "graph": "work/gsm8k-sprint121-homes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "homes_combined_months",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.homes_combined_months",
+      "title_ja": "2人の合計期間7.5年は90か月。",
+      "claim_ja": "2人の合計期間7.5年は90か月。",
+      "method_ja": "1年12か月なので7.5×12。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "2人の合計期間7.5年は90か月。",
+      "baseline_ja": "2人の合計期間7.5年は90か月。"
+    },
+    {
+      "id": "homes_relation",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.homes_relation",
+      "title_ja": "Emilioの期間はFelipeの2倍。",
+      "claim_ja": "Emilioの期間はFelipeの2倍。",
+      "method_ja": "FelipeはEmilioの半分。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "Emilioの期間はFelipeの2倍。",
+      "baseline_ja": "Emilioの期間はFelipeの2倍。"
+    },
+    {
+      "id": "homes_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A12.homes_solution",
+      "title_ja": "Felipeは30か月。",
+      "claim_ja": "Felipeは30か月。",
+      "method_ja": "F+2F=90を解く。",
+      "requires_steps": [
+        "homes_combined_months",
+        "homes_relation"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・型・単位・割合を保ち、個数・金額・時間・重量は非負整数として扱う。",
+      "conclusion_ja": "Felipeは30か月。",
+      "baseline_ja": "Felipeは30か月。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2107,
+    "checked_model_hash": "ffad73bc199599a5f0c226842303fb1e02ef01d4da74d086f8998943325bf433",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、曖昧な表現は別読解も明示した。"
+    ]
+  }
+}

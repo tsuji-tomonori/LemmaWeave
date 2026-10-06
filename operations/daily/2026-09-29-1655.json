@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-29",
+  "run_id": "20260929T160000+0900-ci-recovery-duplicate",
+  "scheduled_slot": "2026-09-29T16:00:00+09:00",
+  "slot_role": "ci_recovery_without_duplicate_solve",
+  "base_sha": "39b71fa01fae16207572df37c1a57d582e2486b0",
+  "started_at": "2026-09-29T07:55:12Z",
+  "finished_at": "2026-09-29T07:59:20Z",
+  "selected_problem_ids": [],
+  "completed_problem_ids": [],
+  "recovered_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03101",
+    "external-gsm8k-main-3101c7d50724:train:03102",
+    "external-gsm8k-main-3101c7d50724:train:03103",
+    "external-gsm8k-main-3101c7d50724:train:03104",
+    "external-gsm8k-main-3101c7d50724:train:03105",
+    "external-gsm8k-main-3101c7d50724:train:03106",
+    "external-gsm8k-main-3101c7d50724:train:03107",
+    "external-gsm8k-main-3101c7d50724:train:03108",
+    "external-gsm8k-main-3101c7d50724:train:03109",
+    "external-gsm8k-main-3101c7d50724:train:03110",
+    "external-gsm8k-main-3101c7d50724:train:03111",
+    "external-gsm8k-main-3101c7d50724:train:03112",
+    "external-gsm8k-main-3101c7d50724:train:03113",
+    "external-gsm8k-main-3101c7d50724:train:03114",
+    "external-gsm8k-main-3101c7d50724:train:03115"
+  ],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03101",
+    "external-gsm8k-main-3101c7d50724:train:03102",
+    "external-gsm8k-main-3101c7d50724:train:03103",
+    "external-gsm8k-main-3101c7d50724:train:03104",
+    "external-gsm8k-main-3101c7d50724:train:03105",
+    "external-gsm8k-main-3101c7d50724:train:03106",
+    "external-gsm8k-main-3101c7d50724:train:03107",
+    "external-gsm8k-main-3101c7d50724:train:03108",
+    "external-gsm8k-main-3101c7d50724:train:03109",
+    "external-gsm8k-main-3101c7d50724:train:03110",
+    "external-gsm8k-main-3101c7d50724:train:03111",
+    "external-gsm8k-main-3101c7d50724:train:03112",
+    "external-gsm8k-main-3101c7d50724:train:03113",
+    "external-gsm8k-main-3101c7d50724:train:03114",
+    "external-gsm8k-main-3101c7d50724:train:03115"
+  ],
+  "deferred": [],
+  "failed_ci": {
+    "head_sha": "39b71fa01fae16207572df37c1a57d582e2486b0",
+    "workflow_run_id": 36536072964,
+    "workflow_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36536072964",
+    "job_id": 109300855034,
+    "artifact_id": 11018917948,
+    "artifact_digest": "sha256:a6f2aa075143c123d7f6b193528e57ea85609f5b755962c212ad7202a3f81e3d",
+    "artifact_url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36536072964/artifacts/11018917948",
+    "toolchain_setup": "passed_lean_4_33_1_and_pinned_mathlib",
+    "result": "failed_during_A16_model_elaboration"
+  },
+  "repair": {
+    "classification": "proof_maintenance_only",
+    "root_cause_ja": "15個のstructureで複数フィールドを1宣言にまとめた構文がLean 4.33.1で受理されず、構造体自体が構築されなかった。",
+    "change_ja": "全フィールドを個別の型付き宣言へ分割した。問題の意味、仮定、結論、定理名、証明本文は変更していない。",
+    "model_hashes": {
+      "Sprint0929A16P1Models.lean": "7aa590d5aa36aef2422e9e17e917909fda12e06a6bc840aa24695bf7251a8ff0",
+      "Sprint0929A16P2Models.lean": "61fbc8910ddeb61f0eb5b740abb435cb64dd6a889d5a2e5edd3153c129fbdc67",
+      "Sprint0929A16P3Models.lean": "6e363fac86e7331425c8f5ffe408486b4c1f942a7ea264d6fb244b7f07e3df27"
+    },
+    "recipe_and_batch_hashes_updated": 18
+  },
+  "id_reconciliation": {
+    "total": 8792,
+    "unique": 8792,
+    "duplicates": 0,
+    "missing": 0,
+    "unexpected": 0,
+    "status_counts": {"solution_ready": 518, "awaiting_verification": 2599, "pending": 5675}
+  },
+  "ci": {
+    "repair_head_sha": null,
+    "workflow_run_id": null,
+    "workflow_url": null,
+    "status_at_record": "not_started",
+    "note_ja": "修復HEADのLean replay、公理監査、依存抽出、証拠取込が成功するまで15問をverification_pendingに置く。"
+  },
+  "pr": {
+    "number": 5,
+    "state": "open",
+    "draft": false,
+    "merged": false,
+    "mergeable_at_record": true,
+    "reviews": 0,
+    "unresolved_review_threads": 0
+  },
+  "commit": null,
+  "assurance": "INCONCLUSIVE",
+  "duplicate_slot_handling_ja": "同じ16時解答枠は再実行せず、既存15問のCI失敗回収だけを実施した。",
+  "status_note_ja": "正確なHEADの失敗証拠を回収し、構文上の根本原因を15構造体すべてで修復した。数学的内容は不変。修復HEADのCI成功前なのでsolution_readyを増やさず、mainにも未反映。"
+}

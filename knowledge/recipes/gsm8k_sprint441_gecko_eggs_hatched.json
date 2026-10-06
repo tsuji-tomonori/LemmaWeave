@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint441_gecko_eggs_hatched",
+  "title_ja": "孵化するヤモリの卵",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04196",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A gecko lays 30 eggs per year. 20 percent of them are infertile, and a third of the remaining eggs will not hatch due to calcification issues.  How many eggs actually hatch?",
+  "answer_ja": "無精卵は30×20%=6個。残り24個の3分の1である8個が石灰化で孵化しないので、実際に孵化するのは16個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.gecko_eggs_hatched",
+  "graph": "work/gsm8k-sprint441-gecko-eggs-hatched-graph.json",
+  "model_notes_ja": [
+    "石灰化による3分の1は無精卵を除いた残り24個を基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "gecko_infertile_eggs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.gecko_infertile_eggs",
+      "title_ja": "無精卵",
+      "claim_ja": "30×20÷100=6個。",
+      "method_ja": "全30個に20%を適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "卵30個、無精卵20%。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "6個。"
+    },
+    {
+      "id": "gecko_fertile_eggs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.gecko_fertile_eggs",
+      "title_ja": "無精卵を除いた卵",
+      "claim_ja": "30−6=24個。",
+      "method_ja": "全体から無精卵を引く。",
+      "requires_steps": [
+        "gecko_infertile_eggs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "無精卵6個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "24個。"
+    },
+    {
+      "id": "gecko_calcified_eggs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.gecko_calcified_eggs",
+      "title_ja": "石灰化で孵化しない卵",
+      "claim_ja": "24÷3=8個。",
+      "method_ja": "残りの3分の1。",
+      "requires_steps": [
+        "gecko_infertile_eggs",
+        "gecko_fertile_eggs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "基準は24個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "8個。"
+    },
+    {
+      "id": "gecko_hatched_eggs",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.gecko_hatched_eggs",
+      "title_ja": "孵化する卵",
+      "claim_ja": "24−8=16個。",
+      "method_ja": "残りから石灰化分を引く。",
+      "requires_steps": [
+        "gecko_infertile_eggs",
+        "gecko_fertile_eggs",
+        "gecko_calcified_eggs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "24個中8個が孵化しない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "16個。"
+    },
+    {
+      "id": "gecko_eggs_hatched",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.gecko_eggs_hatched",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "無精卵は30×20%=6個。残り24個の3分の1である8個が石灰化で孵化しないので、実際に孵化するのは16個。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "gecko_infertile_eggs",
+        "gecko_fertile_eggs",
+        "gecko_calcified_eggs",
+        "gecko_hatched_eggs"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "石灰化による3分の1は無精卵を除いた残り24個を基準にする。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "無精卵は30×20%=6個。残り24個の3分の1である8個が石灰化で孵化しないので、実際に孵化するのは16個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4197,
+    "checked_model_hash": "8bac0bd053d2c9c42f769f1835e3a69c857abf12d92e01c66fb9329ed7569d0b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "8bac0bd053d2c9c42f769f1835e3a69c857abf12d92e01c66fb9329ed7569d0b"
+}

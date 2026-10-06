@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint146_lollipops",
+  "title_ja": "Julieの支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02475",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A20.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "12個で3ドルの飴を4分の1だけ分け、その原価をセントで精算する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A20.lollipops_solution",
+  "graph": "work/gsm8k-sprint146-lollipops-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lollipops_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.lollipops_total",
+      "title_ja": "総額は300セント",
+      "claim_ja": "総額は300セント",
+      "method_ja": "3ドルをセントへ換算する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "総額は300セント",
+      "baseline_ja": "総額は300セント"
+    },
+    {
+      "id": "lollipops_unit",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.lollipops_unit",
+      "title_ja": "1個25セント",
+      "claim_ja": "1個25セント",
+      "method_ja": "300を12等分する",
+      "requires_steps": [
+        "lollipops_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "1個25セント",
+      "baseline_ja": "1個25セント"
+    },
+    {
+      "id": "lollipops_shared",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.lollipops_shared",
+      "title_ja": "分けるのは3個",
+      "claim_ja": "分けるのは3個",
+      "method_ja": "12の4分の1を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "分けるのは3個",
+      "baseline_ja": "分けるのは3個"
+    },
+    {
+      "id": "lollipops_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A20.lollipops_solution",
+      "title_ja": "支払額は75セント",
+      "claim_ja": "支払額は75セント",
+      "method_ja": "3個に25セントを掛ける",
+      "requires_steps": [
+        "lollipops_unit",
+        "lollipops_shared"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "支払額は75セント",
+      "baseline_ja": "支払額は75セント"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2476,
+    "checked_model_hash": "89584c57efaf631476f4ba32c2ca421834ffcefb0f4212eb442b1d4832e0b9c5",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

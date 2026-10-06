@@ -1,0 +1,93 @@
+{
+  "id": "gsm8k_sprint94_clothes",
+  "title_ja": "二人が洗った衣類総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01698",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "二人の白シャツ・色シャツ・短パン・長ズボンをすべて合計する。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.clothes_solution",
+  "graph": "work/gsm8k-sprint94-clothes-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "clothes_white",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.clothes_white",
+      "title_ja": "白シャツ",
+      "claim_ja": "16枚。",
+      "method_ja": "10+6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二人分を加える。",
+      "conclusion_ja": "10+6=16。",
+      "baseline_ja": "10+6=16。"
+    },
+    {
+      "id": "clothes_colored",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.clothes_colored",
+      "title_ja": "色シャツ",
+      "claim_ja": "13枚。",
+      "method_ja": "5+8。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二人分を加える。",
+      "conclusion_ja": "5+8=13。",
+      "baseline_ja": "5+8=13。"
+    },
+    {
+      "id": "clothes_shorts",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.clothes_shorts",
+      "title_ja": "短パン",
+      "claim_ja": "17枚。",
+      "method_ja": "7+10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二人分を加える。",
+      "conclusion_ja": "7+10=17。",
+      "baseline_ja": "7+10=17。"
+    },
+    {
+      "id": "clothes_pants",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.clothes_pants",
+      "title_ja": "長ズボン",
+      "claim_ja": "12枚。",
+      "method_ja": "6+6。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "二人分を加える。",
+      "conclusion_ja": "6+6=12。",
+      "baseline_ja": "6+6=12。"
+    },
+    {
+      "id": "clothes_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.clothes_solution",
+      "title_ja": "総数",
+      "claim_ja": "58枚。",
+      "method_ja": "16+13+17+12。",
+      "requires_steps": [
+        "clothes_white",
+        "clothes_colored",
+        "clothes_shorts",
+        "clothes_pants"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "挙げられた衣類をすべて洗う。",
+      "conclusion_ja": "16+13+17+12=58。",
+      "baseline_ja": "16+13+17+12=58。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1699,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

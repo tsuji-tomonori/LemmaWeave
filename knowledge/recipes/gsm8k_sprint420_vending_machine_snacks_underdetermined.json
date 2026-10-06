@@ -1,0 +1,145 @@
+{
+  "id": "gsm8k_sprint420_vending_machine_snacks_underdetermined",
+  "title_ja": "自販機が落とした菓子数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04175",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A04P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "The vending machine fails to drop a snack when it’s purchased one in six times. One in ten times, it will accidentally drop two snacks. The rest of the time, it drops the purchased snack. If thirty people have used the vending machine once each to purchase a snack, how many snacks has the vending machine dropped?",
+  "answer_ja": "故障率を確率と読むと、特定の30回の実現結果は一意に決まらない。期待値、または30回中ちょうど5回失敗・3回二重と追加仮定すれば、通常22回なので22+2×3=28個。例えば30回すべて通常なら30個であり、確率モデルでは起こり得る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_machine_snacks_underdetermined",
+  "graph": "work/gsm8k-sprint420-vending-machine-snacks-underdetermined-graph.json",
+  "model_notes_ja": [
+    "『one in six/ten times』は確率・長期頻度であり、30回の実現回数を必ず固定しない。",
+    "失敗と二重排出は『rest of the time』により排反と読む。"
+  ],
+  "steps": [
+    {
+      "id": "vending_exact_failure_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_exact_failure_count",
+      "title_ja": "正確頻度仮定の失敗回数",
+      "claim_ja": "30÷6=5回。",
+      "method_ja": "30回に1/6を適用する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "30回内でも比率どおりという追加条件。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5回。"
+    },
+    {
+      "id": "vending_exact_double_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_exact_double_count",
+      "title_ja": "正確頻度仮定の二重回数",
+      "claim_ja": "30÷10=3回。",
+      "method_ja": "30回に1/10を適用する。",
+      "requires_steps": [
+        "vending_exact_failure_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "30回内でも比率どおりという追加条件。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3回。"
+    },
+    {
+      "id": "vending_exact_normal_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_exact_normal_count",
+      "title_ja": "通常回数",
+      "claim_ja": "30-5-3=22回。",
+      "method_ja": "排反な失敗・二重回を除く。",
+      "requires_steps": [
+        "vending_exact_failure_count",
+        "vending_exact_double_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "2事象が排反。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "22回。"
+    },
+    {
+      "id": "vending_exact_frequency_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_exact_frequency_total",
+      "title_ja": "条件付き総数",
+      "claim_ja": "22+2×3=28個。",
+      "method_ja": "通常は1個、二重は2個、失敗は0個として合計。",
+      "requires_steps": [
+        "vending_exact_failure_count",
+        "vending_exact_double_count",
+        "vending_exact_normal_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "正確頻度仮定の下。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "28個。"
+    },
+    {
+      "id": "vending_all_normal_sample_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_all_normal_sample_total",
+      "title_ja": "別の実現例",
+      "claim_ja": "30×1=30個。",
+      "method_ja": "30回すべて通常という実現を数える。",
+      "requires_steps": [
+        "vending_exact_failure_count",
+        "vending_exact_double_count",
+        "vending_exact_normal_count",
+        "vending_exact_frequency_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "確率を実現回数の確定値と読まない。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "30個。"
+    },
+    {
+      "id": "vending_possible_totals_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_possible_totals_differ",
+      "title_ja": "非一意性",
+      "claim_ja": "28≠30。",
+      "method_ja": "2つの候補総数を比較する。",
+      "requires_steps": [
+        "vending_exact_failure_count",
+        "vending_exact_double_count",
+        "vending_exact_normal_count",
+        "vending_exact_frequency_total",
+        "vending_all_normal_sample_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "無条件の実現個数を問う。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "一意に決まらない。"
+    },
+    {
+      "id": "vending_machine_snacks_underdetermined",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A04P2.vending_machine_snacks_underdetermined",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "故障率を確率と読むと、特定の30回の実現結果は一意に決まらない。期待値、または30回中ちょうど5回失敗・3回二重と追加仮定すれば、通常22回なので22+2×3=28個。例えば30回すべて通常なら30個であり、確率モデルでは起こり得る。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "vending_exact_failure_count",
+        "vending_exact_double_count",
+        "vending_exact_normal_count",
+        "vending_exact_frequency_total",
+        "vending_all_normal_sample_total",
+        "vending_possible_totals_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『one in six/ten times』は確率・長期頻度であり、30回の実現回数を必ず固定しない。 失敗と二重排出は『rest of the time』により排反と読む。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "故障率を確率と読むと、特定の30回の実現結果は一意に決まらない。期待値、または30回中ちょうど5回失敗・3回二重と追加仮定すれば、通常22回なので22+2×3=28個。例えば30回すべて通常なら30個であり、確率モデルでは起こり得る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4176,
+    "checked_model_hash": "9fb26bfffae931c4ad2fdf802b49866457484545f381e8a2db290b79dc622f10",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "9fb26bfffae931c4ad2fdf802b49866457484545f381e8a2db290b79dc622f10"
+}

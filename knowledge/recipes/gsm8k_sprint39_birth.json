@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint39_birth",
+  "title_ja": "Juliaの出生年の非一意性",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00871",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "2021年内の日付不足を示し、誕生日の前後を分ける。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.birth_solution",
+  "graph": "work/gsm8k-sprint39-birth-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "2021年の基準日とJuliaの誕生日の前後が未指定。参照解答1979年は誕生日後という追加条件付き。"
+  ],
+  "steps": [
+    {
+      "id": "birth_peter",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.birth_peter",
+      "title_ja": "Peterの年齢",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Wayne37歳より3歳上。",
+      "conclusion_ja": "40歳。",
+      "baseline_ja": "37+3=40。"
+    },
+    {
+      "id": "birth_julia",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.birth_julia",
+      "title_ja": "Juliaの年齢",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Peter40歳より2歳上。",
+      "conclusion_ja": "42歳。",
+      "baseline_ja": "40+2=42。"
+    },
+    {
+      "id": "birth_after_birthday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.birth_after_birthday",
+      "title_ja": "誕生日後の候補",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2021年に42歳で、その年の誕生日を迎えている。",
+      "conclusion_ja": "1979年生まれ。",
+      "baseline_ja": "2021=1979+42。"
+    },
+    {
+      "id": "birth_before_birthday",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.birth_before_birthday",
+      "title_ja": "誕生日前の候補",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "2021年に42歳で、その年の誕生日がまだ来ていない。",
+      "conclusion_ja": "1978年生まれ。",
+      "baseline_ja": "2021=1978+42+1。"
+    },
+    {
+      "id": "birth_candidates_differ",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.birth_candidates_differ",
+      "title_ja": "非一意性",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1978年と1979年は異なる。",
+      "conclusion_ja": "原文だけでは出生年を一意に決められない。",
+      "baseline_ja": "1979≠1978。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 872,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

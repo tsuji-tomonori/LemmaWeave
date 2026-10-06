@@ -1,0 +1,79 @@
+{
+  "id": "gsm8k_sprint32_dough",
+  "title_ja": "巨大な生地玉の利益",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00759",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "材料費・宣伝費と入場料収入から利益を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.dough_solution",
+  "graph": "work/gsm8k-sprint32-dough-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "金額はセント単位で保持し、最後に100セント=1ドルで換算する。"
+  ],
+  "steps": [
+    {
+      "id": "dough_bags",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.dough_bags",
+      "title_ja": "小麦粉の袋数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "500ポンドを50ポンド袋で買う。",
+      "conclusion_ja": "10袋。",
+      "baseline_ja": "500=10×50。"
+    },
+    {
+      "id": "dough_flour_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.dough_flour_cost",
+      "title_ja": "小麦粉代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10袋を1袋2000セントで買う。",
+      "conclusion_ja": "20000セント。",
+      "baseline_ja": "10×2000=20000。"
+    },
+    {
+      "id": "dough_salt_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.dough_salt_cost",
+      "title_ja": "塩代",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "10ポンドを1ポンド20セントで買う。",
+      "conclusion_ja": "200セント。",
+      "baseline_ja": "10×20=200。"
+    },
+    {
+      "id": "dough_total_cost",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.dough_total_cost",
+      "title_ja": "総費用",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "宣伝100000セント、小麦粉20000セント、塩200セント。",
+      "conclusion_ja": "120200セント。",
+      "baseline_ja": "100000+20000+200=120200。"
+    },
+    {
+      "id": "dough_profit",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.dough_profit",
+      "title_ja": "利益",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "500枚を1枚2000セントで販売し総費用を引く。",
+      "conclusion_ja": "879800セント、すなわち8798ドル。",
+      "baseline_ja": "1000000=879800+120200、879800=8798×100。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 760,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint587_remaining_sticker_count",
+  "title_ja": "1ページ失った後のステッカー数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04342",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P3.lean",
+  "problem_ja": "There are 20 stickers on a page. If you have 12 pages of stickers but lose one of the pages, then how many stickers would you have?",
+  "answer_ja": "12ページから1ページ失うと11ページ。1ページ20枚なので11×20=220枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.remaining_sticker_count",
+  "graph": "work/gsm8k-sprint587-remaining-sticker-count-graph.json",
+  "model_notes_ja": [
+    "全ページにそれぞれ20枚あり、失ったページも1ページ分全てを失う。"
+  ],
+  "steps": [
+    {
+      "id": "remaining_sticker_pages",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.remaining_sticker_pages",
+      "title_ja": "残りページ",
+      "claim_ja": "12−1=11ページ。",
+      "method_ja": "失った1ページを引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12−1=11ページ。"
+    },
+    {
+      "id": "remaining_stickers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.remaining_stickers",
+      "title_ja": "残り枚数",
+      "claim_ja": "11×20=220枚。",
+      "method_ja": "残りページ数に1ページの枚数を掛ける。",
+      "requires_steps": [
+        "remaining_sticker_pages"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "11×20=220枚。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.remaining_sticker_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "12ページから1ページ失うと11ページ。1ページ20枚なので11×20=220枚。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "remaining_sticker_pages",
+        "remaining_stickers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12ページから1ページ失うと11ページ。1ページ20枚なので11×20=220枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4343,
+    "checked_model_hash": "e6b35405fa138a37e861678c81010e519a557b1c97fe92e598b4c18d16140b5a",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

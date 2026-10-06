@@ -1,0 +1,72 @@
+{
+  "id": "gsm8k_sprint434_bernard_luke_average_minus_ten",
+  "title_ja": "二人の平均年齢より10歳少ない年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04189",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1004A11P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "In eight years, Mr. Bernard will be 3 times as old as Luke is now. If Luke is 20, what is 10 years less than their average age?",
+  "answer_ja": "8年後のBernardは現在のLukeの3倍で60歳なので、Bernardの現在年齢は52歳。現在の平均は(52+20)÷2=36歳、その10歳下は26歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.bernard_luke_average_minus_ten",
+  "graph": "work/gsm8k-sprint434-bernard-luke-average-minus-ten-graph.json",
+  "model_notes_ja": [
+    "平均年齢は現在の二人の年齢について取る。"
+  ],
+  "steps": [
+    {
+      "id": "bernard",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.bernard_current_age",
+      "title_ja": "Bernardの現在年齢",
+      "claim_ja": "3×20-8=52歳。",
+      "method_ja": "8年後の年齢から8年を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Lukeの現在年齢20歳。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "3×20-8=52歳。"
+    },
+    {
+      "id": "average",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.bernard_luke_average",
+      "title_ja": "現在の平均年齢",
+      "claim_ja": "(52+20)÷2=36歳。",
+      "method_ja": "二人の現在年齢を平均する。",
+      "requires_steps": [
+        "bernard"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "対象はBernardとLukeの2人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "(52+20)÷2=36歳。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1004A11P2.bernard_luke_average_minus_ten",
+      "title_ja": "平均より10歳少ない値",
+      "claim_ja": "36-10=26歳。",
+      "method_ja": "平均から10を引く。",
+      "requires_steps": [
+        "average"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "年齢差を年単位で扱う。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "36-10=26歳。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4190,
+    "checked_model_hash": "36520a5493dfbeeee6398f2298aaa7f53f29221fd77d96b96c3e12b29d3acde8",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答の各行と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

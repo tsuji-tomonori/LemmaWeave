@@ -1,0 +1,49 @@
+{
+  "id": "gsm8k_sprint32_calories",
+  "title_ja": "推奨量を超えたカロリー",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00764",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "40カロリーの4分の3を食べた量と推奨25カロリーとの差を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A32.calories_solution",
+  "graph": "work/gsm8k-sprint32-calories-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A32.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "4分の3は積の等式で表し、自然数除算の切捨てを使わない。"
+  ],
+  "steps": [
+    {
+      "id": "calories_eaten",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.calories_eaten",
+      "title_ja": "食べた量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "40カロリーの4分の3を食べる。",
+      "conclusion_ja": "30カロリー。",
+      "baseline_ja": "30×4=40×3。"
+    },
+    {
+      "id": "calories_extra",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A32.calories_extra",
+      "title_ja": "超過量",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "30カロリーと推奨25カロリーの差を取る。",
+      "conclusion_ja": "5カロリー。",
+      "baseline_ja": "30=5+25。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 765,
+    "checked_model_hash": "f9e32ebb64596a5bfe3bd07d773eae87ab990729954b8b6af93574bc43270e4b",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

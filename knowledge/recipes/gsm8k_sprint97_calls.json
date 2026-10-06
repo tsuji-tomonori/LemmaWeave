@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint97_calls",
+  "title_ja": "平日の平均応答件数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01742",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A05Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "5日分を合計して5で割る。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.calls_solution",
+  "graph": "work/gsm8k-sprint97-calls-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "calls_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.calls_total",
+      "title_ja": "合計200件。",
+      "claim_ja": "合計200件。",
+      "method_ja": "35+46+27+61+31。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "月曜から金曜を各1回数える。",
+      "conclusion_ja": "合計200。",
+      "baseline_ja": "合計200。"
+    },
+    {
+      "id": "calls_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A05Catchup.calls_solution",
+      "title_ja": "1日平均40件。",
+      "claim_ja": "1日平均40件。",
+      "method_ja": "200÷5。",
+      "requires_steps": [
+        "calls_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "対象日は5日で同じ重みの算術平均。",
+      "conclusion_ja": "40×5=200。",
+      "baseline_ja": "40×5=200。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1743,
+    "checked_model_hash": "243df566713457fa09f31d43b2df52310400fa22f6629fb091d2207e2fb16534",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

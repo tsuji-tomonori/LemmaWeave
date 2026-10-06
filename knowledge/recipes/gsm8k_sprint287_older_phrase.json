@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint287_older_phrase",
+  "title_ja": "3.5 times older の年齢解釈",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03539",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A20P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "ピーターは10歳。父はピーターより「3.5 times older」とされるときの父の年齢。",
+  "answer_ja": "倍率の慣用解釈では35歳。文字どおり3.5倍分だけ年上なら45歳で、原文だけでは一意でない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A20P1.older_phrase_ambiguous",
+  "graph": "work/gsm8k-sprint287-older-phrase-graph.json",
+  "model_notes_ja": [
+    "“3 and 1/2 times older” は、全体が3.5倍という慣用解釈と、3.5倍分を加える文字どおりの解釈がある。"
+  ],
+  "steps": [
+    {
+      "id": "conventional_older_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P1.conventional_older_age",
+      "title_ja": "倍率の慣用解釈では35歳。",
+      "claim_ja": "倍率の慣用解釈では35歳。",
+      "method_ja": "10歳の3.5倍を、2倍して7倍となる整数関係で表す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "倍率の慣用解釈では35歳。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "literal_older_age",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P1.literal_older_age",
+      "title_ja": "文字どおり3.5倍分だけ年上なら45歳。",
+      "claim_ja": "文字どおり3.5倍分だけ年上なら45歳。",
+      "method_ja": "元の10歳に3.5倍分を加え、全体4.5倍とする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "文字どおり3.5倍分だけ年上なら45歳。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "older_phrase_ambiguous",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A20P1.older_phrase_ambiguous",
+      "title_ja": "二つの解釈は35歳と45歳で一致しない。",
+      "claim_ja": "二つの解釈は35歳と45歳で一致しない。",
+      "method_ja": "両モデルの結論を比較して非一意性を示す。",
+      "requires_steps": [
+        "conventional_older_age",
+        "literal_older_age"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位・非負整数条件。",
+      "conclusion_ja": "二つの解釈は35歳と45歳で一致しない。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3540,
+    "checked_model_hash": "c4a37704fc2145012d34e367f6b0f5dba157888f50c5b0e434b22dc90ec108be",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

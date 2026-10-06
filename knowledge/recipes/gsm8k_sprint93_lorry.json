@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint93_lorry",
+  "title_ja": "リンゴ袋を積んだトラックの重量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01675",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "空車500ポンドに、1袋60ポンドのリンゴ20袋を積む。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A02.lorry_solution",
+  "graph": "work/gsm8k-sprint93-lorry-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "lorry_load",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.lorry_load",
+      "title_ja": "積荷重量",
+      "claim_ja": "積荷は1200ポンド。",
+      "method_ja": "20袋×60ポンド。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各袋の重さが一定。",
+      "conclusion_ja": "20×60=1200。",
+      "baseline_ja": "20×60=1200。"
+    },
+    {
+      "id": "lorry_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A02.lorry_solution",
+      "title_ja": "総重量",
+      "claim_ja": "総重量は1700ポンド。",
+      "method_ja": "空車重量に積荷を加える。",
+      "requires_steps": [
+        "lorry_load"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "他の積荷はない。",
+      "conclusion_ja": "500+1200=1700。",
+      "baseline_ja": "500+1200=1700。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1676,
+    "checked_model_hash": "f33b5af619ffd68d4fc9156e049f169d77840bb690ef3d252082e94d2df01436",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

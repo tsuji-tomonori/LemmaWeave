@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint94_sue",
+  "title_ja": "ニューオーリンズからサンフランシスコまでの総時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01692",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A01Catchup.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "前半は後半24時間の3/4、ニューヨーク滞在16時間、後半24時間。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.sue_solution",
+  "graph": "work/gsm8k-sprint94-sue-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "sue_first_leg",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.sue_first_leg",
+      "title_ja": "前半移動",
+      "claim_ja": "18時間。",
+      "method_ja": "24×3/4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "比較対象のNY-SFは24時間。",
+      "conclusion_ja": "4×18=3×24。",
+      "baseline_ja": "4×18=3×24。"
+    },
+    {
+      "id": "sue_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A01Catchup.sue_solution",
+      "title_ja": "総時間",
+      "claim_ja": "58時間。",
+      "method_ja": "18+16+24。",
+      "requires_steps": [
+        "sue_first_leg"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "滞在時間も経過時間に含む。",
+      "conclusion_ja": "18+16+24=58。",
+      "baseline_ja": "18+16+24=58。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1693,
+    "checked_model_hash": "d856b7e9276a61440ee70b14f590d2003e1a35bc45bfb0804ce8eb1a91d24fca",
+    "checks_ja": [
+      "原題を再読し、数値・単位・条件・求める全結論とLeanモデルの対応を自己照合した。"
+    ]
+  }
+}
+

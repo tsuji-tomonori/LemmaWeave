@@ -1,0 +1,76 @@
+{
+  "id": "gsm8k_sprint26_pills",
+  "title_ja": "保険適用後の薬代",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00676",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "1日2錠、1錠1.5ドルを30日服用し、保険が40%負担した後の本人負担を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0919A26.pills_solution",
+  "graph": "work/gsm8k-sprint26-pills-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0919A26.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "金額をセントで保持する。"
+  ],
+  "steps": [
+    {
+      "id": "pills_count",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.pills_count",
+      "title_ja": "月間錠数",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1日2錠を30日。",
+      "conclusion_ja": "60錠。",
+      "baseline_ja": "2×30=60。"
+    },
+    {
+      "id": "pills_gross",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.pills_gross",
+      "title_ja": "保険前総額",
+      "requires_steps": [
+        "pills_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "60錠を各150セント。",
+      "conclusion_ja": "9000セント、90ドル。",
+      "baseline_ja": "60×150=9000。"
+    },
+    {
+      "id": "pills_covered",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.pills_covered",
+      "title_ja": "保険負担",
+      "requires_steps": [
+        "pills_gross"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "9000セントの40%。",
+      "conclusion_ja": "3600セント、36ドル。",
+      "baseline_ja": "9000×40/100=3600。"
+    },
+    {
+      "id": "pills_paid",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0919A26.pills_paid",
+      "title_ja": "本人負担",
+      "requires_steps": [
+        "pills_gross",
+        "pills_covered"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "総額から保険負担を引く。",
+      "conclusion_ja": "5400セント、54ドル。",
+      "baseline_ja": "9000-3600=5400。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 677,
+    "checked_model_hash": "916d85cf91b2b878437a08560919c67499293ac4d5422b70e189384b4426aceb",
+    "checks_ja": [
+      "錠数、総額、保険負担、本人負担を順に照合した。"
+    ]
+  }
+}

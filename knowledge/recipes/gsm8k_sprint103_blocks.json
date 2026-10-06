@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint103_blocks",
+  "title_ja": "ブロック総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01838",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A13.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "赤18個を基準に黄と青を求めて加える。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A13.blocks_solution",
+  "graph": "work/gsm8k-sprint103-blocks-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "blocks_yellow",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.blocks_yellow",
+      "title_ja": "黄色は25個。",
+      "claim_ja": "黄色は25個。",
+      "method_ja": "18+7。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤より7個多い。",
+      "conclusion_ja": "25。",
+      "baseline_ja": "25。"
+    },
+    {
+      "id": "blocks_blue",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.blocks_blue",
+      "title_ja": "青色は32個。",
+      "claim_ja": "青色は32個。",
+      "method_ja": "18+14。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "赤より14個多い。",
+      "conclusion_ja": "32。",
+      "baseline_ja": "32。"
+    },
+    {
+      "id": "blocks_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A13.blocks_solution",
+      "title_ja": "合計75個。",
+      "claim_ja": "合計75個。",
+      "method_ja": "18+25+32。",
+      "requires_steps": [
+        "blocks_yellow",
+        "blocks_blue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "3色を各1回加える。",
+      "conclusion_ja": "75。",
+      "baseline_ja": "75。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1839,
+    "checked_model_hash": "0f6cc52b0010da7892bc64b6740ce781d6c1c2ea091f11c8e9cc94f68a7456be",
+    "checks_ja": [
+      "固定原本の原題を再読し、数値・単位・定義域・条件・求める全結論をLeanモデルと自己照合した。",
+      "各説明行の名前付きLean定理と依存関係を照合した。"
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "id": "gsm8k_sprint127_drive",
+  "title_ja": "近似時間を含む走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02186",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "時速80マイルで約6時間、時速60マイルで4時間、時速40マイルで2時間走った。総距離は何マイルか。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drive_answer_scope",
+  "graph": "work/gsm8k-sprint127-drive-graph.json",
+  "model_notes_ja": [
+    "原文は最初の時間をabout 6 hoursとする。誤差幅がないため800は追加条件付き。"
+  ],
+  "steps": [
+    {
+      "id": "drive_first_exact",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drive_first_exact",
+      "title_ja": "最初を正確に6時間とすれば480マイル",
+      "claim_ja": "最初を正確に6時間とすれば480マイル",
+      "method_ja": "時速80マイルに6時間を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "最初を正確に6時間とすれば480マイル",
+      "baseline_ja": "最初を正確に6時間とすれば480マイル"
+    },
+    {
+      "id": "drive_second",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drive_second",
+      "title_ja": "次の区間は240マイル",
+      "claim_ja": "次の区間は240マイル",
+      "method_ja": "時速60マイルに4時間を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "次の区間は240マイル",
+      "baseline_ja": "次の区間は240マイル"
+    },
+    {
+      "id": "drive_third",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drive_third",
+      "title_ja": "最後の区間は80マイル",
+      "claim_ja": "最後の区間は80マイル",
+      "method_ja": "時速40マイルに2時間を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "最後の区間は80マイル",
+      "baseline_ja": "最後の区間は80マイル"
+    },
+    {
+      "id": "drive_exact_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drive_exact_solution",
+      "title_ja": "最初を正確に6時間とすれば合計800マイル",
+      "claim_ja": "最初を正確に6時間とすれば合計800マイル",
+      "method_ja": "480、240、80マイルを足す。",
+      "requires_steps": [
+        "drive_first_exact",
+        "drive_second",
+        "drive_third"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "最初を正確に6時間とすれば合計800マイル",
+      "baseline_ja": "最初を正確に6時間とすれば合計800マイル"
+    },
+    {
+      "id": "drive_about_alternative",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drive_about_alternative",
+      "title_ja": "約6時間を5時間30分とすれば合計760マイル",
+      "claim_ja": "約6時間を5時間30分とすれば合計760マイル",
+      "method_ja": "最初は440マイルとなり、残り2区間を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "約6時間を5時間30分とすれば合計760マイル",
+      "baseline_ja": "約6時間を5時間30分とすれば合計760マイル"
+    },
+    {
+      "id": "drive_not_unique",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drive_not_unique",
+      "title_ja": "800マイルと760マイルは異なる",
+      "claim_ja": "800マイルと760マイルは異なる",
+      "method_ja": "近似時間の許容範囲がないため厳密値を一意にできない。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "800マイルと760マイルは異なる",
+      "baseline_ja": "800マイルと760マイルは異なる"
+    },
+    {
+      "id": "drive_answer_scope",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0924A19.drive_answer_scope",
+      "title_ja": "800マイルは約6時間を正確に6時間と置く場合の答え",
+      "claim_ja": "800マイルは約6時間を正確に6時間と置く場合の答え",
+      "method_ja": "条件付き解と別の近似値の両方を保持する。",
+      "requires_steps": [
+        "drive_exact_solution",
+        "drive_about_alternative",
+        "drive_not_unique"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位、非負整数モデルと記載の追加条件・読解に限る。",
+      "conclusion_ja": "800マイルは約6時間を正確に6時間と置く場合の答え",
+      "baseline_ja": "800マイルは約6時間を正確に6時間と置く場合の答え"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2187,
+    "checked_model_hash": "e011a4b57cb0e3b5128ec4fa60c79e685c6adfec0c3d24a2c7821c8bac91e723",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

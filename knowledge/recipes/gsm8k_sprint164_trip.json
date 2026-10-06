@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint164_trip",
+  "title_ja": "ワシントン旅行のキャンディ販売本数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02741",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0928A02.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "旅行費485ドルのうち祖母が250ドルを出し、1本1.25ドルの利益で残額を得る販売本数を求める。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0928A02.trip_solution",
+  "graph": "work/gsm8k-sprint164-trip-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "trip_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.trip_remaining",
+      "title_ja": "残額は235ドル",
+      "claim_ja": "485-250=235ドル（23500セント）",
+      "method_ja": "485-250=235ドル（23500セント）",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "485-250=235ドル（23500セント）",
+      "baseline_ja": "485-250=235ドル（23500セント）"
+    },
+    {
+      "id": "trip_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0928A02.trip_solution",
+      "title_ja": "販売本数は188本",
+      "claim_ja": "23500÷125=188本",
+      "method_ja": "23500÷125=188本",
+      "requires_steps": [
+        "trip_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原文の数量・単位を自然数の等式として表す。",
+      "conclusion_ja": "23500÷125=188本",
+      "baseline_ja": "23500÷125=188本"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2742,
+    "checked_model_hash": "f32b73b732f7b98644e11bb0aa6f12c4d921d8e6a4e614c3cb8b770ccedb4f48",
+    "checks_ja": [
+      "固定原本の全条件・単位・求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

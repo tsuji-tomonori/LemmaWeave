@@ -1,0 +1,70 @@
+{
+  "id": "gsm8k_sprint277_unanswered_questions",
+  "title_ja": "未回答問題数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03490",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A16P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "100問中、2時間を使い1問2分で答えた後の未回答数を求める。",
+  "answer_ja": "40問",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.unanswered_questions",
+  "graph": "work/gsm8k-sprint277-unanswered-questions-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "test_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.test_minutes",
+      "title_ja": "2時間は120分。",
+      "claim_ja": "2時間は120分。",
+      "method_ja": "2時間×60分を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "1時間=60分。",
+      "conclusion_ja": "120分。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "answered_questions",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.answered_questions",
+      "title_ja": "回答したのは60問。",
+      "claim_ja": "回答したのは60問。",
+      "method_ja": "120分を1問2分で割る。",
+      "requires_steps": [
+        "test_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各回答に2分かかる。",
+      "conclusion_ja": "60問。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "unanswered_questions",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A16P3.unanswered_questions",
+      "title_ja": "未回答は40問。",
+      "claim_ja": "未回答は40問。",
+      "method_ja": "全100問から60問を引く。",
+      "requires_steps": [
+        "answered_questions"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "全問題数は100問。",
+      "conclusion_ja": "40問。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3491,
+    "checked_model_hash": "34942b96f42e18add642a70a6b9e8b30264048ec55ca609c2851037925d4393d",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させ、前提・適用条件・依存を確認した。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

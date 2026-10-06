@@ -1,0 +1,101 @@
+{
+  "id": "gsm8k_sprint510_zain_coin_total",
+  "title_ja": "Zainの硬貨枚数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04265",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P2.lean",
+  "problem_ja": "Emerieは25セント6枚、10セント7枚、5セント5枚。Zainは各種類を10枚ずつ多く持つ。合計枚数は。",
+  "answer_ja": "Zainは16枚、17枚、15枚で、合計48枚。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.zain_coin_total",
+  "graph": "work/gsm8k-sprint510-zain-coin-total-graph.json",
+  "model_notes_ja": [
+    "10枚多いという条件を硬貨の各種類へ個別に適用する。"
+  ],
+  "steps": [
+    {
+      "id": "zain_quarters",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.zain_quarters",
+      "title_ja": "25セント硬貨",
+      "claim_ja": "6+10=16枚。",
+      "method_ja": "10枚を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6+10=16枚。"
+    },
+    {
+      "id": "zain_dimes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.zain_dimes",
+      "title_ja": "10セント硬貨",
+      "claim_ja": "7+10=17枚。",
+      "method_ja": "10枚を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "7+10=17枚。"
+    },
+    {
+      "id": "zain_nickels",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.zain_nickels",
+      "title_ja": "5セント硬貨",
+      "claim_ja": "5+10=15枚。",
+      "method_ja": "10枚を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5+10=15枚。"
+    },
+    {
+      "id": "zain_all_coins",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.zain_all_coins",
+      "title_ja": "合計枚数",
+      "claim_ja": "16+17+15=48枚。",
+      "method_ja": "3種類を足す。",
+      "requires_steps": [
+        "zain_quarters",
+        "zain_dimes",
+        "zain_nickels"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "16+17+15=48枚。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.zain_coin_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Zainは16枚、17枚、15枚で、合計48枚。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "zain_quarters",
+        "zain_dimes",
+        "zain_nickels",
+        "zain_all_coins"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Zainは16枚、17枚、15枚で、合計48枚。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4266,
+    "checked_model_hash": "046f077325373f030d564e7b3fdfbfaf1e6fd6e25cb6fb795a4fb62a35111d93",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "gsm8k_sprint119_yogurt",
+  "title_ja": "返金額は384ドル。",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02070",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0924A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "原題を読み、変数・単位・割合・全要求を保って一行ずつ導く。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0924A10.yogurt_solution",
+  "graph": "work/gsm8k-sprint119-yogurt-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "yogurt_expired",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.yogurt_expired",
+      "title_ja": "期限切れは32パック。",
+      "claim_ja": "期限切れは32パック。",
+      "method_ja": "80パックの40%。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "期限切れは32パック。",
+      "baseline_ja": "期限切れは32パック。"
+    },
+    {
+      "id": "yogurt_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0924A10.yogurt_solution",
+      "title_ja": "返金額は384ドル。",
+      "claim_ja": "返金額は384ドル。",
+      "method_ja": "32×12ドル。",
+      "requires_steps": [
+        "yogurt_expired"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・割合を保ち、個数・金額・時間・距離は非負整数として扱う。",
+      "conclusion_ja": "返金額は384ドル。",
+      "baseline_ja": "返金額は384ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2071,
+    "checked_model_hash": "0590cbfd29c3b6d8fb8f55077c6c787f083c7d445b4b3244a24912af0c1067a7",
+    "checks_ja": [
+      "固定原本を再読し、全条件・単位・求める結論をLeanモデルへ照合した。",
+      "説明行と名前付きLean定理を照合し、単位のずれや解釈条件を黙って補わず明示した。"
+    ]
+  }
+}

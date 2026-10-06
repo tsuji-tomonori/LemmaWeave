@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint338_cookie_sales_cents",
+  "title_ja": "クッキー販売総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03811",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A00P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Carmen is selling girl scout cookies. She sells three boxes of samoas to the green house for $4 each; two boxes of thin mints for $3.50 each and one box of fudge delights for $5 to the yellow house; and nine boxes of sugar cookies for $2 each to the brown house. How much money did Carmen make?",
+  "answer_ja": "最初の客は3×4ドル=12ドル。次の客は2×3.50ドル+5ドル=12ドル。最後の客は9×2ドル=18ドル。合計42ドル。Leanでは端数を避け、4200セントとして計算する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A00P2.cookie_sales_cents",
+  "graph": "work/gsm8k-sprint338-cookie-sales-cents-graph.json",
+  "model_notes_ja": [
+    "税・割引はなく、各客が記載された個数をすべて購入する。"
+  ],
+  "steps": [
+    {
+      "id": "cookie_sales_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A00P2.cookie_sales_cents",
+      "title_ja": "クッキー販売総額",
+      "claim_ja": "最初の客は3×4ドル=12ドル。次の客は2×3.50ドル+5ドル=12ドル。最後の客は9×2ドル=18ドル。合計42ドル。Leanでは端数を避け、4200セントとして計算する。",
+      "method_ja": "客ごとの小計をセント単位で求めて合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "価格はすべて1セント単位の整数。",
+      "baseline_ja": "整数・分数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "42ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3812,
+    "checked_model_hash": "e9603d9d1e7c92173b1dcf6df55966de74d54993d55bc487db26c2eca4d61b3b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

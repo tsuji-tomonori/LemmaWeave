@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint143_ages",
+  "title_ja": "5年後のFrankの年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02435",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A17.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Karenは2歳、Carlaは2歳上、TyはCarlaの2倍より4歳上、5年後のFrankは現在のTyの3倍。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A17.ages_solution",
+  "graph": "work/gsm8k-sprint143-ages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ages_carla",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.ages_carla",
+      "title_ja": "Carlaは4歳",
+      "claim_ja": "Carlaは4歳",
+      "method_ja": "2に2を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Carlaは4歳",
+      "baseline_ja": "Carlaは4歳"
+    },
+    {
+      "id": "ages_ty",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.ages_ty",
+      "title_ja": "Tyは12歳",
+      "claim_ja": "Tyは12歳",
+      "method_ja": "4の2倍に4を足す",
+      "requires_steps": [
+        "ages_carla"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Tyは12歳",
+      "baseline_ja": "Tyは12歳"
+    },
+    {
+      "id": "ages_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A17.ages_solution",
+      "title_ja": "5年後のFrankは36歳",
+      "claim_ja": "5年後のFrankは36歳",
+      "method_ja": "12の3倍",
+      "requires_steps": [
+        "ages_ty"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "5年後のFrankは36歳",
+      "baseline_ja": "5年後のFrankは36歳"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2436,
+    "checked_model_hash": "51930b9cca0f789ec73cd646c2464d8b5b040eaad6b288a8ea8ddbb541ea8a6f",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

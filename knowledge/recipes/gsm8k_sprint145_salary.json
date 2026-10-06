@@ -1,0 +1,84 @@
+{
+  "id": "gsm8k_sprint145_salary",
+  "title_ja": "Robertの月間支出",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02458",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "基本給1250ドル、売上23600ドルの10%が歩合。総収入の20%を貯蓄する。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A19.salary_solution",
+  "graph": "work/gsm8k-sprint145-salary-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "salary_commission",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.salary_commission",
+      "title_ja": "歩合は2360ドル",
+      "claim_ja": "歩合は2360ドル",
+      "method_ja": "23600の10%を求める",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "歩合は2360ドル",
+      "baseline_ja": "歩合は2360ドル"
+    },
+    {
+      "id": "salary_earnings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.salary_earnings",
+      "title_ja": "総収入は3610ドル",
+      "claim_ja": "総収入は3610ドル",
+      "method_ja": "1250と2360を足す",
+      "requires_steps": [
+        "salary_commission"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "総収入は3610ドル",
+      "baseline_ja": "総収入は3610ドル"
+    },
+    {
+      "id": "salary_savings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.salary_savings",
+      "title_ja": "貯蓄は722ドル",
+      "claim_ja": "貯蓄は722ドル",
+      "method_ja": "3610の20%を求める",
+      "requires_steps": [
+        "salary_earnings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "貯蓄は722ドル",
+      "baseline_ja": "貯蓄は722ドル"
+    },
+    {
+      "id": "salary_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A19.salary_solution",
+      "title_ja": "支出は2888ドル",
+      "claim_ja": "支出は2888ドル",
+      "method_ja": "3610から722を引く",
+      "requires_steps": [
+        "salary_earnings",
+        "salary_savings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "支出は2888ドル",
+      "baseline_ja": "支出は2888ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2459,
+    "checked_model_hash": "423c9f803ff24f129598ede8720ac4eb2ddd472b6b4ca4eb216de179e168a2b6",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

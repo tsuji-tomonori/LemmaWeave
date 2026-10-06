@@ -1,0 +1,47 @@
+{
+  "id": "gsm8k_sprint44_weights",
+  "title_ja": "Yolaの2年前の体重",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00949",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "現在220ポンドのYolaよりWandaが30ポンド重く、2年前のYolaより80ポンド重い条件から過去の体重を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A12.weights_solution",
+  "graph": "work/gsm8k-sprint44-weights-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "weights_wanda",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.weights_wanda",
+      "title_ja": "Wandaの現在体重",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Yolaの現在220ポンドより30ポンド重い。",
+      "conclusion_ja": "250ポンド。",
+      "baseline_ja": "220+30=250。"
+    },
+    {
+      "id": "weights_past",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A12.weights_past",
+      "title_ja": "Yolaの2年前の体重",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Wanda250ポンドは当時のYolaより80ポンド重い。",
+      "conclusion_ja": "170ポンド。",
+      "baseline_ja": "250=170+80。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 950,
+    "checked_model_hash": "962f5dfe8c33eda9de39cc8a0cc74898d5ad2516f5d06325b43f90a73a8362ff",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

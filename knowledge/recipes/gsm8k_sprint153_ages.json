@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint153_ages",
+  "title_ja": "孫の年齢",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02582",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A10.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "父は息子の2倍、息子は孫の2倍で、3人の合計は140歳。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A10.ages_solution",
+  "graph": "work/gsm8k-sprint153-ages-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "ages_ratio_sum",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.ages_ratio_sum",
+      "title_ja": "孫の7倍が140歳",
+      "claim_ja": "孫の7倍が140歳",
+      "method_ja": "孫を1とすると息子2、父4なので合計7倍",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "孫の7倍が140歳",
+      "baseline_ja": "孫の7倍が140歳"
+    },
+    {
+      "id": "ages_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A10.ages_solution",
+      "title_ja": "孫は20歳",
+      "claim_ja": "孫は20歳",
+      "method_ja": "140を7で割る",
+      "requires_steps": [
+        "ages_ratio_sum"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "孫は20歳",
+      "baseline_ja": "孫は20歳"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2583,
+    "checked_model_hash": "46e79fb8178be609e6fbfa0886df34cbbb62c16290d04ba3642b6415e85d7526",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術と文言も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

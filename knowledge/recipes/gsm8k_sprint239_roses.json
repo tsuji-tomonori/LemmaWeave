@@ -1,0 +1,8 @@
+{
+  "id":"gsm8k_sprint239_roses","title_ja":"バラの均等分配","problem_id":"external-gsm8k-main-3101c7d50724:train:03236","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint1001A03P1.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"40本から妹が4本取った残りを9人へ均等に分ける。","root":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.roses_each","graph":"work/gsm8k-sprint239-roses-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"roses_remaining","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.roses_remaining","title_ja":"残りは36本。","claim_ja":"40-4=36本。","method_ja":"全体から妹が取った本数を引く。","requires_steps":[],"uses_nodes":[],"condition_ja":"40本のうち4本を取る。","conclusion_ja":"36本。","baseline_ja":"自然数の減法。"},
+    {"id":"roses_each","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint1001A03P1.roses_each","title_ja":"1人4本。","claim_ja":"36÷9=4本。","method_ja":"9×1人分=残り36を解く。","requires_steps":["roses_remaining"],"uses_nodes":[],"condition_ja":"9人へ均等に配る。","conclusion_ja":"1人4本。","baseline_ja":"整数の等分。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":3237,"checked_model_hash":"c24d6d0174100c85a1464a1704b75775aa730bc48f2d65a920afb31ed72126e7","checks_ja":["40本・4本・9人を原題へ照合した。","全説明行をLean定理へ対応させた。","独立レビューではなく作成者自己照合である。"]}
+}

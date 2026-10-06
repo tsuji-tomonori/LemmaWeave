@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_sprint445_mango_total",
+  "title_ja": "3人のマンゴー総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04200",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Alexis has four times as many mangoes as Dilan and Ashley combined. If Alexis has 60 mangoes, how many mangoes does all of them have combined?",
+  "answer_ja": "DilanとAshleyの合計は60÷4=15個。Alexisの60個と合わせて75個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.mango_total",
+  "graph": "work/gsm8k-sprint445-mango-total-graph.json",
+  "model_notes_ja": [
+    "4倍の比較対象はDilanとAshleyを合わせた個数。"
+  ],
+  "steps": [
+    {
+      "id": "dilan_ashley_mangoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.dilan_ashley_mangoes",
+      "title_ja": "2人の合計",
+      "claim_ja": "60÷4=15個。",
+      "method_ja": "Alexisの個数を4で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Alexisは2人合計の4倍。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "15個。"
+    },
+    {
+      "id": "all_mangoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.all_mangoes",
+      "title_ja": "全員の合計",
+      "claim_ja": "60+15=75個。",
+      "method_ja": "Alexisと2人分を足す。",
+      "requires_steps": [
+        "dilan_ashley_mangoes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "60個と15個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "75個。"
+    },
+    {
+      "id": "mango_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A07P1.mango_total",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "DilanとAshleyの合計は60÷4=15個。Alexisの60個と合わせて75個。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "dilan_ashley_mangoes",
+        "all_mangoes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "4倍の比較対象はDilanとAshleyを合わせた個数。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "DilanとAshleyの合計は60÷4=15個。Alexisの60個と合わせて75個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4201,
+    "checked_model_hash": "8bac0bd053d2c9c42f769f1835e3a69c857abf12d92e01c66fb9329ed7569d0b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "8bac0bd053d2c9c42f769f1835e3a69c857abf12d92e01c66fb9329ed7569d0b"
+}

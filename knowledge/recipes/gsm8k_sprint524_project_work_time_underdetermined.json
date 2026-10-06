@@ -1,0 +1,135 @@
+{
+  "id": "gsm8k_sprint524_project_work_time_underdetermined",
+  "title_ja": "作業時間の条件不足",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04279",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P2.lean",
+  "problem_ja": "4日間の期間に7時間の昼寝を6回した。プロジェクトに何時間使ったか。",
+  "answer_ja": "4日間は96時間、昼寝は42時間。全ての非昼寝時間を作業したという追加条件なら54時間だが、原文は他の活動時間を指定せず、例えば他に4時間使えば50時間なので一意に決まらない。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.project_work_time_underdetermined",
+  "graph": "work/gsm8k-sprint524-project-work-time-underdetermined-graph.json",
+  "model_notes_ja": [
+    "「4日かかった」だけでは全ての非昼寝時間を作業したとは限らない。参照解答54時間は追加条件付きの値として保持する。"
+  ],
+  "steps": [
+    {
+      "id": "four_day_window",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.four_day_window",
+      "title_ja": "4日間の総時間",
+      "claim_ja": "4×24=96時間。",
+      "method_ja": "1日24時間を4倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4×24=96時間。"
+    },
+    {
+      "id": "nap_time_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.nap_time_total",
+      "title_ja": "昼寝時間",
+      "claim_ja": "6×7=42時間。",
+      "method_ja": "6回の7時間を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6×7=42時間。"
+    },
+    {
+      "id": "conditional_work_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.conditional_work_time",
+      "title_ja": "追加条件付き作業時間",
+      "claim_ja": "96−42=54時間。",
+      "method_ja": "非昼寝時間を全て作業したと仮定して引く。",
+      "requires_steps": [
+        "four_day_window",
+        "nap_time_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "96−42=54時間。"
+    },
+    {
+      "id": "other_activity_example",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.other_activity_example",
+      "title_ja": "他活動の具体例",
+      "claim_ja": "4時間の他活動は54時間以内。",
+      "method_ja": "別の整合的な時間配分のため非負の4時間を置く。",
+      "requires_steps": [
+        "conditional_work_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4時間の他活動は54時間以内。"
+    },
+    {
+      "id": "alternative_work_time",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.alternative_work_time",
+      "title_ja": "別の作業時間",
+      "claim_ja": "96−42−4=50時間。",
+      "method_ja": "他活動4時間も差し引く。",
+      "requires_steps": [
+        "four_day_window",
+        "nap_time_total",
+        "other_activity_example"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "96−42−4=50時間。"
+    },
+    {
+      "id": "work_times_differ",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.work_times_differ",
+      "title_ja": "非一意性",
+      "claim_ja": "54時間と50時間は異なる。",
+      "method_ja": "追加条件の有無で答えが異なることを確認する。",
+      "requires_steps": [
+        "conditional_work_time",
+        "alternative_work_time"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "54時間と50時間は異なる。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.project_work_time_underdetermined",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "4日間は96時間、昼寝は42時間。全ての非昼寝時間を作業したという追加条件なら54時間だが、原文は他の活動時間を指定せず、例えば他に4時間使えば50時間なので一意に決まらない。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "four_day_window",
+        "nap_time_total",
+        "conditional_work_time",
+        "other_activity_example",
+        "alternative_work_time",
+        "work_times_differ"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4日間は96時間、昼寝は42時間。全ての非昼寝時間を作業したという追加条件なら54時間だが、原文は他の活動時間を指定せず、例えば他に4時間使えば50時間なので一意に決まらない。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4280,
+    "checked_model_hash": "856f034a08fcb9718dbed19908fa3256e481e4abe9ccd62e438c44244ff5d2a8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

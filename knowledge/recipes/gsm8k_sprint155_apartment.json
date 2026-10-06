@@ -1,0 +1,71 @@
+{
+  "id": "gsm8k_sprint155_apartment",
+  "title_ja": "居間の面積",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02617",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A12.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "16×10平方フィートを6室に分け、5室は同面積、居間は通常室3室分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A12.apartment_solution",
+  "graph": "work/gsm8k-sprint155-apartment-graph.json",
+  "model_notes_ja": [
+    "間取りが全160平方フィートを重なりや余白なく占める。"
+  ],
+  "steps": [
+    {
+      "id": "apartment_area",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.apartment_area",
+      "title_ja": "総面積は160平方フィート",
+      "claim_ja": "総面積は160平方フィート",
+      "method_ja": "16フィートに10フィートを掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "間取りが全160平方フィートを重なりや余白なく占める。",
+      "conclusion_ja": "総面積は160平方フィート",
+      "baseline_ja": "総面積は160平方フィート"
+    },
+    {
+      "id": "apartment_normal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.apartment_normal",
+      "title_ja": "通常室は20平方フィート",
+      "claim_ja": "通常室は20平方フィート",
+      "method_ja": "通常室5室と3室分の居間、合計8室分へ160を等分する",
+      "requires_steps": [
+        "apartment_area"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "間取りが全160平方フィートを重なりや余白なく占める。",
+      "conclusion_ja": "通常室は20平方フィート",
+      "baseline_ja": "通常室は20平方フィート"
+    },
+    {
+      "id": "apartment_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A12.apartment_solution",
+      "title_ja": "居間は60平方フィート",
+      "claim_ja": "居間は60平方フィート",
+      "method_ja": "20平方フィートを3倍する",
+      "requires_steps": [
+        "apartment_normal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "間取りが全160平方フィートを重なりや余白なく占める。",
+      "conclusion_ja": "居間は60平方フィート",
+      "baseline_ja": "居間は60平方フィート"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2618,
+    "checked_model_hash": "e7456ead757e31e01855c8bdf9ea2e415b763b370f320dc110796823d9f96001",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gsm8k_sprint141_cards",
+  "title_ja": "Jessの重複カード数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02399",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A15.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Robの24枚の3分の1が重複で、JessはRobの重複の5倍を持つ。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cards_solution",
+  "graph": "work/gsm8k-sprint141-cards-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "cards_rob",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cards_rob",
+      "title_ja": "Robの重複は8枚",
+      "claim_ja": "Robの重複は8枚",
+      "method_ja": "24を3等分する",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Robの重複は8枚",
+      "baseline_ja": "Robの重複は8枚"
+    },
+    {
+      "id": "cards_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A15.cards_solution",
+      "title_ja": "Jessの重複は40枚",
+      "claim_ja": "Jessの重複は40枚",
+      "method_ja": "8に5を掛ける",
+      "requires_steps": [
+        "cards_rob"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "Jessの重複は40枚",
+      "baseline_ja": "Jessの重複は40枚"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2400,
+    "checked_model_hash": "edf560264063acec45b55cad783b0f7182cd791453815982b5a6deac70e9978e",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint39_choir",
+  "title_ja": "最終節で加わる歌手",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:00876",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "problem_ja": "各節で新たに参加する人数を追う。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0920A07.choir_solution",
+  "graph": "work/gsm8k-sprint39-choir-graph.json",
+  "lean_file": "tests/lean/GSM8KSprint0920A07.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "model_notes_ja": [
+    "joined in は各節で新たに歌い始めた人数として読む。"
+  ],
+  "steps": [
+    {
+      "id": "choir_first",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.choir_first",
+      "title_ja": "第1節",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "30人の半数が歌う。",
+      "conclusion_ja": "15人。",
+      "baseline_ja": "15×2=30。"
+    },
+    {
+      "id": "choir_remaining",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.choir_remaining",
+      "title_ja": "第1節後の未参加",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "15人参加したので残り15人。",
+      "conclusion_ja": "15人。",
+      "baseline_ja": "15+15=30。"
+    },
+    {
+      "id": "choir_second",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.choir_second",
+      "title_ja": "第2節で参加",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "残り15人の3分の1。",
+      "conclusion_ja": "5人。",
+      "baseline_ja": "5×3=15。"
+    },
+    {
+      "id": "choir_final",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0920A07.choir_final",
+      "title_ja": "最終節で参加",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "全30人から既参加15人と5人を除く。",
+      "conclusion_ja": "10人。",
+      "baseline_ja": "15+5+10=30。"
+    }
+  ],
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 877,
+    "checked_model_hash": "4b736d5664801bb7449b897e9bb46cd143083ac8056c5d66c60212aa3a8dc621",
+    "checks_ja": [
+      "原題から条件・単位・全要求を再読し、各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

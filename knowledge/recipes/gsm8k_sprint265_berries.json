@@ -1,0 +1,85 @@
+{
+  "id": "gsm8k_sprint265_berries",
+  "title_ja": "販売できるベリー数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03369",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1001A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "30+20+10個のベリーのうち3分の1を腐敗として除き、新鮮な残りの半分を保管した後の販売数を求める。",
+  "answer_ja": "20個",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.berry_sold",
+  "graph": "work/gsm8k-sprint265-berries-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "berry_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.berry_total",
+      "title_ja": "収穫総数は60個。",
+      "claim_ja": "収穫総数は60個。",
+      "method_ja": "30+20+10。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "3人の収穫を合計する。",
+      "conclusion_ja": "60個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "berry_fresh",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.berry_fresh",
+      "title_ja": "腐敗は20個、新鮮なのは40個。",
+      "claim_ja": "腐敗は20個、新鮮なのは40個。",
+      "method_ja": "60の3分の1を引く。",
+      "requires_steps": [
+        "berry_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "腐敗割合は総数を基準にする。",
+      "conclusion_ja": "40個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "berry_kept",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.berry_kept",
+      "title_ja": "保管するのは20個。",
+      "claim_ja": "保管するのは20個。",
+      "method_ja": "40の半分。",
+      "requires_steps": [
+        "berry_fresh"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "半分は新鮮な40個を基準にする。",
+      "conclusion_ja": "20個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    },
+    {
+      "id": "berry_sold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1001A12P3.berry_sold",
+      "title_ja": "販売できるのは20個。",
+      "claim_ja": "販売できるのは20個。",
+      "method_ja": "40-20。",
+      "requires_steps": [
+        "berry_fresh",
+        "berry_kept"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "新鮮なうち保管しない分を売る。",
+      "conclusion_ja": "20個。",
+      "baseline_ja": "小中算数の四則計算・割合・一次関係。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3370,
+    "checked_model_hash": "b6cea9d1a666702b5012c56dc0cbd3c2d0155c54b55f5c910555bdf9c5288613",
+    "checks_ja": [
+      "原文の数量・単位・求める全結論を再照合した。",
+      "全説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。参照解答ではなく原文から再計算した。"
+    ]
+  }
+}

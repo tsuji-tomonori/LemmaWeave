@@ -1,0 +1,68 @@
+{
+  "id": "gsm8k_sprint140_fruit",
+  "title_ja": "果物の購入額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02388",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A14.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "りんご1ダース40ドル、梨1ダース50ドルを各14ダース。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A14.fruit_solution",
+  "graph": "work/gsm8k-sprint140-fruit-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "fruit_apples",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.fruit_apples",
+      "title_ja": "りんご560ドル",
+      "claim_ja": "りんご560ドル",
+      "method_ja": "14に40を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "りんご560ドル",
+      "baseline_ja": "りんご560ドル"
+    },
+    {
+      "id": "fruit_pears",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.fruit_pears",
+      "title_ja": "梨700ドル",
+      "claim_ja": "梨700ドル",
+      "method_ja": "14に50を掛ける",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "梨700ドル",
+      "baseline_ja": "梨700ドル"
+    },
+    {
+      "id": "fruit_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A14.fruit_solution",
+      "title_ja": "合計1260ドル",
+      "claim_ja": "合計1260ドル",
+      "method_ja": "560と700を足す",
+      "requires_steps": [
+        "fruit_apples",
+        "fruit_pears"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数の量として扱う。",
+      "conclusion_ja": "合計1260ドル",
+      "baseline_ja": "合計1260ドル"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2389,
+    "checked_model_hash": "5bd3bfec9c9d76312f9daf1e10ec52344857ae18554d270e30427ddf06f22550",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答の算術も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "id": "gsm8k_sprint517_chicken_surprise_serving_ounces",
+  "title_ja": "Chicken Surprise 1食分の重さ",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04272",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P1.lean",
+  "problem_ja": "12食分に鶏肉4.5ポンドと詰め物24オンスを使う。1食分は何オンスか。",
+  "answer_ja": "4ポンドは64オンス、0.5ポンドは8オンスなので鶏肉は72オンス。詰め物込み96オンスを12等分し、1食8オンス。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.chicken_surprise_serving_ounces",
+  "graph": "work/gsm8k-sprint517-chicken-surprise-serving-ounces-graph.json",
+  "model_notes_ja": [
+    "1ポンド=16オンスを用い、0.5ポンドを8オンスとして正確に換算する。"
+  ],
+  "steps": [
+    {
+      "id": "four_pounds_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.four_pounds_ounces",
+      "title_ja": "4ポンドの換算",
+      "claim_ja": "4×16=64オンス。",
+      "method_ja": "1ポンド16オンスを4倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4×16=64オンス。"
+    },
+    {
+      "id": "half_pound_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.half_pound_ounces",
+      "title_ja": "0.5ポンドの換算",
+      "claim_ja": "16÷2=8オンス。",
+      "method_ja": "1ポンドの半分を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "16÷2=8オンス。"
+    },
+    {
+      "id": "chicken_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.chicken_ounces",
+      "title_ja": "鶏肉の総重量",
+      "claim_ja": "64+8=72オンス。",
+      "method_ja": "4ポンド分と0.5ポンド分を足す。",
+      "requires_steps": [
+        "four_pounds_ounces",
+        "half_pound_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "64+8=72オンス。"
+    },
+    {
+      "id": "mixture_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.mixture_ounces",
+      "title_ja": "材料の総重量",
+      "claim_ja": "72+24=96オンス。",
+      "method_ja": "鶏肉と詰め物を足す。",
+      "requires_steps": [
+        "chicken_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "72+24=96オンス。"
+    },
+    {
+      "id": "serving_ounces",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.serving_ounces",
+      "title_ja": "1食分",
+      "claim_ja": "96÷12=8オンス。",
+      "method_ja": "総重量を12食で等分する。",
+      "requires_steps": [
+        "mixture_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "96÷12=8オンス。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.chicken_surprise_serving_ounces",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "4ポンドは64オンス、0.5ポンドは8オンスなので鶏肉は72オンス。詰め物込み96オンスを12等分し、1食8オンス。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "four_pounds_ounces",
+        "half_pound_ounces",
+        "chicken_ounces",
+        "mixture_ounces",
+        "serving_ounces"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4ポンドは64オンス、0.5ポンドは8オンスなので鶏肉は72オンス。詰め物込み96オンスを12等分し、1食8オンス。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4273,
+    "checked_model_hash": "9deac44327d4c25371eedd84b73adaf41869bf13e44dc6daefec7cae619d5d34",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

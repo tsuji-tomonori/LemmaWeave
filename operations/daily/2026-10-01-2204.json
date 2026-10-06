@@ -1,0 +1,199 @@
+{
+  "date": "2026-10-01",
+  "run_id": "20261001T220440+0900-ci-evidence-22",
+  "scheduled_slot": "2026-10-01T22:00:00+09:00",
+  "started_at": "2026-10-01T13:04:40Z",
+  "finished_at": "2026-10-01T13:51:30Z",
+  "base_sha": "2d7e67dc17593fd232d1bf094f9ec726fb2e0fd7",
+  "branch": "codex/sprint-20260919-0000",
+  "role": "ci_evidence_recovery_and_integration",
+  "selected_problem_ids": [],
+  "authored_problem_ids": [],
+  "completed_problem_ids": [],
+  "verification_pending_problem_ids": [
+    "external-gsm8k-main-3101c7d50724:train:03536",
+    "external-gsm8k-main-3101c7d50724:train:03537",
+    "external-gsm8k-main-3101c7d50724:train:03538",
+    "external-gsm8k-main-3101c7d50724:train:03539",
+    "external-gsm8k-main-3101c7d50724:train:03540",
+    "external-gsm8k-main-3101c7d50724:train:03541",
+    "external-gsm8k-main-3101c7d50724:train:03542",
+    "external-gsm8k-main-3101c7d50724:train:03543",
+    "external-gsm8k-main-3101c7d50724:train:03544",
+    "external-gsm8k-main-3101c7d50724:train:03545",
+    "external-gsm8k-main-3101c7d50724:train:03546",
+    "external-gsm8k-main-3101c7d50724:train:03547",
+    "external-gsm8k-main-3101c7d50724:train:03548",
+    "external-gsm8k-main-3101c7d50724:train:03549",
+    "external-gsm8k-main-3101c7d50724:train:03550"
+  ],
+  "deferred": [],
+  "queue": {
+    "total": 8792,
+    "unique_ids": 8792,
+    "sequence_exact": true,
+    "missing": 0,
+    "unexpected": 0,
+    "state_overlap": 0,
+    "before": {
+      "solution_ready": 518,
+      "awaiting_verification": 3034,
+      "pending": 5240
+    },
+    "after": {
+      "solution_ready": 518,
+      "awaiting_verification": 3034,
+      "pending": 5240
+    },
+    "changed": false,
+    "main_reflected_solution_ready": 518,
+    "next_pending": "external-gsm8k-main-3101c7d50724:train:03551"
+  },
+  "ci": {
+    "checked_head": "a827ffb8629327913f96cea835e5f9b9990f3e16",
+    "workflow_run": {
+      "id": 36858611245,
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36858611245",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-01T11:57:20Z",
+      "finished_at": "2026-10-01T12:05:51Z"
+    },
+    "job": {
+      "id": 110357009225,
+      "name": "lean",
+      "conclusion": "failure"
+    },
+    "fixed_environment": {
+      "lean": "4.33.1",
+      "lake": "5.0.0-src+819816b",
+      "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "full_lake_build": "passed",
+      "build_jobs": 3020,
+      "observed_allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "replay": {
+      "run": "runs/20261001T115928-9d39ddbf/run.json",
+      "exit_code": 1,
+      "failing_command": [
+        "python3",
+        "scripts/run_method_targets.py"
+      ],
+      "failing_run": "runs/20261001T120520-fc8644e6/run.json",
+      "error": "missing_graph_directives",
+      "affected_recipes": 285,
+      "affected_lean_files": 57,
+      "diagnosed_causes": [
+        "284 recipes used an unqualified Lean root after opening the recipe root namespace; the guard required only the fully qualified spelling.",
+        "gsm8k_sprint284_dumbbell_total_weight had a graph filename mismatch between the recipe and Lean directive."
+      ]
+    },
+    "artifact": {
+      "id": 11161730473,
+      "name": "lean-evidence-2d7e67dc17593fd232d1bf094f9ec726fb2e0fd7",
+      "size_bytes": 219307878,
+      "sha256": "49f3fbb33193ae6346e1b57db9eca5f6e336eb99a47b8e52842979254a42d072",
+      "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36858611245/artifacts/11161730473",
+      "expires_at": "2026-10-15T12:05:26Z"
+    },
+    "repair": {
+      "status": "isolated_target_replay_committed_pending_new_head_ci",
+      "changed_files": [
+        "scripts/run_method_targets.py",
+        "tests/test_method_recipes.py",
+        "tests/test_run_method_targets.py",
+        "tests/lean/GSM8KSprint1001A19P1.lean",
+        "operations/daily/2026-10-01-2204.json"
+      ],
+      "regression_tests": [
+        "qualified root remains accepted",
+        "unqualified root is accepted only when its exact namespace is opened",
+        "unqualified root without the matching open remains rejected"
+      ],
+      "additional_checks": [
+        "Python AST parse of the exact corrected script passed before commit",
+        "corrected script rebuilt from the complete parent version",
+        "The exact isolation-repair script passed Python bytecode compilation before commit",
+        "Dependency builds are serial per target to avoid shared Lake-output writes; only evidence-producing Lean target checks may run in parallel",
+        "A failed imported model no longer prevents unrelated selected targets from being attempted and recorded"
+      ]
+    },
+    "required_success": false,
+    "retry_runs": [
+      {
+        "head_sha": "8fc388fa7309d05ec6563eebfb8c5f9bf05a256b",
+        "workflow_run_id": 36867201825,
+        "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36867201825",
+        "conclusion": "failure",
+        "started_at": "2026-10-01T13:14:08Z",
+        "finished_at": "2026-10-01T13:24:02Z",
+        "progress_ja": "登録ガード通過後に多数の対象ビルドが成功したが、生成時のJavaScript replacement展開でPythonソースが欠損しSyntaxError。",
+        "failing_run": "runs/20261001T132322-1a4c3b02/run.json",
+        "error": "SyntaxError: unterminated string literal in scripts/run_method_targets.py line 43",
+        "artifact": {
+          "id": 11165136456,
+          "size_bytes": 219308230,
+          "sha256": "9fd155f3c114b950bdb59540074f42653f25736fb3a9f3afc503389de946ecbd",
+          "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36867201825/artifacts/11165136456",
+          "expires_at": "2026-10-15T13:23:29Z"
+        }
+      },
+      {
+        "head_sha": "a827ffb8629327913f96cea835e5f9b9990f3e16",
+        "workflow_run_id": 36868713869,
+        "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36868713869",
+        "conclusion": "failure",
+        "started_at": "2026-10-01T13:26:41Z",
+        "finished_at": "2026-10-01T13:44:33Z",
+        "progress_ja": "依存ディレクティブ検査とPython構文を通過し、固定環境の完全再生まで進行した。単一union依存ビルドが151個の未集約Leanモジュールのエラーで停止し、57対象の個別結果を残せなかった。",
+        "failing_run": "runs/20261001T133504-f41dcf55/run.json",
+        "error": "lake build of union imports failed",
+        "diagnostics": {
+          "failing_lean_modules": 151,
+          "parsed_error_rows": 5379,
+          "omega_failures": 1500,
+          "implicit_or_binder_type_failures": 1464,
+          "invalid_field_failures": 1247,
+          "unsolved_goals": 96,
+          "syntax_failures": 9,
+          "rewrite_failures": 2,
+          "other": 1061,
+          "examples": [
+            "LemmaWeave/Problems/GSM8K/Sprint0922A05Models.lean",
+            "LemmaWeave/Problems/GSM8K/Sprint0928A10Models.lean",
+            "LemmaWeave/Problems/GSM8K/Sprint1001A20P2Models.lean",
+            "LemmaWeave/Problems/GSM8K/Sprint1001A20P3Models.lean"
+          ]
+        },
+        "artifact": {
+          "id": 11167008469,
+          "size_bytes": 219519631,
+          "sha256": "e7a0d6f94935d9741d3be1a00750ca67af72159e2b03c6760ae39dfc6095a13f",
+          "url": "https://github.com/tsuji-tomonori/LemmaWeave/actions/runs/36868713869/artifacts/11167008469",
+          "expires_at": "2026-10-15T13:43:56Z"
+        }
+      }
+    ]
+  },
+  "pr": {
+    "number": 5,
+    "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
+    "state": "open",
+    "mergeable": true,
+    "merged": false,
+    "latest_review": "APPROVED",
+    "unresolved_review_threads": 0,
+    "merge_action": "not_merged",
+    "merge_blocker_ja": "第2修復HEADの必須CIは151個の未集約Leanモジュールに計5,379件のエラーを検出して失敗した。個別対象を継続・記録する第3修復HEADの成功証拠も未取得。"
+  },
+  "verification": {
+    "assurance": "INCONCLUSIVE",
+    "reason_ja": "固定Lean 4.33.1の全体集約ビルドと許容公理出力は成功したが、method対象のimport閉包では151モジュールに5,379件のLeanエラーがある。個別再生を継続する基盤修復後も、各対象の現在証拠が揃うまではINCONCLUSIVE。"
+  },
+  "next_action_ja": "第3修復HEADのCIで57対象を相互に遮断せず再生し、成功対象だけ現行入力ハッシュ・公理・依存証拠を取り込み、失敗対象はファイル別に期限と再開箇所を保存する。"
+}

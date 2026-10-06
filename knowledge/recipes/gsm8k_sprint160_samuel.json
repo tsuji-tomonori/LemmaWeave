@@ -1,0 +1,86 @@
+{
+  "id": "gsm8k_sprint160_samuel",
+  "title_ja": "Samuelに残ったりんご",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02690",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0927A19.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Bonnie8個、Samuelは20個多い。Samuelは半分を食べ、全体の7分の1をパイに使う。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0927A19.samuel_solution",
+  "graph": "work/gsm8k-sprint160-samuel-graph.json",
+  "model_notes_ja": [
+    "『them』はいずれもSamuelが買った28個を指すため、食べた量とパイ使用量を同じ元の28個から計算する。"
+  ],
+  "steps": [
+    {
+      "id": "samuel_bought",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.samuel_bought",
+      "title_ja": "Samuelは28個買った",
+      "claim_ja": "Samuelは28個買った",
+      "method_ja": "8に20を足す",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "『them』はいずれもSamuelが買った28個を指すため、食べた量とパイ使用量を同じ元の28個から計算する。",
+      "conclusion_ja": "Samuelは28個買った",
+      "baseline_ja": "Samuelは28個買った"
+    },
+    {
+      "id": "samuel_eaten",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.samuel_eaten",
+      "title_ja": "14個食べた",
+      "claim_ja": "14個食べた",
+      "method_ja": "28個の半分",
+      "requires_steps": [
+        "samuel_bought"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『them』はいずれもSamuelが買った28個を指すため、食べた量とパイ使用量を同じ元の28個から計算する。",
+      "conclusion_ja": "14個食べた",
+      "baseline_ja": "14個食べた"
+    },
+    {
+      "id": "samuel_pie",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.samuel_pie",
+      "title_ja": "4個をパイに使った",
+      "claim_ja": "4個をパイに使った",
+      "method_ja": "28個の7分の1",
+      "requires_steps": [
+        "samuel_bought"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『them』はいずれもSamuelが買った28個を指すため、食べた量とパイ使用量を同じ元の28個から計算する。",
+      "conclusion_ja": "4個をパイに使った",
+      "baseline_ja": "4個をパイに使った"
+    },
+    {
+      "id": "samuel_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0927A19.samuel_solution",
+      "title_ja": "10個残る",
+      "claim_ja": "10個残る",
+      "method_ja": "28から14と4を引く",
+      "requires_steps": [
+        "samuel_eaten",
+        "samuel_pie"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "『them』はいずれもSamuelが買った28個を指すため、食べた量とパイ使用量を同じ元の28個から計算する。",
+      "conclusion_ja": "10個残る",
+      "baseline_ja": "10個残る"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2691,
+    "checked_model_hash": "d8a8f17053fea51046189bab310493b47bf9a1d615c9244601260391ee436219",
+    "checks_ja": [
+      "固定原本の全条件と求める対象を再読しLeanモデルへ照合した。",
+      "各説明行の主張・根拠・適用条件と名前付きLean定理を照合した。",
+      "参考解答も照合したが、独立レビューではなく作成者の自己照合として記録した。"
+    ]
+  }
+}

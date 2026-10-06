@@ -1,0 +1,44 @@
+{
+  "id": "gsm8k_sprint349_barrel_remaining",
+  "title_ja": "漏れた後に残る水量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:03868",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1003A07P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "A 220-liter barrel has a small leak. It lost 10% of its contents before anyone noticed. How many liters are left in the barrel?",
+  "answer_ja": "失った量は220リットルの10%なので220×10÷100=22リットル。残量は220−22=198リットル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1003A07P1.barrel_remaining",
+  "graph": "work/gsm8k-sprint349-barrel-remaining-graph.json",
+  "model_notes_ja": [
+    "割合の基準を漏れる前の220リットルに固定する。"
+  ],
+  "steps": [
+    {
+      "id": "barrel_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1003A07P1.barrel_remaining",
+      "title_ja": "漏れた後に残る水量",
+      "claim_ja": "失った量は220リットルの10%なので220×10÷100=22リットル。残量は220−22=198リットル。",
+      "method_ja": "初期量の10%を求めて初期量から引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "漏れる前に樽は220リットル満たされ、失った割合は初期内容量の10%である。",
+      "baseline_ja": "整数・有理数・割合・単位・金額計算のうち問題で明示したもの。",
+      "conclusion_ja": "198リットル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 3869,
+    "checked_model_hash": "e71f624d8600b04a2f830891a2af7d630837a670ca0e9fb29f7aeaca1dc63c2c",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint494_marble_jar_total",
+  "title_ja": "瓶3個のビー玉総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04249",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Courtney liked to collect marbles.  She kept them in mason jars.  One jar had 80 marbles.  Her second jar had twice that amount.  She just started her third jar which currently has 1/4 the amount of her first jar.  How many marbles does she have in total?",
+  "answer_ja": "第2瓶は80×2=160個、第3瓶は80÷4=20個。3瓶合計は260個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.marble_jar_total",
+  "graph": "work/gsm8k-sprint494-marble-jar-total-graph.json",
+  "model_notes_ja": [
+    "第2瓶は第1瓶の2倍、第3瓶は第1瓶の4分の1として別々に求める。"
+  ],
+  "steps": [
+    {
+      "id": "second_jar",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.second_jar",
+      "title_ja": "第2瓶",
+      "claim_ja": "80×2=160個。",
+      "method_ja": "第1瓶の2倍。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "第1瓶80個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "160個。"
+    },
+    {
+      "id": "third_jar",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.third_jar",
+      "title_ja": "第3瓶",
+      "claim_ja": "80÷4=20個。",
+      "method_ja": "第1瓶の4分の1。",
+      "requires_steps": [
+        "second_jar"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第1瓶80個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20個。"
+    },
+    {
+      "id": "all_jars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.all_jars",
+      "title_ja": "全瓶",
+      "claim_ja": "80+160+20=260個。",
+      "method_ja": "3瓶を合計する。",
+      "requires_steps": [
+        "second_jar",
+        "third_jar"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各瓶の個数。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "260個。"
+    },
+    {
+      "id": "marble_jar_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.marble_jar_total",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "第2瓶は80×2=160個、第3瓶は80÷4=20個。3瓶合計は260個。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "second_jar",
+        "third_jar",
+        "all_jars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "第2瓶は第1瓶の2倍、第3瓶は第1瓶の4分の1として別々に求める。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "第2瓶は80×2=160個、第3瓶は80÷4=20個。3瓶合計は260個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4250,
+    "checked_model_hash": "1780be905fc1bf45efbe801fa2fbae1a27a34eaf90951b7e2c7d2d672732c3fd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "1780be905fc1bf45efbe801fa2fbae1a27a34eaf90951b7e2c7d2d672732c3fd"
+}

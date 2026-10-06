@@ -1,0 +1,67 @@
+{
+  "id": "gsm8k_sprint106_catchup",
+  "title_ja": "ウサギが追いつく時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01875",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A16.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "15分の先行距離と相対速度を求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A16.catchup_solution",
+  "graph": "work/gsm8k-sprint106-catchup-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "catchup_head_start",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.catchup_head_start",
+      "title_ja": "猫の先行距離は5マイル。",
+      "claim_ja": "猫の先行距離は5マイル。",
+      "method_ja": "15分は4分の1時間なので20÷4。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "catchup_speed_gap",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.catchup_speed_gap",
+      "title_ja": "速度差は時速5マイル。",
+      "claim_ja": "速度差は時速5マイル。",
+      "method_ja": "25−20。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "catchup_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A16.catchup_solution",
+      "title_ja": "追いつくまで1時間。",
+      "claim_ja": "追いつくまで1時間。",
+      "method_ja": "5マイル÷時速5マイル。",
+      "requires_steps": [
+        "catchup_head_start",
+        "catchup_speed_gap"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1876,
+    "checked_model_hash": "79a4f73a1a54d29dcea8da5cc4cb9b02712354f803dbca9b8234b7f519085607",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

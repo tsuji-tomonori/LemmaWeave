@@ -1,0 +1,82 @@
+{
+  "id": "gsm8k_sprint108_corn",
+  "title_ja": "6か月のトウモロコシ収穫量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:01910",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0923A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "隣人の1ヘクタール、2ヘクタール、両者の2か月分、3期間分を順に求める。",
+  "root": "LemmaWeave.Tests.GSM8KSprint0923A18.corn_solution",
+  "graph": "work/gsm8k-sprint108-corn-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "corn_neighbor_each",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.corn_neighbor_each",
+      "title_ja": "隣人の1ヘクタールは160本。",
+      "claim_ja": "隣人の1ヘクタールは160本。",
+      "method_ja": "80×2。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "corn_neighbor_total",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.corn_neighbor_total",
+      "title_ja": "隣人の畑全体は320本。",
+      "claim_ja": "隣人の畑全体は320本。",
+      "method_ja": "160×2。",
+      "requires_steps": [
+        "corn_neighbor_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "corn_per_period",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.corn_per_period",
+      "title_ja": "2か月で合計400本。",
+      "claim_ja": "2か月で合計400本。",
+      "method_ja": "80+320。",
+      "requires_steps": [
+        "corn_neighbor_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    },
+    {
+      "id": "corn_solution",
+      "lean_declaration": "LemmaWeave.Tests.GSM8KSprint0923A18.corn_solution",
+      "title_ja": "6か月で1200本。",
+      "claim_ja": "6か月で1200本。",
+      "method_ja": "400×3。",
+      "requires_steps": [
+        "corn_per_period"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量関係を用いる。",
+      "conclusion_ja": "上記の値。",
+      "baseline_ja": "上記の値。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 1911,
+    "checked_model_hash": "8387abb9439c81fb607c222f1f1736998bf0c1f8b65dd181b6386c00663bd8bc",
+    "checks_ja": [
+      "固定原本の原題を再読し、全条件と結論をLeanモデルへ照合した。",
+      "各説明行と名前付きLean定理を照合した。"
+    ]
+  }
+}

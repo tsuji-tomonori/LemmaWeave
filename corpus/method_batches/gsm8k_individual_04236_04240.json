@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1067",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "3ff80d078a091b485441515f01aaf59ca8e844233c298e4afb760effaf0771fe",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A10P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04236",
+      "source_line_1based": 4237,
+      "source_record_sha256": "40aa55d0c4abbfffda2148d488f841961dce6399866503d5233eef483618bf32",
+      "raw_question_sha256": "5800df390cadac055f375dc3c308d134902c7758bdc1c0ba59efb7de727ff2de",
+      "normalized_question_sha256": "5800df390cadac055f375dc3c308d134902c7758bdc1c0ba59efb7de727ff2de",
+      "source_question": "John plays at the arcade for 3 hours.  He uses $.50 for every 6 minutes.  How much money did he spend, in dollars?",
+      "recipe_id": "gsm8k_sprint481_arcade_spending",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "3時間を180分へ換算し、6分ごとの50セントを数えてドルへ換算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04237",
+      "source_line_1based": 4238,
+      "source_record_sha256": "2c181d8d368fa35ce6fc59c7f42d8748472408fb1b44788b2e6ad0a33e99efb7",
+      "raw_question_sha256": "c9b99f11bb88c82c056ab571a400d35a934864c81f23a28b8154922ae56d16d4",
+      "normalized_question_sha256": "c9b99f11bb88c82c056ab571a400d35a934864c81f23a28b8154922ae56d16d4",
+      "source_question": "Silvio was running a race that had 4 parts. The total length of the race was 74.5 kilometers. The first part of the race is 15.5 kilometers long. The second and third parts are each 21.5 kilometers long. How many kilometers is the last part of the race?",
+      "recipe_id": "gsm8k_sprint482_race_last_part",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "小数を0.1km単位の整数へ換算し、既知3区間を総距離から引く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04238",
+      "source_line_1based": 4239,
+      "source_record_sha256": "0843c500d3c6b4b165f3a7cadb46a4a11c2dbcf5c9cbc5916f0df665102cbfd8",
+      "raw_question_sha256": "36b1e11e5522e0904ff66d43f49efb791554ed7ec5ff441da6feeacf24257031",
+      "normalized_question_sha256": "36b1e11e5522e0904ff66d43f49efb791554ed7ec5ff441da6feeacf24257031",
+      "source_question": "Luca went to a sandwich shop for lunch. The sandwich he bought was normally $8, but he had a coupon for a quarter of the price off. He then upgraded it with sliced avocado for an extra dollar. After adding a drink and a $3 salad, his total lunch bill was $12. How many dollars did Luca pay for his drink?",
+      "recipe_id": "gsm8k_sprint483_lunch_drink_dollars",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "4分の1引きは8ドルの2ドル引き。アボカドとサラダを加えた既知額を総額から引く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04239",
+      "source_line_1based": 4240,
+      "source_record_sha256": "290c10b8bf02dfa12a38d3f5ca8a82a10f9e97a9676e1db93ade7cf15d85a993",
+      "raw_question_sha256": "c51dadd47338ef99a2f4393367574547dc5c898fac55adae63a71f89ce5e8cf2",
+      "normalized_question_sha256": "c51dadd47338ef99a2f4393367574547dc5c898fac55adae63a71f89ce5e8cf2",
+      "source_question": "Alex was having a cookout Friday night and planned to serve burgers to his guests.  He planned to cook 3 burgers for each guest and had invited 10 friends over.  1 of his friends didn't eat meat and said they would bring their own food.  Another one of his friends didn't eat bread and would not need the buns.  The burger buns came 8 to a pack.  How many packs of buns did Alex need to buy?",
+      "recipe_id": "gsm8k_sprint484_bun_pack_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "肉を食べない1人を除き、パンを食べない別の1人の3個分だけバンズを除く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04240",
+      "source_line_1based": 4241,
+      "source_record_sha256": "09f26025bdb6b9c107a342aed803a360e1be7ebcf452b46bdf6cc10219f6ef1e",
+      "raw_question_sha256": "edf0d232782c8d3e452a370e8888ce624597e0fb9aa92724e14ec536a1ef471f",
+      "normalized_question_sha256": "edf0d232782c8d3e452a370e8888ce624597e0fb9aa92724e14ec536a1ef471f",
+      "source_question": "When Diane turns 30, she will be half the age of Alex and twice as old as Allison. Diane is 16 years old now. What is the sum of the ages of Alex and Allison now?",
+      "recipe_id": "gsm8k_sprint485_current_alex_allison_sum",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Dianeが30歳になる14年後の関係から、AlexとAllisonの現在年齢を同じ14年だけ戻す。"
+      ],
+      "blockers": []
+    }
+  ]
+}

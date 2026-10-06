@@ -1,0 +1,10 @@
+{
+  "id":"gsm8k_sprint172_turtles","title_ja":"TreyとKristenのカメの数の差","problem_id":"external-gsm8k-main-3101c7d50724:train:02864","collection_id":"external-gsm8k-main-3101c7d50724","lean_file":"tests/lean/GSM8KSprint0928A14.lean","semantic_review_status":"self_review_only","model_scope":"self_reviewed_model","counting_note_ja":"固定GSM8Kの1問。","solution_format":"individual_lines_v1","authorship":"llm_individual","problem_ja":"Kristenが12匹、Krisはその4分の1、TreyはKrisの7倍。TreyがKristenより何匹多いか。","root":"LemmaWeave.Problems.GSM8K.Sprint0928A14.turtle_solution","graph":"work/gsm8k-sprint172-turtles-graph.json","model_notes_ja":[],
+  "steps":[
+    {"id":"turtle_kris","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.turtle_kris","title_ja":"Krisは3匹","claim_ja":"12÷4=3匹。","method_ja":"4分の1","requires_steps":[],"uses_nodes":[],"condition_ja":"Kristenは12匹で、Krisはその1/4。","conclusion_ja":"Krisは3匹。","baseline_ja":"12÷4=3。"},
+    {"id":"turtle_trey","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.turtle_trey","title_ja":"Treyは21匹","claim_ja":"3×7=21匹。","method_ja":"倍率","requires_steps":["turtle_kris"],"uses_nodes":[],"condition_ja":"TreyはKrisの7倍。","conclusion_ja":"Treyは21匹。","baseline_ja":"3×7=21。"},
+    {"id":"turtle_more","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.turtle_more","title_ja":"差は9匹","claim_ja":"21−12=9匹。","method_ja":"個数差","requires_steps":["turtle_trey"],"uses_nodes":[],"condition_ja":"TreyとKristenを比較する。","conclusion_ja":"Treyは9匹多い。","baseline_ja":"21−12=9。"},
+    {"id":"turtle_solution","lean_declaration":"LemmaWeave.Problems.GSM8K.Sprint0928A14.turtle_solution","title_ja":"答えは9匹","claim_ja":"TreyはKristenより9匹多い。","method_ja":"直前の結論","requires_steps":["turtle_more"],"uses_nodes":[],"condition_ja":"差は大きい方から小さい方を引く。","conclusion_ja":"答えは9匹。","baseline_ja":"9匹。"}
+  ],
+  "author_review":{"reviewer":"author","status":"checked","source_line_1based":2865,"checked_model_hash":"6bdc2b2b890105008f1bf78a7b1e5d0217af5f9c9e12871fb77358be639e4961","checks_ja":["Kristen・Kris・Treyの人物を取り違えていない。","1/4と7倍を順に適用した。","独立レビューではない。"]}
+}

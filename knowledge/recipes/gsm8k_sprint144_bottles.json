@@ -1,0 +1,69 @@
+{
+  "id": "gsm8k_sprint144_bottles",
+  "title_ja": "箱内の水量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:02448",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint0925A18.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "10箱、各50本。12L容器を4分の3まで満たす。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint0925A18.bottles_solution",
+  "graph": "work/gsm8k-sprint144-bottles-graph.json",
+  "model_notes_ja": [],
+  "steps": [
+    {
+      "id": "bottles_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.bottles_each",
+      "title_ja": "1本9L",
+      "claim_ja": "1本9L",
+      "method_ja": "12の4分の3",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "1本9L",
+      "baseline_ja": "1本9L"
+    },
+    {
+      "id": "bottles_box",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.bottles_box",
+      "title_ja": "1箱450L",
+      "claim_ja": "1箱450L",
+      "method_ja": "50に9を掛ける",
+      "requires_steps": [
+        "bottles_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "1箱450L",
+      "baseline_ja": "1箱450L"
+    },
+    {
+      "id": "bottles_solution",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint0925A18.bottles_solution",
+      "title_ja": "合計4500L",
+      "claim_ja": "合計4500L",
+      "method_ja": "450に10を掛ける",
+      "requires_steps": [
+        "bottles_box"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位を保持し、非負整数として扱う。",
+      "conclusion_ja": "合計4500L",
+      "baseline_ja": "合計4500L"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 2449,
+    "checked_model_hash": "bfdb294a0a32e05633a50c15c898e6eedb89ef6be29c3b3098758b98083f31cd",
+    "checks_ja": [
+      "固定原本の全条件と結論をLeanモデルへ照合した。",
+      "説明行と名前付き定理を照合した。",
+      "独立レビューではなく自己照合として記録した。"
+    ]
+  }
+}

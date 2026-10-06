@@ -1,0 +1,134 @@
+{
+  "id": "gsm8k_sprint538_cd_purchase_cost",
+  "title_ja": "CD購入総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04293",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P2.lean",
+  "problem_ja": "200枚の40%が10ドル、残りが5ドル。10ドルCDの半分と5ドルCD全部を買う。総額はいくらか。",
+  "answer_ja": "10ドルCDは80枚、その半分40枚で400ドル。5ドルCDは120枚で600ドル。合計1000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.cd_purchase_cost",
+  "graph": "work/gsm8k-sprint538-cd-purchase-cost-graph.json",
+  "model_notes_ja": [
+    "40%は総数200枚を基準にし、残り60%を5ドルCDとする。"
+  ],
+  "steps": [
+    {
+      "id": "ten_dollar_cd_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.ten_dollar_cd_count",
+      "title_ja": "10ドルCD数",
+      "claim_ja": "200×40÷100=80枚。",
+      "method_ja": "総数の40%を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "200×40÷100=80枚。"
+    },
+    {
+      "id": "five_dollar_cd_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.five_dollar_cd_count",
+      "title_ja": "5ドルCD数",
+      "claim_ja": "200−80=120枚。",
+      "method_ja": "残り枚数を求める。",
+      "requires_steps": [
+        "ten_dollar_cd_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "200−80=120枚。"
+    },
+    {
+      "id": "ten_dollar_cd_bought",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.ten_dollar_cd_bought",
+      "title_ja": "10ドルCD購入数",
+      "claim_ja": "80÷2=40枚。",
+      "method_ja": "10ドルCDの半分を求める。",
+      "requires_steps": [
+        "ten_dollar_cd_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "80÷2=40枚。"
+    },
+    {
+      "id": "ten_dollar_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.ten_dollar_cost",
+      "title_ja": "10ドルCD代",
+      "claim_ja": "40×10=400ドル。",
+      "method_ja": "購入数と単価を掛ける。",
+      "requires_steps": [
+        "ten_dollar_cd_bought"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40×10=400ドル。"
+    },
+    {
+      "id": "five_dollar_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.five_dollar_cost",
+      "title_ja": "5ドルCD代",
+      "claim_ja": "120×5=600ドル。",
+      "method_ja": "全枚数と単価を掛ける。",
+      "requires_steps": [
+        "five_dollar_cd_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "120×5=600ドル。"
+    },
+    {
+      "id": "cd_total_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.cd_total_cost",
+      "title_ja": "購入総額",
+      "claim_ja": "400+600=1000ドル。",
+      "method_ja": "二種類の代金を足す。",
+      "requires_steps": [
+        "ten_dollar_cost",
+        "five_dollar_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "400+600=1000ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.cd_purchase_cost",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "10ドルCDは80枚、その半分40枚で400ドル。5ドルCDは120枚で600ドル。合計1000ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "ten_dollar_cd_count",
+        "five_dollar_cd_count",
+        "ten_dollar_cd_bought",
+        "ten_dollar_cost",
+        "five_dollar_cost",
+        "cd_total_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10ドルCDは80枚、その半分40枚で400ドル。5ドルCDは120枚で600ドル。合計1000ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4294,
+    "checked_model_hash": "4ef0930a045de652bae45c32b78940a10f6b0e94a7d0764200116d071ac73e28",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

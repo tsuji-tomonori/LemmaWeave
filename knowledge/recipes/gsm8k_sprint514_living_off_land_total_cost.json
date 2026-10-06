@@ -1,0 +1,115 @@
+{
+  "id": "gsm8k_sprint514_living_off_land_total_cost",
+  "title_ja": "土地生活の総費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04269",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P3.lean",
+  "problem_ja": "土地30エーカーを1エーカー20ドル、家120,000ドル、牛20頭を各1,000ドル、鶏100羽を各5ドル、太陽光設備は6時間を時給100ドルと機材6,000ドルで購入する。総額は。",
+  "answer_ja": "土地600、家120,000、牛20,000、鶏500、設置600、機材6,000ドルで、合計147,700ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.living_off_land_total_cost",
+  "graph": "work/gsm8k-sprint514-living-off-land-total-cost-graph.json",
+  "model_notes_ja": [
+    "すべての金額をドル単位で加算する。"
+  ],
+  "steps": [
+    {
+      "id": "land_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.land_cost",
+      "title_ja": "土地代",
+      "claim_ja": "30×20=600ドル。",
+      "method_ja": "面積と単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30×20=600ドル。"
+    },
+    {
+      "id": "cow_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.cow_cost",
+      "title_ja": "牛代",
+      "claim_ja": "20×1,000=20,000ドル。",
+      "method_ja": "頭数と単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20×1,000=20,000ドル。"
+    },
+    {
+      "id": "chicken_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.chicken_cost",
+      "title_ja": "鶏代",
+      "claim_ja": "100×5=500ドル。",
+      "method_ja": "羽数と単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "100×5=500ドル。"
+    },
+    {
+      "id": "solar_installation_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.solar_installation_cost",
+      "title_ja": "設置作業費",
+      "claim_ja": "6×100=600ドル。",
+      "method_ja": "時間と時給を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6×100=600ドル。"
+    },
+    {
+      "id": "all_land_living_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.all_land_living_cost",
+      "title_ja": "総費用",
+      "claim_ja": "全費目を足して147,700ドル。",
+      "method_ja": "土地・家・動物・設置・機材を合計する。",
+      "requires_steps": [
+        "land_cost",
+        "cow_cost",
+        "chicken_cost",
+        "solar_installation_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "全費目を足して147,700ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.living_off_land_total_cost",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "土地600、家120,000、牛20,000、鶏500、設置600、機材6,000ドルで、合計147,700ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "land_cost",
+        "cow_cost",
+        "chicken_cost",
+        "solar_installation_cost",
+        "all_land_living_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "土地600、家120,000、牛20,000、鶏500、設置600、機材6,000ドルで、合計147,700ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4270,
+    "checked_model_hash": "5e5065b43a0044861194598e07c25572a27c4d1cecdad3ad56739f7a0341534f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

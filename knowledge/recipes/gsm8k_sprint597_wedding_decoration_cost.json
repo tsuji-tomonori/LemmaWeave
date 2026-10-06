@@ -1,0 +1,116 @@
+{
+  "id": "gsm8k_sprint597_wedding_decoration_cost",
+  "title_ja": "披露宴装飾の総費用",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04352",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P2.lean",
+  "problem_ja": "Nathan is buying decorations for his wedding reception. The reception hall will have 20 tables. Each table needs a linen tablecloth ($25 to rent), 4 place settings ($10 each to rent), and a centerpiece. Each centerpiece will have 10 roses ($5 each) and 15 lilies ($4 each). How much will the decorations cost?",
+  "answer_ja": "1卓のバラは50ドル、ユリは60ドル、4人分の食器は40ドル、クロスは25ドル。1卓175ドルなので20卓で3500ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.wedding_decoration_cost",
+  "graph": "work/gsm8k-sprint597-wedding-decoration-cost-graph.json",
+  "model_notes_ja": [
+    "各20卓が同一構成で、花1本・食器1組・クロス1枚の価格は一定。"
+  ],
+  "steps": [
+    {
+      "id": "rose_cost_per_centerpiece",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.rose_cost_per_centerpiece",
+      "title_ja": "バラ代",
+      "claim_ja": "10×5=50ドル。",
+      "method_ja": "本数に単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "10×5=50ドル。"
+    },
+    {
+      "id": "lily_cost_per_centerpiece",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.lily_cost_per_centerpiece",
+      "title_ja": "ユリ代",
+      "claim_ja": "15×4=60ドル。",
+      "method_ja": "本数に単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "15×4=60ドル。"
+    },
+    {
+      "id": "place_setting_cost_per_table",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.place_setting_cost_per_table",
+      "title_ja": "食器代",
+      "claim_ja": "4×10=40ドル。",
+      "method_ja": "組数に単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4×10=40ドル。"
+    },
+    {
+      "id": "decoration_cost_per_table",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.decoration_cost_per_table",
+      "title_ja": "1卓の費用",
+      "claim_ja": "25+40+50+60=175ドル。",
+      "method_ja": "クロス・食器・花を合計する。",
+      "requires_steps": [
+        "rose_cost_per_centerpiece",
+        "lily_cost_per_centerpiece",
+        "place_setting_cost_per_table"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "25+40+50+60=175ドル。"
+    },
+    {
+      "id": "all_table_decoration_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.all_table_decoration_cost",
+      "title_ja": "全卓の費用",
+      "claim_ja": "20×175=3500ドル。",
+      "method_ja": "1卓の費用に卓数を掛ける。",
+      "requires_steps": [
+        "decoration_cost_per_table"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "20×175=3500ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P2.wedding_decoration_cost",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1卓のバラは50ドル、ユリは60ドル、4人分の食器は40ドル、クロスは25ドル。1卓175ドルなので20卓で3500ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "rose_cost_per_centerpiece",
+        "lily_cost_per_centerpiece",
+        "place_setting_cost_per_table",
+        "decoration_cost_per_table",
+        "all_table_decoration_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "1卓のバラは50ドル、ユリは60ドル、4人分の食器は40ドル、クロスは25ドル。1卓175ドルなので20卓で3500ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4353,
+    "checked_model_hash": "2c4895a78f2f0df7b2c26dde7d68bc9e87de1b20730d60f44401765935b34663",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

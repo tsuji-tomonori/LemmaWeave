@@ -1,0 +1,105 @@
+{
+  "id": "gsm8k_sprint605_ursula_purchase_total",
+  "title_ja": "Ursulaの買物総額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04360",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P3.lean",
+  "problem_ja": "Ursula went to the store and bought butter, bread, a package of cheese, and tea. The bread was 2 times cheaper than the butter, while the price of the butter was 80% of the price of cheese. Tea was the most expensive and cost twice the price of a package of cheese. If the tea cost $10, how much did Ursula pay for her purchases?",
+  "answer_ja": "紅茶10ドルがチーズの2倍なのでチーズは5ドル。バターはその80%で4ドル。“2 times cheaper”を半額と読む追加条件ではパンは2ドル。合計は21ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.ursula_purchase_total",
+  "graph": "work/gsm8k-sprint605-ursula-purchase-total-graph.json",
+  "model_notes_ja": [
+    "“2 times cheaper”は厳密な標準表現でないため、参照解答の「バターの半額」という読みを明示条件とする。"
+  ],
+  "steps": [
+    {
+      "id": "cheese_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.cheese_price",
+      "title_ja": "チーズ価格",
+      "claim_ja": "10÷2=5ドル。",
+      "method_ja": "紅茶価格を2で割る。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "10÷2=5ドル。"
+    },
+    {
+      "id": "butter_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.butter_price",
+      "title_ja": "バター価格",
+      "claim_ja": "5×80÷100=4ドル。",
+      "method_ja": "チーズ価格の80%を求める。",
+      "requires_steps": [
+        "cheese_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "5×80÷100=4ドル。"
+    },
+    {
+      "id": "conditional_bread_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.conditional_bread_price",
+      "title_ja": "条件付きのパン価格",
+      "claim_ja": "半額の読みでは4÷2=2ドル。",
+      "method_ja": "バター価格を2で割る。",
+      "requires_steps": [
+        "butter_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "半額の読みでは4÷2=2ドル。"
+    },
+    {
+      "id": "shopping_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.shopping_total",
+      "title_ja": "買物総額",
+      "claim_ja": "2+4+5+10=21ドル。",
+      "method_ja": "4品の価格を合計する。",
+      "requires_steps": [
+        "cheese_price",
+        "butter_price",
+        "conditional_bread_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "2+4+5+10=21ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.ursula_purchase_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "紅茶10ドルがチーズの2倍なのでチーズは5ドル。バターはその80%で4ドル。“2 times cheaper”を半額と読む追加条件ではパンは2ドル。合計は21ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "cheese_price",
+        "butter_price",
+        "conditional_bread_price",
+        "shopping_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "紅茶10ドルがチーズの2倍なのでチーズは5ドル。バターはその80%で4ドル。“2 times cheaper”を半額と読む追加条件ではパンは2ドル。合計は21ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4361,
+    "checked_model_hash": "5a7e7d65ff8944256f8ac0ef2c5351d4d11babfe8e9708538e85dce984b47e28",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

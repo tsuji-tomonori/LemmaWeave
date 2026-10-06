@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint609_running_program_final_miles",
+  "title_ja": "運動計画終了時の1日走行距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04364",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P1.lean",
+  "problem_ja": "Jackson wants to improve his endurance running. His goal is to start by running 3 miles a day the first week, then spend the next four weeks running one additional mile/day each week. How many miles is Jackson running each day at the end of this exercise program?",
+  "answer_ja": "最初は1日3マイル。その後4週間、毎週1マイルずつ増やすので4マイル増え、終了時は1日7マイル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.running_program_final_miles",
+  "graph": "work/gsm8k-sprint609-running-program-final-miles-graph.json",
+  "model_notes_ja": [
+    "“next four weeks”の各週で前週より1日当たり1マイル増える。"
+  ],
+  "steps": [
+    {
+      "id": "running_added_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.running_added_miles",
+      "title_ja": "増加距離",
+      "claim_ja": "4×1=4マイル。",
+      "method_ja": "4週間の毎週1マイル増を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "4×1=4マイル。"
+    },
+    {
+      "id": "final_daily_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.final_daily_miles",
+      "title_ja": "終了時距離",
+      "claim_ja": "3+4=7マイル。",
+      "method_ja": "初期距離に増加分を加える。",
+      "requires_steps": [
+        "running_added_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・論法の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "3+4=7マイル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P1.running_program_final_miles",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "最初は1日3マイル。その後4週間、毎週1マイルずつ増やすので4マイル増え、終了時は1日7マイル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "running_added_miles",
+        "final_daily_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・剰余・一次方程式。",
+      "conclusion_ja": "最初は1日3マイル。その後4週間、毎週1マイルずつ増やすので4マイル増え、終了時は1日7マイル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4365,
+    "checked_model_hash": "796a414a376319989f559ce3267fe4c26234a534bce3cf7c3a2a8847d6acfbc4",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

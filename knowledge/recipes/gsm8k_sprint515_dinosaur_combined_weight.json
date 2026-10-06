@@ -1,0 +1,89 @@
+{
+  "id": "gsm8k_sprint515_dinosaur_combined_weight",
+  "title_ja": "恐竜6頭の合計重量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04270",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P3.lean",
+  "problem_ja": "通常の恐竜5頭は各800ポンド。Barneyはその5頭合計より1,500ポンド重い。6頭の合計は。",
+  "answer_ja": "通常5頭は4,000ポンド、Barneyは5,500ポンド、合計9,500ポンド。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.dinosaur_combined_weight",
+  "graph": "work/gsm8k-sprint515-dinosaur-combined-weight-graph.json",
+  "model_notes_ja": [
+    "Barneyの重量は通常5頭の合計に1,500を加えて求める。"
+  ],
+  "steps": [
+    {
+      "id": "five_dinosaurs_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.five_dinosaurs_weight",
+      "title_ja": "通常5頭の重量",
+      "claim_ja": "5×800=4,000ポンド。",
+      "method_ja": "頭数と1頭の重量を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×800=4,000ポンド。"
+    },
+    {
+      "id": "barney_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.barney_weight",
+      "title_ja": "Barneyの重量",
+      "claim_ja": "4,000+1,500=5,500ポンド。",
+      "method_ja": "通常5頭合計へ差を足す。",
+      "requires_steps": [
+        "five_dinosaurs_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4,000+1,500=5,500ポンド。"
+    },
+    {
+      "id": "all_dinosaurs_weight",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.all_dinosaurs_weight",
+      "title_ja": "6頭の合計",
+      "claim_ja": "5,500+4,000=9,500ポンド。",
+      "method_ja": "Barneyと通常5頭を足す。",
+      "requires_steps": [
+        "barney_weight",
+        "five_dinosaurs_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5,500+4,000=9,500ポンド。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P3.dinosaur_combined_weight",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "通常5頭は4,000ポンド、Barneyは5,500ポンド、合計9,500ポンド。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "five_dinosaurs_weight",
+        "barney_weight",
+        "all_dinosaurs_weight"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "通常5頭は4,000ポンド、Barneyは5,500ポンド、合計9,500ポンド。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4271,
+    "checked_model_hash": "5e5065b43a0044861194598e07c25572a27c4d1cecdad3ad56739f7a0341534f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

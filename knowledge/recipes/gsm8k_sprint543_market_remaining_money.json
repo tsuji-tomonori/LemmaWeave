@@ -1,0 +1,136 @@
+{
+  "id": "gsm8k_sprint543_market_remaining_money",
+  "title_ja": "市場で買物後の残金",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04298",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P3.lean",
+  "problem_ja": "500ドルから、じゃがいも6kg×2ドル、トマト9kg×3ドル、きゅうり5kg×4ドル、バナナ3kg×5ドルを買う。残金はいくらか。",
+  "answer_ja": "各代金は12、27、20、15ドルで合計74ドル。500−74=426ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.market_remaining_money",
+  "graph": "work/gsm8k-sprint543-market-remaining-money-graph.json",
+  "model_notes_ja": [
+    "全ての単価は1kg当たりで、数量との積を合計する。"
+  ],
+  "steps": [
+    {
+      "id": "potato_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.potato_cost",
+      "title_ja": "じゃがいも代",
+      "claim_ja": "6×2=12ドル。",
+      "method_ja": "重量と単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6×2=12ドル。"
+    },
+    {
+      "id": "tomato_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.tomato_cost",
+      "title_ja": "トマト代",
+      "claim_ja": "9×3=27ドル。",
+      "method_ja": "重量と単価を掛ける。",
+      "requires_steps": [
+        "potato_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "9×3=27ドル。"
+    },
+    {
+      "id": "cucumber_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.cucumber_cost",
+      "title_ja": "きゅうり代",
+      "claim_ja": "5×4=20ドル。",
+      "method_ja": "重量と単価を掛ける。",
+      "requires_steps": [
+        "tomato_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×4=20ドル。"
+    },
+    {
+      "id": "banana_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.banana_cost",
+      "title_ja": "バナナ代",
+      "claim_ja": "3×5=15ドル。",
+      "method_ja": "重量と単価を掛ける。",
+      "requires_steps": [
+        "cucumber_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3×5=15ドル。"
+    },
+    {
+      "id": "market_total_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.market_total_cost",
+      "title_ja": "購入総額",
+      "claim_ja": "12+27+20+15=74ドル。",
+      "method_ja": "各品目の代金を足す。",
+      "requires_steps": [
+        "potato_cost",
+        "tomato_cost",
+        "cucumber_cost",
+        "banana_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12+27+20+15=74ドル。"
+    },
+    {
+      "id": "market_money_left",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.market_money_left",
+      "title_ja": "残金",
+      "claim_ja": "500−74=426ドル。",
+      "method_ja": "所持金から購入総額を引く。",
+      "requires_steps": [
+        "market_total_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "500−74=426ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P3.market_remaining_money",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "各代金は12、27、20、15ドルで合計74ドル。500−74=426ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "potato_cost",
+        "tomato_cost",
+        "cucumber_cost",
+        "banana_cost",
+        "market_total_cost",
+        "market_money_left"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "各代金は12、27、20、15ドルで合計74ドル。500−74=426ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4299,
+    "checked_model_hash": "b922122d10016bec624e3139706da983a8e177a44a2cf38f725a421081324277",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

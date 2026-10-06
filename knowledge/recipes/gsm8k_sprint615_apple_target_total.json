@@ -1,0 +1,131 @@
+{
+  "id": "gsm8k_sprint615_apple_target_total",
+  "title_ja": "2人のりんご目標総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04370",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P2.lean",
+  "problem_ja": "Kaiden and Adriel were to pick a certain number of apples from their farm. After picking 400 apples each, they realized they still had to pick some more, so each picked 3/4 times as many as they had picked earlier. When they checked the pickup truck that was carrying the apples, they found out they still needed to pick 600 apples each to reach the target number. How many apples were they targeting to pick?",
+  "answer_ja": "最初に2人で800個、次に各300個で計600個を摘み、ここまで1400個。さらに各600個、計1200個必要なので、目標総数は2600個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.apple_target_total",
+  "graph": "work/gsm8k-sprint615-apple-target-total-graph.json",
+  "model_notes_ja": [
+    "問いの目標数をKaidenとAdrielの合計として読む。各人の目標は1300個。"
+  ],
+  "steps": [
+    {
+      "id": "first_round_apples",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.first_round_apples",
+      "title_ja": "第1回合計",
+      "claim_ja": "2×400=800個。",
+      "method_ja": "2人分を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "2×400=800個。"
+    },
+    {
+      "id": "second_round_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.second_round_each",
+      "title_ja": "第2回の各人数",
+      "claim_ja": "400×3÷4=300個。",
+      "method_ja": "最初の4分の3を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "400×3÷4=300個。"
+    },
+    {
+      "id": "second_round_apples",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.second_round_apples",
+      "title_ja": "第2回合計",
+      "claim_ja": "2×300=600個。",
+      "method_ja": "2人分を合計する。",
+      "requires_steps": [
+        "second_round_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "2×300=600個。"
+    },
+    {
+      "id": "picked_so_far",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.picked_so_far",
+      "title_ja": "途中合計",
+      "claim_ja": "800+600=1400個。",
+      "method_ja": "2回分を加える。",
+      "requires_steps": [
+        "first_round_apples",
+        "second_round_apples"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "800+600=1400個。"
+    },
+    {
+      "id": "remaining_target_apples",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.remaining_target_apples",
+      "title_ja": "残り合計",
+      "claim_ja": "2×600=1200個。",
+      "method_ja": "各600個を2人分にする。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "2×600=1200個。"
+    },
+    {
+      "id": "target_apple_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.target_apple_total",
+      "title_ja": "目標総数",
+      "claim_ja": "1400+1200=2600個。",
+      "method_ja": "途中合計と残りを加える。",
+      "requires_steps": [
+        "picked_so_far",
+        "remaining_target_apples"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "1400+1200=2600個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.apple_target_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "最初に2人で800個、次に各300個で計600個を摘み、ここまで1400個。さらに各600個、計1200個必要なので、目標総数は2600個。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "first_round_apples",
+        "second_round_each",
+        "second_round_apples",
+        "picked_so_far",
+        "remaining_target_apples",
+        "target_apple_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "最初に2人で800個、次に各300個で計600個を摘み、ここまで1400個。さらに各600個、計1200個必要なので、目標総数は2600個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4371,
+    "checked_model_hash": "ba08090ab15203723875619b975ccd4373ac0c80cec3a23314a67a14e9d6028a",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

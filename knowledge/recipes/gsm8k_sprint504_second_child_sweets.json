@@ -1,0 +1,117 @@
+{
+  "id": "gsm8k_sprint504_second_child_sweets",
+  "title_ja": "2番目の子の菓子",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04259",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P1.lean",
+  "problem_ja": "27個の菓子の3分の1を母が取り、残りを3人へ分ける。長子8個、末子はその半分。2番目は何個か。",
+  "answer_ja": "母は9個、子ども分は18個。末子は4個なので、2番目は18−8−4=6個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.second_child_sweets",
+  "graph": "work/gsm8k-sprint504-second-child-sweets-graph.json",
+  "model_notes_ja": [
+    "残りは3人の取得数の合計であり、均等配分とは読まない。"
+  ],
+  "steps": [
+    {
+      "id": "mother_sweets",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.mother_sweets",
+      "title_ja": "母の取り分",
+      "claim_ja": "27÷3=9個。",
+      "method_ja": "3分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "27÷3=9個。"
+    },
+    {
+      "id": "children_sweets",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.children_sweets",
+      "title_ja": "子ども分",
+      "claim_ja": "27−9=18個。",
+      "method_ja": "全体から母の分を引く。",
+      "requires_steps": [
+        "mother_sweets"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "27−9=18個。"
+    },
+    {
+      "id": "youngest_sweets",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.youngest_sweets",
+      "title_ja": "末子の取り分",
+      "claim_ja": "8÷2=4個。",
+      "method_ja": "長子の半分を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "8÷2=4個。"
+    },
+    {
+      "id": "known_children_sweets",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.known_children_sweets",
+      "title_ja": "長子と末子の合計",
+      "claim_ja": "8+4=12個。",
+      "method_ja": "既知の2人分を足す。",
+      "requires_steps": [
+        "youngest_sweets"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "8+4=12個。"
+    },
+    {
+      "id": "second_child_gets",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.second_child_gets",
+      "title_ja": "2番目の取り分",
+      "claim_ja": "18−12=6個。",
+      "method_ja": "子ども分から他の2人分を引く。",
+      "requires_steps": [
+        "children_sweets",
+        "known_children_sweets"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "18−12=6個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.second_child_sweets",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "母は9個、子ども分は18個。末子は4個なので、2番目は18−8−4=6個。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "mother_sweets",
+        "children_sweets",
+        "youngest_sweets",
+        "known_children_sweets",
+        "second_child_gets"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "母は9個、子ども分は18個。末子は4個なので、2番目は18−8−4=6個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4260,
+    "checked_model_hash": "ce83dde56c15afd77b09bf36a123b3c1f49d6068459b2800116f42d29550d8bb",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

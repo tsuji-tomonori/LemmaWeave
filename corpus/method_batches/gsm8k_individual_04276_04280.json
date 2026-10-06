@@ -1,0 +1,98 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1705",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "856f034a08fcb9718dbed19908fa3256e481e4abe9ccd62e438c44244ff5d2a8",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A14P2Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04276",
+      "source_line_1based": 4277,
+      "source_record_sha256": "d6fc233b58362ad712cb7e86788149d8d3149301c3dd8ce3eee2b18c5b3b5ff6",
+      "raw_question_sha256": "9d299cd89a4291eae821fa8858fe06648e89ab62f9437b7c81cfcb64e504f712",
+      "normalized_question_sha256": "9d299cd89a4291eae821fa8858fe06648e89ab62f9437b7c81cfcb64e504f712",
+      "source_question": "It takes 320 rose petals to make an ounce of perfume. If each rose produces 8 petals, and there are 12 roses per bush, how many bushes will Fern have to harvest to make 20 12-ounce bottles of perfume?",
+      "recipe_id": "gsm8k_sprint521_perfume_bushes_needed",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "全量を収穫でき、各バラと各株の花びら・花数が一定とする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04277",
+      "source_line_1based": 4278,
+      "source_record_sha256": "15fae44dd54453859ac36976662bb18e39553644caa63e6a80919a6f53fd7182",
+      "raw_question_sha256": "307c2c1538e09a7b02b27afb64b829926e49e7b6e41efaf4ea625abc91ef16ae",
+      "normalized_question_sha256": "307c2c1538e09a7b02b27afb64b829926e49e7b6e41efaf4ea625abc91ef16ae",
+      "source_question": "Jacob has been tasked with a project to write up an urban plan proposal that will be used to construct a new city. He uses Pittsburg city as a reference which has 2000 stores, 500 hospitals, 200 schools, and 20 police stations. If the new city should have half the number of stores, twice as many hospitals, 50 fewer schools, and 5 more police stations, what is the total number of buildings required for this project?",
+      "recipe_id": "gsm8k_sprint522_new_city_buildings",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各建物種別の条件を独立に適用してから合計する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04278",
+      "source_line_1based": 4279,
+      "source_record_sha256": "2616c34cdf4fe03219fbaabd7d2a59544b9212aebf2d919481f28d100aedb8ab",
+      "raw_question_sha256": "139c37b2e9acc1108f80fda708a96c137405f29490892dd3fece73e0929b73af",
+      "normalized_question_sha256": "139c37b2e9acc1108f80fda708a96c137405f29490892dd3fece73e0929b73af",
+      "source_question": "Antonov bought 60 candies. He gave a pack of candy to his sister. If a pack of candy has 20 pieces, how many packs does Antonov still have?",
+      "recipe_id": "gsm8k_sprint523_candy_packs_left",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "最初の60個も同じ20個入り袋として数えられるとする。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04279",
+      "source_line_1based": 4280,
+      "source_record_sha256": "feb5ef6b7209c2ddc21faf1b5e282586c744cc7675c1e2d4e23508aba7263cc2",
+      "raw_question_sha256": "5fb57e06986fefd9128f54f7a539b213d8f3070ad31c679fe6983a3f6f1d6bf5",
+      "normalized_question_sha256": "5fb57e06986fefd9128f54f7a539b213d8f3070ad31c679fe6983a3f6f1d6bf5",
+      "source_question": "Bill had to finish a project from work that was to take him 4 days. If he took 6 seven-hour naps in the four days, how long did he spend working on the project?",
+      "recipe_id": "gsm8k_sprint524_project_work_time_underdetermined",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "「4日かかった」だけでは全ての非昼寝時間を作業したとは限らない。参照解答54時間は追加条件付きの値として保持する。"
+      ],
+      "blockers": [
+        "semantic_ambiguity",
+        "missing_condition"
+      ]
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04280",
+      "source_line_1based": 4281,
+      "source_record_sha256": "1c7fb704f6f8452a82216abf9d64373d59a97cd3ecc45534aefb1dc5be7b8895",
+      "raw_question_sha256": "d9655201db60eabfd4820d719c86868827aead832edd931eef0c4a353eaa2382",
+      "normalized_question_sha256": "d9655201db60eabfd4820d719c86868827aead832edd931eef0c4a353eaa2382",
+      "source_question": "Zilla spent 7% of her monthly earnings on rent, half of it on her other monthly expenses, and put the rest in her savings. If she spent $133 on her rent, how much does she deposit into her savings account in a month?",
+      "recipe_id": "gsm8k_sprint525_monthly_savings_deposit",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "“half of it”は直前の月収を指し、その他支出が月収の半分であるという参照解答の読みを明示する。"
+      ],
+      "blockers": []
+    }
+  ]
+}

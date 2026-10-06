@@ -1,0 +1,105 @@
+{
+  "id": "gsm8k_sprint550_egg_crates_four_days",
+  "title_ja": "4日間の卵販売箱数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04305",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P1.lean",
+  "problem_ja": "月曜5箱、火曜は2倍、水曜は火曜より2箱少なく、木曜は火曜の半分。合計何箱か。",
+  "answer_ja": "火曜10箱、水曜8箱、木曜5箱。月曜を含め5+10+8+5=28箱。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.egg_crates_four_days",
+  "graph": "work/gsm8k-sprint550-egg-crates-four-days-graph.json",
+  "model_notes_ja": [
+    "水曜と木曜はいずれも火曜10箱を基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "tuesday_crates",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.tuesday_crates",
+      "title_ja": "火曜",
+      "claim_ja": "5×2=10箱。",
+      "method_ja": "月曜の2倍を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×2=10箱。"
+    },
+    {
+      "id": "wednesday_crates",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.wednesday_crates",
+      "title_ja": "水曜",
+      "claim_ja": "10−2=8箱。",
+      "method_ja": "火曜から2箱引く。",
+      "requires_steps": [
+        "tuesday_crates"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10−2=8箱。"
+    },
+    {
+      "id": "thursday_crates",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.thursday_crates",
+      "title_ja": "木曜",
+      "claim_ja": "10÷2=5箱。",
+      "method_ja": "火曜の半分を求める。",
+      "requires_steps": [
+        "tuesday_crates"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10÷2=5箱。"
+    },
+    {
+      "id": "four_day_crates",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.four_day_crates",
+      "title_ja": "4日合計",
+      "claim_ja": "5+10+8+5=28箱。",
+      "method_ja": "4日分を足す。",
+      "requires_steps": [
+        "tuesday_crates",
+        "wednesday_crates",
+        "thursday_crates"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5+10+8+5=28箱。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.egg_crates_four_days",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "火曜10箱、水曜8箱、木曜5箱。月曜を含め5+10+8+5=28箱。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "tuesday_crates",
+        "wednesday_crates",
+        "thursday_crates",
+        "four_day_crates"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "火曜10箱、水曜8箱、木曜5箱。月曜を含め5+10+8+5=28箱。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4306,
+    "checked_model_hash": "c75058a771e6d093ed7734adf989dee2a43487e47b38014dd0c58acacef110c8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

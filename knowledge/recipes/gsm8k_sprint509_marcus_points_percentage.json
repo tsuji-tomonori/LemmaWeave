@@ -1,0 +1,102 @@
+{
+  "id": "gsm8k_sprint509_marcus_points_percentage",
+  "title_ja": "Marcusの得点割合",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04264",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P2.lean",
+  "problem_ja": "3点ゴール5本と2点ゴール10本を決め、チーム総得点は70点。Marcusの割合は。",
+  "answer_ja": "Marcusは15+20=35点。35÷70=2分の1なので50%。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.marcus_points_percentage",
+  "graph": "work/gsm8k-sprint509-marcus-points-percentage-graph.json",
+  "model_notes_ja": [
+    "割合はMarcus得点÷チーム総得点×100で求める。"
+  ],
+  "steps": [
+    {
+      "id": "three_point_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.three_point_total",
+      "title_ja": "3点ゴールの得点",
+      "claim_ja": "5×3=15点。",
+      "method_ja": "本数と点数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×3=15点。"
+    },
+    {
+      "id": "two_point_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.two_point_total",
+      "title_ja": "2点ゴールの得点",
+      "claim_ja": "10×2=20点。",
+      "method_ja": "本数と点数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10×2=20点。"
+    },
+    {
+      "id": "marcus_points",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.marcus_points",
+      "title_ja": "Marcusの総得点",
+      "claim_ja": "15+20=35点。",
+      "method_ja": "2種類の得点を足す。",
+      "requires_steps": [
+        "three_point_total",
+        "two_point_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "15+20=35点。"
+    },
+    {
+      "id": "marcus_percent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.marcus_percent",
+      "title_ja": "チーム得点に占める割合",
+      "claim_ja": "35×100÷70=50%。",
+      "method_ja": "全体70点に対する百分率を求める。",
+      "requires_steps": [
+        "marcus_points"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "35×100÷70=50%。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P2.marcus_points_percentage",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Marcusは15+20=35点。35÷70=2分の1なので50%。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "three_point_total",
+        "two_point_total",
+        "marcus_points",
+        "marcus_percent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "Marcusは15+20=35点。35÷70=2分の1なので50%。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4265,
+    "checked_model_hash": "046f077325373f030d564e7b3fdfbfaf1e6fd6e25cb6fb795a4fb62a35111d93",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

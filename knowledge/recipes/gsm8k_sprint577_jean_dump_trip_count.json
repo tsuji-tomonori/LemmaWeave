@@ -1,0 +1,89 @@
+{
+  "id": "gsm8k_sprint577_jean_dump_trip_count",
+  "title_ja": "Jeanのごみ捨て回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04332",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P1.lean",
+  "problem_ja": "Bill and Jean are both cleaning out their garages. Bill makes a certain number of trips to the dump and Jean makes that many trips plus 6. If they make 40 trips total, how many trips does Jean make?",
+  "answer_ja": "JeanはBillより6回多い。合計40回なのでBillは(40−6)÷2=17回、Jeanは23回。17+23=40で条件を満たす。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.jean_dump_trip_count",
+  "graph": "work/gsm8k-sprint577-jean-dump-trip-count-graph.json",
+  "model_notes_ja": [
+    "回数は自然数で、Jeanの回数=Billの回数+6。"
+  ],
+  "steps": [
+    {
+      "id": "bill_dump_trips",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.bill_dump_trips",
+      "title_ja": "Billの回数",
+      "claim_ja": "(40−6)÷2=17回。",
+      "method_ja": "合計から差6を除き2人分に分ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "(40−6)÷2=17回。"
+    },
+    {
+      "id": "jean_dump_trips",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.jean_dump_trips",
+      "title_ja": "Jeanの回数",
+      "claim_ja": "17+6=23回。",
+      "method_ja": "Billの回数へ6を加える。",
+      "requires_steps": [
+        "bill_dump_trips"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "17+6=23回。"
+    },
+    {
+      "id": "dump_trip_total_check",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.dump_trip_total_check",
+      "title_ja": "合計確認",
+      "claim_ja": "17+23=40回。",
+      "method_ja": "両者の回数を加えて条件を照合する。",
+      "requires_steps": [
+        "bill_dump_trips",
+        "jean_dump_trips"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "17+23=40回。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P1.jean_dump_trip_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "JeanはBillより6回多い。合計40回なのでBillは(40−6)÷2=17回、Jeanは23回。17+23=40で条件を満たす。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "bill_dump_trips",
+        "jean_dump_trips",
+        "dump_trip_total_check"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "JeanはBillより6回多い。合計40回なのでBillは(40−6)÷2=17回、Jeanは23回。17+23=40で条件を満たす。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4333,
+    "checked_model_hash": "35b4a2ab13fee9e8db23b0b9b938cade8b53c6d39f129c4d817b03f1ed091e20",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

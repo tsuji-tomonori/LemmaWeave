@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint546_stocking_stuffers_total",
+  "title_ja": "靴下用プレゼントの総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04301",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P1.lean",
+  "problem_ja": "子ども1人につきキャンディ4本、ぬいぐるみ2個、本1冊を3人分買う。総数はいくつか。",
+  "answer_ja": "1人分は4+2+1=7個。3人分は7×3=21個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.stocking_stuffers_total",
+  "graph": "work/gsm8k-sprint546-stocking-stuffers-total-graph.json",
+  "model_notes_ja": [
+    "3種類を1人分として合計し、同じ構成を3人へ用意する。"
+  ],
+  "steps": [
+    {
+      "id": "stuffers_per_child",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.stuffers_per_child",
+      "title_ja": "1人分",
+      "claim_ja": "4+2+1=7個。",
+      "method_ja": "三種類の品数を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "4+2+1=7個。"
+    },
+    {
+      "id": "all_stocking_stuffers",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.all_stocking_stuffers",
+      "title_ja": "3人分",
+      "claim_ja": "7×3=21個。",
+      "method_ja": "1人分に子どもの人数を掛ける。",
+      "requires_steps": [
+        "stuffers_per_child"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "7×3=21個。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P1.stocking_stuffers_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1人分は4+2+1=7個。3人分は7×3=21個。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "stuffers_per_child",
+        "all_stocking_stuffers"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1人分は4+2+1=7個。3人分は7×3=21個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4302,
+    "checked_model_hash": "c75058a771e6d093ed7734adf989dee2a43487e47b38014dd0c58acacef110c8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

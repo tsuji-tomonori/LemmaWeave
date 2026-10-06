@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1716",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "35b4a2ab13fee9e8db23b0b9b938cade8b53c6d39f129c4d817b03f1ed091e20",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A18P1Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04331",
+      "source_line_1based": 4332,
+      "source_record_sha256": "60d0d0588c181fdfcd2d0abf519887a9e36e6bef639b155225b61fabe14876b3",
+      "raw_question_sha256": "9413531bb408230ade64f85578520803595ea6304ade96430ecf51b5f48eea63",
+      "normalized_question_sha256": "9413531bb408230ade64f85578520803595ea6304ade96430ecf51b5f48eea63",
+      "source_question": "Josh has a device that automatically records the temperature in his lab every 5 seconds. To perform an analysis of environmental conditions, Josh lets the device record data for one hour. How many instances of data will the device record?",
+      "recipe_id": "gsm8k_sprint576_temperature_record_count_analysis",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "参照解答720件は記録時刻を5,10,…,3600秒とする。0秒も含む仕様なら721件。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04332",
+      "source_line_1based": 4333,
+      "source_record_sha256": "01bd2c99f0ea4e546890085963f4701d4f6e22198561d8cb576ca0b20f919ba9",
+      "raw_question_sha256": "eb7728ea56b940bea6c737a75a4e49f91ed2a673cff13f3b08aa313146edf1b2",
+      "normalized_question_sha256": "eb7728ea56b940bea6c737a75a4e49f91ed2a673cff13f3b08aa313146edf1b2",
+      "source_question": "Bill and Jean are both cleaning out their garages. Bill makes a certain number of trips to the dump and Jean makes that many trips plus 6. If they make 40 trips total, how many trips does Jean make?",
+      "recipe_id": "gsm8k_sprint577_jean_dump_trip_count",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "回数は自然数で、Jeanの回数=Billの回数+6。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04333",
+      "source_line_1based": 4334,
+      "source_record_sha256": "2cd9622cb0c40778c78a8dd1a5d20a029298f298fda9c011fe7f8fcf9dd342f2",
+      "raw_question_sha256": "e9668020201790346c61461bd4eb8024cfb287e1971c3e732e08a3d6c2a8bde4",
+      "normalized_question_sha256": "84093d8da1ee053ba94afffd63fd416a345a5e896673f02d1e23a7f287caf454",
+      "source_question": "The show Magic King was on the air for 10 seasons and 20 episodes per season for the first half of seasons and 25 for the second half of the show.  How many total episodes were there?",
+      "recipe_id": "gsm8k_sprint578_magic_king_episode_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "前半・後半は各5シーズンで、各シーズン内の話数は指定どおり一定。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04334",
+      "source_line_1based": 4335,
+      "source_record_sha256": "7feb5302f1e1903fe12e4d85143387ef443cc2a712a822011b9d7df5fb56ed80",
+      "raw_question_sha256": "fcf5356639ad4215783a333e15bb1d97b179519289d570510732b6bc4223a331",
+      "normalized_question_sha256": "fcf5356639ad4215783a333e15bb1d97b179519289d570510732b6bc4223a331",
+      "source_question": "Joan is answering English and Math exams with 30 and 15 questions, respectively. The English exam is to be completed in 1 hour and the Math exam in 1.5 hours. If Joan wants to spend an equal amount of time on each question, how many more minutes does she have in answering each question on the Math exam than the English exam?",
+      "recipe_id": "gsm8k_sprint579_exam_minutes_per_question_difference",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "1.5時間を90分として、各試験内で全問へ時間を均等配分する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04335",
+      "source_line_1based": 4336,
+      "source_record_sha256": "1e2c86b097a60b68d0b5bfd5772cfc32dc8fe87f8e4bc9579a630cc003fbfd62",
+      "raw_question_sha256": "2a7e4dadcf97f9f473fb762da31f157db01a9f575cf0162b90b0c6e0c3bff551",
+      "normalized_question_sha256": "89ece4d5e4a0d6189f80697e45a26668bb064a680e1f4265011d074a8ae05b1a",
+      "source_question": "James has 5 dozen boxes of matches.  Each box contains 20 matches.  How many matches does James have?",
+      "recipe_id": "gsm8k_sprint580_match_stick_total",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "1ダース=12箱で、各箱の本数は同じ。"
+      ],
+      "blockers": []
+    }
+  ]
+}

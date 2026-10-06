@@ -1,19 +1,19 @@
 {
-  "batch_id": "GSM8K-INDIVIDUAL-1500",
+  "batch_id": "GSM8K-INDIVIDUAL-1065",
   "collection_id": "external-gsm8k-main-3101c7d50724",
   "source": {
     "repository": "openai/grade-school-math",
     "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
     "path": "grade_school_math/data/train.jsonl",
     "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
-    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+    "file_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
   },
   "solution_format": "individual_lines_v1",
   "authorship": "llm_individual",
   "semantic_review_status": "self_review_only",
-  "semantic_model_hash": "ae18cb5fb3fc58ba40a510e6c1db26f67abb0871b1f07d55a1676ba6f5b02e88",
+  "semantic_model_hash": "1ced79c958f74c45061f52bc37d0e94f6c8689535dfbc188a2d204ae69915b57",
   "model_files": [
-    "LemmaWeave/Problems/GSM8K/Sprint1004A15P1Models.lean"
+    "LemmaWeave/Problems/GSM8K/Sprint1006A10P1Models.lean"
   ],
   "items": [
     {
@@ -27,7 +27,7 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "2枚の総切れ数から食べた7切れを引く。"
+        "ピザ1枚8切れ、2枚を合計してから食べた7切れを引く。"
       ],
       "blockers": []
     },
@@ -38,11 +38,11 @@
       "raw_question_sha256": "3e7cc794c4c5388ababd804336cfb1f37a2aab9c1e32250771e2ea535b0e1709",
       "normalized_question_sha256": "3e7cc794c4c5388ababd804336cfb1f37a2aab9c1e32250771e2ea535b0e1709",
       "source_question": "A community is building a metal fence. Each fence panel is made of 3 metal sheets, and 2 metal beams. The fence is made of 10 fence panels. If each sheet is made of 10 metal rods and each metal beam is made of 4 metal rods, how many metal rods does the community need for the fence?",
-      "recipe_id": "gsm8k_sprint472_fence_total_rods",
+      "recipe_id": "gsm8k_sprint472_fence_metal_rods",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "1パネルの板用30本と梁用8本を合計し10倍する。"
+        "板・梁それぞれの棒数を求め、1パネル分を10倍する。"
       ],
       "blockers": []
     },
@@ -53,11 +53,11 @@
       "raw_question_sha256": "a5d1c47e96970cfc88077ac664386f1f5d878218a469be1afb05719149a9dc13",
       "normalized_question_sha256": "a5d1c47e96970cfc88077ac664386f1f5d878218a469be1afb05719149a9dc13",
       "source_question": "Martha receives a daily allowance of $12. She decides to save half of this amount every day. In the first week she kept her commitment with the exception of one day when she saved only a quarter of this amount. How much has she saved at the end of this week?",
-      "recipe_id": "gsm8k_sprint473_weekly_savings",
+      "recipe_id": "gsm8k_sprint473_weekly_allowance_savings",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "通常6日と例外1日に分けて貯金額を合計する。"
+        "7日のうち6日は半額、残る1日だけ4分の1を貯金する。"
       ],
       "blockers": []
     },
@@ -68,11 +68,11 @@
       "raw_question_sha256": "73d9cba7e24676974956fd3dc0ef63b4c4066faf3cb3f2ff38cb1ebdc83a90de",
       "normalized_question_sha256": "73d9cba7e24676974956fd3dc0ef63b4c4066faf3cb3f2ff38cb1ebdc83a90de",
       "source_question": "Nate starts his camping trip with 70 matches. He drops 10 in a creek and his dog eats twice as many. How many matches does he have left?",
-      "recipe_id": "gsm8k_sprint474_camping_matches_left",
+      "recipe_id": "gsm8k_sprint474_matches_remaining",
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "落とした10本と犬が食べた20本を70本から引く。"
+        "「twice as many」の比較対象は小川へ落とした10本。"
       ],
       "blockers": []
     },
@@ -87,10 +87,9 @@
       "semantic_status": "self_review_only",
       "model_scope": "self_reviewed_model",
       "modeling_notes_ja": [
-        "既使用62オンスを引き、残り60オンスを4で割る。"
+        "既に満たした各杯の消費量を合計し、残量を4オンスで割る。"
       ],
       "blockers": []
     }
   ]
 }
-

@@ -1,0 +1,125 @@
+{
+  "id": "gsm8k_sprint491_tomato_total",
+  "title_ja": "トマト総数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04246",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Mabel planted 4 tomato plants. One tomato plant bore 8 tomatoes and another bore 4 more tomatoes than the first. The two remaining plants each bore three times the number of tomatoes as the first two plants combined. How many tomatoes does Mabel have?",
+  "answer_ja": "第2株は8+4=12個。最初の2株は20個で、残り2株はそれぞれ60個。合計140個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.tomato_total",
+  "graph": "work/gsm8k-sprint491-tomato-total-graph.json",
+  "model_notes_ja": [
+    "残る2株はそれぞれ、最初の2株合計の3倍を実らせる。"
+  ],
+  "steps": [
+    {
+      "id": "second_tomatoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.second_tomatoes",
+      "title_ja": "第2株",
+      "claim_ja": "8+4=12個。",
+      "method_ja": "第1株より4個多い。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "第1株8個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "12個。"
+    },
+    {
+      "id": "first_two_tomatoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.first_two_tomatoes",
+      "title_ja": "最初の2株",
+      "claim_ja": "8+12=20個。",
+      "method_ja": "2株を合計する。",
+      "requires_steps": [
+        "second_tomatoes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "8個と12個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20個。"
+    },
+    {
+      "id": "each_remaining_tomatoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.each_remaining_tomatoes",
+      "title_ja": "残り各株",
+      "claim_ja": "20×3=60個。",
+      "method_ja": "最初の2株合計の3倍。",
+      "requires_steps": [
+        "second_tomatoes",
+        "first_two_tomatoes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60個。"
+    },
+    {
+      "id": "remaining_two_tomatoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.remaining_two_tomatoes",
+      "title_ja": "残り2株",
+      "claim_ja": "60×2=120個。",
+      "method_ja": "同じ個数の2株を合計する。",
+      "requires_steps": [
+        "second_tomatoes",
+        "first_two_tomatoes",
+        "each_remaining_tomatoes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各60個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "120個。"
+    },
+    {
+      "id": "all_tomatoes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.all_tomatoes",
+      "title_ja": "全株合計",
+      "claim_ja": "20+120=140個。",
+      "method_ja": "最初の2株と残り2株を合計する。",
+      "requires_steps": [
+        "second_tomatoes",
+        "first_two_tomatoes",
+        "each_remaining_tomatoes",
+        "remaining_two_tomatoes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "20個と120個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "140個。"
+    },
+    {
+      "id": "tomato_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.tomato_total",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "第2株は8+4=12個。最初の2株は20個で、残り2株はそれぞれ60個。合計140個。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "second_tomatoes",
+        "first_two_tomatoes",
+        "each_remaining_tomatoes",
+        "remaining_two_tomatoes",
+        "all_tomatoes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "残る2株はそれぞれ、最初の2株合計の3倍を実らせる。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "第2株は8+4=12個。最初の2株は20個で、残り2株はそれぞれ60個。合計140個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4247,
+    "checked_model_hash": "1780be905fc1bf45efbe801fa2fbae1a27a34eaf90951b7e2c7d2d672732c3fd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "1780be905fc1bf45efbe801fa2fbae1a27a34eaf90951b7e2c7d2d672732c3fd"
+}

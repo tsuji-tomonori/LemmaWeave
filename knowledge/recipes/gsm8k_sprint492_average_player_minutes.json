@@ -1,0 +1,90 @@
+{
+  "id": "gsm8k_sprint492_average_player_minutes",
+  "title_ja": "選手1人あたり平均時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04247",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A12P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Patricia is making a highlight film about her basketball team. She recorded video of every player and plans to put it all together in a longer movie. She has 130 seconds of the point guard, 145 seconds of the shooting guard, 85 seconds of the small forward, 60 seconds of the power forward, and 180 seconds of the center. How on average, how many minutes does each player get?",
+  "answer_ja": "映像は130+145+85+60+180=600秒、つまり10分。5人平均は2分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.average_player_minutes",
+  "graph": "work/gsm8k-sprint492-average-player-minutes-graph.json",
+  "model_notes_ja": [
+    "5人分の秒数を合計し、分へ換算した後で5人に等分する。"
+  ],
+  "steps": [
+    {
+      "id": "highlight_seconds",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.highlight_seconds",
+      "title_ja": "総秒数",
+      "claim_ja": "合計600秒。",
+      "method_ja": "5人分を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "各選手の録画秒数。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "600秒。"
+    },
+    {
+      "id": "highlight_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.highlight_minutes",
+      "title_ja": "総分数",
+      "claim_ja": "600÷60=10分。",
+      "method_ja": "秒を分へ換算する。",
+      "requires_steps": [
+        "highlight_seconds"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "600秒。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "10分。"
+    },
+    {
+      "id": "minutes_per_player",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.minutes_per_player",
+      "title_ja": "平均",
+      "claim_ja": "10÷5=2分。",
+      "method_ja": "5人で平均する。",
+      "requires_steps": [
+        "highlight_seconds",
+        "highlight_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "10分、5人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "2分。"
+    },
+    {
+      "id": "average_player_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P2.average_player_minutes",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "映像は130+145+85+60+180=600秒、つまり10分。5人平均は2分。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "highlight_seconds",
+        "highlight_minutes",
+        "minutes_per_player"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "5人分の秒数を合計し、分へ換算した後で5人に等分する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "映像は130+145+85+60+180=600秒、つまり10分。5人平均は2分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4248,
+    "checked_model_hash": "1780be905fc1bf45efbe801fa2fbae1a27a34eaf90951b7e2c7d2d672732c3fd",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "1780be905fc1bf45efbe801fa2fbae1a27a34eaf90951b7e2c7d2d672732c3fd"
+}

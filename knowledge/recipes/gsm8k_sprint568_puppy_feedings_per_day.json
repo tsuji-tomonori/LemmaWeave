@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint568_puppy_feedings_per_day",
+  "title_ja": "子犬への1日当たり給餌回数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04323",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P2.lean",
+  "problem_ja": "Sandra's dog gave birth to 7 puppies. Her vet gave her 105 portions of formula to give to the puppies for 5 days. How many times a day should Sandra feed the puppies?",
+  "answer_ja": "105食分を5日で分けると1日21食分。7匹へ均等に与えるので、1匹当たり1日3回。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.puppy_feedings_per_day",
+  "graph": "work/gsm8k-sprint568-puppy-feedings-per-day-graph.json",
+  "model_notes_ja": [
+    "1回の給餌で子犬1匹につき1食分を使い、全て均等に与える。"
+  ],
+  "steps": [
+    {
+      "id": "daily_formula_portions",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.daily_formula_portions",
+      "title_ja": "1日分",
+      "claim_ja": "105÷5=21食分。",
+      "method_ja": "全食分を5日で均等に分ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "105÷5=21食分。"
+    },
+    {
+      "id": "daily_puppy_feedings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.daily_puppy_feedings",
+      "title_ja": "給餌回数",
+      "claim_ja": "21÷7=3回。",
+      "method_ja": "1日の食数を子犬7匹で割る。",
+      "requires_steps": [
+        "daily_formula_portions"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "21÷7=3回。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P2.puppy_feedings_per_day",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "105食分を5日で分けると1日21食分。7匹へ均等に与えるので、1匹当たり1日3回。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "daily_formula_portions",
+        "daily_puppy_feedings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "105食分を5日で分けると1日21食分。7匹へ均等に与えるので、1匹当たり1日3回。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4324,
+    "checked_model_hash": "3ac8694ccc634607c840230ad416833fb8207f62fea9e28db32aca8271bc38ff",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint619_peanut_butter_jar_count",
+  "title_ja": "30日分のピーナツバター瓶数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04374",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P3.lean",
+  "problem_ja": "Phoebe eats 1 serving and gives her dog 1 serving of peanut butter for a bedtime snack. Each jar of peanut butter has 15 servings.  How many jars will she need to make sure she and her dog have enough to last for 30 days?",
+  "answer_ja": "Phoebeと犬で1日2食分、30日で60食分。1瓶15食分なので4瓶必要。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.peanut_butter_jar_count",
+  "graph": "work/gsm8k-sprint619-peanut-butter-jar-count-graph.json",
+  "model_notes_ja": [
+    "毎日Phoebeと犬が各1食分を消費し、端数瓶は不要な割り切れる条件。"
+  ],
+  "steps": [
+    {
+      "id": "daily_peanut_servings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.daily_peanut_servings",
+      "title_ja": "1日の食数",
+      "claim_ja": "1+1=2食分。",
+      "method_ja": "二者の1食分ずつを加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "1+1=2食分。"
+    },
+    {
+      "id": "thirty_day_servings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.thirty_day_servings",
+      "title_ja": "30日の食数",
+      "claim_ja": "30×2=60食分。",
+      "method_ja": "日数に1日の食数を掛ける。",
+      "requires_steps": [
+        "daily_peanut_servings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "30×2=60食分。"
+    },
+    {
+      "id": "needed_jar_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.needed_jar_count",
+      "title_ja": "必要瓶数",
+      "claim_ja": "60÷15=4瓶。",
+      "method_ja": "総食数を1瓶の食数で割る。",
+      "requires_steps": [
+        "thirty_day_servings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "60÷15=4瓶。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.peanut_butter_jar_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "Phoebeと犬で1日2食分、30日で60食分。1瓶15食分なので4瓶必要。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "daily_peanut_servings",
+        "thirty_day_servings",
+        "needed_jar_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "Phoebeと犬で1日2食分、30日で60食分。1瓶15食分なので4瓶必要。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4375,
+    "checked_model_hash": "6ac66d8d69059cd9ddcaf13a92c2b4b2d2c850cae6fb8d48c0bbc5c02afb122c",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

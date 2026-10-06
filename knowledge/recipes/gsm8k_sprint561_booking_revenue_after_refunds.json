@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint561_booking_revenue_after_refunds",
+  "title_ja": "予約返金後の売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04316",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P1.lean",
+  "problem_ja": "Cloud 9 Diving Company has taken individual bookings worth $12,000 and group bookings worth $16,000. Some people have cancelled at the last minute. $1600 has had to be returned to them. How much money has the sky diving company taken altogether?",
+  "answer_ja": "個人予約と団体予約の合計は12000+16000=28000ドル。返金1600ドルを引き、会社が受け取った金額は26400ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.booking_revenue_after_refunds",
+  "graph": "work/gsm8k-sprint561-booking-revenue-after-refunds-graph.json",
+  "model_notes_ja": [
+    "予約総額から実際に返した1600ドルを一度だけ差し引く。"
+  ],
+  "steps": [
+    {
+      "id": "gross_booking_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.gross_booking_revenue",
+      "title_ja": "予約総額",
+      "claim_ja": "12000+16000=28000ドル。",
+      "method_ja": "個人予約と団体予約を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12000+16000=28000ドル。"
+    },
+    {
+      "id": "net_booking_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.net_booking_revenue",
+      "title_ja": "返金後",
+      "claim_ja": "28000−1600=26400ドル。",
+      "method_ja": "予約総額から返金額を引く。",
+      "requires_steps": [
+        "gross_booking_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "28000−1600=26400ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.booking_revenue_after_refunds",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "個人予約と団体予約の合計は12000+16000=28000ドル。返金1600ドルを引き、会社が受け取った金額は26400ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "gross_booking_revenue",
+        "net_booking_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "個人予約と団体予約の合計は12000+16000=28000ドル。返金1600ドルを引き、会社が受け取った金額は26400ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4317,
+    "checked_model_hash": "409c02908b476593fe04e43a00bbac5ac9aa6f5bd7955b5d95fea12f3b6ef58f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

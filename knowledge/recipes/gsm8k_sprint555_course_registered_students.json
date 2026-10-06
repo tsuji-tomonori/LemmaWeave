@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint555_course_registered_students",
+  "title_ja": "科目登録者数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04310",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P2.lean",
+  "problem_ja": "今日の出席者は昨日70人の2倍より10%少ない。今日は30人欠席。登録者は何人か。",
+  "answer_ja": "昨日の2倍は140人、その10%の14人を引き今日126人出席。欠席30人を足し登録者156人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.course_registered_students",
+  "graph": "work/gsm8k-sprint555-course-registered-students-graph.json",
+  "model_notes_ja": [
+    "「10%少ない」は2倍した140人を基準にする。"
+  ],
+  "steps": [
+    {
+      "id": "twice_yesterday",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.twice_yesterday",
+      "title_ja": "昨日人数の2倍",
+      "claim_ja": "70×2=140人。",
+      "method_ja": "昨日の出席者を2倍する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "70×2=140人。"
+    },
+    {
+      "id": "ten_percent_reduction",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.ten_percent_reduction",
+      "title_ja": "10%分",
+      "claim_ja": "140×10÷100=14人。",
+      "method_ja": "140人の10%を求める。",
+      "requires_steps": [
+        "twice_yesterday"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "140×10÷100=14人。"
+    },
+    {
+      "id": "today_present",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.today_present",
+      "title_ja": "今日の出席者",
+      "claim_ja": "140−14=126人。",
+      "method_ja": "基準人数から10%分を引く。",
+      "requires_steps": [
+        "twice_yesterday",
+        "ten_percent_reduction"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "140−14=126人。"
+    },
+    {
+      "id": "registered_students",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.registered_students",
+      "title_ja": "登録者数",
+      "claim_ja": "126+30=156人。",
+      "method_ja": "出席者と欠席者を足す。",
+      "requires_steps": [
+        "today_present"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "126+30=156人。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.course_registered_students",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "昨日の2倍は140人、その10%の14人を引き今日126人出席。欠席30人を足し登録者156人。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "twice_yesterday",
+        "ten_percent_reduction",
+        "today_present",
+        "registered_students"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "昨日の2倍は140人、その10%の14人を引き今日126人出席。欠席30人を足し登録者156人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4311,
+    "checked_model_hash": "4765595c3ac7c1f78e7205405d16c10effbd2a117bd5392d2cad5ebe151407a0",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

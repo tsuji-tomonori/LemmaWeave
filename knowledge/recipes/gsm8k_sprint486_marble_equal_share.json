@@ -1,0 +1,144 @@
+{
+  "id": "gsm8k_sprint486_marble_equal_share",
+  "title_ja": "3人のビー玉均等分配",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04241",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A12P1.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "Three friends Wolfgang, Ludo, and Michael, went to Walmart and bought marbles. Wolfgang bought 16 marbles, Ludo bought 1/4 times more marbles than Wolfgang, and Michael bought 2/3 times as many marbles as the number of marbles both Wolfgang and Ludo bought. If they combined their marbles and decided to share them equally, how many marbles did each get?",
+  "answer_ja": "Ludoの増加分は16÷4=4個で、合計20個。WolfgangとLudoは36個、Michaelはその3分の2で24個。合計60個を3人で分けるので1人20個。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A12P1.marble_equal_share",
+  "graph": "work/gsm8k-sprint486-marble-equal-share-graph.json",
+  "model_notes_ja": [
+    "「1/4 times more」をWolfgangより25%多い（16に4を加える）と明示して解釈する。"
+  ],
+  "steps": [
+    {
+      "id": "ludo_extra",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P1.ludo_extra",
+      "title_ja": "Ludoの増加分",
+      "claim_ja": "16÷4=4個。",
+      "method_ja": "16個の4分の1を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "Wolfgangは16個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "4個。"
+    },
+    {
+      "id": "ludo_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P1.ludo_total",
+      "title_ja": "Ludoの個数",
+      "claim_ja": "16+4=20個。",
+      "method_ja": "25%増加分を元の個数へ加える。",
+      "requires_steps": [
+        "ludo_extra"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "16個と増加分4個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20個。"
+    },
+    {
+      "id": "wolfgang_ludo_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P1.wolfgang_ludo_total",
+      "title_ja": "最初の2人",
+      "claim_ja": "16+20=36個。",
+      "method_ja": "2人の個数を合計する。",
+      "requires_steps": [
+        "ludo_extra",
+        "ludo_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "16個と20個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "36個。"
+    },
+    {
+      "id": "michael_marbles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P1.michael_marbles",
+      "title_ja": "Michaelの個数",
+      "claim_ja": "36×2÷3=24個。",
+      "method_ja": "最初の2人の合計の3分の2を求める。",
+      "requires_steps": [
+        "ludo_extra",
+        "ludo_total",
+        "wolfgang_ludo_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "36個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "24個。"
+    },
+    {
+      "id": "three_friend_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P1.three_friend_total",
+      "title_ja": "3人の合計",
+      "claim_ja": "36+24=60個。",
+      "method_ja": "最初の2人とMichaelを合計する。",
+      "requires_steps": [
+        "ludo_extra",
+        "ludo_total",
+        "wolfgang_ludo_total",
+        "michael_marbles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "36個と24個。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "60個。"
+    },
+    {
+      "id": "marbles_each",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P1.marbles_each",
+      "title_ja": "1人分",
+      "claim_ja": "60÷3=20個。",
+      "method_ja": "3人で均等に分ける。",
+      "requires_steps": [
+        "ludo_extra",
+        "ludo_total",
+        "wolfgang_ludo_total",
+        "michael_marbles",
+        "three_friend_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "60個、3人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "20個。"
+    },
+    {
+      "id": "marble_equal_share",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P1.marble_equal_share",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "Ludoの増加分は16÷4=4個で、合計20個。WolfgangとLudoは36個、Michaelはその3分の2で24個。合計60個を3人で分けるので1人20個。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "ludo_extra",
+        "ludo_total",
+        "wolfgang_ludo_total",
+        "michael_marbles",
+        "three_friend_total",
+        "marbles_each"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "「1/4 times more」をWolfgangより25%多い（16に4を加える）と明示して解釈する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "Ludoの増加分は16÷4=4個で、合計20個。WolfgangとLudoは36個、Michaelはその3分の2で24個。合計60個を3人で分けるので1人20個。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4242,
+    "checked_model_hash": "9d7cb05afa41c9f7b815b38afa6272f2a818726d1081c39fc68ed0e0f8c1e4df",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "9d7cb05afa41c9f7b815b38afa6272f2a818726d1081c39fc68ed0e0f8c1e4df"
+}

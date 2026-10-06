@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint534_bicycle_home_school_distance",
+  "title_ja": "家から高校までの距離",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04289",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P1.lean",
+  "problem_ja": "家と高校を往復し、トラックを4マイル走って合計10マイル。家から高校まで何マイルか。",
+  "answer_ja": "往復部分は10−4=6マイル。往路と復路は同じ道なので片道6÷2=3マイル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.bicycle_home_school_distance",
+  "graph": "work/gsm8k-sprint534-bicycle-home-school-distance-graph.json",
+  "model_notes_ja": [
+    "往路と復路は同一路線で距離が等しい。"
+  ],
+  "steps": [
+    {
+      "id": "round_trip_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.round_trip_miles",
+      "title_ja": "往復部分",
+      "claim_ja": "10−4=6マイル。",
+      "method_ja": "総距離からトラック4マイルを引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10−4=6マイル。"
+    },
+    {
+      "id": "one_way_school_miles",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.one_way_school_miles",
+      "title_ja": "片道距離",
+      "claim_ja": "6÷2=3マイル。",
+      "method_ja": "同距離の往復を2等分する。",
+      "requires_steps": [
+        "round_trip_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6÷2=3マイル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.bicycle_home_school_distance",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "往復部分は10−4=6マイル。往路と復路は同じ道なので片道6÷2=3マイル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "round_trip_miles",
+        "one_way_school_miles"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "往復部分は10−4=6マイル。往路と復路は同じ道なので片道6÷2=3マイル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4290,
+    "checked_model_hash": "37fb0e1f335428757bc4ec5bf56b5d1a4db40a10a3d8e6654ee66dec536e66af",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

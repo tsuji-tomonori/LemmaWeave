@@ -1,0 +1,88 @@
+{
+  "id": "gsm8k_sprint552_annual_rent_revenue",
+  "title_ja": "年間家賃収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04307",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P2.lean",
+  "problem_ja": "100戸の建物が年間を通じ3/4入居し、各居住者が月400ドル払う。年間収入はいくらか。",
+  "answer_ja": "入居は75戸。月収75×400=30000ドル、12か月で360000ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.annual_rent_revenue",
+  "graph": "work/gsm8k-sprint552-annual-rent-revenue-graph.json",
+  "model_notes_ja": [
+    "年間を通じて75戸が毎月入居し、1戸につき居住者1人が400ドル払う。"
+  ],
+  "steps": [
+    {
+      "id": "occupied_units",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.occupied_units",
+      "title_ja": "入居戸数",
+      "claim_ja": "100×3÷4=75戸。",
+      "method_ja": "全戸数の3/4を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "100×3÷4=75戸。"
+    },
+    {
+      "id": "monthly_rent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.monthly_rent",
+      "title_ja": "月間家賃",
+      "claim_ja": "75×400=30000ドル。",
+      "method_ja": "入居戸数と月額を掛ける。",
+      "requires_steps": [
+        "occupied_units"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "75×400=30000ドル。"
+    },
+    {
+      "id": "yearly_rent",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.yearly_rent",
+      "title_ja": "年間家賃",
+      "claim_ja": "30000×12=360000ドル。",
+      "method_ja": "月収を12か月分にする。",
+      "requires_steps": [
+        "monthly_rent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30000×12=360000ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P2.annual_rent_revenue",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "入居は75戸。月収75×400=30000ドル、12か月で360000ドル。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "occupied_units",
+        "monthly_rent",
+        "yearly_rent"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "入居は75戸。月収75×400=30000ドル、12か月で360000ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4308,
+    "checked_model_hash": "4765595c3ac7c1f78e7205405d16c10effbd2a117bd5392d2cad5ebe151407a0",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

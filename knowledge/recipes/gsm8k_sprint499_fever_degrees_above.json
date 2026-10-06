@@ -1,0 +1,74 @@
+{
+  "id": "gsm8k_sprint499_fever_degrees_above",
+  "title_ja": "発熱閾値を上回る度数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04254",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A12P3.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "If Tony normally has a temperature of 95 degrees, and he comes down with a sickness that raises his temperature by 10 degrees, how many degrees above the threshold of fever is his temperature if a fever is anything over 100 degrees?",
+  "answer_ja": "病後体温は95+10=105度。100度との差は5度なので、発熱閾値を5度上回る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.fever_degrees_above",
+  "graph": "work/gsm8k-sprint499-fever-degrees-above-graph.json",
+  "model_notes_ja": [
+    "病後体温を先に求め、発熱境界100度との差を計算する。"
+  ],
+  "steps": [
+    {
+      "id": "sick_temperature",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.sick_temperature",
+      "title_ja": "病後体温",
+      "claim_ja": "95+10=105度。",
+      "method_ja": "通常体温へ上昇分を加える。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "95度、10度上昇。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "105度。"
+    },
+    {
+      "id": "above_fever_threshold",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.above_fever_threshold",
+      "title_ja": "閾値との差",
+      "claim_ja": "105−100=5度。",
+      "method_ja": "体温から境界100度を引く。",
+      "requires_steps": [
+        "sick_temperature"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "105度。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "5度。"
+    },
+    {
+      "id": "fever_degrees_above",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A12P3.fever_degrees_above",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "病後体温は95+10=105度。100度との差は5度なので、発熱閾値を5度上回る。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "sick_temperature",
+        "above_fever_threshold"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "病後体温を先に求め、発熱境界100度との差を計算する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "病後体温は95+10=105度。100度との差は5度なので、発熱閾値を5度上回る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4255,
+    "checked_model_hash": "196e31c97a4a6a21d1f393dbba0528bf0d34d496dde09bdaaf4546966ecd056b",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "196e31c97a4a6a21d1f393dbba0528bf0d34d496dde09bdaaf4546966ecd056b"
+}

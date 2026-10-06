@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint560_watermelon_sales_revenue",
+  "title_ja": "スイカ18個の売上",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04315",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P3.lean",
+  "problem_ja": "1個23ポンドのスイカを1ポンド2ドルで18個売る。売上はいくらか。",
+  "answer_ja": "1個は23×2=46ドル。18個では46×18=828ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.watermelon_sales_revenue",
+  "graph": "work/gsm8k-sprint560-watermelon-sales-revenue-graph.json",
+  "model_notes_ja": [
+    "参照解答の途中文に「60 watermelons」とあるが、原題は18個で計算式も46×18であるため誤記として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "one_watermelon_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.one_watermelon_price",
+      "title_ja": "1個の価格",
+      "claim_ja": "23×2=46ドル。",
+      "method_ja": "重量と1ポンド単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "23×2=46ドル。"
+    },
+    {
+      "id": "watermelon_total_revenue",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.watermelon_total_revenue",
+      "title_ja": "18個の売上",
+      "claim_ja": "46×18=828ドル。",
+      "method_ja": "1個価格と個数を掛ける。",
+      "requires_steps": [
+        "one_watermelon_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "46×18=828ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.watermelon_sales_revenue",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1個は23×2=46ドル。18個では46×18=828ドル。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "one_watermelon_price",
+        "watermelon_total_revenue"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1個は23×2=46ドル。18個では46×18=828ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4316,
+    "checked_model_hash": "1996423f62893da6f88cf97d68f47a413603677a123a88e9a22ef8c1685945ae",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

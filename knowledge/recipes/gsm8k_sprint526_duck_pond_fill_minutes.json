@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint526_duck_pond_fill_minutes",
+  "title_ja": "池を満たす時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04281",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P3.lean",
+  "problem_ja": "200ガロンの池を、通常毎分6ガロンの2/3の速度で満たす。何分か。",
+  "answer_ja": "制限時の流量は6×2/3=毎分4ガロン。200÷4=50分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.duck_pond_fill_minutes",
+  "graph": "work/gsm8k-sprint526-duck-pond-fill-minutes-graph.json",
+  "model_notes_ja": [
+    "池は空から満水まで200ガロン入れるものとする。"
+  ],
+  "steps": [
+    {
+      "id": "restricted_hose_rate",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.restricted_hose_rate",
+      "title_ja": "制限時の流量",
+      "claim_ja": "6×2÷3=毎分4ガロン。",
+      "method_ja": "通常流量の2/3を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6×2÷3=毎分4ガロン。"
+    },
+    {
+      "id": "pond_fill_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.pond_fill_minutes",
+      "title_ja": "満水までの時間",
+      "claim_ja": "200÷4=50分。",
+      "method_ja": "容量を毎分流量で割る。",
+      "requires_steps": [
+        "restricted_hose_rate"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "200÷4=50分。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P3.duck_pond_fill_minutes",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "制限時の流量は6×2/3=毎分4ガロン。200÷4=50分。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "restricted_hose_rate",
+        "pond_fill_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "制限時の流量は6×2/3=毎分4ガロン。200÷4=50分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4282,
+    "checked_model_hash": "a5813930c3e5d173cff5d2d1ba1bd0bf21fe514f1d872224445412bafdeac2f1",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

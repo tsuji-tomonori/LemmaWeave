@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint516_park_to_restaurant_walk",
+  "title_ja": "公園事務所からレストランまでの時間",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04271",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P1.lean",
+  "problem_ja": "公園事務所からレストランを経てHidden Lakeまで15分、湖から事務所へ7分、全行程32分。事務所からレストランまでは何分か。",
+  "answer_ja": "レストラン以後の15分と復路7分で22分。全32分から引いて、事務所からレストランまでは10分。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.park_to_restaurant_walk",
+  "graph": "work/gsm8k-sprint516-park-to-restaurant-walk-graph.json",
+  "model_notes_ja": [
+    "15分はレストランからHidden Lakeまでの区間として、全行程から既知2区間を引く。"
+  ],
+  "steps": [
+    {
+      "id": "lake_trip_and_return",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.lake_trip_and_return",
+      "title_ja": "既知区間の合計",
+      "claim_ja": "15+7=22分。",
+      "method_ja": "レストランから湖、湖から事務所の時間を足す。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "15+7=22分。"
+    },
+    {
+      "id": "restaurant_walk_minutes",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.restaurant_walk_minutes",
+      "title_ja": "未知区間の時間",
+      "claim_ja": "32−22=10分。",
+      "method_ja": "全行程から既知区間を引く。",
+      "requires_steps": [
+        "lake_trip_and_return"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "32−22=10分。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.park_to_restaurant_walk",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "レストラン以後の15分と復路7分で22分。全32分から引いて、事務所からレストランまでは10分。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "lake_trip_and_return",
+        "restaurant_walk_minutes"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "レストラン以後の15分と復路7分で22分。全32分から引いて、事務所からレストランまでは10分。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4272,
+    "checked_model_hash": "9deac44327d4c25371eedd84b73adaf41869bf13e44dc6daefec7cae619d5d34",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

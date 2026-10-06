@@ -45,7 +45,7 @@ theorem ticket_total_cost : (40 - 1 : ℕ) = 39 := by norm_num
 theorem adult_ticket_cost : (9 * 2 : ℕ) = 18 := by norm_num
 theorem children_ticket_total : (39 - 18 : ℕ) = 21 := by norm_num
 theorem child_ticket_price : (9 - 2 : ℕ) = 7 := by norm_num
-theorem movie_child_count : (21 / 7 : ℕ) = 3 := by norm_num
+theorem child_ticket_count : (21 / 7 : ℕ) = 3 := by norm_num
 
 theorem movie_child_count :
     (20 * 2 : ℕ) = 40 ∧
@@ -54,6 +54,6 @@ theorem movie_child_count :
       (39 - 18 : ℕ) = 21 ∧
       (9 - 2 : ℕ) = 7 ∧
       (21 / 7 : ℕ) = 3 := by
-  exact ⟨cash_given, ticket_total_cost, adult_ticket_cost, children_ticket_total, child_ticket_price, movie_child_count⟩
+  exact ⟨cash_given, ticket_total_cost, adult_ticket_cost, children_ticket_total, child_ticket_price, child_ticket_count⟩
 
 end LemmaWeave.Problems.GSM8K.Sprint1006A18P3

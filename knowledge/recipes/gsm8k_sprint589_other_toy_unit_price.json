@@ -1,0 +1,87 @@
+{
+  "id": "gsm8k_sprint589_other_toy_unit_price",
+  "title_ja": "残りのおもちゃ1個の価格",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04344",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A18P3.lean",
+  "problem_ja": "Allie has 9 toys, which are in total worth $52. If we know that one toy is worth $12, and all the other toys have the same value, how much does one of the other toys cost?",
+  "answer_ja": "12ドルのおもちゃ以外は9−1=8個。その合計価値は52−12=40ドルなので、1個5ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.other_toy_unit_price",
+  "graph": "work/gsm8k-sprint589-other-toy-unit-price-graph.json",
+  "model_notes_ja": [
+    "残り8個は全て同じ価値で、総価値52ドルは9個全ての合計。"
+  ],
+  "steps": [
+    {
+      "id": "other_toy_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.other_toy_count",
+      "title_ja": "残り個数",
+      "claim_ja": "9−1=8個。",
+      "method_ja": "特別な1個を除く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "9−1=8個。"
+    },
+    {
+      "id": "other_toy_total_value",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.other_toy_total_value",
+      "title_ja": "残り総額",
+      "claim_ja": "52−12=40ドル。",
+      "method_ja": "全体価値から特別な1個の価値を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "52−12=40ドル。"
+    },
+    {
+      "id": "other_toy_price",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.other_toy_price",
+      "title_ja": "1個の価格",
+      "claim_ja": "40÷8=5ドル。",
+      "method_ja": "残り総額を同価値の8個で割る。",
+      "requires_steps": [
+        "other_toy_count",
+        "other_toy_total_value"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40÷8=5ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A18P3.other_toy_unit_price",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "12ドルのおもちゃ以外は9−1=8個。その合計価値は52−12=40ドルなので、1個5ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "other_toy_count",
+        "other_toy_total_value",
+        "other_toy_price"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12ドルのおもちゃ以外は9−1=8個。その合計価値は52−12=40ドルなので、1個5ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4345,
+    "checked_model_hash": "5c16b115034e5f644a89e0097863acc174b46bb72a3615d9d606ded050094450",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "gsm8k_sprint601_pizza_slice_total",
+  "title_ja": "15枚のピザの総スライス数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04356",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A19P3.lean",
+  "problem_ja": "A small pizza has 6 slices, a medium pizza has 8 slices whereas a large pizza has 12 slices. How many slices of pizza will you have if you bought a total of 15 pizzas and you know you ordered 4 small pizzas and 5 medium pizzas?",
+  "answer_ja": "小4枚と中5枚で9枚なので、大は15−9=6枚。各サイズのスライス数は24、40、72で、合計136スライス。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.pizza_slice_total",
+  "graph": "work/gsm8k-sprint601-pizza-slice-total-graph.json",
+  "model_notes_ja": [
+    "15枚の内訳は小4・中5・残り全て大である。"
+  ],
+  "steps": [
+    {
+      "id": "known_pizza_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.known_pizza_count",
+      "title_ja": "小中ピザ数",
+      "claim_ja": "4+5=9枚。",
+      "method_ja": "既知の2サイズを合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4+5=9枚。"
+    },
+    {
+      "id": "large_pizza_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.large_pizza_count",
+      "title_ja": "大ピザ数",
+      "claim_ja": "15−9=6枚。",
+      "method_ja": "総数から小中を引く。",
+      "requires_steps": [
+        "known_pizza_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "15−9=6枚。"
+    },
+    {
+      "id": "small_pizza_slices",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.small_pizza_slices",
+      "title_ja": "小のスライス",
+      "claim_ja": "4×6=24枚。",
+      "method_ja": "小ピザ枚数に1枚の切数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "4×6=24枚。"
+    },
+    {
+      "id": "medium_pizza_slices",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.medium_pizza_slices",
+      "title_ja": "中のスライス",
+      "claim_ja": "5×8=40枚。",
+      "method_ja": "中ピザ枚数に1枚の切数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "5×8=40枚。"
+    },
+    {
+      "id": "large_pizza_slices",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.large_pizza_slices",
+      "title_ja": "大のスライス",
+      "claim_ja": "6×12=72枚。",
+      "method_ja": "大ピザ枚数に1枚の切数を掛ける。",
+      "requires_steps": [
+        "large_pizza_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "6×12=72枚。"
+    },
+    {
+      "id": "all_pizza_slices",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.all_pizza_slices",
+      "title_ja": "総スライス数",
+      "claim_ja": "24+40+72=136枚。",
+      "method_ja": "3サイズの切数を合計する。",
+      "requires_steps": [
+        "small_pizza_slices",
+        "medium_pizza_slices",
+        "large_pizza_slices"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "24+40+72=136枚。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A19P3.pizza_slice_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "小4枚と中5枚で9枚なので、大は15−9=6枚。各サイズのスライス数は24、40、72で、合計136スライス。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "known_pizza_count",
+        "large_pizza_count",
+        "small_pizza_slices",
+        "medium_pizza_slices",
+        "large_pizza_slices",
+        "all_pizza_slices"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・時刻・剰余。",
+      "conclusion_ja": "小4枚と中5枚で9枚なので、大は15−9=6枚。各サイズのスライス数は24、40、72で、合計136スライス。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4357,
+    "checked_model_hash": "5a7e7d65ff8944256f8ac0ef2c5351d4d11babfe8e9708538e85dce984b47e28",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

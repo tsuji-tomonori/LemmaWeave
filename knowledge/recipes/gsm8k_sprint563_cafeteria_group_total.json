@@ -1,0 +1,116 @@
+{
+  "id": "gsm8k_sprint563_cafeteria_group_total",
+  "title_ja": "カフェ代の合計",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04318",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A17P1.lean",
+  "problem_ja": "Mell went to a cafeteria to spend some time with her friends. She ordered two cups of coffee and one piece of cake. Two of her friends ordered the same, but each of them also bought a bowl of ice cream. One cup of coffee is $4, one piece of cake is $7, and a bowl of ice cream is $3. How much money did Mell and her friends need to pay at the cafeteria?",
+  "answer_ja": "3人が各2杯のコーヒーと各1個のケーキを買い、友人2人だけがアイスを1杯ずつ買う。アイス6ドル、コーヒー24ドル、ケーキ21ドルで、合計51ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.cafeteria_group_total",
+  "graph": "work/gsm8k-sprint563-cafeteria-group-total-graph.json",
+  "model_notes_ja": [
+    "Mellを含む3人全員が同じコーヒーとケーキを注文し、追加のアイスは友人2人だけ。"
+  ],
+  "steps": [
+    {
+      "id": "ice_cream_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.ice_cream_cost",
+      "title_ja": "アイス代",
+      "claim_ja": "2×3=6ドル。",
+      "method_ja": "友人2人分を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2×3=6ドル。"
+    },
+    {
+      "id": "coffee_cup_count",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.coffee_cup_count",
+      "title_ja": "コーヒー杯数",
+      "claim_ja": "3×2=6杯。",
+      "method_ja": "3人が2杯ずつ買う。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3×2=6杯。"
+    },
+    {
+      "id": "coffee_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.coffee_cost",
+      "title_ja": "コーヒー代",
+      "claim_ja": "6×4=24ドル。",
+      "method_ja": "杯数に単価を掛ける。",
+      "requires_steps": [
+        "coffee_cup_count"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6×4=24ドル。"
+    },
+    {
+      "id": "cake_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.cake_cost",
+      "title_ja": "ケーキ代",
+      "claim_ja": "3×7=21ドル。",
+      "method_ja": "3人分のケーキ代を計算する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3×7=21ドル。"
+    },
+    {
+      "id": "cafeteria_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.cafeteria_cost",
+      "title_ja": "総額",
+      "claim_ja": "6+24+21=51ドル。",
+      "method_ja": "各品目の代金を加える。",
+      "requires_steps": [
+        "ice_cream_cost",
+        "coffee_cost",
+        "cake_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "6+24+21=51ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A17P1.cafeteria_group_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "3人が各2杯のコーヒーと各1個のケーキを買い、友人2人だけがアイスを1杯ずつ買う。アイス6ドル、コーヒー24ドル、ケーキ21ドルで、合計51ドル。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "ice_cream_cost",
+        "coffee_cup_count",
+        "coffee_cost",
+        "cake_cost",
+        "cafeteria_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3人が各2杯のコーヒーと各1個のケーキを買い、友人2人だけがアイスを1杯ずつ買う。アイス6ドル、コーヒー24ドル、ケーキ21ドルで、合計51ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4319,
+    "checked_model_hash": "409c02908b476593fe04e43a00bbac5ac9aa6f5bd7955b5d95fea12f3b6ef58f",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

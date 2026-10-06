@@ -433,10 +433,10 @@
     "url": "https://github.com/tsuji-tomonori/LemmaWeave/pull/5",
     "head_sha_before_ledger": "16323768c9d1f21cc2bef1cd890e7b0f258aaa35",
     "base_sha": "f24b333b27ace588609a3c506ce3ef1bb93f2430",
-    "mergeable": false,
+    "mergeable": true,
     "merged": false,
     "merge_performed": false,
-    "merge_blocker_ja": "GitHubが現HEADをmergeable=falseと返し、かつ固定CI成功証拠がないためマージしない。"
+    "merge_blocker_ja": "最終再照合でmergeable=true・behind=0だが、現HEADの固定CI成功証拠がないためマージしない。"
   },
   "missed_slots_observed": [
     "2026-10-06 03:00 JST",
@@ -447,6 +447,7 @@
   "notes_ja": [
     "train:04315は参照解答の途中に60 watermelonsとあるが、原題は18個で式も46×18のため、828ドルとして形式化した。",
     "16:00予定枠を16:03 JSTに開始した。",
-    "全15問はself_review_only。独立レビュー済みとはしていない。"
+    "全15問はself_review_only。独立レビュー済みとはしていない。",
+    "成果保存直後はGitHubが一時的にmergeable=falseを返したが、最終再照合ではmergeable=trueへ更新された。"
   ]
 }

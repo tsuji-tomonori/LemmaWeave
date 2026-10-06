@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint523_candy_packs_left",
+  "title_ja": "残ったキャンディの袋数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04278",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P2.lean",
+  "problem_ja": "キャンディ60個を持ち、20個入り1袋を妹へ渡す。残りは何袋か。",
+  "answer_ja": "60−20=40個。20個入りなので40÷20=2袋。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.candy_packs_left",
+  "graph": "work/gsm8k-sprint523-candy-packs-left-graph.json",
+  "model_notes_ja": [
+    "最初の60個も同じ20個入り袋として数えられるとする。"
+  ],
+  "steps": [
+    {
+      "id": "candies_after_gift",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.candies_after_gift",
+      "title_ja": "残った個数",
+      "claim_ja": "60−20=40個。",
+      "method_ja": "全体から1袋20個を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "60−20=40個。"
+    },
+    {
+      "id": "packs_after_gift",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.packs_after_gift",
+      "title_ja": "残った袋数",
+      "claim_ja": "40÷20=2袋。",
+      "method_ja": "残個数を1袋20個で割る。",
+      "requires_steps": [
+        "candies_after_gift"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "40÷20=2袋。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P2.candy_packs_left",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "60−20=40個。20個入りなので40÷20=2袋。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "candies_after_gift",
+        "packs_after_gift"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "60−20=40個。20個入りなので40÷20=2袋。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4279,
+    "checked_model_hash": "856f034a08fcb9718dbed19908fa3256e481e4abe9ccd62e438c44244ff5d2a8",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

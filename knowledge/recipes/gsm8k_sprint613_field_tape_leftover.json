@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint613_field_tape_leftover",
+  "title_ja": "畑を囲んだ後のテープ残量",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04368",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P2.lean",
+  "problem_ja": "Joy has 250 feet of tape. She wants to wrap the tape around a field that is 20 feet wide and 60 feet long. How much tape will Joy have left over after wrapping tape around the field once?",
+  "answer_ja": "幅20フィート、長さ60フィートの周は2×(20+60)=160フィート。250−160=90フィート残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.field_tape_leftover",
+  "graph": "work/gsm8k-sprint613-field-tape-leftover-graph.json",
+  "model_notes_ja": [
+    "長方形の四辺を一周だけ、重なりや結び目の余分なしで囲む。"
+  ],
+  "steps": [
+    {
+      "id": "field_perimeter",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.field_perimeter",
+      "title_ja": "畑の周長",
+      "claim_ja": "2×(20+60)=160フィート。",
+      "method_ja": "長方形の周長公式を使う。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "2×(20+60)=160フィート。"
+    },
+    {
+      "id": "tape_leftover",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.tape_leftover",
+      "title_ja": "テープ残量",
+      "claim_ja": "250−160=90フィート。",
+      "method_ja": "所有量から使用量を引く。",
+      "requires_steps": [
+        "field_perimeter"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・公式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "250−160=90フィート。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P2.field_tape_leftover",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "幅20フィート、長さ60フィートの周は2×(20+60)=160フィート。250−160=90フィート残る。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "field_perimeter",
+        "tape_leftover"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・長方形の周長。",
+      "conclusion_ja": "幅20フィート、長さ60フィートの周は2×(20+60)=160フィート。250−160=90フィート残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4369,
+    "checked_model_hash": "ba08090ab15203723875619b975ccd4373ac0c80cec3a23314a67a14e9d6028a",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

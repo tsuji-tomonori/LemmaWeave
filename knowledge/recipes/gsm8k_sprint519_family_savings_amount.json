@@ -1,0 +1,133 @@
+{
+  "id": "gsm8k_sprint519_family_savings_amount",
+  "title_ja": "家族貯蓄額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04274",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A14P1.lean",
+  "problem_ja": "2000ドルから妻へ2/5、残額から長男へ2/5、さらに残額から次男へ40%渡す。貯蓄額を求める。",
+  "answer_ja": "妻へ800ドルで残り1200ドル。長男へ480ドルで残り720ドル。次男へ288ドル渡し、貯蓄は432ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.family_savings_amount",
+  "graph": "work/gsm8k-sprint519-family-savings-amount-graph.json",
+  "model_notes_ja": [
+    "各割合は直前の残額を基準に順次適用する。"
+  ],
+  "steps": [
+    {
+      "id": "wife_share",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.wife_share",
+      "title_ja": "妻の取り分",
+      "claim_ja": "2000×2÷5=800ドル。",
+      "method_ja": "元金の2/5を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2000×2÷5=800ドル。"
+    },
+    {
+      "id": "after_wife",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.after_wife",
+      "title_ja": "妻へ渡した後",
+      "claim_ja": "2000−800=1200ドル。",
+      "method_ja": "元金から妻の分を引く。",
+      "requires_steps": [
+        "wife_share"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2000−800=1200ドル。"
+    },
+    {
+      "id": "first_son_share",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.first_son_share",
+      "title_ja": "長男の取り分",
+      "claim_ja": "1200×2÷5=480ドル。",
+      "method_ja": "残額1200ドルの2/5を求める。",
+      "requires_steps": [
+        "after_wife"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1200×2÷5=480ドル。"
+    },
+    {
+      "id": "after_first_son",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.after_first_son",
+      "title_ja": "長男へ渡した後",
+      "claim_ja": "1200−480=720ドル。",
+      "method_ja": "残額から長男の分を引く。",
+      "requires_steps": [
+        "first_son_share"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1200−480=720ドル。"
+    },
+    {
+      "id": "second_son_share",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.second_son_share",
+      "title_ja": "次男の取り分",
+      "claim_ja": "720×40÷100=288ドル。",
+      "method_ja": "残額720ドルの40%を求める。",
+      "requires_steps": [
+        "after_first_son"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "720×40÷100=288ドル。"
+    },
+    {
+      "id": "savings_amount",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.savings_amount",
+      "title_ja": "貯蓄額",
+      "claim_ja": "720−288=432ドル。",
+      "method_ja": "最後の残額から次男の分を引く。",
+      "requires_steps": [
+        "second_son_share"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "720−288=432ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A14P1.family_savings_amount",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "妻へ800ドルで残り1200ドル。長男へ480ドルで残り720ドル。次男へ288ドル渡し、貯蓄は432ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "wife_share",
+        "after_wife",
+        "first_son_share",
+        "after_first_son",
+        "second_son_share",
+        "savings_amount"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "妻へ800ドルで残り1200ドル。長男へ480ドルで残り720ドル。次男へ288ドル渡し、貯蓄は432ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4275,
+    "checked_model_hash": "9deac44327d4c25371eedd84b73adaf41869bf13e44dc6daefec7cae619d5d34",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

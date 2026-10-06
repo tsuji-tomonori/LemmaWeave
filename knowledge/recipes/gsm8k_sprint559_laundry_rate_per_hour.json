@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint559_laundry_rate_per_hour",
+  "title_ja": "1時間当たりの洗濯物数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04314",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A16P3.lean",
+  "problem_ja": "午前8時から正午までに80点をクリーニングする。毎時何点必要か。",
+  "answer_ja": "作業時間は12−8=4時間。80÷4=毎時20点。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.laundry_rate_per_hour",
+  "graph": "work/gsm8k-sprint559-laundry-rate-per-hour-graph.json",
+  "model_notes_ja": [
+    "午前8時から正午までを連続4時間として扱う。"
+  ],
+  "steps": [
+    {
+      "id": "laundry_work_hours",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.laundry_work_hours",
+      "title_ja": "作業時間",
+      "claim_ja": "12−8=4時間。",
+      "method_ja": "正午と開始時刻の差を求める。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12−8=4時間。"
+    },
+    {
+      "id": "laundry_hourly_rate",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.laundry_hourly_rate",
+      "title_ja": "毎時処理数",
+      "claim_ja": "80÷4=毎時20点。",
+      "method_ja": "総数を作業時間で割る。",
+      "requires_steps": [
+        "laundry_work_hours"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "80÷4=毎時20点。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A16P3.laundry_rate_per_hour",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "作業時間は12−8=4時間。80÷4=毎時20点。",
+      "method_ja": "各説明行の等式を一つの根定理にまとめる。",
+      "requires_steps": [
+        "laundry_work_hours",
+        "laundry_hourly_rate"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "作業時間は12−8=4時間。80÷4=毎時20点。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4315,
+    "checked_model_hash": "1996423f62893da6f88cf97d68f47a413603677a123a88e9a22ef8c1685945ae",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

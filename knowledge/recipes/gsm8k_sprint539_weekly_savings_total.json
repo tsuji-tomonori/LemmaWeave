@@ -1,0 +1,105 @@
+{
+  "id": "gsm8k_sprint539_weekly_savings_total",
+  "title_ja": "12週間の貯金額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04294",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P2.lean",
+  "problem_ja": "4週間ずつ週5ドル、10ドル、20ドルを貯める。12週間の総額はいくらか。",
+  "answer_ja": "各期間は20ドル、40ドル、80ドル。合計140ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.weekly_savings_total",
+  "graph": "work/gsm8k-sprint539-weekly-savings-total-graph.json",
+  "model_notes_ja": [
+    "各週額は連続する4週間ずつに適用する。"
+  ],
+  "steps": [
+    {
+      "id": "first_four_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.first_four_weeks",
+      "title_ja": "最初の4週間",
+      "claim_ja": "5×4=20ドル。",
+      "method_ja": "週額と週数を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "5×4=20ドル。"
+    },
+    {
+      "id": "second_four_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.second_four_weeks",
+      "title_ja": "次の4週間",
+      "claim_ja": "10×4=40ドル。",
+      "method_ja": "週額と週数を掛ける。",
+      "requires_steps": [
+        "first_four_weeks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10×4=40ドル。"
+    },
+    {
+      "id": "third_four_weeks",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.third_four_weeks",
+      "title_ja": "最後の4週間",
+      "claim_ja": "20×4=80ドル。",
+      "method_ja": "週額と週数を掛ける。",
+      "requires_steps": [
+        "second_four_weeks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20×4=80ドル。"
+    },
+    {
+      "id": "savings_total",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.savings_total",
+      "title_ja": "総貯金額",
+      "claim_ja": "20+40+80=140ドル。",
+      "method_ja": "三期間の貯金を足す。",
+      "requires_steps": [
+        "first_four_weeks",
+        "second_four_weeks",
+        "third_four_weeks"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "20+40+80=140ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P2.weekly_savings_total",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "各期間は20ドル、40ドル、80ドル。合計140ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "first_four_weeks",
+        "second_four_weeks",
+        "third_four_weeks",
+        "savings_total"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "各期間は20ドル、40ドル、80ドル。合計140ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4295,
+    "checked_model_hash": "4ef0930a045de652bae45c32b78940a10f6b0e94a7d0764200116d071ac73e28",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

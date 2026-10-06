@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint531_choir_black_hair_count",
+  "title_ja": "合唱団の黒髪の人数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04286",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P1.lean",
+  "problem_ja": "80人の合唱団に金髪30人がいて、金髪10人を追加した。黒髪は何人か。",
+  "answer_ja": "当初の黒髪は80−30=50人。追加10人は全員金髪なので、追加後も黒髪は90−40=50人。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.choir_black_hair_count",
+  "graph": "work/gsm8k-sprint531-choir-black-hair-count-graph.json",
+  "model_notes_ja": [
+    "追加された10人は全員金髪なので黒髪人数は変わらない。"
+  ],
+  "steps": [
+    {
+      "id": "initial_black_hair",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.initial_black_hair",
+      "title_ja": "当初の黒髪",
+      "claim_ja": "80−30=50人。",
+      "method_ja": "全体から当初の金髪を引く。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "80−30=50人。"
+    },
+    {
+      "id": "choir_after_addition",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.choir_after_addition",
+      "title_ja": "追加後の総数",
+      "claim_ja": "80+10=90人。",
+      "method_ja": "当初人数に追加人数を足す。",
+      "requires_steps": [
+        "initial_black_hair"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "80+10=90人。"
+    },
+    {
+      "id": "blonde_after_addition",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.blonde_after_addition",
+      "title_ja": "追加後の金髪",
+      "claim_ja": "30+10=40人。",
+      "method_ja": "追加された10人が全員金髪であることを用いる。",
+      "requires_steps": [
+        "choir_after_addition"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "30+10=40人。"
+    },
+    {
+      "id": "black_after_addition",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.black_after_addition",
+      "title_ja": "追加後の黒髪",
+      "claim_ja": "90−40=50人。",
+      "method_ja": "追加後の全体から金髪を引く。",
+      "requires_steps": [
+        "choir_after_addition",
+        "blonde_after_addition"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "90−40=50人。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.choir_black_hair_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "当初の黒髪は80−30=50人。追加10人は全員金髪なので、追加後も黒髪は90−40=50人。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "initial_black_hair",
+        "choir_after_addition",
+        "blonde_after_addition",
+        "black_after_addition"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "当初の黒髪は80−30=50人。追加10人は全員金髪なので、追加後も黒髪は90−40=50人。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4287,
+    "checked_model_hash": "37fb0e1f335428757bc4ec5bf56b5d1a4db40a10a3d8e6654ee66dec536e66af",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_sprint501_weekly_task_earnings",
+  "title_ja": "週6日の作業収入",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04256",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A13P1.lean",
+  "problem_ja": "1日100件、1件1.2ドルの仕事を週6日行う。週収はいくらか。",
+  "answer_ja": "1件1.2ドルを120セントとして、1日12,000セント=120ドル。6日で72,000セント=720ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.weekly_task_earnings",
+  "graph": "work/gsm8k-sprint501-weekly-task-earnings-graph.json",
+  "model_notes_ja": [
+    "小数の通貨を正確に扱うためセントへ換算する。"
+  ],
+  "steps": [
+    {
+      "id": "daily_earnings_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.daily_earnings_cents",
+      "title_ja": "1日分の収入",
+      "claim_ja": "100件×120セント=12,000セント。",
+      "method_ja": "件数と1件単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "100件×120セント=12,000セント。"
+    },
+    {
+      "id": "daily_earnings_dollars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.daily_earnings_dollars",
+      "title_ja": "1日分をドル換算",
+      "claim_ja": "12,000÷100=120ドル。",
+      "method_ja": "100セント=1ドルで換算する。",
+      "requires_steps": [
+        "daily_earnings_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12,000÷100=120ドル。"
+    },
+    {
+      "id": "weekly_earnings_cents",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.weekly_earnings_cents",
+      "title_ja": "週6日分",
+      "claim_ja": "12,000×6=72,000セント。",
+      "method_ja": "1日分を6倍する。",
+      "requires_steps": [
+        "daily_earnings_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12,000×6=72,000セント。"
+    },
+    {
+      "id": "weekly_earnings_dollars",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.weekly_earnings_dollars",
+      "title_ja": "週収",
+      "claim_ja": "72,000÷100=720ドル。",
+      "method_ja": "セントをドルへ換算する。",
+      "requires_steps": [
+        "weekly_earnings_cents"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "72,000÷100=720ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A13P1.weekly_task_earnings",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "1件1.2ドルを120セントとして、1日12,000セント=120ドル。6日で72,000セント=720ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "daily_earnings_cents",
+        "daily_earnings_dollars",
+        "weekly_earnings_cents",
+        "weekly_earnings_dollars"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "1件1.2ドルを120セントとして、1日12,000セント=120ドル。6日で72,000セント=720ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4257,
+    "checked_model_hash": "ce83dde56c15afd77b09bf36a123b3c1f49d6068459b2800116f42d29550d8bb",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "id": "gsm8k_sprint480_town_population_literal",
+  "title_ja": "移住前の人口",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04235",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "lean_file": "tests/lean/GSM8KSprint1006A10P2.lean",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "problem_ja": "After 100 new people move into a town, 400 of the original population move out. Every year afterward, the town’s population is halved. After 4 years, the population is 60 people. Before the new people moved in, how many people lived in the town?",
+  "answer_ja": "文面どおり4年間それぞれ半減したなら、移動直後は60×2⁴=960人。元人口pはp+100−400=960だから1260人。参照解答780人は半減を3回しか数えておらず、4回半減すると30人になる。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A10P2.town_population_literal",
+  "graph": "work/gsm8k-sprint480-town-population-literal-graph.json",
+  "model_notes_ja": [
+    "「Every year afterward」「After 4 years」を4回半減と読む。参照解答780は3回半減の別解釈として保持し、文面との不一致を明示する。"
+  ],
+  "steps": [
+    {
+      "id": "population_after_moves",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P2.population_after_moves",
+      "title_ja": "移動直後の人口",
+      "claim_ja": "60×16=960人。",
+      "method_ja": "4回の半減を逆向きに4回倍加する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "4年後60人、毎年半減。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "960人。"
+    },
+    {
+      "id": "original_population_unique",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P2.original_population_unique",
+      "title_ja": "移住前人口",
+      "claim_ja": "p+100−400=960ならp=1260。",
+      "method_ja": "移入100と流出400を移動直後人口へ対応させる。",
+      "requires_steps": [
+        "population_after_moves"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "整数人口p、移動直後960人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "1260人。"
+    },
+    {
+      "id": "reference_three_halvings",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P2.reference_three_halvings",
+      "title_ja": "参照解答の計算",
+      "claim_ja": "60×8+400−100=780人。",
+      "method_ja": "半減3回として逆算する。",
+      "requires_steps": [
+        "population_after_moves",
+        "original_population_unique"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "参照解答の時間解釈。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "780人。"
+    },
+    {
+      "id": "reference_four_year_check",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P2.reference_four_year_check",
+      "title_ja": "780人の4年後",
+      "claim_ja": "(780+100−400)÷16=30人。",
+      "method_ja": "参照値を4回半減へ代入する。",
+      "requires_steps": [
+        "population_after_moves",
+        "original_population_unique",
+        "reference_three_halvings"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "元人口780人。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "30人であり60人ではない。"
+    },
+    {
+      "id": "town_population_literal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A10P2.town_population_literal",
+      "title_ja": "問題全体の結論",
+      "claim_ja": "文面どおり4年間それぞれ半減したなら、移動直後は60×2⁴=960人。元人口pはp+100−400=960だから1260人。参照解答780人は半減を3回しか数えておらず、4回半減すると30人になる。",
+      "method_ja": "前段の行別結論を結合する。",
+      "requires_steps": [
+        "population_after_moves",
+        "original_population_unique",
+        "reference_three_halvings",
+        "reference_four_year_check"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "「Every year afterward」「After 4 years」を4回半減と読む。参照解答780は3回半減の別解釈として保持し、文面との不一致を明示する。",
+      "baseline_ja": "整数・割合・分数・単位・一次方程式のうち問題で明示したもの。",
+      "conclusion_ja": "文面どおり4年間それぞれ半減したなら、移動直後は60×2⁴=960人。元人口pはp+100−400=960だから1260人。参照解答780人は半減を3回しか数えておらず、4回半減すると30人になる。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4236,
+    "checked_model_hash": "b9da7ac57e5a1d26fb97f84d3d2124eeb8b69827142a770e9df0ce1bf5ac2a29",
+    "checks_ja": [
+      "原文の数量・型・単位・仮定・求める全結論を再照合した。",
+      "記述解答と適用条件を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  },
+  "checked_model_hash": "b9da7ac57e5a1d26fb97f84d3d2124eeb8b69827142a770e9df0ce1bf5ac2a29"
+}

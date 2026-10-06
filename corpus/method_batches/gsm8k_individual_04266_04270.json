@@ -1,0 +1,95 @@
+{
+  "batch_id": "GSM8K-INDIVIDUAL-1703",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "source": {
+    "repository": "openai/grade-school-math",
+    "commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "path": "grade_school_math/data/train.jsonl",
+    "blob_sha": "7d97154b91aef28d01c3301741c81ce90039a4b1",
+    "manifest_sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "semantic_review_status": "self_review_only",
+  "semantic_model_hash": "5e5065b43a0044861194598e07c25572a27c4d1cecdad3ad56739f7a0341534f",
+  "model_files": [
+    "LemmaWeave/Problems/GSM8K/Sprint1006A13P3Models.lean"
+  ],
+  "items": [
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04266",
+      "source_line_1based": 4267,
+      "source_record_sha256": "0adb1f604f23ad214848789e2a7f8742e0ffe7a55d030328504862c8a56d07f8",
+      "raw_question_sha256": "d2909e3c70589dfcc4bbf4e83aea2a3a4ab89d7e79fbcb3a933ec7f59bd41a74",
+      "normalized_question_sha256": "d2909e3c70589dfcc4bbf4e83aea2a3a4ab89d7e79fbcb3a933ec7f59bd41a74",
+      "source_question": "Matilda had 20 chocolate bars and shared them evenly amongst herself and her 4 sisters. When her father got home from work, he was upset that they did not put aside any chocolates for him. They felt bad, so they each gave up half of their chocolate bars for their father. Their father then gave 3 chocolate bars to their mother and ate 2. How many chocolate bars did Matilda's father have left?",
+      "recipe_id": "gsm8k_sprint511_father_chocolate_bars_left",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Matildaを含む5人で均等に分ける。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04267",
+      "source_line_1based": 4268,
+      "source_record_sha256": "e382930594623871f366859f22259319dcf63d8a13b7b0bc85747f927dd603cf",
+      "raw_question_sha256": "bf492b29f8041b936afea70bbea27e4ed7f985c0bedd75f351d5155925bf9eeb",
+      "normalized_question_sha256": "bf492b29f8041b936afea70bbea27e4ed7f985c0bedd75f351d5155925bf9eeb",
+      "source_question": "After uploading her video to Youtube, Kallie received 4000 views on the first day. When she checked her channel 4 days later, she realized that the number of views had increased by a number ten times more than the views on the first day. If 50000 more people viewed the video after another two days, determine the number of views the video had gained on Youtube?",
+      "recipe_id": "gsm8k_sprint512_youtube_views_ambiguity",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "曖昧な “ten times more” に追加条件を黙って足さず、2つの整合する読みを分離する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04268",
+      "source_line_1based": 4269,
+      "source_record_sha256": "bf32e078ff7f9b7ee9bb88467d74fd083e617e763803414ad84d5cfa64d6e0bc",
+      "raw_question_sha256": "32bc6fd50d062bbafaa86a599ae1324b01c7416899e11f55ccf08d278bb0a1fd",
+      "normalized_question_sha256": "32bc6fd50d062bbafaa86a599ae1324b01c7416899e11f55ccf08d278bb0a1fd",
+      "source_question": "Derek has $40. He spends $14 on lunch for himself, $11 for lunch for his dad, and $5 on more lunch for himself. His brother Dave has $50 and only spends $7 on lunch for his mom. How much more money does Dave have left than Derek?",
+      "recipe_id": "gsm8k_sprint513_dave_more_money_left",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "各人の支出をそれぞれの所持金から引く。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04269",
+      "source_line_1based": 4270,
+      "source_record_sha256": "4ed42434881959e3d17a2be5b1a46edd01003d67b52497d2ad5c75a35c455da5",
+      "raw_question_sha256": "7678059108bab5ee0e1ed35e0327c6cd5fc6f5557f0667863d3e357886f5fe34",
+      "normalized_question_sha256": "a8ab445259206fee3b3527f5dbaa48f4433aa79d5e1e402f101cc006dd4eb028",
+      "source_question": "Timothy decides he wants to start living off the land.  He buys 30 acres of land for $20 an acre.  He then builds himself a large house for $120,000.  After that, he gets himself 20 cows for $1000 per cow and 100 chickens for $5 per chicken.  The last thing is solar panels which take 6 hours to install with an installation cost of $100 an hour and then a flat fee of $6000 for the equipment.  How much did everything cost?",
+      "recipe_id": "gsm8k_sprint514_living_off_land_total_cost",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "すべての金額をドル単位で加算する。"
+      ],
+      "blockers": []
+    },
+    {
+      "problem_id": "external-gsm8k-main-3101c7d50724:train:04270",
+      "source_line_1based": 4271,
+      "source_record_sha256": "c65474cc130f4cc8f2478a7d9573d964b177894481ef24d2370280a298093ac6",
+      "raw_question_sha256": "819ac42ae440df87d08a88c211a2a9e1525d4ae6bb140064b95a49da524e6f01",
+      "normalized_question_sha256": "819ac42ae440df87d08a88c211a2a9e1525d4ae6bb140064b95a49da524e6f01",
+      "source_question": "Barney the dinosaur weighs 1500 pounds more than five regular dinosaurs combined. If each regular dinosaur weighs 800 pounds, find the combined weight of Barney and the five regular dinosaurs' weights?",
+      "recipe_id": "gsm8k_sprint515_dinosaur_combined_weight",
+      "semantic_status": "self_review_only",
+      "model_scope": "self_reviewed_model",
+      "modeling_notes_ja": [
+        "Barneyの重量は通常5頭の合計に1,500を加えて求める。"
+      ],
+      "blockers": []
+    }
+  ]
+}

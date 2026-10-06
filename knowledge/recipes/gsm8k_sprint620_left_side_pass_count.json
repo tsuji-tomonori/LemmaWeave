@@ -1,0 +1,73 @@
+{
+  "id": "gsm8k_sprint620_left_side_pass_count",
+  "title_ja": "左側へのパス数",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04375",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A20P3.lean",
+  "problem_ja": "A quarterback throws 50 passes in one game.  He throws twice as many passes to the right of the field than he does to the left of the field.  He throws 2 more passes to the center of the field than he did to the left.  How many passes did he throw to the left side of the field?",
+  "answer_ja": "左側へのパスをx回とすると、右は2x回、中央はx+2回。x+2x+(x+2)=50より4x+2=50、したがってx=12回。この解は合計50を満たし、自然数解として一意。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.left_side_pass_count",
+  "graph": "work/gsm8k-sprint620-left-side-pass-count-graph.json",
+  "model_notes_ja": [
+    "rightへの回数はleftの2倍、centerはleftより2回多く、3方向が全50回を分割する。"
+  ],
+  "steps": [
+    {
+      "id": "pass_total_at_twelve",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.pass_total_at_twelve",
+      "title_ja": "12回の検算",
+      "claim_ja": "12+24+14=50回。",
+      "method_ja": "左12・右24・中央14を合計する。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "12+24+14=50回。"
+    },
+    {
+      "id": "left_passes_unique",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.left_passes_unique",
+      "title_ja": "左回数の一意性",
+      "claim_ja": "合計式を満たす自然数xは12。",
+      "method_ja": "一次方程式を解く。",
+      "requires_steps": [
+        "pass_total_at_twelve"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算・方程式の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "合計式を満たす自然数xは12。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A20P3.left_side_pass_count",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "左側へのパスをx回とすると、右は2x回、中央はx+2回。x+2x+(x+2)=50より4x+2=50、したがってx=12回。この解は合計50を満たし、自然数解として一意。",
+      "method_ja": "各説明行の命題を一つの根定理にまとめる。",
+      "requires_steps": [
+        "pass_total_at_twelve",
+        "left_passes_unique"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・一次方程式。",
+      "conclusion_ja": "左側へのパスをx回とすると、右は2x回、中央はx+2回。x+2x+(x+2)=50より4x+2=50、したがってx=12回。この解は合計50を満たし、自然数解として一意。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4376,
+    "checked_model_hash": "6ac66d8d69059cd9ddcaf13a92c2b4b2d2c850cae6fb8d48c0bbc5c02afb122c",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

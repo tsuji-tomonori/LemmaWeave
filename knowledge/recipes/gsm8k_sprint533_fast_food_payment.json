@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint533_fast_food_payment",
+  "title_ja": "ファストフードの支払額",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04288",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P1.lean",
+  "problem_ja": "5ドルのハンバーガー2個と2ドルのコーラ3本を買い、4ドル引き券を使う。支払額はいくらか。",
+  "answer_ja": "ハンバーガー10ドル、コーラ6ドルで計16ドル。4ドル引いて12ドル。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.fast_food_payment",
+  "graph": "work/gsm8k-sprint533-fast-food-payment-graph.json",
+  "model_notes_ja": [
+    "割引券は商品合計に1回適用する。"
+  ],
+  "steps": [
+    {
+      "id": "hamburger_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.hamburger_cost",
+      "title_ja": "ハンバーガー代",
+      "claim_ja": "2×5=10ドル。",
+      "method_ja": "個数と単価を掛ける。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "2×5=10ドル。"
+    },
+    {
+      "id": "cola_cost",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.cola_cost",
+      "title_ja": "コーラ代",
+      "claim_ja": "3×2=6ドル。",
+      "method_ja": "本数と単価を掛ける。",
+      "requires_steps": [
+        "hamburger_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "3×2=6ドル。"
+    },
+    {
+      "id": "meal_subtotal",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.meal_subtotal",
+      "title_ja": "商品合計",
+      "claim_ja": "10+6=16ドル。",
+      "method_ja": "商品代を足す。",
+      "requires_steps": [
+        "hamburger_cost",
+        "cola_cost"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "10+6=16ドル。"
+    },
+    {
+      "id": "payment_after_coupon",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.payment_after_coupon",
+      "title_ja": "割引後の支払額",
+      "claim_ja": "16−4=12ドル。",
+      "method_ja": "合計から券面額を引く。",
+      "requires_steps": [
+        "meal_subtotal"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "16−4=12ドル。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.fast_food_payment",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "ハンバーガー10ドル、コーラ6ドルで計16ドル。4ドル引いて12ドル。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "hamburger_cost",
+        "cola_cost",
+        "meal_subtotal",
+        "payment_after_coupon"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "ハンバーガー10ドル、コーラ6ドルで計16ドル。4ドル引いて12ドル。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4289,
+    "checked_model_hash": "37fb0e1f335428757bc4ec5bf56b5d1a4db40a10a3d8e6654ee66dec536e66af",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}

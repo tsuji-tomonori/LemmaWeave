@@ -1,0 +1,104 @@
+{
+  "id": "gsm8k_sprint532_parsley_sprigs_left",
+  "title_ja": "残ったパセリの枝",
+  "problem_id": "external-gsm8k-main-3101c7d50724:train:04287",
+  "collection_id": "external-gsm8k-main-3101c7d50724",
+  "semantic_review_status": "self_review_only",
+  "model_scope": "self_reviewed_model",
+  "counting_note_ja": "固定GSM8Kの1問。",
+  "solution_format": "individual_lines_v1",
+  "authorship": "llm_individual",
+  "lean_file": "tests/lean/GSM8KSprint1006A15P1.lean",
+  "problem_ja": "25枝から8皿に1枝ずつ、12皿に半枝ずつ使う。何枝残るか。",
+  "answer_ja": "丸ごと8枝、半枝分は12÷2=6枝なので計14枝を使い、25−14=11枝残る。",
+  "root": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.parsley_sprigs_left",
+  "graph": "work/gsm8k-sprint532-parsley-sprigs-left-graph.json",
+  "model_notes_ja": [
+    "半枝を12皿に使う量は、元の枝6本分である。"
+  ],
+  "steps": [
+    {
+      "id": "whole_sprigs_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.whole_sprigs_used",
+      "title_ja": "丸ごとの使用量",
+      "claim_ja": "8×1=8枝。",
+      "method_ja": "8皿へ1枝ずつ使う。",
+      "requires_steps": [],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "8×1=8枝。"
+    },
+    {
+      "id": "half_sprigs_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.half_sprigs_used",
+      "title_ja": "半枝の使用量",
+      "claim_ja": "12÷2=6枝分。",
+      "method_ja": "半枝12個を元の枝数へ換算する。",
+      "requires_steps": [
+        "whole_sprigs_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "12÷2=6枝分。"
+    },
+    {
+      "id": "total_sprigs_used",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.total_sprigs_used",
+      "title_ja": "合計使用量",
+      "claim_ja": "8+6=14枝。",
+      "method_ja": "二種類の使用量を足す。",
+      "requires_steps": [
+        "whole_sprigs_used",
+        "half_sprigs_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "8+6=14枝。"
+    },
+    {
+      "id": "sprigs_remaining",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.sprigs_remaining",
+      "title_ja": "残量",
+      "claim_ja": "25−14=11枝。",
+      "method_ja": "初めの枝数から使用量を引く。",
+      "requires_steps": [
+        "total_sprigs_used"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "原題の数量・単位・時点を保ち、示した演算の条件を満たす。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "25−14=11枝。"
+    },
+    {
+      "id": "root",
+      "lean_declaration": "LemmaWeave.Problems.GSM8K.Sprint1006A15P1.parsley_sprigs_left",
+      "title_ja": "全説明行の結合",
+      "claim_ja": "丸ごと8枝、半枝分は12÷2=6枝なので計14枝を使い、25−14=11枝残る。",
+      "method_ja": "各説明行の等式または相異なる結果を一つの根定理にまとめる。",
+      "requires_steps": [
+        "whole_sprigs_used",
+        "half_sprigs_used",
+        "total_sprigs_used",
+        "sprigs_remaining"
+      ],
+      "uses_nodes": [],
+      "condition_ja": "各説明行の定理が成立し、原題との対応は作成者が再読した。",
+      "baseline_ja": "小中学校までの四則演算・割合・速さ。",
+      "conclusion_ja": "丸ごと8枝、半枝分は12÷2=6枝なので計14枝を使い、25−14=11枝残る。"
+    }
+  ],
+  "author_review": {
+    "reviewer": "author",
+    "status": "checked",
+    "source_line_1based": 4288,
+    "checked_model_hash": "37fb0e1f335428757bc4ec5bf56b5d1a4db40a10a3d8e6654ee66dec536e66af",
+    "checks_ja": [
+      "原題の数量・単位・時点・求める全結論を再読してモデルと照合した。",
+      "各説明行を名前付きLean定理へ対応させた。",
+      "独立レビューではなく作成者自己照合である。"
+    ]
+  }
+}
